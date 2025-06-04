@@ -9,28 +9,33 @@ public class PlayerFingerValueReceiver : MonoBehaviour
 		public float triggerValue; //Field offset: 0x14
 		public float gripValue; //Field offset: 0x18
 
-		public float indexValue
-		{
-			 get { } //Length: 8
-		}
+                public float indexValue
+                {
+                         get { return triggerValue; }
+                }
 
-		public float middleValue
-		{
-			 get { } //Length: 8
-		}
+                public float middleValue
+                {
+                         get { return gripValue; }
+                }
 
-		public float thumbValue
-		{
-			 get { } //Length: 44
-		}
+                public float thumbValue
+                {
+                         get
+                         {
+                                if (isThumbPressed)
+                                        return 1f;
+                                return isThumbTouched ? 0.5f : 0f;
+                         }
+                }
 
-		public FingerValues() { }
+                public FingerValues() { }
 
-		public float get_indexValue() { }
+                public float get_indexValue() => indexValue;
 
-		public float get_middleValue() { }
+                public float get_middleValue() => middleValue;
 
-		public float get_thumbValue() { }
+                public float get_thumbValue() => thumbValue;
 
 	}
 

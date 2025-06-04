@@ -51,10 +51,10 @@ public class PlayerFingerView : MonoBehaviour
 	[SerializeField]
 	private float _middleValueDebug; //Field offset: 0xCC
 
-	private float _smoothingSpeed
-	{
-		private get { } //Length: 28
-	}
+        private float _smoothingSpeed
+        {
+                private get { return smoothingValues ? 10f : 0f; }
+        }
 
 	public PlayerFingerView() { }
 
@@ -64,7 +64,7 @@ public class PlayerFingerView : MonoBehaviour
 
 	private void ApplyThumbValues(float value) { }
 
-	private float get__smoothingSpeed() { }
+        private float get__smoothingSpeed() => _smoothingSpeed;
 
 	private float GetInterpolatedValue(float stretch, float bent, float value) { }
 

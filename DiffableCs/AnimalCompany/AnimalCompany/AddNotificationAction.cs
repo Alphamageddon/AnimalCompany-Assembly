@@ -1,3 +1,4 @@
+// Batch 2
 namespace AnimalCompany;
 
 public class AddNotificationAction : BaseAction
@@ -21,6 +22,15 @@ public class AddNotificationAction : BaseAction
                 {
                         dict[id] = new NotificationState();
                 }
+
+                var notifState = dict[id];
+                notifState.id.value = id;
+                notifState.code.value = (NotificationCode)_notification.Code;
+                notifState.subject.value = _notification.Subject;
+                notifState.content.value = _notification.Content;
+                notifState.senderID.value = _notification.SenderId;
+                notifState.time.value = _notification.CreateTime;
+                notifState.persistent.value = _notification.Persistent;
         }
 
 }

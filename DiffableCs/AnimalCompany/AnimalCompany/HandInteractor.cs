@@ -10,15 +10,15 @@ public class HandInteractor : NetworkBehaviour
 	private AttachedItemAnchor _itemAnchor; //Field offset: 0x88
 	private NetPlayer _netPlayer; //Field offset: 0x90
 
-	public HandSide handSide
-	{
-		 get { } //Length: 8
-	}
+        public HandSide handSide
+        {
+                 get { return _handSide; }
+        }
 
-	public AttachedItemAnchor itemAnchor
-	{
-		 get { } //Length: 8
-	}
+        public AttachedItemAnchor itemAnchor
+        {
+                 get { return _itemAnchor; }
+        }
 
 	public HandInteractor() { }
 

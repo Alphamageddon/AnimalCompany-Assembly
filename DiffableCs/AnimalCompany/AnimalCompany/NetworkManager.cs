@@ -70,15 +70,20 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 	private CommandHandle _autoJoinCommandHandle; //Field offset: 0x48
 	private float _nextAutoJoinDelay; //Field offset: 0x50
 
-	public NetworkRunner currentRunner
-	{
-		 get { } //Length: 128
-	}
+        public NetworkRunner currentRunner
+        {
+                 get { return _currSessionManager != null ? _currSessionManager.runner : null; }
+        }
 
-	public static NetworkManager instance
-	{
-		 get { } //Length: 72
-	}
+        public static NetworkManager instance
+        {
+                 get
+                 {
+                        if (_instance == null)
+                                _instance = Object.FindObjectOfType<NetworkManager>();
+                        return _instance;
+                 }
+        }
 
 	public NetworkManager() { }
 
@@ -93,9 +98,9 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 
 	public bool CustomCodeEntered(string code, SessionProperties properties) { }
 
-	public NetworkRunner get_currentRunner() { }
+        public NetworkRunner get_currentRunner() => currentRunner;
 
-	public static NetworkManager get_instance() { }
+        public static NetworkManager get_instance() => instance;
 
 	public static int GetPlayerToken(NetworkRunner runner, PlayerRef player) { }
 
