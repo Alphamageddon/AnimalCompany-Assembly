@@ -39,12 +39,19 @@ public class AnalyticsHeartbeat : MonoBehaviour
 
 	}
 
-	private const float INTERVAL_SECONDS = 60; //Field offset: 0x0
+        private const float INTERVAL_SECONDS = 60; //Field offset: 0x0
 
-	public AnalyticsHeartbeat() { }
+        public AnalyticsHeartbeat() { }
 
-	[IteratorStateMachine(typeof(<Start>d__1))]
-	private IEnumerator Start() { }
+        [IteratorStateMachine(typeof(<Start>d__1))]
+        private IEnumerator Start()
+        {
+                while (true)
+                {
+                        Analytics.Track("heartbeat");
+                        yield return new WaitForSeconds(INTERVAL_SECONDS);
+                }
+        }
 
 }
 

@@ -14,7 +14,11 @@ public class AvatarAccessoryData : ScriptableObject
 	public GarmentRefitPreProcessResult refitData; //Field offset: 0x60
 	public AvatarBodyBones[] bones; //Field offset: 0x68
 
-	public AvatarAccessoryData() { }
+        public AvatarAccessoryData()
+        {
+                // ScriptableObject constructor will initialise Unity specific
+                // behaviour. No additional setup is required.
+        }
 
 }
 
