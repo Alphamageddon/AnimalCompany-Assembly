@@ -1,0 +1,72 @@
+Type: Unity.Collections.LowLevel.Unsafe.BurstLike/SharedStatic
+
+Method: System.Void* GetOrCreateSharedStaticInternal(System.Int64 getHashCode64, System.Int64 getSubHashCode64, System.UInt32 sizeOf, System.UInt32 alignment)
+
+Disassembly:
+	0x03C00C4C LDP X30, X21, [X31], #0x20
+	0x03C00C50 B 0x33CB4DC
+	0x03C00C54 CMP W1, 0x1
+	0x03C00C58 MOV X21, X0
+	0x03C00C5C B.NE 0x3C00C8C
+	0x03C00C60 MOV X0, X21
+	0x03C00C64 BL 0x3EB1AD0
+	0x03C00C68 LDR X20, [X0]
+	0x03C00C6C BL 0x3EB1AE0
+	0x03C00C70 MOV X0, X19
+	0x03C00C74 MOV X1, X31
+	0x03C00C78 BL 0x33CB4DC
+	0x03C00C7C CBNZ X20, 0x3C00C94
+	0x03C00C80 LDP X20, X19, [X31 + 0x10]
+	0x03C00C84 LDP X30, X21, [X31], #0x20
+	0x03C00C88 RET
+	0x03C00C8C MOV X20, X31
+	0x03C00C90 B 0x3C00CA0
+	0x03C00C94 MOV X0, X20
+	0x03C00C98 BL 0x1C16F18
+	0x03C00C9C MOV X21, X0
+	0x03C00CA0 MOV X0, X19
+	0x03C00CA4 MOV X1, X31
+	0x03C00CA8 BL 0x33CB4DC
+	0x03C00CAC CBNZ X20, 0x3C00CB8
+	0x03C00CB0 MOV X0, X21
+	0x03C00CB4 BL 0x1D2C690
+	0x03C00CB8 MOV X0, X20
+	0x03C00CBC BL 0x1C16F18
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], X30
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move W20, W3
+	007 Move W19, W2
+	008 Move X2, X1
+	009 Move X1, X0
+	010 Add X0, X31, 0
+	011 Move X3, X31
+	012 Move [X31], X31
+	013 Move [X31+8], X31
+	014 Call Hash128..ctor, X0, X1, X2
+	015 Move X21, 0x7E4000
+	016 Move X8, [X21+3480]
+	017 Compare X8, 0
+	018 JumpIfNotEqual {24}
+	019 Move X0, -51425280
+	020 Add X0, X0, 3975
+	021 Call 0x1C17CB8
+	022 Move X8, X0
+	023 Move [X21+3480], X0
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move W9, 4
+	026 NotImplemented "Instruction CSEL not yet implemented."
+	027 Add X0, X31, 0
+	028 Move W1, W19
+	029 NotImplemented "Instruction BLR not yet implemented."
+	030 Move X20, [X31+32]
+	031 Move X19, [X31+40]
+	032 Move X30, [X31+16]
+	033 Move X21, [X31+24]
+	034 Add X31, X31, 48
+	035 Return X0
+

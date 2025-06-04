@@ -1,0 +1,60 @@
+Type: System.LocalDataStoreElement
+
+Method: System.Void .ctor(System.Int64 cookie)
+
+Disassembly:
+	0x033A6330 BL 0x1C16F18
+	0x033A6334 BL 0x1C16F20
+	0x033A6338 B 0x33A6340
+	0x033A633C B 0x33A6340
+	0x033A6340 MOV X21, X0
+	0x033A6344 CMP W1, 0x1
+	0x033A6348 B.NE 0x33A6360
+	0x033A634C MOV X0, X21
+	0x033A6350 BL 0x3EB1AD0
+	0x033A6354 LDR X20, [X0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+24], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Object get_Value()
+
+Disassembly:
+	0x033A6358 BL 0x3EB1AE0
+	0x033A635C B 0x33A6304
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_Value(System.Object value)
+
+Disassembly:
+	0x033A6360 MOV X20, X31
+	0x033A6364 B 0x33A636C
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Int64 get_Cookie()
+
+Disassembly:
+	0x033A6368 MOV X21, X0
+	0x033A636C LDRB W8, [X31 + 0xC]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+

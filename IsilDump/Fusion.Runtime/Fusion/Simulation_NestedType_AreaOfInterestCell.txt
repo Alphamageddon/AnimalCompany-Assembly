@@ -1,0 +1,51 @@
+Type: Fusion.Simulation/AreaOfInterestCell
+
+Method: System.Boolean get_Empty()
+
+Disassembly:
+	0x01ECBD70 ADRP X0, 0x2234000
+	0x01ECBD74 LDR X0, [X0 + 0xDA0]
+	0x01ECBD78 BL 0x1C16CF4
+	0x01ECBD7C ADRP X0, 0x2234000
+	0x01ECBD80 LDR X0, [X0 + 0xDB0]
+	0x01ECBD84 BL 0x1C16CF4
+	0x01ECBD88 ADRP X0, 0x2234000
+	0x01ECBD8C LDR X0, [X0 + 0xD98]
+	0x01ECBD90 BL 0x1C16CF4
+	0x01ECBD94 ADRP X0, 0x2233000
+	0x01ECBD98 LDR X0, [X0 + 0x448]
+	0x01ECBD9C BL 0x1C16CF4
+	0x01ECBDA0 MOVZ W8, 0x1
+	0x01ECBDA4 STRB W8, [X25 + 0x4CB]
+
+ISIL:
+	001 Move W8, [X0+24]
+	002 Compare W8, 0
+	003 JumpIfNotEqual {13}
+	004 Move X8, [X0+48]
+	005 Compare X8, 0
+	006 JumpIfNotEqual {13}
+	007 Move X8, [X0+56]
+	008 Compare X8, 0
+	009 JumpIfNotEqual {13}
+	010 Move X8, [X0+64]
+	011 Compare X8, 0
+	012 JumpIfEqual {15}
+	013 Move W0, W31
+	014 Return X0
+	015 Move X8, [X0+72]
+	016 NotImplemented "Instruction CMP not yet implemented."
+	017 NotImplemented "Instruction CSET not yet implemented."
+	018 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01ECBDA8 ADD X0, X31, 0x78
+	0x01ECBDAC MOVZ W2, 0x50
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

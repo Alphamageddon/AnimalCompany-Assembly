@@ -1,0 +1,147 @@
+Type: UnityEngine.Animations.Rigging.FloatProperty
+
+Method: UnityEngine.Animations.Rigging.FloatProperty Bind(UnityEngine.Animator animator, UnityEngine.Component component, System.String name)
+
+Disassembly:
+	0x036E615C MOV X24, X0
+	0x036E6160 MOV X0, X21
+	0x036E6164 MOV X2, X31
+	0x036E6168 BL 0x321B938
+	0x036E616C MOV X3, X0
+	0x036E6170 MOV X0, X20
+	0x036E6174 MOV X1, X24
+	0x036E6178 MOV X2, X23
+	0x036E617C MOV X4, X31
+	0x036E6180 BL 0x3BFB030
+	0x036E6184 MOV X24, X0
+	0x036E6188 MOV X25, X1
+	0x036E618C MOV X0, X22
+	0x036E6190 MOV X1, X31
+	0x036E6194 BL 0x3C32E90
+	0x036E6198 LDR X1, [X26]
+	0x036E619C MOV X26, X0
+	0x036E61A0 MOV X0, X21
+	0x036E61A4 MOV X2, X31
+	0x036E61A8 BL 0x321B938
+	0x036E61AC MOV X3, X0
+	0x036E61B0 MOV X0, X20
+	0x036E61B4 MOV X1, X26
+	0x036E61B8 MOV X2, X23
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Compare X1, 0
+	007 JumpIfEqual {30}
+	008 Move X21, X1
+	009 Move X20, X0
+	010 Move X0, X1
+	011 Move X1, X31
+	012 Move X19, X2
+	013 Call Component.get_transform, X0
+	014 Move X22, X0
+	015 Move X0, X21
+	016 Move X1, X31
+	017 Call "il2cpp_vm_object_is_inst", X0
+	018 Move X2, X0
+	019 Move X0, X20
+	020 Move X1, X22
+	021 Move X3, X19
+	022 Move X20, [X31+32]
+	023 Move X19, [X31+40]
+	024 Move X22, [X31+16]
+	025 Move X21, [X31+24]
+	026 Move X4, X31
+	027 Move X30, [X31+48]
+	028 Call AnimatorJobExtensions.BindStreamProperty, X0, X1, X2, X3
+	029 Return X0
+	030 Call 0x1C17F20
+
+Method: UnityEngine.Animations.Rigging.FloatProperty BindCustom(UnityEngine.Animator animator, System.String property)
+
+Disassembly:
+	0x036E61BC MOV X4, X31
+	0x036E61C0 BL 0x3BFB030
+	0x036E61C4 MOV X26, X0
+
+ISIL:
+	001 Move W2, 5
+	002 Move X3, X31
+	003 Call AnimatorJobExtensions.BindCustomStreamProperty, X0, X1, X2
+	004 Return X0
+
+Method: System.Single Get(UnityEngine.Animations.AnimationStream stream)
+
+Disassembly:
+	0x036E4300 MOVZ W8, 0x1
+	0x036E4304 STRB W8, [X21 + 0x785]
+	0x036E4308 LDR X0, [X22]
+	0x036E430C LDR W8, [X0 + 0xE0]
+	0x036E4310 CBNZ W8, 0x36E4318
+	0x036E4314 BL 0x1C16DFC
+	0x036E4318 FMUL S0, S13, S13
+	0x036E431C FMUL S1, S12, S12
+	0x036E4320 FADD S0, S0, S1
+	0x036E4324 FMUL S1, S11, S11
+	0x036E4328 FADD S0, S1, S0
+	0x036E432C FSQRT S2, S0
+	0x036E4330 FCMP S2, S15
+	0x036E4334 B.LE 0x36E4348
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call PropertyStreamHandle.GetFloat, X0, X1
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return V0
+
+Method: System.Void Set(UnityEngine.Animations.AnimationStream stream, System.Single v)
+
+Disassembly:
+	0x036E61C8 MOV X27, X1
+	0x036E61CC MOV X0, X22
+	0x036E61D0 MOV X1, X31
+	0x036E61D4 BL 0x3C32E90
+	0x036E61D8 LDR X1, [X28]
+	0x036E61DC MOV X28, X0
+	0x036E61E0 MOV X0, X21
+	0x036E61E4 MOV X2, X31
+	0x036E61E8 BL 0x321B938
+	0x036E61EC MOV X3, X0
+	0x036E61F0 MOV X0, X20
+	0x036E61F4 MOV X1, X28
+	0x036E61F8 MOV X2, X23
+	0x036E61FC MOV X4, X31
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V2, [X1+16]
+	005 Move V1, [X1+32]
+	006 Move V3, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V2
+	011 Move [X31+24], V1
+	012 Move [X31], V3
+	013 Call PropertyStreamHandle.SetFloat, X0, X1, V0
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return 
+

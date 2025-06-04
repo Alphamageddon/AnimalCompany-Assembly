@@ -1,0 +1,45 @@
+Type: UnityEngine.InputSystem.InputBindingCompositeContext/DefaultComparer`1
+
+Method: System.Int32 Compare(TValue x, TValue y)
+
+Disassembly:
+	0x029B3514 LDP X24, X23, [X31 + 0x10]
+	0x029B3518 LDP X29, X30, [X31], #0x40
+	0x029B351C RET
+	0x029B3520 BL 0x1C16F20
+	0x029B3524 BL 0x3EB1B20
+	0x029B3528 STR X30, [X31 - 0x20]!
+	0x029B352C STP X20, X19, [X31 + 0x10]
+	0x029B3530 LDR X8, [X2 + 0x20]
+	0x029B3534 MOV W19, W1
+	0x029B3538 MOV X20, X2
+	0x029B353C LDR X8, [X8 + 0xC0]
+	0x029B3540 LDR X1, [X8 + 0x30]
+	0x029B3544 LDR X8, [X1]
+	0x029B3548 BLR X8
+	0x029B354C CBZ X0, 0x29B3570
+	0x029B3550 LDR X8, [X20 + 0x20]
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move [X31+12], W1
+	005 Move X0, [X3+32]
+	006 Move W19, W2
+	007 Move W8, [X0+309]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {13}
+	012 Call 0x1C5D684
+	013 Move X8, [X0+192]
+	014 Add X0, X31, 12
+	015 Move W1, W19
+	016 Move X2, [X8+16]
+	017 Call Int32.CompareTo, X0, X1
+	018 Move X30, [X31+16]
+	019 Move X19, [X31+24]
+	020 Add X31, X31, 32
+	021 Return X0
+

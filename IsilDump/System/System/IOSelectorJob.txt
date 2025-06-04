@@ -1,0 +1,102 @@
+Type: System.IOSelectorJob
+
+Method: System.Void .ctor(System.IOOperation operation, System.IOAsyncCallback callback, System.IOAsyncResult state)
+
+Disassembly:
+	0x0362F5F8 RET
+	0x0362F5FC LDR W0, [X0 + 0x10]
+	0x0362F600 RET
+	0x0362F604 STR W1, [X0 + 0x10]
+	0x0362F608 RET
+	0x0362F60C LDR W0, [X0 + 0x14]
+	0x0362F610 RET
+	0x0362F614 STR W1, [X0 + 0x14]
+	0x0362F618 RET
+	0x0362F61C LDR X0, [X0 + 0x18]
+	0x0362F620 RET
+	0x0362F624 STR X1, [X0 + 0x18]
+	0x0362F628 RET
+	0x0362F62C STR X30, [X31 - 0x10]!
+	0x0362F630 MOV X8, X0
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move W21, W1
+	007 Move X1, X31
+	008 Move X19, X3
+	009 Move X20, X2
+	010 Move X22, X0
+	011 Call Object..ctor, X0
+	012 Move [X22+16], W21
+	013 Move [X22+24], X20
+	014 Move [X22+32], X19
+	015 Move X20, [X31+32]
+	016 Move X19, [X31+40]
+	017 Move X22, [X31+16]
+	018 Move X21, [X31+24]
+	019 Move X30, [X31+48]
+	020 Return 
+
+Method: System.Void System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+
+Disassembly:
+	0x0362F634 LDR X0, [X0 + 0x18]
+	0x0362F638 CBZ X0, 0x362F64C
+	0x0362F63C LDP W1, W2, [X8 + 0x10]
+	0x0362F640 MOV X3, X31
+	0x0362F644 LDR X30, [X31], #0x10
+	0x0362F648 B 0x3228DE4
+	0x0362F64C BL 0x1C16F20
+	0x0362F650 B 0x362F62C
+	0x0362F654 STP X30, X21, [X31 - 0x20]!
+	0x0362F658 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {11}
+	005 Move X1, [X0+32]
+	006 Move X3, [X8+24]
+	007 Move X0, [X8+64]
+	008 Move X2, [X8+40]
+	009 Move X30, [X31+16]
+	010 CallNoReturn X3
+	011 Call 0x1C17F20
+
+Method: System.Void System.Threading.IThreadPoolWorkItem.MarkAborted(System.Threading.ThreadAbortException tae)
+
+Disassembly:
+	0x0362F65C ADRP X21, 0xDAA000
+
+ISIL:
+	001 Return 
+
+Method: System.Void MarkDisposed()
+
+Disassembly:
+	0x0362F660 LDR X20, [X0 + 0x18]
+	0x0362F664 LDRB W8, [X21 + 0x761]
+	0x0362F668 LDR W19, [X0 + 0x10]
+	0x0362F66C CBZ W8, 0x362F69C
+	0x0362F670 CBZ X20, 0x362F6B4
+	0x0362F674 LDR W8, [X20 + 0x10]
+	0x0362F678 CMP W8, W19
+	0x0362F67C B.CS 0x362F68C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+32]
+	003 Compare X0, 0
+	004 JumpIfEqual {10}
+	005 Move X8, [X0]
+	006 Move X2, [X8+440]
+	007 Move X1, [X8+448]
+	008 Move X30, [X31+16]
+	009 CallNoReturn X2
+	010 Call 0x1C17F20
+

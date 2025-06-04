@@ -1,0 +1,223 @@
+Type: UnityEngine.XR.Interaction.Toolkit.UI.NavigationModel
+
+Method: UnityEngine.Vector2 get_move()
+
+Disassembly:
+	0x03B9A870 STRB W8, [X22 + 0x78F]
+	0x03B9A874 ADRP X8, 0x561000
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Return X0
+
+Method: System.Void set_move(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x03B9A878 LDR X8, [X8 + 0xF08]
+	0x03B9A87C LDR X8, [X8]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Return 
+
+Method: System.Boolean get_submitButtonDown()
+
+Disassembly:
+	0x03B9A880 LDR X8, [X8 + 0xB8]
+	0x03B9A884 ADD X9, X8, 0x4
+
+ISIL:
+	001 Move W0, [X0+28]
+	002 Return X0
+
+Method: System.Void set_submitButtonDown(System.Boolean value)
+
+Disassembly:
+	0x03B9A888 LDR V0, [X8]
+	0x03B9A88C LDR V1, [X9]
+	0x03B9A890 ADD X1, X19, 0x40
+	0x03B9A894 ADD X0, X20, 0xA0
+	0x03B9A898 STR S0, [X20 + 0x10C]
+	0x03B9A89C STR S1, [X20 + 0x110]
+	0x03B9A8A0 LDR X8, [X19 + 0x28]
+	0x03B9A8A4 MOVZ W2, 0x50
+	0x03B9A8A8 STR X8, [X20 + 0x20]
+	0x03B9A8AC LDRB W8, [X19 + 0x30]
+
+ISIL:
+	001 Move W9, [X0+28]
+	002 And W8, W1, 1
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 And W31, W1, 1
+	005 Move W9, 1
+	006 NotImplemented "Instruction CINC not yet implemented."
+	007 Move [X0+8], W9
+	008 Move [X0+28], W8
+	009 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.UI.ButtonDeltaState get_submitButtonDelta()
+
+Disassembly:
+	0x03B9A8B0 STRB W8, [X20 + 0x145]
+	0x03B9A8B4 LDR V0, [X19 + 0x34]
+
+ISIL:
+	001 Move W0, [X0+8]
+	002 Return X0
+
+Method: System.Void set_submitButtonDelta(UnityEngine.XR.Interaction.Toolkit.UI.ButtonDeltaState value)
+
+Disassembly:
+	0x03B9A8B8 STR S0, [X20 + 0x134]
+	0x03B9A8BC LDR V0, [X19 + 0x38]
+
+ISIL:
+	001 Move [X0+8], W1
+	002 Return 
+
+Method: System.Boolean get_cancelButtonDown()
+
+Disassembly:
+	0x03B9A8C0 STR D0, [X21 + 0x10]
+	0x03B9A8C4 BL 0x3EB1B30
+
+ISIL:
+	001 Move W0, [X0+29]
+	002 Return X0
+
+Method: System.Void set_cancelButtonDown(System.Boolean value)
+
+Disassembly:
+	0x03B9A8C8 LDR X1, [X19 + 0x90]
+	0x03B9A8CC MOV X0, X20
+	0x03B9A8D0 MOV X2, X31
+	0x03B9A8D4 BL 0x3E4F3AC
+	0x03B9A8D8 LDUR V0, [X19 + 0x98]
+	0x03B9A8DC LDR X0, [X20 + 0xF0]
+	0x03B9A8E0 STUR V0, [X20 + 0x38]
+	0x03B9A8E4 CBZ X0, 0x3B9A934
+	0x03B9A8E8 LDP W2, W8, [X0 + 0x18]
+	0x03B9A8EC ADD W8, W8, 0x1
+
+ISIL:
+	001 Move W9, [X0+29]
+	002 And W8, W1, 1
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 And W31, W1, 1
+	005 Move W9, 1
+	006 NotImplemented "Instruction CINC not yet implemented."
+	007 Move [X0+12], W9
+	008 Move [X0+29], W8
+	009 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.UI.ButtonDeltaState get_cancelButtonDelta()
+
+Disassembly:
+	0x03B9A8F0 CMP W2, 0x1
+	0x03B9A8F4 STP W31, W8, [X0 + 0x18]
+
+ISIL:
+	001 Move W0, [X0+12]
+	002 Return X0
+
+Method: System.Void set_cancelButtonDelta(UnityEngine.XR.Interaction.Toolkit.UI.ButtonDeltaState value)
+
+Disassembly:
+	0x03B9A8F8 B.LT 0x3B9A914
+	0x03B9A8FC LDR X0, [X0 + 0x10]
+
+ISIL:
+	001 Move [X0+12], W1
+	002 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.UI.NavigationModel/ImplementationData get_implementationData()
+
+Disassembly:
+	0x03B9A900 MOV W1, W31
+	0x03B9A904 MOV X3, X31
+	0x03B9A908 BL 0x339FA34
+	0x03B9A90C LDR X0, [X20 + 0xF0]
+
+ISIL:
+	001 Move X8, [X0+16]
+	002 Move W1, [X0+24]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void set_implementationData(UnityEngine.XR.Interaction.Toolkit.UI.NavigationModel/ImplementationData value)
+
+Disassembly:
+	0x03B9A910 CBZ X0, 0x3B9A934
+	0x03B9A914 ADRP X8, 0x5C2000
+	0x03B9A918 LDR X8, [X8 + 0x8B0]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Move [X0+24], W2
+	003 Return 
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x03B9A91C LDR X1, [X19 + 0x20]
+	0x03B9A920 LDP X20, X19, [X31 + 0x20]
+	0x03B9A924 LDP X22, X21, [X31 + 0x10]
+	0x03B9A928 LDR X2, [X8]
+	0x03B9A92C LDR X30, [X31], #0x30
+	0x03B9A930 B 0x301C194
+	0x03B9A934 BL 0x1C16F20
+	0x03B9A938 STP X30, X21, [X31 - 0x20]!
+	0x03B9A93C STP X20, X19, [X31 + 0x10]
+	0x03B9A940 ADRP X21, 0x848000
+	0x03B9A944 LDRB W8, [X21 + 0xC04]
+	0x03B9A948 MOV X19, X1
+	0x03B9A94C MOV X20, X0
+	0x03B9A950 TBNZ X8, 0x0, 0x3B9A974
+	0x03B9A954 ADRP X0, 0x5C2000
+	0x03B9A958 LDR X0, [X0 + 0x8B0]
+	0x03B9A95C BL 0x1C16CF4
+	0x03B9A960 ADRP X0, 0x5AF000
+	0x03B9A964 LDR X0, [X0 + 0x408]
+	0x03B9A968 BL 0x1C16CF4
+	0x03B9A96C MOVZ W8, 0x1
+	0x03B9A970 STRB W8, [X21 + 0xC04]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x840000
+	005 Move W8, [X20+1935]
+	006 Move X19, X0
+	007 Compare W8, 0
+	008 JumpIfNotEqual {14}
+	009 Move X0, 0x562000
+	010 Move X0, [X0+3848]
+	011 Call 0x1C17CF4
+	012 Move W8, 1
+	013 Move [X20+1935], W8
+	014 Move X8, 0x562000
+	015 Move X8, [X8+3848]
+	016 Move X8, [X8]
+	017 Move X8, [X8+184]
+	018 Move V0, [X8]
+	019 NotImplemented "Instruction STRH not yet implemented."
+	020 Move [X19+8], X31
+	021 Move [X19], D0
+	022 Move X20, [X31+16]
+	023 Move X19, [X31+24]
+	024 Move X30, [X31+32]
+	025 Return 
+
+Method: System.Void OnFrameFinished()
+
+Disassembly:
+	0x03B9A988 STR X8, [X20 + 0x28]
+	0x03B9A98C LDRB W8, [X19 + 0x145]
+
+ISIL:
+	001 Move [X0+8], X31
+	002 Return 
+

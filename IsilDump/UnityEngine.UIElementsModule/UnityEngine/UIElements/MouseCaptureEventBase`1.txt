@@ -1,0 +1,41 @@
+Type: UnityEngine.UIElements.MouseCaptureEventBase`1
+
+Method: System.Void Init()
+
+Disassembly:
+	0x031A0FEC MOV X0, X20
+	0x031A0FF0 BL 0x1C5C788
+	0x031A0FF4 B 0x31A1008
+	0x031A0FF8 LDR W9, [X10]
+	0x031A0FFC ADD W9, W9, 0x4
+	0x031A1000 ADD X8, X8, W9, 0x4, SXTW
+	0x031A1004 ADD X0, X8, 0x138
+	0x031A1008 LDP X8, X1, [X0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X0, 0
+	003 JumpIfEqual {10}
+	004 Move X8, [X1+32]
+	005 Move X8, [X8+192]
+	006 Move X1, [X8]
+	007 Move X30, [X31+16]
+	008 Call 0x24A3CBC, X0
+	009 Return 
+	010 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x031A100C ADRP X22, 0xF7E000
+	0x031A1010 LDR X22, [X22 + 0x220]
+	0x031A1014 MOV X0, X20
+	0x031A1018 BLR X8
+
+ISIL:
+	001 Move X8, [X1+32]
+	002 Move X8, [X8+192]
+	003 Move X1, [X8+8]
+	004 Call 0x24A3E38, X0
+	005 Return 
+

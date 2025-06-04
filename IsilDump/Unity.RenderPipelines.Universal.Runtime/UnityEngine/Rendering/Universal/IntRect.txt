@@ -1,0 +1,40 @@
+Type: UnityEngine.Rendering.Universal.IntRect
+
+Method: System.Void .ctor(System.Int64 l, System.Int64 t, System.Int64 r, System.Int64 b)
+
+Disassembly:
+	0x03A0553C MOV W25, W9
+	0x03A05540 LDR X2, [X21]
+	0x03A05544 SUB W25, W25, 0x1
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Move [X0+16], X3
+	004 Move [X0+24], X4
+	005 Return 
+
+Method: System.Void .ctor(UnityEngine.Rendering.Universal.IntRect ir)
+
+Disassembly:
+	0x03A05548 ADD X8, X31, 0x1F0
+	0x03A0554C MOV X0, X23
+	0x03A05550 MOV W1, W25
+	0x03A05554 BL 0x2FE4360
+	0x03A05558 LDR X2, [X21]
+	0x03A0555C LDP X22, X20, [X31 + 0x1F8]
+	0x03A05560 ADD X8, X31, 0x1F0
+	0x03A05564 MOV X0, X23
+	0x03A05568 MOV W1, W31
+
+ISIL:
+	001 Move X8, [X1]
+	002 Move [X0], X8
+	003 Move X8, [X1+8]
+	004 Move [X0+8], X8
+	005 Move X8, [X1+16]
+	006 Move [X0+16], X8
+	007 Move X8, [X1+24]
+	008 Move [X0+24], X8
+	009 Return 
+

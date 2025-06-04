@@ -1,0 +1,116 @@
+Type: System.Runtime.CompilerServices.TaskAwaiter`1
+
+Method: System.Void .ctor(System.Threading.Tasks.Task`1<TResult> task)
+
+Disassembly:
+	0x02677D1C LDR X21, [X21]
+	0x02677D20 CBZ X21, 0x2677D50
+
+ISIL:
+	001 Move [X0], X1
+	002 Return 
+
+Method: System.Boolean get_IsCompleted()
+
+Disassembly:
+	0x02677D24 LDR X0, [X20 + 0x20]
+	0x02677D28 LDRB W8, [X0 + 0x135]
+	0x02677D2C TBNZ X8, 0x0, 0x2677D34
+	0x02677D30 BL 0x1C5C684
+	0x02677D34 LDP V1, V0, [X21 + 0x60]
+	0x02677D38 LDR V2, [X21 + 0x5]
+	0x02677D3C STP V1, V0, [X19 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0]
+	003 Compare X0, 0
+	004 JumpIfEqual {9}
+	005 Move X1, X31
+	006 Move X30, [X31+16]
+	007 Call Task.get_IsCompleted, X0
+	008 Return X0
+	009 Call 0x1C17F20
+
+Method: System.Void OnCompleted(System.Action continuation)
+
+Disassembly:
+	0x02677D40 STR V2, [X19]
+	0x02677D44 LDP X20, X19, [X31 + 0x10]
+	0x02677D48 LDP X30, X21, [X31], #0x20
+	0x02677D4C RET
+	0x02677D50 BL 0x1C16F20
+
+ISIL:
+	001 Move X0, [X0]
+	002 Move W2, 1
+	003 Move W3, 1
+	004 Move X4, X31
+	005 Call TaskAwaiter.OnCompletedInternal, X0, X1, X2, X3
+	006 Return 
+
+Method: System.Void UnsafeOnCompleted(System.Action continuation)
+
+Disassembly:
+	0x02677D54 STR X1, [X0]
+	0x02677D58 RET
+	0x02677D5C STR X30, [X31 - 0x10]!
+	0x02677D60 LDR X0, [X0]
+	0x02677D64 CBZ X0, 0x2677D74
+
+ISIL:
+	001 Move X0, [X0]
+	002 Move W2, 1
+	003 Move W3, W31
+	004 Move X4, X31
+	005 Call TaskAwaiter.OnCompletedInternal, X0, X1, X2, X3
+	006 Return 
+
+Method: TResult GetResult()
+
+Disassembly:
+	0x02677D68 MOV X1, X31
+	0x02677D6C LDR X30, [X31], #0x10
+	0x02677D70 B 0x33ED11C
+	0x02677D74 BL 0x1C16F20
+	0x02677D78 LDR X0, [X0]
+	0x02677D7C MOVZ W2, 0x1
+	0x02677D80 MOVZ W3, 0x1
+	0x02677D84 MOV X4, X31
+	0x02677D88 B 0x32C3A9C
+	0x02677D8C LDR X0, [X0]
+	0x02677D90 MOVZ W2, 0x1
+	0x02677D94 MOV W3, W31
+	0x02677D98 MOV X4, X31
+	0x02677D9C B 0x32C3A9C
+	0x02677DA0 STR X30, [X31 - 0x20]!
+	0x02677DA4 STP X20, X19, [X31 + 0x10]
+	0x02677DA8 MOV X20, X0
+	0x02677DAC LDR X0, [X0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, X0
+	005 Move X0, [X0]
+	006 Move X19, X1
+	007 Move X1, X31
+	008 Call TaskAwaiter.ValidateEnd, X0
+	009 Move X20, [X20]
+	010 Compare X20, 0
+	011 JumpIfEqual {24}
+	012 Move X0, [X19+32]
+	013 Move W8, [X0+309]
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {19}
+	018 Call 0x1C5D684
+	019 Move X0, [X20+80]
+	020 Move X20, [X31+16]
+	021 Move X19, [X31+24]
+	022 Move X30, [X31+32]
+	023 Return X0
+	024 Call 0x1C17F20
+

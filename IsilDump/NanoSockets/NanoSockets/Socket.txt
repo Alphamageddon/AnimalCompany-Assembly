@@ -1,0 +1,32 @@
+Type: NanoSockets.Socket
+
+Method: System.Boolean get_IsCreated()
+
+Disassembly:
+	0x034AFEC0 STP X10, X11, [X31 + 0x10]
+	0x034AFEC4 STR W13, [X31 + 0x28]
+	0x034AFEC8 STR D0, [X31 + 0x20]
+	0x034AFECC STRB W31, [X31 + 0x2C]
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Int64 op_Implicit(NanoSockets.Socket socket)
+
+Disassembly:
+	0x034AFED0 BL 0x1C1729C
+
+ISIL:
+	001 Return X0
+
+Method: NanoSockets.Socket op_Implicit(System.Int64 handle)
+
+Disassembly:
+	0x034AFED4 MOV X8, X0
+
+ISIL:
+	001 Return X0
+

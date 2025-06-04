@@ -1,0 +1,72 @@
+Type: UnityEngine.Rendering.Universal.NativeArrayExtensions
+
+Method: T UnsafeElementAt(Unity.Collections.NativeArray`1<T> array, System.Int32 index)
+
+Disassembly:
+	0x02223228 MOV X19, X3
+	0x0222322C BL 0x1C16D08
+	0x02223230 ADD X1, X31, 0x8
+	0x02223234 BL 0x1C16E04
+	0x02223238 MOV X20, X0
+	0x0222323C ADRP X0, 0x1EF9000
+	0x02223240 LDR X0, [X0 + 0x148]
+	0x02223244 BL 0x1C16D08
+	0x02223248 MOV X1, X20
+	0x0222324C MOV X2, X31
+	0x02223250 BL 0x321EFD0
+	0x02223254 MOV X20, X0
+	0x02223258 ADRP X0, 0x1ED8000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X3+56]
+	005 Move W19, W2
+	006 Move X20, X0
+	007 Compare X8, 0
+	008 JumpIfNotEqual {11}
+	009 Move X0, X3
+	010 Call 0x1C5D6E0
+	011 Move W8, 116
+	012 NotImplemented "Instruction SMADDL not yet implemented."
+	013 Move X20, [X31+16]
+	014 Move X19, [X31+24]
+	015 Move X30, [X31+32]
+	016 Return X0
+
+Method: T UnsafeElementAtMutable(Unity.Collections.NativeArray`1<T> array, System.Int32 index)
+
+Disassembly:
+	0x022232C0 RET
+	0x022232C4 RET
+	0x022232C8 RET
+	0x022232CC RET
+	0x022232D0 RET
+	0x022232D4 RET
+	0x022232D8 RET
+	0x022232DC RET
+	0x022232E0 RET
+	0x022232E4 RET
+	0x022232E8 RET
+	0x022232EC RET
+	0x022232F0 RET
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X3+56]
+	005 Move W19, W2
+	006 Move X20, X0
+	007 Compare X8, 0
+	008 JumpIfNotEqual {11}
+	009 Move X0, X3
+	010 Call 0x1C5D6E0
+	011 Move W8, 116
+	012 NotImplemented "Instruction SMADDL not yet implemented."
+	013 Move X20, [X31+16]
+	014 Move X19, [X31+24]
+	015 Move X30, [X31+32]
+	016 Return X0
+

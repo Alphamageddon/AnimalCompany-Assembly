@@ -1,0 +1,124 @@
+Type: AnimalCompany.PrototypeSlenderAnimationSounds
+
+Method: System.Void Footstep()
+
+Disassembly:
+	0x01DD1F74 MOV X19, X0
+	0x01DD1F78 ADRP X0, 0x2327000
+	0x01DD1F7C LDR X0, [X0 + 0x630]
+	0x01DD1F80 BL 0x1C16D08
+	0x01DD1F84 MOV X1, X0
+	0x01DD1F88 MOV X0, X19
+	0x01DD1F8C MOV X2, X31
+	0x01DD1F90 BL 0x33B2C70
+	0x01DD1F94 ADRP X0, 0x2327000
+	0x01DD1F98 LDR X0, [X0 + 0x638]
+	0x01DD1F9C BL 0x1C16D08
+	0x01DD1FA0 MOV X1, X0
+	0x01DD1FA4 MOV X0, X19
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, [X0+32]
+	004 Move X1, X31
+	005 Call Component.get_transform, X0
+	006 Compare X0, 0
+	007 JumpIfEqual {18}
+	008 Move X1, X31
+	009 Call Transform.get_position, X0
+	010 Compare X19, 0
+	011 JumpIfEqual {18}
+	012 Move S3, 1
+	013 Move X0, X19
+	014 Move X30, [X31+16]
+	015 Move X19, [X31+24]
+	016 Call SFXManager.PlaySFX, X0, X1, V0
+	017 Return 
+	018 Call 0x1C17F20
+
+Method: System.Void Standup()
+
+Disassembly:
+	0x01DD1FC0 LDR X20, [X20 + 0xA58]
+	0x01DD1FC4 TBNZ X8, 0x0, 0x1DD2000
+	0x01DD1FC8 ADRP X0, 0x2327000
+	0x01DD1FCC LDR X0, [X0 + 0x640]
+	0x01DD1FD0 BL 0x1C16CF4
+	0x01DD1FD4 ADRP X0, 0x2322000
+	0x01DD1FD8 LDR X0, [X0 + 0xA58]
+	0x01DD1FDC BL 0x1C16CF4
+	0x01DD1FE0 ADRP X0, 0x2327000
+	0x01DD1FE4 LDR X0, [X0 + 0xC0]
+	0x01DD1FE8 BL 0x1C16CF4
+	0x01DD1FEC ADRP X0, 0x2327000
+	0x01DD1FF0 LDR X0, [X0 + 0x648]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, [X0+40]
+	004 Move X1, X31
+	005 Call Component.get_transform, X0
+	006 Compare X0, 0
+	007 JumpIfEqual {18}
+	008 Move X1, X31
+	009 Call Transform.get_position, X0
+	010 Compare X19, 0
+	011 JumpIfEqual {18}
+	012 Move S3, 1
+	013 Move X0, X19
+	014 Move X30, [X31+16]
+	015 Move X19, [X31+24]
+	016 Call SFXManager.PlaySFX, X0, X1, V0
+	017 Return 
+	018 Call 0x1C17F20
+
+Method: System.Void Sitdown()
+
+Disassembly:
+	0x01DD1FF4 BL 0x1C16CF4
+	0x01DD1FF8 MOVZ W8, 0x1
+	0x01DD1FFC STRB W8, [X19 + 0xC02]
+	0x01DD2000 LDR X0, [X20]
+	0x01DD2004 BL 0x1C16F10
+	0x01DD2008 MOV X1, X31
+	0x01DD200C MOV X19, X0
+	0x01DD2010 BL 0x3C35A08
+	0x01DD2014 CBZ X19, 0x1DD2094
+	0x01DD2018 ADRP X8, 0x2326000
+	0x01DD201C LDR X8, [X8 + 0x648]
+	0x01DD2020 ADRP X20, 0x2326000
+	0x01DD2024 MOV X0, X19
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, [X0+48]
+	004 Move X1, X31
+	005 Call Component.get_transform, X0
+	006 Compare X0, 0
+	007 JumpIfEqual {18}
+	008 Move X1, X31
+	009 Call Transform.get_position, X0
+	010 Compare X19, 0
+	011 JumpIfEqual {18}
+	012 Move S3, 1
+	013 Move X0, X19
+	014 Move X30, [X31+16]
+	015 Move X19, [X31+24]
+	016 Call SFXManager.PlaySFX, X0, X1, V0
+	017 Return 
+	018 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01DD2028 MOV X2, X31
+	0x01DD202C LDR X1, [X8]
+
+ISIL:
+	001 Move X1, X31
+	002 Call MonoBehaviour..ctor, X0
+	003 Return 
+

@@ -1,0 +1,40 @@
+Type: Unity.XR.CoreUtils.ScriptableSettingsPathAttribute
+
+Method: System.String get_Path()
+
+Disassembly:
+	0x03B22E08 LDR V5, [X0 + 0x14]
+	0x03B22E0C FADD S16, S6, S7
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void .ctor(System.String path = )
+
+Disassembly:
+	0x03B22E10 FADD S17, S4, S5
+	0x03B22E14 FCMP S17, S16
+	0x03B22E18 B.LT 0x3B22DC4
+	0x03B22E1C FSUB S2, S2, S3
+	0x03B22E20 FSUB S0, S0, S1
+	0x03B22E24 FSUB S6, S6, S7
+	0x03B22E28 FSUB S3, S4, S5
+	0x03B22E2C FCMP S0, S2
+	0x03B22E30 CSET W8, LS
+	0x03B22E34 FCMP S3, S6
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

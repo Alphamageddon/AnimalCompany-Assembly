@@ -1,0 +1,77 @@
+Type: AnimalCompany.FriendsBoardMediator/<>c__DisplayClass26_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01D850D8 BL 0x1C16CF4
+	0x01D850DC STRB W29, [X28 + 0x85B]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <HandleNotificationsChanged>b__0(System.String k)
+
+Disassembly:
+	0x01D85B88 MOV X19, X1
+	0x01D85B8C TBNZ X8, 0x0, 0x1D85BA4
+	0x01D85B90 ADRP X0, 0x2371000
+	0x01D85B94 LDR X0, [X0 + 0x938]
+	0x01D85B98 BL 0x1C16CF4
+	0x01D85B9C MOVZ W8, 0x1
+	0x01D85BA0 STRB W8, [X20 + 0x987]
+	0x01D85BA4 CBZ X19, 0x1D85BC4
+	0x01D85BA8 ADRP X8, 0x2371000
+	0x01D85BAC LDR X8, [X8 + 0x938]
+	0x01D85BB0 MOV X0, X19
+	0x01D85BB4 LDP X20, X19, [X31 + 0x10]
+	0x01D85BB8 LDR X1, [X8]
+	0x01D85BBC LDR X30, [X31], #0x20
+	0x01D85BC0 B 0x21A3894
+	0x01D85BC4 BL 0x1C16F20
+	0x01D85BC8 STR X30, [X31 - 0x10]!
+	0x01D85BCC CBZ X1, 0x1D85BEC
+	0x01D85BD0 LDR X0, [X1 + 0x28]
+	0x01D85BD4 CBZ X0, 0x1D85BEC
+	0x01D85BD8 LDR X8, [X0]
+	0x01D85BDC LDR X2, [X8 + 0x548]
+	0x01D85BE0 LDR X1, [X8 + 0x550]
+	0x01D85BE4 LDR X30, [X31], #0x10
+	0x01D85BE8 BR X2
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x2654000
+	006 Move W8, [X21+2417]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x2372000
+	014 Move X0, [X0+2312]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+2417], W8
+	018 Move X0, [X20+16]
+	019 Compare X0, 0
+	020 JumpIfEqual {33}
+	021 Move X8, 0x2372000
+	022 Move X8, [X8+2312]
+	023 Move X1, X19
+	024 Move X2, [X8]
+	025 Call StateDictionary`2<Object, Object>.ContainsKey, X0, X1
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 NotImplemented "Instruction ORN not yet implemented."
+	029 And W0, W8, 1
+	030 Move X30, [X31+32]
+	031 Move X21, [X31+40]
+	032 Return X0
+	033 Call 0x1C17F20
+

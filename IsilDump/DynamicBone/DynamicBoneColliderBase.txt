@@ -1,0 +1,110 @@
+Type: DynamicBoneColliderBase
+
+Method: System.Void set_PrepareFrame(System.Int32 value)
+
+Disassembly:
+	0x01E28D00 LDR X20, [X20 + 0xAC0]
+	0x01E28D04 LDR X22, [X22 + 0xA78]
+
+ISIL:
+	001 Move [X0+52], W1
+	002 Return 
+
+Method: System.Int32 get_PrepareFrame()
+
+Disassembly:
+	0x01E28D08 MOVZ W19, 0x68
+	0x01E28D0C STR X8, [X31 + 0x230]
+
+ISIL:
+	001 Move W0, [X0+52]
+	002 Return X0
+
+Method: System.Void Start()
+
+Disassembly:
+	0x01E28D10 LDR X1, [X25]
+
+ISIL:
+	001 Return 
+
+Method: System.Void Prepare()
+
+Disassembly:
+	0x01E28D14 ADD X0, X31, 0x210
+
+ISIL:
+	001 Return 
+
+Method: System.Boolean Collide(ref UnityEngine.Vector3 particlePosition, System.Single particleRadius)
+
+Disassembly:
+	0x01E28D18 BL 0x2C0A728
+	0x01E28D1C TBZ X0, 0x0, 0x1E28FD4
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E28C9C LDR X8, [X8 + 0xAD0]
+	0x01E28CA0 LDR X0, [X8]
+	0x01E28CA4 BL 0x1C16F10
+	0x01E28CA8 ADRP X8, 0x22D2000
+	0x01E28CAC LDR X8, [X8 + 0xAB0]
+	0x01E28CB0 MOV X24, X0
+	0x01E28CB4 LDR X1, [X8]
+	0x01E28CB8 BL 0x301B7C4
+	0x01E28CBC CBZ X21, 0x1E29764
+	0x01E28CC0 ADRP X8, 0x22D2000
+	0x01E28CC4 LDR X8, [X8 + 0x9F8]
+	0x01E28CC8 MOV X0, X21
+	0x01E28CCC LDR X1, [X8]
+	0x01E28CD0 ADD X8, X31, 0x378
+	0x01E28CD4 BL 0x2AA54BC
+	0x01E28CD8 ADD X8, X31, 0x279
+	0x01E28CDC LDUR V0, [X8 + 0xFF]
+	0x01E28CE0 ADD X8, X31, 0x289
+	0x01E28CE4 LDUR V1, [X8 + 0xFF]
+	0x01E28CE8 ADRP X25, 0x22D2000
+	0x01E28CEC LDR X8, [X31 + 0x398]
+	0x01E28CF0 LDR X25, [X25 + 0xA30]
+	0x01E28CF4 STP V0, V1, [X29 + 0x180]
+	0x01E28CF8 ADRP X20, 0x22D2000
+	0x01E28CFC ADRP X22, 0x22D2000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, 1
+	006 Move [X0+32], W20
+	007 Move X21, 0x25B1000
+	008 Move W8, [X21+1923]
+	009 Move X19, X0
+	010 Compare W8, 0
+	011 JumpIfNotEqual {16}
+	012 Move X0, 0x22CC000
+	013 Move X0, [X0+1440]
+	014 Call 0x1C17CF4
+	015 Move [X21+1923], W20
+	016 Move X8, 0x22CC000
+	017 Move X8, [X8+1440]
+	018 Move X0, X19
+	019 Move X1, X31
+	020 Move X8, [X8]
+	021 Move X8, [X8+184]
+	022 Move V0, [X8]
+	023 Move V1, [X8+8]
+	024 Move [X19+36], D0
+	025 Move [X19+44], S1
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Call MonoBehaviour..ctor, X0
+	031 Return 
+

@@ -1,0 +1,138 @@
+Type: System.Threading.Tasks.CompletionActionInvoker
+
+Method: System.Void .ctor(System.Threading.Tasks.ITaskCompletionAction action, System.Threading.Tasks.Task completingTask)
+
+Disassembly:
+	0x033F4F14 MOV X0, X19
+	0x033F4F18 BL 0x1C16DEC
+	0x033F4F1C BL 0x1C16F20
+	0x033F4F20 SUB X31, X31, 0x30
+	0x033F4F24 STP X30, X21, [X31 + 0x10]
+	0x033F4F28 STP X20, X19, [X31 + 0x20]
+	0x033F4F2C ADRP X20, 0xFE9000
+	0x033F4F30 STR X0, [X31 + 0x8]
+	0x033F4F34 ADRP X21, 0xD01000
+	0x033F4F38 LDRB W8, [X20 + 0x47A]
+	0x033F4F3C LDR X21, [X21 + 0x570]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move X19, X2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+16], X20
+	011 Move [X21+24], X19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+
+Method: System.Void System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+
+Disassembly:
+	0x033F85F0 MOV X19, X0
+	0x033F85F4 BL 0x3EB1AE0
+	0x033F85F8 MOV X0, X19
+	0x033F85FC BL 0x1D2C690
+	0x033F8600 BL 0x1990590
+	0x033F8604 STP X30, X21, [X31 - 0x20]!
+	0x033F8608 STP X20, X19, [X31 + 0x10]
+	0x033F860C ADRP X20, 0xFE5000
+	0x033F8610 ADRP X21, 0xD29000
+	0x033F8614 LDRB W8, [X20 + 0x4A7]
+	0x033F8618 LDR X21, [X21 + 0xFB8]
+	0x033F861C MOV X19, X0
+	0x033F8620 TBNZ X8, 0x0, 0x33F8638
+	0x033F8624 ADRP X0, 0xD29000
+	0x033F8628 LDR X0, [X0 + 0xFB8]
+	0x033F862C BL 0x1C16CF4
+	0x033F8630 MOVZ W8, 0x1
+	0x033F8634 STRB W8, [X20 + 0x4A7]
+	0x033F8638 LDR X0, [X21]
+	0x033F863C LDR W8, [X0 + 0xE0]
+	0x033F8640 CBNZ W8, 0x33F8648
+	0x033F8644 BL 0x1C16DFC
+	0x033F8648 MOV X0, X19
+	0x033F864C LDP X20, X19, [X31 + 0x10]
+	0x033F8650 MOV X1, X31
+	0x033F8654 LDP X30, X21, [X31], #0x20
+	0x033F8658 B 0x3225288
+	0x033F865C STP X30, X21, [X31 - 0x20]!
+	0x033F8660 STP X20, X19, [X31 + 0x10]
+	0x033F8664 ADRP X19, 0xFE5000
+	0x033F8668 LDRB W8, [X19 + 0x4A2]
+	0x033F866C TBNZ X8, 0x0, 0x33F869C
+	0x033F8670 ADRP X0, 0xD2D000
+	0x033F8674 LDR X0, [X0 + 0x958]
+	0x033F8678 BL 0x1C16CF4
+	0x033F867C ADRP X0, 0xD03000
+	0x033F8680 LDR X0, [X0 + 0x7E8]
+	0x033F8684 BL 0x1C16CF4
+	0x033F8688 ADRP X0, 0xCFB000
+	0x033F868C LDR X0, [X0 + 0x6C0]
+	0x033F8690 BL 0x1C16CF4
+	0x033F8694 MOVZ W8, 0x1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xFE6000
+	005 Move W8, [X19+1169]
+	006 Move X20, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0xD36000
+	012 Move X0, [X0+1992]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X19+1169], W8
+	016 Move X19, [X20+16]
+	017 Compare X19, 0
+	018 JumpIfEqual {47}
+	019 Move X10, 0xD36000
+	020 Move X8, [X19]
+	021 Move X10, [X10+1992]
+	022 Move X20, [X20+24]
+	023 NotImplemented "Instruction LDRH not yet implemented."
+	024 Move X1, [X10]
+	025 Compare X9, 0
+	026 JumpIfEqual {33}
+	027 Move X10, [X8+176]
+	028 Add X10, X10, 8
+	029 NotImplemented "Instruction LDUR not yet implemented."
+	030 NotImplemented "Instruction CMP not yet implemented."
+	031 Subtract X9, X9, 1
+	032 Add X10, X10, 16
+	033 Move X0, X19
+	034 Move W2, W31
+	035 Call 0x1C5D788
+	036 NotImplemented "Instruction LDRSW not yet implemented."
+	037 Add X8, X8, X9
+	038 Add X0, X8, 312
+	039 Move X3, [X0]
+	040 Move X2, [X0+8]
+	041 Move X0, X19
+	042 Move X1, X20
+	043 Move X20, [X31+16]
+	044 Move X19, [X31+24]
+	045 Move X30, [X31+32]
+	046 CallNoReturn X3
+	047 Call 0x1C17F20
+
+Method: System.Void MarkAborted(System.Threading.ThreadAbortException e)
+
+Disassembly:
+	0x033F8698 STRB W8, [X19 + 0x4A2]
+
+ISIL:
+	001 Return 
+

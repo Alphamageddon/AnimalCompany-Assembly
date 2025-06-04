@@ -1,0 +1,50 @@
+Type: Unity.Burst.Intrinsics.Common
+
+Method: System.Void Pause()
+
+Disassembly:
+	0x0371F8A8 B.LS 0x371F8F0
+
+ISIL:
+	001 Return 
+
+Method: System.UInt64 umul128(System.UInt64 x, System.UInt64 y, out System.UInt64 high)
+
+Disassembly:
+	0x0371F8AC LDRB W9, [X19 + 0x2C]
+	0x0371F8B0 CMP W8, 0x1D
+	0x0371F8B4 STRB W9, [X0 + 0x3C]
+	0x0371F8B8 B.EQ 0x371F8F0
+	0x0371F8BC LDRB W9, [X19 + 0x2D]
+	0x0371F8C0 CMP W8, 0x1E
+	0x0371F8C4 STRB W9, [X0 + 0x3D]
+	0x0371F8C8 B.LS 0x371F8F0
+	0x0371F8CC LDRB W9, [X19 + 0x2E]
+	0x0371F8D0 CMP W8, 0x1F
+	0x0371F8D4 STRB W9, [X0 + 0x3E]
+	0x0371F8D8 B.EQ 0x371F8F0
+	0x0371F8DC LDRB W8, [X19 + 0x2F]
+	0x0371F8E0 LDP X20, X19, [X31 + 0x10]
+	0x0371F8E4 STRB W8, [X0 + 0x3F]
+
+ISIL:
+	001 And X8, X0, 0
+	002 Move X10, X1
+	003 ShiftRight X10, 32
+	004 And X10, X10, 0x7FFFFFFF
+	005 And X9, X1, 0
+	006 Move X11, X0
+	007 ShiftRight X11, 32
+	008 And X11, X11, 0x7FFFFFFF
+	009 NotImplemented "Instruction UMADDL not yet implemented."
+	010 Multiply X8, X10, X8
+	011 Multiply X9, X9, X11
+	012 Multiply X11, X10, X11
+	013 Add X8, X8, X12
+	014 Add X10, X11, X9
+	015 Add X8, X8, W9
+	016 Add X8, X10, X8
+	017 Multiply X0, X1, X0
+	018 Move [X2], X8
+	019 Return X0
+

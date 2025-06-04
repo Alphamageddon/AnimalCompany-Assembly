@@ -1,0 +1,74 @@
+Type: Unity.XR.CoreUtils.TextureUtils
+
+Method: System.Void RenderTextureToTexture2D(UnityEngine.RenderTexture renderTexture, UnityEngine.Texture2D texture)
+
+Disassembly:
+	0x03B2FBD8 LDR X20, [X20 + 0x598]
+	0x03B2FBDC MOV V8.16B, V2.16B
+	0x03B2FBE0 MOV V9.16B, V1.16B
+	0x03B2FBE4 MOV V10.16B, V0.16B
+	0x03B2FBE8 MOV X19, X0
+	0x03B2FBEC TBNZ X8, 0x0, 0x3B2FC04
+	0x03B2FBF0 ADRP X0, 0x5C4000
+	0x03B2FBF4 LDR X0, [X0 + 0x598]
+	0x03B2FBF8 BL 0x1C16CF4
+	0x03B2FBFC MOVZ W8, 0x1
+	0x03B2FC00 STRB W8, [X21 + 0x7BC]
+	0x03B2FC04 LDR X0, [X20]
+	0x03B2FC08 LDR X20, [X19 + 0x38]
+	0x03B2FC0C LDR W8, [X0 + 0xE0]
+	0x03B2FC10 CBNZ W8, 0x3B2FC18
+	0x03B2FC14 BL 0x1C16DFC
+	0x03B2FC18 MOV X0, X20
+	0x03B2FC1C MOV X1, X31
+	0x03B2FC20 MOV X2, X31
+	0x03B2FC24 BL 0x3C3883C
+	0x03B2FC28 TBZ X0, 0x0, 0x3B2FC34
+	0x03B2FC2C MOV W0, W31
+	0x03B2FC30 B 0x3B2FD70
+	0x03B2FC34 LDR X0, [X19 + 0x38]
+	0x03B2FC38 CBZ X0, 0x3B2FD84
+	0x03B2FC3C MOV X1, X31
+	0x03B2FC40 BL 0x3C356F8
+	0x03B2FC44 CBZ X0, 0x3B2FD84
+	0x03B2FC48 MOV X1, X31
+	0x03B2FC4C BL 0x3C3F988
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Call RenderTexture.set_active, X0
+	007 Compare X19, 0
+	008 JumpIfEqual {36}
+	009 Move X8, [X19]
+	010 Move X0, X19
+	011 Move X9, [X8+392]
+	012 Move X1, [X8+400]
+	013 NotImplemented "Instruction BLR not yet implemented."
+	014 Move X8, [X19]
+	015 Move W20, W0
+	016 Move X0, X19
+	017 Move X9, [X8+424]
+	018 Move X1, [X8+432]
+	019 NotImplemented "Instruction BLR not yet implemented."
+	020 NotImplemented "Instruction SCVTF not yet implemented."
+	021 NotImplemented "Instruction SCVTF not yet implemented."
+	022 Move S0, W31
+	023 Move S1, W31
+	024 Move X0, X19
+	025 Move W1, W31
+	026 Move W2, W31
+	027 Move X3, X31
+	028 Call Texture2D.ReadPixels, X0, X1, X2, X3
+	029 Move X0, X19
+	030 Move X20, [X31+16]
+	031 Move X19, [X31+24]
+	032 Move X1, X31
+	033 Move X30, [X31+32]
+	034 Call Texture2D.Apply, X0
+	035 Return 
+	036 Call 0x1C17F20
+

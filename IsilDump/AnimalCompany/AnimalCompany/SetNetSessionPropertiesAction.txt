@@ -1,0 +1,62 @@
+Type: AnimalCompany.SetNetSessionPropertiesAction
+
+Method: System.Void .ctor(AnimalCompany.SessionProperties props)
+
+Disassembly:
+	0x01DBB80C RET
+	0x01DBB810 STR X30, [X31 - 0x10]!
+	0x01DBB814 MOVZ W0, 0x86A0
+	0x01DBB818 MOVZ W1, 0x4240
+	0x01DBB81C MOVK W0, 0x10000
+	0x01DBB820 MOVK W1, 0xF0000
+	0x01DBB824 MOV X2, X31
+	0x01DBB828 BL 0x3C309A8
+	0x01DBB82C STR W0, [X31 + 0xC]
+	0x01DBB830 ADD X0, X31, 0xC
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call BaseAction..ctor, X0
+	008 Move [X20+24], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void Execute(AnimalCompany.AppState state)
+
+Disassembly:
+	0x01DBB834 MOV X1, X31
+	0x01DBB838 BL 0x337B6E0
+	0x01DBB83C LDR X30, [X31], #0x10
+	0x01DBB840 RET
+	0x01DBB844 SUB X31, X31, 0x70
+	0x01DBB848 STR X30, [X31 + 0x10]
+	0x01DBB84C STP X28, X27, [X31 + 0x20]
+	0x01DBB850 STP X26, X25, [X31 + 0x30]
+	0x01DBB854 STP X24, X23, [X31 + 0x40]
+	0x01DBB858 STP X22, X21, [X31 + 0x50]
+	0x01DBB85C STP X20, X19, [X31 + 0x60]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {15}
+	004 Move X8, [X1+224]
+	005 Compare X8, 0
+	006 JumpIfEqual {15}
+	007 Move X8, [X8+104]
+	008 Compare X8, 0
+	009 JumpIfEqual {15}
+	010 Move X1, [X0+24]
+	011 Move X0, X8
+	012 Move X30, [X31+16]
+	013 Call NetSessionPropertiesState.Set, X0, X1
+	014 Return 
+	015 Call 0x1C17F20
+

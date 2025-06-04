@@ -1,0 +1,167 @@
+Type: UnityEngine.XR.Interaction.Toolkit.ActivateEventArgs
+
+Method: UnityEngine.XR.Interaction.Toolkit.IXRActivateInteractor get_interactorObject()
+
+Disassembly:
+	0x03B6CCAC CBNZ W8, 0x3B6CCB4
+	0x03B6CCB0 BL 0x1C16DFC
+	0x03B6CCB4 LDRB W8, [X21 + 0xAD3]
+	0x03B6CCB8 CBNZ W8, 0x3B6CCD0
+	0x03B6CCBC ADRP X0, 0x5EE000
+	0x03B6CCC0 LDR X0, [X0 + 0xE20]
+	0x03B6CCC4 BL 0x1C16CF4
+	0x03B6CCC8 MOVZ W8, 0x1
+	0x03B6CCCC STRB W8, [X21 + 0xAD3]
+	0x03B6CCD0 LDR X0, [X20]
+	0x03B6CCD4 LDR W8, [X0 + 0xE0]
+	0x03B6CCD8 CBNZ W8, 0x3B6CCE4
+	0x03B6CCDC BL 0x1C16DFC
+	0x03B6CCE0 LDR X0, [X20]
+	0x03B6CCE4 LDR X8, [X0 + 0xB8]
+	0x03B6CCE8 LDR X0, [X8]
+	0x03B6CCEC CBZ X0, 0x3B6CDA4
+	0x03B6CCF0 ADRP X9, 0x5EF000
+	0x03B6CCF4 LDR X9, [X9 + 0x5D0]
+	0x03B6CCF8 LDR W10, [X0 + 0x1C]
+	0x03B6CCFC LDR X8, [X0 + 0x10]
+	0x03B6CD00 LDR X9, [X9]
+	0x03B6CD04 ADD W10, W10, 0x1
+	0x03B6CD08 STR W10, [X0 + 0x1C]
+	0x03B6CD0C CBZ X8, 0x3B6CDA4
+	0x03B6CD10 LDRSW X10, [X0 + 0x18]
+	0x03B6CD14 LDR W11, [X8 + 0x18]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x877000
+	005 Move W8, [X20+2556]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x5F0000
+	012 Move X0, [X0+1440]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2556], W8
+	016 Move X19, [X19+16]
+	017 Compare X19, 0
+	018 JumpIfEqual {30}
+	019 Move X8, 0x5F0000
+	020 Move X8, [X8+1440]
+	021 Move X0, X19
+	022 Move X20, [X8]
+	023 Move X1, X20
+	024 Call 0x1C17E00
+	025 Compare X0, 0
+	026 JumpIfNotEqual {31}
+	027 Move X0, X19
+	028 Move X1, X20
+	029 Call 0x1C181E0
+	030 Move X0, X31
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X30, [X31+32]
+	034 Return X0
+
+Method: System.Void set_interactorObject(UnityEngine.XR.Interaction.Toolkit.IXRActivateInteractor value)
+
+Disassembly:
+	0x03B6CD18 ADRP X20, 0x5AE000
+	0x03B6CD1C LDR X20, [X20 + 0xE30]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.IXRActivateInteractable get_interactableObject()
+
+Disassembly:
+	0x03B6CD20 CMP W10, W11
+	0x03B6CD24 B.CS 0x3B6CD3C
+	0x03B6CD28 ADD W9, W10, 0x1
+	0x03B6CD2C ADD X8, X8, X10, 0x3, LSL
+	0x03B6CD30 STR W9, [X0 + 0x18]
+	0x03B6CD34 STR X19, [X8 + 0x20]
+	0x03B6CD38 B 0x3B6CD50
+	0x03B6CD3C LDR X8, [X9 + 0x20]
+	0x03B6CD40 MOV X1, X19
+	0x03B6CD44 LDR X8, [X8 + 0xC0]
+	0x03B6CD48 LDR X2, [X8 + 0x70]
+	0x03B6CD4C BL 0x301BF90
+	0x03B6CD50 LDR X0, [X20]
+	0x03B6CD54 BL 0x1C16F10
+	0x03B6CD58 CBZ X19, 0x3B6CDA4
+	0x03B6CD5C LDR X8, [X19]
+	0x03B6CD60 ADRP X21, 0x587000
+	0x03B6CD64 MOV X1, X19
+	0x03B6CD68 MOV X3, X31
+	0x03B6CD6C LDR X2, [X8 + 0x1E0]
+	0x03B6CD70 LDR X21, [X21 + 0x970]
+	0x03B6CD74 MOV X20, X0
+	0x03B6CD78 BL 0x3C45BE8
+	0x03B6CD7C LDR X0, [X21]
+	0x03B6CD80 LDR W8, [X0 + 0xE0]
+	0x03B6CD84 CBNZ W8, 0x3B6CD8C
+	0x03B6CD88 BL 0x1C16DFC
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x877000
+	005 Move W8, [X20+2557]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x5EF000
+	012 Move X0, [X0+2912]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2557], W8
+	016 Move X19, [X19+24]
+	017 Compare X19, 0
+	018 JumpIfEqual {30}
+	019 Move X8, 0x5EF000
+	020 Move X8, [X8+2912]
+	021 Move X0, X19
+	022 Move X20, [X8]
+	023 Move X1, X20
+	024 Call 0x1C17E00
+	025 Compare X0, 0
+	026 JumpIfNotEqual {31}
+	027 Move X0, X19
+	028 Move X1, X20
+	029 Call 0x1C181E0
+	030 Move X0, X31
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X30, [X31+32]
+	034 Return X0
+
+Method: System.Void set_interactableObject(UnityEngine.XR.Interaction.Toolkit.IXRActivateInteractable value)
+
+Disassembly:
+	0x03B6CD8C MOV X0, X20
+	0x03B6CD90 LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03B6CD94 LDP X22, X21, [X31 + 0x10]
+	0x03B6CD98 MOV X1, X31
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

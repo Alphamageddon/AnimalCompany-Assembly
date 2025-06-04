@@ -1,0 +1,43 @@
+Type: UnityEngine.CreateAssetMenuAttribute
+
+Method: System.Void set_menuName(System.String value)
+
+Disassembly:
+	0x03C33248 ADD X0, X0, 0x2EE
+	0x03C3324C BL 0x1C16CB8
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Void set_fileName(System.String value)
+
+Disassembly:
+	0x03C33250 MOV X3, X0
+	0x03C33254 STR X0, [X22 + 0x348]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Void set_order(System.Int32 value)
+
+Disassembly:
+	0x03C33258 AND W2, W20, 0x1
+	0x03C3325C MOV X0, X21
+
+ISIL:
+	001 Move [X0+32], W1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03C33260 MOV X1, X19
+	0x03C33264 LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Attribute..ctor, X0
+	003 Return 
+

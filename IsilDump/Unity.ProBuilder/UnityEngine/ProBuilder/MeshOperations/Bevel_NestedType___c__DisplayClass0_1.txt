@@ -1,0 +1,49 @@
+Type: UnityEngine.ProBuilder.MeshOperations.Bevel/<>c__DisplayClass0_1
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0395C454 CBZ X1, 0x395C464
+	0x0395C458 LDR X0, [X1 + 0x10]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <BevelEdges>b__4(UnityEngine.ProBuilder.WingedEdge x)
+
+Disassembly:
+	0x0395D4F8 LDR X0, [X0 + 0x528]
+	0x0395D4FC BL 0x1C16D08
+	0x0395D500 BL 0x1C16F10
+	0x0395D504 MOV X19, X0
+	0x0395D508 ADRP X0, 0x7F2000
+	0x0395D50C LDR X0, [X0 + 0x830]
+	0x0395D510 BL 0x1C16D08
+	0x0395D514 MOV X1, X0
+	0x0395D518 MOV X0, X19
+	0x0395D51C MOV X2, X31
+	0x0395D520 BL 0x330E100
+	0x0395D524 ADRP X0, 0x7F2000
+	0x0395D528 LDR X0, [X0 + 0x838]
+	0x0395D52C BL 0x1C16D08
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Compare X1, 0
+	004 JumpIfEqual {16}
+	005 Move V0, [X1+1]
+	006 Move X3, X31
+	007 Move [X31], V0
+	008 Move X1, [X0+16]
+	009 Move X2, [X0+24]
+	010 Add X0, X31, 0
+	011 Call EdgeLookup.Equals, X0, X1
+	012 Move X30, [X31+16]
+	013 And W0, W0, 1
+	014 Add X31, X31, 32
+	015 Return X0
+	016 Call 0x1C17F20
+

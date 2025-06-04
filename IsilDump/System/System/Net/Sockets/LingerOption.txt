@@ -1,0 +1,60 @@
+Type: System.Net.Sockets.LingerOption
+
+Method: System.Void .ctor(System.Boolean enable, System.Int32 seconds)
+
+Disassembly:
+	0x036CBA38 STP X20, X19, [X31 + 0x10]
+	0x036CBA3C ADRP X20, 0xD15000
+	0x036CBA40 LDRB W8, [X20 + 0xA4C]
+	0x036CBA44 MOV X19, X0
+	0x036CBA48 TBNZ X8, 0x0, 0x36CBA60
+	0x036CBA4C ADRP X0, 0xA72000
+	0x036CBA50 LDR X0, [X0 + 0x8E8]
+	0x036CBA54 BL 0x1C16CF4
+	0x036CBA58 MOVZ W8, 0x1
+	0x036CBA5C STRB W8, [X20 + 0xA4C]
+	0x036CBA60 MOV X0, X31
+	0x036CBA64 BL 0x3692290
+	0x036CBA68 LDRB W8, [X19 + 0x2C]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, W1
+	006 Move X1, X31
+	007 Move W19, W2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 And W8, W20, 1
+	011 Move [X21+20], W19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move [X21+16], W8
+	015 Move X30, [X31+32]
+	016 Move X21, [X31+40]
+	017 Return 
+
+Method: System.Void set_Enabled(System.Boolean value)
+
+Disassembly:
+	0x036CBA6C CBNZ W8, 0x36CBAC8
+	0x036CBA70 LDR X20, [X19 + 0x10]
+	0x036CBA74 CBZ X20, 0x36CBB18
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+16], W8
+	003 Return 
+
+Method: System.Void set_LingerTime(System.Int32 value)
+
+Disassembly:
+	0x036CBA78 LDRB W8, [X20 + 0x52]
+	0x036CBA7C CBZ W8, 0x36CBB1C
+
+ISIL:
+	001 Move [X0+20], W1
+	002 Return 
+

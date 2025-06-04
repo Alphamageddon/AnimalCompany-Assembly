@@ -1,0 +1,43 @@
+Type: Unity.Mathematics.float3/DebuggerProxy
+
+Method: System.Void .ctor(Unity.Mathematics.float3 v)
+
+Disassembly:
+	0x03888BE8 MOV X0, X21
+	0x03888BEC LDR X1, [X8 + 0x40]
+	0x03888BF0 BL 0x1C16E00
+	0x03888BF4 CBZ X0, 0x3888D38
+	0x03888BF8 LDR W8, [X19 + 0x18]
+	0x03888BFC CMP W8, 0x1
+	0x03888C00 B.LS 0x3888D34
+	0x03888C04 STR X21, [X19 + 0x28]
+	0x03888C08 LDR V0, [X20 + 0x4]
+	0x03888C0C LDR X0, [X22]
+	0x03888C10 ADD X1, X31, 0xC
+	0x03888C14 STR S0, [X31 + 0xC]
+	0x03888C18 BL 0x1C16E04
+	0x03888C1C MOV X21, X0
+	0x03888C20 CBZ X0, 0x3888C38
+
+ISIL:
+	001 Move [X31-48], D10
+	002 Move [X31+16], D9
+	003 Move [X31+24], D8
+	004 Move [X31+32], X30
+	005 Move [X31+40], X19
+	006 Move X1, X31
+	007 Move V8, V2
+	008 Move V9, V1
+	009 Move V10, V0
+	010 Move X19, X0
+	011 Call Object..ctor, X0
+	012 Move [X19+16], S10
+	013 Move [X19+24], S9
+	014 Move [X19+24], S8
+	015 Move X30, [X31+32]
+	016 Move X19, [X31+40]
+	017 Move D9, [X31+16]
+	018 Move D8, [X31+24]
+	019 Move V10, [X31+48]
+	020 Return 
+

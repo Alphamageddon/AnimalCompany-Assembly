@@ -1,0 +1,124 @@
+Type: System.InvalidOperationException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0337EEC0 B.MI 0x337EED8
+	0x0337EEC4 FMOV W8, S0
+	0x0337EEC8 AND W8, W8, 0x7FFFFFFF
+	0x0337EECC MOVZ W9, 0x7F800000
+	0x0337EED0 CMP W8, W9
+	0x0337EED4 FCSEL S0, S0, S1, HI
+	0x0337EED8 RET
+	0x0337EEDC AND W8, W0, 0xFFFF
+	0x0337EEE0 CMP W8, W1, UXTH
+	0x0337EEE4 CSEL W0, W1, W0, HI
+	0x0337EEE8 RET
+	0x0337EEEC CMP W0, W1
+	0x0337EEF0 CSEL W0, W1, W0, HI
+	0x0337EEF4 RET
+	0x0337EEF8 CMP X0, X1
+	0x0337EEFC CSEL X0, X1, X0, HI
+	0x0337EF00 RET
+	0x0337EF04 SUB X31, X31, 0x20
+	0x0337EF08 STR D8, [X31 + 0x10]
+	0x0337EF0C STR X30, [X31 + 0x18]
+	0x0337EF10 ADD X0, X31, 0x8
+	0x0337EF14 MOV V8.16B, V0.16B
+	0x0337EF18 BL 0x3EB1C00
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x105F000
+	006 Move X21, 0xDAD000
+	007 Move W8, [X20+3977]
+	008 Move X21, [X21+3784]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xDAD000
+	015 Move X0, [X0+3784]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+3977], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X2, X31
+	022 Call SystemException..ctor, X0, X1
+	023 Move W8, 0x1509
+	024 NotImplemented "Instruction MOVK not yet implemented."
+	025 Move [X19+96], W8
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Return 
+
+Method: System.Void .ctor(System.String message)
+
+Disassembly:
+	0x0337EF1C FCMP D8, 0x0
+	0x0337EF20 B.GE 0x337EF3C
+	0x0337EF24 FMOV D1, -0.5
+	0x0337EF28 FCMP D0, D1
+	0x0337EF2C B.NE 0x337EF64
+	0x0337EF30 LDR V0, [X31 + 0x8]
+	0x0337EF34 FMOV D1, -1
+	0x0337EF38 B 0x337EF50
+	0x0337EF3C FMOV D1, 0.5
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X2, X31
+	004 Move X19, X0
+	005 Call SystemException..ctor, X0, X1
+	006 Move W8, 0x1509
+	007 NotImplemented "Instruction MOVK not yet implemented."
+	008 Move [X19+96], W8
+	009 Move X30, [X31+16]
+	010 Move X19, [X31+24]
+	011 Return 
+
+Method: System.Void .ctor(System.String message, System.Exception innerException)
+
+Disassembly:
+	0x0337EF40 FCMP D0, D1
+	0x0337EF44 B.NE 0x337EF70
+	0x0337EF48 LDR V0, [X31 + 0x8]
+	0x0337EF4C FMOV D1, 1
+	0x0337EF50 FCVTZS X8, D0
+	0x0337EF54 FADD D1, D0, D1
+	0x0337EF58 ANDS X31, X8, 0x1
+	0x0337EF5C FCSEL D0, D0, D1, EQ
+	0x0337EF60 B 0x337EF78
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X3, X31
+	004 Move X19, X0
+	005 Call SystemException..ctor, X0, X1, X2
+	006 Move W8, 0x1509
+	007 NotImplemented "Instruction MOVK not yet implemented."
+	008 Move [X19+96], W8
+	009 Move X30, [X31+16]
+	010 Move X19, [X31+24]
+	011 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x0337EF64 FADD D0, D8, D1
+	0x0337EF68 FRINTP D0, D0
+
+ISIL:
+	001 Move X4, X31
+	002 Call SystemException..ctor, X0, X1, X2
+	003 Return 
+

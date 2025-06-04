@@ -1,0 +1,148 @@
+Type: UnityEngine.Animations.Rigging.OverrideTransform
+
+Method: System.Void OnValidate()
+
+Disassembly:
+	0x036F0D38 ADD W9, W25, 0x1
+	0x036F0D3C CMP W9, W23
+	0x036F0D40 B.EQ 0x36F0D50
+	0x036F0D44 LDR X8, [X22]
+	0x036F0D48 CBNZ X8, 0x36F0CA0
+	0x036F0D4C BL 0x1C16F20
+	0x036F0D50 STP X31, X31, [X22]
+	0x036F0D54 STRB W31, [X22 + 0x10]
+	0x036F0D58 LDP X20, X19, [X31 + 0x30]
+	0x036F0D5C LDP X22, X21, [X31 + 0x20]
+	0x036F0D60 LDP X24, X23, [X31 + 0x10]
+	0x036F0D64 LDP X30, X25, [X31], #0x40
+	0x036F0D68 RET
+	0x036F0D6C BL 0x1C16F28
+	0x036F0D70 STP X30, X21, [X31 - 0x20]!
+	0x036F0D74 STP X20, X19, [X31 + 0x10]
+	0x036F0D78 ADRP X21, 0xCF0000
+	0x036F0D7C ADRP X20, 0xA03000
+	0x036F0D80 LDRB W8, [X21 + 0xB85]
+	0x036F0D84 LDR X20, [X20 + 0x598]
+	0x036F0D88 MOV X19, X0
+	0x036F0D8C TBNZ X8, 0x0, 0x36F0DA4
+	0x036F0D90 ADRP X0, 0xA03000
+	0x036F0D94 LDR X0, [X0 + 0x598]
+	0x036F0D98 BL 0x1C16CF4
+	0x036F0D9C MOVZ W8, 0x1
+	0x036F0DA0 STRB W8, [X21 + 0xB85]
+	0x036F0DA4 LDR X0, [X20]
+	0x036F0DA8 LDR X20, [X19 + 0x10]
+	0x036F0DAC LDR W8, [X0 + 0xE0]
+	0x036F0DB0 CBNZ W8, 0x36F0DB8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xCF1000
+	006 Move X21, 0xA51000
+	007 Move W8, [X20+2930]
+	008 Move X21, [X21+2336]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xA51000
+	015 Move X0, [X0+2336]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+2930], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Call RigConstraint`3<OverrideTransformJob, OverrideTransformData, Object>.OnValidate, X0
+	022 Move S0, [X19+80]
+	023 Move S2, [X19+84]
+	024 Move S1, 1
+	025 Move S3, W31
+	026 NotImplemented "Instruction FMIN not yet implemented."
+	027 NotImplemented "Instruction FCMP not yet implemented."
+	028 NotImplemented "Instruction FMIN not yet implemented."
+	029 NotImplemented "Instruction FCSEL not yet implemented."
+	030 NotImplemented "Instruction FCMP not yet implemented."
+	031 NotImplemented "Instruction FCSEL not yet implemented."
+	032 NotImplemented "Instruction FMAX not yet implemented."
+	033 NotImplemented "Instruction FMAX not yet implemented."
+	034 Move [X19+80], S1
+	035 Move [X19+88], S0
+	036 Move X20, [X31+16]
+	037 Move X19, [X31+24]
+	038 Move X30, [X31+32]
+	039 Move X21, [X31+40]
+	040 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x036F0DB4 BL 0x1C16DFC
+	0x036F0DB8 MOV X0, X20
+	0x036F0DBC MOV X1, X31
+	0x036F0DC0 MOV X2, X31
+	0x036F0DC4 BL 0x3C354F8
+	0x036F0DC8 TBZ X0, 0x0, 0x36F0DDC
+	0x036F0DCC LDRB W8, [X19 + 0x30]
+	0x036F0DD0 CMP W8, 0x0
+	0x036F0DD4 CSET W0, NE
+	0x036F0DD8 B 0x36F0DE0
+	0x036F0DDC MOV W0, W31
+	0x036F0DE0 LDP X20, X19, [X31 + 0x10]
+	0x036F0DE4 LDP X30, X21, [X31], #0x20
+	0x036F0DE8 RET
+	0x036F0DEC LDR V0, [X0 + 0x20]
+	0x036F0DF0 RET
+	0x036F0DF4 FMOV S1, 1
+	0x036F0DF8 FCMP S0, 0x0
+	0x036F0DFC FMIN S0, S0, S1
+	0x036F0E00 FMOV S1, W31
+	0x036F0E04 FCSEL S0, S0, S1, PL
+	0x036F0E08 STR S0, [X0 + 0x20]
+	0x036F0E0C RET
+	0x036F0E10 STR X30, [X31 - 0x30]!
+	0x036F0E14 STP X22, X21, [X31 + 0x10]
+	0x036F0E18 STP X20, X19, [X31 + 0x20]
+	0x036F0E1C ADRP X22, 0xCF0000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xCF1000
+	006 Move X20, 0xA51000
+	007 Move W8, [X21+2931]
+	008 Move X20, [X20+2344]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {22}
+	014 Move X0, 0xA51000
+	015 Move X0, [X0+2352]
+	016 Call 0x1C17CF4
+	017 Move X0, 0xA51000
+	018 Move X0, [X0+2344]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X21+2931], W8
+	022 Move X0, [X20]
+	023 Move X20, 0xA51000
+	024 Move W8, [X0+224]
+	025 Move X20, [X20+2352]
+	026 Compare W8, 0
+	027 JumpIfNotEqual {29}
+	028 Call 0x1C17DFC
+	029 Move X1, [X20]
+	030 Move X0, X19
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X30, [X31+32]
+	034 Move X21, [X31+40]
+	035 Call RigConstraint`3<OverrideTransformJob, OverrideTransformData, Object>..ctor, X0
+	036 Return 
+

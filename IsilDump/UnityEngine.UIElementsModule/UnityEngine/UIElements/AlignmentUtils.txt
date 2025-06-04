@@ -1,0 +1,38 @@
+Type: UnityEngine.UIElements.AlignmentUtils
+
+Method: System.Single RoundToPixelGrid(System.Single v, System.Single pixelsPerPoint, System.Single offset = 0.02)
+
+Disassembly:
+	0x03CE9140 LDR X20, [X20 + 0x758]
+	0x03CE9144 LDR X23, [X23 + 0x760]
+	0x03CE9148 LDR X21, [X21 + 0x768]
+	0x03CE914C LDR X22, [X22 + 0x700]
+	0x03CE9150 TBNZ X8, 0x0, 0x3CE91B0
+	0x03CE9154 ADRP X0, 0x479000
+	0x03CE9158 LDR X0, [X0 + 0x750]
+
+ISIL:
+	001 Multiply S0, S0, S1
+	002 Move S3, 0.5
+	003 Add S0, S0, S3
+	004 Add S0, S0, S2
+	005 NotImplemented "Instruction FRINTM not yet implemented."
+	006 NotImplemented "Instruction FDIV not yet implemented."
+	007 Return V0
+
+Method: System.Single CeilToPixelGrid(System.Single v, System.Single pixelsPerPoint, System.Single offset = -0.02)
+
+Disassembly:
+	0x03CE915C BL 0x1C16CF4
+	0x03CE9160 ADRP X0, 0x479000
+	0x03CE9164 LDR X0, [X0 + 0x740]
+	0x03CE9168 BL 0x1C16CF4
+	0x03CE916C ADRP X0, 0x479000
+
+ISIL:
+	001 Multiply S0, S0, S1
+	002 Add S0, S0, S2
+	003 NotImplemented "Instruction FRINTP not yet implemented."
+	004 NotImplemented "Instruction FDIV not yet implemented."
+	005 Return V0
+

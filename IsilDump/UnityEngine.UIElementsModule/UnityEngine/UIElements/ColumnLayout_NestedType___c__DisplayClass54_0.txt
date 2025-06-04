@@ -1,0 +1,48 @@
+Type: UnityEngine.UIElements.ColumnLayout/<>c__DisplayClass54_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03D74584 MOV W1, W31
+	0x03D74588 LDR X30, [X31], #0x20
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <RecomputeToMinWidthProportionally>b__1(UnityEngine.UIElements.Column c)
+
+Disassembly:
+	0x03D7550C LDUR X11, [X10 - 0x8]
+	0x03D75510 CMP X11, X1
+	0x03D75514 B.EQ 0x3D75534
+	0x03D75518 SUBS X9, X9, 0x1
+	0x03D7551C ADD X10, X10, 0x10
+	0x03D75520 B.NE 0x3D7550C
+	0x03D75524 MOVZ W2, 0x6
+	0x03D75528 MOV X0, X21
+	0x03D7552C BL 0x1C5C788
+	0x03D75530 B 0x3D75544
+	0x03D75534 LDR W9, [X10]
+	0x03D75538 ADD W9, W9, 0x6
+	0x03D7553C ADD X8, X8, W9, 0x4, SXTW
+
+ISIL:
+	001 Move [X31-32], D8
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move X19, X0
+	005 Move X0, [X0+24]
+	006 Compare X0, 0
+	007 JumpIfEqual {16}
+	008 Move V8, [X19+16]
+	009 Call ColumnLayout.GetDesiredWidth, X0, X1
+	010 Add S0, S8, S0
+	011 Move [X19+16], S0
+	012 Move X30, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move V8, [X31+32]
+	015 Return 
+	016 Call 0x1C17F20
+

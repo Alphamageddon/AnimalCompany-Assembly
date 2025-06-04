@@ -1,0 +1,91 @@
+Type: Fusion.Simulation/RecvContext
+
+Method: System.Void .ctor(Fusion.Simulation simulation)
+
+Disassembly:
+	0x01ED03BC STP X20, X19, [X31 + 0x80]
+	0x01ED03C0 ADRP X20, 0x2509000
+	0x01ED03C4 LDRB W8, [X20 + 0x4ED]
+	0x01ED03C8 MOV X19, X0
+	0x01ED03CC TBNZ X8, 0x0, 0x1ED03F0
+	0x01ED03D0 ADRP X0, 0x222F000
+	0x01ED03D4 LDR X0, [X0 + 0xF30]
+	0x01ED03D8 BL 0x1C16CF4
+	0x01ED03DC ADRP X0, 0x222E000
+	0x01ED03E0 LDR X0, [X0 + 0x7D0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void Init(Fusion.SimulationConnection connection, Fusion.Sockets.NetBitBuffer* buffer)
+
+Disassembly:
+	0x01ED03E4 BL 0x1C16CF4
+	0x01ED03E8 MOVZ W8, 0x1
+	0x01ED03EC STRB W8, [X20 + 0x4ED]
+	0x01ED03F0 STP X31, X31, [X31 + 0x18]
+	0x01ED03F4 LDR X8, [X19 + 0x110]
+	0x01ED03F8 CBZ X8, 0x1ED0750
+	0x01ED03FC LDP X0, X20, [X8 + 0x28]
+	0x01ED0400 MOV X1, X31
+	0x01ED0404 BL 0x1EF987C
+	0x01ED0408 STR W0, [X31 + 0x28]
+	0x01ED040C LDR X8, [X19 + 0x110]
+	0x01ED0410 CBZ X8, 0x1ED0750
+	0x01ED0414 LDR X0, [X8 + 0x28]
+	0x01ED0418 MOV X1, X31
+	0x01ED041C BL 0x1EFB0C0
+	0x01ED0420 LDR X8, [X19 + 0x110]
+	0x01ED0424 CBZ X8, 0x1ED0750
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, X0
+	005 Move X0, [X0+16]
+	006 Move [X20+48], X1
+	007 Compare X0, 0
+	008 JumpIfEqual {21}
+	009 Move X19, X2
+	010 Move X2, X31
+	011 Call Simulation.Connection2Player, X0, X1
+	012 Move [X20+24], W0
+	013 Add X0, X20, 28
+	014 Move [X20+40], X19
+	015 Move X1, X19
+	016 Move X20, [X31+16]
+	017 Move X19, [X31+24]
+	018 Move X30, [X31+32]
+	019 Call SimulationPacketHeader.Read, X0, X1
+	020 Return 
+	021 Call 0x1C17F20
+
+Method: System.Void Done()
+
+Disassembly:
+	0x01ED0428 LDRB W26, [X8 + 0x1D]
+	0x01ED042C CBZ W26, 0x1ED0714
+	0x01ED0430 LDR X8, [X19 + 0x58]
+	0x01ED0434 CBZ X8, 0x1ED0750
+	0x01ED0438 LDR W9, [X8 + 0x18]
+
+ISIL:
+	001 Add X8, X0, 40
+	002 Move [X0+48], X31
+	003 Move X0, X8
+	004 Move X1, X31
+	005 Call NetBitBuffer.ReleaseRef, X0
+	006 Return 
+

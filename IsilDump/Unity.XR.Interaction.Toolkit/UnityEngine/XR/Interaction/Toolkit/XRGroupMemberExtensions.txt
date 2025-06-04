@@ -1,0 +1,160 @@
+Type: UnityEngine.XR.Interaction.Toolkit.XRGroupMemberExtensions
+
+Method: UnityEngine.XR.Interaction.Toolkit.IXRInteractionGroup GetTopLevelContainingGroup(UnityEngine.XR.Interaction.Toolkit.IXRGroupMember groupMember)
+
+Disassembly:
+	0x03B4919C BL 0x3227BD4
+	0x03B491A0 ADRP X8, 0x5D4000
+	0x03B491A4 LDR X8, [X8 + 0x1E8]
+	0x03B491A8 MOV X20, X0
+	0x03B491AC LDR X8, [X8]
+	0x03B491B0 LDR W9, [X8 + 0xE0]
+	0x03B491B4 CBNZ W9, 0x3B491C0
+	0x03B491B8 MOV X0, X8
+	0x03B491BC BL 0x1C16DFC
+	0x03B491C0 MOV X0, X20
+	0x03B491C4 MOV X1, X19
+	0x03B491C8 MOV X2, X31
+	0x03B491CC BL 0x3B2EF38
+	0x03B491D0 MOV X0, X19
+	0x03B491D4 MOV W1, W31
+	0x03B491D8 MOV X2, X31
+	0x03B491DC BL 0x3C32410
+	0x03B491E0 LDR X0, [X19 + 0xD0]
+	0x03B491E4 CBZ X0, 0x3B49200
+	0x03B491E8 LDP X20, X19, [X31 + 0x20]
+	0x03B491EC LDP X22, X21, [X31 + 0x10]
+	0x03B491F0 MOV W1, W31
+	0x03B491F4 MOV X2, X31
+	0x03B491F8 LDR X30, [X31], #0x30
+	0x03B491FC B 0x3C13034
+	0x03B49200 BL 0x1C16F20
+	0x03B49204 STP X30, X21, [X31 - 0x20]!
+	0x03B49208 STP X20, X19, [X31 + 0x10]
+	0x03B4920C ADRP X20, 0x899000
+	0x03B49210 LDRB W8, [X20 + 0x8B2]
+	0x03B49214 MOV X19, X0
+	0x03B49218 TBNZ X8, 0x0, 0x3B49254
+	0x03B4921C ADRP X0, 0x5AA000
+	0x03B49220 LDR X0, [X0 + 0x970]
+	0x03B49224 BL 0x1C16CF4
+	0x03B49228 ADRP X0, 0x5AA000
+	0x03B4922C LDR X0, [X0 + 0x598]
+	0x03B49230 BL 0x1C16CF4
+	0x03B49234 ADRP X0, 0x5D1000
+	0x03B49238 LDR X0, [X0 + 0xE30]
+	0x03B4923C BL 0x1C16CF4
+	0x03B49240 ADRP X0, 0x611000
+	0x03B49244 LDR X0, [X0 + 0x988]
+	0x03B49248 BL 0x1C16CF4
+	0x03B4924C MOVZ W8, 0x1
+	0x03B49250 STRB W8, [X20 + 0x8B2]
+	0x03B49254 LDR X0, [X19 + 0x1D0]
+	0x03B49258 CBZ X0, 0x3B49340
+	0x03B4925C ADRP X21, 0x5AA000
+	0x03B49260 LDR X21, [X21 + 0x598]
+	0x03B49264 MOV X1, X31
+	0x03B49268 BL 0x3B31AF0
+	0x03B4926C LDR X0, [X21]
+	0x03B49270 LDR X20, [X19 + 0xD0]
+	0x03B49274 LDR W8, [X0 + 0xE0]
+	0x03B49278 CBNZ W8, 0x3B49280
+	0x03B4927C BL 0x1C16DFC
+	0x03B49280 MOV X0, X20
+	0x03B49284 MOV X1, X31
+	0x03B49288 MOV X2, X31
+	0x03B4928C BL 0x3C354F8
+	0x03B49290 TBZ X0, 0x0, 0x3B492A8
+	0x03B49294 LDR X0, [X19 + 0xD0]
+	0x03B49298 CBZ X0, 0x3B49340
+	0x03B4929C MOV W1, W31
+	0x03B492A0 MOV X2, X31
+	0x03B492A4 BL 0x3C13034
+	0x03B492A8 LDR X0, [X21]
+	0x03B492AC LDR X20, [X19 + 0xC8]
+	0x03B492B0 LDR W8, [X0 + 0xE0]
+	0x03B492B4 CBNZ W8, 0x3B492BC
+	0x03B492B8 BL 0x1C16DFC
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x89A000
+	006 Move W8, [X20+2216]
+	007 Move X19, X0
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x612000
+	013 Move X0, [X0+2336]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+2216], W8
+	017 Compare X19, 0
+	018 JumpIfEqual {80}
+	019 Move X21, 0x612000
+	020 Move X8, [X19]
+	021 Move X21, [X21+2336]
+	022 NotImplemented "Instruction LDRH not yet implemented."
+	023 Move X1, [X21]
+	024 Compare X9, 0
+	025 JumpIfEqual {32}
+	026 Move X10, [X8+176]
+	027 Add X10, X10, 8
+	028 NotImplemented "Instruction LDUR not yet implemented."
+	029 NotImplemented "Instruction CMP not yet implemented."
+	030 Subtract X9, X9, 1
+	031 Add X10, X10, 16
+	032 Move X0, X19
+	033 Move W2, W31
+	034 Call 0x1C5D788
+	035 NotImplemented "Instruction LDRSW not yet implemented."
+	036 Add X8, X8, X9
+	037 Add X0, X8, 312
+	038 Move X8, [X0]
+	039 Move X1, [X0+8]
+	040 Move X0, X19
+	041 NotImplemented "Instruction BLR not yet implemented."
+	042 Compare X0, 0
+	043 JumpIfEqual {73}
+	044 Move X1, [X21]
+	045 Move X19, X0
+	046 Call 0x1C17E00
+	047 Compare X0, 0
+	048 JumpIfEqual {74}
+	049 Move X8, [X0]
+	050 Move X1, [X21]
+	051 Move X20, X0
+	052 NotImplemented "Instruction LDRH not yet implemented."
+	053 Compare X9, 0
+	054 JumpIfEqual {61}
+	055 Move X10, [X8+176]
+	056 Add X10, X10, 8
+	057 NotImplemented "Instruction LDUR not yet implemented."
+	058 NotImplemented "Instruction CMP not yet implemented."
+	059 Subtract X9, X9, 1
+	060 Add X10, X10, 16
+	061 Move X0, X20
+	062 Move W2, W31
+	063 Call 0x1C5D788
+	064 NotImplemented "Instruction LDRSW not yet implemented."
+	065 Add X8, X8, X9
+	066 Add X0, X8, 312
+	067 Move X8, [X0]
+	068 Move X1, [X0+8]
+	069 Move X0, X20
+	070 NotImplemented "Instruction BLR not yet implemented."
+	071 Compare X0, 0
+	072 JumpIfNotEqual {44}
+	073 Move X19, X31
+	074 Move X0, X19
+	075 Move X20, [X31+16]
+	076 Move X19, [X31+24]
+	077 Move X30, [X31+32]
+	078 Move X21, [X31+40]
+	079 Return X0
+	080 Call 0x1C17F20
+

@@ -1,0 +1,33 @@
+Type: System.Collections.DictionaryEntry
+
+Method: System.Void .ctor(System.Object key, System.Object value)
+
+Disassembly:
+	0x0335135C CBZ X8, 0x3351384
+	0x03351360 LDR W9, [X0 + 0x20]
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Return 
+
+Method: System.Object get_Key()
+
+Disassembly:
+	0x03351364 LDR W8, [X8 + 0x18]
+	0x03351368 CMP W9, W8
+
+ISIL:
+	001 Move X0, [X0]
+	002 Return X0
+
+Method: System.Object get_Value()
+
+Disassembly:
+	0x0335136C B.NE 0x3351388
+	0x03351370 MOVZ W8, 0x1
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Return X0
+

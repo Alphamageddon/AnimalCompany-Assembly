@@ -1,0 +1,50 @@
+Type: UnityEngine.InputSystem.Utilities.DisplayStringFormatAttribute
+
+Method: System.String get_formatString()
+
+Disassembly:
+	0x03760298 CBNZ W8, 0x3760334
+	0x0376029C ADD X0, X31, 0x8
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_formatString(System.String value)
+
+Disassembly:
+	0x037602A0 ADD X1, X31, 0x50
+	0x037602A4 MOVZ W2, 0x48
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Void .ctor(System.String formatString)
+
+Disassembly:
+	0x037602A8 BL 0x3EB1AC0
+	0x037602AC CBZ X21, 0x37603CC
+	0x037602B0 LDR X22, [X24]
+	0x037602B4 ADD X0, X31, 0xA0
+	0x037602B8 ADD X1, X31, 0x8
+	0x037602BC MOVZ W2, 0x48
+	0x037602C0 BL 0x3EB1AC0
+	0x037602C4 LDR W9, [X21 + 0x1C]
+	0x037602C8 LDR X8, [X21 + 0x10]
+	0x037602CC ADD W9, W9, 0x1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

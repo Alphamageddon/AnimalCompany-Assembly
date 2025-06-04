@@ -1,0 +1,33 @@
+Type: Fusion.UnityContextMenuItemAttribute
+
+Method: System.Int32 get_order()
+
+Disassembly:
+	0x01E68860 BL 0x1C16F20
+	0x01E68864 LDRB W0, [X0 + 0x12]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_order(System.Int32 value)
+
+Disassembly:
+	0x01E68868 RET
+	0x01E6886C AND W8, W1, 0x1
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+
+Method: System.Void .ctor(System.String function, System.String name)
+
+Disassembly:
+	0x01E68870 STRB W8, [X0 + 0x12]
+	0x01E68874 RET
+
+ISIL:
+	001 Move X1, X31
+	002 Call Attribute..ctor, X0
+	003 Return 
+

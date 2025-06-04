@@ -1,0 +1,203 @@
+Type: UnityEngine.InputSystem.XInput.XInputController
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_menu()
+
+Disassembly:
+	0x037E0DAC SMADDL X8, X0, X8, X23
+	0x037E0DB0 LDR X8, [X8 + 0x50]
+
+ISIL:
+	001 Move X0, [X0+496]
+	002 Return X0
+
+Method: System.Void set_menu(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x037E0DB4 CBZ X8, 0x37E0F04
+	0x037E0DB8 LDR X8, [X22]
+
+ISIL:
+	001 Move [X0+496], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_view()
+
+Disassembly:
+	0x037E0DBC MOV X0, X21
+	0x037E0DC0 LDR X8, [X8 + 0xB8]
+
+ISIL:
+	001 Move X0, [X0+504]
+	002 Return X0
+
+Method: System.Void set_view(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x037E0DC4 LDR X22, [X8 + 0x20]
+	0x037E0DC8 BL 0x37DFF1C
+
+ISIL:
+	001 Move [X0+504], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.XInput.XInputController/DeviceSubType get_subType()
+
+Disassembly:
+	0x037E0DCC CBZ X22, 0x37E0EFC
+	0x037E0DD0 LDR W8, [X22 + 0x18]
+	0x037E0DD4 CMP W0, W8
+	0x037E0DD8 B.CS 0x37E0F00
+	0x037E0DDC MOVZ W8, 0xB8
+	0x037E0DE0 SMADDL X8, X0, X8, X22
+	0x037E0DE4 LDR X21, [X8 + 0x50]
+	0x037E0DE8 CBZ X21, 0x37E0EFC
+	0x037E0DEC ADRP X10, 0x968000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0+512]
+	004 Move X19, X0
+	005 Compare W8, 0
+	006 JumpIfNotEqual {9}
+	007 Move X0, X19
+	008 Call XInputController.ParseCapabilities, X0
+	009 Move W0, [X19+516]
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.XInput.XInputController/DeviceFlags get_flags()
+
+Disassembly:
+	0x037E0E60 ADRP X22, 0x965000
+	0x037E0E64 LDR X22, [X22 + 0x638]
+	0x037E0E68 MOV W21, W31
+	0x037E0E6C LDR X2, [X22]
+	0x037E0E70 ADD X8, X31, 0x20
+	0x037E0E74 ADD X0, X31, 0x40
+	0x037E0E78 MOV W1, W21
+	0x037E0E7C BL 0x24FC748
+	0x037E0E80 LDR X0, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0+512]
+	004 Move X19, X0
+	005 Compare W8, 0
+	006 JumpIfNotEqual {9}
+	007 Move X0, X19
+	008 Call XInputController.ParseCapabilities, X0
+	009 Move W0, [X19+520]
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Return X0
+
+Method: System.Void FinishSetup()
+
+Disassembly:
+	0x037E0E84 MOVZ W2, 0x3
+	0x037E0E88 MOV X1, X19
+	0x037E0E8C MOV X3, X31
+	0x037E0E90 BL 0x322590C
+	0x037E0E94 CBZ W0, 0x37E0EC8
+	0x037E0E98 LDR W8, [X31 + 0x4C]
+	0x037E0E9C ADD W21, W21, 0x1
+	0x037E0EA0 CMP W21, W8
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X1, X31
+	004 Move X19, X0
+	005 Call Gamepad.FinishSetup, X0
+	006 Move V0, [X19+26]
+	007 Move [X19+31], V0
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+
+Method: System.Void ParseCapabilities()
+
+Disassembly:
+	0x037E0DF0 LDR X8, [X21]
+	0x037E0DF4 LDR X10, [X10 + 0xAC8]
+	0x037E0DF8 LDRH W9, [X8 + 0x12E]
+	0x037E0DFC LDR X1, [X10]
+	0x037E0E00 CBZ X9, 0x37E0E24
+	0x037E0E04 LDR X10, [X8 + 0xB0]
+	0x037E0E08 ADD X10, X10, 0x8
+	0x037E0E0C LDUR X11, [X10 - 0x8]
+	0x037E0E10 CMP X11, X1
+	0x037E0E14 B.EQ 0x37E0E34
+	0x037E0E18 SUBS X9, X9, 0x1
+	0x037E0E1C ADD X10, X10, 0x10
+	0x037E0E20 B.NE 0x37E0E0C
+	0x037E0E24 MOVZ W2, 0x4
+	0x037E0E28 MOV X0, X21
+	0x037E0E2C BL 0x1C5C788
+	0x037E0E30 B 0x37E0E44
+	0x037E0E34 LDR W9, [X10]
+	0x037E0E38 ADD W9, W9, 0x4
+	0x037E0E3C ADD X8, X8, W9, 0x4, SXTW
+	0x037E0E40 ADD X0, X8, 0x138
+	0x037E0E44 LDP X8, X1, [X0]
+	0x037E0E48 MOV X0, X21
+	0x037E0E4C BLR X8
+	0x037E0E50 UBFM X8, X1, 0x20, 0x3F
+	0x037E0E54 CMP W8, 0x1
+	0x037E0E58 STP X0, X1, [X31 + 0x40]
+	0x037E0E5C B.LT 0x37E0EA8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xC02000
+	005 Move W8, [X20+718]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x96A000
+	012 Move X0, [X0+88]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+718], W8
+	016 Move X0, [X19+288]
+	017 Move X1, X31
+	018 Call String.IsNullOrEmpty, X0
+	019 Move TEMP, X0
+	020 And TEMP, TEMP, 1
+	021 Compare TEMP, 1
+	022 JumpIfEqual {33}
+	023 Move X8, 0x96A000
+	024 Move X8, [X8+88]
+	025 Move X0, [X19+288]
+	026 Move X1, [X8]
+	027 Call JsonUtility.FromJson, X0
+	028 Move X8, X0
+	029 ShiftRight X8, 32
+	030 And X8, X8, 0x7FFFFFFF
+	031 Move [X19+516], W8
+	032 Move [X19+520], W1
+	033 Move W8, 1
+	034 Move [X19+512], W8
+	035 Move X20, [X31+16]
+	036 Move X19, [X31+24]
+	037 Move X30, [X31+32]
+	038 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x037E0EA4 B.LT 0x37E0E6C
+	0x037E0EA8 MOV W0, W31
+
+ISIL:
+	001 Move X1, X31
+	002 Call Gamepad..ctor, X0
+	003 Return 
+

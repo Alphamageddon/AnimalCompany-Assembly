@@ -1,0 +1,86 @@
+Type: UnityEngine.Rendering.VirtualOffsetSettings
+
+Method: System.Void SetDefaults()
+
+Disassembly:
+	0x039C8174 TBNZ X8, 0x0, 0x39C81BC
+	0x039C8178 ADRP X0, 0x78A000
+	0x039C817C LDR X0, [X0 + 0x360]
+	0x039C8180 BL 0x1C16CF4
+	0x039C8184 ADRP X0, 0x78A000
+	0x039C8188 LDR X0, [X0 + 0x368]
+	0x039C818C BL 0x1C16CF4
+	0x039C8190 ADRP X0, 0x78A000
+	0x039C8194 LDR X0, [X0 + 0x370]
+	0x039C8198 BL 0x1C16CF4
+	0x039C819C ADRP X0, 0x78A000
+	0x039C81A0 LDR X0, [X0 + 0x378]
+	0x039C81A4 BL 0x1C16CF4
+	0x039C81A8 ADRP X0, 0x789000
+	0x039C81AC LDR X0, [X0 + 0xF48]
+	0x039C81B0 BL 0x1C16CF4
+	0x039C81B4 MOVZ W8, 0x1
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X8, -49127424
+	004 Move V0, [X8+4016]
+	005 Move X9, 0x126F
+	006 NotImplemented "Instruction MOVK not yet implemented."
+	007 Move W8, 1
+	008 NotImplemented "Instruction MOVK not yet implemented."
+	009 Move X19, X0
+	010 Move [X0], W8
+	011 Move [X0+4], D0
+	012 Move [X0+12], X9
+	013 Move TEMP, 4
+	014 Not TEMP
+	015 Move W0, TEMP
+	016 Move X1, X31
+	017 Call LayerMask.op_Implicit, X0
+	018 Move [X19+20], W0
+	019 Move X30, [X31+16]
+	020 Move X19, [X31+24]
+	021 Return 
+
+Method: System.Void UpgradeFromTo(UnityEngine.Rendering.ProbeVolumeBakingProcessSettings/SettingsVersion from, UnityEngine.Rendering.ProbeVolumeBakingProcessSettings/SettingsVersion to)
+
+Disassembly:
+	0x039C81B8 STRB W8, [X21 + 0xCE5]
+	0x039C81BC STP X31, X31, [X31 + 0x20]
+	0x039C81C0 STR X31, [X31 + 0x30]
+	0x039C81C4 LDR X0, [X19 + 0x70]
+	0x039C81C8 MOV X1, X20
+	0x039C81CC MOV X2, X31
+	0x039C81D0 BL 0x321BA08
+	0x039C81D4 TBZ X0, 0x0, 0x39C81E4
+	0x039C81D8 LDR V0, [X19 + 0x80]
+	0x039C81DC FCMP S0, 0x0
+	0x039C81E0 B.EQ 0x39C8374
+	0x039C81E4 ADRP X21, 0x789000
+	0x039C81E8 LDR X21, [X21 + 0xF48]
+	0x039C81EC STP X20, X31, [X19 + 0x70]
+	0x039C81F0 STR W31, [X19 + 0x80]
+	0x039C81F4 LDR X0, [X21]
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 Move [X31-16], X30
+	004 Move [X31-8], X19
+	005 Move X8, 0x126F
+	006 NotImplemented "Instruction MOVK not yet implemented."
+	007 NotImplemented "Instruction MOVK not yet implemented."
+	008 Move X19, X0
+	009 Move [X0+12], X8
+	010 Move TEMP, 4
+	011 Not TEMP
+	012 Move W0, TEMP
+	013 Move X1, X31
+	014 Call LayerMask.op_Implicit, X0
+	015 Move [X19+20], W0
+	016 Move X30, [X31+16]
+	017 Move X19, [X31+24]
+	018 Return 
+

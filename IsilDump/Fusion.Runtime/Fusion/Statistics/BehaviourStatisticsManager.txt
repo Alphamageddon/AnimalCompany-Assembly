@@ -1,0 +1,105 @@
+Type: Fusion.Statistics.BehaviourStatisticsManager
+
+Method: Fusion.Statistics.BehaviourStatisticsSnapshot get_CompletedSnapshot()
+
+Disassembly:
+	0x01EF15F0 B 0x1EF164C
+	0x01EF15F4 MOV X21, X31
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: Fusion.Statistics.BehaviourStatisticsSnapshot get_PendingSnapshot()
+
+Disassembly:
+	0x01EF15F8 B 0x1EF1600
+	0x01EF15FC MOV X20, X0
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01EF1600 ADRP X8, 0x220F000
+	0x01EF1604 LDR X8, [X8 + 0x650]
+	0x01EF1608 LDR X1, [X8]
+	0x01EF160C ADD X0, X31, 0x50
+	0x01EF1610 BL 0x2C0448C
+	0x01EF1614 CBZ X21, 0x1EF1670
+	0x01EF1618 MOV X0, X21
+	0x01EF161C BL 0x1C16F18
+	0x01EF1620 MOV X20, X0
+	0x01EF1624 CMP W1, 0x1
+	0x01EF1628 B.NE 0x1EF1654
+	0x01EF162C MOV X0, X20
+	0x01EF1630 BL 0x3EB1AD0
+	0x01EF1634 LDR X21, [X0]
+	0x01EF1638 BL 0x3EB1AE0
+	0x01EF163C LDR X1, [X23]
+	0x01EF1640 ADD X0, X31, 0x20
+	0x01EF1644 BL 0x2C03F78
+	0x01EF1648 CBZ X21, 0x1EF156C
+	0x01EF164C MOV X0, X21
+	0x01EF1650 BL 0x1C16F18
+	0x01EF1654 MOV X21, X31
+	0x01EF1658 B 0x1EF1660
+	0x01EF165C MOV X20, X0
+	0x01EF1660 LDR X1, [X23]
+	0x01EF1664 ADD X0, X31, 0x20
+	0x01EF1668 BL 0x2C03F78
+	0x01EF166C CBNZ X21, 0x1EF1678
+	0x01EF1670 MOV X0, X20
+	0x01EF1674 BL 0x1D2C690
+	0x01EF1678 MOV X0, X21
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x24E9000
+	006 Move X21, 0x2210000
+	007 Move W8, [X20+1483]
+	008 Move X21, [X21+1480]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x2210000
+	015 Move X0, [X0+1480]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1483], W8
+	019 Move X0, X19
+	020 Move X1, X31
+	021 Call Object..ctor, X0
+	022 Move X0, [X21]
+	023 Call 0x1C17F10
+	024 Move X1, X31
+	025 Move X20, X0
+	026 Call Object..ctor, X0
+	027 Move [X19+16], X20
+	028 Move X0, [X21]
+	029 Call 0x1C17F10
+	030 Move X1, X31
+	031 Move X20, X0
+	032 Call Object..ctor, X0
+	033 Move [X19+24], X20
+	034 Move X20, [X31+16]
+	035 Move X19, [X31+24]
+	036 Move X30, [X31+32]
+	037 Move X21, [X31+40]
+	038 Return 
+
+Method: System.Void FinishPendingSnapshot()
+
+Disassembly:
+	0x01EF1684 LDR W0, [X0 + 0x10]
+
+ISIL:
+	001 Return 
+

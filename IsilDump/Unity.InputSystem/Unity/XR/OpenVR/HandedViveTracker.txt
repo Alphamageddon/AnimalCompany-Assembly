@@ -1,0 +1,289 @@
+Type: Unity.XR.OpenVR.HandedViveTracker
+
+Method: UnityEngine.InputSystem.Controls.AxisControl get_grip()
+
+Disassembly:
+	0x03734024 MOV X1, X0
+	0x03734028 MOV X0, X19
+
+ISIL:
+	001 Move X0, [X0+416]
+	002 Return X0
+
+Method: System.Void set_grip(UnityEngine.InputSystem.Controls.AxisControl value)
+
+Disassembly:
+	0x0373402C MOV X2, X31
+	0x03734030 BL 0x330E100
+
+ISIL:
+	001 Move [X0+416], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_gripPressed()
+
+Disassembly:
+	0x03734034 ADRP X0, 0xA10000
+	0x03734038 LDR X0, [X0 + 0xF28]
+
+ISIL:
+	001 Move X0, [X0+424]
+	002 Return X0
+
+Method: System.Void set_gripPressed(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x0373403C BL 0x1C16D08
+	0x03734040 MOV X1, X0
+
+ISIL:
+	001 Move [X0+424], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_primary()
+
+Disassembly:
+	0x03734044 MOV X0, X19
+	0x03734048 BL 0x1C16DEC
+
+ISIL:
+	001 Move X0, [X0+432]
+	002 Return X0
+
+Method: System.Void set_primary(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x0373404C STR X30, [X31 - 0x30]!
+	0x03734050 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+432], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_trackpadPressed()
+
+Disassembly:
+	0x03734054 STP X20, X19, [X31 + 0x20]
+	0x03734058 ADRP X20, 0xCAC000
+
+ISIL:
+	001 Move X0, [X0+440]
+	002 Return X0
+
+Method: System.Void set_trackpadPressed(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x0373405C ADRP X21, 0x9BF000
+	0x03734060 LDRB W8, [X20 + 0xCDB]
+
+ISIL:
+	001 Move [X0+440], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_triggerPressed()
+
+Disassembly:
+	0x03734064 LDR X21, [X21 + 0x6C0]
+	0x03734068 MOV X19, X0
+
+ISIL:
+	001 Move X0, [X0+448]
+	002 Return X0
+
+Method: System.Void set_triggerPressed(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x0373406C TBNZ X8, 0x0, 0x373409C
+	0x03734070 ADRP X0, 0xA10000
+
+ISIL:
+	001 Move [X0+448], X1
+	002 Return 
+
+Method: System.Void FinishSetup()
+
+Disassembly:
+	0x03734074 LDR X0, [X0 + 0xF30]
+	0x03734078 BL 0x1C16CF4
+	0x0373407C ADRP X0, 0x9BF000
+	0x03734080 LDR X0, [X0 + 0x6C0]
+	0x03734084 BL 0x1C16CF4
+	0x03734088 ADRP X0, 0xA10000
+	0x0373408C LDR X0, [X0 + 0xF38]
+	0x03734090 BL 0x1C16CF4
+	0x03734094 MOVZ W8, 0x1
+	0x03734098 STRB W8, [X20 + 0xCDB]
+	0x0373409C LDR X0, [X21]
+	0x037340A0 LDR W8, [X0 + 0xE0]
+	0x037340A4 CBNZ W8, 0x37340AC
+	0x037340A8 BL 0x1C16DFC
+	0x037340AC MOV X0, X19
+	0x037340B0 MOV X1, X31
+	0x037340B4 MOV X2, X31
+	0x037340B8 BL 0x3395194
+	0x037340BC TBNZ X0, 0x0, 0x3734198
+	0x037340C0 ADRP X8, 0xA10000
+	0x037340C4 LDR X8, [X8 + 0xF30]
+	0x037340C8 MOV X0, X19
+	0x037340CC LDR X1, [X8]
+	0x037340D0 BL 0x21A891C
+	0x037340D4 CBZ X0, 0x37340F0
+	0x037340D8 LDR X8, [X0]
+	0x037340DC LDP X20, X19, [X31 + 0x20]
+	0x037340E0 LDP X22, X21, [X31 + 0x10]
+	0x037340E4 LDP X2, X1, [X8 + 0x178]
+	0x037340E8 LDR X30, [X31], #0x30
+	0x037340EC BR X2
+	0x037340F0 CBZ X19, 0x3734194
+	0x037340F4 LDR X8, [X19]
+	0x037340F8 MOV X0, X19
+	0x037340FC LDP X9, X1, [X8 + 0x1A8]
+	0x03734100 BLR X9
+	0x03734104 CBZ X0, 0x3734194
+	0x03734108 ADRP X22, 0xA10000
+	0x0373410C LDR X22, [X22 + 0xF38]
+	0x03734110 MOV X2, X31
+	0x03734114 LDR X1, [X22]
+	0x03734118 BL 0x3226588
+	0x0373411C LDR X8, [X19]
+	0x03734120 MOV W21, W0
+	0x03734124 MOV X0, X19
+	0x03734128 LDP X9, X1, [X8 + 0x1A8]
+	0x0373412C BLR X9
+	0x03734130 MOV X20, X0
+	0x03734134 TBZ X21, 0x0, 0x3734180
+	0x03734138 LDR X8, [X19]
+	0x0373413C MOV X0, X19
+	0x03734140 LDP X9, X1, [X8 + 0x1A8]
+	0x03734144 BLR X9
+	0x03734148 CBZ X0, 0x3734194
+	0x0373414C LDR X8, [X22]
+	0x03734150 CBZ X8, 0x3734194
+	0x03734154 CBZ X20, 0x3734194
+	0x03734158 LDR W9, [X0 + 0x10]
+	0x0373415C LDR W8, [X8 + 0x10]
+	0x03734160 MOV X0, X20
+	0x03734164 LDP X20, X19, [X31 + 0x20]
+	0x03734168 LDP X22, X21, [X31 + 0x10]
+	0x0373416C SUB W2, W9, W8
+	0x03734170 MOV W1, W31
+	0x03734174 MOV X3, X31
+	0x03734178 LDR X30, [X31], #0x30
+	0x0373417C B 0x3228DE4
+	0x03734180 MOV X0, X20
+	0x03734184 LDP X20, X19, [X31 + 0x20]
+	0x03734188 LDP X22, X21, [X31 + 0x10]
+	0x0373418C LDR X30, [X31], #0x30
+	0x03734190 RET
+	0x03734194 BL 0x1C16F20
+	0x03734198 ADRP X0, 0x9C4000
+	0x0373419C LDR X0, [X0 + 0x528]
+	0x037341A0 BL 0x1C16D08
+	0x037341A4 BL 0x1C16F10
+	0x037341A8 MOV X19, X0
+
+ISIL:
+	001 Move [X31-80], X30
+	002 Move [X31-72], X27
+	003 Move [X31+16], X26
+	004 Move [X31+24], X25
+	005 Move [X31+32], X24
+	006 Move [X31+40], X23
+	007 Move [X31+48], X22
+	008 Move [X31+56], X21
+	009 Move [X31+64], X20
+	010 Move [X31+72], X19
+	011 Move X25, 0xCAD000
+	012 Move X26, 0x9E8000
+	013 Move X27, 0xA11000
+	014 Move X24, 0xA11000
+	015 Move X20, 0xA11000
+	016 Move X23, 0xA11000
+	017 Move X22, 0xA11000
+	018 Move X21, 0xA11000
+	019 Move X26, [X26+280]
+	020 Move X27, [X27+3632]
+	021 Move W8, [X25+3283]
+	022 Move X24, [X24+3664]
+	023 Move X20, [X20+3608]
+	024 Move X23, [X23+3624]
+	025 Move X22, [X22+3672]
+	026 Move X21, [X21+3656]
+	027 Move X19, X0
+	028 Move TEMP, X8
+	029 And TEMP, TEMP, 1
+	030 Compare TEMP, 1
+	031 JumpIfEqual {55}
+	032 Move X0, 0xA11000
+	033 Move X0, [X0+3632]
+	034 Call 0x1C17CF4
+	035 Move X0, 0xA11000
+	036 Move X0, [X0+3608]
+	037 Call 0x1C17CF4
+	038 Move X0, 0xA11000
+	039 Move X0, [X0+3664]
+	040 Call 0x1C17CF4
+	041 Move X0, 0x9E8000
+	042 Move X0, [X0+280]
+	043 Call 0x1C17CF4
+	044 Move X0, 0xA11000
+	045 Move X0, [X0+3672]
+	046 Call 0x1C17CF4
+	047 Move X0, 0xA11000
+	048 Move X0, [X0+3624]
+	049 Call 0x1C17CF4
+	050 Move X0, 0xA11000
+	051 Move X0, [X0+3656]
+	052 Call 0x1C17CF4
+	053 Move W8, 1
+	054 Move [X25+3283], W8
+	055 Move X1, [X26]
+	056 Move X2, [X27]
+	057 Move X0, X19
+	058 Call 0x21FD754, X0, X1
+	059 Move [X19+416], X0
+	060 Move X1, [X24]
+	061 Move X2, [X20]
+	062 Move X0, X19
+	063 Call 0x21FD754, X0, X1
+	064 Move [X19+432], X0
+	065 Move X1, [X23]
+	066 Move X2, [X20]
+	067 Move X0, X19
+	068 Call 0x21FD754, X0, X1
+	069 Move [X19+424], X0
+	070 Move X1, [X22]
+	071 Move X2, [X20]
+	072 Move X0, X19
+	073 Call 0x21FD754, X0, X1
+	074 Move [X19+440], X0
+	075 Move X1, [X21]
+	076 Move X2, [X20]
+	077 Move X0, X19
+	078 Call 0x21FD754, X0, X1
+	079 Move [X19+448], X0
+	080 Move X0, X19
+	081 Move X20, [X31+64]
+	082 Move X19, [X31+72]
+	083 Move X22, [X31+48]
+	084 Move X21, [X31+56]
+	085 Move X24, [X31+32]
+	086 Move X23, [X31+40]
+	087 Move X26, [X31+16]
+	088 Move X25, [X31+24]
+	089 Move X30, [X31+80]
+	090 Move X27, [X31+88]
+	091 Call ViveTracker.FinishSetup, X0
+	092 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x037341AC ADRP X0, 0xA10000
+	0x037341B0 LDR X0, [X0 + 0xF10]
+
+ISIL:
+	001 Move X1, X31
+	002 Call TrackedDevice..ctor, X0
+	003 Return 
+

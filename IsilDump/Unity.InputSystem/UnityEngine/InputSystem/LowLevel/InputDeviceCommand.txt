@@ -1,0 +1,152 @@
+Type: UnityEngine.InputSystem.LowLevel.InputDeviceCommand
+
+Method: System.Int32 get_payloadSizeInBytes()
+
+Disassembly:
+	0x037FFB78 BL 0x375AA28
+	0x037FFB7C LDR W0, [X31 + 0x8]
+	0x037FFB80 LDR X30, [X31], #0x10
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 Subtract W0, W8, 8
+	003 Return X0
+
+Method: System.Void* get_payloadPtr()
+
+Disassembly:
+	0x037FFB84 RET
+	0x037FFB88 LDRH W9, [X0 + 0x18]
+
+ISIL:
+	001 Add X0, X0, 8
+	002 Return X0
+
+Method: System.Void .ctor(UnityEngine.InputSystem.Utilities.FourCC type, System.Int32 sizeInBytes = 8)
+
+Disassembly:
+	0x037FF6B4 STR X30, [X31 - 0x10]!
+	0x037FF6B8 ADD X0, X31, 0x8
+
+ISIL:
+	001 Move [X0], W1
+	002 Move [X0+4], W2
+	003 Return 
+
+Method: Unity.Collections.NativeArray`1<System.Byte> AllocateNative(UnityEngine.InputSystem.Utilities.FourCC type, System.Int32 payloadSize)
+
+Disassembly:
+	0x037FFB8C MOVZ W10, 0x1
+	0x037FFB90 LSLV W10, W10, W1
+	0x037FFB94 ANDS W31, W2, 0x1
+	0x037FFB98 BIC W11, W9, W10, 0x0
+	0x037FFB9C ORR W9, W9, W10, 0x0
+	0x037FFBA0 CSEL W9, W9, W11, NE
+	0x037FFBA4 STRH W9, [X0 + 0x18]
+	0x037FFBA8 LDUR V0, [X0 + 0xE]
+	0x037FFBAC LDR V1, [X0]
+	0x037FFBB0 STUR V0, [X8 + 0xE]
+	0x037FFBB4 STR V1, [X8]
+	0x037FFBB8 RET
+	0x037FFBBC STR X30, [X31 - 0x10]!
+	0x037FFBC0 ADD X0, X31, 0x8
+	0x037FFBC4 MOVZ W1, 0x4D
+	0x037FFBC8 MOVZ W2, 0x4F
+	0x037FFBCC MOVZ W3, 0x55
+	0x037FFBD0 MOVZ W4, 0x53
+	0x037FFBD4 MOV X5, X31
+	0x037FFBD8 STR W31, [X31 + 0x8]
+	0x037FFBDC BL 0x375AA28
+	0x037FFBE0 LDR W0, [X31 + 0x8]
+	0x037FFBE4 LDR X30, [X31], #0x10
+	0x037FFBE8 RET
+	0x037FFBEC STR X30, [X31 - 0x10]!
+	0x037FFBF0 ADD X0, X31, 0x8
+	0x037FFBF4 MOVZ W1, 0x50
+	0x037FFBF8 MOVZ W2, 0x45
+	0x037FFBFC MOVZ W3, 0x4E
+	0x037FFC00 MOVZ W4, 0x20
+	0x037FFC04 MOV X5, X31
+	0x037FFC08 STR W31, [X31 + 0x8]
+	0x037FFC0C BL 0x375AA28
+	0x037FFC10 LDR W0, [X31 + 0x8]
+	0x037FFC14 LDR X30, [X31], #0x10
+	0x037FFC18 RET
+	0x037FFC1C LDRH W9, [X0 + 0x20]
+	0x037FFC20 MOVZ W10, 0x1
+	0x037FFC24 LSLV W10, W10, W1
+	0x037FFC28 ANDS W31, W2, 0x1
+	0x037FFC2C BIC W11, W9, W10, 0x0
+	0x037FFC30 ORR W9, W9, W10, 0x0
+	0x037FFC34 CSEL W9, W9, W11, NE
+	0x037FFC38 STRH W9, [X0 + 0x20]
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+16], X30
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X22, 0xBE3000
+	009 Move X21, 0x949000
+	010 Move X23, 0x949000
+	011 Move W8, [X22+1028]
+	012 Move X21, [X21+4064]
+	013 Move X23, [X23+4072]
+	014 Move W20, W1
+	015 Move X19, X0
+	016 Move TEMP, X8
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {28}
+	020 Move X0, 0x949000
+	021 Move X0, [X0+4072]
+	022 Call 0x1C17CF4
+	023 Move X0, 0x949000
+	024 Move X0, [X0+4064]
+	025 Call 0x1C17CF4
+	026 Move W8, 1
+	027 Move [X22+1028], W8
+	028 Move X4, [X21]
+	029 Add W20, W20, 8
+	030 Add X0, X31, 0
+	031 Move W2, 2
+	032 Move W3, 1
+	033 Move W1, W20
+	034 Move [X31], X31
+	035 Move [X31+8], X31
+	036 Call NativeArray`1<Byte>..ctor, X0, X1, X2, X3
+	037 Move X21, [X31]
+	038 Move X22, [X31+8]
+	039 Move X2, [X23]
+	040 Move X0, X21
+	041 Move X1, X22
+	042 Call 0x2223688, X0
+	043 Compare X0, 0
+	044 JumpIfEqual {57}
+	045 Move [X0], W19
+	046 Move [X0+4], W20
+	047 Move X0, X21
+	048 Move X1, X22
+	049 Move X20, [X31+48]
+	050 Move X19, [X31+56]
+	051 Move X22, [X31+32]
+	052 Move X21, [X31+40]
+	053 Move X30, [X31+16]
+	054 Move X23, [X31+24]
+	055 Add X31, X31, 64
+	056 Return X0
+	057 Call 0x1C17F20
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_typeStatic()
+
+Disassembly:
+	0x037FFC3C LDR W9, [X0 + 0x20]
+	0x037FFC40 LDP V1, V0, [X0]
+
+ISIL:
+	001 Move X0, X31
+	002 Return X0
+

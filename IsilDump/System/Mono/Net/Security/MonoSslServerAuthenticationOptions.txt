@@ -1,0 +1,397 @@
+Type: Mono.Net.Security.MonoSslServerAuthenticationOptions
+
+Method: System.Net.Security.SslServerAuthenticationOptions get_Options()
+
+Disassembly:
+	0x035EEEF4 STRB W8, [X19 + 0x2D4]
+	0x035EEEF8 LDR X0, [X20]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Boolean get_ServerMode()
+
+Disassembly:
+	0x035EEEFC LDR W8, [X0 + 0xE0]
+	0x035EEF00 CBNZ W8, 0x35EEF08
+
+ISIL:
+	001 Move W0, 1
+	002 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x035EC1F8 LDR X0, [X0 + 0x648]
+	0x035EC1FC BL 0x1C16CF4
+	0x035EC200 ADRP X0, 0xB4D000
+	0x035EC204 LDR X0, [X0 + 0x650]
+	0x035EC208 BL 0x1C16CF4
+	0x035EC20C ADRP X0, 0xB4D000
+	0x035EC210 LDR X0, [X0 + 0x658]
+	0x035EC214 BL 0x1C16CF4
+	0x035EC218 ADRP X0, 0xB4D000
+	0x035EC21C LDR X0, [X0 + 0x318]
+	0x035EC220 BL 0x1C16CF4
+	0x035EC224 ADRP X0, 0xB4D000
+	0x035EC228 LDR X0, [X0 + 0x660]
+	0x035EC22C BL 0x1C16CF4
+	0x035EC230 ADRP X0, 0xB35000
+	0x035EC234 LDR X0, [X0 + 0x990]
+	0x035EC238 BL 0x1C16CF4
+	0x035EC23C MOVZ W8, 0x1
+	0x035EC240 STRB W8, [X20 + 0x2C1]
+	0x035EC244 STRB W31, [X31 + 0x4C]
+	0x035EC248 STP X31, X31, [X31 + 0x30]
+	0x035EC24C LDR W8, [X19]
+	0x035EC250 STP W31, W8, [X31 + 0x68]
+	0x035EC254 LDR X9, [X19 + 0x28]
+	0x035EC258 STP X31, X9, [X31 + 0x50]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xDF5000
+	006 Move X20, 0xB4E000
+	007 Move W8, [X21+716]
+	008 Move X20, [X20+1520]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xB4E000
+	015 Move X0, [X0+1520]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+716], W8
+	019 Move X0, X19
+	020 Move X1, X31
+	021 Call Object..ctor, X0
+	022 Move X0, [X20]
+	023 Call 0x1C17F10
+	024 Move X1, X31
+	025 Move X20, X0
+	026 Call SslServerAuthenticationOptions..ctor, X0
+	027 Move [X19+24], X20
+	028 Move X20, [X31+16]
+	029 Move X19, [X31+24]
+	030 Move X30, [X31+32]
+	031 Move X21, [X31+40]
+	032 Return 
+
+Method: System.Void set_CertificateRevocationCheckMode(System.Security.Cryptography.X509Certificates.X509RevocationMode value)
+
+Disassembly:
+	0x035EEF04 BL 0x1C16DFC
+	0x035EEF08 LDP X20, X19, [X31 + 0x10]
+	0x035EEF0C LDR X30, [X31], #0x20
+	0x035EEF10 B 0x35E9EEC
+	0x035EEF14 SUB X31, X31, 0x70
+	0x035EEF18 STR X30, [X31 + 0x30]
+	0x035EEF1C STP X24, X23, [X31 + 0x40]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+24]
+	003 Compare X0, 0
+	004 JumpIfEqual {9}
+	005 Move X2, X31
+	006 Move X30, [X31+16]
+	007 Call SslServerAuthenticationOptions.set_CertificateRevocationCheckMode, X0, X1
+	008 Return 
+	009 Call 0x1C17F20
+
+Method: System.Void set_EncryptionPolicy(System.Net.Security.EncryptionPolicy value)
+
+Disassembly:
+	0x035EEF20 STP X22, X21, [X31 + 0x50]
+	0x035EEF24 STP X20, X19, [X31 + 0x60]
+	0x035EEF28 ADRP X19, 0xDF2000
+	0x035EEF2C ADRP X24, 0xB0B000
+	0x035EEF30 ADRP X20, 0xB4B000
+	0x035EEF34 ADRP X23, 0xB4B000
+	0x035EEF38 ADRP X22, 0xB4B000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+24]
+	003 Compare X0, 0
+	004 JumpIfEqual {9}
+	005 Move X2, X31
+	006 Move X30, [X31+16]
+	007 Call SslServerAuthenticationOptions.set_EncryptionPolicy, X0, X1
+	008 Return 
+	009 Call 0x1C17F20
+
+Method: System.Security.Authentication.SslProtocols get_EnabledSslProtocols()
+
+Disassembly:
+	0x035EEF3C ADRP X21, 0xB4B000
+	0x035EEF40 LDRB W8, [X19 + 0x2D5]
+	0x035EEF44 LDR X24, [X24 + 0xCC0]
+	0x035EEF48 LDR X20, [X20 + 0x378]
+	0x035EEF4C LDR X23, [X23 + 0x7E0]
+	0x035EEF50 LDR X22, [X22 + 0x7E8]
+	0x035EEF54 LDR X21, [X21 + 0x7F0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {8}
+	005 Move W0, [X8+20]
+	006 Move X30, [X31+16]
+	007 Return X0
+	008 Call 0x1C17F20
+
+Method: System.Void set_EnabledSslProtocols(System.Security.Authentication.SslProtocols value)
+
+Disassembly:
+	0x035EEF58 TBNZ X8, 0x0, 0x35EEFA0
+	0x035EEF5C ADRP X0, 0xB4B000
+	0x035EEF60 LDR X0, [X0 + 0x378]
+	0x035EEF64 BL 0x1C16CF4
+	0x035EEF68 ADRP X0, 0xB0B000
+	0x035EEF6C LDR X0, [X0 + 0xCC0]
+	0x035EEF70 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {8}
+	005 Move [X8+20], W1
+	006 Move X30, [X31+16]
+	007 Return 
+	008 Call 0x1C17F20
+
+Method: System.Boolean get_ClientCertificateRequired()
+
+Disassembly:
+	0x035EEF74 ADRP X0, 0xB4B000
+	0x035EEF78 LDR X0, [X0 + 0x7E0]
+	0x035EEF7C BL 0x1C16CF4
+	0x035EEF80 ADRP X0, 0xB4B000
+	0x035EEF84 LDR X0, [X0 + 0x7E8]
+	0x035EEF88 BL 0x1C16CF4
+	0x035EEF8C ADRP X0, 0xB4B000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {8}
+	005 Move W0, [X8+29]
+	006 Move X30, [X31+16]
+	007 Return X0
+	008 Call 0x1C17F20
+
+Method: System.Void set_ClientCertificateRequired(System.Boolean value)
+
+Disassembly:
+	0x035EEF90 LDR X0, [X0 + 0x7F0]
+	0x035EEF94 BL 0x1C16CF4
+	0x035EEF98 MOVZ W8, 0x1
+	0x035EEF9C STRB W8, [X19 + 0x2D5]
+	0x035EEFA0 LDR X0, [X24]
+	0x035EEFA4 BL 0x1C16F10
+	0x035EEFA8 MOV X1, X31
+	0x035EEFAC MOV X19, X0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {9}
+	005 And W9, W1, 1
+	006 Move [X8+29], W9
+	007 Move X30, [X31+16]
+	008 Return 
+	009 Call 0x1C17F20
+
+Method: System.String get_TargetHost()
+
+Disassembly:
+	0x035EEFB0 BL 0x33BDD8C
+	0x035EEFB4 LDR X8, [X20]
+	0x035EEFB8 ADD X0, X31, 0x20
+	0x035EEFBC MOV X2, X31
+	0x035EEFC0 LDR X8, [X8 + 0xB8]
+	0x035EEFC4 STR X19, [X8]
+	0x035EEFC8 LDR X1, [X23]
+	0x035EEFCC STP X31, X31, [X31 + 0x20]
+	0x035EEFD0 BL 0x3376AD0
+	0x035EEFD4 LDR X8, [X20]
+	0x035EEFD8 LDR V0, [X31 + 0x2]
+	0x035EEFDC ADD X0, X31, 0x10
+	0x035EEFE0 MOV X2, X31
+	0x035EEFE4 LDR X8, [X8 + 0xB8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0xB06000
+	004 Move X0, [X0+2880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotSupportedException..ctor, X0
+	010 Move X0, 0xB4C000
+	011 Move X0, [X0+1784]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Void set_TargetHost(System.String value)
+
+Disassembly:
+	0x035EEFE8 STUR V0, [X8 + 0x28]
+	0x035EEFEC LDR X1, [X22]
+	0x035EEFF0 STP X31, X31, [X31 + 0x10]
+	0x035EEFF4 BL 0x3376AD0
+	0x035EEFF8 LDR X8, [X20]
+	0x035EEFFC LDR V0, [X31 + 0x1]
+	0x035EF000 ADD X0, X31, 0x0
+	0x035EF004 MOV X2, X31
+	0x035EF008 LDR X8, [X8 + 0xB8]
+	0x035EF00C STUR V0, [X8 + 0x38]
+	0x035EF010 LDR X1, [X21]
+	0x035EF014 STP X31, X31, [X31]
+	0x035EF018 BL 0x3376AD0
+	0x035EF01C LDR X8, [X20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0xB06000
+	004 Move X0, [X0+2880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotSupportedException..ctor, X0
+	010 Move X0, 0xB4B000
+	011 Move X0, [X0+1792]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Security.Cryptography.X509Certificates.X509Certificate get_ServerCertificate()
+
+Disassembly:
+	0x035EF020 LDR V0, [X31]
+	0x035EF024 LDP X20, X19, [X31 + 0x60]
+	0x035EF028 LDP X22, X21, [X31 + 0x50]
+	0x035EF02C LDR X8, [X8 + 0xB8]
+	0x035EF030 LDP X24, X23, [X31 + 0x40]
+	0x035EF034 LDR X30, [X31 + 0x30]
+	0x035EF038 STUR V0, [X8 + 0x48]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {8}
+	005 Move X0, [X8+32]
+	006 Move X30, [X31+16]
+	007 Return X0
+	008 Call 0x1C17F20
+
+Method: System.Void set_ServerCertificate(System.Security.Cryptography.X509Certificates.X509Certificate value)
+
+Disassembly:
+	0x035EF03C ADD X31, X31, 0x70
+	0x035EF040 RET
+	0x035EF044 LDR X0, [X0 + 0x20]
+	0x035EF048 RET
+	0x035EF04C LDR W0, [X0 + 0x40]
+	0x035EF050 RET
+	0x035EF054 LDRB W0, [X0 + 0x44]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {8}
+	005 Move [X8+32], X1
+	006 Move X30, [X31+16]
+	007 Return 
+	008 Call 0x1C17F20
+
+Method: System.Security.Cryptography.X509Certificates.X509CertificateCollection get_ClientCertificates()
+
+Disassembly:
+	0x035EF058 RET
+	0x035EF05C AND W8, W1, 0x1
+	0x035EF060 STRB W8, [X0 + 0x44]
+	0x035EF064 RET
+	0x035EF068 STP X30, X23, [X31 - 0x30]!
+	0x035EF06C STP X22, X21, [X31 + 0x10]
+	0x035EF070 STP X20, X19, [X31 + 0x20]
+	0x035EF074 ADRP X22, 0xDF1000
+	0x035EF078 ADRP X23, 0xB0A000
+	0x035EF07C LDRB W8, [X22 + 0x2D6]
+	0x035EF080 LDR X23, [X23 + 0xCC0]
+	0x035EF084 MOV X21, X2
+	0x035EF088 MOV X20, X1
+	0x035EF08C MOV X19, X0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0xB05000
+	004 Move X0, [X0+2880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotSupportedException..ctor, X0
+	010 Move X0, 0xB4B000
+	011 Move X0, [X0+1800]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Void set_ClientCertificates(System.Security.Cryptography.X509Certificates.X509CertificateCollection value)
+
+Disassembly:
+	0x035EF090 TBNZ X8, 0x0, 0x35EF0B4
+	0x035EF094 ADRP X0, 0xB4A000
+	0x035EF098 LDR X0, [X0 + 0x378]
+	0x035EF09C BL 0x1C16CF4
+	0x035EF0A0 ADRP X0, 0xB0A000
+	0x035EF0A4 LDR X0, [X0 + 0xCC0]
+	0x035EF0A8 BL 0x1C16CF4
+	0x035EF0AC MOVZ W8, 0x1
+	0x035EF0B0 STRB W8, [X22 + 0x2D6]
+	0x035EF0B4 LDR X0, [X23]
+	0x035EF0B8 BL 0x1C16F10
+	0x035EF0BC MOV X1, X31
+	0x035EF0C0 MOV X22, X0
+	0x035EF0C4 BL 0x33BDD8C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0xB05000
+	004 Move X0, [X0+2880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotSupportedException..ctor, X0
+	010 Move X0, 0xB4B000
+	011 Move X0, [X0+1808]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+

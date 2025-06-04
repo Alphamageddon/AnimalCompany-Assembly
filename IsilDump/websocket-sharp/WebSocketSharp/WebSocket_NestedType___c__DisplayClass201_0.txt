@@ -1,0 +1,56 @@
+Type: WebSocketSharp.WebSocket/<>c__DisplayClass201_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03E78F18 CBZ X19, 0x3E78FFC
+	0x03E78F1C LDR X1, [X31 + 0x18]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <ConnectAsync>b__0(System.IAsyncResult ar)
+
+Disassembly:
+	0x03E7B528 STP X30, X21, [X31 - 0x20]!
+	0x03E7B52C STP X20, X19, [X31 + 0x10]
+	0x03E7B530 ADRP X21, 0x56D000
+	0x03E7B534 LDRB W8, [X21 + 0xD95]
+	0x03E7B538 MOV X19, X1
+	0x03E7B53C MOV X20, X0
+	0x03E7B540 TBNZ X8, 0x0, 0x3E7B558
+	0x03E7B544 ADRP X0, 0x280000
+	0x03E7B548 LDR X0, [X0 + 0x958]
+	0x03E7B54C BL 0x1C16CF4
+	0x03E7B550 MOVZ W8, 0x1
+	0x03E7B554 STRB W8, [X21 + 0xD95]
+	0x03E7B558 CBZ X20, 0x3E7B5C8
+	0x03E7B55C LDR X8, [X20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+16]
+	005 Compare X0, 0
+	006 JumpIfEqual {23}
+	007 Move X2, X31
+	008 Call Func`1<Boolean>.EndInvoke, X0, X1
+	009 Move TEMP, X0
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfNotEqual {20}
+	013 Move X0, [X19+24]
+	014 Compare X0, 0
+	015 JumpIfEqual {23}
+	016 Move X30, [X31+16]
+	017 Move X19, [X31+24]
+	018 Call WebSocket.open, X0
+	019 Return 
+	020 Move X30, [X31+16]
+	021 Move X19, [X31+24]
+	022 Return 
+	023 Call 0x1C17F20
+

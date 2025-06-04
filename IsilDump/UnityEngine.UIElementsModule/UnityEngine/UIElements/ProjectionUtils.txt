@@ -1,0 +1,66 @@
+Type: UnityEngine.UIElements.ProjectionUtils
+
+Method: UnityEngine.Matrix4x4 Ortho(System.Single left, System.Single right, System.Single bottom, System.Single top, System.Single near, System.Single far)
+
+Disassembly:
+	0x03DC1970 LDR X0, [X23]
+	0x03DC1974 BL 0x1C16F10
+	0x03DC1978 LDR X3, [X22]
+	0x03DC197C MOVZ W2, 0x64
+	0x03DC1980 MOV X1, X20
+	0x03DC1984 MOV X19, X0
+	0x03DC1988 BL 0x24944D4
+	0x03DC198C LDR X8, [X21]
+	0x03DC1990 LDP X22, X21, [X31 + 0x20]
+	0x03DC1994 LDP X24, X23, [X31 + 0x10]
+	0x03DC1998 LDR X8, [X8 + 0xB8]
+	0x03DC199C STR X19, [X8]
+	0x03DC19A0 LDP X20, X19, [X31 + 0x30]
+	0x03DC19A4 LDR X30, [X31], #0x40
+	0x03DC19A8 RET
+	0x03DC19AC STR X30, [X31 - 0x20]!
+	0x03DC19B0 STP X20, X19, [X31 + 0x10]
+	0x03DC19B4 ADRP X19, 0x627000
+	0x03DC19B8 ADRP X20, 0x3A8000
+	0x03DC19BC LDRB W8, [X19 + 0x11E]
+	0x03DC19C0 LDR X20, [X20 + 0x100]
+	0x03DC19C4 TBNZ X8, 0x0, 0x3DC19DC
+	0x03DC19C8 ADRP X0, 0x3A8000
+	0x03DC19CC LDR X0, [X0 + 0x100]
+	0x03DC19D0 BL 0x1C16CF4
+	0x03DC19D4 MOVZ W8, 0x1
+	0x03DC19D8 STRB W8, [X19 + 0x11E]
+	0x03DC19DC LDR X0, [X20]
+
+ISIL:
+	001 Subtract S6, S1, S0
+	002 Subtract S7, S3, S2
+	003 Add S0, S0, S1
+	004 Add S1, S2, S3
+	005 Add S2, S4, S5
+	006 Subtract S16, S5, S4
+	007 Move S17, 2
+	008 NotImplemented "Instruction FNEG not yet implemented."
+	009 NotImplemented "Instruction FNEG not yet implemented."
+	010 NotImplemented "Instruction FNEG not yet implemented."
+	011 Move W9, 0x3F800000
+	012 NotImplemented "Instruction FDIV not yet implemented."
+	013 NotImplemented "Instruction FDIV not yet implemented."
+	014 NotImplemented "Instruction FDIV not yet implemented."
+	015 NotImplemented "Instruction FDIV not yet implemented."
+	016 NotImplemented "Instruction FDIV not yet implemented."
+	017 NotImplemented "Instruction FDIV not yet implemented."
+	018 Move [X8+12], X31
+	019 Move [X8+4], X31
+	020 Move [X8+24], X31
+	021 Move [X8+32], X31
+	022 Move [X8+44], W31
+	023 Move [X8], S3
+	024 Move [X8+20], S4
+	025 Move [X8+40], S5
+	026 Move [X8+48], S0
+	027 Move [X8+56], S1
+	028 Move [X8+56], S2
+	029 Move [X8+60], W9
+	030 Return X0
+

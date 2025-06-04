@@ -1,0 +1,56 @@
+Type: System.Threading.CancellationCallbackInfo/WithSyncContext
+
+Method: System.Void .ctor(System.Action`1<System.Object> callback, System.Object stateForCallback, System.Threading.ExecutionContext targetExecutionContext, System.Threading.CancellationTokenSource cancellationTokenSource, System.Threading.SynchronizationContext targetSyncContext)
+
+Disassembly:
+	0x033E1358 STRB W8, [X22 + 0x3BF]
+	0x033E135C CBZ X21, 0x33E13A8
+	0x033E1360 LDRB W8, [X21 + 0x30]
+	0x033E1364 MOVZ W9, 0x5
+	0x033E1368 ANDS W31, W8, W9, 0x0
+	0x033E136C B.EQ 0x33E13B4
+	0x033E1370 ADRP X8, 0xD3A000
+	0x033E1374 LDR X8, [X8 + 0x580]
+	0x033E1378 LDR X0, [X8]
+	0x033E137C LDR W8, [X0 + 0xE0]
+	0x033E1380 CBNZ W8, 0x33E1388
+	0x033E1384 BL 0x1C16DFC
+	0x033E1388 MOV X0, X21
+	0x033E138C MOV X1, X20
+	0x033E1390 MOV X2, X19
+	0x033E1394 LDP X20, X19, [X31 + 0x20]
+	0x033E1398 LDP X22, X21, [X31 + 0x10]
+	0x033E139C MOV W3, W31
+	0x033E13A0 LDR X30, [X31], #0x30
+	0x033E13A4 B 0x33E49D8
+
+ISIL:
+	001 Move [X31-64], X30
+	002 Move [X31+16], X24
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X23, X1
+	009 Move X1, X31
+	010 Move X19, X5
+	011 Move X20, X4
+	012 Move X21, X3
+	013 Move X22, X2
+	014 Move X24, X0
+	015 Call Object..ctor, X0
+	016 Move [X24+16], X23
+	017 Move [X24+24], X22
+	018 Move [X24+32], X21
+	019 Move [X24+40], X20
+	020 Move [X24+48], X19
+	021 Move X20, [X31+48]
+	022 Move X19, [X31+56]
+	023 Move X22, [X31+32]
+	024 Move X21, [X31+40]
+	025 Move X24, [X31+16]
+	026 Move X23, [X31+24]
+	027 Move X30, [X31+64]
+	028 Return 
+

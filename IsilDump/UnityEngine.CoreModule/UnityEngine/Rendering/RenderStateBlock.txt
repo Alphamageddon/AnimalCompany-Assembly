@@ -1,0 +1,597 @@
+Type: UnityEngine.Rendering.RenderStateBlock
+
+Method: System.Void .ctor(UnityEngine.Rendering.RenderStateMask mask)
+
+Disassembly:
+	0x03C57240 LDP X2, X3, [X19 + 0x100]
+	0x03C57244 LDR X8, [X8 + 0xE48]
+	0x03C57248 LDR X4, [X8]
+	0x03C5724C BL 0x23E4AF8
+	0x03C57250 TBZ X0, 0x0, 0x3C57298
+	0x03C57254 LDRB W8, [X20 + 0x110]
+	0x03C57258 LDRB W9, [X19 + 0x110]
+	0x03C5725C CMP W8, 0x0
+	0x03C57260 CSET W10, NE
+	0x03C57264 CMP W9, 0x0
+	0x03C57268 CSET W9, NE
+	0x03C5726C EOR W9, W10, W9, 0x0
+	0x03C57270 EOR W0, W9, 0x1
+	0x03C57274 TBNZ X9, 0x0, 0x3C5729C
+	0x03C57278 CBZ W8, 0x3C5729C
+	0x03C5727C ADRP X8, 0x508000
+	0x03C57280 LDP X2, X3, [X19 + 0x118]
+	0x03C57284 LDP X0, X1, [X20 + 0x118]
+	0x03C57288 LDR X8, [X8 + 0xE50]
+	0x03C5728C LDR X4, [X8]
+	0x03C57290 BL 0x23E2E74
+	0x03C57294 B 0x3C5729C
+	0x03C57298 MOV W0, W31
+	0x03C5729C LDR X8, [X21 + 0x28]
+	0x03C572A0 LDR X9, [X31 + 0x468]
+	0x03C572A4 CMP X8, X9
+	0x03C572A8 B.NE 0x3C572C8
+	0x03C572AC AND W0, W0, 0x1
+	0x03C572B0 ADD X31, X31, 0x470
+	0x03C572B4 LDP X20, X19, [X31 + 0x30]
+	0x03C572B8 LDP X22, X21, [X31 + 0x20]
+	0x03C572BC LDP X30, X23, [X31 + 0x10]
+	0x03C572C0 LDR X29, [X31], #0x40
+	0x03C572C4 RET
+	0x03C572C8 BL 0x3EB1B20
+	0x03C572CC CMP W0, W1
+	0x03C572D0 CSET W0, EQ
+	0x03C572D4 RET
+	0x03C572D8 SUB X31, X31, 0x160
+	0x03C572DC STP X29, X30, [X31 + 0x130]
+	0x03C572E0 STP X22, X21, [X31 + 0x140]
+	0x03C572E4 STP X20, X19, [X31 + 0x150]
+	0x03C572E8 MRS X21, 0xC000
+	0x03C572EC LDR X8, [X21 + 0x28]
+	0x03C572F0 ADRP X22, 0x78F000
+	0x03C572F4 MOV X20, X1
+	0x03C572F8 MOV X19, X0
+	0x03C572FC STR X8, [X31 + 0x128]
+	0x03C57300 LDRB W8, [X22 + 0x96]
+	0x03C57304 TBNZ X8, 0x0, 0x3C5731C
+	0x03C57308 ADRP X0, 0x508000
+	0x03C5730C LDR X0, [X0 + 0xE68]
+	0x03C57310 BL 0x1C16CF4
+	0x03C57314 MOVZ W8, 0x1
+	0x03C57318 STRB W8, [X22 + 0x96]
+	0x03C5731C CBZ X20, 0x3C57338
+
+ISIL:
+	001 Subtract X31, X31, 208
+	002 Move [X31+160], X30
+	003 Move [X31+176], X22
+	004 Move [X31+184], X21
+	005 Move [X31+192], X20
+	006 Move [X31+200], X19
+	007 Move X22, 0x790000
+	008 Move X21, 0x509000
+	009 Move W8, [X22+128]
+	010 Move X21, [X21+3504]
+	011 Move W19, W1
+	012 Move X20, X0
+	013 Move TEMP, X8
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfEqual {22}
+	017 Move X0, 0x509000
+	018 Move X0, [X0+3504]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X22+128], W8
+	022 NotImplemented "Instruction MOVI not yet implemented."
+	023 Add X0, X31, 80
+	024 Move W1, W31
+	025 Move W2, W31
+	026 Move [X31+144], W31
+	027 Move [X31+112], V0
+	028 Move [X31+120], V0
+	029 Move [X31+80], V0
+	030 Move [X31+88], V0
+	031 Call BlendState..ctor, X0, X1, X2
+	032 Add X0, X31, 8
+	033 Add X1, X31, 80
+	034 Move W2, 68
+	035 Call 0x3EB2AC0
+	036 Add X1, X31, 8
+	037 Move W2, 68
+	038 Move X0, X20
+	039 Call 0x3EB2AC0
+	040 Move X0, [X21]
+	041 Move W8, [X0+224]
+	042 Compare W8, 0
+	043 JumpIfNotEqual {46}
+	044 Call 0x1C17DFC
+	045 Move X0, [X21]
+	046 Move X8, [X0+184]
+	047 Add X0, X31, 80
+	048 Move W1, 1
+	049 Move W2, 2
+	050 Move V0, [X8]
+	051 Move [X20+68], V0
+	052 NotImplemented "Instruction STRH not yet implemented."
+	053 Call DepthState..ctor, X0, X1, X2
+	054 NotImplemented "Instruction LDRH not yet implemented."
+	055 NotImplemented "Instruction STRH not yet implemented."
+	056 Call StencilState.get_defaultValue
+	057 Move [X20+86], X0
+	058 Move [X20+94], W1
+	059 Move [X20+100], W31
+	060 Move [X20+104], W19
+	061 Move X20, [X31+192]
+	062 Move X19, [X31+200]
+	063 Move X22, [X31+176]
+	064 Move X21, [X31+184]
+	065 Move X30, [X31+160]
+	066 Add X31, X31, 208
+	067 Return 
+
+Method: System.Void set_blendState(UnityEngine.Rendering.BlendState value)
+
+Disassembly:
+	0x03C5737C MOVZ W2, 0x128
+	0x03C57380 BL 0x3EB1AC0
+	0x03C57384 ADD X1, X31, 0x0
+	0x03C57388 MOV X0, X19
+	0x03C5738C BL 0x3C57084
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W2, 68
+	003 Call 0x3EB2B30
+	004 Move X30, [X31+16]
+	005 Return 
+
+Method: System.Void set_rasterState(UnityEngine.Rendering.RasterState value)
+
+Disassembly:
+	0x03C57390 LDR X8, [X21 + 0x28]
+	0x03C57394 LDR X9, [X31 + 0x128]
+	0x03C57398 CMP X8, X9
+
+ISIL:
+	001 Move [X0+68], X1
+	002 Move [X0+76], X2
+	003 Return 
+
+Method: UnityEngine.Rendering.DepthState get_depthState()
+
+Disassembly:
+	0x03C5739C B.NE 0x3C573BC
+	0x03C573A0 LDP X20, X19, [X31 + 0x150]
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 Return X0
+
+Method: System.Void set_depthState(UnityEngine.Rendering.DepthState value)
+
+Disassembly:
+	0x03C573A4 LDP X22, X21, [X31 + 0x140]
+	0x03C573A8 LDP X29, X30, [X31 + 0x130]
+
+ISIL:
+	001 NotImplemented "Instruction STRH not yet implemented."
+	002 Return 
+
+Method: UnityEngine.Rendering.StencilState get_stencilState()
+
+Disassembly:
+	0x03C573AC AND W0, W0, 0x1
+	0x03C573B0 ADD X31, X31, 0x160
+	0x03C573B4 RET
+	0x03C573B8 BL 0x1C171E0
+
+ISIL:
+	001 NotImplemented "Instruction LDUR not yet implemented."
+	002 NotImplemented "Instruction LDUR not yet implemented."
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void set_stencilState(UnityEngine.Rendering.StencilState value)
+
+Disassembly:
+	0x03C573BC BL 0x3EB1B20
+	0x03C573C0 STR X30, [X31 - 0x40]!
+	0x03C573C4 STP X24, X23, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+86], X1
+	002 Move [X0+94], W2
+	003 Return 
+
+Method: System.Int32 get_stencilReference()
+
+Disassembly:
+	0x03C573C8 STP X22, X21, [X31 + 0x20]
+	0x03C573CC STP X20, X19, [X31 + 0x30]
+
+ISIL:
+	001 Move W0, [X0+100]
+	002 Return X0
+
+Method: System.Void set_stencilReference(System.Int32 value)
+
+Disassembly:
+	0x03C573D0 ADRP X21, 0x78F000
+	0x03C573D4 ADRP X20, 0x4FD000
+
+ISIL:
+	001 Move [X0+100], W1
+	002 Return 
+
+Method: UnityEngine.Rendering.RenderStateMask get_mask()
+
+Disassembly:
+	0x03C573D8 LDRB W8, [X21 + 0x97]
+	0x03C573DC LDR X20, [X20 + 0xB8]
+
+ISIL:
+	001 Move W0, [X0+104]
+	002 Return X0
+
+Method: System.Void set_mask(UnityEngine.Rendering.RenderStateMask value)
+
+Disassembly:
+	0x03C573E0 MOV X19, X0
+	0x03C573E4 TBNZ X8, 0x0, 0x3C57414
+
+ISIL:
+	001 Move [X0+104], W1
+	002 Return 
+
+Method: System.Boolean Equals(UnityEngine.Rendering.RenderStateBlock other)
+
+Disassembly:
+	0x03C573E8 ADRP X0, 0x4FD000
+	0x03C573EC LDR X0, [X0 + 0xB8]
+	0x03C573F0 BL 0x1C16CF4
+	0x03C573F4 ADRP X0, 0x508000
+	0x03C573F8 LDR X0, [X0 + 0xE70]
+	0x03C573FC BL 0x1C16CF4
+	0x03C57400 ADRP X0, 0x508000
+	0x03C57404 LDR X0, [X0 + 0xE78]
+	0x03C57408 BL 0x1C16CF4
+	0x03C5740C MOVZ W8, 0x1
+	0x03C57410 STRB W8, [X21 + 0x97]
+	0x03C57414 ADRP X22, 0x508000
+	0x03C57418 ADRP X21, 0x508000
+	0x03C5741C LDR X22, [X22 + 0xE78]
+	0x03C57420 LDR X21, [X21 + 0xE70]
+	0x03C57424 MOV X0, X19
+	0x03C57428 MOV X1, X31
+	0x03C5742C BL 0x33C24FC
+	0x03C57430 LDR X8, [X20]
+	0x03C57434 LDR X23, [X19 + 0x8]
+	0x03C57438 MOV W20, W0
+	0x03C5743C LDR W9, [X8 + 0xE0]
+	0x03C57440 CBNZ W9, 0x3C5744C
+	0x03C57444 MOV X0, X8
+	0x03C57448 BL 0x1C16DFC
+	0x03C5744C MOVZ W24, 0x18D
+	0x03C57450 ADD X0, X19, 0x10
+	0x03C57454 MUL W8, W20, W24
+	0x03C57458 EOR W20, W8, W23, 0x0
+	0x03C5745C BL 0x3C53D24
+	0x03C57460 MUL W8, W20, W24
+	0x03C57464 EOR W20, W0, W8, 0x0
+	0x03C57468 ADD X0, X19, 0xD4
+	0x03C5746C BL 0x3C541B8
+	0x03C57470 MUL W8, W20, W24
+	0x03C57474 EOR W20, W8, W0, 0x0
+	0x03C57478 ADD X0, X19, 0xEC
+	0x03C5747C MOV X1, X31
+	0x03C57480 BL 0x337B6D8
+	0x03C57484 MOVZ W8, 0x6916
+	0x03C57488 MOVK W8, 0x13320000
+	0x03C5748C LDRB W10, [X19 + 0xF0]
+	0x03C57490 MUL W9, W20, W24
+	0x03C57494 LDR X1, [X22]
+	0x03C57498 ADD W8, W0, W8
+	0x03C5749C EOR W8, W9, W8, 0x0
+	0x03C574A0 MUL W8, W8, W24
+	0x03C574A4 EOR W8, W10, W8, 0x0
+	0x03C574A8 ADD X0, X19, 0xF8
+	0x03C574AC EOR W20, W8, 0x1
+	0x03C574B0 BL 0x242C8C8
+	0x03C574B4 LDR X1, [X21]
+	0x03C574B8 MUL W8, W20, W24
+	0x03C574BC EOR W20, W8, W0, 0x0
+	0x03C574C0 ADD X0, X19, 0x110
+	0x03C574C4 BL 0x242C484
+	0x03C574C8 MUL W8, W20, W24
+	0x03C574CC LDP X20, X19, [X31 + 0x30]
+	0x03C574D0 LDP X22, X21, [X31 + 0x20]
+	0x03C574D4 LDP X24, X23, [X31 + 0x10]
+	0x03C574D8 EOR W0, W8, W0, 0x0
+	0x03C574DC LDR X30, [X31], #0x40
+	0x03C574E0 RET
+	0x03C574E4 STR X30, [X31 - 0x10]!
+
+ISIL:
+	001 Subtract X31, X31, 128
+	002 Move [X31+80], X30
+	003 Move [X31+88], X23
+	004 Move [X31+96], X22
+	005 Move [X31+104], X21
+	006 Move [X31+112], X20
+	007 Move [X31+120], X19
+	008 Move X21, 0x790000
+	009 Move W8, [X21+129]
+	010 Move X19, X1
+	011 Move X20, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x509000
+	017 Move X0, [X0+3504]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+129], W8
+	021 Add X0, X31, 8
+	022 Move W2, 68
+	023 Move X1, X19
+	024 Call 0x3EB2AC0
+	025 Add X1, X31, 8
+	026 Move X0, X20
+	027 Call BlendState.Equals, X0, X1
+	028 Move TEMP, X0
+	029 And TEMP, TEMP, 1
+	030 Compare TEMP, 1
+	031 JumpIfNotEqual {73}
+	032 Move X8, 0x509000
+	033 Move X8, [X8+3504]
+	034 NotImplemented "Instruction LDUR not yet implemented."
+	035 NotImplemented "Instruction LDUR not yet implemented."
+	036 Add X23, X20, 68
+	037 Move X0, [X8]
+	038 Move W8, [X0+224]
+	039 Compare W8, 0
+	040 JumpIfNotEqual {42}
+	041 Call 0x1C17DFC
+	042 Move X0, X23
+	043 Move X1, X22
+	044 Move X2, X21
+	045 Call RasterState.Equals, X0, X1
+	046 Move TEMP, X0
+	047 And TEMP, TEMP, 1
+	048 Compare TEMP, 1
+	049 JumpIfNotEqual {73}
+	050 NotImplemented "Instruction LDRH not yet implemented."
+	051 Move W9, [X20+84]
+	052 NotImplemented "Instruction CMP not yet implemented."
+	053 NotImplemented "Instruction INVALID not yet implemented."
+	054 Move W8, W8
+	055 ShiftRight W8, 16
+	056 And W8, W8, 0x7FFF
+	057 NotImplemented "Instruction CMP not yet implemented."
+	058 NotImplemented "Instruction LDUR not yet implemented."
+	059 NotImplemented "Instruction LDUR not yet implemented."
+	060 Add X0, X20, 86
+	061 Call StencilState.Equals, X0, X1
+	062 Move TEMP, X0
+	063 And TEMP, TEMP, 1
+	064 Compare TEMP, 1
+	065 JumpIfNotEqual {73}
+	066 Move W8, [X20+100]
+	067 Move W9, [X19+100]
+	068 NotImplemented "Instruction CMP not yet implemented."
+	069 Move W8, [X20+104]
+	070 Move W9, [X19+104]
+	071 NotImplemented "Instruction CMP not yet implemented."
+	072 NotImplemented "Instruction CSET not yet implemented."
+	073 Move W0, W31
+	074 Move X20, [X31+112]
+	075 Move X19, [X31+120]
+	076 Move X22, [X31+96]
+	077 Move X21, [X31+104]
+	078 Move X30, [X31+80]
+	079 Move X23, [X31+88]
+	080 Add X31, X31, 128
+	081 Return X0
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x03C57598 BL 0x1C16CB8
+	0x03C5759C MOV X8, X0
+	0x03C575A0 STR X0, [X27 + 0xA0]
+	0x03C575A4 MOV X0, X26
+	0x03C575A8 MOV W1, W25
+	0x03C575AC MOV W2, W24
+	0x03C575B0 MOV W3, W23
+	0x03C575B4 MOV W4, W22
+	0x03C575B8 MOV X5, X21
+	0x03C575BC MOV W6, W20
+	0x03C575C0 MOV W7, W19
+	0x03C575C4 LDP X20, X19, [X31 + 0x40]
+	0x03C575C8 LDP X22, X21, [X31 + 0x30]
+	0x03C575CC LDP X24, X23, [X31 + 0x20]
+	0x03C575D0 LDP X26, X25, [X31 + 0x10]
+	0x03C575D4 LDP X30, X27, [X31], #0x50
+	0x03C575D8 BR X8
+	0x03C575DC STR X30, [X31 - 0x50]!
+	0x03C575E0 STP X26, X25, [X31 + 0x10]
+	0x03C575E4 STP X24, X23, [X31 + 0x20]
+	0x03C575E8 STP X22, X21, [X31 + 0x30]
+	0x03C575EC STP X20, X19, [X31 + 0x40]
+	0x03C575F0 ADRP X26, 0x78F000
+	0x03C575F4 LDR X7, [X26 + 0xA8]
+	0x03C575F8 MOV W21, W6
+	0x03C575FC MOV W23, W5
+	0x03C57600 MOV W19, W4
+	0x03C57604 MOV X20, X3
+	0x03C57608 MOV W22, W2
+	0x03C5760C MOV X24, X1
+	0x03C57610 MOV X25, X0
+	0x03C57614 CBNZ X7, 0x3C5762C
+	0x03C57618 ADRP X0, 0xFFFFFFFFFCE9C000
+	0x03C5761C ADD X0, X0, 0x5FE
+	0x03C57620 BL 0x1C16CB8
+	0x03C57624 MOV X7, X0
+
+ISIL:
+	001 Subtract X31, X31, 144
+	002 Move [X31+112], X30
+	003 Move [X31+120], X21
+	004 Move [X31+128], X20
+	005 Move [X31+136], X19
+	006 Move X21, 0x790000
+	007 Move W8, [X21+130]
+	008 Move X20, X1
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x4FF000
+	015 Move X0, [X0+1512]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+130], W8
+	019 Compare X20, 0
+	020 JumpIfEqual {26}
+	021 Move X8, 0x4FF000
+	022 Move X8, [X8+1512]
+	023 Move X9, [X20]
+	024 Move X8, [X8]
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move W0, W31
+	027 Move X0, X20
+	028 Call 0x1C17E08
+	029 Move X1, X0
+	030 Add X0, X31, 0
+	031 Move W2, 108
+	032 Call 0x3EB2AC0
+	033 Add X1, X31, 0
+	034 Move X0, X19
+	035 Call RenderStateBlock.Equals, X0, X1
+	036 Move X20, [X31+128]
+	037 Move X19, [X31+136]
+	038 Move X30, [X31+112]
+	039 Move X21, [X31+120]
+	040 And W0, W0, 1
+	041 Add X31, X31, 144
+	042 Return X0
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x03C57628 STR X0, [X26 + 0xA8]
+	0x03C5762C AND W5, W23, 0x1
+	0x03C57630 AND W6, W21, 0x1
+	0x03C57634 MOV X0, X25
+	0x03C57638 MOV X1, X24
+	0x03C5763C MOV W2, W22
+	0x03C57640 MOV X3, X20
+	0x03C57644 MOV W4, W19
+	0x03C57648 LDP X20, X19, [X31 + 0x40]
+	0x03C5764C LDP X22, X21, [X31 + 0x30]
+	0x03C57650 LDP X24, X23, [X31 + 0x20]
+	0x03C57654 LDP X26, X25, [X31 + 0x10]
+	0x03C57658 LDR X30, [X31], #0x50
+	0x03C5765C BR X7
+	0x03C57660 STR X30, [X31 - 0x20]!
+	0x03C57664 STP X20, X19, [X31 + 0x10]
+	0x03C57668 ADRP X20, 0x78F000
+	0x03C5766C LDR X1, [X20 + 0xB0]
+	0x03C57670 MOV X19, X0
+	0x03C57674 CBNZ X1, 0x3C5768C
+	0x03C57678 ADRP X0, 0xFFFFFFFFFCEB8000
+	0x03C5767C ADD X0, X0, 0x7E9
+	0x03C57680 BL 0x1C16CB8
+	0x03C57684 MOV X1, X0
+	0x03C57688 STR X0, [X20 + 0xB0]
+	0x03C5768C MOV X0, X19
+	0x03C57690 LDP X20, X19, [X31 + 0x10]
+	0x03C57694 LDR X30, [X31], #0x20
+	0x03C57698 BR X1
+	0x03C5769C STR X30, [X31 - 0x20]!
+	0x03C576A0 STP X20, X19, [X31 + 0x10]
+	0x03C576A4 ADRP X20, 0x78F000
+	0x03C576A8 LDR X1, [X20 + 0xB8]
+	0x03C576AC MOV X19, X0
+	0x03C576B0 CBNZ X1, 0x3C576C8
+	0x03C576B4 ADRP X0, 0xFFFFFFFFFCEA6000
+	0x03C576B8 ADD X0, X0, 0x764
+	0x03C576BC BL 0x1C16CB8
+	0x03C576C0 MOV X1, X0
+	0x03C576C4 STR X0, [X20 + 0xB8]
+	0x03C576C8 MOV X0, X19
+	0x03C576CC LDP X20, X19, [X31 + 0x10]
+	0x03C576D0 LDR X30, [X31], #0x20
+	0x03C576D4 BR X1
+	0x03C576D8 STR X30, [X31 - 0x30]!
+	0x03C576DC STP X22, X21, [X31 + 0x10]
+	0x03C576E0 STP X20, X19, [X31 + 0x20]
+	0x03C576E4 ADRP X21, 0x78F000
+	0x03C576E8 STR X1, [X31 + 0x8]
+	0x03C576EC ADRP X22, 0x4F9000
+	0x03C576F0 LDRB W8, [X21 + 0xC0]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x790000
+	007 Move X20, 0x509000
+	008 Move W8, [X21+131]
+	009 Move X20, [X20+3504]
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0x509000
+	016 Move X0, [X0+3504]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X21+131], W8
+	020 Move X0, X19
+	021 Call BlendState.GetHashCode, X0
+	022 Move X8, [X20]
+	023 Move W20, W0
+	024 Move W9, [X8+224]
+	025 Compare W9, 0
+	026 JumpIfNotEqual {29}
+	027 Move X0, X8
+	028 Call 0x1C17DFC
+	029 Add X0, X19, 68
+	030 Call RasterState.GetHashCode, X0
+	031 Move W21, 397
+	032 Multiply W8, W20, W21
+	033 Xor W22, W0, W8
+	034 Add X0, X19, 84
+	035 Move X1, X31
+	036 Call Byte.GetHashCode, X0
+	037 Move W20, W0
+	038 Add X0, X19, 85
+	039 Move X1, X31
+	040 Call SByte.GetHashCode, X0
+	041 Multiply W8, W20, W21
+	042 Multiply W9, W22, W21
+	043 Xor W8, W8, W0
+	044 Add X0, X19, 86
+	045 Xor W20, W8, W9
+	046 Call StencilState.GetHashCode, X0
+	047 Move W9, [X19+100]
+	048 Move W10, [X19+104]
+	049 Multiply W8, W20, W21
+	050 Xor W8, W8, W0
+	051 Multiply W8, W8, W21
+	052 Xor W8, W8, W9
+	053 Multiply W8, W8, W21
+	054 Move X20, [X31+32]
+	055 Move X19, [X31+40]
+	056 Move X22, [X31+16]
+	057 Move X21, [X31+24]
+	058 Xor W0, W8, W10
+	059 Move X30, [X31+48]
+	060 Return X0
+

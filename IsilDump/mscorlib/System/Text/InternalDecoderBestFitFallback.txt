@@ -1,0 +1,225 @@
+Type: System.Text.InternalDecoderBestFitFallback
+
+Method: System.Void .ctor(System.Text.Encoding encoding)
+
+Disassembly:
+	0x033FE168 MOV X2, X0
+	0x033FE16C MOV X0, X19
+	0x033FE170 MOV X1, X20
+	0x033FE174 MOV X3, X31
+	0x033FE178 BL 0x3311888
+	0x033FE17C ADRP X0, 0xD2F000
+	0x033FE180 LDR X0, [X0 + 0xC28]
+	0x033FE184 BL 0x1C16D08
+	0x033FE188 MOV X1, X0
+	0x033FE18C MOV X0, X19
+	0x033FE190 BL 0x1C16DEC
+	0x033FE194 STR X30, [X31 - 0x20]!
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move W8, 63
+	006 Move X1, X31
+	007 Move X20, X0
+	008 NotImplemented "Instruction STRH not yet implemented."
+	009 Call Object..ctor, X0
+	010 Move [X20+16], X19
+	011 Move X20, [X31+16]
+	012 Move X19, [X31+24]
+	013 Move X30, [X31+32]
+	014 Return 
+
+Method: System.Text.DecoderFallbackBuffer CreateFallbackBuffer()
+
+Disassembly:
+	0x033FE1A0 TBNZ X2, 0x1F, 0x33FE224
+	0x033FE1A4 MOV X8, X0
+	0x033FE1A8 LDR X0, [X0 + 0x20]
+	0x033FE1AC AND W9, W3, 0x1
+	0x033FE1B0 STRB W9, [X8 + 0x28]
+	0x033FE1B4 MOVZ W9, 0x1
+	0x033FE1B8 STRB W9, [X8 + 0x29]
+	0x033FE1BC CBZ X0, 0x33FE280
+	0x033FE1C0 LDR X9, [X0]
+	0x033FE1C4 LDP X20, X19, [X31 + 0x10]
+	0x033FE1C8 MOV X3, X8
+	0x033FE1CC LDR X5, [X9 + 0x2C8]
+	0x033FE1D0 LDR X4, [X9 + 0x2D0]
+	0x033FE1D4 LDR X30, [X31], #0x20
+	0x033FE1D8 BR X5
+	0x033FE1DC ADRP X0, 0xCFA000
+	0x033FE1E0 LDR X0, [X0 + 0x528]
+	0x033FE1E4 BL 0x1C16D08
+	0x033FE1E8 BL 0x1C16F10
+	0x033FE1EC MOV X19, X0
+	0x033FE1F0 ADRP X0, 0xD24000
+	0x033FE1F4 LDR X0, [X0 + 0x308]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xFE0000
+	006 Move X21, 0xD30000
+	007 Move W8, [X20+1246]
+	008 Move X21, [X21+3008]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xD30000
+	015 Move X0, [X0+3008]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1246], W8
+	019 Move X0, [X21]
+	020 Call 0x1C17F10
+	021 Move X1, X19
+	022 Move X20, X0
+	023 Call InternalDecoderBestFitFallbackBuffer..ctor, X0, X1
+	024 Move X0, X20
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Move X21, [X31+40]
+	029 Return X0
+
+Method: System.Int32 get_MaxCharCount()
+
+Disassembly:
+	0x033FE31C LDR W8, [X25 + 0x18]
+	0x033FE320 SUB W8, W8, W22
+
+ISIL:
+	001 Move W0, 1
+	002 Return X0
+
+Method: System.Boolean Equals(System.Object value)
+
+Disassembly:
+	0x033FE324 CMP W8, W19
+	0x033FE328 B.LT 0x33FE4B8
+	0x033FE32C TBNZ X21, 0x1F, 0x33FE3C4
+	0x033FE330 LDR W8, [X24 + 0x18]
+	0x033FE334 SUBS W26, W8, W21
+	0x033FE338 B.LT 0x33FE3C4
+	0x033FE33C ADRP X8, 0xD24000
+	0x033FE340 LDR X8, [X8 + 0x2F8]
+	0x033FE344 ADRP X27, 0xD23000
+	0x033FE348 ADRP X28, 0xD24000
+	0x033FE34C ADRP X29, 0xD24000
+	0x033FE350 LDR X1, [X8]
+	0x033FE354 LDR X27, [X27 + 0x830]
+	0x033FE358 LDR X28, [X28 + 0x2D0]
+	0x033FE35C LDR X29, [X29 + 0x2C8]
+	0x033FE360 MOV X0, X25
+	0x033FE364 BL 0x25FB4C0
+	0x033FE368 LDR X2, [X27]
+	0x033FE36C BL 0x2218CF4
+	0x033FE370 LDR X1, [X28]
+	0x033FE374 MOV X25, X0
+	0x033FE378 MOV X0, X24
+	0x033FE37C BL 0x25FBC40
+	0x033FE380 LDR X2, [X29]
+	0x033FE384 BL 0x2218CFC
+	0x033FE388 LDR X8, [X23]
+	0x033FE38C ADD X1, X25, W22, SXTW
+	0x033FE390 ADD X3, X0, W21, 0x1, UXTW
+	0x033FE394 AND W5, W20, 0x1
+	0x033FE398 LDP X7, X6, [X8 + 0x1D8]
+	0x033FE39C MOV X0, X23
+	0x033FE3A0 MOV W2, W19
+	0x033FE3A4 MOV W4, W26
+	0x033FE3A8 LDP X20, X19, [X31 + 0x50]
+	0x033FE3AC LDP X22, X21, [X31 + 0x40]
+	0x033FE3B0 LDP X24, X23, [X31 + 0x30]
+	0x033FE3B4 LDP X26, X25, [X31 + 0x20]
+	0x033FE3B8 LDP X28, X27, [X31 + 0x10]
+	0x033FE3BC LDP X29, X30, [X31], #0x60
+	0x033FE3C0 BR X7
+	0x033FE3C4 ADRP X0, 0xCFD000
+	0x033FE3C8 LDR X0, [X0 + 0x760]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xFE0000
+	006 Move W8, [X21+1247]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0xD25000
+	014 Move X0, [X0+2376]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+1247], W8
+	018 Compare X19, 0
+	019 JumpIfEqual {26}
+	020 Move X8, 0xD25000
+	021 Move X8, [X8+2376]
+	022 Move X9, [X19]
+	023 Move X8, [X8]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 NotImplemented "Instruction CSEL not yet implemented."
+	026 Move W0, W31
+	027 Move X0, [X20+16]
+	028 Compare X0, 0
+	029 JumpIfEqual {51}
+	030 Move X8, [X0]
+	031 Move X9, [X8+808]
+	032 Move X1, [X8+816]
+	033 NotImplemented "Instruction BLR not yet implemented."
+	034 Compare X21, 0
+	035 JumpIfEqual {51}
+	036 Move W19, W0
+	037 Move X0, [X21+16]
+	038 Compare X0, 0
+	039 JumpIfEqual {51}
+	040 Move X8, [X0]
+	041 Move X9, [X8+808]
+	042 Move X1, [X8+816]
+	043 NotImplemented "Instruction BLR not yet implemented."
+	044 NotImplemented "Instruction CMP not yet implemented."
+	045 NotImplemented "Instruction CSET not yet implemented."
+	046 Move X20, [X31+16]
+	047 Move X19, [X31+24]
+	048 Move X30, [X31+32]
+	049 Move X21, [X31+40]
+	050 Return X0
+	051 Call 0x1C17F20
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x033FE3CC BL 0x1C16D08
+	0x033FE3D0 BL 0x1C16F10
+	0x033FE3D4 MOV X19, X0
+	0x033FE3D8 ADRP X0, 0xD24000
+	0x033FE3DC LDR X0, [X0 + 0x318]
+	0x033FE3E0 BL 0x1C16D08
+	0x033FE3E4 MOV X20, X0
+	0x033FE3E8 ADRP X0, 0xD1D000
+	0x033FE3EC LDR X0, [X0 + 0x660]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+16]
+	003 Compare X0, 0
+	004 JumpIfEqual {10}
+	005 Move X8, [X0]
+	006 Move X2, [X8+808]
+	007 Move X1, [X8+816]
+	008 Move X30, [X31+16]
+	009 CallNoReturn X2
+	010 Call 0x1C17F20
+

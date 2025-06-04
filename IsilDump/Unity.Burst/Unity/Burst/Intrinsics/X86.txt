@@ -1,0 +1,214 @@
+Type: Unity.Burst.Intrinsics.X86
+
+Method: Unity.Burst.Intrinsics.v128 GenericCSharpLoad(System.Void* ptr)
+
+Disassembly:
+	0x037218C4 STR X30, [X31 - 0x40]!
+	0x037218C8 STP X24, X23, [X31 + 0x10]
+	0x037218CC STP X22, X21, [X31 + 0x20]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X1, [X0+8]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void GenericCSharpStore(System.Void* ptr, Unity.Burst.Intrinsics.v128 val)
+
+Disassembly:
+	0x037218D0 STP X20, X19, [X31 + 0x30]
+	0x037218D4 AND W9, W4, 0x1F
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Return 
+
+Method: System.SByte Saturate_To_Int8(System.Int32 val)
+
+Disassembly:
+	0x037218D8 CMP W9, 0x1E
+	0x037218DC B.HI 0x37219F4
+	0x037218E0 ADRP X10, 0xFFFFFFFFFD476000
+	0x037218E4 ADD X10, X10, 0x82B
+	0x037218E8 ADR X11, 0x2C
+	0x037218EC LDRB W12, [X10, X9, LSL]
+	0x037218F0 ADD X11, X11, X12, 0x2, LSL
+	0x037218F4 MOV X19, X3
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 Add W31, W0, 129
+	003 Move TEMP, 127
+	004 Not TEMP
+	005 Move W8, TEMP
+	006 NotImplemented "Instruction CSEL not yet implemented."
+	007 Return X0
+	008 Move W0, 127
+	009 Return X0
+
+Method: System.Byte Saturate_To_UnsignedInt8(System.Int32 val)
+
+Disassembly:
+	0x037218F8 MOV X20, X2
+	0x037218FC MOV X21, X1
+	0x03721900 MOV X22, X0
+	0x03721904 MOV X0, X31
+	0x03721908 MOV X8, X31
+	0x0372190C MOV X1, X31
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction BIC not yet implemented."
+	003 Return X0
+	004 Move W0, 255
+	005 Return X0
+
+Method: System.Int16 Saturate_To_Int16(System.Int32 val)
+
+Disassembly:
+	0x03721910 BR X11
+	0x03721914 MOV X0, X22
+	0x03721918 MOV X1, X21
+	0x0372191C MOV X2, X20
+	0x03721920 MOV X3, X19
+	0x03721924 MOV X4, X31
+	0x03721928 BL 0x372E2C0
+	0x0372192C B 0x3721BA4
+	0x03721930 MOV X0, X22
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 Move TEMP, 0x8000
+	003 Not TEMP
+	004 Move W8, TEMP
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Move TEMP, 0x7FFF
+	007 Not TEMP
+	008 Move W8, TEMP
+	009 NotImplemented "Instruction CSEL not yet implemented."
+	010 Return X0
+	011 Move W0, 0x7FFF
+	012 Return X0
+
+Method: System.UInt16 Saturate_To_UnsignedInt16(System.Int32 val)
+
+Disassembly:
+	0x03721934 MOV X1, X21
+	0x03721938 MOV X2, X20
+	0x0372193C MOV X3, X19
+	0x03721940 MOV X4, X31
+	0x03721944 BL 0x372E364
+	0x03721948 B 0x3721BA4
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction BIC not yet implemented."
+	003 Return X0
+	004 Move W0, 0xFFFF
+	005 Return X0
+
+Method: System.Boolean IsNaN(System.UInt32 v)
+
+Disassembly:
+	0x0372194C MOV X0, X22
+	0x03721950 MOV X1, X21
+	0x03721954 MOV X2, X20
+	0x03721958 MOV X3, X19
+	0x0372195C MOV X4, X31
+
+ISIL:
+	001 And W8, W0, 0x7FFFFFFF
+	002 Move W9, 0x7F800000
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 Return X0
+
+Method: System.Boolean IsNaN(System.UInt64 v)
+
+Disassembly:
+	0x03721960 BL 0x372E214
+	0x03721964 B 0x3721BA4
+	0x03721968 MOV X0, X22
+	0x0372196C MOV X1, X21
+	0x03721970 MOV X2, X20
+
+ISIL:
+	001 And X8, X0, 0x7FFFFFFF
+	002 Move X9, 0x7FF00000
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 Return X0
+
+Method: System.Void BurstIntrinsicSetCSRFromManaged(System.Int32 _)
+
+Disassembly:
+	0x03721974 MOV X3, X19
+
+ISIL:
+	001 Return 
+
+Method: System.Int32 BurstIntrinsicGetCSRFromManaged()
+
+Disassembly:
+	0x03721978 MOV X4, X31
+	0x0372197C BL 0x372E160
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Int32 getcsr_raw()
+
+Disassembly:
+	0x03721980 B 0x3721B6C
+	0x03721984 MOV X0, X22
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Void setcsr_raw(System.Int32 bits)
+
+Disassembly:
+	0x03721990 MOV X3, X19
+
+ISIL:
+	001 Return 
+
+Method: System.Void DoSetCSRTrampoline(System.Int32 bits)
+
+Disassembly:
+	0x03721994 MOV X4, X31
+
+ISIL:
+	001 Return 
+
+Method: System.Int32 DoGetCSRTrampoline()
+
+Disassembly:
+	0x03721988 MOV X1, X21
+	0x0372198C MOV X2, X20
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: Unity.Burst.Intrinsics.X86/MXCSRBits get_MXCSR()
+
+Disassembly:
+	0x037219A0 MOV X0, X22
+	0x037219A4 MOV X1, X21
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Void set_MXCSR(Unity.Burst.Intrinsics.X86/MXCSRBits value)
+
+Disassembly:
+	0x037219A8 MOV X2, X20
+
+ISIL:
+	001 Return 
+

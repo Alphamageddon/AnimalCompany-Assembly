@@ -1,0 +1,96 @@
+Type: Fusion.ArrayLengthAttribute
+
+Method: System.Void .ctor(System.Int32 length)
+
+Disassembly:
+	0x01E3394C MOV X2, X31
+	0x01E33950 LDR X0, [X8]
+	0x01E33954 BL 0x3227C5C
+	0x01E33958 LDP X20, X19, [X31 + 0x40]
+	0x01E3395C LDP X22, X21, [X31 + 0x30]
+	0x01E33960 LDR X30, [X31 + 0x20]
+	0x01E33964 ADD X31, X31, 0x50
+	0x01E33968 RET
+	0x01E3396C BL 0x1C16F28
+	0x01E33970 BL 0x1C16F44
+	0x01E33974 MOV X1, X31
+	0x01E33978 BL 0x1C16DEC
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call PropertyAttribute..ctor, X0
+	008 Move TEMP, 0x270F
+	009 Not TEMP
+	010 Move W8, TEMP
+	011 Move [X20+20], W19
+	012 Move [X20+24], W19
+	013 Move [X20+16], W8
+	014 Move X20, [X31+16]
+	015 Move X19, [X31+24]
+	016 Move X30, [X31+32]
+	017 Return 
+
+Method: System.Void .ctor(System.Int32 minLength, System.Int32 maxLength)
+
+Disassembly:
+	0x01E3399C RET
+	0x01E339A0 STR X30, [X31 - 0x30]!
+	0x01E339A4 STP X22, X21, [X31 + 0x10]
+	0x01E339A8 STP X20, X19, [X31 + 0x20]
+	0x01E339AC ADRP X21, 0x25A5000
+	0x01E339B0 ADRP X22, 0x22C0000
+	0x01E339B4 LDRB W8, [X21 + 0xEB1]
+	0x01E339B8 LDR X22, [X22 + 0x6C0]
+	0x01E339BC MOV X20, X1
+	0x01E339C0 MOV X19, X0
+	0x01E339C4 TBNZ X8, 0x0, 0x1E339E8
+	0x01E339C8 ADRP X0, 0x22C2000
+	0x01E339CC LDR X0, [X0 + 0x278]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, W1
+	006 Move X1, X31
+	007 Move W19, W2
+	008 Move X21, X0
+	009 Call PropertyAttribute..ctor, X0
+	010 Move TEMP, 0x270F
+	011 Not TEMP
+	012 Move W8, TEMP
+	013 Move [X21+16], W8
+	014 Move [X21+20], W20
+	015 Move [X21+24], W19
+	016 Move X20, [X31+16]
+	017 Move X19, [X31+24]
+	018 Move X30, [X31+32]
+	019 Move X21, [X31+40]
+	020 Return 
+
+Method: System.Int32 get_MinLength()
+
+Disassembly:
+	0x01E339D0 BL 0x1C16CF4
+	0x01E339D4 ADRP X0, 0x22C0000
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Int32 get_MaxLength()
+
+Disassembly:
+	0x01E339D8 LDR X0, [X0 + 0x6C0]
+	0x01E339DC BL 0x1C16CF4
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+

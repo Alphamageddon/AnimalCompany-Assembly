@@ -1,0 +1,38 @@
+Type: UnityEngine.Rendering.Universal.UTess.Tessellator/TestEdgePointE
+
+Method: System.Boolean Test(Unity.Mathematics.int2 h, Unity.Mathematics.int2 p, ref System.Single t)
+
+Disassembly:
+	0x03ABCE04 BL 0x301BCCC
+	0x03ABCE08 CBZ X0, 0x3ABCD70
+	0x03ABCE0C LDR W8, [X31 + 0x106C]
+	0x03ABCE10 MOV X25, X0
+	0x03ABCE14 CMP W8, 0x3C
+	0x03ABCE18 B.NE 0x3ABCF48
+	0x03ABCE1C LDR W8, [X19 + 0x6A4]
+	0x03ABCE20 LDR X22, [X31 + 0x150]
+	0x03ABCE24 ADD W8, W8, 0xE000
+	0x03ABCE28 STR W8, [X31 + 0x106C]
+	0x03ABCE2C B 0x3ABCF6C
+	0x03ABCE30 LDR W8, [X19 + 0x25C]
+	0x03ABCE34 LDR X26, [X31 + 0x160]
+	0x03ABCE38 TBNZ X8, 0x4, 0x3ABCEEC
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move X19, X3
+	005 Add X0, X31, 8
+	006 Move X3, X31
+	007 Move [X31+8], W31
+	008 Call TessEdgeCompare.Compare, X0, X1, X2
+	009 NotImplemented "Instruction SCVTF not yet implemented."
+	010 Move [X19], S0
+	011 Move X30, [X31+16]
+	012 Move X19, [X31+24]
+	013 NotImplemented "Instruction CMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 Add X31, X31, 32
+	016 Return X0
+

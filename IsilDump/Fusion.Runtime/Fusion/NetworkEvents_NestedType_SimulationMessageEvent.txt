@@ -1,0 +1,52 @@
+Type: Fusion.NetworkEvents/SimulationMessageEvent
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01EB8134 STR X1, [X0]
+	0x01EB8138 STR W2, [X0 + 0x8]
+	0x01EB813C STR X3, [X0 + 0x10]
+	0x01EB8140 RET
+	0x01EB8144 STR X1, [X0]
+	0x01EB8148 STR W2, [X0 + 0x8]
+	0x01EB814C STR X3, [X0 + 0x10]
+	0x01EB8150 RET
+	0x01EB8154 SUB X31, X31, 0x30
+	0x01EB8158 STP X30, X21, [X31 + 0x10]
+	0x01EB815C STP X20, X19, [X31 + 0x20]
+	0x01EB8160 ADRP X21, 0x2521000
+	0x01EB8164 LDRB W8, [X21 + 0x3FC]
+	0x01EB8168 MOV X19, X1
+	0x01EB816C MOV X20, X0
+	0x01EB8170 TBNZ X8, 0x0, 0x1EB8188
+	0x01EB8174 ADRP X0, 0x223E000
+	0x01EB8178 LDR X0, [X0 + 0xBA8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x2522000
+	006 Move X21, 0x2248000
+	007 Move W8, [X20+998]
+	008 Move X21, [X21+832]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x2248000
+	015 Move X0, [X0+832]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+998], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X30, [X31+32]
+	024 Move X21, [X31+40]
+	025 Call UnityEvent`2<Object, SimulationMessagePtr>..ctor, X0
+	026 Return 
+

@@ -1,0 +1,56 @@
+Type: UnityEngine.ProBuilder.ProBuilderMesh/NonVersionedEditScope
+
+Method: System.Void .ctor(UnityEngine.ProBuilder.ProBuilderMesh mesh)
+
+Disassembly:
+	0x03919D40 LDR X8, [X8 + 0xA88]
+	0x03919D44 LDR X1, [X8]
+	0x03919D48 BL 0x301DDC4
+	0x03919D4C CBZ X21, 0x3919D8C
+	0x03919D50 MOV X1, X0
+	0x03919D54 MOV X0, X21
+	0x03919D58 MOV X2, X31
+	0x03919D5C BL 0x3C13558
+	0x03919D60 AND W1, W20, 0x1
+	0x03919D64 MOV X0, X19
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X0], X1
+	003 Compare X1, 0
+	004 JumpIfEqual {11}
+	005 NotImplemented "Instruction LDRH not yet implemented."
+	006 NotImplemented "Instruction STRH not yet implemented."
+	007 NotImplemented "Instruction LDRH not yet implemented."
+	008 NotImplemented "Instruction STRH not yet implemented."
+	009 Move X30, [X31+16]
+	010 Return 
+	011 Call 0x1C17F20
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x0391F19C MOV X1, X0
+	0x0391F1A0 MOV X0, X19
+	0x0391F1A4 MOV X2, X31
+	0x0391F1A8 BL 0x3379B6C
+	0x0391F1AC ADRP X0, 0x82F000
+	0x0391F1B0 LDR X0, [X0 + 0x700]
+	0x0391F1B4 BL 0x1C16D08
+	0x0391F1B8 MOV X1, X0
+	0x0391F1BC MOV X0, X19
+	0x0391F1C0 BL 0x1C16DEC
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {11}
+	005 NotImplemented "Instruction LDRH not yet implemented."
+	006 NotImplemented "Instruction STRH not yet implemented."
+	007 NotImplemented "Instruction LDRH not yet implemented."
+	008 NotImplemented "Instruction STRH not yet implemented."
+	009 Move X30, [X31+16]
+	010 Return 
+	011 Call 0x1C17F20
+

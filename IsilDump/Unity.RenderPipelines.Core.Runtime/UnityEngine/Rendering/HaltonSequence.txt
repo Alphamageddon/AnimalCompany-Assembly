@@ -1,0 +1,40 @@
+Type: UnityEngine.Rendering.HaltonSequence
+
+Method: System.Single Get(System.Int32 index, System.Int32 radix)
+
+Disassembly:
+	0x039EBDF4 LDP X20, X19, [X31 + 0x10]
+	0x039EBDF8 LDP X30, X21, [X31], #0x20
+	0x039EBDFC RET
+	0x039EBE00 BL 0x1C16F20
+	0x039EBE04 MOVZ W8, 0x1
+	0x039EBE08 LSLV W0, W8, W0
+	0x039EBE0C RET
+	0x039EBE10 STR X30, [X31 - 0x30]!
+	0x039EBE14 STP X22, X21, [X31 + 0x10]
+	0x039EBE18 STP X20, X19, [X31 + 0x20]
+	0x039EBE1C ADRP X20, 0x9F6000
+	0x039EBE20 LDRB W8, [X20 + 0xE3E]
+	0x039EBE24 MOV W19, W0
+	0x039EBE28 TBNZ X8, 0x0, 0x39EBE40
+	0x039EBE2C ADRP X0, 0x768000
+	0x039EBE30 LDR X0, [X0 + 0x5D0]
+	0x039EBE34 BL 0x1C16CF4
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction SCVTF not yet implemented."
+	003 Move S0, W31
+	004 Move S2, 1
+	005 NotImplemented "Instruction SDIV not yet implemented."
+	006 NotImplemented "Instruction MSUB not yet implemented."
+	007 NotImplemented "Instruction FDIV not yet implemented."
+	008 NotImplemented "Instruction SCVTF not yet implemented."
+	009 Multiply S3, S2, S3
+	010 NotImplemented "Instruction CMP not yet implemented."
+	011 Add S0, S0, S3
+	012 Move W0, W8
+	013 Return V0
+	014 Move S0, W31
+	015 Return V0
+

@@ -1,0 +1,139 @@
+Type: System.Buffers.MemoryHandle
+
+Method: System.Void .ctor(System.Void* pointer, System.Runtime.InteropServices.GCHandle handle = null, System.Buffers.IPinnable pinnable = null)
+
+Disassembly:
+	0x0335F49C MOV W20, W6
+	0x0335F4A0 MOV W22, W5
+	0x0335F4A4 MOV W23, W4
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Move [X0+16], X3
+	004 Return 
+
+Method: System.Void* get_Pointer()
+
+Disassembly:
+	0x0335F4A8 MOV W24, W3
+	0x0335F4AC MOV W25, W2
+
+ISIL:
+	001 Move X0, [X0]
+	002 Return X0
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x0335F4B0 MOV W26, W1
+	0x0335F4B4 MOV X21, X0
+	0x0335F4B8 TBNZ X8, 0x0, 0x335F4D0
+	0x0335F4BC ADRP X0, 0xD95000
+	0x0335F4C0 LDR X0, [X0 + 0x9F0]
+	0x0335F4C4 BL 0x1C16CF4
+	0x0335F4C8 MOVZ W8, 0x1
+	0x0335F4CC STRB W8, [X27 + 0xE2F]
+	0x0335F4D0 CMP W19, 0x3
+	0x0335F4D4 B.CS 0x335F538
+	0x0335F4D8 ADRP X8, 0xD95000
+	0x0335F4DC LDR X8, [X8 + 0x9F0]
+	0x0335F4E0 LDR X0, [X8]
+	0x0335F4E4 LDR W8, [X0 + 0xE0]
+	0x0335F4E8 CBNZ W8, 0x335F4F0
+	0x0335F4EC BL 0x1C16DFC
+	0x0335F4F0 MOV W0, W26
+	0x0335F4F4 MOV W1, W25
+	0x0335F4F8 MOV W2, W24
+	0x0335F4FC BL 0x335F144
+	0x0335F500 MOV X24, X0
+	0x0335F504 MOV W0, W23
+	0x0335F508 MOV W1, W22
+	0x0335F50C MOV W2, W20
+	0x0335F510 BL 0x335F3A8
+	0x0335F514 ADD X8, X0, X24
+	0x0335F518 ORR X8, X8, X19, 0x3E
+	0x0335F51C STR X8, [X21]
+	0x0335F520 LDP X20, X19, [X31 + 0x40]
+	0x0335F524 LDP X22, X21, [X31 + 0x30]
+	0x0335F528 LDP X24, X23, [X31 + 0x20]
+	0x0335F52C LDP X26, X25, [X31 + 0x10]
+	0x0335F530 LDP X30, X27, [X31], #0x50
+	0x0335F534 RET
+	0x0335F538 ADRP X0, 0xD9C000
+	0x0335F53C LDR X0, [X0 + 0x578]
+	0x0335F540 BL 0x1C16D08
+	0x0335F544 BL 0x1C16F10
+	0x0335F548 MOV X19, X0
+	0x0335F54C ADRP X0, 0xDCB000
+	0x0335F550 LDR X0, [X0 + 0x908]
+	0x0335F554 BL 0x1C16D08
+	0x0335F558 MOV X20, X0
+	0x0335F55C ADRP X0, 0xDCB000
+	0x0335F560 LDR X0, [X0 + 0x910]
+	0x0335F564 BL 0x1C16D08
+	0x0335F568 MOV X2, X0
+	0x0335F56C MOV X0, X19
+	0x0335F570 MOV X1, X20
+	0x0335F574 MOV X3, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x107E000
+	005 Move W8, [X20+3623]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0xDCC000
+	012 Move X0, [X0+2136]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+3623], W8
+	016 Add X20, X19, 8
+	017 Move X0, X20
+	018 Move X1, X31
+	019 Call GCHandle.get_IsAllocated, X0
+	020 Move TEMP, X0
+	021 And TEMP, TEMP, 1
+	022 Compare TEMP, 1
+	023 JumpIfNotEqual {27}
+	024 Move X0, X20
+	025 Move X1, X31
+	026 Call GCHandle.Free, X0
+	027 Move X20, [X19+16]
+	028 Compare X20, 0
+	029 JumpIfEqual {54}
+	030 Move X10, 0xDCC000
+	031 Move X8, [X20]
+	032 Move X10, [X10+2136]
+	033 NotImplemented "Instruction LDRH not yet implemented."
+	034 Move X1, [X10]
+	035 Compare X9, 0
+	036 JumpIfEqual {43}
+	037 Move X10, [X8+176]
+	038 Add X10, X10, 8
+	039 NotImplemented "Instruction LDUR not yet implemented."
+	040 NotImplemented "Instruction CMP not yet implemented."
+	041 Subtract X9, X9, 1
+	042 Add X10, X10, 16
+	043 Move X0, X20
+	044 Move W2, W31
+	045 Call 0x1C5D788
+	046 NotImplemented "Instruction LDRSW not yet implemented."
+	047 Add X8, X8, X9
+	048 Add X0, X8, 312
+	049 Move X8, [X0]
+	050 Move X1, [X0+8]
+	051 Move X0, X20
+	052 NotImplemented "Instruction BLR not yet implemented."
+	053 Move [X19+16], X31
+	054 Move [X19], X31
+	055 Move X20, [X31+16]
+	056 Move X19, [X31+24]
+	057 Move X30, [X31+32]
+	058 Return 
+

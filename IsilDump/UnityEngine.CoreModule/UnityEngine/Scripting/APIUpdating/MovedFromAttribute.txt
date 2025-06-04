@@ -1,0 +1,112 @@
+Type: UnityEngine.Scripting.APIUpdating.MovedFromAttribute
+
+Method: System.Void .ctor(System.Boolean autoUpdateAPI, System.String sourceNamespace = null, System.String sourceAssembly = null, System.String sourceClassName = null)
+
+Disassembly:
+	0x03C46FD0 LDP X30, X21, [X31], #0x20
+	0x03C46FD4 RET
+	0x03C46FD8 BL 0x1C16F20
+	0x03C46FDC SUB X31, X31, 0x30
+	0x03C46FE0 STP X30, X21, [X31 + 0x10]
+	0x03C46FE4 STP X20, X19, [X31 + 0x20]
+	0x03C46FE8 ADRP X21, 0x79F000
+	0x03C46FEC ADRP X20, 0x4AD000
+	0x03C46FF0 LDRB W8, [X21 + 0xC74]
+	0x03C46FF4 LDR X20, [X20 + 0xC90]
+	0x03C46FF8 MOV W19, W0
+	0x03C46FFC TBNZ X8, 0x0, 0x3C47014
+	0x03C47000 ADRP X0, 0x4AC000
+	0x03C47004 LDR X0, [X0 + 0xC90]
+	0x03C47008 BL 0x1C16CF4
+	0x03C4700C MOVZ W8, 0x1
+	0x03C47010 STRB W8, [X21 + 0xC74]
+	0x03C47014 LDR X0, [X20]
+	0x03C47018 STR W31, [X31 + 0x8]
+	0x03C4701C LDR W8, [X0 + 0xE0]
+	0x03C47020 CBNZ W8, 0x3C47028
+	0x03C47024 BL 0x1C16DFC
+	0x03C47028 ADRP X20, 0x79E000
+	0x03C4702C LDR X8, [X20 + 0xCA0]
+	0x03C47030 CBNZ X8, 0x3C47048
+	0x03C47034 ADRP X0, 0xFFFFFFFFFCECD000
+	0x03C47038 ADD X0, X0, 0xC30
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move W22, W1
+	008 Move X1, X31
+	009 Move X19, X4
+	010 Move X20, X3
+	011 Move X21, X2
+	012 Move X23, X0
+	013 Call Attribute..ctor, X0
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 NotImplemented "Instruction CSET not yet implemented."
+	016 NotImplemented "Instruction CMP not yet implemented."
+	017 And W8, W22, 1
+	018 Move [X23+16], X19
+	019 Move [X23+24], X21
+	020 Move [X23+32], X20
+	021 Move [X23+40], W9
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction CMP not yet implemented."
+	024 Move X20, [X31+32]
+	025 Move X19, [X31+40]
+	026 Move X22, [X31+16]
+	027 Move X21, [X31+24]
+	028 Move [X23+41], W9
+	029 NotImplemented "Instruction CSET not yet implemented."
+	030 Move [X23+42], W9
+	031 Move [X23+43], W8
+	032 Move X30, [X31+48]
+	033 Move X23, [X31+56]
+	034 Return 
+
+Method: System.Void .ctor(System.String sourceNamespace)
+
+Disassembly:
+	0x03C4703C BL 0x1C16CB8
+	0x03C47040 MOV X8, X0
+	0x03C47044 STR X0, [X20 + 0xCA0]
+	0x03C47048 ADD X1, X31, 0x8
+	0x03C4704C MOV W0, W19
+	0x03C47050 BLR X8
+	0x03C47054 LDR W0, [X31 + 0x8]
+	0x03C47058 LDP X20, X19, [X31 + 0x20]
+	0x03C4705C LDP X30, X21, [X31 + 0x10]
+	0x03C47060 ADD X31, X31, 0x30
+	0x03C47064 RET
+	0x03C47068 STP X30, X21, [X31 - 0x20]!
+	0x03C4706C STP X20, X19, [X31 + 0x10]
+	0x03C47070 ADRP X21, 0x79E000
+	0x03C47074 LDR X2, [X21 + 0xCA0]
+	0x03C47078 MOV X19, X1
+	0x03C4707C MOV W20, W0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move W8, 256
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 Move [X20+40], W31
+	012 Move [X20+16], X31
+	013 Move [X20+24], X19
+	014 Move [X20+32], X31
+	015 Move [X20+41], W9
+	016 NotImplemented "Instruction STRH not yet implemented."
+	017 Move X20, [X31+16]
+	018 Move X19, [X31+24]
+	019 Move X30, [X31+32]
+	020 Return 
+

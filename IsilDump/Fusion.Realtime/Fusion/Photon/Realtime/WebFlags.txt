@@ -1,0 +1,223 @@
+Type: Fusion.Photon.Realtime.WebFlags
+
+Method: System.Boolean get_HttpForward()
+
+Disassembly:
+	0x01E58F58 LDR X4, [X8 + 0x240]
+	0x01E58F5C MOVZ W1, 0xFD
+	0x01E58F60 MOV X0, X19
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 And W0, W8, 1
+	003 Return X0
+
+Method: System.Void set_HttpForward(System.Boolean value)
+
+Disassembly:
+	0x01E62F0C MOV X22, X0
+	0x01E62F10 CBZ X0, 0x1E62F28
+	0x01E62F14 LDR X8, [X21]
+	0x01E62F18 MOV X0, X22
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 NotImplemented "Instruction BFM not yet implemented."
+	003 Move [X0+16], W8
+	004 Return 
+
+Method: System.Boolean get_SendAuthCookie()
+
+Disassembly:
+	0x01E62F1C LDR X1, [X8 + 0x40]
+	0x01E62F20 BL 0x1C16E00
+	0x01E62F24 CBZ X0, 0x1E63004
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 Move W0, W8
+	003 ShiftRight W0, 1
+	004 And W0, W0, 1
+	005 Return X0
+
+Method: System.Void set_SendAuthCookie(System.Boolean value)
+
+Disassembly:
+	0x01E62F28 LDR W8, [X21 + 0x18]
+	0x01E62F2C CBZ W8, 0x1E63000
+	0x01E62F30 ADRP X8, 0x2299000
+	0x01E62F34 LDR X8, [X8 + 0x868]
+	0x01E62F38 STR X22, [X21 + 0x20]
+	0x01E62F3C ADRP X22, 0x229A000
+	0x01E62F40 LDR X0, [X8]
+	0x01E62F44 LDR X22, [X22 + 0xC28]
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 And W31, W1, 1
+	003 Move W9, 2
+	004 NotImplemented "Instruction CSEL not yet implemented."
+	005 And W8, W8, 0xFFFFFFFD
+	006 Or W8, W8, W9
+	007 Move [X0+16], W8
+	008 Return 
+
+Method: System.Boolean get_SendSync()
+
+Disassembly:
+	0x01E62F48 BL 0x1C16F10
+	0x01E62F4C LDR X2, [X22]
+	0x01E62F50 MOV X1, X20
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 Move W0, W8
+	003 ShiftRight W0, 2
+	004 And W0, W0, 3
+	005 Return X0
+
+Method: System.Void set_SendSync(System.Boolean value)
+
+Disassembly:
+	0x01E62F54 MOV X3, X31
+	0x01E62F58 MOV X22, X0
+	0x01E62F5C BL 0x2D2B9F4
+	0x01E62F60 LDR X8, [X20 + 0x18]
+	0x01E62F64 CBZ X8, 0x1E62FFC
+	0x01E62F68 LDR X0, [X8 + 0x38]
+	0x01E62F6C CBZ X0, 0x1E62FFC
+	0x01E62F70 ADRP X23, 0x2299000
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 And W31, W1, 1
+	003 Move W9, 4
+	004 NotImplemented "Instruction CSEL not yet implemented."
+	005 And W8, W8, 0xFFFFFFFB
+	006 Or W8, W8, W9
+	007 Move [X0+16], W8
+	008 Return 
+
+Method: System.Boolean get_SendState()
+
+Disassembly:
+	0x01E62F74 LDR X23, [X23 + 0x7D0]
+	0x01E62F78 MOV X1, X31
+	0x01E62F7C BL 0x33DFA08
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 Move W0, W8
+	003 ShiftRight W0, 3
+	004 And W0, W0, 7
+	005 Return X0
+
+Method: System.Void set_SendState(System.Boolean value)
+
+Disassembly:
+	0x01E62F80 LDR X8, [X23]
+	0x01E62F84 MOV X23, X0
+	0x01E62F88 LDR W9, [X8 + 0xE0]
+	0x01E62F8C CBNZ W9, 0x1E62F98
+	0x01E62F90 MOV X0, X8
+	0x01E62F94 BL 0x1C16DFC
+	0x01E62F98 MOV X0, X21
+	0x01E62F9C MOV X1, X22
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 And W31, W1, 1
+	003 Move W9, 8
+	004 NotImplemented "Instruction CSEL not yet implemented."
+	005 And W8, W8, 0xFFFFFFF7
+	006 Or W8, W8, W9
+	007 Move [X0+16], W8
+	008 Return 
+
+Method: System.Void .ctor(System.Byte webhookFlags)
+
+Disassembly:
+	0x01E62FA0 MOV X2, X23
+	0x01E62FA4 MOV X3, X31
+	0x01E62FA8 BL 0x1E3A098
+	0x01E62FAC TBZ X19, 0x0, 0x1E62FE4
+	0x01E62FB0 LDR X8, [X20 + 0x18]
+	0x01E62FB4 CBZ X8, 0x1E62FFC
+	0x01E62FB8 LDR X0, [X8 + 0x38]
+	0x01E62FBC CBZ X0, 0x1E62FFC
+	0x01E62FC0 LDR X19, [X20 + 0x10]
+	0x01E62FC4 MOV X1, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x01E62FC8 BL 0x33DFA08
+	0x01E62FCC LDR X8, [X20 + 0x18]
+	0x01E62FD0 CBZ X8, 0x1E62FFC
+	0x01E62FD4 LDR X2, [X8 + 0x30]
+	0x01E62FD8 MOV X1, X0
+	0x01E62FDC MOV X0, X19
+	0x01E62FE0 BL 0x1E63DC4
+	0x01E62FE4 LDR X0, [X20 + 0x18]
+	0x01E62FE8 LDP X20, X19, [X31 + 0x30]
+	0x01E62FEC LDP X22, X21, [X31 + 0x20]
+	0x01E62FF0 LDP X24, X23, [X31 + 0x10]
+	0x01E62FF4 LDR X30, [X31], #0x40
+	0x01E62FF8 RET
+	0x01E62FFC BL 0x1C16F20
+	0x01E63000 BL 0x1C16F28
+	0x01E63004 BL 0x1C16F44
+	0x01E63008 MOV X1, X31
+	0x01E6300C BL 0x1C16DEC
+	0x01E63010 STP X30, X23, [X31 - 0x30]!
+	0x01E63014 STP X22, X21, [X31 + 0x10]
+	0x01E63018 STP X20, X19, [X31 + 0x20]
+	0x01E6301C ADRP X23, 0x2576000
+	0x01E63020 LDRB W8, [X23 + 0xCB]
+	0x01E63024 MOV X19, X3
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x2578000
+	005 Move X20, 0x229B000
+	006 Move W8, [X19+184]
+	007 Move X20, [X20+1792]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x229B000
+	013 Move X0, [X0+1792]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+184], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move [X19+16], W31
+	023 Move X8, [X20]
+	024 Move X8, [X8+184]
+	025 Move [X8], X19
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Return 
+

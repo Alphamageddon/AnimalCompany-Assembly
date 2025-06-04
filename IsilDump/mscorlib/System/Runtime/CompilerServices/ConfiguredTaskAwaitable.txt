@@ -1,0 +1,33 @@
+Type: System.Runtime.CompilerServices.ConfiguredTaskAwaitable
+
+Method: System.Void .ctor(System.Threading.Tasks.Task task, System.Boolean continueOnCapturedContext)
+
+Disassembly:
+	0x032C50A0 MOV X1, X31
+	0x032C50A4 MOV X22, X3
+	0x032C50A8 MOV X19, X2
+	0x032C50AC MOV X21, X0
+	0x032C50B0 BL 0x33BDD8C
+	0x032C50B4 CBNZ X22, 0x32C50C4
+
+ISIL:
+	001 And W8, W2, 1
+	002 Move [X0], X1
+	003 Move [X0+9], W31
+	004 Move [X0+8], W8
+	005 Move [X0+12], W31
+	006 Return 
+
+Method: System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter GetAwaiter()
+
+Disassembly:
+	0x032C50C8 STR X20, [X21 + 0x10]
+	0x032C50CC LDP X20, X19, [X31 + 0x20]
+	0x032C50D0 LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X1, [X0+8]
+	003 Move X0, X8
+	004 Return X0
+

@@ -1,0 +1,175 @@
+Type: UnityEngine.Experimental.Rendering.XRView
+
+Method: System.Void .ctor(UnityEngine.Matrix4x4 projMatrix, UnityEngine.Matrix4x4 viewMatrix, UnityEngine.Rect viewport, UnityEngine.Mesh occlusionMesh, System.Int32 textureArraySlice)
+
+Disassembly:
+	0x0398B5CC BL 0x1C16F10
+	0x0398B5D0 LDR X1, [X23]
+	0x0398B5D4 MOV X20, X0
+	0x0398B5D8 BL 0x313CEF4
+	0x0398B5DC MOV W24, W31
+	0x0398B5E0 MOVZ W25, 0x1
+	0x0398B5E4 CBNZ X21, 0x398B594
+	0x0398B5E8 BL 0x1C16F20
+	0x0398B5EC BL 0x1C16F28
+	0x0398B5F0 BL 0x1C16F44
+	0x0398B5F4 MOV X1, X31
+	0x0398B5F8 BL 0x1C16DEC
+	0x0398B5FC STP X30, X23, [X31 - 0x30]!
+	0x0398B600 STP X22, X21, [X31 + 0x10]
+	0x0398B604 STP X20, X19, [X31 + 0x20]
+	0x0398B608 ADRP X22, 0xA56000
+	0x0398B60C ADRP X23, 0x7C5000
+	0x0398B610 ADRP X20, 0x7C5000
+	0x0398B614 ADRP X21, 0x7C5000
+	0x0398B618 LDRB W8, [X22 + 0xA99]
+	0x0398B61C LDR X23, [X23 + 0x8A8]
+	0x0398B620 LDR X20, [X20 + 0x8B0]
+	0x0398B624 LDR X21, [X21 + 0x8B8]
+	0x0398B628 MOV X19, X0
+	0x0398B62C TBNZ X8, 0x0, 0x398B65C
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move [X31+72], X19
+	004 Move V5, [X1+32]
+	005 Move V4, [X1+48]
+	006 Move V7, [X1]
+	007 Move V6, [X1+16]
+	008 Move X19, X0
+	009 Move [X0+32], V5
+	010 Move [X0+40], V4
+	011 Move [X0], V7
+	012 Move [X0+8], V6
+	013 Move V4, [X2]
+	014 Move V5, [X2+16]
+	015 Move V6, [X2+32]
+	016 Move V7, [X2+48]
+	017 Move [X0+128], S0
+	018 Move [X0+136], S1
+	019 Move [X0+136], S2
+	020 Move [X0+144], S3
+	021 Move [X0+144], X3
+	022 Move [X0+152], W4
+	023 Move [X0+96], V6
+	024 Move [X0+104], V7
+	025 Move [X0+64], V4
+	026 Move [X0+72], V5
+	027 Move V1, [X1+32]
+	028 Move V0, [X1+48]
+	029 Move V3, [X1]
+	030 Move V2, [X1+16]
+	031 Add X0, X31, 0
+	032 Move [X31+32], V1
+	033 Move [X31+40], V0
+	034 Move [X31], V3
+	035 Move [X31+8], V2
+	036 Call XRView.ComputeEyeCenterUV, X0
+	037 Move [X19+156], S0
+	038 Move [X19+164], S1
+	039 Move X30, [X31+64]
+	040 Move X19, [X31+72]
+	041 Add X31, X31, 80
+	042 Return 
+
+Method: UnityEngine.Vector2 ComputeEyeCenterUV(UnityEngine.Matrix4x4 proj)
+
+Disassembly:
+	0x0398B744 BL 0x1C16DFC
+	0x0398B748 LDR X0, [X20]
+	0x0398B74C LDR X8, [X0 + 0xB8]
+	0x0398B750 AND W9, W19, 0x1
+	0x0398B754 LDP X20, X19, [X31 + 0x10]
+	0x0398B758 STRB W9, [X8 + 0x10]
+	0x0398B75C LDP X30, X21, [X31], #0x20
+	0x0398B760 RET
+	0x0398B764 LDR X0, [X0 + 0x40]
+	0x0398B768 RET
+	0x0398B76C STP X29, X30, [X31 - 0x60]!
+	0x0398B770 STP X28, X27, [X31 + 0x10]
+	0x0398B774 STP X26, X25, [X31 + 0x20]
+	0x0398B778 STP X24, X23, [X31 + 0x30]
+	0x0398B77C STP X22, X21, [X31 + 0x40]
+	0x0398B780 STP X20, X19, [X31 + 0x50]
+	0x0398B784 ADRP X24, 0xA56000
+	0x0398B788 ADRP X21, 0x7C5000
+	0x0398B78C ADRP X26, 0x7C5000
+	0x0398B790 ADRP X25, 0x7C5000
+	0x0398B794 ADRP X22, 0x7C5000
+	0x0398B798 ADRP X23, 0x7C5000
+	0x0398B79C ADRP X28, 0x7C5000
+	0x0398B7A0 LDR X21, [X21 + 0x8C8]
+	0x0398B7A4 LDR X26, [X26 + 0x8D0]
+	0x0398B7A8 LDR X25, [X25 + 0x8D8]
+	0x0398B7AC LDR X22, [X22 + 0x8E0]
+	0x0398B7B0 LDR X23, [X23 + 0x8E8]
+	0x0398B7B4 LDR X28, [X28 + 0x8F0]
+	0x0398B7B8 LDRB W8, [X24 + 0xA9C]
+	0x0398B7BC MOV X20, X1
+	0x0398B7C0 MOV X19, X0
+	0x0398B7C4 TBNZ X8, 0x0, 0x398B8FC
+	0x0398B7C8 ADRP X0, 0x7C5000
+	0x0398B7CC LDR X0, [X0 + 0x8F8]
+	0x0398B7D0 BL 0x1C16CF4
+	0x0398B7D4 ADRP X0, 0x7C5000
+	0x0398B7D8 LDR X0, [X0 + 0x900]
+	0x0398B7DC BL 0x1C16CF4
+	0x0398B7E0 ADRP X0, 0x7C5000
+
+ISIL:
+	001 Subtract X31, X31, 96
+	002 Move [X31+32], D11
+	003 Move [X31+40], D10
+	004 Move [X31+48], D9
+	005 Move [X31+56], D8
+	006 Move [X31+64], X30
+	007 Move [X31+72], X21
+	008 Move [X31+80], X20
+	009 Move [X31+88], X19
+	010 Move X21, 0xA57000
+	011 Move X20, 0x769000
+	012 Move W8, [X21+2706]
+	013 Move X20, [X20+1448]
+	014 Move X19, X0
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {24}
+	019 Move X0, 0x769000
+	020 Move X0, [X0+1448]
+	021 Call 0x1C17CF4
+	022 Move W8, 1
+	023 Move [X21+2706], W8
+	024 Add X8, X31, 8
+	025 Move X0, X19
+	026 Move X1, X31
+	027 Call Matrix4x4.get_decomposeProjection, X0
+	028 Move X0, [X20]
+	029 Move S11, [X31+8]
+	030 Move S9, [X31+12]
+	031 Move S8, [X31+16]
+	032 Move S10, [X31+20]
+	033 Move W8, [X0+224]
+	034 Compare W8, 0
+	035 JumpIfNotEqual {37}
+	036 Call 0x1C17DFC
+	037 NotImplemented "Instruction FABS not yet implemented."
+	038 NotImplemented "Instruction FABS not yet implemented."
+	039 NotImplemented "Instruction FABS not yet implemented."
+	040 NotImplemented "Instruction FABS not yet implemented."
+	041 Move X20, [X31+80]
+	042 Move X19, [X31+88]
+	043 Move X30, [X31+64]
+	044 Move X21, [X31+72]
+	045 Move D9, [X31+48]
+	046 Move D8, [X31+56]
+	047 Move D11, [X31+32]
+	048 Move D10, [X31+40]
+	049 Add S1, S0, S1
+	050 Add S3, S3, S2
+	051 NotImplemented "Instruction FDIV not yet implemented."
+	052 NotImplemented "Instruction FDIV not yet implemented."
+	053 Add X31, X31, 96
+	054 Return X0
+

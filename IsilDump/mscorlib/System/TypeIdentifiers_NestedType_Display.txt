@@ -1,0 +1,65 @@
+Type: System.TypeIdentifiers/Display
+
+Method: System.Void .ctor(System.String displayName)
+
+Disassembly:
+	0x033D3F28 ADD W10, W10, 0x1
+	0x033D3F2C STR W10, [X25 + 0x1C]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Move [X0+24], X31
+	003 Return 
+
+Method: System.String get_DisplayName()
+
+Disassembly:
+	0x033D3F30 CBZ X8, 0x33D41A4
+	0x033D3F34 LDRSW X10, [X25 + 0x18]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.String get_InternalName()
+
+Disassembly:
+	0x033D3F38 LDR W11, [X8 + 0x18]
+	0x033D3F3C MOV X1, X0
+	0x033D3F40 CMP W10, W11
+	0x033D3F44 B.CS 0x33D3FB4
+	0x033D3F48 ADD W9, W10, 0x1
+	0x033D3F4C ADD X8, X8, X10, 0x3, LSL
+	0x033D3F50 STR W9, [X25 + 0x18]
+	0x033D3F54 STR X1, [X8 + 0x20]
+	0x033D3F58 B 0x33D3FC8
+	0x033D3F5C ADD X1, X31, 0xC
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+24]
+	005 Compare X0, 0
+	006 JumpIfNotEqual {11}
+	007 Move X0, [X19+16]
+	008 Move X1, X31
+	009 Call TypeSpec.UnescapeInternalName, X0
+	010 Move [X19+24], X0
+	011 Move X30, [X31+16]
+	012 Move X19, [X31+24]
+	013 Return X0
+
+Method: System.String GetInternalName()
+
+Disassembly:
+	0x033D3F60 MOVZ W2, 0x1
+	0x033D3F64 MOV X0, X20
+	0x033D3F68 MOV W3, W31
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Move X1, X31
+	003 Call TypeSpec.UnescapeInternalName, X0
+	004 Return X0
+

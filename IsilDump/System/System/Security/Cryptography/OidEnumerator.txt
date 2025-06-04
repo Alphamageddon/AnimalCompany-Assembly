@@ -1,0 +1,129 @@
+Type: System.Security.Cryptography.OidEnumerator
+
+Method: System.Void .ctor(System.Security.Cryptography.OidCollection oids)
+
+Disassembly:
+	0x0364F118 BL 0x32333E0
+	0x0364F11C MOV X0, X21
+	0x0364F120 MOV X1, X24
+	0x0364F124 MOV X2, X31
+	0x0364F128 BL 0x32333E0
+	0x0364F12C TBZ X19, 0x0, 0x364F14C
+	0x0364F130 MOV X0, X31
+	0x0364F134 BL 0x33C1548
+	0x0364F138 MOV X1, X0
+	0x0364F13C MOV X0, X21
+	0x0364F140 MOV X2, X31
+	0x0364F144 BL 0x32333E0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move TEMP, 0
+	009 Not TEMP
+	010 Move W8, TEMP
+	011 Move [X20+16], X19
+	012 Move [X20+24], W8
+	013 Move X20, [X31+16]
+	014 Move X19, [X31+24]
+	015 Move X30, [X31+32]
+	016 Return 
+
+Method: System.Security.Cryptography.Oid get_Current()
+
+Disassembly:
+	0x0364F304 BL 0x1C16CF4
+	0x0364F308 ADRP X0, 0xAED000
+	0x0364F30C LDR X0, [X0 + 0x8B0]
+	0x0364F310 BL 0x1C16CF4
+	0x0364F314 ADRP X0, 0xAD7000
+	0x0364F318 LDR X0, [X0 + 0x350]
+	0x0364F31C BL 0x1C16CF4
+	0x0364F320 ADRP X0, 0xAA4000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {10}
+	005 Move W1, [X0+24]
+	006 Move X0, X8
+	007 Move X30, [X31+16]
+	008 Call OidCollection.get_Item, X0, X1
+	009 Return X0
+	010 Call 0x1C17F20
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x0364F324 LDR X0, [X0 + 0x838]
+
+ISIL:
+	001 Call OidEnumerator.get_Current, X0
+	002 Return X0
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x0364F328 BL 0x1C16CF4
+	0x0364F32C ADRP X0, 0xAED000
+	0x0364F330 LDR X0, [X0 + 0x8B8]
+	0x0364F334 BL 0x1C16CF4
+	0x0364F338 ADRP X0, 0xAED000
+	0x0364F33C LDR X0, [X0 + 0x8C0]
+	0x0364F340 BL 0x1C16CF4
+	0x0364F344 ADRP X0, 0xAED000
+	0x0364F348 LDR X0, [X0 + 0x890]
+	0x0364F34C BL 0x1C16CF4
+	0x0364F350 ADRP X0, 0xAD7000
+	0x0364F354 LDR X0, [X0 + 0x198]
+	0x0364F358 BL 0x1C16CF4
+	0x0364F35C ADRP X0, 0xAED000
+	0x0364F360 LDR X0, [X0 + 0x8C8]
+	0x0364F364 BL 0x1C16CF4
+	0x0364F368 ADRP X0, 0xAED000
+	0x0364F36C LDR X0, [X0 + 0x8D0]
+	0x0364F370 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X0
+	005 Move X0, [X0+16]
+	006 Compare X0, 0
+	007 JumpIfEqual {21}
+	008 Move W20, [X19+24]
+	009 Call OidCollection.get_Count, X0
+	010 Subtract W8, W0, 1
+	011 NotImplemented "Instruction CMP not yet implemented."
+	012 Move W9, [X19+24]
+	013 Add W9, W9, 1
+	014 Move [X19+24], W9
+	015 NotImplemented "Instruction CMP not yet implemented."
+	016 Move X20, [X31+16]
+	017 Move X19, [X31+24]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 Move X30, [X31+32]
+	020 Return X0
+	021 Call 0x1C17F20
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x0364F374 ADRP X0, 0xAED000
+	0x0364F378 LDR X0, [X0 + 0x8D8]
+	0x0364F37C BL 0x1C16CF4
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move [X0+24], W8
+	005 Return 
+

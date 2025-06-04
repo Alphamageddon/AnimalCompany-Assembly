@@ -1,0 +1,85 @@
+Type: Mono.Net.Security.AsyncReadRequest
+
+Method: System.Void .ctor(Mono.Net.Security.MobileAuthenticatedStream parent, System.Boolean sync, System.Byte[] buffer, System.Int32 offset, System.Int32 size)
+
+Disassembly:
+	0x035EA76C EOR W22, W0, 0x1
+	0x035EA770 LDP W19, W1, [X31 + 0x28]
+
+ISIL:
+	001 And W2, W2, 1
+	002 Call AsyncReadOrWriteRequest..ctor, X0, X1, X2, X3, X4, X5
+	003 Return 
+
+Method: Mono.Net.Security.AsyncOperationStatus Run(Mono.Net.Security.AsyncOperationStatus status)
+
+Disassembly:
+	0x035EA774 LDR X2, [X27]
+	0x035EA778 ADD X0, X31, 0x18
+	0x035EA77C STR X31, [X31 + 0x18]
+	0x035EA780 BL 0x24345B8
+	0x035EA784 LDR X0, [X26]
+	0x035EA788 BL 0x1C16F10
+	0x035EA78C LDR X4, [X31 + 0x18]
+	0x035EA790 MOV X20, X0
+	0x035EA794 AND W1, W23, 0x1
+	0x035EA798 AND W2, W22, 0x1
+	0x035EA79C MOV W3, W19
+	0x035EA7A0 MOV X5, X31
+	0x035EA7A4 BL 0x31FD3BC
+	0x035EA7A8 MOV X0, X20
+	0x035EA7AC LDP X20, X19, [X31 + 0x70]
+	0x035EA7B0 LDP X22, X21, [X31 + 0x60]
+	0x035EA7B4 LDP X24, X23, [X31 + 0x50]
+	0x035EA7B8 LDP X26, X25, [X31 + 0x40]
+	0x035EA7BC LDP X28, X27, [X31 + 0x30]
+	0x035EA7C0 LDR X30, [X31 + 0x20]
+	0x035EA7C4 ADD X31, X31, 0x80
+	0x035EA7C8 RET
+	0x035EA7CC LDR X9, [X19 + 0x28]
+	0x035EA7D0 CBNZ X9, 0x35EA758
+	0x035EA7D4 B 0x35EA63C
+	0x035EA7D8 BL 0x1C16F20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+16]
+	005 Compare X0, 0
+	006 JumpIfEqual {40}
+	007 Move X1, [X19+56]
+	008 Call MobileAuthenticatedStream.ProcessRead, X0, X1
+	009 Move TEMP, X0
+	010 And TEMP, TEMP, -2147483648
+	011 Compare TEMP, -2147483648
+	012 JumpIfEqual {32}
+	013 Move W8, [X19+64]
+	014 Move X9, [X19+56]
+	015 Add W8, W8, W0
+	016 Move [X19+64], W8
+	017 Compare X9, 0
+	018 JumpIfEqual {40}
+	019 Move W10, [X9+24]
+	020 Move W11, [X9+28]
+	021 Add W10, W10, W0
+	022 Subtract W11, W11, W0
+	023 Move [X9+24], W10
+	024 Move [X9+28], W11
+	025 Move TEMP, X0
+	026 And TEMP, TEMP, 1
+	027 Compare TEMP, 1
+	028 JumpIfNotEqual {35}
+	029 Compare W8, 0
+	030 JumpIfNotEqual {35}
+	031 Move W0, 1
+	032 Move TEMP, 0
+	033 Not TEMP
+	034 Move W8, TEMP
+	035 Move [X19+28], W8
+	036 Move W0, 3
+	037 Move X30, [X31+16]
+	038 Move X19, [X31+24]
+	039 Return X0
+	040 Call 0x1C17F20
+

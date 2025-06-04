@@ -1,0 +1,30 @@
+Type: System.Reflection.AssemblyDefaultAliasAttribute
+
+Method: System.Void .ctor(System.String defaultAlias)
+
+Disassembly:
+	0x032CD5E8 MOVZ W1, 0x1
+	0x032CD5EC BL 0x1C16D6C
+	0x032CD5F0 ADRP X24, 0xE4D000
+	0x032CD5F4 LDR X8, [X28]
+	0x032CD5F8 LDR X24, [X24 + 0xD80]
+	0x032CD5FC MOV X22, X0
+	0x032CD600 LDR W9, [X8 + 0xE0]
+	0x032CD604 LDR X23, [X24]
+	0x032CD608 CBNZ W9, 0x32CD614
+	0x032CD60C MOV X0, X8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

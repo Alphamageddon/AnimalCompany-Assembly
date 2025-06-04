@@ -1,0 +1,45 @@
+Type: AnimalCompany.AvatarSystem.AvatarArmature
+
+Method: UnityEngine.Transform GetBone(AnimalCompany.AvatarSystem.AvatarBodyBones boneType)
+
+Disassembly:
+	0x01E1EBB0 CMP W23, W8
+	0x01E1EBB4 B.CS 0x1E1ED50
+	0x01E1EBB8 LDR X20, [X24, X23, LSL #3]
+	0x01E1EBBC CBZ X20, 0x1E1ED4C
+	0x01E1EBC0 LDR W8, [X20 + 0x10]
+	0x01E1EBC4 SUB W8, W8, 0x5
+	0x01E1EBC8 CMP W8, 0x2
+	0x01E1EBCC B.CC 0x1E1EC58
+	0x01E1EBD0 MOV X26, X20
+	0x01E1EBD4 LDRB W8, [X19 + 0x44]
+	0x01E1EBD8 LDR X21, [X26 + 0x28]!
+	0x01E1EBDC STRB W8, [X26 + 0x18]
+	0x01E1EBE0 LDR X0, [X25]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+32]
+	003 Compare X8, 0
+	004 JumpIfEqual {12}
+	005 Move W10, [X8+24]
+	006 Subtract W9, W1, 1
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 Add X8, X8, W9
+	009 Move X0, [X8+32]
+	010 Move X30, [X31+16]
+	011 Return X0
+	012 Call 0x1C17F20
+	013 Call 0x1C17F28
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E1EBE4 LDR W8, [X0 + 0xE0]
+	0x01E1EBE8 CBNZ W8, 0x1E1EBF0
+
+ISIL:
+	001 Move X1, X31
+	002 Call MonoBehaviour..ctor, X0
+	003 Return 
+

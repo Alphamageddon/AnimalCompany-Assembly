@@ -1,0 +1,497 @@
+Type: UnityEngine.Animations.Rigging.OverrideTransformData
+
+Method: UnityEngine.Transform get_constrainedObject()
+
+Disassembly:
+	0x036F0AA8 LDP X8, X2, [X0]
+	0x036F0AAC MOV X0, X21
+
+ISIL:
+	001 Move X0, [X0]
+	002 Return X0
+
+Method: System.Void set_constrainedObject(UnityEngine.Transform value)
+
+Disassembly:
+	0x036F0AB0 MOV X1, X19
+	0x036F0AB4 BLR X8
+
+ISIL:
+	001 Move [X0], X1
+	002 Return 
+
+Method: UnityEngine.Transform get_sourceObject()
+
+Disassembly:
+	0x036F0AB8 CBZ X25, 0x36F0AF8
+	0x036F0ABC MOV X21, X0
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Return X0
+
+Method: System.Void set_sourceObject(UnityEngine.Transform value)
+
+Disassembly:
+	0x036F0AC0 CBZ X0, 0x36F0AD8
+	0x036F0AC4 LDR X8, [X25]
+
+ISIL:
+	001 Move [X0+8], X1
+	002 Return 
+
+Method: UnityEngine.Animations.Rigging.OverrideTransformData/Space get_space()
+
+Disassembly:
+	0x036F0AC8 MOV X0, X21
+	0x036F0ACC LDR X1, [X8 + 0x40]
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_space(UnityEngine.Animations.Rigging.OverrideTransformData/Space value)
+
+Disassembly:
+	0x036F0AD0 BL 0x1C16E00
+	0x036F0AD4 CBZ X0, 0x36F0B24
+
+ISIL:
+	001 Move [X0+48], W1
+	002 Return 
+
+Method: UnityEngine.Vector3 get_position()
+
+Disassembly:
+	0x036F0AD8 LDR W8, [X25 + 0x18]
+	0x036F0ADC CMP W22, W8
+	0x036F0AE0 B.CS 0x36F0B20
+
+ISIL:
+	001 Move S0, [X0+16]
+	002 Move S1, [X0+20]
+	003 Move V2, [X0+24]
+	004 Return X0
+
+Method: System.Void set_position(UnityEngine.Vector3 value)
+
+Disassembly:
+	0x036F0AE4 ADD X8, X25, X24, 0x3, LSL
+	0x036F0AE8 STR X21, [X8 + 0x20]
+	0x036F0AEC LDR X8, [X20 + 0x20]
+
+ISIL:
+	001 Move [X0+16], S0
+	002 Move [X0+24], S1
+	003 Move [X0+24], S2
+	004 Return 
+
+Method: UnityEngine.Vector3 get_rotation()
+
+Disassembly:
+	0x036F0AF0 ADD W22, W22, 0x1
+	0x036F0AF4 CBNZ X8, 0x36F0A30
+	0x036F0AF8 BL 0x1C16F20
+
+ISIL:
+	001 Move S0, [X0+28]
+	002 Move S1, [X0+32]
+	003 Move V2, [X0+36]
+	004 Return X0
+
+Method: System.Void set_rotation(UnityEngine.Vector3 value)
+
+Disassembly:
+	0x036F0AFC MOV W0, W31
+	0x036F0B00 LDP X20, X19, [X31 + 0x30]
+	0x036F0B04 LDP X22, X21, [X31 + 0x20]
+
+ISIL:
+	001 Move [X0+28], S0
+	002 Move [X0+36], S1
+	003 Move [X0+36], S2
+	004 Return 
+
+Method: System.Single get_positionWeight()
+
+Disassembly:
+	0x036F0B08 LDP X24, X23, [X31 + 0x10]
+	0x036F0B0C LDP X30, X25, [X31], #0x40
+
+ISIL:
+	001 Move V0, [X0+40]
+	002 Return V0
+
+Method: System.Void set_positionWeight(System.Single value)
+
+Disassembly:
+	0x036F0B10 RET
+	0x036F0B14 MOVZ W0, 0x1
+	0x036F0B18 STRB W0, [X20 + 0x30]
+	0x036F0B1C B 0x36F0B00
+	0x036F0B20 BL 0x1C16F28
+	0x036F0B24 BL 0x1C16F44
+	0x036F0B28 MOV X1, X31
+
+ISIL:
+	001 Move S1, 1
+	002 NotImplemented "Instruction FCMP not yet implemented."
+	003 NotImplemented "Instruction FMIN not yet implemented."
+	004 Move S1, W31
+	005 NotImplemented "Instruction FCSEL not yet implemented."
+	006 Move [X0+40], S0
+	007 Return 
+
+Method: System.Single get_rotationWeight()
+
+Disassembly:
+	0x036F0B2C BL 0x1C16DEC
+	0x036F0B30 STP X30, X23, [X31 - 0x30]!
+
+ISIL:
+	001 Move V0, [X0+44]
+	002 Return V0
+
+Method: System.Void set_rotationWeight(System.Single value)
+
+Disassembly:
+	0x036F0B34 STP X22, X21, [X31 + 0x10]
+	0x036F0B38 STP X20, X19, [X31 + 0x20]
+	0x036F0B3C ADRP X20, 0xCF0000
+	0x036F0B40 LDRB W8, [X20 + 0xB83]
+	0x036F0B44 MOV X19, X0
+	0x036F0B48 TBNZ X8, 0x0, 0x36F0B60
+	0x036F0B4C ADRP X0, 0xA2C000
+
+ISIL:
+	001 Move S1, 1
+	002 NotImplemented "Instruction FCMP not yet implemented."
+	003 NotImplemented "Instruction FMIN not yet implemented."
+	004 Move S1, W31
+	005 NotImplemented "Instruction FCSEL not yet implemented."
+	006 Move [X0+44], S0
+	007 Return 
+
+Method: System.Int32 UnityEngine.Animations.Rigging.IOverrideTransformData.get_space()
+
+Disassembly:
+	0x036F0B50 LDR X0, [X0 + 0xE30]
+	0x036F0B54 BL 0x1C16CF4
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: System.String UnityEngine.Animations.Rigging.IOverrideTransformData.get_positionWeightFloatProperty()
+
+Disassembly:
+	0x036F0B58 MOVZ W8, 0x1
+	0x036F0B5C STRB W8, [X20 + 0xB83]
+	0x036F0B60 LDRB W8, [X19 + 0x30]
+	0x036F0B64 CBZ W8, 0x36F0C2C
+	0x036F0B68 LDR X8, [X19 + 0x20]
+	0x036F0B6C CBZ X8, 0x36F0C28
+	0x036F0B70 ADRP X23, 0xA2C000
+	0x036F0B74 LDR X23, [X23 + 0xE30]
+	0x036F0B78 MOV W22, W31
+	0x036F0B7C LDR W9, [X8 + 0x18]
+	0x036F0B80 CMP W22, W9
+	0x036F0B84 B.GE 0x36F0C2C
+	0x036F0B88 CMP W22, W9
+	0x036F0B8C B.CS 0x36F0C3C
+	0x036F0B90 LDR X9, [X19 + 0x28]
+	0x036F0B94 CBZ X9, 0x36F0C28
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xCF1000
+	005 Move X20, 0xA51000
+	006 Move W8, [X19+2925]
+	007 Move X20, [X20+2016]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xA51000
+	013 Move X0, [X0+2016]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2925], W8
+	017 Move X0, [X20]
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Call ConstraintsUtils.ConstructConstraintDataPropertyName, X0
+	022 Return X0
+
+Method: System.String UnityEngine.Animations.Rigging.IOverrideTransformData.get_rotationWeightFloatProperty()
+
+Disassembly:
+	0x036F0B98 LDR W10, [X9 + 0x18]
+	0x036F0B9C CMP W22, W10
+	0x036F0BA0 B.CS 0x36F0C3C
+	0x036F0BA4 SXTW X10, W22
+	0x036F0BA8 ADD X8, X8, X10, 0x3, LSL
+	0x036F0BAC LDR X20, [X8 + 0x20]
+	0x036F0BB0 CBZ X20, 0x36F0C28
+	0x036F0BB4 LDR X8, [X20]
+	0x036F0BB8 ADD X9, X9, X10, 0x3, LSL
+	0x036F0BBC LDR X21, [X9 + 0x20]
+	0x036F0BC0 LDR X1, [X23]
+	0x036F0BC4 LDRH W9, [X8 + 0x12E]
+	0x036F0BC8 CBZ X9, 0x36F0BEC
+	0x036F0BCC LDR X10, [X8 + 0xB0]
+	0x036F0BD0 ADD X10, X10, 0x8
+	0x036F0BD4 LDUR X11, [X10 - 0x8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xCF1000
+	005 Move X20, 0xA51000
+	006 Move W8, [X19+2926]
+	007 Move X20, [X20+2024]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xA51000
+	013 Move X0, [X0+2024]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2926], W8
+	017 Move X0, [X20]
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Call ConstraintsUtils.ConstructConstraintDataPropertyName, X0
+	022 Return X0
+
+Method: System.String UnityEngine.Animations.Rigging.IOverrideTransformData.get_positionVector3Property()
+
+Disassembly:
+	0x036F0BD8 CMP X11, X1
+	0x036F0BDC B.EQ 0x36F0BFC
+	0x036F0BE0 SUBS X9, X9, 0x1
+	0x036F0BE4 ADD X10, X10, 0x10
+	0x036F0BE8 B.NE 0x36F0BD4
+	0x036F0BEC MOVZ W2, 0x2
+	0x036F0BF0 MOV X0, X20
+	0x036F0BF4 BL 0x1C5C788
+	0x036F0BF8 B 0x36F0C0C
+	0x036F0BFC LDR W9, [X10]
+	0x036F0C00 ADD W9, W9, 0x2
+	0x036F0C04 ADD X8, X8, W9, 0x4, SXTW
+	0x036F0C08 ADD X0, X8, 0x138
+	0x036F0C0C LDP X8, X2, [X0]
+	0x036F0C10 MOV X0, X20
+	0x036F0C14 MOV X1, X21
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xCF1000
+	005 Move X20, 0xA51000
+	006 Move W8, [X19+2927]
+	007 Move X20, [X20+2320]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xA51000
+	013 Move X0, [X0+2320]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2927], W8
+	017 Move X0, [X20]
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Call ConstraintsUtils.ConstructConstraintDataPropertyName, X0
+	022 Return X0
+
+Method: System.String UnityEngine.Animations.Rigging.IOverrideTransformData.get_rotationVector3Property()
+
+Disassembly:
+	0x036F0C18 BLR X8
+	0x036F0C1C LDR X8, [X19 + 0x20]
+	0x036F0C20 ADD W22, W22, 0x1
+	0x036F0C24 CBNZ X8, 0x36F0B7C
+	0x036F0C28 BL 0x1C16F20
+	0x036F0C2C LDP X20, X19, [X31 + 0x20]
+	0x036F0C30 LDP X22, X21, [X31 + 0x10]
+	0x036F0C34 LDP X30, X23, [X31], #0x30
+	0x036F0C38 RET
+	0x036F0C3C BL 0x1C16F28
+	0x036F0C40 STP X30, X25, [X31 - 0x40]!
+	0x036F0C44 STP X24, X23, [X31 + 0x10]
+	0x036F0C48 STP X22, X21, [X31 + 0x20]
+	0x036F0C4C STP X20, X19, [X31 + 0x30]
+	0x036F0C50 ADRP X20, 0xCF0000
+	0x036F0C54 LDRB W8, [X20 + 0xB84]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xCF1000
+	005 Move X20, 0xA51000
+	006 Move W8, [X19+2928]
+	007 Move X20, [X20+2328]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xA51000
+	013 Move X0, [X0+2328]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2928], W8
+	017 Move X0, [X20]
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Call ConstraintsUtils.ConstructConstraintDataPropertyName, X0
+	022 Return X0
+
+Method: System.Boolean UnityEngine.Animations.Rigging.IAnimationJobData.IsValid()
+
+Disassembly:
+	0x036F0C58 MOV X19, X0
+	0x036F0C5C TBNZ X8, 0x0, 0x36F0C74
+	0x036F0C60 ADRP X0, 0xA2C000
+	0x036F0C64 LDR X0, [X0 + 0xE30]
+	0x036F0C68 BL 0x1C16CF4
+	0x036F0C6C MOVZ W8, 0x1
+	0x036F0C70 STRB W8, [X20 + 0xB84]
+	0x036F0C74 LDRB W8, [X19 + 0x30]
+	0x036F0C78 CBZ W8, 0x36F0D58
+	0x036F0C7C MOV X22, X19
+	0x036F0C80 LDR X8, [X22 + 0x20]!
+	0x036F0C84 CBZ X8, 0x36F0D4C
+	0x036F0C88 LDR W23, [X8 + 0x18]
+	0x036F0C8C CMP W23, 0x1
+	0x036F0C90 B.LT 0x36F0D50
+	0x036F0C94 ADRP X24, 0xA2C000
+	0x036F0C98 LDR X24, [X24 + 0xE30]
+	0x036F0C9C MOV W9, W31
+	0x036F0CA0 LDR W10, [X8 + 0x18]
+	0x036F0CA4 CMP W9, W10
+	0x036F0CA8 B.CS 0x36F0D6C
+	0x036F0CAC LDR X10, [X19 + 0x28]
+	0x036F0CB0 CBZ X10, 0x36F0D4C
+	0x036F0CB4 LDR W11, [X10 + 0x18]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xCF1000
+	006 Move X20, 0xA04000
+	007 Move W8, [X21+2929]
+	008 Move X20, [X20+1432]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xA04000
+	015 Move X0, [X0+1432]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+2929], W8
+	019 Move X0, [X20]
+	020 Move X19, [X19]
+	021 Move W8, [X0+224]
+	022 Compare W8, 0
+	023 JumpIfNotEqual {25}
+	024 Call 0x1C17DFC
+	025 Move X0, X19
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X1, X31
+	029 Move X2, X31
+	030 Move X30, [X31+32]
+	031 Move X21, [X31+40]
+	032 Call Object.op_Inequality, X0, X1
+	033 Return X0
+
+Method: System.Void UnityEngine.Animations.Rigging.IAnimationJobData.SetDefaultValues()
+
+Disassembly:
+	0x036F0CB8 SXTW X25, W9
+	0x036F0CBC CMP W25, W11
+	0x036F0CC0 B.CS 0x36F0D6C
+	0x036F0CC4 ADD X8, X8, X25, 0x3, LSL
+	0x036F0CC8 LDR X20, [X8 + 0x20]
+	0x036F0CCC CBZ X20, 0x36F0D4C
+	0x036F0CD0 LDR X8, [X20]
+	0x036F0CD4 ADD X9, X10, X25, 0x3, LSL
+	0x036F0CD8 LDR X21, [X9 + 0x20]
+	0x036F0CDC LDR X1, [X24]
+	0x036F0CE0 LDRH W9, [X8 + 0x12E]
+	0x036F0CE4 CBZ X9, 0x36F0D08
+	0x036F0CE8 LDR X10, [X8 + 0xB0]
+	0x036F0CEC ADD X10, X10, 0x8
+	0x036F0CF0 LDUR X11, [X10 - 0x8]
+	0x036F0CF4 CMP X11, X1
+	0x036F0CF8 B.EQ 0x36F0D18
+	0x036F0CFC SUBS X9, X9, 0x1
+	0x036F0D00 ADD X10, X10, 0x10
+	0x036F0D04 B.NE 0x36F0CF0
+	0x036F0D08 MOVZ W2, 0x3
+	0x036F0D0C MOV X0, X20
+	0x036F0D10 BL 0x1C5C788
+	0x036F0D14 B 0x36F0D28
+	0x036F0D18 LDR W9, [X10]
+	0x036F0D1C ADD W9, W9, 0x3
+	0x036F0D20 ADD X8, X8, W9, 0x4, SXTW
+	0x036F0D24 ADD X0, X8, 0x138
+	0x036F0D28 LDP X8, X2, [X0]
+	0x036F0D2C MOV X0, X20
+	0x036F0D30 MOV X1, X21
+	0x036F0D34 BLR X8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move [X0], X31
+	005 Move [X0+8], X31
+	006 Move X20, 0xCE9000
+	007 Move W8, [X20+1923]
+	008 Move X19, X0
+	009 Compare W8, 0
+	010 JumpIfNotEqual {16}
+	011 Move X0, 0xA04000
+	012 Move X0, [X0+1440]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+1923], W8
+	016 Move X8, 0xA04000
+	017 Move X8, [X8+1440]
+	018 Move X8, [X8]
+	019 Move X9, [X8+184]
+	020 Move V0, [X9]
+	021 Move V1, [X9+8]
+	022 Move W9, 2
+	023 Move [X19+16], D0
+	024 Move [X19+24], S1
+	025 Move X8, [X8+184]
+	026 Move V0, [X8]
+	027 Move V1, [X8+8]
+	028 Move [X19+48], W9
+	029 Move [X19+28], D0
+	030 Move V0, 0
+	031 Move [X19+36], S1
+	032 Move [X19+40], D0
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 Move X30, [X31+32]
+	036 Return 
+

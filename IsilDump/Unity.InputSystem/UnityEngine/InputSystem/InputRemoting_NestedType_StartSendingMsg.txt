@@ -1,0 +1,18 @@
+Type: UnityEngine.InputSystem.InputRemoting/StartSendingMsg
+
+Method: System.Void Process(UnityEngine.InputSystem.InputRemoting receiver)
+
+Disassembly:
+	0x037BBDE4 ADRP X0, 0x98C000
+	0x037BBDE8 LDR X0, [X0 + 0xC88]
+	0x037BBDEC BL 0x1C16CF4
+	0x037BBDF0 MOVZ W8, 0x1
+
+ISIL:
+	001 Compare X0, 0
+	002 JumpIfEqual {5}
+	003 Call InputRemoting.StartSending, X0
+	004 Return 
+	005 Move [X31-16], X30
+	006 Call 0x1C17F20
+

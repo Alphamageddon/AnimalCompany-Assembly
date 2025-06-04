@@ -1,0 +1,45 @@
+Type: UnityEngine.ProBuilder.MeshOperations.MeshValidation/<>c__DisplayClass5_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03977B20 CMP W0, W22
+	0x03977B24 B.EQ 0x3977A14
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <CollectFaceGroups>b__0(UnityEngine.ProBuilder.Triangle x)
+
+Disassembly:
+	0x039798D4 BL 0x1C16CF4
+	0x039798D8 ADRP X0, 0x77B000
+	0x039798DC LDR X0, [X0 + 0xE10]
+	0x039798E0 BL 0x1C16CF4
+	0x039798E4 ADRP X0, 0x7D6000
+	0x039798E8 LDR X0, [X0 + 0x308]
+	0x039798EC BL 0x1C16CF4
+	0x039798F0 ADRP X0, 0x7D6000
+	0x039798F4 LDR X0, [X0 + 0x1C0]
+	0x039798F8 BL 0x1C16CF4
+	0x039798FC ADRP X0, 0x77E000
+	0x03979900 LDR X0, [X0 + 0xB70]
+	0x03979904 BL 0x1C16CF4
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31], X1
+	004 Move [X31+8], W2
+	005 Move X1, [X0+16]
+	006 Move W2, [X0+24]
+	007 Add X0, X31, 0
+	008 Move X3, X31
+	009 Call Triangle.IsAdjacent, X0, X1
+	010 Move X30, [X31+16]
+	011 And W0, W0, 1
+	012 Add X31, X31, 32
+	013 Return X0
+

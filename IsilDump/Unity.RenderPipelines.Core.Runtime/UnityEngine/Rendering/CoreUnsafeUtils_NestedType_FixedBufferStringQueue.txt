@@ -1,0 +1,239 @@
+Type: UnityEngine.Rendering.CoreUnsafeUtils/FixedBufferStringQueue
+
+Method: System.Int32 get_Count()
+
+Disassembly:
+	0x0399F824 ADRP X0, 0x7B2000
+	0x0399F828 LDR X0, [X0 + 0x360]
+
+ISIL:
+	001 Move W0, [X0+36]
+	002 Return X0
+
+Method: System.Void set_Count(System.Int32 value)
+
+Disassembly:
+	0x0399F82C BL 0x1C16CF4
+	0x0399F830 ADRP X0, 0x754000
+
+ISIL:
+	001 Move [X0+36], W1
+	002 Return 
+
+Method: System.Void .ctor(System.Byte* ptr, System.Int32 length)
+
+Disassembly:
+	0x0399F834 LDR X0, [X0 + 0x598]
+	0x0399F838 BL 0x1C16CF4
+	0x0399F83C MOVZ W8, 0x1
+	0x0399F840 STRB W8, [X24 + 0xB75]
+	0x0399F844 LDR X0, [X22]
+	0x0399F848 MOVI V0.2D, 0x0
+	0x0399F84C STUR V0, [X23 + 0x2C]
+	0x0399F850 STP V0, V0, [X31 + 0x90]
+	0x0399F854 STR V0, [X31 + 0x8]
+
+ISIL:
+	001 Move X8, X1
+	002 Add X9, X8, W2
+	003 Move X1, W2
+	004 Move [X0], X8
+	005 Move [X0+8], X8
+	006 Move [X0+16], X9
+	007 Move [X0+24], X8
+	008 Move [X0+32], W2
+	009 Move [X0+36], W31
+	010 Move X0, X8
+	011 Move X2, X31
+	012 Call UnsafeUtility.MemClear, X0, X1
+	013 Return 
+
+Method: System.Boolean TryPush(System.String v)
+
+Disassembly:
+	0x0399F874 MOV X2, X31
+	0x0399F878 BL 0x3C3883C
+	0x0399F87C LDR X8, [X24]
+	0x0399F880 MOV W22, W0
+	0x0399F884 LDR W9, [X8 + 0xE0]
+	0x0399F888 CBZ W9, 0x399F8A8
+	0x0399F88C TBZ X22, 0x0, 0x399F8B4
+	0x0399F890 LDR X8, [X24]
+	0x0399F894 MOV W21, W31
+	0x0399F898 LDR X9, [X8 + 0xB8]
+	0x0399F89C LDR X10, [X9 + 0x20]
+	0x0399F8A0 STR X10, [X9 + 0x30]
+	0x0399F8A4 B 0x399F8E0
+	0x0399F8A8 MOV X0, X8
+	0x0399F8AC BL 0x1C16DFC
+	0x0399F8B0 TBNZ X22, 0x0, 0x399F890
+	0x0399F8B4 MOV X0, X21
+	0x0399F8B8 BL 0x399EC6C
+	0x0399F8BC LDR X8, [X24]
+	0x0399F8C0 LDR X8, [X8 + 0xB8]
+	0x0399F8C4 STR X0, [X8 + 0x30]
+	0x0399F8C8 CBZ X21, 0x399F9D4
+	0x0399F8CC MOV X0, X21
+	0x0399F8D0 MOV X1, X31
+	0x0399F8D4 BL 0x3C385F8
+	0x0399F8D8 LDR X8, [X24]
+	0x0399F8DC MOV W21, W0
+	0x0399F8E0 LDR W9, [X8 + 0xE0]
+	0x0399F8E4 CBNZ W9, 0x399F8F4
+	0x0399F8E8 MOV X0, X8
+	0x0399F8EC BL 0x1C16DFC
+	0x0399F8F0 LDR X8, [X24]
+	0x0399F8F4 LDR X9, [X8 + 0xB8]
+	0x0399F8F8 LDR W10, [X9 + 0x28]
+	0x0399F8FC STR W21, [X9 + 0x28]
+	0x0399F900 CMP W21, W10
+	0x0399F904 CSET W10, NE
+	0x0399F908 STRB W10, [X9 + 0x38]
+	0x0399F90C LDRB W10, [X20]
+	0x0399F910 LDR X21, [X9 + 0x30]
+	0x0399F914 CBZ W10, 0x399F950
+	0x0399F918 ADRP X8, 0x7B2000
+	0x0399F91C LDR X8, [X8 + 0x360]
+	0x0399F920 MOV X0, X20
+
+ISIL:
+	001 Move [X31-64], X30
+	002 Move [X31+16], X24
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Compare X1, 0
+	009 JumpIfEqual {53}
+	010 Move W8, [X1+16]
+	011 Move X24, [X0+8]
+	012 Move X22, [X0+16]
+	013 Move X20, X1
+	014 Move X19, X0
+	015 Move W9, W8
+	016 ShiftRight W9, 31
+	017 And W9, W9, 0x3FFFFFFF
+	018 Add W9, W9, 4
+	019 Add X23, X24, W9
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 Move [X24+4], W8
+	022 Move [X19+8], X24
+	023 Move W8, [X20+16]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move W21, W31
+	026 Move X0, X20
+	027 Move W1, W21
+	028 Move X2, X31
+	029 Call String.get_Chars, X0, X1
+	030 NotImplemented "Instruction STRH not yet implemented."
+	031 Move W8, [X20+16]
+	032 Add W21, W21, 1
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move X24, [X19+8]
+	035 Move W9, [X19+36]
+	036 Move W8, W8
+	037 ShiftRight W8, 31
+	038 And W8, W8, 0x3FFFFFFF
+	039 Add X8, X24, W8
+	040 Move [X19+8], X8
+	041 Add W8, W9, 1
+	042 Move [X19+36], W8
+	043 NotImplemented "Instruction CMP not yet implemented."
+	044 Move X20, [X31+48]
+	045 Move X19, [X31+56]
+	046 Move X22, [X31+32]
+	047 Move X21, [X31+40]
+	048 Move X24, [X31+16]
+	049 Move X23, [X31+24]
+	050 NotImplemented "Instruction CSET not yet implemented."
+	051 Move X30, [X31+64]
+	052 Return X0
+	053 Call 0x1C17F20
+
+Method: System.Boolean TryPop(out System.String v)
+
+Disassembly:
+	0x0399F924 LDR X1, [X8]
+	0x0399F928 ADD X8, X31, 0x40
+	0x0399F92C BL 0x2431FA4
+	0x0399F930 LDP V0, V1, [X31 + 0x40]
+	0x0399F934 LDR V2, [X31 + 0x6]
+	0x0399F938 LDUR V3, [X31 + 0x6C]
+	0x0399F93C STP V0, V1, [X31 + 0x80]
+	0x0399F940 STR V2, [X31 + 0xA]
+	0x0399F944 STUR V3, [X23 + 0x2C]
+	0x0399F948 CBNZ X21, 0x399F994
+	0x0399F94C B 0x399F9D4
+	0x0399F950 LDR W10, [X8 + 0xE0]
+	0x0399F954 MOV X9, X21
+	0x0399F958 CBNZ W10, 0x399F970
+	0x0399F95C MOV X0, X8
+	0x0399F960 BL 0x1C16DFC
+	0x0399F964 LDR X8, [X24]
+	0x0399F968 LDR X8, [X8 + 0xB8]
+	0x0399F96C LDR X9, [X8 + 0x30]
+	0x0399F970 CBZ X9, 0x399F9D4
+	0x0399F974 LDR V0, [X9 + 0x8]
+	0x0399F978 LDUR V1, [X9 + 0x74]
+	0x0399F97C LDUR V2, [X9 + 0x64]
+	0x0399F980 LDUR V3, [X9 + 0x54]
+	0x0399F984 STUR V0, [X23 + 0x2C]
+	0x0399F988 STP V2, V1, [X31 + 0x90]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X0]
+	006 Move X21, X1
+	007 Move W19, [X8]
+	008 Compare W19, 0
+	009 JumpIfEqual {25}
+	010 Add X1, X8, 4
+	011 Move X20, X0
+	012 Move [X0], X1
+	013 Move X0, X31
+	014 Move W2, W31
+	015 Move W3, W19
+	016 Move X4, X31
+	017 Call String.CreateString, X0, X1, X2, X3
+	018 Move [X21], X0
+	019 Move X8, [X20]
+	020 Move W9, W19
+	021 ShiftRight W9, 31
+	022 And W9, W9, 0x3FFFFFFF
+	023 Add X8, X8, W9
+	024 Move [X20], X8
+	025 Move [X21], X31
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Move X20, [X31+16]
+	028 Move X19, [X31+24]
+	029 NotImplemented "Instruction CSET not yet implemented."
+	030 Move X30, [X31+32]
+	031 Move X21, [X31+40]
+	032 Return X0
+
+Method: System.Void Clear()
+
+Disassembly:
+	0x0399F858 ADRP X24, 0x7B2000
+	0x0399F85C LDR W8, [X0 + 0xE0]
+	0x0399F860 LDR X24, [X24 + 0x2D8]
+	0x0399F864 CBNZ W8, 0x399F86C
+	0x0399F868 BL 0x1C16DFC
+	0x0399F86C MOV X0, X21
+	0x0399F870 MOV X1, X31
+
+ISIL:
+	001 Move X8, [X0+24]
+	002 NotImplemented "Instruction LDRSW not yet implemented."
+	003 Move [X0+36], W31
+	004 Move X2, X31
+	005 Move [X0], X8
+	006 Move [X0+8], X8
+	007 Move X0, X8
+	008 Call UnsafeUtility.MemClear, X0, X1
+	009 Return 
+

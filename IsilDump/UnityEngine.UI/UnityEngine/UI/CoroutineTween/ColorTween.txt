@@ -1,0 +1,360 @@
+Type: UnityEngine.UI.CoroutineTween.ColorTween
+
+Method: UnityEngine.Color get_startColor()
+
+Disassembly:
+	0x03E4C3C8 B 0x3E4C3D8
+	0x03E4C3CC LDRSW X9, [X10]
+	0x03E4C3D0 ADD X8, X8, X9, 0x4, LSL
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move S2, [X0+16]
+	004 Move S3, [X0+20]
+	005 Return X0
+
+Method: System.Void set_startColor(UnityEngine.Color value)
+
+Disassembly:
+	0x03E4C3D4 ADD X0, X8, 0x138
+	0x03E4C3D8 LDP X8, X1, [X0]
+	0x03E4C3DC MOV X0, X19
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Move [X0+16], S1
+	003 Move [X0+16], S2
+	004 Move [X0+24], S3
+	005 Return 
+
+Method: UnityEngine.Color get_targetColor()
+
+Disassembly:
+	0x03E4C3E0 BLR X8
+	0x03E4C3E4 CBNZ X20, 0x3E4C3F4
+	0x03E4C3E8 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move S0, [X0+24]
+	002 Move S1, [X0+28]
+	003 Move S2, [X0+32]
+	004 Move S3, [X0+36]
+	005 Return X0
+
+Method: System.Void set_targetColor(UnityEngine.Color value)
+
+Disassembly:
+	0x03E4C3EC LDP X30, X21, [X31], #0x20
+	0x03E4C3F0 RET
+	0x03E4C3F4 MOV X0, X20
+
+ISIL:
+	001 Move [X0+24], S0
+	002 Move [X0+32], S1
+	003 Move [X0+32], S2
+	004 Move [X0+40], S3
+	005 Return 
+
+Method: UnityEngine.UI.CoroutineTween.ColorTween/ColorTweenMode get_tweenMode()
+
+Disassembly:
+	0x03E4C3F8 BL 0x1C16F18
+	0x03E4C3FC BL 0x1C16F20
+
+ISIL:
+	001 Move W0, [X0+40]
+	002 Return X0
+
+Method: System.Void set_tweenMode(UnityEngine.UI.CoroutineTween.ColorTween/ColorTweenMode value)
+
+Disassembly:
+	0x03E4C400 B 0x3E4C408
+	0x03E4C404 B 0x3E4C408
+
+ISIL:
+	001 Move [X0+40], W1
+	002 Return 
+
+Method: System.Single get_duration()
+
+Disassembly:
+	0x03E4C408 MOV X21, X0
+	0x03E4C40C CMP W1, 0x1
+
+ISIL:
+	001 Move V0, [X0+44]
+	002 Return V0
+
+Method: System.Void set_duration(System.Single value)
+
+Disassembly:
+	0x03E4C410 B.NE 0x3E4C42C
+	0x03E4C414 MOV X0, X21
+
+ISIL:
+	001 Move [X0+44], S0
+	002 Return 
+
+Method: System.Boolean get_ignoreTimeScale()
+
+Disassembly:
+	0x03E4C418 BL 0x3EB1AD0
+	0x03E4C41C LDR X20, [X0]
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_ignoreTimeScale(System.Boolean value)
+
+Disassembly:
+	0x03E4C420 BL 0x3EB1AE0
+	0x03E4C424 CBNZ X19, 0x3E4C384
+	0x03E4C428 B 0x3E4C3E4
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+48], W8
+	003 Return 
+
+Method: System.Void TweenValue(System.Single floatPercentage)
+
+Disassembly:
+	0x03E4C42C MOV X20, X31
+	0x03E4C430 B 0x3E4C438
+	0x03E4C434 MOV X21, X0
+	0x03E4C438 CBZ X19, 0x3E4C49C
+	0x03E4C43C ADRP X10, 0x2A7000
+	0x03E4C440 LDR X8, [X19]
+	0x03E4C444 LDR X10, [X10 + 0xE00]
+	0x03E4C448 LDRH W9, [X8 + 0x12E]
+	0x03E4C44C LDR X1, [X10]
+	0x03E4C450 CBZ X9, 0x3E4C474
+	0x03E4C454 LDR X10, [X8 + 0xB0]
+	0x03E4C458 ADD X10, X10, 0x8
+	0x03E4C45C LDUR X11, [X10 - 0x8]
+	0x03E4C460 CMP X11, X1
+	0x03E4C464 B.EQ 0x3E4C484
+	0x03E4C468 SUBS X9, X9, 0x1
+	0x03E4C46C ADD X10, X10, 0x10
+	0x03E4C470 B.NE 0x3E4C45C
+	0x03E4C474 MOV X0, X19
+	0x03E4C478 MOV W2, W31
+	0x03E4C47C BL 0x1C5C788
+	0x03E4C480 B 0x3E4C490
+	0x03E4C484 LDRSW X9, [X10]
+	0x03E4C488 ADD X8, X8, X9, 0x4, LSL
+	0x03E4C48C ADD X0, X8, 0x138
+	0x03E4C490 LDP X8, X1, [X0]
+	0x03E4C494 MOV X0, X19
+	0x03E4C498 BLR X8
+	0x03E4C49C CBNZ X20, 0x3E4C4A8
+	0x03E4C4A0 MOV X0, X21
+	0x03E4C4A4 BL 0x1D2C690
+	0x03E4C4A8 MOV X0, X20
+	0x03E4C4AC BL 0x1C16F18
+	0x03E4C4B0 BL 0x1990590
+	0x03E4C4B4 STR X30, [X31 - 0x30]!
+	0x03E4C4B8 STP X22, X21, [X31 + 0x10]
+	0x03E4C4BC STP X20, X19, [X31 + 0x20]
+	0x03E4C4C0 ADRP X19, 0x59C000
+	0x03E4C4C4 LDRB W8, [X19 + 0x841]
+	0x03E4C4C8 MOV X21, X1
+	0x03E4C4CC MOV X20, X0
+	0x03E4C4D0 TBNZ X8, 0x0, 0x3E4C518
+	0x03E4C4D4 ADRP X0, 0x2A7000
+	0x03E4C4D8 LDR X0, [X0 + 0xE00]
+	0x03E4C4DC BL 0x1C16CF4
+	0x03E4C4E0 ADRP X0, 0x2A7000
+	0x03E4C4E4 LDR X0, [X0 + 0x598]
+	0x03E4C4E8 BL 0x1C16CF4
+	0x03E4C4EC ADRP X0, 0x2CF000
+	0x03E4C4F0 LDR X0, [X0 + 0x958]
+	0x03E4C4F4 BL 0x1C16CF4
+	0x03E4C4F8 ADRP X0, 0x31F000
+	0x03E4C4FC LDR X0, [X0 + 0x778]
+	0x03E4C500 BL 0x1C16CF4
+	0x03E4C504 ADRP X0, 0x2D2000
+
+ISIL:
+	001 Move [X31-32], D8
+	002 Move [X31+8], X30
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x59D000
+	006 Move W8, [X20+2099]
+	007 Move V8, V0
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x30D000
+	014 Move X0, [X0+2200]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X20+2099], W8
+	018 Move X0, [X19]
+	019 Compare X0, 0
+	020 JumpIfEqual {57}
+	021 Move X8, 0x30D000
+	022 Move X8, [X8+2200]
+	023 Move V1, [X19+20]
+	024 Move V3, [X19+36]
+	025 NotImplemented "Instruction LDUR not yet implemented."
+	026 Move S2, 1
+	027 Move W9, [X19+40]
+	028 Move V0, [X19+8]
+	029 NotImplemented "Instruction FCMP not yet implemented."
+	030 Move S5, W31
+	031 NotImplemented "Instruction FMIN not yet implemented."
+	032 NotImplemented "Instruction FCSEL not yet implemented."
+	033 Subtract S3, S3, S1
+	034 Multiply S3, S5, S3
+	035 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	036 NotImplemented "Instruction CMP not yet implemented."
+	037 Add S3, S1, S3
+	038 NotImplemented "Instruction LDUR not yet implemented."
+	039 Move V6, [X19+24]
+	040 NotImplemented "Instruction CMP not yet implemented."
+	041 Subtract V4, V7, V4
+	042 Subtract S6, S6, S0
+	043 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	044 Multiply S6, S5, S6
+	045 NotImplemented "Instruction INVALID not yet implemented."
+	046 Add S0, S0, S6
+	047 Add V2, V2, V4
+	048 Move V3, V1
+	049 Move X1, [X8]
+	050 Move X20, [X31+16]
+	051 Move X19, [X31+24]
+	052 Move X30, [X31+8]
+	053 Move S1, V2.S[1]
+	054 Move V8, [X31+32]
+	055 Call UnityEvent`1<Color>.Invoke, X0, X1
+	056 Return 
+	057 Move X20, [X31+16]
+	058 Move X19, [X31+24]
+	059 Move X30, [X31+8]
+	060 Move V8, [X31+32]
+	061 Return 
+
+Method: System.Void AddOnChangedCallback(UnityEngine.Events.UnityAction`1<UnityEngine.Color> callback)
+
+Disassembly:
+	0x03E4C518 LDR X8, [X20 + 0x20]
+	0x03E4C51C CBZ X8, 0x3E4C664
+	0x03E4C520 LDR X1, [X20 + 0x28]
+	0x03E4C524 MOVZ W3, 0x1
+	0x03E4C528 MOV X0, X20
+	0x03E4C52C MOV X2, X21
+	0x03E4C530 BL 0x3E4C0F4
+	0x03E4C534 TBZ X0, 0x0, 0x3E4C664
+	0x03E4C538 BL 0x3E4BBE4
+	0x03E4C53C ADRP X8, 0x2A7000
+	0x03E4C540 LDR X8, [X8 + 0x598]
+	0x03E4C544 MOV X19, X0
+	0x03E4C548 LDR X8, [X8]
+	0x03E4C54C LDR W9, [X8 + 0xE0]
+	0x03E4C550 CBNZ W9, 0x3E4C55C
+	0x03E4C554 MOV X0, X8
+	0x03E4C558 BL 0x1C16DFC
+	0x03E4C55C MOV X0, X19
+	0x03E4C560 MOV X1, X31
+	0x03E4C564 MOV X2, X31
+	0x03E4C568 BL 0x3C354F8
+	0x03E4C56C TBZ X0, 0x0, 0x3E4C5A0
+	0x03E4C570 BL 0x3E4BBE4
+	0x03E4C574 LDR X8, [X20 + 0x20]
+	0x03E4C578 MOV X19, X0
+	0x03E4C57C CBZ X8, 0x3E4C674
+	0x03E4C580 LDR X22, [X8 + 0x160]
+	0x03E4C584 CBZ X19, 0x3E4C67C
+	0x03E4C588 MOV X0, X19
+	0x03E4C58C BL 0x3E50414
+	0x03E4C590 MOV X2, X0
+	0x03E4C594 MOV X0, X19
+	0x03E4C598 MOV X1, X22
+	0x03E4C59C BL 0x3E4EC58
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x59D000
+	006 Move W8, [X21+2100]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {21}
+	013 Move X0, 0x320000
+	014 Move X0, [X0+1808]
+	015 Call 0x1C17CF4
+	016 Move X0, 0x30D000
+	017 Move X0, [X0+2216]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+2100], W8
+	021 Move X21, [X20]
+	022 Compare X21, 0
+	023 JumpIfNotEqual {33}
+	024 Move X8, 0x320000
+	025 Move X8, [X8+1808]
+	026 Move X0, [X8]
+	027 Call 0x1C17F10
+	028 Move X21, X0
+	029 Call ColorTweenCallback..ctor, X0
+	030 Move [X20], X21
+	031 Compare X21, 0
+	032 JumpIfEqual {44}
+	033 Move X8, 0x30D000
+	034 Move X8, [X8+2216]
+	035 Move X1, X19
+	036 Move X20, [X31+16]
+	037 Move X19, [X31+24]
+	038 Move X0, X21
+	039 Move X2, [X8]
+	040 Move X30, [X31+32]
+	041 Move X21, [X31+40]
+	042 Call UnityEvent`1<Color>.AddListener, X0, X1
+	043 Return 
+	044 Call 0x1C17F20
+
+Method: System.Boolean GetIgnoreTimescale()
+
+Disassembly:
+	0x03E4C5E8 BL 0x1C16DFC
+	0x03E4C5EC MOV W0, W21
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: System.Single GetDuration()
+
+Disassembly:
+	0x03E4C5F0 MOV X1, X20
+	0x03E4C5F4 MOV X2, X31
+
+ISIL:
+	001 Move V0, [X0+44]
+	002 Return V0
+
+Method: System.Boolean ValidTarget()
+
+Disassembly:
+	0x03E4C508 LDR X0, [X0 + 0xCF8]
+	0x03E4C50C BL 0x1C16CF4
+	0x03E4C510 MOVZ W8, 0x1
+	0x03E4C514 STRB W8, [X19 + 0x841]
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+

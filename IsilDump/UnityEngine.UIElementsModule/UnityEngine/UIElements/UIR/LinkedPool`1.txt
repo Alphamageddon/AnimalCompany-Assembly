@@ -1,0 +1,238 @@
+Type: UnityEngine.UIElements.UIR.LinkedPool`1
+
+Method: System.Void .ctor(System.Func`1<T> createFunc, System.Action`1<T> resetAction, System.Int32 limit = 10000)
+
+Disassembly:
+	0x02EF1D58 LDR X8, [X0 + 0xC0]
+	0x02EF1D5C LDR X0, [X8 + 0x20]
+	0x02EF1D60 LDRB W8, [X0 + 0x135]
+	0x02EF1D64 TBNZ X8, 0x0, 0x2EF1D6C
+	0x02EF1D68 BL 0x1C5C684
+	0x02EF1D6C MOV W1, W21
+	0x02EF1D70 BL 0x1C16D6C
+	0x02EF1D74 STR X0, [X19]
+	0x02EF1D78 CBZ X0, 0x2EF1E04
+	0x02EF1D7C LDR W8, [X0 + 0x18]
+	0x02EF1D80 CBZ W8, 0x2EF1E08
+	0x02EF1D84 LDR X8, [X19 + 0x8]
+	0x02EF1D88 STR X8, [X0 + 0x20]
+	0x02EF1D8C B 0x2EF1DD0
+	0x02EF1D90 STR X20, [X19 + 0x8]
+	0x02EF1D94 MOVZ W8, 0x1
+	0x02EF1D98 B 0x2EF1DF4
+	0x02EF1D9C CMP W21, W8
+	0x02EF1DA0 B.NE 0x2EF1DD0
+	0x02EF1DA4 LDR X0, [X2 + 0x20]
+	0x02EF1DA8 UBFM W21, W8, 0x1F, 0x1E
+	0x02EF1DAC LDRB W9, [X0 + 0x135]
+	0x02EF1DB0 TBNZ X9, 0x0, 0x2EF1DB8
+	0x02EF1DB4 BL 0x1C5C684
+	0x02EF1DB8 LDR X8, [X0 + 0xC0]
+	0x02EF1DBC MOV X0, X19
+	0x02EF1DC0 MOV W1, W21
+	0x02EF1DC4 LDR X2, [X8 + 0x28]
+	0x02EF1DC8 BL 0x2142E6C
+	0x02EF1DCC STR W21, [X19 + 0x14]
+	0x02EF1DD0 LDR X8, [X19]
+	0x02EF1DD4 CBZ X8, 0x2EF1E04
+	0x02EF1DD8 LDRSW X9, [X19 + 0x10]
+	0x02EF1DDC LDR W10, [X8 + 0x18]
+	0x02EF1DE0 CMP W9, W10
+	0x02EF1DE4 B.CS 0x2EF1E08
+	0x02EF1DE8 ADD X8, X8, X9, 0x3, LSL
+	0x02EF1DEC STR X20, [X8 + 0x20]
+	0x02EF1DF0 ADD W8, W9, 0x1
+	0x02EF1DF4 STR W8, [X19 + 0x10]
+	0x02EF1DF8 LDP X20, X19, [X31 + 0x10]
+	0x02EF1DFC LDP X30, X21, [X31], #0x20
+	0x02EF1E00 RET
+	0x02EF1E04 BL 0x1C16F20
+	0x02EF1E08 BL 0x1C16F28
+
+ISIL:
+	001 Move [X31-64], X30
+	002 Move [X31+16], X24
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X24, 0x14EB000
+	009 Move X23, 0x1203000
+	010 Move W8, [X24+2948]
+	011 Move X23, [X23+2600]
+	012 Move W19, W3
+	013 Move X21, X2
+	014 Move X22, X1
+	015 Move X20, X0
+	016 Move TEMP, X8
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {25}
+	020 Move X0, 0x1203000
+	021 Move X0, [X0+2600]
+	022 Call 0x1C17CF4
+	023 Move W8, 1
+	024 Move [X24+2948], W8
+	025 Move X0, X20
+	026 Move X1, X31
+	027 Call Object..ctor, X0
+	028 Move X0, [X23]
+	029 Move W8, [X0+224]
+	030 Compare W8, 0
+	031 JumpIfNotEqual {33}
+	032 Call 0x1C17DFC
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 NotImplemented "Instruction CSET not yet implemented."
+	035 Move X1, X31
+	036 Call Debug.Assert, X0
+	037 NotImplemented "Instruction CMP not yet implemented."
+	038 NotImplemented "Instruction CSET not yet implemented."
+	039 Move X1, X31
+	040 Move [X20+16], X22
+	041 Call Debug.Assert, X0
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 NotImplemented "Instruction CSET not yet implemented."
+	044 Move X1, X31
+	045 Move [X20+24], X21
+	046 Call Debug.Assert, X0
+	047 Move [X20+32], W19
+	048 Move X20, [X31+48]
+	049 Move X19, [X31+56]
+	050 Move X22, [X31+32]
+	051 Move X21, [X31+40]
+	052 Move X24, [X31+16]
+	053 Move X23, [X31+24]
+	054 Move X30, [X31+64]
+	055 Return 
+
+Method: System.Int32 get_Count()
+
+Disassembly:
+	0x02EF1E0C STP X30, X23, [X31 - 0x30]!
+	0x02EF1E10 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_Count(System.Int32 value)
+
+Disassembly:
+	0x02EF1E14 STP X20, X19, [X31 + 0x20]
+	0x02EF1E18 ADRP X22, 0x14EA000
+
+ISIL:
+	001 Move [X0+48], W1
+	002 Return 
+
+Method: System.Void Clear()
+
+Disassembly:
+	0x02EF1E1C ADRP X23, 0x122E000
+	0x02EF1E20 LDRB W8, [X22 + 0xB85]
+	0x02EF1E24 LDR X23, [X23 + 0x158]
+
+ISIL:
+	001 Move [X0+40], X31
+	002 Move [X0+48], W31
+	003 Return 
+
+Method: T Get()
+
+Disassembly:
+	0x02EF1E28 MOV X19, X2
+	0x02EF1E2C MOV W21, W1
+	0x02EF1E30 MOV X20, X0
+	0x02EF1E34 TBNZ X8, 0x0, 0x2EF1E4C
+	0x02EF1E38 ADRP X0, 0x122E000
+	0x02EF1E3C LDR X0, [X0 + 0x158]
+	0x02EF1E40 BL 0x1C16CF4
+	0x02EF1E44 MOVZ W8, 0x1
+	0x02EF1E48 STRB W8, [X22 + 0xB85]
+	0x02EF1E4C LDR X0, [X23]
+	0x02EF1E50 LDR W8, [X0 + 0xE0]
+	0x02EF1E54 CBNZ W8, 0x2EF1E5C
+	0x02EF1E58 BL 0x1C16DFC
+	0x02EF1E5C MOV X0, X20
+	0x02EF1E60 MOV X1, X31
+	0x02EF1E64 BL 0x33671B0
+	0x02EF1E68 STR W21, [X20 + 0x10]
+	0x02EF1E6C STR X19, [X20 + 0x18]
+	0x02EF1E70 LDP X20, X19, [X31 + 0x20]
+	0x02EF1E74 LDP X22, X21, [X31 + 0x10]
+	0x02EF1E78 LDP X30, X23, [X31], #0x30
+	0x02EF1E7C RET
+	0x02EF1E80 STP X29, X30, [X31 - 0x50]!
+	0x02EF1E84 STP X26, X25, [X31 + 0x10]
+	0x02EF1E88 STP X24, X23, [X31 + 0x20]
+	0x02EF1E8C STP X22, X21, [X31 + 0x30]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, [X0+40]
+	004 Compare X19, 0
+	005 JumpIfEqual {23}
+	006 Move W8, [X0+48]
+	007 Subtract W8, W8, 1
+	008 Move [X0+48], W8
+	009 Move X9, [X19+16]
+	010 Move X8, [X0+24]
+	011 Move [X0+40], X9
+	012 Compare X8, 0
+	013 JumpIfEqual {32}
+	014 Move X9, [X8+24]
+	015 Move X0, [X8+64]
+	016 Move X2, [X8+40]
+	017 Move X1, X19
+	018 NotImplemented "Instruction BLR not yet implemented."
+	019 Move X0, X19
+	020 Move X30, [X31+16]
+	021 Move X19, [X31+24]
+	022 Return X0
+	023 Move X8, [X0+16]
+	024 Compare X8, 0
+	025 JumpIfEqual {32}
+	026 Move X2, [X8+24]
+	027 Move X0, [X8+64]
+	028 Move X1, [X8+40]
+	029 Move X30, [X31+16]
+	030 Move X19, [X31+24]
+	031 CallNoReturn X2
+	032 Call 0x1C17F20
+
+Method: System.Void Return(T item)
+
+Disassembly:
+	0x02EF1E90 STP X20, X19, [X31 + 0x40]
+	0x02EF1E94 ADD X29, X31, 0x0
+	0x02EF1E98 SUB X31, X31, 0x10
+	0x02EF1E9C MRS X26, 0xC000
+	0x02EF1EA0 LDR X8, [X26 + 0x28]
+	0x02EF1EA4 ADRP X23, 0x14EA000
+	0x02EF1EA8 ADRP X25, 0x122E000
+	0x02EF1EAC MOV X21, X3
+	0x02EF1EB0 STUR X8, [X29 - 0x8]
+	0x02EF1EB4 STUR X2, [X29 - 0x10]
+	0x02EF1EB8 LDRB W8, [X23 + 0xB86]
+	0x02EF1EBC LDR X25, [X25 + 0x158]
+	0x02EF1EC0 MOV X20, X2
+	0x02EF1EC4 MOV W22, W1
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W8, [X0+48]
+	003 Move W9, [X0+32]
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Compare X1, 0
+	006 JumpIfEqual {14}
+	007 Move X9, [X0+40]
+	008 Add W8, W8, 1
+	009 Move [X1+16], X9
+	010 Move [X0+40], X1
+	011 Move [X0+48], W8
+	012 Move X30, [X31+16]
+	013 Return 
+	014 Call 0x1C17F20
+

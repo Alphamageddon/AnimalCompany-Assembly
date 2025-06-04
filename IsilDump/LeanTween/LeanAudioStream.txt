@@ -1,0 +1,104 @@
+Type: LeanAudioStream
+
+Method: System.Void .ctor(System.Single[] audioArr)
+
+Disassembly:
+	0x031A9D68 LDR X0, [X20]
+	0x031A9D6C LDR W8, [X0 + 0xE0]
+	0x031A9D70 CBNZ W8, 0x31A9D78
+	0x031A9D74 BL 0x1C16DFC
+	0x031A9D78 MOV X0, X19
+	0x031A9D7C MOV V1.16B, V9.16B
+	0x031A9D80 MOV V2.16B, V8.16B
+	0x031A9D84 LDP X20, X19, [X31 + 0x30]
+	0x031A9D88 LDP X30, X21, [X31 + 0x20]
+	0x031A9D8C LDP D9, D8, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+32], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void OnAudioRead(System.Single[] data)
+
+Disassembly:
+	0x031A9D90 MOV V0.16B, V10.16B
+	0x031A9D94 LDR V10, [X31], #0x40
+	0x031A9D98 B 0x31A9B48
+	0x031A9D9C STP D11, D10, [X31 - 0x40]!
+	0x031A9DA0 STP D9, D8, [X31 + 0x10]
+	0x031A9DA4 STP X30, X21, [X31 + 0x20]
+	0x031A9DA8 STP X20, X19, [X31 + 0x30]
+	0x031A9DAC ADRP X21, 0x1232000
+	0x031A9DB0 ADRP X20, 0xF76000
+	0x031A9DB4 LDRB W8, [X21 + 0xE39]
+	0x031A9DB8 LDR X20, [X20 + 0x258]
+	0x031A9DBC MOV V8.16B, V3.16B
+	0x031A9DC0 MOV V9.16B, V2.16B
+	0x031A9DC4 MOV V10.16B, V1.16B
+	0x031A9DC8 MOV V11.16B, V0.16B
+	0x031A9DCC MOV X19, X0
+	0x031A9DD0 TBNZ X8, 0x0, 0x31A9DE8
+	0x031A9DD4 ADRP X0, 0xF76000
+	0x031A9DD8 LDR X0, [X0 + 0x258]
+	0x031A9DDC BL 0x1C16CF4
+	0x031A9DE0 MOVZ W8, 0x1
+	0x031A9DE4 STRB W8, [X21 + 0xE39]
+	0x031A9DE8 LDR X0, [X20]
+	0x031A9DEC LDR W8, [X0 + 0xE0]
+	0x031A9DF0 CBNZ W8, 0x31A9DF8
+	0x031A9DF4 BL 0x1C16DFC
+	0x031A9DF8 MOV X0, X19
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {31}
+	004 Move W8, [X1+24]
+	005 Move X9, X8
+	006 ShiftRight X9, 32
+	007 And X9, X9, 0x7FFFFFFF
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move X9, [X0+32]
+	010 Move X10, W8
+	011 Add X11, X1, 32
+	012 Compare X9, 0
+	013 JumpIfEqual {31}
+	014 NotImplemented "Instruction LDRSW not yet implemented."
+	015 Move W13, [X9+24]
+	016 NotImplemented "Instruction CMP not yet implemented."
+	017 Compare X8, 0
+	018 JumpIfEqual {30}
+	019 Add X13, X9, X12
+	020 Move V0, [X13+32]
+	021 Add W12, W12, 1
+	022 Subtract X10, X10, 1
+	023 Subtract X8, X8, 1
+	024 Move [X11+4], S0
+	025 Move [X0+16], W12
+	026 Compare X10, 0
+	027 JumpIfNotEqual {12}
+	028 Move X30, [X31+16]
+	029 Return 
+	030 Call 0x1C17F28
+	031 Call 0x1C17F20
+
+Method: System.Void OnAudioSetPosition(System.Int32 newPosition)
+
+Disassembly:
+	0x031A9DFC MOV V0.16B, V11.16B
+	0x031A9E00 MOV V1.16B, V10.16B
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+

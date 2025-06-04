@@ -1,0 +1,27 @@
+Type: Fusion.Sockets.Stun.StunNatTypeExtensions
+
+Method: System.Boolean IsValid(Fusion.Sockets.Stun.NATType natType)
+
+Disassembly:
+	0x01F05788 BL 0x1C16CF4
+	0x01F0578C ADRP X0, 0x21FB000
+	0x01F05790 LDR X0, [X0 + 0xBF0]
+	0x01F05794 BL 0x1C16CF4
+	0x01F05798 MOVZ W8, 0x1
+	0x01F0579C STRB W8, [X22 + 0x682]
+	0x01F057A0 LDR X0, [X23]
+	0x01F057A4 BL 0x1C16F10
+	0x01F057A8 LDR X1, [X20]
+	0x01F057AC MOV X20, X0
+
+ISIL:
+	001 Subtract W8, W0, 2
+	002 And W9, W8, 255
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move W9, 69
+	005 NotImplemented "Instruction LSRV not yet implemented."
+	006 And W0, W8, 1
+	007 Return X0
+	008 Move W0, W31
+	009 Return X0
+

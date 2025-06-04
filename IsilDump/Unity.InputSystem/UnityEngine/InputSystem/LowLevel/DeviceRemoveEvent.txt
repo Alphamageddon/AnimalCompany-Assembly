@@ -1,0 +1,86 @@
+Type: UnityEngine.InputSystem.LowLevel.DeviceRemoveEvent
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_typeStatic()
+
+Disassembly:
+	0x03801D4C BL 0x2222670
+	0x03801D50 LDR X8, [X20 + 0x10]
+	0x03801D54 MOV W1, W19
+
+ISIL:
+	001 Move W0, 0x454D
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 Return X0
+
+Method: UnityEngine.InputSystem.LowLevel.InputEventPtr ToEventPtr()
+
+Disassembly:
+	0x03801D58 ADD X21, X8, X0
+
+ISIL:
+	001 Return X0
+
+Method: UnityEngine.InputSystem.LowLevel.DeviceRemoveEvent Create(System.Int32 deviceId, System.Double time = -1)
+
+Disassembly:
+	0x03801D5C MOV X0, X21
+	0x03801D60 BL 0x38011A8
+	0x03801D64 LDR X8, [X20 + 0x10]
+	0x03801D68 LDR W9, [X20 + 0x18]
+	0x03801D6C MOV X0, X21
+	0x03801D70 LDP X24, X23, [X31 + 0x30]
+	0x03801D74 ADD X8, X8, X22
+	0x03801D78 ADD W9, W9, 0x1
+	0x03801D7C STR X8, [X20 + 0x10]
+	0x03801D80 STR W9, [X20 + 0x18]
+	0x03801D84 LDP X20, X19, [X31 + 0x50]
+	0x03801D88 LDP X22, X21, [X31 + 0x40]
+	0x03801D8C LDP X30, X25, [X31 + 0x20]
+	0x03801D90 ADD X31, X31, 0x60
+	0x03801D94 RET
+	0x03801D98 MOVZ W8, 0x14
+	0x03801D9C STR W8, [X31 + 0xC]
+	0x03801DA0 ADRP X20, 0x8F2000
+	0x03801DA4 LDR X20, [X20 + 0x758]
+	0x03801DA8 MOV X0, X20
+	0x03801DAC BL 0x1C16D08
+	0x03801DB0 ADD X1, X31, 0xC
+	0x03801DB4 BL 0x1C16E04
+	0x03801DB8 MOV X21, X0
+	0x03801DBC MOV X0, X20
+	0x03801DC0 STR W19, [X31 + 0x8]
+	0x03801DC4 BL 0x1C16D08
+	0x03801DC8 ADD X1, X31, 0x8
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+32], X30
+	003 Move [X31+48], X20
+	004 Move [X31+56], X19
+	005 NotImplemented "Instruction MRS not yet implemented."
+	006 Move X19, X8
+	007 Move X8, [X20+40]
+	008 Move W1, 0x454D
+	009 Move W3, W0
+	010 Add X0, X31, 0
+	011 NotImplemented "Instruction MOVK not yet implemented."
+	012 Move W2, 20
+	013 Move [X31+24], X8
+	014 Move [X31], X31
+	015 Move [X31+8], X31
+	016 Move [X31+16], W31
+	017 Call InputEvent..ctor, X0, X1, X2, X3, V0
+	018 Move W8, [X31+16]
+	019 Move V0, [X31]
+	020 Move [X19+16], W8
+	021 Move [X19], V0
+	022 Move X8, [X20+40]
+	023 Move X9, [X31+24]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move X20, [X31+48]
+	026 Move X19, [X31+56]
+	027 Move X30, [X31+32]
+	028 Add X31, X31, 64
+	029 Return X0
+	030 Call 0x3EB2B20
+

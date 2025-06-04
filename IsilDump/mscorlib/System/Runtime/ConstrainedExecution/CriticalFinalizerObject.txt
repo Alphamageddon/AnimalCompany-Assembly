@@ -1,0 +1,24 @@
+Type: System.Runtime.ConstrainedExecution.CriticalFinalizerObject
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x032C11F0 ADD X0, X0, W20, SXTW
+	0x032C11F4 TBNZ X0, 0x0, 0x32C1200
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void Finalize()
+
+Disassembly:
+	0x032C3928 BL 0x1C16CF4
+	0x032C392C MOVZ W8, 0x1
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object.Finalize, X0
+	003 Return 
+

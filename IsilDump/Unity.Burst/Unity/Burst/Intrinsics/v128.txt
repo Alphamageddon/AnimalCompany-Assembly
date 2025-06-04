@@ -1,0 +1,383 @@
+Type: Unity.Burst.Intrinsics.v128
+
+Method: System.Void .ctor(System.Byte b)
+
+Disassembly:
+	0x03721250 UBFM X24, X19, 0x20, 0x3F
+	0x03721254 BL 0x337EE18
+	0x03721258 MOV V8.16B, V0.16B
+	0x0372125C FMOV S0, W22
+	0x03721260 FMOV S1, W21
+
+ISIL:
+	001 And X8, X1, 255
+	002 Or X9, X31, 0x101010101010101
+	003 Multiply X8, X8, X9
+	004 Move [X0], X8
+	005 Move [X0+8], X8
+	006 Return 
+
+Method: System.Void .ctor(System.Byte a, System.Byte b, System.Byte c, System.Byte d, System.Byte e, System.Byte f, System.Byte g, System.Byte h, System.Byte i, System.Byte j, System.Byte k, System.Byte l, System.Byte m, System.Byte n, System.Byte o, System.Byte p)
+
+Disassembly:
+	0x03721264 MOV X0, X31
+	0x03721268 BL 0x337EE18
+	0x0372126C MOV V9.16B, V0.16B
+	0x03721270 FMOV S0, W20
+	0x03721274 FMOV S1, W19
+	0x03721278 MOV X0, X31
+	0x0372127C BL 0x337EE18
+	0x03721280 MOV V10.16B, V0.16B
+	0x03721284 FMOV S0, W23
+	0x03721288 FMOV S1, W24
+	0x0372128C MOV X0, X31
+	0x03721290 BL 0x337EE18
+	0x03721294 FMOV W0, S8
+	0x03721298 FMOV W8, S9
+	0x0372129C LDP X20, X19, [X31 + 0x40]
+	0x037212A0 LDP X22, X21, [X31 + 0x30]
+	0x037212A4 LDP X24, X23, [X31 + 0x20]
+	0x037212A8 LDR X30, [X31 + 0x18]
+	0x037212AC LDP D9, D8, [X31 + 0x8]
+	0x037212B0 FMOV W1, S10
+	0x037212B4 FMOV W9, S0
+	0x037212B8 BFM X0, X8, 0x20, 0x1F
+	0x037212BC BFM X1, X9, 0x20, 0x1F
+	0x037212C0 LDR V10, [X31], #0x50
+	0x037212C4 RET
+	0x037212C8 STR X30, [X31 - 0x30]!
+
+ISIL:
+	001 Move W8, [X31+64]
+	002 Move W9, [X31+56]
+	003 Move W10, [X31+48]
+	004 Move W11, [X31+40]
+	005 Move W12, [X31+32]
+	006 Move W13, [X31+24]
+	007 Move W14, [X31+16]
+	008 Move W15, [X31+8]
+	009 Move W16, [X31]
+	010 Move [X0], W1
+	011 Move [X0+1], W2
+	012 Move [X0+2], W3
+	013 Move [X0+3], W4
+	014 Move [X0+4], W5
+	015 Move [X0+5], W6
+	016 Move [X0+6], W7
+	017 Move [X0+7], W16
+	018 Move [X0+8], W15
+	019 Move [X0+9], W14
+	020 Move [X0+10], W13
+	021 Move [X0+11], W12
+	022 Move [X0+12], W11
+	023 Move [X0+13], W10
+	024 Move [X0+14], W9
+	025 Move [X0+15], W8
+	026 Return 
+
+Method: System.Void .ctor(System.SByte b)
+
+Disassembly:
+	0x037212CC STP X22, X21, [X31 + 0x10]
+	0x037212D0 STP X20, X19, [X31 + 0x20]
+	0x037212D4 MOV X19, X1
+	0x037212D8 MOV X20, X0
+	0x037212DC LDR X0, [X0]
+
+ISIL:
+	001 And X8, X1, 255
+	002 Or X9, X31, 0x101010101010101
+	003 Multiply X8, X8, X9
+	004 Move [X0], X8
+	005 Move [X0+8], X8
+	006 Return 
+
+Method: System.Void .ctor(System.SByte a, System.SByte b, System.SByte c, System.SByte d, System.SByte e, System.SByte f, System.SByte g, System.SByte h, System.SByte i, System.SByte j, System.SByte k, System.SByte l, System.SByte m, System.SByte n, System.SByte o, System.SByte p)
+
+Disassembly:
+	0x037212E0 LDR X1, [X20 + 0x8]
+	0x037212E4 LDP X2, X3, [X19]
+	0x037212E8 MOV X4, X31
+	0x037212EC MOV X21, X8
+	0x037212F0 BL 0x372DDE0
+	0x037212F4 MOV X22, X0
+	0x037212F8 LDP X0, X8, [X20 + 0x10]
+	0x037212FC LDP X2, X3, [X19 + 0x10]
+	0x03721300 MOV X19, X1
+	0x03721304 MOV X4, X31
+	0x03721308 MOV X1, X8
+	0x0372130C BL 0x372DDE0
+	0x03721310 STP X22, X19, [X21]
+	0x03721314 STP X0, X1, [X21 + 0x10]
+	0x03721318 LDP X20, X19, [X31 + 0x20]
+	0x0372131C LDP X22, X21, [X31 + 0x10]
+	0x03721320 LDR X30, [X31], #0x30
+	0x03721324 RET
+	0x03721328 STR X30, [X31 - 0x30]!
+	0x0372132C STP X22, X21, [X31 + 0x10]
+	0x03721330 STP X20, X19, [X31 + 0x20]
+	0x03721334 MOV X19, X1
+	0x03721338 MOV X20, X0
+	0x0372133C LDR X0, [X0]
+	0x03721340 LDR X1, [X20 + 0x8]
+	0x03721344 LDP X2, X3, [X19]
+
+ISIL:
+	001 Move W8, [X31+64]
+	002 Move W9, [X31+56]
+	003 Move W10, [X31+48]
+	004 Move W11, [X31+40]
+	005 Move W12, [X31+32]
+	006 Move W13, [X31+24]
+	007 Move W14, [X31+16]
+	008 Move W15, [X31+8]
+	009 Move W16, [X31]
+	010 Move [X0], W1
+	011 Move [X0+1], W2
+	012 Move [X0+2], W3
+	013 Move [X0+3], W4
+	014 Move [X0+4], W5
+	015 Move [X0+5], W6
+	016 Move [X0+6], W7
+	017 Move [X0+7], W16
+	018 Move [X0+8], W15
+	019 Move [X0+9], W14
+	020 Move [X0+10], W13
+	021 Move [X0+11], W12
+	022 Move [X0+12], W11
+	023 Move [X0+13], W10
+	024 Move [X0+14], W9
+	025 Move [X0+15], W8
+	026 Return 
+
+Method: System.Void .ctor(System.Int16 v)
+
+Disassembly:
+	0x03721348 MOV X21, X8
+	0x0372134C BL 0x3721380
+	0x03721350 MOV X22, X0
+
+ISIL:
+	001 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	002 Move [X0], V0
+	003 Return 
+
+Method: System.Void .ctor(System.Int16 a, System.Int16 b, System.Int16 c, System.Int16 d, System.Int16 e, System.Int16 f, System.Int16 g, System.Int16 h)
+
+Disassembly:
+	0x03721354 LDP X0, X8, [X20 + 0x10]
+	0x03721358 LDP X2, X3, [X19 + 0x10]
+	0x0372135C MOV X19, X1
+	0x03721360 MOV X1, X8
+	0x03721364 BL 0x3721380
+	0x03721368 STP X22, X19, [X21]
+	0x0372136C STP X0, X1, [X21 + 0x10]
+	0x03721370 LDP X20, X19, [X31 + 0x20]
+	0x03721374 LDP X22, X21, [X31 + 0x10]
+	0x03721378 LDR X30, [X31], #0x30
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 NotImplemented "Instruction STRH not yet implemented."
+	003 NotImplemented "Instruction STRH not yet implemented."
+	004 NotImplemented "Instruction STRH not yet implemented."
+	005 NotImplemented "Instruction STRH not yet implemented."
+	006 NotImplemented "Instruction STRH not yet implemented."
+	007 NotImplemented "Instruction STRH not yet implemented."
+	008 NotImplemented "Instruction STRH not yet implemented."
+	009 NotImplemented "Instruction STRH not yet implemented."
+	010 Return 
+
+Method: System.Void .ctor(System.UInt16 v)
+
+Disassembly:
+	0x0372137C RET
+	0x03721380 STR D10, [X31 - 0x50]!
+	0x03721384 STP D9, D8, [X31 + 0x8]
+
+ISIL:
+	001 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	002 Move [X0], V0
+	003 Return 
+
+Method: System.Void .ctor(System.UInt16 a, System.UInt16 b, System.UInt16 c, System.UInt16 d, System.UInt16 e, System.UInt16 f, System.UInt16 g, System.UInt16 h)
+
+Disassembly:
+	0x03721388 STR X30, [X31 + 0x18]
+	0x0372138C STP X24, X23, [X31 + 0x20]
+	0x03721390 STP X22, X21, [X31 + 0x30]
+	0x03721394 STP X20, X19, [X31 + 0x40]
+	0x03721398 ADRP X24, 0xCBF000
+	0x0372139C ADRP X23, 0x9D2000
+	0x037213A0 LDRB W8, [X24 + 0xC87]
+	0x037213A4 LDR X23, [X23 + 0x5A8]
+	0x037213A8 MOV X19, X3
+	0x037213AC MOV X21, X2
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 NotImplemented "Instruction STRH not yet implemented."
+	003 NotImplemented "Instruction STRH not yet implemented."
+	004 NotImplemented "Instruction STRH not yet implemented."
+	005 NotImplemented "Instruction STRH not yet implemented."
+	006 NotImplemented "Instruction STRH not yet implemented."
+	007 NotImplemented "Instruction STRH not yet implemented."
+	008 NotImplemented "Instruction STRH not yet implemented."
+	009 NotImplemented "Instruction STRH not yet implemented."
+	010 Return 
+
+Method: System.Void .ctor(System.Int32 v)
+
+Disassembly:
+	0x037213B0 MOV X20, X1
+	0x037213B4 MOV X22, X0
+	0x037213B8 TBNZ X8, 0x0, 0x37213D0
+
+ISIL:
+	001 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	002 Move [X0], V0
+	003 Return 
+
+Method: System.Void .ctor(System.Int32 a, System.Int32 b, System.Int32 c, System.Int32 d)
+
+Disassembly:
+	0x037213BC ADRP X0, 0x9D2000
+	0x037213C0 LDR X0, [X0 + 0x5A8]
+	0x037213C4 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0], W1
+	002 Move [X0+4], W2
+	003 Move [X0+8], W3
+	004 Move [X0+12], W4
+	005 Return 
+
+Method: System.Void .ctor(System.UInt32 v)
+
+Disassembly:
+	0x037213C8 MOVZ W8, 0x1
+	0x037213CC STRB W8, [X24 + 0xC87]
+	0x037213D0 LDR X0, [X23]
+
+ISIL:
+	001 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	002 Move [X0], V0
+	003 Return 
+
+Method: System.Void .ctor(System.UInt32 a, System.UInt32 b, System.UInt32 c, System.UInt32 d)
+
+Disassembly:
+	0x037213D4 LDR W8, [X0 + 0xE0]
+	0x037213D8 CBNZ W8, 0x37213E0
+	0x037213DC BL 0x1C16DFC
+
+ISIL:
+	001 Move [X0], W1
+	002 Move [X0+4], W2
+	003 Move [X0+8], W3
+	004 Move [X0+12], W4
+	005 Return 
+
+Method: System.Void .ctor(System.Single f)
+
+Disassembly:
+	0x037213E0 FMOV S1, W21
+	0x037213E4 FMOV S0, W22
+	0x037213E8 MOV X0, X31
+
+ISIL:
+	001 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	002 Move [X0], V0
+	003 Return 
+
+Method: System.Void .ctor(System.Single a, System.Single b, System.Single c, System.Single d)
+
+Disassembly:
+	0x037213EC UBFM X22, X22, 0x20, 0x3F
+	0x037213F0 UBFM X23, X20, 0x20, 0x3F
+	0x037213F4 UBFM X21, X21, 0x20, 0x3F
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: System.Void .ctor(System.Double f)
+
+Disassembly:
+	0x037213F8 UBFM X24, X19, 0x20, 0x3F
+	0x037213FC BL 0x337EEBC
+
+ISIL:
+	001 Move [X0], D0
+	002 Move [X0+8], D0
+	003 Return 
+
+Method: System.Void .ctor(System.Double a, System.Double b)
+
+Disassembly:
+	0x03721400 MOV V8.16B, V0.16B
+	0x03721404 FMOV S0, W22
+
+ISIL:
+	001 Move [X0], D0
+	002 Move [X0+8], D1
+	003 Return 
+
+Method: System.Void .ctor(System.Int64 f)
+
+Disassembly:
+	0x03721408 FMOV S1, W21
+	0x0372140C MOV X0, X31
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X1
+	003 Return 
+
+Method: System.Void .ctor(System.Int64 a, System.Int64 b)
+
+Disassembly:
+	0x03721410 BL 0x337EEBC
+	0x03721414 MOV V9.16B, V0.16B
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Return 
+
+Method: System.Void .ctor(System.UInt64 f)
+
+Disassembly:
+	0x03721418 FMOV S0, W20
+	0x0372141C FMOV S1, W19
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X1
+	003 Return 
+
+Method: System.Void .ctor(System.UInt64 a, System.UInt64 b)
+
+Disassembly:
+	0x03721420 MOV X0, X31
+	0x03721424 BL 0x337EEBC
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Return 
+
+Method: System.Void .ctor(Unity.Burst.Intrinsics.v64 lo, Unity.Burst.Intrinsics.v64 hi)
+
+Disassembly:
+	0x03721428 MOV V10.16B, V0.16B
+	0x0372142C FMOV S0, W23
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Return 
+

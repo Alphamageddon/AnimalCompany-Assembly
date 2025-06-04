@@ -1,0 +1,115 @@
+Type: UnityEngine.UIElements.Scroller/ScrollerSlider
+
+Method: System.Void .ctor(System.Single start, System.Single end, UnityEngine.UIElements.SliderDirection direction, System.Single pageSize)
+
+Disassembly:
+	0x03D85648 LDR X8, [X8 + 0x538]
+	0x03D8564C MOV X0, X19
+	0x03D85650 LDR X1, [X8]
+	0x03D85654 BL 0x28BF5A4
+	0x03D85658 B 0x3D85768
+	0x03D8565C ADRP X8, 0x3E2000
+	0x03D85660 LDR X8, [X8 + 0x538]
+	0x03D85664 MOV X0, X19
+	0x03D85668 LDR X1, [X8]
+	0x03D8566C BL 0x28BF5A4
+	0x03D85670 ADRP X8, 0x3E2000
+	0x03D85674 LDR X8, [X8 + 0x528]
+	0x03D85678 MOV X0, X19
+	0x03D8567C MOV V8.16B, V0.16B
+	0x03D85680 LDR X1, [X8]
+	0x03D85684 BL 0x28BF4FC
+	0x03D85688 ADRP X22, 0x3E2000
+	0x03D8568C LDR X22, [X22 + 0x5F8]
+	0x03D85690 ADRP X8, 0xFFFFFFFFFCD65000
+	0x03D85694 LDR V1, [X8 + 0x330]
+	0x03D85698 FSUB S0, S8, S0
+	0x03D8569C LDR X0, [X22]
+	0x03D856A0 FMUL S0, S0, S1
+	0x03D856A4 FABS S8, S0
+	0x03D856A8 LDR W8, [X0 + 0xE0]
+	0x03D856AC CBNZ W8, 0x3D856B4
+	0x03D856B0 BL 0x1C16DFC
+	0x03D856B4 ADRP X8, 0x3E2000
+	0x03D856B8 LDR X8, [X8 + 0x610]
+	0x03D856BC MOV V0.16B, V8.16B
+	0x03D856C0 LDR X0, [X8]
+	0x03D856C4 BL 0x28C00F4
+	0x03D856C8 CMP W20, 0x5
+	0x03D856CC MOV V8.16B, V0.16B
+	0x03D856D0 B.EQ 0x3D856DC
+	0x03D856D4 CMP W20, 0x2
+
+ISIL:
+	001 Move [X31-64], D10
+	002 Move [X31+8], D9
+	003 Move [X31+16], D8
+	004 Move [X31+24], X30
+	005 Move [X31+32], X22
+	006 Move [X31+40], X21
+	007 Move [X31+48], X20
+	008 Move [X31+56], X19
+	009 Move X21, 0x663000
+	010 Move X22, 0x3E3000
+	011 Move W8, [X21+3552]
+	012 Move X22, [X22+1424]
+	013 Move V8, V2
+	014 Move W19, W1
+	015 Move V9, V1
+	016 Move V10, V0
+	017 Move X20, X0
+	018 Move TEMP, X8
+	019 And TEMP, TEMP, 1
+	020 Compare TEMP, 1
+	021 JumpIfEqual {27}
+	022 Move X0, 0x3E3000
+	023 Move X0, [X0+1424]
+	024 Call 0x1C17CF4
+	025 Move W8, 1
+	026 Move [X21+3552], W8
+	027 Move X0, [X22]
+	028 Move W8, [X0+224]
+	029 Compare W8, 0
+	030 JumpIfNotEqual {32}
+	031 Call 0x1C17DFC
+	032 Move X0, X20
+	033 Move V1, V9
+	034 Move W2, W19
+	035 Move V2, V8
+	036 Move X20, [X31+48]
+	037 Move X19, [X31+56]
+	038 Move X22, [X31+32]
+	039 Move X21, [X31+40]
+	040 Move X30, [X31+24]
+	041 Move D9, [X31+8]
+	042 Move D8, [X31+16]
+	043 Move X1, X31
+	044 Move V0, V10
+	045 Move V10, [X31+64]
+	046 Call Slider..ctor, X0, X1, V0, V1, X2, V2
+	047 Return 
+
+Method: System.Single SliderNormalizeValue(System.Single currentValue, System.Single lowerValue, System.Single higherValue)
+
+Disassembly:
+	0x03D85B58 BL 0x1C171E0
+	0x03D85B5C STP X30, X21, [X31 - 0x20]!
+	0x03D85B60 STP X20, X19, [X31 + 0x10]
+	0x03D85B64 ADRP X20, 0x662000
+	0x03D85B68 ADRP X21, 0x3DE000
+	0x03D85B6C LDRB W8, [X20 + 0xDEC]
+	0x03D85B70 LDR X21, [X21 + 0x270]
+	0x03D85B74 MOV X19, X0
+	0x03D85B78 TBNZ X8, 0x0, 0x3D85C2C
+
+ISIL:
+	001 Subtract S0, S0, S1
+	002 Subtract S1, S2, S1
+	003 Move S2, 1
+	004 NotImplemented "Instruction FDIV not yet implemented."
+	005 NotImplemented "Instruction FMIN not yet implemented."
+	006 NotImplemented "Instruction FCMP not yet implemented."
+	007 Move S0, W31
+	008 NotImplemented "Instruction FCSEL not yet implemented."
+	009 Return V0
+

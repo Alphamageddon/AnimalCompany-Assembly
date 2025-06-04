@@ -1,0 +1,64 @@
+Type: Fusion.Analyzer.StaticFieldAttribute
+
+Method: System.Void .ctor(Fusion.Analyzer.StaticFieldResetMode resetMode)
+
+Disassembly:
+	0x01E3A7FC LDP X22, X21, [X31 + 0x30]
+	0x01E3A800 LDP X24, X23, [X31 + 0x20]
+	0x01E3A804 LDP X30, X25, [X31 + 0x10]
+	0x01E3A808 ADD X31, X31, 0x50
+	0x01E3A80C RET
+	0x01E3A810 BL 0x1C16F20
+	0x01E3A814 BL 0x1C16F20
+	0x01E3A818 BL 0x1C16F20
+	0x01E3A81C BL 0x1C16F20
+	0x01E3A820 BL 0x1C16F20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E3A824 BL 0x1C16F20
+	0x01E3A828 B 0x1E3A874
+	0x01E3A82C B 0x1E3A874
+	0x01E3A830 B 0x1E3A874
+	0x01E3A834 B 0x1E3A874
+	0x01E3A838 B 0x1E3A874
+	0x01E3A83C B 0x1E3A874
+	0x01E3A840 B 0x1E3A868
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X1, X31
+	004 Move X19, X0
+	005 Call Attribute..ctor, X0
+	006 Move W8, 2
+	007 Move [X19+16], W8
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+
+Method: Fusion.Analyzer.StaticFieldResetMode get_Reset()
+
+Disassembly:
+	0x01E3A844 B 0x1E3A874
+	0x01E3A848 B 0x1E3A874
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+

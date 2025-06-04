@@ -1,0 +1,145 @@
+Type: Fusion.JsonUtilityExtensions/TypeResolverDelegate
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0x01F852D0 LDR X8, [X8 + 0xC0]
+	0x01F852D4 LDR X2, [X8 + 0x70]
+	0x01F852D8 MOV X0, X24
+	0x01F852DC BL 0x301BF90
+	0x01F852E0 SUB W28, W28, 0x1
+	0x01F852E4 CMP W28, 0x2
+	0x01F852E8 B.GE 0x1F85208
+	0x01F852EC LDR X0, [X31 + 0x68]
+	0x01F852F0 ADRP X8, 0x2195000
+	0x01F852F4 ADD X2, X20, 0x70
+	0x01F852F8 LDR X3, [X0 + 0x38]
+	0x01F852FC LDR X8, [X8 + 0x398]
+	0x01F85300 LDR X4, [X8]
+	0x01F85304 MOV X1, X20
+	0x01F85308 BL 0x222AB1C
+	0x01F8530C MOV W23, W0
+	0x01F85310 LDR X0, [X31 + 0x68]
+	0x01F85314 LDR X8, [X0]
+	0x01F85318 LDP X9, X2, [X8 + 0x198]
+	0x01F8531C MOV X1, X20
+	0x01F85320 BLR X9
+	0x01F85324 ADRP X8, 0x2195000
+	0x01F85328 MOV W3, W0
+	0x01F8532C LDR X0, [X31 + 0x68]
+	0x01F85330 LDR X8, [X8 + 0x3A0]
+	0x01F85334 ADD X2, X20, 0x40
+	0x01F85338 LDR X4, [X8]
+	0x01F8533C MOV X1, X20
+	0x01F85340 BL 0x222ABB8
+	0x01F85344 ORR W8, W21, W22, 0x0
+	0x01F85348 ORR W8, W8, W23, 0x0
+	0x01F8534C ORR W8, W8, W0, 0x0
+	0x01F85350 TBZ X8, 0x0, 0x1F85370
+	0x01F85354 LDR X0, [X31 + 0x68]
+	0x01F85358 LDR X8, [X0]
+	0x01F8535C LDP X9, X2, [X8 + 0x178]
+	0x01F85360 MOV X1, X20
+	0x01F85364 BLR X9
+	0x01F85368 MOVZ W8, 0x1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+8]
+	006 Move [X0+32], X1
+	007 Move [X0+40], X2
+	008 Move X19, X0
+	009 Move X20, X1
+	010 Move [X0+16], X8
+	011 Move W21, [X2+82]
+	012 Move [X0+64], X0
+	013 Move X0, X2
+	014 Call 0x1C17D84
+	015 Move TEMP, X0
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfNotEqual {22}
+	019 NotImplemented "Instruction CMP not yet implemented."
+	020 Move X8, -6205440
+	021 Add X8, X8, 3756
+	022 Compare W21, 0
+	023 JumpIfEqual {30}
+	024 Compare X20, 0
+	025 JumpIfEqual {41}
+	026 Move X8, [X19+16]
+	027 Move X9, [X19+32]
+	028 Move [X19+24], X8
+	029 Move [X19+64], X9
+	030 Move X8, -6205440
+	031 Add X8, X8, 3724
+	032 Move [X19+24], X8
+	033 Move X8, -6205440
+	034 Add X8, X8, 3644
+	035 Move [X19+56], X8
+	036 Move X20, [X31+16]
+	037 Move X19, [X31+24]
+	038 Move X30, [X31+32]
+	039 Move X21, [X31+40]
+	040 Return 
+	041 Move X1, -21401600
+	042 Add X1, X1, 3811
+	043 Move X0, X31
+	044 Call 0x1C17F3C
+	045 Move X1, X31
+	046 Call 0x1C17DEC
+
+Method: System.Type Invoke(System.String typeName)
+
+Disassembly:
+	0x01F8536C STR X8, [X31 + 0x28]
+	0x01F85370 LDR X8, [X31 + 0x68]
+	0x01F85374 LDR X0, [X8 + 0x10]
+	0x01F85378 CBZ X0, 0x1F8545C
+	0x01F8537C LDR W8, [X0 + 0x18]
+
+ISIL:
+	001 Move X8, [X0+64]
+	002 Move X3, [X0+24]
+	003 Move X2, [X0+40]
+	004 Move X0, X8
+	005 CallNoReturn X3
+
+Method: System.IAsyncResult BeginInvoke(System.String typeName, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x01F85380 ADD W19, W19, 0x1
+	0x01F85384 ADD W27, W27, 0x1
+	0x01F85388 CMP W19, W8
+	0x01F8538C B.LT 0x1F84DE0
+	0x01F85390 B 0x1F853B0
+	0x01F85394 ADD X0, X31, 0x30
+	0x01F85398 BL 0x199A2E8
+	0x01F8539C MOV W20, W31
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+8], X31
+	003 Move [X31+16], X30
+	004 Move [X31], X1
+	005 Add X1, X31, 0
+	006 Call 0x1C17CB0
+	007 Move X30, [X31+16]
+	008 Add X31, X31, 32
+	009 Return X0
+
+Method: System.Type EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0x01F853A0 MOV W21, W31
+	0x01F853A4 MOV X19, X31
+	0x01F853A8 B 0x1F853C8
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X31
+	003 Call 0x1C17CB4
+	004 Return X0
+

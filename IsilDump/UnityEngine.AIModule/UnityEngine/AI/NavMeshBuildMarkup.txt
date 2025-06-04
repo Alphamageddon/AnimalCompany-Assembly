@@ -1,0 +1,163 @@
+Type: UnityEngine.AI.NavMeshBuildMarkup
+
+Method: System.Void set_overrideArea(System.Boolean value)
+
+Disassembly:
+	0x03BE3A1C MOV X21, X0
+	0x03BE3A20 B.LT 0x3BE3D7C
+	0x03BE3A24 MOV W26, W22
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0], W8
+	003 Return 
+
+Method: System.Void set_area(System.Int32 value)
+
+Disassembly:
+	0x03BE3A28 ADRP X22, 0xFFFFFFFFFCF3D000
+	0x03BE3A2C MOV X25, X31
+
+ISIL:
+	001 Move [X0+4], W1
+	002 Return 
+
+Method: System.Void set_ignoreFromBuild(System.Boolean value)
+
+Disassembly:
+	0x03BE3A30 MOV X23, X31
+	0x03BE3A34 ADD X27, X20, 0x20
+	0x03BE3A38 ADD X28, X19, 0x20
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+12], W8
+	003 Return 
+
+Method: System.Void set_overrideGenerateLinks(System.Boolean value)
+
+Disassembly:
+	0x03BE3A3C ADRP X29, 0x800000
+	0x03BE3A40 ADD X22, X22, 0x48C
+	0x03BE3A44 LDR W8, [X20 + 0x18]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+16], W8
+	003 Return 
+
+Method: System.Void set_generateLinks(System.Boolean value)
+
+Disassembly:
+	0x03BE3A48 CMP X25, X8
+	0x03BE3A4C B.CS 0x3BE4074
+	0x03BE3A50 LDR X8, [X27, X25, LSL #3]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+20], W8
+	003 Return 
+
+Method: System.Void set_applyToChildren(System.Boolean value)
+
+Disassembly:
+	0x03BE3A54 CBZ X8, 0x3BE3AE8
+	0x03BE3A58 LDR X9, [X8 + 0x10]
+	0x03BE3A5C CBZ X9, 0x3BE3A64
+	0x03BE3A60 LDR X9, [X9 + 0x18]
+
+ISIL:
+	001 NotImplemented "Instruction ORN not yet implemented."
+	002 And W8, W8, 1
+	003 Move [X0+28], W8
+	004 Return 
+
+Method: System.Void set_root(UnityEngine.Transform value)
+
+Disassembly:
+	0x03BE3A64 CBZ X19, 0x3BE4078
+	0x03BE3A68 LDR W10, [X19 + 0x18]
+	0x03BE3A6C CMP X25, X10
+	0x03BE3A70 B.CS 0x3BE4074
+	0x03BE3A74 STR X9, [X28, X25, LSL #3]
+	0x03BE3A78 LDR W9, [X20 + 0x18]
+	0x03BE3A7C CMP X25, X9
+	0x03BE3A80 B.CS 0x3BE4074
+	0x03BE3A84 LDR X8, [X8 + 0x18]
+	0x03BE3A88 CBZ X8, 0x3BE4078
+	0x03BE3A8C LDR X24, [X8 + 0x18]
+	0x03BE3A90 MOV X0, X23
+	0x03BE3A94 MOV X1, X31
+	0x03BE3A98 MOV X2, X31
+	0x03BE3A9C BL 0x33BE5B0
+	0x03BE3AA0 TBNZ X0, 0x0, 0x3BE3B00
+	0x03BE3AA4 MOV X0, X23
+	0x03BE3AA8 MOV X1, X21
+	0x03BE3AAC MOV X2, X31
+	0x03BE3AB0 BL 0x33C5D2C
+	0x03BE3AB4 TBZ X0, 0x0, 0x3BE3AFC
+	0x03BE3AB8 LDR X8, [X29 + 0x270]
+	0x03BE3ABC CBNZ X8, 0x3BE3AD0
+	0x03BE3AC0 MOV X0, X22
+	0x03BE3AC4 BL 0x1C16CB8
+	0x03BE3AC8 MOV X8, X0
+	0x03BE3ACC STR X0, [X29 + 0x270]
+	0x03BE3AD0 MOV X0, X23
+	0x03BE3AD4 MOV X1, X24
+	0x03BE3AD8 BLR X8
+	0x03BE3ADC MOV X24, X21
+	0x03BE3AE0 TBNZ X0, 0x0, 0x3BE3AFC
+	0x03BE3AE4 B 0x3BE3B00
+	0x03BE3AE8 CBZ X19, 0x3BE4078
+	0x03BE3AEC LDR W8, [X19 + 0x18]
+	0x03BE3AF0 CMP X25, X8
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x801000
+	007 Move X22, 0x511000
+	008 Move W8, [X21+360]
+	009 Move X22, [X22+1432]
+	010 Move X20, X1
+	011 Move X19, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x511000
+	017 Move X0, [X0+1432]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+360], W8
+	021 Move X0, [X22]
+	022 Move W8, [X0+224]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {26}
+	025 Call 0x1C17DFC
+	026 Move X0, X20
+	027 Move X1, X31
+	028 Move X2, X31
+	029 Call Object.op_Inequality, X0, X1
+	030 Move TEMP, X0
+	031 And TEMP, TEMP, 1
+	032 Compare TEMP, 1
+	033 JumpIfNotEqual {39}
+	034 Compare X20, 0
+	035 JumpIfEqual {47}
+	036 Move X0, X20
+	037 Move X1, X31
+	038 Call Object.GetInstanceID, X0
+	039 Move W0, W31
+	040 Move [X19+24], W0
+	041 Move X20, [X31+32]
+	042 Move X19, [X31+40]
+	043 Move X22, [X31+16]
+	044 Move X21, [X31+24]
+	045 Move X30, [X31+48]
+	046 Return 
+	047 Call 0x1C17F20
+

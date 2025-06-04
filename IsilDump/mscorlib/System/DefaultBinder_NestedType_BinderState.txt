@@ -1,0 +1,44 @@
+Type: System.DefaultBinder/BinderState
+
+Method: System.Void .ctor(System.Int32[] argsMap, System.Int32 originalSize, System.Boolean isParamArray)
+
+Disassembly:
+	0x033AC084 LDR X8, [X8 + 0x538]
+	0x033AC088 MOV X24, X0
+	0x033AC08C LDR X8, [X8]
+	0x033AC090 LDR W9, [X8 + 0xE0]
+	0x033AC094 CBNZ W9, 0x33AC0A0
+	0x033AC098 MOV X0, X8
+	0x033AC09C BL 0x1C16DFC
+	0x033AC0A0 LDR X2, [X31 + 0x10]
+	0x033AC0A4 MOV X0, X22
+	0x033AC0A8 MOV X1, X24
+	0x033AC0AC BL 0x33AC53C
+	0x033AC0B0 CBZ X19, 0x33AC148
+	0x033AC0B4 CBNZ W0, 0x33AC148
+	0x033AC0B8 LDR W8, [X21 + 0x18]
+	0x033AC0BC CMP W20, W8
+	0x033AC0C0 B.CS 0x33AC234
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, X1
+	007 Move X1, X31
+	008 Move W19, W2
+	009 Move X21, X0
+	010 And W22, W3, 1
+	011 Call Object..ctor, X0
+	012 Move [X21+16], X20
+	013 Move [X21+24], W19
+	014 Move [X21+28], W22
+	015 Move X20, [X31+32]
+	016 Move X19, [X31+40]
+	017 Move X22, [X31+16]
+	018 Move X21, [X31+24]
+	019 Move X30, [X31+48]
+	020 Return 
+

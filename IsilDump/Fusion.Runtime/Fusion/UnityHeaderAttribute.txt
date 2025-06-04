@@ -1,0 +1,33 @@
+Type: Fusion.UnityHeaderAttribute
+
+Method: System.Int32 get_order()
+
+Disassembly:
+	0x01E68890 MOV X1, X31
+	0x01E68894 BL 0x1E4546C
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_order(System.Int32 value)
+
+Disassembly:
+	0x01E68898 TBZ X0, 0x0, 0x1E688B8
+	0x01E6889C LDR X8, [X19 + 0x30]
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+
+Method: System.Void .ctor(System.String header)
+
+Disassembly:
+	0x01E688A0 CBZ X8, 0x1E688C4
+	0x01E688A4 LDR X0, [X8 + 0x38]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Attribute..ctor, X0
+	003 Return 
+

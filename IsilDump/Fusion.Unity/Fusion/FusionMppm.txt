@@ -1,0 +1,29 @@
+Type: Fusion.FusionMppm
+
+Method: System.Void Send(T data)
+
+Disassembly:
+	0x021E59BC MOV X1, X23
+
+ISIL:
+	001 Return 
+
+Method: System.Void Broadcast(T data)
+
+Disassembly:
+	0x021E59B8 MOV X0, X22
+
+ISIL:
+	001 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01F856AC STP X22, X21, [X31 + 0xF0]
+	0x01F856B0 STP X20, X19, [X31 + 0x100]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

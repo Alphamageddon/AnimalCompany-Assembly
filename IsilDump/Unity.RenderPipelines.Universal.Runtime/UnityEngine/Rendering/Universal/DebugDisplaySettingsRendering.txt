@@ -1,0 +1,676 @@
+Type: UnityEngine.Rendering.Universal.DebugDisplaySettingsRendering
+
+Method: UnityEngine.Rendering.Universal.DebugWireframeMode get_wireframeMode()
+
+Disassembly:
+	0x03A32AE8 ADRP X8, 0x723000
+	0x03A32AEC LDR X8, [X8 + 0x278]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_wireframeMode(UnityEngine.Rendering.Universal.DebugWireframeMode value)
+
+Disassembly:
+	0x03A32AF0 MOV X1, X23
+	0x03A32AF4 MOV X3, X31
+	0x03A32AF8 MOV X22, X0
+	0x03A32AFC LDR X2, [X8]
+	0x03A32B00 BL 0x2D27710
+	0x03A32B04 LDR X8, [X24]
+	0x03A32B08 LDR X8, [X8 + 0xB8]
+	0x03A32B0C STR X22, [X8 + 0x10]
+	0x03A32B10 STR X22, [X21 + 0x68]
+	0x03A32B14 CBZ X20, 0x3A32B4C
+	0x03A32B18 ADRP X8, 0x71E000
+
+ISIL:
+	001 Subtract W8, W1, 1
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 Move [X0+16], W1
+	004 Add W8, W1, 1
+	005 Move W8, [X0+24]
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 NotImplemented "Instruction CSET not yet implemented."
+	008 Move [X0+40], W8
+	009 Return 
+
+Method: System.Boolean get_overdraw()
+
+Disassembly:
+	0x03A32B48 RET
+	0x03A32B4C BL 0x1C16F20
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void set_overdraw(System.Boolean value)
+
+Disassembly:
+	0x03A32B50 MOV X1, X31
+	0x03A32B54 B 0x33BDD8C
+	0x03A32B58 STP X29, X30, [X31 - 0x60]!
+	0x03A32B5C STP X28, X27, [X31 + 0x10]
+	0x03A32B60 STP X26, X25, [X31 + 0x20]
+	0x03A32B64 STP X24, X23, [X31 + 0x30]
+	0x03A32B68 STP X22, X21, [X31 + 0x40]
+	0x03A32B6C STP X20, X19, [X31 + 0x50]
+	0x03A32B70 ADRP X20, 0x9B0000
+	0x03A32B74 ADRP X21, 0x723000
+	0x03A32B78 LDRB W8, [X20 + 0xBC]
+	0x03A32B7C LDR X21, [X21 + 0x298]
+	0x03A32B80 MOV X19, X0
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 And W9, W1, 1
+	003 Move [X0+20], W9
+	004 Subtract W10, W8, 1
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Add W8, W8, 1
+	007 Move W8, [X0+24]
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 NotImplemented "Instruction CSET not yet implemented."
+	010 Move [X0+40], W8
+	011 Return 
+
+Method: UnityEngine.Rendering.Universal.DebugOverdrawMode get_overdrawMode()
+
+Disassembly:
+	0x03A32B84 TBNZ X8, 0x0, 0x3A32C50
+	0x03A32B88 ADRP X0, 0x6C5000
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_overdrawMode(UnityEngine.Rendering.Universal.DebugOverdrawMode value)
+
+Disassembly:
+	0x03A32B8C LDR X0, [X0 + 0xB00]
+	0x03A32B90 BL 0x1C16CF4
+	0x03A32B94 ADRP X0, 0x71F000
+	0x03A32B98 LDR X0, [X0 + 0x458]
+	0x03A32B9C BL 0x1C16CF4
+	0x03A32BA0 ADRP X0, 0x723000
+	0x03A32BA4 LDR X0, [X0 + 0x2A0]
+	0x03A32BA8 BL 0x1C16CF4
+	0x03A32BAC ADRP X0, 0x71F000
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Move [X0+24], W1
+	005 Subtract W9, W8, 1
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 NotImplemented "Instruction CSINC not yet implemented."
+	008 Move [X0+40], W8
+	009 Return 
+
+Method: System.Int32 get_maxOverdrawCount()
+
+Disassembly:
+	0x03A32BB0 LDR X0, [X0 + 0xE8]
+	0x03A32BB4 BL 0x1C16CF4
+
+ISIL:
+	001 Move W0, [X0+28]
+	002 Return X0
+
+Method: System.Void set_maxOverdrawCount(System.Int32 value)
+
+Disassembly:
+	0x03A32BB8 ADRP X0, 0x71F000
+	0x03A32BBC LDR X0, [X0 + 0xF0]
+
+ISIL:
+	001 Move [X0+28], W1
+	002 Return 
+
+Method: System.Void UpdateDebugSceneOverrideMode()
+
+Disassembly:
+	0x03A32B1C LDR X8, [X8 + 0x7A0]
+	0x03A32B20 MOV X0, X20
+	0x03A32B24 MOV X1, X21
+	0x03A32B28 LDR X2, [X8]
+	0x03A32B2C BL 0x2497EC8
+	0x03A32B30 MOV X0, X19
+	0x03A32B34 LDP X20, X19, [X31 + 0x40]
+	0x03A32B38 LDP X22, X21, [X31 + 0x30]
+	0x03A32B3C LDP X24, X23, [X31 + 0x20]
+	0x03A32B40 LDP X26, X25, [X31 + 0x10]
+	0x03A32B44 LDP X30, X27, [X31], #0x50
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 Subtract W9, W8, 1
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Add W8, W8, 1
+	005 Move W8, [X0+24]
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 NotImplemented "Instruction CSET not yet implemented."
+	008 Move [X0+40], W8
+	009 Return 
+
+Method: UnityEngine.Rendering.Universal.DebugFullScreenMode get_fullScreenDebugMode()
+
+Disassembly:
+	0x03A32BC0 BL 0x1C16CF4
+	0x03A32BC4 ADRP X0, 0x71F000
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_fullScreenDebugMode(UnityEngine.Rendering.Universal.DebugFullScreenMode value)
+
+Disassembly:
+	0x03A32BC8 LDR X0, [X0 + 0xF8]
+	0x03A32BCC BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+32], W1
+	002 Return 
+
+Method: System.Int32 get_fullScreenDebugModeOutputSizeScreenPercent()
+
+Disassembly:
+	0x03A32BD0 ADRP X0, 0x707000
+	0x03A32BD4 LDR X0, [X0 + 0x6A0]
+
+ISIL:
+	001 Move W0, [X0+36]
+	002 Return X0
+
+Method: System.Void set_fullScreenDebugModeOutputSizeScreenPercent(System.Int32 value)
+
+Disassembly:
+	0x03A32BD8 BL 0x1C16CF4
+	0x03A32BDC ADRP X0, 0x723000
+
+ISIL:
+	001 Move [X0+36], W1
+	002 Return 
+
+Method: UnityEngine.Rendering.Universal.DebugSceneOverrideMode get_sceneOverrideMode()
+
+Disassembly:
+	0x03A32BE0 LDR X0, [X0 + 0x160]
+	0x03A32BE4 BL 0x1C16CF4
+
+ISIL:
+	001 Move W0, [X0+40]
+	002 Return X0
+
+Method: System.Void set_sceneOverrideMode(UnityEngine.Rendering.Universal.DebugSceneOverrideMode value)
+
+Disassembly:
+	0x03A32BE8 ADRP X0, 0x6C1000
+	0x03A32BEC LDR X0, [X0 + 0x6C0]
+
+ISIL:
+	001 Move [X0+40], W1
+	002 Return 
+
+Method: UnityEngine.Rendering.Universal.DebugMipInfoMode get_mipInfoMode()
+
+Disassembly:
+	0x03A32BF0 BL 0x1C16CF4
+	0x03A32BF4 ADRP X0, 0x723000
+
+ISIL:
+	001 Move W0, [X0+44]
+	002 Return X0
+
+Method: System.Void set_mipInfoMode(UnityEngine.Rendering.Universal.DebugMipInfoMode value)
+
+Disassembly:
+	0x03A32BF8 LDR X0, [X0 + 0x2A8]
+	0x03A32BFC BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+44], W1
+	002 Return 
+
+Method: UnityEngine.Rendering.Universal.DebugPostProcessingMode get_postProcessingDebugMode()
+
+Disassembly:
+	0x03A32C00 ADRP X0, 0x723000
+	0x03A32C04 LDR X0, [X0 + 0x2B0]
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_postProcessingDebugMode(UnityEngine.Rendering.Universal.DebugPostProcessingMode value)
+
+Disassembly:
+	0x03A32C08 BL 0x1C16CF4
+	0x03A32C0C ADRP X0, 0x723000
+
+ISIL:
+	001 Move [X0+48], W1
+	002 Return 
+
+Method: System.Boolean get_enableMsaa()
+
+Disassembly:
+	0x03A32C10 LDR X0, [X0 + 0x2B8]
+	0x03A32C14 BL 0x1C16CF4
+
+ISIL:
+	001 Move W0, [X0+52]
+	002 Return X0
+
+Method: System.Void set_enableMsaa(System.Boolean value)
+
+Disassembly:
+	0x03A32C18 ADRP X0, 0x723000
+	0x03A32C1C LDR X0, [X0 + 0x2C0]
+	0x03A32C20 BL 0x1C16CF4
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+52], W8
+	003 Return 
+
+Method: System.Boolean get_enableHDR()
+
+Disassembly:
+	0x03A32C24 ADRP X0, 0x723000
+	0x03A32C28 LDR X0, [X0 + 0x2C8]
+
+ISIL:
+	001 Move W0, [X0+53]
+	002 Return X0
+
+Method: System.Void set_enableHDR(System.Boolean value)
+
+Disassembly:
+	0x03A32C2C BL 0x1C16CF4
+	0x03A32C30 ADRP X0, 0x723000
+	0x03A32C34 LDR X0, [X0 + 0x298]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+53], W8
+	003 Return 
+
+Method: UnityEngine.Rendering.Universal.DebugDisplaySettingsRendering/TaaDebugMode get_taaDebugMode()
+
+Disassembly:
+	0x03A32C38 BL 0x1C16CF4
+	0x03A32C3C ADRP X0, 0x723000
+
+ISIL:
+	001 Move W0, [X0+56]
+	002 Return X0
+
+Method: System.Void set_taaDebugMode(UnityEngine.Rendering.Universal.DebugDisplaySettingsRendering/TaaDebugMode value)
+
+Disassembly:
+	0x03A32C40 LDR X0, [X0 + 0x290]
+	0x03A32C44 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+56], W1
+	002 Return 
+
+Method: UnityEngine.Rendering.Universal.DebugValidationMode get_validationMode()
+
+Disassembly:
+	0x03A32C48 MOVZ W8, 0x1
+	0x03A32C4C STRB W8, [X20 + 0xBC]
+
+ISIL:
+	001 Move W0, [X0+60]
+	002 Return X0
+
+Method: System.Void set_validationMode(UnityEngine.Rendering.Universal.DebugValidationMode value)
+
+Disassembly:
+	0x03A32C50 LDR X0, [X21]
+	0x03A32C54 BL 0x1C16F10
+
+ISIL:
+	001 Move [X0+60], W1
+	002 Return 
+
+Method: UnityEngine.Rendering.Universal.PixelValidationChannels get_validationChannels()
+
+Disassembly:
+	0x03A32C58 MOV X1, X31
+	0x03A32C5C MOV X20, X0
+
+ISIL:
+	001 Move W0, [X0+64]
+	002 Return X0
+
+Method: System.Void set_validationChannels(UnityEngine.Rendering.Universal.PixelValidationChannels value)
+
+Disassembly:
+	0x03A32C60 BL 0x33BDD8C
+	0x03A32C64 CBZ X20, 0x3A32E48
+
+ISIL:
+	001 Move [X0+64], W1
+	002 Return 
+
+Method: System.Single get_validationRangeMin()
+
+Disassembly:
+	0x03A32C68 ADRP X8, 0x71F000
+	0x03A32C6C LDR X8, [X8 + 0xE8]
+
+ISIL:
+	001 Move V0, [X0+68]
+	002 Return V0
+
+Method: System.Void set_validationRangeMin(System.Single value)
+
+Disassembly:
+	0x03A32C70 STR X19, [X20 + 0x10]
+	0x03A32C74 ADRP X21, 0x723000
+
+ISIL:
+	001 Move [X0+68], S0
+	002 Return 
+
+Method: System.Single get_validationRangeMax()
+
+Disassembly:
+	0x03A32C78 LDR X0, [X8]
+	0x03A32C7C LDR X21, [X21 + 0x160]
+
+ISIL:
+	001 Move V0, [X0+72]
+	002 Return V0
+
+Method: System.Void set_validationRangeMax(System.Single value)
+
+Disassembly:
+	0x03A32C80 BL 0x1C16F10
+	0x03A32C84 MOV X1, X31
+
+ISIL:
+	001 Move [X0+72], S0
+	002 Return 
+
+Method: System.Boolean get_AreAnySettingsActive()
+
+Disassembly:
+	0x03A32C88 MOV X19, X0
+	0x03A32C8C BL 0x399C0B4
+	0x03A32C90 LDR X0, [X21]
+	0x03A32C94 LDR W8, [X0 + 0xE0]
+	0x03A32C98 CBNZ W8, 0x3A32CA4
+	0x03A32C9C BL 0x1C16DFC
+	0x03A32CA0 LDR X0, [X21]
+	0x03A32CA4 CBZ X19, 0x3A32E48
+	0x03A32CA8 ADRP X21, 0x723000
+	0x03A32CAC ADRP X29, 0x6C1000
+	0x03A32CB0 ADRP X25, 0x707000
+	0x03A32CB4 LDR X21, [X21 + 0x2A0]
+	0x03A32CB8 LDR X29, [X29 + 0x6C0]
+	0x03A32CBC LDR X25, [X25 + 0x6A0]
+	0x03A32CC0 LDR X8, [X0 + 0xB8]
+	0x03A32CC4 ADRP X28, 0x723000
+	0x03A32CC8 ADRP X24, 0x6C5000
+	0x03A32CCC ADRP X27, 0x723000
+	0x03A32CD0 LDR X28, [X28 + 0x2B0]
+	0x03A32CD4 LDR X24, [X24 + 0xB00]
+	0x03A32CD8 LDR X27, [X27 + 0x2B8]
+
+ISIL:
+	001 Move W8, [X0+48]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 Move W8, [X0+32]
+	004 Compare W8, 0
+	005 JumpIfNotEqual {15}
+	006 Move W8, [X0+40]
+	007 Compare W8, 0
+	008 JumpIfNotEqual {15}
+	009 Move W8, [X0+44]
+	010 Compare W8, 0
+	011 JumpIfNotEqual {15}
+	012 Move W8, [X0+60]
+	013 Compare W8, 0
+	014 JumpIfEqual {17}
+	015 Move W0, 1
+	016 Return X0
+	017 Move W8, [X0+52]
+	018 Compare W8, 0
+	019 JumpIfEqual {15}
+	020 Move W8, [X0+53]
+	021 Compare W8, 0
+	022 JumpIfEqual {15}
+	023 Move W8, [X0+56]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 NotImplemented "Instruction CSET not yet implemented."
+	026 Return X0
+
+Method: System.Boolean get_IsPostProcessingAllowed()
+
+Disassembly:
+	0x03A32CDC LDP X1, X2, [X8 + 0x20]
+	0x03A32CE0 ADRP X26, 0x723000
+	0x03A32CE4 ADRP X23, 0x723000
+	0x03A32CE8 ADRP X22, 0x723000
+	0x03A32CEC LDR X26, [X26 + 0x2C0]
+	0x03A32CF0 LDR X23, [X23 + 0x2C8]
+	0x03A32CF4 LDR X22, [X22 + 0x290]
+	0x03A32CF8 MOV X0, X19
+	0x03A32CFC MOV X3, X31
+	0x03A32D00 BL 0x39AE800
+
+ISIL:
+	001 Move W8, [X0+48]
+	002 Compare W8, 0
+	003 JumpIfEqual {7}
+	004 Move W8, [X0+40]
+	005 Compare W8, 0
+	006 JumpIfEqual {9}
+	007 Move W0, W31
+	008 Return X0
+	009 Move W8, [X0+44]
+	010 NotImplemented "Instruction CMP not yet implemented."
+	011 NotImplemented "Instruction CSET not yet implemented."
+	012 Return X0
+
+Method: System.Boolean get_IsLightingActive()
+
+Disassembly:
+	0x03A32D04 LDR X0, [X29]
+	0x03A32D08 LDR X21, [X21]
+	0x03A32D0C LDR W8, [X0 + 0xE0]
+	0x03A32D10 CBNZ W8, 0x3A32D18
+	0x03A32D14 BL 0x1C16DFC
+	0x03A32D18 MOV X0, X21
+	0x03A32D1C MOV X1, X31
+	0x03A32D20 BL 0x338C698
+
+ISIL:
+	001 Move W8, [X0+40]
+	002 Compare W8, 0
+	003 JumpIfEqual {6}
+	004 Move W0, W31
+	005 Return X0
+	006 Move W8, [X0+44]
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Return X0
+
+Method: System.Boolean TryGetScreenClearColor(ref UnityEngine.Color color)
+
+Disassembly:
+	0x03A32D24 MOV X1, X0
+	0x03A32D28 MOV X0, X19
+	0x03A32D2C MOV X2, X31
+	0x03A32D30 BL 0x39AED9C
+	0x03A32D34 LDR X0, [X25]
+	0x03A32D38 BL 0x1C16F10
+	0x03A32D3C LDR X2, [X28]
+	0x03A32D40 MOV X1, X20
+	0x03A32D44 MOV X3, X31
+	0x03A32D48 MOV X21, X0
+	0x03A32D4C BL 0x2D27710
+	0x03A32D50 STR X21, [X19 + 0x48]
+	0x03A32D54 LDR X0, [X24]
+	0x03A32D58 BL 0x1C16F10
+	0x03A32D5C LDR X2, [X27]
+	0x03A32D60 MOV X1, X20
+	0x03A32D64 MOV X3, X31
+	0x03A32D68 MOV X21, X0
+	0x03A32D6C BL 0x2983F04
+	0x03A32D70 STR X21, [X19 + 0x50]
+	0x03A32D74 LDR X0, [X25]
+	0x03A32D78 BL 0x1C16F10
+	0x03A32D7C LDR X2, [X26]
+	0x03A32D80 MOV X1, X20
+	0x03A32D84 MOV X3, X31
+	0x03A32D88 MOV X21, X0
+	0x03A32D8C BL 0x2D27710
+	0x03A32D90 STR X21, [X19 + 0x80]
+	0x03A32D94 LDR X0, [X24]
+	0x03A32D98 BL 0x1C16F10
+	0x03A32D9C LDR X2, [X23]
+	0x03A32DA0 MOV X1, X20
+	0x03A32DA4 MOV X3, X31
+	0x03A32DA8 MOV X21, X0
+	0x03A32DAC BL 0x2983F04
+	0x03A32DB0 STR X21, [X19 + 0x88]
+	0x03A32DB4 LDR X0, [X22]
+	0x03A32DB8 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0+40]
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Move X9, -48865280
+	006 Add X9, X9, 2820
+	007 NotImplemented "Instruction ADR not yet implemented."
+	008 Move W11, [X9]
+	009 Add X10, X10, X11
+	010 Move W0, W31
+	011 CallNoReturn X10
+	012 Move X8, -49573888
+	013 Move V0, [X8+229]
+	014 Move X8, -49565696
+	015 Move V0, [X8+187]
+	016 Move W0, 1
+	017 Move [X1], V0
+	018 Move X30, [X31+16]
+	019 Move X19, [X31+24]
+	020 Return X0
+	021 Move X0, 0x6CA000
+	022 Move X0, [X0+1888]
+	023 Call 0x1C17D08
+	024 Call 0x1C17F10
+	025 Move X19, X0
+	026 Move X0, 0x724000
+	027 Move X0, [X0+264]
+	028 Call 0x1C17D08
+	029 Move X1, X0
+	030 Move X0, X19
+	031 Move X2, X31
+	032 Call ArgumentOutOfRangeException..ctor, X0, X1
+	033 Move X0, 0x724000
+	034 Move X0, [X0+272]
+	035 Call 0x1C17D08
+	036 Move X1, X0
+	037 Move X0, X19
+	038 Call 0x1C17DEC
+
+Method: UnityEngine.Rendering.IDebugDisplaySettingsPanelDisposable UnityEngine.Rendering.IDebugDisplaySettingsData.CreatePanel()
+
+Disassembly:
+	0x03A32DBC CBNZ W8, 0x3A32DC8
+	0x03A32DC0 BL 0x1C16DFC
+	0x03A32DC4 LDR X0, [X22]
+	0x03A32DC8 LDR X8, [X0 + 0xB8]
+	0x03A32DCC LDR X20, [X8 + 0x18]
+	0x03A32DD0 CBNZ X20, 0x3A32E24
+	0x03A32DD4 LDR W8, [X0 + 0xE0]
+	0x03A32DD8 CBNZ W8, 0x3A32DE4
+	0x03A32DDC BL 0x1C16DFC
+	0x03A32DE0 LDR X0, [X22]
+	0x03A32DE4 ADRP X9, 0x71F000
+	0x03A32DE8 LDR X8, [X0 + 0xB8]
+	0x03A32DEC LDR X9, [X9 + 0x458]
+	0x03A32DF0 LDR X21, [X8]
+	0x03A32DF4 LDR X0, [X9]
+	0x03A32DF8 BL 0x1C16F10
+	0x03A32DFC ADRP X8, 0x723000
+	0x03A32E00 LDR X8, [X8 + 0x2A8]
+	0x03A32E04 MOV X1, X21
+	0x03A32E08 MOV X3, X31
+	0x03A32E0C MOV X20, X0
+	0x03A32E10 LDR X2, [X8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x9B1000
+	006 Move X21, 0x724000
+	007 Move W8, [X20+184]
+	008 Move X21, [X21+280]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x724000
+	015 Move X0, [X0+280]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+184], W8
+	019 Move X0, [X21]
+	020 Call 0x1C17F10
+	021 Move X1, X19
+	022 Move X20, X0
+	023 Call SettingsPanel..ctor, X0, X1
+	024 Move X0, X20
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Move X21, [X31+40]
+	029 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03A331EC STP X20, X19, [X31 + 0x40]
+	0x03A331F0 ADRP X20, 0x9AF000
+	0x03A331F4 ADRP X21, 0x722000
+	0x03A331F8 LDRB W8, [X20 + 0xBF]
+	0x03A331FC LDR X21, [X21 + 0x310]
+	0x03A33200 MOV X19, X0
+	0x03A33204 TBNZ X8, 0x0, 0x3A332D0
+	0x03A33208 ADRP X0, 0x6C4000
+	0x03A3320C LDR X0, [X0 + 0xB00]
+	0x03A33210 BL 0x1C16CF4
+	0x03A33214 ADRP X0, 0x71D000
+	0x03A33218 LDR X0, [X0 + 0x758]
+
+ISIL:
+	001 Move W8, 10
+	002 Move W9, 50
+	003 Move W10, 1
+	004 Move W11, 257
+	005 Move W12, 0x3F800000
+	006 Move X1, X31
+	007 Move [X0+28], W8
+	008 Move [X0+36], W9
+	009 Move [X0+48], W10
+	010 NotImplemented "Instruction STRH not yet implemented."
+	011 Move [X0+72], W12
+	012 Call Object..ctor, X0
+	013 Return 
+

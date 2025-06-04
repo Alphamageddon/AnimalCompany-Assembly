@@ -1,0 +1,241 @@
+Type: UnityEngine.XR.Interaction.Toolkit.UI.TrackedDevicePhysicsRaycaster/RaycastHitArraySegment
+
+Method: System.Int32 get_count()
+
+Disassembly:
+	0x03BA1780 STRB W8, [X23 + 0x386]
+	0x03BA1784 LDR X0, [X25]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_count(System.Int32 value)
+
+Disassembly:
+	0x03BA1788 LDR W8, [X0 + 0xE0]
+	0x03BA178C CBNZ W8, 0x3BA1798
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+
+Method: UnityEngine.RaycastHit get_Current()
+
+Disassembly:
+	0x03BA1790 BL 0x1C16DFC
+	0x03BA1794 LDR X0, [X25]
+	0x03BA1798 ADRP X9, 0x5A8000
+	0x03BA179C LDR X8, [X0 + 0xB8]
+	0x03BA17A0 LDR X9, [X9 + 0x388]
+	0x03BA17A4 MOV X0, X21
+	0x03BA17A8 MOV X1, X19
+	0x03BA17AC LDR X2, [X8 + 0x18]
+	0x03BA17B0 LDR X3, [X9]
+	0x03BA17B4 BL 0x21DD8A8
+	0x03BA17B8 LDR X8, [X26]
+	0x03BA17BC MOV X23, X0
+	0x03BA17C0 LDR W9, [X8 + 0xE0]
+	0x03BA17C4 CBNZ W9, 0x3BA17D0
+	0x03BA17C8 MOV X0, X8
+	0x03BA17CC BL 0x1C16DFC
+	0x03BA17D0 MOV X0, X23
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X9, [X0+24]
+	003 Compare X9, 0
+	004 JumpIfEqual {18}
+	005 NotImplemented "Instruction LDRSW not yet implemented."
+	006 Move W11, [X9+24]
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 Move W11, 44
+	009 NotImplemented "Instruction MADD not yet implemented."
+	010 NotImplemented "Instruction LDUR not yet implemented."
+	011 Move V2, [X9+32]
+	012 Move V1, [X9+48]
+	013 Move [X8+28], V0
+	014 Move [X8], V2
+	015 Move [X8+8], V1
+	016 Move X30, [X31+16]
+	017 Return X0
+	018 Call 0x1C17F20
+	019 Call 0x1C17F28
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x03BA17D4 MOV X1, X31
+	0x03BA17D8 MOV X2, X31
+	0x03BA17DC BL 0x3C3883C
+	0x03BA17E0 TBZ X0, 0x0, 0x3BA180C
+	0x03BA17E4 LDR X0, [X25]
+	0x03BA17E8 LDR W8, [X0 + 0xE0]
+	0x03BA17EC CBNZ W8, 0x3BA17F4
+	0x03BA17F0 BL 0x1C16DFC
+	0x03BA17F4 ADRP X8, 0x5A8000
+	0x03BA17F8 LDR X8, [X8 + 0x3B8]
+	0x03BA17FC MOV X0, X21
+	0x03BA1800 LDR X1, [X8]
+	0x03BA1804 BL 0x21DDB64
+	0x03BA1808 MOV X23, X0
+	0x03BA180C MOV X0, X31
+	0x03BA1810 BL 0x3C3C764
+	0x03BA1814 LDR X0, [X26]
+	0x03BA1818 LDR X24, [X19 + 0x30]
+	0x03BA181C MOV V8.16B, V0.16B
+	0x03BA1820 LDR W8, [X0 + 0xE0]
+	0x03BA1824 CBNZ W8, 0x3BA182C
+	0x03BA1828 BL 0x1C16DFC
+	0x03BA182C MOV X0, X23
+	0x03BA1830 MOV X1, X24
+	0x03BA1834 MOV X2, X31
+	0x03BA1838 BL 0x3C3883C
+	0x03BA183C TBZ X0, 0x0, 0x3BA1860
+	0x03BA1840 LDR V0, [X19 + 0x134]
+
+ISIL:
+	001 Subtract X31, X31, 128
+	002 Move [X31+96], X30
+	003 Move [X31+104], X21
+	004 Move [X31+112], X20
+	005 Move [X31+120], X19
+	006 Move X21, 0x842000
+	007 Move X20, 0x57E000
+	008 Move W8, [X21+3129]
+	009 Move X20, [X20+1776]
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0x57E000
+	016 Move X0, [X0+1776]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X21+3129], W8
+	020 Add X8, X31, 48
+	021 Move X0, X19
+	022 Call RaycastHitArraySegment.get_Current, X0
+	023 Move V0, [X31+48]
+	024 Move V1, [X31+64]
+	025 NotImplemented "Instruction LDUR not yet implemented."
+	026 Move X0, [X20]
+	027 Add X1, X31, 0
+	028 Move [X31], V0
+	029 Move [X31+8], V1
+	030 Move [X31+28], V2
+	031 Call 0x1C17E04
+	032 Move X20, [X31+112]
+	033 Move X19, [X31+120]
+	034 Move X30, [X31+96]
+	035 Move X21, [X31+104]
+	036 Add X31, X31, 128
+	037 Return X0
+
+Method: System.Void .ctor(UnityEngine.RaycastHit[] raycastHits, System.Int32 count)
+
+Disassembly:
+	0x03BA0FE4 LDP X24, X23, [X31 + 0x70]
+	0x03BA0FE8 LDR X30, [X31 + 0x60]
+	0x03BA0FEC ADD X31, X31, 0xA0
+	0x03BA0FF0 RET
+	0x03BA0FF4 BL 0x1C16F20
+	0x03BA0FF8 B 0x3BA1008
+	0x03BA0FFC B 0x3BA106C
+	0x03BA1000 B 0x3BA1008
+	0x03BA1004 B 0x3BA106C
+	0x03BA1008 MOV X21, X0
+	0x03BA100C CMP W1, 0x1
+	0x03BA1010 B.NE 0x3BA1040
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move W19, W2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+24], X20
+	011 Move [X21+16], W19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x03BA1844 LDR V1, [X20 + 0x58]
+	0x03BA1848 FSUB S0, S8, S0
+	0x03BA184C FCMP S0, S1
+	0x03BA1850 B.PL 0x3BA1860
+	0x03BA1854 LDR W8, [X19 + 0x138]
+	0x03BA1858 ADD W8, W8, 0x1
+	0x03BA185C B 0x3BA1864
+	0x03BA1860 MOVZ W8, 0x1
+
+ISIL:
+	001 Move W8, [X0+32]
+	002 Move W9, [X0+16]
+	003 Add W10, W8, 1
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 NotImplemented "Instruction CSET not yet implemented."
+	006 Move [X0+32], W10
+	007 Move W0, W8
+	008 Return X0
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x03BA1864 MOV X0, X19
+	0x03BA1868 MOV X1, X23
+	0x03BA186C MOV X2, X31
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move [X0+32], W8
+	005 Return 
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x03BA1870 STR W8, [X19 + 0x138]
+
+ISIL:
+	001 Return 
+
+Method: System.Collections.Generic.IEnumerator`1<UnityEngine.RaycastHit> GetEnumerator()
+
+Disassembly:
+	0x03BA1874 STR S8, [X19 + 0x134]
+	0x03BA1878 BL 0x3E4F3AC
+	0x03BA187C STR X21, [X19 + 0x38]
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move [X0+32], W8
+	005 Return X0
+
+Method: System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+Disassembly:
+	0x03BA1880 LDR X0, [X25]
+	0x03BA1884 LDR W8, [X0 + 0xE0]
+	0x03BA1888 CBNZ W8, 0x3BA1890
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move [X0+32], W8
+	005 Return X0
+

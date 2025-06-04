@@ -1,0 +1,42 @@
+Type: UnityEngine.Rendering.Universal.UTess.Tessellator/TestCellE
+
+Method: System.Boolean Test(Unity.Mathematics.int3 h, Unity.Mathematics.int3 p, ref System.Single t)
+
+Disassembly:
+	0x03ABCE3C TBNZ X8, 0x3, 0x3ABD0E4
+	0x03ABCE40 FMOV S0, 1
+	0x03ABCE44 STR S0, [X31 + 0x138]
+	0x03ABCE48 TBZ X8, 0x5, 0x3ABD144
+	0x03ABCE4C ADRP X8, 0x639000
+	0x03ABCE50 LDR X8, [X8 + 0x170]
+	0x03ABCE54 LDR X0, [X8]
+	0x03ABCE58 LDR W8, [X0 + 0xE0]
+	0x03ABCE5C CBNZ W8, 0x3ABCE64
+	0x03ABCE60 BL 0x1C16DFC
+	0x03ABCE64 MOV W0, W25
+	0x03ABCE68 MOV X1, X31
+	0x03ABCE6C BL 0x331AA58
+	0x03ABCE70 TBZ X0, 0x0, 0x3ABD144
+	0x03ABCE74 ADRP X8, 0x639000
+	0x03ABCE78 LDR X8, [X8 + 0x170]
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move X19, X5
+	005 And X2, X2, 0
+	006 And X4, X4, 0
+	007 Add X0, X31, 8
+	008 Move X5, X31
+	009 Move [X31+8], W31
+	010 Call TessCellCompare.Compare, X0, X1, X2
+	011 NotImplemented "Instruction SCVTF not yet implemented."
+	012 Move [X19], S0
+	013 Move X30, [X31+16]
+	014 Move X19, [X31+24]
+	015 NotImplemented "Instruction CMP not yet implemented."
+	016 NotImplemented "Instruction CSET not yet implemented."
+	017 Add X31, X31, 32
+	018 Return X0
+

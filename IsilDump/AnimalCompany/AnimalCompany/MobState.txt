@@ -1,0 +1,115 @@
+Type: AnimalCompany.MobState
+
+Method: System.Boolean get_isDie()
+
+Disassembly:
+	0x01DFA678 ADRP X0, 0x22FF000
+	0x01DFA67C LDR X0, [X0 + 0x4E0]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_isDie(System.Boolean value)
+
+Disassembly:
+	0x01DFA680 BL 0x1C16CF4
+	0x01DFA684 ADRP X0, 0x22FF000
+	0x01DFA688 LDR X0, [X0 + 0x4C0]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+16], W8
+	003 Return 
+
+Method: System.Int32 get_health()
+
+Disassembly:
+	0x01DFA68C BL 0x1C16CF4
+	0x01DFA690 ADRP X0, 0x22FF000
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void set_health(System.Int32 value)
+
+Disassembly:
+	0x01DFA694 LDR X0, [X0 + 0x4D0]
+	0x01DFA698 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+20], W1
+	002 Return 
+
+Method: System.Single get_angerMeter()
+
+Disassembly:
+	0x01DFA69C ADRP X0, 0x22FF000
+	0x01DFA6A0 LDR X0, [X0 + 0x4A8]
+
+ISIL:
+	001 Move V0, [X0+24]
+	002 Return V0
+
+Method: System.Void set_angerMeter(System.Single value)
+
+Disassembly:
+	0x01DFA6A4 BL 0x1C16CF4
+	0x01DFA6A8 ADRP X0, 0x22FF000
+
+ISIL:
+	001 Move [X0+24], S0
+	002 Return 
+
+Method: System.Single get_searchPrecision()
+
+Disassembly:
+	0x01DFA6AC LDR X0, [X0 + 0x500]
+	0x01DFA6B0 BL 0x1C16CF4
+
+ISIL:
+	001 Move V0, [X0+28]
+	002 Return V0
+
+Method: System.Void set_searchPrecision(System.Single value)
+
+Disassembly:
+	0x01DFA6B4 MOVZ W8, 0x1
+	0x01DFA6B8 STRB W8, [X22 + 0xD35]
+
+ISIL:
+	001 Move [X0+28], S0
+	002 Return 
+
+Method: System.Single get_searchWidth()
+
+Disassembly:
+	0x01DFA6BC LDR X0, [X23]
+	0x01DFA6C0 MOV X1, X31
+
+ISIL:
+	001 Move V0, [X0+32]
+	002 Return V0
+
+Method: System.Void set_searchWidth(System.Single value)
+
+Disassembly:
+	0x01DFA6C4 BL 0x3C124EC
+	0x01DFA6C8 LDR X8, [X19]
+
+ISIL:
+	001 Move [X0+32], S0
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01DFA6CC MOV X1, X31
+	0x01DFA6D0 LDR X8, [X8 + 0xB8]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

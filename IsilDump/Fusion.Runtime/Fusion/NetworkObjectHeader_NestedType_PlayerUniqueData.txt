@@ -1,0 +1,44 @@
+Type: Fusion.NetworkObjectHeader/PlayerUniqueData
+
+Method: System.Boolean HasFlag(Fusion.NetworkObjectHeaderPlayerDataFlags flag)
+
+Disassembly:
+	0x01E977B8 MOV W1, W31
+	0x01E977BC MOV X3, X31
+	0x01E977C0 BL 0x339FA34
+	0x01E977C4 LDR X8, [X19 + 0x58]
+
+ISIL:
+	001 Move W8, [X0]
+	002 NotImplemented "Instruction BICS not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Void SetFlag(Fusion.NetworkObjectHeaderPlayerDataFlags flag)
+
+Disassembly:
+	0x01E977C8 CBZ X8, 0x1E978A8
+	0x01E977CC ADRP X9, 0x2267000
+	0x01E977D0 LDR X9, [X9 + 0x468]
+	0x01E977D4 LDR W1, [X8 + 0x28]
+
+ISIL:
+	001 Move W8, [X0]
+	002 Or W8, W8, W1
+	003 Move [X0], W8
+	004 Return 
+
+Method: System.Void ClearFlag(Fusion.NetworkObjectHeaderPlayerDataFlags flag)
+
+Disassembly:
+	0x01E977D8 ADD X0, X31, 0x8
+	0x01E977DC STR X31, [X31 + 0x8]
+	0x01E977E0 LDR X2, [X9]
+	0x01E977E4 BL 0x243AFBC
+
+ISIL:
+	001 Move W8, [X0]
+	002 NotImplemented "Instruction BIC not yet implemented."
+	003 Move [X0], W8
+	004 Return 
+

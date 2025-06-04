@@ -1,0 +1,30 @@
+Type: System.Diagnostics.CodeAnalysis.NotNullWhenAttribute
+
+Method: System.Void .ctor(System.Boolean returnValue)
+
+Disassembly:
+	0x03350DD4 SUB W9, W0, W19
+	0x03350DD8 CMP W9, W8
+	0x03350DDC B.LT 0x3350EE8
+	0x03350DE0 LDR X21, [X21 + 0x10]
+	0x03350DE4 CBZ X21, 0x3350E24
+	0x03350DE8 ADRP X22, 0xDAB000
+	0x03350DEC LDR X22, [X22 + 0xF10]
+	0x03350DF0 LDR V0, [X21 + 0x1]
+	0x03350DF4 LDR X0, [X22]
+	0x03350DF8 ADD X1, X31, 0x0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 And W20, W1, 1
+	005 Move X1, X31
+	006 Move X19, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X19+16], W20
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

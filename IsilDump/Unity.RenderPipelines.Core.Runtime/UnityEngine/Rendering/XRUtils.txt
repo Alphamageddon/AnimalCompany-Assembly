@@ -1,0 +1,94 @@
+Type: UnityEngine.Rendering.XRUtils
+
+Method: System.Void DrawOcclusionMesh(UnityEngine.Rendering.CommandBuffer cmd, UnityEngine.Camera camera, System.Boolean stereoEnabled = True)
+
+Disassembly:
+	0x039EE5D0 STR W10, [X0 + 0x1C]
+	0x039EE5D4 CBZ X8, 0x39EE640
+	0x039EE5D8 LDRSW X10, [X0 + 0x18]
+	0x039EE5DC LDR W11, [X8 + 0x18]
+	0x039EE5E0 CMP W10, W11
+	0x039EE5E4 B.CS 0x39EE5FC
+	0x039EE5E8 ADD W9, W10, 0x1
+	0x039EE5EC ADD X8, X8, X10, 0x3, LSL
+	0x039EE5F0 STR W9, [X0 + 0x18]
+	0x039EE5F4 STR X1, [X8 + 0x20]
+	0x039EE5F8 B 0x39EE57C
+	0x039EE5FC LDR X8, [X9 + 0x20]
+	0x039EE600 LDR X8, [X8 + 0xC0]
+	0x039EE604 LDR X2, [X8 + 0x70]
+	0x039EE608 BL 0x301BF90
+	0x039EE60C B 0x39EE57C
+	0x039EE610 ADRP X8, 0x72E000
+	0x039EE614 LDR X8, [X8 + 0x988]
+	0x039EE618 ADD X0, X31, 0x20
+	0x039EE61C LDR X1, [X8]
+	0x039EE620 BL 0x2BC434C
+	0x039EE624 LDR X0, [X19 + 0x48]
+	0x039EE628 LDP X20, X19, [X31 + 0x70]
+	0x039EE62C LDP X22, X21, [X31 + 0x60]
+	0x039EE630 LDP X24, X23, [X31 + 0x50]
+	0x039EE634 LDR X30, [X31 + 0x40]
+	0x039EE638 ADD X31, X31, 0x80
+	0x039EE63C RET
+	0x039EE640 BL 0x1C16F20
+	0x039EE644 BL 0x1C16F20
+	0x039EE648 BL 0x1C16F20
+	0x039EE64C BL 0x1C16F20
+	0x039EE650 B 0x39EE664
+	0x039EE654 B 0x39EE664
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X19, X0
+	006 Move X0, X31
+	007 Move W21, W2
+	008 Move X20, X1
+	009 Call XRGraphics.get_enabled
+	010 Move TEMP, X0
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfNotEqual {47}
+	014 Compare X20, 0
+	015 JumpIfEqual {52}
+	016 Move X0, X20
+	017 Move X1, X31
+	018 Call Camera.get_stereoEnabled, X0
+	019 Move TEMP, X0
+	020 And TEMP, TEMP, 1
+	021 Compare TEMP, 1
+	022 JumpIfNotEqual {47}
+	023 Move TEMP, X21
+	024 And TEMP, TEMP, 1
+	025 Compare TEMP, 1
+	026 JumpIfNotEqual {47}
+	027 Move X0, X20
+	028 Move X1, X31
+	029 Call Camera.get_pixelWidth, X0
+	030 Move W21, W0
+	031 Move X0, X20
+	032 Move X1, X31
+	033 Call Camera.get_pixelHeight, X0
+	034 Compare X19, 0
+	035 JumpIfEqual {52}
+	036 Move W2, W21
+	037 NotImplemented "Instruction BFM not yet implemented."
+	038 Move X0, X19
+	039 Move X20, [X31+16]
+	040 Move X19, [X31+24]
+	041 Move X1, X31
+	042 Move X3, X31
+	043 Move X30, [X31+32]
+	044 Move X21, [X31+40]
+	045 Call CommandBuffer.DrawOcclusionMesh, X0, X1
+	046 Return 
+	047 Move X20, [X31+16]
+	048 Move X19, [X31+24]
+	049 Move X30, [X31+32]
+	050 Move X21, [X31+40]
+	051 Return 
+	052 Call 0x1C17F20
+

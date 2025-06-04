@@ -1,0 +1,40 @@
+Type: System.Runtime.Serialization.TypeLoadExceptionHolder
+
+Method: System.Void .ctor(System.String typeName)
+
+Disassembly:
+	0x032A84B4 B 0x32A84D4
+	0x032A84B8 ADRP X0, 0xE50000
+	0x032A84BC LDR X0, [X0 + 0x528]
+	0x032A84C0 BL 0x1C16D08
+	0x032A84C4 BL 0x1C16F10
+	0x032A84C8 MOV X19, X0
+	0x032A84CC ADRP X0, 0xE74000
+	0x032A84D0 LDR X0, [X0 + 0xB08]
+	0x032A84D4 BL 0x1C16D08
+	0x032A84D8 MOV X1, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.String get_TypeName()
+
+Disassembly:
+	0x032A84DC MOV X0, X19
+	0x032A84E0 MOV X2, X31
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+

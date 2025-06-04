@@ -1,0 +1,111 @@
+Type: UnityEngine.Rendering.NoInterpClampedIntParameter
+
+Method: System.Int32 get_value()
+
+Disassembly:
+	0x039F3D98 LDR X20, [X20 + 0x8F8]
+	0x039F3D9C BLR X9
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void set_value(System.Int32 value)
+
+Disassembly:
+	0x039F3DA0 LDR X8, [X20]
+	0x039F3DA4 MOV X19, X0
+	0x039F3DA8 LDR W9, [X8 + 0xE0]
+	0x039F3DAC CBNZ W9, 0x39F3DB8
+	0x039F3DB0 MOV X0, X8
+	0x039F3DB4 BL 0x1C16DFC
+	0x039F3DB8 MOV X0, X19
+
+ISIL:
+	001 Move W9, [X0+24]
+	002 Move W8, [X0+28]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSEL not yet implemented."
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSEL not yet implemented."
+	007 Move [X0+20], W8
+	008 Return 
+
+Method: System.Void .ctor(System.Int32 value, System.Int32 min, System.Int32 max, System.Boolean overrideState = False)
+
+Disassembly:
+	0x039F3DBC MOV X1, X31
+	0x039F3DC0 BL 0x39DA35C
+	0x039F3DC4 MOVZ W8, 0x17
+	0x039F3DC8 MUL W20, W0, W8
+	0x039F3DCC MOV W0, W20
+	0x039F3DD0 LDP X20, X19, [X31 + 0x20]
+	0x039F3DD4 LDP X22, X21, [X31 + 0x10]
+	0x039F3DD8 LDR X30, [X31], #0x30
+	0x039F3DDC RET
+	0x039F3DE0 STP X30, X23, [X31 - 0x30]!
+	0x039F3DE4 STP X22, X21, [X31 + 0x10]
+	0x039F3DE8 STP X20, X19, [X31 + 0x20]
+	0x039F3DEC ADRP X22, 0x9EE000
+	0x039F3DF0 ADRP X23, 0x760000
+	0x039F3DF4 LDRB W8, [X22 + 0xE9B]
+	0x039F3DF8 LDR X23, [X23 + 0x950]
+	0x039F3DFC MOV W20, W2
+	0x039F3E00 MOV X19, X1
+	0x039F3E04 MOV X21, X0
+	0x039F3E08 TBNZ X8, 0x0, 0x39F3E20
+	0x039F3E0C ADRP X0, 0x760000
+	0x039F3E10 LDR X0, [X0 + 0x950]
+	0x039F3E14 BL 0x1C16CF4
+	0x039F3E18 MOVZ W8, 0x1
+	0x039F3E1C STRB W8, [X22 + 0xE9B]
+	0x039F3E20 LDR X3, [X23]
+	0x039F3E24 AND W2, W20, 0x1
+	0x039F3E28 MOV X0, X21
+	0x039F3E2C MOV X1, X19
+	0x039F3E30 LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-64], X30
+	002 Move [X31-56], X25
+	003 Move [X31+16], X24
+	004 Move [X31+24], X23
+	005 Move [X31+32], X22
+	006 Move [X31+40], X21
+	007 Move [X31+48], X20
+	008 Move [X31+56], X19
+	009 Move X24, 0x9EF000
+	010 Move X25, 0x761000
+	011 Move W8, [X24+3715]
+	012 Move X25, [X25+2336]
+	013 Move W22, W4
+	014 Move W19, W3
+	015 Move W20, W2
+	016 Move W23, W1
+	017 Move X21, X0
+	018 Move TEMP, X8
+	019 And TEMP, TEMP, 1
+	020 Compare TEMP, 1
+	021 JumpIfEqual {27}
+	022 Move X0, 0x761000
+	023 Move X0, [X0+2336]
+	024 Call 0x1C17CF4
+	025 Move W8, 1
+	026 Move [X24+3715], W8
+	027 Move X3, [X25]
+	028 And W2, W22, 1
+	029 Move X0, X21
+	030 Move W1, W23
+	031 Call VolumeParameter`1<Int32>..ctor, X0, X1, X2
+	032 Move [X21+24], W20
+	033 Move [X21+28], W19
+	034 Move X20, [X31+48]
+	035 Move X19, [X31+56]
+	036 Move X22, [X31+32]
+	037 Move X21, [X31+40]
+	038 Move X24, [X31+16]
+	039 Move X23, [X31+24]
+	040 Move X30, [X31+64]
+	041 Move X25, [X31+72]
+	042 Return 
+

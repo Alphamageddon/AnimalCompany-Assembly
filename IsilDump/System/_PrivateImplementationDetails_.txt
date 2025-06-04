@@ -1,0 +1,72 @@
+Type: <PrivateImplementationDetails>
+
+Method: System.UInt32 ComputeStringHash(System.String s)
+
+Disassembly:
+	0x03627318 STRH W0, [X10, W8, SXTW]
+	0x0362731C B 0x3626FAC
+	0x03627320 LDR W8, [X31 + 0x2C]
+	0x03627324 TBZ X8, 0x0, 0x3627340
+	0x03627328 LDR X12, [X31 + 0x18]
+	0x0362732C LDR W10, [X31 + 0xC]
+	0x03627330 ADD W8, W19, 0x1
+	0x03627334 STRH W26, [X12, W19, SXTW]
+	0x03627338 MOV W19, W8
+	0x0362733C B 0x3627348
+	0x03627340 LDR W10, [X31 + 0xC]
+	0x03627344 LDR X12, [X31 + 0x18]
+	0x03627348 CMP W10, 0x1
+	0x0362734C B.LT 0x3627388
+	0x03627350 SUB W8, W19, W10
+	0x03627354 CMP W8, 0x1
+	0x03627358 B.LT 0x3627388
+	0x0362735C ADD X8, X12, 0xE
+	0x03627360 SUB W9, W19, 0x1
+	0x03627364 SUB W10, W31, W10
+	0x03627368 LDRH W11, [X12, W9, SXTW]
+	0x0362736C STRH W11, [X8], #0xFFFFFFFFFFFFFFFE
+	0x03627370 STRH W31, [X12, W9, SXTW]
+	0x03627374 SUB W9, W9, 0x1
+	0x03627378 ADD W11, W10, W9
+	0x0362737C ADD W11, W11, 0x2
+	0x03627380 CMP W11, 0x1
+	0x03627384 B.GT 0x3627368
+	0x03627388 LDP X20, X19, [X31 + 0x80]
+	0x0362738C LDP X22, X21, [X31 + 0x70]
+	0x03627390 LDP X24, X23, [X31 + 0x60]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Compare X0, 0
+	007 JumpIfEqual {26}
+	008 Move W8, [X0+16]
+	009 Move W20, 0x9DC5
+	010 Move X19, X0
+	011 NotImplemented "Instruction MOVK not yet implemented."
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 Move W22, 403
+	014 Move W21, W31
+	015 NotImplemented "Instruction MOVK not yet implemented."
+	016 Move X0, X19
+	017 Move W1, W21
+	018 Move X2, X31
+	019 Call String.get_Chars, X0, X1
+	020 Move W8, [X19+16]
+	021 And W9, W0, 0xFFFF
+	022 Xor W9, W20, W9
+	023 Add W21, W21, 1
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Multiply W20, W9, W22
+	026 Move W20, W31
+	027 Move W0, W20
+	028 Move X20, [X31+32]
+	029 Move X19, [X31+40]
+	030 Move X22, [X31+16]
+	031 Move X21, [X31+24]
+	032 Move X30, [X31+48]
+	033 Return X0
+

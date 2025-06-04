@@ -1,0 +1,93 @@
+Type: UnityEngine.Rendering.Universal.ShadowUtility/Edge
+
+Method: System.Void AssignVertexIndices(System.Int32 vi0, System.Int32 vi1)
+
+Disassembly:
+	0x03A2B880 LDRB W8, [X20 + 0x59]
+	0x03A2B884 MOV X19, X0
+	0x03A2B888 TBNZ X8, 0x0, 0x3A2B8D0
+	0x03A2B88C ADRP X0, 0x6C8000
+	0x03A2B890 LDR X0, [X0 + 0xA28]
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 Move [X0], W1
+	004 Move [X0+4], W2
+	005 Move [X0+24], W8
+	006 Return 
+
+Method: System.Int32 Compare(UnityEngine.Rendering.Universal.ShadowUtility/Edge a, UnityEngine.Rendering.Universal.ShadowUtility/Edge b)
+
+Disassembly:
+	0x03A2C200 BL 0x3C61E18
+	0x03A2C204 ADRP X8, 0x6CF000
+	0x03A2C208 LDR X8, [X8 + 0x720]
+	0x03A2C20C UBFM W9, W0, 0x1D, 0x1C
+	0x03A2C210 ADD X1, X31, 0x4
+	0x03A2C214 STR W9, [X31 + 0x4]
+	0x03A2C218 LDR X8, [X8]
+	0x03A2C21C MOV X0, X8
+	0x03A2C220 BL 0x1C16E04
+	0x03A2C224 MOV X20, X0
+	0x03A2C228 MOVZ W0, 0x8
+	0x03A2C22C MOV X1, X31
+	0x03A2C230 BL 0x3C61A90
+	0x03A2C234 ADRP X8, 0x728000
+	0x03A2C238 LDR X8, [X8 + 0xC28]
+	0x03A2C23C MOV X3, X0
+
+ISIL:
+	001 Move W8, [X1+24]
+	002 Move W9, [X2+24]
+	003 And X8, X8, 1
+	004 And X9, X9, 1
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Move W8, [X1]
+	010 Move W10, [X1]
+	011 Move W9, [X2]
+	012 Move W11, [X2]
+	013 Subtract W8, W8, W9
+	014 Subtract W9, W10, W11
+	015 NotImplemented "Instruction CSEL not yet implemented."
+	016 Return X0
+
+Method: System.Int32 CompareTo(UnityEngine.Rendering.Universal.ShadowUtility/Edge edgeToCompare)
+
+Disassembly:
+	0x03A2BC50 CBZ X0, 0x3A2BCE0
+	0x03A2BC54 MOV X1, X31
+	0x03A2BC58 BL 0x3A757B0
+	0x03A2BC5C CBZ X21, 0x3A2BCE0
+	0x03A2BC60 MOV X20, X0
+	0x03A2BC64 CBZ X0, 0x3A2BC7C
+	0x03A2BC68 LDR X8, [X21]
+	0x03A2BC6C MOV X0, X20
+	0x03A2BC70 LDR X1, [X8 + 0x40]
+	0x03A2BC74 BL 0x1C16E00
+	0x03A2BC78 CBZ X0, 0x3A2BCE8
+	0x03A2BC7C LDR W8, [X21 + 0x18]
+	0x03A2BC80 CMP W22, W8
+	0x03A2BC84 B.CS 0x3A2BCE4
+
+ISIL:
+	001 Move W10, [X0+24]
+	002 Move W8, [X0]
+	003 Move W9, [X0+4]
+	004 Move W13, [X1+24]
+	005 Move W11, [X1]
+	006 Move W12, [X1+4]
+	007 And W31, W10, 1
+	008 NotImplemented "Instruction CSEL not yet implemented."
+	009 NotImplemented "Instruction CSEL not yet implemented."
+	010 And W31, W13, 1
+	011 NotImplemented "Instruction CSEL not yet implemented."
+	012 NotImplemented "Instruction CSEL not yet implemented."
+	013 Subtract W9, W10, W9
+	014 Subtract W8, W8, W11
+	015 NotImplemented "Instruction CSEL not yet implemented."
+	016 Return X0
+

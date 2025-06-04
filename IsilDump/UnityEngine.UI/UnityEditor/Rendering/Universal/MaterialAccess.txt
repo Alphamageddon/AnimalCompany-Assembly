@@ -1,0 +1,20 @@
+Type: UnityEditor.Rendering.Universal.MaterialAccess
+
+Method: System.Int32 ReadMaterialRawRenderQueue(UnityEngine.Material mat)
+
+Disassembly:
+	0x03E5BE10 ADRP X28, 0x2C0000
+	0x03E5BE14 LDR X27, [X27 + 0xF8]
+	0x03E5BE18 LDR X28, [X28 + 0xB58]
+	0x03E5BE1C LDR X0, [X19]
+	0x03E5BE20 ADRP X29, 0x310000
+
+ISIL:
+	001 Compare X0, 0
+	002 JumpIfEqual {6}
+	003 Move X1, X31
+	004 Call Material.get_rawRenderQueue, X0
+	005 Return X0
+	006 Move [X31-16], X30
+	007 Call 0x1C17F20
+

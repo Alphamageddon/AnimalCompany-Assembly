@@ -1,0 +1,120 @@
+Type: UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulatorSettings
+
+Method: System.Boolean get_automaticallyInstantiateSimulatorPrefab()
+
+Disassembly:
+	0x03BCAD54 CBNZ W8, 0x3BCAD5C
+	0x03BCAD58 BL 0x1C16DFC
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_automaticallyInstantiateSimulatorPrefab(System.Boolean value)
+
+Disassembly:
+	0x03BCAD5C LDR X1, [X19]
+	0x03BCAD60 LDP X20, X19, [X31 + 0x10]
+	0x03BCAD64 MOV X0, X31
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+24], W8
+	003 Return 
+
+Method: System.Boolean get_automaticallyInstantiateInEditorOnly()
+
+Disassembly:
+	0x03BCAD68 LDR X30, [X31], #0x20
+	0x03BCAD6C B 0x220C4A8
+
+ISIL:
+	001 Move W0, [X0+25]
+	002 Return X0
+
+Method: System.Void set_automaticallyInstantiateInEditorOnly(System.Boolean value)
+
+Disassembly:
+	0x03BCAD70 STP X30, X21, [X31 - 0x20]!
+	0x03BCAD74 STP X20, X19, [X31 + 0x10]
+	0x03BCAD78 ADRP X20, 0x818000
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+25], W8
+	003 Return 
+
+Method: UnityEngine.GameObject get_simulatorPrefab()
+
+Disassembly:
+	0x03BCAD7C ADRP X21, 0x593000
+	0x03BCAD80 LDRB W8, [X20 + 0xDFA]
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_simulatorPrefab(UnityEngine.GameObject value)
+
+Disassembly:
+	0x03BCAD84 LDR X21, [X21 + 0x7E0]
+	0x03BCAD88 MOV X19, X0
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03BCAD8C TBNZ X8, 0x0, 0x3BCADA4
+	0x03BCAD90 ADRP X0, 0x593000
+	0x03BCAD94 LDR X0, [X0 + 0x7E0]
+	0x03BCAD98 BL 0x1C16CF4
+	0x03BCAD9C MOVZ W8, 0x1
+	0x03BCADA0 STRB W8, [X20 + 0xDFA]
+	0x03BCADA4 LDR X1, [X21]
+	0x03BCADA8 MOV X0, X19
+	0x03BCADAC LDP X20, X19, [X31 + 0x10]
+	0x03BCADB0 LDP X30, X21, [X31], #0x20
+	0x03BCADB4 B 0x2D11430
+	0x03BCADB8 STR X30, [X31 - 0x30]!
+	0x03BCADBC STP X22, X21, [X31 + 0x10]
+	0x03BCADC0 STP X20, X19, [X31 + 0x20]
+	0x03BCADC4 ADRP X22, 0x818000
+	0x03BCADC8 ADRP X21, 0x593000
+	0x03BCADCC LDRB W8, [X22 + 0xDFB]
+	0x03BCADD0 LDR X21, [X21 + 0x7E8]
+	0x03BCADD4 MOV X19, X1
+	0x03BCADD8 MOV X20, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x819000
+	006 Move X20, 0x594000
+	007 Move W8, [X21+3564]
+	008 Move X20, [X20+1880]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x594000
+	015 Move X0, [X0+1880]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+3564], W8
+	019 Move W8, 1
+	020 Move [X19+25], W8
+	021 Move X1, [X20]
+	022 Move X0, X19
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move X30, [X31+32]
+	026 Move X21, [X31+40]
+	027 Call 0x25D81B0, X0
+	028 Return 
+

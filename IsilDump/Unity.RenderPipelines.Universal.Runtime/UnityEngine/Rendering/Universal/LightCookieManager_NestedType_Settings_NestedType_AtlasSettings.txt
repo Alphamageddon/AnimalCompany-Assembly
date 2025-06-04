@@ -1,0 +1,56 @@
+Type: UnityEngine.Rendering.Universal.LightCookieManager/Settings/AtlasSettings
+
+Method: System.Boolean get_isPow2()
+
+Disassembly:
+	0x03A55700 CMP W28, W8
+	0x03A55704 B.LE 0x3A556D4
+	0x03A55708 MOV X0, X31
+	0x03A5570C BL 0x3C3C88C
+	0x03A55710 LDR W8, [X21 + 0x58]
+	0x03A55714 MOVZ W9, 0xA5E1
+	0x03A55718 MOVK W9, 0x10000
+	0x03A5571C SUB W8, W0, W8
+	0x03A55720 CMP W8, W9
+	0x03A55724 B.LT 0x3A556D4
+	0x03A55728 MOV X0, X31
+	0x03A5572C BL 0x3C3C88C
+	0x03A55730 STR W0, [X21 + 0x58]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move W0, [X0]
+	005 Move X1, X31
+	006 Call Mathf.IsPowerOfTwo, X0
+	007 Move TEMP, X0
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfNotEqual {17}
+	011 Move W0, [X19+4]
+	012 Move X1, X31
+	013 Move X30, [X31+16]
+	014 Move X19, [X31+24]
+	015 Call Mathf.IsPowerOfTwo, X0
+	016 Return X0
+	017 Move W0, W31
+	018 Move X30, [X31+16]
+	019 Move X19, [X31+24]
+	020 Return X0
+
+Method: System.Boolean get_isSquare()
+
+Disassembly:
+	0x03A5807C MOV X19, X0
+	0x03A58080 MOVZ W21, 0x8
+	0x03A58084 MOVZ W22, 0x20
+	0x03A58088 ADRP X23, 0x980000
+
+ISIL:
+	001 Move W8, [X0]
+	002 Move W9, [X0+4]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 Return X0
+

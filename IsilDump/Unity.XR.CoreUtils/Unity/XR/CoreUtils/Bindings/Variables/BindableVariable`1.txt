@@ -1,0 +1,58 @@
+Type: Unity.XR.CoreUtils.Bindings.Variables.BindableVariable`1
+
+Method: System.Void .ctor(T initialValue = null, System.Boolean checkEquality = True, System.Func`3<T, T, System.Boolean> equalityMethod = null, System.Boolean startInitialized = False)
+
+Disassembly:
+	0x028E375C ADD X31, X11, 0x0
+	0x028E3760 TBNZ X10, 0x0, 0x28E3778
+	0x028E3764 MOV X0, X8
+	0x028E3768 BL 0x1C5C684
+	0x028E376C LDR X8, [X23]
+	0x028E3770 LDR X9, [X8 + 0xC0]
+	0x028E3774 MOV X8, X0
+
+ISIL:
+	001 Move X8, [X5+32]
+	002 And X1, X1, 0xFFFF
+	003 And W2, W2, 1
+	004 And W4, W4, 1
+	005 Move X8, [X8+192]
+	006 Move X5, [X8+16]
+	007 Call 0x28CC6F4, X0, X1, X2, X3, X4
+	008 Return 
+
+Method: System.Boolean ValueEquals(T other)
+
+Disassembly:
+	0x028E3778 LDR W8, [X8 + 0xFC]
+	0x028E377C ADD X10, X31, 0x0
+	0x028E3780 ADD W8, W8, 0x10
+	0x028E3784 ADD X8, X8, 0xF
+	0x028E3788 AND X8, X8, 0x1FFFFFFFF
+	0x028E378C SUB X8, X10, X8
+	0x028E3790 STUR X8, [X29 - 0xD8]
+	0x028E3794 ADD X31, X8, 0x0
+	0x028E3798 STP X31, X31, [X29 - 0x68]
+	0x028E379C STUR X31, [X29 - 0x70]
+	0x028E37A0 STP X31, X31, [X29 - 0x88]
+	0x028E37A4 STP X31, X31, [X29 - 0x98]
+	0x028E37A8 STUR X31, [X29 - 0xA0]
+	0x028E37AC LDR X0, [X9 + 0x8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X0, 0
+	003 JumpIfEqual {15}
+	004 Move X8, [X2+32]
+	005 NotImplemented "Instruction LDRH not yet implemented."
+	006 And X1, X1, 0xFFFF
+	007 Add X0, X31, 12
+	008 Move X8, [X8+192]
+	009 NotImplemented "Instruction STRH not yet implemented."
+	010 Move X2, [X8+48]
+	011 Call AffordanceStateData.Equals, X0, X1
+	012 And W0, W0, 1
+	013 Move X30, [X31+16]
+	014 Return X0
+	015 Call 0x1C17F20
+

@@ -1,0 +1,222 @@
+Type: UnityEngine.Rendering.TileLayoutUtils
+
+Method: System.Boolean TryLayoutByTiles(UnityEngine.RectInt src, System.UInt32 tileSize, out UnityEngine.RectInt main, out UnityEngine.RectInt topRow, out UnityEngine.RectInt rightCol, out UnityEngine.RectInt topRight)
+
+Disassembly:
+	0x039EE468 LDR X0, [X0 + 0x9A0]
+	0x039EE46C BL 0x1C16CF4
+	0x039EE470 ADRP X0, 0x765000
+	0x039EE474 LDR X0, [X0 + 0x658]
+	0x039EE478 BL 0x1C16CF4
+	0x039EE47C ADRP X0, 0x705000
+	0x039EE480 LDR X0, [X0 + 0x598]
+	0x039EE484 BL 0x1C16CF4
+	0x039EE488 ADRP X0, 0x765000
+	0x039EE48C LDR X0, [X0 + 0x660]
+	0x039EE490 BL 0x1C16CF4
+	0x039EE494 MOVZ W8, 0x1
+	0x039EE498 STRB W8, [X20 + 0xE50]
+	0x039EE49C LDR X0, [X21]
+	0x039EE4A0 STP X31, X31, [X31 + 0x20]
+	0x039EE4A4 STR X31, [X31 + 0x30]
+	0x039EE4A8 LDR X20, [X19 + 0x48]
+	0x039EE4AC LDR W8, [X0 + 0xE0]
+	0x039EE4B0 CBNZ W8, 0x39EE4B8
+	0x039EE4B4 BL 0x1C16DFC
+	0x039EE4B8 MOV X0, X20
+	0x039EE4BC MOV X1, X31
+	0x039EE4C0 MOV X2, X31
+	0x039EE4C4 BL 0x3C3883C
+	0x039EE4C8 TBZ X0, 0x0, 0x39EE624
+	0x039EE4CC ADRP X8, 0x765000
+	0x039EE4D0 LDR X8, [X8 + 0x660]
+	0x039EE4D4 LDR X0, [X8]
+	0x039EE4D8 BL 0x22537A0
+	0x039EE4DC STR X0, [X19 + 0x48]
+	0x039EE4E0 LDR X0, [X21]
+	0x039EE4E4 LDR X20, [X19 + 0x30]
+	0x039EE4E8 LDR W8, [X0 + 0xE0]
+	0x039EE4EC CBNZ W8, 0x39EE4F4
+	0x039EE4F0 BL 0x1C16DFC
+	0x039EE4F4 MOV X0, X20
+	0x039EE4F8 MOV X1, X31
+	0x039EE4FC MOV X2, X31
+	0x039EE500 BL 0x3C354F8
+	0x039EE504 TBZ X0, 0x0, 0x39EE624
+	0x039EE508 LDR X0, [X19 + 0x30]
+	0x039EE50C CBZ X0, 0x39EE64C
+
+ISIL:
+	001 NotImplemented "Instruction SBFM not yet implemented."
+	002 Move X8, W1
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move W9, W2
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Move X14, X1
+	007 ShiftRight X14, 32
+	008 And X14, X14, 0x7FFFFFFF
+	009 NotImplemented "Instruction SDIV not yet implemented."
+	010 NotImplemented "Instruction SDIV not yet implemented."
+	011 Move X11, X0
+	012 ShiftRight X11, 32
+	013 And X11, X11, 0x7FFFFFFF
+	014 Multiply W17, W12, W2
+	015 Multiply W13, W13, W2
+	016 Subtract W12, W1, W17
+	017 Add W15, W17, W0
+	018 Subtract W14, W14, W13
+	019 Add W16, W13, W11
+	020 Move [X3], W0
+	021 Move [X3+4], W11
+	022 Move [X3+8], W17
+	023 Move [X3+12], W13
+	024 Move [X4], W0
+	025 Move [X4+4], W16
+	026 Move [X4+8], W17
+	027 Move [X4+12], W14
+	028 Move [X5], W15
+	029 Move W11, W31
+	030 Move W13, W31
+	031 Move W15, W31
+	032 Move W16, W31
+	033 Move W12, W31
+	034 Move W14, W31
+	035 Move [X3], X31
+	036 Move [X3+8], X31
+	037 Move [X4], X31
+	038 Move [X4+8], X31
+	039 Move [X5], W31
+	040 NotImplemented "Instruction CMP not yet implemented."
+	041 NotImplemented "Instruction CSET not yet implemented."
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 NotImplemented "Instruction CSET not yet implemented."
+	044 And W0, W10, W8
+	045 Move [X5+4], W11
+	046 Move [X5+8], W12
+	047 Move [X5+12], W13
+	048 Move [X6], W15
+	049 Move [X6+4], W16
+	050 Move [X6+8], W12
+	051 Move [X6+12], W14
+	052 Return X0
+
+Method: System.Boolean TryLayoutByRow(UnityEngine.RectInt src, System.UInt32 tileSize, out UnityEngine.RectInt main, out UnityEngine.RectInt other)
+
+Disassembly:
+	0x039EE510 LDR X20, [X19 + 0x48]
+	0x039EE514 MOV X1, X31
+	0x039EE518 BL 0x3C389D4
+	0x039EE51C CBZ X20, 0x39EE64C
+	0x039EE520 MOV X1, X0
+	0x039EE524 MOV X0, X20
+	0x039EE528 MOV X2, X31
+	0x039EE52C BL 0x3C38A84
+	0x039EE530 LDR X8, [X19 + 0x30]
+	0x039EE534 CBZ X8, 0x39EE64C
+	0x039EE538 LDR X0, [X8 + 0x18]
+	0x039EE53C CBZ X0, 0x39EE64C
+	0x039EE540 ADRP X8, 0x72E000
+	0x039EE544 LDR X8, [X8 + 0x9A0]
+	0x039EE548 LDR X1, [X8]
+	0x039EE54C ADD X8, X31, 0x8
+	0x039EE550 BL 0x301CB58
+	0x039EE554 LDUR V0, [X31 + 0x8]
+	0x039EE558 LDR X8, [X31 + 0x18]
+	0x039EE55C ADRP X22, 0x72E000
+	0x039EE560 ADRP X23, 0x765000
+	0x039EE564 LDR X22, [X22 + 0x990]
+	0x039EE568 LDR X23, [X23 + 0x658]
+	0x039EE56C STR V0, [X31 + 0x2]
+
+ISIL:
+	001 NotImplemented "Instruction SBFM not yet implemented."
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 Move W9, W2
+	004 Move W10, W31
+	005 Move W11, W31
+	006 Move W0, W31
+	007 Move W13, W31
+	008 Move W1, W31
+	009 Move W12, W31
+	010 Move X12, X1
+	011 ShiftRight X12, 32
+	012 And X12, X12, 0x7FFFFFFF
+	013 NotImplemented "Instruction SDIV not yet implemented."
+	014 Move X10, X0
+	015 ShiftRight X10, 32
+	016 And X10, X10, 0x7FFFFFFF
+	017 Multiply W11, W11, W2
+	018 Subtract W12, W12, W11
+	019 Add W13, W11, W10
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 Move [X3], W0
+	022 Move [X3+4], W10
+	023 Move [X3+8], W1
+	024 Move [X3+12], W11
+	025 Move [X4], W0
+	026 Move [X4+4], W13
+	027 NotImplemented "Instruction CSET not yet implemented."
+	028 Move [X4+8], W1
+	029 Move [X4+12], W12
+	030 Return X0
+
+Method: System.Boolean TryLayoutByCol(UnityEngine.RectInt src, System.UInt32 tileSize, out UnityEngine.RectInt main, out UnityEngine.RectInt other)
+
+Disassembly:
+	0x039EE570 STR X8, [X31 + 0x30]
+	0x039EE574 ADRP X24, 0x765000
+	0x039EE578 LDR X24, [X24 + 0x650]
+	0x039EE57C LDR X1, [X22]
+	0x039EE580 ADD X0, X31, 0x20
+	0x039EE584 BL 0x2BC4350
+	0x039EE588 TBZ X0, 0x0, 0x39EE610
+	0x039EE58C LDR X0, [X21]
+	0x039EE590 LDR X20, [X31 + 0x30]
+	0x039EE594 LDR W8, [X0 + 0xE0]
+	0x039EE598 CBNZ W8, 0x39EE5A0
+	0x039EE59C BL 0x1C16DFC
+	0x039EE5A0 LDR X1, [X23]
+	0x039EE5A4 MOV X0, X20
+	0x039EE5A8 BL 0x222D35C
+	0x039EE5AC MOV X1, X0
+	0x039EE5B0 LDR X8, [X19 + 0x48]
+	0x039EE5B4 CBZ X8, 0x39EE644
+	0x039EE5B8 LDR X0, [X8 + 0x18]
+	0x039EE5BC CBZ X0, 0x39EE648
+	0x039EE5C0 LDR W10, [X0 + 0x1C]
+	0x039EE5C4 LDR X8, [X0 + 0x10]
+	0x039EE5C8 LDR X9, [X24]
+	0x039EE5CC ADD W10, W10, 0x1
+
+ISIL:
+	001 Move X8, W1
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 Move W9, W2
+	004 Move W0, W31
+	005 Move W12, W31
+	006 Move W14, W31
+	007 Move W11, W31
+	008 Move W13, W31
+	009 Move W10, W31
+	010 NotImplemented "Instruction SDIV not yet implemented."
+	011 Multiply W12, W12, W2
+	012 Move X10, X1
+	013 ShiftRight X10, 32
+	014 And X10, X10, 0x7FFFFFFF
+	015 Move X11, X0
+	016 ShiftRight X11, 32
+	017 And X11, X11, 0x7FFFFFFF
+	018 Subtract W13, W1, W12
+	019 Add W14, W12, W0
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 Move [X3], W0
+	022 Move [X3+4], W11
+	023 NotImplemented "Instruction CSET not yet implemented."
+	024 Move [X3+8], W12
+	025 Move [X3+12], W10
+	026 Move [X4], W14
+	027 Move [X4+4], W11
+	028 Move [X4+8], W13
+	029 Move [X4+12], W10
+	030 Return X0
+

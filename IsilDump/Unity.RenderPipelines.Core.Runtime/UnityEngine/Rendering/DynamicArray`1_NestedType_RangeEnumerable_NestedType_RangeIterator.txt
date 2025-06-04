@@ -1,0 +1,106 @@
+Type: UnityEngine.Rendering.DynamicArray`1/RangeEnumerable/RangeIterator
+
+Method: System.Void .ctor(UnityEngine.Rendering.DynamicArray`1<T> setOwner, System.Int32 first, System.Int32 numItems)
+
+Disassembly:
+	0x024F4FCC STP V1, V0, [X31]
+	0x024F4FD0 LDR X0, [X19 + 0x20]
+	0x024F4FD4 LDRB W8, [X0 + 0x135]
+	0x024F4FD8 TBNZ X8, 0x0, 0x24F4FE0
+	0x024F4FDC BL 0x1C5C684
+	0x024F4FE0 LDR X8, [X0 + 0xC0]
+
+ISIL:
+	001 Subtract W8, W2, 1
+	002 Add W9, W3, W2
+	003 Move [X0], X1
+	004 Move [X0+8], W8
+	005 Move [X0+12], W2
+	006 Move [X0+16], W9
+	007 Return 
+
+Method: T get_Current()
+
+Disassembly:
+	0x024F4FE4 ADD X1, X31, 0x0
+	0x024F4FE8 LDR X0, [X8 + 0x18]
+	0x024F4FEC BL 0x1C16E04
+	0x024F4FF0 LDP X20, X19, [X31 + 0x60]
+	0x024F4FF4 LDR X30, [X31 + 0x50]
+	0x024F4FF8 ADD X31, X31, 0x70
+	0x024F4FFC RET
+	0x024F5000 STR X1, [X0]
+	0x024F5004 STR W2, [X0 + 0x8]
+	0x024F5008 RET
+	0x024F500C LDR W0, [X0 + 0x8]
+	0x024F5010 RET
+	0x024F5014 STR X30, [X31 - 0x20]!
+	0x024F5018 STP X20, X19, [X31 + 0x10]
+	0x024F501C MOV X8, X0
+	0x024F5020 LDR X0, [X2 + 0x20]
+	0x024F5024 LDR X20, [X8]
+	0x024F5028 MOV W19, W1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, [X0]
+	005 Compare X19, 0
+	006 JumpIfEqual {25}
+	007 Move X8, X0
+	008 Move X0, [X1+32]
+	009 Move W20, [X8+8]
+	010 Move W9, [X0+309]
+	011 Move TEMP, X9
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {16}
+	015 Call 0x1C5D684
+	016 Move X8, [X0+192]
+	017 Move X0, X19
+	018 Move W1, W20
+	019 Move X20, [X31+16]
+	020 Move X19, [X31+24]
+	021 Move X2, [X8+16]
+	022 Move X30, [X31+32]
+	023 Call 0x2B41178, X0, X1
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x024F502C LDRB W9, [X0 + 0x135]
+	0x024F5030 TBNZ X9, 0x0, 0x24F5038
+	0x024F5034 BL 0x1C5C684
+	0x024F5038 LDR W0, [X20, W19, SXTW]
+	0x024F503C LDP X20, X19, [X31 + 0x10]
+	0x024F5040 LDR X30, [X31], #0x20
+	0x024F5044 RET
+	0x024F5048 SUB X31, X31, 0x60
+
+ISIL:
+	001 Move W8, [X0+8]
+	002 Move W9, [X0+16]
+	003 Add W10, W8, 1
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 NotImplemented "Instruction CSET not yet implemented."
+	006 Move [X0+8], W10
+	007 Move W0, W8
+	008 Return X0
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x024F504C STR X30, [X31 + 0x40]
+	0x024F5050 STP X20, X19, [X31 + 0x50]
+	0x024F5054 STP X31, X31, [X31 + 0x8]
+	0x024F5058 STR X31, [X31 + 0x18]
+
+ISIL:
+	001 Move W8, [X0+12]
+	002 Subtract W8, W8, 1
+	003 Move [X0+8], W8
+	004 Return 
+

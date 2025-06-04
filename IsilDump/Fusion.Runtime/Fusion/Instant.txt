@@ -1,0 +1,62 @@
+Type: Fusion.Instant
+
+Method: System.Double get_Input()
+
+Disassembly:
+	0x01EDE0B4 RET
+	0x01EDE0B8 STR X30, [X31 - 0x30]!
+
+ISIL:
+	001 Move V0, [X0]
+	002 Return V0
+
+Method: System.Void set_Input(System.Double value)
+
+Disassembly:
+	0x01EDE0BC STP X22, X21, [X31 + 0x10]
+	0x01EDE0C0 STP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move [X0], D0
+	002 Return 
+
+Method: System.Double get_Local()
+
+Disassembly:
+	0x01EDE0C4 MOV X21, X0
+	0x01EDE0C8 MOV X0, X1
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Return V0
+
+Method: System.Void set_Local(System.Double value)
+
+Disassembly:
+	0x01EDE0CC MOV X20, X2
+	0x01EDE0D0 MOV X22, X1
+
+ISIL:
+	001 Move [X0+8], D0
+	002 Return 
+
+Method: System.Double get_Remote()
+
+Disassembly:
+	0x01EDE0D4 BL 0x1EDDB68
+	0x01EDE0D8 LDR W8, [X21 + 0x8]
+
+ISIL:
+	001 Move V0, [X0+16]
+	002 Return V0
+
+Method: System.Void set_Remote(System.Double value)
+
+Disassembly:
+	0x01EDE0DC MOV W19, W0
+	0x01EDE0E0 CMP W0, W8
+
+ISIL:
+	001 Move [X0+16], D0
+	002 Return 
+

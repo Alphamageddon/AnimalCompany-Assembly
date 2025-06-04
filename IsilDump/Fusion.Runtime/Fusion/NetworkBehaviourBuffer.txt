@@ -1,0 +1,249 @@
+Type: Fusion.NetworkBehaviourBuffer
+
+Method: Fusion.Tick get_Tick()
+
+Disassembly:
+	0x01E770A4 LDR X0, [X21]
+	0x01E770A8 STR W31, [X31 + 0xC]
+
+ISIL:
+	001 Move W0, [X0+12]
+	002 Return X0
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0x01E770AC LDR W8, [X0 + 0xE0]
+	0x01E770B0 CBNZ W8, 0x1E770BC
+
+ISIL:
+	001 Move W0, [X0+8]
+	002 Return X0
+
+Method: System.Boolean get_Valid()
+
+Disassembly:
+	0x01E75A34 LDR X8, [X23 + 0x18]
+	0x01E75A38 LDR X2, [X23 + 0x28]
+	0x01E75A3C MOV X1, X22
+	0x01E75A40 BLR X8
+	0x01E75A44 ADD X29, X29, 0x1
+	0x01E75A48 CMP X25, X29
+	0x01E75A4C B.EQ 0x1E75B1C
+	0x01E75A50 LDR X8, [X21 + 0x38]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Compare X8, 0
+	003 JumpIfEqual {8}
+	004 Move W8, [X0+8]
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Return X0
+	008 Move W0, W31
+	009 Return X0
+
+Method: T ReinterpretState(System.Int32 offset = 0)
+
+Disassembly:
+	0x022287C0 MOV X2, X31
+	0x022287C4 MOV X4, X24
+	0x022287C8 LDR X0, [X1]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move W0, [X8]
+	003 Return X0
+
+Method: System.Int32 get_Item(System.Int32 index)
+
+Disassembly:
+	0x01E770B4 BL 0x1C16DFC
+	0x01E770B8 LDR X0, [X21]
+	0x01E770BC LDR X8, [X0 + 0xB8]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move W0, [X8]
+	003 Return X0
+
+Method: System.Void .ctor(Fusion.Tick tick, System.Int32* ptr, System.Int32 length)
+
+Disassembly:
+	0x01E74970 MOV X0, X19
+	0x01E74974 MOV X1, X31
+	0x01E74978 BL 0x3C385F8
+
+ISIL:
+	001 Move [X0], X2
+	002 Move [X0+8], W3
+	003 Move [X0+12], W1
+	004 Return 
+
+Method: T Read(Fusion.NetworkBehaviour/BehaviourReader`1<T> reader)
+
+Disassembly:
+	0x0222865C LDRH W8, [X8]
+	0x02228660 B 0x2228668
+	0x02228664 MOV W9, W22
+	0x02228668 ADD W9, W9, 0x10
+	0x0222866C ADD X9, X9, 0xF
+	0x02228670 ADD X10, X31, 0x0
+	0x02228674 AND X9, X9, 0x1FFFFFFFF
+	0x02228678 SUB X9, X10, X9
+	0x0222867C ADD X31, X9, 0x0
+	0x02228680 STUR X21, [X29 - 0xC8]
+	0x02228684 STUR X9, [X29 - 0xD8]
+	0x02228688 TBNZ X8, 0x0, 0x2228694
+	0x0222868C BL 0x1C5C684
+	0x02228690 LDR X20, [X19 + 0x38]
+	0x02228694 LDR W8, [X0 + 0xFC]
+	0x02228698 ADD X9, X31, 0x0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+56]
+	006 Move X19, X1
+	007 Move X20, X0
+	008 Compare X8, 0
+	009 JumpIfNotEqual {14}
+	010 Move X0, X2
+	011 Move X21, X2
+	012 Call 0x1C5D6E0
+	013 Move X8, [X21+56]
+	014 Move X1, [X20]
+	015 Move X2, [X20+8]
+	016 Move X3, [X8+8]
+	017 Move X0, X19
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Move X21, [X31+40]
+	022 Call 0x28CBBA0, X0, X1
+	023 Return X0
+
+Method: T Read(Fusion.NetworkBehaviour/PropertyReader`1<T> reader)
+
+Disassembly:
+	0x022285FC STUR X8, [X29 - 0xD0]
+	0x02228600 LDR X8, [X8 + 0x28]
+	0x02228604 MOV X19, X2
+	0x02228608 MOV X21, X0
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction LDRSW not yet implemented."
+	003 Move W0, [X8]
+	004 Return X0
+
+Method: System.Single Read(Fusion.NetworkBehaviour/PropertyReader`1<System.Single> reader)
+
+Disassembly:
+	0x01E770C0 LDR X0, [X8]
+	0x01E770C4 CBZ X0, 0x1E7714C
+	0x01E770C8 ADRP X8, 0x2286000
+	0x01E770CC LDR X8, [X8 + 0x710]
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction LDRSW not yet implemented."
+	003 Move V0, [X8]
+	004 Return V0
+
+Method: UnityEngine.Vector2 Read(Fusion.NetworkBehaviour/PropertyReader`1<UnityEngine.Vector2> reader)
+
+Disassembly:
+	0x01E770D0 ADD X2, X31, 0xC
+	0x01E770D4 MOV X1, X19
+	0x01E770D8 LDR X3, [X8]
+	0x01E770DC BL 0x2AA09F8
+	0x01E770E0 TBNZ X0, 0x0, 0x1E77138
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction LDRSW not yet implemented."
+	003 Add X8, X8, X9
+	004 Move S0, [X8]
+	005 Move S1, [X8+4]
+	006 Return X0
+
+Method: UnityEngine.Vector3 Read(Fusion.NetworkBehaviour/PropertyReader`1<UnityEngine.Vector3> reader)
+
+Disassembly:
+	0x01E770E4 MOV X0, X19
+	0x01E770E8 MOV X1, X31
+	0x01E770EC BL 0x1E8E0B0
+	0x01E770F0 LDR X8, [X21]
+	0x01E770F4 MOV X20, X0
+	0x01E770F8 LDR W9, [X8 + 0xE0]
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction LDRSW not yet implemented."
+	003 Add X8, X8, X9
+	004 Move S0, [X8]
+	005 Move S1, [X8+4]
+	006 Move V2, [X8+8]
+	007 Return X0
+
+Method: UnityEngine.Vector4 Read(Fusion.NetworkBehaviour/PropertyReader`1<UnityEngine.Vector4> reader)
+
+Disassembly:
+	0x01E770FC CBNZ W9, 0x1E7710C
+	0x01E77100 MOV X0, X8
+	0x01E77104 BL 0x1C16DFC
+	0x01E77108 LDR X8, [X21]
+	0x01E7710C CBZ X20, 0x1E7714C
+	0x01E77110 LDR X8, [X8 + 0xB8]
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction LDRSW not yet implemented."
+	003 Add X8, X8, X9
+	004 Move S0, [X8]
+	005 Move S1, [X8+4]
+	006 Move S2, [X8+8]
+	007 Move S3, [X8+12]
+	008 Return X0
+
+Method: UnityEngine.Quaternion Read(Fusion.NetworkBehaviour/PropertyReader`1<UnityEngine.Quaternion> reader)
+
+Disassembly:
+	0x01E77114 LDR W2, [X20 + 0x10]
+	0x01E77118 LDR X0, [X8]
+	0x01E7711C STR W2, [X31 + 0xC]
+	0x01E77120 CBZ X0, 0x1E7714C
+	0x01E77124 ADRP X8, 0x2286000
+	0x01E77128 LDR X8, [X8 + 0x708]
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction LDRSW not yet implemented."
+	003 Add X8, X8, X9
+	004 Move S0, [X8]
+	005 Move S1, [X8+4]
+	006 Move S2, [X8+8]
+	007 Move S3, [X8+12]
+	008 Return X0
+
+Method: System.Boolean op_Implicit(Fusion.NetworkBehaviourBuffer buffer)
+
+Disassembly:
+	0x01E7712C MOV X1, X19
+	0x01E77130 LDR X3, [X8]
+	0x01E77134 BL 0x2A9EF9C
+	0x01E77138 LDR W0, [X31 + 0xC]
+	0x01E7713C LDP X20, X19, [X31 + 0x20]
+	0x01E77140 LDP X30, X21, [X31 + 0x10]
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 And W0, W8, W9
+	006 Return X0
+

@@ -1,0 +1,93 @@
+Type: AnimalCompany.DebugState
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.LogLevel> get_logLevel()
+
+Disassembly:
+	0x01D3B6E0 LDR X23, [X23 + 0x6E0]
+	0x01D3B6E4 MOV X19, X2
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_logLevel(SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.LogLevel> value)
+
+Disassembly:
+	0x01D3B6E8 MOV X20, X1
+	0x01D3B6EC MOV X21, X0
+
+ISIL:
+	001 Move [X0+72], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.LogChannel> get_logChannelFlags()
+
+Disassembly:
+	0x01D3B6F0 TBNZ X8, 0x0, 0x1D3B708
+	0x01D3B6F4 ADRP X0, 0x23B8000
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_logChannelFlags(SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.LogChannel> value)
+
+Disassembly:
+	0x01D3B6F8 LDR X0, [X0 + 0x6E0]
+	0x01D3B6FC BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.LogLevel> get_remoteLogLevel()
+
+Disassembly:
+	0x01D3B700 MOVZ W8, 0x1
+	0x01D3B704 STRB W8, [X22 + 0x711]
+
+ISIL:
+	001 Move X0, [X0+88]
+	002 Return X0
+
+Method: System.Void set_remoteLogLevel(SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.LogLevel> value)
+
+Disassembly:
+	0x01D3B708 LDR X0, [X23]
+	0x01D3B70C LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X0+88], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.LogChannel> get_remoteLogChannelFlags()
+
+Disassembly:
+	0x01D3B710 CBNZ W8, 0x1D3B718
+	0x01D3B714 BL 0x1C16DFC
+
+ISIL:
+	001 Move X0, [X0+96]
+	002 Return X0
+
+Method: System.Void set_remoteLogChannelFlags(SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.LogChannel> value)
+
+Disassembly:
+	0x01D3B718 MOV X0, X21
+	0x01D3B71C MOV X1, X20
+
+ISIL:
+	001 Move [X0+96], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01D3B720 MOV X2, X19
+	0x01D3B724 LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move X1, X31
+	002 Call StateObject..ctor, X0
+	003 Return 
+

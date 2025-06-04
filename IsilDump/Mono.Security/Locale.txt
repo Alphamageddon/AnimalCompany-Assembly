@@ -1,0 +1,21 @@
+Type: Locale
+
+Method: System.String GetText(System.String msg)
+
+Disassembly:
+	0x031E89DC BL 0x1C16CF4
+
+ISIL:
+	001 Return X0
+
+Method: System.String GetText(System.String fmt, System.Object[] args)
+
+Disassembly:
+	0x031E89E0 ADRP X0, 0xF38000
+	0x031E89E4 LDR X0, [X0 + 0xBB0]
+
+ISIL:
+	001 Move X2, X31
+	002 Call String.Format, X0, X1
+	003 Return X0
+

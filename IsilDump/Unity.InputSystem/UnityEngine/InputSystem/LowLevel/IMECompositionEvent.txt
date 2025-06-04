@@ -1,0 +1,118 @@
+Type: UnityEngine.InputSystem.LowLevel.IMECompositionEvent
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_typeStatic()
+
+Disassembly:
+	0x03801E64 MOV X0, X19
+	0x03801E68 MOV X2, X31
+	0x03801E6C BL 0x33802E4
+
+ISIL:
+	001 Move W0, 0x4553
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 Return X0
+
+Method: UnityEngine.InputSystem.LowLevel.IMECompositionEvent Create(System.Int32 deviceId, System.String compositionString, System.Double time)
+
+Disassembly:
+	0x03801E70 ADRP X0, 0x949000
+	0x03801E74 LDR X0, [X0 + 0x128]
+	0x03801E78 BL 0x1C16D08
+	0x03801E7C MOV X1, X0
+	0x03801E80 MOV X0, X19
+	0x03801E84 BL 0x1C16DEC
+	0x03801E88 LDR X8, [X0 + 0x10]
+	0x03801E8C STR W31, [X0 + 0x18]
+	0x03801E90 ADDS X31, X8, 0x1
+	0x03801E94 B.EQ 0x3801E9C
+	0x03801E98 STR X31, [X0 + 0x10]
+	0x03801E9C RET
+	0x03801EA0 STR X30, [X31 - 0x40]!
+	0x03801EA4 STP X24, X23, [X31 + 0x10]
+	0x03801EA8 STP X22, X21, [X31 + 0x20]
+	0x03801EAC STP X20, X19, [X31 + 0x30]
+	0x03801EB0 MOV X20, X1
+	0x03801EB4 LDR W8, [X4]
+	0x03801EB8 LDR X1, [X1]
+	0x03801EBC MOV X19, X4
+	0x03801EC0 MOV X21, X3
+	0x03801EC4 MOV X22, X2
+	0x03801EC8 CMP W8, 0x2
+	0x03801ECC MOV X24, X1
+	0x03801ED0 B.LT 0x3801EEC
+	0x03801ED4 LDRH W9, [X1 + 0x4]
+	0x03801ED8 AND W10, W9, 0xFFFC
+	0x03801EDC ADD W10, W10, 0x4
+	0x03801EE0 ANDS W31, W9, 0x3
+	0x03801EE4 CSEL W9, W9, W10, EQ
+	0x03801EE8 ADD X24, X1, X9
+	0x03801EEC TBZ X5, 0x0, 0x3801F38
+	0x03801EF0 LDR X0, [X22]
+	0x03801EF4 LDRH W23, [X1 + 0x4]
+	0x03801EF8 CMP X1, X0
+	0x03801EFC B.EQ 0x3801F10
+	0x03801F00 MOV X2, X23
+	0x03801F04 MOV X3, X31
+	0x03801F08 BL 0x3C0010C
+	0x03801F0C LDR X1, [X22]
+	0x03801F10 AND W8, W23, 0xFFFC
+	0x03801F14 ADD W8, W8, 0x4
+	0x03801F18 ANDS W31, W23, 0x3
+	0x03801F1C CSEL W8, W23, W8, EQ
+	0x03801F20 ADD X8, X1, X8
+	0x03801F24 STR X8, [X22]
+	0x03801F28 LDR W8, [X21]
+
+ISIL:
+	001 Subtract X31, X31, 368
+	002 Move [X31+320], X29
+	003 Move [X31+336], X30
+	004 Move [X31+344], X21
+	005 Move [X31+352], X20
+	006 Move [X31+360], X19
+	007 NotImplemented "Instruction MRS not yet implemented."
+	008 Move X20, X8
+	009 Move X8, [X21+40]
+	010 Move X19, X1
+	011 Move W1, 0x4553
+	012 Move W3, W0
+	013 Add X0, X31, 136
+	014 NotImplemented "Instruction MOVK not yet implemented."
+	015 Move W2, 152
+	016 Move [X31+312], X8
+	017 Move [X31+136], X31
+	018 Move [X31+144], X31
+	019 Move [X31+152], W31
+	020 Call InputEvent..ctor, X0, X1, X2, X3, V0
+	021 NotImplemented "Instruction LDUR not yet implemented."
+	022 Move W8, [X31+152]
+	023 Add X0, X31, 0
+	024 Move W2, 132
+	025 Move W1, W31
+	026 Move [X31+10], V0
+	027 Move [X31+176], W8
+	028 Call 0x3EB2B10
+	029 Add X0, X31, 0
+	030 Move X1, X19
+	031 Call IMECompositionString..ctor, X0, X1
+	032 Add X8, X31, 160
+	033 Add X0, X8, 20
+	034 Add X1, X31, 0
+	035 Move W2, 132
+	036 Call 0x3EB2AC0
+	037 Add X1, X31, 160
+	038 Move W2, 152
+	039 Move X0, X20
+	040 Call 0x3EB2AC0
+	041 Move X8, [X21+40]
+	042 Move X9, [X31+312]
+	043 NotImplemented "Instruction CMP not yet implemented."
+	044 Move X20, [X31+352]
+	045 Move X19, [X31+360]
+	046 Move X30, [X31+336]
+	047 Move X21, [X31+344]
+	048 Move X29, [X31+320]
+	049 Add X31, X31, 368
+	050 Return X0
+	051 Call 0x3EB2B20
+

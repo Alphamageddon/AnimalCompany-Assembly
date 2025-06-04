@@ -1,0 +1,518 @@
+Type: UnityEngine.InputSystem.DualShock.DualShockGamepad
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_touchpadButton()
+
+Disassembly:
+	0x037FD828 LDR X0, [X19]
+	0x037FD82C LDR X8, [X0 + 0xB8]
+
+ISIL:
+	001 Move X0, [X0+496]
+	002 Return X0
+
+Method: System.Void set_touchpadButton(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x037FD830 LDP X20, X19, [X31 + 0x10]
+	0x037FD834 LDR W0, [X8]
+
+ISIL:
+	001 Move [X0+496], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_optionsButton()
+
+Disassembly:
+	0x037FD838 LDR X30, [X31], #0x20
+	0x037FD83C RET
+
+ISIL:
+	001 Move X0, [X0+504]
+	002 Return X0
+
+Method: System.Void set_optionsButton(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x037FD840 MOV X9, X0
+	0x037FD844 MOV X0, X8
+
+ISIL:
+	001 Move [X0+504], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_shareButton()
+
+Disassembly:
+	0x037FD848 ADD W8, W1, 0x1F
+	0x037FD84C CMP W1, 0x0
+
+ISIL:
+	001 Move X0, [X0+512]
+	002 Return X0
+
+Method: System.Void set_shareButton(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x037FD850 CSEL W8, W8, W1, LT
+	0x037FD854 SBFM W8, W8, 0x5, 0x1F
+
+ISIL:
+	001 Move [X0+512], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_L1()
+
+Disassembly:
+	0x037FD858 LDR W10, [X9, W8, SXTW]
+	0x037FD85C MOVZ W11, 0x1
+
+ISIL:
+	001 Move X0, [X0+520]
+	002 Return X0
+
+Method: System.Void set_L1(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x037FD860 LSLV W11, W11, W1
+	0x037FD864 ANDS W31, W2, 0x1
+
+ISIL:
+	001 Move [X0+520], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_R1()
+
+Disassembly:
+	0x037FD868 BIC W12, W10, W11, 0x0
+	0x037FD86C ORR W10, W10, W11, 0x0
+
+ISIL:
+	001 Move X0, [X0+528]
+	002 Return X0
+
+Method: System.Void set_R1(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x037FD870 CSEL W10, W10, W12, NE
+	0x037FD874 MOVZ W2, 0xDC
+
+ISIL:
+	001 Move [X0+528], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_L2()
+
+Disassembly:
+	0x037FD878 MOV X1, X9
+	0x037FD87C STR W10, [X9, W8, SXTW]
+
+ISIL:
+	001 Move X0, [X0+536]
+	002 Return X0
+
+Method: System.Void set_L2(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x037FD880 B 0x3EB1AC0
+	0x037FD884 MOV X9, X0
+
+ISIL:
+	001 Move [X0+536], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_R2()
+
+Disassembly:
+	0x037FD888 MOV X0, X8
+	0x037FD88C ADD X8, X9, W1, 0x2, SXTW
+
+ISIL:
+	001 Move X0, [X0+544]
+	002 Return X0
+
+Method: System.Void set_R2(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x037FD890 MOVZ W2, 0xDC
+	0x037FD894 MOV X1, X9
+
+ISIL:
+	001 Move [X0+544], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_L3()
+
+Disassembly:
+	0x037FD898 STR S0, [X8 + 0x1C]
+	0x037FD89C B 0x3EB1AC0
+
+ISIL:
+	001 Move X0, [X0+552]
+	002 Return X0
+
+Method: System.Void set_L3(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x037FD8A0 STR X30, [X31 - 0x20]!
+	0x037FD8A4 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+552], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_R3()
+
+Disassembly:
+	0x037FD8A8 ADRP X20, 0xBE4000
+	0x037FD8AC ADRP X19, 0x94C000
+
+ISIL:
+	001 Move X0, [X0+560]
+	002 Return X0
+
+Method: System.Void set_R3(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x037FD8B0 LDRB W8, [X20 + 0x3F5]
+	0x037FD8B4 LDR X19, [X19 + 0xF20]
+
+ISIL:
+	001 Move [X0+560], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.DualShock.DualShockGamepad get_current()
+
+Disassembly:
+	0x037FD8B8 TBNZ X8, 0x0, 0x37FD8D0
+	0x037FD8BC ADRP X0, 0x94C000
+	0x037FD8C0 LDR X0, [X0 + 0xF20]
+	0x037FD8C4 BL 0x1C16CF4
+	0x037FD8C8 MOVZ W8, 0x1
+	0x037FD8CC STRB W8, [X20 + 0x3F5]
+	0x037FD8D0 ADD X0, X31, 0x8
+	0x037FD8D4 MOVZ W1, 0x41
+	0x037FD8D8 MOVZ W2, 0x47
+	0x037FD8DC MOVZ W3, 0x43
+	0x037FD8E0 MOVZ W4, 0x20
+	0x037FD8E4 MOV X5, X31
+	0x037FD8E8 STR W31, [X31 + 0x8]
+	0x037FD8EC BL 0x375AA28
+	0x037FD8F0 LDR X8, [X19]
+	0x037FD8F4 LDR W9, [X31 + 0x8]
+	0x037FD8F8 LDP X20, X19, [X31 + 0x10]
+	0x037FD8FC LDR X8, [X8 + 0xB8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xBE5000
+	005 Move X20, 0x94D000
+	006 Move W8, [X19+1006]
+	007 Move X20, [X20+3576]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x94D000
+	013 Move X0, [X0+3576]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+1006], W8
+	017 Move X8, [X20]
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X8, [X8+184]
+	021 Move X0, [X8]
+	022 Move X30, [X31+32]
+	023 Return X0
+
+Method: System.Void set_current(UnityEngine.InputSystem.DualShock.DualShockGamepad value)
+
+Disassembly:
+	0x037FD900 STR W9, [X8]
+	0x037FD904 LDR X30, [X31], #0x20
+	0x037FD908 RET
+	0x037FD90C MOV X1, X31
+	0x037FD910 B 0x33BDD8C
+	0x037FD914 SUB X31, X31, 0x50
+	0x037FD918 STP X30, X21, [X31 + 0x30]
+	0x037FD91C STP X20, X19, [X31 + 0x40]
+	0x037FD920 ADRP X21, 0xBE4000
+	0x037FD924 ADRP X20, 0x94C000
+	0x037FD928 LDRB W8, [X21 + 0x3F7]
+	0x037FD92C LDR X20, [X20 + 0xF28]
+	0x037FD930 MOV X19, X0
+	0x037FD934 TBNZ X8, 0x0, 0x37FD94C
+	0x037FD938 ADRP X0, 0x94C000
+	0x037FD93C LDR X0, [X0 + 0xF28]
+	0x037FD940 BL 0x1C16CF4
+	0x037FD944 MOVZ W8, 0x1
+	0x037FD948 STRB W8, [X21 + 0x3F7]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xBE5000
+	006 Move X21, 0x94D000
+	007 Move W8, [X20+1007]
+	008 Move X21, [X21+3576]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x94D000
+	015 Move X0, [X0+3576]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1007], W8
+	019 Move X8, [X21]
+	020 Move X8, [X8+184]
+	021 Move [X8], X19
+	022 Move X20, [X31+16]
+	023 Move X19, [X31+24]
+	024 Move X30, [X31+32]
+	025 Move X21, [X31+40]
+	026 Return 
+
+Method: System.Void MakeCurrent()
+
+Disassembly:
+	0x037FD94C LDR X8, [X19 + 0x20]
+	0x037FD950 LDP V1, V0, [X19]
+	0x037FD954 LDR X0, [X20]
+	0x037FD958 ADD X1, X31, 0x0
+	0x037FD95C STR X8, [X31 + 0x20]
+	0x037FD960 STP V1, V0, [X31]
+	0x037FD964 BL 0x1C16E04
+	0x037FD968 MOV X1, X31
+	0x037FD96C BL 0x3C86C20
+	0x037FD970 LDP X20, X19, [X31 + 0x40]
+	0x037FD974 LDP X30, X21, [X31 + 0x30]
+	0x037FD978 ADD X31, X31, 0x50
+	0x037FD97C RET
+	0x037FD980 SUB X31, X31, 0x70
+	0x037FD984 STR X30, [X31 + 0x10]
+	0x037FD988 STP X28, X27, [X31 + 0x20]
+	0x037FD98C STP X26, X25, [X31 + 0x30]
+	0x037FD990 STP X24, X23, [X31 + 0x40]
+	0x037FD994 STP X22, X21, [X31 + 0x50]
+	0x037FD998 STP X20, X19, [X31 + 0x60]
+	0x037FD99C ADRP X20, 0xBE4000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X1, X31
+	005 Move X19, X0
+	006 Call Gamepad.MakeCurrent, X0
+	007 Move X20, 0xBE5000
+	008 Move W8, [X20+1149]
+	009 Compare W8, 0
+	010 JumpIfNotEqual {16}
+	011 Move X0, 0x94D000
+	012 Move X0, [X0+3576]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+1149], W8
+	016 Move X8, 0x94D000
+	017 Move X8, [X8+3576]
+	018 Move X8, [X8]
+	019 Move X8, [X8+184]
+	020 Move [X8], X19
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X30, [X31+32]
+	024 Return 
+
+Method: System.Void OnRemoved()
+
+Disassembly:
+	0x037FD9A0 ADRP X21, 0x8F6000
+	0x037FD9A4 LDRB W8, [X20 + 0x3F9]
+	0x037FD9A8 LDR X21, [X21 + 0x9D0]
+	0x037FD9AC MOV X19, X0
+	0x037FD9B0 TBNZ X8, 0x0, 0x37FDA4C
+	0x037FD9B4 ADRP X0, 0x94C000
+	0x037FD9B8 LDR X0, [X0 + 0xF30]
+	0x037FD9BC BL 0x1C16CF4
+	0x037FD9C0 ADRP X0, 0x8F6000
+	0x037FD9C4 LDR X0, [X0 + 0xB58]
+	0x037FD9C8 BL 0x1C16CF4
+	0x037FD9CC ADRP X0, 0x94C000
+	0x037FD9D0 LDR X0, [X0 + 0xF38]
+	0x037FD9D4 BL 0x1C16CF4
+	0x037FD9D8 ADRP X0, 0x8F6000
+	0x037FD9DC LDR X0, [X0 + 0xEB8]
+	0x037FD9E0 BL 0x1C16CF4
+	0x037FD9E4 ADRP X0, 0x94C000
+	0x037FD9E8 LDR X0, [X0 + 0xF40]
+	0x037FD9EC BL 0x1C16CF4
+	0x037FD9F0 ADRP X0, 0x8F6000
+	0x037FD9F4 LDR X0, [X0 + 0x758]
+	0x037FD9F8 BL 0x1C16CF4
+	0x037FD9FC ADRP X0, 0x8F6000
+	0x037FDA00 LDR X0, [X0 + 0x9D0]
+	0x037FDA04 BL 0x1C16CF4
+	0x037FDA08 ADRP X0, 0x94C000
+	0x037FDA0C LDR X0, [X0 + 0xF48]
+	0x037FDA10 BL 0x1C16CF4
+	0x037FDA14 ADRP X0, 0x94C000
+	0x037FDA18 LDR X0, [X0 + 0xF50]
+	0x037FDA1C BL 0x1C16CF4
+	0x037FDA20 ADRP X0, 0x94C000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X1, X31
+	005 Move X19, X0
+	006 Call Gamepad.OnRemoved, X0
+	007 Move X20, 0xBE5000
+	008 Move W8, [X20+1150]
+	009 Compare W8, 0
+	010 JumpIfNotEqual {16}
+	011 Move X0, 0x94D000
+	012 Move X0, [X0+3576]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+1150], W8
+	016 Move X20, 0x94D000
+	017 Move X20, [X20+3576]
+	018 Move X8, [X20]
+	019 Move X8, [X8+184]
+	020 Move X9, [X8]
+	021 NotImplemented "Instruction CMP not yet implemented."
+	022 Move X19, 0xBE5000
+	023 Move W9, [X19+1149]
+	024 Compare W9, 0
+	025 JumpIfNotEqual {32}
+	026 Move X0, X20
+	027 Call 0x1C17CF4
+	028 Move X8, [X20]
+	029 Move W9, 1
+	030 Move [X19+1149], W9
+	031 Move X8, [X8+184]
+	032 Move [X8], X31
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 Move X30, [X31+32]
+	036 Return 
+
+Method: System.Void FinishSetup()
+
+Disassembly:
+	0x037FDA24 LDR X0, [X0 + 0xF58]
+	0x037FDA28 BL 0x1C16CF4
+	0x037FDA2C ADRP X0, 0x8F8000
+	0x037FDA30 LDR X0, [X0 + 0x3A0]
+	0x037FDA34 BL 0x1C16CF4
+	0x037FDA38 ADRP X0, 0x8FD000
+	0x037FDA3C LDR X0, [X0 + 0xD58]
+	0x037FDA40 BL 0x1C16CF4
+	0x037FDA44 MOVZ W8, 0x1
+	0x037FDA48 STRB W8, [X20 + 0x3F9]
+	0x037FDA4C LDR X0, [X21]
+	0x037FDA50 MOVZ W1, 0x6
+	0x037FDA54 BL 0x1C16D6C
+	0x037FDA58 CBZ X0, 0x37FDCF4
+	0x037FDA5C LDR X21, [X19]
+	0x037FDA60 MOV X20, X0
+	0x037FDA64 CBZ X21, 0x37FDA7C
+	0x037FDA68 LDR X8, [X20]
+	0x037FDA6C MOV X0, X21
+	0x037FDA70 LDR X1, [X8 + 0x40]
+	0x037FDA74 BL 0x1C16E00
+	0x037FDA78 CBZ X0, 0x37FDCE8
+	0x037FDA7C LDR W8, [X20 + 0x18]
+	0x037FDA80 CBZ W8, 0x37FDCE4
+	0x037FDA84 ADRP X22, 0x8F6000
+	0x037FDA88 LDR X22, [X22 + 0x758]
+	0x037FDA8C STR X21, [X20 + 0x20]
+	0x037FDA90 LDR W8, [X19 + 0x8]
+	0x037FDA94 ADD X1, X31, 0x1C
+	0x037FDA98 LDR X0, [X22]
+	0x037FDA9C STR W8, [X31 + 0x1C]
+	0x037FDAA0 BL 0x1C16E04
+	0x037FDAA4 MOV X21, X0
+	0x037FDAA8 CBZ X0, 0x37FDAC0
+	0x037FDAAC LDR X8, [X20]
+	0x037FDAB0 MOV X0, X21
+	0x037FDAB4 LDR X1, [X8 + 0x40]
+	0x037FDAB8 BL 0x1C16E00
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X23, 0xBE5000
+	008 Move X21, 0x94D000
+	009 Move X22, 0x948000
+	010 Move W8, [X23+1008]
+	011 Move X21, [X21+3584]
+	012 Move X22, [X22+3608]
+	013 Move X19, X0
+	014 Add X20, X0, 440
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {27}
+	019 Move X0, 0x948000
+	020 Move X0, [X0+3608]
+	021 Call 0x1C17CF4
+	022 Move X0, 0x94D000
+	023 Move X0, [X0+3584]
+	024 Call 0x1C17CF4
+	025 Move W8, 1
+	026 Move [X23+1008], W8
+	027 Move X0, X19
+	028 Move X1, X31
+	029 Call Gamepad.FinishSetup, X0
+	030 Move X1, [X21]
+	031 Move X2, [X22]
+	032 Move X0, X19
+	033 Call 0x21FD754, X0, X1
+	034 Move [X19+496], X0
+	035 Move V0, [X19+26]
+	036 Move V1, [X20]
+	037 Move V2, [X20+2]
+	038 Move X22, [X31+16]
+	039 Move X21, [X31+24]
+	040 Move [X20+64], V0
+	041 Move [X20+72], V1
+	042 Move V0, [X19+25]
+	043 Move [X20+96], V2
+	044 Move [X20+104], V0
+	045 Move X20, [X31+32]
+	046 Move X19, [X31+40]
+	047 Move X30, [X31+48]
+	048 Move X23, [X31+56]
+	049 Return 
+
+Method: System.Void SetLightBarColor(UnityEngine.Color color)
+
+Disassembly:
+	0x037FDABC CBZ X0, 0x37FDCE8
+
+ISIL:
+	001 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x037FDAC0 LDR W8, [X20 + 0x18]
+	0x037FDAC4 CMP W8, 0x1
+
+ISIL:
+	001 Move X1, X31
+	002 Call Gamepad..ctor, X0
+	003 Return 
+

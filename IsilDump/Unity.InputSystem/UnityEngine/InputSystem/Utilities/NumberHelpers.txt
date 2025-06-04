@@ -1,0 +1,362 @@
+Type: UnityEngine.InputSystem.Utilities.NumberHelpers
+
+Method: System.Int32 AlignToMultipleOf(System.Int32 number, System.Int32 alignment)
+
+Disassembly:
+	0x03765BA8 LDRSW X0, [X0 + 0x4]
+	0x03765BAC RET
+	0x03765BB0 LDR W0, [X0 + 0x4]
+	0x03765BB4 RET
+	0x03765BB8 LDR V0, [X0 + 0x4]
+	0x03765BBC MOVZ W8, 0x7F800000
+	0x03765BC0 FMOV S1, W8
+
+ISIL:
+	001 NotImplemented "Instruction SDIV not yet implemented."
+	002 Add W9, W1, W0
+	003 NotImplemented "Instruction MSUB not yet implemented."
+	004 Subtract W9, W9, W8
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSEL not yet implemented."
+	007 Return X0
+
+Method: System.Int64 AlignToMultipleOf(System.Int64 number, System.Int64 alignment)
+
+Disassembly:
+	0x03765BC4 FCVTZS X8, S0
+	0x03765BC8 FCMP S0, S1
+	0x03765BCC B 0x3765BE4
+	0x03765BD0 LDUR V0, [X0 + 0x4]
+	0x03765BD4 MOVZ X8, 0x7FF00000
+	0x03765BD8 FMOV D1, X8
+	0x03765BDC FCVTZS X8, D0
+
+ISIL:
+	001 NotImplemented "Instruction SDIV not yet implemented."
+	002 Add X9, X1, X0
+	003 NotImplemented "Instruction MSUB not yet implemented."
+	004 Subtract X9, X9, X8
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSEL not yet implemented."
+	007 Return X0
+
+Method: System.UInt32 AlignToMultipleOf(System.UInt32 number, System.UInt32 alignment)
+
+Disassembly:
+	0x03765BE0 FCMP D0, D1
+	0x03765BE4 MOVZ X9, 0x80000000
+	0x03765BE8 CSEL X0, X9, X8, EQ
+	0x03765BEC RET
+	0x03765BF0 MOV X0, X31
+	0x03765BF4 RET
+	0x03765BF8 STP X31, X31, [X31 - 0x10]!
+
+ISIL:
+	001 NotImplemented "Instruction UDIV not yet implemented."
+	002 Add W9, W1, W0
+	003 NotImplemented "Instruction MSUB not yet implemented."
+	004 Subtract W9, W9, W8
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSEL not yet implemented."
+	007 Return X0
+
+Method: System.Boolean Approximately(System.Double a, System.Double b)
+
+Disassembly:
+	0x03765BFC MOVZ W8, 0xB
+	0x03765C00 STUR X0, [X31 + 0x4]
+	0x03765C04 STR W8, [X31]
+	0x03765C08 LDP X0, X1, [X31], #0x10
+	0x03765C0C RET
+	0x03765C10 LDR W8, [X0]
+	0x03765C14 SUB W8, W8, 0x3
+	0x03765C18 CMP W8, 0xB
+	0x03765C1C B.HI 0x3765C9C
+	0x03765C20 ADRP X9, 0xFFFFFFFFFD432000
+	0x03765C24 ADD X9, X9, 0x8D3
+	0x03765C28 ADR X10, 0x10
+	0x03765C2C LDRB W11, [X9, X8, LSL]
+	0x03765C30 ADD X10, X10, X11, 0x2, LSL
+	0x03765C34 BR X10
+	0x03765C38 LDRB W0, [X0 + 0x4]
+	0x03765C3C RET
+	0x03765C40 LDRH W0, [X0 + 0x4]
+	0x03765C44 RET
+	0x03765C48 LDUR X0, [X0 + 0x4]
+	0x03765C4C RET
+	0x00000000 INVALID
+	0x03765C54 RET
+	0x03765C58 LDRSH X0, [X0 + 0x4]
+	0x03765C5C RET
+	0x03765C60 LDRSW X0, [X0 + 0x4]
+	0x03765C64 RET
+	0x03765C68 LDR W0, [X0 + 0x4]
+	0x03765C6C RET
+	0x03765C70 LDR V0, [X0 + 0x4]
+	0x03765C74 FCVTZS X8, S0
+	0x03765C78 FCVTZU X9, S0
+	0x03765C7C FCMP S0, 0x0
+	0x03765C80 B 0x3765C94
+	0x03765C84 LDUR V0, [X0 + 0x4]
+	0x03765C88 FCVTZS X8, D0
+	0x03765C8C FCVTZU X9, D0
+	0x03765C90 FCMP D0, 0x0
+	0x03765C94 CSEL X0, X8, X9, MI
+
+ISIL:
+	001 Move [X31-48], D10
+	002 Move [X31+8], D9
+	003 Move [X31+16], D8
+	004 Move [X31+24], X30
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X19, 0xC7C000
+	008 Move X20, 0x98F000
+	009 Move W8, [X19+3694]
+	010 Move X20, [X20+1448]
+	011 Move V8, V1
+	012 Move V9, V0
+	013 Move TEMP, X8
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfEqual {22}
+	017 Move X0, 0x98F000
+	018 Move X0, [X0+1448]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X19+3694], W8
+	022 Move X0, [X20]
+	023 Move W8, [X0+224]
+	024 Compare W8, 0
+	025 JumpIfNotEqual {27}
+	026 Call 0x1C17DFC
+	027 NotImplemented "Instruction FABS not yet implemented."
+	028 NotImplemented "Instruction FABS not yet implemented."
+	029 Move X0, X31
+	030 NotImplemented "Instruction FABD not yet implemented."
+	031 Call Math.Max, V0, V1
+	032 Move X8, -46624768
+	033 Move V1, [X8+3016]
+	034 Move X8, 8
+	035 Move X0, X31
+	036 Multiply D0, D0, D1
+	037 Move D1, X8
+	038 Call Math.Max, V0, V1
+	039 Move X20, [X31+32]
+	040 Move X19, [X31+40]
+	041 Move X30, [X31+24]
+	042 Move D9, [X31+8]
+	043 Move D8, [X31+16]
+	044 NotImplemented "Instruction FCMP not yet implemented."
+	045 NotImplemented "Instruction CSET not yet implemented."
+	046 Move V10, [X31+48]
+	047 Return X0
+
+Method: System.Single IntToNormalizedFloat(System.Int32 value, System.Int32 minValue, System.Int32 maxValue)
+
+Disassembly:
+	0x03765C98 RET
+	0x03765C9C MOV X0, X31
+	0x03765CA0 RET
+	0x03765CA4 STP X31, X31, [X31 - 0x10]!
+	0x03765CA8 MOVZ W8, 0xC
+	0x03765CAC STUR X0, [X31 + 0x4]
+	0x03765CB0 STR W8, [X31]
+	0x03765CB4 LDP X0, X1, [X31], #0x10
+	0x03765CB8 RET
+	0x03765CBC LDR W8, [X0]
+	0x03765CC0 SUB W8, W8, 0x3
+	0x03765CC4 CMP W8, 0xB
+	0x03765CC8 B.HI 0x3765D5C
+	0x03765CCC ADRP X9, 0xFFFFFFFFFD432000
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 Move S0, W31
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move S0, 1
+	005 NotImplemented "Instruction SCVTF not yet implemented."
+	006 NotImplemented "Instruction SCVTF not yet implemented."
+	007 NotImplemented "Instruction SCVTF not yet implemented."
+	008 Subtract D0, D0, D1
+	009 Subtract D1, D2, D1
+	010 NotImplemented "Instruction FDIV not yet implemented."
+	011 NotImplemented "Instruction INVALID not yet implemented."
+	012 Return V0
+
+Method: System.Int32 NormalizedFloatToInt(System.Single value, System.Int32 intMinValue, System.Int32 intMaxValue)
+
+Disassembly:
+	0x03765CD0 ADD X9, X9, 0x8DF
+	0x03765CD4 ADR X10, 0x10
+	0x03765CD8 LDRB W11, [X9, X8, LSL]
+	0x03765CDC ADD X10, X10, X11, 0x2, LSL
+	0x03765CE0 BR X10
+	0x03765CE4 LDR V0, [X0 + 0x4]
+	0x03765CE8 B 0x3765D40
+	0x03765CEC LDRB W8, [X0 + 0x4]
+	0x03765CF0 FMOV D0, 1
+	0x03765CF4 FMOV D1, X31
+	0x03765CF8 CMP W8, 0x0
+	0x03765CFC FCSEL D0, D1, D0, EQ
+	0x03765D00 RET
+	0x00000000 INVALID
+	0x03765D08 B 0x3765D20
+	0x03765D0C LDR V0, [X0 + 0x4]
+	0x03765D10 B 0x3765D40
+	0x03765D14 LDRSH W8, [X0 + 0x4]
+	0x03765D18 B 0x3765D20
+	0x03765D1C LDR W8, [X0 + 0x4]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 Move S1, 1
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction SCVTF not yet implemented."
+	005 NotImplemented "Instruction SCVTF not yet implemented."
+	006 NotImplemented "Instruction FCVT not yet implemented."
+	007 Subtract D1, D1, D2
+	008 Move X8, 0x7FF00000
+	009 Multiply D0, D1, D0
+	010 Move D3, X8
+	011 Add D0, D0, D2
+	012 NotImplemented "Instruction FCVTZS not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 Move W9, 0x80000000
+	015 NotImplemented "Instruction CSEL not yet implemented."
+	016 Return X0
+	017 Move W0, W1
+	018 Return X0
+
+Method: System.Single UIntToNormalizedFloat(System.UInt32 value, System.UInt32 minValue, System.UInt32 maxValue)
+
+Disassembly:
+	0x03765D20 SCVTF D0, W8
+	0x03765D24 RET
+	0x03765D28 LDR V0, [X0 + 0x4]
+	0x03765D2C B 0x3765D40
+	0x03765D30 LDUR V0, [X0 + 0x4]
+	0x03765D34 SCVTF D0, D0
+	0x03765D38 RET
+	0x03765D3C LDUR V0, [X0 + 0x4]
+	0x03765D40 UCVTF D0, D0
+	0x03765D44 RET
+	0x03765D48 LDR V0, [X0 + 0x4]
+	0x03765D4C FCVT S0, S0
+	0x03765D50 RET
+	0x03765D54 LDUR V0, [X0 + 0x4]
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 Move S0, W31
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move S0, 1
+	005 NotImplemented "Instruction UCVTF not yet implemented."
+	006 NotImplemented "Instruction UCVTF not yet implemented."
+	007 NotImplemented "Instruction UCVTF not yet implemented."
+	008 Subtract D0, D0, D1
+	009 Subtract D1, D2, D1
+	010 NotImplemented "Instruction FDIV not yet implemented."
+	011 NotImplemented "Instruction INVALID not yet implemented."
+	012 Return V0
+
+Method: System.UInt32 NormalizedFloatToUInt(System.Single value, System.UInt32 uintMinValue, System.UInt32 uintMaxValue)
+
+Disassembly:
+	0x03765D58 RET
+	0x03765D5C FMOV D0, X31
+	0x03765D60 RET
+	0x03765D64 STP X31, X31, [X31 - 0x10]!
+	0x03765D68 MOVZ W8, 0xE
+	0x03765D6C STUR D0, [X31 + 0x4]
+	0x03765D70 STR W8, [X31]
+	0x03765D74 LDP X0, X1, [X31], #0x10
+	0x03765D78 RET
+	0x03765D7C SUB X31, X31, 0x20
+	0x03765D80 STP X2, X30, [X31 + 0x8]
+	0x03765D84 STR X1, [X31]
+	0x03765D88 LDR W8, [X0]
+	0x03765D8C CMP W8, W1
+	0x03765D90 B.NE 0x3765DB8
+	0x03765D94 ADD X8, X31, 0x0
+	0x03765D98 ADD X0, X0, 0x4
+	0x03765D9C ORR X1, X8, 0x7
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 Move S1, 1
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction UCVTF not yet implemented."
+	005 NotImplemented "Instruction UCVTF not yet implemented."
+	006 NotImplemented "Instruction FCVT not yet implemented."
+	007 Subtract D1, D1, D2
+	008 Multiply D0, D1, D0
+	009 Add D0, D0, D2
+	010 NotImplemented "Instruction FCVTZS not yet implemented."
+	011 NotImplemented "Instruction FCVTZU not yet implemented."
+	012 NotImplemented "Instruction FCMP not yet implemented."
+	013 NotImplemented "Instruction CSEL not yet implemented."
+	014 Return X0
+	015 Move W0, W1
+	016 Return X0
+
+Method: System.UInt32 RemapUIntBitsToNormalizeFloatToUIntBits(System.UInt32 value, System.UInt32 inBitSize, System.UInt32 outBitSize)
+
+Disassembly:
+	0x03765DA0 MOVZ W2, 0x8
+	0x03765DA4 MOV X3, X31
+	0x03765DA8 BL 0x3C001FC
+	0x03765DAC CMP W0, 0x0
+	0x03765DB0 CSET W0, EQ
+	0x03765DB4 B 0x3765DBC
+	0x03765DB8 MOV W0, W31
+	0x03765DBC LDR X30, [X31 + 0x10]
+	0x03765DC0 ADD X31, X31, 0x20
+	0x03765DC4 RET
+	0x03765DC8 STP X30, X21, [X31 - 0x20]!
+	0x03765DCC STP X20, X19, [X31 + 0x10]
+	0x03765DD0 ADRP X21, 0xC7B000
+	0x03765DD4 LDRB W8, [X21 + 0xE75]
+	0x03765DD8 MOV X20, X1
+	0x03765DDC MOV X19, X0
+	0x03765DE0 TBNZ X8, 0x0, 0x3765E88
+	0x03765DE4 ADRP X0, 0x98E000
+	0x03765DE8 LDR X0, [X0 + 0xB58]
+	0x03765DEC BL 0x1C16CF4
+	0x03765DF0 ADRP X0, 0x98F000
+	0x03765DF4 LDR X0, [X0 + 0x9D8]
+	0x03765DF8 BL 0x1C16CF4
+	0x03765DFC ADRP X0, 0x990000
+	0x03765E00 LDR X0, [X0 + 0x170]
+	0x03765E04 BL 0x1C16CF4
+	0x03765E08 ADRP X0, 0x991000
+
+ISIL:
+	001 Compare W0, 0
+	002 JumpIfEqual {25}
+	003 Move TEMP, 0
+	004 Not TEMP
+	005 Move X10, TEMP
+	006 NotImplemented "Instruction LSLV not yet implemented."
+	007 NotImplemented "Instruction ORN not yet implemented."
+	008 NotImplemented "Instruction LSLV not yet implemented."
+	009 Move W8, W0
+	010 NotImplemented "Instruction CMP not yet implemented."
+	011 NotImplemented "Instruction ORN not yet implemented."
+	012 NotImplemented "Instruction UCVTF not yet implemented."
+	013 NotImplemented "Instruction UCVTF not yet implemented."
+	014 NotImplemented "Instruction FDIV not yet implemented."
+	015 NotImplemented "Instruction INVALID not yet implemented."
+	016 NotImplemented "Instruction FCMP not yet implemented."
+	017 Move S1, 1
+	018 NotImplemented "Instruction FCMP not yet implemented."
+	019 NotImplemented "Instruction FCVT not yet implemented."
+	020 NotImplemented "Instruction UCVTF not yet implemented."
+	021 Multiply D0, D1, D0
+	022 Move D1, X31
+	023 Add D0, D0, D1
+	024 NotImplemented "Instruction FCVTZU not yet implemented."
+	025 Return X0
+	026 Move W0, W31
+	027 Return X0
+

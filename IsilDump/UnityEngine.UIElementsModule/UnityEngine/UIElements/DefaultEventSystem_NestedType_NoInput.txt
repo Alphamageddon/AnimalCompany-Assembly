@@ -1,0 +1,170 @@
+Type: UnityEngine.UIElements.DefaultEventSystem/NoInput
+
+Method: System.Boolean GetButtonDown(System.String button)
+
+Disassembly:
+	0x03D911D0 CMP X11, X1
+	0x03D911D4 B.EQ 0x3D911F4
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Single GetAxisRaw(System.String axis)
+
+Disassembly:
+	0x03D911D8 SUBS X9, X9, 0x1
+	0x03D911DC ADD X10, X10, 0x10
+
+ISIL:
+	001 Move S0, W31
+	002 Return V0
+
+Method: System.Int32 get_touchCount()
+
+Disassembly:
+	0x03D911E0 B.NE 0x3D911CC
+	0x03D911E4 MOV X0, X19
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: UnityEngine.Touch GetTouch(System.Int32 index)
+
+Disassembly:
+	0x03D911E8 MOV W2, W31
+	0x03D911EC BL 0x1C5C788
+	0x03D911F0 B 0x3D91200
+	0x03D911F4 LDRSW X9, [X10]
+	0x03D911F8 ADD X8, X8, X9, 0x4, LSL
+
+ISIL:
+	001 NotImplemented "Instruction MOVI not yet implemented."
+	002 Move [X8+64], W31
+	003 Move [X8+32], V0
+	004 Move [X8+40], V0
+	005 Move [X8], V0
+	006 Move [X8+8], V0
+	007 Return X0
+
+Method: System.Void ClearLastPenContactEvent()
+
+Disassembly:
+	0x03D911FC ADD X0, X8, 0x138
+
+ISIL:
+	001 Return 
+
+Method: UnityEngine.PenData GetLastPenContactEvent()
+
+Disassembly:
+	0x03D91200 LDP X8, X1, [X0]
+	0x03D91204 ADRP X22, 0x362000
+	0x03D91208 LDR X22, [X22 + 0xE00]
+	0x03D9120C MOV X0, X19
+
+ISIL:
+	001 NotImplemented "Instruction MOVI not yet implemented."
+	002 Move [X8+32], X31
+	003 Move [X8], V0
+	004 Move [X8+8], V0
+	005 Return X0
+
+Method: System.Boolean get_mousePresent()
+
+Disassembly:
+	0x03D91210 BLR X8
+	0x03D91214 MOV X19, X0
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Boolean GetMouseButtonDown(System.Int32 button)
+
+Disassembly:
+	0x03D91218 CBZ X0, 0x3D913B0
+	0x03D9121C ADRP X23, 0x362000
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Boolean GetMouseButtonUp(System.Int32 button)
+
+Disassembly:
+	0x03D91220 ADRP X24, 0x38C000
+	0x03D91224 LDR X23, [X23 + 0xE18]
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: UnityEngine.Vector3 get_mousePosition()
+
+Disassembly:
+	0x03D91228 LDR X24, [X24 + 0xF28]
+	0x03D9122C LDR X8, [X19]
+	0x03D91230 LDR X1, [X23]
+	0x03D91234 LDRH W9, [X8 + 0x12E]
+
+ISIL:
+	001 Move S0, W31
+	002 Move S1, W31
+	003 Move S2, W31
+	004 Return X0
+
+Method: System.Int32 get_mouseButtonCount()
+
+Disassembly:
+	0x03D91238 CBZ X9, 0x3D9125C
+	0x03D9123C LDR X10, [X8 + 0xB0]
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Boolean get_anyKey()
+
+Disassembly:
+	0x03D91240 ADD X10, X10, 0x8
+	0x03D91244 LDUR X11, [X10 - 0x8]
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Single get_unscaledTime()
+
+Disassembly:
+	0x03D91248 CMP X11, X1
+	0x03D9124C B.EQ 0x3D9126C
+
+ISIL:
+	001 Move S0, W31
+	002 Return V0
+
+Method: System.Single get_doubleClickTime()
+
+Disassembly:
+	0x03D91250 SUBS X9, X9, 0x1
+	0x03D91254 ADD X10, X10, 0x10
+	0x03D91258 B.NE 0x3D91244
+
+ISIL:
+	001 Move W8, 0x7F800000
+	002 Move S0, W8
+	003 Return V0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03D8E6F8 FMOV S5, W31
+	0x03D8E6FC MOVZ W6, 0x1
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

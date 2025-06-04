@@ -1,0 +1,137 @@
+Type: UnityEngine.UIElements.DropdownMenuAction
+
+Method: System.Void set_status(UnityEngine.UIElements.DropdownMenuAction/Status value)
+
+Disassembly:
+	0x03D9B8F4 MOV X0, X22
+	0x03D9B8F8 MOV X1, X31
+
+ISIL:
+	001 Move [X0+24], W1
+	002 Return 
+
+Method: System.Void set_eventInfo(UnityEngine.UIElements.DropdownMenuEventInfo value)
+
+Disassembly:
+	0x03D9B8FC BL 0x3C62C04
+	0x03D9B900 CMP W0, 0xC
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.Void set_userData(System.Object value)
+
+Disassembly:
+	0x03D9B904 MOV W26, W31
+	0x03D9B908 CSET W23, EQ
+
+ISIL:
+	001 Move [X0+40], X1
+	002 Return 
+
+Method: UnityEngine.UIElements.DropdownMenuAction/Status AlwaysEnabled(UnityEngine.UIElements.DropdownMenuAction a)
+
+Disassembly:
+	0x03D9B90C B 0x3D9B918
+	0x03D9B910 MOV W23, W31
+
+ISIL:
+	001 Move W0, 1
+	002 Return X0
+
+Method: UnityEngine.UIElements.DropdownMenuAction/Status AlwaysDisabled(UnityEngine.UIElements.DropdownMenuAction a)
+
+Disassembly:
+	0x03D9B914 MOVZ W26, 0x1
+	0x03D9B918 ADD X0, X31, 0x38
+
+ISIL:
+	001 Move W0, 2
+	002 Return X0
+
+Method: System.Void .ctor(System.String actionName, System.Action`1<UnityEngine.UIElements.DropdownMenuAction> actionCallback, System.Func`2<UnityEngine.UIElements.DropdownMenuAction, UnityEngine.UIElements.DropdownMenuAction/Status> actionStatusCallback, System.Object userData = null)
+
+Disassembly:
+	0x03D9B91C MOV X1, X20
+	0x03D9B920 BL 0x3D9B238
+	0x03D9B924 LDR X8, [X19]
+	0x03D9B928 LDP X9, X2, [X8 + 0x1A8]
+	0x03D9B92C MOV X0, X19
+	0x03D9B930 MOV X1, X21
+	0x03D9B934 BLR X9
+	0x03D9B938 LDRB W8, [X19 + 0x40]
+	0x03D9B93C MOVZ W9, 0x41
+	0x03D9B940 ANDS W31, W8, W9, 0x0
+	0x03D9B944 B.NE 0x3D9B95C
+	0x03D9B948 MOV X0, X20
+	0x03D9B94C MOV X1, X19
+	0x03D9B950 MOV X2, X21
+	0x03D9B954 MOV W3, W23
+	0x03D9B958 BL 0x3D9C118
+	0x03D9B95C LDR X0, [X19 + 0x38]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X22, X1
+	008 Move X1, X31
+	009 Move X19, X4
+	010 Move X20, X3
+	011 Move X21, X2
+	012 Move X23, X0
+	013 Call Object..ctor, X0
+	014 Move [X23+16], X22
+	015 Move [X23+48], X21
+	016 Move [X23+56], X20
+	017 Move [X23+40], X19
+	018 Move X20, [X31+32]
+	019 Move X19, [X31+40]
+	020 Move X22, [X31+16]
+	021 Move X21, [X31+24]
+	022 Move X30, [X31+48]
+	023 Move X23, [X31+56]
+	024 Return 
+
+Method: System.Void UpdateActionStatus(UnityEngine.UIElements.DropdownMenuEventInfo eventInfo)
+
+Disassembly:
+	0x03D9B960 CBZ X0, 0x3D9BA18
+	0x03D9B964 LDR X0, [X0 + 0x18]
+	0x03D9B968 CBZ X0, 0x3D9BC38
+	0x03D9B96C ADRP X8, 0x3CC000
+	0x03D9B970 LDR X8, [X8 + 0xDA8]
+	0x03D9B974 LDR X1, [X8]
+	0x03D9B978 ADD X8, X31, 0x8
+	0x03D9B97C BL 0x301CB58
+	0x03D9B980 ADRP X25, 0x3CC000
+	0x03D9B984 ADRP X27, 0x3CC000
+	0x03D9B988 LDUR V0, [X31 + 0x8]
+	0x03D9B98C LDR X8, [X31 + 0x18]
+	0x03D9B990 LDR X25, [X25 + 0xD98]
+	0x03D9B994 LDR X27, [X27 + 0xD90]
+	0x03D9B998 STR V0, [X31 + 0x2]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X8, [X0+56]
+	004 Move X19, X0
+	005 Move [X0+32], X1
+	006 Compare X8, 0
+	007 JumpIfEqual {13}
+	008 Move X9, [X8+24]
+	009 Move X0, [X8+64]
+	010 Move X2, [X8+40]
+	011 Move X1, X19
+	012 NotImplemented "Instruction BLR not yet implemented."
+	013 Move W0, 8
+	014 Move [X19+24], W0
+	015 Move X30, [X31+16]
+	016 Move X19, [X31+24]
+	017 Return 
+

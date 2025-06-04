@@ -1,0 +1,26 @@
+Type: UnityEngine.LowLevel.PlayerLoopSystem
+
+Method: System.String ToString()
+
+Disassembly:
+	0x03C48FB0 LDR W8, [X21 + 0x18]
+	0x03C48FB4 CMP W8, 0x0
+	0x03C48FB8 B.LE 0x3C48FD0
+	0x03C48FBC LDP X20, X19, [X31 + 0x30]
+	0x03C48FC0 LDP X22, X21, [X31 + 0x20]
+	0x03C48FC4 LDP X24, X23, [X31 + 0x10]
+	0x03C48FC8 LDR X30, [X31], #0x40
+	0x03C48FCC RET
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0]
+	003 Compare X0, 0
+	004 JumpIfEqual {10}
+	005 Move X8, [X0]
+	006 Move X2, [X8+424]
+	007 Move X1, [X8+432]
+	008 Move X30, [X31+16]
+	009 CallNoReturn X2
+	010 Call 0x1C17F20
+

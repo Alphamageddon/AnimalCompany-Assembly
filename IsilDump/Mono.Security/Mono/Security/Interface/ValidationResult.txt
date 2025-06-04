@@ -1,0 +1,70 @@
+Type: Mono.Security.Interface.ValidationResult
+
+Method: System.Void .ctor(System.Boolean trusted, System.Boolean user_denied, System.Int32 error_code, System.Nullable`1<Mono.Security.Interface.MonoSslPolicyErrors> policy_errors)
+
+Disassembly:
+	0x031FE3BC ADRP X20, 0xF23000
+	0x031FE3C0 LDRB W8, [X19 + 0x216]
+	0x031FE3C4 LDR X20, [X20 + 0x420]
+	0x031FE3C8 TBNZ X8, 0x0, 0x31FE3E0
+	0x031FE3CC ADRP X0, 0xF23000
+	0x031FE3D0 LDR X0, [X0 + 0x420]
+	0x031FE3D4 BL 0x1C16CF4
+	0x031FE3D8 MOVZ W8, 0x1
+	0x031FE3DC STRB W8, [X19 + 0x216]
+	0x031FE3E0 LDR X0, [X20]
+	0x031FE3E4 BL 0x1C16F10
+	0x031FE3E8 MOV X19, X0
+	0x031FE3EC BL 0x31FE400
+	0x031FE3F0 MOV X0, X19
+	0x031FE3F4 LDP X20, X19, [X31 + 0x10]
+	0x031FE3F8 LDR X30, [X31], #0x20
+	0x031FE3FC RET
+	0x031FE400 STR X30, [X31 - 0x30]!
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 And W22, W1, 1
+	008 Move X1, X31
+	009 Move X19, X4
+	010 Move W20, W3
+	011 Move X21, X0
+	012 And W23, W2, 1
+	013 Call Object..ctor, X0
+	014 Move [X21+16], W22
+	015 Move [X21+17], W23
+	016 Move [X21+20], W20
+	017 Move [X21+24], X19
+	018 Move X20, [X31+32]
+	019 Move X19, [X31+40]
+	020 Move X22, [X31+16]
+	021 Move X21, [X31+24]
+	022 Move X30, [X31+48]
+	023 Move X23, [X31+56]
+	024 Return 
+
+Method: System.Boolean get_Trusted()
+
+Disassembly:
+	0x031FE404 STP X22, X21, [X31 + 0x10]
+	0x031FE408 STP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Boolean get_UserDenied()
+
+Disassembly:
+	0x031FE40C ADRP X22, 0x11DE000
+	0x031FE410 ADRP X20, 0xF1E000
+
+ISIL:
+	001 Move W0, [X0+17]
+	002 Return X0
+

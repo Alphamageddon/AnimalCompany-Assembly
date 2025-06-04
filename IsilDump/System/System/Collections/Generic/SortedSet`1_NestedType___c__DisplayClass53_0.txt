@@ -1,0 +1,84 @@
+Type: System.Collections.Generic.SortedSet`1/<>c__DisplayClass53_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0237B888 LDR X0, [X0 + 0x10]
+	0x0237B88C CBZ X0, 0x237B8A4
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <System.Collections.ICollection.CopyTo>b__0(System.Collections.Generic.SortedSet`1/Node<T> node)
+
+Disassembly:
+	0x0237B890 LDR X8, [X2 + 0x20]
+	0x0237B894 LDR X8, [X8 + 0xC0]
+	0x0237B898 LDR X2, [X8 + 0x18]
+	0x0237B89C LDR X30, [X31], #0x10
+	0x0237B8A0 B 0x24E0940
+	0x0237B8A4 BL 0x1C16F20
+	0x0237B8A8 STP X30, X21, [X31 - 0x20]!
+	0x0237B8AC STP X20, X19, [X31 + 0x10]
+	0x0237B8B0 LDR X8, [X0 + 0x18]
+	0x0237B8B4 MOV X19, X2
+	0x0237B8B8 MOV X20, X0
+	0x0237B8BC CBZ X8, 0x237B8FC
+	0x0237B8C0 MOV X21, X1
+	0x0237B8C4 LDR X0, [X8 + 0x40]
+	0x0237B8C8 LDR X1, [X8 + 0x28]
+	0x0237B8CC LDR X9, [X8 + 0x18]
+	0x0237B8D0 BLR X9
+	0x0237B8D4 LDR X0, [X20 + 0x10]
+	0x0237B8D8 CBZ X0, 0x237B900
+	0x0237B8DC LDR X8, [X19 + 0x20]
+	0x0237B8E0 LDR X8, [X8 + 0xC0]
+	0x0237B8E4 LDR X2, [X8 + 0x20]
+	0x0237B8E8 MOV X1, X21
+	0x0237B8EC BL 0x24E07B0
+	0x0237B8F0 LDP X20, X19, [X31 + 0x10]
+	0x0237B8F4 LDP X30, X21, [X31], #0x20
+	0x0237B8F8 RET
+	0x0237B8FC BL 0x1C16F20
+	0x0237B900 BL 0x1C16F20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 NotImplemented "Instruction LDRSW not yet implemented."
+	006 Move X21, [X0+24]
+	007 Add W8, W20, 1
+	008 Move [X0+16], W8
+	009 Compare X1, 0
+	010 JumpIfEqual {32}
+	011 Compare X21, 0
+	012 JumpIfEqual {32}
+	013 Move X19, [X1+16]
+	014 Compare X19, 0
+	015 JumpIfEqual {22}
+	016 Move X8, [X21]
+	017 Move X0, X19
+	018 Move X1, [X8+64]
+	019 Call 0x1C17E00
+	020 Compare X0, 0
+	021 JumpIfEqual {34}
+	022 Move W8, [X21+24]
+	023 NotImplemented "Instruction CMP not yet implemented."
+	024 Add X8, X21, X20
+	025 Move [X8+32], X19
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move W0, 1
+	029 Move X30, [X31+32]
+	030 Move X21, [X31+40]
+	031 Return X0
+	032 Call 0x1C17F20
+	033 Call 0x1C17F28
+	034 Call 0x1C17F44
+	035 Move X1, X31
+	036 Call 0x1C17DEC
+

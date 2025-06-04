@@ -1,0 +1,22 @@
+Type: UnityEngine.InputSystem.LowLevel.InputStateHistory/RecordHeader
+
+Method: System.Byte* get_statePtrWithControlIndex()
+
+Disassembly:
+	0x0380F488 LDR X8, [X21]
+	0x0380F48C MOV X2, X0
+
+ISIL:
+	001 Add X0, X0, 16
+	002 Return X0
+
+Method: System.Byte* get_statePtrWithoutControlIndex()
+
+Disassembly:
+	0x0380F480 STR S0, [X31 + 0x8]
+	0x0380F484 BL 0x1C16E04
+
+ISIL:
+	001 Add X0, X0, 12
+	002 Return X0
+

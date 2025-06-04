@@ -1,0 +1,236 @@
+Type: ExitGames.Client.Photon.NonAllocDictionary`2/ValueIterator
+
+Method: System.Void .ctor(ExitGames.Client.Photon.NonAllocDictionary`2<K, V> dictionary)
+
+Disassembly:
+	0x0278C3D4 LDR X8, [X19 + 0x20]
+	0x0278C3D8 MOV X1, X20
+	0x0278C3DC MOV X19, X0
+
+ISIL:
+	001 Move [X0], W31
+	002 Move [X0+8], X1
+	003 Return 
+
+Method: ExitGames.Client.Photon.NonAllocDictionary`2/ValueIterator<K, V> GetEnumerator()
+
+Disassembly:
+	0x0278C3E0 LDR X8, [X8 + 0xC0]
+	0x0278C3E4 LDR X2, [X8 + 0x40]
+	0x0278C3E8 BL 0x25EC0F0
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X1, [X0+8]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x0278C3EC MOV X0, X19
+	0x0278C3F0 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0], W31
+	002 Return 
+
+Method: V get_Current()
+
+Disassembly:
+	0x0278C3F4 LDR X30, [X31], #0x20
+	0x0278C3F8 RET
+	0x0278C3FC STR X30, [X31 - 0x20]!
+	0x0278C400 STP X20, X19, [X31 + 0x10]
+	0x0278C404 LDR X9, [X1 + 0x20]
+	0x0278C408 MOV X8, X0
+	0x0278C40C LDR X20, [X8 + 0x10]
+	0x0278C410 MOV X19, X1
+	0x0278C414 LDR X9, [X9 + 0xC0]
+	0x0278C418 LDR X0, [X9 + 0x38]
+	0x0278C41C LDRB W9, [X0 + 0x135]
+	0x0278C420 TBNZ X9, 0x0, 0x278C428
+	0x0278C424 BL 0x1C5C684
+	0x0278C428 BL 0x1C16F10
+	0x0278C42C LDR X8, [X19 + 0x20]
+	0x0278C430 MOV X1, X20
+	0x0278C434 MOV X19, X0
+	0x0278C438 LDR X8, [X8 + 0xC0]
+	0x0278C43C LDR X2, [X8 + 0x40]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 NotImplemented "Instruction LDRSW not yet implemented."
+	003 Compare W8, 0
+	004 JumpIfEqual {16}
+	005 Move X9, [X0+8]
+	006 Compare X9, 0
+	007 JumpIfEqual {19}
+	008 Move X9, [X9+40]
+	009 Compare X9, 0
+	010 JumpIfEqual {19}
+	011 Move W10, [X9+24]
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 Move W10, 24
+	014 NotImplemented "Instruction MADD not yet implemented."
+	015 Move X0, [X8+48]
+	016 Move X0, X31
+	017 Move X30, [X31+16]
+	018 Return X0
+	019 Call 0x1C17F20
+	020 Call 0x1C17F28
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x0278C440 BL 0x25EC0F0
+	0x0278C444 MOV X0, X19
+	0x0278C448 LDP X20, X19, [X31 + 0x10]
+	0x0278C44C LDR X30, [X31], #0x20
+	0x0278C450 RET
+	0x0278C454 STR X30, [X31 - 0x10]!
+	0x0278C458 LDR X8, [X0 + 0x10]
+	0x0278C45C CBZ X8, 0x278C480
+	0x0278C460 LDR X9, [X2 + 0x20]
+	0x0278C464 LDR X0, [X8 + 0x18]
+	0x0278C468 LDR W3, [X8 + 0x20]
+	0x0278C46C MOV W2, W31
+	0x0278C470 LDR X9, [X9 + 0xC0]
+	0x0278C474 LDR X4, [X9 + 0x50]
+	0x0278C478 LDR X30, [X31], #0x10
+	0x0278C47C B 0x22EEBA4
+	0x0278C480 BL 0x1C16F20
+	0x0278C484 STR X30, [X31 - 0x20]!
+	0x0278C488 STP X20, X19, [X31 + 0x10]
+	0x0278C48C ADRP X0, 0x1967000
+	0x0278C490 LDR X0, [X0 + 0xB40]
+	0x0278C494 MOV X19, X2
+	0x0278C498 BL 0x1C16D08
+	0x0278C49C BL 0x1C16F10
+	0x0278C4A0 MOV X20, X0
+	0x0278C4A4 ADRP X0, 0x1991000
+	0x0278C4A8 LDR X0, [X0 + 0xE38]
+	0x0278C4AC BL 0x1C16D08
+	0x0278C4B0 MOV X1, X0
+	0x0278C4B4 MOV X0, X20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 NotImplemented "Instruction LDRSW not yet implemented."
+	005 Compare W8, 0
+	006 JumpIfEqual {23}
+	007 Move X9, [X0+8]
+	008 Compare X9, 0
+	009 JumpIfEqual {22}
+	010 Move X9, [X9+40]
+	011 Compare X9, 0
+	012 JumpIfEqual {22}
+	013 Move W10, [X9+24]
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 Move W10, 24
+	016 NotImplemented "Instruction MADD not yet implemented."
+	017 Move X0, [X8+48]
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Return X0
+	022 Call 0x1C17F20
+	023 Move X0, 0x1968000
+	024 Move X0, [X0+1456]
+	025 Move X19, X1
+	026 Call 0x1C17D08
+	027 Call 0x1C17F10
+	028 Move X1, X31
+	029 Move X20, X0
+	030 Call InvalidOperationException..ctor, X0
+	031 Move X0, X20
+	032 Move X1, X19
+	033 Call 0x1C17DEC
+	034 Call 0x1C17F28
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x0278C4B8 MOV X2, X31
+	0x0278C4BC BL 0x3379A44
+	0x0278C4C0 MOV X0, X20
+	0x0278C4C4 MOV X1, X19
+	0x0278C4C8 BL 0x1C16DEC
+	0x0278C4CC STR X30, [X31 - 0x20]!
+	0x0278C4D0 STP X20, X19, [X31 + 0x10]
+	0x0278C4D4 ADRP X0, 0x1967000
+	0x0278C4D8 LDR X0, [X0 + 0xB40]
+	0x0278C4DC MOV X19, X2
+	0x0278C4E0 BL 0x1C16D08
+	0x0278C4E4 BL 0x1C16F10
+	0x0278C4E8 MOV X20, X0
+	0x0278C4EC ADRP X0, 0x1991000
+	0x0278C4F0 LDR X0, [X0 + 0xE38]
+	0x0278C4F4 BL 0x1C16D08
+	0x0278C4F8 MOV X1, X0
+	0x0278C4FC MOV X0, X20
+	0x0278C500 MOV X2, X31
+	0x0278C504 BL 0x3379A44
+	0x0278C508 MOV X0, X20
+	0x0278C50C MOV X1, X19
+	0x0278C510 BL 0x1C16DEC
+	0x0278C514 STR X30, [X31 - 0x20]!
+	0x0278C518 STP X20, X19, [X31 + 0x10]
+	0x0278C51C MOV X19, X1
+	0x0278C520 MOV X1, X31
+	0x0278C524 MOV X20, X0
+	0x0278C528 BL 0x33BDD8C
+	0x0278C52C STR X19, [X20 + 0x10]
+	0x0278C530 LDP X20, X19, [X31 + 0x10]
+	0x0278C534 LDR X30, [X31], #0x20
+	0x0278C538 RET
+	0x0278C53C STR X30, [X31 - 0x10]!
+	0x0278C540 LDR X8, [X0 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+8]
+	003 Move W10, [X0]
+	004 Move W11, 24
+	005 Add W9, W10, 1
+	006 Compare X8, 0
+	007 JumpIfEqual {28}
+	008 Move W12, [X8+24]
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Move X13, [X8+40]
+	011 Compare X13, 0
+	012 JumpIfEqual {30}
+	013 Move W14, [X13+24]
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 NotImplemented "Instruction SMADDL not yet implemented."
+	016 Move W14, [X10+32]
+	017 Move W10, W9
+	018 Move W13, W9
+	019 Compare W14, 0
+	020 JumpIfEqual {5}
+	021 Move W13, W31
+	022 NotImplemented "Instruction CMP not yet implemented."
+	023 NotImplemented "Instruction CSET not yet implemented."
+	024 Move [X0], W13
+	025 Move W0, W8
+	026 Move X30, [X31+16]
+	027 Return X0
+	028 Move [X0], W9
+	029 Call 0x1C17F20
+	030 Add W8, W10, 1
+	031 Move [X0], W8
+	032 Call 0x1C17F20
+	033 Add W8, W10, 1
+	034 Move [X0], W8
+	035 Call 0x1C17F28
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x0278C544 CBZ X8, 0x278C554
+
+ISIL:
+	001 Return 
+

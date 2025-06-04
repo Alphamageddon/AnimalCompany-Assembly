@@ -1,0 +1,172 @@
+Type: System.Collections.Generic.InternalStringComparer
+
+Method: System.Int32 GetHashCode(System.String obj)
+
+Disassembly:
+	0x0335F074 BL 0x1C16F10
+	0x0335F078 MOV X19, X0
+	0x0335F07C ADRP X0, 0xDCB000
+	0x0335F080 LDR X0, [X0 + 0x8F0]
+	0x0335F084 BL 0x1C16D08
+	0x0335F088 MOV X20, X0
+	0x0335F08C ADRP X0, 0xDCB000
+	0x0335F090 LDR X0, [X0 + 0x8F8]
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {9}
+	003 Move X8, [X1]
+	004 Move X0, X1
+	005 Move X2, [X8+344]
+	006 Move X8, [X8+352]
+	007 Move X1, X8
+	008 CallNoReturn X2
+	009 Move W0, W31
+	010 Return X0
+
+Method: System.Boolean Equals(System.String x, System.String y)
+
+Disassembly:
+	0x0335F094 BL 0x1C16D08
+	0x0335F098 MOV X2, X0
+	0x0335F09C MOV X0, X19
+	0x0335F0A0 MOV X1, X20
+	0x0335F0A4 MOV X3, X31
+	0x0335F0A8 BL 0x3311888
+	0x0335F0AC ADRP X0, 0xDCB000
+	0x0335F0B0 LDR X0, [X0 + 0x920]
+	0x0335F0B4 BL 0x1C16D08
+	0x0335F0B8 MOV X1, X0
+	0x0335F0BC MOV X0, X19
+	0x0335F0C0 BL 0x1C16DEC
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {9}
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move X0, X1
+	005 Move X1, X2
+	006 Move X2, X31
+	007 Call String.Equals, X0, X1
+	008 Return X0
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 Return X0
+	012 Move W0, 1
+	013 Return X0
+
+Method: System.Int32 IndexOf(System.String[] array, System.String value, System.Int32 startIndex, System.Int32 count)
+
+Disassembly:
+	0x0335F0C4 STR X30, [X31 - 0x40]!
+	0x0335F0C8 STP X24, X23, [X31 + 0x10]
+	0x0335F0CC STP X22, X21, [X31 + 0x20]
+	0x0335F0D0 STP X20, X19, [X31 + 0x30]
+	0x0335F0D4 ADRP X23, 0x107D000
+	0x0335F0D8 ADRP X24, 0xD95000
+	0x0335F0DC LDRB W8, [X23 + 0xE2D]
+	0x0335F0E0 LDR X24, [X24 + 0x9F0]
+	0x0335F0E4 MOV W20, W3
+	0x0335F0E8 MOV W21, W2
+	0x0335F0EC MOV W22, W1
+	0x0335F0F0 MOV X19, X0
+	0x0335F0F4 TBNZ X8, 0x0, 0x335F10C
+	0x0335F0F8 ADRP X0, 0xD95000
+	0x0335F0FC LDR X0, [X0 + 0x9F0]
+	0x0335F100 BL 0x1C16CF4
+	0x0335F104 MOVZ W8, 0x1
+	0x0335F108 STRB W8, [X23 + 0xE2D]
+	0x0335F10C LDR X0, [X24]
+	0x0335F110 LDR W8, [X0 + 0xE0]
+	0x0335F114 CBNZ W8, 0x335F11C
+	0x0335F118 BL 0x1C16DFC
+	0x0335F11C MOV W0, W22
+	0x0335F120 MOV W1, W21
+	0x0335F124 MOV W2, W20
+	0x0335F128 BL 0x335F144
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Add W8, W4, W3
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 Add X8, X1, W3
+	009 Move W20, W4
+	010 Move W19, W3
+	011 Move X21, X2
+	012 Add X22, X8, 32
+	013 Move X0, [X22]
+	014 Move X1, X21
+	015 Move X2, X31
+	016 Call String.op_Equality, X0, X1
+	017 Move TEMP, X0
+	018 And TEMP, TEMP, 1
+	019 Compare TEMP, 1
+	020 JumpIfEqual {27}
+	021 Add W19, W19, 1
+	022 Subtract W20, W20, 1
+	023 Add X22, X22, 8
+	024 Move TEMP, 0
+	025 Not TEMP
+	026 Move W19, TEMP
+	027 Move W0, W19
+	028 Move X20, [X31+32]
+	029 Move X19, [X31+40]
+	030 Move X22, [X31+16]
+	031 Move X21, [X31+24]
+	032 Move X30, [X31+48]
+	033 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0335F12C STR X0, [X19]
+	0x0335F130 LDP X20, X19, [X31 + 0x30]
+	0x0335F134 LDP X22, X21, [X31 + 0x20]
+	0x0335F138 LDP X24, X23, [X31 + 0x10]
+	0x0335F13C LDR X30, [X31], #0x40
+	0x0335F140 RET
+	0x0335F144 STR X30, [X31 - 0x40]!
+	0x0335F148 STP X24, X23, [X31 + 0x10]
+	0x0335F14C STP X22, X21, [X31 + 0x20]
+	0x0335F150 STP X20, X19, [X31 + 0x30]
+	0x0335F154 ADRP X22, 0x107D000
+	0x0335F158 LDRB W8, [X22 + 0xE3F]
+	0x0335F15C MOV W19, W2
+	0x0335F160 MOV W20, W1
+	0x0335F164 MOV W21, W0
+	0x0335F168 TBNZ X8, 0x0, 0x335F180
+	0x0335F16C ADRP X0, 0xD95000
+	0x0335F170 LDR X0, [X0 + 0x9F0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x107E000
+	006 Move X21, 0xDCC000
+	007 Move W8, [X20+3618]
+	008 Move X21, [X21+2104]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xDCC000
+	015 Move X0, [X0+2104]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+3618], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X30, [X31+32]
+	024 Move X21, [X31+40]
+	025 Call EqualityComparer`1<Object>..ctor, X0
+	026 Return 
+

@@ -1,0 +1,39 @@
+Type: Fusion.NetworkString
+
+Method: System.Int32 GetCapacity()
+
+Disassembly:
+	0x0222D5F4 MOV X20, X0
+	0x0222D5F8 CBNZ X8, 0x222D618
+	0x0222D5FC ADRP X0, 0x1EC6000
+	0x0222D600 LDR X0, [X0 + 0x598]
+	0x0222D604 BL 0x1C16CF4
+	0x0222D608 LDR X8, [X19 + 0x38]
+	0x0222D60C CBNZ X8, 0x222D618
+	0x0222D610 MOV X0, X19
+	0x0222D614 BL 0x1C5C6E0
+	0x0222D618 ADRP X8, 0x1EC6000
+	0x0222D61C LDR X8, [X8 + 0x598]
+	0x0222D620 LDR X0, [X8]
+	0x0222D624 LDR W8, [X0 + 0xE0]
+	0x0222D628 CBNZ W8, 0x222D630
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X8, [X0+56]
+	004 Compare X8, 0
+	005 JumpIfNotEqual {9}
+	006 Move X19, X0
+	007 Call 0x1C5D6E0
+	008 Move X8, [X19+56]
+	009 Move X8, [X8]
+	010 Move W8, [X8+252]
+	011 Add W9, W8, 3
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 NotImplemented "Instruction CSEL not yet implemented."
+	014 NotImplemented "Instruction SBFM not yet implemented."
+	015 Move X30, [X31+16]
+	016 Move X19, [X31+24]
+	017 Return X0
+

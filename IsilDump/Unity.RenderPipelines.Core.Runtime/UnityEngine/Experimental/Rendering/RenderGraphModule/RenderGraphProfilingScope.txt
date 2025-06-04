@@ -1,0 +1,79 @@
+Type: UnityEngine.Experimental.Rendering.RenderGraphModule.RenderGraphProfilingScope
+
+Method: System.Void .ctor(UnityEngine.Experimental.Rendering.RenderGraphModule.RenderGraph renderGraph, UnityEngine.Rendering.ProfilingSampler sampler)
+
+Disassembly:
+	0x039977C4 BL 0x2BC4350
+	0x039977C8 TBZ X0, 0x0, 0x39977E4
+	0x039977CC LDR X0, [X31 + 0x18]
+	0x039977D0 CBZ X0, 0x3997800
+	0x039977D4 LDR X8, [X0]
+	0x039977D8 LDP X9, X1, [X8 + 0x178]
+	0x039977DC BLR X9
+	0x039977E0 B 0x39977BC
+	0x039977E4 LDR X1, [X19]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X0+8], X2
+	003 Move [X0+16], X1
+	004 Move [X0], W31
+	005 Compare X1, 0
+	006 JumpIfEqual {12}
+	007 Move X0, X1
+	008 Move X1, X2
+	009 Move X30, [X31+16]
+	010 Call RenderGraph.BeginProfilingSampler, X0, X1
+	011 Return 
+	012 Call 0x1C17F20
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x039977E8 ADD X0, X31, 0x8
+	0x039977EC BL 0x2BC434C
+
+ISIL:
+	001 Move W1, 1
+
+Method: System.Void Dispose(System.Boolean disposing)
+
+Disassembly:
+	0x039977F0 LDP X20, X19, [X31 + 0x30]
+	0x039977F4 LDR X30, [X31 + 0x20]
+	0x039977F8 ADD X31, X31, 0x40
+	0x039977FC RET
+	0x03997800 BL 0x1C16F20
+	0x03997804 BL 0x1C16F20
+	0x03997808 B 0x3997810
+	0x0399780C B 0x3997810
+	0x03997810 MOV X19, X0
+	0x03997814 CMP W1, 0x1
+	0x03997818 B.NE 0x399784C
+	0x0399781C MOV X0, X19
+	0x03997820 BL 0x3EB1AD0
+	0x03997824 LDR X20, [X0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0]
+	004 Compare W8, 0
+	005 JumpIfNotEqual {18}
+	006 Move X19, X0
+	007 Move TEMP, X1
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfNotEqual {16}
+	011 Move X0, [X19+16]
+	012 Compare X0, 0
+	013 JumpIfEqual {21}
+	014 Move X1, [X19+8]
+	015 Call RenderGraph.EndProfilingSampler, X0, X1
+	016 Move W8, 1
+	017 Move [X19], W8
+	018 Move X30, [X31+16]
+	019 Move X19, [X31+24]
+	020 Return 
+	021 Call 0x1C17F20
+

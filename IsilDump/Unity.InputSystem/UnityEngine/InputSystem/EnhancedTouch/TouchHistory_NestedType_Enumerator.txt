@@ -1,0 +1,206 @@
+Type: UnityEngine.InputSystem.EnhancedTouch.TouchHistory/Enumerator
+
+Method: System.Void .ctor(UnityEngine.InputSystem.EnhancedTouch.TouchHistory owner)
+
+Disassembly:
+	0x037FB9AC LDR X8, [X26 + 0x78]
+	0x037FB9B0 CMP X8, X23
+	0x037FB9B4 B.NE 0x37FBA1C
+	0x037FB9B8 MOV X0, X26
+	0x037FB9BC MOV X1, X19
+	0x037FB9C0 MOV X2, X22
+	0x037FB9C4 MOV X3, X31
+	0x037FB9C8 BL 0x3774680
+	0x037FB9CC CBZ X0, 0x37FBA00
+	0x037FB9D0 LDR X2, [X28]
+	0x037FB9D4 MOV X1, X0
+	0x037FB9D8 MOV X0, X26
+	0x037FB9DC BL 0x2E05C88
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move V1, [X19]
+	009 Move V0, [X19+16]
+	010 Move TEMP, 0
+	011 Not TEMP
+	012 Move W8, TEMP
+	013 Move [X20+48], W8
+	014 Move [X20+16], V1
+	015 Move [X20+24], V0
+	016 Move X20, [X31+16]
+	017 Move X19, [X31+24]
+	018 Move X30, [X31+32]
+	019 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x037FBBB8 CMP X8, X1
+	0x037FBBBC B.NE 0x37FBC38
+	0x037FBBC0 LDR W8, [X28 + 0x18]
+	0x037FBBC4 CMP W24, W8
+	0x037FBBC8 B.CS 0x37FBC40
+	0x037FBBCC ADD X8, X28, W24, 0x3, UXTW
+	0x037FBBD0 STR X23, [X8 + 0x20]
+	0x037FBBD4 MOVZ W3, 0x1
+	0x037FBBD8 MOV X0, X20
+	0x037FBBDC MOV W1, W24
+
+ISIL:
+	001 Move W9, [X0+32]
+	002 Move W8, [X0+48]
+	003 Subtract W9, W9, 1
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Add W10, W8, 1
+	006 Move [X0+48], W10
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Return X0
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x037FBBE0 MOV W2, W21
+	0x037FBBE4 MOV X4, X19
+	0x037FBBE8 BL 0x37FB3A4
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move [X0+48], W8
+	005 Return 
+
+Method: UnityEngine.InputSystem.EnhancedTouch.Touch get_Current()
+
+Disassembly:
+	0x037FBBEC B 0x37FBA88
+	0x037FBBF0 ADD X0, X31, 0xA0
+	0x037FBBF4 MOV X1, X31
+	0x037FBBF8 BL 0x3776130
+	0x037FBBFC ADD X0, X31, 0x118
+	0x037FBC00 MOVZ W1, 0x1
+	0x037FBC04 BL 0x37FBCE0
+	0x037FBC08 LDP X20, X19, [X31 + 0x170]
+	0x037FBC0C LDP X22, X21, [X31 + 0x160]
+	0x037FBC10 LDP X24, X23, [X31 + 0x150]
+	0x037FBC14 LDP X26, X25, [X31 + 0x140]
+	0x037FBC18 LDP X28, X27, [X31 + 0x130]
+	0x037FBC1C LDP X29, X30, [X31 + 0x120]
+	0x037FBC20 ADD X31, X31, 0x180
+	0x037FBC24 RET
+	0x037FBC28 BL 0x1C16F28
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move [X31+72], X19
+	004 Move V1, [X0+16]
+	005 Move V0, [X0+32]
+	006 Move X19, X8
+	007 Add X8, X31, 8
+	008 Move [X31+32], V1
+	009 Move [X31+40], V0
+	010 Move W1, [X0+48]
+	011 Add X0, X31, 32
+	012 Call TouchHistory.get_Item, X0, X1
+	013 Move X8, [X31+24]
+	014 NotImplemented "Instruction LDUR not yet implemented."
+	015 Move [X19+16], X8
+	016 Move [X19], V0
+	017 Move X30, [X31+64]
+	018 Move X19, [X31+72]
+	019 Add X31, X31, 80
+	020 Return X0
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x037FBC2C BL 0x1C16F20
+	0x037FBC30 MOV X0, X23
+	0x037FBC34 BL 0x1C171E0
+	0x037FBC38 MOV X0, X23
+	0x037FBC3C BL 0x1C171E0
+	0x037FBC40 BL 0x1C16F28
+	0x037FBC44 BL 0x1C16F44
+	0x037FBC48 MOV X1, X31
+	0x037FBC4C BL 0x1C16DEC
+	0x037FBC50 BL 0x1C16F20
+	0x037FBC54 B 0x37FBC7C
+	0x037FBC58 B 0x37FBC7C
+	0x037FBC5C B 0x37FBC7C
+	0x037FBC60 B 0x37FBC7C
+	0x037FBC64 B 0x37FBC7C
+	0x037FBC68 B 0x37FBC7C
+	0x037FBC6C B 0x37FBC7C
+	0x037FBC70 B 0x37FBC7C
+	0x037FBC74 B 0x37FBC7C
+	0x037FBC78 B 0x37FBC7C
+	0x037FBC7C MOV X19, X0
+	0x037FBC80 CMP W1, 0x1
+	0x037FBC84 B.NE 0x37FBCB0
+	0x037FBC88 MOV X0, X19
+	0x037FBC8C BL 0x3EB1AD0
+	0x037FBC90 LDR X20, [X0]
+	0x037FBC94 BL 0x3EB1AE0
+	0x037FBC98 ADD X0, X31, 0xA0
+	0x037FBC9C MOV X1, X31
+	0x037FBCA0 BL 0x3776130
+	0x037FBCA4 CBZ X20, 0x37FBBFC
+
+ISIL:
+	001 Subtract X31, X31, 96
+	002 Move [X31+64], X30
+	003 Move [X31+72], X21
+	004 Move [X31+80], X20
+	005 Move [X31+88], X19
+	006 Move X21, 0xBE7000
+	007 Move X20, 0x921000
+	008 Move W8, [X21+994]
+	009 Move X20, [X20+1576]
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0x921000
+	016 Move X0, [X0+1576]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X21+994], W8
+	020 Move V1, [X19+16]
+	021 Move V0, [X19+32]
+	022 Add X8, X31, 8
+	023 Add X0, X31, 32
+	024 Move [X31+32], V1
+	025 Move [X31+40], V0
+	026 Move W1, [X19+48]
+	027 Call TouchHistory.get_Item, X0, X1
+	028 NotImplemented "Instruction LDUR not yet implemented."
+	029 Move X8, [X31+24]
+	030 Move X0, [X20]
+	031 Add X1, X31, 32
+	032 Move [X31+2], V0
+	033 Move [X31+48], X8
+	034 Call 0x1C17E04
+	035 Move X20, [X31+80]
+	036 Move X19, [X31+88]
+	037 Move X30, [X31+64]
+	038 Move X21, [X31+72]
+	039 Add X31, X31, 96
+	040 Return X0
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x037FBCA8 MOV X0, X20
+
+ISIL:
+	001 Return 
+

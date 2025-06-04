@@ -1,0 +1,86 @@
+Type: Fusion.NetworkBehaviour/ChangeDetector/Enumerator
+
+Method: System.String get_Current()
+
+Disassembly:
+	0x01E77048 LDR X30, [X31], #0x20
+	0x01E7704C RET
+	0x01E77050 BL 0x1C16F20
+	0x01E77054 SUB X31, X31, 0x30
+	0x01E77058 STP X30, X21, [X31 + 0x10]
+	0x01E7705C STP X20, X19, [X31 + 0x20]
+	0x01E77060 ADRP X20, 0x2562000
+	0x01E77064 ADRP X21, 0x227F000
+	0x01E77068 LDRB W8, [X20 + 0x186]
+	0x01E7706C LDR X21, [X21 + 0xA78]
+	0x01E77070 MOV X19, X0
+	0x01E77074 TBNZ X8, 0x0, 0x1E770A4
+	0x01E77078 ADRP X0, 0x2286000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {12}
+	005 NotImplemented "Instruction LDRSW not yet implemented."
+	006 Move W10, [X8+24]
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 Add X8, X8, X9
+	009 Move X0, [X8+32]
+	010 Move X30, [X31+16]
+	011 Return X0
+	012 Call 0x1C17F20
+	013 Call 0x1C17F28
+
+Method: System.Void .ctor(System.String[] changed, System.Int32 count)
+
+Disassembly:
+	0x01E76FC4 LDR X0, [X0 + 0xF00]
+	0x01E76FC8 BL 0x1C16CF4
+	0x01E76FCC MOVZ W8, 0x1
+	0x01E76FD0 STRB W8, [X20 + 0x185]
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move [X0], X1
+	005 Move [X0+8], W2
+	006 Move [X0+12], W8
+	007 Return 
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x01E7707C LDR X0, [X0 + 0x708]
+	0x01E77080 BL 0x1C16CF4
+	0x01E77084 ADRP X0, 0x2286000
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move [X0+12], W8
+	005 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x01E77088 LDR X0, [X0 + 0x710]
+	0x01E7708C BL 0x1C16CF4
+	0x01E77090 ADRP X0, 0x227F000
+	0x01E77094 LDR X0, [X0 + 0xA78]
+	0x01E77098 BL 0x1C16CF4
+	0x01E7709C MOVZ W8, 0x1
+	0x01E770A0 STRB W8, [X20 + 0x186]
+
+ISIL:
+	001 Move W9, [X0+8]
+	002 Move W8, [X0+12]
+	003 Add W10, W8, 1
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 NotImplemented "Instruction CSET not yet implemented."
+	006 Move [X0+12], W10
+	007 Move W0, W8
+	008 Return X0
+

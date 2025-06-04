@@ -1,0 +1,271 @@
+Type: Fusion.BehaviourUtils
+
+Method: System.Boolean IsNull(Fusion.Behaviour obj)
+
+Disassembly:
+	0x01E87CA0 CMP X0, X2
+	0x01E87CA4 STR X9, [X31 + 0x28]
+	0x01E87CA8 STP X0, X1, [X31 + 0x8]
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 Return X0
+
+Method: System.Boolean IsNotNull(Fusion.Behaviour obj)
+
+Disassembly:
+	0x01E87CAC STP X2, X3, [X31 + 0x18]
+	0x01E87CB0 B.NE 0x1E87CC8
+	0x01E87CB4 LDR X9, [X31 + 0x10]
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 Return X0
+
+Method: System.Boolean IsAlive(Fusion.NetworkRunner obj)
+
+Disassembly:
+	0x01E87CB8 LDR X10, [X31 + 0x20]
+	0x01E87CBC CMP X9, X10
+	0x01E87CC0 CSET W0, EQ
+	0x01E87CC4 B 0x1E87CCC
+	0x01E87CC8 MOV W0, W31
+	0x01E87CCC LDR X8, [X8 + 0x28]
+	0x01E87CD0 LDR X9, [X31 + 0x28]
+	0x01E87CD4 CMP X8, X9
+	0x01E87CD8 B.NE 0x1E87CE8
+	0x01E87CDC LDR X30, [X31 + 0x30]
+	0x01E87CE0 ADD X31, X31, 0x40
+	0x01E87CE4 RET
+	0x01E87CE8 BL 0x3EB1B20
+	0x01E87CEC SUB X31, X31, 0x40
+	0x01E87CF0 STR X30, [X31 + 0x30]
+	0x01E87CF4 MRS X8, 0xC000
+	0x01E87CF8 LDR X9, [X8 + 0x28]
+	0x01E87CFC CMP X0, X2
+	0x01E87D00 STR X9, [X31 + 0x28]
+	0x01E87D04 STP X0, X1, [X31 + 0x8]
+	0x01E87D08 STP X2, X3, [X31 + 0x18]
+	0x01E87D0C B.NE 0x1E87D24
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x2553000
+	006 Move X21, 0x226D000
+	007 Move W8, [X20+525]
+	008 Move X21, [X21+1432]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x226D000
+	015 Move X0, [X0+1432]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+525], W8
+	019 Move X0, [X21]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move X0, X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X1, X31
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Call Object.op_Implicit, X0
+	031 Return X0
+
+Method: System.Boolean IsNotAlive(Fusion.NetworkRunner obj)
+
+Disassembly:
+	0x01E87D10 LDR X9, [X31 + 0x10]
+	0x01E87D14 LDR X10, [X31 + 0x20]
+	0x01E87D18 CMP X9, X10
+	0x01E87D1C CSET W0, NE
+	0x01E87D20 B 0x1E87D28
+	0x01E87D24 MOVZ W0, 0x1
+	0x01E87D28 LDR X8, [X8 + 0x28]
+	0x01E87D2C LDR X9, [X31 + 0x28]
+	0x01E87D30 CMP X8, X9
+	0x01E87D34 B.NE 0x1E87D44
+	0x01E87D38 LDR X30, [X31 + 0x30]
+	0x01E87D3C ADD X31, X31, 0x40
+	0x01E87D40 RET
+	0x01E87D44 BL 0x3EB1B20
+	0x01E87D48 SUB X31, X31, 0x10
+	0x01E87D4C STR X31, [X31 + 0x8]
+	0x01E87D50 LDR W8, [X0]
+	0x01E87D54 ADD W8, W8, 0x1
+	0x01E87D58 CMP W8, 0x7F
+	0x01E87D5C STR W8, [X0]
+	0x01E87D60 B.GT 0x1E87E24
+	0x01E87D64 ADD X9, X0, 0x8
+	0x01E87D68 MOVZ W10, 0x1
+	0x01E87D6C ADD X11, X31, 0x8
+	0x01E87D70 ADD W12, W8, 0x3F
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x2553000
+	006 Move X21, 0x226D000
+	007 Move W8, [X20+526]
+	008 Move X21, [X21+1432]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x226D000
+	015 Move X0, [X0+1432]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+526], W8
+	019 Move X0, [X21]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move X0, X19
+	025 Move X1, X31
+	026 Call Object.op_Implicit, X0
+	027 Move X20, [X31+16]
+	028 Move X19, [X31+24]
+	029 NotImplemented "Instruction ORN not yet implemented."
+	030 And W0, W8, 1
+	031 Move X30, [X31+32]
+	032 Move X21, [X31+40]
+	033 Return X0
+
+Method: System.Boolean IsAlive(Fusion.SimulationBehaviour obj)
+
+Disassembly:
+	0x01E87D74 CMP W8, 0x0
+	0x01E87D78 CSEL W12, W12, W8, LT
+	0x01E87D7C SBFM W13, W12, 0x6, 0x1F
+	0x01E87D80 LDR X14, [X9, W13, SXTW]
+	0x01E87D84 AND W12, W12, 0xFFFFFFC0
+
+ISIL:
+	001 Compare X0, 0
+	002 JumpIfEqual {6}
+	003 Move W8, [X0+48]
+	004 And W31, W8, 8
+	005 NotImplemented "Instruction CSET not yet implemented."
+	006 Return X0
+
+Method: System.Boolean IsNotAlive(Fusion.SimulationBehaviour obj)
+
+Disassembly:
+	0x01E87D88 SUB W15, W8, W12
+	0x01E87D8C LSLV X12, X10, X15
+	0x01E87D90 ANDS X12, X14, X12, 0x0
+	0x01E87D94 STR X14, [X31 + 0x8]
+	0x01E87D98 B.NE 0x1E87E18
+	0x01E87D9C CBZ X14, 0x1E87DF4
+
+ISIL:
+	001 Compare X0, 0
+	002 JumpIfEqual {8}
+	003 Move W8, [X0+48]
+	004 Move W0, W8
+	005 ShiftRight W0, 3
+	006 And W0, W0, 7
+	007 Return X0
+	008 Move W0, 1
+	009 Return X0
+
+Method: System.Boolean IsAlive(Fusion.NetworkObject obj)
+
+Disassembly:
+	0x01E87DA0 SXTB W16, W15
+	0x01E87DA4 UBFM W17, W16, 0xA, 0xE
+	0x01E87DA8 ADD W17, W15, W17
+	0x01E87DAC SBFM W17, W17, 0x5, 0x7
+	0x01E87DB0 LDR W17, [X11, W17, SXTW]
+
+ISIL:
+	001 Compare X0, 0
+	002 JumpIfEqual {6}
+	003 Move W8, [X0+96]
+	004 And W31, W8, 2
+	005 NotImplemented "Instruction CSET not yet implemented."
+	006 Return X0
+
+Method: System.Boolean IsNotAlive(Fusion.NetworkObject obj)
+
+Disassembly:
+	0x01E87DB4 CBZ W17, 0x1E87DFC
+	0x01E87DB8 UBFM W16, W16, 0xB, 0xE
+	0x01E87DBC ADD W15, W15, W16
+	0x01E87DC0 SBFM W15, W15, 0x4, 0x7
+	0x01E87DC4 LDRH W15, [X11, W15, SXTW]
+	0x01E87DC8 CBZ W15, 0x1E87E04
+
+ISIL:
+	001 Compare X0, 0
+	002 JumpIfEqual {8}
+	003 Move W8, [X0+96]
+	004 Move W0, W8
+	005 ShiftRight W0, 1
+	006 And W0, W0, 1
+	007 Return X0
+	008 Move W0, 1
+	009 Return X0
+
+Method: System.Boolean IsSame(Fusion.Behaviour a, Fusion.Behaviour b)
+
+Disassembly:
+	0x01E87DCC MOV W15, W8
+	0x01E87DD0 ADD W8, W8, 0x1
+	0x01E87DD4 ADD W16, W15, 0x40
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 Return X0
+
+Method: System.Boolean IsSameNotNull(Fusion.Behaviour a, Fusion.Behaviour b)
+
+Disassembly:
+	0x01E87DD8 CMP W8, 0x0
+	0x01E87DDC CSINC W15, W16, W15, LT
+	0x01E87DE0 CMP W13, W15, ASR
+	0x01E87DE4 B.NE 0x1E87E08
+	0x01E87DE8 LSRV X15, X14, X8
+	0x01E87DEC TBZ X15, 0x0, 0x1E87DCC
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 And W0, W8, W9
+	006 Return X0
+
+Method: Fusion.BehaviourUtils/NameDeferred GetName(Fusion.Behaviour obj)
+
+Disassembly:
+	0x01E7DFF4 FMUL S0, S0, S3
+
+ISIL:
+	001 Return X0
+
+Method: Fusion.BehaviourUtils/DeferredJoin Join(System.Collections.IEnumerable objects)
+
+Disassembly:
+	0x01E87DF0 B 0x1E87E30
+
+ISIL:
+	001 Return X0
+

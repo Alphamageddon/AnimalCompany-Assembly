@@ -1,0 +1,145 @@
+Type: SpatialSys.ObservableState.NoOpTypeIDManifest
+
+Method: System.Collections.Generic.IReadOnlyList`1<System.Type> get_registeredTypes()
+
+Disassembly:
+	0x035D3AA4 LDR X0, [X27]
+	0x035D3AA8 BL 0x1C16F10
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Int32 get_numRegisteredTypes()
+
+Disassembly:
+	0x035D3AAC LDR X1, [X28]
+	0x035D3AB0 MOV X19, X0
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x035C6548 MOV X23, X0
+	0x035C654C ADRP X0, 0xB56000
+	0x035C6550 LDR X0, [X0 + 0x5F8]
+	0x035C6554 BL 0x1C16D08
+	0x035C6558 MOV X20, X0
+	0x035C655C ADRP X0, 0xB71000
+	0x035C6560 LDR X0, [X0 + 0xF98]
+	0x035C6564 BL 0x1C16D08
+	0x035C6568 LDR X8, [X19]
+	0x035C656C MOV X22, X0
+	0x035C6570 LDRH W9, [X8 + 0x12E]
+	0x035C6574 CBZ X9, 0x35C6598
+	0x035C6578 LDR X10, [X8 + 0xB0]
+	0x035C657C ADD X10, X10, 0x8
+	0x035C6580 LDUR X11, [X10 - 0x8]
+	0x035C6584 CMP X11, X23
+	0x035C6588 B.EQ 0x35C65AC
+	0x035C658C SUBS X9, X9, 0x1
+	0x035C6590 ADD X10, X10, 0x10
+	0x035C6594 B.NE 0x35C6580
+	0x035C6598 MOVZ W2, 0x7
+	0x035C659C MOV X0, X19
+	0x035C65A0 MOV X1, X23
+	0x035C65A4 BL 0x1C5C788
+	0x035C65A8 B 0x35C65BC
+	0x035C65AC LDR W9, [X10]
+	0x035C65B0 ADD W9, W9, 0x7
+	0x035C65B4 ADD X8, X8, W9, 0x4, SXTW
+	0x035C65B8 ADD X0, X8, 0x138
+	0x035C65BC LDP X8, X6, [X0]
+	0x035C65C0 MOVZ W5, 0x83
+	0x035C65C4 MOV X0, X19
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X22, 0xE1B000
+	007 Move X21, 0xB38000
+	008 Move X20, 0xB38000
+	009 Move W8, [X22+539]
+	010 Move X21, [X21+2336]
+	011 Move X20, [X20+2344]
+	012 Move X19, X0
+	013 Move TEMP, X8
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfEqual {25}
+	017 Move X0, 0xB38000
+	018 Move X0, [X0+2344]
+	019 Call 0x1C17CF4
+	020 Move X0, 0xB38000
+	021 Move X0, [X0+2336]
+	022 Call 0x1C17CF4
+	023 Move W8, 1
+	024 Move [X22+539], W8
+	025 Move X0, X19
+	026 Move X1, X31
+	027 Call Object..ctor, X0
+	028 Move X0, [X21]
+	029 Call 0x1C17F10
+	030 Move X1, [X20]
+	031 Move X20, X0
+	032 Call List`1<Object>..ctor, X0
+	033 Move [X19+16], X20
+	034 Move X20, [X31+32]
+	035 Move X19, [X31+40]
+	036 Move X22, [X31+16]
+	037 Move X21, [X31+24]
+	038 Move X30, [X31+48]
+	039 Return 
+
+Method: System.Void RegisterType(System.Type type)
+
+Disassembly:
+	0x035D3AB4 BL 0x249B4FC
+
+ISIL:
+	001 Return 
+
+Method: System.Boolean TryGetIDForType(System.Type type, out System.Int32 id)
+
+Disassembly:
+	0x035D3AB8 LDR X8, [X22]
+	0x035D3ABC LDR X0, [X23]
+	0x035D3AC0 LDR X8, [X8 + 0xB8]
+	0x035D3AC4 LDR X21, [X8]
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move W0, W31
+	005 Move [X2], W8
+	006 Return X0
+
+Method: System.Int32 GetIDForType(System.Type type)
+
+Disassembly:
+	0x035D3AC8 BL 0x1C16F10
+	0x035D3ACC LDR X2, [X29]
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W0, TEMP
+	004 Return X0
+
+Method: System.Type GetTypeByID(System.Int32 typeID)
+
+Disassembly:
+	0x035D3AD0 MOV X1, X21
+	0x035D3AD4 MOV X3, X31
+
+ISIL:
+	001 Move X0, X31
+	002 Return X0
+

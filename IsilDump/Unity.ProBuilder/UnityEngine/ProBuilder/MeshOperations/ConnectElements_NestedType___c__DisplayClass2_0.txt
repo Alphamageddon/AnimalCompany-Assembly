@@ -1,0 +1,115 @@
+Type: UnityEngine.ProBuilder.MeshOperations.ConnectElements/<>c__DisplayClass2_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03962E6C LDR X8, [X8 + 0xC0]
+	0x03962E70 LDR X2, [X8 + 0x70]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Int32 <Connect>b__0(System.Int32 x)
+
+Disassembly:
+	0x03965B40 LDR X8, [X21 + 0x10]
+	0x03965B44 LDR X9, [X9 + 0xE10]
+	0x03965B48 ADD W10, W10, 0x1
+	0x03965B4C LDR X9, [X9]
+	0x03965B50 STR W10, [X21 + 0x1C]
+	0x03965B54 CBZ X8, 0x3965B9C
+	0x03965B58 LDRSW X10, [X21 + 0x18]
+	0x03965B5C LDR W11, [X8 + 0x18]
+	0x03965B60 CMP W10, W11
+	0x03965B64 B.CS 0x3965B7C
+	0x03965B68 ADD W9, W10, 0x1
+	0x03965B6C ADD X8, X8, X10, 0x3, LSL
+	0x03965B70 STR W9, [X21 + 0x18]
+	0x03965B74 STR X1, [X8 + 0x20]
+	0x03965B78 B 0x3965B90
+	0x03965B7C LDR X8, [X9 + 0x20]
+	0x03965B80 MOV X0, X21
+	0x03965B84 LDR X8, [X8 + 0xC0]
+	0x03965B88 LDR X2, [X8 + 0x70]
+	0x03965B8C BL 0x301BF90
+	0x03965B90 LDR X8, [X19 + 0x28]
+	0x03965B94 ADD W25, W25, 0x1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xA7D000
+	006 Move W8, [X21+2493]
+	007 Move W19, W1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x7E9000
+	014 Move X0, [X0+3200]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+2493], W8
+	018 Move X0, [X20+16]
+	019 Compare X0, 0
+	020 JumpIfEqual {31}
+	021 Move X8, 0x7E9000
+	022 Move X8, [X8+3200]
+	023 Move W1, W19
+	024 Move X20, [X31+16]
+	025 Move X19, [X31+24]
+	026 Move X2, [X8]
+	027 Move X30, [X31+32]
+	028 Move X21, [X31+40]
+	029 Call Dictionary`2<Int32, Int32>.get_Item, X0, X1
+	030 Return X0
+	031 Call 0x1C17F20
+
+Method: System.Int32 <Connect>b__3(System.Int32 x)
+
+Disassembly:
+	0x03965B98 CBNZ X8, 0x3965A84
+	0x03965B9C BL 0x1C16F20
+	0x03965BA0 MOV X0, X21
+	0x03965BA4 LDP X20, X19, [X31 + 0x50]
+	0x03965BA8 LDP X22, X21, [X31 + 0x40]
+	0x03965BAC LDP X24, X23, [X31 + 0x30]
+	0x03965BB0 LDP X26, X25, [X31 + 0x20]
+	0x03965BB4 LDP X28, X27, [X31 + 0x10]
+	0x03965BB8 LDP X29, X30, [X31], #0x60
+	0x03965BBC RET
+	0x03965BC0 BL 0x1C16F28
+	0x03965BC4 SUB X31, X31, 0x80
+	0x03965BC8 STP X29, X30, [X31 + 0x20]
+	0x03965BCC STP X28, X27, [X31 + 0x30]
+	0x03965BD0 STP X26, X25, [X31 + 0x40]
+	0x03965BD4 STP X24, X23, [X31 + 0x50]
+	0x03965BD8 STP X22, X21, [X31 + 0x60]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {19}
+	005 Move X8, [X8+48]
+	006 Compare X8, 0
+	007 JumpIfEqual {19}
+	008 Move W9, [X8+24]
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Add X8, X8, W1
+	011 Move X0, [X8+32]
+	012 Compare X0, 0
+	013 JumpIfEqual {19}
+	014 Move W1, W31
+	015 Move X2, X31
+	016 Move X30, [X31+16]
+	017 Call SharedVertex.get_Item, X0, X1
+	018 Return X0
+	019 Call 0x1C17F20
+	020 Call 0x1C17F28
+

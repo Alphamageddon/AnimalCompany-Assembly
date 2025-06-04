@@ -1,0 +1,45 @@
+Type: Fusion.UnitAttribute
+
+Method: Fusion.Units get_Unit()
+
+Disassembly:
+	0x01E341F4 MOV X2, X31
+	0x01E341F8 MOV X20, X0
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void .ctor(Fusion.Units units)
+
+Disassembly:
+	0x01E341FC BL 0x337DF1C
+	0x01E34200 ADRP X0, 0x22C7000
+	0x01E34204 LDR X0, [X0 + 0x5F0]
+	0x01E34208 BL 0x1C16D08
+	0x01E3420C MOV X1, X0
+	0x01E34210 MOV X0, X20
+	0x01E34214 BL 0x1C16DEC
+	0x01E34218 STR X30, [X31 - 0x30]!
+	0x01E3421C STP X22, X21, [X31 + 0x10]
+	0x01E34220 STP X20, X19, [X31 + 0x20]
+	0x01E34224 ADRP X21, 0x25A4000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call PropertyAttribute..ctor, X0
+	008 Move TEMP, 0x270F
+	009 Not TEMP
+	010 Move W8, TEMP
+	011 Move [X20+16], W8
+	012 Move [X20+20], W19
+	013 Move X20, [X31+16]
+	014 Move X19, [X31+24]
+	015 Move X30, [X31+32]
+	016 Return 
+

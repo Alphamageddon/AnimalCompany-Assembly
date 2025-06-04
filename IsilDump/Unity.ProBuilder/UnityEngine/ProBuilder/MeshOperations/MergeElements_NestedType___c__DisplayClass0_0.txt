@@ -1,0 +1,77 @@
+Type: UnityEngine.ProBuilder.MeshOperations.MergeElements/<>c__DisplayClass0_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03974054 MOV X1, X0
+	0x03974058 MOV X0, X19
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <MergePairs>b__0(UnityEngine.ProBuilder.Face x)
+
+Disassembly:
+	0x03974C4C BL 0x1C16F28
+	0x03974C50 ADRP X0, 0x77F000
+	0x03974C54 LDR X0, [X0 + 0xB40]
+	0x03974C58 BL 0x1C16D08
+	0x03974C5C BL 0x1C16F10
+	0x03974C60 MOV X19, X0
+	0x03974C64 ADRP X0, 0x7DC000
+	0x03974C68 LDR X0, [X0 + 0x48]
+	0x03974C6C BL 0x1C16D08
+	0x03974C70 MOV X1, X0
+	0x03974C74 MOV X0, X19
+	0x03974C78 MOV X2, X31
+	0x03974C7C BL 0x3379A44
+	0x03974C80 ADRP X0, 0x7DC000
+	0x03974C84 LDR X0, [X0 + 0x50]
+	0x03974C88 BL 0x1C16D08
+	0x03974C8C MOV X1, X0
+	0x03974C90 MOV X0, X19
+	0x03974C94 BL 0x1C16DEC
+	0x03974C98 SUB X31, X31, 0xB0
+	0x03974C9C STR D8, [X31 + 0x40]
+	0x03974CA0 STP X29, X30, [X31 + 0x50]
+	0x03974CA4 STP X28, X27, [X31 + 0x60]
+	0x03974CA8 STP X26, X25, [X31 + 0x70]
+	0x03974CAC STP X24, X23, [X31 + 0x80]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xA6E000
+	006 Move W8, [X21+2558]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x7DA000
+	014 Move X0, [X0+3624]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+2558], W8
+	018 Move X0, [X20+16]
+	019 Compare X0, 0
+	020 JumpIfEqual {33}
+	021 Move X8, 0x7DA000
+	022 Move X8, [X8+3624]
+	023 Move X1, X19
+	024 Move X2, [X8]
+	025 Call HashSet`1<Object>.Contains, X0, X1
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 NotImplemented "Instruction ORN not yet implemented."
+	029 And W0, W8, 1
+	030 Move X30, [X31+32]
+	031 Move X21, [X31+40]
+	032 Return X0
+	033 Call 0x1C17F20
+

@@ -1,0 +1,33 @@
+Type: SpatialSys.CommandLib.Command/<>c__DisplayClass49_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x035BE8FC MOV X20, X0
+	0x035BE900 TBNZ X8, 0x0, 0x35BE9A8
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <op_Implicit>b__0(System.Single elapsedTime)
+
+Disassembly:
+	0x035BEA3C LDR X8, [X8]
+	0x035BEA40 LDRB W11, [X9 + 0x130]
+	0x035BEA44 LDRB W10, [X8 + 0x130]
+	0x035BEA48 CMP W11, W10
+	0x035BEA4C B.CC 0x35BEA64
+	0x035BEA50 LDR X9, [X9 + 0xC8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+16]
+	003 Compare X0, 0
+	004 JumpIfEqual {8}
+	005 Move X30, [X31+16]
+	006 Call CommandHandle.get_hasFinalized, X0
+	007 Return X0
+	008 Call 0x1C17F20
+

@@ -1,0 +1,97 @@
+Type: Fusion.NetworkSceneAsyncOp/<>c__DisplayClass18_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01EBCD24 CMP W0, 0x0
+	0x01EBCD28 CSET W0, EQ
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <AddOnCompleted>b__0(UnityEngine.AsyncOperation _)
+
+Disassembly:
+	0x01EBD018 LDRB W8, [X20 + 0x43A]
+	0x01EBD01C LDR X21, [X21 + 0x5F8]
+	0x01EBD020 MOV X19, X1
+	0x01EBD024 TBNZ X8, 0x0, 0x1EBD03C
+	0x01EBD028 ADRP X0, 0x2236000
+	0x01EBD02C LDR X0, [X0 + 0x5F8]
+	0x01EBD030 BL 0x1C16CF4
+	0x01EBD034 MOVZ W8, 0x1
+	0x01EBD038 STRB W8, [X20 + 0x43A]
+	0x01EBD03C LDR X0, [X21]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {12}
+	005 Move X1, [X0+24]
+	006 Move X2, [X0+32]
+	007 Move X4, [X8+24]
+	008 Move X0, [X8+64]
+	009 Move X3, [X8+40]
+	010 Move X30, [X31+16]
+	011 CallNoReturn X4
+	012 Call 0x1C17F20
+
+Method: System.Void <AddOnCompleted>b__1(Fusion.IAsyncOperation _)
+
+Disassembly:
+	0x01EBD040 LDR W8, [X0 + 0xE0]
+	0x01EBD044 CBNZ W8, 0x1EBD04C
+	0x01EBD048 BL 0x1C16DFC
+	0x01EBD04C MOV X0, X31
+	0x01EBD050 BL 0x3C8A804
+	0x01EBD054 MOV X8, X0
+	0x01EBD058 STR W8, [X19]
+	0x01EBD05C LDP X20, X19, [X31 + 0x10]
+	0x01EBD060 MOVZ W0, 0x1
+	0x01EBD064 LDP X30, X21, [X31], #0x20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {12}
+	005 Move X1, [X0+24]
+	006 Move X2, [X0+32]
+	007 Move X4, [X8+24]
+	008 Move X0, [X8+64]
+	009 Move X3, [X8+40]
+	010 Move X30, [X31+16]
+	011 CallNoReturn X4
+	012 Call 0x1C17F20
+
+Method: System.Void <AddOnCompleted>b__2(System.Threading.Tasks.Task _)
+
+Disassembly:
+	0x01EBD068 RET
+	0x01EBD06C STP X30, X21, [X31 - 0x20]!
+	0x01EBD070 STP X20, X19, [X31 + 0x10]
+	0x01EBD074 ADRP X20, 0x251C000
+	0x01EBD078 ADRP X21, 0x2236000
+	0x01EBD07C LDRB W8, [X20 + 0x43B]
+	0x01EBD080 LDR X21, [X21 + 0x598]
+	0x01EBD084 MOV X19, X1
+	0x01EBD088 TBNZ X8, 0x0, 0x1EBD0A0
+	0x01EBD08C ADRP X0, 0x2236000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {12}
+	005 Move X1, [X0+24]
+	006 Move X2, [X0+32]
+	007 Move X4, [X8+24]
+	008 Move X0, [X8+64]
+	009 Move X3, [X8+40]
+	010 Move X30, [X31+16]
+	011 CallNoReturn X4
+	012 Call 0x1C17F20
+

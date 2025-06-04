@@ -1,0 +1,246 @@
+Type: SpatialSys.CommandLib.CoroutineCommand/<get__childCommands>d__5
+
+Method: System.Void .ctor(System.Int32 <>1__state)
+
+Disassembly:
+	0x035BEDE0 BL 0x3226EF8
+	0x035BEDE4 TBZ X0, 0x0, 0x35BEE08
+	0x035BEDE8 ADRP X8, 0xB79000
+	0x035BEDEC LDR X8, [X8 + 0xBB0]
+	0x035BEDF0 MOV X0, X19
+	0x035BEDF4 LDP X20, X19, [X31 + 0x10]
+	0x035BEDF8 MOV X2, X31
+	0x035BEDFC LDR X1, [X8]
+	0x035BEE00 LDR X30, [X31], #0x20
+	0x035BEE04 B 0x3226EF8
+	0x035BEE08 LDP X20, X19, [X31 + 0x10]
+	0x035BEE0C MOV W0, W31
+	0x035BEE10 LDR X30, [X31], #0x20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move X0, X31
+	009 Move [X20+16], W19
+	010 Call Environment.get_CurrentManagedThreadId
+	011 Move [X20+32], W0
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Return 
+
+Method: System.Void System.IDisposable.Dispose()
+
+Disassembly:
+	0x035BF384 LDR X8, [X8]
+
+ISIL:
+	001 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x035BF388 STR X8, [X20 + 0x20]
+	0x035BF38C BL 0x35BC7DC
+	0x035BF390 LDR W8, [X20 + 0x18]
+	0x035BF394 CMP W8, 0x1
+	0x035BF398 B.LS 0x35BF3FC
+	0x035BF39C CMP W8, 0x2
+	0x035BF3A0 STR X0, [X20 + 0x28]
+	0x035BF3A4 B.EQ 0x35BF3FC
+	0x035BF3A8 ADRP X9, 0xB78000
+	0x035BF3AC LDR X9, [X9 + 0xC28]
+	0x035BF3B0 CMP W8, 0x3
+	0x035BF3B4 LDR X9, [X9]
+	0x035BF3B8 STR X9, [X20 + 0x30]
+	0x035BF3BC B.LS 0x35BF3FC
+	0x035BF3C0 CMP W8, 0x4
+	0x035BF3C4 STR X21, [X20 + 0x38]
+	0x035BF3C8 B.EQ 0x35BF3FC
+	0x035BF3CC ADRP X8, 0xB5E000
+	0x035BF3D0 LDR X8, [X8 + 0x430]
+	0x035BF3D4 MOV X0, X20
+	0x035BF3D8 LDP X22, X21, [X31 + 0x30]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W9, [X0+16]
+	003 Move W8, W31
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Compare W9, 0
+	006 JumpIfNotEqual {22}
+	007 Move X8, [X0+40]
+	008 Move TEMP, 0
+	009 Not TEMP
+	010 Move W9, TEMP
+	011 Move [X0+16], W9
+	012 Compare X8, 0
+	013 JumpIfEqual {25}
+	014 Move X8, [X8+72]
+	015 Move W9, 1
+	016 Move [X0+24], X8
+	017 Move W8, 1
+	018 Move TEMP, 0
+	019 Not TEMP
+	020 Move W9, TEMP
+	021 Move [X0+16], W9
+	022 Move W0, W8
+	023 Move X30, [X31+16]
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: SpatialSys.CommandLib.Command System.Collections.Generic.IEnumerator<SpatialSys.CommandLib.Command>.get_Current()
+
+Disassembly:
+	0x035BF3DC LDP X24, X23, [X31 + 0x20]
+	0x035BF3E0 LDR X8, [X8]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void System.Collections.IEnumerator.Reset()
+
+Disassembly:
+	0x035BF3E4 LDP X26, X25, [X31 + 0x10]
+	0x035BF3E8 MOV X1, X31
+	0x035BF3EC STR X8, [X20 + 0x40]
+	0x035BF3F0 LDP X20, X19, [X31 + 0x40]
+	0x035BF3F4 LDR X30, [X31], #0x50
+	0x035BF3F8 B 0x32278CC
+	0x035BF3FC BL 0x1C16F28
+	0x035BF400 BL 0x1C16F20
+	0x035BF404 STR X30, [X31 - 0x20]!
+	0x035BF408 STP X20, X19, [X31 + 0x10]
+	0x035BF40C ADRP X19, 0xE21000
+	0x035BF410 ADRP X20, 0xB78000
+	0x035BF414 LDRB W8, [X19 + 0x159]
+	0x035BF418 LDR X20, [X20 + 0xC08]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0xB35000
+	004 Move X0, [X0+2880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotSupportedException..ctor, X0
+	010 Move X0, 0xB79000
+	011 Move X0, [X0+2928]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x035BF41C TBNZ X8, 0x0, 0x35BF434
+	0x035BF420 ADRP X0, 0xB78000
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Collections.Generic.IEnumerator`1<SpatialSys.CommandLib.Command> System.Collections.Generic.IEnumerable<SpatialSys.CommandLib.Command>.GetEnumerator()
+
+Disassembly:
+	0x035BF424 LDR X0, [X0 + 0xC08]
+	0x035BF428 BL 0x1C16CF4
+	0x035BF42C MOVZ W8, 0x1
+	0x035BF430 STRB W8, [X19 + 0x159]
+	0x035BF434 LDR X0, [X20]
+	0x035BF438 BL 0x1C16F10
+	0x035BF43C MOV X1, X31
+	0x035BF440 MOV X19, X0
+	0x035BF444 BL 0x33BDD8C
+	0x035BF448 LDR X8, [X20]
+	0x035BF44C LDR X8, [X8 + 0xB8]
+	0x035BF450 STR X19, [X8]
+	0x035BF454 LDP X20, X19, [X31 + 0x10]
+	0x035BF458 LDR X30, [X31], #0x20
+	0x035BF45C RET
+	0x035BF460 MOV X1, X31
+	0x035BF464 B 0x33BDD8C
+	0x035BF468 STR X30, [X31 - 0x10]!
+	0x035BF46C CBZ X1, 0x35BF488
+	0x035BF470 LDR X8, [X1]
+	0x035BF474 MOV X0, X1
+	0x035BF478 LDP X2, X8, [X8 + 0x168]
+	0x035BF47C MOV X1, X8
+	0x035BF480 LDR X30, [X31], #0x10
+	0x035BF484 BR X2
+	0x035BF488 BL 0x1C16F20
+	0x035BF48C LDR X0, [X0 + 0x48]
+	0x035BF490 RET
+	0x035BF494 STP X30, X19, [X31 - 0x10]!
+	0x035BF498 LDR X8, [X0 + 0x38]
+	0x035BF49C CBZ X8, 0x35BF4C4
+	0x035BF4A0 MOV X19, X0
+	0x035BF4A4 LDR X9, [X8 + 0x18]
+	0x035BF4A8 LDR X0, [X8 + 0x40]
+	0x035BF4AC LDR X1, [X8 + 0x28]
+	0x035BF4B0 BLR X9
+	0x035BF4B4 AND W8, W0, 0x1
+	0x035BF4B8 STRB W8, [X19 + 0x40]
+	0x035BF4BC LDP X30, X19, [X31], #0x10
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xE22000
+	005 Move W8, [X20+332]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0xB79000
+	012 Move X0, [X0+2904]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+332], W8
+	016 Move W8, [X19+16]
+	017 Add W31, W8, 2
+	018 Move W20, [X19+32]
+	019 Move X0, X31
+	020 Call Environment.get_CurrentManagedThreadId
+	021 NotImplemented "Instruction CMP not yet implemented."
+	022 Move [X19+16], W31
+	023 Move X8, 0xB79000
+	024 Move X8, [X8+2904]
+	025 Move X0, [X8]
+	026 Call 0x1C17F10
+	027 Move X1, X31
+	028 Move X20, X0
+	029 Call Object..ctor, X0
+	030 Move X0, X31
+	031 Move [X20+16], W31
+	032 Call Environment.get_CurrentManagedThreadId
+	033 Move [X20+32], W0
+	034 Move X8, [X19+40]
+	035 Move X19, X20
+	036 Move [X20+40], X8
+	037 Move X0, X19
+	038 Move X20, [X31+16]
+	039 Move X19, [X31+24]
+	040 Move X30, [X31+32]
+	041 Return X0
+
+Method: System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+Disassembly:
+	0x035BF4C0 RET
+
+ISIL:
+	001 Call <get__childCommands>d__5.System.Collections.Generic.IEnumerable<SpatialSys.CommandLib.Command>.GetEnumerator, X0
+	002 Return X0
+

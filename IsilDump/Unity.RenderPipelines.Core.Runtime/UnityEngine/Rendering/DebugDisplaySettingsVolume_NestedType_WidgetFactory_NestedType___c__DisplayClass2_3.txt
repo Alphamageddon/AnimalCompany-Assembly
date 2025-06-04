@@ -1,0 +1,124 @@
+Type: UnityEngine.Rendering.DebugDisplaySettingsVolume/WidgetFactory/<>c__DisplayClass2_3
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x039A3CDC MOV X19, X0
+	0x039A3CE0 TBNZ X8, 0x0, 0x39A3D10
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Object <CreateVolumeParameterWidget>b__7()
+
+Disassembly:
+	0x039A5D10 LDR X1, [X21]
+	0x039A5D14 BL 0x21C26F4
+	0x039A5D18 LDR V0, [X31 + 0x80]
+	0x00000000 INVALID
+	0x039A5D20 STR S0, [X19 + 0x44]
+	0x039A5D24 LDR X0, [X19 + 0x10]
+	0x039A5D28 CBZ X0, 0x39A5DEC
+	0x039A5D2C LDR W1, [X19 + 0x24]
+	0x039A5D30 MOV X2, X31
+	0x039A5D34 BL 0x39B145C
+	0x039A5D38 LDR X0, [X19 + 0x10]
+	0x039A5D3C LDR X8, [X20 + 0x10]
+	0x039A5D40 LDR V0, [X20]
+	0x039A5D44 STR X8, [X31 + 0x70]
+	0x039A5D48 STR V0, [X31 + 0x6]
+	0x039A5D4C CBZ X0, 0x39A5DEC
+	0x039A5D50 LDR V0, [X31 + 0x6]
+	0x039A5D54 LDR X8, [X31 + 0x70]
+	0x039A5D58 ADD X1, X31, 0x40
+	0x039A5D5C MOV X2, X31
+	0x039A5D60 STR V0, [X31 + 0x4]
+	0x039A5D64 STR X8, [X31 + 0x50]
+	0x039A5D68 BL 0x39B1030
+	0x039A5D6C LDR X0, [X19 + 0x10]
+	0x039A5D70 CBZ X0, 0x39A5DEC
+	0x039A5D74 MOV X1, X31
+	0x039A5D78 BL 0x39B1118
+	0x039A5D7C LDR X0, [X19 + 0x18]
+	0x039A5D80 CBZ X0, 0x39A5DEC
+	0x039A5D84 LDR W1, [X19 + 0x20]
+	0x039A5D88 MOV X2, X31
+	0x039A5D8C BL 0x39B0BFC
+	0x039A5D90 LDR X8, [X19 + 0x10]
+	0x039A5D94 CBZ X8, 0x39A5DEC
+	0x039A5D98 LDR X0, [X19 + 0x18]
+	0x039A5D9C LDR X9, [X8 + 0x28]
+	0x039A5DA0 LDUR V0, [X8 + 0x18]
+	0x039A5DA4 STR X9, [X31 + 0x30]
+	0x039A5DA8 STR V0, [X31 + 0x2]
+	0x039A5DAC CBZ X0, 0x39A5DEC
+	0x039A5DB0 LDR V0, [X31 + 0x2]
+	0x039A5DB4 LDR X8, [X31 + 0x30]
+	0x039A5DB8 ADD X1, X31, 0x0
+	0x039A5DBC MOV X2, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xA3D000
+	006 Move W8, [X20+2976]
+	007 Move X19, X0
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x7AD000
+	013 Move X0, [X0+1160]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+2976], W8
+	017 Move X8, [X19+24]
+	018 Compare X8, 0
+	019 JumpIfEqual {61}
+	020 Move X0, [X8+32]
+	021 Compare X0, 0
+	022 JumpIfEqual {61}
+	023 Move X1, [X8+24]
+	024 Move X21, 0x7AD000
+	025 Move X21, [X21+1160]
+	026 Move X2, X31
+	027 Call PropertyInfo.GetValue, X0, X1
+	028 Compare X0, 0
+	029 JumpIfEqual {48}
+	030 Move X8, [X0]
+	031 Move X1, X31
+	032 Move X20, X0
+	033 Move X9, [X8+312]
+	034 Move X2, [X8+320]
+	035 NotImplemented "Instruction BLR not yet implemented."
+	036 Move TEMP, X0
+	037 And TEMP, TEMP, 1
+	038 Compare TEMP, 1
+	039 JumpIfEqual {48}
+	040 Move X0, [X19+16]
+	041 Compare X0, 0
+	042 JumpIfEqual {61}
+	043 Move X1, X20
+	044 Move X2, X31
+	045 Call PropertyInfo.GetValue, X0, X1
+	046 Compare X0, 0
+	047 JumpIfNotEqual {56}
+	048 Move X0, [X21]
+	049 Move W8, [X0+224]
+	050 Compare W8, 0
+	051 JumpIfNotEqual {54}
+	052 Call 0x1C17DFC
+	053 Move X0, [X21]
+	054 Move X8, [X0+184]
+	055 Move X0, [X8]
+	056 Move X20, [X31+16]
+	057 Move X19, [X31+24]
+	058 Move X30, [X31+32]
+	059 Move X21, [X31+40]
+	060 Return X0
+	061 Call 0x1C17F20
+

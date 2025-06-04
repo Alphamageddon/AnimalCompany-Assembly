@@ -1,0 +1,170 @@
+Type: Fusion.Sockets.ReliableKey
+
+Method: System.Void GetInts(out System.Int32 key0, out System.Int32 key1, out System.Int32 key2, out System.Int32 key3)
+
+Disassembly:
+	0x01F03948 MOV X22, X0
+	0x01F0394C TBNZ X8, 0x0, 0x1F03970
+	0x01F03950 ADRP X0, 0x21FD000
+	0x01F03954 LDR X0, [X0 + 0xB30]
+	0x01F03958 BL 0x1C16CF4
+	0x01F0395C ADRP X0, 0x21FA000
+	0x01F03960 LDR X0, [X0 + 0x78]
+	0x01F03964 BL 0x1C16CF4
+	0x01F03968 MOVZ W8, 0x1
+	0x01F0396C STRB W8, [X24 + 0x665]
+	0x01F03970 STR W31, [X31 + 0x4]
+	0x01F03974 LDR X22, [X22 + 0x18]
+	0x01F03978 CBZ X22, 0x1F03A68
+	0x01F0397C ADRP X10, 0x21FD000
+	0x01F03980 LDR X8, [X22]
+	0x01F03984 LDR X10, [X10 + 0xB30]
+	0x01F03988 LDRH W9, [X8 + 0x12E]
+	0x01F0398C LDR X1, [X10]
+	0x01F03990 CBZ X9, 0x1F039B4
+	0x01F03994 LDR X10, [X8 + 0xB0]
+	0x01F03998 ADD X10, X10, 0x8
+	0x01F0399C LDUR X11, [X10 - 0x8]
+	0x01F039A0 CMP X11, X1
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 Move [X31+24], X9
+	006 Move V0, [X0]
+	007 Move [X31], V0
+	008 Move W9, [X31]
+	009 Move [X1], W9
+	010 Move W9, [X31+4]
+	011 Move [X2], W9
+	012 Move W9, [X31+8]
+	013 Move [X3], W9
+	014 Move W9, [X31+12]
+	015 Move [X4], W9
+	016 Move X8, [X8+40]
+	017 Move X9, [X31+24]
+	018 NotImplemented "Instruction CMP not yet implemented."
+	019 Move X30, [X31+32]
+	020 Add X31, X31, 48
+	021 Return 
+	022 Call 0x3EB2B20
+
+Method: System.Void GetUlongs(out System.UInt64 key0, out System.UInt64 key1)
+
+Disassembly:
+	0x01F039A4 B.EQ 0x1F039C4
+	0x01F039A8 SUBS X9, X9, 0x1
+	0x01F039AC ADD X10, X10, 0x10
+	0x01F039B0 B.NE 0x1F0399C
+	0x01F039B4 MOVZ W2, 0x2
+	0x01F039B8 MOV X0, X22
+	0x01F039BC BL 0x1C5C788
+	0x01F039C0 B 0x1F039D4
+	0x01F039C4 LDR W9, [X10]
+	0x01F039C8 ADD W9, W9, 0x2
+	0x01F039CC ADD X8, X8, W9, 0x4, SXTW
+	0x01F039D0 ADD X0, X8, 0x138
+	0x01F039D4 LDP X8, X4, [X0]
+	0x01F039D8 ADD X1, X31, 0x4
+	0x01F039DC MOV X0, X22
+	0x01F039E0 MOV X2, X21
+	0x01F039E4 MOV W3, W20
+	0x01F039E8 BLR X8
+	0x01F039EC MOV W20, W0
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 Move [X31+24], X9
+	006 Move V0, [X0]
+	007 Move [X31], V0
+	008 Move X9, [X31]
+	009 Move [X1], X9
+	010 Move X9, [X31+8]
+	011 Move [X2], X9
+	012 Move X8, [X8+40]
+	013 Move X9, [X31+24]
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 Move X30, [X31+32]
+	016 Add X31, X31, 48
+	017 Return 
+	018 Call 0x3EB2B20
+
+Method: Fusion.Sockets.ReliableKey FromInts(System.Int32 key0 = 0, System.Int32 key1 = 0, System.Int32 key2 = 0, System.Int32 key3 = 0)
+
+Disassembly:
+	0x01F039F0 CMP W0, 0x1
+	0x01F039F4 B.LT 0x1F03A3C
+	0x01F039F8 ADRP X8, 0x21FA000
+	0x01F039FC LDR X8, [X8 + 0x78]
+	0x01F03A00 LDR W21, [X31 + 0x4]
+	0x01F03A04 LDR X0, [X8]
+	0x01F03A08 LDR W8, [X0 + 0xE0]
+	0x01F03A0C CBNZ W8, 0x1F03A14
+	0x01F03A10 BL 0x1C16DFC
+	0x01F03A14 ADD X8, X31, 0x8
+	0x01F03A18 MOV W0, W21
+	0x01F03A1C MOV X1, X31
+	0x01F03A20 BL 0x1EF8890
+	0x01F03A24 LDR X8, [X31 + 0x18]
+	0x01F03A28 LDUR V0, [X31 + 0x8]
+	0x01F03A2C STR X8, [X31 + 0x30]
+	0x01F03A30 STR V0, [X31 + 0x2]
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 Move [X31+24], X9
+	006 Move [X31+8], X31
+	007 Move [X31+16], X31
+	008 Move [X31+8], W0
+	009 Move [X31+12], W1
+	010 Move [X31+16], W2
+	011 Move [X31+20], W3
+	012 Move X0, [X31+8]
+	013 Move X1, [X31+16]
+	014 Move X8, [X8+40]
+	015 Move X9, [X31+24]
+	016 NotImplemented "Instruction CMP not yet implemented."
+	017 Move X30, [X31+32]
+	018 Add X31, X31, 48
+	019 Return X0
+	020 Call 0x3EB2B20
+
+Method: Fusion.Sockets.ReliableKey FromULongs(System.UInt64 key0 = 0, System.UInt64 key1 = 0)
+
+Disassembly:
+	0x01F03A34 STR X8, [X19 + 0x10]
+	0x01F03A38 STR V0, [X19]
+	0x01F03A3C LDR X8, [X23 + 0x28]
+	0x01F03A40 LDR X9, [X31 + 0x38]
+	0x01F03A44 CMP X8, X9
+	0x01F03A48 B.NE 0x1F03A6C
+	0x01F03A4C MOV W0, W20
+	0x01F03A50 LDP X20, X19, [X31 + 0x70]
+	0x01F03A54 LDP X22, X21, [X31 + 0x60]
+	0x01F03A58 LDP X24, X23, [X31 + 0x50]
+	0x01F03A5C LDR X30, [X31 + 0x40]
+	0x01F03A60 ADD X31, X31, 0x80
+	0x01F03A64 RET
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 Move [X31+24], X9
+	006 Move X8, [X8+40]
+	007 Move X9, [X31+24]
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move X30, [X31+32]
+	010 Add X31, X31, 48
+	011 Return X0
+	012 Call 0x3EB2B20
+

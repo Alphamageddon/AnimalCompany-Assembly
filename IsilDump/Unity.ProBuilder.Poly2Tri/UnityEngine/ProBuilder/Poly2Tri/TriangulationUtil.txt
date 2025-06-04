@@ -1,0 +1,383 @@
+Type: UnityEngine.ProBuilder.Poly2Tri.TriangulationUtil
+
+Method: System.Boolean SmartIncircle(UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint pa, UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint pb, UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint pc, UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint pd)
+
+Disassembly:
+	0x038F50CC TBNZ X8, 0x0, 0x38F5114
+	0x038F50D0 ADRP X0, 0x858000
+	0x038F50D4 LDR X0, [X0 + 0x970]
+	0x038F50D8 BL 0x1C16CF4
+	0x038F50DC ADRP X0, 0x7FE000
+	0x038F50E0 LDR X0, [X0 + 0xE00]
+	0x038F50E4 BL 0x1C16CF4
+	0x038F50E8 ADRP X0, 0x858000
+	0x038F50EC LDR X0, [X0 + 0x980]
+	0x038F50F0 BL 0x1C16CF4
+	0x038F50F4 ADRP X0, 0x858000
+	0x038F50F8 LDR X0, [X0 + 0x988]
+	0x038F50FC BL 0x1C16CF4
+	0x038F5100 ADRP X0, 0x7FE000
+	0x038F5104 LDR X0, [X0 + 0xE18]
+	0x038F5108 BL 0x1C16CF4
+	0x038F510C MOVZ W8, 0x1
+	0x038F5110 STRB W8, [X21 + 0x73F]
+	0x038F5114 CBZ X19, 0x38F5344
+	0x038F5118 ADRP X10, 0x858000
+	0x038F511C LDR X8, [X19]
+	0x038F5120 LDR X10, [X10 + 0x980]
+	0x038F5124 LDRH W9, [X8 + 0x12E]
+	0x038F5128 LDR X1, [X10]
+	0x038F512C CBZ X9, 0x38F5150
+	0x038F5130 LDR X10, [X8 + 0xB0]
+	0x038F5134 ADD X10, X10, 0x8
+	0x038F5138 LDUR X11, [X10 - 0x8]
+	0x038F513C CMP X11, X1
+	0x038F5140 B.EQ 0x38F5160
+	0x038F5144 SUBS X9, X9, 0x1
+	0x038F5148 ADD X10, X10, 0x10
+	0x038F514C B.NE 0x38F5138
+	0x038F5150 MOV X0, X19
+	0x038F5154 MOV W2, W31
+	0x038F5158 BL 0x1C5C788
+	0x038F515C B 0x38F516C
+	0x038F5160 LDRSW X9, [X10]
+	0x038F5164 ADD X8, X8, X9, 0x4, LSL
+	0x038F5168 ADD X0, X8, 0x138
+	0x038F516C LDP X8, X1, [X0]
+	0x038F5170 ADRP X23, 0x7FE000
+	0x038F5174 LDR X23, [X23 + 0xE00]
+	0x038F5178 MOV X0, X19
+	0x038F517C BLR X8
+	0x038F5180 MOV X19, X0
+	0x038F5184 CBZ X0, 0x38F5348
+	0x038F5188 ADRP X24, 0x7FE000
+	0x038F518C ADRP X25, 0x858000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X3, 0
+	003 JumpIfEqual {54}
+	004 Compare X0, 0
+	005 JumpIfEqual {54}
+	006 Compare X1, 0
+	007 JumpIfEqual {54}
+	008 Move D4, [X3+24]
+	009 Move D6, [X3+32]
+	010 Move D0, [X0+24]
+	011 Move D1, [X0+32]
+	012 Move D3, [X1+24]
+	013 Move D7, [X1+32]
+	014 Subtract D2, D0, D4
+	015 Subtract D1, D1, D6
+	016 Subtract D5, D3, D4
+	017 Subtract D3, D7, D6
+	018 Multiply D0, D1, D5
+	019 Multiply D7, D2, D3
+	020 Subtract D0, D7, D0
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 Compare X2, 0
+	023 JumpIfEqual {54}
+	024 Move D7, [X2+24]
+	025 Move D16, [X2+32]
+	026 Subtract D7, D7, D4
+	027 Subtract D6, D16, D6
+	028 Multiply D4, D2, D6
+	029 Multiply D16, D1, D7
+	030 Subtract D4, D16, D4
+	031 NotImplemented "Instruction FCMP not yet implemented."
+	032 Multiply D16, D5, D6
+	033 Multiply D17, D3, D7
+	034 Multiply D5, D5, D5
+	035 Multiply D3, D3, D3
+	036 Multiply D2, D2, D2
+	037 Multiply D1, D1, D1
+	038 Multiply D7, D7, D7
+	039 Multiply D6, D6, D6
+	040 Add D3, D5, D3
+	041 Add D1, D2, D1
+	042 Subtract D2, D16, D17
+	043 Add D5, D7, D6
+	044 Multiply D1, D1, D2
+	045 Multiply D2, D3, D4
+	046 Add D1, D1, D2
+	047 Multiply D0, D0, D5
+	048 Add D0, D0, D1
+	049 NotImplemented "Instruction FCMP not yet implemented."
+	050 NotImplemented "Instruction CSET not yet implemented."
+	051 Move W0, W31
+	052 Move X30, [X31+16]
+	053 Return X0
+	054 Call 0x1C17F20
+
+Method: System.Boolean InScanArea(UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint pa, UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint pb, UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint pc, UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint pd)
+
+Disassembly:
+	0x038F47F4 BL 0x2BC434C
+	0x038F47F8 LDR V0, [X19 + 0x40]
+	0x038F47FC LDR X0, [X23]
+	0x038F4800 FSUB D1, D9, D8
+	0x038F4804 FSUB D2, D11, D10
+	0x038F4808 FCVT S0, S0
+	0x038F480C FMUL D11, D1, D0
+	0x038F4810 FMUL D12, D2, D0
+	0x038F4814 BL 0x1C16F10
+	0x038F4818 MOV X1, X31
+	0x038F481C MOV X20, X0
+	0x038F4820 FADD D9, D9, D11
+	0x038F4824 FSUB D10, D10, D12
+	0x038F4828 BL 0x33BDD8C
+	0x038F482C MOVN W24, 0x0
+	0x038F4830 STP D9, D10, [X20 + 0x18]
+	0x038F4834 STR W24, [X20 + 0x28]
+	0x038F4838 LDR X0, [X23]
+	0x038F483C BL 0x1C16F10
+	0x038F4840 MOV X1, X31
+	0x038F4844 MOV X21, X0
+	0x038F4848 FSUB D8, D8, D11
+	0x038F484C BL 0x33BDD8C
+	0x038F4850 STP D8, D10, [X21 + 0x18]
+	0x038F4854 STR W24, [X21 + 0x28]
+	0x038F4858 LDR X0, [X19 + 0x20]
+	0x038F485C STP X20, X21, [X19 + 0x50]
+	0x038F4860 CBZ X0, 0x38F4898
+	0x038F4864 LDR X1, [X19 + 0x70]
+	0x038F4868 LDR X2, [X22]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X3, 0
+	003 JumpIfEqual {36}
+	004 Compare X0, 0
+	005 JumpIfEqual {36}
+	006 Compare X1, 0
+	007 JumpIfEqual {36}
+	008 Move D0, [X3+24]
+	009 Move D1, [X3+32]
+	010 Move D2, [X0+24]
+	011 Move D3, [X0+32]
+	012 Move D4, [X1+24]
+	013 Move D5, [X1+32]
+	014 Subtract D2, D2, D0
+	015 Subtract D3, D3, D1
+	016 Subtract D4, D4, D0
+	017 Subtract D5, D5, D1
+	018 Multiply D4, D3, D4
+	019 Multiply D5, D2, D5
+	020 Subtract D4, D5, D4
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 Compare X2, 0
+	023 JumpIfEqual {36}
+	024 Move D5, [X2+24]
+	025 Move D4, [X2+32]
+	026 Subtract D1, D4, D1
+	027 Subtract D0, D5, D0
+	028 Multiply D1, D2, D1
+	029 Multiply D0, D3, D0
+	030 Subtract D0, D0, D1
+	031 NotImplemented "Instruction FCMP not yet implemented."
+	032 NotImplemented "Instruction CSET not yet implemented."
+	033 Move W0, W31
+	034 Move X30, [X31+16]
+	035 Return X0
+	036 Call 0x1C17F20
+
+Method: UnityEngine.ProBuilder.Poly2Tri.Orientation Orient2d(UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint pa, UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint pb, UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint pc)
+
+Disassembly:
+	0x038F2F1C LDP X26, X25, [X31 + 0x10]
+	0x038F2F20 LDP X30, X27, [X31], #0x50
+	0x038F2F24 B 0x38F2BE4
+	0x038F2F28 BL 0x1C16F20
+	0x038F2F2C STP X30, X27, [X31 - 0x50]!
+	0x038F2F30 STP X26, X25, [X31 + 0x10]
+	0x038F2F34 STP X24, X23, [X31 + 0x20]
+	0x038F2F38 STP X22, X21, [X31 + 0x30]
+	0x038F2F3C STP X20, X19, [X31 + 0x40]
+	0x038F2F40 ADRP X22, 0x85B000
+	0x038F2F44 LDR X22, [X22 + 0x850]
+	0x038F2F48 MOV X20, X2
+	0x038F2F4C MOV X19, X1
+	0x038F2F50 MOV X21, X0
+	0x038F2F54 ADRP X26, 0xAEF000
+	0x038F2F58 MOVZ W27, 0x1
+	0x038F2F5C LDRB W8, [X26 + 0x71C]
+	0x038F2F60 TBNZ X8, 0x0, 0x38F2F70
+	0x038F2F64 MOV X0, X22
+	0x038F2F68 BL 0x1C16CF4
+	0x038F2F6C STRB W27, [X26 + 0x71C]
+	0x038F2F70 CBZ X20, 0x38F3040
+	0x038F2F74 LDR X8, [X20 + 0x18]
+	0x038F2F78 CBZ X8, 0x38F3040
+	0x038F2F7C LDR X9, [X8 + 0x18]
+	0x038F2F80 CBZ X9, 0x38F3040
+	0x038F2F84 LDR X10, [X9 + 0x18]
+	0x038F2F88 CBZ X10, 0x38F3040
+	0x038F2F8C LDR X0, [X22]
+	0x038F2F90 LDR X25, [X8 + 0x28]
+	0x038F2F94 LDR X23, [X9 + 0x28]
+	0x038F2F98 LDR X24, [X10 + 0x28]
+	0x038F2F9C LDR W8, [X0 + 0xE0]
+	0x038F2FA0 CBNZ W8, 0x38F2FA8
+	0x038F2FA4 BL 0x1C16DFC
+	0x038F2FA8 MOV X0, X25
+	0x038F2FAC MOV X1, X23
+	0x038F2FB0 MOV X2, X24
+	0x038F2FB4 BL 0x38F1F1C
+	0x038F2FB8 CBZ W0, 0x38F3004
+	0x038F2FBC CBZ X19, 0x38F3040
+	0x038F2FC0 LDR X8, [X20 + 0x18]
+	0x038F2FC4 CBZ X8, 0x38F3040
+	0x038F2FC8 LDR X8, [X8 + 0x18]
+	0x038F2FCC CBZ X8, 0x38F3040
+	0x038F2FD0 LDR X0, [X22]
+	0x038F2FD4 LDR X23, [X8 + 0x28]
+	0x038F2FD8 LDP X24, X25, [X19 + 0x10]
+	0x038F2FDC LDR W8, [X0 + 0xE0]
+	0x038F2FE0 CBNZ W8, 0x38F2FE8
+	0x038F2FE4 BL 0x1C16DFC
+	0x038F2FE8 MOV X0, X25
+	0x038F2FEC MOV X1, X23
+	0x038F2FF0 MOV X2, X24
+	0x038F2FF4 BL 0x38F1F1C
+	0x038F2FF8 CBNZ W0, 0x38F3028
+	0x038F2FFC LDR X20, [X20 + 0x18]
+	0x038F3000 B 0x38F2F5C
+
+ISIL:
+	001 Move [X31-48], D8
+	002 Move [X31+8], X30
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X22, 0xAF0000
+	008 Move W8, [X22+1864]
+	009 Move X20, X2
+	010 Move X19, X1
+	011 Move X21, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x85C000
+	017 Move X0, [X0+2128]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X22+1864], W8
+	021 Compare X21, 0
+	022 JumpIfEqual {70}
+	023 Compare X20, 0
+	024 JumpIfEqual {70}
+	025 Compare X19, 0
+	026 JumpIfEqual {70}
+	027 Move D5, [X19+24]
+	028 Move D4, [X19+32]
+	029 Move X19, 0x85C000
+	030 Move D0, [X20+24]
+	031 Move D1, [X20+32]
+	032 Move D2, [X21+24]
+	033 Move D3, [X21+32]
+	034 Move X19, [X19+2128]
+	035 Subtract D5, D5, D0
+	036 Subtract D3, D3, D1
+	037 Move X0, [X19]
+	038 Subtract D0, D2, D0
+	039 Subtract D1, D4, D1
+	040 Multiply D3, D3, D5
+	041 Move W8, [X0+224]
+	042 Multiply D0, D0, D1
+	043 Subtract D8, D0, D3
+	044 Compare W8, 0
+	045 JumpIfNotEqual {48}
+	046 Call 0x1C17DFC
+	047 Move X0, [X19]
+	048 Move X8, [X0+184]
+	049 Move V0, [X8]
+	050 NotImplemented "Instruction FNEG not yet implemented."
+	051 NotImplemented "Instruction FCMP not yet implemented."
+	052 Move W8, [X0+224]
+	053 Compare W8, 0
+	054 JumpIfNotEqual {59}
+	055 Call 0x1C17DFC
+	056 Move X8, [X19]
+	057 Move X8, [X8+184]
+	058 Move V0, [X8]
+	059 NotImplemented "Instruction FCMP not yet implemented."
+	060 NotImplemented "Instruction FCMP not yet implemented."
+	061 NotImplemented "Instruction CSET not yet implemented."
+	062 Move W0, 2
+	063 Move X20, [X31+32]
+	064 Move X19, [X31+40]
+	065 Move X22, [X31+16]
+	066 Move X21, [X31+24]
+	067 Move X30, [X31+8]
+	068 Move V8, [X31+48]
+	069 Return X0
+	070 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x038F6640 STP X20, X19, [X31 + 0x10]
+	0x038F6644 ADRP X20, 0xAEB000
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x038F6648 ADRP X21, 0x857000
+	0x038F664C ADRP X19, 0x7FD000
+	0x038F6650 LDRB W8, [X20 + 0x757]
+	0x038F6654 LDR X21, [X21 + 0x9D8]
+	0x038F6658 LDR X19, [X19 + 0x988]
+	0x038F665C TBNZ X8, 0x0, 0x38F6680
+	0x038F6660 ADRP X0, 0x857000
+	0x038F6664 LDR X0, [X0 + 0x9D8]
+	0x038F6668 BL 0x1C16CF4
+	0x038F666C ADRP X0, 0x7FD000
+	0x038F6670 LDR X0, [X0 + 0x988]
+	0x038F6674 BL 0x1C16CF4
+	0x038F6678 MOVZ W8, 0x1
+	0x038F667C STRB W8, [X20 + 0x757]
+	0x038F6680 LDR X0, [X21]
+	0x038F6684 BL 0x1C16F10
+	0x038F6688 LDR X20, [X19]
+	0x038F668C MOV X1, X31
+	0x038F6690 MOV X19, X0
+	0x038F6694 BL 0x33BDD8C
+	0x038F6698 STR W31, [X19 + 0x10]
+	0x038F669C STR X20, [X19 + 0x18]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xAEC000
+	005 Move X20, 0x858000
+	006 Move W8, [X19+1865]
+	007 Move X20, [X20+2128]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x858000
+	013 Move X0, [X0+2128]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+1865], W8
+	017 Move X8, [X20]
+	018 Move X9, 0xEA11
+	019 NotImplemented "Instruction MOVK not yet implemented."
+	020 Move X20, [X31+16]
+	021 Move X19, [X31+24]
+	022 Move X8, [X8+184]
+	023 NotImplemented "Instruction MOVK not yet implemented."
+	024 NotImplemented "Instruction MOVK not yet implemented."
+	025 Move [X8], X9
+	026 Move X30, [X31+32]
+	027 Return 
+

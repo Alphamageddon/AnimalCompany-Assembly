@@ -1,0 +1,140 @@
+Type: UnityEngine.XR.Interaction.Toolkit.Filtering.XRInteractionStrengthFilterDelegate
+
+Method: System.Func`4<UnityEngine.XR.Interaction.Toolkit.IXRInteractor, UnityEngine.XR.Interaction.Toolkit.IXRInteractable, System.Single, System.Single> get_delegateToProcess()
+
+Disassembly:
+	0x03BB3284 MOV X1, X19
+	0x03BB3288 BLR X8
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_delegateToProcess(System.Func`4<UnityEngine.XR.Interaction.Toolkit.IXRInteractor, UnityEngine.XR.Interaction.Toolkit.IXRInteractable, System.Single, System.Single> value)
+
+Disassembly:
+	0x03BB328C MOV X0, X19
+	0x03BB3290 BL 0x3BB32B8
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Boolean get_canProcess()
+
+Disassembly:
+	0x03BB3294 LDR X0, [X19 + 0x38]
+	0x03BB3298 CBZ X0, 0x3BB32A8
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_canProcess(System.Boolean value)
+
+Disassembly:
+	0x03BB329C LDP X20, X19, [X31 + 0x10]
+	0x03BB32A0 LDP X30, X21, [X31], #0x20
+	0x03BB32A4 B 0x3BB342C
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+24], W8
+	003 Return 
+
+Method: System.Void .ctor(System.Func`4<UnityEngine.XR.Interaction.Toolkit.IXRInteractor, UnityEngine.XR.Interaction.Toolkit.IXRInteractable, System.Single, System.Single> delegateToProcess)
+
+Disassembly:
+	0x03BB32A8 LDP X20, X19, [X31 + 0x10]
+	0x03BB32AC LDP X30, X21, [X31], #0x20
+	0x03BB32B0 RET
+	0x03BB32B4 BL 0x1C16F20
+	0x03BB32B8 STP X30, X21, [X31 - 0x20]!
+	0x03BB32BC STP X20, X19, [X31 + 0x10]
+	0x03BB32C0 ADRP X20, 0x82F000
+	0x03BB32C4 LDRB W8, [X20 + 0xCE2]
+	0x03BB32C8 MOV X19, X0
+	0x03BB32CC TBNZ X8, 0x0, 0x3BB332C
+	0x03BB32D0 ADRP X0, 0x540000
+	0x03BB32D4 LDR X0, [X0 + 0x598]
+	0x03BB32D8 BL 0x1C16CF4
+	0x03BB32DC ADRP X0, 0x5A7000
+	0x03BB32E0 LDR X0, [X0 + 0x190]
+	0x03BB32E4 BL 0x1C16CF4
+	0x03BB32E8 ADRP X0, 0x5A7000
+	0x03BB32EC LDR X0, [X0 + 0x198]
+	0x03BB32F0 BL 0x1C16CF4
+	0x03BB32F4 ADRP X0, 0x5A7000
+	0x03BB32F8 LDR X0, [X0 + 0x1F8]
+	0x03BB32FC BL 0x1C16CF4
+	0x03BB3300 ADRP X0, 0x5A7000
+	0x03BB3304 LDR X0, [X0 + 0x208]
+	0x03BB3308 BL 0x1C16CF4
+	0x03BB330C ADRP X0, 0x5A9000
+	0x03BB3310 LDR X0, [X0 + 0xFA0]
+	0x03BB3314 BL 0x1C16CF4
+	0x03BB3318 ADRP X0, 0x5A9000
+	0x03BB331C LDR X0, [X0 + 0xFA8]
+	0x03BB3320 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move W8, 1
+	006 Move X1, X31
+	007 Move X20, X0
+	008 Move [X0+24], W8
+	009 Call Object..ctor, X0
+	010 Compare X19, 0
+	011 JumpIfEqual {17}
+	012 Move [X20+16], X19
+	013 Move X20, [X31+16]
+	014 Move X19, [X31+24]
+	015 Move X30, [X31+32]
+	016 Return 
+	017 Move X0, 0x549000
+	018 Move X0, [X0+1400]
+	019 Call 0x1C17D08
+	020 Call 0x1C17F10
+	021 Move X19, X0
+	022 Move X0, 0x5AA000
+	023 Move X0, [X0+3896]
+	024 Call 0x1C17D08
+	025 Move X1, X0
+	026 Move X0, X19
+	027 Move X2, X31
+	028 Call ArgumentException..ctor, X0, X1
+	029 Move X0, 0x5AA000
+	030 Move X0, [X0+3912]
+	031 Call 0x1C17D08
+	032 Move X1, X0
+	033 Move X0, X19
+	034 Call 0x1C17DEC
+
+Method: System.Single Process(UnityEngine.XR.Interaction.Toolkit.IXRInteractor interactor, UnityEngine.XR.Interaction.Toolkit.IXRInteractable interactable, System.Single interactionStrength)
+
+Disassembly:
+	0x03BB3324 MOVZ W8, 0x1
+	0x03BB3328 STRB W8, [X20 + 0xCE2]
+	0x03BB332C LDR X0, [X19 + 0x40]
+	0x03BB3330 CBZ X0, 0x3BB3428
+	0x03BB3334 ADRP X20, 0x540000
+	0x03BB3338 LDR X20, [X20 + 0x598]
+	0x03BB333C MOV X1, X31
+	0x03BB3340 BL 0x3B31AF0
+	0x03BB3344 LDR X0, [X20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {10}
+	005 Move X4, [X8+24]
+	006 Move X0, [X8+64]
+	007 Move X3, [X8+40]
+	008 Move X30, [X31+16]
+	009 CallNoReturn X4
+	010 Call 0x1C17F20
+

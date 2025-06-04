@@ -1,0 +1,111 @@
+Type: RSG.Promise/<>c__DisplayClass62_1
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x035921D8 MOV X1, X22
+	0x035921DC MOV X3, X31
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: RSG.IPromise <Sequence>b__2()
+
+Disassembly:
+	0x035921F8 MOV X0, X20
+	0x035921FC MOV X2, X31
+	0x03592200 BL 0x321B938
+	0x03592204 ADRP X8, 0xB61000
+	0x03592208 LDR X8, [X8 + 0x988]
+	0x0359220C STR X0, [X31]
+	0x03592210 LDR X0, [X31 + 0x8]
+	0x03592214 LDR X20, [X8]
+	0x03592218 BL 0x3591DF0
+	0x0359221C CBZ X0, 0x3592510
+	0x03592220 LDR X8, [X0]
+	0x03592224 ADRP X10, 0xB64000
+	0x03592228 MOV X21, X0
+	0x0359222C LDRH W9, [X8 + 0x12E]
+	0x03592230 LDR X10, [X10 + 0x190]
+	0x03592234 LDR X1, [X10]
+	0x03592238 CBZ X9, 0x359225C
+	0x0359223C LDR X10, [X8 + 0xB0]
+	0x03592240 ADD X10, X10, 0x8
+	0x03592244 LDUR X11, [X10 - 0x8]
+	0x03592248 CMP X11, X1
+	0x0359224C B.EQ 0x359226C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X8, [X0+32]
+	004 Compare X8, 0
+	005 JumpIfEqual {27}
+	006 Move X19, X0
+	007 Move X0, [X8+24]
+	008 Compare X0, 0
+	009 JumpIfEqual {27}
+	010 Move V0, [X8+16]
+	011 Move V1, [X19+16]
+	012 Move S2, 1
+	013 NotImplemented "Instruction SCVTF not yet implemented."
+	014 NotImplemented "Instruction FDIV not yet implemented."
+	015 NotImplemented "Instruction SCVTF not yet implemented."
+	016 Multiply S0, S0, S1
+	017 Call Promise.ReportProgress, X0, V0
+	018 Move X8, [X19+24]
+	019 Compare X8, 0
+	020 JumpIfEqual {27}
+	021 Move X2, [X8+24]
+	022 Move X0, [X8+64]
+	023 Move X1, [X8+40]
+	024 Move X30, [X31+16]
+	025 Move X19, [X31+24]
+	026 CallNoReturn X2
+	027 Call 0x1C17F20
+
+Method: System.Void <Sequence>b__3(System.Single v)
+
+Disassembly:
+	0x03592250 SUBS X9, X9, 0x1
+	0x03592254 ADD X10, X10, 0x10
+	0x03592258 B.NE 0x3592244
+	0x0359225C MOV X0, X21
+	0x03592260 MOV W2, W31
+	0x03592264 BL 0x1C5C788
+	0x03592268 B 0x3592278
+	0x0359226C LDRSW X9, [X10]
+	0x03592270 ADD X8, X8, X9, 0x4, LSL
+	0x03592274 ADD X0, X8, 0x138
+	0x03592278 LDP X8, X1, [X0]
+	0x0359227C MOV X0, X21
+	0x03592280 BLR X8
+	0x03592284 MOV X21, X0
+	0x03592288 MOV X0, X20
+	0x0359228C CBZ X21, 0x35924DC
+	0x03592290 LDR X8, [X21]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X9, [X0+32]
+	003 Compare X9, 0
+	004 JumpIfEqual {20}
+	005 Move X8, [X9+24]
+	006 Compare X8, 0
+	007 JumpIfEqual {20}
+	008 Move V1, [X9+16]
+	009 Move V2, [X0+16]
+	010 Move S3, 1
+	011 Move X0, X8
+	012 NotImplemented "Instruction SCVTF not yet implemented."
+	013 NotImplemented "Instruction SCVTF not yet implemented."
+	014 NotImplemented "Instruction FDIV not yet implemented."
+	015 Add S0, S2, S0
+	016 Multiply S0, S0, S1
+	017 Move X30, [X31+16]
+	018 Call Promise.ReportProgress, X0, V0
+	019 Return 
+	020 Call 0x1C17F20
+

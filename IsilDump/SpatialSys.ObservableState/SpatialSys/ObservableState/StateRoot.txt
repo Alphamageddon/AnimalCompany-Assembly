@@ -1,0 +1,154 @@
+Type: SpatialSys.ObservableState.StateRoot
+
+Method: SpatialSys.ObservableState.IStateObservationContext get_context()
+
+Disassembly:
+	0x035D2D64 B.NE 0x35D2D50
+	0x035D2D68 MOV X0, X20
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: SpatialSys.ObservableState.IStateTypeIDManifest get_typeIDManifest()
+
+Disassembly:
+	0x035D2D6C MOV W2, W31
+	0x035D2D70 BL 0x1C5C788
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: SpatialSys.ObservableState.IStateSerialization get_serialization()
+
+Disassembly:
+	0x035D2D74 B 0x35D2D84
+	0x035D2D78 LDRSW X9, [X10]
+
+ISIL:
+	001 Move X0, [X0+88]
+	002 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x035D2D7C ADD X8, X8, X9, 0x4, LSL
+
+ISIL:
+	001 Call StateObject..ctor, X0
+	002 Return 
+
+Method: System.Void .ctor(SpatialSys.ObservableState.IStateObservationContext context, SpatialSys.ObservableState.IStateTypeIDManifest typeIDManifest, SpatialSys.ObservableState.IStateSerialization serializationOverride = null)
+
+Disassembly:
+	0x035D2D80 ADD X0, X8, 0x138
+	0x035D2D84 LDP X8, X1, [X0]
+	0x035D2D88 MOV X0, X20
+	0x035D2D8C BLR X8
+	0x035D2D90 ADRP X8, 0xB22000
+	0x035D2D94 LDR X8, [X8 + 0x460]
+	0x035D2D98 MOV X20, X0
+	0x035D2D9C LDR X8, [X8]
+	0x035D2DA0 LDR W9, [X8 + 0xE0]
+	0x035D2DA4 CBNZ W9, 0x35D2DB0
+	0x035D2DA8 MOV X0, X8
+	0x035D2DAC BL 0x1C16DFC
+	0x035D2DB0 MOV X0, X20
+	0x035D2DB4 MOV X1, X31
+	0x035D2DB8 BL 0x35ACF6C
+	0x035D2DBC CBZ X19, 0x35D2DE4
+	0x035D2DC0 LDR X8, [X19]
+	0x035D2DC4 MOV X1, X0
+	0x035D2DC8 MOV X0, X19
+	0x035D2DCC LDP X20, X19, [X31 + 0x20]
+	0x035D2DD0 LDR X3, [X8 + 0x288]
+	0x035D2DD4 LDR X2, [X8 + 0x290]
+	0x035D2DD8 LDP X22, X21, [X31 + 0x10]
+	0x035D2DDC LDR X30, [X31], #0x30
+	0x035D2DE0 BR X3
+	0x035D2DE4 BL 0x1C16F20
+	0x035D2DE8 STP X30, X23, [X31 - 0x30]!
+	0x035D2DEC STP X22, X21, [X31 + 0x10]
+	0x035D2DF0 STP X20, X19, [X31 + 0x20]
+	0x035D2DF4 ADRP X20, 0xE0E000
+	0x035D2DF8 ADRP X21, 0xB66000
+	0x035D2DFC ADRP X19, 0xB66000
+	0x035D2E00 LDRB W8, [X20 + 0x21F]
+	0x035D2E04 LDR X21, [X21 + 0x7B8]
+	0x035D2E08 LDR X19, [X19 + 0x7C0]
+	0x035D2E0C TBNZ X8, 0x0, 0x35D2E6C
+	0x035D2E10 ADRP X0, 0xB66000
+	0x035D2E14 LDR X0, [X0 + 0x7C8]
+	0x035D2E18 BL 0x1C16CF4
+	0x035D2E1C ADRP X0, 0xB66000
+	0x035D2E20 LDR X0, [X0 + 0x7C0]
+	0x035D2E24 BL 0x1C16CF4
+	0x035D2E28 ADRP X0, 0xB66000
+	0x035D2E2C LDR X0, [X0 + 0x7B8]
+	0x035D2E30 BL 0x1C16CF4
+	0x035D2E34 ADRP X0, 0xB49000
+	0x035D2E38 LDR X0, [X0 + 0xBB0]
+	0x035D2E3C BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X23, 0xE0F000
+	008 Move W8, [X23+531]
+	009 Move X20, X3
+	010 Move X21, X2
+	011 Move X22, X1
+	012 Move X19, X0
+	013 Move TEMP, X8
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfEqual {25}
+	017 Move X0, 0xB67000
+	018 Move X0, [X0+1816]
+	019 Call 0x1C17CF4
+	020 Move X0, 0xB49000
+	021 Move X0, [X0+1008]
+	022 Call 0x1C17CF4
+	023 Move W8, 1
+	024 Move [X23+531], W8
+	025 Move X23, 0xB49000
+	026 Move X23, [X23+1008]
+	027 Move X0, X19
+	028 Call StateObject..ctor, X0
+	029 Move [X19+72], X22
+	030 Move [X19+80], X21
+	031 Compare X20, 0
+	032 JumpIfNotEqual {39}
+	033 Move X8, 0xB67000
+	034 Move X8, [X8+1816]
+	035 Move X0, [X8]
+	036 Call 0x1C17F10
+	037 Move X20, X0
+	038 Call StateSerialization..ctor, X0
+	039 Move X8, [X19]
+	040 Move [X19+88], X20
+	041 Move X2, [X23]
+	042 Move W3, 1
+	043 Move X9, [X8+872]
+	044 Move X4, [X8+880]
+	045 Move X0, X19
+	046 Move X1, X31
+	047 NotImplemented "Instruction BLR not yet implemented."
+	048 Move X8, [X19]
+	049 Move [X19+48], X19
+	050 Move X0, X19
+	051 Move X20, [X31+32]
+	052 Move X19, [X31+40]
+	053 Move X2, [X8+888]
+	054 Move X1, [X8+896]
+	055 Move X22, [X31+16]
+	056 Move X21, [X31+24]
+	057 Move X30, [X31+48]
+	058 Move X23, [X31+56]
+	059 CallNoReturn X2
+

@@ -1,0 +1,155 @@
+Type: System.Text.RegularExpressions.RegexCode
+
+Method: System.Void .ctor(System.Int32[] codes, System.Collections.Generic.List`1<System.String> stringlist, System.Int32 trackcount, System.Collections.Hashtable caps, System.Int32 capsize, System.Text.RegularExpressions.RegexBoyerMoore bmPrefix, System.Nullable`1<System.Text.RegularExpressions.RegexPrefix> fcPrefix, System.Int32 anchors, System.Boolean rightToLeft)
+
+Disassembly:
+	0x0363C674 MOV X0, X19
+	0x0363C678 BL 0x363C304
+	0x0363C67C CBZ X0, 0x363C6E0
+	0x0363C680 LDRB W8, [X0 + 0x18]
+	0x0363C684 CBNZ W8, 0x363C6CC
+	0x0363C688 MOVZ W8, 0x1
+	0x0363C68C STRB W8, [X19 + 0x28]
+	0x0363C690 B 0x363C6CC
+	0x0363C694 CMP W22, 0x2
+	0x0363C698 B.LT 0x363C6CC
+	0x0363C69C MOV X0, X19
+	0x0363C6A0 BL 0x363C288
+	0x0363C6A4 MOV X20, X0
+	0x0363C6A8 MOV X0, X19
+	0x0363C6AC BL 0x363C304
+	0x0363C6B0 CBZ X0, 0x363C6E0
+	0x0363C6B4 MOV X1, X20
+	0x0363C6B8 MOV W2, W31
+	0x0363C6BC BL 0x363C7E8
+	0x0363C6C0 ORN W8, W31, W0, 0x0
+	0x0363C6C4 AND W8, W8, 0x1
+	0x0363C6C8 STRB W8, [X19 + 0x2A]
+	0x0363C6CC LDP X20, X19, [X31 + 0x30]
+	0x0363C6D0 LDP X22, X21, [X31 + 0x20]
+	0x0363C6D4 LDP X30, X23, [X31 + 0x10]
+	0x0363C6D8 ADD X31, X31, 0x40
+	0x0363C6DC RET
+	0x0363C6E0 BL 0x1C16F20
+	0x0363C6E4 ADRP X0, 0xAB9000
+	0x0363C6E8 LDR X0, [X0 + 0xC48]
+	0x0363C6EC BL 0x1C16D08
+	0x0363C6F0 BL 0x19903D0
+	0x0363C6F4 MOV X0, X31
+	0x0363C6F8 BL 0x33387A0
+	0x0363C6FC MOV X1, X0
+	0x0363C700 ADD X0, X31, 0xC
+	0x0363C704 MOV X2, X31
+	0x0363C708 BL 0x337B824
+	0x0363C70C MOV X19, X0
+	0x0363C710 ADRP X0, 0xB00000
+	0x0363C714 LDR X0, [X0 + 0x338]
+	0x0363C718 BL 0x1C16D08
+	0x0363C71C MOV X1, X19
+	0x0363C720 MOV X2, X31
+	0x0363C724 BL 0x32094D4
+	0x0363C728 MOV X19, X0
+	0x0363C72C ADRP X0, 0xABF000
+	0x0363C730 LDR X0, [X0 + 0x578]
+	0x0363C734 BL 0x1C16D08
+	0x0363C738 BL 0x1C16F10
+	0x0363C73C MOV X1, X19
+	0x0363C740 MOV X2, X31
+
+ISIL:
+	001 Move [X31-80], X30
+	002 Move [X31-72], X27
+	003 Move [X31+16], X26
+	004 Move [X31+24], X25
+	005 Move [X31+32], X24
+	006 Move [X31+40], X23
+	007 Move [X31+48], X22
+	008 Move [X31+56], X21
+	009 Move [X31+64], X20
+	010 Move [X31+72], X19
+	011 Move X27, 0xDA5000
+	012 Move W8, [X27+1371]
+	013 Move X19, X7
+	014 Move X20, X6
+	015 Move W21, W5
+	016 Move X23, X4
+	017 Move W24, W3
+	018 Move X25, X2
+	019 Move X26, X1
+	020 Move X22, X0
+	021 Move TEMP, X8
+	022 And TEMP, TEMP, 1
+	023 Compare TEMP, 1
+	024 JumpIfEqual {30}
+	025 Move X0, 0xABA000
+	026 Move X0, [X0+3704]
+	027 Call 0x1C17CF4
+	028 Move W8, 1
+	029 Move [X27+1371], W8
+	030 Move X0, X22
+	031 Move X1, X31
+	032 Call Object..ctor, X0
+	033 Move [X22+16], X26
+	034 Compare X25, 0
+	035 JumpIfEqual {66}
+	036 Move X9, 0xABA000
+	037 Move X9, [X9+3704]
+	038 Move W8, [X31+88]
+	039 Move W26, [X31+80]
+	040 Move X0, X25
+	041 Move X1, [X9]
+	042 And W27, W8, 1
+	043 Call List`1<Object>.ToArray, X0
+	044 Move [X22+24], X0
+	045 Move [X22+32], W24
+	046 Move [X22+40], X23
+	047 Move [X22+48], W21
+	048 Move [X22+80], X20
+	049 Move V0, [X19]
+	050 Move X8, [X19+16]
+	051 Move [X22+88], W26
+	052 Move [X22+92], W27
+	053 Move [X22+56], V0
+	054 Move [X22+72], X8
+	055 Move X20, [X31+64]
+	056 Move X19, [X31+72]
+	057 Move X22, [X31+48]
+	058 Move X21, [X31+56]
+	059 Move X24, [X31+32]
+	060 Move X23, [X31+40]
+	061 Move X26, [X31+16]
+	062 Move X25, [X31+24]
+	063 Move X30, [X31+80]
+	064 Move X27, [X31+88]
+	065 Return 
+	066 Call 0x1C17F20
+
+Method: System.Boolean OpcodeBacktracks(System.Int32 Op)
+
+Disassembly:
+	0x0363C744 MOV X20, X0
+	0x0363C748 BL 0x3314A68
+	0x0363C74C ADRP X0, 0xB00000
+	0x0363C750 LDR X0, [X0 + 0x340]
+	0x0363C754 BL 0x1C16D08
+	0x0363C758 MOV X1, X0
+	0x0363C75C MOV X0, X20
+	0x0363C760 BL 0x1C16DEC
+	0x0363C764 MOVZ W8, 0x1
+	0x0363C768 STRB W8, [X0 + 0x29]
+	0x0363C76C RET
+	0x0363C770 STR X30, [X31 - 0x30]!
+
+ISIL:
+	001 And W8, W0, 63
+	002 Subtract W8, W8, 3
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move X9, 63
+	005 NotImplemented "Instruction MOVK not yet implemented."
+	006 NotImplemented "Instruction MOVK not yet implemented."
+	007 NotImplemented "Instruction LSRV not yet implemented."
+	008 And W0, W8, 1
+	009 Return X0
+	010 Move W0, W31
+	011 Return X0
+

@@ -1,0 +1,37 @@
+Type: System.Text.UTF7Encoding/Encoder
+
+Method: System.Void .ctor(System.Text.UTF7Encoding encoding)
+
+Disassembly:
+	0x0323AF2C LDRB W8, [X25 + 0x405]
+
+ISIL:
+	001 Call EncoderNLS..ctor, X0, X1
+	002 Return 
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x0323B108 LDR X0, [X0 + 0x808]
+	0x0323B10C BL 0x1C16D08
+	0x0323B110 MOV X1, X0
+	0x0323B114 MOV X0, X20
+	0x0323B118 BL 0x1C16DEC
+	0x0323B11C ADRP X0, 0xEC0000
+	0x0323B120 LDR X0, [X0 + 0x760]
+	0x0323B124 BL 0x1C16D08
+	0x0323B128 BL 0x1C16F10
+
+ISIL:
+	001 Move X8, X0
+	002 Move X0, [X0+24]
+	003 NotImplemented "Instruction MOVI not yet implemented."
+	004 Move [X8+56], D0
+	005 Compare X0, 0
+	006 JumpIfEqual {11}
+	007 Move X8, [X0]
+	008 Move X2, [X8+456]
+	009 Move X1, [X8+464]
+	010 CallNoReturn X2
+	011 Return 
+

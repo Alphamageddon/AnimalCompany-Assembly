@@ -1,0 +1,238 @@
+Type: UnityEngine.UIElements.DefaultEventSystem/Input
+
+Method: System.Boolean GetButtonDown(System.String button)
+
+Disassembly:
+	0x03D910D4 LDR X10, [X8 + 0xB0]
+	0x03D910D8 ADD X10, X10, 0x8
+	0x03D910DC LDUR X11, [X10 - 0x8]
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X31
+	003 Call Input.GetButtonDown, X0
+	004 Return X0
+
+Method: System.Single GetAxisRaw(System.String axis)
+
+Disassembly:
+	0x03D910E0 CMP X11, X1
+	0x03D910E4 B.EQ 0x3D91104
+	0x03D910E8 SUBS X9, X9, 0x1
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X31
+	003 Call Input.GetAxis, X0
+	004 Return V0
+
+Method: System.Void ClearLastPenContactEvent()
+
+Disassembly:
+	0x03D910EC ADD X10, X10, 0x10
+	0x03D910F0 B.NE 0x3D910DC
+
+ISIL:
+	001 Move X0, X31
+	002 Call Input.ClearLastPenContactEvent
+	003 Return 
+
+Method: UnityEngine.PenData GetLastPenContactEvent()
+
+Disassembly:
+	0x03D910F4 MOV X0, X21
+	0x03D910F8 MOV W2, W31
+	0x03D910FC BL 0x1C5C788
+	0x03D91100 B 0x3D91110
+	0x03D91104 LDRSW X9, [X10]
+	0x03D91108 ADD X8, X8, X9, 0x4, LSL
+	0x03D9110C ADD X0, X8, 0x138
+	0x03D91110 LDP X8, X1, [X0]
+	0x03D91114 MOV X0, X21
+	0x03D91118 BLR X8
+	0x03D9111C CBNZ X24, 0x3D91128
+	0x03D91120 MOV X0, X23
+	0x03D91124 BL 0x1D2C690
+	0x03D91128 MOV X0, X24
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+48], X30
+	003 Move [X31+56], X19
+	004 Move X19, X8
+	005 Add X8, X31, 8
+	006 Move X0, X31
+	007 Call Input.GetLastPenContactEvent
+	008 Move X8, [X31+40]
+	009 NotImplemented "Instruction LDUR not yet implemented."
+	010 NotImplemented "Instruction LDUR not yet implemented."
+	011 Move [X19+32], X8
+	012 Move [X19], V1
+	013 Move [X19+8], V0
+	014 Move X30, [X31+48]
+	015 Move X19, [X31+56]
+	016 Add X31, X31, 64
+	017 Return X0
+
+Method: System.Int32 get_touchCount()
+
+Disassembly:
+	0x03D9112C BL 0x1C16F18
+	0x03D91130 BL 0x1990590
+
+ISIL:
+	001 Move X0, X31
+	002 Call Input.get_touchCount
+	003 Return X0
+
+Method: UnityEngine.Touch GetTouch(System.Int32 index)
+
+Disassembly:
+	0x03D91134 STR X30, [X31 - 0x40]!
+	0x03D91138 STP X24, X23, [X31 + 0x10]
+	0x03D9113C STP X22, X21, [X31 + 0x20]
+	0x03D91140 STP X20, X19, [X31 + 0x30]
+	0x03D91144 ADRP X21, 0x656000
+	0x03D91148 LDRB W8, [X21 + 0xE7B]
+	0x03D9114C MOV W20, W1
+	0x03D91150 MOV X19, X0
+	0x03D91154 TBNZ X8, 0x0, 0x3D91190
+	0x03D91158 ADRP X0, 0x362000
+	0x03D9115C LDR X0, [X0 + 0xE00]
+	0x03D91160 BL 0x1C16CF4
+	0x03D91164 ADRP X0, 0x38C000
+	0x03D91168 LDR X0, [X0 + 0xF20]
+
+ISIL:
+	001 Subtract X31, X31, 96
+	002 Move [X31+80], X30
+	003 Move [X31+88], X19
+	004 Move W0, W1
+	005 Move X19, X8
+	006 Add X8, X31, 8
+	007 Move X1, X31
+	008 Call Input.GetTouch, X0
+	009 Add X1, X31, 8
+	010 Move W2, 68
+	011 Move X0, X19
+	012 Call 0x3EB2AC0
+	013 Move X30, [X31+80]
+	014 Move X19, [X31+88]
+	015 Add X31, X31, 96
+	016 Return X0
+
+Method: System.Boolean get_mousePresent()
+
+Disassembly:
+	0x03D9116C BL 0x1C16CF4
+	0x03D91170 ADRP X0, 0x38C000
+
+ISIL:
+	001 Move X0, X31
+	002 Call Input.get_mousePresent
+	003 Return X0
+
+Method: System.Boolean GetMouseButtonDown(System.Int32 button)
+
+Disassembly:
+	0x03D91174 LDR X0, [X0 + 0xF28]
+	0x03D91178 BL 0x1C16CF4
+	0x03D9117C ADRP X0, 0x362000
+
+ISIL:
+	001 Move W0, W1
+	002 Move X1, X31
+	003 Call Input.GetMouseButtonDown, X0
+	004 Return X0
+
+Method: System.Boolean GetMouseButtonUp(System.Int32 button)
+
+Disassembly:
+	0x03D91180 LDR X0, [X0 + 0xE18]
+	0x03D91184 BL 0x1C16CF4
+	0x03D91188 MOVZ W8, 0x1
+
+ISIL:
+	001 Move W0, W1
+	002 Move X1, X31
+	003 Call Input.GetMouseButtonUp, X0
+	004 Return X0
+
+Method: UnityEngine.Vector3 get_mousePosition()
+
+Disassembly:
+	0x03D9118C STRB W8, [X21 + 0xE7B]
+	0x03D91190 STR W31, [X31 + 0xC]
+
+ISIL:
+	001 Move X0, X31
+	002 Call Input.get_mousePosition
+	003 Return X0
+
+Method: System.Int32 get_mouseButtonCount()
+
+Disassembly:
+	0x03D91194 CBZ X19, 0x3D913AC
+	0x03D91198 MOV X0, X19
+
+ISIL:
+	001 Move W0, 3
+	002 Return X0
+
+Method: System.Boolean get_anyKey()
+
+Disassembly:
+	0x03D9119C MOV X1, X31
+	0x03D911A0 BL 0x3CFEC08
+
+ISIL:
+	001 Move X0, X31
+	002 Call Input.get_anyKey
+	003 Return X0
+
+Method: System.Single get_unscaledTime()
+
+Disassembly:
+	0x03D911A4 CBZ X0, 0x3D913AC
+	0x03D911A8 ADRP X10, 0x38C000
+
+ISIL:
+	001 Move X0, X31
+	002 Call Time.get_unscaledTime
+	003 Return V0
+
+Method: System.Single get_doubleClickTime()
+
+Disassembly:
+	0x03D911AC LDR X8, [X0]
+	0x03D911B0 LDR X10, [X10 + 0xF20]
+	0x03D911B4 MOV X19, X0
+	0x03D911B8 LDRH W9, [X8 + 0x12E]
+	0x03D911BC LDR X1, [X10]
+	0x03D911C0 CBZ X9, 0x3D911E4
+	0x03D911C4 LDR X10, [X8 + 0xB0]
+	0x03D911C8 ADD X10, X10, 0x8
+	0x03D911CC LDUR X11, [X10 - 0x8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, X31
+	003 Call Event.GetDoubleClickTime
+	004 Move X8, -53108736
+	005 Move V0, [X8+1040]
+	006 NotImplemented "Instruction SCVTF not yet implemented."
+	007 Multiply S0, S1, S0
+	008 Move X30, [X31+16]
+	009 Return V0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03D8E6F0 LDR X8, [X8 + 0x9C0]
+	0x03D8E6F4 FMOV S2, W31
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

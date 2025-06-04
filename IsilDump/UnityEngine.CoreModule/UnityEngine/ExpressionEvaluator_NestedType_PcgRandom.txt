@@ -1,0 +1,127 @@
+Type: UnityEngine.ExpressionEvaluator/PcgRandom
+
+Method: System.Void .ctor(System.UInt64 state = 0, System.UInt64 sequence = 0)
+
+Disassembly:
+	0x03C0A6E0 LDP V2, V3, [X31 + 0x120]
+	0x03C0A6E4 ADD X0, X31, 0x0
+	0x03C0A6E8 MOV X1, X19
+	0x03C0A6EC STP V0, V1, [X31]
+	0x03C0A6F0 STP V2, V3, [X31 + 0x20]
+	0x03C0A6F4 BL 0x3C0A710
+	0x03C0A6F8 LDP X20, X19, [X31 + 0x160]
+	0x03C0A6FC LDP X30, X21, [X31 + 0x150]
+	0x03C0A700 LDR X29, [X31 + 0x140]
+	0x03C0A704 ADD X31, X31, 0x170
+
+ISIL:
+	001 Move X9, 0x7F2D
+	002 Move W8, 1
+	003 NotImplemented "Instruction MOVK not yet implemented."
+	004 NotImplemented "Instruction MOVK not yet implemented."
+	005 NotImplemented "Instruction BFM not yet implemented."
+	006 NotImplemented "Instruction MOVK not yet implemented."
+	007 Add X10, X8, X1
+	008 NotImplemented "Instruction MADD not yet implemented."
+	009 Move [X0], X8
+	010 Move [X0+8], X9
+	011 Return 
+
+Method: System.UInt32 GetUInt()
+
+Disassembly:
+	0x03C0A138 CBZ X0, 0x3C0A150
+	0x03C0A13C LDR X8, [X22]
+	0x03C0A140 MOV X0, X19
+	0x03C0A144 LDR X1, [X8 + 0x40]
+	0x03C0A148 BL 0x1C16E00
+	0x03C0A14C CBZ X0, 0x3C0A18C
+	0x03C0A150 LDR W8, [X22 + 0x18]
+	0x03C0A154 CMP W8, 0x1
+	0x03C0A158 B.LS 0x3C0A184
+	0x03C0A15C ADRP X8, 0x512000
+	0x03C0A160 LDR X8, [X8 + 0xD20]
+	0x03C0A164 STR X19, [X22 + 0x28]
+	0x03C0A168 MOV X1, X22
+	0x03C0A16C LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move X9, [X0]
+	002 Move X8, [X0+8]
+	003 Move X10, 0x7F2D
+	004 NotImplemented "Instruction MOVK not yet implemented."
+	005 NotImplemented "Instruction MOVK not yet implemented."
+	006 NotImplemented "Instruction MOVK not yet implemented."
+	007 NotImplemented "Instruction MADD not yet implemented."
+	008 Move X10, X8
+	009 ShiftRight X10, 45
+	010 And X10, X10, 0x7FFFFFFF
+	011 Move X11, X8
+	012 ShiftRight X11, 27
+	013 And X11, X11, 0x7FFFFFFF
+	014 Xor W10, W10, W11
+	015 Move X8, X8
+	016 ShiftRight X8, 59
+	017 And X8, X8, 0x7FFFFFFF
+	018 NotImplemented "Instruction RORV not yet implemented."
+	019 Move [X0+8], X9
+	020 Move W0, W8
+	021 Return X0
+
+Method: System.UInt32 RotateRight(System.UInt32 v, System.Int32 rot)
+
+Disassembly:
+	0x03C0A804 MOV X0, X19
+	0x03C0A808 BL 0x1C16DEC
+
+ISIL:
+	001 NotImplemented "Instruction RORV not yet implemented."
+	002 Return X0
+
+Method: System.UInt32 XshRr(System.UInt64 s)
+
+Disassembly:
+	0x03C0A7EC MOV X3, X31
+	0x03C0A7F0 BL 0x330E16C
+	0x03C0A7F4 ADRP X0, 0x554000
+	0x03C0A7F8 LDR X0, [X0 + 0xCA0]
+	0x03C0A7FC BL 0x1C16D08
+	0x03C0A800 MOV X1, X0
+
+ISIL:
+	001 Move X8, X0
+	002 ShiftRight X8, 45
+	003 And X8, X8, 0x7FFFFFFF
+	004 Move X9, X0
+	005 ShiftRight X9, 27
+	006 And X9, X9, 0x7FFFFFFF
+	007 Xor W8, W8, W9
+	008 Move X9, X0
+	009 ShiftRight X9, 59
+	010 And X9, X9, 0x7FFFFFFF
+	011 NotImplemented "Instruction RORV not yet implemented."
+	012 Return X0
+
+Method: System.Void Step()
+
+Disassembly:
+	0x03C0A7CC BL 0x1C16D08
+	0x03C0A7D0 MOV X20, X0
+	0x03C0A7D4 ADRP X0, 0x554000
+	0x03C0A7D8 LDR X0, [X0 + 0xC90]
+	0x03C0A7DC BL 0x1C16D08
+	0x03C0A7E0 MOV X2, X0
+	0x03C0A7E4 MOV X0, X19
+	0x03C0A7E8 MOV X1, X20
+
+ISIL:
+	001 Move X9, [X0]
+	002 Move X8, [X0+8]
+	003 Move X10, 0x7F2D
+	004 NotImplemented "Instruction MOVK not yet implemented."
+	005 NotImplemented "Instruction MOVK not yet implemented."
+	006 NotImplemented "Instruction MOVK not yet implemented."
+	007 NotImplemented "Instruction MADD not yet implemented."
+	008 Move [X0+8], X8
+	009 Return 
+

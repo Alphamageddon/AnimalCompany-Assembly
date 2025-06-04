@@ -1,0 +1,151 @@
+Type: UnityEngine.Animations.Rigging.BoolProperty
+
+Method: UnityEngine.Animations.Rigging.BoolProperty Bind(UnityEngine.Animator animator, UnityEngine.Component component, System.String name)
+
+Disassembly:
+	0x036E5FD8 LDP X20, X19, [X31 + 0xE0]
+	0x036E5FDC LDP X22, X21, [X31 + 0xD0]
+	0x036E5FE0 LDR X30, [X31 + 0xC0]
+	0x036E5FE4 ORR X0, X9, X8, 0x0
+	0x036E5FE8 ADD X31, X31, 0xF0
+	0x036E5FEC RET
+	0x036E5FF0 AND W8, W1, 0x1
+	0x036E5FF4 AND W9, W2, 0x1
+	0x036E5FF8 AND W10, W3, 0x1
+	0x036E5FFC STRB W8, [X0]
+	0x036E6000 STRB W9, [X0 + 0x1]
+	0x036E6004 STRB W10, [X0 + 0x2]
+	0x036E6008 RET
+	0x036E600C SUB X31, X31, 0xE0
+	0x036E6010 STP X30, X21, [X31 + 0xC0]
+	0x036E6014 STP X20, X19, [X31 + 0xD0]
+	0x036E6018 LDR X8, [X1 + 0x30]
+	0x036E601C LDP V1, V0, [X1 + 0x10]
+	0x036E6020 LDR V2, [X1]
+	0x036E6024 MOV X19, X2
+	0x036E6028 MOV X20, X1
+	0x036E602C AND W2, W19, 0x1
+	0x036E6030 ADD X1, X31, 0x80
+	0x036E6034 MOV X3, X31
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Compare X1, 0
+	007 JumpIfEqual {30}
+	008 Move X21, X1
+	009 Move X20, X0
+	010 Move X0, X1
+	011 Move X1, X31
+	012 Move X19, X2
+	013 Call Component.get_transform, X0
+	014 Move X22, X0
+	015 Move X0, X21
+	016 Move X1, X31
+	017 Call "il2cpp_vm_object_is_inst", X0
+	018 Move X2, X0
+	019 Move X0, X20
+	020 Move X1, X22
+	021 Move X3, X19
+	022 Move X20, [X31+32]
+	023 Move X19, [X31+40]
+	024 Move X22, [X31+16]
+	025 Move X21, [X31+24]
+	026 Move X4, X31
+	027 Move X30, [X31+48]
+	028 Call AnimatorJobExtensions.BindStreamProperty, X0, X1, X2, X3
+	029 Return X0
+	030 Call 0x1C17F20
+
+Method: UnityEngine.Animations.Rigging.BoolProperty BindCustom(UnityEngine.Animator animator, System.String property)
+
+Disassembly:
+	0x036E6038 MOV X21, X0
+	0x036E603C STR X8, [X31 + 0xB0]
+	0x036E6040 STP V1, V0, [X31 + 0x90]
+
+ISIL:
+	001 Move W2, 6
+	002 Move X3, X31
+	003 Call AnimatorJobExtensions.BindCustomStreamProperty, X0, X1, X2
+	004 Return X0
+
+Method: System.Boolean Get(UnityEngine.Animations.AnimationStream stream)
+
+Disassembly:
+	0x036E4338 FDIV S0, S13, S2
+	0x036E433C FDIV S1, S12, S2
+	0x036E4340 FDIV S2, S11, S2
+	0x036E4344 B 0x36E4374
+	0x036E4348 LDRB W8, [X20 + 0x783]
+	0x036E434C CBNZ W8, 0x36E4364
+	0x036E4350 ADRP X0, 0xA0F000
+	0x036E4354 LDR X0, [X0 + 0x5A0]
+	0x036E4358 BL 0x1C16CF4
+	0x036E435C MOVZ W8, 0x1
+	0x036E4360 STRB W8, [X20 + 0x783]
+	0x036E4364 LDR X8, [X19]
+	0x036E4368 LDR X8, [X8 + 0xB8]
+	0x036E436C LDP S0, S1, [X8]
+	0x036E4370 LDR V2, [X8 + 0x8]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call PropertyStreamHandle.GetBool, X0, X1
+	014 Move X30, [X31+64]
+	015 And W0, W0, 1
+	016 Add X31, X31, 80
+	017 Return X0
+
+Method: System.Void Set(UnityEngine.Animations.AnimationStream stream, System.Boolean v)
+
+Disassembly:
+	0x036E6044 STR V2, [X31 + 0x8]
+	0x036E6048 BL 0x3BF9BFC
+	0x036E604C LDP V2, V0, [X20 + 0x10]
+	0x036E6050 LDR X8, [X20 + 0x30]
+	0x036E6054 LDR V1, [X20]
+	0x036E6058 ADD X0, X21, 0x10
+	0x036E605C UBFM X2, X19, 0x8, 0x8
+	0x036E6060 ADD X1, X31, 0x40
+	0x036E6064 MOV X3, X31
+	0x036E6068 STR X8, [X31 + 0x70]
+	0x036E606C STP V2, V0, [X31 + 0x50]
+	0x036E6070 STR V1, [X31 + 0x4]
+	0x036E6074 BL 0x3BF9BFC
+	0x036E6078 LDP V2, V0, [X20 + 0x10]
+	0x036E607C LDR X8, [X20 + 0x30]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 And W2, W2, 1
+	008 Add X1, X31, 0
+	009 Move X3, X31
+	010 Move [X31+48], X8
+	011 Move [X31+16], V1
+	012 Move [X31+24], V0
+	013 Move [X31], V2
+	014 Call PropertyStreamHandle.SetBool, X0, X1, X2
+	015 Move X30, [X31+64]
+	016 Add X31, X31, 80
+	017 Return 
+

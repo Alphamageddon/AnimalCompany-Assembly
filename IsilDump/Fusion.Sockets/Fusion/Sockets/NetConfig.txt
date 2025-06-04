@@ -1,0 +1,108 @@
+Type: Fusion.Sockets.NetConfig
+
+Method: System.Int32 get_ConnectionsPerGroup()
+
+Disassembly:
+	0x01EFC9A4 LDR X8, [X19 + 0x10]
+	0x01EFC9A8 LDR V0, [X19]
+	0x01EFC9AC LDR X0, [X24]
+	0x01EFC9B0 ADD X1, X31, 0x0
+	0x01EFC9B4 STR X8, [X31 + 0x10]
+	0x01EFC9B8 STR V0, [X31]
+
+ISIL:
+	001 Move W9, [X0+4]
+	002 Move W8, [X0+8]
+	003 NotImplemented "Instruction SDIV not yet implemented."
+	004 Multiply W9, W10, W9
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CINC not yet implemented."
+	007 Return X0
+
+Method: System.Int32 get_PacketSizeInBits()
+
+Disassembly:
+	0x01EFC9BC BL 0x1C16E04
+	0x01EFC9C0 LDR X8, [X22]
+	0x01EFC9C4 MOV X2, X0
+
+ISIL:
+	001 Move W8, [X0+20]
+	002 Move W0, W8
+	003 ShiftRight W0, 29
+	004 And W0, W0, 0xFFFFFFF
+	005 Return X0
+
+Method: Fusion.Sockets.NetConfig get_Defaults()
+
+Disassembly:
+	0x01EFC9C8 MOV X1, X21
+	0x01EFC9CC MOV X3, X31
+	0x01EFC9D0 MOV X0, X8
+	0x01EFC9D4 BL 0x3227BD4
+	0x01EFC9D8 MOV X1, X31
+	0x01EFC9DC BL 0x1E3B98C
+	0x01EFC9E0 LDR X8, [X23 + 0x28]
+	0x01EFC9E4 LDR X9, [X31 + 0x38]
+	0x01EFC9E8 CMP X8, X9
+	0x01EFC9EC B.NE 0x1EFCA4C
+	0x01EFC9F0 MOV X0, X20
+	0x01EFC9F4 LDP X20, X19, [X31 + 0x80]
+	0x01EFC9F8 LDP X22, X21, [X31 + 0x70]
+	0x01EFC9FC LDP X24, X23, [X31 + 0x60]
+	0x01EFCA00 LDP X26, X25, [X31 + 0x50]
+	0x01EFCA04 LDR X30, [X31 + 0x40]
+	0x01EFCA08 ADD X31, X31, 0x90
+	0x01EFCA0C RET
+	0x01EFCA10 LDR X11, [X20 + 0x8]
+	0x01EFCA14 CBZ X14, 0x1EFCA20
+	0x01EFCA18 STR X11, [X14 + 0x8]
+	0x01EFCA1C B 0x1EFCA24
+	0x01EFCA20 STR X11, [X8, X9, LSL #3]
+	0x01EFCA24 LDR X8, [X19 + 0x10]
+	0x01EFCA28 LDR V0, [X19]
+	0x01EFCA2C STR X10, [X20]
+	0x01EFCA30 STR X8, [X20 + 0x38]
+	0x01EFCA34 STUR V0, [X20 + 0x28]
+	0x01EFCA38 LDR X8, [X21]
+	0x01EFCA3C LDR X9, [X8, X12, LSL #3]
+
+ISIL:
+	001 Move X9, -21032960
+	002 Move V0, [X9+125]
+	003 Move X9, -21041152
+	004 Move V1, [X9+120]
+	005 NotImplemented "Instruction MOVI not yet implemented."
+	006 Move X9, -21032960
+	007 Move [X8+104], D2
+	008 NotImplemented "Instruction MOVI not yet implemented."
+	009 Move [X8+144], V2
+	010 Move [X8+152], V2
+	011 Move [X8+176], V2
+	012 Move [X8+184], V2
+	013 Move [X8+208], V2
+	014 Move [X8+216], V2
+	015 Move V2, [X9+26]
+	016 Move X9, -21041152
+	017 Move [X8], V0
+	018 Move [X8+8], V1
+	019 Move V0, [X9+146]
+	020 Move V3, 0xFE000000000000
+	021 Move X9, -21024768
+	022 Move [X8+88], X31
+	023 Move [X8+96], X31
+	024 Move [X8+48], V0
+	025 Move [X8+56], V3
+	026 Move V0, [X9+1112]
+	027 Or X9, X31, -7378697629483820647
+	028 NotImplemented "Instruction MOVK not yet implemented."
+	029 NotImplemented "Instruction MOVK not yet implemented."
+	030 Move [X8+80], X31
+	031 Move [X8+2], V2
+	032 Move [X8+128], X31
+	033 Move [X8+136], X31
+	034 Move [X8+112], X9
+	035 Move [X8+120], D0
+	036 Move [X8+240], X31
+	037 Return X0
+

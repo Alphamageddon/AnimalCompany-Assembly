@@ -1,0 +1,68 @@
+Type: RSG.Promise/<>c__DisplayClass64_0`1
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0237D14C CBZ W8, 0x237D1C0
+	0x0237D150 LDR X24, [X22 + 0x20]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: RSG.IPromise`1<ConvertedT> <ThenRace>b__0()
+
+Disassembly:
+	0x0237D154 LDR X22, [X23 + 0x18]
+	0x0237D158 MOV X0, X19
+	0x0237D15C MOV X2, X21
+	0x0237D160 LDR X8, [X24 + 0xC0]
+	0x0237D164 LDR X8, [X8 + 0x10]
+	0x0237D168 LDR W8, [X8 + 0x28]
+	0x0237D16C CMP W8, 0x0
+	0x0237D170 SUB X8, X29, 0x20
+	0x0237D174 CSEL X1, X20, X8, LT
+	0x0237D178 BL 0x3EB1AC0
+	0x0237D17C CBZ X22, 0x237D1F0
+	0x0237D180 LDR X8, [X24 + 0xC0]
+	0x0237D184 LDP X9, X1, [X8 + 0x10]
+	0x0237D188 LDR W8, [X9 + 0x28]
+	0x0237D18C LDR X0, [X1]
+	0x0237D190 TBNZ X8, 0x1F, 0x237D198
+	0x0237D194 LDR X19, [X19]
+	0x0237D198 STUR X19, [X29 - 0x18]
+	0x0237D19C LDR X8, [X1 + 0x10]
+	0x0237D1A0 SUB X3, X29, 0x18
+	0x0237D1A4 SUB X4, X29, 0xC
+	0x0237D1A8 MOV X2, X22
+	0x0237D1AC BLR X8
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move X2, [X0+16]
+	005 Compare X2, 0
+	006 JumpIfEqual {26}
+	007 Move X8, [X1+32]
+	008 Move X19, X1
+	009 Add X4, X31, 8
+	010 Move X3, X31
+	011 Move X8, [X8+192]
+	012 Move X1, [X8+16]
+	013 Move X0, [X1]
+	014 Move X8, [X1+16]
+	015 NotImplemented "Instruction BLR not yet implemented."
+	016 Move X8, [X19+32]
+	017 Move X0, [X31+8]
+	018 Move X8, [X8+192]
+	019 Move X1, [X8+32]
+	020 Move X8, [X1]
+	021 NotImplemented "Instruction BLR not yet implemented."
+	022 Move X30, [X31+16]
+	023 Move X19, [X31+24]
+	024 Add X31, X31, 32
+	025 Return X0
+	026 Call 0x1C17F20
+

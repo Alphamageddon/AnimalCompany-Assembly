@@ -1,0 +1,52 @@
+Type: UnityEngine.UIElements.FloatField/UxmlTraits
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03D0F210 LDR X8, [X8 + 0xB8]
+	0x03D0F214 STR X9, [X8]
+	0x03D0F218 LDR X8, [X19]
+	0x03D0F21C LDR X1, [X26]
+	0x03D0F220 LDR X8, [X8 + 0xB8]
+	0x03D0F224 LDR X0, [X8]
+	0x03D0F228 BL 0x321B938
+	0x03D0F22C LDR X8, [X19]
+	0x03D0F230 MOV X2, X31
+	0x03D0F234 LDR X8, [X8 + 0xB8]
+	0x03D0F238 STR X0, [X8 + 0x8]
+	0x03D0F23C LDR X0, [X8]
+	0x03D0F240 LDR X1, [X25]
+	0x03D0F244 BL 0x321B938
+	0x03D0F248 LDR X8, [X19]
+	0x03D0F24C MOV X2, X31
+	0x03D0F250 LDR X8, [X8 + 0xB8]
+	0x03D0F254 STR X0, [X8 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x6D9000
+	006 Move X21, 0x455000
+	007 Move W8, [X20+2207]
+	008 Move X21, [X21+2744]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x455000
+	015 Move X0, [X0+2744]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+2207], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X30, [X31+32]
+	024 Move X21, [X31+40]
+	025 Call TextValueFieldTraits`2<Single, Object>..ctor, X0
+	026 Return 
+

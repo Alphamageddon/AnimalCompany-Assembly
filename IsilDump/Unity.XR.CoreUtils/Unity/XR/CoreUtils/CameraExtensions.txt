@@ -1,0 +1,163 @@
+Type: Unity.XR.CoreUtils.CameraExtensions
+
+Method: System.Single GetVerticalFieldOfView(UnityEngine.Camera camera, System.Single aspectNeutralFieldOfView)
+
+Disassembly:
+	0x03B23E44 B.NE 0x3B23E5C
+	0x03B23E48 MOV X0, X21
+	0x03B23E4C BL 0x3EB1AD0
+	0x03B23E50 LDR X20, [X0]
+	0x03B23E54 BL 0x3EB1AE0
+	0x03B23E58 B 0x3B23D8C
+	0x03B23E5C MOV X20, X31
+	0x03B23E60 B 0x3B23E68
+	0x03B23E64 MOV X21, X0
+	0x03B23E68 LDR X1, [X22]
+	0x03B23E6C MOV X0, X19
+	0x03B23E70 BL 0x1C16E00
+	0x03B23E74 MOV X19, X0
+	0x03B23E78 CBZ X0, 0x3B23ED4
+	0x03B23E7C LDR X8, [X19]
+	0x03B23E80 LDR X1, [X22]
+	0x03B23E84 LDRH W9, [X8 + 0x12E]
+	0x03B23E88 CBZ X9, 0x3B23EAC
+	0x03B23E8C LDR X10, [X8 + 0xB0]
+	0x03B23E90 ADD X10, X10, 0x8
+	0x03B23E94 LDUR X11, [X10 - 0x8]
+	0x03B23E98 CMP X11, X1
+	0x03B23E9C B.EQ 0x3B23EBC
+	0x03B23EA0 SUBS X9, X9, 0x1
+	0x03B23EA4 ADD X10, X10, 0x10
+	0x03B23EA8 B.NE 0x3B23E94
+	0x03B23EAC MOV X0, X19
+	0x03B23EB0 MOV W2, W31
+
+ISIL:
+	001 Move [X31-32], D8
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Compare X0, 0
+	005 JumpIfEqual {31}
+	006 Move X8, -50561024
+	007 Move V1, [X8+260]
+	008 Move S2, 0.5
+	009 Multiply S0, S0, S2
+	010 Move X19, X0
+	011 Multiply S0, S0, S1
+	012 Call 0x3EB2E50
+	013 Move X0, X19
+	014 Move X1, X31
+	015 Move V8, V0
+	016 Call Camera.get_aspect, X0
+	017 Move X8, -50561024
+	018 Move V1, [X8+364]
+	019 NotImplemented "Instruction FSQRT not yet implemented."
+	020 Multiply S1, S8, S1
+	021 NotImplemented "Instruction FDIV not yet implemented."
+	022 Call 0x3EB2BE0
+	023 Move X8, -50561024
+	024 Move V1, [X8+1096]
+	025 Move X30, [X31+16]
+	026 Move X19, [X31+24]
+	027 Add S0, S0, S0
+	028 Multiply S0, S0, S1
+	029 Move V8, [X31+32]
+	030 Return V0
+	031 Call 0x1C17F20
+
+Method: System.Single GetHorizontalFieldOfView(UnityEngine.Camera camera)
+
+Disassembly:
+	0x03B23EB4 BL 0x1C5C788
+	0x03B23EB8 B 0x3B23EC8
+	0x03B23EBC LDRSW X9, [X10]
+	0x03B23EC0 ADD X8, X8, X9, 0x4, LSL
+	0x03B23EC4 ADD X0, X8, 0x138
+	0x03B23EC8 LDP X8, X1, [X0]
+	0x03B23ECC MOV X0, X19
+	0x03B23ED0 BLR X8
+	0x03B23ED4 CBNZ X20, 0x3B23EE0
+	0x03B23ED8 MOV X0, X21
+	0x03B23EDC BL 0x1D2C690
+	0x03B23EE0 MOV X0, X20
+	0x03B23EE4 BL 0x1C16F18
+	0x03B23EE8 BL 0x1990590
+	0x03B23EEC RET
+	0x03B23EF0 SUB X31, X31, 0x30
+	0x03B23EF4 STP X30, X21, [X31 + 0x10]
+	0x03B23EF8 STP X20, X19, [X31 + 0x20]
+	0x03B23EFC STP X0, X1, [X31]
+	0x03B23F00 ADD X0, X31, 0x0
+	0x03B23F04 MOV X1, X31
+	0x03B23F08 MOV X19, X3
+	0x03B23F0C MOV X20, X2
+	0x03B23F10 BL 0x33785D8
+	0x03B23F14 MOV W1, W31
+
+ISIL:
+	001 Move [X31-32], D8
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Compare X0, 0
+	005 JumpIfEqual {28}
+	006 Move X1, X31
+	007 Move X19, X0
+	008 Call Camera.get_fieldOfView, X0
+	009 Move X8, -50561024
+	010 Move V1, [X8+260]
+	011 Move S2, 0.5
+	012 Multiply S0, S0, S2
+	013 Multiply S0, S0, S1
+	014 Call 0x3EB2E50
+	015 Move X0, X19
+	016 Move X1, X31
+	017 Move V8, V0
+	018 Call Camera.get_aspect, X0
+	019 Multiply S0, S8, S0
+	020 Call 0x3EB2BE0
+	021 Move X8, -50561024
+	022 Move V1, [X8+1096]
+	023 Move X30, [X31+16]
+	024 Move X19, [X31+24]
+	025 Multiply S0, S0, S1
+	026 Move V8, [X31+32]
+	027 Return V0
+	028 Call 0x1C17F20
+
+Method: System.Single GetVerticalOrthographicSize(UnityEngine.Camera camera, System.Single size)
+
+Disassembly:
+	0x03B23F18 MOV X2, X31
+	0x03B23F1C MOV X21, X0
+	0x03B23F20 BL 0x3317114
+	0x03B23F24 STR X0, [X20]
+	0x03B23F28 MOVZ W1, 0x8
+	0x03B23F2C MOV X0, X21
+	0x03B23F30 MOV X2, X31
+	0x03B23F34 BL 0x3317114
+	0x03B23F38 STR X0, [X19]
+	0x03B23F3C LDP X20, X19, [X31 + 0x20]
+	0x03B23F40 LDP X30, X21, [X31 + 0x10]
+	0x03B23F44 ADD X31, X31, 0x30
+	0x03B23F48 RET
+	0x03B23F4C STR X30, [X31 - 0x10]!
+	0x03B23F50 STR W0, [X31 + 0x8]
+
+ISIL:
+	001 Move [X31-16], D8
+	002 Move [X31+8], X30
+	003 Compare X0, 0
+	004 JumpIfEqual {16}
+	005 Move X1, X31
+	006 Move V8, V0
+	007 Call Camera.get_aspect, X0
+	008 Move X8, -50561024
+	009 Move V1, [X8+364]
+	010 Move X30, [X31+8]
+	011 NotImplemented "Instruction FSQRT not yet implemented."
+	012 Multiply S1, S8, S1
+	013 NotImplemented "Instruction FDIV not yet implemented."
+	014 Move V8, [X31+16]
+	015 Return V0
+	016 Call 0x1C17F20
+

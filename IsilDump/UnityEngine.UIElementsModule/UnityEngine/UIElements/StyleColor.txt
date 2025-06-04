@@ -1,0 +1,444 @@
+Type: UnityEngine.UIElements.StyleColor
+
+Method: UnityEngine.Color get_value()
+
+Disassembly:
+	0x03DFF0AC RET
+	0x03DFF0B0 STR W2, [X0 + 0x18]
+	0x03DFF0B4 LDR X8, [X1 + 0x10]
+	0x03DFF0B8 LDR V0, [X1]
+	0x03DFF0BC STR X8, [X0 + 0x10]
+	0x03DFF0C0 STR V0, [X0]
+	0x03DFF0C4 RET
+	0x03DFF0C8 SUB X31, X31, 0x50
+	0x03DFF0CC STR X30, [X31 + 0x40]
+	0x03DFF0D0 LDR W8, [X0 + 0x18]
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 Move S0, W31
+	003 Move S1, W31
+	004 Move S2, W31
+	005 Move S3, W31
+	006 Compare W8, 0
+	007 JumpIfEqual {9}
+	008 Return X0
+	009 Move S0, [X0]
+	010 Move S1, [X0+4]
+	011 Move S2, [X0+8]
+	012 Move S3, [X0+12]
+	013 Return X0
+
+Method: UnityEngine.UIElements.StyleKeyword get_keyword()
+
+Disassembly:
+	0x03DFF0D4 LDR W9, [X1 + 0x18]
+	0x03DFF0D8 CMP W8, W9
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void .ctor(UnityEngine.Color v)
+
+Disassembly:
+	0x03DFF0DC B.NE 0x3DFF110
+	0x03DFF0E0 LDR X8, [X0 + 0x10]
+	0x03DFF0E4 LDR V0, [X0]
+	0x03DFF0E8 ADD X0, X31, 0x20
+
+ISIL:
+	001 Move [X0+16], W31
+	002 Move [X0], S0
+	003 Move [X0+8], S1
+	004 Move [X0+8], S2
+	005 Move [X0+16], S3
+	006 Return 
+
+Method: System.Void .ctor(UnityEngine.Color v, UnityEngine.UIElements.StyleKeyword keyword)
+
+Disassembly:
+	0x03DFF0EC STR X8, [X31 + 0x30]
+	0x03DFF0F0 STR V0, [X31 + 0x2]
+	0x03DFF0F4 LDR X8, [X1 + 0x10]
+	0x03DFF0F8 LDR V0, [X1]
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Move [X0], S0
+	003 Move [X0+8], S1
+	004 Move [X0+8], S2
+	005 Move [X0+16], S3
+	006 Return 
+
+Method: System.Boolean op_Equality(UnityEngine.UIElements.StyleColor lhs, UnityEngine.UIElements.StyleColor rhs)
+
+Disassembly:
+	0x03DFF0FC ADD X1, X31, 0x0
+	0x03DFF100 STR X8, [X31 + 0x10]
+	0x03DFF104 STR V0, [X31]
+	0x03DFF108 BL 0x3DFBDD0
+	0x03DFF10C B 0x3DFF114
+	0x03DFF110 MOV W0, W31
+	0x03DFF114 LDR X30, [X31 + 0x40]
+	0x03DFF118 AND W0, W0, 0x1
+	0x03DFF11C ADD X31, X31, 0x50
+	0x03DFF120 RET
+	0x03DFF124 STP X31, X31, [X8]
+	0x03DFF128 STR X31, [X8 + 0x10]
+	0x03DFF12C STR W0, [X8 + 0x18]
+	0x03DFF130 RET
+	0x03DFF134 SUB X31, X31, 0x90
+	0x03DFF138 STR X30, [X31 + 0x80]
+	0x03DFF13C LDR X8, [X1 + 0x10]
+	0x03DFF140 LDR V0, [X1]
+	0x03DFF144 STR X8, [X31 + 0x30]
+	0x03DFF148 STR V0, [X31 + 0x2]
+	0x03DFF14C LDR X8, [X0 + 0x10]
+	0x03DFF150 LDR V0, [X0]
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 Move W9, [X1+16]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move D0, [X1]
+	005 Move D3, [X1+8]
+	006 Move D1, [X0]
+	007 Move D2, [X0+8]
+	008 Move X8, -53563392
+	009 Subtract V0, V1, V0
+	010 NotImplemented "Instruction INVALID not yet implemented."
+	011 Move V1, [X8+3872]
+	012 Subtract V2, V2, V3
+	013 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	014 NotImplemented "Instruction INVALID not yet implemented."
+	015 Add V0, V0, V3
+	016 Add V0, V2, V0
+	017 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	018 Add V0, V2, V0
+	019 NotImplemented "Instruction FCMP not yet implemented."
+	020 NotImplemented "Instruction CSET not yet implemented."
+	021 Return X0
+	022 Move W0, W31
+	023 Return X0
+
+Method: UnityEngine.UIElements.StyleColor op_Implicit(UnityEngine.Color v)
+
+Disassembly:
+	0x03DFF154 LDR W9, [X1 + 0x18]
+	0x03DFF158 STR X8, [X31 + 0x10]
+	0x03DFF15C STR V0, [X31]
+	0x03DFF160 LDR W8, [X0 + 0x18]
+
+ISIL:
+	001 Move [X8], S0
+	002 Move [X8+8], S1
+	003 Move [X8+8], S2
+	004 Move [X8+16], S3
+	005 Move [X8+16], W31
+	006 Return X0
+
+Method: System.Boolean Equals(UnityEngine.UIElements.StyleColor other)
+
+Disassembly:
+	0x03DFF164 CMP W9, W8
+	0x03DFF168 B.NE 0x3DFF19C
+	0x03DFF16C LDR V0, [X31 + 0x2]
+	0x03DFF170 LDR X8, [X31 + 0x30]
+	0x03DFF174 LDR V1, [X31]
+	0x03DFF178 LDR X9, [X31 + 0x10]
+	0x03DFF17C ADD X0, X31, 0x60
+	0x03DFF180 ADD X1, X31, 0x40
+	0x03DFF184 STR V0, [X31 + 0x6]
+	0x03DFF188 STR X8, [X31 + 0x70]
+	0x03DFF18C STR V1, [X31 + 0x4]
+	0x03DFF190 STR X9, [X31 + 0x50]
+	0x03DFF194 BL 0x3DFBDD0
+	0x03DFF198 B 0x3DFF1A0
+	0x03DFF19C MOV W0, W31
+	0x03DFF1A0 LDR X30, [X31 + 0x80]
+	0x03DFF1A4 AND W0, W0, 0x1
+	0x03DFF1A8 ADD X31, X31, 0x90
+	0x03DFF1AC RET
+	0x03DFF1B0 SUB X31, X31, 0x40
+	0x03DFF1B4 STP X30, X21, [X31 + 0x20]
+	0x03DFF1B8 STP X20, X19, [X31 + 0x30]
+
+ISIL:
+	001 Move W8, [X1+16]
+	002 Move W9, [X0+16]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move D0, [X0]
+	005 Move D2, [X0+8]
+	006 Move D1, [X1]
+	007 Move D3, [X1+8]
+	008 Move X8, -53563392
+	009 Subtract V0, V1, V0
+	010 NotImplemented "Instruction INVALID not yet implemented."
+	011 Move V1, [X8+3872]
+	012 Subtract V2, V3, V2
+	013 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	014 NotImplemented "Instruction INVALID not yet implemented."
+	015 Add V0, V3, V0
+	016 Add V0, V2, V0
+	017 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	018 Add V0, V2, V0
+	019 NotImplemented "Instruction FCMP not yet implemented."
+	020 NotImplemented "Instruction CSET not yet implemented."
+	021 Return X0
+	022 Move W0, W31
+	023 Return X0
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x03DFF1BC ADRP X21, 0x5E9000
+	0x03DFF1C0 LDRB W8, [X21 + 0x2CF]
+	0x03DFF1C4 MOV X20, X1
+	0x03DFF1C8 MOV X19, X0
+	0x03DFF1CC TBNZ X8, 0x0, 0x3DFF1E4
+	0x03DFF1D0 ADRP X0, 0x36A000
+	0x03DFF1D4 LDR X0, [X0 + 0xD98]
+	0x03DFF1D8 BL 0x1C16CF4
+	0x03DFF1DC MOVZ W8, 0x1
+	0x03DFF1E0 STRB W8, [X21 + 0x2CF]
+	0x03DFF1E4 CBZ X20, 0x3DFF200
+	0x03DFF1E8 ADRP X8, 0x36A000
+	0x03DFF1EC LDR X8, [X8 + 0xD98]
+	0x03DFF1F0 LDR X9, [X20]
+	0x03DFF1F4 LDR X8, [X8]
+	0x03DFF1F8 CMP X9, X8
+	0x03DFF1FC B.EQ 0x3DFF208
+	0x03DFF200 MOV W0, W31
+	0x03DFF204 B 0x3DFF22C
+	0x03DFF208 MOV X0, X20
+	0x03DFF20C BL 0x1C16E08
+	0x03DFF210 LDR V0, [X0]
+	0x03DFF214 LDUR V1, [X0 + 0xC]
+	0x03DFF218 ADD X1, X31, 0x0
+	0x03DFF21C MOV X0, X19
+	0x03DFF220 STR V0, [X31]
+	0x03DFF224 STUR V1, [X31 + 0xC]
+	0x03DFF228 BL 0x3DFF134
+	0x03DFF22C LDP X20, X19, [X31 + 0x30]
+	0x03DFF230 LDP X30, X21, [X31 + 0x20]
+	0x03DFF234 AND W0, W0, 0x1
+	0x03DFF238 ADD X31, X31, 0x40
+	0x03DFF23C RET
+	0x03DFF240 STP X30, X19, [X31 - 0x10]!
+	0x03DFF244 MOV X19, X0
+	0x03DFF248 BL 0x3DFC0C0
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+32], X30
+	003 Move [X31+40], X21
+	004 Move [X31+48], X20
+	005 Move [X31+56], X19
+	006 Move X21, 0x5EA000
+	007 Move W8, [X21+704]
+	008 Move X20, X1
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x36B000
+	015 Move X0, [X0+3368]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+704], W8
+	019 Compare X20, 0
+	020 JumpIfEqual {26}
+	021 Move X8, 0x36B000
+	022 Move X8, [X8+3368]
+	023 Move X9, [X20]
+	024 Move X8, [X8]
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move W0, W31
+	027 Move X0, X20
+	028 Call 0x1C17E08
+	029 Move V0, [X0]
+	030 Move W8, [X0+16]
+	031 Add X1, X31, 0
+	032 Move X0, X19
+	033 Move [X31], V0
+	034 Move [X31+16], W8
+	035 Call StyleColor.Equals, X0, X1
+	036 Move X20, [X31+48]
+	037 Move X19, [X31+56]
+	038 Move X30, [X31+32]
+	039 Move X21, [X31+40]
+	040 And W0, W0, 1
+	041 Add X31, X31, 64
+	042 Return X0
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x03DFF24C LDR W8, [X19 + 0x18]
+	0x03DFF250 MOVZ W9, 0x18D
+	0x03DFF254 MUL W9, W0, W9
+	0x03DFF258 EOR W0, W9, W8, 0x0
+	0x03DFF25C LDP X30, X19, [X31], #0x10
+	0x03DFF260 RET
+	0x03DFF264 SUB X31, X31, 0x50
+	0x03DFF268 STR X30, [X31 + 0x20]
+	0x03DFF26C STP X22, X21, [X31 + 0x30]
+	0x03DFF270 STP X20, X19, [X31 + 0x40]
+	0x03DFF274 ADRP X22, 0x5E9000
+	0x03DFF278 ADRP X21, 0x36A000
+	0x03DFF27C ADRP X20, 0x36A000
+	0x03DFF280 LDRB W8, [X22 + 0x2D0]
+	0x03DFF284 LDR X21, [X21 + 0xD98]
+	0x03DFF288 LDR X20, [X20 + 0xDA0]
+	0x03DFF28C MOV X19, X0
+	0x03DFF290 TBNZ X8, 0x0, 0x3DFF2B4
+	0x03DFF294 ADRP X0, 0x36A000
+	0x03DFF298 LDR X0, [X0 + 0xD98]
+	0x03DFF29C BL 0x1C16CF4
+	0x03DFF2A0 ADRP X0, 0x36A000
+	0x03DFF2A4 LDR X0, [X0 + 0xDA0]
+	0x03DFF2A8 BL 0x1C16CF4
+	0x03DFF2AC MOVZ W8, 0x1
+	0x03DFF2B0 STRB W8, [X22 + 0x2D0]
+	0x03DFF2B4 LDUR V0, [X19 + 0xC]
+	0x03DFF2B8 LDR V1, [X19]
+	0x03DFF2BC LDR X0, [X21]
+	0x03DFF2C0 ADD X1, X31, 0x0
+	0x03DFF2C4 STUR V0, [X31 + 0xC]
+	0x03DFF2C8 STR V1, [X31]
+	0x03DFF2CC BL 0x1C16E04
+	0x03DFF2D0 LDR X1, [X20]
+	0x03DFF2D4 BL 0x2295E38
+	0x03DFF2D8 LDP X20, X19, [X31 + 0x40]
+	0x03DFF2DC LDP X22, X21, [X31 + 0x30]
+	0x03DFF2E0 LDR X30, [X31 + 0x20]
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+16], X30
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move V0, [X0]
+	009 Move X19, X0
+	010 Add X8, X31, 0
+	011 Add X0, X31, 0
+	012 Move X1, X31
+	013 Or X20, X8, 7
+	014 Or X21, X8, 15
+	015 Or X22, X8, 15
+	016 Move [X31], V0
+	017 Call Single.GetHashCode, X0
+	018 Move W23, W0
+	019 Move X0, X20
+	020 Move X1, X31
+	021 Call Single.GetHashCode, X0
+	022 Move W20, W0
+	023 Move X0, X21
+	024 Move X1, X31
+	025 Call Single.GetHashCode, X0
+	026 Move W21, W0
+	027 Move X0, X22
+	028 Move X1, X31
+	029 Call Single.GetHashCode, X0
+	030 Xor W8, W23, W20
+	031 Move W9, [X19+16]
+	032 Xor W8, W8, W21
+	033 Move X20, [X31+48]
+	034 Move X19, [X31+56]
+	035 Move X22, [X31+32]
+	036 Move X21, [X31+40]
+	037 Move X30, [X31+16]
+	038 Move X23, [X31+24]
+	039 Xor W8, W8, W0
+	040 Move W10, 397
+	041 Multiply W8, W8, W10
+	042 Xor W0, W8, W9
+	043 Add X31, X31, 64
+	044 Return X0
+
+Method: System.String ToString()
+
+Disassembly:
+	0x03DFF2E4 ADD X31, X31, 0x50
+	0x03DFF2E8 RET
+	0x03DFF2EC STP X30, X19, [X31 - 0x10]!
+	0x03DFF2F0 LDR W9, [X0 + 0x10]
+	0x03DFF2F4 CMP W9, 0x4
+	0x03DFF2F8 B.HI 0x3DFF340
+	0x03DFF2FC ADRP X10, 0xFFFFFFFFFCD99000
+	0x03DFF300 ADD X10, X10, 0x5C6
+	0x03DFF304 ADR X11, 0x10
+	0x03DFF308 LDRB W12, [X10, X9, LSL]
+	0x03DFF30C ADD X11, X11, X12, 0x2, LSL
+	0x03DFF310 BR X11
+	0x03DFF314 BL 0x3DFDC24
+	0x03DFF318 AND X8, X1, 0xFFFFFFFFFFFFFFFF
+	0x03DFF31C ORR X1, X8, 0x1FFFFFFFF
+	0x03DFF320 B 0x3DFF338
+	0x03DFF324 BL 0x3DFDC24
+	0x03DFF328 B 0x3DFF338
+	0x03DFF32C MOV X8, X0
+	0x03DFF330 LDR X0, [X0]
+	0x03DFF334 LDR X1, [X8 + 0x8]
+	0x03DFF338 LDP X30, X19, [X31], #0x10
+	0x03DFF33C RET
+	0x03DFF340 ADRP X0, 0x2FD000
+	0x03DFF344 LDR X0, [X0 + 0x758]
+	0x03DFF348 BL 0x1C16D08
+	0x03DFF34C BL 0x1C16F10
+	0x03DFF350 MOV X1, X31
+	0x03DFF354 MOV X19, X0
+	0x03DFF358 BL 0x3380288
+	0x03DFF35C ADRP X0, 0x36A000
+	0x03DFF360 LDR X0, [X0 + 0xDA8]
+	0x03DFF364 BL 0x1C16D08
+	0x03DFF368 MOV X1, X0
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+32], X30
+	003 Move [X31+48], X22
+	004 Move [X31+56], X21
+	005 Move [X31+64], X20
+	006 Move [X31+72], X19
+	007 Move X22, 0x5EA000
+	008 Move X21, 0x36B000
+	009 Move X20, 0x36B000
+	010 Move W8, [X22+705]
+	011 Move X21, [X21+3368]
+	012 Move X20, [X20+3376]
+	013 Move X19, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {26}
+	018 Move X0, 0x36B000
+	019 Move X0, [X0+3368]
+	020 Call 0x1C17CF4
+	021 Move X0, 0x36B000
+	022 Move X0, [X0+3376]
+	023 Call 0x1C17CF4
+	024 Move W8, 1
+	025 Move [X22+705], W8
+	026 Move W8, [X19+16]
+	027 Move V0, [X19]
+	028 Move X0, [X21]
+	029 Add X1, X31, 0
+	030 Move [X31+16], W8
+	031 Move [X31], V0
+	032 Call 0x1C17E04
+	033 Move X1, [X20]
+	034 Call StyleValueExtensions.DebugString, X0
+	035 Move X20, [X31+64]
+	036 Move X19, [X31+72]
+	037 Move X22, [X31+48]
+	038 Move X21, [X31+56]
+	039 Move X30, [X31+32]
+	040 Add X31, X31, 80
+	041 Return X0
+

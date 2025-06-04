@@ -1,0 +1,46 @@
+Type: System.Security.XmlSyntaxException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03248F9C BL 0x3311888
+	0x03248FA0 ADRP X0, 0xEDA000
+
+ISIL:
+	001 Move X1, X31
+	002 Call SystemException..ctor, X0
+	003 Return 
+
+Method: System.Void .ctor(System.Int32 lineNumber)
+
+Disassembly:
+	0x03248FA4 LDR X0, [X0 + 0xBB8]
+	0x03248FA8 BL 0x1C16D08
+
+ISIL:
+	001 Move X1, X31
+	002 Call SystemException..ctor, X0
+	003 Return 
+
+Method: System.Void .ctor(System.Int32 lineNumber, System.String message)
+
+Disassembly:
+	0x03248FAC MOV X1, X0
+	0x03248FB0 MOV X0, X19
+
+ISIL:
+	001 Move X1, X31
+	002 Call SystemException..ctor, X0
+	003 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x03248FB4 BL 0x1C16DEC
+	0x03248FB8 RET
+
+ISIL:
+	001 Move X4, X31
+	002 Call SystemException..ctor, X0, X1, X2
+	003 Return 
+

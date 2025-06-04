@@ -1,0 +1,120 @@
+Type: UnityEngine.Rendering.DebugUI/FloatField
+
+Method: System.Single ValidateValue(System.Single value)
+
+Disassembly:
+	0x039AFC04 ADD X0, X31, 0xC
+	0x039AFC08 MOV X2, X31
+	0x039AFC0C STR W8, [X31 + 0xC]
+	0x039AFC10 LDR W1, [X1 + 0x20]
+	0x039AFC14 BL 0x337B634
+	0x039AFC18 LDR X30, [X31], #0x10
+	0x039AFC1C RET
+	0x039AFC20 MOVZ W0, 0x1
+	0x039AFC24 RET
+	0x039AFC28 STR X30, [X31 - 0x20]!
+	0x039AFC2C STP X20, X19, [X31 + 0x10]
+	0x039AFC30 ADRP X19, 0xA32000
+	0x039AFC34 ADRP X20, 0x7A2000
+	0x039AFC38 LDRB W8, [X19 + 0xC27]
+	0x039AFC3C LDR X20, [X20 + 0xCD0]
+	0x039AFC40 TBNZ X8, 0x0, 0x39AFC58
+	0x039AFC44 ADRP X0, 0x7A2000
+	0x039AFC48 LDR X0, [X0 + 0xCD0]
+	0x039AFC4C BL 0x1C16CF4
+	0x039AFC50 MOVZ W8, 0x1
+	0x039AFC54 STRB W8, [X19 + 0xC27]
+	0x039AFC58 LDR X0, [X20]
+	0x039AFC5C BL 0x1C16F10
+	0x039AFC60 MOV X1, X31
+
+ISIL:
+	001 Move [X31-32], D8
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move X8, [X0+96]
+	005 Move X19, X0
+	006 Move V8, V0
+	007 Compare X8, 0
+	008 JumpIfEqual {15}
+	009 Move X9, [X8+24]
+	010 Move X0, [X8+64]
+	011 Move X1, [X8+40]
+	012 NotImplemented "Instruction BLR not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction FCSEL not yet implemented."
+	015 Move X8, [X19+104]
+	016 Compare X8, 0
+	017 JumpIfEqual {24}
+	018 Move X9, [X8+24]
+	019 Move X0, [X8+64]
+	020 Move X1, [X8+40]
+	021 NotImplemented "Instruction BLR not yet implemented."
+	022 NotImplemented "Instruction FCMP not yet implemented."
+	023 NotImplemented "Instruction FCSEL not yet implemented."
+	024 Move X30, [X31+16]
+	025 Move X19, [X31+24]
+	026 Move V0, V8
+	027 Move V8, [X31+32]
+	028 Return V0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x039AFC64 MOV X19, X0
+	0x039AFC68 BL 0x33BDD8C
+	0x039AFC6C LDR X8, [X20]
+	0x039AFC70 LDR X8, [X8 + 0xB8]
+	0x039AFC74 STR X19, [X8]
+	0x039AFC78 LDP X20, X19, [X31 + 0x10]
+	0x039AFC7C LDR X30, [X31], #0x20
+	0x039AFC80 RET
+	0x039AFC84 MOV X1, X31
+	0x039AFC88 B 0x33BDD8C
+	0x039AFC8C RET
+	0x039AFC90 RET
+	0x039AFC94 TBZ X0, 0x0, 0x39AFC9C
+	0x039AFC98 B 0x39AFCA0
+	0x039AFC9C B 0x39AFE20
+	0x039AFCA0 STP X30, X21, [X31 - 0x20]!
+	0x039AFCA4 STP X20, X19, [X31 + 0x10]
+	0x039AFCA8 ADRP X19, 0xA32000
+	0x039AFCAC ADRP X21, 0x7A2000
+	0x039AFCB0 ADRP X20, 0x744000
+	0x039AFCB4 LDRB W8, [X19 + 0xC28]
+	0x039AFCB8 LDR X21, [X21 + 0xCE0]
+	0x039AFCBC LDR X20, [X20 + 0x598]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xA33000
+	006 Move X20, 0x7A3000
+	007 Move W8, [X21+3088]
+	008 Move X20, [X20+3144]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x7A3000
+	015 Move X0, [X0+3144]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+3088], W8
+	019 Move X8, -49025024
+	020 Move V0, [X8+4008]
+	021 Move W8, 3
+	022 Move [X19+120], W8
+	023 Move X0, X19
+	024 Move [X19+112], D0
+	025 Move X1, [X20]
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Call Field`1<Single>..ctor, X0
+	031 Return 
+

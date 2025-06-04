@@ -1,0 +1,25 @@
+Type: Fusion.DisconnectCauseExt
+
+Method: Fusion.ShutdownReason ConvertToShutdownReason(Fusion.Photon.Realtime.DisconnectCause disconnectCause)
+
+Disassembly:
+	0x01E68E9C BL 0x1C16F10
+	0x01E68EA0 LDR X2, [X23]
+	0x01E68EA4 MOV X1, X19
+	0x01E68EA8 MOV X3, X31
+	0x01E68EAC MOV X21, X0
+	0x01E68EB0 BL 0x2A76070
+	0x01E68EB4 CBZ X20, 0x1E69030
+	0x01E68EB8 ADRP X8, 0x2294000
+	0x01E68EBC LDR X8, [X8 + 0xFC8]
+
+ISIL:
+	001 Subtract W8, W0, 1
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 Move X9, -20160512
+	004 Add X9, X9, 2912
+	005 Move W0, [X9]
+	006 Return X0
+	007 Move W0, W31
+	008 Return X0
+

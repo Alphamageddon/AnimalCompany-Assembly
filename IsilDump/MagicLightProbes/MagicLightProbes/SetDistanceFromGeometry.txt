@@ -1,0 +1,81 @@
+Type: MagicLightProbes.SetDistanceFromGeometry
+
+Method: System.Collections.IEnumerator ExecutePass(MagicLightProbes.MagicLightProbes parent, MagicLightProbes.MLPVolume currentVolume)
+
+Disassembly:
+	0x031D23FC LDR X8, [X8 + 0xB8]
+	0x031D2400 STR X0, [X8 + 0x8]
+	0x031D2404 LDRB W9, [X19 + 0x18]
+	0x031D2408 STRB W9, [X8 + 0x10]
+	0x031D240C LDRB W9, [X19 + 0x19]
+	0x031D2410 STRB W9, [X8 + 0x11]
+	0x031D2414 LDR V0, [X19 + 0x38]
+	0x031D2418 LDP X20, X19, [X31 + 0x30]
+	0x031D241C STR S0, [X8 + 0x14]
+	0x031D2420 LDP X30, X25, [X31], #0x40
+	0x031D2424 RET
+	0x031D2428 BL 0x1C16F20
+	0x031D242C STP X30, X21, [X31 - 0x20]!
+	0x031D2430 STP X20, X19, [X31 + 0x10]
+	0x031D2434 ADRP X19, 0x120A000
+	0x031D2438 ADRP X20, 0xF4D000
+	0x031D243C ADRP X21, 0xF21000
+	0x031D2440 LDRB W8, [X19 + 0x26]
+	0x031D2444 LDR X20, [X20 + 0xE00]
+	0x031D2448 LDR X21, [X21 + 0x598]
+	0x031D244C TBNZ X8, 0x0, 0x31D2494
+	0x031D2450 ADRP X0, 0xF4D000
+	0x031D2454 LDR X0, [X0 + 0xE00]
+	0x031D2458 BL 0x1C16CF4
+	0x031D245C ADRP X0, 0xF4D000
+	0x031D2460 LDR X0, [X0 + 0xEB0]
+	0x031D2464 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x120B000
+	007 Move X22, 0xF4E000
+	008 Move W8, [X21+29]
+	009 Move X22, [X22+3504]
+	010 Move X19, X2
+	011 Move X20, X1
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0xF4E000
+	017 Move X0, [X0+3504]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+29], W8
+	021 Move X0, [X22]
+	022 Call 0x1C17F10
+	023 Move X1, X31
+	024 Move X21, X0
+	025 Call Object..ctor, X0
+	026 Move [X21+16], W31
+	027 Move [X21+32], X19
+	028 Move [X21+40], X20
+	029 Move X0, X21
+	030 Move X20, [X31+32]
+	031 Move X19, [X31+40]
+	032 Move X22, [X31+16]
+	033 Move X21, [X31+24]
+	034 Move X30, [X31+48]
+	035 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x031D2490 STRB W8, [X19 + 0x26]
+	0x031D2494 LDR X8, [X20]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

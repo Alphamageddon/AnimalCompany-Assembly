@@ -1,0 +1,460 @@
+Type: System.Linq.Lookup`2/Grouping
+
+Method: System.Void Add(TElement element)
+
+Disassembly:
+	0x02D57264 STR X30, [X31 - 0x20]!
+	0x02D57268 STP X20, X19, [X31 + 0x10]
+	0x02D5726C ADRP X20, 0x1684000
+	0x02D57270 LDRB W8, [X20 + 0x8A9]
+	0x02D57274 MOV X19, X0
+	0x02D57278 TBNZ X8, 0x0, 0x2D57290
+	0x02D5727C ADRP X0, 0x139C000
+	0x02D57280 LDR X0, [X0 + 0x6C0]
+	0x02D57284 BL 0x1C16CF4
+	0x02D57288 MOVZ W8, 0x1
+	0x02D5728C STRB W8, [X20 + 0x8A9]
+	0x02D57290 LDR X0, [X19 + 0x20]
+	0x02D57294 ADRP X20, 0x139C000
+	0x02D57298 LDRB W8, [X0 + 0x135]
+	0x02D5729C LDR X20, [X20 + 0x6C0]
+	0x02D572A0 TBNZ X8, 0x0, 0x2D572A8
+	0x02D572A4 BL 0x1C5C684
+	0x02D572A8 LDR X8, [X20]
+	0x02D572AC LDR X9, [X0 + 0xC0]
+	0x02D572B0 LDR W10, [X8 + 0xE0]
+	0x02D572B4 LDR X20, [X9]
+	0x02D572B8 CBNZ W10, 0x2D572C4
+	0x02D572BC MOV X0, X8
+	0x02D572C0 BL 0x1C16DFC
+	0x02D572C4 MOV X0, X20
+	0x02D572C8 MOV X1, X31
+	0x02D572CC BL 0x338C698
+	0x02D572D0 CBZ X0, 0x2D57330
+	0x02D572D4 LDR X8, [X0]
+	0x02D572D8 LDR X9, [X8 + 0x2D8]
+	0x02D572DC LDR X1, [X8 + 0x2E0]
+	0x02D572E0 BLR X9
+	0x02D572E4 MOV X1, X31
+	0x02D572E8 BL 0x3BFFD14
+	0x02D572EC LDR X8, [X19 + 0x20]
+	0x02D572F0 MOV X19, X0
+	0x02D572F4 LDRB W9, [X8 + 0x135]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X0
+	005 Add X0, X0, 24
+	006 Move X9, [X0]
+	007 Compare X9, 0
+	008 JumpIfEqual {36}
+	009 Move W8, [X19+32]
+	010 Move W10, [X9+24]
+	011 Move X20, X1
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 Move W9, 0x40000000
+	014 Add W31, W8, W9
+	015 Move X9, [X2+32]
+	016 Move W1, W8
+	017 ShiftRight W1, 31
+	018 And W1, W1, 0x3FFFFFFF
+	019 Move X9, [X9+192]
+	020 Move X2, [X9+16]
+	021 Call Array.Resize, X0, X1
+	022 Move X9, [X19+24]
+	023 Compare X9, 0
+	024 JumpIfEqual {36}
+	025 Move W8, [X19+32]
+	026 Move W10, [X9+24]
+	027 NotImplemented "Instruction CMP not yet implemented."
+	028 Add X9, X9, W8
+	029 Add W8, W8, 1
+	030 Move [X9+32], X20
+	031 Move [X19+32], W8
+	032 Move X20, [X31+16]
+	033 Move X19, [X31+24]
+	034 Move X30, [X31+32]
+	035 Return 
+	036 Call 0x1C17F20
+	037 Call 0x1C17F28
+	038 Move X19, X2
+	039 Call 0x1C17F30
+	040 Move X1, X19
+	041 Call 0x1C17DEC
+
+Method: System.Collections.Generic.IEnumerator`1<TElement> GetEnumerator()
+
+Disassembly:
+	0x02D572F8 TBNZ X9, 0x0, 0x2D57308
+	0x02D572FC MOV X0, X8
+	0x02D57300 BL 0x1C5C684
+	0x02D57304 MOV X8, X0
+	0x02D57308 LDR X8, [X8 + 0xC0]
+	0x02D5730C LDR X0, [X8 + 0x10]
+	0x02D57310 LDRB W8, [X0 + 0x135]
+	0x02D57314 TBNZ X8, 0x0, 0x2D5731C
+	0x02D57318 BL 0x1C5C684
+	0x02D5731C LDR X8, [X0 + 0xB8]
+	0x02D57320 STR X19, [X8]
+	0x02D57324 LDP X20, X19, [X31 + 0x10]
+	0x02D57328 LDR X30, [X31], #0x20
+	0x02D5732C RET
+	0x02D57330 BL 0x1C16F20
+	0x02D57334 STR X30, [X31 - 0x20]!
+	0x02D57338 STP X20, X19, [X31 + 0x10]
+	0x02D5733C ADRP X20, 0x1684000
+	0x02D57340 LDRB W8, [X20 + 0x8AA]
+	0x02D57344 MOV X19, X0
+	0x02D57348 TBNZ X8, 0x0, 0x2D57360
+	0x02D5734C ADRP X0, 0x139C000
+	0x02D57350 LDR X0, [X0 + 0x6C0]
+	0x02D57354 BL 0x1C16CF4
+	0x02D57358 MOVZ W8, 0x1
+	0x02D5735C STRB W8, [X20 + 0x8AA]
+	0x02D57360 LDR X0, [X19 + 0x20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X1+32]
+	005 Move X20, X1
+	006 Move X19, X0
+	007 Move X8, [X8+192]
+	008 Move X8, [X8+40]
+	009 Move W9, [X8+309]
+	010 Move TEMP, X9
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {17}
+	014 Move X0, X8
+	015 Call 0x1C5D684
+	016 Move X8, X0
+	017 Move X0, X8
+	018 Call 0x1C17F10
+	019 Move X8, [X20+32]
+	020 Move W1, W31
+	021 Move X20, X0
+	022 Move X8, [X8+192]
+	023 Move X2, [X8+48]
+	024 Call 0x239CCB8, X0, X1
+	025 Compare X20, 0
+	026 JumpIfEqual {33}
+	027 Move [X20+32], X19
+	028 Move X0, X20
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X30, [X31+32]
+	032 Return X0
+	033 Call 0x1C17F20
+
+Method: System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+Disassembly:
+	0x02D57364 ADRP X20, 0x139C000
+	0x02D57368 LDRB W8, [X0 + 0x135]
+	0x02D5736C LDR X20, [X20 + 0x6C0]
+	0x02D57370 TBNZ X8, 0x0, 0x2D57378
+
+ISIL:
+	001 Move X8, [X1+32]
+	002 Move X8, [X8+192]
+	003 Move X1, [X8+64]
+	004 Call 0x2D572F8, X0
+	005 Return X0
+
+Method: TKey get_Key()
+
+Disassembly:
+	0x02D57374 BL 0x1C5C684
+	0x02D57378 LDR X8, [X20]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Int32 System.Collections.Generic.ICollection<TElement>.get_Count()
+
+Disassembly:
+	0x02D5737C LDR X9, [X0 + 0xC0]
+	0x02D57380 LDR W10, [X8 + 0xE0]
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: System.Boolean System.Collections.Generic.ICollection<TElement>.get_IsReadOnly()
+
+Disassembly:
+	0x02D57384 LDR X20, [X9]
+	0x02D57388 CBNZ W10, 0x2D57394
+
+ISIL:
+	001 Move W0, 1
+	002 Return X0
+
+Method: System.Void System.Collections.Generic.ICollection<TElement>.Add(TElement item)
+
+Disassembly:
+	0x02D5738C MOV X0, X8
+	0x02D57390 BL 0x1C16DFC
+	0x02D57394 MOV X0, X20
+	0x02D57398 MOV X1, X31
+	0x02D5739C BL 0x338C698
+	0x02D573A0 CBZ X0, 0x2D57400
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, X31
+	004 Move X19, X2
+	005 Call Error.NotSupported
+	006 Move X1, X19
+	007 Call 0x1C17DEC
+
+Method: System.Void System.Collections.Generic.ICollection<TElement>.Clear()
+
+Disassembly:
+	0x02D573A4 LDR X8, [X0]
+	0x02D573A8 LDR X9, [X8 + 0x2D8]
+	0x02D573AC LDR X1, [X8 + 0x2E0]
+	0x02D573B0 BLR X9
+	0x02D573B4 MOV X1, X31
+	0x02D573B8 BL 0x3BFFD14
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, X31
+	004 Move X19, X1
+	005 Call Error.NotSupported
+	006 Move X1, X19
+	007 Call 0x1C17DEC
+
+Method: System.Boolean System.Collections.Generic.ICollection<TElement>.Contains(TElement item)
+
+Disassembly:
+	0x02D573BC LDR X8, [X19 + 0x20]
+	0x02D573C0 MOV X19, X0
+	0x02D573C4 LDRB W9, [X8 + 0x135]
+	0x02D573C8 TBNZ X9, 0x0, 0x2D573D8
+	0x02D573CC MOV X0, X8
+	0x02D573D0 BL 0x1C5C684
+	0x02D573D4 MOV X8, X0
+	0x02D573D8 LDR X8, [X8 + 0xC0]
+	0x02D573DC LDR X0, [X8 + 0x10]
+	0x02D573E0 LDRB W8, [X0 + 0x135]
+	0x02D573E4 TBNZ X8, 0x0, 0x2D573EC
+	0x02D573E8 BL 0x1C5C684
+	0x02D573EC LDR X8, [X0 + 0xB8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X2+32]
+	003 Move W3, [X0+32]
+	004 Move W2, W31
+	005 Move X9, [X8+192]
+	006 Move X8, [X0+24]
+	007 Move X4, [X9+80]
+	008 Move X0, X8
+	009 Call Array.IndexOf, X0, X1, X2, X3
+	010 NotImplemented "Instruction ORN not yet implemented."
+	011 Move W0, W8
+	012 ShiftRight W0, 31
+	013 And W0, W0, 0x7FFFFFFF
+	014 Move X30, [X31+16]
+	015 Return X0
+
+Method: System.Void System.Collections.Generic.ICollection<TElement>.CopyTo(TElement[] array, System.Int32 arrayIndex)
+
+Disassembly:
+	0x02D573F0 STR X19, [X8]
+	0x02D573F4 LDP X20, X19, [X31 + 0x10]
+	0x02D573F8 LDR X30, [X31], #0x20
+	0x02D573FC RET
+	0x02D57400 BL 0x1C16F20
+	0x02D57404 STR X30, [X31 - 0x20]!
+	0x02D57408 STP X20, X19, [X31 + 0x10]
+	0x02D5740C ADRP X20, 0x1684000
+
+ISIL:
+	001 Move X8, [X0+24]
+	002 Move W4, [X0+32]
+	003 Move W3, W2
+	004 Move X2, X1
+	005 Move X0, X8
+	006 Move W1, W31
+	007 Move X5, X31
+	008 Call Array.Copy, X0, X1, X2, X3, X4
+	009 Return 
+
+Method: System.Boolean System.Collections.Generic.ICollection<TElement>.Remove(TElement item)
+
+Disassembly:
+	0x02D57410 LDRB W8, [X20 + 0x8AB]
+	0x02D57414 MOV X19, X0
+	0x02D57418 TBNZ X8, 0x0, 0x2D57430
+	0x02D5741C ADRP X0, 0x139C000
+	0x02D57420 LDR X0, [X0 + 0x6C0]
+	0x02D57424 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, X31
+	004 Move X19, X2
+	005 Call Error.NotSupported
+	006 Move X1, X19
+	007 Call 0x1C17DEC
+
+Method: System.Int32 System.Collections.Generic.IList<TElement>.IndexOf(TElement item)
+
+Disassembly:
+	0x02D57428 MOVZ W8, 0x1
+	0x02D5742C STRB W8, [X20 + 0x8AB]
+	0x02D57430 LDR X0, [X19 + 0x20]
+	0x02D57434 ADRP X20, 0x139C000
+	0x02D57438 LDRB W8, [X0 + 0x135]
+	0x02D5743C LDR X20, [X20 + 0x6C0]
+	0x02D57440 TBNZ X8, 0x0, 0x2D57448
+	0x02D57444 BL 0x1C5C684
+
+ISIL:
+	001 Move X8, [X2+32]
+	002 Move W3, [X0+32]
+	003 Move W2, W31
+	004 Move X9, [X8+192]
+	005 Move X8, [X0+24]
+	006 Move X4, [X9+80]
+	007 Move X0, X8
+	008 Call Array.IndexOf, X0, X1, X2, X3
+	009 Return X0
+
+Method: System.Void System.Collections.Generic.IList<TElement>.Insert(System.Int32 index, TElement item)
+
+Disassembly:
+	0x02D57448 LDR X8, [X20]
+	0x02D5744C LDR X9, [X0 + 0xC0]
+	0x02D57450 LDR W10, [X8 + 0xE0]
+	0x02D57454 LDR X20, [X9]
+	0x02D57458 CBNZ W10, 0x2D57464
+	0x02D5745C MOV X0, X8
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, X31
+	004 Move X19, X3
+	005 Call Error.NotSupported
+	006 Move X1, X19
+	007 Call 0x1C17DEC
+
+Method: System.Void System.Collections.Generic.IList<TElement>.RemoveAt(System.Int32 index)
+
+Disassembly:
+	0x02D57460 BL 0x1C16DFC
+	0x02D57464 MOV X0, X20
+	0x02D57468 MOV X1, X31
+	0x02D5746C BL 0x338C698
+	0x02D57470 CBZ X0, 0x2D574D0
+	0x02D57474 LDR X8, [X0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, X31
+	004 Move X19, X2
+	005 Call Error.NotSupported
+	006 Move X1, X19
+	007 Call 0x1C17DEC
+
+Method: TElement System.Collections.Generic.IList<TElement>.get_Item(System.Int32 index)
+
+Disassembly:
+	0x02D57478 LDR X9, [X8 + 0x2D8]
+	0x02D5747C LDR X1, [X8 + 0x2E0]
+	0x02D57480 BLR X9
+	0x02D57484 MOV X1, X31
+	0x02D57488 BL 0x3BFFD14
+	0x02D5748C LDR X8, [X19 + 0x20]
+	0x02D57490 MOV X19, X0
+	0x02D57494 LDRB W9, [X8 + 0x135]
+	0x02D57498 TBNZ X9, 0x0, 0x2D574A8
+	0x02D5749C MOV X0, X8
+	0x02D574A0 BL 0x1C5C684
+	0x02D574A4 MOV X8, X0
+	0x02D574A8 LDR X8, [X8 + 0xC0]
+	0x02D574AC LDR X0, [X8 + 0x10]
+	0x02D574B0 LDRB W8, [X0 + 0x135]
+	0x02D574B4 TBNZ X8, 0x0, 0x2D574BC
+	0x02D574B8 BL 0x1C5C684
+	0x02D574BC LDR X8, [X0 + 0xB8]
+	0x02D574C0 STR X19, [X8]
+	0x02D574C4 LDP X20, X19, [X31 + 0x10]
+	0x02D574C8 LDR X30, [X31], #0x20
+	0x02D574CC RET
+	0x02D574D0 BL 0x1C16F20
+	0x02D574D4 STR X30, [X31 - 0x20]!
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move TEMP, X1
+	004 And TEMP, TEMP, -2147483648
+	005 Compare TEMP, -2147483648
+	006 JumpIfEqual {19}
+	007 Move W8, [X0+32]
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move X8, [X0+24]
+	010 Compare X8, 0
+	011 JumpIfEqual {27}
+	012 Move W9, [X8+24]
+	013 NotImplemented "Instruction CMP not yet implemented."
+	014 Add X8, X8, W1
+	015 Move X0, [X8+32]
+	016 Move X30, [X31+16]
+	017 Move X19, [X31+24]
+	018 Return X0
+	019 Move X0, 0x13A8000
+	020 Move X0, [X0+304]
+	021 Move X19, X2
+	022 Call 0x1C17D08
+	023 Move X1, X31
+	024 Call Error.ArgumentOutOfRange, X0
+	025 Move X1, X19
+	026 Call 0x1C17DEC
+	027 Call 0x1C17F20
+	028 Call 0x1C17F28
+
+Method: System.Void System.Collections.Generic.IList<TElement>.set_Item(System.Int32 index, TElement value)
+
+Disassembly:
+	0x02D574D8 STP X20, X19, [X31 + 0x10]
+	0x02D574DC ADRP X20, 0x1684000
+	0x02D574E0 LDRB W8, [X20 + 0x8AC]
+	0x02D574E4 MOV X19, X0
+	0x02D574E8 TBNZ X8, 0x0, 0x2D57500
+	0x02D574EC ADRP X0, 0x139C000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, X31
+	004 Move X19, X3
+	005 Call Error.NotSupported
+	006 Move X1, X19
+	007 Call 0x1C17DEC
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x02D574F0 LDR X0, [X0 + 0x6C0]
+	0x02D574F4 BL 0x1C16CF4
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

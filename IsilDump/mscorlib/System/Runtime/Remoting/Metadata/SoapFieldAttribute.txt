@@ -1,0 +1,131 @@
+Type: System.Runtime.Remoting.Metadata.SoapFieldAttribute
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03291EC0 LDR X0, [X0 + 0x2D8]
+	0x03291EC4 BL 0x1C16D08
+
+ISIL:
+	001 Move X1, X31
+	002 Call Attribute..ctor, X0
+	003 Return 
+
+Method: System.String get_XmlElementName()
+
+Disassembly:
+	0x03291EC8 MOV X1, X0
+	0x03291ECC MOV X0, X19
+
+ISIL:
+	001 Move X0, [X0+40]
+	002 Return X0
+
+Method: System.Boolean IsInteropXmlElement()
+
+Disassembly:
+	0x03291ED0 MOV X2, X31
+	0x03291ED4 BL 0x330E100
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: System.Void SetReflectionObject(System.Object reflectionObject)
+
+Disassembly:
+	0x03291ED8 ADRP X0, 0xE93000
+	0x03291EDC LDR X0, [X0 + 0x7A8]
+	0x03291EE0 BL 0x1C16D08
+	0x03291EE4 MOV X1, X0
+	0x03291EE8 MOV X0, X19
+	0x03291EEC BL 0x1C16DEC
+	0x03291EF0 BL 0x1C16F20
+	0x03291EF4 STR X30, [X31 - 0x10]!
+	0x03291EF8 LDR X0, [X0 + 0x10]
+	0x03291EFC CBZ X0, 0x3291F18
+	0x03291F00 LDR X8, [X0]
+	0x03291F04 LDR X9, [X8 + 0x378]
+	0x03291F08 LDR X1, [X8 + 0x380]
+	0x03291F0C BLR X9
+	0x03291F10 CMP W0, 0x0
+	0x03291F14 CSET W0, GT
+	0x03291F18 LDR X30, [X31], #0x10
+	0x03291F1C RET
+	0x03291F20 STP X29, X30, [X31 - 0x60]!
+	0x03291F24 STP X28, X27, [X31 + 0x10]
+	0x03291F28 STP X26, X25, [X31 + 0x20]
+	0x03291F2C STP X24, X23, [X31 + 0x30]
+	0x03291F30 STP X22, X21, [X31 + 0x40]
+	0x03291F34 STP X20, X19, [X31 + 0x50]
+	0x03291F38 ADRP X19, 0x114B000
+	0x03291F3C ADRP X21, 0xE93000
+	0x03291F40 LDRB W8, [X19 + 0x6D4]
+	0x03291F44 LDR X21, [X21 + 0x370]
+	0x03291F48 MOV X20, X0
+	0x03291F4C TBNZ X8, 0x0, 0x3291FB8
+	0x03291F50 ADRP X0, 0xE93000
+	0x03291F54 LDR X0, [X0 + 0x768]
+	0x03291F58 BL 0x1C16CF4
+	0x03291F5C ADRP X0, 0xE93000
+	0x03291F60 LDR X0, [X0 + 0x770]
+	0x03291F64 BL 0x1C16CF4
+	0x03291F68 ADRP X0, 0xE93000
+	0x03291F6C LDR X0, [X0 + 0x7B0]
+	0x03291F70 BL 0x1C16CF4
+	0x03291F74 ADRP X0, 0xE8F000
+	0x03291F78 LDR X0, [X0 + 0xF80]
+	0x03291F7C BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x114C000
+	006 Move W8, [X21+1741]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0xE8C000
+	014 Move X0, [X0+936]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+1741], W8
+	018 Compare X20, 0
+	019 JumpIfEqual {40}
+	020 Move X9, 0xE8C000
+	021 Move X9, [X9+936]
+	022 Move X8, [X20]
+	023 Move X1, [X9]
+	024 Move W10, [X8+304]
+	025 Move W9, [X1+304]
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Move X8, [X8+200]
+	028 Add X8, X8, X9
+	029 NotImplemented "Instruction LDUR not yet implemented."
+	030 NotImplemented "Instruction CMP not yet implemented."
+	031 Move X8, [X19+40]
+	032 Compare X8, 0
+	033 JumpIfNotEqual {43}
+	034 Move X8, [X20]
+	035 Move X0, X20
+	036 Move X9, [X8+424]
+	037 Move X1, [X8+432]
+	038 NotImplemented "Instruction BLR not yet implemented."
+	039 Move [X19+40], X0
+	040 Move X8, [X19+40]
+	041 Compare X8, 0
+	042 JumpIfEqual {50}
+	043 Move X20, [X31+16]
+	044 Move X19, [X31+24]
+	045 Move X30, [X31+32]
+	046 Move X21, [X31+40]
+	047 Return 
+	048 Move X0, X20
+	049 Call 0x1C181E0
+	050 Call 0x1C17F20
+

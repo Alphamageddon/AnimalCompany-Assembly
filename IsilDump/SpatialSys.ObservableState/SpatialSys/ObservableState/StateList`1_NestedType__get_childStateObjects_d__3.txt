@@ -1,0 +1,452 @@
+Type: SpatialSys.ObservableState.StateList`1/<get_childStateObjects>d__3
+
+Method: System.Void .ctor(System.Int32 <>1__state)
+
+Disassembly:
+	0x0297DA2C CMP W21, W0
+	0x0297DA30 B.NE 0x297DA3C
+	0x0297DA34 STR W31, [X19 + 0x10]
+	0x0297DA38 B 0x297DA80
+	0x0297DA3C LDR X8, [X20 + 0x20]
+	0x0297DA40 LDR X8, [X8 + 0xC0]
+	0x0297DA44 LDR X0, [X8]
+	0x0297DA48 LDRB W8, [X0 + 0x135]
+	0x0297DA4C TBNZ X8, 0x0, 0x297DA54
+	0x0297DA50 BL 0x1C5C684
+	0x0297DA54 BL 0x1C16F10
+	0x0297DA58 MOV X1, X31
+	0x0297DA5C MOV X20, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move X0, X31
+	009 Move [X20+16], W19
+	010 Call Environment.get_CurrentManagedThreadId
+	011 Move [X20+32], W0
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Return 
+
+Method: System.Void System.IDisposable.Dispose()
+
+Disassembly:
+	0x0297DA60 BL 0x33BDD8C
+	0x0297DA64 MOV X0, X31
+	0x0297DA68 STR W31, [X20 + 0x10]
+	0x0297DA6C BL 0x33C151C
+	0x0297DA70 STR W0, [X20 + 0x20]
+	0x0297DA74 LDR X8, [X19 + 0x28]
+	0x0297DA78 MOV X19, X20
+	0x0297DA7C STR X8, [X20 + 0x28]
+	0x0297DA80 MOV X0, X19
+	0x0297DA84 LDP X20, X19, [X31 + 0x10]
+	0x0297DA88 LDP X30, X21, [X31], #0x20
+	0x0297DA8C RET
+	0x0297DA90 LDR X8, [X1 + 0x20]
+	0x0297DA94 LDR X8, [X8 + 0xC0]
+	0x0297DA98 LDR X1, [X8 + 0x78]
+	0x0297DA9C B 0x297DA04
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 Add W31, W8, 3
+	004 Move X8, [X1+32]
+	005 Move TEMP, 0
+	006 Not TEMP
+	007 Move W9, TEMP
+	008 Move X8, [X8+192]
+	009 Move X8, [X8+8]
+	010 Move [X0+16], W9
+	011 Add X0, X0, 48
+	012 Move X8, [X8+32]
+	013 Move X8, [X8+192]
+	014 Move X1, [X8+88]
+	015 Call Enumerator<Object>.Dispose, X0
+	016 Return 
+	017 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x0297DAA0 STR X30, [X31 - 0x30]!
+	0x0297DAA4 STP X22, X21, [X31 + 0x10]
+	0x0297DAA8 STP X20, X19, [X31 + 0x20]
+	0x0297DAAC MOV W20, W1
+	0x0297DAB0 MOV X1, X31
+	0x0297DAB4 MOV X19, X2
+	0x0297DAB8 MOV X21, X0
+	0x0297DABC BL 0x33BDD8C
+	0x0297DAC0 LDR X8, [X19 + 0x20]
+	0x0297DAC4 MOVZ W1, 0x4
+	0x0297DAC8 LDR X8, [X8 + 0xC0]
+	0x0297DACC LDR X8, [X8]
+	0x0297DAD0 LDR X22, [X8 + 0x80]
+	0x0297DAD4 MOV X0, X22
+	0x0297DAD8 BL 0x1C16D14
+	0x0297DADC MOV X0, X21
+	0x0297DAE0 MOV X1, X22
+	0x0297DAE4 BL 0x1C16D18
+	0x0297DAE8 STR W20, [X0]
+	0x0297DAEC MOV X0, X31
+	0x0297DAF0 BL 0x33C151C
+	0x0297DAF4 LDR X8, [X19 + 0x20]
+	0x0297DAF8 MOV W20, W0
+	0x0297DAFC MOVZ W1, 0x4
+	0x0297DB00 LDR X8, [X8 + 0xC0]
+	0x0297DB04 LDR X8, [X8]
+	0x0297DB08 LDR X8, [X8 + 0x80]
+	0x0297DB0C ADD X19, X8, 0x40
+	0x0297DB10 MOV X0, X19
+	0x0297DB14 BL 0x1C16D14
+	0x0297DB18 MOV X0, X21
+	0x0297DB1C MOV X1, X19
+	0x0297DB20 BL 0x1C16D18
+	0x0297DB24 STR W20, [X0]
+	0x0297DB28 LDP X20, X19, [X31 + 0x20]
+	0x0297DB2C LDP X22, X21, [X31 + 0x10]
+	0x0297DB30 LDR X30, [X31], #0x30
+	0x0297DB34 RET
+	0x0297DB38 STR X30, [X31 - 0x20]!
+	0x0297DB3C STP X20, X19, [X31 + 0x10]
+	0x0297DB40 LDR X8, [X1 + 0x20]
+	0x0297DB44 MOV X19, X1
+	0x0297DB48 MOV X20, X0
+	0x0297DB4C LDR X8, [X8 + 0xC0]
+	0x0297DB50 LDR X8, [X8]
+	0x0297DB54 LDR X1, [X8 + 0x80]
+	0x0297DB58 BL 0x1C16D18
+	0x0297DB5C LDR W8, [X0]
+	0x0297DB60 CMP W8, 0x1
+	0x0297DB64 CCMN W8, 0x3, 0x4, NE
+	0x0297DB68 B.NE 0x297DB8C
+	0x0297DB6C LDR X8, [X19 + 0x20]
+	0x0297DB70 MOV X0, X20
+	0x0297DB74 LDP X20, X19, [X31 + 0x10]
+	0x0297DB78 LDR X8, [X8 + 0xC0]
+	0x0297DB7C LDR X1, [X8 + 0x8]
+	0x0297DB80 LDR X2, [X1]
+	0x0297DB84 LDR X30, [X31], #0x20
+	0x0297DB88 BR X2
+	0x0297DB8C LDP X20, X19, [X31 + 0x10]
+	0x0297DB90 LDR X30, [X31], #0x20
+	0x0297DB94 RET
+	0x0297DB98 STP X29, X30, [X31 - 0x50]!
+	0x0297DB9C STR X25, [X31 + 0x10]
+	0x0297DBA0 STP X24, X23, [X31 + 0x20]
+	0x0297DBA4 STP X22, X21, [X31 + 0x30]
+	0x0297DBA8 STP X20, X19, [X31 + 0x40]
+	0x0297DBAC ADD X29, X31, 0x0
+	0x0297DBB0 SUB X31, X31, 0x40
+	0x0297DBB4 MRS X24, 0xC000
+	0x0297DBB8 LDR X8, [X24 + 0x28]
+	0x0297DBBC STUR X8, [X29 - 0x8]
+	0x0297DBC0 STP X1, X0, [X29 - 0x20]
+	0x0297DBC4 LDR X8, [X1 + 0x20]
+	0x0297DBC8 LDR X8, [X8 + 0xC0]
+	0x0297DBCC LDR X9, [X8 + 0x38]
+	0x0297DBD0 LDR X10, [X8 + 0x50]
+	0x0297DBD4 LDR W20, [X9 + 0xFC]
+	0x0297DBD8 LDR W9, [X10 + 0xFC]
+	0x0297DBDC ADD X10, X31, 0x0
+	0x0297DBE0 ADD X9, X9, 0xF
+	0x0297DBE4 AND X9, X9, 0x1FFFFFFFF
+	0x0297DBE8 SUB X19, X10, X9
+	0x0297DBEC ADD X31, X19, 0x0
+	0x0297DBF0 ADD X10, X20, 0xF
+	0x0297DBF4 ADD X9, X31, 0x0
+	0x0297DBF8 AND X10, X10, 0x1FFFFFFFF
+	0x0297DBFC SUB X21, X9, X10
+	0x0297DC00 ADD X31, X21, 0x0
+	0x0297DC04 SUB X9, X29, 0x20
+	0x0297DC08 SUB X10, X29, 0x18
+	0x0297DC0C STP X9, X10, [X29 - 0x30]
+	0x0297DC10 LDR X8, [X8]
+
+ISIL:
+	001 Subtract X31, X31, 112
+	002 Move [X31+96], X30
+	003 Move [X31+104], X19
+	004 Add X8, X31, 88
+	005 Add X9, X31, 80
+	006 Move [X31+80], X1
+	007 Move [X31+88], X0
+	008 Move [X31+64], X8
+	009 Move [X31+72], X9
+	010 Move W8, [X0+16]
+	011 NotImplemented "Instruction CMP not yet implemented."
+	012 Compare W8, 0
+	013 JumpIfNotEqual {86}
+	014 Move X8, [X0+40]
+	015 Move TEMP, 0
+	016 Not TEMP
+	017 Move W9, TEMP
+	018 Move [X0+16], W9
+	019 Compare X8, 0
+	020 JumpIfEqual {77}
+	021 Move X0, [X8+64]
+	022 Compare X0, 0
+	023 JumpIfEqual {78}
+	024 Move X8, [X1+32]
+	025 Move X8, [X8+192]
+	026 Move X1, [X8+32]
+	027 Add X8, X31, 8
+	028 Call List`1<Object>.GetEnumerator, X0
+	029 NotImplemented "Instruction LDUR not yet implemented."
+	030 Move X8, [X31+24]
+	031 Move X1, [X31+80]
+	032 Move X0, [X31+88]
+	033 Move TEMP, 2
+	034 Not TEMP
+	035 Move W9, TEMP
+	036 Move [X31+2], V0
+	037 Move [X31+48], X8
+	038 Move [X0+64], X8
+	039 Move [X0+3], V0
+	040 Move [X0+16], W9
+	041 Move TEMP, 2
+	042 Not TEMP
+	043 Move W8, TEMP
+	044 Move [X0+16], W8
+	045 Move X8, [X1+32]
+	046 Add X0, X0, 48
+	047 Move X8, [X8+192]
+	048 Move X1, [X8+72]
+	049 Call Enumerator<Object>.MoveNext, X0
+	050 Move X8, [X31+88]
+	051 Move TEMP, X0
+	052 And TEMP, TEMP, 1
+	053 Compare TEMP, 1
+	054 JumpIfNotEqual {59}
+	055 Move X9, [X8+64]
+	056 Move W0, 1
+	057 Move [X8+16], W0
+	058 Move [X8+24], X9
+	059 Move X9, [X31+80]
+	060 Move TEMP, 0
+	061 Not TEMP
+	062 Move W10, TEMP
+	063 Add X0, X8, 48
+	064 Move X9, [X9+32]
+	065 Move X9, [X9+192]
+	066 Move X9, [X9+8]
+	067 Move [X8+16], W10
+	068 Move X9, [X9+32]
+	069 Move X9, [X9+192]
+	070 Move X1, [X9+88]
+	071 Call Enumerator<Object>.Dispose, X0
+	072 Move X8, [X31+88]
+	073 Move W0, W31
+	074 Move [X8+48], X31
+	075 Move [X8+56], X31
+	076 Move [X8+64], X31
+	077 Call 0x1C17F20
+	078 Call 0x1C17F20
+	079 NotImplemented "Instruction CMP not yet implemented."
+	080 Call 0x3EB2AD0
+	081 Move X19, [X0]
+	082 Move [X31+56], X19
+	083 Call 0x3EB2AE0
+	084 Compare X19, 0
+	085 JumpIfNotEqual {91}
+	086 Move W0, W31
+	087 Move X30, [X31+96]
+	088 Move X19, [X31+104]
+	089 Add X31, X31, 112
+	090 Return X0
+	091 Add X8, X31, 56
+	092 Add X0, X8, 8
+	093 Call 0x19D087C
+	094 Move X0, X19
+	095 Call 0x1C17F18
+	096 Compare X19, 0
+	097 JumpIfNotEqual {99}
+	098 Call 0x1D2D690
+	099 Move X8, [X31+80]
+	100 Move X0, [X31+88]
+	101 Move X8, [X8+32]
+	102 Move X8, [X8+192]
+	103 Move X1, [X8+80]
+	104 Call 0x297DA60, X0
+	105 Move X0, X19
+	106 Call 0x1C17F18
+	107 Call 0x1991590
+
+Method: System.Void <>m__Finally1()
+
+Disassembly:
+	0x0297DC14 LDR X1, [X8 + 0x80]
+	0x0297DC18 BL 0x1C16D18
+	0x0297DC1C LDUR X8, [X29 - 0x20]
+	0x0297DC20 LDR W22, [X0]
+	0x0297DC24 LDUR X0, [X29 - 0x18]
+	0x0297DC28 LDR X8, [X8 + 0x20]
+	0x0297DC2C LDR X8, [X8 + 0xC0]
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move [X0+16], W8
+	005 Move X8, [X1+32]
+	006 Add X0, X0, 48
+	007 Move X8, [X8+192]
+	008 Move X1, [X8+88]
+	009 Call Enumerator<Object>.Dispose, X0
+	010 Return 
+
+Method: SpatialSys.ObservableState.IStateObject System.Collections.Generic.IEnumerator<SpatialSys.ObservableState.IStateObject>.get_Current()
+
+Disassembly:
+	0x0297DC30 LDR X8, [X8]
+	0x0297DC34 LDR X8, [X8 + 0x80]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void System.Collections.IEnumerator.Reset()
+
+Disassembly:
+	0x0297DC38 ADD X1, X8, 0x60
+	0x0297DC3C BL 0x1C16D18
+	0x0297DC40 CBZ W22, 0x297DC7C
+	0x0297DC44 CMP W22, 0x1
+	0x0297DC48 B.NE 0x297DEA8
+	0x0297DC4C LDP X8, X22, [X29 - 0x20]
+	0x0297DC50 LDR X8, [X8 + 0x20]
+	0x0297DC54 LDR X8, [X8 + 0xC0]
+	0x0297DC58 LDR X8, [X8]
+	0x0297DC5C LDR X21, [X8 + 0x80]
+	0x0297DC60 MOVZ W1, 0x4
+	0x0297DC64 MOV X0, X21
+	0x0297DC68 BL 0x1C16D14
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X0, 0x1777000
+	005 Move X0, [X0+2880]
+	006 Move X19, X1
+	007 Call 0x1C17D08
+	008 Call 0x1C17F10
+	009 Move X1, X31
+	010 Move X20, X0
+	011 Call NotSupportedException..ctor, X0
+	012 Move X0, X20
+	013 Move X1, X19
+	014 Call 0x1C17DEC
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x0297DC6C MOV X0, X22
+	0x0297DC70 MOV X1, X21
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Collections.Generic.IEnumerator`1<SpatialSys.ObservableState.IStateObject> System.Collections.Generic.IEnumerable<SpatialSys.ObservableState.IStateObject>.GetEnumerator()
+
+Disassembly:
+	0x0297DC74 BL 0x1C16D18
+	0x0297DC78 B 0x297DD58
+	0x0297DC7C LDP X8, X23, [X29 - 0x20]
+	0x0297DC80 LDR X25, [X0]
+	0x0297DC84 LDR X8, [X8 + 0x20]
+	0x0297DC88 LDR X8, [X8 + 0xC0]
+	0x0297DC8C LDR X8, [X8]
+	0x0297DC90 LDR X22, [X8 + 0x80]
+	0x0297DC94 MOVZ W1, 0x4
+	0x0297DC98 MOV X0, X22
+	0x0297DC9C BL 0x1C16D14
+	0x0297DCA0 MOV X0, X23
+	0x0297DCA4 MOV X1, X22
+	0x0297DCA8 BL 0x1C16D18
+	0x0297DCAC MOVN W8, 0x0
+	0x0297DCB0 STR W8, [X0]
+	0x0297DCB4 CBZ X25, 0x297DED8
+	0x0297DCB8 LDR X0, [X25 + 0x60]
+	0x0297DCBC CBZ X0, 0x297DEDC
+	0x0297DCC0 LDUR X8, [X29 - 0x20]
+	0x0297DCC4 LDR X8, [X8 + 0x20]
+	0x0297DCC8 LDR X8, [X8 + 0xC0]
+	0x0297DCCC LDR X1, [X8 + 0x20]
+	0x0297DCD0 LDR X8, [X1]
+	0x0297DCD4 BLR X8
+	0x0297DCD8 MOV X2, X0
+	0x0297DCDC CBZ X0, 0x297DEE0
+	0x0297DCE0 LDUR X8, [X29 - 0x20]
+	0x0297DCE4 LDR X8, [X8 + 0x20]
+	0x0297DCE8 LDR X8, [X8 + 0xC0]
+	0x0297DCEC LDR X1, [X8 + 0x30]
+	0x0297DCF0 LDR X0, [X1]
+	0x0297DCF4 STUR X21, [X29 - 0x10]
+	0x0297DCF8 LDR X8, [X1 + 0x10]
+	0x0297DCFC SUB X3, X29, 0x10
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W8, [X0+16]
+	006 Move X19, X0
+	007 Move X20, X1
+	008 Add W31, W8, 2
+	009 Move W21, [X19+32]
+	010 Move X0, X31
+	011 Call Environment.get_CurrentManagedThreadId
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 Move [X19+16], W31
+	014 Move X8, [X20+32]
+	015 Move X8, [X8+192]
+	016 Move X0, [X8]
+	017 Move W8, [X0+309]
+	018 Move TEMP, X8
+	019 And TEMP, TEMP, 1
+	020 Compare TEMP, 1
+	021 JumpIfEqual {23}
+	022 Call 0x1C5D684
+	023 Call 0x1C17F10
+	024 Move X1, X31
+	025 Move X20, X0
+	026 Call Object..ctor, X0
+	027 Move X0, X31
+	028 Move [X20+16], W31
+	029 Call Environment.get_CurrentManagedThreadId
+	030 Move [X20+32], W0
+	031 Move X8, [X19+40]
+	032 Move X19, X20
+	033 Move [X20+40], X8
+	034 Move X0, X19
+	035 Move X20, [X31+16]
+	036 Move X19, [X31+24]
+	037 Move X30, [X31+32]
+	038 Move X21, [X31+40]
+	039 Return X0
+
+Method: System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+Disassembly:
+	0x0297DD00 MOV X4, X21
+	0x0297DD04 BLR X8
+	0x0297DD08 LDP X8, X0, [X29 - 0x20]
+	0x0297DD0C LDR X8, [X8 + 0x20]
+
+ISIL:
+	001 Move X8, [X1+32]
+	002 Move X8, [X8+192]
+	003 Move X1, [X8+104]
+	004 Call 0x297DC74, X0
+	005 Return X0
+

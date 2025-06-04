@@ -1,0 +1,141 @@
+Type: AnimalCompany.FriendsBoardMediator/<>c__DisplayClass16_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01D84070 MOV X0, X20
+	0x01D84074 BL 0x3EB1AD0
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <HandleFriendsChanged>b__3(System.String k)
+
+Disassembly:
+	0x01D85AC0 LDR X0, [X1 + 0x28]
+	0x01D85AC4 CBZ X0, 0x1D85ADC
+	0x01D85AC8 LDR X8, [X0]
+	0x01D85ACC LDR X2, [X8 + 0x548]
+	0x01D85AD0 LDR X1, [X8 + 0x550]
+	0x01D85AD4 LDR X30, [X31], #0x10
+	0x01D85AD8 BR X2
+	0x01D85ADC BL 0x1C16F20
+	0x01D85AE0 STR X30, [X31 - 0x20]!
+	0x01D85AE4 STP X20, X19, [X31 + 0x10]
+	0x01D85AE8 ADRP X20, 0x2653000
+	0x01D85AEC LDRB W8, [X20 + 0x986]
+	0x01D85AF0 MOV X19, X1
+	0x01D85AF4 TBNZ X8, 0x0, 0x1D85B0C
+	0x01D85AF8 ADRP X0, 0x2371000
+	0x01D85AFC LDR X0, [X0 + 0x930]
+	0x01D85B00 BL 0x1C16CF4
+	0x01D85B04 MOVZ W8, 0x1
+	0x01D85B08 STRB W8, [X20 + 0x986]
+	0x01D85B0C CBZ X19, 0x1D85B2C
+	0x01D85B10 ADRP X8, 0x2371000
+	0x01D85B14 LDR X8, [X8 + 0x930]
+	0x01D85B18 MOV X0, X19
+	0x01D85B1C LDP X20, X19, [X31 + 0x10]
+	0x01D85B20 LDR X1, [X8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x2654000
+	006 Move W8, [X21+2415]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x2372000
+	014 Move X0, [X0+2304]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+2415], W8
+	018 Move X0, [X20+16]
+	019 Compare X0, 0
+	020 JumpIfEqual {33}
+	021 Move X8, 0x2372000
+	022 Move X8, [X8+2304]
+	023 Move X1, X19
+	024 Move X2, [X8]
+	025 Call Dictionary`2<Object, Object>.ContainsKey, X0, X1
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 NotImplemented "Instruction ORN not yet implemented."
+	029 And W0, W8, 1
+	030 Move X30, [X31+32]
+	031 Move X21, [X31+40]
+	032 Return X0
+	033 Call 0x1C17F20
+
+Method: System.Boolean <HandleFriendsChanged>b__7(System.String k)
+
+Disassembly:
+	0x01D85B24 LDR X30, [X31], #0x20
+	0x01D85B28 B 0x21A3894
+	0x01D85B2C BL 0x1C16F20
+	0x01D85B30 STR X30, [X31 - 0x10]!
+	0x01D85B34 CBZ X1, 0x1D85B4C
+	0x01D85B38 LDR W8, [X1 + 0x80]
+	0x01D85B3C CMP W8, 0x3
+	0x01D85B40 CSET W0, EQ
+	0x01D85B44 LDR X30, [X31], #0x10
+	0x01D85B48 RET
+	0x01D85B4C BL 0x1C16F20
+	0x01D85B50 STR X30, [X31 - 0x10]!
+	0x01D85B54 CBZ X1, 0x1D85B74
+	0x01D85B58 LDR X0, [X1 + 0x28]
+	0x01D85B5C CBZ X0, 0x1D85B74
+	0x01D85B60 LDR X8, [X0]
+	0x01D85B64 LDR X2, [X8 + 0x548]
+	0x01D85B68 LDR X1, [X8 + 0x550]
+	0x01D85B6C LDR X30, [X31], #0x10
+	0x01D85B70 BR X2
+	0x01D85B74 BL 0x1C16F20
+	0x01D85B78 STR X30, [X31 - 0x20]!
+	0x01D85B7C STP X20, X19, [X31 + 0x10]
+	0x01D85B80 ADRP X20, 0x2653000
+	0x01D85B84 LDRB W8, [X20 + 0x987]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x2654000
+	006 Move W8, [X21+2416]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x2372000
+	014 Move X0, [X0+2304]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+2416], W8
+	018 Move X0, [X20+24]
+	019 Compare X0, 0
+	020 JumpIfEqual {33}
+	021 Move X8, 0x2372000
+	022 Move X8, [X8+2304]
+	023 Move X1, X19
+	024 Move X2, [X8]
+	025 Call Dictionary`2<Object, Object>.ContainsKey, X0, X1
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 NotImplemented "Instruction ORN not yet implemented."
+	029 And W0, W8, 1
+	030 Move X30, [X31+32]
+	031 Move X21, [X31+40]
+	032 Return X0
+	033 Call 0x1C17F20
+

@@ -1,0 +1,160 @@
+Type: UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Rendering.MaterialPropertyBlockHelper
+
+Method: System.Void OnDestroy()
+
+Disassembly:
+	0x03BD5008 MOV V2.16B, V9.16B
+	0x03BD500C MOV V3.16B, V8.16B
+
+ISIL:
+	001 Move [X0+48], X31
+	002 Return 
+
+Method: System.Void LateUpdate()
+
+Disassembly:
+	0x03BD5010 MOV X2, X31
+	0x03BD5014 BL 0x3C12724
+	0x03BD5018 MOV X0, X19
+	0x03BD501C MOV V2.16B, V9.16B
+	0x03BD5020 MOV V3.16B, V8.16B
+	0x03BD5024 LDP X30, X19, [X31 + 0x20]
+	0x03BD5028 LDP D9, D8, [X31 + 0x10]
+	0x03BD502C MOV V0.16B, V11.16B
+	0x03BD5030 MOV V1.16B, V10.16B
+	0x03BD5034 LDP D11, D10, [X31], #0x30
+	0x03BD5038 B 0x3BD4298
+	0x03BD503C BL 0x1C16F20
+	0x03BD5040 STP X30, X19, [X31 - 0x10]!
+	0x03BD5044 MOV X19, X0
+	0x03BD5048 LDR X0, [X0 + 0xB0]
+	0x03BD504C CBZ X0, 0x3BD5068
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0+56]
+	004 Compare W8, 0
+	005 JumpIfEqual {18}
+	006 Move W8, [X0+44]
+	007 Move X19, X0
+	008 Compare W8, 0
+	009 JumpIfEqual {18}
+	010 Move X0, [X19+32]
+	011 Compare X0, 0
+	012 JumpIfEqual {21}
+	013 Move W2, [X19+40]
+	014 Move X1, [X19+48]
+	015 Move X3, X31
+	016 Call Renderer.SetPropertyBlock, X0, X1, X2
+	017 Move [X19+56], W31
+	018 Move X30, [X31+16]
+	019 Move X19, [X31+24]
+	020 Return 
+	021 Call 0x1C17F20
+
+Method: UnityEngine.MaterialPropertyBlock GetMaterialPropertyBlock(System.Boolean markPropertyBlockAsDirty = True)
+
+Disassembly:
+	0x03BD5050 BL 0x3BD3DD4
+	0x03BD5054 CBZ X0, 0x3BD5068
+	0x03BD5058 LDR W1, [X19 + 0xC0]
+	0x03BD505C MOV X2, X31
+	0x03BD5060 LDP X30, X19, [X31], #0x10
+
+ISIL:
+	001 Move TEMP, X1
+	002 And TEMP, TEMP, 1
+	003 Compare TEMP, 1
+	004 JumpIfNotEqual {7}
+	005 Move W8, 1
+	006 Move [X0+56], W8
+	007 Move X0, [X0+48]
+	008 Return X0
+
+Method: System.Void Initialize()
+
+Disassembly:
+	0x03BD5064 B 0x3C14864
+	0x03BD5068 BL 0x1C16F20
+	0x03BD506C B 0x3BD43A0
+	0x03BD5070 STR X30, [X31 - 0x30]!
+	0x03BD5074 STP X22, X21, [X31 + 0x10]
+	0x03BD5078 STP X20, X19, [X31 + 0x20]
+	0x03BD507C ADRP X21, 0x80D000
+	0x03BD5080 ADRP X22, 0x522000
+	0x03BD5084 ADRP X19, 0x588000
+	0x03BD5088 ADRP X20, 0x546000
+	0x03BD508C LDRB W8, [X21 + 0xE76]
+	0x03BD5090 LDR X22, [X22 + 0x220]
+	0x03BD5094 LDR X19, [X19 + 0xC18]
+	0x03BD5098 LDR X20, [X20 + 0x2E0]
+	0x03BD509C TBNZ X8, 0x0, 0x3BD50CC
+	0x03BD50A0 ADRP X0, 0x588000
+	0x03BD50A4 LDR X0, [X0 + 0xC18]
+	0x03BD50A8 BL 0x1C16CF4
+	0x03BD50AC ADRP X0, 0x546000
+	0x03BD50B0 LDR X0, [X0 + 0x2E0]
+	0x03BD50B4 BL 0x1C16CF4
+	0x03BD50B8 ADRP X0, 0x522000
+	0x03BD50BC LDR X0, [X0 + 0x220]
+	0x03BD50C0 BL 0x1C16CF4
+	0x03BD50C4 MOVZ W8, 0x1
+	0x03BD50C8 STRB W8, [X21 + 0xE76]
+	0x03BD50CC LDR X0, [X22]
+	0x03BD50D0 MOV X1, X31
+	0x03BD50D4 BL 0x3C124EC
+	0x03BD50D8 LDR X8, [X19]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x80E000
+	006 Move X20, 0x57C000
+	007 Move W8, [X21+3688]
+	008 Move X20, [X20+1424]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x57C000
+	015 Move X0, [X0+1424]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+3688], W8
+	019 Move W8, 1
+	020 Move [X19+44], W8
+	021 Move X0, [X20]
+	022 Call 0x1C17F10
+	023 Move X1, X31
+	024 Move X20, X0
+	025 Call MaterialPropertyBlock..ctor, X0
+	026 Move X0, [X19+32]
+	027 Move [X19+48], X20
+	028 Compare X0, 0
+	029 JumpIfEqual {39}
+	030 Move W2, [X19+40]
+	031 Move X1, X20
+	032 Move X20, [X31+16]
+	033 Move X19, [X31+24]
+	034 Move X3, X31
+	035 Move X30, [X31+32]
+	036 Move X21, [X31+40]
+	037 Call Renderer.GetPropertyBlock, X0, X1, X2
+	038 Return 
+	039 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03BD50DC MOV X1, X31
+	0x03BD50E0 LDR X8, [X8 + 0xB8]
+
+ISIL:
+	001 Move X1, X31
+	002 Call MonoBehaviour..ctor, X0
+	003 Return 
+

@@ -1,0 +1,119 @@
+Type: UnityEngine.InputSystem.Utilities.OneOrMore`2/Enumerator
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x02C06690 MOV X20, X1
+	0x02C06694 CMP W9, W10
+	0x02C06698 B.EQ 0x2C066AC
+	0x02C0669C MOV X0, X31
+	0x02C066A0 BL 0x339E09C
+	0x02C066A4 LDR X8, [X19]
+	0x02C066A8 CBZ X8, 0x2C0678C
+	0x02C066AC LDR W11, [X19 + 0xC]
+	0x02C066B0 LDR W22, [X8 + 0x20]
+	0x02C066B4 MOVZ W9, 0x28
+	0x02C066B8 MOV W23, W11
+	0x02C066BC CMP W11, W22
+	0x02C066C0 B.CS 0x2C06760
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0+16]
+	004 Add W19, W8, 1
+	005 Move [X0+16], W19
+	006 Move X8, [X1+32]
+	007 Add X0, X0, 24
+	008 Move X8, [X8+192]
+	009 Move X1, [X8+16]
+	010 Call 0x249B484, X0
+	011 NotImplemented "Instruction CMP not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 Move X30, [X31+16]
+	014 Move X19, [X31+24]
+	015 Return X0
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x02C066C4 LDR X10, [X8 + 0x18]
+	0x02C066C8 ADD W11, W23, 0x1
+	0x02C066CC STR W11, [X19 + 0xC]
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move [X0+16], W8
+	005 Return 
+
+Method: TValue get_Current()
+
+Disassembly:
+	0x02C066D0 CBZ X10, 0x2C0678C
+	0x02C066D4 LDR W12, [X10 + 0x18]
+	0x02C066D8 SUB W11, W11, 0x1
+	0x02C066DC CMP W11, W12
+	0x02C066E0 B.CS 0x2C06790
+	0x02C066E4 SMADDL X12, X23, X9, X10
+
+ISIL:
+	001 Move X8, [X1+32]
+	002 Move W1, [X0+16]
+	003 Add X0, X0, 24
+	004 Move X8, [X8+192]
+	005 Move X2, [X8+32]
+	006 Call 0x249B4BC, X0, X1
+	007 Return X0
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x02C066E8 LDR W12, [X12 + 0x20]
+	0x02C066EC ADD W11, W11, 0x1
+	0x02C066F0 TBNZ X12, 0x1F, 0x2C066B8
+	0x02C066F4 SXTW X8, W23
+	0x02C066F8 MOVZ W9, 0x28
+	0x02C066FC MADD X8, X8, X9, X10
+	0x02C06700 LDR X9, [X8 + 0x40]
+	0x02C06704 LDR V0, [X8 + 0x3]
+	0x02C06708 MOVI V1.2D, 0x0
+
+ISIL:
+	001 Move X8, [X1+32]
+	002 Move W1, [X0+16]
+	003 Add X0, X0, 24
+	004 Move X8, [X8+192]
+	005 Move X8, [X8+48]
+	006 Move X8, [X8+32]
+	007 Move X8, [X8+192]
+	008 Move X2, [X8+32]
+	009 Call 0x249B4BC, X0, X1
+	010 Return X0
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x02C0670C LDR X21, [X8 + 0x28]
+
+ISIL:
+	001 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x02C06710 STR X9, [X31 + 0x10]
+	0x02C06714 STR V0, [X31]
+	0x02C06718 STP V1, V1, [X31 + 0x20]
+	0x02C0671C LDR X0, [X20 + 0x20]
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move X1, X31
+	005 Move [X0+16], W8
+	006 Call Object..ctor, X0
+	007 Return 
+

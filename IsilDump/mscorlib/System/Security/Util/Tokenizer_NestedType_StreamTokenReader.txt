@@ -1,0 +1,81 @@
+Type: System.Security.Util.Tokenizer/StreamTokenReader
+
+Method: System.Void .ctor(System.IO.StreamReader input)
+
+Disassembly:
+	0x0324D37C MOV X2, X31
+	0x0324D380 BL 0x3379A44
+	0x0324D384 ADRP X0, 0xED5000
+	0x0324D388 LDR X0, [X0 + 0xD68]
+	0x0324D38C BL 0x1C16D08
+	0x0324D390 MOV X1, X0
+	0x0324D394 MOV X0, X19
+	0x0324D398 BL 0x1C16DEC
+	0x0324D39C RET
+	0x0324D3A0 SUB X31, X31, 0x40
+	0x0324D3A4 STP X30, X23, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move [X20+24], W31
+	010 Move X20, [X31+16]
+	011 Move X19, [X31+24]
+	012 Move X30, [X31+32]
+	013 Return 
+
+Method: System.Int32 Read()
+
+Disassembly:
+	0x0324D768 LDRB W8, [X25 + 0x4A5]
+	0x0324D76C LDR X24, [X24 + 0xDA0]
+	0x0324D770 MOV X19, X4
+	0x0324D774 MOV W20, W3
+	0x0324D778 MOV W21, W2
+	0x0324D77C MOV X22, X1
+	0x0324D780 MOV X23, X0
+	0x0324D784 TBNZ X8, 0x0, 0x324D7C0
+	0x0324D788 ADRP X0, 0xED5000
+	0x0324D78C LDR X0, [X0 + 0xDA8]
+	0x0324D790 BL 0x1C16CF4
+	0x0324D794 ADRP X0, 0xED5000
+	0x0324D798 LDR X0, [X0 + 0xDB0]
+	0x0324D79C BL 0x1C16CF4
+	0x0324D7A0 ADRP X0, 0xED5000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+16]
+	005 Compare X0, 0
+	006 JumpIfEqual {18}
+	007 Move X8, [X0]
+	008 Move X9, [X8+456]
+	009 Move X1, [X8+464]
+	010 NotImplemented "Instruction BLR not yet implemented."
+	011 Add W31, W0, 1
+	012 Move W8, [X19+24]
+	013 Add W8, W8, 1
+	014 Move [X19+24], W8
+	015 Move X30, [X31+16]
+	016 Move X19, [X31+24]
+	017 Return X0
+	018 Call 0x1C17F20
+
+Method: System.Int32 get_NumCharEncountered()
+
+Disassembly:
+	0x0324D7A4 LDR X0, [X0 + 0xDB8]
+	0x0324D7A8 BL 0x1C16CF4
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+

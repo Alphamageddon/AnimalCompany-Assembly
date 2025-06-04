@@ -1,0 +1,254 @@
+Type: UnityEngine.AI.NavMeshBuildSource
+
+Method: UnityEngine.Matrix4x4 get_transform()
+
+Disassembly:
+	0x03BE38D4 MOV W1, W22
+	0x03BE38D8 MOV X2, X24
+	0x03BE38DC BLR X8
+	0x03BE38E0 MOV X0, X24
+	0x03BE38E4 BL 0x3BEBA40
+
+ISIL:
+	001 Move V1, [X0+32]
+	002 Move V0, [X0+48]
+	003 Move V3, [X0]
+	004 Move V2, [X0+16]
+	005 Move [X8+32], V1
+	006 Move [X8+40], V0
+	007 Move [X8], V3
+	008 Move [X8+8], V2
+	009 Return X0
+
+Method: System.Void set_transform(UnityEngine.Matrix4x4 value)
+
+Disassembly:
+	0x03BE38E8 ADD X22, X22, 0x1
+	0x03BE38EC CMP X25, X22
+	0x03BE38F0 B.NE 0x3BE38A0
+	0x03BE38F4 MOV X0, X19
+	0x03BE38F8 BL 0x3BEBA40
+
+ISIL:
+	001 Move V1, [X1+32]
+	002 Move V0, [X1+48]
+	003 Move V3, [X1]
+	004 Move V2, [X1+16]
+	005 Move [X0+32], V1
+	006 Move [X0+40], V0
+	007 Move [X0], V3
+	008 Move [X0+8], V2
+	009 Return 
+
+Method: UnityEngine.Vector3 get_size()
+
+Disassembly:
+	0x03BE38FC MOV X0, X21
+	0x03BE3900 B 0x3BE3D9C
+	0x03BE3904 ADRP X8, 0x539000
+
+ISIL:
+	001 Move S0, [X0+64]
+	002 Move S1, [X0+68]
+	003 Move V2, [X0+72]
+	004 Return X0
+
+Method: System.Void set_size(UnityEngine.Vector3 value)
+
+Disassembly:
+	0x03BE3908 LDR X0, [X22]
+	0x03BE390C LDR X8, [X8 + 0x248]
+	0x03BE3910 LDR W9, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X0+64], S0
+	002 Move [X0+72], S1
+	003 Move [X0+72], S2
+	004 Return 
+
+Method: UnityEngine.AI.NavMeshBuildSourceShape get_shape()
+
+Disassembly:
+	0x03BE3914 LDR X21, [X8]
+	0x03BE3918 CBNZ W9, 0x3BE3920
+
+ISIL:
+	001 Move W0, [X0+76]
+	002 Return X0
+
+Method: System.Void set_shape(UnityEngine.AI.NavMeshBuildSourceShape value)
+
+Disassembly:
+	0x03BE391C BL 0x1C16DFC
+	0x03BE3920 MOV X0, X21
+
+ISIL:
+	001 Move [X0+76], W1
+	002 Return 
+
+Method: System.Void set_area(System.Int32 value)
+
+Disassembly:
+	0x03BE3924 MOV X1, X31
+	0x03BE3928 BL 0x338C698
+
+ISIL:
+	001 Move [X0+80], W1
+	002 Return 
+
+Method: UnityEngine.Object get_sourceObject()
+
+Disassembly:
+	0x03BE392C MOV X1, X0
+	0x03BE3930 MOV X0, X20
+	0x03BE3934 MOV X2, X31
+	0x03BE3938 BL 0x3395194
+	0x03BE393C TBZ X0, 0x0, 0x3BE3B14
+	0x03BE3940 ADRP X8, 0x512000
+	0x03BE3944 LDR X8, [X8 + 0x9B8]
+	0x03BE3948 MOV X0, X19
+	0x03BE394C LDR X20, [X8]
+	0x03BE3950 MOV X1, X20
+	0x03BE3954 BL 0x1C16E00
+	0x03BE3958 CBZ X0, 0x3BE4088
+	0x03BE395C LDP X20, X19, [X31 + 0x50]
+	0x03BE3960 LDP X22, X21, [X31 + 0x40]
+	0x03BE3964 LDP X24, X23, [X31 + 0x30]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x801000
+	005 Move X1, [X20+352]
+	006 Move W19, [X0+84]
+	007 Compare X1, 0
+	008 JumpIfNotEqual {14}
+	009 Move X0, -51290112
+	010 Add X0, X0, 2625
+	011 Call 0x1C17CB8
+	012 Move X1, X0
+	013 Move [X20+352], X0
+	014 Move W0, W19
+	015 Move X20, [X31+16]
+	016 Move X19, [X31+24]
+	017 Move X30, [X31+32]
+	018 CallNoReturn X1
+
+Method: UnityEngine.Component get_component()
+
+Disassembly:
+	0x03BE39A4 MOV X0, X20
+	0x03BE39A8 MOV X2, X31
+	0x03BE39AC BL 0x3395194
+	0x03BE39B0 TBZ X0, 0x0, 0x3BE3BB4
+	0x03BE39B4 ADRP X8, 0x539000
+	0x03BE39B8 LDR X8, [X8 + 0xA08]
+	0x03BE39BC MOV X0, X19
+	0x03BE39C0 LDR X21, [X8]
+	0x03BE39C4 MOV X1, X21
+	0x03BE39C8 BL 0x1C16E00
+	0x03BE39CC CBZ X0, 0x3BE407C
+	0x03BE39D0 MOV X20, X0
+	0x03BE39D4 MOV X0, X19
+	0x03BE39D8 MOV W1, W31
+	0x03BE39DC MOV X2, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x801000
+	005 Move X1, [X20+344]
+	006 Move W19, [X0+88]
+	007 Compare X1, 0
+	008 JumpIfNotEqual {14}
+	009 Move X0, -51208192
+	010 Add X0, X0, 1607
+	011 Call 0x1C17CB8
+	012 Move X1, X0
+	013 Move [X20+344], X0
+	014 Move W0, W19
+	015 Move X20, [X31+16]
+	016 Move X19, [X31+24]
+	017 Move X30, [X31+32]
+	018 CallNoReturn X1
+
+Method: UnityEngine.Component InternalGetComponent(System.Int32 instanceID)
+
+Disassembly:
+	0x03BE39E0 BL 0x33A0EDC
+	0x03BE39E4 ADRP X8, 0x549000
+	0x03BE39E8 LDR X8, [X8 + 0x448]
+	0x03BE39EC MOV W22, W0
+	0x03BE39F0 MOV W1, W22
+	0x03BE39F4 LDR X8, [X8]
+	0x03BE39F8 MOV X0, X8
+	0x03BE39FC BL 0x1C16D6C
+	0x03BE3A00 ADRP X8, 0x57B000
+	0x03BE3A04 LDR X8, [X8 + 0x278]
+	0x03BE3A08 MOV X19, X0
+	0x03BE3A0C LDR X8, [X8]
+	0x03BE3A10 MOV X0, X8
+	0x03BE3A14 BL 0x3BE5BAC
+	0x03BE3A18 CMP W22, 0x1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x801000
+	005 Move X1, [X20+344]
+	006 Move W19, W0
+	007 Compare X1, 0
+	008 JumpIfNotEqual {14}
+	009 Move X0, -51208192
+	010 Add X0, X0, 1607
+	011 Call 0x1C17CB8
+	012 Move X1, X0
+	013 Move [X20+344], X0
+	014 Move W0, W19
+	015 Move X20, [X31+16]
+	016 Move X19, [X31+24]
+	017 Move X30, [X31+32]
+	018 CallNoReturn X1
+
+Method: UnityEngine.Object InternalGetObject(System.Int32 instanceID)
+
+Disassembly:
+	0x03BE3968 LDP X26, X25, [X31 + 0x20]
+	0x03BE396C LDP X28, X27, [X31 + 0x10]
+	0x03BE3970 LDP X29, X30, [X31], #0x60
+	0x03BE3974 B 0x3BEEBB8
+	0x03BE3978 ADRP X8, 0x539000
+	0x03BE397C LDR X0, [X23]
+	0x03BE3980 LDR X8, [X8 + 0x698]
+	0x03BE3984 LDR W9, [X0 + 0xE0]
+	0x03BE3988 LDR X21, [X8]
+	0x03BE398C CBNZ W9, 0x3BE3994
+	0x03BE3990 BL 0x1C16DFC
+	0x03BE3994 MOV X0, X21
+	0x03BE3998 MOV X1, X31
+	0x03BE399C BL 0x338C698
+	0x03BE39A0 MOV X1, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x801000
+	005 Move X1, [X20+352]
+	006 Move W19, W0
+	007 Compare X1, 0
+	008 JumpIfNotEqual {14}
+	009 Move X0, -51290112
+	010 Add X0, X0, 2625
+	011 Call 0x1C17CB8
+	012 Move X1, X0
+	013 Move [X20+352], X0
+	014 Move W0, W19
+	015 Move X20, [X31+16]
+	016 Move X19, [X31+24]
+	017 Move X30, [X31+32]
+	018 CallNoReturn X1
+

@@ -1,0 +1,119 @@
+Type: UnityEngine.ProBuilder.MeshOperations.Subdivision
+
+Method: UnityEngine.ProBuilder.ActionResult Subdivide(UnityEngine.ProBuilder.ProBuilderMesh pb)
+
+Disassembly:
+	0x0397A204 LDR X8, [X23]
+	0x0397A208 LDR X8, [X8 + 0xB8]
+	0x0397A20C STR X21, [X8 + 0x10]
+	0x0397A210 LDR X2, [X25]
+	0x0397A214 MOV X0, X20
+	0x0397A218 MOV X1, X21
+	0x0397A21C BL 0x21CF80C
+	0x0397A220 LDR X1, [X24]
+	0x0397A224 BL 0x21D599C
+	0x0397A228 MOV X1, X19
+	0x0397A22C MOV X2, X31
+	0x0397A230 BL 0x391F1D4
+	0x0397A234 LDP X20, X19, [X31 + 0x30]
+	0x0397A238 LDP X22, X21, [X31 + 0x20]
+	0x0397A23C LDP X24, X23, [X31 + 0x10]
+	0x0397A240 LDP X30, X25, [X31], #0x40
+	0x0397A244 B 0x3979E98
+	0x0397A248 ADRP X0, 0x77E000
+	0x0397A24C LDR X0, [X0 + 0x528]
+	0x0397A250 BL 0x1C16D08
+	0x0397A254 BL 0x1C16F10
+	0x0397A258 MOV X19, X0
+	0x0397A25C ADRP X0, 0x7D4000
+	0x0397A260 LDR X0, [X0 + 0x450]
+	0x0397A264 B 0x397A284
+	0x0397A268 ADRP X0, 0x77E000
+	0x0397A26C LDR X0, [X0 + 0x528]
+	0x0397A270 BL 0x1C16D08
+	0x0397A274 BL 0x1C16F10
+	0x0397A278 MOV X19, X0
+	0x0397A27C ADRP X0, 0x7B1000
+	0x0397A280 LDR X0, [X0 + 0xE10]
+	0x0397A284 BL 0x1C16D08
+	0x0397A288 MOV X1, X0
+	0x0397A28C MOV X0, X19
+	0x0397A290 MOV X2, X31
+	0x0397A294 BL 0x330E100
+	0x0397A298 ADRP X0, 0x7D6000
+	0x0397A29C LDR X0, [X0 + 0x1D8]
+	0x0397A2A0 BL 0x1C16D08
+	0x0397A2A4 MOV X1, X0
+	0x0397A2A8 MOV X0, X19
+	0x0397A2AC BL 0x1C16DEC
+	0x0397A2B0 STR X30, [X31 - 0x30]!
+	0x0397A2B4 STP X22, X21, [X31 + 0x10]
+	0x0397A2B8 STP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, 0xA68000
+	007 Move W8, [X20+2589]
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {24}
+	013 Move X0, 0x7D4000
+	014 Move X0, [X0+2520]
+	015 Call 0x1C17CF4
+	016 Move X0, 0x7D7000
+	017 Move X0, [X0+408]
+	018 Call 0x1C17CF4
+	019 Move X0, 0x7D7000
+	020 Move X0, [X0+416]
+	021 Call 0x1C17CF4
+	022 Move W8, 1
+	023 Move [X20+2589], W8
+	024 Compare X19, 0
+	025 JumpIfEqual {54}
+	026 Move X1, [X19+40]
+	027 Move X20, 0x7D4000
+	028 Move X21, 0x7D7000
+	029 Move X22, 0x7D7000
+	030 Move X20, [X20+2520]
+	031 Move X21, [X21+416]
+	032 Move X22, [X22+408]
+	033 Move X0, X19
+	034 Move X2, X31
+	035 Call ConnectElements.Connect, X0, X1
+	036 Move X8, [X20]
+	037 Move X19, X0
+	038 Move X0, X8
+	039 Call 0x1C17F10
+	040 NotImplemented "Instruction CMP not yet implemented."
+	041 NotImplemented "Instruction CSEL not yet implemented."
+	042 Move X2, [X8]
+	043 NotImplemented "Instruction CSET not yet implemented."
+	044 Move X3, X31
+	045 Move X20, X0
+	046 Call ActionResult..ctor, X0, X1, X2
+	047 Move X0, X20
+	048 Move X20, [X31+32]
+	049 Move X19, [X31+40]
+	050 Move X22, [X31+16]
+	051 Move X21, [X31+24]
+	052 Move X30, [X31+48]
+	053 Return X0
+	054 Call 0x1C17F20
+
+Method: UnityEngine.ProBuilder.Face[] Subdivide(UnityEngine.ProBuilder.ProBuilderMesh pb, System.Collections.Generic.IList`1<UnityEngine.ProBuilder.Face> faces)
+
+Disassembly:
+	0x0397A2BC ADRP X21, 0xA67000
+	0x0397A2C0 ADRP X22, 0x779000
+
+ISIL:
+	001 Move X2, X31
+	002 Call ConnectElements.Connect, X0, X1
+	003 Return X0
+

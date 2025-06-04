@@ -1,0 +1,253 @@
+Type: Unity.XR.CoreUtils.Vector3Extensions
+
+Method: UnityEngine.Vector3 Inverse(UnityEngine.Vector3 vector)
+
+Disassembly:
+	0x03B27D1C LDR X8, [X8]
+	0x03B27D20 LDR X8, [X8 + 0xB8]
+	0x03B27D24 LDP S2, S1, [X8]
+	0x03B27D28 LDR V0, [X8 + 0x8]
+	0x03B27D2C CMP W23, 0x0
+
+ISIL:
+	001 Move S3, 1
+	002 NotImplemented "Instruction FDIV not yet implemented."
+	003 NotImplemented "Instruction FDIV not yet implemented."
+	004 NotImplemented "Instruction FDIV not yet implemented."
+	005 Return X0
+
+Method: System.Single MinComponent(UnityEngine.Vector3 vector)
+
+Disassembly:
+	0x03B27D30 STP S2, S1, [X19]
+	0x03B27D34 STR S0, [X19 + 0x8]
+	0x03B27D38 LDP X20, X19, [X31 + 0xB0]
+	0x03B27D3C LDP X22, X21, [X31 + 0xA0]
+	0x03B27D40 LDP X24, X23, [X31 + 0x90]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction FCSEL not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction FCSEL not yet implemented."
+	005 Return V0
+
+Method: System.Single MaxComponent(UnityEngine.Vector3 vector)
+
+Disassembly:
+	0x03B27D44 LDP X30, X25, [X31 + 0x80]
+	0x03B27D48 LDP D9, D8, [X31 + 0x70]
+	0x03B27D4C LDP D11, D10, [X31 + 0x60]
+	0x03B27D50 LDP D13, D12, [X31 + 0x50]
+	0x03B27D54 LDP D15, D14, [X31 + 0x40]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction FCSEL not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction FCSEL not yet implemented."
+	005 Return V0
+
+Method: UnityEngine.Vector3 Abs(UnityEngine.Vector3 vector)
+
+Disassembly:
+	0x03B27D58 CSET W0, GT
+	0x03B27D5C ADD X31, X31, 0xC0
+	0x03B27D60 RET
+	0x03B27D64 BL 0x1C16F20
+
+ISIL:
+	001 NotImplemented "Instruction FABS not yet implemented."
+	002 NotImplemented "Instruction FABS not yet implemented."
+	003 NotImplemented "Instruction FABS not yet implemented."
+	004 Return X0
+
+Method: UnityEngine.Vector3 Multiply(UnityEngine.Vector3 value, UnityEngine.Vector3 scale)
+
+Disassembly:
+	0x03B27D68 SUB X31, X31, 0x60
+	0x03B27D6C STP D15, D14, [X31 + 0x10]
+	0x03B27D70 STP D13, D12, [X31 + 0x20]
+	0x03B27D74 STP D11, D10, [X31 + 0x30]
+
+ISIL:
+	001 Multiply S0, S0, S3
+	002 Multiply S1, S1, S4
+	003 Multiply S2, S2, S5
+	004 Return X0
+
+Method: UnityEngine.Vector3 Divide(UnityEngine.Vector3 value, UnityEngine.Vector3 scale)
+
+Disassembly:
+	0x03B27D78 STP D9, D8, [X31 + 0x40]
+	0x03B27D7C STP X30, X19, [X31 + 0x50]
+	0x03B27D80 ADRP X19, 0x8B1000
+	0x03B27D84 LDP S13, S11, [X31 + 0x64]
+
+ISIL:
+	001 NotImplemented "Instruction FDIV not yet implemented."
+	002 NotImplemented "Instruction FDIV not yet implemented."
+	003 NotImplemented "Instruction FDIV not yet implemented."
+	004 Return X0
+
+Method: UnityEngine.Vector3 SafeDivide(UnityEngine.Vector3 value, UnityEngine.Vector3 scale)
+
+Disassembly:
+	0x03B27D88 LDRB W8, [X19 + 0x785]
+	0x03B27D8C LDR V15, [X31 + 0x60]
+	0x03B27D90 MOV V10.16B, V3.16B
+	0x03B27D94 MOV V12.16B, V0.16B
+	0x03B27D98 CBNZ W8, 0x3B27DD8
+	0x03B27D9C ADRP X0, 0x5CC000
+	0x03B27DA0 LDR X0, [X0 + 0x5A8]
+	0x03B27DA4 MOV V8.16B, V5.16B
+	0x03B27DA8 MOV V9.16B, V4.16B
+	0x03B27DAC MOV V14.16B, V2.16B
+	0x03B27DB0 STR S12, [X31 + 0xC]
+	0x03B27DB4 MOV V12.16B, V1.16B
+	0x03B27DB8 BL 0x1C16CF4
+	0x03B27DBC MOV V1.16B, V12.16B
+	0x03B27DC0 LDR V12, [X31 + 0xC]
+	0x03B27DC4 MOV V2.16B, V14.16B
+	0x03B27DC8 MOV V4.16B, V9.16B
+	0x03B27DCC MOV V5.16B, V8.16B
+	0x03B27DD0 MOVZ W8, 0x1
+	0x03B27DD4 STRB W8, [X19 + 0x785]
+	0x03B27DD8 ADRP X8, 0x5CC000
+	0x03B27DDC LDR X8, [X8 + 0x5A8]
+	0x03B27DE0 FSUB S9, S15, S10
+	0x03B27DE4 FSUB S8, S13, S4
+	0x03B27DE8 FSUB S14, S11, S5
+	0x03B27DEC LDR X0, [X8]
+	0x03B27DF0 STP S15, S11, [X31 + 0x4]
+	0x03B27DF4 LDR W8, [X0 + 0xE0]
+	0x03B27DF8 CBNZ W8, 0x3B27E30
+	0x03B27DFC MOV V15.16B, V5.16B
+	0x03B27E00 STR S10, [X31]
+	0x03B27E04 MOV V10.16B, V4.16B
+	0x03B27E08 MOV V11.16B, V2.16B
+	0x03B27E0C STR S12, [X31 + 0xC]
+	0x03B27E10 MOV V12.16B, V1.16B
+	0x03B27E14 BL 0x1C16DFC
+	0x03B27E18 MOV V1.16B, V12.16B
+	0x03B27E1C LDR V12, [X31 + 0xC]
+	0x03B27E20 MOV V4.16B, V10.16B
+	0x03B27E24 LDR V10, [X31]
+	0x03B27E28 MOV V2.16B, V11.16B
+	0x03B27E2C MOV V5.16B, V15.16B
+	0x03B27E30 ADRP X8, 0xFFFFFFFFFCFC3000
+	0x03B27E34 FMUL S0, S9, S9
+	0x03B27E38 FMUL S3, S8, S8
+	0x03B27E3C LDR V6, [X8 + 0x17C]
+	0x03B27E40 FADD S0, S0, S3
+	0x03B27E44 FMUL S3, S14, S14
+	0x03B27E48 FADD S15, S3, S0
+	0x03B27E4C FSQRT S3, S15
+	0x03B27E50 FCMP S3, S6
+	0x03B27E54 B.LE 0x3B27E68
+	0x03B27E58 FDIV S18, S9, S3
+	0x03B27E5C FDIV S17, S8, S3
+	0x03B27E60 FDIV S16, S14, S3
+	0x03B27E64 B 0x3B27EC0
+	0x03B27E68 ADRP X19, 0x8B1000
+	0x03B27E6C LDRB W8, [X19 + 0x783]
+	0x03B27E70 CBNZ W8, 0x3B27EA8
+	0x03B27E74 ADRP X0, 0x5CC000
+	0x03B27E78 LDR X0, [X0 + 0x5A0]
+	0x03B27E7C MOV V8.16B, V5.16B
+	0x03B27E80 MOV V9.16B, V4.16B
+	0x03B27E84 MOV V14.16B, V2.16B
+	0x03B27E88 MOV V11.16B, V1.16B
+	0x03B27E8C BL 0x1C16CF4
+	0x03B27E90 MOV V1.16B, V11.16B
+	0x03B27E94 MOV V2.16B, V14.16B
+	0x03B27E98 MOV V4.16B, V9.16B
+	0x03B27E9C MOV V5.16B, V8.16B
+	0x03B27EA0 MOVZ W8, 0x1
+	0x03B27EA4 STRB W8, [X19 + 0x783]
+	0x03B27EA8 ADRP X8, 0x5CC000
+
+ISIL:
+	001 Move [X31-64], D13
+	002 Move [X31-56], D12
+	003 Move [X31+16], D11
+	004 Move [X31+24], D10
+	005 Move [X31+32], D9
+	006 Move [X31+40], D8
+	007 Move [X31+48], X30
+	008 Move [X31+56], X19
+	009 Move X19, 0x8B3000
+	010 Move W8, [X19+1450]
+	011 Move V8, V5
+	012 Move V9, V4
+	013 Move V11, V3
+	014 Move V10, V2
+	015 Move V12, V1
+	016 Move V13, V0
+	017 Compare W8, 0
+	018 JumpIfNotEqual {24}
+	019 Move X0, 0x5D4000
+	020 Move X0, [X0+1208]
+	021 Call 0x1C17CF4
+	022 Move W8, 1
+	023 Move [X19+1450], W8
+	024 Move X8, 0x5D4000
+	025 Move X8, [X8+1208]
+	026 Move X9, -50577408
+	027 Move S1, 8
+	028 NotImplemented "Instruction FABS not yet implemented."
+	029 Move X8, [X8]
+	030 Move S2, W31
+	031 NotImplemented "Instruction FMAXNM not yet implemented."
+	032 NotImplemented "Instruction FABS not yet implemented."
+	033 Move X8, [X8+184]
+	034 NotImplemented "Instruction FABD not yet implemented."
+	035 NotImplemented "Instruction FMAXNM not yet implemented."
+	036 NotImplemented "Instruction FDIV not yet implemented."
+	037 Move V3, [X8]
+	038 NotImplemented "Instruction FABD not yet implemented."
+	039 NotImplemented "Instruction FDIV not yet implemented."
+	040 Move W8, 0x7F800000
+	041 Multiply S3, S3, S1
+	042 Move V1, [X9+576]
+	043 NotImplemented "Instruction FABD not yet implemented."
+	044 Move X30, [X31+48]
+	045 Move X19, [X31+56]
+	046 Multiply S0, S0, S1
+	047 NotImplemented "Instruction FCMP not yet implemented."
+	048 NotImplemented "Instruction FCSEL not yet implemented."
+	049 NotImplemented "Instruction FCMP not yet implemented."
+	050 Multiply S5, S5, S1
+	051 NotImplemented "Instruction FCSEL not yet implemented."
+	052 NotImplemented "Instruction FCMP not yet implemented."
+	053 NotImplemented "Instruction FCSEL not yet implemented."
+	054 NotImplemented "Instruction FCMP not yet implemented."
+	055 NotImplemented "Instruction FCSEL not yet implemented."
+	056 Move W9, S5
+	057 And W9, W9, 0x7FFFFFFF
+	058 NotImplemented "Instruction FABS not yet implemented."
+	059 NotImplemented "Instruction CMP not yet implemented."
+	060 Move W9, S4
+	061 NotImplemented "Instruction FMAXNM not yet implemented."
+	062 And W9, W9, 0x7FFFFFFF
+	063 Multiply S6, S0, S1
+	064 NotImplemented "Instruction FCSEL not yet implemented."
+	065 NotImplemented "Instruction CMP not yet implemented."
+	066 NotImplemented "Instruction FCSEL not yet implemented."
+	067 NotImplemented "Instruction FCMP not yet implemented."
+	068 NotImplemented "Instruction FCSEL not yet implemented."
+	069 NotImplemented "Instruction FDIV not yet implemented."
+	070 NotImplemented "Instruction FCMP not yet implemented."
+	071 NotImplemented "Instruction FCSEL not yet implemented."
+	072 Move W9, S3
+	073 Move D9, [X31+32]
+	074 Move D8, [X31+40]
+	075 Move D11, [X31+16]
+	076 Move D10, [X31+24]
+	077 And W9, W9, 0x7FFFFFFF
+	078 NotImplemented "Instruction CMP not yet implemented."
+	079 NotImplemented "Instruction FCSEL not yet implemented."
+	080 Move D13, [X31+64]
+	081 Move D12, [X31+72]
+	082 Return X0
+

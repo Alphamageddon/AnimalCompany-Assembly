@@ -1,0 +1,50 @@
+Type: UnityEngine.Rendering.DebugDisplaySettingsPanel`1
+
+Method: T get_data()
+
+Disassembly:
+	0x029AFE54 ADRP X23, 0x176F000
+	0x029AFE58 ADRP X21, 0x176F000
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_data(T value)
+
+Disassembly:
+	0x029AFE5C LDR X1, [X8]
+	0x029AFE60 LDR X22, [X22 + 0x5C0]
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.Void .ctor(T data)
+
+Disassembly:
+	0x029AFE64 LDR X23, [X23 + 0x5D8]
+	0x029AFE68 LDR X21, [X21 + 0x5B8]
+	0x029AFE6C ADD X8, X31, 0x8
+	0x029AFE70 BL 0x2DBE924
+	0x029AFE74 LDR X1, [X22]
+	0x029AFE78 ADD X0, X31, 0x8
+	0x029AFE7C BL 0x2BC3C64
+	0x029AFE80 MOV W19, W0
+	0x029AFE84 TBZ X0, 0x0, 0x29AFEF4
+	0x029AFE88 LDR X20, [X31 + 0x18]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call DebugDisplaySettingsPanel..ctor, X0
+	008 Move [X20+32], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

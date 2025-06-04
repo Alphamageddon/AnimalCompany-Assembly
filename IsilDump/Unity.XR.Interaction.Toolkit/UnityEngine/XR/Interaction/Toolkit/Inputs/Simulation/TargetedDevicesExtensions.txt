@@ -1,0 +1,34 @@
+Type: UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.TargetedDevicesExtensions
+
+Method: UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulator/TargetedDevices WithDevice(UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulator/TargetedDevices devices, UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulator/TargetedDevices device)
+
+Disassembly:
+	0x03BCAA9C B.NE 0x3BCAA7C
+	0x03BCAAA0 B 0x3BCAAC4
+
+ISIL:
+	001 Or W0, W1, W0
+	002 Return X0
+
+Method: UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulator/TargetedDevices WithoutDevice(UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulator/TargetedDevices devices, UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulator/TargetedDevices device)
+
+Disassembly:
+	0x03BCAAA4 CMP W8, 0x1
+	0x03BCAAA8 B.NE 0x3BCAAC4
+
+ISIL:
+	001 NotImplemented "Instruction BIC not yet implemented."
+	002 Return X0
+
+Method: System.Boolean HasDevice(UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulator/TargetedDevices devices, UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulator/TargetedDevices device)
+
+Disassembly:
+	0x03BCAAAC CBNZ W21, 0x3BCAAC4
+	0x03BCAAB0 LDRB W8, [X19 + 0x20]
+	0x03BCAAB4 CBZ W8, 0x3BCAAC4
+
+ISIL:
+	001 NotImplemented "Instruction BICS not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 Return X0
+

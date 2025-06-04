@@ -1,0 +1,93 @@
+Type: UnityEngine.XR.Interaction.Toolkit.UI.CanvasOptimizer/CanvasState/GraphicRaycasterSettings
+
+Method: System.Boolean get_present()
+
+Disassembly:
+	0x03B989B0 ADRP X21, 0x840000
+	0x03B989B4 LDRB W8, [X21 + 0x783]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_present(System.Boolean value)
+
+Disassembly:
+	0x03B989B8 CBNZ W8, 0x3B989D0
+	0x03B989BC ADRP X0, 0x55B000
+	0x03B989C0 LDR X0, [X0 + 0x5A0]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+16], W8
+	003 Return 
+
+Method: System.Void CopyFrom(UnityEngine.UI.GraphicRaycaster source)
+
+Disassembly:
+	0x03B986C0 LDP X30, X21, [X31 + 0x20]
+	0x03B986C4 LDP D9, D8, [X31 + 0x10]
+	0x03B986C8 LDR V10, [X31], #0x40
+	0x03B986CC B 0x3B921BC
+	0x03B986D0 BL 0x1C16F20
+	0x03B986D4 SUB X31, X31, 0x80
+	0x03B986D8 STR D10, [X31 + 0x40]
+	0x03B986DC STP D9, D8, [X31 + 0x48]
+	0x03B986E0 STR X30, [X31 + 0x58]
+	0x03B986E4 STP X22, X21, [X31 + 0x60]
+	0x03B986E8 STP X20, X19, [X31 + 0x70]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {12}
+	004 Move W8, [X1+48]
+	005 Move [X0+20], W8
+	006 Move W8, [X1+44]
+	007 Move [X0+24], W8
+	008 Move W8, [X1+40]
+	009 Move [X0+28], W8
+	010 Move X30, [X31+16]
+	011 Return 
+	012 Call 0x1C17F20
+
+Method: System.Void CopyTo(UnityEngine.UI.GraphicRaycaster dest)
+
+Disassembly:
+	0x03B98944 FMUL S1, S10, S10
+	0x03B98948 ADRP X8, 0xFFFFFFFFFCF52000
+	0x03B9894C FADD S0, S0, S1
+	0x03B98950 LDR V1, [X8 + 0x17C]
+	0x03B98954 ADRP X21, 0x55B000
+	0x03B98958 FMUL S2, S8, S8
+	0x03B9895C LDR X21, [X21 + 0x5A0]
+	0x03B98960 FADD S0, S2, S0
+	0x03B98964 FSQRT S2, S0
+	0x03B98968 FCMP S2, S1
+	0x03B9896C B.LE 0x3B98A44
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {12}
+	004 Move W8, [X0+20]
+	005 Move [X1+48], W8
+	006 Move W8, [X0+24]
+	007 Move [X1+44], W8
+	008 Move W8, [X0+28]
+	009 Move [X1+40], W8
+	010 Move X30, [X31+16]
+	011 Return 
+	012 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03B98980 LDR X0, [X20 + 0x20]
+	0x03B98984 CBZ X0, 0x3B98B0C
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

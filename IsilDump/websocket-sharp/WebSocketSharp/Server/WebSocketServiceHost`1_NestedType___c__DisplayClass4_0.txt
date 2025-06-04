@@ -1,0 +1,60 @@
+Type: WebSocketSharp.Server.WebSocketServiceHost`1/<>c__DisplayClass4_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0237A418 ADD X9, X31, 0x0
+	0x0237A41C ADD X10, X21, 0xF
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: TBehavior <createSessionCreator>b__1()
+
+Disassembly:
+	0x0237A420 AND X10, X10, 0x1FFFFFFFF
+	0x0237A424 SUB X22, X9, X10
+	0x0237A428 ADD X31, X22, 0x0
+	0x0237A42C LDR X9, [X0 + 0x18]
+	0x0237A430 CBZ X9, 0x237A574
+	0x0237A434 LDR X10, [X9 + 0x10]
+	0x0237A438 CBZ X10, 0x237A574
+	0x0237A43C LDRSW X24, [X0 + 0x10]
+	0x0237A440 LDR W11, [X10 + 0x18]
+	0x0237A444 MOV X20, X0
+	0x0237A448 CMP W24, W11
+	0x0237A44C B.CS 0x237A578
+	0x0237A450 ADD X10, X10, X24, 0x2, LSL
+	0x0237A454 MOVZ W11, 0x3F800000
+	0x0237A458 STR W11, [X10 + 0x20]
+	0x0237A45C LDR X8, [X8 + 0x30]
+	0x0237A460 LDR X25, [X9 + 0x20]
+	0x0237A464 MOV X19, X2
+	0x0237A468 MOV X0, X22
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X8, [X1+32]
+	004 Move X19, X0
+	005 Move X8, [X8+192]
+	006 Move X8, [X8]
+	007 Move X0, X8
+	008 Call Activator.CreateInstance
+	009 Move X8, [X19+16]
+	010 Compare X8, 0
+	011 JumpIfEqual {22}
+	012 Move X19, X0
+	013 Move X9, [X8+24]
+	014 Move X0, [X8+64]
+	015 Move X2, [X8+40]
+	016 Move X1, X19
+	017 NotImplemented "Instruction BLR not yet implemented."
+	018 Move X0, X19
+	019 Move X30, [X31+16]
+	020 Move X19, [X31+24]
+	021 Return X0
+	022 Call 0x1C17F20
+

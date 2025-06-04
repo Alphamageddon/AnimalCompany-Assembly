@@ -1,0 +1,3586 @@
+Type: Unity.Mathematics.float4x2
+
+Method: System.Void .ctor(Unity.Mathematics.float4 c0, Unity.Mathematics.float4 c1)
+
+Disassembly:
+	0x03893E6C RET
+	0x03893E70 MOV W0, W31
+	0x03893E74 RET
+	0x03893E78 STP X30, X21, [X31 - 0x20]!
+	0x03893E7C STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Move [X0+16], S4
+	006 Move [X0+24], S5
+	007 Move [X0+24], S6
+	008 Move [X0+32], S7
+	009 Return 
+
+Method: System.Void .ctor(System.Single m00, System.Single m01, System.Single m10, System.Single m11, System.Single m20, System.Single m21, System.Single m30, System.Single m31)
+
+Disassembly:
+	0x03893E80 ADRP X21, 0xB4E000
+	0x03893E84 LDRB W8, [X21 + 0x637]
+	0x03893E88 MOV X20, X1
+	0x03893E8C MOV X19, X0
+	0x03893E90 TBNZ X8, 0x0, 0x3893EA8
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S2
+	003 Move [X0+8], S4
+	004 Move [X0+16], S6
+	005 Move [X0+16], S1
+	006 Move [X0+24], S3
+	007 Move [X0+24], S5
+	008 Move [X0+32], S7
+	009 Return 
+
+Method: System.Void .ctor(System.Single v)
+
+Disassembly:
+	0x03893E94 ADRP X0, 0x8B7000
+	0x03893E98 LDR X0, [X0 + 0xF98]
+	0x03893E9C BL 0x1C16CF4
+
+ISIL:
+	001 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	002 Move [X0], V0
+	003 Move [X0+8], V0
+	004 Return 
+
+Method: System.Void .ctor(System.Boolean v)
+
+Disassembly:
+	0x03893EA0 MOVZ W8, 0x1
+	0x03893EA4 STRB W8, [X21 + 0x637]
+	0x03893EA8 CBZ X20, 0x3893EC4
+	0x03893EAC ADRP X8, 0x8B7000
+	0x03893EB0 LDR X8, [X8 + 0xF98]
+	0x03893EB4 LDR X9, [X20]
+	0x03893EB8 LDR X8, [X8]
+	0x03893EBC CMP X9, X8
+	0x03893EC0 B.EQ 0x3893ED4
+
+ISIL:
+	001 And W31, W1, 1
+	002 Move S0, W31
+	003 Move S1, 1
+	004 NotImplemented "Instruction FCSEL not yet implemented."
+	005 Move [X0], S0
+	006 Move [X0+8], S0
+	007 Move [X0+8], S0
+	008 Move [X0+16], S0
+	009 Move [X0+16], S0
+	010 Move [X0+24], S0
+	011 Move [X0+24], S0
+	012 Move [X0+32], S0
+	013 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.bool4x2 v)
+
+Disassembly:
+	0x03893EC4 MOV W0, W31
+	0x03893EC8 LDP X20, X19, [X31 + 0x10]
+	0x03893ECC LDP X30, X21, [X31], #0x20
+	0x03893ED0 RET
+	0x03893ED4 MOV X0, X20
+	0x03893ED8 BL 0x1C16E08
+	0x03893EDC LDR V0, [X0]
+	0x03893EE0 LDR V1, [X19]
+	0x03893EE4 FCMP S1, S0
+	0x03893EE8 B.NE 0x3893EC4
+	0x03893EEC LDR V0, [X0 + 0x4]
+	0x03893EF0 LDR V1, [X19 + 0x4]
+	0x03893EF4 FCMP S1, S0
+	0x03893EF8 B.NE 0x3893EC4
+	0x03893EFC LDR V0, [X0 + 0x8]
+	0x03893F00 LDR V1, [X19 + 0x8]
+	0x03893F04 FCMP S1, S0
+	0x03893F08 B.NE 0x3893EC4
+	0x03893F0C LDR V0, [X0 + 0xC]
+	0x03893F10 LDR V1, [X19 + 0xC]
+	0x03893F14 FCMP S1, S0
+	0x03893F18 B.NE 0x3893EC4
+	0x03893F1C LDR V0, [X0 + 0x10]
+
+ISIL:
+	001 And X31, X1, 1
+	002 Move S0, 1
+	003 Move S1, W31
+	004 NotImplemented "Instruction FCSEL not yet implemented."
+	005 And X31, X1, 511
+	006 NotImplemented "Instruction FCSEL not yet implemented."
+	007 And X31, X1, 0x1FFFF
+	008 NotImplemented "Instruction FCSEL not yet implemented."
+	009 And X31, X1, 0x1FFFFFF
+	010 Move [X0], S2
+	011 Move [X0+8], S3
+	012 NotImplemented "Instruction FCSEL not yet implemented."
+	013 And X31, X1, 0x1FFFFFFFF
+	014 Move [X0+8], S4
+	015 Move [X0+16], S2
+	016 NotImplemented "Instruction FCSEL not yet implemented."
+	017 And X31, X1, 0x1FFFFFFFFFF
+	018 NotImplemented "Instruction FCSEL not yet implemented."
+	019 And X31, X1, 0x1FFFFFFFFFFFF
+	020 NotImplemented "Instruction FCSEL not yet implemented."
+	021 And X31, X1, 0x1FFFFFFFFFFFFFF
+	022 NotImplemented "Instruction FCSEL not yet implemented."
+	023 Move [X0+16], S2
+	024 Move [X0+24], S3
+	025 Move [X0+24], S4
+	026 Move [X0+32], S0
+	027 Return 
+
+Method: System.Void .ctor(System.Int32 v)
+
+Disassembly:
+	0x03893F20 LDR V1, [X19 + 0x10]
+	0x03893F24 FCMP S1, S0
+	0x03893F28 B.NE 0x3893EC4
+	0x03893F2C LDR V0, [X0 + 0x14]
+
+ISIL:
+	001 NotImplemented "Instruction SCVTF not yet implemented."
+	002 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	003 Move [X0], V0
+	004 Move [X0+8], V0
+	005 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.int4x2 v)
+
+Disassembly:
+	0x03893F30 LDR V1, [X19 + 0x14]
+	0x03893F34 FCMP S1, S0
+	0x03893F38 B.NE 0x3893EC4
+	0x03893F3C LDR V0, [X0 + 0x18]
+	0x03893F40 LDR V1, [X19 + 0x18]
+	0x03893F44 FCMP S1, S0
+	0x03893F48 B.NE 0x3893EC4
+	0x03893F4C LDR V0, [X0 + 0x1C]
+	0x03893F50 LDR V1, [X19 + 0x1C]
+	0x03893F54 FCMP S1, S0
+	0x03893F58 CSET W0, EQ
+	0x03893F5C B 0x3893EC8
+	0x03893F60 LDP W8, W9, [X0]
+	0x03893F64 LDP W13, W12, [X0 + 0x8]
+	0x03893F68 LDP W10, W11, [X0 + 0x10]
+	0x03893F6C MOVZ X17, 0x945
+	0x03893F70 MOVZ W14, 0xC25D
+
+ISIL:
+	001 Move S0, [X1]
+	002 Move S1, [X1+4]
+	003 Move S2, [X1+8]
+	004 Move S3, [X1+12]
+	005 NotImplemented "Instruction SCVTF not yet implemented."
+	006 NotImplemented "Instruction SCVTF not yet implemented."
+	007 NotImplemented "Instruction SCVTF not yet implemented."
+	008 NotImplemented "Instruction SCVTF not yet implemented."
+	009 Move [X0], S0
+	010 Move [X0+8], S1
+	011 Move [X0+8], S2
+	012 Move [X0+16], S3
+	013 Move S0, [X1+16]
+	014 Move S1, [X1+20]
+	015 Move S2, [X1+24]
+	016 Move S3, [X1+28]
+	017 NotImplemented "Instruction SCVTF not yet implemented."
+	018 NotImplemented "Instruction SCVTF not yet implemented."
+	019 NotImplemented "Instruction SCVTF not yet implemented."
+	020 NotImplemented "Instruction SCVTF not yet implemented."
+	021 Move [X0+16], S0
+	022 Move [X0+24], S1
+	023 Move [X0+24], S2
+	024 Move [X0+32], S3
+	025 Return 
+
+Method: System.Void .ctor(System.UInt32 v)
+
+Disassembly:
+	0x03893F74 MOVZ X16, 0xA60D
+	0x03893F78 MOVK X17, 0xD21D0000
+	0x03893F7C LDP W0, W1, [X0 + 0x18]
+	0x03893F80 MOVK W14, 0xAAC30000
+
+ISIL:
+	001 NotImplemented "Instruction UCVTF not yet implemented."
+	002 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	003 Move [X0], V0
+	004 Move [X0+8], V0
+	005 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.uint4x2 v)
+
+Disassembly:
+	0x03893F84 MOVK X16, 0x614D0000
+	0x03893F88 MUL X9, X9, X17
+	0x03893F8C MOVZ X17, 0x5ACB
+	0x03893F90 MOVZ W15, 0xAB2D
+	0x03893F94 MUL W8, W8, W14
+	0x03893F98 MOVZ W14, 0xC50B
+	0x03893F9C MUL X12, X12, X16
+	0x03893FA0 MOVZ X16, 0x2A33
+	0x03893FA4 MOVK X17, 0x8C450000
+	0x03893FA8 MOVK W15, 0x88FC0000
+	0x03893FAC MOVK W14, 0x5BA20000
+	0x03893FB0 MOVK X16, 0xF1850000
+	0x03893FB4 MADD X9, X11, X17, X9
+	0x03893FB8 MUL W13, W13, W15
+	0x03893FBC MOVZ W15, 0x6C89
+	0x03893FC0 MADD W8, W10, W14, W8
+	0x03893FC4 MADD X12, X1, X16, X12
+
+ISIL:
+	001 Move S0, [X1]
+	002 Move S1, [X1+4]
+	003 Move S2, [X1+8]
+	004 Move S3, [X1+12]
+	005 NotImplemented "Instruction UCVTF not yet implemented."
+	006 NotImplemented "Instruction UCVTF not yet implemented."
+	007 NotImplemented "Instruction UCVTF not yet implemented."
+	008 NotImplemented "Instruction UCVTF not yet implemented."
+	009 Move [X0], S0
+	010 Move [X0+8], S1
+	011 Move [X0+8], S2
+	012 Move [X0+16], S3
+	013 Move S0, [X1+16]
+	014 Move S1, [X1+20]
+	015 Move S2, [X1+24]
+	016 Move S3, [X1+28]
+	017 NotImplemented "Instruction UCVTF not yet implemented."
+	018 NotImplemented "Instruction UCVTF not yet implemented."
+	019 NotImplemented "Instruction UCVTF not yet implemented."
+	020 NotImplemented "Instruction UCVTF not yet implemented."
+	021 Move [X0+16], S0
+	022 Move [X0+24], S1
+	023 Move [X0+24], S2
+	024 Move [X0+32], S3
+	025 Return 
+
+Method: System.Void .ctor(System.Double v)
+
+Disassembly:
+	0x03893FC8 UBFM X9, X9, 0x20, 0x3F
+	0x03893FCC MOVK W15, 0xCD260000
+	0x03893FD0 UBFM X11, X12, 0x20, 0x3F
+	0x03893FD4 ADD W8, W9, W8
+
+ISIL:
+	001 NotImplemented "Instruction INVALID not yet implemented."
+	002 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	003 Move [X0], V0
+	004 Move [X0+8], V0
+	005 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.double4x2 v)
+
+Disassembly:
+	0x03893FD8 MADD W10, W0, W15, W13
+	0x03893FDC ADD W8, W8, W11
+	0x03893FE0 MOVZ W9, 0x5E77
+	0x03893FE4 ADD W8, W8, W10
+	0x03893FE8 MOVK W9, 0x77E30000
+	0x03893FEC ADD W0, W8, W9
+	0x03893FF0 RET
+	0x03893FF4 SUB X31, X31, 0x50
+	0x03893FF8 STR X30, [X31 + 0x20]
+
+ISIL:
+	001 Move V0, [X1]
+	002 Move V1, [X1+16]
+	003 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	004 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	005 Move [X0], V0
+	006 Move V0, [X1+32]
+	007 Move V1, [X1+48]
+	008 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	009 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	010 Move [X0+1], V0
+	011 Return 
+
+Method: Unity.Mathematics.float4x2 op_Implicit(System.Single v)
+
+Disassembly:
+	0x03893FFC STP X22, X21, [X31 + 0x30]
+	0x03894000 STP X20, X19, [X31 + 0x40]
+	0x03894004 ADRP X19, 0xB4D000
+
+ISIL:
+	001 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	002 Move [X8], V0
+	003 Move [X8+8], V0
+	004 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Explicit(System.Boolean v)
+
+Disassembly:
+	0x03894008 ADRP X21, 0x85F000
+	0x0389400C ADRP X22, 0x85F000
+	0x03894010 LDRB W8, [X19 + 0x638]
+	0x03894014 LDR X21, [X21 + 0x9D0]
+	0x03894018 LDR X22, [X22 + 0xA90]
+	0x0389401C MOV X20, X0
+	0x03894020 TBNZ X8, 0x0, 0x3894050
+	0x03894024 ADRP X0, 0x85F000
+	0x03894028 LDR X0, [X0 + 0x9D0]
+
+ISIL:
+	001 And W31, W0, 1
+	002 Move S0, W31
+	003 Move S1, 1
+	004 NotImplemented "Instruction FCSEL not yet implemented."
+	005 Move [X8], S0
+	006 Move [X8+8], S0
+	007 Move [X8+8], S0
+	008 Move [X8+16], S0
+	009 Move [X8+16], S0
+	010 Move [X8+24], S0
+	011 Move [X8+24], S0
+	012 Move [X8+32], S0
+	013 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Explicit(Unity.Mathematics.bool4x2 v)
+
+Disassembly:
+	0x0389402C BL 0x1C16CF4
+	0x03894030 ADRP X0, 0x85F000
+	0x03894034 LDR X0, [X0 + 0xA90]
+	0x03894038 BL 0x1C16CF4
+	0x0389403C ADRP X0, 0x8B6000
+	0x03894040 LDR X0, [X0 + 0xFA0]
+	0x03894044 BL 0x1C16CF4
+	0x03894048 MOVZ W8, 0x1
+	0x0389404C STRB W8, [X19 + 0x638]
+	0x03894050 LDR X0, [X21]
+	0x03894054 MOVZ W1, 0x8
+	0x03894058 BL 0x1C16D6C
+	0x0389405C MOV X19, X0
+	0x03894060 LDR V0, [X20]
+	0x03894064 LDR X0, [X22]
+	0x03894068 ADD X1, X31, 0x2C
+	0x0389406C STR S0, [X31 + 0x2C]
+	0x03894070 BL 0x1C16E04
+	0x03894074 CBZ X19, 0x389429C
+	0x03894078 MOV X21, X0
+	0x0389407C CBZ X0, 0x3894094
+	0x03894080 LDR X8, [X19]
+	0x03894084 MOV X0, X21
+
+ISIL:
+	001 And X31, X0, 1
+	002 Move S0, 1
+	003 Move S1, W31
+	004 NotImplemented "Instruction FCSEL not yet implemented."
+	005 And X31, X0, 511
+	006 NotImplemented "Instruction FCSEL not yet implemented."
+	007 And X31, X0, 0x1FFFF
+	008 NotImplemented "Instruction FCSEL not yet implemented."
+	009 And X31, X0, 0x1FFFFFF
+	010 Move [X8], S2
+	011 Move [X8+8], S3
+	012 NotImplemented "Instruction FCSEL not yet implemented."
+	013 And X31, X0, 0x1FFFFFFFF
+	014 Move [X8+8], S4
+	015 Move [X8+16], S2
+	016 NotImplemented "Instruction FCSEL not yet implemented."
+	017 And X31, X0, 0x1FFFFFFFFFF
+	018 NotImplemented "Instruction FCSEL not yet implemented."
+	019 And X31, X0, 0x1FFFFFFFFFFFF
+	020 NotImplemented "Instruction FCSEL not yet implemented."
+	021 And X31, X0, 0x1FFFFFFFFFFFFFF
+	022 NotImplemented "Instruction FCSEL not yet implemented."
+	023 Move [X8+16], S2
+	024 Move [X8+24], S3
+	025 Move [X8+24], S4
+	026 Move [X8+32], S0
+	027 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Implicit(System.Int32 v)
+
+Disassembly:
+	0x03894088 LDR X1, [X8 + 0x40]
+	0x0389408C BL 0x1C16E00
+	0x03894090 CBZ X0, 0x3894290
+	0x03894094 LDR W8, [X19 + 0x18]
+
+ISIL:
+	001 NotImplemented "Instruction SCVTF not yet implemented."
+	002 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	003 Move [X8], V0
+	004 Move [X8+8], V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Implicit(Unity.Mathematics.int4x2 v)
+
+Disassembly:
+	0x03894098 CBZ W8, 0x389428C
+	0x0389409C STR X21, [X19 + 0x20]
+	0x038940A0 LDR V0, [X20 + 0x10]
+	0x038940A4 LDR X0, [X22]
+	0x038940A8 ADD X1, X31, 0x28
+	0x038940AC STR S0, [X31 + 0x28]
+	0x038940B0 BL 0x1C16E04
+	0x038940B4 MOV X21, X0
+	0x038940B8 CBZ X0, 0x38940D0
+	0x038940BC LDR X8, [X19]
+	0x038940C0 MOV X0, X21
+	0x038940C4 LDR X1, [X8 + 0x40]
+	0x038940C8 BL 0x1C16E00
+	0x038940CC CBZ X0, 0x3894290
+	0x038940D0 LDR W8, [X19 + 0x18]
+	0x038940D4 CMP W8, 0x1
+	0x038940D8 B.LS 0x389428C
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move S2, [X0+8]
+	004 Move S3, [X0+12]
+	005 Move S4, [X0+16]
+	006 Move S5, [X0+20]
+	007 Move S6, [X0+24]
+	008 Move S7, [X0+28]
+	009 NotImplemented "Instruction SCVTF not yet implemented."
+	010 NotImplemented "Instruction SCVTF not yet implemented."
+	011 NotImplemented "Instruction SCVTF not yet implemented."
+	012 NotImplemented "Instruction SCVTF not yet implemented."
+	013 NotImplemented "Instruction SCVTF not yet implemented."
+	014 NotImplemented "Instruction SCVTF not yet implemented."
+	015 NotImplemented "Instruction SCVTF not yet implemented."
+	016 NotImplemented "Instruction SCVTF not yet implemented."
+	017 Move [X8], S0
+	018 Move [X8+8], S1
+	019 Move [X8+8], S2
+	020 Move [X8+16], S3
+	021 Move [X8+16], S4
+	022 Move [X8+24], S5
+	023 Move [X8+24], S6
+	024 Move [X8+32], S7
+	025 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Implicit(System.UInt32 v)
+
+Disassembly:
+	0x038940DC STR X21, [X19 + 0x28]
+	0x038940E0 LDR V0, [X20 + 0x4]
+	0x038940E4 LDR X0, [X22]
+	0x038940E8 ADD X1, X31, 0x1C
+
+ISIL:
+	001 NotImplemented "Instruction UCVTF not yet implemented."
+	002 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	003 Move [X8], V0
+	004 Move [X8+8], V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Implicit(Unity.Mathematics.uint4x2 v)
+
+Disassembly:
+	0x038940EC STR S0, [X31 + 0x1C]
+	0x038940F0 BL 0x1C16E04
+	0x038940F4 MOV X21, X0
+	0x038940F8 CBZ X0, 0x3894110
+	0x038940FC LDR X8, [X19]
+	0x03894100 MOV X0, X21
+	0x03894104 LDR X1, [X8 + 0x40]
+	0x03894108 BL 0x1C16E00
+	0x0389410C CBZ X0, 0x3894290
+	0x03894110 LDR W8, [X19 + 0x18]
+	0x03894114 CMP W8, 0x2
+	0x03894118 B.LS 0x389428C
+	0x0389411C STR X21, [X19 + 0x30]
+	0x03894120 LDR V0, [X20 + 0x14]
+	0x03894124 LDR X0, [X22]
+	0x03894128 ADD X1, X31, 0x18
+	0x0389412C STR S0, [X31 + 0x18]
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move S2, [X0+8]
+	004 Move S3, [X0+12]
+	005 Move S4, [X0+16]
+	006 Move S5, [X0+20]
+	007 Move S6, [X0+24]
+	008 Move S7, [X0+28]
+	009 NotImplemented "Instruction UCVTF not yet implemented."
+	010 NotImplemented "Instruction UCVTF not yet implemented."
+	011 NotImplemented "Instruction UCVTF not yet implemented."
+	012 NotImplemented "Instruction UCVTF not yet implemented."
+	013 NotImplemented "Instruction UCVTF not yet implemented."
+	014 NotImplemented "Instruction UCVTF not yet implemented."
+	015 NotImplemented "Instruction UCVTF not yet implemented."
+	016 NotImplemented "Instruction UCVTF not yet implemented."
+	017 Move [X8], S0
+	018 Move [X8+8], S1
+	019 Move [X8+8], S2
+	020 Move [X8+16], S3
+	021 Move [X8+16], S4
+	022 Move [X8+24], S5
+	023 Move [X8+24], S6
+	024 Move [X8+32], S7
+	025 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Explicit(System.Double v)
+
+Disassembly:
+	0x03894130 BL 0x1C16E04
+	0x03894134 MOV X21, X0
+	0x03894138 CBZ X0, 0x3894150
+	0x0389413C LDR X8, [X19]
+
+ISIL:
+	001 NotImplemented "Instruction INVALID not yet implemented."
+	002 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	003 Move [X8], V0
+	004 Move [X8+8], V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Explicit(Unity.Mathematics.double4x2 v)
+
+Disassembly:
+	0x03894140 MOV X0, X21
+	0x03894144 LDR X1, [X8 + 0x40]
+	0x03894148 BL 0x1C16E00
+	0x0389414C CBZ X0, 0x3894290
+	0x03894150 LDR W8, [X19 + 0x18]
+	0x03894154 CMP W8, 0x3
+	0x03894158 B.LS 0x389428C
+	0x0389415C STR X21, [X19 + 0x38]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V2, [X0+16]
+	003 Move V1, [X0+32]
+	004 Move V3, [X0+48]
+	005 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	006 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	007 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	008 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	009 Move [X8], V0
+	010 Move [X8+8], V1
+	011 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Multiply(Unity.Mathematics.float4x2 lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894160 LDR V0, [X20 + 0x8]
+	0x03894164 LDR X0, [X22]
+	0x03894168 ADD X1, X31, 0x14
+	0x0389416C STR S0, [X31 + 0x14]
+	0x03894170 BL 0x1C16E04
+	0x03894174 MOV X21, X0
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+16]
+	003 Move V2, [X1]
+	004 Move V3, [X1+16]
+	005 NotImplemented "Instruction INVALID not yet implemented."
+	006 NotImplemented "Instruction INVALID not yet implemented."
+	007 Move [X8], V0
+	008 Move [X8+8], V1
+	009 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Multiply(Unity.Mathematics.float4x2 lhs, System.Single rhs)
+
+Disassembly:
+	0x03894178 CBZ X0, 0x3894190
+	0x0389417C LDR X8, [X19]
+	0x03894180 MOV X0, X21
+	0x03894184 LDR X1, [X8 + 0x40]
+	0x03894188 BL 0x1C16E00
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V2, [X0+16]
+	003 NotImplemented "Instruction INVALID not yet implemented."
+	004 NotImplemented "Instruction INVALID not yet implemented."
+	005 Move [X8], V1
+	006 Move [X8+8], V0
+	007 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Multiply(System.Single lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x0389418C CBZ X0, 0x3894290
+	0x03894190 LDR W8, [X19 + 0x18]
+	0x03894194 CMP W8, 0x4
+	0x03894198 B.LS 0x389428C
+	0x0389419C STR X21, [X19 + 0x40]
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V2, [X0+16]
+	003 NotImplemented "Instruction INVALID not yet implemented."
+	004 NotImplemented "Instruction INVALID not yet implemented."
+	005 Move [X8], V1
+	006 Move [X8+8], V0
+	007 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Addition(Unity.Mathematics.float4x2 lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x038941A0 LDR V0, [X20 + 0x18]
+	0x038941A4 LDR X0, [X22]
+	0x038941A8 ADD X1, X31, 0x10
+	0x038941AC STR S0, [X31 + 0x10]
+	0x038941B0 BL 0x1C16E04
+	0x038941B4 MOV X21, X0
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+16]
+	003 Move V2, [X1]
+	004 Move V3, [X1+16]
+	005 Add V0, V0, V2
+	006 Add V1, V1, V3
+	007 Move [X8], V0
+	008 Move [X8+8], V1
+	009 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Addition(Unity.Mathematics.float4x2 lhs, System.Single rhs)
+
+Disassembly:
+	0x038941B8 CBZ X0, 0x38941D0
+	0x038941BC LDR X8, [X19]
+	0x038941C0 MOV X0, X21
+	0x038941C4 LDR X1, [X8 + 0x40]
+	0x038941C8 BL 0x1C16E00
+	0x038941CC CBZ X0, 0x3894290
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V2, [X0+16]
+	003 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	004 Add V1, V1, V0
+	005 Add V0, V2, V0
+	006 Move [X8], V1
+	007 Move [X8+8], V0
+	008 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Addition(System.Single lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x038941D0 LDR W8, [X19 + 0x18]
+	0x038941D4 CMP W8, 0x5
+	0x038941D8 B.LS 0x389428C
+	0x038941DC STR X21, [X19 + 0x48]
+	0x038941E0 LDR V0, [X20 + 0xC]
+	0x038941E4 LDR X0, [X22]
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V2, [X0+16]
+	003 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	004 Add V1, V1, V0
+	005 Add V0, V2, V0
+	006 Move [X8], V1
+	007 Move [X8+8], V0
+	008 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Subtraction(Unity.Mathematics.float4x2 lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x038941E8 ADD X1, X31, 0xC
+	0x038941EC STR S0, [X31 + 0xC]
+	0x038941F0 BL 0x1C16E04
+	0x038941F4 MOV X21, X0
+	0x038941F8 CBZ X0, 0x3894210
+	0x038941FC LDR X8, [X19]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+16]
+	003 Move V2, [X1]
+	004 Move V3, [X1+16]
+	005 Subtract V0, V0, V2
+	006 Subtract V1, V1, V3
+	007 Move [X8], V0
+	008 Move [X8+8], V1
+	009 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Subtraction(Unity.Mathematics.float4x2 lhs, System.Single rhs)
+
+Disassembly:
+	0x03894200 MOV X0, X21
+	0x03894204 LDR X1, [X8 + 0x40]
+	0x03894208 BL 0x1C16E00
+	0x0389420C CBZ X0, 0x3894290
+	0x03894210 LDR W8, [X19 + 0x18]
+	0x03894214 CMP W8, 0x6
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V2, [X0+16]
+	003 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	004 Subtract V1, V1, V0
+	005 Subtract V0, V2, V0
+	006 Move [X8], V1
+	007 Move [X8+8], V0
+	008 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Subtraction(System.Single lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894218 B.LS 0x389428C
+	0x0389421C STR X21, [X19 + 0x50]
+	0x03894220 LDR V0, [X20 + 0x1C]
+	0x03894224 LDR X0, [X22]
+	0x03894228 ADD X1, X31, 0x8
+	0x0389422C STR S0, [X31 + 0x8]
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V2, [X0+16]
+	003 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	004 Subtract V1, V0, V1
+	005 Subtract V0, V0, V2
+	006 Move [X8], V1
+	007 Move [X8+8], V0
+	008 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Division(Unity.Mathematics.float4x2 lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894230 BL 0x1C16E04
+	0x03894234 MOV X20, X0
+	0x03894238 CBZ X0, 0x3894250
+	0x0389423C LDR X8, [X19]
+	0x03894240 MOV X0, X20
+	0x03894244 LDR X1, [X8 + 0x40]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+16]
+	003 Move V2, [X1]
+	004 Move V3, [X1+16]
+	005 NotImplemented "Instruction INVALID not yet implemented."
+	006 NotImplemented "Instruction INVALID not yet implemented."
+	007 Move [X8], V0
+	008 Move [X8+8], V1
+	009 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Division(Unity.Mathematics.float4x2 lhs, System.Single rhs)
+
+Disassembly:
+	0x03894248 BL 0x1C16E00
+	0x0389424C CBZ X0, 0x3894290
+	0x03894250 LDR W8, [X19 + 0x18]
+	0x03894254 CMP W8, 0x7
+	0x03894258 B.LS 0x389428C
+	0x0389425C ADRP X8, 0x8B6000
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V2, [X0+16]
+	003 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	004 NotImplemented "Instruction INVALID not yet implemented."
+	005 NotImplemented "Instruction INVALID not yet implemented."
+	006 Move [X8], V1
+	007 Move [X8+8], V0
+	008 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Division(System.Single lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894260 LDR X8, [X8 + 0xFA0]
+	0x03894264 STR X20, [X19 + 0x58]
+	0x03894268 MOV X1, X19
+	0x0389426C MOV X2, X31
+	0x03894270 LDR X0, [X8]
+	0x03894274 BL 0x3227C5C
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V2, [X0+16]
+	003 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	004 NotImplemented "Instruction INVALID not yet implemented."
+	005 NotImplemented "Instruction INVALID not yet implemented."
+	006 Move [X8], V1
+	007 Move [X8+8], V0
+	008 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Modulus(Unity.Mathematics.float4x2 lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894278 LDP X20, X19, [X31 + 0x40]
+	0x0389427C LDP X22, X21, [X31 + 0x30]
+	0x03894280 LDR X30, [X31 + 0x20]
+	0x03894284 ADD X31, X31, 0x50
+	0x03894288 RET
+	0x0389428C BL 0x1C16F28
+	0x03894290 BL 0x1C16F44
+	0x03894294 MOV X1, X31
+	0x03894298 BL 0x1C16DEC
+	0x0389429C BL 0x1C16F20
+	0x038942A0 STP X30, X23, [X31 - 0x30]!
+	0x038942A4 STP X22, X21, [X31 + 0x10]
+	0x038942A8 STP X20, X19, [X31 + 0x20]
+	0x038942AC ADRP X19, 0xB4D000
+	0x038942B0 ADRP X23, 0x85F000
+	0x038942B4 LDRB W8, [X19 + 0x639]
+	0x038942B8 LDR X23, [X23 + 0x9D0]
+	0x038942BC MOV X20, X2
+	0x038942C0 MOV X21, X1
+	0x038942C4 MOV X22, X0
+	0x038942C8 TBNZ X8, 0x0, 0x38942EC
+	0x038942CC ADRP X0, 0x85F000
+	0x038942D0 LDR X0, [X0 + 0x9D0]
+	0x038942D4 BL 0x1C16CF4
+	0x038942D8 ADRP X0, 0x8B6000
+	0x038942DC LDR X0, [X0 + 0xFA0]
+	0x038942E0 BL 0x1C16CF4
+	0x038942E4 MOVZ W8, 0x1
+	0x038942E8 STRB W8, [X19 + 0x639]
+	0x038942EC LDR X0, [X23]
+	0x038942F0 MOVZ W1, 0x8
+	0x038942F4 BL 0x1C16D6C
+	0x038942F8 MOV X19, X0
+	0x038942FC MOV X0, X22
+	0x03894300 MOV X1, X21
+	0x03894304 MOV X2, X20
+	0x03894308 MOV X3, X31
+	0x0389430C BL 0x338FFB4
+	0x03894310 CBZ X19, 0x3894530
+	0x03894314 MOV X23, X0
+	0x03894318 CBZ X0, 0x3894330
+	0x0389431C LDR X8, [X19]
+	0x03894320 MOV X0, X23
+	0x03894324 LDR X1, [X8 + 0x40]
+	0x03894328 BL 0x1C16E00
+	0x0389432C CBZ X0, 0x3894524
+	0x03894330 LDR W8, [X19 + 0x18]
+	0x03894334 CBZ W8, 0x3894520
+	0x03894338 ADD X0, X22, 0x10
+	0x0389433C MOV X1, X21
+	0x03894340 MOV X2, X20
+	0x03894344 MOV X3, X31
+	0x03894348 STR X23, [X19 + 0x20]
+	0x0389434C BL 0x338FFB4
+	0x03894350 MOV X23, X0
+	0x03894354 CBZ X0, 0x389436C
+	0x03894358 LDR X8, [X19]
+	0x0389435C MOV X0, X23
+	0x03894360 LDR X1, [X8 + 0x40]
+	0x03894364 BL 0x1C16E00
+	0x03894368 CBZ X0, 0x3894524
+
+ISIL:
+	001 Subtract X31, X31, 112
+	002 Move [X31+16], D15
+	003 Move [X31+24], D14
+	004 Move [X31+32], D13
+	005 Move [X31+40], D12
+	006 Move [X31+48], D11
+	007 Move [X31+56], D10
+	008 Move [X31+64], D9
+	009 Move [X31+72], D8
+	010 Move [X31+80], X30
+	011 Move [X31+88], X21
+	012 Move [X31+96], X20
+	013 Move [X31+104], X19
+	014 Move S0, [X0]
+	015 Move S8, [X0+4]
+	016 Move S1, [X1]
+	017 Move S11, [X1+4]
+	018 Move S9, [X0+8]
+	019 Move S10, [X0+12]
+	020 Move S12, [X1+8]
+	021 Move S13, [X1+12]
+	022 Move X20, X1
+	023 Move X21, X0
+	024 Move X19, X8
+	025 Call 0x3EB2BA0
+	026 Move [X31+12], S0
+	027 Move V0, V8
+	028 Move V1, V11
+	029 Call 0x3EB2BA0
+	030 Move [X31+8], S0
+	031 Move V0, V9
+	032 Move V1, V12
+	033 Call 0x3EB2BA0
+	034 Move [X31+4], S0
+	035 Move V0, V10
+	036 Move V1, V13
+	037 Call 0x3EB2BA0
+	038 Move S2, [X21+16]
+	039 Move S10, [X21+20]
+	040 Move S1, [X20+16]
+	041 Move S13, [X20+20]
+	042 Move S11, [X21+24]
+	043 Move S12, [X21+28]
+	044 Move S15, [X20+24]
+	045 Move S14, [X20+28]
+	046 Move V8, V0
+	047 Move V0, V2
+	048 Call 0x3EB2BA0
+	049 Move V9, V0
+	050 Move V0, V10
+	051 Move V1, V13
+	052 Call 0x3EB2BA0
+	053 Move V10, V0
+	054 Move V0, V11
+	055 Move V1, V15
+	056 Call 0x3EB2BA0
+	057 Move V11, V0
+	058 Move V0, V12
+	059 Move V1, V14
+	060 Call 0x3EB2BA0
+	061 Move V3, [X31+12]
+	062 Move V1, [X31+8]
+	063 Move [X19+16], S9
+	064 Move [X19+24], S10
+	065 Move [X19+24], S11
+	066 Move [X19+32], S0
+	067 Move X30, [X31+80]
+	068 Move X21, [X31+88]
+	069 Move [X19], S3
+	070 Move [X19+8], S1
+	071 Move V1, [X31+4]
+	072 Move D11, [X31+48]
+	073 Move D10, [X31+56]
+	074 Move D13, [X31+32]
+	075 Move D12, [X31+40]
+	076 Move D15, [X31+16]
+	077 Move D14, [X31+24]
+	078 Move [X19+8], S1
+	079 Move [X19+16], S8
+	080 Move X20, [X31+96]
+	081 Move X19, [X31+104]
+	082 Move D9, [X31+64]
+	083 Move D8, [X31+72]
+	084 Add X31, X31, 112
+	085 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Modulus(Unity.Mathematics.float4x2 lhs, System.Single rhs)
+
+Disassembly:
+	0x0389436C LDR W8, [X19 + 0x18]
+	0x03894370 CMP W8, 0x1
+	0x03894374 B.LS 0x3894520
+	0x03894378 ADD X0, X22, 0x4
+	0x0389437C MOV X1, X21
+	0x03894380 MOV X2, X20
+	0x03894384 MOV X3, X31
+	0x03894388 STR X23, [X19 + 0x28]
+	0x0389438C BL 0x338FFB4
+	0x03894390 MOV X23, X0
+	0x03894394 CBZ X0, 0x38943AC
+	0x03894398 LDR X8, [X19]
+	0x0389439C MOV X0, X23
+	0x038943A0 LDR X1, [X8 + 0x40]
+	0x038943A4 BL 0x1C16E00
+	0x038943A8 CBZ X0, 0x3894524
+	0x038943AC LDR W8, [X19 + 0x18]
+	0x038943B0 CMP W8, 0x2
+	0x038943B4 B.LS 0x3894520
+	0x038943B8 ADD X0, X22, 0x14
+	0x038943BC MOV X1, X21
+	0x038943C0 MOV X2, X20
+	0x038943C4 MOV X3, X31
+	0x038943C8 STR X23, [X19 + 0x30]
+	0x038943CC BL 0x338FFB4
+	0x038943D0 MOV X23, X0
+	0x038943D4 CBZ X0, 0x38943EC
+	0x038943D8 LDR X8, [X19]
+	0x038943DC MOV X0, X23
+	0x038943E0 LDR X1, [X8 + 0x40]
+	0x038943E4 BL 0x1C16E00
+	0x038943E8 CBZ X0, 0x3894524
+	0x038943EC LDR W8, [X19 + 0x18]
+	0x038943F0 CMP W8, 0x3
+	0x038943F4 B.LS 0x3894520
+	0x038943F8 ADD X0, X22, 0x8
+	0x038943FC MOV X1, X21
+	0x03894400 MOV X2, X20
+	0x03894404 MOV X3, X31
+	0x03894408 STR X23, [X19 + 0x38]
+	0x0389440C BL 0x338FFB4
+	0x03894410 MOV X23, X0
+	0x03894414 CBZ X0, 0x389442C
+	0x03894418 LDR X8, [X19]
+	0x0389441C MOV X0, X23
+	0x03894420 LDR X1, [X8 + 0x40]
+	0x03894424 BL 0x1C16E00
+	0x03894428 CBZ X0, 0x3894524
+	0x0389442C LDR W8, [X19 + 0x18]
+	0x03894430 CMP W8, 0x4
+	0x03894434 B.LS 0x3894520
+	0x03894438 ADD X0, X22, 0x18
+	0x0389443C MOV X1, X21
+	0x03894440 MOV X2, X20
+	0x03894444 MOV X3, X31
+
+ISIL:
+	001 Move [X31-96], D15
+	002 Move [X31-88], D14
+	003 Move [X31+16], D13
+	004 Move [X31+24], D12
+	005 Move [X31+32], D11
+	006 Move [X31+40], D10
+	007 Move [X31+48], D9
+	008 Move [X31+56], D8
+	009 Move [X31+64], X30
+	010 Move [X31+80], X20
+	011 Move [X31+88], X19
+	012 Move V8, V0
+	013 Move S0, [X0]
+	014 Move S9, [X0+4]
+	015 Move S10, [X0+8]
+	016 Move S11, [X0+12]
+	017 Move V1, V8
+	018 Move X19, X0
+	019 Move X20, X8
+	020 Call 0x3EB2BA0
+	021 Move [X31+76], S0
+	022 Move V0, V9
+	023 Move V1, V8
+	024 Call 0x3EB2BA0
+	025 Move V9, V0
+	026 Move V0, V10
+	027 Move V1, V8
+	028 Call 0x3EB2BA0
+	029 Move V10, V0
+	030 Move V0, V11
+	031 Move V1, V8
+	032 Call 0x3EB2BA0
+	033 Move S1, [X19+16]
+	034 Move S11, [X19+20]
+	035 Move S13, [X19+24]
+	036 Move S14, [X19+28]
+	037 Move V15, V0
+	038 Move V0, V1
+	039 Move V1, V8
+	040 Call 0x3EB2BA0
+	041 Move V12, V0
+	042 Move V0, V11
+	043 Move V1, V8
+	044 Call 0x3EB2BA0
+	045 Move V11, V0
+	046 Move V0, V13
+	047 Move V1, V8
+	048 Call 0x3EB2BA0
+	049 Move V13, V0
+	050 Move V0, V14
+	051 Move V1, V8
+	052 Call 0x3EB2BA0
+	053 Move V1, [X31+76]
+	054 Move [X20+8], S10
+	055 Move [X20+16], S15
+	056 Move [X20+16], S12
+	057 Move [X20+24], S11
+	058 Move [X20+24], S13
+	059 Move [X20+32], S0
+	060 Move [X20], S1
+	061 Move [X20+8], S9
+	062 Move X20, [X31+80]
+	063 Move X19, [X31+88]
+	064 Move X30, [X31+64]
+	065 Move D9, [X31+48]
+	066 Move D8, [X31+56]
+	067 Move D11, [X31+32]
+	068 Move D10, [X31+40]
+	069 Move D13, [X31+16]
+	070 Move D12, [X31+24]
+	071 Move D15, [X31+96]
+	072 Move D14, [X31+104]
+	073 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Modulus(System.Single lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894448 STR X23, [X19 + 0x40]
+	0x0389444C BL 0x338FFB4
+	0x03894450 MOV X23, X0
+	0x03894454 CBZ X0, 0x389446C
+	0x03894458 LDR X8, [X19]
+	0x0389445C MOV X0, X23
+	0x03894460 LDR X1, [X8 + 0x40]
+	0x03894464 BL 0x1C16E00
+	0x03894468 CBZ X0, 0x3894524
+	0x0389446C LDR W8, [X19 + 0x18]
+	0x03894470 CMP W8, 0x5
+	0x03894474 B.LS 0x3894520
+	0x03894478 ADD X0, X22, 0xC
+	0x0389447C MOV X1, X21
+	0x03894480 MOV X2, X20
+	0x03894484 MOV X3, X31
+	0x03894488 STR X23, [X19 + 0x48]
+	0x0389448C BL 0x338FFB4
+	0x03894490 MOV X23, X0
+	0x03894494 CBZ X0, 0x38944AC
+	0x03894498 LDR X8, [X19]
+	0x0389449C MOV X0, X23
+	0x038944A0 LDR X1, [X8 + 0x40]
+	0x038944A4 BL 0x1C16E00
+	0x038944A8 CBZ X0, 0x3894524
+	0x038944AC LDR W8, [X19 + 0x18]
+	0x038944B0 CMP W8, 0x6
+	0x038944B4 B.LS 0x3894520
+	0x038944B8 ADD X0, X22, 0x1C
+	0x038944BC MOV X1, X21
+	0x038944C0 MOV X2, X20
+	0x038944C4 MOV X3, X31
+	0x038944C8 STR X23, [X19 + 0x50]
+	0x038944CC BL 0x338FFB4
+	0x038944D0 MOV X20, X0
+	0x038944D4 CBZ X0, 0x38944EC
+	0x038944D8 LDR X8, [X19]
+	0x038944DC MOV X0, X20
+	0x038944E0 LDR X1, [X8 + 0x40]
+	0x038944E4 BL 0x1C16E00
+	0x038944E8 CBZ X0, 0x3894524
+	0x038944EC LDR W8, [X19 + 0x18]
+	0x038944F0 CMP W8, 0x7
+	0x038944F4 B.LS 0x3894520
+	0x038944F8 ADRP X8, 0x8B6000
+	0x038944FC LDR X8, [X8 + 0xFA0]
+	0x03894500 STR X20, [X19 + 0x58]
+	0x03894504 MOV X1, X19
+	0x03894508 LDP X20, X19, [X31 + 0x20]
+	0x0389450C LDR X0, [X8]
+	0x03894510 LDP X22, X21, [X31 + 0x10]
+	0x03894514 MOV X2, X31
+	0x03894518 LDP X30, X23, [X31], #0x30
+
+ISIL:
+	001 Move [X31-96], D15
+	002 Move [X31-88], D14
+	003 Move [X31+16], D13
+	004 Move [X31+24], D12
+	005 Move [X31+32], D11
+	006 Move [X31+40], D10
+	007 Move [X31+48], D9
+	008 Move [X31+56], D8
+	009 Move [X31+64], X30
+	010 Move [X31+80], X20
+	011 Move [X31+88], X19
+	012 Move S1, [X0]
+	013 Move S9, [X0+4]
+	014 Move S10, [X0+8]
+	015 Move S11, [X0+12]
+	016 Move X19, X0
+	017 Move V8, V0
+	018 Move X20, X8
+	019 Call 0x3EB2BA0
+	020 Move [X31+76], S0
+	021 Move V0, V8
+	022 Move V1, V9
+	023 Call 0x3EB2BA0
+	024 Move V9, V0
+	025 Move V0, V8
+	026 Move V1, V10
+	027 Call 0x3EB2BA0
+	028 Move V10, V0
+	029 Move V0, V8
+	030 Move V1, V11
+	031 Call 0x3EB2BA0
+	032 Move S1, [X19+16]
+	033 Move S11, [X19+20]
+	034 Move S13, [X19+24]
+	035 Move S14, [X19+28]
+	036 Move V15, V0
+	037 Move V0, V8
+	038 Call 0x3EB2BA0
+	039 Move V12, V0
+	040 Move V0, V8
+	041 Move V1, V11
+	042 Call 0x3EB2BA0
+	043 Move V11, V0
+	044 Move V0, V8
+	045 Move V1, V13
+	046 Call 0x3EB2BA0
+	047 Move V13, V0
+	048 Move V0, V8
+	049 Move V1, V14
+	050 Call 0x3EB2BA0
+	051 Move V1, [X31+76]
+	052 Move [X20+8], S10
+	053 Move [X20+16], S15
+	054 Move [X20+16], S12
+	055 Move [X20+24], S11
+	056 Move [X20+24], S13
+	057 Move [X20+32], S0
+	058 Move [X20], S1
+	059 Move [X20+8], S9
+	060 Move X20, [X31+80]
+	061 Move X19, [X31+88]
+	062 Move X30, [X31+64]
+	063 Move D9, [X31+48]
+	064 Move D8, [X31+56]
+	065 Move D11, [X31+32]
+	066 Move D10, [X31+40]
+	067 Move D13, [X31+16]
+	068 Move D12, [X31+24]
+	069 Move D15, [X31+96]
+	070 Move D14, [X31+104]
+	071 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Increment(Unity.Mathematics.float4x2 val)
+
+Disassembly:
+	0x0389451C B 0x3227C5C
+	0x03894520 BL 0x1C16F28
+	0x03894524 BL 0x1C16F44
+	0x03894528 MOV X1, X31
+	0x0389452C BL 0x1C16DEC
+	0x03894530 BL 0x1C16F20
+	0x03894534 LDR V16, [X31]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+16]
+	003 Move V2, 0
+	004 Add V0, V0, V2
+	005 Add V1, V1, V2
+	006 Move [X0], V0
+	007 Move [X0+8], V1
+	008 Move [X8], V0
+	009 Move [X8+8], V1
+	010 Return X0
+
+Method: Unity.Mathematics.float4x2 op_Decrement(Unity.Mathematics.float4x2 val)
+
+Disassembly:
+	0x03894538 STP S0, S1, [X0]
+	0x0389453C STP S2, S3, [X0 + 0x8]
+	0x03894540 STP S4, S5, [X0 + 0x10]
+	0x03894544 STP S6, S7, [X0 + 0x18]
+	0x03894548 STR V16, [X0 + 0x2]
+	0x0389454C RET
+	0x03894550 LDR V16, [X31 + 0x18]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+16]
+	003 Move V2, 0
+	004 Add V0, V0, V2
+	005 Add V1, V1, V2
+	006 Move [X0], V0
+	007 Move [X0+8], V1
+	008 Move [X8], V0
+	009 Move [X8+8], V1
+	010 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_LessThan(Unity.Mathematics.float4x2 lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894554 LDR V17, [X31]
+	0x03894558 LDR V18, [X31 + 0x10]
+	0x0389455C LDR V19, [X31 + 0x8]
+	0x03894560 STP S0, S3, [X0]
+	0x03894564 STP S1, S4, [X0 + 0x10]
+	0x03894568 STP S2, S5, [X0 + 0x20]
+	0x0389456C STP S6, S19, [X0 + 0x8]
+	0x03894570 STP S7, S18, [X0 + 0x18]
+	0x03894574 STP S17, S16, [X0 + 0x28]
+	0x03894578 RET
+	0x0389457C UNIMPLEMENTED
+	0x03894580 STP V0, V0, [X0]
+	0x03894584 STR V0, [X0 + 0x2]
+	0x03894588 RET
+	0x0389458C ANDS W31, W1, 0x1
+	0x03894590 FMOV S0, W31
+	0x03894594 FMOV S1, 1
+	0x03894598 FCSEL S0, S1, S0, NE
+	0x0389459C STP S0, S0, [X0]
+	0x038945A0 STP S0, S0, [X0 + 0x8]
+	0x038945A4 STP S0, S0, [X0 + 0x10]
+	0x038945A8 STP S0, S0, [X0 + 0x18]
+	0x038945AC STP S0, S0, [X0 + 0x20]
+	0x038945B0 STP S0, S0, [X0 + 0x28]
+	0x038945B4 RET
+	0x038945B8 ANDS X31, X1, 0x1
+	0x038945BC FMOV S0, 1
+	0x038945C0 FMOV S1, W31
+	0x038945C4 FCSEL S2, S1, S0, EQ
+	0x038945C8 ANDS X31, X1, 0x1FF
+	0x038945CC FCSEL S3, S1, S0, EQ
+	0x038945D0 ANDS X31, X1, 0x1FFFF
+	0x038945D4 FCSEL S4, S1, S0, EQ
+	0x038945D8 ANDS X31, X1, 0x1FFFFFF
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move S1, [X1+4]
+	004 Move S3, [X1+8]
+	005 Move V5, [X1+12]
+	006 Move V4, [X1]
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 Move S0, [X0+8]
+	009 Move S1, [X0+12]
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 NotImplemented "Instruction FCMP not yet implemented."
+	012 Move S0, [X0+16]
+	013 Move S3, [X0+20]
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S5, [X1+20]
+	017 Move S1, [X1+24]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction FCMP not yet implemented."
+	020 NotImplemented "Instruction CSET not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 Move S3, [X0+24]
+	023 Move S4, [X0+28]
+	024 Move V5, [X1+28]
+	025 Move V2, [X1+16]
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction FCMP not yet implemented."
+	028 NotImplemented "Instruction CSET not yet implemented."
+	029 NotImplemented "Instruction FCMP not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 NotImplemented "Instruction CSET not yet implemented."
+	032 NotImplemented "Instruction FCMP not yet implemented."
+	033 NotImplemented "Instruction BFM not yet implemented."
+	034 NotImplemented "Instruction CSET not yet implemented."
+	035 NotImplemented "Instruction BFM not yet implemented."
+	036 NotImplemented "Instruction BFM not yet implemented."
+	037 NotImplemented "Instruction BFM not yet implemented."
+	038 NotImplemented "Instruction BFM not yet implemented."
+	039 Or X0, X11, X9
+	040 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_LessThan(Unity.Mathematics.float4x2 lhs, System.Single rhs)
+
+Disassembly:
+	0x038945DC STP S2, S3, [X0]
+	0x038945E0 FCSEL S2, S1, S0, EQ
+	0x038945E4 ANDS X31, X1, 0x1FFFFFFFF
+	0x038945E8 STP S4, S2, [X0 + 0x8]
+	0x038945EC FCSEL S2, S1, S0, EQ
+	0x038945F0 ANDS X31, X1, 0x1FFFFFFFFFF
+	0x038945F4 FCSEL S3, S1, S0, EQ
+	0x038945F8 ANDS X31, X1, 0x1FFFFFFFFFFFF
+	0x038945FC FCSEL S4, S1, S0, EQ
+	0x03894600 ANDS X31, X1, 0x1FFFFFFFFFFFFFF
+	0x03894604 STP S2, S3, [X0 + 0x10]
+	0x03894608 FCSEL S2, S1, S0, EQ
+	0x0389460C ANDS X31, X2, 0x1
+	0x03894610 STP S4, S2, [X0 + 0x18]
+	0x03894614 FCSEL S2, S1, S0, EQ
+	0x03894618 ANDS X31, X2, 0x1FF
+	0x0389461C FCSEL S3, S1, S0, EQ
+	0x03894620 ANDS X31, X2, 0x1FFFF
+	0x03894624 FCSEL S4, S1, S0, EQ
+	0x03894628 ANDS X31, X2, 0x1FFFFFF
+	0x0389462C FCSEL S0, S1, S0, EQ
+	0x03894630 STP S2, S3, [X0 + 0x20]
+	0x03894634 STP S4, S0, [X0 + 0x28]
+	0x03894638 RET
+	0x0389463C SCVTF S0, W1
+	0x03894640 UNIMPLEMENTED
+	0x03894644 STP V0, V0, [X0]
+	0x03894648 STR V0, [X0 + 0x2]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_LessThan(System.Single lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x0389464C RET
+	0x03894650 LDP S0, S1, [X1]
+	0x03894654 LDP S2, S3, [X1 + 0x8]
+	0x03894658 SCVTF S0, S0
+	0x0389465C SCVTF S1, S1
+	0x03894660 SCVTF S2, S2
+	0x03894664 SCVTF S3, S3
+	0x03894668 STP S0, S1, [X0]
+	0x0389466C STP S2, S3, [X0 + 0x8]
+	0x03894670 LDP S0, S1, [X1 + 0x10]
+	0x03894674 LDP S2, S3, [X1 + 0x18]
+	0x03894678 SCVTF S0, S0
+	0x0389467C SCVTF S1, S1
+	0x03894680 SCVTF S2, S2
+	0x03894684 SCVTF S3, S3
+	0x03894688 STP S0, S1, [X0 + 0x10]
+	0x0389468C STP S2, S3, [X0 + 0x18]
+	0x03894690 LDP S0, S1, [X1 + 0x20]
+	0x03894694 LDP S2, S3, [X1 + 0x28]
+	0x03894698 SCVTF S0, S0
+	0x0389469C SCVTF S1, S1
+	0x038946A0 SCVTF S2, S2
+	0x038946A4 SCVTF S3, S3
+	0x038946A8 STP S0, S1, [X0 + 0x20]
+	0x038946AC STP S2, S3, [X0 + 0x28]
+	0x038946B0 RET
+	0x038946B4 UCVTF S0, W1
+	0x038946B8 UNIMPLEMENTED
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_LessThanOrEqual(Unity.Mathematics.float4x2 lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x038946BC STP V0, V0, [X0]
+	0x038946C0 STR V0, [X0 + 0x2]
+	0x038946C4 RET
+	0x038946C8 LDP S0, S1, [X1]
+	0x038946CC LDP S2, S3, [X1 + 0x8]
+	0x038946D0 UCVTF S0, S0
+	0x038946D4 UCVTF S1, S1
+	0x038946D8 UCVTF S2, S2
+	0x038946DC UCVTF S3, S3
+	0x038946E0 STP S0, S1, [X0]
+	0x038946E4 STP S2, S3, [X0 + 0x8]
+	0x038946E8 LDP S0, S1, [X1 + 0x10]
+	0x038946EC LDP S2, S3, [X1 + 0x18]
+	0x038946F0 UCVTF S0, S0
+	0x038946F4 UCVTF S1, S1
+	0x038946F8 UCVTF S2, S2
+	0x038946FC UCVTF S3, S3
+	0x03894700 STP S0, S1, [X0 + 0x10]
+	0x03894704 STP S2, S3, [X0 + 0x18]
+	0x03894708 LDP S0, S1, [X1 + 0x20]
+	0x0389470C LDP S2, S3, [X1 + 0x28]
+	0x03894710 UCVTF S0, S0
+	0x03894714 UCVTF S1, S1
+	0x03894718 UCVTF S2, S2
+	0x0389471C UCVTF S3, S3
+	0x03894720 STP S0, S1, [X0 + 0x20]
+	0x03894724 STP S2, S3, [X0 + 0x28]
+	0x03894728 RET
+	0x00000000 INVALID
+	0x03894730 UNIMPLEMENTED
+	0x03894734 STP V0, V0, [X0]
+	0x03894738 STR V0, [X0 + 0x2]
+	0x0389473C RET
+	0x03894740 LDP V0, V1, [X1]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move S1, [X1+4]
+	004 Move S3, [X1+8]
+	005 Move V5, [X1+12]
+	006 Move V4, [X1]
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 Move S0, [X0+8]
+	009 Move S1, [X0+12]
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 NotImplemented "Instruction FCMP not yet implemented."
+	012 Move S0, [X0+16]
+	013 Move S3, [X0+20]
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S5, [X1+20]
+	017 Move S1, [X1+24]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction FCMP not yet implemented."
+	020 NotImplemented "Instruction CSET not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 Move S3, [X0+24]
+	023 Move S4, [X0+28]
+	024 Move V5, [X1+28]
+	025 Move V2, [X1+16]
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction FCMP not yet implemented."
+	028 NotImplemented "Instruction CSET not yet implemented."
+	029 NotImplemented "Instruction FCMP not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 NotImplemented "Instruction CSET not yet implemented."
+	032 NotImplemented "Instruction FCMP not yet implemented."
+	033 NotImplemented "Instruction BFM not yet implemented."
+	034 NotImplemented "Instruction CSET not yet implemented."
+	035 NotImplemented "Instruction BFM not yet implemented."
+	036 NotImplemented "Instruction BFM not yet implemented."
+	037 NotImplemented "Instruction BFM not yet implemented."
+	038 NotImplemented "Instruction BFM not yet implemented."
+	039 Or X0, X11, X9
+	040 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_LessThanOrEqual(Unity.Mathematics.float4x2 lhs, System.Single rhs)
+
+Disassembly:
+	0x03894744 UNIMPLEMENTED
+	0x03894748 UNIMPLEMENTED
+	0x0389474C STR V0, [X0]
+	0x03894750 LDP V0, V1, [X1 + 0x20]
+	0x03894754 UNIMPLEMENTED
+	0x03894758 UNIMPLEMENTED
+	0x0389475C STR V0, [X0 + 0x1]
+	0x03894760 LDP V0, V1, [X1 + 0x40]
+	0x03894764 UNIMPLEMENTED
+	0x03894768 UNIMPLEMENTED
+	0x0389476C STR V0, [X0 + 0x2]
+	0x03894770 RET
+	0x03894774 UNIMPLEMENTED
+	0x03894778 STP V0, V0, [X8]
+	0x0389477C STR V0, [X8 + 0x2]
+	0x03894780 RET
+	0x03894784 ANDS W31, W0, 0x1
+	0x03894788 FMOV S0, W31
+	0x0389478C FMOV S1, 1
+	0x03894790 FCSEL S0, S1, S0, NE
+	0x03894794 STP S0, S0, [X8]
+	0x03894798 STP S0, S0, [X8 + 0x8]
+	0x0389479C STP S0, S0, [X8 + 0x10]
+	0x038947A0 STP S0, S0, [X8 + 0x18]
+	0x038947A4 STP S0, S0, [X8 + 0x20]
+	0x038947A8 STP S0, S0, [X8 + 0x28]
+	0x038947AC RET
+	0x038947B0 ANDS X31, X0, 0x1
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_LessThanOrEqual(System.Single lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x038947B4 FMOV S0, 1
+	0x038947B8 FMOV S1, W31
+	0x038947BC FCSEL S2, S1, S0, EQ
+	0x038947C0 ANDS X31, X0, 0x1FF
+	0x038947C4 FCSEL S3, S1, S0, EQ
+	0x038947C8 ANDS X31, X0, 0x1FFFF
+	0x038947CC FCSEL S4, S1, S0, EQ
+	0x038947D0 ANDS X31, X0, 0x1FFFFFF
+	0x038947D4 STP S2, S3, [X8]
+	0x038947D8 FCSEL S2, S1, S0, EQ
+	0x038947DC ANDS X31, X0, 0x1FFFFFFFF
+	0x038947E0 STP S4, S2, [X8 + 0x8]
+	0x038947E4 FCSEL S2, S1, S0, EQ
+	0x038947E8 ANDS X31, X0, 0x1FFFFFFFFFF
+	0x038947EC FCSEL S3, S1, S0, EQ
+	0x038947F0 ANDS X31, X0, 0x1FFFFFFFFFFFF
+	0x038947F4 FCSEL S4, S1, S0, EQ
+	0x038947F8 ANDS X31, X0, 0x1FFFFFFFFFFFFFF
+	0x038947FC STP S2, S3, [X8 + 0x10]
+	0x03894800 FCSEL S2, S1, S0, EQ
+	0x03894804 ANDS X31, X1, 0x1
+	0x03894808 STP S4, S2, [X8 + 0x18]
+	0x0389480C FCSEL S2, S1, S0, EQ
+	0x03894810 ANDS X31, X1, 0x1FF
+	0x03894814 FCSEL S3, S1, S0, EQ
+	0x03894818 ANDS X31, X1, 0x1FFFF
+	0x0389481C FCSEL S4, S1, S0, EQ
+	0x03894820 ANDS X31, X1, 0x1FFFFFF
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_GreaterThan(Unity.Mathematics.float4x2 lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894824 FCSEL S0, S1, S0, EQ
+	0x03894828 STP S2, S3, [X8 + 0x20]
+	0x0389482C STP S4, S0, [X8 + 0x28]
+	0x03894830 RET
+	0x03894834 SCVTF S0, W0
+	0x03894838 UNIMPLEMENTED
+	0x0389483C STP V0, V0, [X8]
+	0x03894840 STR V0, [X8 + 0x2]
+	0x03894844 RET
+	0x03894848 LDP S0, S1, [X0]
+	0x0389484C LDP S2, S3, [X0 + 0x8]
+	0x03894850 LDP S4, S5, [X0 + 0x10]
+	0x03894854 LDP S6, S7, [X0 + 0x18]
+	0x03894858 LDP S16, S17, [X0 + 0x20]
+	0x0389485C LDP S18, S19, [X0 + 0x28]
+	0x03894860 SCVTF S0, S0
+	0x03894864 SCVTF S1, S1
+	0x03894868 SCVTF S2, S2
+	0x0389486C SCVTF S3, S3
+	0x03894870 SCVTF S4, S4
+	0x03894874 SCVTF S5, S5
+	0x03894878 SCVTF S6, S6
+	0x0389487C SCVTF S7, S7
+	0x03894880 SCVTF S16, S16
+	0x03894884 SCVTF S17, S17
+	0x03894888 SCVTF S18, S18
+	0x0389488C SCVTF S19, S19
+	0x03894890 STP S0, S1, [X8]
+	0x03894894 STP S2, S3, [X8 + 0x8]
+	0x03894898 STP S4, S5, [X8 + 0x10]
+	0x0389489C STP S6, S7, [X8 + 0x18]
+	0x038948A0 STP S16, S17, [X8 + 0x20]
+	0x038948A4 STP S18, S19, [X8 + 0x28]
+	0x038948A8 RET
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move S1, [X1+4]
+	004 Move S3, [X1+8]
+	005 Move V5, [X1+12]
+	006 Move V4, [X1]
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 Move S0, [X0+8]
+	009 Move S1, [X0+12]
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 NotImplemented "Instruction FCMP not yet implemented."
+	012 Move S0, [X0+16]
+	013 Move S3, [X0+20]
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S5, [X1+20]
+	017 Move S1, [X1+24]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction FCMP not yet implemented."
+	020 NotImplemented "Instruction CSET not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 Move S3, [X0+24]
+	023 Move S4, [X0+28]
+	024 Move V5, [X1+28]
+	025 Move V2, [X1+16]
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction FCMP not yet implemented."
+	028 NotImplemented "Instruction CSET not yet implemented."
+	029 NotImplemented "Instruction FCMP not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 NotImplemented "Instruction CSET not yet implemented."
+	032 NotImplemented "Instruction FCMP not yet implemented."
+	033 NotImplemented "Instruction BFM not yet implemented."
+	034 NotImplemented "Instruction CSET not yet implemented."
+	035 NotImplemented "Instruction BFM not yet implemented."
+	036 NotImplemented "Instruction BFM not yet implemented."
+	037 NotImplemented "Instruction BFM not yet implemented."
+	038 NotImplemented "Instruction BFM not yet implemented."
+	039 Or X0, X11, X9
+	040 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_GreaterThan(Unity.Mathematics.float4x2 lhs, System.Single rhs)
+
+Disassembly:
+	0x038948AC UCVTF S0, W0
+	0x038948B0 UNIMPLEMENTED
+	0x038948B4 STP V0, V0, [X8]
+	0x038948B8 STR V0, [X8 + 0x2]
+	0x038948BC RET
+	0x038948C0 LDP S0, S1, [X0]
+	0x038948C4 LDP S2, S3, [X0 + 0x8]
+	0x038948C8 LDP S4, S5, [X0 + 0x10]
+	0x038948CC LDP S6, S7, [X0 + 0x18]
+	0x038948D0 LDP S16, S17, [X0 + 0x20]
+	0x038948D4 LDP S18, S19, [X0 + 0x28]
+	0x038948D8 UCVTF S0, S0
+	0x038948DC UCVTF S1, S1
+	0x038948E0 UCVTF S2, S2
+	0x038948E4 UCVTF S3, S3
+	0x038948E8 UCVTF S4, S4
+	0x038948EC UCVTF S5, S5
+	0x038948F0 UCVTF S6, S6
+	0x038948F4 UCVTF S7, S7
+	0x038948F8 UCVTF S16, S16
+	0x038948FC UCVTF S17, S17
+	0x03894900 UCVTF S18, S18
+	0x03894904 UCVTF S19, S19
+	0x03894908 STP S0, S1, [X8]
+	0x0389490C STP S2, S3, [X8 + 0x8]
+	0x03894910 STP S4, S5, [X8 + 0x10]
+	0x03894914 STP S6, S7, [X8 + 0x18]
+	0x03894918 STP S16, S17, [X8 + 0x20]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_GreaterThan(System.Single lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x0389491C STP S18, S19, [X8 + 0x28]
+	0x03894920 RET
+	0x00000000 INVALID
+	0x03894928 UNIMPLEMENTED
+	0x0389492C STP V0, V0, [X8]
+	0x03894930 STR V0, [X8 + 0x2]
+	0x03894934 RET
+	0x03894938 LDP V1, V0, [X0]
+	0x0389493C LDP V3, V2, [X0 + 0x20]
+	0x03894940 LDP V4, V5, [X0 + 0x40]
+	0x03894944 UNIMPLEMENTED
+	0x03894948 UNIMPLEMENTED
+	0x0389494C UNIMPLEMENTED
+	0x03894950 UNIMPLEMENTED
+	0x03894954 UNIMPLEMENTED
+	0x03894958 STP V1, V3, [X8]
+	0x0389495C UNIMPLEMENTED
+	0x03894960 STR V4, [X8 + 0x2]
+	0x03894964 RET
+	0x03894968 LDP V0, V1, [X0]
+	0x0389496C LDP V2, V3, [X1]
+	0x03894970 LDR V4, [X0 + 0x2]
+	0x03894974 LDR V5, [X1 + 0x2]
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x03894984 STP V0, V1, [X8]
+	0x03894988 STR V2, [X8 + 0x2]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_GreaterThanOrEqual(Unity.Mathematics.float4x2 lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x0389498C RET
+	0x03894990 LDP V1, V2, [X0]
+	0x03894994 LDR V3, [X0 + 0x2]
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x038949A4 STP V1, V2, [X8]
+	0x038949A8 STR V0, [X8 + 0x2]
+	0x038949AC RET
+	0x038949B0 LDP V1, V2, [X0]
+	0x038949B4 LDR V3, [X0 + 0x2]
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x038949C4 STP V1, V2, [X8]
+	0x038949C8 STR V0, [X8 + 0x2]
+	0x038949CC RET
+	0x038949D0 LDP V0, V1, [X0]
+	0x038949D4 LDP V2, V3, [X1]
+	0x038949D8 LDR V4, [X0 + 0x2]
+	0x038949DC LDR V5, [X1 + 0x2]
+	0x038949E0 FADD V0.4S, V0.4S, V2.4S
+	0x038949E4 FADD V1.4S, V1.4S, V3.4S
+	0x038949E8 FADD V2.4S, V4.4S, V5.4S
+	0x038949EC STP V0, V1, [X8]
+	0x038949F0 STR V2, [X8 + 0x2]
+	0x038949F4 RET
+	0x038949F8 LDP V1, V2, [X0]
+	0x038949FC LDR V3, [X0 + 0x2]
+	0x03894A00 UNIMPLEMENTED
+	0x03894A04 FADD V1.4S, V1.4S, V0.4S
+	0x03894A08 FADD V2.4S, V2.4S, V0.4S
+	0x03894A0C FADD V0.4S, V3.4S, V0.4S
+	0x03894A10 STP V1, V2, [X8]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move S1, [X1+4]
+	004 Move S3, [X1+8]
+	005 Move V5, [X1+12]
+	006 Move V4, [X1]
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 Move S0, [X0+8]
+	009 Move S1, [X0+12]
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 NotImplemented "Instruction FCMP not yet implemented."
+	012 Move S0, [X0+16]
+	013 Move S3, [X0+20]
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S5, [X1+20]
+	017 Move S1, [X1+24]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction FCMP not yet implemented."
+	020 NotImplemented "Instruction CSET not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 Move S3, [X0+24]
+	023 Move S4, [X0+28]
+	024 Move V5, [X1+28]
+	025 Move V2, [X1+16]
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction FCMP not yet implemented."
+	028 NotImplemented "Instruction CSET not yet implemented."
+	029 NotImplemented "Instruction FCMP not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 NotImplemented "Instruction CSET not yet implemented."
+	032 NotImplemented "Instruction FCMP not yet implemented."
+	033 NotImplemented "Instruction BFM not yet implemented."
+	034 NotImplemented "Instruction CSET not yet implemented."
+	035 NotImplemented "Instruction BFM not yet implemented."
+	036 NotImplemented "Instruction BFM not yet implemented."
+	037 NotImplemented "Instruction BFM not yet implemented."
+	038 NotImplemented "Instruction BFM not yet implemented."
+	039 Or X0, X11, X9
+	040 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_GreaterThanOrEqual(Unity.Mathematics.float4x2 lhs, System.Single rhs)
+
+Disassembly:
+	0x03894A14 STR V0, [X8 + 0x2]
+	0x03894A18 RET
+	0x03894A1C LDP V1, V2, [X0]
+	0x03894A20 LDR V3, [X0 + 0x2]
+	0x03894A24 UNIMPLEMENTED
+	0x03894A28 FADD V1.4S, V1.4S, V0.4S
+	0x03894A2C FADD V2.4S, V2.4S, V0.4S
+	0x03894A30 FADD V0.4S, V3.4S, V0.4S
+	0x03894A34 STP V1, V2, [X8]
+	0x03894A38 STR V0, [X8 + 0x2]
+	0x03894A3C RET
+	0x03894A40 LDP V0, V1, [X0]
+	0x03894A44 LDP V2, V3, [X1]
+	0x03894A48 LDR V4, [X0 + 0x2]
+	0x03894A4C LDR V5, [X1 + 0x2]
+	0x03894A50 FSUB V0.4S, V0.4S, V2.4S
+	0x03894A54 FSUB V1.4S, V1.4S, V3.4S
+	0x03894A58 FSUB V2.4S, V4.4S, V5.4S
+	0x03894A5C STP V0, V1, [X8]
+	0x03894A60 STR V2, [X8 + 0x2]
+	0x03894A64 RET
+	0x03894A68 LDP V1, V2, [X0]
+	0x03894A6C LDR V3, [X0 + 0x2]
+	0x03894A70 UNIMPLEMENTED
+	0x03894A74 FSUB V1.4S, V1.4S, V0.4S
+	0x03894A78 FSUB V2.4S, V2.4S, V0.4S
+	0x03894A7C FSUB V0.4S, V3.4S, V0.4S
+	0x03894A80 STP V1, V2, [X8]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_GreaterThanOrEqual(System.Single lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894A84 STR V0, [X8 + 0x2]
+	0x03894A88 RET
+	0x03894A8C LDP V1, V2, [X0]
+	0x03894A90 LDR V3, [X0 + 0x2]
+	0x03894A94 UNIMPLEMENTED
+	0x03894A98 FSUB V1.4S, V0.4S, V1.4S
+	0x03894A9C FSUB V2.4S, V0.4S, V2.4S
+	0x03894AA0 FSUB V0.4S, V0.4S, V3.4S
+	0x03894AA4 STP V1, V2, [X8]
+	0x03894AA8 STR V0, [X8 + 0x2]
+	0x03894AAC RET
+	0x03894AB0 LDP V0, V1, [X0]
+	0x03894AB4 LDP V2, V3, [X1]
+	0x03894AB8 LDR V4, [X0 + 0x2]
+	0x03894ABC LDR V5, [X1 + 0x2]
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x03894ACC STP V0, V1, [X8]
+	0x03894AD0 STR V2, [X8 + 0x2]
+	0x03894AD4 RET
+	0x03894AD8 LDP V1, V2, [X0]
+	0x03894ADC LDR V3, [X0 + 0x2]
+	0x03894AE0 UNIMPLEMENTED
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x03894AF0 STP V1, V2, [X8]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.float4x2 op_UnaryNegation(Unity.Mathematics.float4x2 val)
+
+Disassembly:
+	0x03894AF4 STR V0, [X8 + 0x2]
+	0x03894AF8 RET
+	0x03894AFC LDP V1, V2, [X0]
+	0x03894B00 LDR V3, [X0 + 0x2]
+	0x03894B04 UNIMPLEMENTED
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+16]
+	003 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	004 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	005 Move [X8], V0
+	006 Move [X8+8], V1
+	007 Return X0
+
+Method: Unity.Mathematics.float4x2 op_UnaryPlus(Unity.Mathematics.float4x2 val)
+
+Disassembly:
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x00000000 INVALID
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+16]
+	003 Move [X8], V0
+	004 Move [X8+8], V1
+	005 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_Equality(Unity.Mathematics.float4x2 lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894B14 STP V1, V2, [X8]
+	0x03894B18 STR V0, [X8 + 0x2]
+	0x03894B1C RET
+	0x03894B20 SUB X31, X31, 0x80
+	0x03894B24 STP D15, D14, [X31 + 0x20]
+	0x03894B28 STP D13, D12, [X31 + 0x30]
+	0x03894B2C STP D11, D10, [X31 + 0x40]
+	0x03894B30 STP D9, D8, [X31 + 0x50]
+	0x03894B34 STP X30, X21, [X31 + 0x60]
+	0x03894B38 STP X20, X19, [X31 + 0x70]
+	0x03894B3C LDP S0, S9, [X0]
+	0x03894B40 LDP S1, S12, [X1]
+	0x03894B44 LDP S10, S11, [X0 + 0x8]
+	0x03894B48 LDP S13, S14, [X1 + 0x8]
+	0x03894B4C MOV X20, X1
+	0x03894B50 MOV X21, X0
+	0x03894B54 MOV X19, X8
+	0x03894B58 BL 0x3EB1BA0
+	0x03894B5C STR S0, [X31 + 0x1C]
+	0x03894B60 MOV V0.16B, V9.16B
+	0x03894B64 MOV V1.16B, V12.16B
+	0x03894B68 BL 0x3EB1BA0
+	0x03894B6C STR S0, [X31 + 0x18]
+	0x03894B70 MOV V0.16B, V10.16B
+	0x03894B74 MOV V1.16B, V13.16B
+	0x03894B78 BL 0x3EB1BA0
+	0x03894B7C STR S0, [X31 + 0x14]
+	0x03894B80 MOV V0.16B, V11.16B
+	0x03894B84 MOV V1.16B, V14.16B
+	0x03894B88 BL 0x3EB1BA0
+	0x03894B8C LDP S2, S11, [X21 + 0x10]
+	0x03894B90 LDP S1, S14, [X20 + 0x10]
+	0x03894B94 LDP S12, S13, [X21 + 0x18]
+	0x03894B98 LDP S15, S8, [X20 + 0x18]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move S1, [X1+4]
+	004 Move S3, [X1+8]
+	005 Move V5, [X1+12]
+	006 Move V4, [X1]
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 Move S0, [X0+8]
+	009 Move S1, [X0+12]
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 NotImplemented "Instruction FCMP not yet implemented."
+	012 Move S0, [X0+16]
+	013 Move S3, [X0+20]
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S5, [X1+20]
+	017 Move S1, [X1+24]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction FCMP not yet implemented."
+	020 NotImplemented "Instruction CSET not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 Move S3, [X0+24]
+	023 Move S4, [X0+28]
+	024 Move V5, [X1+28]
+	025 Move V2, [X1+16]
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction FCMP not yet implemented."
+	028 NotImplemented "Instruction CSET not yet implemented."
+	029 NotImplemented "Instruction FCMP not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 NotImplemented "Instruction CSET not yet implemented."
+	032 NotImplemented "Instruction FCMP not yet implemented."
+	033 NotImplemented "Instruction BFM not yet implemented."
+	034 NotImplemented "Instruction CSET not yet implemented."
+	035 NotImplemented "Instruction BFM not yet implemented."
+	036 NotImplemented "Instruction BFM not yet implemented."
+	037 NotImplemented "Instruction BFM not yet implemented."
+	038 NotImplemented "Instruction BFM not yet implemented."
+	039 Or X0, X11, X9
+	040 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_Equality(Unity.Mathematics.float4x2 lhs, System.Single rhs)
+
+Disassembly:
+	0x03894B9C STR S0, [X31 + 0x10]
+	0x03894BA0 MOV V0.16B, V2.16B
+	0x03894BA4 BL 0x3EB1BA0
+	0x03894BA8 STR S0, [X31 + 0xC]
+	0x03894BAC MOV V0.16B, V11.16B
+	0x03894BB0 MOV V1.16B, V14.16B
+	0x03894BB4 BL 0x3EB1BA0
+	0x03894BB8 STR S0, [X31 + 0x8]
+	0x03894BBC MOV V0.16B, V12.16B
+	0x03894BC0 MOV V1.16B, V15.16B
+	0x03894BC4 BL 0x3EB1BA0
+	0x03894BC8 STR S0, [X31 + 0x4]
+	0x03894BCC MOV V0.16B, V13.16B
+	0x03894BD0 MOV V1.16B, V8.16B
+	0x03894BD4 BL 0x3EB1BA0
+	0x03894BD8 LDP S2, S8, [X21 + 0x20]
+	0x03894BDC LDP S1, S15, [X20 + 0x20]
+	0x03894BE0 LDP S13, S14, [X21 + 0x28]
+	0x03894BE4 LDP S9, S10, [X20 + 0x28]
+	0x03894BE8 MOV V11.16B, V0.16B
+	0x03894BEC MOV V0.16B, V2.16B
+	0x03894BF0 BL 0x3EB1BA0
+	0x03894BF4 MOV V12.16B, V0.16B
+	0x03894BF8 MOV V0.16B, V8.16B
+	0x03894BFC MOV V1.16B, V15.16B
+	0x03894C00 BL 0x3EB1BA0
+	0x03894C04 MOV V8.16B, V0.16B
+	0x03894C08 MOV V0.16B, V13.16B
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_Equality(System.Single lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894C0C MOV V1.16B, V9.16B
+	0x03894C10 BL 0x3EB1BA0
+	0x03894C14 MOV V9.16B, V0.16B
+	0x03894C18 MOV V0.16B, V14.16B
+	0x03894C1C MOV V1.16B, V10.16B
+	0x03894C20 BL 0x3EB1BA0
+	0x03894C24 LDR V3, [X31 + 0x1C]
+	0x03894C28 LDR V1, [X31 + 0x18]
+	0x03894C2C STP S12, S8, [X19 + 0x20]
+	0x03894C30 STP S9, S0, [X19 + 0x28]
+	0x03894C34 LDP X30, X21, [X31 + 0x60]
+	0x03894C38 STP S3, S1, [X19]
+	0x03894C3C LDR V3, [X31 + 0x14]
+	0x03894C40 LDR V1, [X31 + 0x10]
+	0x03894C44 LDP D9, D8, [X31 + 0x50]
+	0x03894C48 LDP D13, D12, [X31 + 0x30]
+	0x03894C4C LDP D15, D14, [X31 + 0x20]
+	0x03894C50 STP S3, S1, [X19 + 0x8]
+	0x03894C54 LDR V3, [X31 + 0xC]
+	0x03894C58 LDR V1, [X31 + 0x8]
+	0x03894C5C STP S3, S1, [X19 + 0x10]
+	0x03894C60 LDR V1, [X31 + 0x4]
+	0x03894C64 STP S1, S11, [X19 + 0x18]
+	0x03894C68 LDP X20, X19, [X31 + 0x70]
+	0x03894C6C LDP D11, D10, [X31 + 0x40]
+	0x03894C70 ADD X31, X31, 0x80
+	0x03894C74 RET
+	0x03894C78 SUB X31, X31, 0x70
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_Inequality(Unity.Mathematics.float4x2 lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894C7C STP D15, D14, [X31 + 0x10]
+	0x03894C80 STP D13, D12, [X31 + 0x20]
+	0x03894C84 STP D11, D10, [X31 + 0x30]
+	0x03894C88 STP D9, D8, [X31 + 0x40]
+	0x03894C8C STR X30, [X31 + 0x50]
+	0x03894C90 STP X20, X19, [X31 + 0x60]
+	0x03894C94 MOV V8.16B, V0.16B
+	0x03894C98 LDP S0, S10, [X0]
+	0x03894C9C LDP S11, S12, [X0 + 0x8]
+	0x03894CA0 MOV V1.16B, V8.16B
+	0x03894CA4 MOV X20, X0
+	0x03894CA8 MOV X19, X8
+	0x03894CAC BL 0x3EB1BA0
+	0x03894CB0 STR S0, [X31 + 0x5C]
+	0x03894CB4 MOV V0.16B, V10.16B
+	0x03894CB8 MOV V1.16B, V8.16B
+	0x03894CBC BL 0x3EB1BA0
+	0x03894CC0 STR S0, [X31 + 0x58]
+	0x03894CC4 MOV V0.16B, V11.16B
+	0x03894CC8 MOV V1.16B, V8.16B
+	0x03894CCC BL 0x3EB1BA0
+	0x03894CD0 STR S0, [X31 + 0xC]
+	0x03894CD4 MOV V0.16B, V12.16B
+	0x03894CD8 MOV V1.16B, V8.16B
+	0x03894CDC BL 0x3EB1BA0
+	0x03894CE0 LDP S1, S12, [X20 + 0x10]
+	0x03894CE4 LDP S13, S14, [X20 + 0x18]
+	0x03894CE8 STR S0, [X31 + 0x8]
+	0x03894CEC MOV V0.16B, V1.16B
+	0x03894CF0 MOV V1.16B, V8.16B
+	0x03894CF4 BL 0x3EB1BA0
+	0x03894CF8 STR S0, [X31 + 0x4]
+	0x03894CFC MOV V0.16B, V12.16B
+	0x03894D00 MOV V1.16B, V8.16B
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move S1, [X1+4]
+	004 Move S3, [X1+8]
+	005 Move V5, [X1+12]
+	006 Move V4, [X1]
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 Move S0, [X0+8]
+	009 Move S1, [X0+12]
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 NotImplemented "Instruction FCMP not yet implemented."
+	012 Move S0, [X0+16]
+	013 Move S3, [X0+20]
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S5, [X1+20]
+	017 Move S1, [X1+24]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction FCMP not yet implemented."
+	020 NotImplemented "Instruction CSET not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 Move S3, [X0+24]
+	023 Move S4, [X0+28]
+	024 Move V5, [X1+28]
+	025 Move V2, [X1+16]
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction FCMP not yet implemented."
+	028 NotImplemented "Instruction CSET not yet implemented."
+	029 NotImplemented "Instruction FCMP not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 NotImplemented "Instruction CSET not yet implemented."
+	032 NotImplemented "Instruction FCMP not yet implemented."
+	033 NotImplemented "Instruction BFM not yet implemented."
+	034 NotImplemented "Instruction CSET not yet implemented."
+	035 NotImplemented "Instruction BFM not yet implemented."
+	036 NotImplemented "Instruction BFM not yet implemented."
+	037 NotImplemented "Instruction BFM not yet implemented."
+	038 NotImplemented "Instruction BFM not yet implemented."
+	039 Or X0, X11, X9
+	040 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_Inequality(Unity.Mathematics.float4x2 lhs, System.Single rhs)
+
+Disassembly:
+	0x03894D04 BL 0x3EB1BA0
+	0x03894D08 MOV V12.16B, V0.16B
+	0x03894D0C MOV V0.16B, V13.16B
+	0x03894D10 MOV V1.16B, V8.16B
+	0x03894D14 BL 0x3EB1BA0
+	0x03894D18 MOV V13.16B, V0.16B
+	0x03894D1C MOV V0.16B, V14.16B
+	0x03894D20 MOV V1.16B, V8.16B
+	0x03894D24 BL 0x3EB1BA0
+	0x03894D28 LDP S1, S14, [X20 + 0x20]
+	0x03894D2C LDP S10, S11, [X20 + 0x28]
+	0x03894D30 MOV V15.16B, V0.16B
+	0x03894D34 MOV V0.16B, V1.16B
+	0x03894D38 MOV V1.16B, V8.16B
+	0x03894D3C BL 0x3EB1BA0
+	0x03894D40 MOV V9.16B, V0.16B
+	0x03894D44 MOV V0.16B, V14.16B
+	0x03894D48 MOV V1.16B, V8.16B
+	0x03894D4C BL 0x3EB1BA0
+	0x03894D50 MOV V14.16B, V0.16B
+	0x03894D54 MOV V0.16B, V10.16B
+	0x03894D58 MOV V1.16B, V8.16B
+	0x03894D5C BL 0x3EB1BA0
+	0x03894D60 MOV V10.16B, V0.16B
+	0x03894D64 MOV V0.16B, V11.16B
+	0x03894D68 MOV V1.16B, V8.16B
+	0x03894D6C BL 0x3EB1BA0
+	0x03894D70 LDR V2, [X31 + 0x5C]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.bool4x2 op_Inequality(System.Single lhs, Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894D74 LDR V1, [X31 + 0x58]
+	0x03894D78 STP S13, S15, [X19 + 0x18]
+	0x03894D7C STP S9, S14, [X19 + 0x20]
+	0x03894D80 STP S10, S0, [X19 + 0x28]
+	0x03894D84 STP S2, S1, [X19]
+	0x03894D88 LDR V2, [X31 + 0xC]
+	0x03894D8C LDR V1, [X31 + 0x8]
+	0x03894D90 LDR X30, [X31 + 0x50]
+	0x03894D94 LDP D9, D8, [X31 + 0x40]
+	0x03894D98 LDP D11, D10, [X31 + 0x30]
+	0x03894D9C STP S2, S1, [X19 + 0x8]
+	0x03894DA0 LDR V1, [X31 + 0x4]
+	0x03894DA4 LDP D15, D14, [X31 + 0x10]
+	0x03894DA8 STP S1, S12, [X19 + 0x10]
+	0x03894DAC LDP X20, X19, [X31 + 0x60]
+	0x03894DB0 LDP D13, D12, [X31 + 0x20]
+	0x03894DB4 ADD X31, X31, 0x70
+	0x03894DB8 RET
+	0x03894DBC SUB X31, X31, 0x70
+	0x03894DC0 STP D15, D14, [X31 + 0x10]
+	0x03894DC4 STP D13, D12, [X31 + 0x20]
+	0x03894DC8 STP D11, D10, [X31 + 0x30]
+	0x03894DCC STP D9, D8, [X31 + 0x40]
+	0x03894DD0 STR X30, [X31 + 0x50]
+	0x03894DD4 STP X20, X19, [X31 + 0x60]
+	0x03894DD8 LDP S1, S10, [X0]
+	0x03894DDC LDP S11, S12, [X0 + 0x8]
+	0x03894DE0 MOV X20, X0
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move S3, [X0+8]
+	005 Move S1, [X0+12]
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move S1, [X0+16]
+	011 Move S3, [X0+20]
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move S2, [X0+24]
+	017 Move S3, [X0+28]
+	018 NotImplemented "Instruction CSET not yet implemented."
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction BFM not yet implemented."
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 NotImplemented "Instruction CSET not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 NotImplemented "Instruction FCMP not yet implemented."
+	026 NotImplemented "Instruction CSET not yet implemented."
+	027 NotImplemented "Instruction BFM not yet implemented."
+	028 NotImplemented "Instruction BFM not yet implemented."
+	029 NotImplemented "Instruction BFM not yet implemented."
+	030 NotImplemented "Instruction BFM not yet implemented."
+	031 Or X0, X11, X13
+	032 Return X0
+
+Method: Unity.Mathematics.float4 get_Item(System.Int32 index)
+
+Disassembly:
+	0x03894DE4 MOV V8.16B, V0.16B
+	0x03894DE8 MOV X19, X8
+
+ISIL:
+	001 Add X0, X0, W1
+	002 Return X0
+
+Method: System.Boolean Equals(Unity.Mathematics.float4x2 rhs)
+
+Disassembly:
+	0x03894DEC BL 0x3EB1BA0
+	0x03894DF0 STR S0, [X31 + 0x5C]
+	0x03894DF4 MOV V0.16B, V8.16B
+	0x03894DF8 MOV V1.16B, V10.16B
+	0x03894DFC BL 0x3EB1BA0
+	0x03894E00 STR S0, [X31 + 0x58]
+	0x03894E04 MOV V0.16B, V8.16B
+	0x03894E08 MOV V1.16B, V11.16B
+	0x03894E0C BL 0x3EB1BA0
+	0x03894E10 STR S0, [X31 + 0xC]
+	0x03894E14 MOV V0.16B, V8.16B
+	0x03894E18 MOV V1.16B, V12.16B
+	0x03894E1C BL 0x3EB1BA0
+	0x03894E20 LDP S1, S12, [X20 + 0x10]
+	0x03894E24 LDP S13, S14, [X20 + 0x18]
+	0x03894E28 STR S0, [X31 + 0x8]
+	0x03894E2C MOV V0.16B, V8.16B
+	0x03894E30 BL 0x3EB1BA0
+	0x03894E34 STR S0, [X31 + 0x4]
+	0x03894E38 MOV V0.16B, V8.16B
+	0x03894E3C MOV V1.16B, V12.16B
+	0x03894E40 BL 0x3EB1BA0
+	0x03894E44 MOV V12.16B, V0.16B
+	0x03894E48 MOV V0.16B, V8.16B
+	0x03894E4C MOV V1.16B, V13.16B
+	0x03894E50 BL 0x3EB1BA0
+	0x03894E54 MOV V13.16B, V0.16B
+	0x03894E58 MOV V0.16B, V8.16B
+	0x03894E5C MOV V1.16B, V14.16B
+	0x03894E60 BL 0x3EB1BA0
+	0x03894E64 LDP S1, S14, [X20 + 0x20]
+	0x03894E68 LDP S10, S11, [X20 + 0x28]
+	0x03894E6C MOV V15.16B, V0.16B
+	0x03894E70 MOV V0.16B, V8.16B
+	0x03894E74 BL 0x3EB1BA0
+
+ISIL:
+	001 Move V0, [X1]
+	002 Move V1, [X0]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Move V0, [X1+4]
+	005 Move V1, [X0+4]
+	006 NotImplemented "Instruction FCMP not yet implemented."
+	007 Move V0, [X1+8]
+	008 Move V1, [X0+8]
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 Move V0, [X1+12]
+	011 Move V1, [X0+12]
+	012 NotImplemented "Instruction FCMP not yet implemented."
+	013 Move V0, [X1+16]
+	014 Move V1, [X0+16]
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move V0, [X1+20]
+	017 Move V1, [X0+20]
+	018 NotImplemented "Instruction FCMP not yet implemented."
+	019 Move V0, [X1+24]
+	020 Move V1, [X0+24]
+	021 NotImplemented "Instruction FCMP not yet implemented."
+	022 Move V0, [X1+28]
+	023 Move V1, [X0+28]
+	024 NotImplemented "Instruction FCMP not yet implemented."
+	025 NotImplemented "Instruction CSET not yet implemented."
+	026 Return X0
+	027 Move W0, W31
+	028 Return X0
+
+Method: System.Boolean Equals(System.Object o)
+
+Disassembly:
+	0x03894E78 MOV V9.16B, V0.16B
+	0x03894E7C MOV V0.16B, V8.16B
+	0x03894E80 MOV V1.16B, V14.16B
+	0x03894E84 BL 0x3EB1BA0
+	0x03894E88 MOV V14.16B, V0.16B
+	0x03894E8C MOV V0.16B, V8.16B
+	0x03894E90 MOV V1.16B, V10.16B
+	0x03894E94 BL 0x3EB1BA0
+	0x03894E98 MOV V10.16B, V0.16B
+	0x03894E9C MOV V0.16B, V8.16B
+	0x03894EA0 MOV V1.16B, V11.16B
+	0x03894EA4 BL 0x3EB1BA0
+	0x03894EA8 LDR V2, [X31 + 0x5C]
+	0x03894EAC LDR V1, [X31 + 0x58]
+	0x03894EB0 STP S13, S15, [X19 + 0x18]
+	0x03894EB4 STP S9, S14, [X19 + 0x20]
+	0x03894EB8 STP S10, S0, [X19 + 0x28]
+	0x03894EBC STP S2, S1, [X19]
+	0x03894EC0 LDR V2, [X31 + 0xC]
+	0x03894EC4 LDR V1, [X31 + 0x8]
+	0x03894EC8 LDR X30, [X31 + 0x50]
+	0x03894ECC LDP D9, D8, [X31 + 0x40]
+	0x03894ED0 LDP D11, D10, [X31 + 0x30]
+	0x03894ED4 STP S2, S1, [X19 + 0x8]
+	0x03894ED8 LDR V1, [X31 + 0x4]
+	0x03894EDC LDP D15, D14, [X31 + 0x10]
+	0x03894EE0 STP S1, S12, [X19 + 0x10]
+	0x03894EE4 LDP X20, X19, [X31 + 0x60]
+	0x03894EE8 LDP D13, D12, [X31 + 0x20]
+	0x03894EEC ADD X31, X31, 0x70
+	0x03894EF0 RET
+	0x03894EF4 LDP V0, V1, [X0]
+	0x03894EF8 LDR V2, [X0 + 0x2]
+	0x03894EFC FMOV V3.4S, 0x0
+	0x03894F00 FADD V0.4S, V0.4S, V3.4S
+	0x03894F04 FADD V1.4S, V1.4S, V3.4S
+	0x03894F08 FADD V2.4S, V2.4S, V3.4S
+	0x03894F0C STP V0, V1, [X0]
+	0x03894F10 STR V2, [X0 + 0x2]
+	0x03894F14 STP V0, V1, [X8]
+	0x03894F18 STR V2, [X8 + 0x2]
+	0x03894F1C RET
+	0x03894F20 LDP V0, V1, [X0]
+	0x03894F24 LDR V2, [X0 + 0x2]
+	0x03894F28 FMOV V3.4S, 0x0
+	0x03894F2C FADD V0.4S, V0.4S, V3.4S
+	0x03894F30 FADD V1.4S, V1.4S, V3.4S
+	0x03894F34 FADD V2.4S, V2.4S, V3.4S
+	0x03894F38 STP V0, V1, [X0]
+	0x03894F3C STR V2, [X0 + 0x2]
+	0x03894F40 STP V0, V1, [X8]
+	0x03894F44 STR V2, [X8 + 0x2]
+	0x03894F48 RET
+	0x03894F4C LDP S2, S0, [X0]
+	0x03894F50 LDP S1, S3, [X1 + 0x4]
+	0x03894F54 LDR V5, [X1 + 0xC]
+	0x03894F58 LDR V4, [X1]
+	0x03894F5C FCMP S0, S1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xB4E000
+	006 Move W8, [X21+1591]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x8B7000
+	014 Move X0, [X0+3992]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+1591], W8
+	018 Compare X20, 0
+	019 JumpIfEqual {25}
+	020 Move X8, 0x8B7000
+	021 Move X8, [X8+3992]
+	022 Move X9, [X20]
+	023 Move X8, [X8]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move W0, W31
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Return X0
+	031 Move X0, X20
+	032 Call 0x1C17E08
+	033 Move V0, [X0]
+	034 Move V1, [X19]
+	035 NotImplemented "Instruction FCMP not yet implemented."
+	036 Move V0, [X0+4]
+	037 Move V1, [X19+4]
+	038 NotImplemented "Instruction FCMP not yet implemented."
+	039 Move V0, [X0+8]
+	040 Move V1, [X19+8]
+	041 NotImplemented "Instruction FCMP not yet implemented."
+	042 Move V0, [X0+12]
+	043 Move V1, [X19+12]
+	044 NotImplemented "Instruction FCMP not yet implemented."
+	045 Move V0, [X0+16]
+	046 Move V1, [X19+16]
+	047 NotImplemented "Instruction FCMP not yet implemented."
+	048 Move V0, [X0+20]
+	049 Move V1, [X19+20]
+	050 NotImplemented "Instruction FCMP not yet implemented."
+	051 Move V0, [X0+24]
+	052 Move V1, [X19+24]
+	053 NotImplemented "Instruction FCMP not yet implemented."
+	054 Move V0, [X0+28]
+	055 Move V1, [X19+28]
+	056 NotImplemented "Instruction FCMP not yet implemented."
+	057 NotImplemented "Instruction CSET not yet implemented."
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x03894F60 LDP S0, S1, [X0 + 0x8]
+	0x03894F64 CSET W8, MI
+	0x03894F68 FCMP S0, S3
+	0x03894F6C LDP S0, S3, [X0 + 0x10]
+	0x03894F70 CSET W9, MI
+	0x03894F74 FCMP S1, S5
+	0x03894F78 LDP S5, S1, [X1 + 0x14]
+	0x03894F7C CSET W10, MI
+	0x03894F80 FCMP S2, S4
+	0x03894F84 CSET W11, MI
+	0x03894F88 FCMP S3, S5
+	0x03894F8C LDP S3, S4, [X0 + 0x18]
+	0x03894F90 LDR V5, [X1 + 0x1C]
+	0x03894F94 LDR V2, [X1 + 0x10]
+	0x03894F98 CSET W12, MI
+	0x03894F9C FCMP S3, S1
+	0x03894FA0 LDP S1, S3, [X0 + 0x20]
+	0x03894FA4 CSET W13, MI
+	0x03894FA8 FCMP S4, S5
+	0x03894FAC LDP S5, S4, [X1 + 0x24]
+	0x03894FB0 CSET W14, MI
+	0x03894FB4 FCMP S0, S2
+	0x03894FB8 CSET W15, MI
+	0x03894FBC FCMP S3, S5
+	0x03894FC0 LDP S2, S3, [X0 + 0x28]
+	0x03894FC4 LDR V5, [X1 + 0x2C]
+	0x03894FC8 LDR V0, [X1 + 0x20]
+	0x03894FCC CSET W16, MI
+	0x03894FD0 FCMP S2, S4
+	0x03894FD4 CSET W17, MI
+	0x03894FD8 FCMP S3, S5
+	0x03894FDC BFM X11, X8, 0x38, 0x0
+	0x03894FE0 CSET W8, MI
+	0x03894FE4 FCMP S1, S0
+	0x03894FE8 BFM W15, W12, 0x18, 0x0
+	0x03894FEC CSET W1, MI
+	0x03894FF0 BFM X11, X9, 0x30, 0x0
+
+ISIL:
+	001 Move W8, [X0]
+	002 Move W9, [X0+4]
+	003 Move W13, [X0+8]
+	004 Move W12, [X0+12]
+	005 Move W10, [X0+16]
+	006 Move W11, [X0+20]
+	007 Move X17, 2373
+	008 Move W14, 0xC25D
+	009 Move X16, 0xA60D
+	010 NotImplemented "Instruction MOVK not yet implemented."
+	011 Move W0, [X0+24]
+	012 Move W1, [X0+28]
+	013 NotImplemented "Instruction MOVK not yet implemented."
+	014 NotImplemented "Instruction MOVK not yet implemented."
+	015 Multiply X9, X9, X17
+	016 Move X17, 0x5ACB
+	017 Move W15, 0xAB2D
+	018 Multiply W8, W8, W14
+	019 Move W14, 0xC50B
+	020 Multiply X12, X12, X16
+	021 Move X16, 0x2A33
+	022 NotImplemented "Instruction MOVK not yet implemented."
+	023 NotImplemented "Instruction MOVK not yet implemented."
+	024 NotImplemented "Instruction MOVK not yet implemented."
+	025 NotImplemented "Instruction MOVK not yet implemented."
+	026 NotImplemented "Instruction MADD not yet implemented."
+	027 Multiply W13, W13, W15
+	028 Move W15, 0x6C89
+	029 NotImplemented "Instruction MADD not yet implemented."
+	030 NotImplemented "Instruction MADD not yet implemented."
+	031 Move X9, X9
+	032 ShiftRight X9, 32
+	033 And X9, X9, 0x7FFFFFFF
+	034 NotImplemented "Instruction MOVK not yet implemented."
+	035 Move X11, X12
+	036 ShiftRight X11, 32
+	037 And X11, X11, 0x7FFFFFFF
+	038 Add W8, W9, W8
+	039 NotImplemented "Instruction MADD not yet implemented."
+	040 Add W8, W8, W11
+	041 Move W9, 0x5E77
+	042 Add W8, W8, W10
+	043 NotImplemented "Instruction MOVK not yet implemented."
+	044 Add W0, W8, W9
+	045 Return X0
+
+Method: System.String ToString()
+
+Disassembly:
+	0x03894FF4 BFM W15, W13, 0x10, 0x0
+	0x03894FF8 BFM X1, X16, 0x38, 0x0
+	0x03894FFC BFM X11, X10, 0x28, 0x0
+	0x03895000 BFM W15, W14, 0x8, 0x0
+	0x03895004 BFM X1, X17, 0x30, 0x0
+	0x03895008 BFM X1, X8, 0x28, 0x0
+	0x0389500C ORR X0, X11, X15, 0x20
+	0x03895010 RET
+	0x03895014 LDP S2, S1, [X0]
+	0x03895018 FCMP S1, S0
+	0x0389501C LDP S3, S1, [X0 + 0x8]
+	0x03895020 CSET W8, MI
+	0x03895024 FCMP S3, S0
+	0x03895028 CSET W9, MI
+	0x0389502C FCMP S1, S0
+	0x03895030 LDP S1, S3, [X0 + 0x10]
+	0x03895034 CSET W10, MI
+	0x03895038 FCMP S2, S0
+	0x0389503C CSET W11, MI
+	0x03895040 FCMP S3, S0
+	0x03895044 LDP S2, S3, [X0 + 0x18]
+	0x03895048 CSET W12, MI
+	0x0389504C BFM X11, X8, 0x38, 0x0
+	0x03895050 BFM X11, X9, 0x30, 0x0
+	0x03895054 FCMP S2, S0
+	0x03895058 CSET W13, MI
+	0x0389505C FCMP S3, S0
+	0x03895060 LDP S2, S3, [X0 + 0x20]
+	0x03895064 CSET W14, MI
+	0x03895068 FCMP S1, S0
+	0x0389506C CSET W15, MI
+	0x03895070 FCMP S3, S0
+	0x03895074 LDP S1, S3, [X0 + 0x28]
+	0x03895078 CSET W16, MI
+	0x0389507C BFM W15, W12, 0x18, 0x0
+	0x03895080 BFM W15, W13, 0x10, 0x0
+	0x03895084 FCMP S1, S0
+	0x03895088 CSET W8, MI
+	0x0389508C FCMP S3, S0
+	0x03895090 CSET W9, MI
+	0x03895094 FCMP S2, S0
+	0x03895098 CSET W1, MI
+	0x0389509C BFM X1, X16, 0x38, 0x0
+	0x038950A0 BFM X11, X10, 0x28, 0x0
+	0x038950A4 BFM W15, W14, 0x8, 0x0
+	0x038950A8 BFM X1, X8, 0x30, 0x0
+	0x038950AC BFM X1, X9, 0x28, 0x0
+	0x038950B0 ORR X0, X11, X15, 0x20
+	0x038950B4 RET
+	0x038950B8 LDP S2, S1, [X0]
+	0x038950BC FCMP S1, S0
+	0x038950C0 LDP S3, S1, [X0 + 0x8]
+	0x038950C4 CSET W8, GT
+	0x038950C8 FCMP S3, S0
+	0x038950CC CSET W9, GT
+	0x038950D0 FCMP S1, S0
+	0x038950D4 LDP S1, S3, [X0 + 0x10]
+	0x038950D8 CSET W10, GT
+	0x038950DC FCMP S2, S0
+	0x038950E0 CSET W11, GT
+	0x038950E4 FCMP S3, S0
+	0x038950E8 LDP S2, S3, [X0 + 0x18]
+	0x038950EC CSET W12, GT
+	0x038950F0 BFM X11, X8, 0x38, 0x0
+	0x038950F4 BFM X11, X9, 0x30, 0x0
+	0x038950F8 FCMP S2, S0
+	0x038950FC CSET W13, GT
+	0x03895100 FCMP S3, S0
+	0x03895104 LDP S2, S3, [X0 + 0x20]
+	0x03895108 CSET W14, GT
+	0x0389510C FCMP S1, S0
+	0x03895110 CSET W15, GT
+	0x03895114 FCMP S3, S0
+	0x03895118 LDP S1, S3, [X0 + 0x28]
+	0x0389511C CSET W16, GT
+	0x03895120 BFM W15, W12, 0x18, 0x0
+	0x03895124 BFM W15, W13, 0x10, 0x0
+	0x03895128 FCMP S1, S0
+	0x0389512C CSET W8, GT
+	0x03895130 FCMP S3, S0
+	0x03895134 CSET W9, GT
+	0x03895138 FCMP S2, S0
+	0x0389513C CSET W1, GT
+	0x03895140 BFM X1, X16, 0x38, 0x0
+	0x03895144 BFM X11, X10, 0x28, 0x0
+	0x03895148 BFM W15, W14, 0x8, 0x0
+	0x0389514C BFM X1, X8, 0x30, 0x0
+	0x03895150 BFM X1, X9, 0x28, 0x0
+	0x03895154 ORR X0, X11, X15, 0x20
+	0x03895158 RET
+	0x0389515C LDP S2, S0, [X0]
+	0x03895160 LDP S1, S3, [X1 + 0x4]
+	0x03895164 LDR V5, [X1 + 0xC]
+	0x03895168 LDR V4, [X1]
+	0x0389516C FCMP S0, S1
+	0x03895170 LDP S0, S1, [X0 + 0x8]
+	0x03895174 CSET W8, LS
+	0x03895178 FCMP S0, S3
+	0x0389517C LDP S0, S3, [X0 + 0x10]
+	0x03895180 CSET W9, LS
+	0x03895184 FCMP S1, S5
+	0x03895188 LDP S5, S1, [X1 + 0x14]
+	0x0389518C CSET W10, LS
+	0x03895190 FCMP S2, S4
+	0x03895194 CSET W11, LS
+	0x03895198 FCMP S3, S5
+	0x0389519C LDP S3, S4, [X0 + 0x18]
+	0x038951A0 LDR V5, [X1 + 0x1C]
+	0x038951A4 LDR V2, [X1 + 0x10]
+	0x038951A8 CSET W12, LS
+	0x038951AC FCMP S3, S1
+	0x038951B0 LDP S1, S3, [X0 + 0x20]
+	0x038951B4 CSET W13, LS
+	0x038951B8 FCMP S4, S5
+	0x038951BC LDP S5, S4, [X1 + 0x24]
+	0x038951C0 CSET W14, LS
+	0x038951C4 FCMP S0, S2
+	0x038951C8 CSET W15, LS
+	0x038951CC FCMP S3, S5
+	0x038951D0 LDP S2, S3, [X0 + 0x28]
+	0x038951D4 LDR V5, [X1 + 0x2C]
+	0x038951D8 LDR V0, [X1 + 0x20]
+	0x038951DC CSET W16, LS
+	0x038951E0 FCMP S2, S4
+	0x038951E4 CSET W17, LS
+	0x038951E8 FCMP S3, S5
+	0x038951EC BFM X11, X8, 0x38, 0x0
+	0x038951F0 CSET W8, LS
+	0x038951F4 FCMP S1, S0
+	0x038951F8 BFM W15, W12, 0x18, 0x0
+	0x038951FC CSET W1, LS
+	0x03895200 BFM X11, X9, 0x30, 0x0
+	0x03895204 BFM W15, W13, 0x10, 0x0
+	0x03895208 BFM X1, X16, 0x38, 0x0
+	0x0389520C BFM X11, X10, 0x28, 0x0
+	0x03895210 BFM W15, W14, 0x8, 0x0
+	0x03895214 BFM X1, X17, 0x30, 0x0
+	0x03895218 BFM X1, X8, 0x28, 0x0
+	0x0389521C ORR X0, X11, X15, 0x20
+	0x03895220 RET
+	0x03895224 LDP S2, S1, [X0]
+	0x03895228 FCMP S1, S0
+	0x0389522C LDP S3, S1, [X0 + 0x8]
+	0x03895230 CSET W8, LS
+	0x03895234 FCMP S3, S0
+	0x03895238 CSET W9, LS
+	0x0389523C FCMP S1, S0
+	0x03895240 LDP S1, S3, [X0 + 0x10]
+	0x03895244 CSET W10, LS
+	0x03895248 FCMP S2, S0
+	0x0389524C CSET W11, LS
+	0x03895250 FCMP S3, S0
+	0x03895254 LDP S2, S3, [X0 + 0x18]
+	0x03895258 CSET W12, LS
+	0x0389525C BFM X11, X8, 0x38, 0x0
+	0x03895260 BFM X11, X9, 0x30, 0x0
+	0x03895264 FCMP S2, S0
+	0x03895268 CSET W13, LS
+	0x0389526C FCMP S3, S0
+	0x03895270 LDP S2, S3, [X0 + 0x20]
+	0x03895274 CSET W14, LS
+	0x03895278 FCMP S1, S0
+	0x0389527C CSET W15, LS
+	0x03895280 FCMP S3, S0
+	0x03895284 LDP S1, S3, [X0 + 0x28]
+	0x03895288 CSET W16, LS
+	0x0389528C BFM W15, W12, 0x18, 0x0
+	0x03895290 BFM W15, W13, 0x10, 0x0
+	0x03895294 FCMP S1, S0
+	0x03895298 CSET W8, LS
+	0x0389529C FCMP S3, S0
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+32], X30
+	003 Move [X31+48], X22
+	004 Move [X31+56], X21
+	005 Move [X31+64], X20
+	006 Move [X31+72], X19
+	007 Move X19, 0xB4D000
+	008 Move X21, 0x85F000
+	009 Move X22, 0x85F000
+	010 Move W8, [X19+1592]
+	011 Move X21, [X21+2512]
+	012 Move X22, [X22+2704]
+	013 Move X20, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {29}
+	018 Move X0, 0x85F000
+	019 Move X0, [X0+2512]
+	020 Call 0x1C17CF4
+	021 Move X0, 0x85F000
+	022 Move X0, [X0+2704]
+	023 Call 0x1C17CF4
+	024 Move X0, 0x8B6000
+	025 Move X0, [X0+4000]
+	026 Call 0x1C17CF4
+	027 Move W8, 1
+	028 Move [X19+1592], W8
+	029 Move X0, [X21]
+	030 Move W1, 8
+	031 Call 0x1C17D6C
+	032 Move X19, X0
+	033 Move V0, [X20]
+	034 Move X0, [X22]
+	035 Add X1, X31, 44
+	036 Move [X31+44], S0
+	037 Call 0x1C17E04
+	038 Compare X19, 0
+	039 JumpIfEqual {189}
+	040 Move X21, X0
+	041 Compare X0, 0
+	042 JumpIfEqual {49}
+	043 Move X8, [X19]
+	044 Move X0, X21
+	045 Move X1, [X8+64]
+	046 Call 0x1C17E00
+	047 Compare X0, 0
+	048 JumpIfEqual {186}
+	049 Move W8, [X19+24]
+	050 Compare W8, 0
+	051 JumpIfEqual {185}
+	052 Move [X19+32], X21
+	053 Move V0, [X20+16]
+	054 Move X0, [X22]
+	055 Add X1, X31, 40
+	056 Move [X31+40], S0
+	057 Call 0x1C17E04
+	058 Move X21, X0
+	059 Compare X0, 0
+	060 JumpIfEqual {67}
+	061 Move X8, [X19]
+	062 Move X0, X21
+	063 Move X1, [X8+64]
+	064 Call 0x1C17E00
+	065 Compare X0, 0
+	066 JumpIfEqual {186}
+	067 Move W8, [X19+24]
+	068 NotImplemented "Instruction CMP not yet implemented."
+	069 Move [X19+40], X21
+	070 Move V0, [X20+4]
+	071 Move X0, [X22]
+	072 Add X1, X31, 28
+	073 Move [X31+28], S0
+	074 Call 0x1C17E04
+	075 Move X21, X0
+	076 Compare X0, 0
+	077 JumpIfEqual {84}
+	078 Move X8, [X19]
+	079 Move X0, X21
+	080 Move X1, [X8+64]
+	081 Call 0x1C17E00
+	082 Compare X0, 0
+	083 JumpIfEqual {186}
+	084 Move W8, [X19+24]
+	085 NotImplemented "Instruction CMP not yet implemented."
+	086 Move [X19+48], X21
+	087 Move V0, [X20+20]
+	088 Move X0, [X22]
+	089 Add X1, X31, 24
+	090 Move [X31+24], S0
+	091 Call 0x1C17E04
+	092 Move X21, X0
+	093 Compare X0, 0
+	094 JumpIfEqual {101}
+	095 Move X8, [X19]
+	096 Move X0, X21
+	097 Move X1, [X8+64]
+	098 Call 0x1C17E00
+	099 Compare X0, 0
+	100 JumpIfEqual {186}
+	101 Move W8, [X19+24]
+	102 NotImplemented "Instruction CMP not yet implemented."
+	103 Move [X19+56], X21
+	104 Move V0, [X20+8]
+	105 Move X0, [X22]
+	106 Add X1, X31, 20
+	107 Move [X31+20], S0
+	108 Call 0x1C17E04
+	109 Move X21, X0
+	110 Compare X0, 0
+	111 JumpIfEqual {118}
+	112 Move X8, [X19]
+	113 Move X0, X21
+	114 Move X1, [X8+64]
+	115 Call 0x1C17E00
+	116 Compare X0, 0
+	117 JumpIfEqual {186}
+	118 Move W8, [X19+24]
+	119 NotImplemented "Instruction CMP not yet implemented."
+	120 Move [X19+64], X21
+	121 Move V0, [X20+24]
+	122 Move X0, [X22]
+	123 Add X1, X31, 16
+	124 Move [X31+16], S0
+	125 Call 0x1C17E04
+	126 Move X21, X0
+	127 Compare X0, 0
+	128 JumpIfEqual {135}
+	129 Move X8, [X19]
+	130 Move X0, X21
+	131 Move X1, [X8+64]
+	132 Call 0x1C17E00
+	133 Compare X0, 0
+	134 JumpIfEqual {186}
+	135 Move W8, [X19+24]
+	136 NotImplemented "Instruction CMP not yet implemented."
+	137 Move [X19+72], X21
+	138 Move V0, [X20+12]
+	139 Move X0, [X22]
+	140 Add X1, X31, 12
+	141 Move [X31+12], S0
+	142 Call 0x1C17E04
+	143 Move X21, X0
+	144 Compare X0, 0
+	145 JumpIfEqual {152}
+	146 Move X8, [X19]
+	147 Move X0, X21
+	148 Move X1, [X8+64]
+	149 Call 0x1C17E00
+	150 Compare X0, 0
+	151 JumpIfEqual {186}
+	152 Move W8, [X19+24]
+	153 NotImplemented "Instruction CMP not yet implemented."
+	154 Move [X19+80], X21
+	155 Move V0, [X20+28]
+	156 Move X0, [X22]
+	157 Add X1, X31, 8
+	158 Move [X31+8], S0
+	159 Call 0x1C17E04
+	160 Move X20, X0
+	161 Compare X0, 0
+	162 JumpIfEqual {169}
+	163 Move X8, [X19]
+	164 Move X0, X20
+	165 Move X1, [X8+64]
+	166 Call 0x1C17E00
+	167 Compare X0, 0
+	168 JumpIfEqual {186}
+	169 Move W8, [X19+24]
+	170 NotImplemented "Instruction CMP not yet implemented."
+	171 Move X8, 0x8B6000
+	172 Move X8, [X8+4000]
+	173 Move [X19+88], X20
+	174 Move X1, X19
+	175 Move X2, X31
+	176 Move X0, [X8]
+	177 Call String.Format, X0, X1
+	178 Move X20, [X31+64]
+	179 Move X19, [X31+72]
+	180 Move X22, [X31+48]
+	181 Move X21, [X31+56]
+	182 Move X30, [X31+32]
+	183 Add X31, X31, 80
+	184 Return X0
+	185 Call 0x1C17F28
+	186 Call 0x1C17F44
+	187 Move X1, X31
+	188 Call 0x1C17DEC
+	189 Call 0x1C17F20
+
+Method: System.String ToString(System.String format, System.IFormatProvider formatProvider)
+
+Disassembly:
+	0x038952A0 CSET W9, LS
+	0x038952A4 FCMP S2, S0
+	0x038952A8 CSET W1, LS
+	0x038952AC BFM X1, X16, 0x38, 0x0
+	0x038952B0 BFM X11, X10, 0x28, 0x0
+	0x038952B4 BFM W15, W14, 0x8, 0x0
+	0x038952B8 BFM X1, X8, 0x30, 0x0
+	0x038952BC BFM X1, X9, 0x28, 0x0
+	0x038952C0 ORR X0, X11, X15, 0x20
+	0x038952C4 RET
+	0x038952C8 LDP S2, S1, [X0]
+	0x038952CC FCMP S1, S0
+	0x038952D0 LDP S3, S1, [X0 + 0x8]
+	0x038952D4 CSET W8, GE
+	0x038952D8 FCMP S3, S0
+	0x038952DC CSET W9, GE
+	0x038952E0 FCMP S1, S0
+	0x038952E4 LDP S1, S3, [X0 + 0x10]
+	0x038952E8 CSET W10, GE
+	0x038952EC FCMP S2, S0
+	0x038952F0 CSET W11, GE
+	0x038952F4 FCMP S3, S0
+	0x038952F8 LDP S2, S3, [X0 + 0x18]
+	0x038952FC CSET W12, GE
+	0x03895300 BFM X11, X8, 0x38, 0x0
+	0x03895304 BFM X11, X9, 0x30, 0x0
+	0x03895308 FCMP S2, S0
+	0x0389530C CSET W13, GE
+	0x03895310 FCMP S3, S0
+	0x03895314 LDP S2, S3, [X0 + 0x20]
+	0x03895318 CSET W14, GE
+	0x0389531C FCMP S1, S0
+	0x03895320 CSET W15, GE
+	0x03895324 FCMP S3, S0
+	0x03895328 LDP S1, S3, [X0 + 0x28]
+	0x0389532C CSET W16, GE
+	0x03895330 BFM W15, W12, 0x18, 0x0
+	0x03895334 BFM W15, W13, 0x10, 0x0
+	0x03895338 FCMP S1, S0
+	0x0389533C CSET W8, GE
+	0x03895340 FCMP S3, S0
+	0x03895344 CSET W9, GE
+	0x03895348 FCMP S2, S0
+	0x0389534C CSET W1, GE
+	0x03895350 BFM X1, X16, 0x38, 0x0
+	0x03895354 BFM X11, X10, 0x28, 0x0
+	0x03895358 BFM W15, W14, 0x8, 0x0
+	0x0389535C BFM X1, X8, 0x30, 0x0
+	0x03895360 BFM X1, X9, 0x28, 0x0
+	0x03895364 ORR X0, X11, X15, 0x20
+	0x03895368 RET
+	0x0389536C LDP S2, S0, [X0]
+	0x03895370 LDP S1, S3, [X1 + 0x4]
+	0x03895374 LDR V5, [X1 + 0xC]
+	0x03895378 LDR V4, [X1]
+	0x0389537C FCMP S0, S1
+	0x03895380 LDP S0, S1, [X0 + 0x8]
+	0x03895384 CSET W8, GT
+	0x03895388 FCMP S0, S3
+	0x0389538C LDP S0, S3, [X0 + 0x10]
+	0x03895390 CSET W9, GT
+	0x03895394 FCMP S1, S5
+	0x03895398 LDP S5, S1, [X1 + 0x14]
+	0x0389539C CSET W10, GT
+	0x038953A0 FCMP S2, S4
+	0x038953A4 CSET W11, GT
+	0x038953A8 FCMP S3, S5
+	0x038953AC LDP S3, S4, [X0 + 0x18]
+	0x038953B0 LDR V5, [X1 + 0x1C]
+	0x038953B4 LDR V2, [X1 + 0x10]
+	0x038953B8 CSET W12, GT
+	0x038953BC FCMP S3, S1
+	0x038953C0 LDP S1, S3, [X0 + 0x20]
+	0x038953C4 CSET W13, GT
+	0x038953C8 FCMP S4, S5
+	0x038953CC LDP S5, S4, [X1 + 0x24]
+	0x038953D0 CSET W14, GT
+	0x038953D4 FCMP S0, S2
+	0x038953D8 CSET W15, GT
+	0x038953DC FCMP S3, S5
+	0x038953E0 LDP S2, S3, [X0 + 0x28]
+	0x038953E4 LDR V5, [X1 + 0x2C]
+	0x038953E8 LDR V0, [X1 + 0x20]
+	0x038953EC CSET W16, GT
+	0x038953F0 FCMP S2, S4
+	0x038953F4 CSET W17, GT
+	0x038953F8 FCMP S3, S5
+	0x038953FC BFM X11, X8, 0x38, 0x0
+	0x03895400 CSET W8, GT
+	0x03895404 FCMP S1, S0
+	0x03895408 BFM W15, W12, 0x18, 0x0
+	0x0389540C CSET W1, GT
+	0x03895410 BFM X11, X9, 0x30, 0x0
+	0x03895414 BFM W15, W13, 0x10, 0x0
+	0x03895418 BFM X1, X16, 0x38, 0x0
+	0x0389541C BFM X11, X10, 0x28, 0x0
+	0x03895420 BFM W15, W14, 0x8, 0x0
+	0x03895424 BFM X1, X17, 0x30, 0x0
+	0x03895428 BFM X1, X8, 0x28, 0x0
+	0x0389542C ORR X0, X11, X15, 0x20
+	0x03895430 RET
+	0x03895434 LDP S2, S1, [X0]
+	0x03895438 FCMP S1, S0
+	0x0389543C LDP S3, S1, [X0 + 0x8]
+	0x03895440 CSET W8, GT
+	0x03895444 FCMP S3, S0
+	0x03895448 CSET W9, GT
+	0x0389544C FCMP S1, S0
+	0x03895450 LDP S1, S3, [X0 + 0x10]
+	0x03895454 CSET W10, GT
+	0x03895458 FCMP S2, S0
+	0x0389545C CSET W11, GT
+	0x03895460 FCMP S3, S0
+	0x03895464 LDP S2, S3, [X0 + 0x18]
+	0x03895468 CSET W12, GT
+	0x0389546C BFM X11, X8, 0x38, 0x0
+	0x03895470 BFM X11, X9, 0x30, 0x0
+	0x03895474 FCMP S2, S0
+	0x03895478 CSET W13, GT
+	0x0389547C FCMP S3, S0
+	0x03895480 LDP S2, S3, [X0 + 0x20]
+	0x03895484 CSET W14, GT
+	0x03895488 FCMP S1, S0
+	0x0389548C CSET W15, GT
+	0x03895490 FCMP S3, S0
+	0x03895494 LDP S1, S3, [X0 + 0x28]
+	0x03895498 CSET W16, GT
+	0x0389549C BFM W15, W12, 0x18, 0x0
+	0x038954A0 BFM W15, W13, 0x10, 0x0
+	0x038954A4 FCMP S1, S0
+	0x038954A8 CSET W8, GT
+	0x038954AC FCMP S3, S0
+	0x038954B0 CSET W9, GT
+	0x038954B4 FCMP S2, S0
+	0x038954B8 CSET W1, GT
+	0x038954BC BFM X1, X16, 0x38, 0x0
+	0x038954C0 BFM X11, X10, 0x28, 0x0
+	0x038954C4 BFM W15, W14, 0x8, 0x0
+	0x038954C8 BFM X1, X8, 0x30, 0x0
+	0x038954CC BFM X1, X9, 0x28, 0x0
+	0x038954D0 ORR X0, X11, X15, 0x20
+	0x038954D4 RET
+	0x038954D8 LDP S2, S1, [X0]
+	0x038954DC FCMP S1, S0
+	0x038954E0 LDP S3, S1, [X0 + 0x8]
+	0x038954E4 CSET W8, MI
+	0x038954E8 FCMP S3, S0
+	0x038954EC CSET W9, MI
+	0x038954F0 FCMP S1, S0
+	0x038954F4 LDP S1, S3, [X0 + 0x10]
+	0x038954F8 CSET W10, MI
+	0x038954FC FCMP S2, S0
+	0x03895500 CSET W11, MI
+	0x03895504 FCMP S3, S0
+	0x03895508 LDP S2, S3, [X0 + 0x18]
+	0x0389550C CSET W12, MI
+	0x03895510 BFM X11, X8, 0x38, 0x0
+	0x03895514 BFM X11, X9, 0x30, 0x0
+	0x03895518 FCMP S2, S0
+	0x0389551C CSET W13, MI
+	0x03895520 FCMP S3, S0
+	0x03895524 LDP S2, S3, [X0 + 0x20]
+	0x03895528 CSET W14, MI
+	0x0389552C FCMP S1, S0
+	0x03895530 CSET W15, MI
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X19, 0xB4D000
+	008 Move X23, 0x85F000
+	009 Move W8, [X19+1593]
+	010 Move X23, [X23+2512]
+	011 Move X20, X2
+	012 Move X21, X1
+	013 Move X22, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {26}
+	018 Move X0, 0x85F000
+	019 Move X0, [X0+2512]
+	020 Call 0x1C17CF4
+	021 Move X0, 0x8B6000
+	022 Move X0, [X0+4000]
+	023 Call 0x1C17CF4
+	024 Move W8, 1
+	025 Move [X19+1593], W8
+	026 Move X0, [X23]
+	027 Move W1, 8
+	028 Call 0x1C17D6C
+	029 Move X19, X0
+	030 Move X0, X22
+	031 Move X1, X21
+	032 Move X2, X20
+	033 Move X3, X31
+	034 Call Single.ToString, X0, X1, X2
+	035 Compare X19, 0
+	036 JumpIfEqual {186}
+	037 Move X23, X0
+	038 Compare X0, 0
+	039 JumpIfEqual {46}
+	040 Move X8, [X19]
+	041 Move X0, X23
+	042 Move X1, [X8+64]
+	043 Call 0x1C17E00
+	044 Compare X0, 0
+	045 JumpIfEqual {183}
+	046 Move W8, [X19+24]
+	047 Compare W8, 0
+	048 JumpIfEqual {182}
+	049 Add X0, X22, 16
+	050 Move X1, X21
+	051 Move X2, X20
+	052 Move X3, X31
+	053 Move [X19+32], X23
+	054 Call Single.ToString, X0, X1, X2
+	055 Move X23, X0
+	056 Compare X0, 0
+	057 JumpIfEqual {64}
+	058 Move X8, [X19]
+	059 Move X0, X23
+	060 Move X1, [X8+64]
+	061 Call 0x1C17E00
+	062 Compare X0, 0
+	063 JumpIfEqual {183}
+	064 Move W8, [X19+24]
+	065 NotImplemented "Instruction CMP not yet implemented."
+	066 Add X0, X22, 4
+	067 Move X1, X21
+	068 Move X2, X20
+	069 Move X3, X31
+	070 Move [X19+40], X23
+	071 Call Single.ToString, X0, X1, X2
+	072 Move X23, X0
+	073 Compare X0, 0
+	074 JumpIfEqual {81}
+	075 Move X8, [X19]
+	076 Move X0, X23
+	077 Move X1, [X8+64]
+	078 Call 0x1C17E00
+	079 Compare X0, 0
+	080 JumpIfEqual {183}
+	081 Move W8, [X19+24]
+	082 NotImplemented "Instruction CMP not yet implemented."
+	083 Add X0, X22, 20
+	084 Move X1, X21
+	085 Move X2, X20
+	086 Move X3, X31
+	087 Move [X19+48], X23
+	088 Call Single.ToString, X0, X1, X2
+	089 Move X23, X0
+	090 Compare X0, 0
+	091 JumpIfEqual {98}
+	092 Move X8, [X19]
+	093 Move X0, X23
+	094 Move X1, [X8+64]
+	095 Call 0x1C17E00
+	096 Compare X0, 0
+	097 JumpIfEqual {183}
+	098 Move W8, [X19+24]
+	099 NotImplemented "Instruction CMP not yet implemented."
+	100 Add X0, X22, 8
+	101 Move X1, X21
+	102 Move X2, X20
+	103 Move X3, X31
+	104 Move [X19+56], X23
+	105 Call Single.ToString, X0, X1, X2
+	106 Move X23, X0
+	107 Compare X0, 0
+	108 JumpIfEqual {115}
+	109 Move X8, [X19]
+	110 Move X0, X23
+	111 Move X1, [X8+64]
+	112 Call 0x1C17E00
+	113 Compare X0, 0
+	114 JumpIfEqual {183}
+	115 Move W8, [X19+24]
+	116 NotImplemented "Instruction CMP not yet implemented."
+	117 Add X0, X22, 24
+	118 Move X1, X21
+	119 Move X2, X20
+	120 Move X3, X31
+	121 Move [X19+64], X23
+	122 Call Single.ToString, X0, X1, X2
+	123 Move X23, X0
+	124 Compare X0, 0
+	125 JumpIfEqual {132}
+	126 Move X8, [X19]
+	127 Move X0, X23
+	128 Move X1, [X8+64]
+	129 Call 0x1C17E00
+	130 Compare X0, 0
+	131 JumpIfEqual {183}
+	132 Move W8, [X19+24]
+	133 NotImplemented "Instruction CMP not yet implemented."
+	134 Add X0, X22, 12
+	135 Move X1, X21
+	136 Move X2, X20
+	137 Move X3, X31
+	138 Move [X19+72], X23
+	139 Call Single.ToString, X0, X1, X2
+	140 Move X23, X0
+	141 Compare X0, 0
+	142 JumpIfEqual {149}
+	143 Move X8, [X19]
+	144 Move X0, X23
+	145 Move X1, [X8+64]
+	146 Call 0x1C17E00
+	147 Compare X0, 0
+	148 JumpIfEqual {183}
+	149 Move W8, [X19+24]
+	150 NotImplemented "Instruction CMP not yet implemented."
+	151 Add X0, X22, 28
+	152 Move X1, X21
+	153 Move X2, X20
+	154 Move X3, X31
+	155 Move [X19+80], X23
+	156 Call Single.ToString, X0, X1, X2
+	157 Move X20, X0
+	158 Compare X0, 0
+	159 JumpIfEqual {166}
+	160 Move X8, [X19]
+	161 Move X0, X20
+	162 Move X1, [X8+64]
+	163 Call 0x1C17E00
+	164 Compare X0, 0
+	165 JumpIfEqual {183}
+	166 Move W8, [X19+24]
+	167 NotImplemented "Instruction CMP not yet implemented."
+	168 Move X8, 0x8B6000
+	169 Move X8, [X8+4000]
+	170 Move [X19+88], X20
+	171 Move X1, X19
+	172 Move X20, [X31+32]
+	173 Move X19, [X31+40]
+	174 Move X0, [X8]
+	175 Move X22, [X31+16]
+	176 Move X21, [X31+24]
+	177 Move X2, X31
+	178 Move X30, [X31+48]
+	179 Move X23, [X31+56]
+	180 Call String.Format, X0, X1
+	181 Return X0
+	182 Call 0x1C17F28
+	183 Call 0x1C17F44
+	184 Move X1, X31
+	185 Call 0x1C17DEC
+	186 Call 0x1C17F20
+

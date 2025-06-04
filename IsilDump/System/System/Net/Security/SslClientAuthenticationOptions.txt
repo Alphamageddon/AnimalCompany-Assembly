@@ -1,0 +1,277 @@
+Type: System.Net.Security.SslClientAuthenticationOptions
+
+Method: System.Net.Security.LocalCertificateSelectionCallback get_LocalCertificateSelectionCallback()
+
+Disassembly:
+	0x036DEBEC MOV X2, X31
+	0x036DEBF0 BL 0x33C0FDC
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_LocalCertificateSelectionCallback(System.Net.Security.LocalCertificateSelectionCallback value)
+
+Disassembly:
+	0x036DEBF4 CBZ X0, 0x36DEC28
+	0x036DEBF8 LDR X1, [X22]
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.Net.Security.RemoteCertificateValidationCallback get_RemoteCertificateValidationCallback()
+
+Disassembly:
+	0x036DEBFC LDR X8, [X0]
+	0x036DEC00 CMP X8, X1
+
+ISIL:
+	001 Move X0, [X0+40]
+	002 Return X0
+
+Method: System.String get_TargetHost()
+
+Disassembly:
+	0x036DEC04 B.NE 0x36DEC24
+	0x036DEC08 LDR X8, [X21]
+
+ISIL:
+	001 Move X0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_TargetHost(System.String value)
+
+Disassembly:
+	0x036DEC0C LDR X8, [X8 + 0xB8]
+	0x036DEC10 STR X0, [X8]
+
+ISIL:
+	001 Move [X0+48], X1
+	002 Return 
+
+Method: System.Security.Cryptography.X509Certificates.X509CertificateCollection get_ClientCertificates()
+
+Disassembly:
+	0x036DEC14 LDR X1, [X22]
+	0x036DEC18 LDR X8, [X0]
+
+ISIL:
+	001 Move X0, [X0+56]
+	002 Return X0
+
+Method: System.Void set_ClientCertificates(System.Security.Cryptography.X509Certificates.X509CertificateCollection value)
+
+Disassembly:
+	0x036DEC1C CMP X8, X1
+	0x036DEC20 B.EQ 0x36DEC34
+
+ISIL:
+	001 Move [X0+56], X1
+	002 Return 
+
+Method: System.Void set_CertificateRevocationCheckMode(System.Security.Cryptography.X509Certificates.X509RevocationMode value)
+
+Disassembly:
+	0x036DEC24 BL 0x1C171E0
+	0x036DEC28 LDR X8, [X21]
+	0x036DEC2C LDR X8, [X8 + 0xB8]
+	0x036DEC30 STR X0, [X8]
+	0x036DEC34 LDP X20, X19, [X31 + 0x20]
+	0x036DEC38 LDP X22, X21, [X31 + 0x10]
+	0x036DEC3C LDR X30, [X31], #0x30
+	0x036DEC40 RET
+	0x036DEC44 BL 0x1C16F20
+	0x036DEC48 STP D11, D10, [X31 - 0x30]!
+	0x036DEC4C STP D9, D8, [X31 + 0x10]
+	0x036DEC50 STP X30, X19, [X31 + 0x20]
+	0x036DEC54 LDP S8, S9, [X0 + 0x50]
+	0x036DEC58 LDR V10, [X0 + 0x58]
+	0x036DEC5C MOV X1, X31
+	0x036DEC60 MOV X19, X0
+	0x036DEC64 BL 0x3C32E90
+	0x036DEC68 CBZ X0, 0x36DED08
+	0x036DEC6C MOV X1, X31
+	0x036DEC70 BL 0x3C3F58C
+	0x036DEC74 ADRP X8, 0xFFFFFFFFFD40B000
+	0x036DEC78 FSUB S0, S8, S0
+	0x036DEC7C FSUB S1, S9, S1
+	0x036DEC80 LDR V3, [X8 + 0xF20]
+	0x036DEC84 FSUB S2, S10, S2
+	0x036DEC88 FMUL S0, S0, S0
+	0x036DEC8C FMUL S1, S1, S1
+	0x036DEC90 FADD S0, S0, S1
+	0x036DEC94 FMUL S1, S2, S2
+	0x036DEC98 FADD S0, S1, S0
+	0x036DEC9C FCMP S0, S3
+	0x036DECA0 B.MI 0x36DECAC
+	0x036DECA4 MOVZ W0, 0x1
+	0x036DECA8 B 0x36DECF8
+	0x036DECAC LDP S10, S11, [X19 + 0x5C]
+	0x036DECB0 LDP S9, S8, [X19 + 0x64]
+	0x036DECB4 MOV X0, X19
+	0x036DECB8 MOV X1, X31
+	0x036DECBC BL 0x3C32E90
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Move X20, [X31+16]
+	006 Move X19, [X31+24]
+	007 Move [X0+20], W1
+	008 Move X30, [X31+32]
+	009 Return 
+	010 Move X0, 0xA63000
+	011 Move X0, [X0+1120]
+	012 Call 0x1C17D08
+	013 Move X19, X0
+	014 Move X0, 0xA63000
+	015 Move X0, [X0+1128]
+	016 Call 0x1C17D08
+	017 Move X1, X0
+	018 Move X0, X19
+	019 Move X2, X31
+	020 Call SR.Format, X0, X1
+	021 Move X19, X0
+	022 Move X0, 0xA1E000
+	023 Move X0, [X0+1400]
+	024 Call 0x1C17D08
+	025 Call 0x1C17F10
+	026 Move X20, X0
+	027 Move X0, 0xA20000
+	028 Move X0, [X0+3784]
+	029 Call 0x1C17D08
+	030 Move X2, X0
+	031 Move X0, X20
+	032 Move X1, X19
+	033 Move X3, X31
+	034 Call ArgumentException..ctor, X0, X1, X2
+	035 Move X0, 0xA63000
+	036 Move X0, [X0+1136]
+	037 Call 0x1C17D08
+	038 Move X1, X0
+	039 Move X0, X20
+	040 Call 0x1C17DEC
+
+Method: System.Void set_EncryptionPolicy(System.Net.Security.EncryptionPolicy value)
+
+Disassembly:
+	0x036DECC0 CBZ X0, 0x36DED08
+	0x036DECC4 MOV X1, X31
+	0x036DECC8 BL 0x3C3DEB4
+	0x036DECCC FMUL S0, S10, S0
+	0x036DECD0 FMUL S1, S11, S1
+	0x036DECD4 ADRP X8, 0xFFFFFFFFFD40C000
+	0x036DECD8 FADD S0, S0, S1
+	0x036DECDC LDR V1, [X8 + 0x1B4]
+	0x036DECE0 FMUL S2, S9, S2
+	0x036DECE4 FADD S0, S2, S0
+	0x036DECE8 FMUL S2, S8, S3
+	0x036DECEC FADD S0, S2, S0
+	0x036DECF0 FCMP S0, S1
+	0x036DECF4 CSET W0, LE
+	0x036DECF8 LDP X30, X19, [X31 + 0x20]
+	0x036DECFC LDP D9, D8, [X31 + 0x10]
+	0x036DED00 LDP D11, D10, [X31], #0x30
+	0x036DED04 RET
+	0x036DED08 BL 0x1C16F20
+	0x036DED0C STP X30, X19, [X31 - 0x10]!
+	0x036DED10 MOV X19, X0
+	0x036DED14 ADD X0, X0, 0x4C
+	0x036DED18 MOV X1, X31
+	0x036DED1C BL 0x3BE1F68
+	0x036DED20 MOV X0, X19
+	0x036DED24 LDP X30, X19, [X31], #0x10
+	0x036DED28 B 0x36DE700
+	0x036DED2C SUB X31, X31, 0x40
+	0x036DED30 STP X30, X21, [X31 + 0x20]
+	0x036DED34 STP X20, X19, [X31 + 0x30]
+	0x036DED38 ADRP X20, 0xD02000
+	0x036DED3C ADRP X19, 0xA62000
+	0x036DED40 LDRB W8, [X20 + 0xAED]
+	0x036DED44 LDR X19, [X19 + 0x4C0]
+	0x036DED48 TBNZ X8, 0x0, 0x36DED90
+	0x036DED4C ADRP X0, 0xA62000
+	0x036DED50 LDR X0, [X0 + 0x4F8]
+	0x036DED54 BL 0x1C16CF4
+	0x036DED58 ADRP X0, 0xA62000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Move X20, [X31+16]
+	006 Move X19, [X31+24]
+	007 Move [X0+16], W1
+	008 Move X30, [X31+32]
+	009 Return 
+	010 Move X0, 0xA63000
+	011 Move X0, [X0+1120]
+	012 Call 0x1C17D08
+	013 Move X19, X0
+	014 Move X0, 0xA63000
+	015 Move X0, [X0+1144]
+	016 Call 0x1C17D08
+	017 Move X1, X0
+	018 Move X0, X19
+	019 Move X2, X31
+	020 Call SR.Format, X0, X1
+	021 Move X19, X0
+	022 Move X0, 0xA1E000
+	023 Move X0, [X0+1400]
+	024 Call 0x1C17D08
+	025 Call 0x1C17F10
+	026 Move X20, X0
+	027 Move X0, 0xA20000
+	028 Move X0, [X0+3784]
+	029 Call 0x1C17D08
+	030 Move X2, X0
+	031 Move X0, X20
+	032 Move X1, X19
+	033 Move X3, X31
+	034 Call ArgumentException..ctor, X0, X1, X2
+	035 Move X0, 0xA63000
+	036 Move X0, [X0+1152]
+	037 Call 0x1C17D08
+	038 Move X1, X0
+	039 Move X0, X20
+	040 Call 0x1C17DEC
+
+Method: System.Security.Authentication.SslProtocols get_EnabledSslProtocols()
+
+Disassembly:
+	0x036DED5C LDR X0, [X0 + 0x500]
+	0x036DED60 BL 0x1C16CF4
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_EnabledSslProtocols(System.Security.Authentication.SslProtocols value)
+
+Disassembly:
+	0x036DED64 ADRP X0, 0xA62000
+	0x036DED68 LDR X0, [X0 + 0x508]
+
+ISIL:
+	001 Move [X0+24], W1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x036DED6C BL 0x1C16CF4
+	0x036DED70 ADRP X0, 0xA62000
+	0x036DED74 LDR X0, [X0 + 0x510]
+	0x036DED78 BL 0x1C16CF4
+
+ISIL:
+	001 Move W8, 1
+	002 Move X1, X31
+	003 Move [X0+28], W8
+	004 Call Object..ctor, X0
+	005 Return 
+

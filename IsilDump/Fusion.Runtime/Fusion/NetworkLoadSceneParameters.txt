@@ -1,0 +1,433 @@
+Type: Fusion.NetworkLoadSceneParameters
+
+Method: System.Void .ctor(Fusion.NetworkSceneLoadId loadId, Fusion.NetworkLoadSceneParametersFlags flags)
+
+Disassembly:
+	0x01EBD420 STR X1, [X0 + 0x10]
+	0x01EBD424 ADD W8, W8, 0x1
+	0x01EBD428 STR W8, [X0]
+
+ISIL:
+	001 Move [X0], W1
+	002 Move [X0+1], W2
+	003 Return 
+
+Method: UnityEngine.SceneManagement.LoadSceneMode get_LoadSceneMode()
+
+Disassembly:
+	0x01EBD42C LDR X30, [X31], #0x10
+	0x01EBD430 RET
+	0x01EBD434 BL 0x1C16F20
+	0x01EBD438 STR X30, [X31 - 0x10]!
+
+ISIL:
+	001 Move W8, [X0+1]
+	002 NotImplemented "Instruction ORN not yet implemented."
+	003 And W0, W8, 1
+	004 Return X0
+
+Method: UnityEngine.SceneManagement.LocalPhysicsMode get_LocalPhysicsMode()
+
+Disassembly:
+	0x01EBD43C LDR X8, [X0 + 0x8]
+	0x01EBD440 CMP X8, X2
+	0x01EBD444 B.EQ 0x1EBD480
+
+ISIL:
+	001 Move W8, [X0+1]
+	002 Move W0, W8
+	003 ShiftRight W0, 1
+	004 And W0, W0, 3
+	005 Return X0
+
+Method: UnityEngine.SceneManagement.LoadSceneParameters get_LoadSceneParameters()
+
+Disassembly:
+	0x01EBD448 CBZ X1, 0x1EBD488
+	0x01EBD44C STR X2, [X1 + 0x18]
+	0x01EBD450 CBZ X2, 0x1EBD488
+	0x01EBD454 LDR X8, [X2 + 0x10]
+	0x01EBD458 STR X8, [X1 + 0x10]
+	0x01EBD45C LDR X8, [X2 + 0x10]
+	0x01EBD460 CBZ X8, 0x1EBD488
+	0x01EBD464 STR X1, [X8 + 0x18]
+	0x01EBD468 STR X1, [X2 + 0x10]
+	0x01EBD46C LDR W8, [X0]
+	0x01EBD470 ADD W8, W8, 0x1
+	0x01EBD474 STR W8, [X0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W8, [X0+1]
+	003 Add X0, X31, 8
+	004 Move X3, X31
+	005 Move [X31+8], X31
+	006 NotImplemented "Instruction ORN not yet implemented."
+	007 And W1, W9, 1
+	008 Move W2, W8
+	009 ShiftRight W2, 1
+	010 And W2, W2, 3
+	011 Call LoadSceneParameters..ctor, X0, X1, X2
+	012 Move X0, [X31+8]
+	013 Move X30, [X31+16]
+	014 Return X0
+
+Method: System.Boolean get_IsActiveOnLoad()
+
+Disassembly:
+	0x01EBD478 LDR X30, [X31], #0x10
+	0x01EBD47C RET
+	0x01EBD480 LDR X30, [X31], #0x10
+
+ISIL:
+	001 Move W8, [X0+1]
+	002 Move W0, W8
+	003 ShiftRight W0, 3
+	004 And W0, W0, 7
+	005 Return X0
+
+Method: System.Boolean get_IsSingleLoad()
+
+Disassembly:
+	0x01EBD484 B 0x1EBD3B0
+	0x01EBD488 BL 0x1C16F20
+	0x01EBD48C STR X30, [X31 - 0x10]!
+
+ISIL:
+	001 Move W8, [X0+1]
+	002 And W0, W8, 1
+	003 Return X0
+
+Method: System.Boolean get_IsLocalPhysics2D()
+
+Disassembly:
+	0x01EBD490 LDR X8, [X0 + 0x10]
+	0x01EBD494 CMP X8, X2
+	0x01EBD498 B.EQ 0x1EBD4D0
+
+ISIL:
+	001 Move W8, [X0+1]
+	002 Move W0, W8
+	003 ShiftRight W0, 1
+	004 And W0, W0, 1
+	005 Return X0
+
+Method: System.Boolean get_IsLocalPhysics3D()
+
+Disassembly:
+	0x01EBD49C CBZ X2, 0x1EBD4D8
+	0x01EBD4A0 CBZ X1, 0x1EBD4D8
+	0x01EBD4A4 LDR X8, [X2 + 0x18]
+
+ISIL:
+	001 Move W8, [X0+1]
+	002 Move W0, W8
+	003 ShiftRight W0, 2
+	004 And W0, W0, 3
+	005 Return X0
+
+Method: System.Boolean Equals(Fusion.NetworkLoadSceneParameters other)
+
+Disassembly:
+	0x01EBD4A8 STP X2, X8, [X1 + 0x10]
+	0x01EBD4AC LDR X8, [X2 + 0x18]
+	0x01EBD4B0 CBZ X8, 0x1EBD4D8
+	0x01EBD4B4 STR X1, [X8 + 0x10]
+	0x01EBD4B8 STR X1, [X2 + 0x18]
+	0x01EBD4BC LDR W8, [X0]
+	0x01EBD4C0 ADD W8, W8, 0x1
+	0x01EBD4C4 STR W8, [X0]
+	0x01EBD4C8 LDR X30, [X31], #0x10
+	0x01EBD4CC RET
+
+ISIL:
+	001 Move W8, [X0+1]
+	002 Move X9, X1
+	003 ShiftRight X9, 8
+	004 And X9, X9, 0x7FFFFFFF
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Move W8, [X0]
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Return X0
+	010 Move W0, W31
+	011 Return X0
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x01EBD4D0 LDR X30, [X31], #0x10
+	0x01EBD4D4 B 0x1EBD3F4
+	0x01EBD4D8 BL 0x1C16F20
+	0x01EBD4DC STP X30, X19, [X31 - 0x10]!
+	0x01EBD4E0 LDR X19, [X0 + 0x8]
+	0x01EBD4E4 MOV X1, X19
+	0x01EBD4E8 BL 0x1EBD4F8
+	0x01EBD4EC MOV X0, X19
+	0x01EBD4F0 LDP X30, X19, [X31], #0x10
+	0x01EBD4F4 RET
+	0x01EBD4F8 STR X30, [X31 - 0x10]!
+	0x01EBD4FC CBZ X1, 0x1EBD55C
+	0x01EBD500 MOV X8, X1
+	0x01EBD504 LDR X10, [X8 + 0x10]!
+	0x01EBD508 CBZ X10, 0x1EBD514
+	0x01EBD50C LDR X9, [X1 + 0x18]
+	0x01EBD510 STR X9, [X10 + 0x18]
+	0x01EBD514 LDR X9, [X1 + 0x18]
+	0x01EBD518 CBZ X9, 0x1EBD520
+	0x01EBD51C STR X10, [X9 + 0x10]
+	0x01EBD520 LDR X10, [X0 + 0x10]
+	0x01EBD524 CMP X10, X1
+	0x01EBD528 B.NE 0x1EBD534
+	0x01EBD52C LDR X10, [X8]
+	0x01EBD530 STR X10, [X0 + 0x10]
+	0x01EBD534 LDR X10, [X0 + 0x8]
+	0x01EBD538 CMP X10, X1
+	0x01EBD53C B.NE 0x1EBD544
+	0x01EBD540 STR X9, [X0 + 0x8]
+	0x01EBD544 STP X31, X31, [X8]
+	0x01EBD548 LDR W8, [X0]
+	0x01EBD54C SUB W8, W8, 0x1
+	0x01EBD550 STR W8, [X0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x251D000
+	006 Move W8, [X21+1070]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x2243000
+	014 Move X0, [X0+1904]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+1070], W8
+	018 Compare X20, 0
+	019 JumpIfEqual {33}
+	020 Move X8, 0x2243000
+	021 Move X8, [X8+1904]
+	022 Move X9, [X20]
+	023 Move X8, [X8]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move X0, X20
+	026 Call 0x1C17E08
+	027 NotImplemented "Instruction LDRH not yet implemented."
+	028 Move W9, [X19+1]
+	029 NotImplemented "Instruction CMP not yet implemented."
+	030 Move W9, [X19]
+	031 NotImplemented "Instruction CMP not yet implemented."
+	032 NotImplemented "Instruction CSET not yet implemented."
+	033 Move W0, W31
+	034 Move X20, [X31+16]
+	035 Move X19, [X31+24]
+	036 Move X30, [X31+32]
+	037 Move X21, [X31+40]
+	038 Return X0
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x01EBD554 LDR X30, [X31], #0x10
+	0x01EBD558 RET
+	0x01EBD55C BL 0x1C16F20
+	0x01EBD560 ADD X9, X0, 0x8
+	0x01EBD564 LDR X8, [X9]
+	0x01EBD568 CBZ X8, 0x1EBD578
+	0x01EBD56C CMP X8, X1
+	0x01EBD570 ADD X9, X8, 0x18
+	0x01EBD574 B.NE 0x1EBD564
+	0x01EBD578 CMP X8, 0x0
+	0x01EBD57C CSET W0, NE
+	0x01EBD580 RET
+	0x01EBD584 LDR X9, [X0 + 0x10]
+	0x01EBD588 LDR V0, [X0]
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move W8, [X0]
+	005 Move W19, [X0+1]
+	006 Add X0, X31, 12
+	007 Move X1, X31
+	008 Move [X31+12], W8
+	009 Call Byte.GetHashCode, X0
+	010 Move W8, 397
+	011 Multiply W8, W19, W8
+	012 Move X30, [X31+16]
+	013 Move X19, [X31+24]
+	014 Xor W0, W0, W8
+	015 Add X31, X31, 32
+	016 Return X0
+
+Method: System.Boolean op_Equality(Fusion.NetworkLoadSceneParameters left, Fusion.NetworkLoadSceneParameters right)
+
+Disassembly:
+	0x01EBD58C STR X9, [X8 + 0x10]
+	0x01EBD590 STR V0, [X8]
+	0x01EBD594 STR W31, [X0]
+	0x01EBD598 STP X31, X31, [X0 + 0x8]
+	0x01EBD59C RET
+	0x01EBD5A0 STR X30, [X31 - 0x10]!
+	0x01EBD5A4 LDR W9, [X1]
+	0x01EBD5A8 CBZ W9, 0x1EBD5FC
+	0x01EBD5AC LDR W8, [X0]
+
+ISIL:
+	001 Move W9, W0
+	002 ShiftRight W9, 8
+	003 And W9, W9, 0x7FFF
+	004 Move X10, X1
+	005 ShiftRight X10, 8
+	006 And X10, X10, 0x7FFFFFFF
+	007 And W8, W0, 255
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 NotImplemented "Instruction CSET not yet implemented."
+	010 NotImplemented "Instruction CMP not yet implemented."
+	011 NotImplemented "Instruction CSET not yet implemented."
+	012 And W0, W8, W9
+	013 Return X0
+
+Method: System.Boolean op_Inequality(Fusion.NetworkLoadSceneParameters left, Fusion.NetworkLoadSceneParameters right)
+
+Disassembly:
+	0x01EBD5B0 CBZ W8, 0x1EBD5E8
+	0x01EBD5B4 LDR X9, [X0 + 0x10]
+	0x01EBD5B8 CBZ X9, 0x1EBD604
+	0x01EBD5BC LDR X10, [X1 + 0x8]
+	0x01EBD5C0 STR X10, [X9 + 0x18]
+	0x01EBD5C4 LDR X10, [X1 + 0x8]
+	0x01EBD5C8 CBZ X10, 0x1EBD604
+	0x01EBD5CC STR X9, [X10 + 0x10]
+	0x01EBD5D0 LDR X9, [X1 + 0x10]
+
+ISIL:
+	001 Move W9, W0
+	002 ShiftRight W9, 8
+	003 And W9, W9, 0x7FFF
+	004 Move X10, X1
+	005 ShiftRight X10, 8
+	006 And X10, X10, 0x7FFFFFFF
+	007 And W8, W0, 255
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 NotImplemented "Instruction CSET not yet implemented."
+	010 NotImplemented "Instruction CMP not yet implemented."
+	011 NotImplemented "Instruction CSET not yet implemented."
+	012 Or W0, W8, W9
+	013 Return X0
+
+Method: System.String ToString()
+
+Disassembly:
+	0x01EBD5D4 STR X9, [X0 + 0x10]
+	0x01EBD5D8 LDR W9, [X1]
+	0x01EBD5DC ADD W8, W9, W8
+	0x01EBD5E0 STR W8, [X0]
+	0x01EBD5E4 B 0x1EBD5FC
+	0x01EBD5E8 STR W9, [X0]
+	0x01EBD5EC LDR X8, [X1 + 0x8]
+	0x01EBD5F0 STR X8, [X0 + 0x8]
+	0x01EBD5F4 LDR X8, [X1 + 0x10]
+	0x01EBD5F8 STR X8, [X0 + 0x10]
+	0x01EBD5FC LDR X30, [X31], #0x10
+	0x01EBD600 RET
+	0x01EBD604 BL 0x1C16F20
+	0x01EBD608 STR X30, [X31 - 0x10]!
+	0x01EBD60C MOV X8, X0
+	0x01EBD610 LDR X9, [X8 + 0x8]!
+	0x01EBD614 CBZ X1, 0x1EBD648
+	0x01EBD618 STP X31, X9, [X1 + 0x10]
+	0x01EBD61C CBZ X9, 0x1EBD628
+	0x01EBD620 STR X1, [X9 + 0x10]
+	0x01EBD624 B 0x1EBD630
+	0x01EBD628 ADD X8, X0, 0x10
+	0x01EBD62C STR X1, [X0 + 0x8]
+	0x01EBD630 STR X1, [X8]
+	0x01EBD634 LDR W8, [X0]
+	0x01EBD638 ADD W8, W8, 0x1
+	0x01EBD63C STR W8, [X0]
+	0x01EBD640 LDR X30, [X31], #0x10
+	0x01EBD644 RET
+	0x01EBD648 BL 0x1C16F20
+	0x01EBD64C STR X30, [X31 - 0x10]!
+	0x01EBD650 CBZ X1, 0x1EBD68C
+	0x01EBD654 STR X31, [X1 + 0x18]
+	0x01EBD658 LDR X8, [X0 + 0x10]
+	0x01EBD65C ADD X9, X0, 0x8
+	0x01EBD660 ADD X10, X8, 0x18
+	0x01EBD664 CMP X8, 0x0
+	0x01EBD668 STR X8, [X1 + 0x10]
+	0x01EBD66C CSEL X8, X9, X10, EQ
+	0x01EBD670 STR X1, [X8]
+	0x01EBD674 LDR W8, [X0]
+	0x01EBD678 STR X1, [X0 + 0x10]
+	0x01EBD67C ADD W8, W8, 0x1
+	0x01EBD680 STR W8, [X0]
+	0x01EBD684 LDR X30, [X31], #0x10
+	0x01EBD688 RET
+	0x01EBD68C BL 0x1C16F20
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+16], X30
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X23, 0x251D000
+	009 Move X20, 0x2243000
+	010 Move X22, 0x2243000
+	011 Move X21, 0x2243000
+	012 Move W8, [X23+1071]
+	013 Move X20, [X20+1912]
+	014 Move X22, [X22+1896]
+	015 Move X21, [X21+1920]
+	016 Move X19, X0
+	017 Move TEMP, X8
+	018 And TEMP, TEMP, 1
+	019 Compare TEMP, 1
+	020 JumpIfEqual {32}
+	021 Move X0, 0x2243000
+	022 Move X0, [X0+1912]
+	023 Call 0x1C17CF4
+	024 Move X0, 0x2243000
+	025 Move X0, [X0+1896]
+	026 Call 0x1C17CF4
+	027 Move X0, 0x2243000
+	028 Move X0, [X0+1920]
+	029 Call 0x1C17CF4
+	030 Move W8, 1
+	031 Move [X23+1071], W8
+	032 Move W8, [X19+1]
+	033 Move X0, [X20]
+	034 Add X1, X31, 12
+	035 Move [X31+12], W8
+	036 Call 0x1C17E04
+	037 Move X20, X0
+	038 Move W8, [X19]
+	039 Move X0, [X22]
+	040 Add X1, X31, 8
+	041 Move [X31+8], W8
+	042 Call 0x1C17E04
+	043 Move X8, [X21]
+	044 Move X2, X0
+	045 Move X1, X20
+	046 Move X3, X31
+	047 Move X0, X8
+	048 Call String.Format, X0, X1, X2
+	049 Move X20, [X31+48]
+	050 Move X19, [X31+56]
+	051 Move X22, [X31+32]
+	052 Move X21, [X31+40]
+	053 Move X30, [X31+16]
+	054 Move X23, [X31+24]
+	055 Add X31, X31, 64
+	056 Return X0
+

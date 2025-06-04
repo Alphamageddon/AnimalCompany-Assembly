@@ -1,0 +1,231 @@
+Type: TMPro.TweenRunner`1/<Start>d__2
+
+Method: System.Void .ctor(System.Int32 <>1__state)
+
+Disassembly:
+	0x02978A24 MOV X0, X19
+	0x02978A28 MOV X1, X21
+	0x02978A2C BL 0x1C16D18
+	0x02978A30 STR X31, [X0]
+	0x02978A34 LDR X8, [X20]
+	0x02978A38 MOVZ W1, 0x4
+	0x02978A3C LDR X8, [X8 + 0xC0]
+	0x02978A40 LDR X8, [X8]
+	0x02978A44 LDR X20, [X8 + 0x80]
+	0x02978A48 MOV X0, X20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void System.IDisposable.Dispose()
+
+Disassembly:
+	0x02978A4C BL 0x1C16D14
+
+ISIL:
+	001 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x02978A50 MOV X0, X19
+	0x02978A54 MOV X1, X20
+	0x02978A58 BL 0x1C16D18
+	0x02978A5C MOV X8, X0
+	0x02978A60 MOVZ W0, 0x1
+	0x02978A64 STR W0, [X8]
+	0x02978A68 B 0x2978AD4
+	0x02978A6C LDR X21, [X8 + 0x8]
+	0x02978A70 LDRB W9, [X21 + 0x135]
+	0x02978A74 TBNZ X9, 0x0, 0x2978A8C
+	0x02978A78 MOV X0, X21
+	0x02978A7C BL 0x1C5C684
+	0x02978A80 LDR X8, [X20]
+	0x02978A84 MOV X21, X0
+	0x02978A88 LDR X8, [X8 + 0xC0]
+	0x02978A8C LDR X9, [X8]
+	0x02978A90 LDR X20, [X8 + 0x28]
+	0x02978A94 MOV X0, X19
+	0x02978A98 LDR X9, [X9 + 0x80]
+	0x02978A9C ADD X1, X9, 0x40
+	0x02978AA0 BL 0x1C16D18
+	0x02978AA4 MOV X3, X0
+	0x02978AA8 MOVZ W8, 0x3F800000
+	0x02978AAC SUB X9, X29, 0x1C
+	0x02978AB0 SUB X4, X29, 0x28
+	0x02978AB4 SUB X5, X29, 0x1C
+	0x02978AB8 MOV X0, X21
+	0x02978ABC MOV X1, X20
+	0x02978AC0 MOV X2, X25
+	0x02978AC4 STUR W8, [X29 - 0x1C]
+	0x02978AC8 STUR X9, [X29 - 0x28]
+	0x02978ACC BL 0x1C17728
+	0x02978AD0 MOV W0, W31
+	0x02978AD4 LDR X8, [X28 + 0x28]
+	0x02978AD8 LDUR X9, [X29 - 0x18]
+	0x02978ADC CMP X8, X9
+	0x02978AE0 B.NE 0x2978B24
+	0x02978AE4 SUB X31, X29, 0x10
+	0x02978AE8 LDP X20, X19, [X31 + 0x60]
+	0x02978AEC LDP X22, X21, [X31 + 0x50]
+	0x02978AF0 LDP X24, X23, [X31 + 0x40]
+	0x02978AF4 LDP X26, X25, [X31 + 0x30]
+	0x02978AF8 LDP X28, X27, [X31 + 0x20]
+	0x02978AFC LDP X29, X30, [X31 + 0x10]
+	0x02978B00 LDR V8, [X31], #0x70
+	0x02978B04 RET
+	0x02978B08 MOV W0, W31
+	0x02978B0C MOV X28, X21
+	0x02978B10 B 0x2978AD4
+	0x02978B14 MOV X0, X31
+	0x02978B18 BL 0x3C3C714
+	0x02978B1C CBNZ X19, 0x29788D0
+	0x02978B20 BL 0x1C16F20
+	0x02978B24 BL 0x3EB1B20
+	0x02978B28 STR X30, [X31 - 0x10]!
+	0x02978B2C LDR X8, [X1 + 0x20]
+	0x02978B30 LDR X8, [X8 + 0xC0]
+	0x02978B34 LDR X8, [X8]
+	0x02978B38 LDR X8, [X8 + 0x80]
+	0x02978B3C ADD X1, X8, 0x20
+	0x02978B40 BL 0x1C16D18
+	0x02978B44 LDR X0, [X0]
+	0x02978B48 LDR X30, [X31], #0x10
+
+ISIL:
+	001 Move [X31-48], D8
+	002 Move [X31+16], X30
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move W8, [X0+16]
+	007 Move X19, X0
+	008 Move X20, X1
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Compare W8, 0
+	011 JumpIfNotEqual {46}
+	012 Move TEMP, 0
+	013 Not TEMP
+	014 Move W8, TEMP
+	015 Move [X19+16], W8
+	016 Move X8, [X20+32]
+	017 Add X0, X19, 32
+	018 Move X8, [X8+192]
+	019 Move X1, [X8+16]
+	020 Call FloatTween.ValidTarget, X0
+	021 Move TEMP, X0
+	022 And TEMP, TEMP, 1
+	023 Compare TEMP, 1
+	024 JumpIfNotEqual {46}
+	025 Move [X19+56], W31
+	026 Move S8, W31
+	027 Move V8, [X19+56]
+	028 Move TEMP, 0
+	029 Not TEMP
+	030 Move W8, TEMP
+	031 Move [X19+16], W8
+	032 Move V0, [X19+48]
+	033 Add X21, X19, 32
+	034 NotImplemented "Instruction FCMP not yet implemented."
+	035 Move W8, [X19+52]
+	036 Compare W8, 0
+	037 JumpIfEqual {47}
+	038 Move X0, X31
+	039 Call Time.get_unscaledDeltaTime
+	040 Move X8, [X20+32]
+	041 Move S0, 1
+	042 Move X0, X21
+	043 Move X8, [X8+192]
+	044 Move X1, [X8+40]
+	045 Call FloatTween.TweenValue, X0, V0
+	046 Move W0, W31
+	047 Move X0, X31
+	048 Call Time.get_deltaTime
+	049 Add S0, S8, S0
+	050 Move [X19+56], S0
+	051 Move X8, [X20+32]
+	052 Move V1, [X19+48]
+	053 Move X0, X21
+	054 Move X8, [X8+192]
+	055 NotImplemented "Instruction FDIV not yet implemented."
+	056 Move S1, 1
+	057 NotImplemented "Instruction FMIN not yet implemented."
+	058 Move X1, [X8+40]
+	059 NotImplemented "Instruction FCMP not yet implemented."
+	060 Move S0, W31
+	061 NotImplemented "Instruction FCSEL not yet implemented."
+	062 Call FloatTween.TweenValue, X0, V0
+	063 Move W0, 1
+	064 Move [X19+24], X31
+	065 Move [X19+16], W0
+	066 Move X20, [X31+32]
+	067 Move X19, [X31+40]
+	068 Move X30, [X31+16]
+	069 Move X21, [X31+24]
+	070 Move V8, [X31+48]
+	071 Return X0
+
+Method: System.Object System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+
+Disassembly:
+	0x02978B4C RET
+	0x02978B50 STR X30, [X31 - 0x20]!
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void System.Collections.IEnumerator.Reset()
+
+Disassembly:
+	0x02978B54 STP X20, X19, [X31 + 0x10]
+	0x02978B58 ADRP X0, 0x177B000
+	0x02978B5C LDR X0, [X0 + 0xB40]
+	0x02978B60 MOV X19, X1
+	0x02978B64 BL 0x1C16D08
+	0x02978B68 BL 0x1C16F10
+	0x02978B6C MOV X1, X31
+	0x02978B70 MOV X20, X0
+	0x02978B74 BL 0x3380310
+	0x02978B78 MOV X0, X20
+	0x02978B7C MOV X1, X19
+	0x02978B80 BL 0x1C16DEC
+	0x02978B84 STR X30, [X31 - 0x10]!
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X0, 0x177C000
+	005 Move X0, [X0+2880]
+	006 Move X19, X1
+	007 Call 0x1C17D08
+	008 Call 0x1C17F10
+	009 Move X1, X31
+	010 Move X20, X0
+	011 Call NotSupportedException..ctor, X0
+	012 Move X0, X20
+	013 Move X1, X19
+	014 Call 0x1C17DEC
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x02978B88 LDR X8, [X1 + 0x20]
+	0x02978B8C LDR X8, [X8 + 0xC0]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+

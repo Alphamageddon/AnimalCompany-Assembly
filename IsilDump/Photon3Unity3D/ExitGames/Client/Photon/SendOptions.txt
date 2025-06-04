@@ -1,0 +1,83 @@
+Type: ExitGames.Client.Photon.SendOptions
+
+Method: System.Boolean get_Reliability()
+
+Disassembly:
+	0x03517098 MOV X1, X25
+	0x0351709C MOV X3, X26
+	0x035170A0 MOV X4, X31
+	0x035170A4 BL 0x32277C4
+
+ISIL:
+	001 Move W8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Void set_Reliability(System.Boolean value)
+
+Disassembly:
+	0x035170A8 B 0x3517114
+	0x035170AC MOV X23, X31
+	0x035170B0 ADRP X0, 0xC04000
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0], W8
+	003 Return 
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x035170B4 LDR X0, [X0 + 0x8B0]
+	0x035170B8 BL 0x1C16D08
+	0x035170BC MOV X2, X0
+	0x035170C0 MOV X0, X28
+	0x035170C4 MOV X1, X23
+	0x035170C8 MOV X3, X31
+	0x035170CC BL 0x32274B8
+	0x035170D0 MOV X28, X0
+	0x035170D4 ADRP X0, 0xC1D000
+	0x035170D8 LDR X0, [X0 + 0x498]
+	0x035170DC BL 0x1C16D08
+	0x035170E0 MOV X23, X0
+	0x035170E4 CBZ X25, 0x3517104
+	0x035170E8 CBZ X24, 0x351729C
+	0x035170EC LDR X8, [X24]
+	0x035170F0 MOV X0, X24
+	0x035170F4 LDP X9, X1, [X8 + 0x168]
+	0x035170F8 BLR X9
+	0x035170FC MOV X1, X0
+	0x03517100 B 0x3517108
+	0x03517104 MOV X1, X31
+	0x03517108 MOV X0, X23
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xEC9000
+	005 Move X19, 0xBE6000
+	006 Move W8, [X20+2832]
+	007 Move X19, [X19+1352]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xBE6000
+	013 Move X0, [X0+1352]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+2832], W8
+	017 Move X8, [X19]
+	018 Move W9, 1
+	019 Move X8, [X8+184]
+	020 Move [X8], X9
+	021 Move X8, [X19]
+	022 Move X20, [X31+16]
+	023 Move X19, [X31+24]
+	024 Move X8, [X8+184]
+	025 Move [X8+8], X31
+	026 Move X30, [X31+32]
+	027 Return 
+

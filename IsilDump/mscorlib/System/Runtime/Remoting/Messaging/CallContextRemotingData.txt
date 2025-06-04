@@ -1,0 +1,113 @@
+Type: System.Runtime.Remoting.Messaging.CallContextRemotingData
+
+Method: System.String get_LogicalCallID()
+
+Disassembly:
+	0x032939D0 LDP X22, X21, [X31 + 0x20]
+	0x032939D4 LDP X24, X23, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_LogicalCallID(System.String value)
+
+Disassembly:
+	0x032939D8 LDR X30, [X31], #0x40
+	0x032939DC RET
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Boolean get_HasInfo()
+
+Disassembly:
+	0x03293888 LDR W1, [X21 + 0x18]
+	0x0329388C LDR X0, [X23]
+	0x03293890 BL 0x1C16D6C
+	0x03293894 STR X0, [X19 + 0x28]
+
+ISIL:
+	001 Move X8, [X0+16]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Object Clone()
+
+Disassembly:
+	0x03293528 LDR X8, [X22]
+	0x0329352C MOV X1, X0
+	0x03293530 MOV X0, X22
+	0x03293534 LDR X9, [X8 + 0x3D8]
+	0x03293538 LDR X2, [X8 + 0x3E0]
+	0x0329353C BLR X9
+	0x03293540 CBZ X0, 0x3293648
+	0x03293544 LDR X8, [X0]
+	0x03293548 MOV X20, X0
+	0x0329354C LDR X9, [X8 + 0x248]
+	0x03293550 LDR X1, [X8 + 0x250]
+	0x03293554 BLR X9
+	0x03293558 LDR X8, [X19 + 0x28]
+	0x0329355C CBZ X8, 0x3293648
+	0x03293560 MOV X22, X0
+	0x03293564 CBZ X0, 0x3293648
+	0x03293568 LDR W8, [X8 + 0x18]
+	0x0329356C LDR W9, [X22 + 0x18]
+	0x03293570 CMP W8, W9
+	0x03293574 B.NE 0x329360C
+	0x03293578 CMP W8, 0x1
+	0x0329357C B.LT 0x32935F8
+	0x03293580 MOVZ W24, 0x4
+	0x03293584 SUB X25, X24, 0x4
+	0x03293588 CMP W25, W8
+	0x0329358C B.CS 0x329364C
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x114A000
+	006 Move X21, 0xE92000
+	007 Move W8, [X20+1754]
+	008 Move X21, [X21+1896]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xE92000
+	015 Move X0, [X0+1896]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1754], W8
+	019 Move X0, [X21]
+	020 Call 0x1C17F10
+	021 Move X1, X31
+	022 Move X20, X0
+	023 Call Object..ctor, X0
+	024 Compare X20, 0
+	025 JumpIfEqual {34}
+	026 Move X8, [X19+16]
+	027 Move X0, X20
+	028 Move [X20+16], X8
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X30, [X31+32]
+	032 Move X21, [X31+40]
+	033 Return X0
+	034 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x032939E0 BL 0x1C16F20
+	0x032939E4 STR X30, [X31 - 0x30]!
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

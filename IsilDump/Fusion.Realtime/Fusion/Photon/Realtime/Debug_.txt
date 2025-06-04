@@ -1,0 +1,46 @@
+Type: Fusion.Photon.Realtime.Debug_
+
+Method: System.Void Log(System.String msg)
+
+Disassembly:
+	0x01E48338 CBZ W8, 0x1E482E4
+	0x01E4833C LDR X0, [X19 + 0x20]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Log.Info, X0
+	003 Return 
+
+Method: System.Void LogWarning(System.String msg)
+
+Disassembly:
+	0x01E48340 CBZ X0, 0x1E48390
+	0x01E48344 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Log.Warn, X0
+	003 Return 
+
+Method: System.Void LogError(System.String msg)
+
+Disassembly:
+	0x01E48348 MOVZ W1, 0x11
+	0x01E4834C LDR X30, [X31], #0x20
+
+ISIL:
+	001 Move X1, X31
+	002 Call Log.Error, X0
+	003 Return 
+
+Method: System.Void LogException(System.Exception ex)
+
+Disassembly:
+	0x01E48350 B 0x1E47DC0
+	0x01E48354 LDR W9, [X19 + 0x30]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Log.Error, X0
+	003 Return 
+

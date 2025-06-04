@@ -1,0 +1,163 @@
+Type: UnityEngine.Rendering.Universal.Renderer2D/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x03A26BE8 BL 0x3C32E90
+	0x03A26BEC CBZ X0, 0x3A26D20
+	0x03A26BF0 MOV X1, X31
+	0x03A26BF4 BL 0x3C40EA8
+	0x03A26BF8 MOV X0, X19
+	0x03A26BFC MOV X1, X31
+	0x03A26C00 MOV V11.16B, V1.16B
+	0x03A26C04 BL 0x3C32E90
+	0x03A26C08 CBZ X0, 0x3A26D20
+	0x03A26C0C MOV X1, X31
+	0x03A26C10 BL 0x3C3F58C
+	0x03A26C14 MOV X0, X19
+	0x03A26C18 MOV X1, X31
+	0x03A26C1C MOV V12.16B, V0.16B
+	0x03A26C20 BL 0x3C32E90
+	0x03A26C24 CBZ X0, 0x3A26D20
+	0x03A26C28 FMOV S0, 1
+	0x03A26C2C MOV X1, X31
+	0x03A26C30 FDIV S13, S0, S10
+	0x03A26C34 FDIV S14, S0, S11
+	0x03A26C38 BL 0x3C3F58C
+	0x03A26C3C FNEG S0, S12
+	0x03A26C40 FNEG S1, S1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x9BD000
+	005 Move X20, 0x72F000
+	006 Move W8, [X19+36]
+	007 Move X20, [X20+2424]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x72F000
+	013 Move X0, [X0+2424]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+36], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03A26C44 FMUL S10, S13, S0
+	0x03A26C48 FMUL S11, S14, S1
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <Setup>b__44_1(UnityEngine.Rendering.Universal.ScriptableRenderPass x)
+
+Disassembly:
+	0x03A26C4C FMOV S12, W31
+	0x03A26C50 LDR X8, [X19 + 0x40]
+	0x03A26C54 CBZ X8, 0x3A26C60
+	0x03A26C58 LDR X8, [X8 + 0x18]
+	0x03A26C5C CBNZ X8, 0x3A26CFC
+	0x03A26C60 ADRP X8, 0x6CF000
+	0x03A26C64 LDR X8, [X8 + 0x9B0]
+	0x03A26C68 MOVZ W1, 0x4
+	0x03A26C6C LDR X0, [X8]
+	0x03A26C70 BL 0x1C16D6C
+	0x03A26C74 CBZ X0, 0x3A26D20
+	0x03A26C78 LDR W8, [X0 + 0x18]
+	0x03A26C7C LDR V5, [X31]
+	0x03A26C80 CBZ W8, 0x3A26D24
+	0x03A26C84 MOV S2, V5.S[1]
+	0x03A26C88 FSUB S0, S8, S5
+	0x03A26C8C FMOV S1, W31
+	0x03A26C90 FSUB S3, S9, S2
+	0x03A26C94 FMUL S4, S0, S13
+	0x03A26C98 FADD S0, S12, S1
+	0x03A26C9C FMUL S1, S3, S14
+	0x03A26CA0 CMP W8, 0x1
+	0x03A26CA4 FADD S3, S4, S10
+	0x03A26CA8 FADD S1, S1, S11
+	0x03A26CAC STP S3, S1, [X0 + 0x20]
+	0x03A26CB0 STR S0, [X0 + 0x28]
+	0x03A26CB4 B.EQ 0x3A26D24
+	0x03A26CB8 FADD S2, S9, S2
+	0x03A26CBC FMUL S2, S2, S14
+	0x03A26CC0 CMP W8, 0x2
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x9BD000
+	005 Move W8, [X20+37]
+	006 Move X19, X1
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x72E000
+	012 Move X0, [X0+4072]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+37], W8
+	016 Compare X19, 0
+	017 JumpIfEqual {25}
+	018 Move X8, 0x72E000
+	019 Move X8, [X8+4072]
+	020 Move X9, [X19]
+	021 Move X8, [X8]
+	022 Move W11, [X9+304]
+	023 Move W10, [X8+304]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move W0, W31
+	026 Move X9, [X9+200]
+	027 Add X9, X9, X10
+	028 NotImplemented "Instruction LDUR not yet implemented."
+	029 NotImplemented "Instruction CMP not yet implemented."
+	030 NotImplemented "Instruction CSET not yet implemented."
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X30, [X31+32]
+	034 Return X0
+
+Method: System.Boolean <Setup>b__44_0(UnityEngine.Rendering.Universal.ScriptableRenderPass x)
+
+Disassembly:
+	0x03A26CC4 FADD S2, S2, S11
+	0x03A26CC8 STP S3, S2, [X0 + 0x2C]
+	0x03A26CCC STR S0, [X0 + 0x34]
+	0x03A26CD0 B.LS 0x3A26D24
+	0x03A26CD4 FADD S3, S8, S5
+	0x03A26CD8 FMUL S3, S3, S13
+	0x03A26CDC CMP W8, 0x3
+	0x03A26CE0 FADD S3, S3, S10
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {9}
+	004 Move W8, [X1+16]
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X30, [X31+16]
+	008 Return X0
+	009 Call 0x1C17F20
+

@@ -1,0 +1,44 @@
+Type: Fusion.ScheduledRequestsExt
+
+Method: System.Boolean IsSet(ref Fusion.ScheduledRequests requests, Fusion.ScheduledRequests target)
+
+Disassembly:
+	0x01E70038 MOV X2, X31
+	0x01E7003C BL 0x1E7B718
+	0x01E70040 MOV W20, W0
+	0x01E70044 CMP W0, 0x1
+
+ISIL:
+	001 Move W8, [X0]
+	002 NotImplemented "Instruction BICS not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Void Set(ref Fusion.ScheduledRequests requests, Fusion.ScheduledRequests target)
+
+Disassembly:
+	0x01E70048 B.LT 0x1E702A4
+	0x01E7004C ADRP X27, 0x228D000
+	0x01E70050 LDR X27, [X27 + 0x3B8]
+	0x01E70054 MOV W21, W31
+
+ISIL:
+	001 Move W8, [X0]
+	002 Or W8, W8, W1
+	003 Move [X0], W8
+	004 Return 
+
+Method: System.Void Clear(ref Fusion.ScheduledRequests requests, Fusion.ScheduledRequests target)
+
+Disassembly:
+	0x01E70058 MOV X28, X31
+	0x01E7005C LDR X0, [X26]
+	0x01E70060 LDR X22, [X25]
+	0x01E70064 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move W8, [X0]
+	002 NotImplemented "Instruction BIC not yet implemented."
+	003 Move [X0], W8
+	004 Return 
+

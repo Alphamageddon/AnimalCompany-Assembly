@@ -1,0 +1,173 @@
+Type: AnimalCompany.ProductState
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_id()
+
+Disassembly:
+	0x01D489AC BL 0x34D072C
+	0x01D489B0 TBZ X0, 0x0, 0x1D489DC
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_id(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01D489B4 LDR X8, [X20]
+	0x01D489B8 MOV X0, X20
+
+ISIL:
+	001 Move [X0+72], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_name()
+
+Disassembly:
+	0x01D489BC LDP X9, X1, [X8 + 0x178]
+	0x01D489C0 BLR X9
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_name(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01D489C4 ADRP X8, 0x23AC000
+	0x01D489C8 LDR X8, [X8 + 0x780]
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> get_enabled()
+
+Disassembly:
+	0x01D489CC LDR X8, [X8]
+	0x01D489D0 CBZ X0, 0x1D48A40
+
+ISIL:
+	001 Move X0, [X0+88]
+	002 Return X0
+
+Method: System.Void set_enabled(SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> value)
+
+Disassembly:
+	0x01D489D4 LDR X1, [X0 + 0x18]
+	0x01D489D8 B 0x1D48A44
+
+ISIL:
+	001 Move [X0+88], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_formattedPrice()
+
+Disassembly:
+	0x01D489DC ADRP X8, 0x23AB000
+	0x01D489E0 LDR X8, [X8 + 0x788]
+
+ISIL:
+	001 Move X0, [X0+96]
+	002 Return X0
+
+Method: System.Void set_formattedPrice(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01D489E4 LDR X0, [X8]
+	0x01D489E8 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X0+96], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Int32> get_rewardSoft()
+
+Disassembly:
+	0x01D489EC CBNZ W8, 0x1D489F4
+	0x01D489F0 BL 0x1C16DFC
+
+ISIL:
+	001 Move X0, [X0+104]
+	002 Return X0
+
+Method: System.Void set_rewardSoft(SpatialSys.ObservableState.StatePrimitive`1<System.Int32> value)
+
+Disassembly:
+	0x01D489F4 ADRP X8, 0x23AC000
+	0x01D489F8 ADRP X9, 0x23AC000
+
+ISIL:
+	001 Move [X0+104], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Int32> get_rewardHard()
+
+Disassembly:
+	0x01D489FC ADRP X10, 0x23AC000
+	0x01D48A00 LDR X8, [X8 + 0x778]
+
+ISIL:
+	001 Move X0, [X0+112]
+	002 Return X0
+
+Method: System.Void set_rewardHard(SpatialSys.ObservableState.StatePrimitive`1<System.Int32> value)
+
+Disassembly:
+	0x01D48A04 LDR X9, [X9 + 0x718]
+	0x01D48A08 LDR X10, [X10 + 0x740]
+
+ISIL:
+	001 Move [X0+112], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> get_rewardAvatarItems()
+
+Disassembly:
+	0x01D48A0C MOVZ W0, 0x800
+	0x01D48A10 LDR X1, [X8]
+
+ISIL:
+	001 Move X0, [X0+120]
+	002 Return X0
+
+Method: System.Void set_rewardAvatarItems(SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> value)
+
+Disassembly:
+	0x01D48A14 LDR X3, [X9]
+	0x01D48A18 LDR X4, [X10]
+
+ISIL:
+	001 Move [X0+120], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> get_rewardAvatarItemsFlat()
+
+Disassembly:
+	0x01D48A1C MOVZ W5, 0x11F
+	0x01D48A20 MOV X2, X31
+
+ISIL:
+	001 Move X0, [X0+128]
+	002 Return X0
+
+Method: System.Void set_rewardAvatarItemsFlat(SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> value)
+
+Disassembly:
+	0x01D48A24 MOV X6, X31
+	0x01D48A28 BL 0x35C2014
+
+ISIL:
+	001 Move [X0+128], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01D48A2C LDR X8, [X20 + 0x28]
+	0x01D48A30 CBZ X8, 0x1D48BFC
+
+ISIL:
+	001 Move X1, X31
+	002 Call StateObject..ctor, X0
+	003 Return 
+

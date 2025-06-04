@@ -1,0 +1,38 @@
+Type: SpatialSys.ObservableState.StateList`1/<>c__DisplayClass57_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0237C728 RET
+	0x0237C72C BL 0x1C16F20
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <ToJSON>b__0(T x)
+
+Disassembly:
+	0x0237C730 MOV X1, X31
+	0x0237C734 B 0x33BDD8C
+	0x0237C738 STP X30, X21, [X31 - 0x20]!
+	0x0237C73C STP X20, X19, [X31 + 0x10]
+	0x0237C740 LDR X8, [X0 + 0x10]
+	0x0237C744 CBZ X8, 0x237C7A0
+	0x0237C748 MOV X21, X0
+	0x0237C74C LDR X9, [X8 + 0x18]
+	0x0237C750 LDR X0, [X8 + 0x40]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {10}
+	005 Move X3, [X8+24]
+	006 Move X0, [X8+64]
+	007 Move X2, [X8+40]
+	008 Move X30, [X31+16]
+	009 CallNoReturn X3
+	010 Call 0x1C17F20
+

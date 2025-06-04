@@ -1,0 +1,128 @@
+Type: System.IO.TextWriter/NullTextWriter
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x032EB29C MOV X19, X0
+	0x032EB2A0 CMP W1, 0x1
+	0x032EB2A4 B.NE 0x32EB358
+	0x032EB2A8 MOV X0, X19
+	0x032EB2AC BL 0x3EB1AD0
+	0x032EB2B0 MOV X19, X0
+	0x032EB2B4 ADRP X0, 0xE08000
+	0x032EB2B8 LDR X0, [X0 + 0x7D0]
+	0x032EB2BC BL 0x1C16D08
+	0x032EB2C0 LDR X8, [X19]
+	0x032EB2C4 LDR X1, [X8]
+	0x032EB2C8 BL 0x1C17270
+	0x032EB2CC TBZ X0, 0x0, 0x32EB330
+	0x032EB2D0 LDR X19, [X19]
+	0x032EB2D4 BL 0x3EB1AE0
+	0x032EB2D8 ADRP X0, 0xE09000
+	0x032EB2DC LDR X0, [X0 + 0x7B8]
+	0x032EB2E0 BL 0x1C16D08
+	0x032EB2E4 LDR W8, [X0 + 0xE0]
+	0x032EB2E8 CBNZ W8, 0x32EB2F0
+	0x032EB2EC BL 0x1C16DFC
+	0x032EB2F0 ADRP X0, 0xE3B000
+	0x032EB2F4 LDR X0, [X0 + 0xCE8]
+	0x032EB2F8 BL 0x1C16D08
+	0x032EB2FC MOV X1, X0
+	0x032EB300 MOV X0, X19
+	0x032EB304 BL 0x2299DFC
+	0x032EB308 MOV X19, X0
+	0x032EB30C ADRP X0, 0xE3B000
+	0x032EB310 LDR X0, [X0 + 0xD20]
+	0x032EB314 BL 0x1C16D08
+	0x032EB318 CBNZ X19, 0x32EB328
+	0x032EB31C MOVZ W0, 0x26
+	0x032EB320 MOV X1, X31
+	0x032EB324 BL 0x338F3E0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x10F2000
+	006 Move X20, 0xE0B000
+	007 Move W8, [X21+2534]
+	008 Move X20, [X20+3144]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {22}
+	014 Move X0, 0xE0B000
+	015 Move X0, [X0+3144]
+	016 Call 0x1C17CF4
+	017 Move X0, 0xE3C000
+	018 Move X0, [X0+3696]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X21+2534], W8
+	022 Move X0, [X20]
+	023 Move X20, 0xE3C000
+	024 Move W8, [X0+224]
+	025 Move X20, [X20+3696]
+	026 Compare W8, 0
+	027 JumpIfNotEqual {29}
+	028 Call 0x1C17DFC
+	029 Move X0, X31
+	030 Call CultureInfo.get_InvariantCulture
+	031 Move X8, [X20]
+	032 Move X20, X0
+	033 Move W9, [X8+224]
+	034 Compare W9, 0
+	035 JumpIfNotEqual {38}
+	036 Move X0, X8
+	037 Call 0x1C17DFC
+	038 Move X0, X19
+	039 Move X1, X20
+	040 Move X20, [X31+16]
+	041 Move X19, [X31+24]
+	042 Move X30, [X31+32]
+	043 Move X21, [X31+40]
+	044 Call TextWriter..ctor, X0, X1
+	045 Return 
+
+Method: System.Void Write(System.Char[] buffer, System.Int32 index, System.Int32 count)
+
+Disassembly:
+	0x032EB328 MOV W0, W31
+
+ISIL:
+	001 Return 
+
+Method: System.Void Write(System.String value)
+
+Disassembly:
+	0x032EB32C B 0x32EB268
+
+ISIL:
+	001 Return 
+
+Method: System.Void WriteLine()
+
+Disassembly:
+	0x032EB330 MOVZ W0, 0x8
+
+ISIL:
+	001 Return 
+
+Method: System.Void WriteLine(System.String value)
+
+Disassembly:
+	0x032EB334 BL 0x3EB1AF0
+
+ISIL:
+	001 Return 
+
+Method: System.Void Write(System.Char value)
+
+Disassembly:
+	0x032EB338 LDR X8, [X19]
+
+ISIL:
+	001 Return 
+

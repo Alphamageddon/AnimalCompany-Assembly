@@ -1,0 +1,62 @@
+Type: UnityEngine.InputSystem.LowLevel.GyroscopeState
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_kFormat()
+
+Disassembly:
+	0x03800D40 ADD X31, X31, 0x40
+	0x03800D44 RET
+	0x03800D48 BL 0x3EB1B20
+	0x03800D4C MOVZ W0, 0x454D
+	0x03800D50 MOVK W0, 0x44520000
+	0x03800D54 RET
+	0x03800D58 RET
+	0x03800D5C SUB X31, X31, 0x40
+	0x03800D60 STR X30, [X31 + 0x20]
+	0x03800D64 STP X20, X19, [X31 + 0x30]
+	0x03800D68 MRS X20, 0xC000
+	0x03800D6C MOV X19, X8
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 71
+	004 Move W2, 89
+	005 Move W3, 82
+	006 Move W4, 79
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_format()
+
+Disassembly:
+	0x03800D70 LDR X8, [X20 + 0x28]
+	0x03800D74 MOVZ W1, 0x454D
+	0x03800D78 MOV W3, W0
+	0x03800D7C ADD X0, X31, 0x0
+	0x03800D80 MOVK W1, 0x44520000
+	0x03800D84 MOVZ W2, 0x14
+	0x03800D88 STR X8, [X31 + 0x18]
+	0x03800D8C STP X31, X31, [X31]
+	0x03800D90 STR W31, [X31 + 0x10]
+	0x03800D94 BL 0x3800BC8
+	0x03800D98 LDR W8, [X31 + 0x10]
+	0x03800D9C LDR V0, [X31]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 71
+	004 Move W2, 89
+	005 Move W3, 82
+	006 Move W4, 79
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+

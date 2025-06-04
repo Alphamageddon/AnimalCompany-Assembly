@@ -1,0 +1,252 @@
+Type: SpatialSys.ObservableState.NoOpObservationContext
+
+Method: System.Boolean get_allowChanges()
+
+Disassembly:
+	0x035C6420 LDR W8, [X0 + 0xE0]
+	0x035C6424 CBNZ W8, 0x35C642C
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_allowChanges(System.Boolean value)
+
+Disassembly:
+	0x035C6428 BL 0x1C16DFC
+	0x035C642C ADRP X26, 0xB71000
+	0x035C6430 LDR X26, [X26 + 0xF50]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+16], W8
+	003 Return 
+
+Method: System.Collections.Generic.List`1<SpatialSys.ObservableState.IStateOperation> get_observedOperations()
+
+Disassembly:
+	0x035C6434 MOV X0, X26
+	0x035C6438 BL 0x1C16D08
+	0x035C643C LDR X8, [X0 + 0xB8]
+	0x035C6440 ADRP X0, 0xB71000
+	0x035C6444 LDR X27, [X8]
+	0x035C6448 LDR X0, [X0 + 0xF80]
+	0x035C644C BL 0x1C16D08
+	0x035C6450 BL 0x1C16F10
+	0x035C6454 MOV X25, X0
+	0x035C6458 ADRP X0, 0xB71000
+	0x035C645C LDR X0, [X0 + 0xF88]
+	0x035C6460 BL 0x1C16D08
+	0x035C6464 MOV X2, X0
+	0x035C6468 MOV X0, X25
+	0x035C646C MOV X1, X27
+	0x035C6470 MOV X3, X31
+	0x035C6474 BL 0x2D30578
+	0x035C6478 MOV X0, X26
+	0x035C647C BL 0x1C16D08
+	0x035C6480 LDR X8, [X0 + 0xB8]
+	0x035C6484 MOV X0, X26
+	0x035C6488 STR X25, [X8 + 0x10]
+	0x035C648C BL 0x1C16D08
+	0x035C6490 ADRP X0, 0xB71000
+	0x035C6494 LDR X0, [X0 + 0xF90]
+	0x035C6498 BL 0x1C16D08
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xE1B000
+	006 Move X21, 0xB72000
+	007 Move X19, 0xB72000
+	008 Move W8, [X20+437]
+	009 Move X21, [X21+3648]
+	010 Move X19, [X19+3656]
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {23}
+	015 Move X0, 0xB72000
+	016 Move X0, [X0+3656]
+	017 Call 0x1C17CF4
+	018 Move X0, 0xB72000
+	019 Move X0, [X0+3648]
+	020 Call 0x1C17CF4
+	021 Move W8, 1
+	022 Move [X20+437], W8
+	023 Move X0, [X21]
+	024 Call 0x1C17F10
+	025 Move X1, [X19]
+	026 Move X19, X0
+	027 Call List`1<Object>..ctor, X0
+	028 Move X0, X19
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X30, [X31+32]
+	032 Move X21, [X31+40]
+	033 Return X0
+
+Method: System.Void RegisterObserver(SpatialSys.ObservableState.ObserverDelegate observer, SpatialSys.ObservableState.ObservationScope scope, SpatialSys.ObservableState.IStateObject[] state)
+
+Disassembly:
+	0x035C649C MOV X2, X0
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterKeyObserver(SpatialSys.ObservableState.ObserverDelegate observer, System.Object key, SpatialSys.ObservableState.ObservationScope scope, SpatialSys.ObservableState.IStateDictionary[] dictionaries)
+
+Disassembly:
+	0x035C64A0 MOV X0, X20
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterDerivedStateObserver(SpatialSys.ObservableState.IStateObject derivedState, SpatialSys.ObservableState.ObserverDelegate observer, SpatialSys.ObservableState.ObservationScope scope, SpatialSys.ObservableState.IStateObject[] state)
+
+Disassembly:
+	0x035C64A4 MOV X1, X25
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterDerivedStateKeyObserver(SpatialSys.ObservableState.IStateObject derivedState, SpatialSys.ObservableState.ObserverDelegate observer, System.Object key, SpatialSys.ObservableState.ObservationScope scope, SpatialSys.ObservableState.IStateObject[] state)
+
+Disassembly:
+	0x035C64A8 BL 0x21CF224
+
+ISIL:
+	001 Return 
+
+Method: System.Void DeregisterObserver(SpatialSys.ObservableState.ObserverDelegate observer)
+
+Disassembly:
+	0x035C64AC MOV X1, X0
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterSetOperation(SpatialSys.ObservableState.IStatePrimitive prim, T value, System.Int32 valueTypeID)
+
+Disassembly:
+	0x0222DF20 MOV X19, X2
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterSetOperation(SpatialSys.ObservableState.IStatePrimitive prim, System.Collections.Generic.IReadOnlyList`1<T> value, System.Int32 valueTypeID)
+
+Disassembly:
+	0x0222DF40 LDR X8, [X19 + 0x38]
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterSetSyncRateOperation(SpatialSys.ObservableState.IStatePrimitive prim, System.Byte syncRate)
+
+Disassembly:
+	0x035C64B0 MOV X0, X24
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterMathAddOperation(SpatialSys.ObservableState.IStatePrimitive prim, T value, System.Int32 valueTypeID)
+
+Disassembly:
+	0x0222DEB0 BL 0x1C16F10
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterMathMultiplyOperation(SpatialSys.ObservableState.IStatePrimitive prim, T value, System.Int32 valueTypeID)
+
+Disassembly:
+	0x0222DED0 BL 0x330E100
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterAddOperation(SpatialSys.ObservableState.IStateDictionary dict, TKey key, System.Int32 keyTypeID)
+
+Disassembly:
+	0x0222DE90 BLR X8
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterAddOperation(SpatialSys.ObservableState.IStatePrimitiveSet set, T value, System.Int32 valueTypeID)
+
+Disassembly:
+	0x0222DE80 MOV W2, W20
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterRemoveOperation(SpatialSys.ObservableState.IStateDictionary dict, TKey key, System.Int32 keyTypeID)
+
+Disassembly:
+	0x0222DF00 MOV X2, X31
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterRemoveOperation(SpatialSys.ObservableState.IStatePrimitiveSet set, T value, System.Int32 valueTypeID)
+
+Disassembly:
+	0x0222DEF0 LDR X0, [X0 + 0x648]
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterInsertOperation(SpatialSys.ObservableState.IStateList list, System.Int32 index)
+
+Disassembly:
+	0x035C64B4 MOV X2, X31
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterDeleteOperation(SpatialSys.ObservableState.IStateList list, System.Int32 index)
+
+Disassembly:
+	0x035C64B8 BL 0x32280D8
+
+ISIL:
+	001 Return 
+
+Method: System.Void RegisterDisposeOperation(SpatialSys.ObservableState.IStateObject state)
+
+Disassembly:
+	0x035C64BC CBZ X22, 0x35C6C7C
+
+ISIL:
+	001 Return 
+
+Method: System.Void NotifyObserversAndReset(System.Boolean logObservers = True, System.Boolean rethrowObserverExceptions = False)
+
+Disassembly:
+	0x035C64C0 MOV X20, X0
+
+ISIL:
+	001 Return 
+
+Method: System.Void ClearObservedChanges()
+
+Disassembly:
+	0x035C64C4 ADRP X0, 0xB2D000
+
+ISIL:
+	001 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x035C64C8 LDR X0, [X0 + 0x818]
+	0x035C64CC BL 0x1C16D08
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

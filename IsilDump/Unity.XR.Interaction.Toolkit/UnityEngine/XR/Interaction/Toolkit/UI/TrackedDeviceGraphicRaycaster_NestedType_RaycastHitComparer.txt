@@ -1,0 +1,63 @@
+Type: UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster/RaycastHitComparer
+
+Method: System.Int32 Compare(UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster/RaycastHitData a, UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster/RaycastHitData b)
+
+Disassembly:
+	0x03B9FCBC CBZ X20, 0x3B9FCF4
+	0x03B9FCC0 ADRP X8, 0x5BD000
+	0x03B9FCC4 LDR X8, [X8 + 0x908]
+	0x03B9FCC8 LDR X9, [X20]
+	0x03B9FCCC LDR X8, [X8]
+	0x03B9FCD0 LDRB W11, [X9 + 0x130]
+	0x03B9FCD4 LDRB W10, [X8 + 0x130]
+	0x03B9FCD8 CMP W11, W10
+	0x03B9FCDC B.CC 0x3B9FCF4
+	0x03B9FCE0 LDR X9, [X9 + 0xC8]
+	0x03B9FCE4 ADD X9, X9, X10, 0x3, LSL
+	0x03B9FCE8 LDUR X9, [X9 - 0x8]
+	0x03B9FCEC CMP X9, X8
+	0x03B9FCF0 B.EQ 0x3B9FD04
+	0x03B9FCF4 LDP X20, X19, [X31 + 0x20]
+	0x03B9FCF8 LDP X22, X21, [X31 + 0x10]
+	0x03B9FCFC LDR X30, [X31], #0x30
+	0x03B9FD00 RET
+	0x03B9FD04 MOV X0, X21
+	0x03B9FD08 MOV X1, X20
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move X0, [X2]
+	005 Compare X0, 0
+	006 JumpIfEqual {24}
+	007 Move X19, X1
+	008 Move X1, X31
+	009 Call Graphic.get_depth, X0
+	010 Move [X31+12], W0
+	011 Move X0, [X19]
+	012 Compare X0, 0
+	013 JumpIfEqual {24}
+	014 Move X1, X31
+	015 Call Graphic.get_depth, X0
+	016 Move W1, W0
+	017 Add X0, X31, 12
+	018 Move X2, X31
+	019 Call Int32.CompareTo, X0, X1
+	020 Move X30, [X31+16]
+	021 Move X19, [X31+24]
+	022 Add X31, X31, 32
+	023 Return X0
+	024 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03B9F958 BL 0x1C16F20
+	0x03B9F95C STP X30, X21, [X31 - 0x20]!
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

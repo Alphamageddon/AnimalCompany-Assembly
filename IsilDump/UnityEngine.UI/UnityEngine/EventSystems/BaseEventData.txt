@@ -1,0 +1,92 @@
+Type: UnityEngine.EventSystems.BaseEventData
+
+Method: System.Void .ctor(UnityEngine.EventSystems.EventSystem eventSystem)
+
+Disassembly:
+	0x03E4FBB8 ADRP X0, 0x31C000
+	0x03E4FBBC LDR X0, [X0 + 0x8A0]
+	0x03E4FBC0 BL 0x1C16CF4
+	0x03E4FBC4 ADRP X0, 0x31C000
+	0x03E4FBC8 LDR X0, [X0 + 0x8A8]
+	0x03E4FBCC BL 0x1C16CF4
+	0x03E4FBD0 ADRP X0, 0x31C000
+	0x03E4FBD4 LDR X0, [X0 + 0x8B0]
+	0x03E4FBD8 BL 0x1C16CF4
+	0x03E4FBDC ADRP X0, 0x31C000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+24], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: UnityEngine.EventSystems.BaseInputModule get_currentInputModule()
+
+Disassembly:
+	0x03E4FC04 LDR X0, [X0 + 0x8C8]
+	0x03E4FC08 BL 0x1C16CF4
+	0x03E4FC0C ADRP X0, 0x2A4000
+	0x03E4FC10 LDR X0, [X0 + 0x988]
+	0x03E4FC14 BL 0x1C16CF4
+	0x03E4FC18 ADRP X0, 0x31C000
+	0x03E4FC1C LDR X0, [X0 + 0x8D0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {8}
+	005 Move X0, [X8+40]
+	006 Move X30, [X31+16]
+	007 Return X0
+	008 Call 0x1C17F20
+
+Method: UnityEngine.GameObject get_selectedObject()
+
+Disassembly:
+	0x03E4FC20 BL 0x1C16CF4
+	0x03E4FC24 MOVZ W8, 0x1
+	0x03E4FC28 STRB W8, [X20 + 0x8CF]
+	0x03E4FC2C MOV X0, X19
+	0x03E4FC30 STR W31, [X31 + 0x18]
+	0x03E4FC34 STR X31, [X31 + 0x10]
+	0x03E4FC38 STR X31, [X31 + 0x28]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {8}
+	005 Move X0, [X8+64]
+	006 Move X30, [X31+16]
+	007 Return X0
+	008 Call 0x1C17F20
+
+Method: System.Void set_selectedObject(UnityEngine.GameObject value)
+
+Disassembly:
+	0x03E4FC3C STR W31, [X31 + 0xC]
+	0x03E4FC40 BL 0x3E5AC40
+	0x03E4FC44 TBZ X0, 0x0, 0x3E4FF6C
+	0x03E4FC48 ADRP X8, 0x2A4000
+	0x03E4FC4C LDR X8, [X8 + 0xAC8]
+	0x03E4FC50 MOVZ W1, 0x18
+	0x03E4FC54 LDR X0, [X8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X2, X0
+	003 Move X0, [X0+24]
+	004 Compare X0, 0
+	005 JumpIfEqual {7}
+	006 Move X30, [X31+16]
+	007 Call 0x1C17F20
+

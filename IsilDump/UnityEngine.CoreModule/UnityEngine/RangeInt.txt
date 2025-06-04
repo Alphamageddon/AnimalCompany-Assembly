@@ -1,0 +1,26 @@
+Type: UnityEngine.RangeInt
+
+Method: System.Int32 get_end()
+
+Disassembly:
+	0x03C37CC4 BL 0x1C16CB8
+	0x03C37CC8 MOV X1, X0
+	0x03C37CCC STR X0, [X20 + 0x4D0]
+
+ISIL:
+	001 Move W8, [X0]
+	002 Move W9, [X0+4]
+	003 Add W0, W9, W8
+	004 Return X0
+
+Method: System.Void .ctor(System.Int32 start, System.Int32 length)
+
+Disassembly:
+	0x03C37CD0 MOV X0, X19
+	0x03C37CD4 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0], W1
+	002 Move [X0+4], W2
+	003 Return 
+

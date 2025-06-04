@@ -1,0 +1,101 @@
+Type: System.Runtime.InteropServices.MarshalAsAttribute
+
+Method: System.Void .ctor(System.Runtime.InteropServices.UnmanagedType unmanagedType)
+
+Disassembly:
+	0x032C3708 MOV X0, X20
+	0x032C370C MOV X1, X31
+	0x032C3710 BL 0x33ED394
+	0x032C3714 MOV X1, X19
+	0x032C3718 LDP X20, X19, [X31 + 0x20]
+	0x032C371C LDP X22, X21, [X31 + 0x10]
+	0x032C3720 MOVZ W2, 0x1
+	0x032C3724 MOVZ W3, 0x1
+	0x032C3728 LDP X30, X23, [X31], #0x30
+	0x032C372C B 0x32C3A9C
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+48], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Runtime.InteropServices.UnmanagedType get_Value()
+
+Disassembly:
+	0x032C3730 LDR X0, [X0]
+	0x032C3734 MOVZ W2, 0x1
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: System.Runtime.InteropServices.MarshalAsAttribute Copy()
+
+Disassembly:
+	0x032C3738 MOVZ W3, 0x1
+	0x032C373C B 0x32C3A9C
+	0x032C3740 STP X30, X23, [X31 - 0x30]!
+	0x032C3744 STP X22, X21, [X31 + 0x10]
+	0x032C3748 STP X20, X19, [X31 + 0x20]
+	0x032C374C ADRP X20, 0x1119000
+	0x032C3750 LDRB W8, [X20 + 0x894]
+	0x032C3754 MOV X19, X1
+	0x032C3758 MOV X21, X0
+	0x032C375C TBNZ X8, 0x0, 0x32C3798
+	0x032C3760 ADRP X0, 0xE5F000
+	0x032C3764 LDR X0, [X0 + 0xEA8]
+	0x032C3768 BL 0x1C16CF4
+	0x032C376C ADRP X0, 0xE31000
+	0x032C3770 LDR X0, [X0 + 0x7B8]
+	0x032C3774 BL 0x1C16CF4
+	0x032C3778 ADRP X0, 0xE58000
+	0x032C377C LDR X0, [X0 + 0x678]
+	0x032C3780 BL 0x1C16CF4
+	0x032C3784 ADRP X0, 0xE5A000
+	0x032C3788 LDR X0, [X0 + 0xE40]
+	0x032C378C BL 0x1C16CF4
+	0x032C3790 MOVZ W8, 0x1
+	0x032C3794 STRB W8, [X20 + 0x894]
+	0x032C3798 LDR X20, [X21]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x111A000
+	005 Move W8, [X20+2180]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0xE63000
+	012 Move X0, [X0+2040]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2180], W8
+	016 Move X0, X19
+	017 Move X1, X31
+	018 Call Object.MemberwiseClone, X0
+	019 Compare X0, 0
+	020 JumpIfEqual {26}
+	021 Move X8, 0xE63000
+	022 Move X8, [X8+2040]
+	023 Move X1, [X8]
+	024 Move X8, [X0]
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Return X0
+	030 Call 0x1C181E0
+

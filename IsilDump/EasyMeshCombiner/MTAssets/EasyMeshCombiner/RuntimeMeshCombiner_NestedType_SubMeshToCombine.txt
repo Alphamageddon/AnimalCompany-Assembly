@@ -1,0 +1,49 @@
+Type: MTAssets.EasyMeshCombiner.RuntimeMeshCombiner/SubMeshToCombine
+
+Method: System.Void .ctor(UnityEngine.Transform transform, UnityEngine.MeshFilter meshFilter, UnityEngine.MeshRenderer meshRenderer, System.Int32 subMeshIndex)
+
+Disassembly:
+	0x01E2BA2C CBNZ W8, 0x1E2BA44
+	0x01E2BA30 ADRP X0, 0x22CF000
+	0x01E2BA34 LDR X0, [X0 + 0xC68]
+	0x01E2BA38 BL 0x1C16CF4
+	0x01E2BA3C MOVZ W8, 0x1
+	0x01E2BA40 STRB W8, [X22 + 0xE90]
+	0x01E2BA44 LDR X0, [X23]
+	0x01E2BA48 UBFM X25, X24, 0x20, 0x3F
+	0x01E2BA4C LDR W8, [X0 + 0xE0]
+	0x01E2BA50 CBNZ W8, 0x1E2BA74
+	0x01E2BA54 BL 0x1C16DFC
+	0x01E2BA58 LDRB W8, [X22 + 0xE90]
+	0x01E2BA5C CBNZ W8, 0x1E2BA74
+	0x01E2BA60 ADRP X0, 0x22CF000
+	0x01E2BA64 LDR X0, [X0 + 0xC68]
+	0x01E2BA68 BL 0x1C16CF4
+	0x01E2BA6C MOVZ W8, 0x1
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X22, X1
+	008 Move X1, X31
+	009 Move W19, W4
+	010 Move X20, X3
+	011 Move X21, X2
+	012 Move X23, X0
+	013 Call Object..ctor, X0
+	014 Move [X23+16], X22
+	015 Move [X23+24], X21
+	016 Move [X23+32], X20
+	017 Move [X23+40], W19
+	018 Move X20, [X31+32]
+	019 Move X19, [X31+40]
+	020 Move X22, [X31+16]
+	021 Move X21, [X31+24]
+	022 Move X30, [X31+48]
+	023 Move X23, [X31+56]
+	024 Return 
+

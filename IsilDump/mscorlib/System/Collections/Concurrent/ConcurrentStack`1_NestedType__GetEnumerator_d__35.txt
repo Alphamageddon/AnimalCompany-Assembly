@@ -1,0 +1,153 @@
+Type: System.Collections.Concurrent.ConcurrentStack`1/<GetEnumerator>d__35
+
+Method: System.Void .ctor(System.Int32 <>1__state)
+
+Disassembly:
+	0x0239BB98 MOV X1, X0
+	0x0239BB9C MOV X0, X21
+	0x0239BBA0 MOV X2, X20
+	0x0239BBA4 BL 0x3EB1AC0
+	0x0239BBA8 MOV X0, X19
+	0x0239BBAC MOV X1, X21
+	0x0239BBB0 MOV X2, X20
+	0x0239BBB4 BL 0x3EB1AC0
+	0x0239BBB8 LDR X8, [X22 + 0x28]
+	0x0239BBBC LDUR X9, [X29 - 0x8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void System.IDisposable.Dispose()
+
+Disassembly:
+	0x0239BBC0 CMP X8, X9
+
+ISIL:
+	001 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x0239BBC4 B.NE 0x239BBDC
+	0x0239BBC8 ADD X31, X29, 0x0
+	0x0239BBCC LDP X20, X19, [X31 + 0x20]
+	0x0239BBD0 LDP X22, X21, [X31 + 0x10]
+	0x0239BBD4 LDP X29, X30, [X31], #0x30
+	0x0239BBD8 RET
+	0x0239BBDC BL 0x3EB1B20
+	0x0239BBE0 STR X30, [X31 - 0x20]!
+	0x0239BBE4 STP X20, X19, [X31 + 0x10]
+	0x0239BBE8 ADRP X0, 0x1D58000
+	0x0239BBEC LDR X0, [X0 + 0xB40]
+	0x0239BBF0 MOV X19, X1
+	0x0239BBF4 BL 0x1C16D08
+	0x0239BBF8 BL 0x1C16F10
+	0x0239BBFC MOV X1, X31
+	0x0239BC00 MOV X20, X0
+	0x0239BC04 BL 0x3380310
+	0x0239BC08 MOV X0, X20
+	0x0239BC0C MOV X1, X19
+	0x0239BC10 BL 0x1C16DEC
+	0x0239BC14 STP X29, X30, [X31 - 0x30]!
+	0x0239BC18 STP X22, X21, [X31 + 0x10]
+	0x0239BC1C STP X20, X19, [X31 + 0x20]
+	0x0239BC20 ADD X29, X31, 0x0
+	0x0239BC24 SUB X31, X31, 0x10
+	0x0239BC28 MRS X22, 0xC000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W8, [X0+16]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Compare W8, 0
+	005 JumpIfNotEqual {26}
+	006 Move X8, [X0+32]
+	007 Move TEMP, 0
+	008 Not TEMP
+	009 Move W9, TEMP
+	010 Move [X0+16], W9
+	011 Move X8, [X0+40]
+	012 Move TEMP, 0
+	013 Not TEMP
+	014 Move W9, TEMP
+	015 Move [X0+16], W9
+	016 Compare X8, 0
+	017 JumpIfEqual {30}
+	018 Move X8, [X8+24]
+	019 Move [X0+40], X8
+	020 Compare X8, 0
+	021 JumpIfEqual {27}
+	022 Move X9, [X8+16]
+	023 Move W8, 1
+	024 Move [X0+16], W8
+	025 Move [X0+24], X9
+	026 Move W8, W31
+	027 Move W0, W8
+	028 Move X30, [X31+16]
+	029 Return X0
+	030 Call 0x1C17F20
+
+Method: T System.Collections.Generic.IEnumerator<T>.get_Current()
+
+Disassembly:
+	0x0239BC2C LDR X8, [X22 + 0x28]
+	0x0239BC30 MOV X19, X1
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void System.Collections.IEnumerator.Reset()
+
+Disassembly:
+	0x0239BC34 STUR X8, [X29 - 0x8]
+	0x0239BC38 LDR X8, [X1 + 0x20]
+	0x0239BC3C LDR X8, [X8 + 0xC0]
+	0x0239BC40 LDR X9, [X8 + 0x50]
+	0x0239BC44 LDR W20, [X9 + 0xFC]
+	0x0239BC48 ADD X9, X31, 0x0
+	0x0239BC4C ADD X10, X20, 0xF
+	0x0239BC50 AND X10, X10, 0x1FFFFFFFF
+	0x0239BC54 SUB X21, X9, X10
+	0x0239BC58 ADD X31, X21, 0x0
+	0x0239BC5C LDR X8, [X8]
+	0x0239BC60 LDR X8, [X8 + 0x80]
+	0x0239BC64 ADD X1, X8, 0x20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X0, 0x1D59000
+	005 Move X0, [X0+2880]
+	006 Move X19, X1
+	007 Call 0x1C17D08
+	008 Call 0x1C17F10
+	009 Move X1, X31
+	010 Move X20, X0
+	011 Call NotSupportedException..ctor, X0
+	012 Move X0, X20
+	013 Move X1, X19
+	014 Call 0x1C17DEC
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x0239BC68 BL 0x1C16D18
+	0x0239BC6C MOV X1, X0
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+

@@ -1,0 +1,128 @@
+Type: Nakama.MatchJoinMessage
+
+Method: System.String get_MatchId()
+
+Disassembly:
+	0x03476F6C LDRB W8, [X20 + 0x834]
+	0x03476F70 MOV X19, X0
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_MatchId(System.String value)
+
+Disassembly:
+	0x03476F74 TBNZ X8, 0x0, 0x3476F8C
+	0x03476F78 ADRP X0, 0xCBA000
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.String get_Token()
+
+Disassembly:
+	0x03476F7C LDR X0, [X0 + 0x808]
+	0x03476F80 BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_Token(System.String value)
+
+Disassembly:
+	0x03476F84 MOVZ W8, 0x1
+	0x03476F88 STRB W8, [X20 + 0x834]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Collections.Generic.IDictionary`2<System.String, System.String> get_Metadata()
+
+Disassembly:
+	0x03476F8C LDR X0, [X19 + 0x18]
+	0x03476F90 CBNZ X0, 0x3476FB8
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_Metadata(System.Collections.Generic.IDictionary`2<System.String, System.String> value)
+
+Disassembly:
+	0x03476F94 ADRP X19, 0xCBA000
+	0x03476F98 LDR X19, [X19 + 0x808]
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.String ToString()
+
+Disassembly:
+	0x03476F9C LDR X0, [X19]
+	0x03476FA0 LDR W8, [X0 + 0xE0]
+	0x03476FA4 CBNZ W8, 0x3476FB0
+	0x03476FA8 BL 0x1C16DFC
+	0x03476FAC LDR X0, [X19]
+	0x03476FB0 LDR X8, [X0 + 0xB8]
+	0x03476FB4 LDR X0, [X8]
+	0x03476FB8 LDP X20, X19, [X31 + 0x10]
+	0x03476FBC LDR X30, [X31], #0x20
+	0x03476FC0 RET
+	0x03476FC4 LDR X0, [X0 + 0x18]
+	0x03476FC8 RET
+	0x03476FCC STR X1, [X0 + 0x18]
+	0x03476FD0 RET
+	0x03476FD4 STR X30, [X31 - 0x30]!
+	0x03476FD8 STP X22, X21, [X31 + 0x10]
+	0x03476FDC STP X20, X19, [X31 + 0x20]
+	0x03476FE0 ADRP X20, 0xF67000
+	0x03476FE4 ADRP X21, 0xC7D000
+	0x03476FE8 LDRB W8, [X20 + 0x835]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xF68000
+	006 Move X20, 0xCBB000
+	007 Move W8, [X21+2083]
+	008 Move X20, [X20+2472]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xCBB000
+	015 Move X0, [X0+2472]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+2083], W8
+	019 Move X1, [X19+16]
+	020 Move X2, [X19+24]
+	021 Move X3, [X19+32]
+	022 Move X0, [X20]
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move X4, X31
+	026 Move X30, [X31+32]
+	027 Move X21, [X31+40]
+	028 Call String.Format, X0, X1, X2, X3
+	029 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03476FEC LDR X21, [X21 + 0xAC8]
+	0x03476FF0 MOV X19, X0
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

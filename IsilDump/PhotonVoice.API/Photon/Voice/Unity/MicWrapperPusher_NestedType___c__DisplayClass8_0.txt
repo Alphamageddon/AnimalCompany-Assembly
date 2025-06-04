@@ -1,0 +1,38 @@
+Type: Photon.Voice.Unity.MicWrapperPusher/<>c__DisplayClass8_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03571278 TBNZ X8, 0x0, 0x3571280
+	0x0357127C BL 0x1C5C684
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <SetCallback>b__0(System.Single[] buf, System.Int32 ch)
+
+Disassembly:
+	0x03571524 SUBS X9, X9, 0x1
+	0x03571528 ADD X10, X10, 0x10
+	0x0357152C B.NE 0x3571518
+	0x03571530 MOVZ W2, 0x1
+	0x03571534 MOV X0, X19
+	0x03571538 BL 0x1C5C788
+	0x0357153C B 0x3571550
+	0x03571540 LDR W9, [X10]
+	0x03571544 ADD W9, W9, 0x1
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {10}
+	005 Move X3, [X8+24]
+	006 Move X0, [X8+64]
+	007 Move X2, [X8+40]
+	008 Move X30, [X31+16]
+	009 CallNoReturn X3
+	010 Call 0x1C17F20
+

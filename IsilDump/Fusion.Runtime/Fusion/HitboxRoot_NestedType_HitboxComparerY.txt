@@ -1,0 +1,84 @@
+Type: Fusion.HitboxRoot/HitboxComparerY
+
+Method: System.Int32 Compare(Fusion.HitboxRoot a, Fusion.HitboxRoot b)
+
+Disassembly:
+	0x01E86630 MOVZ W8, 0x1
+	0x01E86634 STRB W8, [X22 + 0x209]
+	0x01E86638 SUB W8, W19, W20
+	0x01E8663C ADD W22, W8, 0x1
+	0x01E86640 CMP W22, 0x2
+	0x01E86644 B.LT 0x1E866D4
+	0x01E86648 UBFM W23, W22, 0x1, 0x1F
+	0x01E8664C MOV X0, X21
+	0x01E86650 MOV W1, W23
+	0x01E86654 MOV W2, W22
+	0x01E86658 MOV W3, W20
+	0x01E8665C BL 0x1E868E4
+	0x01E86660 SUBS W23, W23, 0x1
+	0x01E86664 B.GT 0x1E8664C
+	0x01E86668 CMP W22, 0x2
+	0x01E8666C B.LT 0x1E866D4
+	0x01E86670 CBZ X21, 0x1E866EC
+	0x01E86674 ADD X8, X21, W20, 0x3, SXTW
+	0x01E86678 MOV W9, W22
+	0x01E8667C ADD X22, X8, 0x20
+	0x01E86680 ADD X23, X9, 0x1
+	0x01E86684 SUB W24, W31, W20
+	0x01E86688 LDR W8, [X21 + 0x18]
+	0x01E8668C CMP W8, W20
+	0x01E86690 B.LS 0x1E866E8
+	0x01E86694 CMP W19, W8
+	0x01E86698 B.CS 0x1E866E8
+	0x01E8669C ADD X8, X21, W19, 0x3, SXTW
+	0x01E866A0 LDR X9, [X8 + 0x20]
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Compare X1, 0
+	005 JumpIfEqual {36}
+	006 Move X0, X1
+	007 Move X1, X31
+	008 Move X19, X2
+	009 Call Component.get_transform, X0
+	010 Compare X0, 0
+	011 JumpIfEqual {36}
+	012 Move X1, X31
+	013 Call Transform.get_position, X0
+	014 Move [X31], S0
+	015 Move [X31+8], S1
+	016 Move [X31+8], S2
+	017 Compare X19, 0
+	018 JumpIfEqual {36}
+	019 Move X0, X19
+	020 Move X1, X31
+	021 Call Component.get_transform, X0
+	022 Compare X0, 0
+	023 JumpIfEqual {36}
+	024 Add X8, X31, 0
+	025 Move X1, X31
+	026 Or X19, X8, 7
+	027 Call Transform.get_position, X0
+	028 Move V0, V1
+	029 Move X0, X19
+	030 Move X1, X31
+	031 Call Single.CompareTo, X0, V0
+	032 Move X30, [X31+16]
+	033 Move X19, [X31+24]
+	034 Add X31, X31, 32
+	035 Return X0
+	036 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E866A4 LDR X10, [X22]
+	0x01E866A8 ADD W2, W24, W19
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

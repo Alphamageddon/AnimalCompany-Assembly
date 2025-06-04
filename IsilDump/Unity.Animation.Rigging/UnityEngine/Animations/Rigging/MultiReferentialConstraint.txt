@@ -1,0 +1,125 @@
+Type: UnityEngine.Animations.Rigging.MultiReferentialConstraint
+
+Method: System.Void OnValidate()
+
+Disassembly:
+	0x036F03DC ADRP X0, 0xA50000
+	0x036F03E0 LDR X0, [X0 + 0x960]
+	0x036F03E4 BL 0x1C16CF4
+	0x036F03E8 ADRP X0, 0xA50000
+	0x036F03EC LDR X0, [X0 + 0x958]
+	0x036F03F0 BL 0x1C16CF4
+	0x036F03F4 MOVZ W8, 0x1
+	0x036F03F8 STRB W8, [X21 + 0xB7A]
+	0x036F03FC LDR X0, [X20]
+	0x036F0400 ADRP X20, 0xA50000
+	0x036F0404 LDR W8, [X0 + 0xE0]
+	0x036F0408 LDR X20, [X20 + 0x960]
+	0x036F040C CBNZ W8, 0x36F0414
+	0x036F0410 BL 0x1C16DFC
+	0x036F0414 LDR X1, [X20]
+	0x036F0418 MOV X0, X19
+	0x036F041C LDP X20, X19, [X31 + 0x10]
+	0x036F0420 LDP X30, X21, [X31], #0x20
+	0x036F0424 B 0x25CD6BC
+	0x036F0428 LDR X0, [X0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xCF1000
+	006 Move X21, 0xA51000
+	007 Move W8, [X20+2917]
+	008 Move X21, [X21+2272]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xA51000
+	015 Move X0, [X0+2272]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+2917], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Call RigConstraint`3<MultiReferentialConstraintJob, MultiReferentialConstraintData, Object>.OnValidate, X0
+	022 Add X0, X19, 40
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move X30, [X31+32]
+	026 Move X21, [X31+40]
+	027 Call MultiReferentialConstraintData.UpdateDriver, X0
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x036F042C RET
+	0x036F0430 STR X1, [X0]
+	0x036F0434 RET
+	0x036F0438 LDR X0, [X0 + 0x8]
+	0x036F043C RET
+	0x036F0440 STR X1, [X0 + 0x8]
+	0x036F0444 RET
+	0x036F0448 LDR X0, [X0 + 0x10]
+	0x036F044C RET
+	0x036F0450 STR X1, [X0 + 0x10]
+	0x036F0454 RET
+	0x036F0458 LDR X0, [X0 + 0x18]
+	0x036F045C RET
+	0x036F0460 STR X1, [X0 + 0x18]
+	0x036F0464 RET
+	0x036F0468 LDR X0, [X0 + 0x20]
+	0x036F046C RET
+	0x036F0470 STR X1, [X0 + 0x20]
+	0x036F0474 RET
+	0x036F0478 LDR V0, [X0 + 0x28]
+	0x036F047C RET
+	0x036F0480 FMOV S1, 1
+	0x036F0484 FCMP S0, 0x0
+	0x036F0488 FMIN S0, S0, S1
+	0x036F048C FMOV S1, W31
+	0x036F0490 FCSEL S0, S0, S1, PL
+	0x036F0494 STR S0, [X0 + 0x28]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xCF1000
+	006 Move X20, 0xA51000
+	007 Move W8, [X21+2918]
+	008 Move X20, [X20+2280]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {22}
+	014 Move X0, 0xA51000
+	015 Move X0, [X0+2288]
+	016 Call 0x1C17CF4
+	017 Move X0, 0xA51000
+	018 Move X0, [X0+2280]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X21+2918], W8
+	022 Move X0, [X20]
+	023 Move X20, 0xA51000
+	024 Move W8, [X0+224]
+	025 Move X20, [X20+2288]
+	026 Compare W8, 0
+	027 JumpIfNotEqual {29}
+	028 Call 0x1C17DFC
+	029 Move X1, [X20]
+	030 Move X0, X19
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X30, [X31+32]
+	034 Move X21, [X31+40]
+	035 Call RigConstraint`3<MultiReferentialConstraintJob, MultiReferentialConstraintData, Object>..ctor, X0
+	036 Return 
+

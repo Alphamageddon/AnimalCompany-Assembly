@@ -1,0 +1,213 @@
+Type: UnityEngine.InputSystem.LowLevel.SelectObservable`2/Select
+
+Method: System.Void .ctor(UnityEngine.InputSystem.LowLevel.SelectObservable`2<TSource, TResult> observable, System.IObserver`1<TResult> observer)
+
+Disassembly:
+	0x025DA084 MOV X0, X21
+	0x025DA088 LDR X8, [X8 + 0xC0]
+	0x025DA08C LDR X8, [X8 + 0x18]
+	0x025DA090 LDR X8, [X8 + 0x20]
+	0x025DA094 LDR X8, [X8 + 0xC0]
+	0x025DA098 LDR X1, [X8 + 0x10]
+	0x025DA09C BL 0x25DA760
+	0x025DA0A0 STR X0, [X21 + 0x20]
+	0x025DA0A4 CBZ X0, 0x25DA0C4
+	0x025DA0A8 LDR X8, [X20 + 0x20]
+	0x025DA0AC MOV W1, W19
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move X19, X2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+16], X20
+	011 Move [X21+24], X19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+
+Method: System.Void OnCompleted()
+
+Disassembly:
+	0x025DA0B0 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Return 
+
+Method: System.Void OnError(System.Exception error)
+
+Disassembly:
+	0x025DA0B4 LDR X8, [X8 + 0xC0]
+	0x025DA0B8 LDR X2, [X8 + 0x80]
+	0x025DA0BC LDP X30, X21, [X31], #0x20
+	0x025DA0C0 B 0x29DA8A4
+	0x025DA0C4 BL 0x1C16F20
+	0x025DA0C8 STR X30, [X31 - 0x30]!
+	0x025DA0CC STP X22, X21, [X31 + 0x10]
+	0x025DA0D0 STP X20, X19, [X31 + 0x20]
+	0x025DA0D4 MOV X22, X0
+	0x025DA0D8 LDR X0, [X0 + 0x20]
+	0x025DA0DC MOV X20, X3
+	0x025DA0E0 MOV X19, X2
+	0x025DA0E4 MOV W21, W1
+	0x025DA0E8 CBNZ X0, 0x25DA114
+	0x025DA0EC LDR X8, [X20 + 0x20]
+	0x025DA0F0 MOV X0, X22
+	0x025DA0F4 LDR X8, [X8 + 0xC0]
+	0x025DA0F8 LDR X8, [X8 + 0x18]
+	0x025DA0FC LDR X8, [X8 + 0x20]
+	0x025DA100 LDR X8, [X8 + 0xC0]
+	0x025DA104 LDR X1, [X8 + 0x10]
+	0x025DA108 BL 0x25DA760
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x1E00000
+	006 Move X21, 0x1B1A000
+	007 Move W8, [X20+3973]
+	008 Move X21, [X21+2600]
+	009 Move X19, X1
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x1B1A000
+	015 Move X0, [X0+2600]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+3973], W8
+	019 Move X0, [X21]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move X0, X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X1, X31
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Call Debug.LogException, X0
+	031 Return 
+
+Method: System.Void OnNext(TSource evt)
+
+Disassembly:
+	0x025DA10C STR X0, [X22 + 0x20]
+	0x025DA110 CBZ X0, 0x25DA138
+	0x025DA114 LDR X8, [X20 + 0x20]
+	0x025DA118 MOV W1, W21
+	0x025DA11C MOV X2, X19
+	0x025DA120 LDP X20, X19, [X31 + 0x20]
+	0x025DA124 LDR X8, [X8 + 0xC0]
+	0x025DA128 LDP X22, X21, [X31 + 0x10]
+	0x025DA12C LDR X3, [X8 + 0x90]
+	0x025DA130 LDR X30, [X31], #0x30
+	0x025DA134 B 0x29DAEB8
+	0x025DA138 BL 0x1C16F20
+	0x025DA13C STR X30, [X31 - 0x20]!
+	0x025DA140 STP X20, X19, [X31 + 0x10]
+	0x025DA144 MOV X20, X0
+	0x025DA148 LDR X0, [X0 + 0x20]
+	0x025DA14C MOV X19, X1
+	0x025DA150 CBNZ X0, 0x25DA17C
+	0x025DA154 LDR X8, [X19 + 0x20]
+	0x025DA158 MOV X0, X20
+	0x025DA15C LDR X8, [X8 + 0xC0]
+	0x025DA160 LDR X8, [X8 + 0x18]
+	0x025DA164 LDR X8, [X8 + 0x20]
+	0x025DA168 LDR X8, [X8 + 0xC0]
+	0x025DA16C LDR X1, [X8 + 0x10]
+	0x025DA170 BL 0x25DA760
+	0x025DA174 STR X0, [X20 + 0x20]
+	0x025DA178 CBZ X0, 0x25DA194
+	0x025DA17C LDR X8, [X19 + 0x20]
+	0x025DA180 LDP X20, X19, [X31 + 0x10]
+	0x025DA184 LDR X8, [X8 + 0xC0]
+	0x025DA188 LDR X1, [X8 + 0x98]
+	0x025DA18C LDR X30, [X31], #0x20
+	0x025DA190 B 0x29D9294
+	0x025DA194 BL 0x1C16F20
+	0x025DA198 STR X30, [X31 - 0x20]!
+	0x025DA19C STP X20, X19, [X31 + 0x10]
+	0x025DA1A0 MOV X20, X0
+	0x025DA1A4 LDR X0, [X0 + 0x20]
+	0x025DA1A8 MOV X19, X1
+	0x025DA1AC CBNZ X0, 0x25DA1D8
+	0x025DA1B0 LDR X8, [X19 + 0x20]
+	0x025DA1B4 MOV X0, X20
+	0x025DA1B8 LDR X8, [X8 + 0xC0]
+	0x025DA1BC LDR X8, [X8 + 0x18]
+	0x025DA1C0 LDR X8, [X8 + 0x20]
+	0x025DA1C4 LDR X8, [X8 + 0xC0]
+	0x025DA1C8 LDR X1, [X8 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X0+16]
+	006 Compare X8, 0
+	007 JumpIfEqual {57}
+	008 Move X8, [X8+24]
+	009 Compare X8, 0
+	010 JumpIfEqual {57}
+	011 Move X21, X2
+	012 Move X19, X0
+	013 Move X9, [X8+24]
+	014 Move X0, [X8+64]
+	015 Move X2, [X8+40]
+	016 NotImplemented "Instruction BLR not yet implemented."
+	017 Move X20, [X19+24]
+	018 Compare X20, 0
+	019 JumpIfEqual {57}
+	020 Move X8, [X21+32]
+	021 Move X19, X0
+	022 Move X8, [X8+192]
+	023 Move X1, [X8+16]
+	024 Move W8, [X1+309]
+	025 Move TEMP, X8
+	026 And TEMP, TEMP, 1
+	027 Compare TEMP, 1
+	028 JumpIfEqual {32}
+	029 Move X0, X1
+	030 Call 0x1C5D684
+	031 Move X1, X0
+	032 Move X8, [X20]
+	033 NotImplemented "Instruction LDRH not yet implemented."
+	034 Compare X9, 0
+	035 JumpIfEqual {42}
+	036 Move X10, [X8+176]
+	037 Add X10, X10, 8
+	038 NotImplemented "Instruction LDUR not yet implemented."
+	039 NotImplemented "Instruction CMP not yet implemented."
+	040 Subtract X9, X9, 1
+	041 Add X10, X10, 16
+	042 Move X0, X20
+	043 Move W2, W31
+	044 Call 0x1C5D788
+	045 NotImplemented "Instruction LDRSW not yet implemented."
+	046 Add X8, X8, X9
+	047 Add X0, X8, 312
+	048 Move X3, [X0]
+	049 Move X2, [X0+8]
+	050 Move X0, X20
+	051 Move X1, X19
+	052 Move X20, [X31+16]
+	053 Move X19, [X31+24]
+	054 Move X30, [X31+32]
+	055 Move X21, [X31+40]
+	056 CallNoReturn X3
+	057 Call 0x1C17F20
+

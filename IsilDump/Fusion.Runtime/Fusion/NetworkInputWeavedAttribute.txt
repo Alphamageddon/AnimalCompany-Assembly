@@ -1,0 +1,40 @@
+Type: Fusion.NetworkInputWeavedAttribute
+
+Method: System.Int32 get_WordCount()
+
+Disassembly:
+	0x01E68668 MOV X1, X31
+	0x01E6866C LDP X30, X19, [X31], #0x10
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void .ctor(System.Int32 wordCount)
+
+Disassembly:
+	0x01E68670 B 0x1E4B254
+	0x01E68674 MOV X0, X31
+	0x01E68678 LDP X30, X19, [X31], #0x10
+	0x01E6867C RET
+	0x01E68680 BL 0x1C16F20
+	0x01E68684 STP X30, X19, [X31 - 0x10]!
+	0x01E68688 LDR X8, [X0 + 0x30]
+	0x01E6868C CBZ X8, 0x1E686C4
+	0x01E68690 MOV X19, X0
+	0x01E68694 LDR X0, [X8 + 0x38]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

@@ -1,0 +1,59 @@
+Type: UnityEngine.XR.Interaction.Toolkit.UI.CanvasTracker
+
+Method: System.Boolean get_transformDirty()
+
+Disassembly:
+	0x03B989C4 BL 0x1C16CF4
+	0x03B989C8 MOVZ W8, 0x1
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_transformDirty(System.Boolean value)
+
+Disassembly:
+	0x03B989CC STRB W8, [X21 + 0x783]
+	0x03B989D0 ADRP X8, 0x55B000
+	0x03B989D4 LDR X8, [X8 + 0x5A0]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+32], W8
+	003 Return 
+
+Method: System.Void OnEnable()
+
+Disassembly:
+	0x03B989D8 LDR X8, [X8]
+	0x03B989DC LDR X8, [X8 + 0xB8]
+	0x03B989E0 LDP S0, S1, [X8]
+
+ISIL:
+	001 Move W8, 1
+	002 Move [X0+32], W8
+	003 Return 
+
+Method: System.Void OnTransformParentChanged()
+
+Disassembly:
+	0x03B989E4 LDR V2, [X8 + 0x8]
+	0x03B989E8 ADRP X21, 0x840000
+	0x03B989EC LDRB W8, [X21 + 0x786]
+
+ISIL:
+	001 Move W8, 1
+	002 Move [X0+32], W8
+	003 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03B989F0 STP S0, S1, [X31 + 0x30]
+	0x03B989F4 STR S2, [X31 + 0x38]
+
+ISIL:
+	001 Move X1, X31
+	002 Call MonoBehaviour..ctor, X0
+	003 Return 
+

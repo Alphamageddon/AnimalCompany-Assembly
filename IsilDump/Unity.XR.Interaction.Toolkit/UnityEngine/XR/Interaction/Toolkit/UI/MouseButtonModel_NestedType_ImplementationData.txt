@@ -1,0 +1,225 @@
+Type: UnityEngine.XR.Interaction.Toolkit.UI.MouseButtonModel/ImplementationData
+
+Method: System.Boolean get_isDragging()
+
+Disassembly:
+	0x03B99D58 LDR X8, [X21]
+	0x03B99D5C STR X0, [X31 + 0x8]
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Void set_isDragging(System.Boolean value)
+
+Disassembly:
+	0x03B99D60 MOV X20, X0
+	0x03B99D64 LDR W9, [X8 + 0xE0]
+	0x03B99D68 CBNZ W9, 0x3B99D74
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0], W8
+	003 Return 
+
+Method: System.Single get_pressedTime()
+
+Disassembly:
+	0x03B99D6C MOV X0, X8
+	0x03B99D70 BL 0x1C16DFC
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Return V0
+
+Method: System.Void set_pressedTime(System.Single value)
+
+Disassembly:
+	0x03B99D74 MOV X0, X20
+	0x03B99D78 MOV X1, X31
+
+ISIL:
+	001 Move [X0+4], S0
+	002 Return 
+
+Method: UnityEngine.Vector2 get_pressedPosition()
+
+Disassembly:
+	0x03B99D7C MOV X2, X31
+	0x03B99D80 BL 0x3C3883C
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Return X0
+
+Method: System.Void set_pressedPosition(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x03B99D84 TBZ X0, 0x0, 0x3B99DE0
+	0x03B99D88 ADRP X8, 0x5C3000
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Move [X0+16], S1
+	003 Return 
+
+Method: UnityEngine.EventSystems.RaycastResult get_pressedRaycast()
+
+Disassembly:
+	0x03B99D8C LDR X8, [X8 + 0x8B8]
+	0x03B99D90 ADD X0, X31, 0x8
+	0x03B99D94 LDR X1, [X8]
+	0x03B99D98 BL 0x295FA30
+
+ISIL:
+	001 Add X1, X0, 16
+	002 Move W2, 80
+	003 Move X0, X8
+	004 Call 0x3EB2AC0
+	005 Return X0
+
+Method: System.Void set_pressedRaycast(UnityEngine.EventSystems.RaycastResult value)
+
+Disassembly:
+	0x03B99D9C TBZ X0, 0x0, 0x3B99DEC
+	0x03B99DA0 LDR X0, [X31 + 0x8]
+	0x03B99DA4 CBZ X0, 0x3B99F04
+	0x03B99DA8 ADRP X8, 0x5C3000
+	0x03B99DAC LDR X8, [X8 + 0x8C0]
+	0x03B99DB0 ADD X1, X31, 0x0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X0, 16
+	003 Move W2, 80
+	004 Call 0x3EB2B30
+	005 Move X30, [X31+16]
+	006 Return 
+
+Method: UnityEngine.GameObject get_pressedGameObject()
+
+Disassembly:
+	0x03B99DB4 LDR X2, [X8]
+	0x03B99DB8 BL 0x21A4990
+
+ISIL:
+	001 Move X0, [X0+96]
+	002 Return X0
+
+Method: System.Void set_pressedGameObject(UnityEngine.GameObject value)
+
+Disassembly:
+	0x03B99DBC TBZ X0, 0x0, 0x3B99DE0
+	0x03B99DC0 LDR X0, [X21]
+
+ISIL:
+	001 Move [X0+96], X1
+	002 Return 
+
+Method: UnityEngine.GameObject get_pressedGameObjectRaw()
+
+Disassembly:
+	0x03B99DC4 LDR X20, [X31]
+	0x03B99DC8 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move X0, [X0+104]
+	002 Return X0
+
+Method: System.Void set_pressedGameObjectRaw(UnityEngine.GameObject value)
+
+Disassembly:
+	0x03B99DCC CBNZ W8, 0x3B99DD4
+	0x03B99DD0 BL 0x1C16DFC
+
+ISIL:
+	001 Move [X0+104], X1
+	002 Return 
+
+Method: UnityEngine.GameObject get_draggedGameObject()
+
+Disassembly:
+	0x03B99DD4 MOV X0, X20
+	0x03B99DD8 MOV X1, X31
+
+ISIL:
+	001 Move X0, [X0+112]
+	002 Return X0
+
+Method: System.Void set_draggedGameObject(UnityEngine.GameObject value)
+
+Disassembly:
+	0x03B99DDC BL 0x3C394A8
+	0x03B99DE0 LDR X0, [X31 + 0x8]
+
+ISIL:
+	001 Move [X0+112], X1
+	002 Return 
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x03B99C1C LDR X0, [X0 + 0x598]
+	0x03B99C20 BL 0x1C16CF4
+	0x03B99C24 MOVZ W8, 0x1
+	0x03B99C28 STRB W8, [X21 + 0xBFF]
+	0x03B99C2C LDR X0, [X20]
+	0x03B99C30 LDR X20, [X19 + 0x18]
+	0x03B99C34 LDR W8, [X0 + 0xE0]
+	0x03B99C38 CBNZ W8, 0x3B99C40
+	0x03B99C3C BL 0x1C16DFC
+	0x03B99C40 MOV X0, X20
+	0x03B99C44 MOV X1, X31
+	0x03B99C48 MOV X2, X31
+	0x03B99C4C BL 0x3C354F8
+	0x03B99C50 TBZ X0, 0x0, 0x3B99C64
+	0x03B99C54 LDR X0, [X19 + 0x18]
+	0x03B99C58 CBZ X0, 0x3B99C74
+	0x03B99C5C LDR X1, [X19 + 0x20]
+	0x03B99C60 BL 0x3B9A0A8
+	0x03B99C64 STR X31, [X19 + 0x18]
+	0x03B99C68 LDP X20, X19, [X31 + 0x10]
+	0x03B99C6C LDP X30, X21, [X31], #0x20
+	0x03B99C70 RET
+	0x03B99C74 BL 0x1C16F20
+	0x03B99C78 SUB X31, X31, 0x30
+	0x03B99C7C STP X30, X21, [X31 + 0x10]
+	0x03B99C80 STP X20, X19, [X31 + 0x20]
+	0x03B99C84 ADRP X21, 0x849000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move [X0], W31
+	005 Move [X0+4], W31
+	006 Move X20, 0x841000
+	007 Move W8, [X20+1935]
+	008 Move X19, X0
+	009 Compare W8, 0
+	010 JumpIfNotEqual {16}
+	011 Move X0, 0x563000
+	012 Move X0, [X0+3848]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+1935], W8
+	016 Move X8, 0x563000
+	017 Move X8, [X8+3848]
+	018 NotImplemented "Instruction MOVI not yet implemented."
+	019 Move X8, [X8]
+	020 Move X8, [X8+184]
+	021 Move V1, [X8]
+	022 Move [X19+16], V0
+	023 Move [X19+24], V0
+	024 Move [X19+48], V0
+	025 Move [X19+56], V0
+	026 Move [X19+80], V0
+	027 Move [X19+88], V0
+	028 Move [X19+8], D1
+	029 Move [X19+112], X31
+	030 Move X20, [X31+16]
+	031 Move X19, [X31+24]
+	032 Move X30, [X31+32]
+	033 Return 
+

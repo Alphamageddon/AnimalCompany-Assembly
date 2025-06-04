@@ -1,0 +1,30 @@
+Type: Unity.Burst.CompilerServices.Hint
+
+Method: System.Boolean Likely(System.Boolean condition)
+
+Disassembly:
+	0x037335C0 ADRP X20, 0xA11000
+	0x037335C4 LDR X24, [X24 + 0xE40]
+
+ISIL:
+	001 And W0, W0, 1
+	002 Return X0
+
+Method: System.Boolean Unlikely(System.Boolean condition)
+
+Disassembly:
+	0x037335C8 LDR X25, [X25 + 0xE38]
+	0x037335CC LDR X22, [X22 + 0xE78]
+
+ISIL:
+	001 And W0, W0, 1
+	002 Return X0
+
+Method: System.Void Assume(System.Boolean condition)
+
+Disassembly:
+	0x037335D0 LDR X23, [X23 + 0xE18]
+
+ISIL:
+	001 Return 
+

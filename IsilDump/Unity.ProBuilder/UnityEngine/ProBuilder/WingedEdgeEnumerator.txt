@@ -1,0 +1,106 @@
+Type: UnityEngine.ProBuilder.WingedEdgeEnumerator
+
+Method: System.Void .ctor(UnityEngine.ProBuilder.WingedEdge start)
+
+Disassembly:
+	0x03944870 LDR X0, [X0 + 0x110]
+	0x03944874 BL 0x1C16CF4
+	0x03944878 ADRP X0, 0x80A000
+	0x0394487C LDR X0, [X0 + 0xA38]
+	0x03944880 BL 0x1C16CF4
+	0x03944884 ADRP X0, 0x7DB000
+	0x03944888 LDR X0, [X0 + 0x5B8]
+	0x0394488C BL 0x1C16CF4
+	0x03944890 ADRP X0, 0x7B3000
+	0x03944894 LDR X0, [X0 + 0x978]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move [X20+24], X31
+	010 Move X20, [X31+16]
+	011 Move X19, [X31+24]
+	012 Move X30, [X31+32]
+	013 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x03944898 BL 0x1C16CF4
+	0x0394489C ADRP X0, 0x80A000
+	0x039448A0 LDR X0, [X0 + 0xC40]
+	0x039448A4 BL 0x1C16CF4
+	0x039448A8 ADRP X0, 0x80A000
+	0x039448AC LDR X0, [X0 + 0xC48]
+	0x039448B0 BL 0x1C16CF4
+	0x039448B4 ADRP X0, 0x7B3000
+	0x039448B8 LDR X0, [X0 + 0x980]
+	0x039448BC BL 0x1C16CF4
+	0x039448C0 ADRP X0, 0x80B000
+	0x039448C4 LDR X0, [X0 + 0xE8]
+	0x039448C8 BL 0x1C16CF4
+	0x039448CC ADRP X0, 0x7B3000
+	0x039448D0 LDR X0, [X0 + 0x3C0]
+
+ISIL:
+	001 Move X8, [X0+24]
+	002 Compare X8, 0
+	003 JumpIfEqual {10}
+	004 Move X8, [X8+40]
+	005 Move [X0+24], X8
+	006 Compare X8, 0
+	007 JumpIfEqual {15}
+	008 Move X9, [X0+16]
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Move X8, [X0+16]
+	011 Move [X0+24], X8
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 NotImplemented "Instruction CSET not yet implemented."
+	014 Return X0
+	015 Move W0, W31
+	016 Return X0
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x039448D4 BL 0x1C16CF4
+	0x039448D8 ADRP X0, 0x809000
+
+ISIL:
+	001 Move [X0+24], X31
+	002 Return 
+
+Method: UnityEngine.ProBuilder.WingedEdge get_Current()
+
+Disassembly:
+	0x039448DC LDR X0, [X0 + 0xDF0]
+	0x039448E0 BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x039448E4 ADRP X0, 0x7AF000
+	0x039448E8 LDR X0, [X0 + 0x5A8]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x039448EC BL 0x1C16CF4
+
+ISIL:
+	001 Return 
+

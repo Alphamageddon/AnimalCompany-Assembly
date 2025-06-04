@@ -1,0 +1,106 @@
+Type: Nakama.PartyPromote
+
+Method: System.String get_PartyId()
+
+Disassembly:
+	0x03478A64 STP X31, X31, [X31 + 0x18]
+	0x03478A68 STP X23, X31, [X31 + 0x8]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_PartyId(System.String value)
+
+Disassembly:
+	0x03478A6C BL 0x1C16E04
+	0x03478A70 STP X0, X22, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: Nakama.UserPresence get_Presence()
+
+Disassembly:
+	0x03478A74 ADD X1, X31, 0x8
+	0x03478A78 MOV X0, X21
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_Presence(Nakama.UserPresence value)
+
+Disassembly:
+	0x03478A7C MOV X2, X20
+	0x03478A80 MOV X3, X19
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.String ToString()
+
+Disassembly:
+	0x03478A84 BL 0x1C16CB0
+	0x03478A88 LDP X20, X19, [X31 + 0x60]
+	0x03478A8C LDP X22, X21, [X31 + 0x50]
+	0x03478A90 LDP X24, X23, [X31 + 0x40]
+	0x03478A94 LDP X30, X25, [X31 + 0x30]
+	0x03478A98 ADD X31, X31, 0x70
+	0x03478A9C RET
+	0x03478AA0 STR X30, [X31 - 0x10]!
+	0x03478AA4 MOV X0, X1
+	0x03478AA8 MOV X1, X31
+	0x03478AAC BL 0x1C16CB4
+	0x03478AB0 CBZ X0, 0x3478AC4
+	0x03478AB4 BL 0x1C16E08
+	0x03478AB8 LDR W0, [X0]
+	0x03478ABC LDR X30, [X31], #0x10
+	0x03478AC0 RET
+	0x03478AC4 BL 0x1C16F20
+	0x03478AC8 STR D8, [X31 - 0x30]!
+	0x03478ACC STP X30, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xF66000
+	006 Move X20, 0xCB9000
+	007 Move W8, [X21+2112]
+	008 Move X20, [X20+2728]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xCB9000
+	015 Move X0, [X0+2728]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+2112], W8
+	019 Move X1, [X19+16]
+	020 Move X2, [X19+24]
+	021 Move X0, [X20]
+	022 Move X20, [X31+16]
+	023 Move X19, [X31+24]
+	024 Move X3, X31
+	025 Move X30, [X31+32]
+	026 Move X21, [X31+40]
+	027 Call String.Format, X0, X1, X2
+	028 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03478AD0 STP X20, X19, [X31 + 0x20]
+	0x03478AD4 ADRP X21, 0xF65000
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

@@ -1,0 +1,1128 @@
+Type: Fusion.BitSet128
+
+Method: Fusion.BitSet128/Iterator GetIterator()
+
+Disassembly:
+	0x01E88608 TBNZ X8, 0x0, 0x1E88620
+	0x01E8860C ADRP X0, 0x2275000
+	0x01E88610 LDR X0, [X0 + 0xF40]
+	0x01E88614 BL 0x1C16CF4
+	0x01E88618 MOVZ W8, 0x1
+	0x01E8861C STRB W8, [X21 + 0x221]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move TEMP, 0
+	003 Not TEMP
+	004 Move W9, TEMP
+	005 Move [X8], X31
+	006 Move [X8], W9
+	007 Move [X8+8], V0
+	008 Return X0
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0x01E88630 BL 0x1C16E04
+	0x01E88634 LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move W0, 128
+	002 Return X0
+
+Method: Fusion.BitSet128 FromArray(System.UInt64[] values)
+
+Disassembly:
+	0x01E88638 LDP X30, X21, [X31 + 0x10]
+	0x01E8863C ADD X31, X31, 0x30
+	0x01E88640 RET
+	0x01E88644 SUB X31, X31, 0x30
+	0x01E88648 STR X30, [X31 + 0x20]
+	0x01E8864C MRS X8, 0xC000
+	0x01E88650 LDR X9, [X8 + 0x28]
+	0x01E88654 STR X9, [X31 + 0x18]
+	0x01E88658 LDR X9, [X1 + 0x10]
+	0x01E8865C LDR V0, [X1]
+	0x01E88660 STR X9, [X31 + 0x10]
+	0x01E88664 STR V0, [X31]
+	0x01E88668 LDR X9, [X0]
+	0x01E8866C LDR X10, [X31]
+	0x01E88670 CMP X9, X10
+	0x01E88674 B.NE 0x1E8869C
+	0x01E88678 LDR X9, [X0 + 0x8]
+	0x01E8867C LDR X10, [X31 + 0x8]
+	0x01E88680 CMP X9, X10
+	0x01E88684 B.NE 0x1E8869C
+	0x01E88688 LDR X9, [X0 + 0x10]
+	0x01E8868C LDR X10, [X31 + 0x10]
+	0x01E88690 CMP X9, X10
+	0x01E88694 CSET W0, EQ
+	0x01E88698 B 0x1E886A0
+	0x01E8869C MOV W0, W31
+	0x01E886A0 LDR X8, [X8 + 0x28]
+	0x01E886A4 LDR X9, [X31 + 0x18]
+	0x01E886A8 CMP X8, X9
+	0x01E886AC B.NE 0x1E886BC
+	0x01E886B0 LDR X30, [X31 + 0x20]
+	0x01E886B4 ADD X31, X31, 0x30
+	0x01E886B8 RET
+	0x01E886BC BL 0x3EB1B20
+	0x01E886C0 SUB X31, X31, 0x30
+	0x01E886C4 STR X30, [X31 + 0x20]
+	0x01E886C8 MRS X8, 0xC000
+	0x01E886CC LDR X9, [X8 + 0x28]
+	0x01E886D0 STR X9, [X31 + 0x18]
+	0x01E886D4 LDR X9, [X1 + 0x10]
+	0x01E886D8 LDR V0, [X1]
+	0x01E886DC STR X9, [X31 + 0x10]
+	0x01E886E0 STR V0, [X31]
+	0x01E886E4 LDR X9, [X0]
+	0x01E886E8 LDR X10, [X31]
+	0x01E886EC CMP X9, X10
+	0x01E886F0 B.NE 0x1E88718
+	0x01E886F4 LDR X9, [X0 + 0x8]
+	0x01E886F8 LDR X10, [X31 + 0x8]
+	0x01E886FC CMP X9, X10
+	0x01E88700 B.NE 0x1E88718
+	0x01E88704 LDR X9, [X0 + 0x10]
+	0x01E88708 LDR X10, [X31 + 0x10]
+	0x01E8870C CMP X9, X10
+	0x01E88710 CSET W0, NE
+	0x01E88714 B 0x1E8871C
+	0x01E88718 MOVZ W0, 0x1
+	0x01E8871C LDR X8, [X8 + 0x28]
+	0x01E88720 LDR X9, [X31 + 0x18]
+	0x01E88724 CMP X8, X9
+	0x01E88728 B.NE 0x1E88738
+	0x01E8872C LDR X30, [X31 + 0x20]
+	0x01E88730 ADD X31, X31, 0x30
+	0x01E88734 RET
+	0x01E88738 BL 0x3EB1B20
+	0x01E8873C SUB X31, X31, 0x10
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+32], X30
+	003 Move [X31+48], X20
+	004 Move [X31+56], X19
+	005 NotImplemented "Instruction MRS not yet implemented."
+	006 Move X9, [X8+40]
+	007 Move [X31+24], X9
+	008 Compare X0, 0
+	009 JumpIfEqual {32}
+	010 Move X9, [X0+24]
+	011 NotImplemented "Instruction CMP not yet implemented."
+	012 And X9, X9, 0
+	013 Move [X31+8], X31
+	014 Move [X31+16], X31
+	015 Compare X9, 0
+	016 JumpIfEqual {31}
+	017 Move X9, [X0+32]
+	018 Move [X31+8], X9
+	019 Move W9, [X0+24]
+	020 And W31, W9, 0xFFFFFFFE
+	021 Move X1, [X0+40]
+	022 Move X0, [X31+8]
+	023 Move X8, [X8+40]
+	024 Move X9, [X31+24]
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move X20, [X31+48]
+	027 Move X19, [X31+56]
+	028 Move X30, [X31+32]
+	029 Add X31, X31, 64
+	030 Return X0
+	031 Call 0x1C17F28
+	032 Move X0, 0x2271000
+	033 Move X0, [X0+1320]
+	034 Call 0x1C17D08
+	035 Call 0x1C17F10
+	036 Move X19, X0
+	037 Move X0, 0x2276000
+	038 Move X0, [X0+3800]
+	039 Call 0x1C17D08
+	040 Move X1, X0
+	041 Move X0, X19
+	042 Move X2, X31
+	043 Call ArgumentNullException..ctor, X0, X1
+	044 Move X0, 0x2274000
+	045 Move X0, [X0+1400]
+	046 Call 0x1C17D08
+	047 Call 0x1C17F10
+	048 Move X19, X0
+	049 Move X0, 0x2276000
+	050 Move X0, [X0+3848]
+	051 Call 0x1C17D08
+	052 Move X20, X0
+	053 Move X0, 0x2276000
+	054 Move X0, [X0+3800]
+	055 Call 0x1C17D08
+	056 Move X2, X0
+	057 Move X0, X19
+	058 Move X1, X20
+	059 Move X3, X31
+	060 Call ArgumentException..ctor, X0, X1, X2
+	061 Move X0, 0x2276000
+	062 Move X0, [X0+3856]
+	063 Call 0x1C17D08
+	064 Move X1, X0
+	065 Move X0, X19
+	066 Call 0x1C17DEC
+	067 Call 0x3EB2B20
+
+Method: System.Void Set(System.Int32 bit)
+
+Disassembly:
+	0x01E88740 STR X31, [X31 + 0x8]
+	0x01E88744 LDR W8, [X0]
+	0x01E88748 ADD W8, W8, 0x1
+	0x01E8874C CMP W8, 0xBF
+	0x01E88750 STR W8, [X0]
+	0x01E88754 B.GT 0x1E88818
+	0x01E88758 ADD X9, X0, 0x8
+	0x01E8875C MOVZ W10, 0x1
+	0x01E88760 ADD X11, X31, 0x8
+	0x01E88764 ADD W12, W8, 0x3F
+
+ISIL:
+	001 Add W8, W1, 63
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSEL not yet implemented."
+	004 NotImplemented "Instruction SBFM not yet implemented."
+	005 Move X9, [X0]
+	006 Move W10, 1
+	007 NotImplemented "Instruction LSLV not yet implemented."
+	008 Or X9, X9, X10
+	009 Move [X0], X9
+	010 Return 
+
+Method: System.Void Clear(System.Int32 bit)
+
+Disassembly:
+	0x01E88768 CMP W8, 0x0
+	0x01E8876C CSEL W12, W12, W8, LT
+	0x01E88770 SBFM W13, W12, 0x6, 0x1F
+	0x01E88774 LDR X14, [X9, W13, SXTW]
+	0x01E88778 AND W12, W12, 0xFFFFFFC0
+	0x01E8877C SUB W15, W8, W12
+	0x01E88780 LSLV X12, X10, X15
+	0x01E88784 ANDS X12, X14, X12, 0x0
+	0x01E88788 STR X14, [X31 + 0x8]
+	0x01E8878C B.NE 0x1E8880C
+
+ISIL:
+	001 Add W8, W1, 63
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSEL not yet implemented."
+	004 NotImplemented "Instruction SBFM not yet implemented."
+	005 Move X9, [X0]
+	006 Move W10, 1
+	007 NotImplemented "Instruction LSLV not yet implemented."
+	008 NotImplemented "Instruction BIC not yet implemented."
+	009 Move [X0], X9
+	010 Return 
+
+Method: System.Boolean get_Item(System.Int32 index)
+
+Disassembly:
+	0x01E88790 CBZ X14, 0x1E887E8
+	0x01E88794 SXTB W16, W15
+	0x01E88798 UBFM W17, W16, 0xA, 0xE
+	0x01E8879C ADD W17, W15, W17
+	0x01E887A0 SBFM W17, W17, 0x5, 0x7
+	0x01E887A4 LDR W17, [X11, W17, SXTW]
+	0x01E887A8 CBZ W17, 0x1E887F0
+	0x01E887AC UBFM W16, W16, 0xB, 0xE
+
+ISIL:
+	001 Add W8, W1, 63
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSEL not yet implemented."
+	004 NotImplemented "Instruction SBFM not yet implemented."
+	005 Move X8, [X0]
+	006 NotImplemented "Instruction LSRV not yet implemented."
+	007 And W0, W8, 1
+	008 Return X0
+
+Method: System.Void set_Item(System.Int32 index, System.Boolean value)
+
+Disassembly:
+	0x01E887B0 ADD W15, W15, W16
+	0x01E887B4 SBFM W15, W15, 0x4, 0x7
+	0x01E887B8 LDRH W15, [X11, W15, SXTW]
+	0x01E887BC CBZ W15, 0x1E887F8
+	0x01E887C0 MOV W15, W8
+	0x01E887C4 ADD W8, W8, 0x1
+	0x01E887C8 ADD W16, W15, 0x40
+	0x01E887CC CMP W8, 0x0
+	0x01E887D0 CSINC W15, W16, W15, LT
+	0x01E887D4 CMP W13, W15, ASR
+	0x01E887D8 B.NE 0x1E887FC
+	0x01E887DC LSRV X15, X14, X8
+	0x01E887E0 TBZ X15, 0x0, 0x1E887C0
+
+ISIL:
+	001 Add W8, W1, 63
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSEL not yet implemented."
+	004 NotImplemented "Instruction SBFM not yet implemented."
+	005 Move X9, [X0]
+	006 Move W10, 1
+	007 NotImplemented "Instruction LSLV not yet implemented."
+	008 And W31, W2, 1
+	009 NotImplemented "Instruction BIC not yet implemented."
+	010 Or X9, X9, X10
+	011 NotImplemented "Instruction CSEL not yet implemented."
+	012 Move [X0], X9
+	013 Return 
+
+Method: System.Void And(Fusion.BitSet128 other)
+
+Disassembly:
+	0x01E887E4 B 0x1E88824
+	0x01E887E8 ADD W8, W8, 0x40
+	0x01E887EC B 0x1E887FC
+	0x01E887F0 ADD W8, W8, 0x20
+	0x01E887F4 B 0x1E887FC
+	0x01E887F8 ADD W8, W8, 0x10
+	0x01E887FC CMP W8, 0xC0
+	0x01E88800 STR W8, [X0]
+	0x01E88804 B.LT 0x1E88764
+	0x01E88808 MOVN W8, 0x0
+	0x01E8880C CMP X12, 0x0
+	0x01E88810 CSET W0, NE
+	0x01E88814 B 0x1E8882C
+	0x01E88818 MOV W0, W31
+	0x01E8881C MOVN W8, 0x0
+	0x01E88820 B 0x1E8882C
+	0x01E88824 STR W8, [X0]
+	0x01E88828 MOVZ W0, 0x1
+	0x01E8882C STR W8, [X1]
+	0x01E88830 ADD X31, X31, 0x10
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 Move [X31+24], X9
+	006 Move [X31+8], X1
+	007 Move [X31+16], X2
+	008 Move X9, [X0]
+	009 Move X10, [X0+8]
+	010 And X9, X9, X1
+	011 Move [X0], X9
+	012 Move X9, [X31+16]
+	013 And X9, X9, X10
+	014 Move [X0+8], X9
+	015 Move X8, [X8+40]
+	016 Move X9, [X31+24]
+	017 NotImplemented "Instruction CMP not yet implemented."
+	018 Move X30, [X31+32]
+	019 Add X31, X31, 48
+	020 Return 
+	021 Call 0x3EB2B20
+
+Method: System.Void Or(Fusion.BitSet128 other)
+
+Disassembly:
+	0x01E88834 RET
+	0x01E88838 LDR W0, [X0 + 0x8]
+	0x01E8883C RET
+	0x01E88840 MOVN W8, 0x0
+	0x01E88844 STR W8, [X0 + 0x8]
+	0x01E88848 RET
+	0x01E8884C SUB X31, X31, 0x10
+	0x01E88850 STR X31, [X31 + 0x8]
+	0x01E88854 LDR W8, [X0 + 0x8]
+	0x01E88858 ADD W8, W8, 0x1
+	0x01E8885C CMP W8, 0xBF
+	0x01E88860 STR W8, [X0 + 0x8]
+	0x01E88864 B.GT 0x1E88924
+	0x01E88868 LDR X9, [X0]
+	0x01E8886C MOVZ W10, 0x1
+	0x01E88870 ADD X11, X31, 0x8
+	0x01E88874 ADD W12, W8, 0x3F
+	0x01E88878 CMP W8, 0x0
+	0x01E8887C CSEL W12, W12, W8, LT
+	0x01E88880 SBFM W13, W12, 0x6, 0x1F
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 Move [X31+24], X9
+	006 Move [X31+8], X1
+	007 Move [X31+16], X2
+	008 Move X9, [X0]
+	009 Move X10, [X0+8]
+	010 Or X9, X9, X1
+	011 Move [X0], X9
+	012 Move X9, [X31+16]
+	013 Or X9, X9, X10
+	014 Move [X0+8], X9
+	015 Move X8, [X8+40]
+	016 Move X9, [X31+24]
+	017 NotImplemented "Instruction CMP not yet implemented."
+	018 Move X30, [X31+32]
+	019 Add X31, X31, 48
+	020 Return 
+	021 Call 0x3EB2B20
+
+Method: System.Void Xor(Fusion.BitSet128 other)
+
+Disassembly:
+	0x01E88884 LDR X14, [X9, W13, SXTW]
+	0x01E88888 AND W12, W12, 0xFFFFFFC0
+	0x01E8888C SUB W15, W8, W12
+	0x01E88890 LSLV X12, X10, X15
+	0x01E88894 ANDS X12, X14, X12, 0x0
+	0x01E88898 STR X14, [X31 + 0x8]
+	0x01E8889C B.NE 0x1E88918
+	0x01E888A0 CBZ X14, 0x1E888F8
+	0x01E888A4 SXTB W16, W15
+	0x01E888A8 UBFM W17, W16, 0xA, 0xE
+	0x01E888AC ADD W17, W15, W17
+	0x01E888B0 SBFM W17, W17, 0x5, 0x7
+	0x01E888B4 LDR W17, [X11, W17, SXTW]
+	0x01E888B8 CBZ W17, 0x1E88900
+	0x01E888BC UBFM W16, W16, 0xB, 0xE
+	0x01E888C0 ADD W15, W15, W16
+	0x01E888C4 SBFM W15, W15, 0x4, 0x7
+	0x01E888C8 LDRH W15, [X11, W15, SXTW]
+	0x01E888CC CBZ W15, 0x1E88908
+	0x01E888D0 MOV W15, W8
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 Move [X31+24], X9
+	006 Move [X31+8], X1
+	007 Move [X31+16], X2
+	008 Move X9, [X0]
+	009 Move X10, [X0+8]
+	010 Xor X9, X9, X1
+	011 Move [X0], X9
+	012 Move X9, [X31+16]
+	013 Xor X9, X9, X10
+	014 Move [X0+8], X9
+	015 Move X8, [X8+40]
+	016 Move X9, [X31+24]
+	017 NotImplemented "Instruction CMP not yet implemented."
+	018 Move X30, [X31+32]
+	019 Add X31, X31, 48
+	020 Return 
+	021 Call 0x3EB2B20
+
+Method: System.Void AndNot(Fusion.BitSet128 other)
+
+Disassembly:
+	0x01E888D4 ADD W8, W8, 0x1
+	0x01E888D8 ADD W16, W15, 0x40
+	0x01E888DC CMP W8, 0x0
+	0x01E888E0 CSINC W15, W16, W15, LT
+	0x01E888E4 CMP W13, W15, ASR
+	0x01E888E8 B.NE 0x1E8890C
+	0x01E888EC LSRV X15, X14, X8
+	0x01E888F0 TBZ X15, 0x0, 0x1E888D0
+	0x01E888F4 B 0x1E8892C
+	0x01E888F8 ADD W8, W8, 0x40
+	0x01E888FC B 0x1E8890C
+	0x01E88900 ADD W8, W8, 0x20
+	0x01E88904 B 0x1E8890C
+	0x01E88908 ADD W8, W8, 0x10
+	0x01E8890C CMP W8, 0xC0
+	0x01E88910 STR W8, [X0 + 0x8]
+	0x01E88914 B.LT 0x1E88874
+	0x01E88918 CMP X12, 0x0
+	0x01E8891C CSET W0, NE
+	0x01E88920 B 0x1E88934
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 Move [X31+24], X9
+	006 Move [X31+8], X1
+	007 Move [X31+16], X2
+	008 Move X9, [X0]
+	009 Move X10, [X0+8]
+	010 NotImplemented "Instruction BIC not yet implemented."
+	011 Move [X0], X9
+	012 Move X9, [X31+16]
+	013 NotImplemented "Instruction BIC not yet implemented."
+	014 Move [X0+8], X9
+	015 Move X8, [X8+40]
+	016 Move X9, [X31+24]
+	017 NotImplemented "Instruction CMP not yet implemented."
+	018 Move X30, [X31+32]
+	019 Add X31, X31, 48
+	020 Return 
+	021 Call 0x3EB2B20
+
+Method: System.Void Not()
+
+Disassembly:
+	0x01E88924 MOV W0, W31
+	0x01E88928 B 0x1E88934
+	0x01E8892C STR W8, [X0 + 0x8]
+	0x01E88930 MOVZ W0, 0x1
+	0x01E88934 ADD X31, X31, 0x10
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X9, [X0+8]
+	003 NotImplemented "Instruction ORN not yet implemented."
+	004 NotImplemented "Instruction ORN not yet implemented."
+	005 Move [X0], X8
+	006 Move [X0+8], X9
+	007 Return 
+
+Method: System.Void ClearAll()
+
+Disassembly:
+	0x01E88938 RET
+	0x01E8893C SUB X31, X31, 0x30
+
+ISIL:
+	001 Move [X0], X31
+	002 Move [X0+8], X31
+	003 Return 
+
+Method: System.Boolean IsSet(System.Int32 bit)
+
+Disassembly:
+	0x01E88940 STP X30, X21, [X31 + 0x10]
+	0x01E88944 STP X20, X19, [X31 + 0x20]
+	0x01E88948 ADRP X21, 0x2551000
+	0x01E8894C ADRP X20, 0x226B000
+	0x01E88950 LDRB W8, [X21 + 0x222]
+	0x01E88954 LDR X20, [X20 + 0x758]
+	0x01E88958 MOV X19, X0
+	0x01E8895C TBNZ X8, 0x0, 0x1E88974
+
+ISIL:
+	001 Add W8, W1, 63
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSEL not yet implemented."
+	004 NotImplemented "Instruction SBFM not yet implemented."
+	005 Move X8, [X0]
+	006 NotImplemented "Instruction LSRV not yet implemented."
+	007 And W0, W8, 1
+	008 Return X0
+
+Method: System.Int32 GetSetCount()
+
+Disassembly:
+	0x01E88960 ADRP X0, 0x226B000
+	0x01E88964 LDR X0, [X0 + 0x758]
+	0x01E88968 BL 0x1C16CF4
+	0x01E8896C MOVZ W8, 0x1
+	0x01E88970 STRB W8, [X21 + 0x222]
+	0x01E88974 LDR W8, [X19 + 0x8]
+	0x01E88978 LDR X0, [X20]
+	0x01E8897C ADD X1, X31, 0xC
+	0x01E88980 STR W8, [X31 + 0xC]
+	0x01E88984 BL 0x1C16E04
+	0x01E88988 LDP X20, X19, [X31 + 0x20]
+	0x01E8898C LDP X30, X21, [X31 + 0x10]
+	0x01E88990 ADD X31, X31, 0x30
+	0x01E88994 RET
+	0x01E88998 MOVN W8, 0x0
+	0x01E8899C STR X31, [X0]
+	0x01E889A0 STR W8, [X0 + 0x8]
+	0x01E889A4 RET
+	0x01E889A8 STR X31, [X8]
+	0x01E889AC LDP V1, V0, [X0]
+	0x01E889B0 MOVN W9, 0x0
+	0x01E889B4 STR W9, [X8]
+	0x01E889B8 STUR V0, [X8 + 0x18]
+	0x01E889BC STUR V1, [X8 + 0x8]
+	0x01E889C0 RET
+	0x01E889C4 LDP V1, V0, [X1]
+	0x01E889C8 MOVN W8, 0x0
+	0x01E889CC STR W8, [X0]
+	0x01E889D0 STUR V0, [X0 + 0x18]
+	0x01E889D4 STUR V1, [X0 + 0x8]
+	0x01E889D8 RET
+	0x01E889DC MOVZ W0, 0x100
+	0x01E889E0 RET
+	0x01E889E4 SUB X31, X31, 0x50
+	0x01E889E8 STR X30, [X31 + 0x30]
+	0x01E889EC STP X20, X19, [X31 + 0x40]
+	0x01E889F0 MRS X9, 0xC000
+	0x01E889F4 LDR X10, [X9 + 0x28]
+	0x01E889F8 STR X10, [X31 + 0x28]
+	0x01E889FC CBZ X0, 0x1E88A78
+	0x01E88A00 LDR X10, [X0 + 0x18]
+	0x01E88A04 CMP W10, 0x4
+	0x01E88A08 B.NE 0x1E88AAC
+	0x01E88A0C AND X10, X10, 0x0
+	0x01E88A10 MOVI V0.2D, 0x0
+	0x01E88A14 STP V0, V0, [X31]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x2552000
+	006 Move X20, 0x2273000
+	007 Move W8, [X21+535]
+	008 Move X20, [X20+3176]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x2273000
+	015 Move X0, [X0+3176]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+535], W8
+	019 Move X0, [X20]
+	020 Move X20, [X19]
+	021 Move W8, [X0+224]
+	022 Compare W8, 0
+	023 JumpIfNotEqual {25}
+	024 Call 0x1C17DFC
+	025 Move X8, X20
+	026 ShiftRight X8, 1
+	027 And X8, X8, 0x7FFFFFFF
+	028 Move X10, [X19+8]
+	029 And X8, X8, 0x5555555555555555
+	030 Subtract X8, X20, X8
+	031 And X11, X8, 0x3333333333333333
+	032 Move X8, X8
+	033 ShiftRight X8, 2
+	034 And X8, X8, 0x7FFFFFFF
+	035 And X8, X8, 0x3333333333333333
+	036 Add X8, X8, X11
+	037 Move X11, X10
+	038 ShiftRight X11, 1
+	039 And X11, X11, 0x7FFFFFFF
+	040 And X11, X11, 0x5555555555555555
+	041 Subtract X10, X10, X11
+	042 And X11, X10, 0x3333333333333333
+	043 Move X10, X10
+	044 ShiftRight X10, 2
+	045 And X10, X10, 0x7FFFFFFF
+	046 And X10, X10, 0x3333333333333333
+	047 Add X10, X10, X11
+	048 Add X8, X8, X8
+	049 Add X10, X10, X10
+	050 Or X9, X31, 0x101010101010101
+	051 And X8, X8, 0xF0F0F0F0F0F0F0F
+	052 And X10, X10, 0xF0F0F0F0F0F0F0F
+	053 Move X20, [X31+16]
+	054 Move X19, [X31+24]
+	055 Multiply X8, X8, X9
+	056 Multiply X9, X10, X9
+	057 Move X8, X8
+	058 ShiftRight X8, 56
+	059 And X8, X8, 0x7FFFFFFF
+	060 Move X9, X9
+	061 ShiftRight X9, 56
+	062 And X9, X9, 0x7FFFFFFF
+	063 Add W0, W9, W8
+	064 Move X30, [X31+32]
+	065 Move X21, [X31+40]
+	066 Return X0
+
+Method: System.Boolean Any()
+
+Disassembly:
+	0x01E88A18 CBZ X10, 0x1E88A4C
+	0x01E88A1C MOV X10, X31
+	0x01E88A20 ADD X11, X31, 0x0
+	0x01E88A24 ADD X12, X0, 0x20
+	0x01E88A28 LDR X13, [X12, X10, LSL #3]
+	0x01E88A2C CMP X10, 0x3
+	0x01E88A30 STR X13, [X11]
+	0x01E88A34 B.EQ 0x1E88A50
+
+ISIL:
+	001 Move X8, [X0]
+	002 Compare X8, 0
+	003 JumpIfEqual {6}
+	004 Move W0, 1
+	005 Return X0
+	006 Move X8, [X0+8]
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Return X0
+
+Method: System.Boolean Empty()
+
+Disassembly:
+	0x01E88A38 LDR W13, [X0 + 0x18]
+	0x01E88A3C ADD X10, X10, 0x1
+	0x01E88A40 ADD X11, X11, 0x8
+	0x01E88A44 CMP X10, X13
+	0x01E88A48 B.CC 0x1E88A28
+	0x01E88A4C BL 0x1C16F28
+	0x01E88A50 LDP V1, V0, [X31]
+	0x01E88A54 STP V1, V0, [X8]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Compare X8, 0
+	003 JumpIfEqual {6}
+	004 Move W0, W31
+	005 Return X0
+	006 Move X8, [X0+8]
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Return X0
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x01E88A58 LDR X8, [X9 + 0x28]
+	0x01E88A5C LDR X9, [X31 + 0x28]
+	0x01E88A60 CMP X8, X9
+	0x01E88A64 B.NE 0x1E88B08
+	0x01E88A68 LDP X20, X19, [X31 + 0x40]
+	0x01E88A6C LDR X30, [X31 + 0x30]
+	0x01E88A70 ADD X31, X31, 0x50
+	0x01E88A74 RET
+	0x01E88A78 ADRP X0, 0x2270000
+	0x01E88A7C LDR X0, [X0 + 0x528]
+	0x01E88A80 BL 0x1C16D08
+	0x01E88A84 BL 0x1C16F10
+	0x01E88A88 MOV X19, X0
+	0x01E88A8C ADRP X0, 0x2275000
+	0x01E88A90 LDR X0, [X0 + 0xED8]
+	0x01E88A94 BL 0x1C16D08
+	0x01E88A98 MOV X1, X0
+	0x01E88A9C MOV X0, X19
+	0x01E88AA0 MOV X2, X31
+	0x01E88AA4 BL 0x330E100
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x2552000
+	006 Move X21, 0x2276000
+	007 Move W8, [X20+536]
+	008 Move X21, [X21+3824]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x2276000
+	015 Move X0, [X0+3824]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+536], W8
+	019 Move X3, [X21]
+	020 Move X0, X19
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move W1, 2
+	024 Move W2, 43
+	025 Move X30, [X31+32]
+	026 Move X21, [X31+40]
+	027 Call HashCodeUtilities.GetArrayHashCode, X0, X1, X2
+	028 Return X0
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x01E88AA8 B 0x1E88AF0
+	0x01E88AAC ADRP X0, 0x2273000
+	0x01E88AB0 LDR X0, [X0 + 0x578]
+	0x01E88AB4 BL 0x1C16D08
+	0x01E88AB8 BL 0x1C16F10
+	0x01E88ABC MOV X19, X0
+	0x01E88AC0 ADRP X0, 0x2275000
+	0x01E88AC4 LDR X0, [X0 + 0xF48]
+	0x01E88AC8 BL 0x1C16D08
+	0x01E88ACC MOV X20, X0
+	0x01E88AD0 ADRP X0, 0x2275000
+	0x01E88AD4 LDR X0, [X0 + 0xED8]
+	0x01E88AD8 BL 0x1C16D08
+	0x01E88ADC MOV X2, X0
+	0x01E88AE0 MOV X0, X19
+	0x01E88AE4 MOV X1, X20
+	0x01E88AE8 MOV X3, X31
+	0x01E88AEC BL 0x330E16C
+	0x01E88AF0 ADRP X0, 0x2275000
+	0x01E88AF4 LDR X0, [X0 + 0xF50]
+	0x01E88AF8 BL 0x1C16D08
+	0x01E88AFC MOV X1, X0
+	0x01E88B00 MOV X0, X19
+	0x01E88B04 BL 0x1C16DEC
+	0x01E88B08 BL 0x3EB1B20
+	0x01E88B0C ADD W8, W1, 0x3F
+	0x01E88B10 CMP W1, 0x0
+	0x01E88B14 CSEL W8, W8, W1, LT
+	0x01E88B18 SBFM W8, W8, 0x6, 0x1F
+	0x01E88B1C LDR X9, [X0, W8, SXTW]
+	0x01E88B20 MOVZ W10, 0x1
+	0x01E88B24 LSLV X10, X10, X1
+	0x01E88B28 ORR X9, X9, X10, 0x0
+	0x01E88B2C STR X9, [X0, W8, SXTW]
+	0x01E88B30 RET
+	0x01E88B34 ADD W8, W1, 0x3F
+	0x01E88B38 CMP W1, 0x0
+	0x01E88B3C CSEL W8, W8, W1, LT
+	0x01E88B40 SBFM W8, W8, 0x6, 0x1F
+	0x01E88B44 LDR X9, [X0, W8, SXTW]
+	0x01E88B48 MOVZ W10, 0x1
+	0x01E88B4C LSLV X10, X10, X1
+	0x01E88B50 BIC X9, X9, X10, 0x0
+	0x01E88B54 STR X9, [X0, W8, SXTW]
+	0x01E88B58 RET
+	0x01E88B5C ADD W8, W1, 0x3F
+	0x01E88B60 CMP W1, 0x0
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+32], X30
+	003 Move [X31+48], X22
+	004 Move [X31+56], X21
+	005 Move [X31+64], X20
+	006 Move [X31+72], X19
+	007 NotImplemented "Instruction MRS not yet implemented."
+	008 Move X8, [X21+40]
+	009 Move X22, 0x2552000
+	010 Move X20, X1
+	011 Move X19, X0
+	012 Move [X31+24], X8
+	013 Move W8, [X22+537]
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {23}
+	018 Move X0, 0x2276000
+	019 Move X0, [X0+3864]
+	020 Call 0x1C17CF4
+	021 Move W8, 1
+	022 Move [X22+537], W8
+	023 Compare X20, 0
+	024 JumpIfEqual {42}
+	025 Move X8, 0x2276000
+	026 Move X8, [X8+3864]
+	027 Move X9, [X20]
+	028 Move X8, [X8]
+	029 NotImplemented "Instruction CMP not yet implemented."
+	030 Move X0, X20
+	031 Call 0x1C17E08
+	032 Move X8, [X0]
+	033 Move X9, [X0+8]
+	034 Move [X31+8], X8
+	035 Move [X31+16], X9
+	036 Move X9, [X19]
+	037 NotImplemented "Instruction CMP not yet implemented."
+	038 Move X8, [X19+8]
+	039 Move X9, [X31+16]
+	040 NotImplemented "Instruction CMP not yet implemented."
+	041 NotImplemented "Instruction CSET not yet implemented."
+	042 Move W0, W31
+	043 Move X8, [X21+40]
+	044 Move X9, [X31+24]
+	045 NotImplemented "Instruction CMP not yet implemented."
+	046 Move X20, [X31+64]
+	047 Move X19, [X31+72]
+	048 Move X22, [X31+48]
+	049 Move X21, [X31+56]
+	050 Move X30, [X31+32]
+	051 Add X31, X31, 80
+	052 Return X0
+	053 Call 0x3EB2B20
+
+Method: System.Boolean Equals(Fusion.BitSet128 other)
+
+Disassembly:
+	0x01E88B64 CSEL W8, W8, W1, LT
+	0x01E88B68 SBFM W8, W8, 0x6, 0x1F
+	0x01E88B6C LDR X8, [X0, W8, SXTW]
+	0x01E88B70 LSRV X8, X8, X1
+	0x01E88B74 AND W0, W8, 0x1
+	0x01E88B78 RET
+	0x01E88B7C ADD W8, W1, 0x3F
+	0x01E88B80 CMP W1, 0x0
+	0x01E88B84 CSEL W8, W8, W1, LT
+	0x01E88B88 SBFM W8, W8, 0x6, 0x1F
+	0x01E88B8C LDR X9, [X0, W8, SXTW]
+	0x01E88B90 MOVZ W10, 0x1
+	0x01E88B94 LSLV X10, X10, X1
+	0x01E88B98 ANDS W31, W2, 0x1
+	0x01E88B9C BIC X11, X9, X10, 0x0
+	0x01E88BA0 ORR X9, X9, X10, 0x0
+	0x01E88BA4 CSEL X9, X9, X11, NE
+	0x01E88BA8 STR X9, [X0, W8, SXTW]
+	0x01E88BAC RET
+	0x01E88BB0 LDR X8, [X1]
+	0x01E88BB4 LDP X9, X10, [X0]
+	0x01E88BB8 AND X8, X8, X9, 0x0
+	0x01E88BBC STR X8, [X0]
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 Move [X31+24], X9
+	006 Move [X31+8], X1
+	007 Move [X31+16], X2
+	008 Move X9, [X0]
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Move X9, [X0+8]
+	011 Move X10, [X31+16]
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 NotImplemented "Instruction CSET not yet implemented."
+	014 Move W0, W31
+	015 Move X8, [X8+40]
+	016 Move X9, [X31+24]
+	017 NotImplemented "Instruction CMP not yet implemented."
+	018 Move X30, [X31+32]
+	019 Add X31, X31, 48
+	020 Return X0
+	021 Call 0x3EB2B20
+
+Method: Fusion.BitSet128/Enumerator GetEnumerator()
+
+Disassembly:
+	0x01E88BC0 LDR X8, [X1 + 0x8]
+	0x01E88BC4 AND X8, X8, X10, 0x0
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W1, TEMP
+	004 Return X0
+
+Method: System.Collections.Generic.IEnumerator`1<System.Int32> System.Collections.Generic.IEnumerable<System.Int32>.GetEnumerator()
+
+Disassembly:
+	0x01E88BD8 STR X8, [X0 + 0x10]
+	0x01E88BDC LDR X8, [X1 + 0x18]
+	0x01E88BE0 AND X8, X8, X10, 0x0
+	0x01E88BE4 STR X8, [X0 + 0x18]
+	0x01E88BE8 RET
+	0x01E88BEC LDR X8, [X1]
+	0x01E88BF0 LDP X9, X10, [X0]
+	0x01E88BF4 ORR X8, X8, X9, 0x0
+	0x01E88BF8 STR X8, [X0]
+	0x01E88BFC LDR X8, [X1 + 0x8]
+	0x01E88C00 ORR X8, X8, X10, 0x0
+	0x01E88C04 STR X8, [X0 + 0x8]
+	0x01E88C08 LDR X8, [X1 + 0x10]
+	0x01E88C0C LDP X9, X10, [X0 + 0x10]
+	0x01E88C10 ORR X8, X8, X9, 0x0
+	0x01E88C14 STR X8, [X0 + 0x10]
+	0x01E88C18 LDR X8, [X1 + 0x18]
+	0x01E88C1C ORR X8, X8, X10, 0x0
+	0x01E88C20 STR X8, [X0 + 0x18]
+	0x01E88C24 RET
+	0x01E88C28 LDR X8, [X1]
+	0x01E88C2C LDP X9, X10, [X0]
+	0x01E88C30 EOR X8, X8, X9, 0x0
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], X30
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x2552000
+	007 Move X20, 0x2276000
+	008 Move W8, [X21+538]
+	009 Move X20, [X20+3872]
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0x2276000
+	016 Move X0, [X0+3872]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X21+538], W8
+	020 Move X0, [X20]
+	021 Move TEMP, 0
+	022 Not TEMP
+	023 Move W8, TEMP
+	024 Add X1, X31, 0
+	025 Move [X31], X19
+	026 Move [X31+8], X8
+	027 Call 0x1C17E04
+	028 Move X20, [X31+32]
+	029 Move X19, [X31+40]
+	030 Move X30, [X31+16]
+	031 Move X21, [X31+24]
+	032 Add X31, X31, 48
+	033 Return X0
+
+Method: System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+Disassembly:
+	0x01E88C34 STR X8, [X0]
+	0x01E88C38 LDR X8, [X1 + 0x8]
+	0x01E88C3C EOR X8, X8, X10, 0x0
+	0x01E88C40 STR X8, [X0 + 0x8]
+	0x01E88C44 LDR X8, [X1 + 0x10]
+	0x01E88C48 LDP X9, X10, [X0 + 0x10]
+	0x01E88C4C EOR X8, X8, X9, 0x0
+	0x01E88C50 STR X8, [X0 + 0x10]
+	0x01E88C54 LDR X8, [X1 + 0x18]
+	0x01E88C58 EOR X8, X8, X10, 0x0
+	0x01E88C5C STR X8, [X0 + 0x18]
+	0x01E88C60 RET
+	0x01E88C64 LDR X8, [X1]
+	0x01E88C68 LDP X9, X10, [X0]
+	0x01E88C6C BIC X8, X9, X8, 0x0
+	0x01E88C70 STR X8, [X0]
+	0x01E88C74 LDR X8, [X1 + 0x8]
+	0x01E88C78 BIC X8, X10, X8, 0x0
+	0x01E88C7C STR X8, [X0 + 0x8]
+	0x01E88C80 LDR X8, [X1 + 0x10]
+	0x01E88C84 LDP X9, X10, [X0 + 0x10]
+	0x01E88C88 BIC X8, X9, X8, 0x0
+	0x01E88C8C STR X8, [X0 + 0x10]
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], X30
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x2552000
+	007 Move X20, 0x2276000
+	008 Move W8, [X21+539]
+	009 Move X20, [X20+3872]
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0x2276000
+	016 Move X0, [X0+3872]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X21+539], W8
+	020 Move X0, [X20]
+	021 Move TEMP, 0
+	022 Not TEMP
+	023 Move W8, TEMP
+	024 Add X1, X31, 0
+	025 Move [X31], X19
+	026 Move [X31+8], X8
+	027 Call 0x1C17E04
+	028 Move X20, [X31+32]
+	029 Move X19, [X31+40]
+	030 Move X30, [X31+16]
+	031 Move X21, [X31+24]
+	032 Add X31, X31, 48
+	033 Return X0
+
+Method: System.Boolean op_Equality(Fusion.BitSet128 a, Fusion.BitSet128 b)
+
+Disassembly:
+	0x01E88C90 LDR X8, [X1 + 0x18]
+	0x01E88C94 BIC X8, X10, X8, 0x0
+	0x01E88C98 STR X8, [X0 + 0x18]
+	0x01E88C9C RET
+	0x01E88CA0 LDP X8, X9, [X0]
+	0x01E88CA4 LDP X10, X11, [X0 + 0x10]
+	0x01E88CA8 ORN X8, X31, X8, 0x0
+	0x01E88CAC ORN X9, X31, X9, 0x0
+	0x01E88CB0 ORN X10, X31, X10, 0x0
+	0x01E88CB4 ORN X11, X31, X11, 0x0
+	0x01E88CB8 STP X8, X9, [X0]
+	0x01E88CBC STP X10, X11, [X0 + 0x10]
+	0x01E88CC0 RET
+	0x01E88CC4 MOVI V0.2D, 0x0
+	0x01E88CC8 STP V0, V0, [X0]
+	0x01E88CCC RET
+	0x01E88CD0 ADD W8, W1, 0x3F
+	0x01E88CD4 CMP W1, 0x0
+	0x01E88CD8 CSEL W8, W8, W1, LT
+	0x01E88CDC SBFM W8, W8, 0x6, 0x1F
+	0x01E88CE0 LDR X8, [X0, W8, SXTW]
+	0x01E88CE4 LSRV X8, X8, X1
+	0x01E88CE8 AND W0, W8, 0x1
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+48], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Move [X31+40], X9
+	007 Move [X31+8], X0
+	008 Move [X31+16], X1
+	009 Move [X31+24], X2
+	010 Move [X31+32], X3
+	011 Move X9, [X31+16]
+	012 Move X10, [X31+32]
+	013 NotImplemented "Instruction CMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 Move W0, W31
+	016 Move X8, [X8+40]
+	017 Move X9, [X31+40]
+	018 NotImplemented "Instruction CMP not yet implemented."
+	019 Move X30, [X31+48]
+	020 Add X31, X31, 64
+	021 Return X0
+	022 Call 0x3EB2B20
+
+Method: System.Boolean op_Inequality(Fusion.BitSet128 a, Fusion.BitSet128 b)
+
+Disassembly:
+	0x01E88CEC RET
+	0x01E88CF0 STP X30, X21, [X31 - 0x20]!
+	0x01E88CF4 STP X20, X19, [X31 + 0x10]
+	0x01E88CF8 ADRP X21, 0x2551000
+	0x01E88CFC ADRP X20, 0x2272000
+	0x01E88D00 LDRB W8, [X21 + 0x223]
+	0x01E88D04 LDR X20, [X20 + 0xC68]
+	0x01E88D08 MOV X19, X0
+	0x01E88D0C TBNZ X8, 0x0, 0x1E88D24
+	0x01E88D10 ADRP X0, 0x2272000
+	0x01E88D14 LDR X0, [X0 + 0xC68]
+	0x01E88D18 BL 0x1C16CF4
+	0x01E88D1C MOVZ W8, 0x1
+	0x01E88D20 STRB W8, [X21 + 0x223]
+	0x01E88D24 LDR X0, [X20]
+	0x01E88D28 LDR X20, [X19]
+	0x01E88D2C LDR W8, [X0 + 0xE0]
+	0x01E88D30 CBNZ W8, 0x1E88D38
+	0x01E88D34 BL 0x1C16DFC
+	0x01E88D38 UBFM X8, X20, 0x1, 0x3F
+	0x01E88D3C LDP X10, X11, [X19 + 0x8]
+	0x01E88D40 AND X8, X8, 0x5555555555555555
+	0x01E88D44 SUB X8, X20, X8
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+48], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Move [X31+40], X9
+	007 Move [X31+8], X0
+	008 Move [X31+16], X1
+	009 Move [X31+24], X2
+	010 Move [X31+32], X3
+	011 Move X9, [X31+16]
+	012 Move X10, [X31+32]
+	013 NotImplemented "Instruction CMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 Move W0, 1
+	016 Move X8, [X8+40]
+	017 Move X9, [X31+40]
+	018 NotImplemented "Instruction CMP not yet implemented."
+	019 Move X30, [X31+48]
+	020 Add X31, X31, 64
+	021 Return X0
+	022 Call 0x3EB2B20
+

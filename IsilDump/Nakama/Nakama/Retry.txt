@@ -1,0 +1,55 @@
+Type: Nakama.Retry
+
+Method: System.Int32 get_ExponentialBackoff()
+
+Disassembly:
+	0x03478D30 LDRB W8, [X22 + 0x851]
+	0x03478D34 LDR X21, [X21 + 0xA70]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Int32 get_JitterBackoff()
+
+Disassembly:
+	0x03478D38 MOV X19, X1
+	0x03478D3C MOV X20, X0
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void .ctor(System.Int32 expoBackoff, System.Int32 jitterBackoff)
+
+Disassembly:
+	0x03478D40 TBNZ X8, 0x0, 0x3478D70
+	0x03478D44 ADRP X0, 0xC7C000
+	0x03478D48 LDR X0, [X0 + 0x9F0]
+	0x03478D4C BL 0x1C16CF4
+	0x03478D50 ADRP X0, 0xCB7000
+	0x03478D54 LDR X0, [X0 + 0xA70]
+	0x03478D58 BL 0x1C16CF4
+	0x03478D5C ADRP X0, 0xC7D000
+	0x03478D60 LDR X0, [X0 + 0x570]
+	0x03478D64 BL 0x1C16CF4
+	0x03478D68 MOVZ W8, 0x1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, W1
+	006 Move X1, X31
+	007 Move W19, W2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+16], W20
+	011 Move [X21+20], W19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+

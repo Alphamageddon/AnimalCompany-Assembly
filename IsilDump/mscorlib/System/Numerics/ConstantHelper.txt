@@ -1,0 +1,114 @@
+Type: System.Numerics.ConstantHelper
+
+Method: System.Byte GetByteWithAllBitsSet()
+
+Disassembly:
+	0x032E2564 BL 0x1C16CF4
+	0x032E2568 MOVZ W8, 0x1
+
+ISIL:
+	001 Move W0, 255
+	002 Return X0
+
+Method: System.SByte GetSByteWithAllBitsSet()
+
+Disassembly:
+	0x032E256C STRB W8, [X22 + 0x99D]
+	0x032E2570 LDR X0, [X23]
+
+ISIL:
+	001 Move W0, 255
+	002 Return X0
+
+Method: System.UInt16 GetUInt16WithAllBitsSet()
+
+Disassembly:
+	0x032E2574 LDR W8, [X0 + 0xE0]
+	0x032E2578 CBNZ W8, 0x32E2580
+
+ISIL:
+	001 Move W0, 0xFFFF
+	002 Return X0
+
+Method: System.Int16 GetInt16WithAllBitsSet()
+
+Disassembly:
+	0x032E257C BL 0x1C16DFC
+	0x032E2580 MOV X0, X19
+
+ISIL:
+	001 Move W0, 0xFFFF
+	002 Return X0
+
+Method: System.UInt32 GetUInt32WithAllBitsSet()
+
+Disassembly:
+	0x032E2584 MOV X1, X31
+	0x032E2588 BL 0x32F27B0
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W0, TEMP
+	004 Return X0
+
+Method: System.Int32 GetInt32WithAllBitsSet()
+
+Disassembly:
+	0x032E258C CBZ X20, 0x32E25C0
+	0x032E2590 STR X20, [X19 + 0x28]
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W0, TEMP
+	004 Return X0
+
+Method: System.UInt64 GetUInt64WithAllBitsSet()
+
+Disassembly:
+	0x032E2594 LDR W9, [X20 + 0x18]
+	0x032E2598 AND W8, W21, 0x1
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move X0, TEMP
+	004 Return X0
+
+Method: System.Int64 GetInt64WithAllBitsSet()
+
+Disassembly:
+	0x032E259C MOVZ W10, 0x100
+	0x032E25A0 STRB W8, [X19 + 0x41]
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move X0, TEMP
+	004 Return X0
+
+Method: System.Single GetSingleWithAllBitsSet()
+
+Disassembly:
+	0x032E25A4 STRH W10, [X19 + 0x42]
+	0x032E25A8 STP W9, W9, [X19 + 0x38]
+	0x032E25AC STR W31, [X19 + 0x30]
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move S0, W8
+	005 Return V0
+
+Method: System.Double GetDoubleWithAllBitsSet()
+
+Disassembly:
+	0x032E25B0 LDP X20, X19, [X31 + 0x20]
+	0x032E25B4 LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 NotImplemented "Instruction MOVI not yet implemented."
+	002 Return V0
+

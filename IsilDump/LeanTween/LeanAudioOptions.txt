@@ -1,0 +1,123 @@
+Type: LeanAudioOptions
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x031A9F00 LDR X8, [X8 + 0x790]
+	0x031A9F04 LDR W1, [X20 + 0x18]
+	0x031A9F08 LDR X0, [X8]
+	0x031A9F0C BL 0x1C16D6C
+	0x031A9F10 LDR X8, [X20 + 0x18]
+	0x031A9F14 MOV X21, X0
+	0x031A9F18 CMP W8, 0x1
+	0x031A9F1C B.LT 0x31A9F9C
+	0x031A9F20 MOV X22, X31
+
+ISIL:
+	001 Move X8, -40611840
+	002 Move V0, [X8+1936]
+	003 Move W8, 0xAC44
+	004 Move W9, 1
+	005 Move X1, X31
+	006 Move [X0+40], W8
+	007 Move [X0+44], D0
+	008 Move [X0+52], W9
+	009 Call Object..ctor, X0
+	010 Return 
+
+Method: LeanAudioOptions setFrequency(System.Int32 frequencyRate)
+
+Disassembly:
+	0x031AB044 MOV X0, X19
+	0x031AB048 MOV X1, X31
+
+ISIL:
+	001 Move [X0+40], W1
+	002 Return X0
+
+Method: LeanAudioOptions setVibrato(UnityEngine.Vector3[] vibrato)
+
+Disassembly:
+	0x031AB04C BL 0x3C06048
+	0x031AB050 LDP X20, X19, [X31 + 0x30]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return X0
+
+Method: LeanAudioOptions setWaveSine()
+
+Disassembly:
+	0x031AB054 LDP X22, X21, [X31 + 0x20]
+	0x031AB058 LDP X30, X23, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+16], W31
+	002 Return X0
+
+Method: LeanAudioOptions setWaveSquare()
+
+Disassembly:
+	0x031AB05C ADD X31, X31, 0x40
+	0x031AB060 RET
+	0x031AB064 BL 0x1C16F28
+
+ISIL:
+	001 Move W8, 1
+	002 Move [X0+16], W8
+	003 Return X0
+
+Method: LeanAudioOptions setWaveSawtooth()
+
+Disassembly:
+	0x031AB068 BL 0x1C16F20
+	0x031AB06C LDR X0, [X0 + 0x18]
+	0x031AB070 RET
+
+ISIL:
+	001 Move W8, 2
+	002 Move [X0+16], W8
+	003 Return X0
+
+Method: LeanAudioOptions setWaveNoise()
+
+Disassembly:
+	0x031AB074 STP X30, X19, [X31 - 0x10]!
+	0x031AB078 ADRP X0, 0xF48000
+	0x031AB07C LDR X0, [X0 + 0xB40]
+
+ISIL:
+	001 Move W8, 3
+	002 Move [X0+16], W8
+	003 Return X0
+
+Method: LeanAudioOptions setWaveStyle(LeanAudioOptions/LeanAudioWaveStyle style)
+
+Disassembly:
+	0x031AB080 BL 0x1C16D08
+	0x031AB084 BL 0x1C16F10
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return X0
+
+Method: LeanAudioOptions setWaveNoiseScale(System.Single waveScale)
+
+Disassembly:
+	0x031AB088 MOV X1, X31
+	0x031AB08C MOV X19, X0
+
+ISIL:
+	001 Move [X0+44], S0
+	002 Return X0
+
+Method: LeanAudioOptions setWaveNoiseInfluence(System.Single influence)
+
+Disassembly:
+	0x031AB090 BL 0x3380310
+	0x031AB094 ADRP X0, 0xF74000
+
+ISIL:
+	001 Move [X0+48], S0
+	002 Return X0
+

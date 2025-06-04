@@ -1,0 +1,30 @@
+Type: System.Reflection.AssemblyConfigurationAttribute
+
+Method: System.Void .ctor(System.String configuration)
+
+Disassembly:
+	0x032CD598 CBZ X0, 0x32CD92C
+	0x032CD59C LDR W8, [X19 + 0x18]
+	0x032CD5A0 CBZ W8, 0x32CD928
+	0x032CD5A4 MOVZ W26, 0x1
+	0x032CD5A8 STR X22, [X19 + 0x20]
+	0x032CD5AC LDR X8, [X21]
+	0x032CD5B0 MOV X0, X21
+	0x032CD5B4 LDP X9, X1, [X8 + 0x1B8]
+	0x032CD5B8 BLR X9
+	0x032CD5BC CBZ X0, 0x32CD924
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

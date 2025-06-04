@@ -1,0 +1,38 @@
+Type: UnityEngine.UIElements.BaseUxmlTraits
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03E1DDF4 LDRB W8, [X20 + 0x42D]
+	0x03E1DDF8 MOV X19, X0
+	0x03E1DDFC TBNZ X8, 0x0, 0x3E1DE20
+	0x03E1DE00 ADRP X0, 0x2D7000
+	0x03E1DE04 LDR X0, [X0 + 0x1C0]
+	0x03E1DE08 BL 0x1C16CF4
+	0x03E1DE0C ADRP X0, 0x2D7000
+	0x03E1DE10 LDR X0, [X0 + 0x1D0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X1, X31
+	004 Move X19, X0
+	005 Call Object..ctor, X0
+	006 Move W8, 1
+	007 Move [X19+16], W8
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+
+Method: System.Void set_canHaveAnyAttribute(System.Boolean value)
+
+Disassembly:
+	0x03E1DE14 BL 0x1C16CF4
+	0x03E1DE18 MOVZ W8, 0x1
+	0x03E1DE1C STRB W8, [X20 + 0x42D]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+16], W8
+	003 Return 
+

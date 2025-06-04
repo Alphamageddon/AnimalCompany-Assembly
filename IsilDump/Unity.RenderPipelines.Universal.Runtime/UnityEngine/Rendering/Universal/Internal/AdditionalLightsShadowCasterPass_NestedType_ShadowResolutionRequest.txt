@@ -1,0 +1,27 @@
+Type: UnityEngine.Rendering.Universal.Internal.AdditionalLightsShadowCasterPass/ShadowResolutionRequest
+
+Method: System.Void .ctor(System.Int32 _visibleLightIndex, System.Int32 _perLightShadowSliceIndex, System.Int32 _requestedResolution, System.Boolean _softShadow, System.Boolean _pointLightShadow)
+
+Disassembly:
+	0x03AA49A8 STR V2, [X31 + 0x2]
+	0x03AA49AC STR W8, [X31 + 0x30]
+	0x03AA49B0 ADD X1, X31, 0x0
+	0x03AA49B4 MOVZ W3, 0x1
+	0x03AA49B8 MOVZ W5, 0x1
+	0x03AA49BC MOV X0, X21
+	0x03AA49C0 MOV X2, X23
+	0x03AA49C4 MOV W4, W22
+	0x03AA49C8 MOV X6, X31
+
+ISIL:
+	001 And W8, W4, 1
+	002 And W9, W5, 1
+	003 Move [X0], W1
+	004 Move [X0+4], W2
+	005 Move [X0+8], W3
+	006 Move [X0+16], X31
+	007 Move [X0+12], W8
+	008 Move [X0+13], W9
+	009 Move [X0+24], W31
+	010 Return 
+

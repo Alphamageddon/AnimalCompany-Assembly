@@ -1,0 +1,811 @@
+Type: System.Collections.Generic.SortedSet`1/Node
+
+Method: System.Void .ctor(T item, System.Collections.Generic.NodeColor color)
+
+Disassembly:
+	0x02424E84 MOV X1, X20
+	0x02424E88 LDR X8, [X8 + 0xC0]
+	0x02424E8C LDR X2, [X8 + 0x98]
+	0x02424E90 LDR X8, [X2]
+	0x02424E94 BLR X8
+	0x02424E98 MOV X0, X21
+	0x02424E9C LDP X20, X19, [X31 + 0x20]
+	0x02424EA0 LDP X22, X21, [X31 + 0x10]
+	0x02424EA4 LDR X30, [X31], #0x30
+	0x02424EA8 RET
+	0x02424EAC BL 0x1C16F20
+	0x02424EB0 STP X30, X21, [X31 - 0x20]!
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move W19, W2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+16], X20
+	011 Move [X21+40], W19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+
+Method: System.Boolean IsNonNullRed(System.Collections.Generic.SortedSet`1/Node<T> node)
+
+Disassembly:
+	0x02424EB4 STP X20, X19, [X31 + 0x10]
+	0x02424EB8 LDR X8, [X1 + 0x20]
+	0x02424EBC MOV X20, X1
+	0x02424EC0 MOV X19, X0
+	0x02424EC4 LDR X8, [X8 + 0xC0]
+	0x02424EC8 LDR X1, [X8 + 0x38]
+	0x02424ECC LDR X8, [X1]
+	0x02424ED0 BLR X8
+	0x02424ED4 CBZ X0, 0x2424F38
+	0x02424ED8 LDR X8, [X20 + 0x20]
+	0x02424EDC MOV X21, X0
+	0x02424EE0 LDR X8, [X8 + 0xC0]
+
+ISIL:
+	001 Compare X0, 0
+	002 JumpIfEqual {18}
+	003 Move [X31-16], X30
+	004 Move [X31-8], X19
+	005 Move X19, X0
+	006 Move X0, [X1+32]
+	007 Move W8, [X0+309]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {13}
+	012 Call 0x1C5D684
+	013 Move W8, [X19+40]
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 NotImplemented "Instruction CSET not yet implemented."
+	016 Move X30, [X31+16]
+	017 Move X19, [X31+24]
+	018 Return X0
+
+Method: System.Boolean IsNullOrBlack(System.Collections.Generic.SortedSet`1/Node<T> node)
+
+Disassembly:
+	0x02424EE4 LDR X1, [X8 + 0x50]
+	0x02424EE8 LDR X8, [X1]
+	0x02424EEC BLR X8
+	0x02424EF0 LDR X8, [X20 + 0x20]
+	0x02424EF4 MOV X1, X0
+	0x02424EF8 MOV X0, X19
+	0x02424EFC LDR X8, [X8 + 0xC0]
+	0x02424F00 LDR X2, [X8 + 0x98]
+	0x02424F04 LDR X8, [X2]
+	0x02424F08 BLR X8
+	0x02424F0C LDR X8, [X20 + 0x20]
+	0x02424F10 MOV X0, X21
+	0x02424F14 MOV X1, X19
+	0x02424F18 LDR X8, [X8 + 0xC0]
+
+ISIL:
+	001 Compare X0, 0
+	002 JumpIfEqual {19}
+	003 Move [X31-16], X30
+	004 Move [X31-8], X19
+	005 Move X19, X0
+	006 Move X0, [X1+32]
+	007 Move W8, [X0+309]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {13}
+	012 Call 0x1C5D684
+	013 Move W8, [X19+40]
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 NotImplemented "Instruction CSET not yet implemented."
+	016 Move X30, [X31+16]
+	017 Move X19, [X31+24]
+	018 Return X0
+	019 Move W0, 1
+	020 Return X0
+
+Method: T get_Item()
+
+Disassembly:
+	0x02424F1C LDR X2, [X8 + 0x90]
+	0x02424F20 LDR X8, [X2]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_Item(T value)
+
+Disassembly:
+	0x02424F24 BLR X8
+	0x02424F28 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Collections.Generic.SortedSet`1/Node<T> get_Left()
+
+Disassembly:
+	0x02424F2C MOV X0, X21
+	0x02424F30 LDP X30, X21, [X31], #0x20
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_Left(System.Collections.Generic.SortedSet`1/Node<T> value)
+
+Disassembly:
+	0x02424F34 RET
+	0x02424F38 BL 0x1C16F20
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Collections.Generic.SortedSet`1/Node<T> get_Right()
+
+Disassembly:
+	0x02424F3C STR X30, [X31 - 0x30]!
+	0x02424F40 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_Right(System.Collections.Generic.SortedSet`1/Node<T> value)
+
+Disassembly:
+	0x02424F44 STP X20, X19, [X31 + 0x20]
+	0x02424F48 LDR X8, [X1 + 0x20]
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.Collections.Generic.NodeColor get_Color()
+
+Disassembly:
+	0x02424F4C MOV X19, X1
+	0x02424F50 MOV X22, X0
+
+ISIL:
+	001 Move W0, [X0+40]
+	002 Return X0
+
+Method: System.Void set_Color(System.Collections.Generic.NodeColor value)
+
+Disassembly:
+	0x02424F54 LDR X8, [X8 + 0xC0]
+	0x02424F58 LDR X1, [X8 + 0x50]
+
+ISIL:
+	001 Move [X0+40], W1
+	002 Return 
+
+Method: System.Boolean get_IsBlack()
+
+Disassembly:
+	0x02424F5C LDR X8, [X1]
+	0x02424F60 BLR X8
+	0x02424F64 CBZ X0, 0x2425038
+	0x02424F68 LDR X8, [X19 + 0x20]
+
+ISIL:
+	001 Move W8, [X0+40]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Boolean get_IsRed()
+
+Disassembly:
+	0x02424F6C MOV X20, X0
+	0x02424F70 LDR X8, [X8 + 0xC0]
+	0x02424F74 LDR X1, [X8 + 0x38]
+	0x02424F78 LDR X8, [X1]
+
+ISIL:
+	001 Move W8, [X0+40]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Boolean get_Is2Node()
+
+Disassembly:
+	0x02424F7C BLR X8
+	0x02424F80 CBZ X0, 0x2425038
+	0x02424F84 LDR X8, [X19 + 0x20]
+	0x02424F88 MOV X21, X0
+	0x02424F8C LDR X8, [X8 + 0xC0]
+	0x02424F90 LDR X1, [X8 + 0x38]
+	0x02424F94 LDR X8, [X1]
+	0x02424F98 BLR X8
+	0x02424F9C LDR X8, [X19 + 0x20]
+	0x02424FA0 MOV X1, X0
+	0x02424FA4 MOV X0, X22
+	0x02424FA8 LDR X8, [X8 + 0xC0]
+	0x02424FAC LDR X2, [X8 + 0x90]
+	0x02424FB0 LDR X8, [X2]
+	0x02424FB4 BLR X8
+	0x02424FB8 LDR X8, [X19 + 0x20]
+	0x02424FBC MOV X0, X21
+	0x02424FC0 MOV X1, X22
+	0x02424FC4 LDR X8, [X8 + 0xC0]
+	0x02424FC8 LDR X2, [X8 + 0x98]
+	0x02424FCC LDR X8, [X2]
+	0x02424FD0 BLR X8
+	0x02424FD4 LDR X8, [X19 + 0x20]
+	0x02424FD8 MOV X0, X21
+	0x02424FDC LDR X8, [X8 + 0xC0]
+	0x02424FE0 LDR X1, [X8 + 0x50]
+	0x02424FE4 LDR X8, [X1]
+	0x02424FE8 BLR X8
+	0x02424FEC LDR X8, [X19 + 0x20]
+	0x02424FF0 MOV X1, X0
+	0x02424FF4 MOV X0, X20
+	0x02424FF8 LDR X8, [X8 + 0xC0]
+	0x02424FFC LDR X2, [X8 + 0x98]
+	0x02425000 LDR X8, [X2]
+	0x02425004 BLR X8
+	0x02425008 LDR X8, [X19 + 0x20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W8, [X0+40]
+	006 Compare W8, 0
+	007 JumpIfEqual {14}
+	008 Move W0, W31
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Move X21, [X31+40]
+	013 Return X0
+	014 Move X21, [X0+24]
+	015 Move X20, X0
+	016 Move X19, X1
+	017 Compare X21, 0
+	018 JumpIfEqual {32}
+	019 Move X8, [X19+32]
+	020 Move X8, [X8+192]
+	021 Move X8, [X8+64]
+	022 Move X0, [X8+32]
+	023 Move W8, [X0+309]
+	024 Move TEMP, X8
+	025 And TEMP, TEMP, 1
+	026 Compare TEMP, 1
+	027 JumpIfEqual {29}
+	028 Call 0x1C5D684
+	029 Move W8, [X21+40]
+	030 Compare W8, 0
+	031 JumpIfNotEqual {8}
+	032 Move X20, [X20+32]
+	033 Compare X20, 0
+	034 JumpIfEqual {48}
+	035 Move X8, [X19+32]
+	036 Move X8, [X8+192]
+	037 Move X8, [X8+64]
+	038 Move X0, [X8+32]
+	039 Move W8, [X0+309]
+	040 Move TEMP, X8
+	041 And TEMP, TEMP, 1
+	042 Compare TEMP, 1
+	043 JumpIfEqual {45}
+	044 Call 0x1C5D684
+	045 Move W8, [X20+40]
+	046 NotImplemented "Instruction CMP not yet implemented."
+	047 NotImplemented "Instruction CSET not yet implemented."
+	048 Move W0, 1
+
+Method: System.Boolean get_Is4Node()
+
+Disassembly:
+	0x0242500C MOV X0, X21
+	0x02425010 MOV X1, X20
+	0x02425014 LDR X8, [X8 + 0xC0]
+	0x02425018 LDR X2, [X8 + 0x90]
+	0x0242501C LDR X8, [X2]
+	0x02425020 BLR X8
+	0x02425024 MOV X0, X21
+	0x02425028 LDP X20, X19, [X31 + 0x20]
+	0x0242502C LDP X22, X21, [X31 + 0x10]
+	0x02425030 LDR X30, [X31], #0x30
+	0x02425034 RET
+	0x02425038 BL 0x1C16F20
+	0x0242503C STR X30, [X31 - 0x20]!
+	0x02425040 STP X20, X19, [X31 + 0x10]
+	0x02425044 LDR X8, [X1 + 0x20]
+	0x02425048 MOV X19, X1
+	0x0242504C MOV X20, X0
+	0x02425050 LDR X8, [X8 + 0xC0]
+	0x02425054 LDR X1, [X8 + 0x68]
+	0x02425058 LDR X8, [X1]
+	0x0242505C BLR X8
+	0x02425060 LDR X8, [X19 + 0x20]
+	0x02425064 MOV X0, X20
+	0x02425068 LDR X8, [X8 + 0xC0]
+	0x0242506C LDR X1, [X8 + 0x38]
+	0x02425070 LDR X8, [X1]
+	0x02425074 BLR X8
+	0x02425078 CBZ X0, 0x24250C8
+	0x0242507C LDR X8, [X19 + 0x20]
+	0x02425080 LDR X8, [X8 + 0xC0]
+	0x02425084 LDR X1, [X8 + 0x60]
+	0x02425088 LDR X8, [X1]
+	0x0242508C BLR X8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, [X0+24]
+	006 Compare X21, 0
+	007 JumpIfEqual {38}
+	008 Move X8, [X1+32]
+	009 Move X20, X0
+	010 Move X19, X1
+	011 Move X8, [X8+192]
+	012 Move X8, [X8+88]
+	013 Move X0, [X8+32]
+	014 Move W8, [X0+309]
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {20}
+	019 Call 0x1C5D684
+	020 Move W8, [X21+40]
+	021 NotImplemented "Instruction CMP not yet implemented."
+	022 Move X20, [X20+32]
+	023 Compare X20, 0
+	024 JumpIfEqual {38}
+	025 Move X8, [X19+32]
+	026 Move X8, [X8+192]
+	027 Move X8, [X8+88]
+	028 Move X0, [X8+32]
+	029 Move W8, [X0+309]
+	030 Move TEMP, X8
+	031 And TEMP, TEMP, 1
+	032 Compare TEMP, 1
+	033 JumpIfEqual {35}
+	034 Call 0x1C5D684
+	035 Move W8, [X20+40]
+	036 NotImplemented "Instruction CMP not yet implemented."
+	037 NotImplemented "Instruction CSET not yet implemented."
+	038 Move W0, W31
+	039 Move X20, [X31+16]
+	040 Move X19, [X31+24]
+	041 Move X30, [X31+32]
+	042 Move X21, [X31+40]
+	043 Return X0
+
+Method: System.Void ColorBlack()
+
+Disassembly:
+	0x02425090 LDR X8, [X19 + 0x20]
+	0x02425094 MOV X0, X20
+
+ISIL:
+	001 Move [X0+40], W31
+	002 Return 
+
+Method: System.Void ColorRed()
+
+Disassembly:
+	0x02425098 LDR X8, [X8 + 0xC0]
+	0x0242509C LDR X1, [X8 + 0x50]
+	0x024250A0 LDR X8, [X1]
+
+ISIL:
+	001 Move W8, 1
+	002 Move [X0+40], W8
+	003 Return 
+
+Method: System.Collections.Generic.TreeRotation GetRotation(System.Collections.Generic.SortedSet`1/Node<T> current, System.Collections.Generic.SortedSet`1/Node<T> sibling)
+
+Disassembly:
+	0x024250A4 BLR X8
+	0x024250A8 CBZ X0, 0x24250C8
+	0x024250AC LDR X8, [X19 + 0x20]
+	0x024250B0 LDP X20, X19, [X31 + 0x10]
+	0x024250B4 LDR X8, [X8 + 0xC0]
+	0x024250B8 LDR X1, [X8 + 0x60]
+	0x024250BC LDR X2, [X1]
+	0x024250C0 LDR X30, [X31], #0x20
+	0x024250C4 BR X2
+	0x024250C8 BL 0x1C16F20
+	0x024250CC STR X30, [X31 - 0x30]!
+	0x024250D0 STP X22, X21, [X31 + 0x10]
+	0x024250D4 STP X20, X19, [X31 + 0x20]
+	0x024250D8 LDR X8, [X3 + 0x20]
+	0x024250DC MOV X22, X1
+	0x024250E0 MOV X21, X3
+	0x024250E4 MOV X19, X2
+	0x024250E8 LDR X8, [X8 + 0xC0]
+	0x024250EC MOV X20, X0
+	0x024250F0 LDR X1, [X8 + 0x38]
+	0x024250F4 LDR X8, [X1]
+	0x024250F8 BLR X8
+	0x024250FC LDR X8, [X21 + 0x20]
+	0x02425100 CMP X0, X22
+	0x02425104 LDR X8, [X8 + 0xC0]
+	0x02425108 B.EQ 0x2425114
+	0x0242510C LDR X2, [X8 + 0x90]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Compare X2, 0
+	006 JumpIfEqual {34}
+	007 Move X21, [X2+24]
+	008 Move X20, [X0+24]
+	009 Move X19, X1
+	010 Compare X21, 0
+	011 JumpIfEqual {27}
+	012 Move X8, [X3+32]
+	013 Move X8, [X8+192]
+	014 Move X8, [X8+88]
+	015 Move X0, [X8+32]
+	016 Move W8, [X0+309]
+	017 Move TEMP, X8
+	018 And TEMP, TEMP, 1
+	019 Compare TEMP, 1
+	020 JumpIfEqual {22}
+	021 Call 0x1C5D684
+	022 Move W8, [X21+40]
+	023 NotImplemented "Instruction CMP not yet implemented."
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move W8, 2
+	026 NotImplemented "Instruction CINC not yet implemented."
+	027 NotImplemented "Instruction CMP not yet implemented."
+	028 NotImplemented "Instruction CSET not yet implemented."
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X30, [X31+32]
+	032 Move X21, [X31+40]
+	033 Return X0
+	034 Call 0x1C17F20
+
+Method: System.Collections.Generic.SortedSet`1/Node<T> GetSibling(System.Collections.Generic.SortedSet`1/Node<T> node)
+
+Disassembly:
+	0x02425110 B 0x2425118
+	0x02425114 LDR X2, [X8 + 0x98]
+	0x02425118 LDR X3, [X2]
+	0x0242511C MOV X0, X20
+	0x02425120 MOV X1, X19
+	0x02425124 LDP X20, X19, [X31 + 0x20]
+	0x02425128 LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X8, X0
+	002 Move X0, [X0+24]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Return X0
+	005 Move X0, [X8+32]
+	006 Return X0
+
+Method: System.Void Split4Node()
+
+Disassembly:
+	0x0242512C LDR X30, [X31], #0x30
+	0x02425130 BR X3
+	0x02425134 STR X30, [X31 - 0x40]!
+	0x02425138 STP X24, X23, [X31 + 0x10]
+	0x0242513C STP X22, X21, [X31 + 0x20]
+	0x02425140 STP X20, X19, [X31 + 0x30]
+	0x02425144 MOV X23, X1
+	0x02425148 MOV X1, X31
+	0x0242514C MOV X19, X5
+	0x02425150 MOV W20, W4
+	0x02425154 MOV X21, X3
+	0x02425158 MOV X22, X2
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Move W9, 1
+	004 Move [X0+40], W9
+	005 Compare X8, 0
+	006 JumpIfEqual {14}
+	007 Move [X8+40], W31
+	008 Move X8, [X0+32]
+	009 Compare X8, 0
+	010 JumpIfEqual {14}
+	011 Move [X8+40], W31
+	012 Move X30, [X31+16]
+	013 Return 
+	014 Call 0x1C17F20
+
+Method: System.Collections.Generic.SortedSet`1/Node<T> Rotate(System.Collections.Generic.TreeRotation rotation)
+
+Disassembly:
+	0x0242515C MOV X24, X0
+	0x02425160 BL 0x33BDD8C
+	0x02425164 STP X23, X22, [X24 + 0x10]
+	0x02425168 STR X21, [X24 + 0x20]
+	0x0242516C BL 0x1C16D44
+	0x02425170 STR X19, [X24 + 0x28]
+	0x02425174 STR W20, [X24 + 0x30]
+	0x02425178 LDP X20, X19, [X31 + 0x30]
+	0x0242517C LDP X22, X21, [X31 + 0x20]
+	0x02425180 LDP X24, X23, [X31 + 0x10]
+	0x02425184 LDR X30, [X31], #0x40
+	0x02425188 RET
+	0x0242518C STP X30, X23, [X31 - 0x30]!
+	0x02425190 STP X22, X21, [X31 + 0x10]
+	0x02425194 STP X20, X19, [X31 + 0x20]
+	0x02425198 MOV W22, W1
+	0x0242519C MOV X1, X31
+	0x024251A0 MOV X19, X4
+	0x024251A4 MOV W20, W3
+	0x024251A8 MOV X21, X2
+	0x024251AC MOV X23, X0
+	0x024251B0 BL 0x33BDD8C
+	0x024251B4 STR W22, [X23 + 0x10]
+	0x024251B8 LDR X8, [X21 + 0x10]
+	0x024251BC LDR V0, [X21]
+	0x024251C0 STR X8, [X23 + 0x28]
+	0x024251C4 STUR V0, [X23 + 0x18]
+	0x024251C8 BL 0x1C16D44
+	0x024251CC STR X19, [X23 + 0x30]
+	0x024251D0 STR W20, [X23 + 0x38]
+	0x024251D4 LDP X20, X19, [X31 + 0x20]
+	0x024251D8 LDP X22, X21, [X31 + 0x10]
+	0x024251DC LDP X30, X23, [X31], #0x30
+	0x024251E0 RET
+	0x024251E4 STP X30, X23, [X31 - 0x30]!
+	0x024251E8 STP X22, X21, [X31 + 0x10]
+	0x024251EC STP X20, X19, [X31 + 0x20]
+	0x024251F0 MOV X22, X1
+	0x024251F4 MOV X1, X31
+	0x024251F8 MOV X19, X4
+	0x024251FC MOV W20, W3
+	0x02425200 MOV X21, X2
+	0x02425204 MOV X23, X0
+	0x02425208 BL 0x33BDD8C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 And W8, W1, 255
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move X9, -26177536
+	005 And X8, X1, 255
+	006 Add X9, X9, 3318
+	007 NotImplemented "Instruction ADR not yet implemented."
+	008 Move W11, [X9]
+	009 Add X10, X10, X11
+	010 CallNoReturn X10
+	011 Move X8, [X0+32]
+	012 Compare X8, 0
+	013 JumpIfEqual {47}
+	014 Move X9, [X8+32]
+	015 Compare X9, 0
+	016 JumpIfEqual {47}
+	017 Move [X9+40], W31
+	018 Move X9, [X8+24]
+	019 Move [X0+32], X9
+	020 Move [X8+24], X0
+	021 Move X8, [X0+24]
+	022 Compare X8, 0
+	023 JumpIfEqual {47}
+	024 Move X9, [X8+24]
+	025 Compare X9, 0
+	026 JumpIfEqual {47}
+	027 Move [X9+40], W31
+	028 Move X9, [X8+32]
+	029 Move [X0+24], X9
+	030 Move [X8+32], X0
+	031 Move X8, X31
+	032 Move X0, X8
+	033 Move X30, [X31+16]
+	034 Return X0
+	035 Move X8, [X2+32]
+	036 Move X8, [X8+192]
+	037 Move X1, [X8+136]
+	038 Move X30, [X31+16]
+	039 Call 0x2425234, X0
+	040 Return X0
+	041 Move X8, [X2+32]
+	042 Move X8, [X8+192]
+	043 Move X1, [X8+128]
+	044 Move X30, [X31+16]
+	045 Call 0x2425298, X0
+	046 Return X0
+	047 Call 0x1C17F20
+
+Method: System.Collections.Generic.SortedSet`1/Node<T> RotateLeft()
+
+Disassembly:
+	0x0242520C STP X22, X21, [X23 + 0x10]
+	0x02425210 BL 0x1C16D44
+	0x02425214 STR X19, [X23 + 0x20]
+	0x02425218 STR W20, [X23 + 0x28]
+	0x0242521C LDP X20, X19, [X31 + 0x20]
+	0x02425220 LDP X22, X21, [X31 + 0x10]
+	0x02425224 LDP X30, X23, [X31], #0x30
+	0x02425228 RET
+	0x0242522C STP X29, X30, [X31 - 0x60]!
+	0x02425230 STP X28, X27, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+32]
+	003 Compare X8, 0
+	004 JumpIfEqual {11}
+	005 Move X9, [X8+24]
+	006 Move [X0+32], X9
+	007 Move [X8+24], X0
+	008 Move X0, X8
+	009 Move X30, [X31+16]
+	010 Return X0
+	011 Call 0x1C17F20
+
+Method: System.Collections.Generic.SortedSet`1/Node<T> RotateLeftRight()
+
+Disassembly:
+	0x02425234 STP X26, X25, [X31 + 0x20]
+	0x02425238 STP X24, X23, [X31 + 0x30]
+	0x0242523C STP X22, X21, [X31 + 0x40]
+	0x02425240 STP X20, X19, [X31 + 0x50]
+	0x02425244 ADD X29, X31, 0x0
+	0x02425248 SUB X31, X31, 0x30
+	0x0242524C STUR X4, [X29 - 0x28]
+	0x02425250 STUR W3, [X29 - 0x1C]
+	0x02425254 MRS X19, 0xC000
+	0x02425258 LDR X8, [X19 + 0x28]
+	0x0242525C MOV X20, X5
+	0x02425260 MOV X24, X2
+	0x02425264 MOV X25, X1
+	0x02425268 STUR X8, [X29 - 0x8]
+	0x0242526C STP X2, X1, [X29 - 0x18]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X9, [X0+24]
+	003 Compare X9, 0
+	004 JumpIfEqual {17}
+	005 Move X8, [X9+32]
+	006 Compare X8, 0
+	007 JumpIfEqual {17}
+	008 Move X10, [X8+32]
+	009 Move [X0+24], X10
+	010 Move X10, [X8+24]
+	011 Move [X8+32], X0
+	012 Move X0, X8
+	013 Move [X9+32], X10
+	014 Move [X8+24], X9
+	015 Move X30, [X31+16]
+	016 Return X0
+	017 Call 0x1C17F20
+
+Method: System.Collections.Generic.SortedSet`1/Node<T> RotateRight()
+
+Disassembly:
+	0x02425270 LDR X8, [X5 + 0x20]
+	0x02425274 MOV X22, X0
+	0x02425278 LDR X8, [X8 + 0xC0]
+	0x0242527C LDR X9, [X8]
+	0x02425280 LDR X8, [X8 + 0x10]
+	0x02425284 LDR W26, [X9 + 0xFC]
+	0x02425288 LDR W23, [X8 + 0xFC]
+	0x0242528C ADD X8, X31, 0x0
+	0x02425290 ADD X9, X26, 0xF
+	0x02425294 AND X9, X9, 0x1FFFFFFFF
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {11}
+	005 Move X9, [X8+32]
+	006 Move [X0+24], X9
+	007 Move [X8+32], X0
+	008 Move X0, X8
+	009 Move X30, [X31+16]
+	010 Return X0
+	011 Call 0x1C17F20
+
+Method: System.Collections.Generic.SortedSet`1/Node<T> RotateRightLeft()
+
+Disassembly:
+	0x02425298 SUB X27, X8, X9
+	0x0242529C ADD X31, X27, 0x0
+	0x024252A0 ADD X9, X23, 0xF
+	0x024252A4 ADD X8, X31, 0x0
+	0x024252A8 AND X9, X9, 0x1FFFFFFFF
+	0x024252AC SUB X28, X8, X9
+	0x024252B0 ADD X31, X28, 0x0
+	0x024252B4 MOV X1, X31
+	0x024252B8 BL 0x33BDD8C
+	0x024252BC LDR X21, [X20 + 0x20]
+	0x024252C0 MOV X0, X27
+	0x024252C4 MOV X2, X26
+	0x024252C8 LDR X8, [X21 + 0xC0]
+	0x024252CC LDR X8, [X8]
+	0x024252D0 LDR W8, [X8 + 0x28]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X9, [X0+32]
+	003 Compare X9, 0
+	004 JumpIfEqual {17}
+	005 Move X8, [X9+24]
+	006 Compare X8, 0
+	007 JumpIfEqual {17}
+	008 Move X10, [X8+24]
+	009 Move [X0+32], X10
+	010 Move X10, [X8+32]
+	011 Move [X8+24], X0
+	012 Move X0, X8
+	013 Move [X9+24], X10
+	014 Move [X8+32], X9
+	015 Move X30, [X31+16]
+	016 Return X0
+	017 Call 0x1C17F20
+
+Method: System.Void Merge2Nodes()
+
+Disassembly:
+	0x024252D4 CMP W8, 0x0
+	0x024252D8 SUB X8, X29, 0x10
+	0x024252DC CSEL X1, X25, X8, LT
+	0x024252E0 BL 0x3EB1AC0
+	0x024252E4 LDR X8, [X21 + 0xC0]
+	0x024252E8 MOV X0, X22
+	0x024252EC MOV X2, X27
+	0x024252F0 MOV W3, W26
+	0x024252F4 LDR X8, [X8 + 0x8]
+	0x024252F8 LDR X1, [X8 + 0x80]
+	0x024252FC BL 0x1C16D1C
+	0x02425300 LDR X21, [X20 + 0x20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X9, [X0+24]
+	003 Move [X0+40], W31
+	004 Compare X9, 0
+	005 JumpIfEqual {14}
+	006 Move W8, 1
+	007 Move [X9+40], W8
+	008 Move X9, [X0+32]
+	009 Compare X9, 0
+	010 JumpIfEqual {14}
+	011 Move [X9+40], W8
+	012 Move X30, [X31+16]
+	013 Return 
+	014 Call 0x1C17F20
+
+Method: System.Void ReplaceChild(System.Collections.Generic.SortedSet`1/Node<T> child, System.Collections.Generic.SortedSet`1/Node<T> newChild)
+
+Disassembly:
+	0x02425304 MOV X0, X28
+	0x02425308 MOV X2, X23
+	0x0242530C LDR X8, [X21 + 0xC0]
+	0x02425310 LDR X8, [X8 + 0x10]
+	0x02425314 LDR W8, [X8 + 0x28]
+	0x02425318 CMP W8, 0x0
+	0x0242531C SUB X8, X29, 0x18
+
+ISIL:
+	001 Move X8, [X0+24]
+	002 Move W9, 32
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move W8, 24
+	005 NotImplemented "Instruction CSEL not yet implemented."
+	006 Move [X0], X2
+	007 Return 
+

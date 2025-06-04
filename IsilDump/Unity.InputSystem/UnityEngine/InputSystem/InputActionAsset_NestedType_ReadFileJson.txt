@@ -1,0 +1,91 @@
+Type: UnityEngine.InputSystem.InputActionAsset/ReadFileJson
+
+Method: System.Void ToAsset(UnityEngine.InputSystem.InputActionAsset asset)
+
+Disassembly:
+	0x03738554 TBNZ X8, 0x0, 0x373856C
+	0x03738558 ADRP X0, 0xA0D000
+	0x0373855C LDR X0, [X0 + 0x150]
+	0x03738560 BL 0x1C16CF4
+	0x03738564 MOVZ W8, 0x1
+	0x03738568 STRB W8, [X20 + 0xCFC]
+	0x0373856C LDR X0, [X21]
+	0x03738570 BL 0x1C16F10
+	0x03738574 MOV X1, X31
+	0x03738578 MOV X20, X0
+	0x0373857C BL 0x33BDD8C
+	0x03738580 STR W31, [X20 + 0x10]
+	0x03738584 STR X19, [X20 + 0x20]
+	0x03738588 MOV X0, X20
+	0x0373858C LDP X20, X19, [X31 + 0x10]
+	0x03738590 LDP X30, X21, [X31], #0x20
+	0x03738594 RET
+	0x03738598 STR X30, [X31 - 0x20]!
+	0x0373859C STP X20, X19, [X31 + 0x10]
+	0x037385A0 MOV W19, W1
+	0x037385A4 MOV X1, X31
+	0x037385A8 MOV X20, X0
+	0x037385AC BL 0x33BDD8C
+	0x037385B0 STR W19, [X20 + 0x10]
+	0x037385B4 LDP X20, X19, [X31 + 0x10]
+	0x037385B8 LDR X30, [X31], #0x20
+	0x037385BC RET
+	0x037385C0 B 0x3738538
+	0x037385C4 RET
+	0x037385C8 STP X30, X21, [X31 - 0x20]!
+	0x037385CC STP X20, X19, [X31 + 0x10]
+	0x037385D0 ADRP X21, 0xCA8000
+	0x037385D4 ADRP X20, 0xA0D000
+	0x037385D8 LDRB W8, [X21 + 0xCFD]
+	0x037385DC LDR X20, [X20 + 0x100]
+	0x037385E0 MOV X19, X0
+	0x037385E4 TBNZ X8, 0x0, 0x37385FC
+	0x037385E8 ADRP X0, 0xA0D000
+	0x037385EC LDR X0, [X0 + 0x100]
+	0x037385F0 BL 0x1C16CF4
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], X30
+	003 Move [X31+32], X20
+	004 Move [X31+40], X19
+	005 Compare X1, 0
+	006 JumpIfEqual {43}
+	007 Move X19, X1
+	008 Move X1, [X0]
+	009 Move X20, X0
+	010 Move X0, X19
+	011 Move X2, X31
+	012 Call Object.set_name, X0, X1
+	013 Move X8, [X20+8]
+	014 Add X0, X31, 0
+	015 Move [X31], X31
+	016 Move [X31+8], X8
+	017 Call ReadFileJson.ToMaps, X0
+	018 Move [X19+24], X0
+	019 Move X0, [X20+16]
+	020 Move X1, X31
+	021 Call SchemeJson.ToSchemes, X0
+	022 Move X10, [X19+24]
+	023 Move [X19+32], X0
+	024 Compare X10, 0
+	025 JumpIfEqual {37}
+	026 Move W8, [X10+24]
+	027 NotImplemented "Instruction CMP not yet implemented."
+	028 Move X9, X31
+	029 Add X10, X10, 32
+	030 NotImplemented "Instruction CMP not yet implemented."
+	031 Move X11, [X10]
+	032 Compare X11, 0
+	033 JumpIfEqual {43}
+	034 Add X9, X9, 1
+	035 NotImplemented "Instruction CMP not yet implemented."
+	036 Move [X11+32], X19
+	037 Move X20, [X31+32]
+	038 Move X19, [X31+40]
+	039 Move X30, [X31+16]
+	040 Add X31, X31, 48
+	041 Return 
+	042 Call 0x1C17F28
+	043 Call 0x1C17F20
+

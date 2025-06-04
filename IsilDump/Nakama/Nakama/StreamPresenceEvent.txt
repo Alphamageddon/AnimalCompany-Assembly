@@ -1,0 +1,323 @@
+Type: Nakama.StreamPresenceEvent
+
+Method: System.Collections.Generic.IEnumerable`1<Nakama.IUserPresence> get_Leaves()
+
+Disassembly:
+	0x03476624 ADRP X20, 0xF67000
+	0x03476628 LDRB W8, [X20 + 0x829]
+	0x0347662C MOV X19, X0
+	0x03476630 TBNZ X8, 0x0, 0x3476648
+	0x03476634 ADRP X0, 0xCBA000
+	0x03476638 LDR X0, [X0 + 0x808]
+	0x0347663C BL 0x1C16CF4
+	0x03476640 MOVZ W8, 0x1
+	0x03476644 STRB W8, [X20 + 0x829]
+	0x03476648 LDR X0, [X19 + 0x30]
+	0x0347664C CBNZ X0, 0x3476674
+	0x03476650 ADRP X19, 0xCBA000
+	0x03476654 LDR X19, [X19 + 0x808]
+	0x03476658 LDR X0, [X19]
+	0x0347665C LDR W8, [X0 + 0xE0]
+	0x03476660 CBNZ W8, 0x347666C
+	0x03476664 BL 0x1C16DFC
+	0x03476668 LDR X0, [X19]
+	0x0347666C LDR X8, [X0 + 0xB8]
+	0x03476670 LDR X0, [X8]
+	0x03476674 LDP X20, X19, [X31 + 0x10]
+	0x03476678 LDR X30, [X31], #0x20
+	0x0347667C RET
+	0x03476680 LDR X0, [X0 + 0x30]
+	0x03476684 RET
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xF68000
+	005 Move W8, [X20+2073]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0xCBB000
+	012 Move X0, [X0+2056]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2073], W8
+	016 Move X0, [X19+16]
+	017 Compare X0, 0
+	018 JumpIfNotEqual {29}
+	019 Move X19, 0xCBB000
+	020 Move X19, [X19+2056]
+	021 Move X0, [X19]
+	022 Move W8, [X0+224]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {27}
+	025 Call 0x1C17DFC
+	026 Move X0, [X19]
+	027 Move X8, [X0+184]
+	028 Move X0, [X8]
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X30, [X31+32]
+	032 Return X0
+
+Method: System.Collections.Generic.List`1<Nakama.UserPresence> get_LeavesField()
+
+Disassembly:
+	0x03476688 STR X1, [X0 + 0x30]
+	0x0347668C RET
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_LeavesField(System.Collections.Generic.List`1<Nakama.UserPresence> value)
+
+Disassembly:
+	0x03476690 STR X30, [X31 - 0x30]!
+	0x03476694 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Collections.Generic.IEnumerable`1<Nakama.IUserPresence> get_Joins()
+
+Disassembly:
+	0x03476698 STP X20, X19, [X31 + 0x20]
+	0x0347669C ADRP X21, 0xF67000
+	0x034766A0 LDRB W8, [X21 + 0x82A]
+	0x034766A4 MOV X20, X1
+	0x034766A8 MOV X19, X0
+	0x034766AC TBNZ X8, 0x0, 0x34766C4
+	0x034766B0 ADRP X0, 0xCBA000
+	0x034766B4 LDR X0, [X0 + 0x9F0]
+	0x034766B8 BL 0x1C16CF4
+	0x034766BC MOVZ W8, 0x1
+	0x034766C0 STRB W8, [X21 + 0x82A]
+	0x034766C4 CBZ X20, 0x347681C
+	0x034766C8 ADRP X22, 0xCBA000
+	0x034766CC LDR X8, [X20]
+	0x034766D0 LDR X22, [X22 + 0x9F0]
+	0x034766D4 LDRH W9, [X8 + 0x12E]
+	0x034766D8 LDR X1, [X22]
+	0x034766DC CBZ X9, 0x3476700
+	0x034766E0 LDR X10, [X8 + 0xB0]
+	0x034766E4 ADD X10, X10, 0x8
+	0x034766E8 LDUR X11, [X10 - 0x8]
+	0x034766EC CMP X11, X1
+	0x034766F0 B.EQ 0x3476710
+	0x034766F4 SUBS X9, X9, 0x1
+	0x034766F8 ADD X10, X10, 0x10
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xF68000
+	005 Move W8, [X20+2074]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0xCBB000
+	012 Move X0, [X0+2056]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2074], W8
+	016 Move X0, [X19+24]
+	017 Compare X0, 0
+	018 JumpIfNotEqual {29}
+	019 Move X19, 0xCBB000
+	020 Move X19, [X19+2056]
+	021 Move X0, [X19]
+	022 Move W8, [X0+224]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {27}
+	025 Call 0x1C17DFC
+	026 Move X0, [X19]
+	027 Move X8, [X0+184]
+	028 Move X0, [X8]
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X30, [X31+32]
+	032 Return X0
+
+Method: System.Collections.Generic.List`1<Nakama.UserPresence> get_JoinsField()
+
+Disassembly:
+	0x034766FC B.NE 0x34766E8
+	0x03476700 MOV X0, X20
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_JoinsField(System.Collections.Generic.List`1<Nakama.UserPresence> value)
+
+Disassembly:
+	0x03476704 MOV W2, W31
+	0x03476708 BL 0x1C5C788
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: Nakama.IStream get_Stream()
+
+Disassembly:
+	0x0347670C B 0x347671C
+	0x03476710 LDRSW X9, [X10]
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: Nakama.Stream get_StreamField()
+
+Disassembly:
+	0x03476714 ADD X8, X8, X9, 0x4, LSL
+	0x03476718 ADD X0, X8, 0x138
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_StreamField(Nakama.Stream value)
+
+Disassembly:
+	0x0347671C LDP X8, X1, [X0]
+	0x03476720 MOV X0, X20
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.String ToString()
+
+Disassembly:
+	0x03476724 BLR X8
+	0x03476728 LDR X1, [X19 + 0x10]
+	0x0347672C MOV X2, X31
+	0x03476730 BL 0x3226EF8
+	0x03476734 TBNZ X0, 0x0, 0x3476820
+	0x03476738 LDR X8, [X20]
+	0x0347673C LDR X21, [X19 + 0x30]
+	0x03476740 LDR X1, [X22]
+	0x03476744 LDRH W9, [X8 + 0x12E]
+	0x03476748 CBZ X9, 0x347676C
+	0x0347674C LDR X10, [X8 + 0xB0]
+	0x03476750 ADD X10, X10, 0x8
+	0x03476754 LDUR X11, [X10 - 0x8]
+	0x03476758 CMP X11, X1
+	0x0347675C B.EQ 0x347677C
+	0x03476760 SUBS X9, X9, 0x1
+	0x03476764 ADD X10, X10, 0x10
+	0x03476768 B.NE 0x3476754
+	0x0347676C MOVZ W2, 0x1
+	0x03476770 MOV X0, X20
+	0x03476774 BL 0x1C5C788
+	0x03476778 B 0x347678C
+	0x0347677C LDR W9, [X10]
+	0x03476780 ADD W9, W9, 0x1
+	0x03476784 ADD X8, X8, W9, 0x4, SXTW
+	0x03476788 ADD X0, X8, 0x138
+	0x0347678C LDP X8, X1, [X0]
+	0x03476790 MOV X0, X20
+	0x03476794 BLR X8
+	0x03476798 LDR X8, [X20]
+	0x0347679C LDR X1, [X22]
+	0x034767A0 MOV X22, X0
+	0x034767A4 LDRH W9, [X8 + 0x12E]
+	0x034767A8 CBZ X9, 0x34767CC
+	0x034767AC LDR X10, [X8 + 0xB0]
+	0x034767B0 ADD X10, X10, 0x8
+	0x034767B4 LDUR X11, [X10 - 0x8]
+	0x034767B8 CMP X11, X1
+	0x034767BC B.EQ 0x34767DC
+	0x034767C0 SUBS X9, X9, 0x1
+	0x034767C4 ADD X10, X10, 0x10
+	0x034767C8 B.NE 0x34767B4
+	0x034767CC MOVZ W2, 0x2
+	0x034767D0 MOV X0, X20
+	0x034767D4 BL 0x1C5C788
+	0x034767D8 B 0x34767EC
+	0x034767DC LDR W9, [X10]
+	0x034767E0 ADD W9, W9, 0x2
+	0x034767E4 ADD X8, X8, W9, 0x4, SXTW
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X20, 0xF68000
+	008 Move X22, 0xC7E000
+	009 Move X23, 0xCBB000
+	010 Move X21, 0xCBB000
+	011 Move W8, [X20+2075]
+	012 Move X22, [X22+2104]
+	013 Move X23, [X23+2072]
+	014 Move X21, [X21+2432]
+	015 Move X19, X0
+	016 Move TEMP, X8
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {31}
+	020 Move X0, 0xCBB000
+	021 Move X0, [X0+2072]
+	022 Call 0x1C17CF4
+	023 Move X0, 0xCBB000
+	024 Move X0, [X0+2432]
+	025 Call 0x1C17CF4
+	026 Move X0, 0xC7E000
+	027 Move X0, [X0+2104]
+	028 Call 0x1C17CF4
+	029 Move W8, 1
+	030 Move [X20+2075], W8
+	031 Move X0, X19
+	032 Call StreamPresenceEvent.get_Leaves, X0
+	033 Move X8, [X22]
+	034 Move X2, [X23]
+	035 Move X1, X0
+	036 Move X0, X8
+	037 Call String.Join, X0, X1
+	038 Move X20, X0
+	039 Move X0, X19
+	040 Call StreamPresenceEvent.get_Joins, X0
+	041 Move X8, [X22]
+	042 Move X2, [X23]
+	043 Move X1, X0
+	044 Move X0, X8
+	045 Call String.Join, X0, X1
+	046 Move X8, [X21]
+	047 Move X3, [X19+32]
+	048 Move X1, X20
+	049 Move X20, [X31+32]
+	050 Move X19, [X31+40]
+	051 Move X22, [X31+16]
+	052 Move X21, [X31+24]
+	053 Move X2, X0
+	054 Move X0, X8
+	055 Move X4, X31
+	056 Move X30, [X31+48]
+	057 Move X23, [X31+56]
+	058 Call String.Format, X0, X1, X2, X3
+	059 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x034767E8 ADD X0, X8, 0x138
+	0x034767EC LDP X8, X1, [X0]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

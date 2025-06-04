@@ -1,0 +1,28 @@
+Type: Fusion.Sockets.NetBitBuffer/Offset
+
+Method: System.Void .ctor(Fusion.Sockets.NetBitBuffer* buffer)
+
+Disassembly:
+	0x01EFA884 B.NE 0x1EFA8A8
+	0x01EFA888 BL 0x3EB1AD0
+	0x01EFA88C LDR X20, [X0]
+
+ISIL:
+	001 Move W8, [X1+80]
+	002 Move [X0], W8
+	003 Return 
+
+Method: System.Int32 GetLength(Fusion.Sockets.NetBitBuffer* buffer)
+
+Disassembly:
+	0x01EFBA7C STR X10, [X31 + 0x38]
+	0x01EFBA80 STR W31, [X31 + 0x4]
+	0x01EFBA84 STUR V0, [X31 + 0x8]
+	0x01EFBA88 STUR V0, [X31 + 0x18]
+
+ISIL:
+	001 Move W8, [X1+80]
+	002 Move W9, [X0]
+	003 Subtract W0, W8, W9
+	004 Return X0
+

@@ -1,0 +1,155 @@
+Type: Photon.Realtime.MonoBehaviourEmpty/<>c__DisplayClass6_0/<<StartCoroutineAndDestroy>g__Routine|0>d
+
+Method: System.Void .ctor(System.Int32 <>1__state)
+
+Disassembly:
+	0x0354CFC4 LDR W8, [X21 + 0x18]
+	0x0354CFC8 LDR X23, [X23 + 0x758]
+	0x0354CFCC ADD X1, X31, 0xC
+	0x0354CFD0 STR W8, [X31 + 0xC]
+	0x0354CFD4 LDR X0, [X23]
+	0x0354CFD8 BL 0x1C16E04
+	0x0354CFDC CBZ X20, 0x354D068
+	0x0354CFE0 MOV X2, X0
+	0x0354CFE4 MOVZ W1, 0xF8
+	0x0354CFE8 MOV X0, X20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void System.IDisposable.Dispose()
+
+Disassembly:
+	0x0354CFEC MOV X3, X31
+
+ISIL:
+	001 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x0354CFF0 BL 0x34EDAA0
+	0x0354CFF4 LDR X0, [X22]
+	0x0354CFF8 BL 0x1C16F10
+	0x0354CFFC MOV X1, X31
+	0x0354D000 MOV X21, X0
+	0x0354D004 BL 0x34ED7D8
+	0x0354D008 LDR W8, [X19 + 0x48]
+	0x0354D00C LDR X0, [X23]
+	0x0354D010 ADD X1, X31, 0x8
+	0x0354D014 STR W8, [X31 + 0x8]
+	0x0354D018 BL 0x1C16E04
+	0x0354D01C CBZ X21, 0x354D068
+	0x0354D020 MOV X2, X0
+	0x0354D024 MOVZ W1, 0xF8
+	0x0354D028 MOV X0, X21
+	0x0354D02C MOV X3, X31
+	0x0354D030 BL 0x34EDAA0
+	0x0354D034 LDR X0, [X19 + 0x60]
+	0x0354D038 CBZ X0, 0x354D068
+	0x0354D03C MOV X1, X20
+	0x0354D040 MOV X2, X21
+	0x0354D044 MOV X3, X31
+	0x0354D048 MOV X4, X31
+	0x0354D04C BL 0x353CB08
+	0x0354D050 LDP X20, X19, [X31 + 0x30]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W9, [X0+16]
+	003 Move X8, [X0+32]
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Compare W9, 0
+	006 JumpIfNotEqual {27}
+	007 Move TEMP, 0
+	008 Not TEMP
+	009 Move W9, TEMP
+	010 Move [X0+16], W9
+	011 Compare X8, 0
+	012 JumpIfEqual {31}
+	013 Move X9, [X8+16]
+	014 Move W8, 1
+	015 Move [X0+16], W8
+	016 Move [X0+24], X9
+	017 Move TEMP, 0
+	018 Not TEMP
+	019 Move W9, TEMP
+	020 Move [X0+16], W9
+	021 Compare X8, 0
+	022 JumpIfEqual {31}
+	023 Move X0, [X8+24]
+	024 Compare X0, 0
+	025 JumpIfEqual {31}
+	026 Call MonoBehaviourEmpty.SelfDestroy, X0
+	027 Move W8, W31
+	028 Move W0, W8
+	029 Move X30, [X31+16]
+	030 Return X0
+	031 Call 0x1C17F20
+
+Method: System.Object System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+
+Disassembly:
+	0x0354D054 LDP X22, X21, [X31 + 0x20]
+	0x0354D058 LDP X30, X23, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void System.Collections.IEnumerator.Reset()
+
+Disassembly:
+	0x0354D05C AND W0, W0, 0x1
+	0x0354D060 ADD X31, X31, 0x40
+	0x0354D064 RET
+	0x0354D068 BL 0x1C16F20
+	0x0354D06C STP X30, X21, [X31 - 0x20]!
+	0x0354D070 STP X20, X19, [X31 + 0x10]
+	0x0354D074 ADRP X21, 0xE92000
+	0x0354D078 LDRB W8, [X21 + 0xC93]
+	0x0354D07C MOV X19, X1
+	0x0354D080 MOV X20, X0
+	0x0354D084 TBNZ X8, 0x0, 0x354D09C
+	0x0354D088 ADRP X0, 0xBE8000
+	0x0354D08C LDR X0, [X0 + 0xD8]
+	0x0354D090 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0xBA7000
+	004 Move X0, [X0+2880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotSupportedException..ctor, X0
+	010 Move X0, 0xBE9000
+	011 Move X0, [X0+184]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x0354D094 MOVZ W8, 0x1
+	0x0354D098 STRB W8, [X21 + 0xC93]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+

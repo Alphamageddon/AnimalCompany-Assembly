@@ -1,0 +1,165 @@
+Type: UnityEngine.UIElements.CountingBloomFilter
+
+Method: System.Void AdjustSlot(System.UInt32 index, System.Boolean increment)
+
+Disassembly:
+	0x03D8DB0C ADD X8, X8, W9, 0x4, SXTW
+	0x03D8DB10 ADD X0, X8, 0x138
+	0x03D8DB14 LDP X8, X1, [X0]
+	0x03D8DB18 MOV X0, X20
+	0x03D8DB1C BLR X8
+	0x03D8DB20 CMP W24, 0x0
+	0x03D8DB24 LDP X20, X19, [X31 + 0xB0]
+	0x03D8DB28 LDP X22, X21, [X31 + 0xA0]
+	0x03D8DB2C LDP X24, X23, [X31 + 0x90]
+	0x03D8DB30 LDP X30, X25, [X31 + 0x80]
+	0x03D8DB34 LDP D9, D8, [X31 + 0x70]
+
+ISIL:
+	001 Move W9, [X0]
+	002 Move W8, W1
+	003 Move TEMP, X2
+	004 And TEMP, TEMP, 1
+	005 Compare TEMP, 1
+	006 JumpIfNotEqual {9}
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 Add W9, W9, 1
+	009 Compare W9, 0
+	010 JumpIfEqual {13}
+	011 Subtract W9, W9, 1
+	012 Move [X0], W9
+	013 Return 
+
+Method: System.UInt32 Hash1(System.UInt32 hash)
+
+Disassembly:
+	0x03D8DB38 LDP D11, D10, [X31 + 0x60]
+	0x03D8DB3C CSET W0, NE
+
+ISIL:
+	001 And W0, W1, 0x3FFF
+	002 Return X0
+
+Method: System.UInt32 Hash2(System.UInt32 hash)
+
+Disassembly:
+	0x03D8DB40 ADD X31, X31, 0xC0
+	0x03D8DB44 RET
+
+ISIL:
+	001 Move W0, W1
+	002 ShiftRight W0, 14
+	003 And W0, W0, 0x7FFFFFF
+	004 Return X0
+
+Method: System.Boolean IsSlotEmpty(System.UInt32 index)
+
+Disassembly:
+	0x03D8DB48 BL 0x1C16F20
+	0x03D8DB4C SUB X31, X31, 0x170
+	0x03D8DB50 STP D11, D10, [X31 + 0xF0]
+	0x03D8DB54 STP D9, D8, [X31 + 0x100]
+
+ISIL:
+	001 Move W8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Void InsertHash(System.UInt32 hash)
+
+Disassembly:
+	0x03D8DB58 STP X29, X30, [X31 + 0x110]
+	0x03D8DB5C STP X28, X27, [X31 + 0x120]
+	0x03D8DB60 STP X26, X25, [X31 + 0x130]
+	0x03D8DB64 STP X24, X23, [X31 + 0x140]
+	0x03D8DB68 STP X22, X21, [X31 + 0x150]
+	0x03D8DB6C STP X20, X19, [X31 + 0x160]
+	0x03D8DB70 ADRP X20, 0x65A000
+	0x03D8DB74 LDRB W8, [X20 + 0xE44]
+	0x03D8DB78 MOV X19, X0
+	0x03D8DB7C TBNZ X8, 0x0, 0x3D8DBDC
+	0x03D8DB80 ADRP X0, 0x3DA000
+	0x03D8DB84 LDR X0, [X0 + 0x9A0]
+	0x03D8DB88 BL 0x1C16CF4
+	0x03D8DB8C ADRP X0, 0x3DA000
+
+ISIL:
+	001 Move W8, W1
+	002 And X8, X8, 0x3FFF
+	003 Move W9, [X8]
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Add W9, W9, 1
+	006 Move [X0], W9
+	007 Move X8, X1
+	008 ShiftRight X8, 14
+	009 And X8, X8, 0x7FFFFFF
+	010 Move W9, [X8]
+	011 NotImplemented "Instruction CMP not yet implemented."
+	012 Add W9, W9, 1
+	013 Move [X0], W9
+	014 Return 
+
+Method: System.Void RemoveHash(System.UInt32 hash)
+
+Disassembly:
+	0x03D8DB90 LDR X0, [X0 + 0x9A8]
+	0x03D8DB94 BL 0x1C16CF4
+	0x03D8DB98 ADRP X0, 0x3DA000
+	0x03D8DB9C LDR X0, [X0 + 0x968]
+	0x03D8DBA0 BL 0x1C16CF4
+	0x03D8DBA4 ADRP X0, 0x38F000
+	0x03D8DBA8 LDR X0, [X0 + 0xE50]
+	0x03D8DBAC BL 0x1C16CF4
+	0x03D8DBB0 ADRP X0, 0x3DA000
+	0x03D8DBB4 LDR X0, [X0 + 0x9B0]
+	0x03D8DBB8 BL 0x1C16CF4
+	0x03D8DBBC ADRP X0, 0x3DA000
+
+ISIL:
+	001 Move W8, W1
+	002 And X8, X8, 0x3FFF
+	003 Move W9, [X8]
+	004 Compare W9, 0
+	005 JumpIfEqual {8}
+	006 Subtract W9, W9, 1
+	007 Move [X0], W9
+	008 Move X8, X1
+	009 ShiftRight X8, 14
+	010 And X8, X8, 0x7FFFFFF
+	011 Move W9, [X8]
+	012 Compare W9, 0
+	013 JumpIfEqual {16}
+	014 Subtract W9, W9, 1
+	015 Move [X0], W9
+	016 Return 
+
+Method: System.Boolean ContainsHash(System.UInt32 hash)
+
+Disassembly:
+	0x03D8DBC0 LDR X0, [X0 + 0x998]
+	0x03D8DBC4 BL 0x1C16CF4
+	0x03D8DBC8 ADRP X0, 0x38E000
+	0x03D8DBCC LDR X0, [X0 + 0x930]
+	0x03D8DBD0 BL 0x1C16CF4
+	0x03D8DBD4 MOVZ W8, 0x1
+	0x03D8DBD8 STRB W8, [X20 + 0xE44]
+	0x03D8DBDC ADRP X25, 0x3DA000
+	0x03D8DBE0 ADRP X27, 0x38F000
+	0x03D8DBE4 ADRP X28, 0x3DA000
+
+ISIL:
+	001 And X8, X1, 0x3FFF
+	002 Move W8, [X8]
+	003 Compare W8, 0
+	004 JumpIfEqual {12}
+	005 Move X8, X1
+	006 ShiftRight X8, 14
+	007 And X8, X8, 0x7FFFFFF
+	008 Move W8, [X8]
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 Return X0
+	012 Move W0, W31
+	013 Return X0
+

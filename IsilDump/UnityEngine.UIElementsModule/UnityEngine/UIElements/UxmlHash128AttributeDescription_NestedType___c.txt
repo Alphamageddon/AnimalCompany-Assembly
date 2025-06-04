@@ -1,0 +1,83 @@
+Type: UnityEngine.UIElements.UxmlHash128AttributeDescription/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x03E1DD84 TBNZ X8, 0x0, 0x3E1DDA8
+	0x03E1DD88 ADRP X0, 0x2D7000
+	0x03E1DD8C LDR X0, [X0 + 0x1C0]
+	0x03E1DD90 BL 0x1C16CF4
+	0x03E1DD94 ADRP X0, 0x2D7000
+	0x03E1DD98 LDR X0, [X0 + 0x1D0]
+	0x03E1DD9C BL 0x1C16CF4
+	0x03E1DDA0 MOVZ W8, 0x1
+	0x03E1DDA4 STRB W8, [X21 + 0x42C]
+	0x03E1DDA8 LDR X0, [X22]
+	0x03E1DDAC BL 0x1C16F10
+	0x03E1DDB0 LDR X1, [X20]
+	0x03E1DDB4 MOV X20, X0
+	0x03E1DDB8 BL 0x301B7C4
+	0x03E1DDBC STR X20, [X19 + 0x10]
+	0x03E1DDC0 MOV X0, X19
+	0x03E1DDC4 LDP X20, X19, [X31 + 0x20]
+	0x03E1DDC8 LDP X22, X21, [X31 + 0x10]
+	0x03E1DDCC MOV X1, X31
+	0x03E1DDD0 LDR X30, [X31], #0x30
+	0x03E1DDD4 B 0x33BDD8C
+	0x03E1DDD8 LDR W0, [X0 + 0x38]
+	0x03E1DDDC RET
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x5CC000
+	005 Move X20, 0x34E000
+	006 Move W8, [X19+1058]
+	007 Move X20, [X20+2656]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x34E000
+	013 Move X0, [X0+2656]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+1058], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03E1DDE0 LDR X0, [X0 + 0x50]
+	0x03E1DDE4 RET
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: UnityEngine.Hash128 <GetValueFromBag>b__3_0(System.String s, UnityEngine.Hash128 i)
+
+Disassembly:
+	0x03E1DDE8 STR X30, [X31 - 0x20]!
+	0x03E1DDEC STP X20, X19, [X31 + 0x10]
+	0x03E1DDF0 ADRP X20, 0x5CB000
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X31
+	003 Call Hash128.Parse, X0
+	004 Return X0
+

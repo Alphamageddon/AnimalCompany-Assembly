@@ -1,0 +1,165 @@
+Type: UnityEngine.UI.SetPropertyUtility
+
+Method: System.Boolean SetColor(ref UnityEngine.Color currentValue, UnityEngine.Color newValue)
+
+Disassembly:
+	0x03E434C8 B.EQ 0x3E43520
+	0x03E434CC MOV X0, X19
+	0x03E434D0 MOV V8.16B, V0.16B
+	0x03E434D4 STR S0, [X19 + 0x120]
+	0x03E434D8 BL 0x3E42838
+	0x03E434DC TBZ X20, 0x0, 0x3E43520
+	0x03E434E0 ADRP X8, 0x328000
+	0x03E434E4 LDR X8, [X8 + 0x408]
+	0x03E434E8 MOV X1, X19
+	0x03E434EC MOV X2, X31
+	0x03E434F0 LDR X0, [X8]
+	0x03E434F4 BL 0x3E252BC
+	0x03E434F8 LDR X0, [X19 + 0x128]
+	0x03E434FC CBZ X0, 0x3E43530
+	0x03E43500 ADRP X8, 0x315000
+	0x03E43504 LDR X8, [X8 + 0x8B8]
+	0x03E43508 LDP X20, X19, [X31 + 0x20]
+	0x03E4350C LDP X30, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move V4, [X0]
+	002 NotImplemented "Instruction FCMP not yet implemented."
+	003 Move V4, [X0+4]
+	004 NotImplemented "Instruction FCMP not yet implemented."
+	005 Move V4, [X0+8]
+	006 NotImplemented "Instruction FCMP not yet implemented."
+	007 Move V4, [X0+12]
+	008 NotImplemented "Instruction FCMP not yet implemented."
+	009 Move W0, W31
+	010 Return X0
+	011 Move [X0], S0
+	012 Move [X0+8], S1
+	013 Move [X0+8], S2
+	014 Move [X0+16], S3
+	015 Move W0, 1
+	016 Return X0
+
+Method: System.Boolean SetStruct(ref T currentValue, T newValue)
+
+Disassembly:
+	0x022551E0 STR X8, [X19]
+	0x022551E4 B 0x22551EC
+	0x022551E8 STR X31, [X19]
+	0x022551EC LDP X30, X19, [X31 + 0x10]
+	0x022551F0 AND W0, W0, 0x1
+	0x022551F4 ADD X31, X31, 0x20
+	0x022551F8 RET
+	0x022551FC SUB X31, X31, 0x20
+	0x02255200 STP X30, X19, [X31 + 0x10]
+	0x02255204 MOV X19, X2
+	0x02255208 AND X1, X1, 0x0
+	0x0225520C ADD X2, X31, 0x8
+	0x02255210 MOV X3, X31
+	0x02255214 STR X31, [X31 + 0x8]
+	0x02255218 BL 0x1EC95AC
+	0x0225521C TBZ X0, 0x0, 0x225522C
+	0x02255220 LDR X8, [X31 + 0x8]
+	0x02255224 STR X8, [X19]
+	0x02255228 B 0x2255230
+	0x0225522C STR X31, [X19]
+	0x02255230 LDP X30, X19, [X31 + 0x10]
+	0x02255234 AND W0, W0, 0x1
+	0x02255238 ADD X31, X31, 0x20
+	0x0225523C RET
+	0x02255240 SUB X31, X31, 0x20
+	0x02255244 STP X30, X19, [X31 + 0x10]
+	0x02255248 MOV X19, X2
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+56]
+	006 Move W19, W1
+	007 Move X20, X0
+	008 Compare X8, 0
+	009 JumpIfNotEqual {14}
+	010 Move X0, X2
+	011 Move X21, X2
+	012 Call 0x1C5D6E0
+	013 Move X8, [X21+56]
+	014 Move X0, [X8]
+	015 Call 0x21199DC
+	016 Compare X0, 0
+	017 JumpIfEqual {37}
+	018 Move X8, [X0]
+	019 Move W1, [X20]
+	020 And W2, W19, 1
+	021 Move X9, [X8+440]
+	022 Move X3, [X8+448]
+	023 NotImplemented "Instruction BLR not yet implemented."
+	024 Move TEMP, X0
+	025 And TEMP, TEMP, 1
+	026 Compare TEMP, 1
+	027 JumpIfEqual {30}
+	028 And W8, W19, 1
+	029 Move [X20], W8
+	030 Move X20, [X31+16]
+	031 Move X19, [X31+24]
+	032 NotImplemented "Instruction ORN not yet implemented."
+	033 And W0, W8, 1
+	034 Move X30, [X31+32]
+	035 Move X21, [X31+40]
+	036 Return X0
+	037 Call 0x1C17F20
+
+Method: System.Boolean SetClass(ref T currentValue, T newValue)
+
+Disassembly:
+	0x02255190 BL 0x1E35764
+	0x02255194 MOV X0, X20
+	0x02255198 MOV X1, X19
+	0x0225519C MOV X2, X31
+	0x022551A0 BL 0x1EC2858
+	0x022551A4 MOV X0, X22
+	0x022551A8 LDP X20, X19, [X31 + 0x20]
+	0x022551AC LDP X22, X21, [X31 + 0x10]
+	0x022551B0 LDP X30, X23, [X31], #0x30
+	0x022551B4 RET
+	0x022551B8 SUB X31, X31, 0x20
+	0x022551BC STP X30, X19, [X31 + 0x10]
+	0x022551C0 MOV X19, X2
+	0x022551C4 AND X1, X1, 0x0
+	0x022551C8 ADD X2, X31, 0x8
+	0x022551CC MOV X3, X31
+	0x022551D0 STR X31, [X31 + 0x8]
+	0x022551D4 BL 0x1EC95AC
+	0x022551D8 TBZ X0, 0x0, 0x22551E8
+	0x022551DC LDR X8, [X31 + 0x8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X0
+	005 Move X0, [X0]
+	006 Or X8, X1, X0
+	007 Compare X8, 0
+	008 JumpIfEqual {21}
+	009 Move X20, X1
+	010 Compare X0, 0
+	011 JumpIfEqual {22}
+	012 Move X8, [X0]
+	013 Move X1, X20
+	014 Move X9, [X8+312]
+	015 Move X2, [X8+320]
+	016 NotImplemented "Instruction BLR not yet implemented."
+	017 Move TEMP, X0
+	018 And TEMP, TEMP, 1
+	019 Compare TEMP, 1
+	020 JumpIfNotEqual {22}
+	021 Move W0, W31
+	022 Move W0, 1
+	023 Move [X19], X20
+	024 Move X20, [X31+16]
+	025 Move X19, [X31+24]
+	026 Move X30, [X31+32]
+	027 Return X0
+

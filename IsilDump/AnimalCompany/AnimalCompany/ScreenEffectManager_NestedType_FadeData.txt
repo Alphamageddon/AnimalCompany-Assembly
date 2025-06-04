@@ -1,0 +1,47 @@
+Type: AnimalCompany.ScreenEffectManager/FadeData
+
+Method: System.Void .ctor(System.Single opacity, System.Single duration, System.Action callbackEvent)
+
+Disassembly:
+	0x01E01BAC ADRP X9, 0x22F2000
+	0x01E01BB0 LDR X9, [X9 + 0x598]
+	0x01E01BB4 LDR X20, [X8 + 0x28]
+	0x01E01BB8 LDR X0, [X9]
+	0x01E01BBC LDR W9, [X0 + 0xE0]
+	0x01E01BC0 CBNZ W9, 0x1E01BC8
+	0x01E01BC4 BL 0x1C16DFC
+	0x01E01BC8 MOV X0, X20
+	0x01E01BCC MOV X1, X31
+	0x01E01BD0 MOV X2, X31
+	0x01E01BD4 BL 0x3C354F8
+	0x01E01BD8 TBZ X0, 0x0, 0x1E01C24
+	0x01E01BDC LDR X0, [X21]
+	0x01E01BE0 LDR W8, [X0 + 0xE0]
+	0x01E01BE4 CBNZ W8, 0x1E01BF0
+	0x01E01BE8 BL 0x1C16DFC
+	0x01E01BEC LDR X0, [X21]
+
+ISIL:
+	001 Move [X31-48], D9
+	002 Move [X31-40], D8
+	003 Move [X31+16], X30
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X19, X1
+	007 Move W8, 0x3F000000
+	008 Move X1, X31
+	009 Move V8, V1
+	010 Move V9, V0
+	011 Move X20, X0
+	012 Move [X0+20], W8
+	013 Call Object..ctor, X0
+	014 Move [X20+16], S9
+	015 Move [X20+24], S8
+	016 Move [X20+24], X19
+	017 Move X20, [X31+32]
+	018 Move X19, [X31+40]
+	019 Move X30, [X31+16]
+	020 Move D9, [X31+48]
+	021 Move D8, [X31+56]
+	022 Return 
+

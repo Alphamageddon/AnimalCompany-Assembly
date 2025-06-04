@@ -1,0 +1,109 @@
+Type: Mono.Security.Interface.MonoRemoteCertificateValidationCallback
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0x031FE500 LDR W9, [X8 + 0x18]
+	0x031FE504 CBZ W9, 0x31FE57C
+	0x031FE508 MOVZ W10, 0x2301
+	0x031FE50C MOVK W10, 0x67450000
+	0x031FE510 CMP W9, 0x1
+	0x031FE514 STR W10, [X8 + 0x20]
+	0x031FE518 B.EQ 0x31FE57C
+	0x031FE51C MOVZ W10, 0xAB89
+	0x031FE520 MOVK W10, 0xEFCD0000
+	0x031FE524 CMP W9, 0x2
+	0x031FE528 STR W10, [X8 + 0x24]
+	0x031FE52C B.LS 0x31FE57C
+	0x031FE530 MOVZ W10, 0xDCFE
+	0x031FE534 MOVK W10, 0x98BA0000
+	0x031FE538 CMP W9, 0x3
+	0x031FE53C STR W10, [X8 + 0x28]
+	0x031FE540 B.EQ 0x31FE57C
+	0x031FE544 MOVZ W9, 0x5476
+	0x031FE548 MOVK W9, 0x10320000
+	0x031FE54C STR W9, [X8 + 0x2C]
+	0x031FE550 LDR X0, [X19 + 0x30]
+	0x031FE554 MOVZ W2, 0x40
+	0x031FE558 MOV W1, W31
+	0x031FE55C MOV X3, X31
+	0x031FE560 BL 0x339FA34
+	0x031FE564 LDR X0, [X19 + 0x40]
+	0x031FE568 MOVZ W2, 0x10
+	0x031FE56C MOV W1, W31
+	0x031FE570 MOV X3, X31
+	0x031FE574 LDP X30, X19, [X31], #0x10
+	0x031FE578 B 0x339FA34
+	0x031FE57C BL 0x1C16F28
+	0x031FE580 BL 0x1C16F20
+	0x031FE584 STR X30, [X31 - 0x40]!
+	0x031FE588 STP X24, X23, [X31 + 0x10]
+	0x031FE58C STP X22, X21, [X31 + 0x20]
+	0x031FE590 STP X20, X19, [X31 + 0x30]
+	0x031FE594 LDR X8, [X0 + 0x38]
+	0x031FE598 CBZ X8, 0x31FE6A4
+	0x031FE59C LDR W10, [X8 + 0x18]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+8]
+	006 Move [X0+32], X1
+	007 Move [X0+40], X2
+	008 Move X19, X0
+	009 Move X20, X1
+	010 Move [X0+16], X8
+	011 Move W21, [X2+82]
+	012 Move [X0+64], X0
+	013 Move X0, X2
+	014 Call 0x1C17D84
+	015 Move TEMP, X0
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfNotEqual {22}
+	019 NotImplemented "Instruction CMP not yet implemented."
+	020 Move X8, -23371776
+	021 Add X8, X8, 1248
+	022 NotImplemented "Instruction CMP not yet implemented."
+	023 Move X8, -23371776
+	024 Add X8, X8, 1204
+	025 Move [X19+24], X8
+	026 Compare X20, 0
+	027 JumpIfEqual {40}
+	028 Move X8, [X19+16]
+	029 Move X9, [X19+32]
+	030 Move [X19+24], X8
+	031 Move [X19+64], X9
+	032 Move X8, -23371776
+	033 Add X8, X8, 1080
+	034 Move [X19+56], X8
+	035 Move X20, [X31+16]
+	036 Move X19, [X31+24]
+	037 Move X30, [X31+32]
+	038 Move X21, [X31+40]
+	039 Return 
+	040 Move X1, -40771584
+	041 Add X1, X1, 3811
+	042 Move X0, X31
+	043 Call 0x1C17F3C
+	044 Move X1, X31
+	045 Call 0x1C17DEC
+
+Method: System.Boolean Invoke(System.String targetHost, System.Security.Cryptography.X509Certificates.X509Certificate certificate, System.Security.Cryptography.X509Certificates.X509Chain chain, Mono.Security.Interface.MonoSslPolicyErrors sslPolicyErrors)
+
+Disassembly:
+	0x031FE5A0 CBZ W10, 0x31FE6A0
+	0x031FE5A4 LDR W9, [X8 + 0x20]
+	0x031FE5A8 UBFM W11, W3, 0x1D, 0x1C
+	0x031FE5AC MOV W19, W3
+	0x031FE5B0 MOV W20, W2
+
+ISIL:
+	001 Move X8, [X0+64]
+	002 Move X6, [X0+24]
+	003 Move X5, [X0+40]
+	004 Move X0, X8
+	005 CallNoReturn X6
+

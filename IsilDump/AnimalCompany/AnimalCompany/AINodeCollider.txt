@@ -1,0 +1,73 @@
+Type: AnimalCompany.AINodeCollider
+
+Method: System.Void Setup(System.Int32 id)
+
+Disassembly:
+	0x01DD605C BL 0x1C16CF4
+	0x01DD6060 ADRP X0, 0x2322000
+
+ISIL:
+	001 Move [X0+32], W1
+	002 Return 
+
+Method: System.Void OnDrawGizmos()
+
+Disassembly:
+	0x01DD6064 LDR X0, [X0 + 0x848]
+	0x01DD6068 BL 0x1C16CF4
+	0x01DD606C ADRP X0, 0x231D000
+	0x01DD6070 LDR X0, [X0 + 0x598]
+	0x01DD6074 BL 0x1C16CF4
+	0x01DD6078 ADRP X0, 0x231D000
+	0x01DD607C LDR X0, [X0 + 0x5F8]
+	0x01DD6080 BL 0x1C16CF4
+	0x01DD6084 MOVZ W8, 0x1
+	0x01DD6088 STRB W8, [X20 + 0xC38]
+	0x01DD608C MOV X0, X19
+	0x01DD6090 MOV X1, X31
+	0x01DD6094 STP X31, X31, [X31 + 0x20]
+	0x01DD6098 BL 0x1E73F88
+	0x01DD609C ADRP X20, 0x2602000
+	0x01DD60A0 LDRB W8, [X20 + 0x85B]
+	0x01DD60A4 LDR X21, [X19 + 0xC8]
+	0x01DD60A8 CBNZ W8, 0x1DD60C0
+	0x01DD60AC ADRP X0, 0x231D000
+	0x01DD60B0 LDR X0, [X0 + 0x5A0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move S0, 0.5
+	005 Move S1, 0.5
+	006 Move S2, 0.5
+	007 Move S3, 0.5
+	008 Move X0, X31
+	009 Call Gizmos.set_color, X0
+	010 Move X0, X19
+	011 Move X1, X31
+	012 Call Component.get_transform, X0
+	013 Compare X0, 0
+	014 JumpIfEqual {24}
+	015 Move X1, X31
+	016 Call Transform.get_position, X0
+	017 Move X8, -19836928
+	018 Move V3, [X8+188]
+	019 Move X0, X31
+	020 Move X30, [X31+16]
+	021 Move X19, [X31+24]
+	022 Call Gizmos.DrawSphere, X0, V0
+	023 Return 
+	024 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01DD60B4 BL 0x1C16CF4
+	0x01DD60B8 MOVZ W8, 0x1
+
+ISIL:
+	001 Move X1, X31
+	002 Call MonoBehaviour..ctor, X0
+	003 Return 
+

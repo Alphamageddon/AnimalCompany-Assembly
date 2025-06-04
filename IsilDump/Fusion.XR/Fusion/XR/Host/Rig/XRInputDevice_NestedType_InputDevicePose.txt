@@ -1,0 +1,34 @@
+Type: Fusion.XR.Host.Rig.XRInputDevice/InputDevicePose
+
+Method: System.Void CopyValuesFrom(Fusion.XR.Host.Rig.XRInputDevice/InputDevicePose source)
+
+Disassembly:
+	0x01FA163C MOVK W9, 0x3DCC0000
+	0x01FA1640 MOV X0, X19
+	0x01FA1644 STUR V0, [X19 + 0x28]
+	0x01FA1648 LDR X8, [X20]
+	0x01FA164C UNIMPLEMENTED
+	0x01FA1650 STR D0, [X19 + 0x48]
+	0x01FA1654 STR W9, [X19 + 0x50]
+	0x01FA1658 STR X8, [X19 + 0x40]
+	0x01FA165C LDP X20, X19, [X31 + 0x10]
+	0x01FA1660 MOV X1, X31
+	0x01FA1664 LDP X30, X21, [X31], #0x20
+	0x01FA1668 B 0x3C36C30
+	0x01FA166C RET
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move W8, [X1+8]
+	003 Move X9, [X1]
+	004 Move [X0+8], W8
+	005 Move [X0], X9
+	006 NotImplemented "Instruction LDUR not yet implemented."
+	007 Move V1, [X1]
+	008 Move [X31+12], V0
+	009 Move [X31], V1
+	010 NotImplemented "Instruction LDUR not yet implemented."
+	011 Move [X0+12], V0
+	012 Add X31, X31, 32
+	013 Return 
+

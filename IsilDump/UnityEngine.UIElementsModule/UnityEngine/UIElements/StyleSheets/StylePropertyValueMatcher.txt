@@ -1,0 +1,1435 @@
+Type: UnityEngine.UIElements.StyleSheets.StylePropertyValueMatcher
+
+Method: UnityEngine.UIElements.StyleSheets.StylePropertyValue get_current()
+
+Disassembly:
+	0x03D57324 B 0x3D57744
+	0x03D57328 CMP W8, 0x3C
+	0x03D5732C B.EQ 0x3D576C8
+	0x03D57330 CMP W8, 0x3E
+	0x03D57334 B.EQ 0x3D57700
+	0x03D57338 CMP W8, 0x3F
+	0x03D5733C B.NE 0x3D57378
+	0x03D57340 LDR X0, [X23]
+	0x03D57344 CBZ X0, 0x3D57C2C
+	0x03D57348 LDR W10, [X0 + 0x1C]
+	0x03D5734C LDR X8, [X0 + 0x10]
+	0x03D57350 LDR X9, [X24]
+	0x03D57354 ADD W10, W10, 0x1
+	0x03D57358 STR W10, [X0 + 0x1C]
+	0x03D5735C CBZ X8, 0x3D57C2C
+	0x03D57360 LDRSW X10, [X0 + 0x18]
+	0x03D57364 LDR W11, [X8 + 0x18]
+	0x03D57368 CMP W10, W11
+	0x03D5736C B.CS 0x3D57978
+	0x03D57370 LDR V0, [X31 + 0x18]
+	0x03D57374 B 0x3D57734
+	0x03D57378 LDR X0, [X25]
+	0x03D5737C LDR W8, [X0 + 0xE0]
+	0x03D57380 CBNZ W8, 0x3D57388
+	0x03D57384 BL 0x1C16DFC
+	0x03D57388 MOV W0, W21
+	0x03D5738C MOV X1, X31
+	0x03D57390 BL 0x331B874
+	0x03D57394 TBZ X0, 0x0, 0x3D574B4
+	0x03D57398 MOV X0, X19
+	0x03D5739C MOV W1, W20
+	0x03D573A0 BL 0x3D59610
+	0x03D573A4 TBZ X0, 0x0, 0x3D577E0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x691000
+	005 Move W8, [X20+3120]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x40F000
+	012 Move X0, [X0+976]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+3120], W8
+	016 Move X8, [X19]
+	017 Move W20, [X19+24]
+	018 Move X0, X19
+	019 Move X9, [X8+552]
+	020 Move X1, [X8+560]
+	021 NotImplemented "Instruction BLR not yet implemented."
+	022 NotImplemented "Instruction CMP not yet implemented."
+	023 Move X0, [X19+32]
+	024 Compare X0, 0
+	025 JumpIfEqual {37}
+	026 Move X8, 0x40F000
+	027 Move W1, [X19+24]
+	028 Move X8, [X8+976]
+	029 Move X2, [X8]
+	030 Call List`1<StylePropertyValue>.get_Item, X0, X1
+	031 Move X1, X31
+	032 Move X0, X31
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 Move X30, [X31+32]
+	036 Return X0
+	037 Call 0x1C17F20
+
+Method: System.Int32 get_valueCount()
+
+Disassembly:
+	0x03D573A8 MOV W22, W31
+	0x03D573AC ADD W8, W20, W22
+	0x03D573B0 ADD W1, W8, 0x1
+	0x03D573B4 MOV X0, X19
+	0x03D573B8 BL 0x3D59610
+	0x03D573BC ADD W22, W22, 0x1
+	0x03D573C0 TBNZ X0, 0x0, 0x3D573AC
+	0x03D573C4 ADD W21, W20, W22
+	0x03D573C8 ADD W2, W22, 0x1
+	0x03D573CC B 0x3D577E8
+	0x03D573D0 LDR X0, [X23]
+	0x03D573D4 CBZ X0, 0x3D57C2C
+	0x03D573D8 LDR W10, [X0 + 0x1C]
+	0x03D573DC LDR X8, [X0 + 0x10]
+	0x03D573E0 LDR X9, [X24]
+	0x03D573E4 ADD W10, W10, 0x1
+	0x03D573E8 STR W10, [X0 + 0x1C]
+	0x03D573EC CBZ X8, 0x3D57C2C
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x691000
+	005 Move W8, [X20+3121]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x40F000
+	012 Move X0, [X0+2832]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+3121], W8
+	016 Move X8, [X19+32]
+	017 Compare X8, 0
+	018 JumpIfEqual {24}
+	019 Move W0, [X8+24]
+	020 Move X20, [X31+16]
+	021 Move X19, [X31+24]
+	022 Move X30, [X31+32]
+	023 Return X0
+	024 Call 0x1C17F20
+
+Method: System.Boolean get_isCurrentVariable()
+
+Disassembly:
+	0x03D573F0 LDRSW X10, [X0 + 0x18]
+	0x03D573F4 LDR W11, [X8 + 0x18]
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Boolean get_isCurrentComma()
+
+Disassembly:
+	0x03D573F8 CMP W10, W11
+	0x03D573FC B.CS 0x3D577B8
+	0x03D57400 ADD W9, W10, 0x1
+	0x03D57404 MADD X8, X10, X29, X8
+	0x03D57408 STR W9, [X0 + 0x18]
+	0x03D5740C STR D13, [X8 + 0x20]
+	0x03D57410 B 0x3D57744
+	0x03D57414 MOVZ W2, 0x7C
+	0x03D57418 MOV X0, X19
+	0x03D5741C MOV W1, W20
+	0x03D57420 BL 0x3D595CC
+	0x03D57424 LDR X8, [X23]
+	0x03D57428 TBZ X0, 0x0, 0x3D5774C
+	0x03D5742C CBZ X8, 0x3D57C2C
+	0x03D57430 LDR W11, [X8 + 0x1C]
+	0x03D57434 LDR X9, [X8 + 0x10]
+	0x03D57438 LDR X10, [X24]
+	0x03D5743C ADD W11, W11, 0x1
+	0x03D57440 STR W11, [X8 + 0x1C]
+	0x03D57444 CBZ X9, 0x3D57C2C
+	0x03D57448 LDRSW X11, [X8 + 0x18]
+	0x03D5744C LDR W12, [X9 + 0x18]
+	0x03D57450 CMP W11, W12
+	0x03D57454 B.CS 0x3D57984
+	0x03D57458 ADD W10, W11, 0x1
+	0x03D5745C MADD X9, X11, X29, X9
+	0x03D57460 STR W10, [X8 + 0x18]
+	0x03D57464 STR D8, [X9 + 0x20]
+	0x03D57468 STP X31, X31, [X9 + 0x28]
+	0x03D5746C B 0x3D57B7C
+	0x03D57470 LDR X0, [X23]
+	0x03D57474 CBZ X0, 0x3D57C2C
+	0x03D57478 LDR W10, [X0 + 0x1C]
+	0x03D5747C LDR X8, [X0 + 0x10]
+	0x03D57480 LDR X9, [X24]
+	0x03D57484 ADD W10, W10, 0x1
+	0x03D57488 STR W10, [X0 + 0x1C]
+	0x03D5748C CBZ X8, 0x3D57C2C
+	0x03D57490 LDRSW X10, [X0 + 0x18]
+	0x03D57494 LDR W11, [X8 + 0x18]
+	0x03D57498 CMP W10, W11
+	0x03D5749C B.CS 0x3D577CC
+	0x03D574A0 ADD W9, W10, 0x1
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], X30
+	003 Move [X31+32], X20
+	004 Move [X31+40], X19
+	005 Move X20, 0x691000
+	006 Move W8, [X20+3122]
+	007 Move X19, X0
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x40F000
+	013 Move X0, [X0+976]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+3122], W8
+	017 Move [X31], X31
+	018 Move [X31+8], X31
+	019 Move X8, [X19]
+	020 Move W20, [X19+24]
+	021 Move X0, X19
+	022 Move X9, [X8+552]
+	023 Move X1, [X8+560]
+	024 NotImplemented "Instruction BLR not yet implemented."
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move X0, [X19+32]
+	027 Compare X0, 0
+	028 JumpIfEqual {49}
+	029 Move X8, 0x40F000
+	030 Move W1, [X19+24]
+	031 Move X8, [X8+976]
+	032 Move X2, [X8]
+	033 Call List`1<StylePropertyValue>.get_Item, X0, X1
+	034 Add X8, X31, 0
+	035 Add X8, X8, 8
+	036 Move [X31], X0
+	037 Move [X31+8], X1
+	038 Move X0, X8
+	039 Move X1, X31
+	040 Call StyleValueHandle.get_valueType, X0
+	041 NotImplemented "Instruction CMP not yet implemented."
+	042 NotImplemented "Instruction CSET not yet implemented."
+	043 Move W0, W31
+	044 Move X20, [X31+32]
+	045 Move X19, [X31+40]
+	046 Move X30, [X31+16]
+	047 Add X31, X31, 48
+	048 Return X0
+	049 Call 0x1C17F20
+
+Method: UnityEngine.UIElements.StyleSheets.MatchResult Match(UnityEngine.UIElements.StyleSheets.Syntax.Expression exp, System.Collections.Generic.List`1<UnityEngine.UIElements.StyleSheets.StylePropertyValue> values)
+
+Disassembly:
+	0x03D574A4 MADD X8, X10, X29, X8
+	0x03D574A8 STR W9, [X0 + 0x18]
+	0x03D574AC STR D12, [X8 + 0x20]
+	0x03D574B0 B 0x3D57744
+	0x03D574B4 LDR X0, [X25]
+	0x03D574B8 LDR W8, [X0 + 0xE0]
+	0x03D574BC CBNZ W8, 0x3D574C4
+	0x03D574C0 BL 0x1C16DFC
+	0x03D574C4 MOV W0, W21
+	0x03D574C8 MOV X1, X31
+	0x03D574CC BL 0x331A888
+	0x03D574D0 TBZ X0, 0x0, 0x3D5784C
+	0x03D574D4 MOV X0, X19
+	0x03D574D8 MOV W1, W20
+	0x03D574DC BL 0x3D596A8
+	0x03D574E0 TBZ X0, 0x0, 0x3D57A00
+	0x03D574E4 MOV W22, W31
+	0x03D574E8 ADD W8, W20, W22
+	0x03D574EC ADD W1, W8, 0x1
+	0x03D574F0 MOV X0, X19
+	0x03D574F4 BL 0x3D596A8
+	0x03D574F8 ADD W22, W22, 0x1
+	0x03D574FC TBNZ X0, 0x0, 0x3D574E8
+	0x03D57500 ADD W21, W20, W22
+	0x03D57504 ADD W2, W22, 0x1
+	0x03D57508 B 0x3D57A08
+	0x03D5750C LDR X0, [X23]
+	0x03D57510 CBZ X0, 0x3D57C2C
+	0x03D57514 LDR W10, [X0 + 0x1C]
+	0x03D57518 LDR X8, [X0 + 0x10]
+	0x03D5751C LDR X9, [X24]
+	0x03D57520 ADD W10, W10, 0x1
+	0x03D57524 STR W10, [X0 + 0x1C]
+	0x03D57528 CBZ X8, 0x3D57C2C
+	0x03D5752C LDRSW X10, [X0 + 0x18]
+	0x03D57530 LDR W11, [X8 + 0x18]
+	0x03D57534 CMP W10, W11
+	0x03D57538 B.CS 0x3D57928
+	0x03D5753C LDR V0, [X31 + 0x50]
+	0x03D57540 B 0x3D57734
+	0x03D57544 LDR X0, [X23]
+	0x03D57548 CBZ X0, 0x3D57C2C
+	0x03D5754C LDR W10, [X0 + 0x1C]
+	0x03D57550 LDR X8, [X0 + 0x10]
+	0x03D57554 LDR X9, [X24]
+	0x03D57558 ADD W10, W10, 0x1
+	0x03D5755C STR W10, [X0 + 0x1C]
+	0x03D57560 CBZ X8, 0x3D57C2C
+	0x03D57564 LDRSW X10, [X0 + 0x18]
+	0x03D57568 LDR W11, [X8 + 0x18]
+	0x03D5756C CMP W10, W11
+	0x03D57570 B.CS 0x3D57934
+	0x03D57574 LDR V0, [X31 + 0x48]
+	0x03D57578 B 0x3D57734
+	0x03D5757C MOVZ W2, 0x26
+	0x03D57580 MOV X0, X19
+	0x03D57584 MOV W1, W20
+	0x03D57588 BL 0x3D595CC
+	0x03D5758C TBZ X0, 0x0, 0x3D578D4
+	0x03D57590 LDR X0, [X23]
+	0x03D57594 CBZ X0, 0x3D57C2C
+	0x03D57598 LDR W10, [X0 + 0x1C]
+	0x03D5759C LDR X8, [X0 + 0x10]
+	0x03D575A0 LDR X9, [X24]
+	0x03D575A4 ADD W10, W10, 0x1
+	0x03D575A8 STR W10, [X0 + 0x1C]
+	0x03D575AC CBZ X8, 0x3D57C2C
+	0x03D575B0 LDRSW X10, [X0 + 0x18]
+	0x03D575B4 LDR W11, [X8 + 0x18]
+	0x03D575B8 CMP W10, W11
+	0x03D575BC B.CS 0x3D57B5C
+	0x03D575C0 LDR V0, [X31 + 0x8]
+	0x03D575C4 ADD W9, W10, 0x1
+	0x03D575C8 MADD X8, X10, X29, X8
+	0x03D575CC STR W9, [X0 + 0x18]
+	0x03D575D0 STR D0, [X8 + 0x20]
+	0x03D575D4 STP X31, X31, [X8 + 0x28]
+	0x03D575D8 B 0x3D57B7C
+	0x03D575DC LDR X0, [X23]
+	0x03D575E0 CBZ X0, 0x3D57C2C
+	0x03D575E4 LDR W10, [X0 + 0x1C]
+	0x03D575E8 LDR X8, [X0 + 0x10]
+	0x03D575EC LDR X9, [X24]
+	0x03D575F0 ADD W10, W10, 0x1
+	0x03D575F4 STR W10, [X0 + 0x1C]
+	0x03D575F8 CBZ X8, 0x3D57C2C
+	0x03D575FC LDRSW X10, [X0 + 0x18]
+	0x03D57600 LDR W11, [X8 + 0x18]
+	0x03D57604 CMP W10, W11
+	0x03D57608 B.CS 0x3D57940
+	0x03D5760C LDR V0, [X31 + 0x40]
+	0x03D57610 B 0x3D57734
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X22, 0x691000
+	007 Move W8, [X22+3123]
+	008 Move X21, X2
+	009 Move X20, X1
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {23}
+	015 Move X0, 0x40F000
+	016 Move X0, [X0+2832]
+	017 Call 0x1C17CF4
+	018 Move X0, 0x40F000
+	019 Move X0, [X0+976]
+	020 Call 0x1C17CF4
+	021 Move W8, 1
+	022 Move [X22+3123], W8
+	023 Compare X21, 0
+	024 JumpIfEqual {55}
+	025 Move W8, [X21+24]
+	026 Compare W8, 0
+	027 JumpIfEqual {55}
+	028 Move X0, X19
+	029 Call BaseStyleMatcher.Initialize, X0
+	030 Move [X19+32], X21
+	031 Move X8, 0x40F000
+	032 Move X8, [X8+976]
+	033 Move X0, X21
+	034 Move W1, W31
+	035 Move X2, [X8]
+	036 Call List`1<StylePropertyValue>.get_Item, X0, X1
+	037 Move [X31+8], X1
+	038 Add X0, X31, 8
+	039 Move X1, X31
+	040 Call StyleValueHandle.get_valueType, X0
+	041 NotImplemented "Instruction CMP not yet implemented."
+	042 Move W8, [X31+12]
+	043 NotImplemented "Instruction CMP not yet implemented."
+	044 Move X8, [X19]
+	045 Move W20, [X19+24]
+	046 Move X0, X19
+	047 Move X9, [X8+552]
+	048 Move X1, [X8+560]
+	049 NotImplemented "Instruction BLR not yet implemented."
+	050 Add W8, W20, 1
+	051 NotImplemented "Instruction CMP not yet implemented."
+	052 Move W8, [X19+24]
+	053 Add W8, W8, 1
+	054 Move [X19+24], W8
+	055 Move X1, X31
+	056 Move W0, 2
+	057 Move X0, X19
+	058 Move X1, X20
+	059 Call BaseStyleMatcher.Match, X0, X1
+	060 Move TEMP, X0
+	061 And TEMP, TEMP, 1
+	062 Compare TEMP, 1
+	063 JumpIfNotEqual {82}
+	064 Move X8, [X19]
+	065 Move W20, [X19+24]
+	066 Move X0, X19
+	067 Move X9, [X8+552]
+	068 Move X1, [X8+560]
+	069 NotImplemented "Instruction BLR not yet implemented."
+	070 NotImplemented "Instruction CMP not yet implemented."
+	071 Move X0, X19
+	072 Call StylePropertyValueMatcher.get_current, X0
+	073 Move X20, X0
+	074 Move X0, X19
+	075 Call StylePropertyValueMatcher.get_current, X0
+	076 Move X0, X20
+	077 Call StyleSheetExtensions.ReadAsString, X0, X1
+	078 Move X1, X0
+	079 Move W0, 3
+	080 Move X0, X31
+	081 Move X1, X31
+	082 Move X0, X19
+	083 Call StylePropertyValueMatcher.get_current, X0
+	084 Move X20, X0
+	085 Move X0, X19
+	086 Call StylePropertyValueMatcher.get_current, X0
+	087 Move X0, X20
+	088 Call StyleSheetExtensions.ReadAsString, X0, X1
+	089 Move X1, X0
+	090 Move W0, 1
+	091 Move X20, [X31+32]
+	092 Move X19, [X31+40]
+	093 Move X22, [X31+16]
+	094 Move X21, [X31+24]
+	095 Move X30, [X31+48]
+	096 Return X0
+
+Method: System.Boolean MatchKeyword(System.String keyword)
+
+Disassembly:
+	0x03D57614 LDR X0, [X23]
+	0x03D57618 CBZ X0, 0x3D57C2C
+	0x03D5761C LDR W10, [X0 + 0x1C]
+	0x03D57620 LDR X8, [X0 + 0x10]
+	0x03D57624 LDR X9, [X24]
+	0x03D57628 ADD W10, W10, 0x1
+	0x03D5762C STR W10, [X0 + 0x1C]
+	0x03D57630 CBZ X8, 0x3D57C2C
+	0x03D57634 LDRSW X10, [X0 + 0x18]
+	0x03D57638 LDR W11, [X8 + 0x18]
+	0x03D5763C CMP W10, W11
+	0x03D57640 B.CS 0x3D5794C
+	0x03D57644 LDR V0, [X31 + 0x38]
+	0x03D57648 B 0x3D57734
+	0x03D5764C LDR X0, [X23]
+	0x03D57650 CBZ X0, 0x3D57C2C
+	0x03D57654 LDR W10, [X0 + 0x1C]
+	0x03D57658 LDR X8, [X0 + 0x10]
+	0x03D5765C LDR X9, [X24]
+	0x03D57660 ADD W10, W10, 0x1
+	0x03D57664 STR W10, [X0 + 0x1C]
+	0x03D57668 CBZ X8, 0x3D57C2C
+	0x03D5766C LDRSW X10, [X0 + 0x18]
+	0x03D57670 LDR W11, [X8 + 0x18]
+	0x03D57674 CMP W10, W11
+	0x03D57678 B.CS 0x3D57958
+	0x03D5767C LDR V0, [X31 + 0x30]
+	0x03D57680 B 0x3D57734
+	0x03D57684 LDR X0, [X23]
+	0x03D57688 CBZ X0, 0x3D57C2C
+	0x03D5768C LDR W10, [X0 + 0x1C]
+	0x03D57690 LDR X8, [X0 + 0x10]
+	0x03D57694 LDR X9, [X24]
+	0x03D57698 ADD W10, W10, 0x1
+	0x03D5769C STR W10, [X0 + 0x1C]
+	0x03D576A0 CBZ X8, 0x3D57C2C
+	0x03D576A4 LDRSW X10, [X0 + 0x18]
+	0x03D576A8 LDR W11, [X8 + 0x18]
+	0x03D576AC CMP W10, W11
+	0x03D576B0 B.CS 0x3D57964
+	0x03D576B4 ADD W9, W10, 0x1
+	0x03D576B8 MADD X8, X10, X29, X8
+	0x03D576BC STR W9, [X0 + 0x18]
+	0x03D576C0 STR D15, [X8 + 0x20]
+	0x03D576C4 B 0x3D57744
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], X30
+	003 Move [X31+32], X20
+	004 Move [X31+40], X19
+	005 Move X19, X1
+	006 Call StylePropertyValueMatcher.get_current, X0
+	007 Add X8, X31, 0
+	008 Add X20, X8, 8
+	009 Move [X31], X0
+	010 Move [X31+8], X1
+	011 Move X0, X20
+	012 Move X1, X31
+	013 Call StyleValueHandle.get_valueType, X0
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 Move W0, [X31+12]
+	016 Move X1, X31
+	017 Call StyleValueKeywordExtension.ToUssString, X0
+	018 Compare X19, 0
+	019 JumpIfNotEqual {32}
+	020 Move X0, X20
+	021 Move X1, X31
+	022 Call StyleValueHandle.get_valueType, X0
+	023 NotImplemented "Instruction CMP not yet implemented."
+	024 Move X0, [X31]
+	025 Compare X0, 0
+	026 JumpIfEqual {47}
+	027 Move X1, [X31+8]
+	028 Move X2, X31
+	029 Call StyleSheet.ReadEnum, X0, X1
+	030 Compare X19, 0
+	031 JumpIfEqual {47}
+	032 Move X20, X0
+	033 Move X0, X19
+	034 Move X1, X31
+	035 Call String.ToLowerInvariant, X0
+	036 Move X1, X0
+	037 Move X0, X20
+	038 Move X2, X31
+	039 Call String.op_Equality, X0, X1
+	040 Move W0, W31
+	041 Move X20, [X31+32]
+	042 Move X19, [X31+40]
+	043 Move X30, [X31+16]
+	044 And W0, W0, 1
+	045 Add X31, X31, 48
+	046 Return X0
+	047 Call 0x1C17F20
+
+Method: System.Boolean MatchNumber()
+
+Disassembly:
+	0x03D576C8 LDR X0, [X23]
+	0x03D576CC CBZ X0, 0x3D57C2C
+	0x03D576D0 LDR W10, [X0 + 0x1C]
+	0x03D576D4 LDR X8, [X0 + 0x10]
+	0x03D576D8 LDR X9, [X24]
+	0x03D576DC ADD W10, W10, 0x1
+	0x03D576E0 STR W10, [X0 + 0x1C]
+	0x03D576E4 CBZ X8, 0x3D57C2C
+	0x03D576E8 LDRSW X10, [X0 + 0x18]
+	0x03D576EC LDR W11, [X8 + 0x18]
+	0x03D576F0 CMP W10, W11
+	0x03D576F4 B.CS 0x3D579A0
+	0x03D576F8 LDR V0, [X31 + 0x28]
+	0x03D576FC B 0x3D57734
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Call StylePropertyValueMatcher.get_current, X0
+	004 Add X8, X31, 0
+	005 Add X8, X8, 8
+	006 Move [X31], X0
+	007 Move [X31+8], X1
+	008 Move X0, X8
+	009 Move X1, X31
+	010 Call StyleValueHandle.get_valueType, X0
+	011 Move X30, [X31+16]
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 NotImplemented "Instruction CSET not yet implemented."
+	014 Add X31, X31, 32
+	015 Return X0
+
+Method: System.Boolean MatchInteger()
+
+Disassembly:
+	0x03D57700 LDR X0, [X23]
+	0x03D57704 CBZ X0, 0x3D57C2C
+	0x03D57708 LDR W10, [X0 + 0x1C]
+	0x03D5770C LDR X8, [X0 + 0x10]
+	0x03D57710 LDR X9, [X24]
+	0x03D57714 ADD W10, W10, 0x1
+	0x03D57718 STR W10, [X0 + 0x1C]
+	0x03D5771C CBZ X8, 0x3D57C2C
+	0x03D57720 LDRSW X10, [X0 + 0x18]
+	0x03D57724 LDR W11, [X8 + 0x18]
+	0x03D57728 CMP W10, W11
+	0x03D5772C B.CS 0x3D579AC
+	0x03D57730 LDR V0, [X31 + 0x20]
+	0x03D57734 ADD W9, W10, 0x1
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Call StylePropertyValueMatcher.get_current, X0
+	004 Add X8, X31, 0
+	005 Add X8, X8, 8
+	006 Move [X31], X0
+	007 Move [X31+8], X1
+	008 Move X0, X8
+	009 Move X1, X31
+	010 Call StyleValueHandle.get_valueType, X0
+	011 Move X30, [X31+16]
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 NotImplemented "Instruction CSET not yet implemented."
+	014 Add X31, X31, 32
+	015 Return X0
+
+Method: System.Boolean MatchLength()
+
+Disassembly:
+	0x03D57738 MADD X8, X10, X29, X8
+	0x03D5773C STR W9, [X0 + 0x18]
+	0x03D57740 STR D0, [X8 + 0x20]
+	0x03D57744 STP X31, X31, [X8 + 0x28]
+	0x03D57748 B 0x3D579CC
+	0x03D5774C CBZ X8, 0x3D57C2C
+	0x03D57750 LDR W11, [X8 + 0x1C]
+	0x03D57754 LDR X9, [X8 + 0x10]
+	0x03D57758 LDR X10, [X24]
+	0x03D5775C ADD W11, W11, 0x1
+	0x03D57760 STR W11, [X8 + 0x1C]
+	0x03D57764 CBZ X9, 0x3D57C2C
+	0x03D57768 LDRSW X11, [X8 + 0x18]
+	0x03D5776C LDR W12, [X9 + 0x18]
+	0x03D57770 CMP W11, W12
+	0x03D57774 B.CS 0x3D579E0
+	0x03D57778 ADD W10, W11, 0x1
+	0x03D5777C MADD X9, X11, X29, X9
+	0x03D57780 STR W10, [X8 + 0x18]
+	0x03D57784 STR D14, [X9 + 0x20]
+	0x03D57788 STP X31, X31, [X9 + 0x28]
+	0x03D5778C B 0x3D579CC
+	0x03D57790 LDR X8, [X9 + 0x20]
+	0x03D57794 LDR X8, [X8 + 0xC0]
+	0x03D57798 LDR X2, [X8 + 0x70]
+	0x03D5779C STR D9, [X31 + 0x68]
+	0x03D577A0 B 0x3D579C0
+	0x03D577A4 LDR X8, [X9 + 0x20]
+	0x03D577A8 LDR X8, [X8 + 0xC0]
+	0x03D577AC LDR X2, [X8 + 0x70]
+	0x03D577B0 STR D11, [X31 + 0x68]
+	0x03D577B4 B 0x3D579C0
+	0x03D577B8 LDR X8, [X9 + 0x20]
+	0x03D577BC LDR X8, [X8 + 0xC0]
+	0x03D577C0 LDR X2, [X8 + 0x70]
+	0x03D577C4 STR D13, [X31 + 0x68]
+	0x03D577C8 B 0x3D579C0
+	0x03D577CC LDR X8, [X9 + 0x20]
+	0x03D577D0 LDR X8, [X8 + 0xC0]
+	0x03D577D4 LDR X2, [X8 + 0x70]
+	0x03D577D8 STR D12, [X31 + 0x68]
+	0x03D577DC B 0x3D579C0
+	0x03D577E0 MOVZ W2, 0x1
+	0x03D577E4 MOV W21, W20
+	0x03D577E8 MOV X0, X19
+	0x03D577EC MOV W1, W20
+	0x03D577F0 MOV X3, X31
+	0x03D577F4 BL 0x3228DE4
+	0x03D577F8 MOV X1, X31
+	0x03D577FC BL 0x337BA10
+	0x03D57800 LDR X8, [X23]
+	0x03D57804 CBZ X8, 0x3D57C2C
+	0x03D57808 LDR W11, [X8 + 0x1C]
+	0x03D5780C LDR X9, [X8 + 0x10]
+	0x03D57810 LDR X10, [X24]
+	0x03D57814 ADD W11, W11, 0x1
+	0x03D57818 STR W11, [X8 + 0x1C]
+	0x03D5781C CBZ X9, 0x3D57C2C
+	0x03D57820 LDRSW X11, [X8 + 0x18]
+	0x03D57824 LDR W12, [X9 + 0x18]
+	0x03D57828 CMP W11, W12
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], D8
+	003 Move [X31+32], X30
+	004 Move [X31+40], X19
+	005 Call StylePropertyValueMatcher.get_current, X0
+	006 Add X8, X31, 0
+	007 Add X19, X8, 8
+	008 Move [X31], X0
+	009 Move [X31+8], X1
+	010 Move X0, X19
+	011 Move X1, X31
+	012 Call StyleValueHandle.get_valueType, X0
+	013 NotImplemented "Instruction CMP not yet implemented."
+	014 Move X0, [X31]
+	015 Compare X0, 0
+	016 JumpIfEqual {63}
+	017 Move X1, [X31+8]
+	018 Move X2, X31
+	019 Call StyleSheet.ReadDimension, X0, X1
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 NotImplemented "Instruction CSET not yet implemented."
+	022 Move X0, X19
+	023 Move X1, X31
+	024 Call StyleValueHandle.get_valueType, X0
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move X0, [X31]
+	027 Compare X0, 0
+	028 JumpIfEqual {63}
+	029 Move X1, [X31+8]
+	030 Move X2, X31
+	031 Call StyleSheet.ReadFloat, X0, X1
+	032 Move X19, 0x683000
+	033 Move W8, [X19+1450]
+	034 Move V8, V0
+	035 Compare W8, 0
+	036 JumpIfNotEqual {42}
+	037 Move X0, 0x3A4000
+	038 Move X0, [X0+1208]
+	039 Call 0x1C17CF4
+	040 Move W8, 1
+	041 Move [X19+1450], W8
+	042 Move X8, 0x3A4000
+	043 Move X8, [X8+1208]
+	044 Move X9, -52871168
+	045 Move V0, [X9+576]
+	046 NotImplemented "Instruction FABS not yet implemented."
+	047 Move X8, [X8]
+	048 Move S3, 8
+	049 Multiply S0, S2, S0
+	050 Move X8, [X8+184]
+	051 Move V1, [X8]
+	052 Multiply S1, S1, S3
+	053 NotImplemented "Instruction FCMP not yet implemented."
+	054 NotImplemented "Instruction FCSEL not yet implemented."
+	055 NotImplemented "Instruction FCMP not yet implemented."
+	056 NotImplemented "Instruction CSET not yet implemented."
+	057 Move W0, W31
+	058 Move X30, [X31+32]
+	059 Move X19, [X31+40]
+	060 Move V8, [X31+16]
+	061 Add X31, X31, 48
+	062 Return X0
+	063 Call 0x1C17F20
+
+Method: System.Boolean MatchPercentage()
+
+Disassembly:
+	0x03D5782C B.CS 0x3D578B8
+	0x03D57830 ADD W10, W11, 0x1
+	0x03D57834 MADD X9, X11, X29, X9
+	0x03D57838 STR W10, [X8 + 0x18]
+	0x03D5783C STR D10, [X9 + 0x20]
+	0x03D57840 STR X31, [X9 + 0x28]
+	0x03D57844 STP W0, W31, [X9 + 0x30]
+	0x03D57848 B 0x3D57A88
+	0x03D5784C LDR X0, [X26]
+	0x03D57850 MOVZ W1, 0x1
+	0x03D57854 BL 0x1C16D6C
+	0x03D57858 MOV X22, X0
+	0x03D5785C LDR X0, [X25]
+	0x03D57860 ADD X1, X31, 0x60
+	0x03D57864 STRH W21, [X31 + 0x60]
+	0x03D57868 BL 0x1C16E04
+	0x03D5786C CBZ X22, 0x3D57C2C
+	0x03D57870 MOV X21, X0
+	0x03D57874 CBZ X0, 0x3D5788C
+	0x03D57878 LDR X8, [X22]
+	0x03D5787C MOV X0, X21
+	0x03D57880 LDR X1, [X8 + 0x40]
+	0x03D57884 BL 0x1C16E00
+	0x03D57888 CBZ X0, 0x3D57C34
+	0x03D5788C LDR W8, [X22 + 0x18]
+	0x03D57890 CBZ W8, 0x3D57C30
+	0x03D57894 STR X21, [X22 + 0x20]
+	0x03D57898 LDR X0, [X27]
+	0x03D5789C LDR W8, [X0 + 0xE0]
+	0x03D578A0 CBNZ W8, 0x3D578A8
+	0x03D578A4 BL 0x1C16DFC
+	0x03D578A8 ADRP X8, 0x40F000
+	0x03D578AC LDR X8, [X8 + 0x188]
+	0x03D578B0 MOV X1, X22
+	0x03D578B4 B 0x3D57AF0
+	0x03D578B8 LDR X9, [X10 + 0x20]
+	0x03D578BC LDR X9, [X9 + 0xC0]
+	0x03D578C0 LDR X2, [X9 + 0x70]
+	0x03D578C4 STR D10, [X31 + 0x68]
+	0x03D578C8 STR X31, [X31 + 0x70]
+	0x03D578CC STP W0, W31, [X31 + 0x78]
+	0x03D578D0 B 0x3D57A7C
+	0x03D578D4 LDR W8, [X19 + 0x10]
+	0x03D578D8 ADD W1, W20, 0x1
+	0x03D578DC CMP W1, W8
+	0x03D578E0 B.GE 0x3D57A90
+	0x03D578E4 MOV X0, X19
+	0x03D578E8 MOV X2, X31
+	0x03D578EC BL 0x3222A1C
+	0x03D578F0 LDR X8, [X25]
+	0x03D578F4 STRH W0, [X31 + 0x64]
+	0x03D578F8 LDR W9, [X8 + 0xE0]
+	0x03D578FC CBNZ W9, 0x3D57908
+	0x03D57900 MOV X0, X8
+	0x03D57904 BL 0x1C16DFC
+	0x03D57908 ADD X0, X31, 0x64
+	0x03D5790C MOV X1, X31
+	0x03D57910 BL 0x330A76C
+	0x03D57914 MOV X22, X0
+	0x03D57918 B 0x3D57A9C
+	0x03D5791C LDR X8, [X9 + 0x20]
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], D8
+	003 Move [X31+32], X30
+	004 Move [X31+40], X19
+	005 Call StylePropertyValueMatcher.get_current, X0
+	006 Add X8, X31, 0
+	007 Add X19, X8, 8
+	008 Move [X31], X0
+	009 Move [X31+8], X1
+	010 Move X0, X19
+	011 Move X1, X31
+	012 Call StyleValueHandle.get_valueType, X0
+	013 NotImplemented "Instruction CMP not yet implemented."
+	014 Move X0, [X31]
+	015 Compare X0, 0
+	016 JumpIfEqual {63}
+	017 Move X1, [X31+8]
+	018 Move X2, X31
+	019 Call StyleSheet.ReadDimension, X0, X1
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 NotImplemented "Instruction CSET not yet implemented."
+	022 Move X0, X19
+	023 Move X1, X31
+	024 Call StyleValueHandle.get_valueType, X0
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move X0, [X31]
+	027 Compare X0, 0
+	028 JumpIfEqual {63}
+	029 Move X1, [X31+8]
+	030 Move X2, X31
+	031 Call StyleSheet.ReadFloat, X0, X1
+	032 Move X19, 0x683000
+	033 Move W8, [X19+1450]
+	034 Move V8, V0
+	035 Compare W8, 0
+	036 JumpIfNotEqual {42}
+	037 Move X0, 0x3A4000
+	038 Move X0, [X0+1208]
+	039 Call 0x1C17CF4
+	040 Move W8, 1
+	041 Move [X19+1450], W8
+	042 Move X8, 0x3A4000
+	043 Move X8, [X8+1208]
+	044 Move X9, -52871168
+	045 Move V0, [X9+576]
+	046 NotImplemented "Instruction FABS not yet implemented."
+	047 Move X8, [X8]
+	048 Move S3, 8
+	049 Multiply S0, S2, S0
+	050 Move X8, [X8+184]
+	051 Move V1, [X8]
+	052 Multiply S1, S1, S3
+	053 NotImplemented "Instruction FCMP not yet implemented."
+	054 NotImplemented "Instruction FCSEL not yet implemented."
+	055 NotImplemented "Instruction FCMP not yet implemented."
+	056 NotImplemented "Instruction CSET not yet implemented."
+	057 Move W0, W31
+	058 Move X30, [X31+32]
+	059 Move X19, [X31+40]
+	060 Move V8, [X31+16]
+	061 Add X31, X31, 48
+	062 Return X0
+	063 Call 0x1C17F20
+
+Method: System.Boolean MatchColor()
+
+Disassembly:
+	0x03D57920 LDR V0, [X31 + 0x58]
+	0x03D57924 B 0x3D579B4
+	0x03D57928 LDR X8, [X9 + 0x20]
+	0x03D5792C LDR V0, [X31 + 0x50]
+	0x03D57930 B 0x3D579B4
+	0x03D57934 LDR X8, [X9 + 0x20]
+	0x03D57938 LDR V0, [X31 + 0x48]
+	0x03D5793C B 0x3D579B4
+	0x03D57940 LDR X8, [X9 + 0x20]
+	0x03D57944 LDR V0, [X31 + 0x40]
+	0x03D57948 B 0x3D579B4
+	0x03D5794C LDR X8, [X9 + 0x20]
+	0x03D57950 LDR V0, [X31 + 0x38]
+	0x03D57954 B 0x3D579B4
+	0x03D57958 LDR X8, [X9 + 0x20]
+	0x03D5795C LDR V0, [X31 + 0x30]
+	0x03D57960 B 0x3D579B4
+	0x03D57964 LDR X8, [X9 + 0x20]
+	0x03D57968 LDR X8, [X8 + 0xC0]
+	0x03D5796C LDR X2, [X8 + 0x70]
+	0x03D57970 STR D15, [X31 + 0x68]
+	0x03D57974 B 0x3D579C0
+	0x03D57978 LDR X8, [X9 + 0x20]
+	0x03D5797C LDR V0, [X31 + 0x18]
+	0x03D57980 B 0x3D579B4
+	0x03D57984 LDR X9, [X10 + 0x20]
+	0x03D57988 ADD X1, X31, 0x68
+	0x03D5798C MOV X0, X8
+	0x03D57990 LDR X9, [X9 + 0xC0]
+	0x03D57994 LDR X2, [X9 + 0x70]
+	0x03D57998 STR D8, [X31 + 0x68]
+	0x03D5799C B 0x3D57B74
+	0x03D579A0 LDR X8, [X9 + 0x20]
+	0x03D579A4 LDR V0, [X31 + 0x28]
+	0x03D579A8 B 0x3D579B4
+	0x03D579AC LDR X8, [X9 + 0x20]
+	0x03D579B0 LDR V0, [X31 + 0x20]
+	0x03D579B4 LDR X8, [X8 + 0xC0]
+	0x03D579B8 LDR X2, [X8 + 0x70]
+	0x03D579BC STR D0, [X31 + 0x68]
+	0x03D579C0 STP X31, X31, [X31 + 0x70]
+	0x03D579C4 ADD X1, X31, 0x68
+	0x03D579C8 BL 0x306DCA8
+	0x03D579CC LDR W8, [X19 + 0x10]
+	0x03D579D0 ADD W20, W20, 0x1
+	0x03D579D4 CMP W20, W8
+	0x03D579D8 B.LT 0x3D571D8
+	0x03D579DC B 0x3D57B84
+	0x03D579E0 LDR X9, [X10 + 0x20]
+	0x03D579E4 ADD X1, X31, 0x68
+	0x03D579E8 MOV X0, X8
+	0x03D579EC LDR X9, [X9 + 0xC0]
+	0x03D579F0 LDR X2, [X9 + 0x70]
+	0x03D579F4 STR D14, [X31 + 0x68]
+	0x03D579F8 STP X31, X31, [X31 + 0x70]
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+32], X30
+	003 Move [X31+48], X20
+	004 Move [X31+56], X19
+	005 Move X20, 0x691000
+	006 Move W8, [X20+3124]
+	007 Move X19, X0
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x40F000
+	013 Move X0, [X0+984]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+3124], W8
+	017 Move X0, X19
+	018 Move [X31], X31
+	019 Move [X31+8], X31
+	020 Call StylePropertyValueMatcher.get_current, X0
+	021 Add X8, X31, 16
+	022 Add X19, X8, 8
+	023 Move [X31+16], X0
+	024 Move [X31+24], X1
+	025 Move X0, X19
+	026 Move X1, X31
+	027 Call StyleValueHandle.get_valueType, X0
+	028 NotImplemented "Instruction CMP not yet implemented."
+	029 Move W0, 1
+	030 Move X0, X19
+	031 Move X1, X31
+	032 Call StyleValueHandle.get_valueType, X0
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move X0, [X31+16]
+	035 Move X1, [X31+24]
+	036 Move [X31], X31
+	037 Move [X31+8], X31
+	038 Call StyleSheetExtensions.ReadAsString, X0, X1
+	039 Compare X0, 0
+	040 JumpIfEqual {66}
+	041 Move X1, X31
+	042 Call String.ToLowerInvariant, X0
+	043 Move X8, 0x40F000
+	044 Move X8, [X8+984]
+	045 Move X19, X0
+	046 Move X8, [X8]
+	047 Move W9, [X8+224]
+	048 Compare W9, 0
+	049 JumpIfNotEqual {52}
+	050 Move X0, X8
+	051 Call 0x1C17DFC
+	052 Add X1, X31, 0
+	053 Move X0, X19
+	054 Move X2, X31
+	055 Call StyleSheetColor.TryGetColor, X0, X1
+	056 Move TEMP, X0
+	057 And TEMP, TEMP, 1
+	058 Compare TEMP, 1
+	059 JumpIfEqual {29}
+	060 Move W0, W31
+	061 Move X20, [X31+48]
+	062 Move X19, [X31+56]
+	063 Move X30, [X31+32]
+	064 Add X31, X31, 64
+	065 Return X0
+	066 Call 0x1C17F20
+
+Method: System.Boolean MatchResource()
+
+Disassembly:
+	0x03D579FC B 0x3D579C8
+	0x03D57A00 MOVZ W2, 0x1
+	0x03D57A04 MOV W21, W20
+	0x03D57A08 MOV X0, X19
+	0x03D57A0C MOV W1, W20
+	0x03D57A10 MOV X3, X31
+	0x03D57A14 BL 0x3228DE4
+	0x03D57A18 LDR X8, [X23]
+	0x03D57A1C CBZ X8, 0x3D57C2C
+	0x03D57A20 LDR W11, [X8 + 0x1C]
+	0x03D57A24 LDR X9, [X8 + 0x10]
+	0x03D57A28 LDR X10, [X24]
+	0x03D57A2C ADD W11, W11, 0x1
+	0x03D57A30 STR W11, [X8 + 0x1C]
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Call StylePropertyValueMatcher.get_current, X0
+	004 Add X8, X31, 0
+	005 Add X8, X8, 8
+	006 Move [X31], X0
+	007 Move [X31+8], X1
+	008 Move X0, X8
+	009 Move X1, X31
+	010 Call StyleValueHandle.get_valueType, X0
+	011 Move X30, [X31+16]
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 NotImplemented "Instruction CSET not yet implemented."
+	014 Add X31, X31, 32
+	015 Return X0
+
+Method: System.Boolean MatchUrl()
+
+Disassembly:
+	0x03D57A34 CBZ X9, 0x3D57C2C
+	0x03D57A38 LDRSW X11, [X8 + 0x18]
+	0x03D57A3C LDR W12, [X9 + 0x18]
+	0x03D57A40 CMP W11, W12
+	0x03D57A44 B.CS 0x3D57A64
+	0x03D57A48 LDR V0, [X31 + 0x10]
+	0x03D57A4C ADD W10, W11, 0x1
+	0x03D57A50 MADD X9, X11, X29, X9
+	0x03D57A54 STR W10, [X8 + 0x18]
+	0x03D57A58 STR D0, [X9 + 0x20]
+	0x03D57A5C STP X0, X31, [X9 + 0x28]
+	0x03D57A60 B 0x3D57A88
+	0x03D57A64 LDR X9, [X10 + 0x20]
+	0x03D57A68 LDR V0, [X31 + 0x10]
+	0x03D57A6C LDR X9, [X9 + 0xC0]
+	0x03D57A70 LDR X2, [X9 + 0x70]
+	0x03D57A74 STR D0, [X31 + 0x68]
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Call StylePropertyValueMatcher.get_current, X0
+	004 Add X8, X31, 0
+	005 Add X8, X8, 8
+	006 Move [X31], X0
+	007 Move [X31+8], X1
+	008 Move X0, X8
+	009 Move X1, X31
+	010 Call StyleValueHandle.get_valueType, X0
+	011 NotImplemented "Instruction CMP not yet implemented."
+	012 Move X30, [X31+16]
+	013 NotImplemented "Instruction CSET not yet implemented."
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 NotImplemented "Instruction CSET not yet implemented."
+	016 Or W0, W8, W9
+	017 Add X31, X31, 32
+	018 Return X0
+
+Method: System.Boolean MatchTime()
+
+Disassembly:
+	0x03D57A78 STP X0, X31, [X31 + 0x70]
+	0x03D57A7C ADD X1, X31, 0x68
+	0x03D57A80 MOV X0, X8
+	0x03D57A84 BL 0x306DCA8
+	0x03D57A88 MOV W20, W21
+	0x03D57A8C B 0x3D579CC
+	0x03D57A90 ADRP X8, 0x40F000
+	0x03D57A94 LDR X8, [X8 + 0x180]
+	0x03D57A98 LDR X22, [X8]
+	0x03D57A9C LDR X0, [X26]
+	0x03D57AA0 MOVZ W1, 0x1
+	0x03D57AA4 BL 0x1C16D6C
+	0x03D57AA8 CBZ X0, 0x3D57C2C
+	0x03D57AAC MOV X21, X0
+	0x03D57AB0 CBZ X22, 0x3D57AC8
+	0x03D57AB4 LDR X8, [X21]
+	0x03D57AB8 MOV X0, X22
+	0x03D57ABC LDR X1, [X8 + 0x40]
+	0x03D57AC0 BL 0x1C16E00
+	0x03D57AC4 CBZ X0, 0x3D57C34
+	0x03D57AC8 LDR W8, [X21 + 0x18]
+	0x03D57ACC CBZ W8, 0x3D57C30
+	0x03D57AD0 STR X22, [X21 + 0x20]
+	0x03D57AD4 LDR X0, [X27]
+	0x03D57AD8 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Call StylePropertyValueMatcher.get_current, X0
+	004 Add X8, X31, 0
+	005 Add X8, X8, 8
+	006 Move [X31], X0
+	007 Move [X31+8], X1
+	008 Move X0, X8
+	009 Move X1, X31
+	010 Call StyleValueHandle.get_valueType, X0
+	011 NotImplemented "Instruction CMP not yet implemented."
+	012 Move X0, [X31]
+	013 Compare X0, 0
+	014 JumpIfEqual {25}
+	015 Move X1, [X31+8]
+	016 Move X2, X31
+	017 Call StyleSheet.ReadDimension, X0, X1
+	018 Subtract W8, W0, 3
+	019 NotImplemented "Instruction CMP not yet implemented."
+	020 NotImplemented "Instruction CSET not yet implemented."
+	021 Move W0, W31
+	022 Move X30, [X31+16]
+	023 Add X31, X31, 32
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: System.Boolean MatchCustomIdent()
+
+Disassembly:
+	0x03D57ADC CBNZ W8, 0x3D57AE4
+	0x03D57AE0 BL 0x1C16DFC
+	0x03D57AE4 ADRP X8, 0x40F000
+	0x03D57AE8 LDR X8, [X8 + 0x178]
+	0x03D57AEC MOV X1, X21
+	0x03D57AF0 LDR X0, [X8]
+	0x03D57AF4 MOV X2, X31
+	0x03D57AF8 BL 0x3C071AC
+	0x03D57AFC LDR X0, [X23]
+	0x03D57B00 CBZ X0, 0x3D57C2C
+	0x03D57B04 LDR W10, [X0 + 0x1C]
+	0x03D57B08 LDR X8, [X0 + 0x10]
+	0x03D57B0C LDR X9, [X24]
+	0x03D57B10 ADD W10, W10, 0x1
+	0x03D57B14 STR W10, [X0 + 0x1C]
+	0x03D57B18 CBZ X8, 0x3D57C2C
+	0x03D57B1C LDRSW X10, [X0 + 0x18]
+	0x03D57B20 LDR W11, [X8 + 0x18]
+	0x03D57B24 CMP W10, W11
+	0x03D57B28 B.CS 0x3D57B44
+	0x03D57B2C ADD W9, W10, 0x1
+	0x03D57B30 MADD X8, X10, X29, X8
+	0x03D57B34 STR W9, [X0 + 0x18]
+	0x03D57B38 STP X31, X31, [X8 + 0x20]
+	0x03D57B3C STR X31, [X8 + 0x30]
+	0x03D57B40 B 0x3D579CC
+	0x03D57B44 LDR X8, [X9 + 0x20]
+	0x03D57B48 LDR X8, [X8 + 0xC0]
+	0x03D57B4C LDR X2, [X8 + 0x70]
+	0x03D57B50 STP X31, X31, [X31 + 0x68]
+	0x03D57B54 STR X31, [X31 + 0x78]
+	0x03D57B58 B 0x3D579C4
+	0x03D57B5C LDR X8, [X9 + 0x20]
+	0x03D57B60 LDR V0, [X31 + 0x8]
+	0x03D57B64 ADD X1, X31, 0x68
+	0x03D57B68 LDR X8, [X8 + 0xC0]
+	0x03D57B6C LDR X2, [X8 + 0x70]
+	0x03D57B70 STR D0, [X31 + 0x68]
+	0x03D57B74 STP X31, X31, [X31 + 0x70]
+	0x03D57B78 BL 0x306DCA8
+	0x03D57B7C ADD W20, W20, 0x1
+	0x03D57B80 B 0x3D579CC
+	0x03D57B84 LDR X0, [X23]
+	0x03D57B88 CBZ X0, 0x3D57C2C
+	0x03D57B8C LDR W9, [X0 + 0x1C]
+	0x03D57B90 LDR X8, [X0 + 0x10]
+	0x03D57B94 LDR X10, [X24]
+	0x03D57B98 ADD W9, W9, 0x1
+	0x03D57B9C STR W9, [X0 + 0x1C]
+	0x03D57BA0 CBZ X8, 0x3D57C2C
+	0x03D57BA4 LDRSW X9, [X0 + 0x18]
+	0x03D57BA8 LDR W11, [X8 + 0x18]
+	0x03D57BAC CMP W9, W11
+	0x03D57BB0 B.CS 0x3D57BD8
+	0x03D57BB4 ADRP X12, 0xFFFFFFFFFCD97000
+	0x03D57BB8 LDR V0, [X12 + 0x110]
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], X30
+	003 Move [X31+32], X20
+	004 Move [X31+40], X19
+	005 Move X20, 0x691000
+	006 Move W8, [X20+3125]
+	007 Move X19, X0
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x410000
+	013 Move X0, [X0+312]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+3125], W8
+	017 Move X0, X19
+	018 Call StylePropertyValueMatcher.get_current, X0
+	019 Add X8, X31, 0
+	020 Add X8, X8, 8
+	021 Move [X31], X0
+	022 Move [X31+8], X1
+	023 Move X0, X8
+	024 Move X1, X31
+	025 Call StyleValueHandle.get_valueType, X0
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Move X0, [X31]
+	028 Move X1, [X31+8]
+	029 Move X20, 0x410000
+	030 Move X20, [X20+312]
+	031 Call StyleSheetExtensions.ReadAsString, X0, X1
+	032 Move X8, [X20]
+	033 Move X19, X0
+	034 Move W9, [X8+224]
+	035 Compare W9, 0
+	036 JumpIfNotEqual {40}
+	037 Move X0, X8
+	038 Call 0x1C17DFC
+	039 Move X8, [X20]
+	040 Move X8, [X8+184]
+	041 Move X0, [X8]
+	042 Compare X0, 0
+	043 JumpIfEqual {68}
+	044 Move X1, X19
+	045 Move X2, X31
+	046 Call Regex.Match, X0, X1
+	047 Compare X0, 0
+	048 JumpIfEqual {68}
+	049 Move X1, X31
+	050 Move X20, X0
+	051 Call Group.get_Success, X0
+	052 Move TEMP, X0
+	053 And TEMP, TEMP, 1
+	054 Compare TEMP, 1
+	055 JumpIfNotEqual {62}
+	056 Compare X19, 0
+	057 JumpIfEqual {68}
+	058 Move W8, [X20+20]
+	059 Move W9, [X19+16]
+	060 NotImplemented "Instruction CMP not yet implemented."
+	061 NotImplemented "Instruction CSET not yet implemented."
+	062 Move W0, W31
+	063 Move X20, [X31+32]
+	064 Move X19, [X31+40]
+	065 Move X30, [X31+16]
+	066 Add X31, X31, 48
+	067 Return X0
+	068 Call 0x1C17F20
+
+Method: System.Boolean MatchAngle()
+
+Disassembly:
+	0x03D57BBC MOVZ W11, 0x18
+	0x03D57BC0 ADD W10, W9, 0x1
+	0x03D57BC4 MADD X8, X9, X11, X8
+	0x03D57BC8 STR W10, [X0 + 0x18]
+	0x03D57BCC STP X31, X31, [X8 + 0x28]
+	0x03D57BD0 STR D0, [X8 + 0x20]
+	0x03D57BD4 B 0x3D57BFC
+	0x03D57BD8 LDR X8, [X10 + 0x20]
+	0x03D57BDC ADRP X9, 0xFFFFFFFFFCD97000
+	0x03D57BE0 LDR V0, [X9 + 0x110]
+	0x03D57BE4 ADD X1, X31, 0x68
+	0x03D57BE8 LDR X8, [X8 + 0xC0]
+	0x03D57BEC LDR X2, [X8 + 0x70]
+	0x03D57BF0 STR D0, [X31 + 0x68]
+	0x03D57BF4 STP X31, X31, [X31 + 0x70]
+	0x03D57BF8 BL 0x306DCA8
+	0x03D57BFC LDP X20, X19, [X31 + 0x110]
+	0x03D57C00 LDP X22, X21, [X31 + 0x100]
+	0x03D57C04 LDP X24, X23, [X31 + 0xF0]
+	0x03D57C08 LDP X26, X25, [X31 + 0xE0]
+	0x03D57C0C LDP X28, X27, [X31 + 0xD0]
+	0x03D57C10 LDP X29, X30, [X31 + 0xC0]
+	0x03D57C14 LDP D9, D8, [X31 + 0xB0]
+	0x03D57C18 LDP D11, D10, [X31 + 0xA0]
+	0x03D57C1C LDP D13, D12, [X31 + 0x90]
+	0x03D57C20 LDP D15, D14, [X31 + 0x80]
+	0x03D57C24 ADD X31, X31, 0x120
+	0x03D57C28 RET
+	0x03D57C2C BL 0x1C16F20
+	0x03D57C30 BL 0x1C16F28
+	0x03D57C34 BL 0x1C16F44
+	0x03D57C38 MOV X1, X31
+	0x03D57C3C BL 0x1C16DEC
+	0x03D57C40 SUB X31, X31, 0x70
+	0x03D57C44 STR X30, [X31 + 0x20]
+	0x03D57C48 STP X26, X25, [X31 + 0x30]
+	0x03D57C4C STP X24, X23, [X31 + 0x40]
+	0x03D57C50 STP X22, X21, [X31 + 0x50]
+	0x03D57C54 STP X20, X19, [X31 + 0x60]
+	0x03D57C58 ADRP X21, 0x690000
+	0x03D57C5C LDRB W8, [X21 + 0xC38]
+	0x03D57C60 MOV X20, X1
+	0x03D57C64 MOV X19, X0
+	0x03D57C68 TBNZ X8, 0x0, 0x3D57CBC
+	0x03D57C6C ADRP X0, 0x40F000
+	0x03D57C70 LDR X0, [X0 + 0x190]
+	0x03D57C74 BL 0x1C16CF4
+	0x03D57C78 ADRP X0, 0x40F000
+	0x03D57C7C LDR X0, [X0 + 0x198]
+	0x03D57C80 BL 0x1C16CF4
+	0x03D57C84 ADRP X0, 0x40F000
+	0x03D57C88 LDR X0, [X0 + 0x1A0]
+	0x03D57C8C BL 0x1C16CF4
+	0x03D57C90 ADRP X0, 0x40F000
+	0x03D57C94 LDR X0, [X0 + 0x1A8]
+	0x03D57C98 BL 0x1C16CF4
+	0x03D57C9C ADRP X0, 0x40F000
+	0x03D57CA0 LDR X0, [X0 + 0x1B0]
+	0x03D57CA4 BL 0x1C16CF4
+	0x03D57CA8 ADRP X0, 0x40F000
+	0x03D57CAC LDR X0, [X0 + 0x1B8]
+	0x03D57CB0 BL 0x1C16CF4
+	0x03D57CB4 MOVZ W8, 0x1
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], D8
+	003 Move [X31+32], X30
+	004 Move [X31+40], X19
+	005 Call StylePropertyValueMatcher.get_current, X0
+	006 Add X8, X31, 0
+	007 Add X19, X8, 8
+	008 Move [X31], X0
+	009 Move [X31+8], X1
+	010 Move X0, X19
+	011 Move X1, X31
+	012 Call StyleValueHandle.get_valueType, X0
+	013 NotImplemented "Instruction CMP not yet implemented."
+	014 Move X0, [X31]
+	015 Compare X0, 0
+	016 JumpIfEqual {64}
+	017 Move X1, [X31+8]
+	018 Move X2, X31
+	019 Call StyleSheet.ReadDimension, X0, X1
+	020 Subtract W8, W0, 5
+	021 NotImplemented "Instruction CMP not yet implemented."
+	022 Move X0, X19
+	023 Move X1, X31
+	024 Call StyleValueHandle.get_valueType, X0
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move X0, [X31]
+	027 Compare X0, 0
+	028 JumpIfEqual {64}
+	029 Move X1, [X31+8]
+	030 Move X2, X31
+	031 Call StyleSheet.ReadFloat, X0, X1
+	032 Move X19, 0x683000
+	033 Move W8, [X19+1450]
+	034 Move V8, V0
+	035 Compare W8, 0
+	036 JumpIfNotEqual {42}
+	037 Move X0, 0x3A4000
+	038 Move X0, [X0+1208]
+	039 Call 0x1C17CF4
+	040 Move W8, 1
+	041 Move [X19+1450], W8
+	042 Move X8, 0x3A4000
+	043 Move X8, [X8+1208]
+	044 Move X9, -52871168
+	045 Move V0, [X9+576]
+	046 NotImplemented "Instruction FABS not yet implemented."
+	047 Move X8, [X8]
+	048 Move S3, 8
+	049 Multiply S0, S2, S0
+	050 Move X8, [X8+184]
+	051 Move V1, [X8]
+	052 Multiply S1, S1, S3
+	053 NotImplemented "Instruction FCMP not yet implemented."
+	054 NotImplemented "Instruction FCSEL not yet implemented."
+	055 NotImplemented "Instruction FCMP not yet implemented."
+	056 NotImplemented "Instruction CSET not yet implemented."
+	057 Move W0, W31
+	058 Move W0, 1
+	059 Move X30, [X31+32]
+	060 Move X19, [X31+40]
+	061 Move V8, [X31+16]
+	062 Add X31, X31, 48
+	063 Return X0
+	064 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03D57CB8 STRB W8, [X21 + 0xC38]
+	0x03D57CBC CBZ X20, 0x3D57E44
+	0x03D57CC0 ADRP X24, 0x40F000
+	0x03D57CC4 ADRP X23, 0x40F000
+	0x03D57CC8 ADRP X25, 0x40F000
+	0x03D57CCC ADRP X22, 0x40F000
+	0x03D57CD0 LDR X24, [X24 + 0x1B0]
+	0x03D57CD4 LDR X23, [X23 + 0x190]
+	0x03D57CD8 LDR X25, [X25 + 0x1A8]
+	0x03D57CDC LDR X22, [X22 + 0x1A0]
+	0x03D57CE0 ADD X8, X31, 0x8
+	0x03D57CE4 MOV X0, X20
+	0x03D57CE8 BL 0x3D57EB8
+	0x03D57CEC LDR W8, [X31 + 0x8]
+	0x03D57CF0 ADRP X26, 0xFFFFFFFFFCE41000
+	0x03D57CF4 ADD X26, X26, 0x38
+	0x03D57CF8 SUB W9, W8, 0xE
+	0x03D57CFC CMP W9, 0x6
+	0x03D57D00 B.HI 0x3D57D24
+	0x03D57D04 ADR X10, 0x10
+	0x03D57D08 LDRB W11, [X26, X9, LSL]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x691000
+	006 Move X21, 0x410000
+	007 Move W8, [X20+3126]
+	008 Move X21, [X21+312]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x410000
+	015 Move X0, [X0+312]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+3126], W8
+	019 Move X0, [X21]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move X0, X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Move X21, [X31+40]
+	029 Call BaseStyleMatcher..ctor, X0
+	030 Return 
+

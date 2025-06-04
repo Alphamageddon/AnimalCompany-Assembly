@@ -1,0 +1,117 @@
+Type: Photon.Voice.Unity.UtilityScripts.SaveOutgoingStreamToFile/OutgoingStreamSaverShort
+
+Method: System.Void .ctor(Photon.Voice.Unity.UtilityScripts.WaveWriter waveWriter)
+
+Disassembly:
+	0x035875FC MOV X1, X31
+	0x03587600 BL 0x1E9E9E4
+	0x03587604 CMP W0, 0x3
+	0x03587608 B.NE 0x3587614
+	0x0358760C LDP X30, X19, [X31], #0x10
+	0x03587610 RET
+	0x03587614 MOV X0, X19
+	0x03587618 LDP X30, X19, [X31], #0x10
+	0x0358761C B 0x3587624
+	0x03587620 BL 0x1C16F20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Int16[] Process(System.Int16[] buf)
+
+Disassembly:
+	0x035877B0 ADD W9, W9, 0x1
+	0x035877B4 ADD X8, X8, W9, 0x4, SXTW
+	0x035877B8 ADD X0, X8, 0x138
+	0x035877BC LDP X5, X4, [X0]
+	0x035877C0 MOV X0, X19
+	0x035877C4 MOV X3, X20
+	0x035877C8 LDP X20, X19, [X31 + 0x10]
+	0x035877CC MOVZ W1, 0x1
+	0x035877D0 MOV X2, X21
+	0x035877D4 LDP X30, X21, [X31], #0x20
+	0x035877D8 BR X5
+	0x035877DC BL 0x1C16F20
+	0x035877E0 STR X30, [X31 - 0x30]!
+	0x035877E4 STP X22, X21, [X31 + 0x10]
+	0x035877E8 STP X20, X19, [X31 + 0x20]
+	0x035877EC ADRP X22, 0xE58000
+	0x035877F0 ADRP X21, 0xB70000
+	0x035877F4 ADRP X20, 0xBAF000
+	0x035877F8 LDRB W8, [X22 + 0xF07]
+	0x035877FC LDR X21, [X21 + 0xF28]
+	0x03587800 LDR X20, [X20 + 0x968]
+	0x03587804 MOV X19, X0
+	0x03587808 TBNZ X8, 0x0, 0x358782C
+	0x0358780C ADRP X0, 0xB70000
+	0x03587810 LDR X0, [X0 + 0xF28]
+	0x03587814 BL 0x1C16CF4
+	0x03587818 ADRP X0, 0xBAF000
+	0x0358781C LDR X0, [X0 + 0x968]
+	0x03587820 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Compare X1, 0
+	007 JumpIfEqual {32}
+	008 Move X8, [X1+24]
+	009 Move X19, X1
+	010 NotImplemented "Instruction CMP not yet implemented."
+	011 Move X20, X0
+	012 Move X21, X31
+	013 And X8, X8, 0
+	014 Add X22, X19, 32
+	015 NotImplemented "Instruction CMP not yet implemented."
+	016 Move X0, [X20+16]
+	017 Compare X0, 0
+	018 JumpIfEqual {32}
+	019 NotImplemented "Instruction LDRH not yet implemented."
+	020 Call WaveWriter.Write, X0, X1
+	021 Move W8, [X19+24]
+	022 Add X21, X21, 1
+	023 NotImplemented "Instruction CMP not yet implemented."
+	024 Move X0, X19
+	025 Move X20, [X31+32]
+	026 Move X19, [X31+40]
+	027 Move X22, [X31+16]
+	028 Move X21, [X31+24]
+	029 Move X30, [X31+48]
+	030 Return X0
+	031 Call 0x1C17F28
+	032 Call 0x1C17F20
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x0358785C LDP X22, X21, [X31 + 0x10]
+	0x03587860 LDR X30, [X31], #0x30
+	0x03587864 B 0x3587868
+	0x03587868 STR X30, [X31 - 0x40]!
+	0x0358786C STP X24, X23, [X31 + 0x10]
+	0x03587870 STP X22, X21, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+16]
+	003 Compare X0, 0
+	004 JumpIfEqual {8}
+	005 Move X30, [X31+16]
+	006 Call WaveWriter.Dispose, X0
+	007 Return 
+	008 Call 0x1C17F20
+

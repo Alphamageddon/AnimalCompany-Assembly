@@ -1,0 +1,83 @@
+Type: AnimalCompany.ArmTargetAnimator/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x01DEFA70 MOVZ W1, 0xC
+	0x01DEFA74 MOV X2, X31
+	0x01DEFA78 BL 0x1ED9318
+	0x01DEFA7C LDR X8, [X19 + 0x40]
+	0x01DEFA80 CBZ X8, 0x1DEFB3C
+	0x01DEFA84 LDR X8, [X8 + 0x20]
+	0x01DEFA88 MOV X21, X0
+	0x01DEFA8C CBZ X8, 0x1DEFAFC
+	0x01DEFA90 LDR W0, [X8]
+	0x01DEFA94 B 0x1DEFB00
+	0x01DEFA98 LDR X0, [X21]
+	0x01DEFA9C LDR X19, [X19 + 0x40]
+	0x01DEFAA0 LDR W8, [X0 + 0xE0]
+	0x01DEFAA4 CBNZ W8, 0x1DEFAAC
+	0x01DEFAA8 BL 0x1C16DFC
+	0x01DEFAAC ADRP X8, 0x230A000
+	0x01DEFAB0 LDR X8, [X8 + 0x130]
+	0x01DEFAB4 MOV X1, X19
+	0x01DEFAB8 LDP X20, X19, [X31 + 0x10]
+	0x01DEFABC MOVZ W2, 0x7
+	0x01DEFAC0 LDR X0, [X8]
+	0x01DEFAC4 MOV X3, X31
+	0x01DEFAC8 LDP X30, X21, [X31], #0x20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x25EA000
+	005 Move X20, 0x230B000
+	006 Move W8, [X19+3286]
+	007 Move X20, [X20+80]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x230B000
+	013 Move X0, [X0+80]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+3286], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01DEFACC B 0x1E77B00
+	0x01DEFAD0 MOV X0, X19
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Single <Update>b__14_0(UnityEngine.RaycastHit hit)
+
+Disassembly:
+	0x01DEFAD4 MOV W1, W31
+	0x01DEFAD8 BL 0x1DF49EC
+	0x01DEFADC LDR X8, [X19]
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X31
+	003 Call RaycastHit.get_distance, X0
+	004 Return V0
+

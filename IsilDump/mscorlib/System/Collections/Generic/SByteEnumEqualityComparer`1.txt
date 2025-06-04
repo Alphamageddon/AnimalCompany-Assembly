@@ -1,0 +1,131 @@
+Type: System.Collections.Generic.SByteEnumEqualityComparer`1
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x025D7294 RET
+	0x025D7298 BL 0x1C16F28
+	0x025D729C BL 0x1C16F20
+	0x025D72A0 STR X30, [X31 - 0x10]!
+	0x025D72A4 LDR X8, [X0 + 0x10]
+
+ISIL:
+	001 Move X8, [X1+32]
+	002 Move X8, [X8+192]
+	003 Move X1, [X8]
+	004 Move X2, [X1]
+	005 CallNoReturn X2
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo information, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x025D72A8 CBZ X8, 0x25D72B8
+	0x025D72AC LDR W0, [X8 + 0x18]
+	0x025D72B0 LDR X30, [X31], #0x10
+	0x025D72B4 RET
+	0x025D72B8 BL 0x1C16F20
+
+ISIL:
+	001 Move X8, [X4+32]
+	002 Move X8, [X8+192]
+	003 Move X1, [X8]
+	004 Move X2, [X1]
+	005 CallNoReturn X2
+
+Method: System.Int32 GetHashCode(T obj)
+
+Disassembly:
+	0x025D72BC STR X30, [X31 - 0x10]!
+	0x025D72C0 LDR X8, [X0 + 0x10]
+	0x025D72C4 CBZ X8, 0x25D72D8
+	0x025D72C8 LDR W8, [X8 + 0x18]
+	0x025D72CC UBFM W0, W8, 0x1F, 0x1E
+	0x025D72D0 LDR X30, [X31], #0x10
+	0x025D72D4 RET
+	0x025D72D8 BL 0x1C16F20
+	0x025D72DC STR X30, [X31 - 0x30]!
+	0x025D72E0 STP X22, X21, [X31 + 0x10]
+	0x025D72E4 STP X20, X19, [X31 + 0x20]
+	0x025D72E8 ADRP X20, 0x1E02000
+	0x025D72EC LDRB W8, [X20 + 0xF77]
+	0x025D72F0 MOV X19, X0
+	0x025D72F4 TBNZ X8, 0x0, 0x25D730C
+	0x025D72F8 ADRP X0, 0x1B28000
+	0x025D72FC LDR X0, [X0 + 0x470]
+	0x025D7300 BL 0x1C16CF4
+	0x025D7304 MOVZ W8, 0x1
+	0x025D7308 STRB W8, [X20 + 0xF77]
+	0x025D730C LDRB W8, [X19 + 0x19D]
+	0x025D7310 CBZ W8, 0x25D7324
+	0x025D7314 LDP X20, X19, [X31 + 0x20]
+	0x025D7318 LDP X22, X21, [X31 + 0x10]
+	0x025D731C LDR X30, [X31], #0x30
+	0x025D7320 RET
+	0x025D7324 MOVZ W8, 0x1
+	0x025D7328 STRB W8, [X19 + 0x19D]
+	0x025D732C STR W31, [X31 + 0x8]
+	0x025D7330 LDR W21, [X19 + 0x11C]
+	0x025D7334 BL 0x1C16D44
+	0x025D7338 LDR X8, [X19 + 0x10]
+	0x025D733C CBZ X8, 0x25D7398
+	0x025D7340 ADRP X22, 0x1B28000
+	0x025D7344 LDR X22, [X22 + 0x470]
+	0x025D7348 ADD X20, X19, 0x11C
+	0x025D734C LDR W8, [X8 + 0x18]
+	0x025D7350 MOV X0, X20
+	0x025D7354 MOV W2, W21
+	0x025D7358 MOV X3, X31
+	0x025D735C ADD W1, W21, W8, 0x1, LSL
+	0x025D7360 BL 0x33E7AB4
+	0x025D7364 CMP W0, W21
+	0x025D7368 B.EQ 0x25D7314
+
+ISIL:
+	001 Move [X31-48], X29
+	002 Move [X31-40], X30
+	003 Move [X31+16], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Add X29, X31, 0
+	007 Subtract X31, X31, 32
+	008 NotImplemented "Instruction MRS not yet implemented."
+	009 Move X8, [X20+40]
+	010 Move [X29-8], X8
+	011 Move X21, [X2+32]
+	012 Move X8, [X21+192]
+	013 Move X8, [X8+24]
+	014 Move W2, [X8+252]
+	015 Add X8, X31, 0
+	016 Add X9, X2, 15
+	017 And X9, X9, 0x1FFFFFFFF
+	018 Subtract X19, X8, X9
+	019 Add X31, X19, 0
+	020 Move X0, X19
+	021 NotImplemented "Instruction STURB not yet implemented."
+	022 Call 0x3EB2AC0
+	023 Move X8, [X21+192]
+	024 Subtract X3, X29, 24
+	025 Subtract X4, X29, 12
+	026 Move X2, X31
+	027 Move X1, [X8+32]
+	028 Move X0, [X1]
+	029 Move [X29-24], X19
+	030 Move X8, [X1+16]
+	031 NotImplemented "Instruction BLR not yet implemented."
+	032 NotImplemented "Instruction LDUR not yet implemented."
+	033 Subtract X0, X29, 28
+	034 Move X1, X31
+	035 NotImplemented "Instruction STURB not yet implemented."
+	036 Call SByte.GetHashCode, X0
+	037 Move X8, [X20+40]
+	038 NotImplemented "Instruction LDUR not yet implemented."
+	039 NotImplemented "Instruction CMP not yet implemented."
+	040 Add X31, X29, 0
+	041 Move X20, [X31+32]
+	042 Move X19, [X31+40]
+	043 Move X21, [X31+16]
+	044 Move X29, [X31+48]
+	045 Move X30, [X31+56]
+	046 Return X0
+	047 Call 0x3EB2B20
+

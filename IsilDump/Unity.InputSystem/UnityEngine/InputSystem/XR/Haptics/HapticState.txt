@@ -1,0 +1,53 @@
+Type: UnityEngine.InputSystem.XR.Haptics.HapticState
+
+Method: System.Void .ctor(System.UInt32 samplesQueued, System.UInt32 samplesAvailable)
+
+Disassembly:
+	0x037E0B70 ADD X0, X31, 0x0
+	0x037E0B74 ADD X1, X31, 0x60
+
+ISIL:
+	001 Move [X0], W1
+	002 Move [X0+4], W2
+	003 Return 
+
+Method: System.UInt32 get_samplesQueued()
+
+Disassembly:
+	0x037E0B78 MOVZ W2, 0x60
+	0x037E0B7C LDR X21, [X8]
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Void set_samplesQueued(System.UInt32 value)
+
+Disassembly:
+	0x037E0B80 BL 0x3EB1AC0
+	0x037E0B84 LDR X8, [X20]
+
+ISIL:
+	001 Move [X0], W1
+	002 Return 
+
+Method: System.UInt32 get_samplesAvailable()
+
+Disassembly:
+	0x037E0B88 LDRH W9, [X8 + 0x12E]
+	0x037E0B8C CBZ X9, 0x37E0BB0
+
+ISIL:
+	001 Move W0, [X0+4]
+	002 Return X0
+
+Method: System.Void set_samplesAvailable(System.UInt32 value)
+
+Disassembly:
+	0x037E0B90 LDR X10, [X8 + 0xB0]
+	0x037E0B94 ADD X10, X10, 0x8
+
+ISIL:
+	001 Move [X0+4], W1
+	002 Return 
+

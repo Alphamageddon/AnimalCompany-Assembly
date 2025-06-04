@@ -1,0 +1,378 @@
+Type: UnityEngine.UIElements.BaseVisualTreeUpdater
+
+Method: System.Void add_panelChanged(System.Action`1<UnityEngine.UIElements.BaseVisualElementPanel> value)
+
+Disassembly:
+	0x03D1F04C CBNZ X0, 0x3D1F058
+	0x03D1F050 B 0x3D1F0A0
+	0x03D1F054 MOV X21, X31
+	0x03D1F058 LDR X0, [X24]
+	0x03D1F05C LDR W8, [X0 + 0xE0]
+	0x03D1F060 CBNZ W8, 0x3D1F06C
+	0x03D1F064 BL 0x1C16DFC
+	0x03D1F068 LDR X0, [X24]
+	0x03D1F06C LDR X8, [X0 + 0xB8]
+	0x03D1F070 MOV X1, X21
+	0x03D1F074 MOV X2, X20
+	0x03D1F078 ADD X0, X8, 0x28
+	0x03D1F07C BL 0x1C24138
+	0x03D1F080 CMP X20, X0
+	0x03D1F084 MOV X20, X0
+	0x03D1F088 B.NE 0x3D1F024
+	0x03D1F08C LDP X20, X19, [X31 + 0x30]
+	0x03D1F090 LDP X22, X21, [X31 + 0x20]
+	0x03D1F094 LDP X24, X23, [X31 + 0x10]
+	0x03D1F098 LDP X30, X25, [X31], #0x40
+	0x03D1F09C RET
+	0x03D1F0A0 MOV X0, X22
+	0x03D1F0A4 MOV X1, X23
+	0x03D1F0A8 BL 0x1C171E0
+	0x03D1F0AC STP X30, X21, [X31 - 0x20]!
+	0x03D1F0B0 STP X20, X19, [X31 + 0x10]
+	0x03D1F0B4 ADRP X21, 0x6C8000
+	0x03D1F0B8 ADRP X20, 0x3FD000
+	0x03D1F0BC LDRB W8, [X21 + 0x96D]
+	0x03D1F0C0 LDR X20, [X20 + 0x820]
+	0x03D1F0C4 MOV W19, W0
+	0x03D1F0C8 TBNZ X8, 0x0, 0x3D1F0E0
+	0x03D1F0CC ADRP X0, 0x3FD000
+	0x03D1F0D0 LDR X0, [X0 + 0x820]
+	0x03D1F0D4 BL 0x1C16CF4
+	0x03D1F0D8 MOVZ W8, 0x1
+	0x03D1F0DC STRB W8, [X21 + 0x96D]
+	0x03D1F0E0 LDR X0, [X20]
+	0x03D1F0E4 LDR W8, [X0 + 0xE0]
+	0x03D1F0E8 CBNZ W8, 0x3D1F0F4
+	0x03D1F0EC BL 0x1C16DFC
+	0x03D1F0F0 LDR X0, [X20]
+	0x03D1F0F4 LDR X8, [X0 + 0xB8]
+	0x03D1F0F8 LDR X8, [X8]
+
+ISIL:
+	001 Move [X31-64], X30
+	002 Move [X31+16], X24
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X21, 0x6C9000
+	009 Move W8, [X21+2393]
+	010 Move X19, X1
+	011 Move X20, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x446000
+	017 Move X0, [X0+968]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+2393], W8
+	021 Move X24, 0x446000
+	022 Add X20, X20, 16
+	023 Move X21, [X20]
+	024 Move X24, [X24+968]
+	025 Move X0, X21
+	026 Move X1, X19
+	027 Move X2, X31
+	028 Call Delegate.Combine, X0, X1
+	029 Compare X0, 0
+	030 JumpIfEqual {38}
+	031 Move X23, [X24]
+	032 Move X22, X0
+	033 Move X1, X23
+	034 Call 0x1C17E00
+	035 Move X1, X0
+	036 Compare X0, 0
+	037 JumpIfNotEqual {39}
+	038 Move X1, X31
+	039 Move X0, X20
+	040 Move X2, X21
+	041 Call 0x1C25138
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 Move X21, X0
+	044 Move X20, [X31+48]
+	045 Move X19, [X31+56]
+	046 Move X22, [X31+32]
+	047 Move X21, [X31+40]
+	048 Move X24, [X31+16]
+	049 Move X23, [X31+24]
+	050 Move X30, [X31+64]
+	051 Return 
+	052 Move X0, X22
+	053 Move X1, X23
+	054 Call 0x1C181E0
+
+Method: System.Void remove_panelChanged(System.Action`1<UnityEngine.UIElements.BaseVisualElementPanel> value)
+
+Disassembly:
+	0x03D1F0FC CBZ X8, 0x3D1F11C
+	0x03D1F100 LDR X3, [X8 + 0x18]
+	0x03D1F104 LDR X0, [X8 + 0x40]
+	0x03D1F108 LDR X2, [X8 + 0x28]
+	0x03D1F10C AND W1, W19, 0x1
+	0x03D1F110 LDP X20, X19, [X31 + 0x10]
+	0x03D1F114 LDP X30, X21, [X31], #0x20
+	0x03D1F118 BR X3
+	0x03D1F11C LDP X20, X19, [X31 + 0x10]
+	0x03D1F120 LDP X30, X21, [X31], #0x20
+	0x03D1F124 RET
+	0x03D1F128 STR X30, [X31 - 0x20]!
+	0x03D1F12C STP X20, X19, [X31 + 0x10]
+	0x03D1F130 ADRP X20, 0x6C8000
+	0x03D1F134 ADRP X19, 0x3FD000
+	0x03D1F138 LDRB W8, [X20 + 0x96E]
+	0x03D1F13C LDR X19, [X19 + 0x820]
+	0x03D1F140 TBNZ X8, 0x0, 0x3D1F158
+	0x03D1F144 ADRP X0, 0x3FD000
+	0x03D1F148 LDR X0, [X0 + 0x820]
+	0x03D1F14C BL 0x1C16CF4
+	0x03D1F150 MOVZ W8, 0x1
+	0x03D1F154 STRB W8, [X20 + 0x96E]
+	0x03D1F158 LDR X0, [X19]
+	0x03D1F15C LDR W8, [X0 + 0xE0]
+	0x03D1F160 CBNZ W8, 0x3D1F16C
+	0x03D1F164 BL 0x1C16DFC
+	0x03D1F168 LDR X0, [X19]
+	0x03D1F16C LDR X8, [X0 + 0xB8]
+	0x03D1F170 LDR X9, [X8 + 0x8]
+	0x03D1F174 CBZ X9, 0x3D1F1AC
+	0x03D1F178 LDR W9, [X0 + 0xE0]
+	0x03D1F17C CBNZ W9, 0x3D1F18C
+	0x03D1F180 BL 0x1C16DFC
+	0x03D1F184 LDR X8, [X19]
+	0x03D1F188 LDR X8, [X8 + 0xB8]
+	0x03D1F18C LDR X8, [X8 + 0x8]
+	0x03D1F190 CBZ X8, 0x3D1F1B8
+	0x03D1F194 LDR X2, [X8 + 0x18]
+	0x03D1F198 LDR X0, [X8 + 0x40]
+	0x03D1F19C LDR X1, [X8 + 0x28]
+	0x03D1F1A0 LDP X20, X19, [X31 + 0x10]
+	0x03D1F1A4 LDR X30, [X31], #0x20
+	0x03D1F1A8 BR X2
+
+ISIL:
+	001 Move [X31-64], X30
+	002 Move [X31+16], X24
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X21, 0x6C9000
+	009 Move W8, [X21+2394]
+	010 Move X19, X1
+	011 Move X20, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x446000
+	017 Move X0, [X0+968]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+2394], W8
+	021 Move X24, 0x446000
+	022 Add X20, X20, 16
+	023 Move X21, [X20]
+	024 Move X24, [X24+968]
+	025 Move X0, X21
+	026 Move X1, X19
+	027 Move X2, X31
+	028 Call Delegate.Remove, X0, X1
+	029 Compare X0, 0
+	030 JumpIfEqual {38}
+	031 Move X23, [X24]
+	032 Move X22, X0
+	033 Move X1, X23
+	034 Call 0x1C17E00
+	035 Move X1, X0
+	036 Compare X0, 0
+	037 JumpIfNotEqual {39}
+	038 Move X1, X31
+	039 Move X0, X20
+	040 Move X2, X21
+	041 Call 0x1C25138
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 Move X21, X0
+	044 Move X20, [X31+48]
+	045 Move X19, [X31+56]
+	046 Move X22, [X31+32]
+	047 Move X21, [X31+40]
+	048 Move X24, [X31+16]
+	049 Move X23, [X31+24]
+	050 Move X30, [X31+64]
+	051 Return 
+	052 Move X0, X22
+	053 Move X1, X23
+	054 Call 0x1C181E0
+
+Method: UnityEngine.UIElements.BaseVisualElementPanel get_panel()
+
+Disassembly:
+	0x03D1B824 LDR X21, [X19 + 0x40]
+	0x03D1B828 MOV X0, X20
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_panel(UnityEngine.UIElements.BaseVisualElementPanel value)
+
+Disassembly:
+	0x03D1F1AC LDP X20, X19, [X31 + 0x10]
+	0x03D1F1B0 LDR X30, [X31], #0x20
+	0x03D1F1B4 RET
+	0x03D1F1B8 BL 0x1C16F20
+	0x03D1F1BC STR X30, [X31 - 0x20]!
+	0x03D1F1C0 STP X20, X19, [X31 + 0x10]
+	0x03D1F1C4 ADRP X20, 0x6C8000
+	0x03D1F1C8 ADRP X19, 0x3FD000
+
+ISIL:
+	001 Move X8, [X0+16]
+	002 Move [X0+24], X1
+	003 Compare X8, 0
+	004 JumpIfEqual {9}
+	005 Move X3, [X8+24]
+	006 Move X0, [X8+64]
+	007 Move X2, [X8+40]
+	008 CallNoReturn X3
+	009 Return 
+
+Method: UnityEngine.UIElements.VisualElement get_visualTree()
+
+Disassembly:
+	0x03D1CE30 CBNZ W8, 0x3D1CE3C
+	0x03D1CE34 BL 0x1C16DFC
+	0x03D1CE38 LDR X0, [X19]
+	0x03D1CE3C LDR X8, [X0 + 0xB8]
+	0x03D1CE40 LDR X23, [X8 + 0x8]
+	0x03D1CE44 CBNZ X23, 0x3D1CE98
+	0x03D1CE48 LDR W8, [X0 + 0xE0]
+	0x03D1CE4C CBNZ W8, 0x3D1CE58
+	0x03D1CE50 BL 0x1C16DFC
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+24]
+	003 Compare X0, 0
+	004 JumpIfEqual {10}
+	005 Move X8, [X0]
+	006 Move X2, [X8+920]
+	007 Move X1, [X8+928]
+	008 Move X30, [X31+16]
+	009 CallNoReturn X2
+	010 Call 0x1C17F20
+
+Method: Unity.Profiling.ProfilerMarker get_profilerMarker()
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated
+Method: System.Void Dispose()
+
+Disassembly:
+	0x03D1F1CC LDRB W8, [X20 + 0x96F]
+	0x03D1F1D0 LDR X19, [X19 + 0x820]
+	0x03D1F1D4 TBNZ X8, 0x0, 0x3D1F1EC
+	0x03D1F1D8 ADRP X0, 0x3FD000
+	0x03D1F1DC LDR X0, [X0 + 0x820]
+	0x03D1F1E0 BL 0x1C16CF4
+	0x03D1F1E4 MOVZ W8, 0x1
+	0x03D1F1E8 STRB W8, [X20 + 0x96F]
+	0x03D1F1EC LDR X0, [X19]
+	0x03D1F1F0 LDR W8, [X0 + 0xE0]
+	0x03D1F1F4 CBNZ W8, 0x3D1F200
+	0x03D1F1F8 BL 0x1C16DFC
+	0x03D1F1FC LDR X0, [X19]
+	0x03D1F200 LDR X8, [X0 + 0xB8]
+	0x03D1F204 LDR X8, [X8 + 0x10]
+	0x03D1F208 CBZ X8, 0x3D1F224
+	0x03D1F20C LDR X2, [X8 + 0x18]
+	0x03D1F210 LDR X0, [X8 + 0x40]
+	0x03D1F214 LDR X1, [X8 + 0x28]
+	0x03D1F218 LDP X20, X19, [X31 + 0x10]
+	0x03D1F21C LDR X30, [X31], #0x20
+	0x03D1F220 BR X2
+	0x03D1F224 LDP X20, X19, [X31 + 0x10]
+	0x03D1F228 LDR X30, [X31], #0x20
+	0x03D1F22C RET
+	0x03D1F230 STP X30, X21, [X31 - 0x20]!
+	0x03D1F234 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x6C9000
+	006 Move X20, 0x3DC000
+	007 Move W8, [X21+2395]
+	008 Move X20, [X20+3088]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x3DC000
+	015 Move X0, [X0+3088]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+2395], W8
+	019 Move X8, [X19]
+	020 Move W1, 1
+	021 Move X0, X19
+	022 Move X9, [X8+488]
+	023 Move X2, [X8+496]
+	024 NotImplemented "Instruction BLR not yet implemented."
+	025 Move X0, [X20]
+	026 Move W8, [X0+224]
+	027 Compare W8, 0
+	028 JumpIfNotEqual {30}
+	029 Call 0x1C17DFC
+	030 Move X0, X19
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X1, X31
+	034 Move X30, [X31+32]
+	035 Move X21, [X31+40]
+	036 Call GC.SuppressFinalize, X0
+	037 Return 
+
+Method: System.Void Dispose(System.Boolean disposing)
+
+Disassembly:
+	0x03D1F238 ADRP X21, 0x6C8000
+
+ISIL:
+	001 Return 
+
+Method: System.Void Update()
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated
+Method: System.Void OnVersionChanged(UnityEngine.UIElements.VisualElement ve, UnityEngine.UIElements.VersionChangeType versionChangeType)
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03D1B8F8 ADRP X8, 0x447000
+	0x03D1B8FC LDR X8, [X8 + 0x7D8]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

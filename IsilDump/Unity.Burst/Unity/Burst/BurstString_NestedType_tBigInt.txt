@@ -1,0 +1,119 @@
+Type: Unity.Burst.BurstString/tBigInt
+
+Method: System.Int32 GetLength()
+
+Disassembly:
+	0x037034D8 ADRP X0, 0xA3E000
+	0x037034DC LDR X0, [X0 + 0x258]
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.UInt32 GetBlock(System.Int32 idx)
+
+Disassembly:
+	0x03702810 STR X30, [X31 - 0x10]!
+	0x03702814 BL 0x3702740
+	0x03702818 STR X30, [X31 - 0x10]!
+
+ISIL:
+	001 Add X8, X0, W1
+	002 Move W0, [X8+4]
+	003 Return X0
+
+Method: System.Void SetZero()
+
+Disassembly:
+	0x037034E0 BL 0x1C16D08
+	0x037034E4 MOV X1, X0
+
+ISIL:
+	001 Move [X0], W31
+	002 Return 
+
+Method: System.Boolean IsZero()
+
+Disassembly:
+	0x0370281C BL 0x3702778
+	0x03702820 STR X30, [X31 - 0x10]!
+	0x03702824 BL 0x37027B0
+	0x03702828 STP X30, X19, [X31 - 0x10]!
+
+ISIL:
+	001 Move W8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Void SetU64(System.UInt64 val)
+
+Disassembly:
+	0x037027E0 MOV X0, X19
+	0x037027E4 BL 0x1C16DEC
+	0x037027E8 STR X30, [X31 - 0x10]!
+	0x037027EC BL 0x3702628
+	0x037027F0 STR X30, [X31 - 0x10]!
+	0x037027F4 BL 0x3702660
+	0x037027F8 STR X30, [X31 - 0x10]!
+	0x037027FC BL 0x3702698
+	0x03702800 STR X30, [X31 - 0x10]!
+	0x03702804 BL 0x37026D0
+	0x03702808 STR X30, [X31 - 0x10]!
+	0x0370280C BL 0x3702708
+
+ISIL:
+	001 Move X8, X1
+	002 ShiftRight X8, 32
+	003 And X8, X8, 0x7FFFFFFF
+	004 Compare X8, 0
+	005 JumpIfEqual {8}
+	006 Move [X0+4], X1
+	007 Move W8, 2
+	008 Compare X1, 0
+	009 JumpIfEqual {12}
+	010 Move W8, 1
+	011 Move [X0+4], W1
+	012 Move W8, W31
+	013 Move [X0], W8
+	014 Return 
+
+Method: System.Void SetU32(System.UInt32 val)
+
+Disassembly:
+	0x03701B28 UNIMPLEMENTED
+	0x03701B2C TBZ X13, 0x0, 0x3701B38
+	0x03701B30 ADD X13, X11, X9
+	0x03701B34 STRB W12, [X13 + 0x1]
+	0x03701B38 ADD X9, X9, 0x2
+	0x03701B3C CMP X10, X9
+	0x03701B40 B.NE 0x3701B0C
+
+ISIL:
+	001 Compare W1, 0
+	002 JumpIfEqual {5}
+	003 Move W8, 1
+	004 Move [X0+4], W1
+	005 Move W8, W31
+	006 Move [X0], W8
+	007 Return 
+
+Method: System.UInt32 GetU32()
+
+Disassembly:
+	0x037034E8 MOV X0, X19
+	0x037034EC BL 0x1C16DEC
+	0x037034F0 STP X30, X19, [X31 - 0x10]!
+	0x037034F4 ADRP X0, 0x9F9000
+	0x037034F8 LDR X0, [X0 + 0x758]
+	0x037034FC BL 0x1C16D08
+
+ISIL:
+	001 Move W8, [X0]
+	002 Compare W8, 0
+	003 JumpIfEqual {6}
+	004 Move W0, [X0+4]
+	005 Return X0
+	006 Move W0, W31
+	007 Return X0
+

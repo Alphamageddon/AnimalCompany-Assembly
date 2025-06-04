@@ -1,0 +1,30 @@
+Type: UnityEngine.RequireComponent
+
+Method: System.Void .ctor(System.Type requiredComponent)
+
+Disassembly:
+	0x03C331C4 ADD X0, X0, 0xBC
+	0x03C331C8 BL 0x1C16CB8
+	0x03C331CC MOV X3, X0
+	0x03C331D0 STR X0, [X22 + 0x340]
+	0x03C331D4 AND W2, W20, 0x1
+	0x03C331D8 MOV X0, X21
+	0x03C331DC MOV X1, X19
+	0x03C331E0 LDP X20, X19, [X31 + 0x20]
+	0x03C331E4 LDP X22, X21, [X31 + 0x10]
+	0x03C331E8 LDR X30, [X31], #0x30
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

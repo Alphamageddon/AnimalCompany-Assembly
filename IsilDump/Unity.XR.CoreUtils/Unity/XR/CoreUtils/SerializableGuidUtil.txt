@@ -1,0 +1,30 @@
+Type: Unity.XR.CoreUtils.SerializableGuidUtil
+
+Method: Unity.XR.CoreUtils.SerializableGuid Create(System.Guid guid)
+
+Disassembly:
+	0x03B2FBB0 LDP D11, D10, [X31], #0x40
+	0x03B2FBB4 RET
+	0x03B2FBB8 BL 0x1C16F20
+	0x03B2FBBC STP D11, D10, [X31 - 0x40]!
+	0x03B2FBC0 STP D9, D8, [X31 + 0x10]
+	0x03B2FBC4 STP X30, X21, [X31 + 0x20]
+	0x03B2FBC8 STP X20, X19, [X31 + 0x30]
+	0x03B2FBCC ADRP X21, 0x8B3000
+	0x03B2FBD0 ADRP X20, 0x5C4000
+	0x03B2FBD4 LDRB W8, [X21 + 0x7BC]
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X31
+	004 Add X2, X31, 24
+	005 Add X3, X31, 8
+	006 Move [X31+8], X31
+	007 Call GuidExtensions.Decompose, X0, X1, X2
+	008 Move X30, [X31+16]
+	009 Move X0, [X31+24]
+	010 Move X1, [X31+8]
+	011 Add X31, X31, 32
+	012 Return X0
+

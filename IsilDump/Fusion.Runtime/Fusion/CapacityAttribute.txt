@@ -1,0 +1,40 @@
+Type: Fusion.CapacityAttribute
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0x01E68450 CBZ X8, 0x1E6850C
+	0x01E68454 LDR X8, [X8 + 0x38]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void .ctor(System.Int32 length)
+
+Disassembly:
+	0x01E68458 CBZ X8, 0x1E68514
+	0x01E6845C LDR X3, [X8 + 0x140]
+	0x01E68460 MOV X1, X0
+	0x01E68464 MOV X2, X20
+	0x01E68468 BL 0x1E6A21C
+	0x01E6846C B 0x1E68378
+	0x01E68470 ADRP X8, 0x2294000
+	0x01E68474 LDR X8, [X8 + 0xEB8]
+	0x01E68478 ADD X0, X31, 0x20
+	0x01E6847C LDR X1, [X8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

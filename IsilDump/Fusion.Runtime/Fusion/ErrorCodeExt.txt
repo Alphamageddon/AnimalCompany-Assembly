@@ -1,0 +1,36 @@
+Type: Fusion.ErrorCodeExt
+
+Method: Fusion.ShutdownReason ConvertToShutdownReason(System.Int16 errorCode)
+
+Disassembly:
+	0x01E695DC MOV X1, X31
+	0x01E695E0 BL 0x1E4546C
+	0x01E695E4 TBZ X0, 0x0, 0x1E69628
+	0x01E695E8 CMP W22, 0x3
+	0x01E695EC B.EQ 0x1E69674
+	0x01E695F0 CMP W22, 0x2
+	0x01E695F4 B.EQ 0x1E696CC
+	0x01E695F8 CMP W22, 0x1
+	0x01E695FC B.NE 0x1E69724
+	0x01E69600 ADRP X20, 0x2293000
+	0x01E69604 LDR X20, [X20 + 0xF50]
+	0x01E69608 LDR X0, [X20]
+	0x01E6960C LDR W8, [X0 + 0xE0]
+	0x01E69610 CBNZ W8, 0x1E6961C
+
+ISIL:
+	001 And W31, W0, 0xFFFF
+	002 Move TEMP, 0x7FEE
+	003 Not TEMP
+	004 Move X8, TEMP
+	005 Add X8, X8, W0
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 Move X9, -20164608
+	008 Add X9, X9, 3012
+	009 Move W0, [X9]
+	010 Return X0
+	011 Move W0, W31
+	012 Return X0
+	013 Move W0, 1
+	014 Return X0
+

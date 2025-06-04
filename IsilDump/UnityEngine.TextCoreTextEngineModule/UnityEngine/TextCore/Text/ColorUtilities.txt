@@ -1,0 +1,126 @@
+Type: UnityEngine.TextCore.Text.ColorUtilities
+
+Method: System.Boolean CompareColors(UnityEngine.Color32 a, UnityEngine.Color32 b)
+
+Disassembly:
+	0x03C9F9F8 SUB X31, X31, 0x30
+	0x03C9F9FC STP X30, X21, [X31 + 0x10]
+	0x03C9FA00 STP X20, X19, [X31 + 0x20]
+	0x03C9FA04 ADRP X20, 0x748000
+
+ISIL:
+	001 Xor W8, W1, W0
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: UnityEngine.Color32 MultiplyColors(UnityEngine.Color32 c1, UnityEngine.Color32 c2)
+
+Disassembly:
+	0x03C9FA08 ADRP X21, 0x4C2000
+	0x03C9FA0C LDRB W8, [X20 + 0x2D0]
+	0x03C9FA10 LDR X21, [X21 + 0x258]
+	0x03C9FA14 MOV X19, X0
+	0x03C9FA18 TBNZ X8, 0x0, 0x3C9FA30
+	0x03C9FA1C ADRP X0, 0x4C2000
+	0x03C9FA20 LDR X0, [X0 + 0x258]
+	0x03C9FA24 BL 0x1C16CF4
+	0x03C9FA28 MOVZ W8, 0x1
+	0x03C9FA2C STRB W8, [X20 + 0x2D0]
+	0x03C9FA30 LDR X0, [X21]
+	0x03C9FA34 LDR W8, [X0 + 0xE0]
+	0x03C9FA38 CBNZ W8, 0x3C9FA40
+	0x03C9FA3C BL 0x1C16DFC
+	0x03C9FA40 MOVZ W1, 0x5A
+	0x03C9FA44 MOVZ W2, 0x9
+	0x03C9FA48 MOVZ W3, 0x1045
+	0x03C9FA4C MOVZ W4, 0x400
+	0x03C9FA50 MOVZ W5, 0x400
+	0x03C9FA54 MOVZ W6, 0x1
+	0x03C9FA58 MOVZ W7, 0x1
+	0x03C9FA5C MOV X0, X19
+	0x03C9FA60 BL 0x3C9FA74
+	0x03C9FA64 LDP X20, X19, [X31 + 0x20]
+	0x03C9FA68 LDP X30, X21, [X31 + 0x10]
+	0x03C9FA6C ADD X31, X31, 0x30
+	0x03C9FA70 RET
+	0x03C9FA74 SUB X31, X31, 0x70
+	0x03C9FA78 STR X30, [X31 + 0x10]
+	0x03C9FA7C STP X28, X27, [X31 + 0x20]
+	0x03C9FA80 STP X26, X25, [X31 + 0x30]
+	0x03C9FA84 STP X24, X23, [X31 + 0x40]
+	0x03C9FA88 STP X22, X21, [X31 + 0x50]
+	0x03C9FA8C STP X20, X19, [X31 + 0x60]
+	0x03C9FA90 ADRP X27, 0x748000
+	0x03C9FA94 ADRP X28, 0x4C2000
+	0x03C9FA98 LDRB W8, [X27 + 0x2D1]
+	0x03C9FA9C LDR X28, [X28 + 0x258]
+	0x03C9FAA0 MOV W25, W7
+	0x03C9FAA4 MOV W19, W6
+	0x03C9FAA8 MOV W20, W5
+	0x03C9FAAC MOV W21, W4
+	0x03C9FAB0 MOV W22, W3
+	0x03C9FAB4 MOV W23, W2
+	0x03C9FAB8 MOV W24, W1
+	0x03C9FABC MOV X26, X0
+
+ISIL:
+	001 And W8, W0, 255
+	002 And W12, W1, 255
+	003 NotImplemented "Instruction UCVTF not yet implemented."
+	004 Move W8, 0x437F0000
+	005 Move S1, W8
+	006 NotImplemented "Instruction UCVTF not yet implemented."
+	007 Move W9, W0
+	008 ShiftRight W9, 8
+	009 And W9, W9, 0x7FFF
+	010 Move W10, W0
+	011 ShiftRight W10, 16
+	012 And W10, W10, 0x7FFFFF
+	013 Move W13, W1
+	014 ShiftRight W13, 8
+	015 And W13, W13, 0x7FFF
+	016 Move W14, W1
+	017 ShiftRight W14, 16
+	018 And W14, W14, 0x7FFFFF
+	019 NotImplemented "Instruction FDIV not yet implemented."
+	020 NotImplemented "Instruction FDIV not yet implemented."
+	021 NotImplemented "Instruction UCVTF not yet implemented."
+	022 NotImplemented "Instruction UCVTF not yet implemented."
+	023 NotImplemented "Instruction UCVTF not yet implemented."
+	024 Multiply S0, S0, S2
+	025 NotImplemented "Instruction UCVTF not yet implemented."
+	026 Move X11, X0
+	027 ShiftRight X11, 24
+	028 And X11, X11, 0x7FFFFFFF
+	029 Move X15, X1
+	030 ShiftRight X15, 24
+	031 And X15, X15, 0x7FFFFFFF
+	032 NotImplemented "Instruction FDIV not yet implemented."
+	033 NotImplemented "Instruction FDIV not yet implemented."
+	034 NotImplemented "Instruction FDIV not yet implemented."
+	035 NotImplemented "Instruction FDIV not yet implemented."
+	036 Multiply S3, S3, S4
+	037 NotImplemented "Instruction UCVTF not yet implemented."
+	038 Multiply S2, S5, S2
+	039 NotImplemented "Instruction UCVTF not yet implemented."
+	040 NotImplemented "Instruction FDIV not yet implemented."
+	041 NotImplemented "Instruction FDIV not yet implemented."
+	042 Multiply S4, S4, S5
+	043 Multiply S0, S0, S1
+	044 Multiply S3, S3, S1
+	045 Multiply S2, S2, S1
+	046 Multiply S1, S4, S1
+	047 NotImplemented "Instruction FCVTZS not yet implemented."
+	048 NotImplemented "Instruction FCVTZS not yet implemented."
+	049 NotImplemented "Instruction FCVTZS not yet implemented."
+	050 NotImplemented "Instruction FCVTZS not yet implemented."
+	051 Move W0, W8
+	052 Move W8, W9
+	053 Move W9, W10
+	054 Move W10, W11
+	055 NotImplemented "Instruction BFM not yet implemented."
+	056 NotImplemented "Instruction BFM not yet implemented."
+	057 NotImplemented "Instruction BFM not yet implemented."
+	058 Return X0
+

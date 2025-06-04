@@ -1,0 +1,118 @@
+Type: UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives.ColorAffordanceThemeDatumProperty
+
+Method: System.Void .ctor(UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives.ColorAffordanceTheme value)
+
+Disassembly:
+	0x03BCC35C RET
+	0x03BCC360 STP X30, X21, [X31 - 0x20]!
+	0x03BCC364 STP X20, X19, [X31 + 0x10]
+	0x03BCC368 ADRP X21, 0x816000
+	0x03BCC36C LDRB W8, [X21 + 0xE1F]
+	0x03BCC370 MOV X20, X1
+	0x03BCC374 MOV X19, X0
+	0x03BCC378 TBNZ X8, 0x0, 0x3BCC390
+	0x03BCC37C ADRP X0, 0x552000
+	0x03BCC380 LDR X0, [X0 + 0x460]
+	0x03BCC384 BL 0x1C16CF4
+	0x03BCC388 MOVZ W8, 0x1
+	0x03BCC38C STRB W8, [X21 + 0xE1F]
+	0x03BCC390 CBZ X20, 0x3BCC3D4
+	0x03BCC394 ADRP X8, 0x552000
+	0x03BCC398 LDR X8, [X8 + 0x460]
+	0x03BCC39C LDR X9, [X20]
+	0x03BCC3A0 LDR X8, [X8]
+	0x03BCC3A4 CMP X9, X8
+	0x03BCC3A8 B.NE 0x3BCC3D4
+	0x03BCC3AC MOV X0, X20
+	0x03BCC3B0 BL 0x1C16E08
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x817000
+	007 Move X22, 0x592000
+	008 Move W8, [X21+3590]
+	009 Move X22, [X22+2136]
+	010 Move X19, X1
+	011 Move X20, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x592000
+	017 Move X0, [X0+2136]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+3590], W8
+	021 Move X2, [X22]
+	022 Move X0, X20
+	023 Move X1, X19
+	024 Move X20, [X31+32]
+	025 Move X19, [X31+40]
+	026 Move X22, [X31+16]
+	027 Move X21, [X31+24]
+	028 Move X30, [X31+48]
+	029 Call DatumProperty`2<Object, Object>..ctor, X0, X1
+	030 Return 
+
+Method: System.Void .ctor(UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives.ColorAffordanceThemeDatum datum)
+
+Disassembly:
+	0x03BCC3B4 LDRH W8, [X0]
+	0x03BCC3B8 LDRB W9, [X19]
+	0x03BCC3BC CMP W9, W8, UXTB
+	0x03BCC3C0 B.NE 0x3BCC3D4
+	0x03BCC3C4 LDRB W9, [X19 + 0x1]
+	0x03BCC3C8 CMP W9, W8, LSR
+	0x03BCC3CC CSET W0, EQ
+	0x03BCC3D0 B 0x3BCC3D8
+	0x03BCC3D4 MOV W0, W31
+	0x03BCC3D8 LDP X20, X19, [X31 + 0x10]
+	0x03BCC3DC LDP X30, X21, [X31], #0x20
+	0x03BCC3E0 RET
+	0x03BCC3E4 STR X30, [X31 - 0x20]!
+	0x03BCC3E8 STP X20, X19, [X31 + 0x10]
+	0x03BCC3EC LDRB W8, [X0]
+	0x03BCC3F0 MOV X19, X0
+	0x03BCC3F4 ADD X0, X31, 0xC
+	0x03BCC3F8 MOV X1, X31
+	0x03BCC3FC STRB W8, [X31 + 0xC]
+	0x03BCC400 BL 0x3319718
+	0x03BCC404 LDRB W8, [X19 + 0x1]
+	0x03BCC408 MOV W20, W0
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x817000
+	007 Move X22, 0x592000
+	008 Move W8, [X21+3591]
+	009 Move X22, [X22+2144]
+	010 Move X19, X1
+	011 Move X20, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x592000
+	017 Move X0, [X0+2144]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+3591], W8
+	021 Move X2, [X22]
+	022 Move X0, X20
+	023 Move X1, X19
+	024 Move X20, [X31+32]
+	025 Move X19, [X31+40]
+	026 Move X22, [X31+16]
+	027 Move X21, [X31+24]
+	028 Move X30, [X31+48]
+	029 Call DatumProperty`2<Object, Object>..ctor, X0, X1
+	030 Return 
+

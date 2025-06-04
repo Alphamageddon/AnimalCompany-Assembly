@@ -1,0 +1,209 @@
+Type: UnityEngine.XR.Interaction.Toolkit.SelectExitEventArgs
+
+Method: UnityEngine.XR.Interaction.Toolkit.IXRSelectInteractor get_interactorObject()
+
+Disassembly:
+	0x03B6C9E0 LDRB W8, [X21 + 0xA16]
+	0x03B6C9E4 MOV X19, X1
+	0x03B6C9E8 MOV X20, X0
+	0x03B6C9EC TBNZ X8, 0x0, 0x3B6CA04
+	0x03B6C9F0 ADRP X0, 0x5EF000
+	0x03B6C9F4 LDR X0, [X0 + 0x5C8]
+	0x03B6C9F8 BL 0x1C16CF4
+	0x03B6C9FC MOVZ W8, 0x1
+	0x03B6CA00 STRB W8, [X21 + 0xA16]
+	0x03B6CA04 ADRP X24, 0x5EF000
+	0x03B6CA08 LDR X21, [X20 + 0x58]!
+	0x03B6CA0C LDR X24, [X24 + 0x5C8]
+	0x03B6CA10 MOV X0, X21
+	0x03B6CA14 MOV X1, X19
+	0x03B6CA18 MOV X2, X31
+	0x03B6CA1C BL 0x33C0FDC
+	0x03B6CA20 CBZ X0, 0x3B6CA40
+	0x03B6CA24 LDR X23, [X24]
+	0x03B6CA28 MOV X22, X0
+	0x03B6CA2C MOV X1, X23
+	0x03B6CA30 BL 0x1C16E00
+	0x03B6CA34 MOV X1, X0
+	0x03B6CA38 CBNZ X0, 0x3B6CA44
+	0x03B6CA3C B 0x3B6CA70
+	0x03B6CA40 MOV X1, X31
+	0x03B6CA44 MOV X0, X20
+	0x03B6CA48 MOV X2, X21
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x877000
+	005 Move W8, [X20+2549]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x5EF000
+	012 Move X0, [X0+808]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2549], W8
+	016 Move X19, [X19+16]
+	017 Compare X19, 0
+	018 JumpIfEqual {30}
+	019 Move X8, 0x5EF000
+	020 Move X8, [X8+808]
+	021 Move X0, X19
+	022 Move X20, [X8]
+	023 Move X1, X20
+	024 Call 0x1C17E00
+	025 Compare X0, 0
+	026 JumpIfNotEqual {31}
+	027 Move X0, X19
+	028 Move X1, X20
+	029 Call 0x1C181E0
+	030 Move X0, X31
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X30, [X31+32]
+	034 Return X0
+
+Method: System.Void set_interactorObject(UnityEngine.XR.Interaction.Toolkit.IXRSelectInteractor value)
+
+Disassembly:
+	0x03B6CA4C BL 0x1C24138
+	0x03B6CA50 CMP X21, X0
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.IXRSelectInteractable get_interactableObject()
+
+Disassembly:
+	0x03B67758 LDUR X11, [X10 - 0x8]
+	0x03B6775C CMP X11, X1
+	0x03B67760 B.EQ 0x3B67780
+	0x03B67764 SUBS X9, X9, 0x1
+	0x03B67768 ADD X10, X10, 0x10
+	0x03B6776C B.NE 0x3B67758
+	0x03B67770 MOVZ W2, 0x6
+	0x03B67774 MOV X0, X19
+	0x03B67778 BL 0x1C5C788
+	0x03B6777C B 0x3B67790
+	0x03B67780 LDR W9, [X10]
+	0x03B67784 ADD W9, W9, 0x6
+	0x03B67788 ADD X8, X8, W9, 0x4, SXTW
+	0x03B6778C ADD X0, X8, 0x138
+	0x03B67790 LDP X8, X1, [X0]
+	0x03B67794 MOV X0, X19
+	0x03B67798 BLR X8
+	0x03B6779C TBZ X0, 0x0, 0x3B67808
+	0x03B677A0 MOV X0, X20
+	0x03B677A4 MOV X1, X19
+	0x03B677A8 MOV X2, X31
+	0x03B677AC BL 0x3B52CD0
+	0x03B677B0 TBZ X0, 0x0, 0x3B67800
+	0x03B677B4 CBZ X19, 0x3B67848
+	0x03B677B8 ADRP X10, 0x5F3000
+	0x03B677BC LDR X8, [X19]
+	0x03B677C0 LDR X10, [X10 + 0x160]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x87C000
+	005 Move W8, [X20+2550]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x5F4000
+	012 Move X0, [X0+352]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2550], W8
+	016 Move X19, [X19+24]
+	017 Compare X19, 0
+	018 JumpIfEqual {30}
+	019 Move X8, 0x5F4000
+	020 Move X8, [X8+352]
+	021 Move X0, X19
+	022 Move X20, [X8]
+	023 Move X1, X20
+	024 Call 0x1C17E00
+	025 Compare X0, 0
+	026 JumpIfNotEqual {31}
+	027 Move X0, X19
+	028 Move X1, X20
+	029 Call 0x1C181E0
+	030 Move X0, X31
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X30, [X31+32]
+	034 Return X0
+
+Method: System.Void set_interactableObject(UnityEngine.XR.Interaction.Toolkit.IXRSelectInteractable value)
+
+Disassembly:
+	0x03B6CA54 MOV X21, X0
+	0x03B6CA58 B.NE 0x3B6CA10
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.XRInteractionManager get_manager()
+
+Disassembly:
+	0x03B6CA5C LDP X20, X19, [X31 + 0x30]
+	0x03B6CA60 LDP X22, X21, [X31 + 0x20]
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_manager(UnityEngine.XR.Interaction.Toolkit.XRInteractionManager value)
+
+Disassembly:
+	0x03B6CA64 LDP X24, X23, [X31 + 0x10]
+	0x03B6CA68 LDR X30, [X31], #0x40
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.Boolean get_isCanceled()
+
+Disassembly:
+	0x03B6CA6C RET
+	0x03B6CA70 MOV X0, X22
+
+ISIL:
+	001 Move W0, [X0+40]
+	002 Return X0
+
+Method: System.Void set_isCanceled(System.Boolean value)
+
+Disassembly:
+	0x03B6CA74 MOV X1, X23
+	0x03B6CA78 BL 0x1C171E0
+	0x03B6CA7C LDR X0, [X0 + 0x60]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+40], W8
+	003 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03B6CA80 RET
+	0x03B6CA84 STR X1, [X0 + 0x60]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

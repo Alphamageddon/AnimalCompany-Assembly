@@ -1,0 +1,198 @@
+Type: UnityEngine.UIElements.INotifyValueChangedExtensions
+
+Method: System.Boolean RegisterValueChangedCallback(UnityEngine.UIElements.INotifyValueChanged`1<T> control, UnityEngine.UIElements.EventCallback`1<UnityEngine.UIElements.ChangeEvent`1<T>> callback)
+
+Disassembly:
+	0x021F0110 LDP X22, X21, [X31 + 0x50]
+	0x021F0114 LDP X24, X23, [X31 + 0x40]
+	0x021F0118 LDP X26, X25, [X31 + 0x30]
+	0x021F011C LDP X30, X27, [X31 + 0x20]
+	0x021F0120 ADD X31, X31, 0x70
+	0x021F0124 RET
+	0x021F0128 MOV X23, X31
+	0x021F012C MOV X24, X31
+	0x021F0130 B 0x21F0254
+	0x021F0134 LDR W9, [X10]
+	0x021F0138 ADD W9, W9, 0x12
+	0x021F013C ADD X8, X8, W9, 0x4, SXTW
+	0x021F0140 ADD X0, X8, 0x138
+	0x021F0144 LDP X8, X3, [X0]
+	0x021F0148 MOV X0, X23
+	0x021F014C MOV X1, X31
+	0x021F0150 MOV W2, W31
+	0x021F0154 BLR X8
+	0x021F0158 MOV X24, X0
+	0x021F015C B 0x21F0254
+	0x021F0160 LDR W9, [X10]
+	0x021F0164 ADD W9, W9, 0x9
+	0x021F0168 ADD X8, X8, W9, 0x4, SXTW
+	0x021F016C ADD X0, X8, 0x138
+	0x021F0170 LDP X8, X1, [X0]
+	0x021F0174 MOV X0, X23
+	0x021F0178 BLR X8
+	0x021F017C CBZ X0, 0x21F03D8
+	0x021F0180 LDR X9, [X21 + 0x38]
+	0x021F0184 LDR X8, [X0]
+	0x021F0188 LDRB W25, [X20 + 0x19]
+	0x021F018C MOV X23, X0
+	0x021F0190 LDR X24, [X9 + 0x28]
+	0x021F0194 LDRH W9, [X8 + 0x12E]
+	0x021F0198 LDR X1, [X24 + 0x20]
+	0x021F019C LDRH W2, [X24 + 0x50]
+	0x021F01A0 CBZ X9, 0x21F01C4
+	0x021F01A4 LDR X10, [X8 + 0xB0]
+	0x021F01A8 ADD X10, X10, 0x8
+	0x021F01AC LDUR X11, [X10 - 0x8]
+	0x021F01B0 CMP X11, X1
+	0x021F01B4 B.EQ 0x21F01D0
+	0x021F01B8 SUBS X9, X9, 0x1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+56]
+	006 Move X20, X2
+	007 Move X19, X1
+	008 Move X21, X0
+	009 Compare X8, 0
+	010 JumpIfNotEqual {17}
+	011 Move X0, 0x1F2C000
+	012 Move X0, [X0+2968]
+	013 Call 0x1C17CF4
+	014 Move X8, [X20+56]
+	015 Compare X8, 0
+	016 JumpIfEqual {39}
+	017 Compare X21, 0
+	018 JumpIfEqual {43}
+	019 Move X8, 0x1F2C000
+	020 Move X8, [X8+2968]
+	021 Move X9, [X21]
+	022 Move X8, [X8]
+	023 Move W11, [X9+304]
+	024 Move W10, [X8+304]
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move X9, [X9+200]
+	027 Add X9, X9, X10
+	028 NotImplemented "Instruction LDUR not yet implemented."
+	029 NotImplemented "Instruction CMP not yet implemented."
+	030 NotImplemented "Instruction CSEL not yet implemented."
+	031 Compare X0, 0
+	032 JumpIfEqual {49}
+	033 Move X8, [X20+56]
+	034 Move X1, X19
+	035 Move W2, W31
+	036 Move X3, [X8+16]
+	037 Call 0x21A2534, X0, X1, X2
+	038 Move W0, 1
+	039 Move X0, X20
+	040 Call 0x1C5D6E0
+	041 Compare X21, 0
+	042 JumpIfNotEqual {19}
+	043 Move W0, W31
+	044 Move X20, [X31+16]
+	045 Move X19, [X31+24]
+	046 Move X30, [X31+32]
+	047 Move X21, [X31+40]
+	048 Return X0
+	049 Call 0x1C17F20
+
+Method: System.Boolean UnregisterValueChangedCallback(UnityEngine.UIElements.INotifyValueChanged`1<T> control, UnityEngine.UIElements.EventCallback`1<UnityEngine.UIElements.ChangeEvent`1<T>> callback)
+
+Disassembly:
+	0x021F05C8 LDR X0, [X31 + 0x18]
+	0x021F05CC LDR X25, [X25 + 0xBC8]
+	0x021F05D0 MOV X2, X31
+	0x021F05D4 LDR X1, [X25]
+	0x021F05D8 BL 0x321BA08
+	0x021F05DC TBZ X0, 0x0, 0x21F0630
+	0x021F05E0 LDR X22, [X20 + 0x10]
+	0x021F05E4 CBZ X22, 0x21F0D9C
+	0x021F05E8 ADRP X10, 0x1F04000
+	0x021F05EC LDR X8, [X22]
+	0x021F05F0 LDR X10, [X10 + 0x1B0]
+	0x021F05F4 LDRH W9, [X8 + 0x12E]
+	0x021F05F8 LDR X1, [X10]
+	0x021F05FC CBZ X9, 0x21F0620
+	0x021F0600 LDR X10, [X8 + 0xB0]
+	0x021F0604 ADD X10, X10, 0x8
+	0x021F0608 LDUR X11, [X10 - 0x8]
+	0x021F060C CMP X11, X1
+	0x021F0610 B.EQ 0x21F07D0
+	0x021F0614 SUBS X9, X9, 0x1
+	0x021F0618 ADD X10, X10, 0x10
+	0x021F061C B.NE 0x21F0608
+	0x021F0620 MOVZ W2, 0x9
+	0x021F0624 MOV X0, X22
+	0x021F0628 BL 0x1C5C788
+	0x021F062C B 0x21F07E0
+	0x021F0630 ADRP X8, 0x1F2B000
+	0x021F0634 LDR X0, [X31 + 0x18]
+	0x021F0638 LDR X8, [X8 + 0xBE8]
+	0x021F063C MOV X2, X31
+	0x021F0640 LDR X1, [X8]
+	0x021F0644 BL 0x321BA08
+	0x021F0648 TBZ X0, 0x0, 0x21F06FC
+	0x021F064C LDR X0, [X24]
+	0x021F0650 LDR X22, [X20 + 0x10]
+	0x021F0654 LDR W8, [X0 + 0xE0]
+	0x021F0658 CBNZ W8, 0x21F0660
+	0x021F065C BL 0x1C16DFC
+	0x021F0660 MOV X0, X22
+	0x021F0664 MOV X1, X31
+	0x021F0668 BL 0x35D2B94
+	0x021F066C LDR X8, [X21 + 0x38]
+	0x021F0670 LDR X24, [X20 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+56]
+	006 Move X20, X2
+	007 Move X19, X1
+	008 Move X21, X0
+	009 Compare X8, 0
+	010 JumpIfNotEqual {17}
+	011 Move X0, 0x1F2C000
+	012 Move X0, [X0+2968]
+	013 Call 0x1C17CF4
+	014 Move X8, [X20+56]
+	015 Compare X8, 0
+	016 JumpIfEqual {39}
+	017 Compare X21, 0
+	018 JumpIfEqual {43}
+	019 Move X8, 0x1F2C000
+	020 Move X8, [X8+2968]
+	021 Move X9, [X21]
+	022 Move X8, [X8]
+	023 Move W11, [X9+304]
+	024 Move W10, [X8+304]
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move X9, [X9+200]
+	027 Add X9, X9, X10
+	028 NotImplemented "Instruction LDUR not yet implemented."
+	029 NotImplemented "Instruction CMP not yet implemented."
+	030 NotImplemented "Instruction CSEL not yet implemented."
+	031 Compare X0, 0
+	032 JumpIfEqual {49}
+	033 Move X8, [X20+56]
+	034 Move X1, X19
+	035 Move W2, W31
+	036 Move X3, [X8+16]
+	037 Call 0x21A28B4, X0, X1, X2
+	038 Move W0, 1
+	039 Move X0, X20
+	040 Call 0x1C5D6E0
+	041 Compare X21, 0
+	042 JumpIfNotEqual {19}
+	043 Move W0, W31
+	044 Move X20, [X31+16]
+	045 Move X19, [X31+24]
+	046 Move X30, [X31+32]
+	047 Move X21, [X31+40]
+	048 Return X0
+	049 Call 0x1C17F20
+

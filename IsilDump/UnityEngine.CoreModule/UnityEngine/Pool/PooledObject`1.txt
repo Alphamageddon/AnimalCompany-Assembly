@@ -1,0 +1,111 @@
+Type: UnityEngine.Pool.PooledObject`1
+
+Method: System.Void .ctor(T value, UnityEngine.Pool.IObjectPool`1<T> pool)
+
+Disassembly:
+	0x024A7D18 LDR X27, [X20 + 0x20]
+	0x024A7D1C LDR X9, [X0]
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Return 
+
+Method: System.Void System.IDisposable.Dispose()
+
+Disassembly:
+	0x024A7D20 LDR X8, [X27 + 0xC0]
+	0x024A7D24 CBZ X9, 0x24A7DA4
+	0x024A7D28 LDR X8, [X8]
+	0x024A7D2C MOV X0, X24
+	0x024A7D30 LDR X8, [X8 + 0x80]
+	0x024A7D34 ADD X1, X8, 0x80
+	0x024A7D38 BL 0x1C16D18
+	0x024A7D3C LDR X21, [X20 + 0x20]
+	0x024A7D40 LDR X20, [X0]
+	0x024A7D44 MOV X0, X22
+	0x024A7D48 MOV X2, X23
+	0x024A7D4C LDR X8, [X21 + 0xC0]
+	0x024A7D50 LDR X8, [X8 + 0x20]
+	0x024A7D54 LDR W8, [X8 + 0x28]
+	0x024A7D58 CMP W8, 0x0
+	0x024A7D5C SUB X8, X29, 0x20
+	0x024A7D60 CSEL X1, X19, X8, LT
+	0x024A7D64 BL 0x3EB1AC0
+	0x024A7D68 CBZ X20, 0x24A7EF8
+	0x024A7D6C LDR X8, [X21 + 0xC0]
+	0x024A7D70 LDP X9, X1, [X8 + 0x20]
+	0x024A7D74 LDR W8, [X9 + 0x28]
+	0x024A7D78 LDR X0, [X1]
+	0x024A7D7C TBNZ X8, 0x1F, 0x24A7D84
+	0x024A7D80 LDR X22, [X22]
+	0x024A7D84 STUR X22, [X29 - 0x18]
+	0x024A7D88 LDR X8, [X1 + 0x10]
+	0x024A7D8C SUB X3, X29, 0x18
+	0x024A7D90 SUB X4, X29, 0x10
+	0x024A7D94 MOV X2, X20
+	0x024A7D98 BLR X8
+	0x024A7D9C LDUR X0, [X29 - 0x10]
+	0x024A7DA0 B 0x24A7E9C
+	0x024A7DA4 LDR X8, [X8 + 0x20]
+	0x024A7DA8 SUB X26, X29, 0x20
+	0x024A7DAC MOV X0, X22
+	0x024A7DB0 MOV X2, X23
+	0x024A7DB4 LDR W8, [X8 + 0x28]
+	0x024A7DB8 CMP W8, 0x0
+	0x024A7DBC CSEL X1, X19, X26, LT
+	0x024A7DC0 BL 0x3EB1AC0
+	0x024A7DC4 LDR X8, [X27 + 0xC0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, [X0+8]
+	005 Compare X19, 0
+	006 JumpIfEqual {50}
+	007 Move X8, X0
+	008 Move X0, [X1+32]
+	009 Move X20, [X8]
+	010 Move W9, [X0+309]
+	011 Move TEMP, X9
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {16}
+	015 Call 0x1C5D684
+	016 Move X8, [X0+192]
+	017 Move X1, [X8+16]
+	018 Move W8, [X1+309]
+	019 Move TEMP, X8
+	020 And TEMP, TEMP, 1
+	021 Compare TEMP, 1
+	022 JumpIfEqual {26}
+	023 Move X0, X1
+	024 Call 0x1C5D684
+	025 Move X1, X0
+	026 Move X8, [X19]
+	027 NotImplemented "Instruction LDRH not yet implemented."
+	028 Compare X9, 0
+	029 JumpIfEqual {36}
+	030 Move X10, [X8+176]
+	031 Add X10, X10, 8
+	032 NotImplemented "Instruction LDUR not yet implemented."
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Subtract X9, X9, 1
+	035 Add X10, X10, 16
+	036 Move X0, X19
+	037 Move W2, W31
+	038 Call 0x1C5D788
+	039 NotImplemented "Instruction LDRSW not yet implemented."
+	040 Add X8, X8, X9
+	041 Add X0, X8, 312
+	042 Move X3, [X0]
+	043 Move X2, [X0+8]
+	044 Move X0, X19
+	045 Move X1, X20
+	046 Move X20, [X31+16]
+	047 Move X19, [X31+24]
+	048 Move X30, [X31+32]
+	049 CallNoReturn X3
+	050 Call 0x1C17F20
+

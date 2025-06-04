@@ -1,0 +1,153 @@
+Type: AnimalCompany.NotificationState
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_id()
+
+Disassembly:
+	0x01D456AC LDP X20, X19, [X31 + 0x10]
+	0x01D456B0 LDR X30, [X31], #0x20
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_id(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01D456B4 RET
+	0x01D456B8 MOV X1, X31
+
+ISIL:
+	001 Move [X0+72], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.NotificationCode> get_code()
+
+Disassembly:
+	0x01D456BC B 0x33BDD8C
+	0x01D456C0 STP X30, X21, [X31 - 0x20]!
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_code(SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.NotificationCode> value)
+
+Disassembly:
+	0x01D456C4 STP X20, X19, [X31 + 0x10]
+	0x01D456C8 ADRP X20, 0x2693000
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_subject()
+
+Disassembly:
+	0x01D456CC ADRP X21, 0x23AE000
+	0x01D456D0 LDRB W8, [X20 + 0x765]
+
+ISIL:
+	001 Move X0, [X0+88]
+	002 Return X0
+
+Method: System.Void set_subject(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01D456D4 LDR X21, [X21 + 0x648]
+	0x01D456D8 MOV X19, X1
+
+ISIL:
+	001 Move [X0+88], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_content()
+
+Disassembly:
+	0x01D456DC TBNZ X8, 0x0, 0x1D456F4
+	0x01D456E0 ADRP X0, 0x23AE000
+
+ISIL:
+	001 Move X0, [X0+96]
+	002 Return X0
+
+Method: System.Void set_content(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01D456E4 LDR X0, [X0 + 0x648]
+	0x01D456E8 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+96], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_senderID()
+
+Disassembly:
+	0x01D456EC MOVZ W8, 0x1
+	0x01D456F0 STRB W8, [X20 + 0x765]
+
+ISIL:
+	001 Move X0, [X0+104]
+	002 Return X0
+
+Method: System.Void set_senderID(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01D456F4 LDR X0, [X21]
+	0x01D456F8 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X0+104], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_time()
+
+Disassembly:
+	0x01D456FC CBNZ W8, 0x1D45704
+	0x01D45700 BL 0x1C16DFC
+
+ISIL:
+	001 Move X0, [X0+112]
+	002 Return X0
+
+Method: System.Void set_time(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01D45704 BL 0x1D32AF4
+	0x01D45708 MOV X20, X0
+
+ISIL:
+	001 Move [X0+112], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> get_persistent()
+
+Disassembly:
+	0x01D4570C BL 0x1D32B7C
+	0x01D45710 CBZ X20, 0x1D45734
+
+ISIL:
+	001 Move X0, [X0+120]
+	002 Return X0
+
+Method: System.Void set_persistent(SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> value)
+
+Disassembly:
+	0x01D45714 MOV X1, X0
+	0x01D45718 MOV X0, X20
+
+ISIL:
+	001 Move [X0+120], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01D4571C MOV X3, X19
+	0x01D45720 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move X1, X31
+	002 Call StateObject..ctor, X0
+	003 Return 
+

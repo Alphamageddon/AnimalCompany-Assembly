@@ -1,0 +1,176 @@
+Type: UnityEngine.Keyframe
+
+Method: System.Void .ctor(System.Single time, System.Single value)
+
+Disassembly:
+	0x03C01A74 STR X30, [X31 - 0x20]!
+	0x03C01A78 STP X20, X19, [X31 + 0x10]
+	0x03C01A7C ADRP X20, 0x7E2000
+	0x03C01A80 LDR X1, [X20 + 0xEE0]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], X31
+	004 Move [X0+16], X31
+	005 Move [X0+24], W31
+	006 Return 
+
+Method: System.Void .ctor(System.Single time, System.Single value, System.Single inTangent, System.Single outTangent)
+
+Disassembly:
+	0x03C01A84 MOV W19, W0
+	0x03C01A88 CBNZ X1, 0x3C01AA0
+	0x03C01A8C ADRP X0, 0xFFFFFFFFFCEFD000
+	0x03C01A90 ADD X0, X0, 0xDA9
+	0x03C01A94 BL 0x1C16CB8
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Move [X0+24], W31
+	006 Move [X0+16], X31
+	007 Return 
+
+Method: System.Single get_time()
+
+Disassembly:
+	0x03C01A98 MOV X1, X0
+	0x03C01A9C STR X0, [X20 + 0xEE0]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Return V0
+
+Method: System.Void set_time(System.Single value)
+
+Disassembly:
+	0x03C01AA0 AND W0, W19, 0x1
+	0x03C01AA4 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0], S0
+	002 Return 
+
+Method: System.Single get_value()
+
+Disassembly:
+	0x03C01AA8 LDR X30, [X31], #0x20
+	0x03C01AAC BR X1
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Return V0
+
+Method: System.Void set_value(System.Single value)
+
+Disassembly:
+	0x03C01AB0 STP X30, X19, [X31 - 0x10]!
+	0x03C01AB4 ADRP X19, 0x7E2000
+
+ISIL:
+	001 Move [X0+4], S0
+	002 Return 
+
+Method: System.Single get_inTangent()
+
+Disassembly:
+	0x03C01AB8 LDR X0, [X19 + 0xEE8]
+	0x03C01ABC CBNZ X0, 0x3C01AD0
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Return V0
+
+Method: System.Void set_inTangent(System.Single value)
+
+Disassembly:
+	0x03C01AC0 ADRP X0, 0xFFFFFFFFFCF1D000
+	0x03C01AC4 ADD X0, X0, 0x75E
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Return 
+
+Method: System.Single get_outTangent()
+
+Disassembly:
+	0x03C01AC8 BL 0x1C16CB8
+	0x03C01ACC STR X0, [X19 + 0xEE8]
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Return V0
+
+Method: System.Void set_outTangent(System.Single value)
+
+Disassembly:
+	0x03C01AD0 LDP X30, X19, [X31], #0x10
+	0x03C01AD4 BR X0
+
+ISIL:
+	001 Move [X0+12], S0
+	002 Return 
+
+Method: System.Single get_inWeight()
+
+Disassembly:
+	0x03C01AD8 STR X30, [X31 - 0x20]!
+	0x03C01ADC STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move V0, [X0+20]
+	002 Return V0
+
+Method: System.Void set_inWeight(System.Single value)
+
+Disassembly:
+	0x03C01AE0 ADRP X19, 0x7E2000
+	0x03C01AE4 ADRP X20, 0x4F2000
+
+ISIL:
+	001 Move [X0+20], S0
+	002 Return 
+
+Method: System.Single get_outWeight()
+
+Disassembly:
+	0x03C01AE8 LDRB W8, [X19 + 0xEF0]
+	0x03C01AEC LDR X20, [X20 + 0x970]
+
+ISIL:
+	001 Move V0, [X0+24]
+	002 Return V0
+
+Method: System.Void set_outWeight(System.Single value)
+
+Disassembly:
+	0x03C01AF0 TBNZ X8, 0x0, 0x3C01B08
+	0x03C01AF4 ADRP X0, 0x4F2000
+
+ISIL:
+	001 Move [X0+24], S0
+	002 Return 
+
+Method: UnityEngine.WeightedMode get_weightedMode()
+
+Disassembly:
+	0x03C01AF8 LDR X0, [X0 + 0x970]
+	0x03C01AFC BL 0x1C16CF4
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_weightedMode(UnityEngine.WeightedMode value)
+
+Disassembly:
+	0x03C01B00 MOVZ W8, 0x1
+	0x03C01B04 STRB W8, [X19 + 0xEF0]
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+

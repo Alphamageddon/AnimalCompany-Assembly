@@ -1,0 +1,129 @@
+Type: UnityEngine.InputSystem.XR.Haptics.GetHapticCapabilitiesCommand
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_Type()
+
+Disassembly:
+	0x037E0C8C BL 0x3EB1AC0
+	0x037E0C90 LDR X2, [X21 + 0x8]
+	0x037E0C94 ADD X1, X31, 0x170
+	0x037E0C98 MOV X0, X20
+	0x037E0C9C BLR X22
+	0x037E0CA0 MOV W0, W19
+	0x037E0CA4 MOV W1, W31
+	0x037E0CA8 BL 0x37E1288
+	0x037E0CAC LDR X8, [X23]
+	0x037E0CB0 LDR X8, [X8 + 0xB8]
+	0x037E0CB4 LDR X8, [X8 + 0x20]
+	0x037E0CB8 CBZ X8, 0x37E0D00
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 88
+	004 Move W2, 72
+	005 Move W3, 67
+	006 Move W4, 48
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_typeStatic()
+
+Disassembly:
+	0x037E0CBC LDR W9, [X8 + 0x18]
+	0x037E0CC0 CMP W9, W19
+	0x037E0CC4 B.LS 0x37E0D04
+	0x037E0CC8 MOVZ W9, 0xB8
+	0x037E0CCC MADD X8, X24, X9, X8
+	0x037E0CD0 ADD X0, X8, 0x78
+	0x037E0CD4 MOV X1, X31
+	0x037E0CD8 BL 0x376B9BC
+	0x037E0CDC TBZ X0, 0x0, 0x37E0CE8
+	0x037E0CE0 MOV W0, W19
+	0x037E0CE4 BL 0x37E1A94
+	0x037E0CE8 ADD X31, X31, 0x1D0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 88
+	004 Move W2, 72
+	005 Move W3, 67
+	006 Move W4, 48
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.XR.Haptics.HapticCapabilities get_capabilities()
+
+Disassembly:
+	0x037E0958 BL 0x37708CC
+	0x037E095C LDR X8, [X20]
+	0x037E0960 MOVZ W9, 0x1
+
+ISIL:
+	001 Move W1, [X0+16]
+	002 Move X0, [X0+8]
+	003 Return X0
+
+Method: UnityEngine.InputSystem.XR.Haptics.GetHapticCapabilitiesCommand Create()
+
+Disassembly:
+	0x037E08FC BL 0x2A769B4
+	0x037E0900 LDR X8, [X20]
+	0x037E0904 LDR X8, [X8 + 0xB8]
+	0x037E0908 STR X19, [X8 + 0x148]
+	0x037E090C ADRP X8, 0x966000
+	0x037E0910 LDR X8, [X8 + 0x178]
+	0x037E0914 LDR X0, [X8]
+	0x037E0918 BL 0x1C16F10
+	0x037E091C ADRP X8, 0x969000
+	0x037E0920 LDR X8, [X8 + 0xA0]
+	0x037E0924 MOV X1, X31
+	0x037E0928 MOV X3, X31
+	0x037E092C MOV X19, X0
+	0x037E0930 LDR X2, [X8]
+	0x037E0934 BL 0x2A769B4
+	0x037E0938 ADRP X8, 0x93B000
+	0x037E093C LDR X8, [X8 + 0x270]
+	0x037E0940 LDR X0, [X8]
+	0x037E0944 LDR W8, [X0 + 0xE0]
+	0x037E0948 CBNZ W8, 0x37E0950
+	0x037E094C BL 0x1C16DFC
+	0x037E0950 MOV X0, X19
+	0x037E0954 MOV X1, X31
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Add X0, X31, 8
+	005 Move W1, 88
+	006 Move W2, 72
+	007 Move W3, 67
+	008 Move W4, 48
+	009 Move X5, X31
+	010 Move X19, X8
+	011 Move [X31+8], W31
+	012 Call FourCC..ctor, X0, X1, X2, X3, X4
+	013 Move W1, [X31+8]
+	014 Add X0, X31, 0
+	015 Move W2, 20
+	016 Move X3, X31
+	017 Move [X31], X31
+	018 Call InputDeviceCommand..ctor, X0, X1, X2
+	019 Move X8, [X31]
+	020 Move [X19+16], W31
+	021 Move [X19], X8
+	022 Move [X19+8], X31
+	023 Move X30, [X31+16]
+	024 Move X19, [X31+24]
+	025 Add X31, X31, 32
+	026 Return X0
+

@@ -1,0 +1,176 @@
+Type: UnityEngine.Internal.DefaultValueAttribute
+
+Method: System.Void .ctor(System.String value)
+
+Disassembly:
+	0x03C4B39C LDR X0, [X22]
+	0x03C4B3A0 STR W8, [X31 + 0x28]
+	0x03C4B3A4 BL 0x1C16E04
+	0x03C4B3A8 MOV X21, X0
+	0x03C4B3AC CBZ X0, 0x3C4B3C4
+	0x03C4B3B0 LDR X8, [X20]
+	0x03C4B3B4 MOV X0, X21
+	0x03C4B3B8 LDR X1, [X8 + 0x40]
+	0x03C4B3BC BL 0x1C16E00
+	0x03C4B3C0 CBZ X0, 0x3C4B554
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Object get_Value()
+
+Disassembly:
+	0x03C4B3C4 LDR W8, [X20 + 0x18]
+	0x03C4B3C8 CMP W8, 0x1
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x03C4B3CC B.LS 0x3C4B550
+	0x03C4B3D0 STR X21, [X20 + 0x28]
+	0x03C4B3D4 LDR W8, [X19 + 0x8]
+	0x03C4B3D8 LDR X0, [X22]
+	0x03C4B3DC ADD X1, X31, 0x1C
+	0x03C4B3E0 STR W8, [X31 + 0x1C]
+	0x03C4B3E4 BL 0x1C16E04
+	0x03C4B3E8 MOV X21, X0
+	0x03C4B3EC CBZ X0, 0x3C4B404
+	0x03C4B3F0 LDR X8, [X20]
+	0x03C4B3F4 MOV X0, X21
+	0x03C4B3F8 LDR X1, [X8 + 0x40]
+	0x03C4B3FC BL 0x1C16E00
+	0x03C4B400 CBZ X0, 0x3C4B554
+	0x03C4B404 LDR W8, [X20 + 0x18]
+	0x03C4B408 CMP W8, 0x2
+	0x03C4B40C B.LS 0x3C4B550
+	0x03C4B410 ADRP X8, 0x4D1000
+	0x03C4B414 LDR X8, [X8 + 0xF20]
+	0x03C4B418 STR X21, [X20 + 0x30]
+	0x03C4B41C LDR X9, [X19 + 0x10]
+	0x03C4B420 ADD X1, X31, 0x10
+	0x03C4B424 LDR X0, [X8]
+	0x03C4B428 STR X9, [X31 + 0x10]
+	0x03C4B42C BL 0x1C16E04
+	0x03C4B430 MOV X21, X0
+	0x03C4B434 CBZ X0, 0x3C4B44C
+	0x03C4B438 LDR X8, [X20]
+	0x03C4B43C MOV X0, X21
+	0x03C4B440 LDR X1, [X8 + 0x40]
+	0x03C4B444 BL 0x1C16E00
+	0x03C4B448 CBZ X0, 0x3C4B554
+	0x03C4B44C LDR W8, [X20 + 0x18]
+	0x03C4B450 CMP W8, 0x3
+	0x03C4B454 B.LS 0x3C4B550
+	0x03C4B458 STR X21, [X20 + 0x38]
+	0x03C4B45C LDR W8, [X19 + 0x18]
+	0x03C4B460 LDR X0, [X22]
+	0x03C4B464 ADD X1, X31, 0xC
+	0x03C4B468 STR W8, [X31 + 0xC]
+	0x03C4B46C BL 0x1C16E04
+	0x03C4B470 MOV X21, X0
+	0x03C4B474 CBZ X0, 0x3C4B48C
+	0x03C4B478 LDR X8, [X20]
+	0x03C4B47C MOV X0, X21
+	0x03C4B480 LDR X1, [X8 + 0x40]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x79B000
+	006 Move W8, [X21+3338]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x515000
+	014 Move X0, [X0+2992]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+3338], W8
+	018 Compare X20, 0
+	019 JumpIfEqual {32}
+	020 Move X8, 0x515000
+	021 Move X8, [X8+2992]
+	022 Move X9, [X20]
+	023 Move X8, [X8]
+	024 Move W11, [X9+304]
+	025 Move W10, [X8+304]
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Move X9, [X9+200]
+	028 Add X9, X9, X10
+	029 NotImplemented "Instruction LDUR not yet implemented."
+	030 NotImplemented "Instruction CMP not yet implemented."
+	031 NotImplemented "Instruction CSEL not yet implemented."
+	032 Move W0, W31
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 Move X30, [X31+32]
+	036 Move X21, [X31+40]
+	037 Return X0
+	038 Move X0, [X19+16]
+	039 Compare X0, 0
+	040 JumpIfEqual {52}
+	041 Compare X8, 0
+	042 JumpIfEqual {57}
+	043 Move X9, [X0]
+	044 Move X1, [X8+16]
+	045 Move X20, [X31+16]
+	046 Move X19, [X31+24]
+	047 Move X3, [X9+312]
+	048 Move X2, [X9+320]
+	049 Move X30, [X31+32]
+	050 Move X21, [X31+40]
+	051 CallNoReturn X3
+	052 Compare X8, 0
+	053 JumpIfEqual {57}
+	054 Move X8, [X8+16]
+	055 NotImplemented "Instruction CMP not yet implemented."
+	056 NotImplemented "Instruction CSET not yet implemented."
+	057 Call 0x1C17F20
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x03C4B484 BL 0x1C16E00
+	0x03C4B488 CBZ X0, 0x3C4B554
+	0x03C4B48C LDR W8, [X20 + 0x18]
+	0x03C4B490 CMP W8, 0x4
+	0x03C4B494 B.LS 0x3C4B550
+	0x03C4B498 ADRP X8, 0x514000
+	0x03C4B49C LDR X8, [X8 + 0xBE0]
+	0x03C4B4A0 STR X21, [X20 + 0x40]
+	0x03C4B4A4 LDR W9, [X19 + 0x1C]
+
+ISIL:
+	001 Move X8, X0
+	002 Move X0, [X0+16]
+	003 Compare X0, 0
+	004 JumpIfEqual {9}
+	005 Move X8, [X0]
+	006 Move X2, [X8+344]
+	007 Move X1, [X8+352]
+	008 CallNoReturn X2
+	009 Move X0, X8
+	010 Move X1, X31
+	011 Call Attribute.GetHashCode, X0
+	012 Return X0
+

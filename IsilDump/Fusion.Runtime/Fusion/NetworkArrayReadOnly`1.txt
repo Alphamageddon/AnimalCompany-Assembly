@@ -1,0 +1,157 @@
+Type: Fusion.NetworkArrayReadOnly`1
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0x0240B62C LDR V0, [X0]
+	0x0240B630 MOVI V1.2D, 0x0
+
+ISIL:
+	001 Move W0, [X0+8]
+	002 Return X0
+
+Method: T get_Item(System.Int32 index)
+
+Disassembly:
+	0x0240B634 STP V1, V1, [X19]
+	0x0240B638 STR X8, [X31 + 0x10]
+	0x0240B63C STR V0, [X31]
+	0x0240B640 LDR X0, [X1 + 0x20]
+	0x0240B644 LDRB W8, [X0 + 0x135]
+	0x0240B648 TBNZ X8, 0x0, 0x240B650
+	0x0240B64C BL 0x1C5C684
+	0x0240B650 LDR X8, [X0 + 0xC0]
+	0x0240B654 LDR V0, [X31]
+	0x0240B658 LDR X9, [X31 + 0x10]
+	0x0240B65C ADD X1, X31, 0x20
+	0x0240B660 LDR X2, [X8 + 0x98]
+	0x0240B664 MOV X0, X19
+	0x0240B668 STR V0, [X31 + 0x2]
+	0x0240B66C STR X9, [X31 + 0x30]
+	0x0240B670 BL 0x2BB6740
+	0x0240B674 LDP X30, X19, [X31 + 0x40]
+	0x0240B678 ADD X31, X31, 0x50
+	0x0240B67C RET
+	0x0240B680 SUB X31, X31, 0x60
+	0x0240B684 STR X30, [X31 + 0x40]
+	0x0240B688 STP X20, X19, [X31 + 0x50]
+	0x0240B68C LDR X8, [X1 + 0x20]
+	0x0240B690 MOV X19, X1
+	0x0240B694 MOV X20, X0
+	0x0240B698 LDRB W9, [X8 + 0x135]
+	0x0240B69C TBNZ X9, 0x0, 0x240B6AC
+	0x0240B6A0 MOV X0, X8
+	0x0240B6A4 BL 0x1C5C684
+	0x0240B6A8 MOV X8, X0
+	0x0240B6AC LDR X8, [X8 + 0xC0]
+	0x0240B6B0 MOV X0, X20
+	0x0240B6B4 LDR X1, [X8 + 0xA0]
+	0x0240B6B8 ADD X8, X31, 0x0
+	0x0240B6BC BL 0x240B61C
+	0x0240B6C0 LDP V1, V0, [X31]
+	0x0240B6C4 STP V1, V0, [X31 + 0x20]
+	0x0240B6C8 STP V1, V0, [X31]
+	0x0240B6CC LDR X0, [X19 + 0x20]
+	0x0240B6D0 LDRB W8, [X0 + 0x135]
+	0x0240B6D4 TBNZ X8, 0x0, 0x240B6DC
+	0x0240B6D8 BL 0x1C5C684
+	0x0240B6DC LDR X8, [X0 + 0xC0]
+	0x0240B6E0 ADD X1, X31, 0x0
+	0x0240B6E4 LDR X0, [X8 + 0x90]
+	0x0240B6E8 BL 0x1C16E04
+	0x0240B6EC LDP X20, X19, [X31 + 0x50]
+	0x0240B6F0 LDR X30, [X31 + 0x40]
+	0x0240B6F4 ADD X31, X31, 0x60
+	0x0240B6F8 RET
+	0x0240B6FC SUB X31, X31, 0x60
+	0x0240B700 STR X30, [X31 + 0x40]
+	0x0240B704 STP X20, X19, [X31 + 0x50]
+	0x0240B708 LDR X8, [X1 + 0x20]
+	0x0240B70C MOV X19, X1
+	0x0240B710 MOV X20, X0
+	0x0240B714 LDRB W9, [X8 + 0x135]
+	0x0240B718 TBNZ X9, 0x0, 0x240B728
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W9, [X0+8]
+	006 Move X21, X2
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 Move X20, [X0+16]
+	009 Move X8, X0
+	010 Compare X20, 0
+	011 JumpIfEqual {67}
+	012 Move X0, [X21+32]
+	013 Move X21, [X8]
+	014 Move W19, W1
+	015 Move W9, [X0+309]
+	016 Move TEMP, X9
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {21}
+	020 Call 0x1C5D684
+	021 Move X8, [X0+192]
+	022 Move X1, [X8+8]
+	023 Move W8, [X1+309]
+	024 Move TEMP, X8
+	025 And TEMP, TEMP, 1
+	026 Compare TEMP, 1
+	027 JumpIfEqual {31}
+	028 Move X0, X1
+	029 Call 0x1C5D684
+	030 Move X1, X0
+	031 Move X8, [X20]
+	032 NotImplemented "Instruction LDRH not yet implemented."
+	033 Compare X9, 0
+	034 JumpIfEqual {41}
+	035 Move X10, [X8+176]
+	036 Add X10, X10, 8
+	037 NotImplemented "Instruction LDUR not yet implemented."
+	038 NotImplemented "Instruction CMP not yet implemented."
+	039 Subtract X9, X9, 1
+	040 Add X10, X10, 16
+	041 Move X0, X20
+	042 Move W2, W31
+	043 Call 0x1C5D788
+	044 NotImplemented "Instruction LDRSW not yet implemented."
+	045 Add X8, X8, X9
+	046 Add X0, X8, 312
+	047 Move X4, [X0]
+	048 Move X3, [X0+8]
+	049 Move X0, X20
+	050 Move W2, W19
+	051 Move X20, [X31+16]
+	052 Move X19, [X31+24]
+	053 Move X1, X21
+	054 Move X30, [X31+32]
+	055 Move X21, [X31+40]
+	056 CallNoReturn X4
+	057 Move X0, 0x1CF3000
+	058 Move X0, [X0+3960]
+	059 Call 0x1C17D08
+	060 Call 0x1C17F10
+	061 Move X1, X31
+	062 Move X19, X0
+	063 Call IndexOutOfRangeException..ctor, X0
+	064 Move X0, X19
+	065 Move X1, X21
+	066 Call 0x1C17DEC
+	067 Call 0x1C17F20
+
+Method: System.Void .ctor(System.Byte* array, System.Int32 length, Fusion.IElementReaderWriter`1<T> readerWriter)
+
+Disassembly:
+	0x0240B71C MOV X0, X8
+	0x0240B720 BL 0x1C5C684
+	0x0240B724 MOV X8, X0
+	0x0240B728 LDR X8, [X8 + 0xC0]
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], W2
+	003 Move [X0+16], X3
+	004 Return 
+

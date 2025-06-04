@@ -1,0 +1,529 @@
+Type: Fusion.Statistics.LagCompensationStatisticsSnapshot
+
+Method: System.Double get_TotalElapsedTime()
+
+Disassembly:
+	0x01EF1E40 SUB W8, W1, W8
+	0x01EF1E44 CMP W8, 0x1
+	0x01EF1E48 B.LT 0x1EF1E84
+	0x01EF1E4C LDRB W9, [X0 + 0x20]
+	0x01EF1E50 MOVZ W10, 0x8
+	0x01EF1E54 MOV X19, X0
+	0x01EF1E58 SUB W20, W10, W8
+	0x01EF1E5C CBZ W9, 0x1EF1E7C
+	0x01EF1E60 LDR X0, [X19 + 0x18]
+	0x01EF1E64 MOV W2, W20
+
+ISIL:
+	001 Move D3, [X0+56]
+	002 Move D0, [X0+64]
+	003 Move D1, [X0+32]
+	004 Move D2, [X0+40]
+	005 Move V4, [X0+48]
+	006 Move V5, [X0+72]
+	007 Add D0, D0, D1
+	008 Add D0, D0, D2
+	009 Add D0, D0, D3
+	010 Add D0, D0, D4
+	011 Add D0, D0, D5
+	012 Return V0
+
+Method: System.Int32 get_BVHMaxDeep()
+
+Disassembly:
+	0x01EF1E68 MOV W3, W31
+	0x01EF1E6C BL 0x1EF33E0
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_BVHMaxDeep(System.Int32 value)
+
+Disassembly:
+	0x01EF1E70 LDR W8, [X19 + 0x10]
+	0x01EF1E74 ADD W1, W8, W20
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+
+Method: System.Int32 get_BVHNodesCount()
+
+Disassembly:
+	0x01EF1E78 B 0x1EF1E80
+	0x01EF1E7C ADD W1, W20, W1
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void set_BVHNodesCount(System.Int32 value)
+
+Disassembly:
+	0x01EF1E80 STR W1, [X19 + 0x10]
+	0x01EF1E84 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+20], W1
+	002 Return 
+
+Method: System.Int32 get_HitboxesCount()
+
+Disassembly:
+	0x01EF1E88 ADD W8, W1, 0x7
+	0x01EF1E8C CMP W1, 0x0
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_HitboxesCount(System.Int32 value)
+
+Disassembly:
+	0x01EF1E90 CSEL W8, W8, W1, LT
+	0x01EF1E94 SBFM W0, W8, 0x3, 0x1F
+
+ISIL:
+	001 Move [X0+24], W1
+	002 Return 
+
+Method: System.Double get_AddOnBufferTime()
+
+Disassembly:
+	0x01EF1E98 LDR X30, [X31], #0x20
+	0x01EF1E9C RET
+
+ISIL:
+	001 Move V0, [X0+32]
+	002 Return V0
+
+Method: System.Void set_AddOnBufferTime(System.Double value)
+
+Disassembly:
+	0x01EF1EA0 STR X30, [X31 - 0x20]!
+	0x01EF1EA4 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+32], D0
+	002 Return 
+
+Method: System.Double get_AddOnBVHTime()
+
+Disassembly:
+	0x01EF1EA8 MOV X20, X0
+	0x01EF1EAC LDR W8, [X20 + 0x10]
+
+ISIL:
+	001 Move V0, [X0+40]
+	002 Return V0
+
+Method: System.Void set_AddOnBVHTime(System.Double value)
+
+Disassembly:
+	0x01EF1EB0 LDR X0, [X0 + 0x18]
+	0x01EF1EB4 MOV W3, W1
+
+ISIL:
+	001 Move [X0+40], D0
+	002 Return 
+
+Method: System.Double get_UpdateBVHTime()
+
+Disassembly:
+	0x01EF1EB8 MOV W19, W2
+	0x01EF1EBC MOV W1, W8
+
+ISIL:
+	001 Move V0, [X0+48]
+	002 Return V0
+
+Method: System.Void set_UpdateBVHTime(System.Double value)
+
+Disassembly:
+	0x01EF1EC0 BL 0x1EF33E0
+	0x01EF1EC4 LDR W8, [X20 + 0x10]
+
+ISIL:
+	001 Move [X0+48], D0
+	002 Return 
+
+Method: System.Double get_UpdateBufferTime()
+
+Disassembly:
+	0x01EF1EC8 ADD W8, W8, W19
+	0x01EF1ECC STR W8, [X20 + 0x10]
+
+ISIL:
+	001 Move V0, [X0+56]
+	002 Return V0
+
+Method: System.Void set_UpdateBufferTime(System.Double value)
+
+Disassembly:
+	0x01EF1ED0 LDP X20, X19, [X31 + 0x10]
+	0x01EF1ED4 LDR X30, [X31], #0x20
+
+ISIL:
+	001 Move [X0+56], D0
+	002 Return 
+
+Method: System.Double get_AdvanceBufferTime()
+
+Disassembly:
+	0x01EF1ED8 RET
+	0x01EF1EDC STR X30, [X31 - 0x20]!
+
+ISIL:
+	001 Move V0, [X0+64]
+	002 Return V0
+
+Method: System.Void set_AdvanceBufferTime(System.Double value)
+
+Disassembly:
+	0x01EF1EE0 STP X20, X19, [X31 + 0x10]
+	0x01EF1EE4 ADRP X20, 0x24E8000
+
+ISIL:
+	001 Move [X0+64], D0
+	002 Return 
+
+Method: System.Double get_RefitBVHTime()
+
+Disassembly:
+	0x01EF1EE8 LDRB W8, [X20 + 0x5DD]
+	0x01EF1EEC MOV X19, X0
+
+ISIL:
+	001 Move V0, [X0+72]
+	002 Return V0
+
+Method: System.Void set_RefitBVHTime(System.Double value)
+
+Disassembly:
+	0x01EF1EF0 TBNZ X8, 0x0, 0x1EF1F08
+	0x01EF1EF4 ADRP X0, 0x2202000
+
+ISIL:
+	001 Move [X0+72], D0
+	002 Return 
+
+Method: System.Void CopyFromSnapshot(Fusion.Statistics.LagCompensationStatisticsSnapshot snapshot)
+
+Disassembly:
+	0x01EF1DEC RET
+	0x01EF1DF0 STR X30, [X31 - 0x10]!
+	0x01EF1DF4 CBZ X1, 0x1EF1E10
+	0x01EF1DF8 LDR W8, [X1 + 0x18]
+	0x01EF1DFC STR X1, [X0 + 0x18]
+	0x01EF1E00 UBFM W8, W8, 0x1D, 0x1C
+	0x01EF1E04 STP W31, W8, [X0 + 0x10]
+	0x01EF1E08 LDR X30, [X31], #0x10
+	0x01EF1E0C RET
+	0x01EF1E10 BL 0x1C16F20
+	0x01EF1E14 UBFM W8, W2, 0x1D, 0x1C
+	0x01EF1E18 STR X1, [X0 + 0x18]
+	0x01EF1E1C STP W31, W8, [X0 + 0x10]
+	0x01EF1E20 RET
+	0x01EF1E24 STR X30, [X31 - 0x20]!
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {16}
+	004 Move V0, [X1+16]
+	005 Move [X0+16], D0
+	006 Move W8, [X1+24]
+	007 Move [X0+24], W8
+	008 Move V0, [X1+2]
+	009 Move [X0+2], V0
+	010 Move V0, [X1+3]
+	011 Move [X0+3], V0
+	012 Move V0, [X1+4]
+	013 Move [X0+4], V0
+	014 Move X30, [X31+16]
+	015 Return 
+	016 Call 0x1C17F20
+
+Method: System.Void ClearSnapshot()
+
+Disassembly:
+	0x01EF1E28 STP X20, X19, [X31 + 0x10]
+	0x01EF1E2C LDR W1, [X0 + 0x10]
+	0x01EF1E30 ADD W8, W1, 0x7
+	0x01EF1E34 CMP W1, 0x0
+	0x01EF1E38 CSEL W8, W8, W1, LT
+	0x01EF1E3C AND W8, W8, 0xFFFFFFF8
+
+ISIL:
+	001 NotImplemented "Instruction MOVI not yet implemented."
+	002 Move [X0+16], X31
+	003 Move [X0+24], W31
+	004 Move [X0+32], V0
+	005 Move [X0+40], V0
+	006 Move [X0+4], V0
+	007 Return 
+
+Method: System.Void SetBVHMaxDeep(System.Int32 value, System.Boolean overrideValue = False)
+
+Disassembly:
+	0x01EF1EF8 LDR X0, [X0 + 0x618]
+	0x01EF1EFC BL 0x1C16CF4
+	0x01EF1F00 MOVZ W8, 0x1
+	0x01EF1F04 STRB W8, [X20 + 0x5DD]
+	0x01EF1F08 LDR X8, [X19 + 0x18]
+	0x01EF1F0C CBZ X8, 0x1EF1F70
+	0x01EF1F10 ADRP X9, 0x2202000
+	0x01EF1F14 LDR X9, [X9 + 0x618]
+	0x01EF1F18 LDR W8, [X8 + 0x18]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move TEMP, X2
+	003 And TEMP, TEMP, 1
+	004 Compare TEMP, 1
+	005 JumpIfNotEqual {9}
+	006 Compare X0, 0
+	007 JumpIfNotEqual {11}
+	008 Call 0x1C17F20
+	009 Move W8, [X0+16]
+	010 Add W1, W8, W1
+	011 Move [X0+16], W1
+	012 Move X30, [X31+16]
+	013 Return 
+
+Method: System.Void SetBVHNodeCount(System.Int32 value, System.Boolean overrideValue = False)
+
+Disassembly:
+	0x01EF1F1C LDR X0, [X9]
+	0x01EF1F20 UBFM W1, W8, 0x1F, 0x1E
+	0x01EF1F24 BL 0x1C16D6C
+	0x01EF1F28 LDR X8, [X19 + 0x18]
+	0x01EF1F2C CBZ X8, 0x1EF1F70
+	0x01EF1F30 LDR W4, [X8 + 0x18]
+	0x01EF1F34 MOV X20, X0
+	0x01EF1F38 MOV X0, X8
+	0x01EF1F3C MOV W1, W31
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move TEMP, X2
+	003 And TEMP, TEMP, 1
+	004 Compare TEMP, 1
+	005 JumpIfNotEqual {9}
+	006 Compare X0, 0
+	007 JumpIfNotEqual {11}
+	008 Call 0x1C17F20
+	009 Move W8, [X0+16]
+	010 Add W1, W8, W1
+	011 Move [X0+20], W1
+	012 Move X30, [X31+16]
+	013 Return 
+
+Method: System.Void SetHitboxesCount(System.Int32 value, System.Boolean overrideValue = False)
+
+Disassembly:
+	0x01EF1F40 MOV X2, X20
+	0x01EF1F44 MOV W3, W31
+	0x01EF1F48 MOV X5, X31
+	0x01EF1F4C BL 0x33A8A9C
+	0x01EF1F50 STR X20, [X19 + 0x18]
+	0x01EF1F54 CBZ X20, 0x1EF1F70
+	0x01EF1F58 LDR W8, [X20 + 0x18]
+	0x01EF1F5C UBFM W8, W8, 0x1D, 0x1C
+	0x01EF1F60 STR W8, [X19 + 0x14]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move TEMP, X2
+	003 And TEMP, TEMP, 1
+	004 Compare TEMP, 1
+	005 JumpIfNotEqual {9}
+	006 Compare X0, 0
+	007 JumpIfNotEqual {11}
+	008 Call 0x1C17F20
+	009 Move W8, [X0+24]
+	010 Add W1, W8, W1
+	011 Move [X0+24], W1
+	012 Move X30, [X31+16]
+	013 Return 
+
+Method: System.Void SetAddOnBufferTime(System.Double value, System.Boolean overrideValue = False)
+
+Disassembly:
+	0x01EF1F64 LDP X20, X19, [X31 + 0x10]
+	0x01EF1F68 LDR X30, [X31], #0x20
+	0x01EF1F6C RET
+	0x01EF1F70 BL 0x1C16F20
+	0x01EF1F74 LDP W8, W9, [X0 + 0x10]
+	0x01EF1F78 ADD W8, W8, 0x1
+	0x01EF1F7C CMP W8, W9
+	0x01EF1F80 CSET W0, LE
+	0x01EF1F84 RET
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move TEMP, X1
+	003 And TEMP, TEMP, 1
+	004 Compare TEMP, 1
+	005 JumpIfNotEqual {9}
+	006 Compare X0, 0
+	007 JumpIfNotEqual {11}
+	008 Call 0x1C17F20
+	009 Move V1, [X0+32]
+	010 Add D0, D1, D0
+	011 Move [X0+32], D0
+	012 Move X30, [X31+16]
+	013 Return 
+
+Method: System.Void SetAddOnBVHTime(System.Double value, System.Boolean overrideValue = False)
+
+Disassembly:
+	0x01EF1F88 LDP W8, W9, [X0 + 0x10]
+	0x01EF1F8C ADD W8, W8, W1
+	0x01EF1F90 CMP W8, W9
+	0x01EF1F94 CSET W0, LE
+	0x01EF1F98 RET
+	0x01EF1F9C LDP W8, W9, [X0 + 0x10]
+	0x01EF1FA0 ADD W8, W8, 0x1
+	0x01EF1FA4 CMP W8, W9
+	0x01EF1FA8 CSET W0, LE
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move TEMP, X1
+	003 And TEMP, TEMP, 1
+	004 Compare TEMP, 1
+	005 JumpIfNotEqual {9}
+	006 Compare X0, 0
+	007 JumpIfNotEqual {11}
+	008 Call 0x1C17F20
+	009 Move V1, [X0+40]
+	010 Add D0, D1, D0
+	011 Move [X0+40], D0
+	012 Move X30, [X31+16]
+	013 Return 
+
+Method: System.Void SetUpdateBVHTime(System.Double value, System.Boolean overrideValue = False)
+
+Disassembly:
+	0x01EF1FAC RET
+	0x01EF1FB0 LDP W8, W9, [X0 + 0x10]
+	0x01EF1FB4 ADD W8, W8, W1
+	0x01EF1FB8 CMP W8, W9
+	0x01EF1FBC CSET W0, LE
+	0x01EF1FC0 RET
+	0x01EF1FC4 STR X30, [X31 - 0x20]!
+	0x01EF1FC8 STP X20, X19, [X31 + 0x10]
+	0x01EF1FCC CBZ X1, 0x1EF2010
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move TEMP, X1
+	003 And TEMP, TEMP, 1
+	004 Compare TEMP, 1
+	005 JumpIfNotEqual {9}
+	006 Compare X0, 0
+	007 JumpIfNotEqual {11}
+	008 Call 0x1C17F20
+	009 Move V1, [X0+48]
+	010 Add D0, D1, D0
+	011 Move [X0+48], D0
+	012 Move X30, [X31+16]
+	013 Return 
+
+Method: System.Void SetUpdateBufferTime(System.Double value, System.Boolean overrideValue = False)
+
+Disassembly:
+	0x01EF1FD0 LDR X2, [X0 + 0x18]
+	0x01EF1FD4 LDR W4, [X1 + 0x18]
+	0x01EF1FD8 MOV X20, X1
+	0x01EF1FDC MOV X19, X0
+	0x01EF1FE0 MOV X0, X1
+	0x01EF1FE4 MOV W1, W31
+	0x01EF1FE8 MOV W3, W31
+	0x01EF1FEC MOV X5, X31
+	0x01EF1FF0 BL 0x339FCE8
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move TEMP, X1
+	003 And TEMP, TEMP, 1
+	004 Compare TEMP, 1
+	005 JumpIfNotEqual {9}
+	006 Compare X0, 0
+	007 JumpIfNotEqual {11}
+	008 Call 0x1C17F20
+	009 Move V1, [X0+56]
+	010 Add D0, D1, D0
+	011 Move [X0+56], D0
+	012 Move X30, [X31+16]
+	013 Return 
+
+Method: System.Void SetAdvanceBufferTime(System.Double value, System.Boolean overrideValue = False)
+
+Disassembly:
+	0x01EF1FF4 STR W31, [X19 + 0x10]
+	0x01EF1FF8 LDR W8, [X20 + 0x18]
+	0x01EF1FFC UBFM W8, W8, 0x1D, 0x1C
+	0x01EF2000 STR W8, [X19 + 0x14]
+	0x01EF2004 LDP X20, X19, [X31 + 0x10]
+	0x01EF2008 LDR X30, [X31], #0x20
+	0x01EF200C RET
+	0x01EF2010 BL 0x1C16F20
+	0x01EF2014 STR X30, [X31 - 0x10]!
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move TEMP, X1
+	003 And TEMP, TEMP, 1
+	004 Compare TEMP, 1
+	005 JumpIfNotEqual {9}
+	006 Compare X0, 0
+	007 JumpIfNotEqual {11}
+	008 Call 0x1C17F20
+	009 Move V1, [X0+64]
+	010 Add D0, D1, D0
+	011 Move [X0+64], D0
+	012 Move X30, [X31+16]
+	013 Return 
+
+Method: System.Void SetRefitBVHTime(System.Double value, System.Boolean overrideValue = False)
+
+Disassembly:
+	0x01EF2018 LDR X8, [X0 + 0x18]
+	0x01EF201C CBZ X8, 0x1EF202C
+	0x01EF2020 LDR W1, [X8 + 0x18]
+	0x01EF2024 LDR X30, [X31], #0x10
+	0x01EF2028 B 0x1EF2030
+	0x01EF202C BL 0x1C16F20
+	0x01EF2030 STR X30, [X31 - 0x20]!
+	0x01EF2034 STP X20, X19, [X31 + 0x10]
+	0x01EF2038 MOV X19, X0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move TEMP, X1
+	003 And TEMP, TEMP, 1
+	004 Compare TEMP, 1
+	005 JumpIfNotEqual {9}
+	006 Compare X0, 0
+	007 JumpIfNotEqual {11}
+	008 Call 0x1C17F20
+	009 Move V1, [X0+72]
+	010 Add D0, D1, D0
+	011 Move [X0+72], D0
+	012 Move X30, [X31+16]
+	013 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01EF1DA4 MOV X1, X0
+	0x01EF1DA8 MOV X0, X19
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

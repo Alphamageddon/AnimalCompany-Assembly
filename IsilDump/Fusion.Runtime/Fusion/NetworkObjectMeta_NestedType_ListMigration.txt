@@ -1,0 +1,313 @@
+Type: Fusion.NetworkObjectMeta/ListMigration
+
+Method: Fusion.NetworkObjectMeta Next(Fusion.NetworkObjectMeta item)
+
+Disassembly:
+	0x01E991E0 MOV X0, X19
+	0x01E991E4 BL 0x1C16DEC
+	0x01E991E8 LDR W8, [X0]
+	0x01E991EC CMP W8, 0x0
+	0x01E991F0 CSET W0, NE
+	0x01E991F4 RET
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X0, 0
+	003 JumpIfEqual {7}
+	004 Move X0, [X0+144]
+	005 Move X30, [X31+16]
+	006 Return X0
+	007 Call 0x1C17F20
+
+Method: System.Void AddFirst(Fusion.NetworkObjectMeta item)
+
+Disassembly:
+	0x01E991F8 SUB X31, X31, 0x30
+	0x01E991FC STP X30, X21, [X31 + 0x10]
+	0x01E99200 STP X20, X19, [X31 + 0x20]
+	0x01E99204 ADRP X20, 0x2540000
+	0x01E99208 ADRP X21, 0x2265000
+	0x01E9920C LDRB W8, [X20 + 0x2C8]
+	0x01E99210 LDR X21, [X21 + 0x378]
+	0x01E99214 MOV X19, X0
+	0x01E99218 TBNZ X8, 0x0, 0x1E99230
+	0x01E9921C ADRP X0, 0x2265000
+	0x01E99220 LDR X0, [X0 + 0x378]
+	0x01E99224 BL 0x1C16CF4
+	0x01E99228 MOVZ W8, 0x1
+	0x01E9922C STRB W8, [X20 + 0x2C8]
+	0x01E99230 LDR X0, [X21]
+	0x01E99234 LDR W8, [X0 + 0xE0]
+	0x01E99238 CBNZ W8, 0x1E99240
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, X0
+	003 Add X8, X8, 8
+	004 Move X9, [X8]
+	005 Compare X1, 0
+	006 JumpIfEqual {20}
+	007 Move [X1+136], X31
+	008 Move [X1+144], X9
+	009 Compare X9, 0
+	010 JumpIfEqual {12}
+	011 Move [X9+136], X1
+	012 Add X8, X0, 16
+	013 Move [X0+8], X1
+	014 Move [X8], X1
+	015 Move W8, [X0]
+	016 Add W8, W8, 1
+	017 Move [X0], W8
+	018 Move X30, [X31+16]
+	019 Return 
+	020 Call 0x1C17F20
+
+Method: System.Void AddLast(Fusion.NetworkObjectMeta item)
+
+Disassembly:
+	0x01E9923C BL 0x1C16DFC
+	0x01E99240 MOV X0, X19
+	0x01E99244 BL 0x1E99318
+	0x01E99248 TBZ X0, 0x0, 0x1E99260
+	0x01E9924C LDR W0, [X19]
+	0x01E99250 LDP X20, X19, [X31 + 0x20]
+	0x01E99254 LDP X30, X21, [X31 + 0x10]
+	0x01E99258 ADD X31, X31, 0x30
+	0x01E9925C RET
+	0x01E99260 ADRP X0, 0x2265000
+	0x01E99264 LDR X0, [X0 + 0x378]
+	0x01E99268 BL 0x1C16D08
+	0x01E9926C BL 0x19903D0
+	0x01E99270 LDP W8, W9, [X19]
+	0x01E99274 ADRP X19, 0x2265000
+	0x01E99278 ORR W8, W9, W8, 0x0
+	0x01E9927C AND W9, W9, 0x3
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {18}
+	004 Move [X1+144], X31
+	005 Move X8, [X0+16]
+	006 Add X9, X0, 8
+	007 Add X10, X8, 144
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move [X1+136], X8
+	010 NotImplemented "Instruction CSEL not yet implemented."
+	011 Move [X8], X1
+	012 Move W8, [X0]
+	013 Move [X0+16], X1
+	014 Add W8, W8, 1
+	015 Move [X0], W8
+	016 Move X30, [X31+16]
+	017 Return 
+	018 Call 0x1C17F20
+
+Method: System.Void AddBefore(Fusion.NetworkObjectMeta item, Fusion.NetworkObjectMeta before)
+
+Disassembly:
+	0x01E99280 CMP W8, 0x0
+	0x01E99284 MOVZ W8, 0x4
+	0x01E99288 CSEL W8, W8, W9, EQ
+	0x01E9928C STR W8, [X31 + 0xC]
+	0x01E99290 LDR X19, [X19 + 0x4F0]
+	0x01E99294 MOV X0, X19
+	0x01E99298 BL 0x1C16D08
+	0x01E9929C ADD X1, X31, 0xC
+	0x01E992A0 BL 0x1C16E04
+	0x01E992A4 MOV X20, X0
+	0x01E992A8 MOV X0, X19
+	0x01E992AC STR W31, [X31 + 0x8]
+	0x01E992B0 BL 0x1C16D08
+	0x01E992B4 ADD X1, X31, 0x8
+	0x01E992B8 BL 0x1C16E04
+	0x01E992BC MOV X19, X0
+	0x01E992C0 ADRP X0, 0x2265000
+	0x01E992C4 LDR X0, [X0 + 0x4F8]
+	0x01E992C8 BL 0x1C16D08
+	0x01E992CC MOV X1, X20
+	0x01E992D0 MOV X2, X19
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+8]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Compare X1, 0
+	005 JumpIfEqual {24}
+	006 Move [X1+144], X2
+	007 Compare X2, 0
+	008 JumpIfEqual {24}
+	009 Move X8, [X2+136]
+	010 Move [X1+136], X8
+	011 Move X8, [X2+136]
+	012 Compare X8, 0
+	013 JumpIfEqual {24}
+	014 Move [X8+144], X1
+	015 Move [X2+136], X1
+	016 Move W8, [X0]
+	017 Add W8, W8, 1
+	018 Move [X0], W8
+	019 Move X30, [X31+16]
+	020 Return 
+	021 Move X30, [X31+16]
+	022 Call ListMigration.AddFirst, X0, X1
+	023 Return 
+	024 Call 0x1C17F20
+
+Method: System.Void AddAfter(Fusion.NetworkObjectMeta item, Fusion.NetworkObjectMeta after)
+
+Disassembly:
+	0x01E992D4 MOV X3, X31
+	0x01E992D8 BL 0x3227BD4
+	0x01E992DC MOV X19, X0
+	0x01E992E0 ADRP X0, 0x225A000
+	0x01E992E4 LDR X0, [X0 + 0x5B0]
+	0x01E992E8 BL 0x1C16D08
+	0x01E992EC BL 0x1C16F10
+	0x01E992F0 MOV X1, X19
+	0x01E992F4 MOV X2, X31
+	0x01E992F8 MOV X20, X0
+	0x01E992FC BL 0x337DF1C
+	0x01E99300 ADRP X0, 0x2265000
+	0x01E99304 LDR X0, [X0 + 0x520]
+	0x01E99308 BL 0x1C16D08
+	0x01E9930C MOV X1, X0
+	0x01E99310 MOV X0, X20
+	0x01E99314 BL 0x1C16DEC
+	0x01E99318 STP X30, X21, [X31 - 0x20]!
+	0x01E9931C STP X20, X19, [X31 + 0x10]
+	0x01E99320 ADRP X20, 0x2540000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Compare X2, 0
+	005 JumpIfEqual {24}
+	006 Compare X1, 0
+	007 JumpIfEqual {24}
+	008 Move X8, [X2+144]
+	009 Move [X1+136], X2
+	010 Move [X1+144], X8
+	011 Move X8, [X2+144]
+	012 Compare X8, 0
+	013 JumpIfEqual {24}
+	014 Move [X8+136], X1
+	015 Move [X2+144], X1
+	016 Move W8, [X0]
+	017 Add W8, W8, 1
+	018 Move [X0], W8
+	019 Move X30, [X31+16]
+	020 Return 
+	021 Move X30, [X31+16]
+	022 Call ListMigration.AddLast, X0, X1
+	023 Return 
+	024 Call 0x1C17F20
+
+Method: Fusion.NetworkObjectMeta RemoveHead()
+
+Disassembly:
+	0x01E99324 ADRP X21, 0x2265000
+	0x01E99328 LDRB W8, [X20 + 0x2CE]
+	0x01E9932C LDR X21, [X21 + 0x378]
+	0x01E99330 MOV X19, X0
+	0x01E99334 TBNZ X8, 0x0, 0x1E9934C
+	0x01E99338 ADRP X0, 0x2265000
+	0x01E9933C LDR X0, [X0 + 0x378]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, [X0+8]
+	004 Move X1, X19
+	005 Call ListMigration.Remove, X0, X1
+	006 Move X0, X19
+	007 Move X30, [X31+16]
+	008 Move X19, [X31+24]
+	009 Return X0
+
+Method: System.Void Remove(Fusion.NetworkObjectMeta item)
+
+Disassembly:
+	0x01E99340 BL 0x1C16CF4
+	0x01E99344 MOVZ W8, 0x1
+	0x01E99348 STRB W8, [X20 + 0x2CE]
+	0x01E9934C LDR X0, [X21]
+	0x01E99350 LDR W8, [X0 + 0xE0]
+	0x01E99354 CBNZ W8, 0x1E9935C
+	0x01E99358 BL 0x1C16DFC
+	0x01E9935C LDP W8, W9, [X19]
+	0x01E99360 LDP X20, X19, [X31 + 0x10]
+	0x01E99364 ORR W8, W9, W8, 0x0
+	0x01E99368 CMP W8, 0x0
+	0x01E9936C CSET W8, NE
+	0x01E99370 ANDS W31, W9, 0x3
+	0x01E99374 CSET W9, EQ
+	0x01E99378 AND W0, W8, W9, 0x0
+	0x01E9937C LDP X30, X21, [X31], #0x20
+	0x01E99380 RET
+	0x01E99384 MOV W0, W0
+	0x01E99388 RET
+	0x01E9938C MOV W8, W0
+	0x01E99390 ORR X0, X8, 0x1FFFFFFFF
+	0x01E99394 RET
+	0x01E99398 SUB X31, X31, 0x30
+	0x01E9939C STP X30, X21, [X31 + 0x10]
+	0x01E993A0 STP X20, X19, [X31 + 0x20]
+	0x01E993A4 ADRP X20, 0x2540000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {29}
+	004 Move X8, X1
+	005 Add X8, X8, 136
+	006 Move X10, [X8]
+	007 Compare X10, 0
+	008 JumpIfEqual {11}
+	009 Move X9, [X1+144]
+	010 Move [X10+144], X9
+	011 Move X9, [X1+144]
+	012 Compare X9, 0
+	013 JumpIfEqual {15}
+	014 Move [X9+136], X10
+	015 Move X10, [X0+16]
+	016 NotImplemented "Instruction CMP not yet implemented."
+	017 Move X10, [X8]
+	018 Move [X0+16], X10
+	019 Move X10, [X0+8]
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 Move [X0+8], X9
+	022 Move [X8], X31
+	023 Move [X8+8], X31
+	024 Move W8, [X0]
+	025 Subtract W8, W8, 1
+	026 Move [X0], W8
+	027 Move X30, [X31+16]
+	028 Return 
+	029 Call 0x1C17F20
+
+Method: System.Boolean IsInList(Fusion.NetworkObjectMeta item)
+
+Disassembly:
+	0x01E993A8 ADRP X21, 0x2265000
+	0x01E993AC LDRB W8, [X20 + 0x2C9]
+	0x01E993B0 LDR X21, [X21 + 0x378]
+	0x01E993B4 MOV X19, X0
+	0x01E993B8 TBNZ X8, 0x0, 0x1E993D0
+	0x01E993BC ADRP X0, 0x2265000
+	0x01E993C0 LDR X0, [X0 + 0x378]
+	0x01E993C4 BL 0x1C16CF4
+	0x01E993C8 MOVZ W8, 0x1
+
+ISIL:
+	001 Add X9, X0, 8
+	002 Move X8, [X9]
+	003 Compare X8, 0
+	004 JumpIfEqual {7}
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Add X9, X8, 144
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Return X0
+

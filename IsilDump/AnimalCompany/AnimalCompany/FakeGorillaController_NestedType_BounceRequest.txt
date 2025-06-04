@@ -1,0 +1,59 @@
+Type: AnimalCompany.FakeGorillaController/BounceRequest
+
+Method: System.Boolean ShouldPerformBounce()
+
+Disassembly:
+	0x01DF2D88 MOV X0, X20
+	0x01DF2D8C MOV X1, X31
+	0x01DF2D90 BL 0x3BE1644
+	0x01DF2D94 LDR X0, [X19 + 0xE8]
+	0x01DF2D98 CBZ X0, 0x1DF3034
+	0x01DF2D9C MOV X1, X31
+	0x01DF2DA0 BL 0x3BE1B08
+	0x01DF2DA4 TBNZ X0, 0x0, 0x1DF2E98
+	0x01DF2DA8 LDR X0, [X19 + 0xE8]
+	0x01DF2DAC CBZ X0, 0x1DF3034
+	0x01DF2DB0 MOV X1, X31
+	0x01DF2DB4 BL 0x3BE15CC
+	0x01DF2DB8 TBNZ X0, 0x0, 0x1DF2E98
+	0x01DF2DBC MOV X0, X19
+	0x01DF2DC0 MOV X1, X31
+	0x01DF2DC4 BL 0x3C32E90
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0+16]
+	004 Compare W8, 0
+	005 JumpIfEqual {13}
+	006 Move X19, X0
+	007 Move X0, X31
+	008 Call Time.get_time
+	009 Move S1, [X19+20]
+	010 Move S2, [X19+24]
+	011 Subtract S0, S0, S1
+	012 NotImplemented "Instruction FCMP not yet implemented."
+	013 Move W0, W31
+	014 Move W0, 1
+	015 Move [X19+16], W31
+	016 Move X30, [X31+16]
+	017 Move X19, [X31+24]
+	018 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01DF0144 CBZ X0, 0x1DF018C
+	0x01DF0148 MOV X1, X31
+	0x01DF014C BL 0x3BFCAC0
+	0x01DF0150 LDR X1, [X19 + 0xE8]
+	0x01DF0154 CBZ X1, 0x1DF0164
+
+ISIL:
+	001 Move W8, 0xCCCD
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 Move X1, X31
+	004 Move [X0+24], W8
+	005 Call Object..ctor, X0
+	006 Return 
+

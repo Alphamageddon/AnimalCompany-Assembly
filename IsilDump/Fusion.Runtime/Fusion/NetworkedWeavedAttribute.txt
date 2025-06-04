@@ -1,0 +1,55 @@
+Type: Fusion.NetworkedWeavedAttribute
+
+Method: System.Int32 get_WordOffset()
+
+Disassembly:
+	0x01E6862C MOV W0, W31
+	0x01E68630 RET
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Int32 get_WordCount()
+
+Disassembly:
+	0x01E68634 STP X30, X19, [X31 - 0x10]!
+	0x01E68638 LDR X8, [X0 + 0x30]
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void .ctor(System.Int32 wordOffset, System.Int32 wordCount)
+
+Disassembly:
+	0x01E6863C CBZ X8, 0x1E68674
+	0x01E68640 MOV X19, X0
+	0x01E68644 LDR X0, [X8 + 0x38]
+	0x01E68648 CBZ X0, 0x1E68674
+	0x01E6864C MOV X1, X31
+	0x01E68650 BL 0x1E4546C
+	0x01E68654 TBZ X0, 0x0, 0x1E68674
+	0x01E68658 LDR X8, [X19 + 0x30]
+	0x01E6865C CBZ X8, 0x1E68680
+	0x01E68660 LDR X0, [X8 + 0x38]
+	0x01E68664 CBZ X0, 0x1E68680
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, W1
+	006 Move X1, X31
+	007 Move W19, W2
+	008 Move X21, X0
+	009 Call Attribute..ctor, X0
+	010 Move [X21+16], W20
+	011 Move [X21+20], W19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+

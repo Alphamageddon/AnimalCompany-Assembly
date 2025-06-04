@@ -1,0 +1,30 @@
+Type: UnityEngine.TooltipAttribute
+
+Method: System.Void .ctor(System.String tooltip)
+
+Disassembly:
+	0x03C31404 LDP X20, X19, [X31 + 0x10]
+	0x03C31408 LDP X30, X21, [X31], #0x20
+	0x03C3140C BR X2
+	0x03C31410 STP X30, X21, [X31 - 0x20]!
+	0x03C31414 STP X20, X19, [X31 + 0x10]
+	0x03C31418 ADRP X20, 0x7B4000
+	0x03C3141C ADRP X21, 0x52D000
+	0x03C31420 LDRB W8, [X20 + 0x268]
+	0x03C31424 LDR X21, [X21 + 0xDE8]
+	0x03C31428 MOV X19, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+24], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

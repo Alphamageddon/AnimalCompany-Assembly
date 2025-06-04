@@ -1,0 +1,415 @@
+Type: Fusion.Sockets.NetBitBufferSerializer
+
+Method: System.Boolean get_Writing()
+
+Disassembly:
+	0x01EFC084 STP X31, X31, [X19 + 0xD8]
+	0x01EFC088 STRH W31, [X19 + 0xE8]
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Boolean get_Reading()
+
+Disassembly:
+	0x01EFC08C STP X31, X31, [X19 + 0x128]
+	0x01EFC090 STR X31, [X19 + 0x170]
+	0x01EFC094 STR X8, [X19 + 0x148]
+	0x01EFC098 STUR D0, [X19 + 0x9C]
+
+ISIL:
+	001 Move W8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: Fusion.Sockets.NetBitBuffer* get_Buffer()
+
+Disassembly:
+	0x01EFC09C STUR D0, [X19 + 0xEC]
+	0x01EFC0A0 STR D0, [X19 + 0x100]
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Return X0
+
+Method: System.Void .ctor(Fusion.Sockets.NetBitBuffer* buffer, System.Boolean write)
+
+Disassembly:
+	0x01EFC0A4 STP V0, V0, [X19 + 0x20]
+	0x01EFC0A8 STUR V0, [X19 + 0x48]
+	0x01EFC0AC STUR V0, [X19 + 0x58]
+	0x01EFC0B0 STUR V0, [X19 + 0x68]
+
+ISIL:
+	001 And W8, W2, 1
+	002 Move [X0], W8
+	003 Move [X0+8], X1
+	004 Return 
+
+Method: Fusion.Sockets.NetBitBufferSerializer Writer(Fusion.Sockets.NetBitBuffer* buffer)
+
+Disassembly:
+	0x01EFC0B4 STP V0, V0, [X19 + 0x150]
+	0x01EFC0B8 LDP X20, X19, [X31 + 0x50]
+	0x01EFC0BC LDR X30, [X31 + 0x40]
+
+ISIL:
+	001 Move X1, X0
+	002 Move W0, 1
+	003 Return X0
+
+Method: Fusion.Sockets.NetBitBufferSerializer Reader(Fusion.Sockets.NetBitBuffer* buffer)
+
+Disassembly:
+	0x01EFC0C0 ADD X31, X31, 0x60
+	0x01EFC0C4 RET
+	0x01EFC0C8 BL 0x1C16F20
+
+ISIL:
+	001 Move X1, X0
+	002 Move X0, X31
+	003 Return X0
+
+Method: System.Boolean Check(System.Boolean value)
+
+Disassembly:
+	0x01EFC0CC STP X30, X19, [X31 - 0x10]!
+	0x01EFC0D0 MOV X19, X0
+	0x01EFC0D4 LDR W8, [X19 + 0x18]!
+	0x01EFC0D8 CMP W8, 0x1
+	0x01EFC0DC B.LT 0x1EFC100
+	0x01EFC0E0 MOV X0, X19
+	0x01EFC0E4 MOV X1, X31
+	0x01EFC0E8 BL 0x1F02BB8
+	0x01EFC0EC MOV X1, X31
+	0x01EFC0F0 BL 0x1E3585C
+	0x01EFC0F4 LDR W8, [X19]
+	0x01EFC0F8 CMP W8, 0x0
+	0x01EFC0FC B.GT 0x1EFC0E0
+	0x01EFC100 LDP X30, X19, [X31], #0x10
+	0x01EFC104 RET
+	0x01EFC108 ADRP X9, 0xFFFFFFFFFEBF2000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0]
+	004 Move X0, [X0+8]
+	005 Compare W8, 0
+	006 JumpIfEqual {11}
+	007 Move W19, W1
+	008 And X1, X19, 1
+	009 Move W2, 1
+	010 Call NetBitBuffer.Write, X0, X1, X2
+	011 Move W1, 1
+	012 Call NetBitBuffer.Read, X0, X1
+	013 NotImplemented "Instruction CMP not yet implemented."
+	014 NotImplemented "Instruction CSET not yet implemented."
+	015 And W0, W19, 1
+	016 Move X30, [X31+16]
+	017 Move X19, [X31+24]
+	018 Return X0
+
+Method: System.Void Serialize(ref System.Single value)
+
+Disassembly:
+	0x01EFC10C ADRP X10, 0xFFFFFFFFFEBEE000
+	0x01EFC110 LDR V1, [X9 + 0xA0]
+	0x01EFC114 LDR V2, [X10 + 0xFD]
+	0x01EFC118 MOVI V0.2D, 0x0
+	0x01EFC11C STUR V0, [X8 + 0x28]
+	0x01EFC120 STUR V0, [X8 + 0x18]
+	0x01EFC124 STR D1, [X8]
+	0x01EFC128 STUR V2, [X8 + 0x8]
+	0x01EFC12C RET
+	0x01EFC130 STR X31, [X0 + 0x10]
+	0x01EFC134 STR W31, [X0 + 0xC]
+	0x01EFC138 RET
+	0x01EFC13C STR X31, [X0 + 0x10]
+	0x01EFC140 RET
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0]
+	004 Move X0, [X0+8]
+	005 Move X19, X1
+	006 Compare W8, 0
+	007 JumpIfEqual {14}
+	008 Move W1, [X19]
+	009 Move W2, 32
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Call NetBitBuffer.Write, X0, X1, X2
+	013 Return 
+	014 Move W1, 32
+	015 Call NetBitBuffer.Read, X0, X1
+	016 Move [X19], W0
+	017 Move X30, [X31+16]
+	018 Move X19, [X31+24]
+	019 Return 
+
+Method: System.Void Serialize(ref System.Byte value)
+
+Disassembly:
+	0x01EFC144 SUB X31, X31, 0x60
+	0x01EFC148 STP X30, X23, [X31 + 0x30]
+	0x01EFC14C STP X22, X21, [X31 + 0x40]
+	0x01EFC150 STP X20, X19, [X31 + 0x50]
+	0x01EFC154 MRS X22, 0xC000
+	0x01EFC158 LDR X8, [X22 + 0x28]
+	0x01EFC15C ADRP X20, 0x24DD000
+	0x01EFC160 ADRP X21, 0x21F7000
+	0x01EFC164 MOV X19, X0
+	0x01EFC168 STR X8, [X31 + 0x28]
+	0x01EFC16C LDRB W8, [X20 + 0x632]
+	0x01EFC170 LDR X21, [X21 + 0x9D0]
+	0x01EFC174 TBNZ X8, 0x0, 0x1EFC1D4
+	0x01EFC178 ADRP X0, 0x21F9000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0]
+	004 Move X0, [X0+8]
+	005 Move X19, X1
+	006 Compare W8, 0
+	007 JumpIfEqual {14}
+	008 Move W1, [X19]
+	009 Move W2, 8
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Call NetBitBuffer.Write, X0, X1, X2
+	013 Return 
+	014 Move W1, 8
+	015 Call NetBitBuffer.Read, X0, X1
+	016 Move [X19], W0
+	017 Move X30, [X31+16]
+	018 Move X19, [X31+24]
+	019 Return 
+
+Method: System.Void Serialize(ref System.Boolean value)
+
+Disassembly:
+	0x01EFC17C LDR X0, [X0 + 0xA60]
+	0x01EFC180 BL 0x1C16CF4
+	0x01EFC184 ADRP X0, 0x2201000
+	0x01EFC188 LDR X0, [X0 + 0x78]
+	0x01EFC18C BL 0x1C16CF4
+	0x01EFC190 ADRP X0, 0x21F7000
+	0x01EFC194 LDR X0, [X0 + 0x9D0]
+	0x01EFC198 BL 0x1C16CF4
+	0x01EFC19C ADRP X0, 0x2204000
+	0x01EFC1A0 LDR X0, [X0 + 0xA20]
+	0x01EFC1A4 BL 0x1C16CF4
+	0x01EFC1A8 ADRP X0, 0x2204000
+	0x01EFC1AC LDR X0, [X0 + 0xA28]
+	0x01EFC1B0 BL 0x1C16CF4
+	0x01EFC1B4 ADRP X0, 0x2204000
+	0x01EFC1B8 LDR X0, [X0 + 0x878]
+	0x01EFC1BC BL 0x1C16CF4
+	0x01EFC1C0 ADRP X0, 0x2201000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0]
+	004 Move X0, [X0+8]
+	005 Move X19, X1
+	006 Compare W8, 0
+	007 JumpIfEqual {16}
+	008 Move W8, [X19]
+	009 Move W2, 1
+	010 NotImplemented "Instruction CMP not yet implemented."
+	011 NotImplemented "Instruction CSET not yet implemented."
+	012 Move X30, [X31+16]
+	013 Move X19, [X31+24]
+	014 Call NetBitBuffer.Write, X0, X1, X2
+	015 Return 
+	016 Move W1, 1
+	017 Call NetBitBuffer.Read, X0, X1
+	018 NotImplemented "Instruction CMP not yet implemented."
+	019 NotImplemented "Instruction CSET not yet implemented."
+	020 Move [X19], W8
+	021 Move X30, [X31+16]
+	022 Move X19, [X31+24]
+	023 Return 
+
+Method: System.Void Serialize(ref System.Int32 value)
+
+Disassembly:
+	0x01EFC1C4 LDR X0, [X0 + 0x318]
+	0x01EFC1C8 BL 0x1C16CF4
+	0x01EFC1CC MOVZ W8, 0x1
+	0x01EFC1D0 STRB W8, [X20 + 0x632]
+	0x01EFC1D4 LDR X0, [X21]
+	0x01EFC1D8 MOVZ W1, 0x5
+	0x01EFC1DC BL 0x1C16D6C
+	0x01EFC1E0 CBZ X0, 0x1EFC364
+	0x01EFC1E4 ADRP X21, 0x2204000
+	0x01EFC1E8 LDR X21, [X21 + 0xA20]
+	0x01EFC1EC MOV X20, X0
+	0x01EFC1F0 LDR X0, [X21]
+	0x01EFC1F4 CBZ X0, 0x1EFC208
+	0x01EFC1F8 LDR X8, [X20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0]
+	004 Move X0, [X0+8]
+	005 Move X19, X1
+	006 Compare W8, 0
+	007 JumpIfEqual {14}
+	008 NotImplemented "Instruction LDRSW not yet implemented."
+	009 Move W2, 32
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Call NetBitBuffer.Write, X0, X1, X2
+	013 Return 
+	014 Move W1, 32
+	015 Call NetBitBuffer.Read, X0, X1
+	016 Move [X19], W0
+	017 Move X30, [X31+16]
+	018 Move X19, [X31+24]
+	019 Return 
+
+Method: System.Void Serialize(ref System.UInt32 value)
+
+Disassembly:
+	0x01EFC1FC LDR X1, [X8 + 0x40]
+	0x01EFC200 BL 0x1C16E00
+	0x01EFC204 CBZ X0, 0x1EFC358
+	0x01EFC208 LDR W8, [X20 + 0x18]
+	0x01EFC20C CBZ W8, 0x1EFC354
+	0x01EFC210 LDR X9, [X21]
+	0x01EFC214 ADRP X21, 0x2204000
+	0x01EFC218 LDR X21, [X21 + 0xA28]
+	0x01EFC21C STR X9, [X20 + 0x20]
+	0x01EFC220 LDR X0, [X21]
+	0x01EFC224 CBZ X0, 0x1EFC23C
+	0x01EFC228 LDR X8, [X20]
+	0x01EFC22C LDR X1, [X8 + 0x40]
+	0x01EFC230 BL 0x1C16E00
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0]
+	004 Move X0, [X0+8]
+	005 Move X19, X1
+	006 Compare W8, 0
+	007 JumpIfEqual {14}
+	008 Move W1, [X19]
+	009 Move W2, 32
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Call NetBitBuffer.Write, X0, X1, X2
+	013 Return 
+	014 Move W1, 32
+	015 Call NetBitBuffer.Read, X0, X1
+	016 Move [X19], W0
+	017 Move X30, [X31+16]
+	018 Move X19, [X31+24]
+	019 Return 
+
+Method: System.Void Serialize(ref System.UInt64 value)
+
+Disassembly:
+	0x01EFC234 CBZ X0, 0x1EFC358
+	0x01EFC238 LDR W8, [X20 + 0x18]
+	0x01EFC23C CMP W8, 0x1
+	0x01EFC240 B.LS 0x1EFC354
+	0x01EFC244 LDR X8, [X21]
+	0x01EFC248 ADRP X9, 0x2201000
+	0x01EFC24C LDR X9, [X9 + 0x78]
+	0x01EFC250 ADD X1, X31, 0x10
+	0x01EFC254 STR X8, [X20 + 0x28]
+	0x01EFC258 LDR X8, [X19 + 0x38]
+	0x01EFC25C LDUR V0, [X19 + 0x28]
+	0x01EFC260 LDR X0, [X9]
+	0x01EFC264 STR X8, [X31 + 0x20]
+	0x01EFC268 STR V0, [X31 + 0x1]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0]
+	004 Move X0, [X0+8]
+	005 Move X19, X1
+	006 Compare W8, 0
+	007 JumpIfEqual {14}
+	008 Move X1, [X19]
+	009 Move W2, 64
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Call NetBitBuffer.Write, X0, X1, X2
+	013 Return 
+	014 Move W1, 64
+	015 Call NetBitBuffer.Read, X0, X1
+	016 Move [X19], X0
+	017 Move X30, [X31+16]
+	018 Move X19, [X31+24]
+	019 Return 
+
+Method: System.Void Serialize(ref System.String value)
+
+Disassembly:
+	0x01EFC26C BL 0x1C16E04
+	0x01EFC270 MOV X21, X0
+	0x01EFC274 CBZ X0, 0x1EFC28C
+	0x01EFC278 LDR X8, [X20]
+	0x01EFC27C MOV X0, X21
+	0x01EFC280 LDR X1, [X8 + 0x40]
+	0x01EFC284 BL 0x1C16E00
+	0x01EFC288 CBZ X0, 0x1EFC358
+	0x01EFC28C LDR W8, [X20 + 0x18]
+	0x01EFC290 CMP W8, 0x2
+	0x01EFC294 B.LS 0x1EFC354
+	0x01EFC298 ADRP X23, 0x2204000
+	0x01EFC29C LDR X23, [X23 + 0x878]
+	0x01EFC2A0 STR X21, [X20 + 0x30]
+	0x01EFC2A4 LDR X0, [X23]
+	0x01EFC2A8 CBZ X0, 0x1EFC2C0
+	0x01EFC2AC LDR X8, [X20]
+	0x01EFC2B0 LDR X1, [X8 + 0x40]
+	0x01EFC2B4 BL 0x1C16E00
+	0x01EFC2B8 CBZ X0, 0x1EFC358
+	0x01EFC2BC LDR W8, [X20 + 0x18]
+	0x01EFC2C0 CMP W8, 0x3
+	0x01EFC2C4 B.LS 0x1EFC354
+	0x01EFC2C8 LDR X8, [X23]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W8, [X0]
+	005 Move X19, [X0+8]
+	006 Move X20, X1
+	007 Compare W8, 0
+	008 JumpIfEqual {20}
+	009 Move X20, [X20]
+	010 Move X0, X31
+	011 Call Encoding.get_UTF8
+	012 Move X2, X0
+	013 Move X0, X19
+	014 Move X1, X20
+	015 Move X20, [X31+16]
+	016 Move X19, [X31+24]
+	017 Move X30, [X31+32]
+	018 Call NetBitBuffer.WriteString, X0, X1, X2
+	019 Return 
+	020 Move X0, X31
+	021 Call Encoding.get_UTF8
+	022 Move X1, X0
+	023 Move X0, X19
+	024 Call NetBitBuffer.ReadString, X0, X1
+	025 Move [X20], X0
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Return 
+

@@ -1,0 +1,402 @@
+Type: AnimalCompany.NetSessionState
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> get_isConnected()
+
+Disassembly:
+	0x01DBB9FC MOV X1, X20
+	0x01DBBA00 BLR X9
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_isConnected(SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> value)
+
+Disassembly:
+	0x01DBBA04 LDR X20, [X19 + 0x10]
+	0x01DBBA08 CBZ X20, 0x1DBBE0C
+
+ISIL:
+	001 Move [X0+72], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_roomCode()
+
+Disassembly:
+	0x01DBBA0C LDR X8, [X20 + 0x190]
+	0x01DBBA10 CBZ X8, 0x1DBBE0C
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_roomCode(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01DBBA14 ADRP X9, 0x233A000
+	0x01DBBA18 LDR X9, [X9 + 0x88]
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Int32> get_playerCount()
+
+Disassembly:
+	0x01DBBA1C ADRP X23, 0x2338000
+	0x01DBBA20 ADRP X24, 0x2339000
+
+ISIL:
+	001 Move X0, [X0+88]
+	002 Return X0
+
+Method: System.Void set_playerCount(SpatialSys.ObservableState.StatePrimitive`1<System.Int32> value)
+
+Disassembly:
+	0x01DBBA24 LDR X20, [X8 + 0x10]
+	0x01DBBA28 LDR X0, [X9]
+
+ISIL:
+	001 Move [X0+88], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Int32> get_localPlayerID()
+
+Disassembly:
+	0x01DBBA2C LDR X22, [X8 + 0x20]
+	0x01DBBA30 LDR X23, [X23 + 0xB50]
+
+ISIL:
+	001 Move X0, [X0+96]
+	002 Return X0
+
+Method: System.Void set_localPlayerID(SpatialSys.ObservableState.StatePrimitive`1<System.Int32> value)
+
+Disassembly:
+	0x01DBBA34 LDR X24, [X24 + 0x308]
+	0x01DBBA38 BL 0x1C16F10
+
+ISIL:
+	001 Move [X0+96], X1
+	002 Return 
+
+Method: AnimalCompany.NetSessionPropertiesState get_properties()
+
+Disassembly:
+	0x01DBBA3C MOV X1, X22
+	0x01DBBA40 MOV X21, X0
+
+ISIL:
+	001 Move X0, [X0+104]
+	002 Return X0
+
+Method: System.Void set_properties(AnimalCompany.NetSessionPropertiesState value)
+
+Disassembly:
+	0x01DBBA44 BL 0x1DBBE28
+	0x01DBBA48 LDR X0, [X23]
+
+ISIL:
+	001 Move [X0+104], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> get_playerUserIDs()
+
+Disassembly:
+	0x01DBBA4C LDR W8, [X0 + 0xE0]
+	0x01DBBA50 CBNZ W8, 0x1DBBA58
+
+ISIL:
+	001 Move X0, [X0+112]
+	002 Return X0
+
+Method: System.Void set_playerUserIDs(SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> value)
+
+Disassembly:
+	0x01DBBA54 BL 0x1C16DFC
+	0x01DBBA58 LDR X0, [X24]
+
+ISIL:
+	001 Move [X0+112], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> get_mutedPlayerUserIDs()
+
+Disassembly:
+	0x01DBBA5C MOV X1, X20
+	0x01DBBA60 MOV X2, X31
+
+ISIL:
+	001 Move X0, [X0+120]
+	002 Return X0
+
+Method: System.Void set_mutedPlayerUserIDs(SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> value)
+
+Disassembly:
+	0x01DBBA64 BL 0x1DD33A8
+	0x01DBBA68 CBZ X21, 0x1DBBE0C
+
+ISIL:
+	001 Move [X0+120], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StateDictionary`2<System.Int32, AnimalCompany.NetSessionPlayerState> get_players()
+
+Disassembly:
+	0x01DBBA6C ADRP X23, 0x2338000
+	0x01DBBA70 LDR X23, [X23 + 0xB58]
+
+ISIL:
+	001 Move X0, [X0+128]
+	002 Return X0
+
+Method: System.Void set_players(SpatialSys.ObservableState.StateDictionary`2<System.Int32, AnimalCompany.NetSessionPlayerState> value)
+
+Disassembly:
+	0x01DBBA74 ADRP X25, 0x233C000
+	0x01DBBA78 LDR X25, [X25 + 0xE10]
+
+ISIL:
+	001 Move [X0+128], X1
+	002 Return 
+
+Method: System.Void PostInitialize()
+
+Disassembly:
+	0x01DBBA7C LDRB W8, [X21 + 0x10]
+	0x01DBBA80 LDR X0, [X23]
+	0x01DBBA84 ADRP X22, 0x2338000
+	0x01DBBA88 ADRP X26, 0x2338000
+	0x01DBBA8C LDR X22, [X22 + 0x720]
+	0x01DBBA90 LDR X26, [X26 + 0x718]
+	0x01DBBA94 ADD X1, X31, 0x1C
+	0x01DBBA98 STRB W8, [X31 + 0x1C]
+	0x01DBBA9C BL 0x1C16E04
+	0x01DBBAA0 LDR X8, [X25]
+	0x01DBBAA4 MOV X1, X0
+	0x01DBBAA8 MOV X2, X31
+	0x01DBBAAC MOV X0, X8
+	0x01DBBAB0 BL 0x1DD33A8
+	0x01DBBAB4 LDR X0, [X22]
+	0x01DBBAB8 BL 0x1C16F10
+	0x01DBBABC LDR X1, [X26]
+	0x01DBBAC0 MOV X22, X0
+	0x01DBBAC4 BL 0x2AA4804
+	0x01DBBAC8 CBZ X22, 0x1DBBE0C
+	0x01DBBACC ADRP X26, 0x2338000
+	0x01DBBAD0 LDR X26, [X26 + 0x710]
+	0x01DBBAD4 LDR X1, [X24]
+	0x01DBBAD8 MOV X0, X22
+	0x01DBBADC MOV X2, X20
+	0x01DBBAE0 LDR X3, [X26]
+	0x01DBBAE4 BL 0x2AA5098
+	0x01DBBAE8 LDRB W8, [X21 + 0x10]
+	0x01DBBAEC LDR X0, [X23]
+	0x01DBBAF0 ADD X1, X31, 0xC
+	0x01DBBAF4 STRB W8, [X31 + 0xC]
+	0x01DBBAF8 BL 0x1C16E04
+	0x01DBBAFC LDR X1, [X25]
+	0x01DBBB00 LDR X3, [X26]
+	0x01DBBB04 MOV X2, X0
+	0x01DBBB08 MOV X0, X22
+	0x01DBBB0C BL 0x2AA5098
+	0x01DBBB10 LDR X0, [X19 + 0x10]
+	0x01DBBB14 CBZ X0, 0x1DBBE0C
+	0x01DBBB18 ADRP X24, 0x233C000
+	0x01DBBB1C ADRP X25, 0x233C000
+	0x01DBBB20 ADRP X27, 0x2338000
+	0x01DBBB24 LDR X24, [X24 + 0xE20]
+	0x01DBBB28 LDR X25, [X25 + 0xE18]
+	0x01DBBB2C LDR X27, [X27 + 0xAB0]
+	0x01DBBB30 MOV X1, X31
+	0x01DBBB34 BL 0x1EA27F0
+	0x01DBBB38 LDR X8, [X23]
+	0x01DBBB3C AND W9, W0, 0x1
+	0x01DBBB40 ADD X1, X31, 0x8
+	0x01DBBB44 STRB W9, [X31 + 0x8]
+	0x01DBBB48 MOV X0, X8
+	0x01DBBB4C BL 0x1C16E04
+	0x01DBBB50 LDR X1, [X24]
+	0x01DBBB54 LDR X3, [X26]
+	0x01DBBB58 MOV X2, X0
+	0x01DBBB5C MOV X0, X22
+	0x01DBBB60 BL 0x2AA5098
+	0x01DBBB64 LDR X0, [X25]
+	0x01DBBB68 MOV X1, X22
+	0x01DBBB6C MOV X2, X31
+	0x01DBBB70 BL 0x1DC4DD0
+	0x01DBBB74 LDR X0, [X27]
+	0x01DBBB78 MOVZ W1, 0x5
+	0x01DBBB7C BL 0x1C16D6C
+	0x01DBBB80 LDR X8, [X19 + 0x10]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X20, 0x261E000
+	008 Move X23, 0x2339000
+	009 Move X21, 0x233D000
+	010 Move X22, 0x2339000
+	011 Move W8, [X20+2877]
+	012 Move X23, [X23+3488]
+	013 Move X21, [X21+3456]
+	014 Move X22, [X22+3504]
+	015 Move X19, X0
+	016 Move TEMP, X8
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {34}
+	020 Move X0, 0x2339000
+	021 Move X0, [X0+3504]
+	022 Call 0x1C17CF4
+	023 Move X0, 0x233D000
+	024 Move X0, [X0+3456]
+	025 Call 0x1C17CF4
+	026 Move X0, 0x2339000
+	027 Move X0, [X0+3488]
+	028 Call 0x1C17CF4
+	029 Move X0, 0x233D000
+	030 Move X0, [X0+3464]
+	031 Call 0x1C17CF4
+	032 Move W8, 1
+	033 Move [X20+2877], W8
+	034 Move X0, [X23]
+	035 Move X20, [X19+72]
+	036 Call 0x1C17F10
+	037 Move X2, [X21]
+	038 Move X1, X19
+	039 Move X3, X31
+	040 Move X21, X0
+	041 Call ObserverDelegate..ctor, X0, X1, X2
+	042 Move X0, [X22]
+	043 Move W1, 1
+	044 Call 0x1C17D6C
+	045 Compare X0, 0
+	046 JumpIfEqual {77}
+	047 Move X19, [X19+80]
+	048 Move X22, X0
+	049 Compare X19, 0
+	050 JumpIfEqual {57}
+	051 Move X8, [X22]
+	052 Move X0, X19
+	053 Move X1, [X8+64]
+	054 Call 0x1C17E00
+	055 Compare X0, 0
+	056 JumpIfEqual {79}
+	057 Move W8, [X22+24]
+	058 Compare W8, 0
+	059 JumpIfEqual {78}
+	060 Move [X22+32], X19
+	061 Compare X20, 0
+	062 JumpIfEqual {77}
+	063 Move X8, 0x233D000
+	064 Move X8, [X8+3464]
+	065 Move X0, X20
+	066 Move X1, X21
+	067 Move X2, X22
+	068 Move X3, [X8]
+	069 Move X20, [X31+32]
+	070 Move X19, [X31+40]
+	071 Move X22, [X31+16]
+	072 Move X21, [X31+24]
+	073 Move X30, [X31+48]
+	074 Move X23, [X31+56]
+	075 Call 0x26549C0, X0, X1, X2
+	076 Return 
+	077 Call 0x1C17F20
+	078 Call 0x1C17F28
+	079 Call 0x1C17F44
+	080 Move X1, X31
+	081 Call 0x1C17DEC
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01DBBB84 CBZ X8, 0x1DBBE0C
+	0x01DBBB88 ADRP X23, 0x233C000
+
+ISIL:
+	001 Move X1, X31
+	002 Call StateObject..ctor, X0
+	003 Return 
+
+Method: System.Void <PostInitialize>b__32_0(SpatialSys.ObservableState.StateChangedEventArgs args)
+
+Disassembly:
+	0x01DBBB8C ADRP X24, 0x233C000
+	0x01DBBB90 ADRP X25, 0x233C000
+	0x01DBBB94 ADRP X26, 0x233C000
+	0x01DBBB98 ADRP X27, 0x233C000
+	0x01DBBB9C ADRP X28, 0x233C000
+	0x01DBBBA0 LDR X23, [X23 + 0xDD8]
+	0x01DBBBA4 LDR X24, [X24 + 0xE00]
+	0x01DBBBA8 LDR X25, [X25 + 0xDD0]
+	0x01DBBBAC LDR X26, [X26 + 0xE08]
+	0x01DBBBB0 LDR X27, [X27 + 0xDC8]
+	0x01DBBBB4 LDR X28, [X28 + 0xDE0]
+	0x01DBBBB8 MOV X22, X0
+	0x01DBBBBC MOV X0, X8
+	0x01DBBBC0 MOV X1, X31
+	0x01DBBBC4 BL 0x1E9EA88
+	0x01DBBBC8 LDR X8, [X23]
+	0x01DBBBCC MOV X23, X0
+	0x01DBBBD0 MOV X0, X8
+	0x01DBBBD4 BL 0x1C16F10
+	0x01DBBBD8 LDR X2, [X24]
+	0x01DBBBDC MOV X1, X19
+	0x01DBBBE0 MOV X3, X31
+	0x01DBBBE4 MOV X24, X0
+	0x01DBBBE8 BL 0x2D32190
+	0x01DBBBEC LDR X0, [X25]
+	0x01DBBBF0 BL 0x1C16F10
+	0x01DBBBF4 LDR X2, [X26]
+	0x01DBBBF8 MOV X1, X19
+	0x01DBBBFC MOV X3, X31
+	0x01DBBC00 MOV X25, X0
+	0x01DBBC04 BL 0x2D32234
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x261E000
+	005 Move W8, [X20+2878]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {19}
+	011 Move X0, 0x2339000
+	012 Move X0, [X0+3528]
+	013 Call 0x1C17CF4
+	014 Move X0, 0x2339000
+	015 Move X0, [X0+3632]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+2878], W8
+	019 Move X8, [X19+80]
+	020 Compare X8, 0
+	021 JumpIfEqual {39}
+	022 Move X0, [X8+80]
+	023 Move X19, [X19+72]
+	024 Move X1, X31
+	025 Call String.IsNullOrEmpty, X0
+	026 Compare X19, 0
+	027 JumpIfEqual {39}
+	028 Move X8, 0x2339000
+	029 Move X8, [X8+3632]
+	030 Move X2, [X8]
+	031 NotImplemented "Instruction ORN not yet implemented."
+	032 Move X0, X19
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 And W1, W8, 1
+	036 Move X30, [X31+32]
+	037 Call 0x26528D0, X0, X1
+	038 Return 
+	039 Call 0x1C17F20
+

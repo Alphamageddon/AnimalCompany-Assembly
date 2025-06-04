@@ -1,0 +1,55 @@
+Type: UnityEngine.InputSystem.InputActionSetupExtensions/<>c__DisplayClass5_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03747C28 BL 0x3763848
+	0x03747C2C MOV X1, X0
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <RemoveAction>b__0(UnityEngine.InputSystem.InputBinding b)
+
+Disassembly:
+	0x0374B730 B.CS 0x374B784
+	0x0374B734 ADD X8, X8, W9, 0x3, UXTW
+	0x0374B738 LDR X0, [X8 + 0x20]
+	0x0374B73C STR X19, [X31]
+	0x0374B740 STP W21, W31, [X31 + 0x8]
+	0x0374B744 CBZ X0, 0x374B780
+	0x0374B748 LDR X8, [X0]
+	0x0374B74C ADD X1, X31, 0x0
+	0x0374B750 LDP X9, X2, [X8 + 0x1C8]
+	0x0374B754 BLR X9
+	0x0374B758 LDR W8, [X19 + 0x54]
+	0x0374B75C ADD X21, X21, 0x1
+	0x0374B760 CMP X21, W8, SXTW
+	0x0374B764 ADD X20, X20, 0x20
+	0x0374B768 B.LT 0x374B704
+	0x0374B76C LDP X20, X19, [X31 + 0x30]
+	0x0374B770 LDP X22, X21, [X31 + 0x20]
+
+ISIL:
+	001 Subtract X31, X31, 192
+	002 Move [X31+176], X30
+	003 Move [X31+184], X19
+	004 Move X19, X0
+	005 Add X0, X31, 0
+	006 Move W2, 88
+	007 Call 0x3EB2AC0
+	008 Add X1, X19, 16
+	009 Add X0, X31, 88
+	010 Move W2, 88
+	011 Call 0x3EB2AC0
+	012 Add X0, X31, 0
+	013 Add X1, X31, 88
+	014 Call InputBinding.Equals, X0, X1
+	015 Move X30, [X31+176]
+	016 Move X19, [X31+184]
+	017 And W0, W0, 1
+	018 Add X31, X31, 192
+	019 Return X0
+

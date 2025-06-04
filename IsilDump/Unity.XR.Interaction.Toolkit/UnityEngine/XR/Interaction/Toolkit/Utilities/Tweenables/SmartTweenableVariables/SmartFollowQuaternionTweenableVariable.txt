@@ -1,0 +1,656 @@
+Type: UnityEngine.XR.Interaction.Toolkit.Utilities.Tweenables.SmartTweenableVariables.SmartFollowQuaternionTweenableVariable
+
+Method: System.Single get_minAngleAllowed()
+
+Disassembly:
+	0x03B9275C LDR X0, [X0 + 0x5D0]
+	0x03B92760 BL 0x1C16CF4
+
+ISIL:
+	001 Move V0, [X0+108]
+	002 Return V0
+
+Method: System.Void set_minAngleAllowed(System.Single value)
+
+Disassembly:
+	0x03B92764 MOVZ W8, 0x1
+	0x03B92768 STRB W8, [X21 + 0xBAF]
+
+ISIL:
+	001 Move [X0+108], S0
+	002 Return 
+
+Method: System.Single get_maxAngleAllowed()
+
+Disassembly:
+	0x03B9276C LDR X0, [X22]
+	0x03B92770 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move V0, [X0+112]
+	002 Return V0
+
+Method: System.Void set_maxAngleAllowed(System.Single value)
+
+Disassembly:
+	0x03B92774 CBNZ W8, 0x3B9277C
+	0x03B92778 BL 0x1C16DFC
+
+ISIL:
+	001 Move [X0+112], S0
+	002 Return 
+
+Method: System.Single get_minToMaxDelaySeconds()
+
+Disassembly:
+	0x03B9277C MOV X0, X31
+	0x03B92780 BL 0x36FA670
+
+ISIL:
+	001 Move V0, [X0+116]
+	002 Return V0
+
+Method: System.Void set_minToMaxDelaySeconds(System.Single value)
+
+Disassembly:
+	0x03B92784 TBZ X0, 0x0, 0x3B927DC
+	0x03B92788 ADRP X8, 0x5CA000
+
+ISIL:
+	001 Move [X0+116], S0
+	002 Return 
+
+Method: System.Void .ctor(System.Single minAngleAllowed = 0.1, System.Single maxAngleAllowed = 5, System.Single minToMaxDelaySeconds = 3)
+
+Disassembly:
+	0x03B9278C LDR X8, [X8 + 0x5D0]
+	0x03B92790 LDR X0, [X8]
+	0x03B92794 LDR W8, [X0 + 0xE0]
+	0x03B92798 CBNZ W8, 0x3B927A0
+	0x03B9279C BL 0x1C16DFC
+	0x03B927A0 BL 0x3B930C8
+	0x03B927A4 CBZ X0, 0x3B927DC
+	0x03B927A8 MOV X2, X0
+	0x03B927AC MOV X0, X20
+	0x03B927B0 MOV X1, X19
+	0x03B927B4 MOV V0.16B, V9.16B
+	0x03B927B8 MOV V1.16B, V8.16B
+	0x03B927BC LDP X20, X19, [X31 + 0x40]
+	0x03B927C0 LDP X22, X21, [X31 + 0x30]
+
+ISIL:
+	001 Move [X31-48], D10
+	002 Move [X31+16], D9
+	003 Move [X31+24], D8
+	004 Move [X31+32], X30
+	005 Move [X31+40], X19
+	006 Move V8, V2
+	007 Move V9, V1
+	008 Move V10, V0
+	009 Move X19, X0
+	010 Call QuaternionTweenableVariable..ctor, X0
+	011 Move [X19+108], S10
+	012 Move [X19+116], S9
+	013 Move [X19+116], S8
+	014 Move X30, [X31+32]
+	015 Move X19, [X31+40]
+	016 Move D9, [X31+16]
+	017 Move D8, [X31+24]
+	018 Move V10, [X31+48]
+	019 Return 
+
+Method: System.Boolean IsNewTargetWithinThreshold(UnityEngine.Quaternion newTarget)
+
+Disassembly:
+	0x03B92818 AND W9, W9, 0x7FFFFFFF
+	0x03B9281C FMOV S2, W31
+	0x03B92820 FMUL S0, S0, S0
+	0x00000000 INVALID
+	0x03B92828 CMP W9, W8
+	0x03B9282C FADD S0, S0, S1
+	0x03B92830 MOV S1, V1.S[1]
+	0x03B92834 FCCMP S3, S2, 0x8, LS
+	0x03B92838 FADD S0, S1, S0
+	0x03B9283C FCSEL S1, S2, S3, MI
+	0x03B92840 FSUB S2, S8, S9
+	0x03B92844 FMUL S1, S2, S1
+	0x03B92848 FADD S1, S1, S9
+	0x03B9284C LDP X20, X19, [X31 + 0x40]
+	0x03B92850 LDP X22, X21, [X31 + 0x30]
+	0x03B92854 LDR X30, [X31 + 0x20]
+	0x03B92858 LDP D9, D8, [X31 + 0x10]
+	0x03B9285C FMUL S1, S1, S1
+	0x03B92860 FCMP S0, S1
+	0x03B92864 CSET W0, GT
+	0x03B92868 LDP D11, D10, [X31], #0x50
+	0x03B9286C RET
+	0x03B92870 LDR V4, [X0]
+	0x03B92874 LDUR V5, [X0 + 0x4]
+	0x03B92878 LDR V6, [X1]
+	0x03B9287C LDUR V7, [X1 + 0x4]
+	0x03B92880 MOVZ W8, 0x7F800000
+	0x03B92884 FSUB S4, S6, S4
+	0x03B92888 FSUB V5.2S, V7.2S, V5.2S
+	0x03B9288C FMUL S4, S4, S4
+	0x00000000 INVALID
+	0x03B92894 FADD S4, S4, S5
+	0x03B92898 MOV S5, V5.S[1]
+	0x03B9289C FADD S4, S5, S4
+	0x03B928A0 FDIV S0, S4, S0
+	0x03B928A4 FMOV W9, S0
+	0x03B928A8 AND W9, W9, 0x7FFFFFFF
+	0x03B928AC FMOV S4, 1
+	0x03B928B0 CMP W9, W8
+	0x03B928B4 FCCMP S0, S4, 0x0, LS
+	0x03B928B8 FCSEL S0, S4, S0, GT
+	0x03B928BC FMOV W9, S0
+	0x03B928C0 AND W9, W9, 0x7FFFFFFF
+	0x03B928C4 FMOV S5, W31
+	0x03B928C8 CMP W9, W8
+	0x03B928CC FSUB S6, S4, S0
+	0x03B928D0 FCCMP S0, S5, 0x8, LS
+	0x03B928D4 FCSEL S0, S4, S6, MI
+	0x03B928D8 FMUL S0, S0, S3
+	0x03B928DC FMOV W9, S0
+	0x03B928E0 AND W9, W9, 0x7FFFFFFF
+	0x03B928E4 CMP W9, W8
+	0x03B928E8 FCCMP S0, S3, 0x0, LS
+	0x03B928EC FCSEL S0, S3, S0, GT
+	0x03B928F0 FMOV W9, S0
+	0x03B928F4 AND W9, W9, 0x7FFFFFFF
+	0x03B928F8 CMP W9, W8
+	0x03B928FC FCCMP S0, S2, 0x8, LS
+	0x03B92900 FCSEL S0, S2, S0, MI
+	0x03B92904 FMUL S0, S0, S1
+
+ISIL:
+	001 Move [X31-64], D11
+	002 Move [X31-56], D10
+	003 Move [X31+16], D9
+	004 Move [X31+24], D8
+	005 Move [X31+32], X30
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X20, 0x851000
+	009 Move W8, [X20+2967]
+	010 Move V8, V3
+	011 Move V9, V2
+	012 Move V10, V1
+	013 Move V11, V0
+	014 Move X19, X0
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {24}
+	019 Move X0, 0x5CB000
+	020 Move X0, [X0+1408]
+	021 Call 0x1C17CF4
+	022 Move W8, 1
+	023 Move [X20+2967], W8
+	024 Move S0, [X19+72]
+	025 Move S1, [X19+76]
+	026 Move S2, [X19+80]
+	027 Move S3, [X19+84]
+	028 Move X8, -51015680
+	029 Move V4, [X8+436]
+	030 Multiply S0, S11, S0
+	031 Multiply S1, S10, S1
+	032 Multiply S2, S9, S2
+	033 Add S0, S0, S1
+	034 Multiply S3, S8, S3
+	035 Add S0, S2, S0
+	036 Add S0, S3, S0
+	037 Move S11, 1
+	038 NotImplemented "Instruction FABS not yet implemented."
+	039 NotImplemented "Instruction FMINNM not yet implemented."
+	040 Move S8, W31
+	041 NotImplemented "Instruction FCMP not yet implemented."
+	042 Move S9, W31
+	043 Call 0x3EB2BB0
+	044 Move X8, -51015680
+	045 Move V1, [X8+1096]
+	046 Add S0, S0, S0
+	047 Multiply S9, S0, S1
+	048 Move X0, X31
+	049 Call Time.get_unscaledTime
+	050 Move S2, [X19+116]
+	051 Move S1, [X19+120]
+	052 Move X30, [X31+32]
+	053 Subtract S0, S0, S1
+	054 Move S1, [X19+108]
+	055 Move S3, [X19+112]
+	056 NotImplemented "Instruction FDIV not yet implemented."
+	057 NotImplemented "Instruction FMIN not yet implemented."
+	058 NotImplemented "Instruction FCMP not yet implemented."
+	059 NotImplemented "Instruction FCSEL not yet implemented."
+	060 NotImplemented "Instruction FMAX not yet implemented."
+	061 Subtract S2, S3, S1
+	062 Multiply S0, S2, S0
+	063 Add S0, S1, S0
+	064 NotImplemented "Instruction FCMP not yet implemented."
+	065 Move X20, [X31+48]
+	066 Move X19, [X31+56]
+	067 Move D9, [X31+16]
+	068 Move D8, [X31+24]
+	069 NotImplemented "Instruction CSET not yet implemented."
+	070 Move D11, [X31+64]
+	071 Move D10, [X31+72]
+	072 Return X0
+
+Method: System.Boolean SetTargetWithinThreshold(UnityEngine.Quaternion newTarget)
+
+Disassembly:
+	0x03B92908 STR S0, [X2]
+	0x03B9290C RET
+	0x03B92910 FDIV S2, S2, S3
+	0x03B92914 FMOV W9, S2
+	0x03B92918 MOVZ W8, 0x7F800000
+	0x03B9291C AND W9, W9, 0x7FFFFFFF
+	0x03B92920 FMOV S3, 1
+	0x03B92924 CMP W9, W8
+	0x03B92928 LDR V4, [X0]
+	0x03B9292C LDR V6, [X1]
+	0x03B92930 FCCMP S2, S3, 0x0, LS
+	0x03B92934 FCSEL S2, S3, S2, GT
+	0x03B92938 LDUR V5, [X0 + 0x4]
+	0x03B9293C LDUR V7, [X1 + 0x4]
+	0x03B92940 FMOV W9, S2
+	0x03B92944 AND W9, W9, 0x7FFFFFFF
+	0x03B92948 FSUB S4, S6, S4
+	0x03B9294C FMOV S6, W31
+	0x03B92950 CMP W9, W8
+	0x03B92954 FCCMP S2, S6, 0x8, LS
+	0x03B92958 FSUB V5.2S, V7.2S, V5.2S
+	0x03B9295C FCSEL S2, S6, S2, MI
+	0x03B92960 FSUB S1, S1, S0
+	0x03B92964 FMUL S3, S4, S4
+	0x00000000 INVALID
+	0x03B9296C FMUL S1, S1, S2
+	0x03B92970 FADD S3, S3, S4
+	0x03B92974 MOV S4, V4.S[1]
+	0x03B92978 FADD S0, S1, S0
+	0x03B9297C FADD S3, S4, S3
+	0x03B92980 FMUL S0, S0, S0
+	0x03B92984 FCMP S3, S0
+	0x03B92988 CSET W0, GT
+	0x03B9298C RET
+	0x03B92990 STP X30, X21, [X31 - 0x20]!
+	0x03B92994 STP X20, X19, [X31 + 0x10]
+	0x03B92998 LDR X8, [X2 + 0x8]
+	0x03B9299C STP X1, X2, [X0 + 0x20]
+	0x03B929A0 MOV X19, X0
+	0x03B929A4 MOV X20, X1
+
+ISIL:
+	001 Move [X31-64], D11
+	002 Move [X31-56], D10
+	003 Move [X31+16], D9
+	004 Move [X31+24], D8
+	005 Move [X31+32], X30
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X20, 0x851000
+	009 Move W8, [X20+2968]
+	010 Move V8, V3
+	011 Move V9, V2
+	012 Move V10, V1
+	013 Move V11, V0
+	014 Move X19, X0
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {24}
+	019 Move X0, 0x5CB000
+	020 Move X0, [X0+1416]
+	021 Call 0x1C17CF4
+	022 Move W8, 1
+	023 Move [X20+2968], W8
+	024 Move X0, X19
+	025 Move V0, V11
+	026 Move V1, V10
+	027 Move V2, V9
+	028 Move V3, V8
+	029 Call SmartFollowQuaternionTweenableVariable.IsNewTargetWithinThreshold, X0, X1
+	030 Move W20, W0
+	031 Move TEMP, X0
+	032 And TEMP, TEMP, 1
+	033 Compare TEMP, 1
+	034 JumpIfNotEqual {44}
+	035 Move X8, 0x5CB000
+	036 Move X8, [X8+1416]
+	037 Move X0, X19
+	038 Move V0, V11
+	039 Move V1, V10
+	040 Move X1, [X8]
+	041 Move V2, V9
+	042 Move V3, V8
+	043 Call TweenableVariableBase`1<Quaternion>.set_target, X0, X1
+	044 And W0, W20, 1
+	045 Move X20, [X31+48]
+	046 Move X19, [X31+56]
+	047 Move X30, [X31+32]
+	048 Move D9, [X31+16]
+	049 Move D8, [X31+24]
+	050 Move D11, [X31+64]
+	051 Move D10, [X31+72]
+	052 Return X0
+
+Method: System.Void OnTargetChanged(UnityEngine.Quaternion newTarget)
+
+Disassembly:
+	0x03B929A8 STR X8, [X0 + 0x10]
+	0x03B929AC LDRB W21, [X2 + 0x52]
+	0x03B929B0 STR X0, [X0 + 0x40]
+	0x03B929B4 MOV X0, X2
+	0x03B929B8 BL 0x1C16D84
+	0x03B929BC TBZ X0, 0x0, 0x3B929D4
+	0x03B929C0 CMP W21, 0x7
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, X31
+	005 Call Time.get_unscaledTime
+	006 Move [X19+120], S0
+	007 Move X30, [X31+16]
+	008 Move X19, [X31+24]
+	009 Return 
+
+Method: System.Void HandleSmartTween(System.Single deltaTime, System.Single lowerSpeed, System.Single upperSpeed)
+
+Disassembly:
+	0x03B929C4 B.NE 0x3B929F0
+	0x03B929C8 ADRP X8, 0xFFFFFFFFFE06C000
+	0x03B929CC ADD X8, X8, 0xCB4
+	0x03B929D0 B 0x3B929E4
+	0x03B929D4 CMP W21, 0x6
+	0x03B929D8 B.NE 0x3B929EC
+	0x03B929DC ADRP X8, 0xFFFFFFFFFE06C000
+	0x03B929E0 ADD X8, X8, 0xC9C
+	0x03B929E4 STR X8, [X19 + 0x18]
+	0x03B929E8 B 0x3B92A00
+	0x03B929EC CBZ X20, 0x3B92A18
+	0x03B929F0 LDR X8, [X19 + 0x10]
+	0x03B929F4 LDR X9, [X19 + 0x20]
+	0x03B929F8 STR X8, [X19 + 0x18]
+	0x03B929FC STR X9, [X19 + 0x40]
+	0x03B92A00 ADRP X8, 0xFFFFFFFFFE06C000
+	0x03B92A04 ADD X8, X8, 0xC0C
+	0x03B92A08 STR X8, [X19 + 0x38]
+	0x03B92A0C LDP X20, X19, [X31 + 0x10]
+	0x03B92A10 LDP X30, X21, [X31], #0x20
+	0x03B92A14 RET
+	0x03B92A18 ADRP X1, 0xFFFFFFFFFCF89000
+	0x03B92A1C ADD X1, X1, 0xEE3
+	0x03B92A20 MOV X0, X31
+	0x03B92A24 BL 0x1C16F3C
+	0x03B92A28 MOV X1, X31
+	0x03B92A2C BL 0x1C16DEC
+	0x03B92A30 LDR X8, [X0 + 0x40]
+	0x03B92A34 LDR X5, [X0 + 0x18]
+	0x03B92A38 LDR X4, [X0 + 0x28]
+	0x03B92A3C MOV X0, X8
+	0x03B92A40 BR X5
+	0x03B92A44 SUB X31, X31, 0xA0
+	0x03B92A48 STP X30, X27, [X31 + 0x50]
+	0x03B92A4C STP X26, X25, [X31 + 0x60]
+	0x03B92A50 STP X24, X23, [X31 + 0x70]
+	0x03B92A54 STP X22, X21, [X31 + 0x80]
+	0x03B92A58 STP X20, X19, [X31 + 0x90]
+	0x03B92A5C STP S1, S0, [X31 + 0x48]
+	0x03B92A60 ADRP X27, 0x850000
+	0x03B92A64 STP S3, S2, [X31 + 0x40]
+	0x03B92A68 ADRP X26, 0x58C000
+	0x03B92A6C ADRP X25, 0x561000
+	0x03B92A70 LDRB W8, [X27 + 0xBA6]
+	0x03B92A74 LDR X26, [X26 + 0x838]
+	0x03B92A78 LDR X25, [X25 + 0xA90]
+	0x03B92A7C MOV X19, X5
+	0x03B92A80 MOV X20, X4
+	0x03B92A84 MOV X22, X3
+	0x03B92A88 MOV X23, X2
+	0x03B92A8C MOV X24, X1
+	0x03B92A90 MOV X21, X0
+	0x03B92A94 TBNZ X8, 0x0, 0x3B92AB8
+	0x03B92A98 ADRP X0, 0x561000
+	0x03B92A9C LDR X0, [X0 + 0xA90]
+	0x03B92AA0 BL 0x1C16CF4
+	0x03B92AA4 ADRP X0, 0x58C000
+	0x03B92AA8 LDR X0, [X0 + 0x838]
+	0x03B92AAC BL 0x1C16CF4
+	0x03B92AB0 MOVZ W8, 0x1
+	0x03B92AB4 STRB W8, [X27 + 0xBA6]
+	0x03B92AB8 LDR X0, [X26]
+	0x03B92ABC MOVI V0.2D, 0x0
+	0x03B92AC0 MOV X1, X24
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+16], D10
+	003 Move [X31+24], D9
+	004 Move [X31+32], D8
+	005 Move [X31+40], X30
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X20, 0x851000
+	009 Move W8, [X20+2969]
+	010 Move V8, V2
+	011 Move V9, V1
+	012 Move V10, V0
+	013 Move X19, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {29}
+	018 Move X0, 0x5CB000
+	019 Move X0, [X0+1424]
+	020 Call 0x1C17CF4
+	021 Move X0, 0x5CB000
+	022 Move X0, [X0+1432]
+	023 Call 0x1C17CF4
+	024 Move X0, 0x5CB000
+	025 Move X0, [X0+1408]
+	026 Call 0x1C17CF4
+	027 Move W8, 1
+	028 Move [X20+2969], W8
+	029 Move X20, 0x5CB000
+	030 Move X20, [X20+1432]
+	031 Move [X31+12], W31
+	032 Move D0, [X19+24]
+	033 Move D3, [X19+32]
+	034 Move D1, [X19+72]
+	035 Move D2, [X19+80]
+	036 Move X8, -51015680
+	037 NotImplemented "Instruction INVALID not yet implemented."
+	038 NotImplemented "Instruction INVALID not yet implemented."
+	039 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	040 Add V0, V0, V3
+	041 Move V1, [X8+436]
+	042 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	043 Add V0, V2, V0
+	044 Add V0, V3, V0
+	045 NotImplemented "Instruction FABS not yet implemented."
+	046 Move S2, 1
+	047 NotImplemented "Instruction FMINNM not yet implemented."
+	048 NotImplemented "Instruction FCMP not yet implemented."
+	049 Move S1, W31
+	050 Call 0x3EB2BB0
+	051 Move X8, -51015680
+	052 Move V1, [X8+1096]
+	053 Add S0, S0, S0
+	054 Multiply S1, S0, S1
+	055 Move V2, [X19+112]
+	056 Add X0, X31, 12
+	057 Move V0, V10
+	058 Move V3, V9
+	059 Move V4, V8
+	060 Call SmartFollowQuaternionTweenableVariable.ComputeNewTweenTarget, V0, V1, V2, V3, V4, X0
+	061 Move V0, [X31+12]
+	062 Move X1, [X20]
+	063 Move X0, X19
+	064 Call TweenableVariableBase`1<Quaternion>.HandleTween, X0, V0
+	065 Move X20, [X31+48]
+	066 Move X19, [X31+56]
+	067 Move X30, [X31+40]
+	068 Move D9, [X31+24]
+	069 Move D8, [X31+32]
+	070 Move V10, [X31+16]
+	071 Add X31, X31, 64
+	072 Return 
+
+Method: System.Void ComputeNewTweenTarget(System.Single deltaTime, System.Single angleOffsetDeg, System.Single maxAngleAllowed, System.Single lowerSpeed, System.Single upperSpeed, out System.Single newTweenTarget)
+
+Disassembly:
+	0x03B92AC4 STP V0, V0, [X31 + 0x20]
+	0x03B92AC8 STR V0, [X31 + 0x1]
+	0x03B92ACC BL 0x1C16E04
+	0x03B92AD0 LDR X8, [X26]
+	0x03B92AD4 STR X0, [X31]
+	0x03B92AD8 MOV X1, X23
+	0x03B92ADC MOV X0, X8
+	0x03B92AE0 BL 0x1C16E04
+	0x03B92AE4 LDR X8, [X25]
+	0x03B92AE8 STR X0, [X31 + 0x8]
+	0x03B92AEC ADD X1, X31, 0x4C
+	0x03B92AF0 MOV X0, X8
+	0x03B92AF4 BL 0x1C16E04
+	0x03B92AF8 LDR X8, [X25]
+	0x03B92AFC STR X0, [X31 + 0x10]
+	0x03B92B00 ADD X1, X31, 0x48
+	0x03B92B04 MOV X0, X8
+	0x03B92B08 BL 0x1C16E04
+	0x03B92B0C LDR X8, [X25]
+	0x03B92B10 STR X0, [X31 + 0x18]
+	0x03B92B14 ADD X1, X31, 0x44
+	0x03B92B18 MOV X0, X8
+	0x03B92B1C BL 0x1C16E04
+	0x03B92B20 LDR X8, [X25]
+	0x03B92B24 STR X0, [X31 + 0x20]
+	0x03B92B28 ADD X1, X31, 0x40
+	0x03B92B2C MOV X0, X8
+	0x03B92B30 BL 0x1C16E04
+	0x03B92B34 LDR X8, [X25]
+	0x03B92B38 STR X0, [X31 + 0x28]
+	0x03B92B3C MOV X1, X22
+	0x03B92B40 MOV X0, X8
+	0x03B92B44 BL 0x1C16E04
+	0x03B92B48 STR X0, [X31 + 0x30]
+	0x03B92B4C ADD X1, X31, 0x0
+	0x03B92B50 MOV X0, X21
+	0x03B92B54 MOV X2, X20
+
+ISIL:
+	001 Move [X31-80], D12
+	002 Move [X31+16], D11
+	003 Move [X31+24], D10
+	004 Move [X31+32], D9
+	005 Move [X31+40], D8
+	006 Move [X31+48], X30
+	007 Move [X31+56], X21
+	008 Move [X31+64], X20
+	009 Move [X31+72], X19
+	010 Move X20, 0x851000
+	011 Move X21, 0x5CB000
+	012 Move W8, [X20+2970]
+	013 Move X21, [X21+1440]
+	014 Move X19, X0
+	015 Move V8, V4
+	016 Move V9, V3
+	017 Move V10, V2
+	018 Move V11, V1
+	019 Move V12, V0
+	020 Move TEMP, X8
+	021 And TEMP, TEMP, 1
+	022 Compare TEMP, 1
+	023 JumpIfEqual {29}
+	024 Move X0, 0x5CB000
+	025 Move X0, [X0+1440]
+	026 Call 0x1C17CF4
+	027 Move W8, 1
+	028 Move [X20+2970], W8
+	029 Move X0, [X21]
+	030 Move W8, [X0+224]
+	031 Compare W8, 0
+	032 JumpIfNotEqual {34}
+	033 Call 0x1C17DFC
+	034 Move V1, V11
+	035 Move V2, V10
+	036 Move V3, V9
+	037 Move V4, V8
+	038 Move X0, X19
+	039 Move X20, [X31+64]
+	040 Move X19, [X31+72]
+	041 Move X30, [X31+48]
+	042 Move X21, [X31+56]
+	043 Move D9, [X31+32]
+	044 Move D8, [X31+40]
+	045 Move D11, [X31+16]
+	046 Move D10, [X31+24]
+	047 Move V0, V12
+	048 Move V12, [X31+80]
+
+Method: System.Void ComputeNewTweenTarget$BurstManaged(System.Single deltaTime, System.Single angleOffsetDeg, System.Single maxAngleAllowed, System.Single lowerSpeed, System.Single upperSpeed, out System.Single newTweenTarget)
+
+Disassembly:
+	0x03B92CB0 ADRP X19, 0x5CA000
+	0x03B92CB4 LDRB W8, [X20 + 0xBA8]
+	0x03B92CB8 LDR X19, [X19 + 0x5F8]
+	0x03B92CBC TBNZ X8, 0x0, 0x3B92CD4
+	0x03B92CC0 ADRP X0, 0x5CA000
+	0x03B92CC4 LDR X0, [X0 + 0x5F8]
+	0x03B92CC8 BL 0x1C16CF4
+	0x03B92CCC MOVZ W8, 0x1
+	0x03B92CD0 STRB W8, [X20 + 0xBA8]
+	0x03B92CD4 LDR X0, [X19]
+	0x03B92CD8 STR X31, [X31 + 0x8]
+	0x03B92CDC LDR W8, [X0 + 0xE0]
+	0x03B92CE0 CBNZ W8, 0x3B92CE8
+	0x03B92CE4 BL 0x1C16DFC
+	0x03B92CE8 ADD X0, X31, 0x8
+	0x03B92CEC BL 0x3B92B88
+	0x03B92CF0 LDR X0, [X31 + 0x8]
+	0x03B92CF4 LDP X20, X19, [X31 + 0x10]
+	0x03B92CF8 LDR X30, [X31], #0x20
+	0x03B92CFC RET
+	0x03B92D00 STP X30, X21, [X31 - 0x20]!
+	0x03B92D04 STP X20, X19, [X31 + 0x10]
+	0x03B92D08 ADRP X21, 0x850000
+	0x03B92D0C ADRP X19, 0x5CA000
+	0x03B92D10 ADRP X20, 0x589000
+	0x03B92D14 LDRB W8, [X21 + 0xBA9]
+	0x03B92D18 LDR X19, [X19 + 0x610]
+	0x03B92D1C LDR X20, [X20 + 0x848]
+	0x03B92D20 TBNZ X8, 0x0, 0x3B92D50
+
+ISIL:
+	001 NotImplemented "Instruction FDIV not yet implemented."
+	002 Move W9, S1
+	003 Move W8, 0x7F800000
+	004 And W9, W9, 0x7FFFFFFF
+	005 Move S2, 1
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 NotImplemented "Instruction FCCMP not yet implemented."
+	008 NotImplemented "Instruction FCSEL not yet implemented."
+	009 Move W9, S1
+	010 And W9, W9, 0x7FFFFFFF
+	011 Move S5, W31
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 NotImplemented "Instruction FCCMP not yet implemented."
+	014 Subtract S1, S2, S1
+	015 NotImplemented "Instruction FCSEL not yet implemented."
+	016 Multiply S1, S1, S4
+	017 Move W9, S1
+	018 And W9, W9, 0x7FFFFFFF
+	019 NotImplemented "Instruction CMP not yet implemented."
+	020 NotImplemented "Instruction FCCMP not yet implemented."
+	021 NotImplemented "Instruction FCSEL not yet implemented."
+	022 Move W9, S1
+	023 And W9, W9, 0x7FFFFFFF
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 NotImplemented "Instruction FCCMP not yet implemented."
+	026 NotImplemented "Instruction FCSEL not yet implemented."
+	027 Multiply S0, S1, S0
+	028 Move [X0], S0
+	029 Return 
+

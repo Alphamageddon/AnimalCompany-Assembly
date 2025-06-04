@@ -1,0 +1,160 @@
+Type: UnityEngine.InputSystem.Utilities.WhereObservable`1
+
+Method: System.Void .ctor(System.IObservable`1<TValue> source, System.Func`2<TValue, System.Boolean> predicate)
+
+Disassembly:
+	0x0285D8F0 BL 0x2EA49C8
+	0x0285D8F4 STP X21, X20, [X19 + 0x28]
+	0x0285D8F8 STR X22, [X19 + 0x38]
+	0x0285D8FC MOV X0, X19
+	0x0285D900 LDP X20, X19, [X31 + 0x20]
+	0x0285D904 LDP X22, X21, [X31 + 0x10]
+	0x0285D908 LDR X30, [X31], #0x30
+	0x0285D90C RET
+	0x0285D910 STP X30, X21, [X31 - 0x20]!
+	0x0285D914 STP X20, X19, [X31 + 0x10]
+	0x0285D918 LDR W8, [X0 + 0x14]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move X19, X2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+16], X20
+	011 Move [X21+24], X19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+
+Method: System.IDisposable Subscribe(System.IObserver`1<TValue> observer)
+
+Disassembly:
+	0x0285D91C CMP W8, 0x1
+	0x0285D920 B.NE 0x285D9BC
+	0x0285D924 MOV X19, X0
+	0x0285D928 LDR X9, [X19 + 0x28]
+	0x0285D92C CBZ X9, 0x285D9D0
+	0x0285D930 LDRSW X8, [X19 + 0x40]
+	0x0285D934 LDR W10, [X9 + 0x18]
+	0x0285D938 CMP W8, W10
+	0x0285D93C B.GE 0x285D9AC
+	0x0285D940 CMP W8, W10
+	0x0285D944 B.CS 0x285D9CC
+	0x0285D948 ADD X10, X9, X8, 0x4, LSL
+	0x0285D94C LDR X9, [X19 + 0x30]
+	0x0285D950 LDP X21, X20, [X10 + 0x20]
+	0x0285D954 ADD W8, W8, 0x1
+	0x0285D958 STR W8, [X19 + 0x40]
+	0x0285D95C CBZ X9, 0x285D97C
+	0x0285D960 LDR X8, [X9 + 0x18]
+	0x0285D964 LDR X0, [X9 + 0x40]
+	0x0285D968 LDR X3, [X9 + 0x28]
+	0x0285D96C MOV X1, X21
+	0x0285D970 MOV X2, X20
+	0x0285D974 BLR X8
+	0x0285D978 TBZ X0, 0x0, 0x285D928
+	0x0285D97C LDR X8, [X19 + 0x38]
+	0x0285D980 CBZ X8, 0x285D9D0
+	0x0285D984 LDR X9, [X8 + 0x18]
+	0x0285D988 LDR X0, [X8 + 0x40]
+	0x0285D98C LDR X3, [X8 + 0x28]
+	0x0285D990 MOV X1, X21
+	0x0285D994 MOV X2, X20
+	0x0285D998 BLR X9
+	0x0285D99C STP S0, S1, [X19 + 0x18]
+	0x0285D9A0 STR S2, [X19 + 0x20]
+	0x0285D9A4 MOVZ W0, 0x1
+	0x0285D9A8 B 0x285D9C0
+	0x0285D9AC LDR X8, [X19]
+	0x0285D9B0 MOV X0, X19
+	0x0285D9B4 LDP X9, X1, [X8 + 0x1F8]
+	0x0285D9B8 BLR X9
+	0x0285D9BC MOV W0, W31
+	0x0285D9C0 LDP X20, X19, [X31 + 0x10]
+	0x0285D9C4 LDP X30, X21, [X31], #0x20
+	0x0285D9C8 RET
+	0x0285D9CC BL 0x1C16F28
+	0x0285D9D0 BL 0x1C16F20
+	0x0285D9D4 STP X30, X21, [X31 - 0x20]!
+	0x0285D9D8 STP X20, X19, [X31 + 0x10]
+	0x0285D9DC LDR X8, [X2 + 0x20]
+	0x0285D9E0 MOV X21, X2
+	0x0285D9E4 MOV X19, X1
+	0x0285D9E8 MOV X20, X0
+	0x0285D9EC LDR X8, [X8 + 0xC0]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X8, [X2+32]
+	008 Move X22, X0
+	009 Move X19, [X22+16]
+	010 Move X21, X2
+	011 Move X8, [X8+192]
+	012 Move X23, X1
+	013 Move X0, [X8+32]
+	014 Move W8, [X0+309]
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {20}
+	019 Call 0x1C5D684
+	020 Call 0x1C17F10
+	021 Move X1, X31
+	022 Move X20, X0
+	023 Call Object..ctor, X0
+	024 Move [X20+16], X22
+	025 Move [X20+24], X23
+	026 Compare X19, 0
+	027 JumpIfEqual {66}
+	028 Move X8, [X21+32]
+	029 Move X8, [X8+192]
+	030 Move X1, [X8]
+	031 Move W8, [X1+309]
+	032 Move TEMP, X8
+	033 And TEMP, TEMP, 1
+	034 Compare TEMP, 1
+	035 JumpIfEqual {39}
+	036 Move X0, X1
+	037 Call 0x1C5D684
+	038 Move X1, X0
+	039 Move X8, [X19]
+	040 NotImplemented "Instruction LDRH not yet implemented."
+	041 Compare X9, 0
+	042 JumpIfEqual {49}
+	043 Move X10, [X8+176]
+	044 Add X10, X10, 8
+	045 NotImplemented "Instruction LDUR not yet implemented."
+	046 NotImplemented "Instruction CMP not yet implemented."
+	047 Subtract X9, X9, 1
+	048 Add X10, X10, 16
+	049 Move X0, X19
+	050 Move W2, W31
+	051 Call 0x1C5D788
+	052 NotImplemented "Instruction LDRSW not yet implemented."
+	053 Add X8, X8, X9
+	054 Add X0, X8, 312
+	055 Move X3, [X0]
+	056 Move X2, [X0+8]
+	057 Move X0, X19
+	058 Move X1, X20
+	059 Move X20, [X31+32]
+	060 Move X19, [X31+40]
+	061 Move X22, [X31+16]
+	062 Move X21, [X31+24]
+	063 Move X30, [X31+48]
+	064 Move X23, [X31+56]
+	065 CallNoReturn X3
+	066 Call 0x1C17F20
+

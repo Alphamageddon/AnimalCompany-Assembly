@@ -1,0 +1,326 @@
+Type: UnityEngine.Animations.Rigging.DampedTransformData
+
+Method: UnityEngine.Transform get_constrainedObject()
+
+Disassembly:
+	0x036EE67C TBZ X0, 0x0, 0x36EE5A0
+	0x036EE680 MOV X20, X31
+
+ISIL:
+	001 Move X0, [X0]
+	002 Return X0
+
+Method: System.Void set_constrainedObject(UnityEngine.Transform value)
+
+Disassembly:
+	0x036EE684 EOR W21, W21, 0x1
+	0x036EE688 CBZ X19, 0x36EE6F4
+
+ISIL:
+	001 Move [X0], X1
+	002 Return 
+
+Method: UnityEngine.Transform get_sourceObject()
+
+Disassembly:
+	0x036EE68C ADRP X10, 0xA05000
+	0x036EE690 LDR X8, [X19]
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Return X0
+
+Method: System.Void set_sourceObject(UnityEngine.Transform value)
+
+Disassembly:
+	0x036EE694 LDR X10, [X10 + 0xE00]
+	0x036EE698 LDRH W9, [X8 + 0x12E]
+
+ISIL:
+	001 Move [X0+8], X1
+	002 Return 
+
+Method: System.Single get_dampPosition()
+
+Disassembly:
+	0x036EE69C LDR X1, [X10]
+	0x036EE6A0 CBZ X9, 0x36EE6C4
+
+ISIL:
+	001 Move V0, [X0+16]
+	002 Return V0
+
+Method: System.Void set_dampPosition(System.Single value)
+
+Disassembly:
+	0x036EE6A4 LDR X10, [X8 + 0xB0]
+	0x036EE6A8 ADD X10, X10, 0x8
+	0x036EE6AC LDUR X11, [X10 - 0x8]
+	0x036EE6B0 CMP X11, X1
+	0x036EE6B4 B.EQ 0x36EE6DC
+	0x036EE6B8 SUBS X9, X9, 0x1
+	0x036EE6BC ADD X10, X10, 0x10
+
+ISIL:
+	001 Move S1, 1
+	002 NotImplemented "Instruction FCMP not yet implemented."
+	003 NotImplemented "Instruction FMIN not yet implemented."
+	004 Move S1, W31
+	005 NotImplemented "Instruction FCSEL not yet implemented."
+	006 Move [X0+16], S0
+	007 Return 
+
+Method: System.Single get_dampRotation()
+
+Disassembly:
+	0x036EE6C0 B.NE 0x36EE6AC
+	0x036EE6C4 MOV X0, X19
+
+ISIL:
+	001 Move V0, [X0+20]
+	002 Return V0
+
+Method: System.Void set_dampRotation(System.Single value)
+
+Disassembly:
+	0x036EE6C8 MOV W2, W31
+	0x036EE6CC BL 0x1C5C788
+	0x036EE6D0 B 0x36EE6E8
+	0x036EE6D4 MOV W21, W31
+	0x036EE6D8 B 0x36EE6F8
+	0x036EE6DC LDRSW X9, [X10]
+	0x036EE6E0 ADD X8, X8, X9, 0x4, LSL
+
+ISIL:
+	001 Move S1, 1
+	002 NotImplemented "Instruction FCMP not yet implemented."
+	003 NotImplemented "Instruction FMIN not yet implemented."
+	004 Move S1, W31
+	005 NotImplemented "Instruction FCSEL not yet implemented."
+	006 Move [X0+20], S0
+	007 Return 
+
+Method: System.Boolean get_maintainAim()
+
+Disassembly:
+	0x036EE6E4 ADD X0, X8, 0x138
+	0x036EE6E8 LDP X8, X1, [X0]
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_maintainAim(System.Boolean value)
+
+Disassembly:
+	0x036EE6EC MOV X0, X19
+	0x036EE6F0 BLR X8
+	0x036EE6F4 CBNZ X20, 0x36EE714
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+24], W8
+	003 Return 
+
+Method: System.String UnityEngine.Animations.Rigging.IDampedTransformData.get_dampPositionFloatProperty()
+
+Disassembly:
+	0x036EE6F8 AND W0, W21, 0x1
+	0x036EE6FC LDP X20, X19, [X31 + 0x30]
+	0x036EE700 LDP X22, X21, [X31 + 0x20]
+	0x036EE704 LDP X24, X23, [X31 + 0x10]
+	0x036EE708 LDR X30, [X31], #0x40
+	0x036EE70C RET
+	0x036EE710 BL 0x1C16F20
+	0x036EE714 MOV X0, X20
+	0x036EE718 BL 0x1C16F18
+	0x036EE71C B 0x36EE72C
+	0x036EE720 B 0x36EE72C
+	0x036EE724 B 0x36EE72C
+	0x036EE728 B 0x36EE72C
+	0x036EE72C MOV X21, X0
+	0x036EE730 CMP W1, 0x1
+	0x036EE734 B.NE 0x36EE754
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xCF3000
+	005 Move X20, 0xA53000
+	006 Move W8, [X19+2885]
+	007 Move X20, [X20+2096]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xA53000
+	013 Move X0, [X0+2096]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2885], W8
+	017 Move X0, [X20]
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Call ConstraintsUtils.ConstructConstraintDataPropertyName, X0
+	022 Return X0
+
+Method: System.String UnityEngine.Animations.Rigging.IDampedTransformData.get_dampRotationFloatProperty()
+
+Disassembly:
+	0x036EE738 MOV X0, X21
+	0x036EE73C BL 0x3EB1AD0
+	0x036EE740 LDR X20, [X0]
+	0x036EE744 BL 0x3EB1AE0
+	0x036EE748 MOVZ W21, 0x1
+	0x036EE74C CBNZ X19, 0x36EE68C
+	0x036EE750 B 0x36EE6F4
+	0x036EE754 MOV X20, X31
+	0x036EE758 B 0x36EE760
+	0x036EE75C MOV X21, X0
+	0x036EE760 CBZ X19, 0x36EE7C4
+	0x036EE764 ADRP X10, 0xA05000
+	0x036EE768 LDR X8, [X19]
+	0x036EE76C LDR X10, [X10 + 0xE00]
+	0x036EE770 LDRH W9, [X8 + 0x12E]
+	0x036EE774 LDR X1, [X10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xCF3000
+	005 Move X20, 0xA53000
+	006 Move W8, [X19+2886]
+	007 Move X20, [X20+2104]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xA53000
+	013 Move X0, [X0+2104]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2886], W8
+	017 Move X0, [X20]
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Call ConstraintsUtils.ConstructConstraintDataPropertyName, X0
+	022 Return X0
+
+Method: System.Boolean UnityEngine.Animations.Rigging.IAnimationJobData.IsValid()
+
+Disassembly:
+	0x036EE778 CBZ X9, 0x36EE79C
+	0x036EE77C LDR X10, [X8 + 0xB0]
+	0x036EE780 ADD X10, X10, 0x8
+	0x036EE784 LDUR X11, [X10 - 0x8]
+	0x036EE788 CMP X11, X1
+	0x036EE78C B.EQ 0x36EE7AC
+	0x036EE790 SUBS X9, X9, 0x1
+	0x036EE794 ADD X10, X10, 0x10
+	0x036EE798 B.NE 0x36EE784
+	0x036EE79C MOV X0, X19
+	0x036EE7A0 MOV W2, W31
+	0x036EE7A4 BL 0x1C5C788
+	0x036EE7A8 B 0x36EE7B8
+	0x036EE7AC LDRSW X9, [X10]
+	0x036EE7B0 ADD X8, X8, X9, 0x4, LSL
+	0x036EE7B4 ADD X0, X8, 0x138
+	0x036EE7B8 LDP X8, X1, [X0]
+	0x036EE7BC MOV X0, X19
+	0x036EE7C0 BLR X8
+	0x036EE7C4 CBNZ X20, 0x36EE7D0
+	0x036EE7C8 MOV X0, X21
+	0x036EE7CC BL 0x1D2C690
+	0x036EE7D0 MOV X0, X20
+	0x036EE7D4 BL 0x1C16F18
+	0x036EE7D8 BL 0x1990590
+	0x036EE7DC STP X30, X21, [X31 - 0x20]!
+	0x036EE7E0 STP X20, X19, [X31 + 0x10]
+	0x036EE7E4 ADRP X21, 0xCF2000
+	0x036EE7E8 ADRP X20, 0xA2F000
+	0x036EE7EC LDRB W8, [X21 + 0xB54]
+	0x036EE7F0 LDR X20, [X20 + 0x960]
+	0x036EE7F4 MOV X19, X0
+	0x036EE7F8 TBNZ X8, 0x0, 0x36EE810
+	0x036EE7FC ADRP X0, 0xA2F000
+	0x036EE800 LDR X0, [X0 + 0x960]
+	0x036EE804 BL 0x1C16CF4
+	0x036EE808 MOVZ W8, 0x1
+	0x036EE80C STRB W8, [X21 + 0xB54]
+	0x036EE810 ORR W8, W31, 0x1010101
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xCF3000
+	006 Move X21, 0xA06000
+	007 Move W8, [X20+2887]
+	008 Move X21, [X21+1432]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xA06000
+	015 Move X0, [X0+1432]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+2887], W8
+	019 Move X0, [X21]
+	020 Move X20, [X19]
+	021 Move W8, [X0+224]
+	022 Compare W8, 0
+	023 JumpIfNotEqual {25}
+	024 Call 0x1C17DFC
+	025 Move X0, X20
+	026 Move X1, X31
+	027 Move X2, X31
+	028 Call Object.op_Equality, X0, X1
+	029 Move TEMP, X0
+	030 And TEMP, TEMP, 1
+	031 Compare TEMP, 1
+	032 JumpIfNotEqual {34}
+	033 Move W8, W31
+	034 Move X0, [X21]
+	035 Move X19, [X19+8]
+	036 Move W8, [X0+224]
+	037 Compare W8, 0
+	038 JumpIfNotEqual {40}
+	039 Call 0x1C17DFC
+	040 Move X0, X19
+	041 Move X1, X31
+	042 Move X2, X31
+	043 Call Object.op_Equality, X0, X1
+	044 Xor W8, W0, 1
+	045 Move X20, [X31+16]
+	046 Move X19, [X31+24]
+	047 And W0, W8, 1
+	048 Move X30, [X31+32]
+	049 Move X21, [X31+40]
+	050 Return X0
+
+Method: System.Void UnityEngine.Animations.Rigging.IAnimationJobData.SetDefaultValues()
+
+Disassembly:
+	0x036EE814 STR X31, [X19]
+	0x036EE818 STR W8, [X19 + 0x90]
+	0x036EE81C STRH W8, [X19 + 0x94]
+	0x036EE820 LDR X0, [X20]
+	0x036EE824 LDR W8, [X0 + 0xE0]
+	0x036EE828 CBNZ W8, 0x36EE830
+
+ISIL:
+	001 NotImplemented "Instruction MOVI not yet implemented."
+	002 Move W8, 1
+	003 Move [X0], X31
+	004 Move [X0+8], X31
+	005 Move [X0+16], D0
+	006 Move [X0+24], W8
+	007 Return 
+

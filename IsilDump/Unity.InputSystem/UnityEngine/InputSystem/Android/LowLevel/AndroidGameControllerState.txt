@@ -1,0 +1,185 @@
+Type: UnityEngine.InputSystem.Android.LowLevel.AndroidGameControllerState
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_format()
+
+Disassembly:
+	0x037FE7E8 BL 0x375AA28
+	0x037FE7EC LDR W8, [X31 + 0x8]
+	0x037FE7F0 ANDS W31, W19, 0x1
+	0x037FE7F4 LDP X30, X19, [X31 + 0x10]
+	0x037FE7F8 MOVZ X9, 0x9
+	0x037FE7FC MOVZ W10, 0xFF
+	0x037FE800 ORR X0, X8, X9, 0x0
+	0x037FE804 CSEL X1, X10, X31, NE
+	0x037FE808 ADD X31, X31, 0x20
+	0x037FE80C RET
+	0x037FE810 STR X30, [X31 - 0x10]!
+	0x037FE814 ADD X0, X31, 0x8
+	0x037FE818 MOVZ W1, 0x50
+	0x037FE81C MOVZ W2, 0x41
+	0x037FE820 MOVZ W3, 0x49
+	0x037FE824 MOVZ W4, 0x52
+	0x037FE828 MOV X5, X31
+	0x037FE82C STR W31, [X31 + 0x8]
+	0x037FE830 BL 0x375AA28
+	0x037FE834 LDR W0, [X31 + 0x8]
+	0x037FE838 LDR X30, [X31], #0x10
+	0x037FE83C RET
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xBE4000
+	005 Move X19, 0x94C000
+	006 Move W8, [X20+1012]
+	007 Move X19, [X19+3872]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x94C000
+	013 Move X0, [X0+3872]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+1012], W8
+	017 Move X0, [X19]
+	018 Move W8, [X0+224]
+	019 Compare W8, 0
+	020 JumpIfNotEqual {23}
+	021 Call 0x1C17DFC
+	022 Move X0, [X19]
+	023 Move X8, [X0+184]
+	024 Move X20, [X31+16]
+	025 Move X19, [X31+24]
+	026 Move W0, [X8]
+	027 Move X30, [X31+32]
+	028 Return X0
+
+Method: UnityEngine.InputSystem.Android.LowLevel.AndroidGameControllerState WithButton(UnityEngine.InputSystem.Android.LowLevel.AndroidKeyCode code, System.Boolean value = True)
+
+Disassembly:
+	0x037FE840 STR X30, [X31 - 0x10]!
+	0x037FE844 ADD X0, X31, 0x8
+	0x037FE848 MOVZ W1, 0x50
+	0x037FE84C MOVZ W2, 0x41
+	0x037FE850 MOVZ W3, 0x49
+	0x037FE854 MOVZ W4, 0x52
+	0x037FE858 MOV X5, X31
+	0x037FE85C STR W31, [X31 + 0x8]
+	0x037FE860 BL 0x375AA28
+	0x037FE864 LDR W0, [X31 + 0x8]
+	0x037FE868 LDR X30, [X31], #0x10
+	0x037FE86C RET
+	0x037FE870 STR X30, [X31 - 0x10]!
+	0x037FE874 ADD X0, X31, 0x8
+	0x037FE878 MOVZ W1, 0x50
+	0x037FE87C MOVZ W2, 0x41
+	0x037FE880 MOVZ W3, 0x49
+
+ISIL:
+	001 Move X9, X0
+	002 Move X0, X8
+	003 Add W8, W1, 31
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 NotImplemented "Instruction CSEL not yet implemented."
+	006 NotImplemented "Instruction SBFM not yet implemented."
+	007 Move W10, [X9]
+	008 Move W11, 1
+	009 NotImplemented "Instruction LSLV not yet implemented."
+	010 And W31, W2, 1
+	011 NotImplemented "Instruction BIC not yet implemented."
+	012 Or W10, W10, W11
+	013 NotImplemented "Instruction CSEL not yet implemented."
+	014 Move W2, 220
+	015 Move X1, X9
+	016 Move [X9], W10
+	017 Call 0x3EB2AC0
+	018 Return X0
+
+Method: UnityEngine.InputSystem.Android.LowLevel.AndroidGameControllerState WithAxis(UnityEngine.InputSystem.Android.LowLevel.AndroidAxis axis, System.Single value)
+
+Disassembly:
+	0x037FE884 MOVZ W4, 0x52
+	0x037FE888 MOV X5, X31
+	0x037FE88C STR W31, [X31 + 0x8]
+	0x037FE890 BL 0x375AA28
+	0x037FE894 LDR W8, [X31 + 0x8]
+	0x037FE898 ORR X0, X8, 0xFFFFFFFFF
+	0x037FE89C LDR X30, [X31], #0x10
+
+ISIL:
+	001 Move X9, X0
+	002 Move X0, X8
+	003 Add X8, X9, W1
+	004 Move W2, 220
+	005 Move X1, X9
+	006 Move [X8+28], S0
+	007 Call 0x3EB2AC0
+	008 Return X0
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x037FE8A0 RET
+	0x037FE8A4 STR X30, [X31 - 0x30]!
+	0x037FE8A8 STP X22, X21, [X31 + 0x10]
+	0x037FE8AC STP X20, X19, [X31 + 0x20]
+	0x037FE8B0 LDR X8, [X2 + 0x8]
+	0x037FE8B4 STP X1, X2, [X0 + 0x20]
+	0x037FE8B8 MOV X19, X0
+	0x037FE8BC MOV X20, X2
+	0x037FE8C0 STR X8, [X0 + 0x10]
+	0x037FE8C4 LDRB W22, [X2 + 0x52]
+	0x037FE8C8 STR X0, [X0 + 0x40]
+	0x037FE8CC MOV X0, X2
+	0x037FE8D0 MOV X21, X1
+	0x037FE8D4 BL 0x1C16D84
+	0x037FE8D8 TBZ X0, 0x0, 0x37FE8F0
+	0x037FE8DC CMP W22, 0x2
+	0x037FE8E0 B.NE 0x37FE92C
+	0x037FE8E4 ADRP X8, 0xFFFFFFFFFE3D5000
+	0x037FE8E8 ADD X8, X8, 0x678
+	0x037FE8EC B 0x37FE970
+	0x037FE8F0 CMP W22, 0x1
+	0x037FE8F4 B.NE 0x37FE928
+	0x037FE8F8 LDRB W8, [X19 + 0x70]
+	0x037FE8FC CBZ W8, 0x37FE940
+	0x037FE900 MOV X0, X20
+	0x037FE904 BL 0x1C16D7C
+	0x037FE908 MOV W21, W0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xBE4000
+	005 Move X19, 0x94C000
+	006 Move W8, [X20+1013]
+	007 Move X19, [X19+3872]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x94C000
+	013 Move X0, [X0+3872]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+1013], W8
+	017 Add X0, X31, 8
+	018 Move W1, 65
+	019 Move W2, 71
+	020 Move W3, 67
+	021 Move W4, 32
+	022 Move X5, X31
+	023 Move [X31+8], W31
+	024 Call FourCC..ctor, X0, X1, X2, X3, X4
+	025 Move X8, [X19]
+	026 Move W9, [X31+8]
+	027 Move X20, [X31+16]
+	028 Move X19, [X31+24]
+	029 Move X8, [X8+184]
+	030 Move [X8], W9
+	031 Move X30, [X31+32]
+	032 Return 
+

@@ -1,0 +1,35 @@
+Type: System.Runtime.ConstrainedExecution.ReliabilityContractAttribute
+
+Method: System.Void .ctor(System.Runtime.ConstrainedExecution.Consistency consistencyGuarantee, System.Runtime.ConstrainedExecution.Cer cer)
+
+Disassembly:
+	0x032C38F4 LDR X19, [X19 + 0x860]
+	0x032C38F8 TBNZ X8, 0x0, 0x32C3934
+	0x032C38FC ADRP X0, 0xE5A000
+	0x032C3900 LDR X0, [X0 + 0xE48]
+	0x032C3904 BL 0x1C16CF4
+	0x032C3908 ADRP X0, 0xE62000
+	0x032C390C LDR X0, [X0 + 0x868]
+	0x032C3910 BL 0x1C16CF4
+	0x032C3914 ADRP X0, 0xE62000
+	0x032C3918 LDR X0, [X0 + 0x860]
+	0x032C391C BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, W1
+	006 Move X1, X31
+	007 Move W19, W2
+	008 Move X21, X0
+	009 Call Attribute..ctor, X0
+	010 Move [X21+16], W20
+	011 Move [X21+20], W19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+

@@ -1,0 +1,80 @@
+Type: Fusion.FusionGlobalScriptableObjectAttribute
+
+Method: System.Void .ctor(System.String defaultPath)
+
+Disassembly:
+	0x01E356A4 LDR X0, [X0 + 0x6A8]
+	0x01E356A8 BL 0x1C16CF4
+	0x01E356AC ADRP X0, 0x22C6000
+	0x01E356B0 LDR X0, [X0 + 0x698]
+	0x01E356B4 BL 0x1C16CF4
+	0x01E356B8 ADRP X0, 0x22C6000
+	0x01E356BC LDR X0, [X0 + 0x6A0]
+	0x01E356C0 BL 0x1C16CF4
+	0x01E356C4 MOVZ W8, 0x1
+	0x01E356C8 STRB W8, [X25 + 0xECC]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.String get_DefaultPath()
+
+Disassembly:
+	0x01E356CC LDR X0, [X24]
+	0x01E356D0 MOVZ W1, 0x20
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.String get_DefaultContents()
+
+Disassembly:
+	0x01E356D4 BL 0x1C16D6C
+	0x01E356D8 LDR X1, [X19]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_DefaultContents(System.String value)
+
+Disassembly:
+	0x01E356DC MOV X2, X31
+	0x01E356E0 MOV X19, X0
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.String get_DefaultContentsGeneratorMethod()
+
+Disassembly:
+	0x01E356E4 BL 0x32C5BD8
+	0x01E356E8 LDR X8, [X20]
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_DefaultContentsGeneratorMethod(System.String value)
+
+Disassembly:
+	0x01E356EC MOVZ W1, 0x40
+	0x01E356F0 LDR X8, [X8 + 0xB8]
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+

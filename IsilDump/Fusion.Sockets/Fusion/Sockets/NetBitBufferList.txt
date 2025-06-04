@@ -1,0 +1,193 @@
+Type: Fusion.Sockets.NetBitBufferList
+
+Method: System.Void AddFirst(Fusion.Sockets.NetBitBuffer* item)
+
+Disassembly:
+	0x01EFBC3C TBNZ X8, 0x0, 0x1EFBC54
+	0x01EFBC40 ADRP X0, 0x21F8000
+	0x01EFBC44 LDR X0, [X0 + 0x5A8]
+	0x01EFBC48 BL 0x1C16CF4
+	0x01EFBC4C MOVZ W8, 0x1
+	0x01EFBC50 STRB W8, [X21 + 0x631]
+	0x01EFBC54 LDR V10, [X20 + 0x18]
+	0x01EFBC58 FCMP D10, 0x0
+	0x01EFBC5C B.NE 0x1EFBC78
+	0x01EFBC60 LDR W8, [X20]
+	0x01EFBC64 CBZ W8, 0x1EFBC78
+	0x01EFBC68 LDP D1, D0, [X20 + 0x8]
+	0x01EFBC6C FMOV D2, 0.5
+	0x01EFBC70 FSUB D0, D0, D1
+	0x01EFBC74 B 0x1EFBD9C
+	0x01EFBC78 LDP D9, D0, [X20 + 0x8]
+	0x01EFBC7C FCMP D9, D0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, X0
+	003 Add X8, X8, 8
+	004 Move X9, [X8]
+	005 Compare X1, 0
+	006 JumpIfEqual {20}
+	007 Move [X1+24], X31
+	008 Move [X1+32], X9
+	009 Compare X9, 0
+	010 JumpIfEqual {12}
+	011 Move [X9+24], X1
+	012 Add X8, X0, 16
+	013 Move [X0+8], X1
+	014 Move [X8], X1
+	015 Move W8, [X0]
+	016 Add W8, W8, 1
+	017 Move [X0], W8
+	018 Move X30, [X31+16]
+	019 Return 
+	020 Call 0x1C17F20
+
+Method: System.Void AddLast(Fusion.Sockets.NetBitBuffer* item)
+
+Disassembly:
+	0x01EFBC80 B.EQ 0x1EFBDA4
+	0x01EFBC84 LDR W8, [X20]
+	0x01EFBC88 FMOV D9, X31
+	0x01EFBC8C FMOV D0, X31
+	0x01EFBC90 CMP W8, 0x5
+	0x01EFBC94 B.HI 0x1EFBD88
+	0x01EFBC98 ADRP X9, 0xFFFFFFFFFEC32000
+	0x01EFBC9C ADD X9, X9, 0xC3A
+	0x01EFBCA0 ADR X10, 0x10
+	0x01EFBCA4 LDRB W11, [X9, X8, LSL]
+	0x01EFBCA8 ADD X10, X10, X11, 0x2, LSL
+	0x01EFBCAC BR X10
+	0x01EFBCB0 CBZ X19, 0x1EFBDE0
+	0x01EFBCB4 LDR X8, [X19]
+	0x01EFBCB8 MOV X0, X19
+	0x01EFBCBC LDP X9, X1, [X8 + 0x1B8]
+	0x01EFBCC0 BLR X9
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {18}
+	004 Move [X1+32], X31
+	005 Move X8, [X0+16]
+	006 Add X9, X0, 8
+	007 Add X10, X8, 32
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move [X1+24], X8
+	010 NotImplemented "Instruction CSEL not yet implemented."
+	011 Move [X8], X1
+	012 Move W8, [X0]
+	013 Move [X0+16], X1
+	014 Add W8, W8, 1
+	015 Move [X0], W8
+	016 Move X30, [X31+16]
+	017 Return 
+	018 Call 0x1C17F20
+
+Method: Fusion.Sockets.NetBitBuffer* RemoveHead()
+
+Disassembly:
+	0x01EFBCC4 B 0x1EFBD88
+	0x01EFBCC8 ADRP X8, 0x21F8000
+	0x01EFBCCC LDR X8, [X8 + 0x5A8]
+	0x01EFBCD0 LDR X0, [X8]
+	0x01EFBCD4 LDR W8, [X0 + 0xE0]
+	0x01EFBCD8 CBNZ W8, 0x1EFBCE0
+	0x01EFBCDC BL 0x1C16DFC
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, [X0+8]
+	004 Move X1, X19
+	005 Call NetBitBufferList.Remove, X0, X1
+	006 Move X0, X19
+	007 Move X30, [X31+16]
+	008 Move X19, [X31+24]
+	009 Return X0
+
+Method: System.Void Remove(Fusion.Sockets.NetBitBuffer* item)
+
+Disassembly:
+	0x01EFBCE0 ADRP X8, 0xFFFFFFFFFEBF2000
+	0x01EFBCE4 LDR V0, [X8 + 0x4B8]
+	0x01EFBCE8 FADD D1, D8, D8
+	0x01EFBCEC FMUL D0, D1, D0
+	0x01EFBCF0 FDIV D0, D0, D10
+	0x01EFBCF4 BL 0x3EB1C30
+	0x01EFBCF8 FMOV D1, 0.5
+	0x01EFBCFC FMUL D0, D0, D1
+	0x01EFBD00 FADD D0, D0, D1
+	0x01EFBD04 B 0x1EFBD88
+	0x01EFBD08 FDIV D0, D8, D10
+	0x01EFBD0C FMOV D1, 1
+	0x01EFBD10 FMOV D8, 1
+	0x01EFBD14 BL 0x3EB1C10
+	0x01EFBD18 FMOV D1, 0.5
+	0x01EFBD1C FCMP D0, D1
+	0x01EFBD20 FMOV D0, X31
+	0x01EFBD24 FCSEL D0, D8, D0, GT
+	0x01EFBD28 B 0x1EFBD88
+	0x01EFBD2C ADRP X8, 0x21F8000
+	0x01EFBD30 LDR X8, [X8 + 0x5A8]
+	0x01EFBD34 LDR X0, [X8]
+	0x01EFBD38 LDR W8, [X0 + 0xE0]
+	0x01EFBD3C CBNZ W8, 0x1EFBD44
+	0x01EFBD40 BL 0x1C16DFC
+	0x01EFBD44 FDIV D0, D8, D10
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {29}
+	004 Move X8, X1
+	005 Add X8, X8, 24
+	006 Move X10, [X8]
+	007 Compare X10, 0
+	008 JumpIfEqual {11}
+	009 Move X9, [X1+32]
+	010 Move [X10+32], X9
+	011 Move X9, [X1+32]
+	012 Compare X9, 0
+	013 JumpIfEqual {15}
+	014 Move [X9+24], X10
+	015 Move X10, [X0+16]
+	016 NotImplemented "Instruction CMP not yet implemented."
+	017 Move X10, [X8]
+	018 Move [X0+16], X10
+	019 Move X10, [X0+8]
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 Move [X0+8], X9
+	022 Move [X8], X31
+	023 Move [X8+8], X31
+	024 Move W8, [X0]
+	025 Subtract W8, W8, 1
+	026 Move [X0], W8
+	027 Move X30, [X31+16]
+	028 Return 
+	029 Call 0x1C17F20
+
+Method: System.Boolean IsInList(Fusion.Sockets.NetBitBuffer* item)
+
+Disassembly:
+	0x01EFBD48 FMOV D1, 1
+	0x01EFBD4C BL 0x3EB1C10
+	0x01EFBD50 FADD D0, D0, D0
+	0x01EFBD54 FMOV D1, -1
+	0x01EFBD58 FADD D0, D0, D1
+	0x01EFBD5C FABS D0, D0
+	0x01EFBD60 B 0x1EFBD88
+	0x01EFBD64 FDIV D0, D8, D10
+	0x01EFBD68 FMOV D1, 1
+
+ISIL:
+	001 Add X9, X0, 8
+	002 Move X8, [X9]
+	003 Compare X8, 0
+	004 JumpIfEqual {7}
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Add X9, X8, 32
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Return X0
+

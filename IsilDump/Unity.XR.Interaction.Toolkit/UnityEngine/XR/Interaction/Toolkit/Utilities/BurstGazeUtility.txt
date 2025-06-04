@@ -1,0 +1,304 @@
+Type: UnityEngine.XR.Interaction.Toolkit.Utilities.BurstGazeUtility
+
+Method: System.Boolean IsOutsideGaze(in Unity.Mathematics.float3 gazePosition, in Unity.Mathematics.float3 gazeDirection, in Unity.Mathematics.float3 targetPosition, System.Single angleThreshold)
+
+Disassembly:
+	0x03B87674 LDR V8, [X31], #0x40
+	0x03B87678 RET
+	0x03B8767C STR D8, [X31 - 0x30]!
+	0x03B87680 STR X30, [X31 + 0x8]
+	0x03B87684 STP X22, X21, [X31 + 0x10]
+	0x03B87688 STP X20, X19, [X31 + 0x20]
+	0x03B8768C ADRP X21, 0x85B000
+	0x03B87690 ADRP X22, 0x5D5000
+	0x03B87694 LDRB W8, [X21 + 0xB07]
+	0x03B87698 LDR X22, [X22 + 0xD0]
+	0x03B8769C MOV V8.16B, V0.16B
+	0x03B876A0 MOV X19, X1
+	0x03B876A4 MOV X20, X0
+	0x03B876A8 TBNZ X8, 0x0, 0x3B876C0
+	0x03B876AC ADRP X0, 0x5D5000
+	0x03B876B0 LDR X0, [X0 + 0xD0]
+	0x03B876B4 BL 0x1C16CF4
+	0x03B876B8 MOVZ W8, 0x1
+	0x03B876BC STRB W8, [X21 + 0xB07]
+	0x03B876C0 LDR X0, [X22]
+	0x03B876C4 LDR W8, [X0 + 0xE0]
+	0x03B876C8 CBNZ W8, 0x3B876D0
+	0x03B876CC BL 0x1C16DFC
+	0x03B876D0 MOV X0, X20
+	0x03B876D4 MOV X1, X19
+	0x03B876D8 LDP X20, X19, [X31 + 0x20]
+	0x03B876DC LDP X22, X21, [X31 + 0x10]
+	0x03B876E0 LDR X30, [X31 + 0x8]
+	0x03B876E4 MOV V0.16B, V8.16B
+	0x03B876E8 LDR V8, [X31], #0x30
+	0x03B876EC B 0x3B876F0
+	0x03B876F0 STR D8, [X31 - 0x30]!
+	0x03B876F4 STR X30, [X31 + 0x8]
+	0x03B876F8 STP X22, X21, [X31 + 0x10]
+	0x03B876FC STP X20, X19, [X31 + 0x20]
+	0x03B87700 ADRP X21, 0x85B000
+	0x03B87704 ADRP X22, 0x594000
+	0x03B87708 LDRB W8, [X21 + 0xB3F]
+	0x03B8770C LDR X22, [X22 + 0x848]
+	0x03B87710 MOV V8.16B, V0.16B
+	0x03B87714 MOV X19, X1
+	0x03B87718 MOV X20, X0
+	0x03B8771C TBNZ X8, 0x0, 0x3B87740
+	0x03B87720 ADRP X0, 0x594000
+	0x03B87724 LDR X0, [X0 + 0x848]
+	0x03B87728 BL 0x1C16CF4
+	0x03B8772C ADRP X0, 0x5D5000
+	0x03B87730 LDR X0, [X0 + 0xD0]
+	0x03B87734 BL 0x1C16CF4
+	0x03B87738 MOVZ W8, 0x1
+	0x03B8773C STRB W8, [X21 + 0xB3F]
+	0x03B87740 LDR X0, [X22]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+16], D12
+	003 Move [X31+24], D11
+	004 Move [X31+32], D10
+	005 Move [X31+40], D9
+	006 Move [X31+48], D8
+	007 Move [X31+56], X30
+	008 Move [X31+64], X20
+	009 Move [X31+72], X19
+	010 Move X20, 0x85B000
+	011 Move V9, [X2]
+	012 Move V10, [X2+8]
+	013 Move V11, [X0]
+	014 Move W8, [X20+1413]
+	015 Move V12, [X0+8]
+	016 Move V8, V0
+	017 Move X19, X1
+	018 Compare W8, 0
+	019 JumpIfNotEqual {25}
+	020 Move X0, 0x56D000
+	021 Move X0, [X0+1448]
+	022 Call 0x1C17CF4
+	023 Move W8, 1
+	024 Move [X20+1413], W8
+	025 Move X8, 0x56D000
+	026 Move X8, [X8+1448]
+	027 Subtract V11, V9, V11
+	028 Subtract S9, S10, S12
+	029 Move X0, [X8]
+	030 Move W8, [X0+224]
+	031 Compare W8, 0
+	032 Invalid "Jump target not found in method."
+	033 Call 0x1C17DFC
+	034 NotImplemented "Instruction INVALID not yet implemented."
+	035 Multiply S0, S9, S9
+	036 NotImplemented "Instruction FADDP not yet implemented."
+	037 Add S0, S0, S1
+	038 Move S2, 1
+	039 NotImplemented "Instruction FSQRT not yet implemented."
+	040 NotImplemented "Instruction FDIV not yet implemented."
+	041 NotImplemented "Instruction INVALID not yet implemented."
+	042 Multiply S0, S9, S0
+	043 Move [X31+8], S0
+	044 Add X1, X31, 0
+	045 Move X0, X19
+	046 Move V0, V8
+	047 Move [X31], D1
+	048 Call BurstGazeUtility.IsAlignedToGazeForward, X0, X1, V0
+	049 Move X20, [X31+64]
+	050 Move X19, [X31+72]
+	051 Move X30, [X31+56]
+	052 Move D9, [X31+40]
+	053 Move D8, [X31+48]
+	054 Move D11, [X31+24]
+	055 Move D10, [X31+32]
+	056 Move V12, [X31+16]
+	057 NotImplemented "Instruction ORN not yet implemented."
+	058 And W0, W8, 1
+	059 Add X31, X31, 80
+	060 Return X0
+
+Method: System.Boolean IsAlignedToGazeForward(in Unity.Mathematics.float3 gazeDirection, in Unity.Mathematics.float3 targetDirection, System.Single angleThreshold)
+
+Disassembly:
+	0x03B87744 LDR W8, [X0 + 0xE0]
+	0x03B87748 CBNZ W8, 0x3B87750
+	0x03B8774C BL 0x1C16DFC
+	0x03B87750 MOV X0, X31
+	0x03B87754 BL 0x36FA670
+	0x03B87758 TBZ X0, 0x0, 0x3B877A0
+	0x03B8775C ADRP X8, 0x5D5000
+	0x03B87760 LDR X8, [X8 + 0xD0]
+	0x03B87764 LDR X0, [X8]
+	0x03B87768 LDR W8, [X0 + 0xE0]
+	0x03B8776C CBNZ W8, 0x3B87774
+	0x03B87770 BL 0x1C16DFC
+	0x03B87774 BL 0x3B8AC44
+	0x03B87778 CBZ X0, 0x3B877A0
+	0x03B8777C MOV X2, X0
+	0x03B87780 MOV X0, X20
+	0x03B87784 MOV X1, X19
+	0x03B87788 LDP X20, X19, [X31 + 0x20]
+	0x03B8778C LDP X22, X21, [X31 + 0x10]
+	0x03B87790 LDR X30, [X31 + 0x8]
+	0x03B87794 MOV V0.16B, V8.16B
+	0x03B87798 LDR V8, [X31], #0x30
+	0x03B8779C BR X2
+	0x03B877A0 LDR V0, [X20]
+	0x03B877A4 LDR V1, [X19]
+	0x03B877A8 FABD S0, S0, S0
+	0x03B877AC FCMP S0, S8
+	0x03B877B0 B.PL 0x3B877E0
+	0x03B877B4 LDR V0, [X20 + 0x4]
+	0x03B877B8 LDR V1, [X19 + 0x4]
+	0x03B877BC FABD S0, S0, S0
+	0x03B877C0 FCMP S0, S8
+	0x03B877C4 B.PL 0x3B877E0
+	0x03B877C8 LDR V0, [X20 + 0x8]
+	0x03B877CC LDR V1, [X19 + 0x8]
+	0x03B877D0 FABD S0, S0, S0
+	0x03B877D4 FCMP S0, S8
+	0x03B877D8 CSET W0, MI
+	0x03B877DC B 0x3B877E4
+	0x03B877E0 MOV W0, W31
+	0x03B877E4 LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-48], D8
+	002 Move [X31+16], X30
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x85B000
+	007 Move W8, [X21+1380]
+	008 Move V8, V0
+	009 Move X19, X1
+	010 Move X20, X0
+	011 Compare W8, 0
+	012 JumpIfNotEqual {18}
+	013 Move X0, 0x56D000
+	014 Move X0, [X0+1448]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+1380], W8
+	018 Move X8, 0x56D000
+	019 Move X8, [X8+1448]
+	020 Move X0, [X8]
+	021 Move W8, [X0+224]
+	022 Compare W8, 0
+	023 JumpIfNotEqual {25}
+	024 Call 0x1C17DFC
+	025 Move X8, -50970624
+	026 Move V0, [X8+260]
+	027 Multiply S0, S8, S0
+	028 NotImplemented "Instruction FCVT not yet implemented."
+	029 Call 0x3EB2BF0
+	030 Move V1, [X19]
+	031 NotImplemented "Instruction LDUR not yet implemented."
+	032 Move V3, [X20]
+	033 NotImplemented "Instruction LDUR not yet implemented."
+	034 Move X20, [X31+32]
+	035 Move X19, [X31+40]
+	036 Move X30, [X31+16]
+	037 Move X21, [X31+24]
+	038 Multiply S1, S1, S3
+	039 NotImplemented "Instruction INVALID not yet implemented."
+	040 Add S1, S1, S2
+	041 Move S2, V2.S[1]
+	042 NotImplemented "Instruction INVALID not yet implemented."
+	043 Add S1, S2, S1
+	044 NotImplemented "Instruction FCMP not yet implemented."
+	045 NotImplemented "Instruction CSET not yet implemented."
+	046 Move V8, [X31+48]
+	047 Return X0
+
+Method: System.Boolean IsOutsideDistanceRange(in Unity.Mathematics.float3 gazePosition, in Unity.Mathematics.float3 targetPosition, System.Single distanceThreshold)
+
+Disassembly:
+	0x03B877E8 LDP X22, X21, [X31 + 0x10]
+	0x03B877EC LDR X30, [X31 + 0x8]
+	0x03B877F0 LDR V8, [X31], #0x30
+	0x03B877F4 RET
+	0x03B877F8 STR D8, [X31 - 0x30]!
+	0x03B877FC STR X30, [X31 + 0x8]
+	0x03B87800 STP X22, X21, [X31 + 0x10]
+	0x03B87804 STP X20, X19, [X31 + 0x20]
+	0x03B87808 ADRP X21, 0x85B000
+	0x03B8780C ADRP X22, 0x5D5000
+	0x03B87810 LDRB W8, [X21 + 0xB08]
+	0x03B87814 LDR X22, [X22 + 0xD8]
+	0x03B87818 MOV V8.16B, V0.16B
+	0x03B8781C MOV X19, X1
+	0x03B87820 MOV X20, X0
+	0x03B87824 TBNZ X8, 0x0, 0x3B8783C
+	0x03B87828 ADRP X0, 0x5D5000
+	0x03B8782C LDR X0, [X0 + 0xD8]
+	0x03B87830 BL 0x1C16CF4
+	0x03B87834 MOVZ W8, 0x1
+	0x03B87838 STRB W8, [X21 + 0xB08]
+	0x03B8783C LDR X0, [X22]
+	0x03B87840 LDR W8, [X0 + 0xE0]
+	0x03B87844 CBNZ W8, 0x3B8784C
+	0x03B87848 BL 0x1C16DFC
+	0x03B8784C MOV X0, X20
+	0x03B87850 MOV X1, X19
+	0x03B87854 LDP X20, X19, [X31 + 0x20]
+	0x03B87858 LDP X22, X21, [X31 + 0x10]
+	0x03B8785C LDR X30, [X31 + 0x8]
+	0x03B87860 MOV V0.16B, V8.16B
+	0x03B87864 LDR V8, [X31], #0x30
+	0x03B87868 B 0x3B8786C
+	0x03B8786C STR D8, [X31 - 0x30]!
+	0x03B87870 STR X30, [X31 + 0x8]
+	0x03B87874 STP X22, X21, [X31 + 0x10]
+	0x03B87878 STP X20, X19, [X31 + 0x20]
+	0x03B8787C ADRP X21, 0x85B000
+
+ISIL:
+	001 Move [X31-64], D12
+	002 Move [X31+16], D11
+	003 Move [X31+24], D10
+	004 Move [X31+32], D9
+	005 Move [X31+40], D8
+	006 Move [X31+48], X30
+	007 Move [X31+56], X19
+	008 Move X19, 0x85B000
+	009 Move V9, [X1]
+	010 NotImplemented "Instruction LDUR not yet implemented."
+	011 Move V11, [X0]
+	012 Move W8, [X19+1413]
+	013 NotImplemented "Instruction LDUR not yet implemented."
+	014 Move V8, V0
+	015 Compare W8, 0
+	016 JumpIfNotEqual {22}
+	017 Move X0, 0x56D000
+	018 Move X0, [X0+1448]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X19+1413], W8
+	022 Move X8, 0x56D000
+	023 Move X8, [X8+1448]
+	024 Subtract S11, S9, S11
+	025 Subtract V9, V10, V12
+	026 Move X0, [X8]
+	027 Move W8, [X0+224]
+	028 Compare W8, 0
+	029 JumpIfNotEqual {31}
+	030 Call 0x1C17DFC
+	031 Multiply S0, S11, S11
+	032 NotImplemented "Instruction INVALID not yet implemented."
+	033 Add S0, S0, S1
+	034 Move S1, V1.S[1]
+	035 Add S0, S1, S0
+	036 NotImplemented "Instruction FSQRT not yet implemented."
+	037 NotImplemented "Instruction FCMP not yet implemented."
+	038 Move X30, [X31+48]
+	039 Move X19, [X31+56]
+	040 Move D9, [X31+32]
+	041 Move D8, [X31+40]
+	042 Move D11, [X31+16]
+	043 Move D10, [X31+24]
+	044 NotImplemented "Instruction CSET not yet implemented."
+	045 Move V12, [X31+64]
+	046 Return X0
+

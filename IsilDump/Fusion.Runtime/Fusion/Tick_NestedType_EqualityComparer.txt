@@ -1,0 +1,35 @@
+Type: Fusion.Tick/EqualityComparer
+
+Method: System.Boolean Equals(Fusion.Tick x, Fusion.Tick y)
+
+Disassembly:
+	0x01E913EC LDR X19, [X19 + 0x168]
+	0x01E913F0 TBNZ X8, 0x0, 0x1E91414
+	0x01E913F4 ADRP X0, 0x226D000
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 Return X0
+
+Method: System.Int32 GetHashCode(Fusion.Tick obj)
+
+Disassembly:
+	0x01E913F8 LDR X0, [X0 + 0x1F8]
+	0x01E913FC BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, X1
+	002 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E91400 ADRP X0, 0x226D000
+	0x01E91404 LDR X0, [X0 + 0x168]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

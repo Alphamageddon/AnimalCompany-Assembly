@@ -1,0 +1,259 @@
+Type: UnityEngine.UIElements.StylePropertyAnimationSystem/ValuesFont
+
+Method: System.Void UpdateComputedStyle()
+
+Disassembly:
+	0x03E04798 SUB X31, X31, 0x90
+	0x03E0479C STR X30, [X31 + 0x50]
+	0x03E047A0 STP X24, X23, [X31 + 0x60]
+	0x03E047A4 STP X22, X21, [X31 + 0x70]
+	0x03E047A8 STP X20, X19, [X31 + 0x80]
+	0x03E047AC LDR W20, [X0 + 0x48]
+	0x03E047B0 CMP W20, 0x1
+	0x03E047B4 B.LT 0x3E0484C
+	0x03E047B8 MOV X19, X0
+	0x03E047BC MOV X21, X31
+	0x03E047C0 MOVZ W22, 0x38
+	0x03E047C4 MOVZ W23, 0x38
+	0x03E047C8 LDR X8, [X19 + 0x38]
+	0x03E047CC CBZ X8, 0x3E04864
+	0x03E047D0 LDR W9, [X8 + 0x18]
+	0x03E047D4 CMP X21, X9
+	0x03E047D8 B.CS 0x3E04868
+	0x03E047DC LDR X9, [X19 + 0x40]
+	0x03E047E0 CBZ X9, 0x3E04864
+	0x03E047E4 LDR W10, [X9 + 0x18]
+	0x03E047E8 CMP X21, X10
+	0x03E047EC B.CS 0x3E04868
+	0x03E047F0 ADD X24, X9, X23
+	0x03E047F4 LDUR X9, [X24 - 0x8]
+	0x03E047F8 LDUR V0, [X24 - 0x18]
+	0x03E047FC ADD X0, X31, 0x20
+	0x03E04800 ADD X1, X31, 0x0
+	0x03E04804 STR X9, [X31 + 0x30]
+	0x03E04808 STR V0, [X31 + 0x2]
+	0x03E0480C LDR X9, [X24 + 0x10]
+	0x03E04810 LDR V0, [X24]
+	0x03E04814 STR X9, [X31 + 0x10]
+	0x03E04818 STR V0, [X31]
+	0x03E0481C LDR V0, [X8, X22, LSL]
+	0x03E04820 ADD X8, X31, 0x38
+	0x03E04824 BL 0x3E0471C
+	0x03E04828 LDUR V0, [X31 + 0x38]
+	0x03E0482C LDR X8, [X31 + 0x48]
+	0x03E04830 ADD X21, X21, 0x1
+	0x03E04834 ADD X23, X23, 0x60
+	0x03E04838 CMP X20, X21
+	0x03E0483C ADD X22, X22, 0x28
+	0x03E04840 STR X8, [X24 + 0x40]
+	0x03E04844 STR V0, [X24 + 0x3]
+	0x03E04848 B.NE 0x3E047C8
+	0x03E0484C LDP X20, X19, [X31 + 0x80]
+	0x03E04850 LDP X22, X21, [X31 + 0x70]
+	0x03E04854 LDP X24, X23, [X31 + 0x60]
+	0x03E04858 LDR X30, [X31 + 0x50]
+	0x03E0485C ADD X31, X31, 0x90
+	0x03E04860 RET
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move W20, [X0+72]
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 Move X19, X0
+	009 Move W21, W31
+	010 Move X8, [X19+40]
+	011 Compare X8, 0
+	012 JumpIfEqual {53}
+	013 Move W9, [X8+24]
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 Move X22, W21
+	016 Add X8, X8, X22
+	017 Move X0, [X8+32]
+	018 Compare X0, 0
+	019 JumpIfEqual {53}
+	020 Move X1, X31
+	021 Call VisualElement.get_computedStyle, X0
+	022 Move X8, [X19+40]
+	023 Compare X8, 0
+	024 JumpIfEqual {53}
+	025 Move W9, [X8+24]
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Move X9, [X19+48]
+	028 Compare X9, 0
+	029 JumpIfEqual {53}
+	030 Move W10, [X9+24]
+	031 NotImplemented "Instruction CMP not yet implemented."
+	032 Move X10, [X19+64]
+	033 Compare X10, 0
+	034 JumpIfEqual {53}
+	035 Move W11, [X10+24]
+	036 NotImplemented "Instruction CMP not yet implemented."
+	037 Add X8, X8, X22
+	038 Add X9, X9, X22
+	039 Add X10, X10, X22
+	040 Move X1, [X8+32]
+	041 Move W2, [X9+32]
+	042 Move X3, [X10+56]
+	043 Move X4, X31
+	044 Call ComputedStyle.ApplyPropertyAnimation, X0, X1, X2, X3
+	045 Add W21, W21, 1
+	046 NotImplemented "Instruction CMP not yet implemented."
+	047 Move X20, [X31+32]
+	048 Move X19, [X31+40]
+	049 Move X22, [X31+16]
+	050 Move X21, [X31+24]
+	051 Move X30, [X31+48]
+	052 Return 
+	053 Call 0x1C17F20
+	054 Call 0x1C17F28
+
+Method: System.Void UpdateComputedStyle(System.Int32 i)
+
+Disassembly:
+	0x03E04864 BL 0x1C16F20
+	0x03E04868 BL 0x1C16F28
+	0x03E0486C STP X30, X23, [X31 - 0x30]!
+	0x03E04870 STP X22, X21, [X31 + 0x10]
+	0x03E04874 STP X20, X19, [X31 + 0x20]
+	0x03E04878 ADRP X22, 0x5E4000
+	0x03E0487C ADRP X23, 0x366000
+	0x03E04880 ADRP X20, 0x366000
+	0x03E04884 ADRP X21, 0x366000
+	0x03E04888 LDRB W8, [X22 + 0x305]
+	0x03E0488C LDR X23, [X23 + 0x10]
+	0x03E04890 LDR X20, [X20 + 0x18]
+	0x03E04894 LDR X21, [X21 + 0x20]
+	0x03E04898 MOV X19, X0
+	0x03E0489C TBNZ X8, 0x0, 0x3E048CC
+	0x03E048A0 ADRP X0, 0x366000
+	0x03E048A4 LDR X0, [X0 + 0x10]
+	0x03E048A8 BL 0x1C16CF4
+	0x03E048AC ADRP X0, 0x366000
+	0x03E048B0 LDR X0, [X0 + 0x18]
+	0x03E048B4 BL 0x1C16CF4
+	0x03E048B8 ADRP X0, 0x366000
+	0x03E048BC LDR X0, [X0 + 0x20]
+	0x03E048C0 BL 0x1C16CF4
+	0x03E048C4 MOVZ W8, 0x1
+	0x03E048C8 STRB W8, [X22 + 0x305]
+	0x03E048CC LDR X0, [X23]
+	0x03E048D0 BL 0x1C16F10
+	0x03E048D4 LDR X2, [X20]
+	0x03E048D8 MOV X1, X31
+	0x03E048DC MOV X3, X31
+	0x03E048E0 MOV X20, X0
+	0x03E048E4 BL 0x2D3E9FC
+	0x03E048E8 STR X20, [X19 + 0x88]
+	0x03E048EC LDR X1, [X21]
+	0x03E048F0 MOV X0, X19
+	0x03E048F4 LDP X20, X19, [X31 + 0x20]
+	0x03E048F8 LDP X22, X21, [X31 + 0x10]
+	0x03E048FC LDP X30, X23, [X31], #0x30
+	0x03E04900 B 0x2817908
+	0x03E04904 LDR X0, [X0 + 0x88]
+	0x03E04908 RET
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X0+40]
+	006 Compare X8, 0
+	007 JumpIfEqual {47}
+	008 Move W9, [X8+24]
+	009 Move W19, W1
+	010 NotImplemented "Instruction CMP not yet implemented."
+	011 Move X21, W19
+	012 Add X8, X8, X21
+	013 Move X20, X0
+	014 Move X0, [X8+32]
+	015 Compare X0, 0
+	016 JumpIfEqual {47}
+	017 Move X1, X31
+	018 Call VisualElement.get_computedStyle, X0
+	019 Move X8, [X20+40]
+	020 Compare X8, 0
+	021 JumpIfEqual {47}
+	022 Move W9, [X8+24]
+	023 NotImplemented "Instruction CMP not yet implemented."
+	024 Move X9, [X20+48]
+	025 Compare X9, 0
+	026 JumpIfEqual {47}
+	027 Move W10, [X9+24]
+	028 NotImplemented "Instruction CMP not yet implemented."
+	029 Move X10, [X20+64]
+	030 Compare X10, 0
+	031 JumpIfEqual {47}
+	032 Move W11, [X10+24]
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Add X8, X8, X21
+	035 Add X9, X9, X21
+	036 Add X10, X10, X21
+	037 Move X1, [X8+32]
+	038 Move W2, [X9+32]
+	039 Move X3, [X10+56]
+	040 Move X20, [X31+16]
+	041 Move X19, [X31+24]
+	042 Move X4, X31
+	043 Move X30, [X31+32]
+	044 Move X21, [X31+40]
+	045 Call ComputedStyle.ApplyPropertyAnimation, X0, X1, X2, X3
+	046 Return 
+	047 Call 0x1C17F20
+	048 Call 0x1C17F28
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03E0490C LDR V0, [X0]
+	0x03E04910 LDR V1, [X1]
+	0x03E04914 FCMP S0, S1
+	0x03E04918 B.NE 0x3E04970
+	0x03E0491C LDR W8, [X0 + 0x4]
+	0x03E04920 LDR W9, [X1 + 0x4]
+	0x03E04924 CMP W8, W9
+	0x03E04928 B.NE 0x3E04970
+	0x03E0492C LDR X8, [X0 + 0x8]
+	0x03E04930 LDR X9, [X1 + 0x8]
+	0x03E04934 LDR V0, [X1 + 0x10]
+	0x03E04938 LDR V1, [X0 + 0x10]
+	0x03E0493C FMOV S2, W8
+	0x03E04940 FMOV S3, W9
+	0x03E04944 UBFM X10, X8, 0x20, 0x3F
+	0x03E04948 UBFM X8, X9, 0x20, 0x3F
+	0x03E0494C FCMP S2, S3
+	0x03E04950 CSET W9, EQ
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x5E5000
+	006 Move X21, 0x366000
+	007 Move W8, [X20+769]
+	008 Move X21, [X21+4032]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x366000
+	015 Move X0, [X0+4032]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+769], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X30, [X31+32]
+	024 Move X21, [X31+40]
+	025 Call ValuesDiscrete`1<Object>..ctor, X0
+	026 Return 
+

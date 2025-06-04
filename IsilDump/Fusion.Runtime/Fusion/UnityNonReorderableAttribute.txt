@@ -1,0 +1,33 @@
+Type: Fusion.UnityNonReorderableAttribute
+
+Method: System.Int32 get_order()
+
+Disassembly:
+	0x01E688D8 LDR X8, [X0 + 0x20]
+	0x01E688DC CBZ X8, 0x1E688F0
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_order(System.Int32 value)
+
+Disassembly:
+	0x01E688E0 LDR X8, [X8 + 0x150]
+	0x01E688E4 CBZ X8, 0x1E688F0
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E688E8 LDRB W0, [X8 + 0x10]
+	0x01E688EC RET
+
+ISIL:
+	001 Move X1, X31
+	002 Call Attribute..ctor, X0
+	003 Return 
+

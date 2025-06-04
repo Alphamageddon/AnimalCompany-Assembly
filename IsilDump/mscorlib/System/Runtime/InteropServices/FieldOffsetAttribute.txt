@@ -1,0 +1,30 @@
+Type: System.Runtime.InteropServices.FieldOffsetAttribute
+
+Method: System.Void .ctor(System.Int32 offset)
+
+Disassembly:
+	0x032C10F0 STRB W31, [X0]
+	0x032C10F4 B 0x32C10A0
+	0x032C10F8 LDP X20, X19, [X31 + 0x10]
+	0x032C10FC LDP X30, X21, [X31], #0x20
+	0x032C1100 RET
+	0x032C1104 STP X30, X19, [X31 - 0x10]!
+	0x032C1108 MOV W19, W2
+	0x032C110C MOV X2, X31
+	0x032C1110 BL 0x33C694C
+	0x032C1114 MOV X1, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

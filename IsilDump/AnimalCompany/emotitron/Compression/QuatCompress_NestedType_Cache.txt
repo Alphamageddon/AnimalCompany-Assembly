@@ -1,0 +1,149 @@
+Type: emotitron.Compression.QuatCompress/Cache
+
+Method: System.Void .ctor(System.Int32 _bitsA, System.Int32 _bitsB, System.Int32 _bitsC)
+
+Disassembly:
+	0x01D338A0 MOVZ W1, 0x100
+	0x01D338A4 MOV X2, X31
+	0x01D338A8 BL 0x35C1A74
+	0x01D338AC MOV W23, W0
+	0x01D338B0 LDR X0, [X20]
+	0x01D338B4 LDR W8, [X0 + 0xE0]
+	0x01D338B8 CBNZ W8, 0x1D338C0
+	0x01D338BC BL 0x1C16DFC
+	0x01D338C0 MOVZ W0, 0x4
+	0x01D338C4 MOVZ W1, 0x100
+	0x01D338C8 MOV X2, X31
+	0x01D338CC BL 0x35C1A74
+	0x01D338D0 ADRP X8, 0x23C0000
+	0x01D338D4 LDR X8, [X8 + 0x648]
+	0x01D338D8 AND W24, W23, 0x1
+	0x01D338DC EOR W26, W23, 0x1
+	0x01D338E0 AND W20, W0, 0x1
+	0x01D338E4 LDR X8, [X8]
+	0x01D338E8 B 0x1D338F8
+	0x01D338EC MOV W24, W31
+	0x01D338F0 MOV W20, W31
+	0x01D338F4 MOVZ W26, 0x1
+	0x01D338F8 LDR W9, [X8 + 0xE0]
+	0x01D338FC CBNZ W9, 0x1D33914
+	0x01D33900 MOV X0, X8
+	0x01D33904 BL 0x1C16DFC
+	0x01D33908 ADRP X8, 0x23C0000
+	0x01D3390C LDR X8, [X8 + 0x648]
+	0x01D33910 LDR X8, [X8]
+	0x01D33914 LDR X8, [X8 + 0xB8]
+	0x01D33918 LDR X0, [X8 + 0x70]
+	0x01D3391C CBZ X0, 0x1D34BAC
+	0x01D33920 MOV X1, X31
+	0x01D33924 BL 0x3232AC0
+	0x01D33928 ADRP X8, 0x23C0000
+	0x01D3392C LDR X8, [X8 + 0x648]
+	0x01D33930 LDR X8, [X8]
+	0x01D33934 LDR X8, [X8 + 0xB8]
+	0x01D33938 LDR X23, [X8 + 0x10]
+	0x01D3393C CBZ X23, 0x1D34BB4
+	0x01D33940 ADRP X10, 0x23C0000
+	0x01D33944 LDR X8, [X23]
+	0x01D33948 LDR X10, [X10 + 0x6A8]
+	0x01D3394C STR W20, [X31 + 0xC]
+	0x01D33950 LDRH W9, [X8 + 0x12E]
+	0x01D33954 LDR X1, [X10]
+	0x01D33958 CBZ X9, 0x1D3397C
+	0x01D3395C LDR X10, [X8 + 0xB0]
+	0x01D33960 ADD X10, X10, 0x8
+	0x01D33964 LDUR X11, [X10 - 0x8]
+	0x01D33968 CMP X11, X1
+	0x01D3396C B.EQ 0x1D3398C
+	0x01D33970 SUBS X9, X9, 0x1
+	0x01D33974 ADD X10, X10, 0x10
+	0x01D33978 B.NE 0x1D33964
+	0x01D3397C MOVZ W2, 0x1
+	0x01D33980 MOV X0, X23
+	0x01D33984 BL 0x1C5C788
+	0x01D33988 B 0x1D3399C
+	0x01D3398C LDR W9, [X10]
+	0x01D33990 ADD W9, W9, 0x1
+	0x01D33994 ADD X8, X8, W9, 0x4, SXTW
+
+ISIL:
+	001 Move X9, -19173376
+	002 Move W8, 1
+	003 Move V0, [X9+3976]
+	004 NotImplemented "Instruction LSLV not yet implemented."
+	005 NotImplemented "Instruction LSLV not yet implemented."
+	006 NotImplemented "Instruction LSLV not yet implemented."
+	007 Move W11, W10
+	008 ShiftRight W11, 1
+	009 And W11, W11, 0x7FFFFFFF
+	010 Move W9, W12
+	011 ShiftRight W9, 1
+	012 And W9, W9, 0x7FFFFFFF
+	013 Subtract W10, W31, W1
+	014 Move TEMP, 0
+	015 Not TEMP
+	016 Move W12, TEMP
+	017 Subtract W13, W31, W2
+	018 Subtract W14, W31, W3
+	019 Move W8, W8
+	020 ShiftRight W8, 1
+	021 And W8, W8, 0x7FFFFFFF
+	022 NotImplemented "Instruction UCVTF not yet implemented."
+	023 NotImplemented "Instruction UCVTF not yet implemented."
+	024 NotImplemented "Instruction LSRV not yet implemented."
+	025 NotImplemented "Instruction LSRV not yet implemented."
+	026 NotImplemented "Instruction LSRV not yet implemented."
+	027 Add W13, W2, W1
+	028 NotImplemented "Instruction UCVTF not yet implemented."
+	029 Multiply S1, S1, S0
+	030 Multiply S2, S2, S0
+	031 Move [X0+40], W10
+	032 Move [X0+44], W12
+	033 Add W10, W13, W3
+	034 Multiply S3, S3, S0
+	035 Move [X0+60], S1
+	036 Move [X0+68], S2
+	037 Move S0, W31
+	038 Move [X0+16], W13
+	039 Move [X0+20], W10
+	040 Move X10, -19152896
+	041 Move S1, W31
+	042 Move [X0], W1
+	043 Move [X0+4], W2
+	044 Move [X0+8], W3
+	045 Move [X0+12], W1
+	046 Move [X0+24], W11
+	047 Move [X0+28], W9
+	048 Move [X0+32], W8
+	049 Move [X0+36], W15
+	050 Move [X0+68], S3
+	051 Compare W1, 0
+	052 JumpIfEqual {59}
+	053 Move V1, [X10+296]
+	054 NotImplemented "Instruction UCVTF not yet implemented."
+	055 Move D3, 1
+	056 NotImplemented "Instruction FDIV not yet implemented."
+	057 Multiply D1, D2, D1
+	058 NotImplemented "Instruction INVALID not yet implemented."
+	059 Move [X0+48], S1
+	060 Compare W2, 0
+	061 JumpIfEqual {68}
+	062 Move V0, [X10+296]
+	063 NotImplemented "Instruction UCVTF not yet implemented."
+	064 Move D2, 1
+	065 NotImplemented "Instruction FDIV not yet implemented."
+	066 Multiply D0, D1, D0
+	067 NotImplemented "Instruction INVALID not yet implemented."
+	068 Move [X0+52], S0
+	069 Compare W3, 0
+	070 JumpIfEqual {77}
+	071 Move V0, [X10+296]
+	072 NotImplemented "Instruction UCVTF not yet implemented."
+	073 Move D2, 1
+	074 NotImplemented "Instruction FDIV not yet implemented."
+	075 Multiply D0, D1, D0
+	076 NotImplemented "Instruction INVALID not yet implemented."
+	077 Move S0, W31
+	078 Move [X0+56], S0
+	079 Return 
+

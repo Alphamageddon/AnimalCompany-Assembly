@@ -1,0 +1,505 @@
+Type: System.Threading.SynchronizationContext
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x033E69EC BL 0x330E100
+	0x033E69F0 ADRP X0, 0xD47000
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean IsWaitNotificationRequired()
+
+Disassembly:
+	0x033E69F4 LDR X0, [X0 + 0x3F0]
+	0x033E69F8 BL 0x1C16D08
+	0x033E69FC MOV X1, X0
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 And W0, W8, 1
+	003 Return X0
+
+Method: System.Void Send(System.Threading.SendOrPostCallback d, System.Object state)
+
+Disassembly:
+	0x033E6A00 MOV X0, X19
+	0x033E6A04 BL 0x1C16DEC
+	0x033E6A08 ADRP X0, 0xD35000
+	0x033E6A0C LDR X0, [X0 + 0x670]
+	0x033E6A10 BL 0x1C16D08
+	0x033E6A14 MOV X1, X31
+	0x033E6A18 BL 0x33BDD84
+	0x033E6A1C MOV X19, X0
+	0x033E6A20 ADRP X0, 0xD15000
+	0x033E6A24 LDR X0, [X0 + 0x760]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {11}
+	004 Move X8, [X1+40]
+	005 Move X3, [X1+24]
+	006 Move X0, [X1+64]
+	007 Move X1, X2
+	008 Move X2, X8
+	009 Move X30, [X31+16]
+	010 CallNoReturn X3
+	011 Call 0x1C17F20
+
+Method: System.Void Post(System.Threading.SendOrPostCallback d, System.Object state)
+
+Disassembly:
+	0x033E6A28 BL 0x1C16D08
+	0x033E6A2C BL 0x1C16F10
+	0x033E6A30 MOV X20, X0
+	0x033E6A34 ADRP X0, 0xD47000
+	0x033E6A38 LDR X0, [X0 + 0x3F8]
+	0x033E6A3C BL 0x1C16D08
+	0x033E6A40 MOV X1, X0
+	0x033E6A44 MOV X0, X20
+	0x033E6A48 MOV X2, X19
+	0x033E6A4C MOV X3, X31
+	0x033E6A50 BL 0x3311888
+	0x033E6A54 ADRP X0, 0xD47000
+	0x033E6A58 LDR X0, [X0 + 0x3F0]
+	0x033E6A5C BL 0x1C16D08
+	0x033E6A60 MOV X1, X0
+	0x033E6A64 MOV X0, X20
+	0x033E6A68 BL 0x1C16DEC
+	0x033E6A6C STR X30, [X31 - 0x10]!
+	0x033E6A70 ADD X1, X31, 0xC
+	0x033E6A74 BL 0x33E6A80
+	0x033E6A78 LDR X30, [X31], #0x10
+	0x033E6A7C RET
+	0x033E6A80 STR X30, [X31 - 0x20]!
+	0x033E6A84 STP X20, X19, [X31 + 0x10]
+	0x033E6A88 ADRP X20, 0xFF7000
+	0x033E6A8C LDRB W8, [X20 + 0x3DD]
+	0x033E6A90 MOV X19, X0
+	0x033E6A94 TBNZ X8, 0x0, 0x33E6AB8
+	0x033E6A98 ADRP X0, 0xD35000
+	0x033E6A9C LDR X0, [X0 + 0x580]
+	0x033E6AA0 BL 0x1C16CF4
+	0x033E6AA4 ADRP X0, 0xD47000
+	0x033E6AA8 LDR X0, [X0 + 0x3C0]
+	0x033E6AAC BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X22, 0xFF8000
+	008 Move X23, 0xD17000
+	009 Move X21, 0xD48000
+	010 Move W8, [X22+973]
+	011 Move X23, [X23+2392]
+	012 Move X21, [X21+824]
+	013 Move X19, X2
+	014 Move X20, X1
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {27}
+	019 Move X0, 0xD48000
+	020 Move X0, [X0+824]
+	021 Call 0x1C17CF4
+	022 Move X0, 0xD17000
+	023 Move X0, [X0+2392]
+	024 Call 0x1C17CF4
+	025 Move W8, 1
+	026 Move [X22+973], W8
+	027 Move X0, [X23]
+	028 Call 0x1C17F10
+	029 Move X2, [X21]
+	030 Move X1, X20
+	031 Move X3, X31
+	032 Move X21, X0
+	033 Call WaitCallback..ctor, X0, X1, X2
+	034 Move X0, X21
+	035 Move X1, X19
+	036 Move X20, [X31+32]
+	037 Move X19, [X31+40]
+	038 Move X22, [X31+16]
+	039 Move X21, [X31+24]
+	040 Move X2, X31
+	041 Move X30, [X31+48]
+	042 Move X23, [X31+56]
+	043 Call ThreadPool.QueueUserWorkItem, X0, X1
+	044 Return 
+
+Method: System.Void OperationStarted()
+
+Disassembly:
+	0x033E6AB0 MOVZ W8, 0x1
+
+ISIL:
+	001 Return 
+
+Method: System.Void OperationCompleted()
+
+Disassembly:
+	0x033E6AB4 STRB W8, [X20 + 0x3DD]
+
+ISIL:
+	001 Return 
+
+Method: System.Int32 Wait(System.IntPtr[] waitHandles, System.Boolean waitAll, System.Int32 millisecondsTimeout)
+
+Disassembly:
+	0x033E6AB8 LDR X8, [X19 + 0x28]
+	0x033E6ABC CBZ X8, 0x33E6B20
+	0x033E6AC0 ADRP X9, 0xD35000
+	0x033E6AC4 LDR X9, [X9 + 0x580]
+	0x033E6AC8 LDR X20, [X8 + 0x20]
+	0x033E6ACC LDR X0, [X9]
+	0x033E6AD0 LDR W9, [X0 + 0xE0]
+	0x033E6AD4 CBNZ W9, 0x33E6ADC
+	0x033E6AD8 BL 0x1C16DFC
+	0x033E6ADC MOVZ W1, 0x1
+	0x033E6AE0 BL 0x33E5250
+	0x033E6AE4 CBZ X20, 0x33E6B38
+	0x033E6AE8 ADRP X9, 0xD47000
+	0x033E6AEC LDR X9, [X9 + 0x3C0]
+	0x033E6AF0 LDR X8, [X20]
+	0x033E6AF4 LDR X1, [X9]
+	0x033E6AF8 LDRB W10, [X8 + 0x130]
+	0x033E6AFC LDRB W9, [X1 + 0x130]
+	0x033E6B00 CMP W10, W9
+	0x033E6B04 B.CC 0x33E6B30
+	0x033E6B08 LDR X8, [X8 + 0xC8]
+	0x033E6B0C ADD X8, X8, X9, 0x3, LSL
+	0x033E6B10 LDUR X8, [X8 - 0x8]
+	0x033E6B14 CMP X8, X1
+	0x033E6B18 B.NE 0x33E6B30
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {7}
+	003 And W8, W2, 1
+	004 Move X0, X1
+	005 Move W1, W8
+	006 Move W2, W3
+	007 Move [X31-16], X30
+	008 Move [X31-8], X19
+	009 Move X0, 0xD13000
+	010 Move X0, [X0+1320]
+	011 Call 0x1C17D08
+	012 Call 0x1C17F10
+	013 Move X19, X0
+	014 Move X0, 0xD48000
+	015 Move X0, [X0+832]
+	016 Call 0x1C17D08
+	017 Move X1, X0
+	018 Move X0, X19
+	019 Move X2, X31
+	020 Call ArgumentNullException..ctor, X0, X1
+	021 Move X0, 0xD48000
+	022 Move X0, [X0+840]
+	023 Call 0x1C17D08
+	024 Move X1, X0
+	025 Move X0, X19
+	026 Call 0x1C17DEC
+
+Method: System.Int32 WaitHelper(System.IntPtr[] waitHandles, System.Boolean waitAll, System.Int32 millisecondsTimeout)
+
+Disassembly:
+	0x033E6B1C STR X0, [X20 + 0x20]
+	0x033E6B20 MOV X0, X19
+	0x033E6B24 LDP X20, X19, [X31 + 0x10]
+	0x033E6B28 LDR X30, [X31], #0x20
+	0x033E6B2C B 0x33E6C00
+	0x033E6B30 MOV X0, X20
+	0x033E6B34 BL 0x1C171E0
+	0x033E6B38 BL 0x1C16F20
+	0x033E6B3C SUB X31, X31, 0x30
+	0x033E6B40 STP X30, X21, [X31 + 0x10]
+	0x033E6B44 STP X20, X19, [X31 + 0x20]
+	0x033E6B48 ADRP X21, 0xFF7000
+	0x033E6B4C LDRB W8, [X21 + 0x3DC]
+	0x033E6B50 MOV X20, X1
+	0x033E6B54 MOV X19, X0
+	0x033E6B58 TBNZ X8, 0x0, 0x33E6B70
+	0x033E6B5C ADRP X0, 0xD39000
+	0x033E6B60 LDR X0, [X0 + 0x1D0]
+	0x033E6B64 BL 0x1C16CF4
+	0x033E6B68 MOVZ W8, 0x1
+	0x033E6B6C STRB W8, [X21 + 0x3DC]
+	0x033E6B70 LDR X8, [X19 + 0x28]
+	0x033E6B74 CBZ X8, 0x33E6B90
+	0x033E6B78 ADRP X9, 0xD39000
+	0x033E6B7C LDR X9, [X9 + 0x1D0]
+	0x033E6B80 LDR X8, [X8]
+	0x033E6B84 LDR X9, [X9]
+	0x033E6B88 CMP X8, X9
+	0x033E6B8C B.EQ 0x33E6BB0
+	0x033E6B90 ADD X1, X31, 0xC
+	0x033E6B94 MOV X0, X19
+	0x033E6B98 STR X20, [X19 + 0x18]
+	0x033E6B9C BL 0x33E6A80
+	0x033E6BA0 LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X22, 0xFF8000
+	007 Move W8, [X22+974]
+	008 Move W19, W2
+	009 Move W20, W1
+	010 Move X21, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0xD48000
+	016 Move X0, [X0+616]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X22+974], W8
+	020 Compare X21, 0
+	021 JumpIfEqual {44}
+	022 Move X8, 0xD48000
+	023 Move X8, [X8+616]
+	024 Move X22, [X21+24]
+	025 Move X0, [X8]
+	026 Move W8, [X0+224]
+	027 Compare W8, 0
+	028 JumpIfNotEqual {30}
+	029 Call 0x1C17DFC
+	030 Add X8, X21, 32
+	031 Move W1, [X21+24]
+	032 NotImplemented "Instruction CMP not yet implemented."
+	033 And W2, W20, 1
+	034 Move W3, W19
+	035 Move X20, [X31+32]
+	036 Move X19, [X31+40]
+	037 Move X22, [X31+16]
+	038 Move X21, [X31+24]
+	039 NotImplemented "Instruction CSEL not yet implemented."
+	040 Move X4, X31
+	041 Move X30, [X31+48]
+	042 Call WaitHandle.Wait_internal, X0, X1, X2, X3
+	043 Return X0
+	044 Call 0x1C17F20
+
+Method: System.Void SetSynchronizationContext(System.Threading.SynchronizationContext syncContext)
+
+Disassembly:
+	0x033E6BA4 LDP X30, X21, [X31 + 0x10]
+	0x033E6BA8 ADD X31, X31, 0x30
+	0x033E6BAC RET
+	0x033E6BB0 ADRP X0, 0xD47000
+	0x033E6BB4 LDR X0, [X0 + 0x400]
+	0x033E6BB8 BL 0x1C16D08
+	0x033E6BBC MOV X1, X31
+	0x033E6BC0 BL 0x33BDD84
+	0x033E6BC4 MOV X19, X0
+	0x033E6BC8 ADRP X0, 0xD0D000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Call Thread.get_CurrentThread
+	005 Compare X0, 0
+	006 JumpIfEqual {15}
+	007 Call Thread.GetMutableExecutionContext, X0
+	008 Compare X0, 0
+	009 JumpIfEqual {15}
+	010 Move [X0+16], X19
+	011 Move [X0+24], X19
+	012 Move X30, [X31+16]
+	013 Move X19, [X31+24]
+	014 Return 
+	015 Call 0x1C17F20
+
+Method: System.Threading.SynchronizationContext get_Current()
+
+Disassembly:
+	0x033DE700 BL 0x33DE2A0
+	0x033DE704 CMP W0, 0x1
+	0x033DE708 B.LT 0x33DE74C
+	0x033DE70C LDR X19, [X20 + 0x10]
+	0x033DE710 BL 0x1C16D44
+	0x033DE714 STRB W31, [X31 + 0xC]
+	0x033DE718 ADD X1, X31, 0xC
+	0x033DE71C MOV X0, X19
+	0x033DE720 BL 0x33DE64C
+	0x033DE724 LDR X22, [X20 + 0x10]
+	0x033DE728 BL 0x1C16D44
+	0x033DE72C MOV X0, X22
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Call Thread.get_CurrentThread
+	003 Compare X0, 0
+	004 JumpIfEqual {16}
+	005 Move X8, [X0+48]
+	006 Compare X8, 0
+	007 JumpIfEqual {13}
+	008 Move X0, [X8+16]
+	009 Compare X0, 0
+	010 JumpIfEqual {13}
+	011 Move X30, [X31+16]
+	012 Return X0
+	013 Move X30, [X31+16]
+	014 Call SynchronizationContext.GetThreadLocalContext
+	015 Return X0
+	016 Call 0x1C17F20
+
+Method: System.Threading.SynchronizationContext get_CurrentNoFlow()
+
+Disassembly:
+	0x033E6C9C LDR X0, [X0 + 0x760]
+	0x033E6CA0 BL 0x1C16D08
+	0x033E6CA4 BL 0x1C16F10
+	0x033E6CA8 MOV X20, X0
+	0x033E6CAC ADRP X0, 0xD46000
+	0x033E6CB0 LDR X0, [X0 + 0xFD8]
+	0x033E6CB4 BL 0x1C16D08
+	0x033E6CB8 MOV X1, X0
+	0x033E6CBC MOV X0, X20
+	0x033E6CC0 MOV X2, X19
+	0x033E6CC4 MOV X3, X31
+	0x033E6CC8 BL 0x3311888
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Call Thread.get_CurrentThread
+	003 Compare X0, 0
+	004 JumpIfEqual {16}
+	005 Move X8, [X0+48]
+	006 Compare X8, 0
+	007 JumpIfEqual {13}
+	008 Move X0, [X8+24]
+	009 Compare X0, 0
+	010 JumpIfEqual {13}
+	011 Move X30, [X31+16]
+	012 Return X0
+	013 Move X30, [X31+16]
+	014 Call SynchronizationContext.GetThreadLocalContext
+	015 Return X0
+	016 Call 0x1C17F20
+
+Method: System.Threading.SynchronizationContext GetThreadLocalContext()
+
+Disassembly:
+	0x033E6C50 ADRP X0, 0xD47000
+	0x033E6C54 LDR X0, [X0 + 0x418]
+	0x033E6C58 BL 0x1C16D08
+	0x033E6C5C MOV X1, X0
+	0x033E6C60 MOV X0, X19
+	0x033E6C64 BL 0x1C16DEC
+	0x033E6C68 B 0x1C4C020
+	0x033E6C6C ADDS W31, W1, 0x2
+	0x033E6C70 B.LE 0x33E6C78
+	0x033E6C74 B 0x1C4C020
+	0x033E6C78 STR X30, [X31 - 0x20]!
+	0x033E6C7C STP X20, X19, [X31 + 0x10]
+	0x033E6C80 ADRP X0, 0xD46000
+	0x033E6C84 LDR X0, [X0 + 0xFF0]
+	0x033E6C88 BL 0x1C16D08
+	0x033E6C8C MOV X1, X31
+	0x033E6C90 BL 0x33BDD84
+	0x033E6C94 MOV X19, X0
+	0x033E6C98 ADRP X0, 0xD15000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xFF8000
+	005 Move X20, 0xD48000
+	006 Move W8, [X19+975]
+	007 Move X20, [X20+848]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xD48000
+	013 Move X0, [X0+848]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+975], W8
+	017 Move X0, [X20]
+	018 Move W8, [X0+224]
+	019 Compare W8, 0
+	020 JumpIfNotEqual {22}
+	021 Call 0x1C17DFC
+	022 Move X20, [X31+16]
+	023 Move X19, [X31+24]
+	024 Move X30, [X31+32]
+	025 Call OSSpecificSynchronizationContext.Get
+	026 Return X0
+
+Method: System.Threading.SynchronizationContext CreateCopy()
+
+Disassembly:
+	0x033E6E24 BL 0x1C16CF4
+	0x033E6E28 ADRP X0, 0xD39000
+	0x033E6E2C LDR X0, [X0 + 0x1D8]
+	0x033E6E30 BL 0x1C16CF4
+	0x033E6E34 MOVZ W8, 0x1
+	0x033E6E38 STRB W8, [X20 + 0x3E1]
+	0x033E6E3C LDR X0, [X19]
+	0x033E6E40 BL 0x1C16D0C
+	0x033E6E44 LDR X8, [X0 + 0x10]
+	0x033E6E48 CBZ X8, 0x33E6E5C
+	0x033E6E4C LDR X0, [X19]
+	0x033E6E50 BL 0x1C16D0C
+	0x033E6E54 LDR X0, [X0 + 0x10]
+	0x033E6E58 B 0x33E6E80
+	0x033E6E5C ADRP X19, 0xD0F000
+	0x033E6E60 LDR X19, [X19 + 0xC48]
+	0x033E6E64 LDR X0, [X19]
+	0x033E6E68 LDR W8, [X0 + 0xE0]
+	0x033E6E6C CBNZ W8, 0x33E6E74
+	0x033E6E70 BL 0x1C16DFC
+	0x033E6E74 MOV X0, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xFF8000
+	005 Move X20, 0xD48000
+	006 Move W8, [X19+976]
+	007 Move X20, [X20+888]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xD48000
+	013 Move X0, [X0+888]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+976], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X0, X19
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move X30, [X31+32]
+	026 Return X0
+
+Method: System.Threading.SynchronizationContext get_CurrentExplicit()
+
+Disassembly:
+	0x033E6E78 BL 0x334B944
+
+ISIL:
+	001 Call SynchronizationContext.get_Current
+	002 Return X0
+

@@ -1,0 +1,105 @@
+Type: WebSocketSharp.Ext/<>c__DisplayClass84_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03E6C980 ADRP X21, 0x28E000
+	0x03E6C984 LDR X21, [X21 + 0x248]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <WriteBytesAsync>b__0()
+
+Disassembly:
+	0x03E6E37C STRB W8, [X21 + 0xD2E]
+	0x03E6E380 STR X31, [X19]
+	0x03E6E384 LDR X0, [X23]
+	0x03E6E388 LDR W8, [X0 + 0xE0]
+	0x03E6E38C CBNZ W8, 0x3E6E398
+	0x03E6E390 BL 0x1C16DFC
+	0x03E6E394 LDR X0, [X23]
+	0x03E6E398 LDR X8, [X0 + 0xB8]
+	0x03E6E39C ADRP X24, 0x28C000
+	0x03E6E3A0 LDR X21, [X8 + 0x8]
+	0x03E6E3A4 LDR X24, [X24 + 0x248]
+	0x03E6E3A8 CBNZ X21, 0x3E6E3FC
+	0x03E6E3AC LDR W8, [X0 + 0xE0]
+	0x03E6E3B0 CBNZ W8, 0x3E6E3BC
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X8, [X0+16]
+	004 Move X19, X0
+	005 Compare X8, 0
+	006 JumpIfEqual {11}
+	007 Move X9, [X8+24]
+	008 Move X0, [X8+64]
+	009 Move X1, [X8+40]
+	010 NotImplemented "Instruction BLR not yet implemented."
+	011 Move X0, [X19+24]
+	012 Compare X0, 0
+	013 JumpIfEqual {19}
+	014 Move X1, X31
+	015 Move X30, [X31+16]
+	016 Move X19, [X31+24]
+	017 Call Stream.Dispose, X0
+	018 Return 
+	019 Call 0x1C17F20
+
+Method: System.Void <WriteBytesAsync>b__1(System.Exception ex)
+
+Disassembly:
+	0x03E6E3B4 BL 0x1C16DFC
+	0x03E6E3B8 LDR X0, [X23]
+	0x03E6E3BC ADRP X9, 0x286000
+	0x03E6E3C0 LDR X8, [X0 + 0xB8]
+	0x03E6E3C4 LDR X9, [X9 + 0xBF8]
+	0x03E6E3C8 LDR X22, [X8]
+	0x03E6E3CC LDR X0, [X9]
+	0x03E6E3D0 BL 0x1C16F10
+	0x03E6E3D4 ADRP X8, 0x2FE000
+	0x03E6E3D8 LDR X8, [X8 + 0x428]
+	0x03E6E3DC MOV X1, X22
+	0x03E6E3E0 MOV X3, X31
+	0x03E6E3E4 MOV X21, X0
+	0x03E6E3E8 LDR X2, [X8]
+	0x03E6E3EC BL 0x2D2F428
+	0x03E6E3F0 LDR X8, [X23]
+	0x03E6E3F4 LDR X8, [X8 + 0xB8]
+	0x03E6E3F8 STR X21, [X8 + 0x8]
+	0x03E6E3FC LDR X0, [X24]
+	0x03E6E400 ADRP X22, 0x2FE000
+	0x03E6E404 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, X0
+	005 Move X0, [X0+24]
+	006 Compare X0, 0
+	007 JumpIfEqual {26}
+	008 Move X19, X1
+	009 Move X1, X31
+	010 Call Stream.Dispose, X0
+	011 Move X8, [X20+32]
+	012 Compare X8, 0
+	013 JumpIfEqual {22}
+	014 Move X3, [X8+24]
+	015 Move X0, [X8+64]
+	016 Move X2, [X8+40]
+	017 Move X1, X19
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 CallNoReturn X3
+	022 Move X20, [X31+16]
+	023 Move X19, [X31+24]
+	024 Move X30, [X31+32]
+	025 Return 
+	026 Call 0x1C17F20
+

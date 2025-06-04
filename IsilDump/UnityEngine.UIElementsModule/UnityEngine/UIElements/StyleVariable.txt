@@ -1,0 +1,89 @@
+Type: UnityEngine.UIElements.StyleVariable
+
+Method: System.Void .ctor(System.String name, UnityEngine.UIElements.StyleSheet sheet, UnityEngine.UIElements.StyleValueHandle[] handles)
+
+Disassembly:
+	0x03E08D2C LDR W8, [X31 + 0x14]
+	0x03E08D30 ADD W8, W8, 0x1
+	0x03E08D34 STR W8, [X31 + 0x14]
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Move [X0+16], X3
+	004 Return 
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x03E08D38 CBNZ W22, 0x3E08D50
+	0x03E08D3C LDR W9, [X20 + 0x18]
+	0x03E08D40 CMP W8, W9
+	0x03E08D44 B.LT 0x3E08C34
+	0x03E08D48 B 0x3E08D50
+	0x03E08D4C MOV W22, W31
+	0x03E08D50 LDR X0, [X19 + 0x20]
+	0x03E08D54 CBZ X0, 0x3E08D74
+	0x03E08D58 ADRP X8, 0x31F000
+	0x03E08D5C LDR X8, [X8 + 0xA0]
+	0x03E08D60 LDR X1, [X8]
+	0x03E08D64 BL 0x26022C0
+	0x03E08D68 B 0x3E08BCC
+	0x03E08D6C MOVZ W22, 0x1
+	0x03E08D70 B 0x3E08BCC
+	0x03E08D74 BL 0x1C16F20
+	0x03E08D78 BL 0x1C16F28
+	0x03E08D7C SUB X31, X31, 0x70
+	0x03E08D80 STP X30, X27, [X31 + 0x20]
+	0x03E08D84 STP X26, X25, [X31 + 0x30]
+	0x03E08D88 STP X24, X23, [X31 + 0x40]
+	0x03E08D8C STP X22, X21, [X31 + 0x50]
+	0x03E08D90 STP X20, X19, [X31 + 0x60]
+	0x03E08D94 ADRP X21, 0x5E0000
+	0x03E08D98 LDRB W8, [X21 + 0x33F]
+	0x03E08D9C MOV X19, X1
+	0x03E08DA0 MOV X20, X0
+	0x03E08DA4 TBNZ X8, 0x0, 0x3E08DEC
+	0x03E08DA8 ADRP X0, 0x2EB000
+	0x03E08DAC LDR X0, [X0 + 0xA28]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X0
+	005 Move X0, [X0]
+	006 Compare X0, 0
+	007 JumpIfEqual {38}
+	008 Move X8, [X0]
+	009 Move X9, [X8+344]
+	010 Move X1, [X8+352]
+	011 NotImplemented "Instruction BLR not yet implemented."
+	012 Move X8, [X19+8]
+	013 Compare X8, 0
+	014 JumpIfEqual {38}
+	015 Move X9, [X8]
+	016 Move W20, W0
+	017 Move X0, X8
+	018 Move X10, [X9+344]
+	019 Move X1, [X9+352]
+	020 NotImplemented "Instruction BLR not yet implemented."
+	021 Move X8, [X19+16]
+	022 Compare X8, 0
+	023 JumpIfEqual {38}
+	024 Move X9, [X8]
+	025 Move W19, 397
+	026 Move X10, [X9+344]
+	027 Move X1, [X9+352]
+	028 Multiply W9, W20, W19
+	029 Xor W20, W0, W9
+	030 Move X0, X8
+	031 NotImplemented "Instruction BLR not yet implemented."
+	032 Multiply W8, W20, W19
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 Xor W0, W0, W8
+	036 Move X30, [X31+32]
+	037 Return X0
+	038 Call 0x1C17F20
+

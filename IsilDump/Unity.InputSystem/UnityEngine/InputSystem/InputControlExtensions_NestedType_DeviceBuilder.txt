@@ -1,0 +1,626 @@
+Type: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder
+
+Method: UnityEngine.InputSystem.InputDevice get_device()
+
+Disassembly:
+	0x0377753C ADRP X0, 0x9CF000
+	0x03777540 LDR X0, [X0 + 0xDC0]
+
+ISIL:
+	001 Move X0, [X0]
+	002 Return X0
+
+Method: System.Void set_device(UnityEngine.InputSystem.InputDevice value)
+
+Disassembly:
+	0x03777544 BL 0x1C16CF4
+	0x03777548 ADRP X0, 0x9A4000
+
+ISIL:
+	001 Move [X0], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder WithName(System.String name)
+
+Disassembly:
+	0x0377754C LDR X0, [X0 + 0xA98]
+	0x03777550 BL 0x1C16CF4
+	0x03777554 ADRP X0, 0x97C000
+	0x03777558 LDR X0, [X0 + 0xDD8]
+	0x0377755C BL 0x1C16CF4
+	0x03777560 ADRP X0, 0x9CF000
+	0x03777564 LDR X0, [X0 + 0xDC8]
+	0x03777568 BL 0x1C16CF4
+	0x0377756C ADRP X0, 0x9CF000
+	0x03777570 LDR X0, [X0 + 0xDD0]
+	0x03777574 BL 0x1C16CF4
+	0x03777578 ADRP X0, 0x9CF000
+	0x0377757C LDR X0, [X0 + 0xDD8]
+	0x03777580 BL 0x1C16CF4
+	0x03777584 ADRP X0, 0x9CF000
+	0x03777588 LDR X0, [X0 + 0xDE0]
+	0x0377758C BL 0x1C16CF4
+	0x03777590 ADRP X0, 0x987000
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+8], X31
+	003 Move [X31+16], X30
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, [X0]
+	007 Move X19, X0
+	008 Add X0, X31, 0
+	009 Move X2, X31
+	010 Move [X31], X31
+	011 Call InternedString..ctor, X0, X1
+	012 Compare X20, 0
+	013 JumpIfEqual {22}
+	014 Move V0, [X31]
+	015 Move X30, [X31+16]
+	016 Move [X20+2], V0
+	017 Move X0, [X19]
+	018 Move X20, [X31+32]
+	019 Move X19, [X31+40]
+	020 Add X31, X31, 48
+	021 Return X0
+	022 Call 0x1C17F20
+
+Method: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder WithDisplayName(System.String displayName)
+
+Disassembly:
+	0x03777594 LDR X0, [X0 + 0xCD8]
+	0x03777598 BL 0x1C16CF4
+	0x0377759C MOVZ W8, 0x1
+	0x037775A0 STRB W8, [X21 + 0xF4B]
+	0x037775A4 ADD X0, X31, 0x118
+	0x037775A8 MOVZ W2, 0xD8
+	0x037775AC MOV W1, W31
+	0x037775B0 STP X31, X31, [X22 + 0x10]
+	0x037775B4 STP X31, X31, [X22]
+	0x037775B8 BL 0x3EB1B10
+	0x037775BC STR W31, [X31 + 0x114]
+	0x037775C0 STR X31, [X20]
+	0x037775C4 STR X31, [X23]
+	0x037775C8 LDR X8, [X24]
+	0x037775CC MOV X0, X19
+	0x037775D0 LDR X8, [X8 + 0xB8]
+	0x037775D4 LDR X21, [X8]
+	0x037775D8 BL 0x3777F10
+	0x037775DC TBZ X0, 0x0, 0x37775FC
+	0x037775E0 ADRP X8, 0x9CF000
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+8], X31
+	003 Move [X31+16], X30
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, [X0]
+	007 Move X19, X0
+	008 Add X0, X31, 0
+	009 Move X2, X31
+	010 Move [X31], X31
+	011 Call InternedString..ctor, X0, X1
+	012 Move X0, [X31]
+	013 Move X1, [X31+8]
+	014 Move X2, X31
+	015 Call InternedString.op_Implicit, X0
+	016 Compare X20, 0
+	017 JumpIfEqual {25}
+	018 Move [X20+64], X0
+	019 Move X0, [X19]
+	020 Move X20, [X31+32]
+	021 Move X19, [X31+40]
+	022 Move X30, [X31+16]
+	023 Add X31, X31, 48
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder WithShortDisplayName(System.String shortDisplayName)
+
+Disassembly:
+	0x037775E4 LDR X8, [X8 + 0xDC8]
+	0x037775E8 MOV X0, X21
+	0x037775EC MOV X2, X31
+	0x037775F0 LDR X1, [X8]
+	0x037775F4 BL 0x321B938
+	0x037775F8 MOV X21, X0
+	0x037775FC MOV X27, X19
+	0x03777600 LDR W8, [X27 + 0x10]!
+	0x03777604 CMP W8, 0x1
+	0x03777608 B.LT 0x3777740
+	0x0377760C LDR X8, [X24]
+	0x03777610 STP X20, X25, [X31 + 0x20]
+	0x03777614 MOV X20, X23
+	0x03777618 ADRP X23, 0x9CF000
+	0x0377761C LDR X8, [X8 + 0xB8]
+	0x03777620 ADRP X25, 0x9CF000
+	0x03777624 MOV W28, W31
+	0x03777628 LDR X26, [X8]
+	0x0377762C LDR X23, [X23 + 0xDA8]
+	0x03777630 LDR X25, [X25 + 0xDC0]
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+8], X31
+	003 Move [X31+16], X30
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, [X0]
+	007 Move X19, X0
+	008 Add X0, X31, 0
+	009 Move X2, X31
+	010 Move [X31], X31
+	011 Call InternedString..ctor, X0, X1
+	012 Move X0, [X31]
+	013 Move X1, [X31+8]
+	014 Move X2, X31
+	015 Call InternedString.op_Implicit, X0
+	016 Compare X20, 0
+	017 JumpIfEqual {25}
+	018 Move [X20+80], X0
+	019 Move X0, [X19]
+	020 Move X20, [X31+32]
+	021 Move X19, [X31+40]
+	022 Move X30, [X31+16]
+	023 Add X31, X31, 48
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder WithLayout(UnityEngine.InputSystem.Utilities.InternedString layout)
+
+Disassembly:
+	0x03777634 LDR X2, [X23]
+	0x03777638 MOV X0, X27
+	0x0377763C MOV W1, W28
+	0x03777640 BL 0x2DED518
+	0x03777644 STP X0, X1, [X22 + 0x10]
+	0x03777648 ADD X0, X31, 0x200
+	0x0377764C MOV X1, X31
+	0x03777650 BL 0x3768760
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {10}
+	005 Move [X8+88], X1
+	006 Move [X8+96], X2
+	007 Move X0, [X0]
+	008 Move X30, [X31+16]
+	009 Return X0
+	010 Call 0x1C17F20
+
+Method: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder WithChildren(System.Int32 startIndex, System.Int32 count)
+
+Disassembly:
+	0x03777654 TBNZ X0, 0x0, 0x37776AC
+	0x03777658 LDR X8, [X24]
+	0x0377765C MOV X0, X26
+	0x03777660 MOV X2, X31
+	0x03777664 LDR X8, [X8 + 0xB8]
+	0x03777668 LDR X1, [X8]
+	0x0377766C BL 0x3226EF8
+	0x03777670 LDR X2, [X23]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {10}
+	005 Move [X8+152], W2
+	006 Move [X8+156], W1
+	007 Move X0, [X0]
+	008 Move X30, [X31+16]
+	009 Return X0
+	010 Call 0x1C17F20
+
+Method: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder WithStateBlock(UnityEngine.InputSystem.LowLevel.InputStateBlock stateBlock)
+
+Disassembly:
+	0x03777674 MOV W29, W0
+	0x03777678 MOV X0, X27
+	0x0377767C MOV W1, W28
+	0x03777680 BL 0x2DED518
+	0x03777684 BL 0x3779848
+	0x03777688 MOV X2, X0
+	0x0377768C TBZ X29, 0x0, 0x37776A8
+	0x03777690 LDR X1, [X25]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {10}
+	005 Move [X8+16], X1
+	006 Move [X8+24], X2
+	007 Move X0, [X0]
+	008 Move X30, [X31+16]
+	009 Return X0
+	010 Call 0x1C17F20
+
+Method: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder IsNoisy(System.Boolean value)
+
+Disassembly:
+	0x03777694 MOV X0, X26
+	0x03777698 MOV X3, X31
+	0x0377769C BL 0x32274B8
+	0x037776A0 MOV X26, X0
+	0x037776A4 B 0x37776AC
+	0x037776A8 MOV X26, X2
+	0x037776AC LDR W8, [X27]
+	0x037776B0 ADD W28, W28, 0x1
+	0x037776B4 CMP W28, W8
+	0x037776B8 B.LT 0x3777634
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0]
+	005 Compare X0, 0
+	006 JumpIfEqual {13}
+	007 And W1, W1, 1
+	008 Call InputControl.set_noisy, X0, X1
+	009 Move X0, [X19]
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Return X0
+	013 Call 0x1C17F20
+
+Method: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder WithControlUsage(System.Int32 controlIndex, UnityEngine.InputSystem.Utilities.InternedString usage, UnityEngine.InputSystem.InputControl control)
+
+Disassembly:
+	0x037776BC LDR X8, [X24]
+	0x037776C0 MOV X0, X26
+	0x037776C4 MOV X2, X31
+	0x037776C8 LDR X8, [X8 + 0xB8]
+	0x037776CC LDR X1, [X8]
+	0x037776D0 BL 0x3226EF8
+	0x037776D4 TBZ X0, 0x0, 0x377771C
+	0x037776D8 LDR X8, [X24]
+	0x037776DC MOV X0, X21
+	0x037776E0 MOV X2, X31
+	0x037776E4 LDR X8, [X8 + 0xB8]
+	0x037776E8 LDR X1, [X8]
+	0x037776EC BL 0x3226EF8
+	0x037776F0 LDR X25, [X31 + 0x28]
+	0x037776F4 MOV X23, X20
+	0x037776F8 TBZ X0, 0x0, 0x3777728
+	0x037776FC ADRP X8, 0x97C000
+	0x03777700 LDR X8, [X8 + 0xDD8]
+	0x03777704 MOV X0, X21
+	0x03777708 MOV X2, X26
+	0x0377770C MOV X3, X31
+	0x03777710 LDR X1, [X8]
+	0x03777714 BL 0x32274B8
+	0x03777718 B 0x3777738
+	0x0377771C MOV X23, X20
+	0x03777720 LDP X20, X25, [X31 + 0x20]
+	0x03777724 B 0x3777740
+	0x03777728 MOV X0, X21
+	0x0377772C MOV X1, X26
+	0x03777730 MOV X2, X31
+	0x03777734 BL 0x321B938
+	0x03777738 LDR X20, [X31 + 0x20]
+	0x0377773C MOV X21, X0
+	0x03777740 MOV X0, X19
+	0x03777744 MOV X1, X31
+	0x03777748 BL 0x3768760
+	0x0377774C TBNZ X0, 0x0, 0x3777800
+	0x03777750 MOV X0, X19
+	0x03777754 MOV X1, X31
+	0x03777758 BL 0x3768AFC
+	0x0377775C STR X0, [X20]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X8, [X0]
+	008 Compare X8, 0
+	009 JumpIfEqual {48}
+	010 Move X8, [X8+320]
+	011 Compare X8, 0
+	012 JumpIfEqual {48}
+	013 Move W9, [X8+24]
+	014 Move W21, W1
+	015 NotImplemented "Instruction CMP not yet implemented."
+	016 Move X22, W21
+	017 Add X8, X8, X22
+	018 Move [X8+32], X2
+	019 Move [X8+40], X3
+	020 Move X8, [X0]
+	021 Move X20, X0
+	022 Compare X8, 0
+	023 JumpIfEqual {48}
+	024 Move X23, [X8+328]
+	025 Compare X23, 0
+	026 JumpIfEqual {48}
+	027 Move X19, X4
+	028 Compare X4, 0
+	029 JumpIfEqual {36}
+	030 Move X8, [X23]
+	031 Move X0, X19
+	032 Move X1, [X8+64]
+	033 Call 0x1C17E00
+	034 Compare X0, 0
+	035 JumpIfEqual {50}
+	036 Move W8, [X23+24]
+	037 NotImplemented "Instruction CMP not yet implemented."
+	038 Add X8, X23, X22
+	039 Move [X8+32], X19
+	040 Move X0, [X20]
+	041 Move X20, [X31+32]
+	042 Move X19, [X31+40]
+	043 Move X22, [X31+16]
+	044 Move X21, [X31+24]
+	045 Move X30, [X31+48]
+	046 Move X23, [X31+56]
+	047 Return X0
+	048 Call 0x1C17F20
+	049 Call 0x1C17F28
+	050 Call 0x1C17F44
+	051 Move X1, X31
+	052 Call 0x1C17DEC
+
+Method: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder WithControlAlias(System.Int32 controlIndex, UnityEngine.InputSystem.Utilities.InternedString alias)
+
+Disassembly:
+	0x03777760 ADRP X8, 0x9A4000
+	0x03777764 LDR X8, [X8 + 0xDC0]
+	0x03777768 LDR X0, [X8]
+	0x0377776C LDR W8, [X0 + 0xE0]
+	0x03777770 CBNZ W8, 0x3777778
+	0x03777774 BL 0x1C16DFC
+	0x03777778 MOV X0, X31
+	0x0377777C BL 0x3815C30
+	0x03777780 LDR X1, [X20]
+	0x03777784 MOV W2, W31
+	0x03777788 MOV X3, X31
+	0x0377778C BL 0x3818BCC
+	0x03777790 CBZ X0, 0x37777A8
+	0x03777794 MOV X26, X0
+	0x03777798 LDR X0, [X0 + 0x98]
+	0x0377779C MOV X1, X31
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {17}
+	005 Move X8, [X8+312]
+	006 Compare X8, 0
+	007 JumpIfEqual {17}
+	008 Move W9, [X8+24]
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Move X9, W1
+	011 Add X8, X8, X9
+	012 Move [X8+32], X2
+	013 Move [X8+40], X3
+	014 Move X0, [X0]
+	015 Move X30, [X31+16]
+	016 Return X0
+	017 Call 0x1C17F20
+	018 Call 0x1C17F28
+
+Method: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder WithStateOffsetToControlIndexMap(System.UInt32[] map)
+
+Disassembly:
+	0x037777A0 BL 0x32277A8
+	0x037777A4 TBZ X0, 0x0, 0x37777B8
+	0x037777A8 LDP X0, X1, [X19]
+	0x037777AC BL 0x3779848
+	0x037777B0 MOV X26, X0
+	0x037777B4 B 0x37777BC
+	0x037777B8 LDR X26, [X26 + 0x98]
+	0x037777BC MOV X0, X21
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {9}
+	005 Move [X8+344], X1
+	006 Move X0, [X0]
+	007 Move X30, [X31+16]
+	008 Return X0
+	009 Call 0x1C17F20
+
+Method: UnityEngine.InputSystem.InputControlExtensions/DeviceBuilder WithControlTree(System.Byte[] controlTreeNodes, System.UInt16[] controlTreeIndicies)
+
+Disassembly:
+	0x037777C0 MOV X1, X31
+	0x037777C4 BL 0x32277A8
+	0x037777C8 TBZ X0, 0x0, 0x37777E0
+	0x037777CC MOV X0, X21
+	0x037777D0 MOV X1, X26
+	0x037777D4 MOV X2, X31
+	0x037777D8 BL 0x321B938
+	0x037777DC B 0x37777FC
+	0x037777E0 ADRP X8, 0x97C000
+	0x037777E4 LDR X8, [X8 + 0xDD8]
+	0x037777E8 MOV X0, X21
+	0x037777EC MOV X2, X26
+	0x037777F0 MOV X3, X31
+	0x037777F4 LDR X1, [X8]
+	0x037777F8 BL 0x32274B8
+	0x037777FC MOV X21, X0
+	0x03777800 ADD X26, X19, 0x30
+	0x03777804 MOV X0, X26
+	0x03777808 MOV X1, X31
+	0x0377780C BL 0x3768760
+	0x03777810 TBNZ X0, 0x0, 0x3777BA0
+	0x03777814 MOV X0, X19
+	0x03777818 BL 0x3777F10
+	0x0377781C TBNZ X0, 0x0, 0x3777BA0
+	0x03777820 MOV X0, X25
+	0x03777824 MOV X1, X31
+	0x03777828 BL 0x32277A8
+	0x0377782C TBNZ X0, 0x0, 0x3777B50
+	0x03777830 ADRP X8, 0x9A4000
+	0x03777834 LDR X8, [X8 + 0xDC0]
+	0x03777838 LDR X0, [X8]
+	0x0377783C LDR W8, [X0 + 0xE0]
+	0x03777840 CBNZ W8, 0x3777848
+	0x03777844 BL 0x1C16DFC
+	0x03777848 MOV X0, X31
+	0x0377784C BL 0x3815C30
+	0x03777850 MOV X27, X0
+	0x03777854 ADD X0, X31, 0x38
+	0x03777858 MOV X1, X25
+	0x0377785C MOV X2, X31
+	0x03777860 STP X31, X31, [X31 + 0x38]
+	0x03777864 BL 0x3757420
+	0x03777868 LDP X0, X1, [X31 + 0x38]
+	0x0377786C MOV X2, X31
+	0x03777870 BL 0x37577E0
+	0x03777874 MOV X1, X0
+	0x03777878 MOV X0, X27
+	0x0377787C MOV W2, W31
+	0x03777880 MOV X3, X31
+	0x03777884 BL 0x3818BCC
+	0x03777888 CBZ X0, 0x3777B50
+	0x0377788C MOV X25, X0
+	0x03777890 MOV X0, X26
+	0x03777894 MOV X1, X31
+	0x03777898 BL 0x3768AFC
+	0x0377789C MOV X1, X0
+	0x037778A0 ADD X0, X31, 0x1F0
+	0x037778A4 MOV X2, X31
+	0x037778A8 BL 0x3757420
+	0x037778AC LDP X0, X1, [X22]
+	0x037778B0 MOV X2, X31
+	0x037778B4 BL 0x37577E0
+	0x037778B8 MOV X1, X0
+	0x037778BC ADD X8, X31, 0x38
+	0x037778C0 ADD X2, X31, 0x114
+	0x037778C4 MOV X0, X25
+	0x037778C8 MOV X3, X31
+	0x037778CC BL 0x38113A4
+	0x037778D0 ADD X0, X31, 0x118
+	0x037778D4 ADD X1, X31, 0x38
+	0x037778D8 MOVZ W2, 0xD8
+	0x037778DC BL 0x3EB1AC0
+	0x037778E0 LDRB W8, [X31 + 0x118]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X22, 0xC6A000
+	008 Move W8, [X22+3893]
+	009 Move X19, X2
+	010 Move X21, X1
+	011 Move X20, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {24}
+	016 Move X0, 0x9D0000
+	017 Move X0, [X0+3448]
+	018 Call 0x1C17CF4
+	019 Move X0, 0x9D0000
+	020 Move X0, [X0+3456]
+	021 Call 0x1C17CF4
+	022 Move W8, 1
+	023 Move [X22+3893], W8
+	024 Compare X21, 0
+	025 JumpIfEqual {79}
+	026 NotImplemented "Instruction LDRSW not yet implemented."
+	027 Move X9, 0x9D0000
+	028 Move X9, [X9+3448]
+	029 Move TEMP, 0xDB6C
+	030 Not TEMP
+	031 Move X10, TEMP
+	032 NotImplemented "Instruction MOVK not yet implemented."
+	033 Multiply X10, X8, X10
+	034 Move X10, X10
+	035 ShiftRight X10, 32
+	036 And X10, X10, 0x7FFFFFFF
+	037 Move X0, [X9]
+	038 Add W8, W10, W8
+	039 Move X23, [X20]
+	040 NotImplemented "Instruction SBFM not yet implemented."
+	041 Add W22, W9, W8
+	042 Move W1, W22
+	043 Call 0x1C17D6C
+	044 Compare X23, 0
+	045 JumpIfEqual {79}
+	046 Move [X23+352], X0
+	047 Move W8, [X21+24]
+	048 Move X14, [X20]
+	049 Add X9, X21, 32
+	050 NotImplemented "Instruction CMP not yet implemented."
+	051 NotImplemented "Instruction CSEL not yet implemented."
+	052 Compare X14, 0
+	053 JumpIfEqual {79}
+	054 Move X11, X31
+	055 Move X9, X31
+	056 NotImplemented "Instruction BIC not yet implemented."
+	057 Move W12, 32
+	058 Move X13, 7
+	059 NotImplemented "Instruction CMP not yet implemented."
+	060 Move X14, [X14+352]
+	061 Compare X14, 0
+	062 JumpIfEqual {79}
+	063 Move W15, [X14+24]
+	064 NotImplemented "Instruction CMP not yet implemented."
+	065 Add X15, X8, X11
+	066 NotImplemented "Instruction LDRH not yet implemented."
+	067 Move W17, [X15+6]
+	068 Move W15, [X15]
+	069 Add X14, X14, X12
+	070 NotImplemented "Instruction STRH not yet implemented."
+	071 Move [X14+6], W17
+	072 Move [X14], W15
+	073 Move X14, [X20]
+	074 Add X11, X11, X13
+	075 Add X12, X12, 7
+	076 Add X9, X9, 1
+	077 Compare X14, 0
+	078 JumpIfNotEqual {59}
+	079 Call 0x1C17F20
+	080 Move [X14+360], X19
+	081 Move X0, [X20]
+	082 Move X20, [X31+32]
+	083 Move X19, [X31+40]
+	084 Move X22, [X31+16]
+	085 Move X21, [X31+24]
+	086 Move X30, [X31+48]
+	087 Move X23, [X31+56]
+	088 Return X0
+	089 Call 0x1C17F28
+
+Method: System.Void Finish()
+
+Disassembly:
+	0x037778E4 CBZ W8, 0x3777B50
+	0x037778E8 LDR X22, [X31 + 0x18]
+	0x037778EC MOV X1, X31
+	0x037778F0 MOV X0, X22
+	0x037778F4 BL 0x32277A8
+	0x037778F8 LDR W8, [X31 + 0x114]
+	0x037778FC ADDS W31, W8, 0x1
+	0x03777900 ADRP X8, 0x9CF000
+	0x03777904 LDR X8, [X8 + 0xDB8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {10}
+	005 Move W9, [X8+160]
+	006 Or W9, W9, 32
+	007 Move [X8+160], W9
+	008 Move X30, [X31+16]
+	009 Return 
+	010 Call 0x1C17F20
+

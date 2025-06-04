@@ -1,0 +1,84 @@
+Type: Fusion.NetworkStructWeavedAttribute
+
+Method: System.Int32 get_WordCount()
+
+Disassembly:
+	0x01E6873C BL 0x1C16F20
+	0x01E68740 STR X30, [X31 - 0x10]!
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Boolean get_IsGenericComposite()
+
+Disassembly:
+	0x01E68744 LDR X8, [X0 + 0x20]
+	0x01E68748 CBZ X8, 0x1E68758
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void .ctor(System.Int32 wordCount)
+
+Disassembly:
+	0x01E6874C LDRB W0, [X8 + 0x110]
+	0x01E68750 LDR X30, [X31], #0x10
+	0x01E68754 RET
+	0x01E68758 BL 0x1C16F20
+	0x01E6875C STP X30, X19, [X31 - 0x10]!
+	0x01E68760 MOV X19, X0
+	0x01E68764 BL 0x1E68684
+	0x01E68768 TBZ X0, 0x0, 0x1E68790
+	0x01E6876C LDR X8, [X19 + 0x30]
+	0x01E68770 CBZ X8, 0x1E6879C
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void .ctor(System.Int32 wordCount, System.Boolean isGenericComposite)
+
+Disassembly:
+	0x01E68774 LDR X8, [X8 + 0x38]
+	0x01E68778 CBZ X8, 0x1E6879C
+	0x01E6877C LDR X0, [X8 + 0x110]
+	0x01E68780 CBZ X0, 0x1E6879C
+	0x01E68784 MOV X1, X31
+	0x01E68788 LDP X30, X19, [X31], #0x10
+	0x01E6878C B 0x1E5E860
+	0x01E68790 MOVN W0, 0x0
+	0x01E68794 LDP X30, X19, [X31], #0x10
+	0x01E68798 RET
+	0x01E6879C BL 0x1C16F20
+	0x01E687A0 STP X30, X19, [X31 - 0x10]!
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W19, W1
+	006 Move X1, X31
+	007 Move X20, X0
+	008 And W21, W2, 1
+	009 Call Attribute..ctor, X0
+	010 Move [X20+16], W19
+	011 Move [X20+20], W21
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+

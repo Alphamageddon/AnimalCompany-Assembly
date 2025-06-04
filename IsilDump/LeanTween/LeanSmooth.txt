@@ -1,0 +1,1537 @@
+Type: LeanSmooth
+
+Method: System.Single damp(System.Single current, System.Single target, ref System.Single currentVelocity, System.Single smoothTime, System.Single maxSpeed = -1, System.Single deltaTime = -1)
+
+Disassembly:
+	0x031AB098 LDR X0, [X0 + 0x2F8]
+	0x031AB09C BL 0x1C16D08
+	0x031AB0A0 MOV X1, X0
+	0x031AB0A4 MOV X0, X19
+	0x031AB0A8 BL 0x1C16DEC
+	0x031AB0AC LDR X0, [X0 + 0x18]
+	0x031AB0B0 RET
+	0x031AB0B4 STP X30, X23, [X31 - 0x30]!
+	0x031AB0B8 STP X22, X21, [X31 + 0x10]
+	0x031AB0BC STP X20, X19, [X31 + 0x20]
+	0x031AB0C0 ADRP X22, 0x1230000
+	0x031AB0C4 ADRP X23, 0xF74000
+	0x031AB0C8 LDRB W8, [X22 + 0xE3F]
+	0x031AB0CC LDR X23, [X23 + 0x2B0]
+	0x031AB0D0 MOV X19, X2
+	0x031AB0D4 MOV W21, W1
+	0x031AB0D8 MOV X20, X0
+	0x031AB0DC TBNZ X8, 0x0, 0x31AB0F4
+	0x031AB0E0 ADRP X0, 0xF74000
+	0x031AB0E4 LDR X0, [X0 + 0x2B0]
+	0x031AB0E8 BL 0x1C16CF4
+	0x031AB0EC MOVZ W8, 0x1
+	0x031AB0F0 STRB W8, [X22 + 0xE3F]
+	0x031AB0F4 LDR X0, [X23]
+	0x031AB0F8 LDR W8, [X0 + 0xE0]
+	0x031AB0FC CBNZ W8, 0x31AB104
+	0x031AB100 BL 0x1C16DFC
+	0x031AB104 AND W0, W21, 0x1
+	0x031AB108 MOV X1, X20
+	0x031AB10C MOV X2, X19
+	0x031AB110 LDP X20, X19, [X31 + 0x20]
+	0x031AB114 LDP X22, X21, [X31 + 0x10]
+	0x031AB118 LDP X30, X23, [X31], #0x30
+	0x031AB11C B 0x31AB120
+	0x031AB120 STR X30, [X31 - 0x50]!
+	0x031AB124 STP X26, X25, [X31 + 0x10]
+	0x031AB128 STP X24, X23, [X31 + 0x20]
+	0x031AB12C STP X22, X21, [X31 + 0x30]
+	0x031AB130 STP X20, X19, [X31 + 0x40]
+	0x031AB134 ADRP X22, 0x1230000
+	0x031AB138 ADRP X24, 0xF74000
+	0x031AB13C LDRB W8, [X22 + 0xE40]
+	0x031AB140 LDR X24, [X24 + 0x2B0]
+	0x031AB144 MOV X20, X2
+	0x031AB148 MOV X21, X1
+	0x031AB14C MOV W19, W0
+	0x031AB150 TBNZ X8, 0x0, 0x31AB24C
+	0x031AB154 ADRP X0, 0xF48000
+	0x031AB158 LDR X0, [X0 + 0xA28]
+	0x031AB15C BL 0x1C16CF4
+	0x031AB160 ADRP X0, 0xF48000
+	0x031AB164 LDR X0, [X0 + 0xA58]
+	0x031AB168 BL 0x1C16CF4
+	0x031AB16C ADRP X0, 0xF74000
+	0x031AB170 LDR X0, [X0 + 0x2B0]
+	0x031AB174 BL 0x1C16CF4
+	0x031AB178 ADRP X0, 0xF74000
+	0x031AB17C LDR X0, [X0 + 0x300]
+	0x031AB180 BL 0x1C16CF4
+	0x031AB184 ADRP X0, 0xF74000
+	0x031AB188 LDR X0, [X0 + 0x308]
+	0x031AB18C BL 0x1C16CF4
+	0x031AB190 ADRP X0, 0xF48000
+	0x031AB194 LDR X0, [X0 + 0xAC8]
+	0x031AB198 BL 0x1C16CF4
+	0x031AB19C ADRP X0, 0xF48000
+	0x031AB1A0 LDR X0, [X0 + 0x6C0]
+	0x031AB1A4 BL 0x1C16CF4
+	0x031AB1A8 ADRP X0, 0xF74000
+	0x031AB1AC LDR X0, [X0 + 0x310]
+	0x031AB1B0 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-48], D11
+	002 Move [X31-40], D10
+	003 Move [X31+16], D9
+	004 Move [X31+24], D8
+	005 Move [X31+32], X30
+	006 Move [X31+40], X19
+	007 Move V10, V3
+	008 Move V11, V2
+	009 Move X19, X0
+	010 Move V8, V1
+	011 NotImplemented "Instruction FCMP not yet implemented."
+	012 Move V9, V0
+	013 Move X0, X31
+	014 Call Time.get_deltaTime
+	015 Move V4, V0
+	016 Move X8, -40636416
+	017 Move V1, [X8+3880]
+	018 Move X8, -40632320
+	019 Move V5, [X8+872]
+	020 Move X8, -40632320
+	021 Move V6, [X8+288]
+	022 Move S0, 2
+	023 NotImplemented "Instruction FMAX not yet implemented."
+	024 NotImplemented "Instruction FDIV not yet implemented."
+	025 Multiply S0, S1, S4
+	026 Move S2, 1
+	027 Multiply S5, S0, S5
+	028 Multiply S6, S0, S6
+	029 Add S7, S0, S2
+	030 Multiply S5, S0, S5
+	031 Multiply S6, S0, S6
+	032 Add S5, S7, S5
+	033 Multiply S0, S0, S6
+	034 Add S0, S5, S0
+	035 NotImplemented "Instruction FCMP not yet implemented."
+	036 NotImplemented "Instruction FDIV not yet implemented."
+	037 Subtract S5, S9, S8
+	038 NotImplemented "Instruction FNMUL not yet implemented."
+	039 NotImplemented "Instruction FCMP not yet implemented."
+	040 Multiply S0, S3, S10
+	041 NotImplemented "Instruction FCMP not yet implemented."
+	042 NotImplemented "Instruction FCSEL not yet implemented."
+	043 Move V0, V5
+	044 Move V3, [X19]
+	045 Multiply S5, S1, S0
+	046 Subtract S6, S9, S0
+	047 Subtract S7, S8, S9
+	048 Add S5, S3, S5
+	049 Multiply S5, S4, S5
+	050 Add S0, S0, S5
+	051 Multiply S0, S2, S0
+	052 NotImplemented "Instruction FCMP not yet implemented."
+	053 Add S0, S6, S0
+	054 NotImplemented "Instruction CSET not yet implemented."
+	055 NotImplemented "Instruction FCMP not yet implemented."
+	056 NotImplemented "Instruction CSET not yet implemented."
+	057 NotImplemented "Instruction CMP not yet implemented."
+	058 Subtract S0, S8, S8
+	059 NotImplemented "Instruction FDIV not yet implemented."
+	060 Move V0, V8
+	061 Multiply S1, S1, S5
+	062 Subtract S1, S3, S1
+	063 Multiply S1, S2, S1
+	064 Move [X19], S1
+	065 Move X30, [X31+32]
+	066 Move X19, [X31+40]
+	067 Move D9, [X31+16]
+	068 Move D8, [X31+24]
+	069 Move D11, [X31+48]
+	070 Move D10, [X31+56]
+	071 Return V0
+
+Method: UnityEngine.Vector3 damp(UnityEngine.Vector3 current, UnityEngine.Vector3 target, ref UnityEngine.Vector3 currentVelocity, System.Single smoothTime, System.Single maxSpeed = -1, System.Single deltaTime = -1)
+
+Disassembly:
+	0x031AB1B4 ADRP X0, 0xF74000
+	0x031AB1B8 LDR X0, [X0 + 0x2D0]
+	0x031AB1BC BL 0x1C16CF4
+	0x031AB1C0 ADRP X0, 0xF48000
+	0x031AB1C4 LDR X0, [X0 + 0xDD8]
+	0x031AB1C8 BL 0x1C16CF4
+	0x031AB1CC ADRP X0, 0xF74000
+	0x031AB1D0 LDR X0, [X0 + 0x2D8]
+	0x031AB1D4 BL 0x1C16CF4
+	0x031AB1D8 ADRP X0, 0xF74000
+	0x031AB1DC LDR X0, [X0 + 0x318]
+	0x031AB1E0 BL 0x1C16CF4
+	0x031AB1E4 ADRP X0, 0xF48000
+	0x031AB1E8 LDR X0, [X0 + 0xDE0]
+	0x031AB1EC BL 0x1C16CF4
+	0x031AB1F0 ADRP X0, 0xF74000
+	0x031AB1F4 LDR X0, [X0 + 0x320]
+	0x031AB1F8 BL 0x1C16CF4
+	0x031AB1FC ADRP X0, 0xF74000
+	0x031AB200 LDR X0, [X0 + 0x328]
+	0x031AB204 BL 0x1C16CF4
+	0x031AB208 ADRP X0, 0xF74000
+	0x031AB20C LDR X0, [X0 + 0x330]
+	0x031AB210 BL 0x1C16CF4
+	0x031AB214 ADRP X0, 0xF74000
+	0x031AB218 LDR X0, [X0 + 0x338]
+	0x031AB21C BL 0x1C16CF4
+	0x031AB220 ADRP X0, 0xF74000
+	0x031AB224 LDR X0, [X0 + 0x340]
+	0x031AB228 BL 0x1C16CF4
+	0x031AB22C ADRP X0, 0xF48000
+	0x031AB230 LDR X0, [X0 + 0x988]
+	0x031AB234 BL 0x1C16CF4
+	0x031AB238 ADRP X0, 0xF74000
+	0x031AB23C LDR X0, [X0 + 0x348]
+	0x031AB240 BL 0x1C16CF4
+	0x031AB244 MOVZ W8, 0x1
+	0x031AB248 STRB W8, [X22 + 0xE40]
+	0x031AB24C LDR X0, [X24]
+	0x031AB250 ADRP X22, 0xF48000
+	0x031AB254 LDR W8, [X0 + 0xE0]
+	0x031AB258 LDR X22, [X22 + 0xDE0]
+	0x031AB25C CBNZ W8, 0x31AB264
+
+ISIL:
+	001 Move [X31-80], D15
+	002 Move [X31-72], D14
+	003 Move [X31+16], D13
+	004 Move [X31+24], D12
+	005 Move [X31+32], D11
+	006 Move [X31+40], D10
+	007 Move [X31+48], D9
+	008 Move [X31+56], D8
+	009 Move [X31+64], X30
+	010 Move [X31+72], X19
+	011 Move V14, [X31+80]
+	012 Move V11, V4
+	013 Move V12, V2
+	014 Move V13, V1
+	015 Move V1, V3
+	016 Move V2, V6
+	017 Move V3, V7
+	018 Move V4, V14
+	019 Move V8, V7
+	020 Move V9, V6
+	021 Move X19, X0
+	022 Move V10, V5
+	023 Call LeanSmooth.damp, V0, V1, X0, V2, V3, V4
+	024 Move V15, V0
+	025 Add X0, X19, 4
+	026 Move V0, V13
+	027 Move V1, V11
+	028 Move V2, V9
+	029 Move V3, V8
+	030 Move V4, V14
+	031 Call LeanSmooth.damp, V0, V1, X0, V2, V3, V4
+	032 Move V11, V0
+	033 Add X0, X19, 8
+	034 Move V0, V12
+	035 Move V1, V10
+	036 Move V2, V9
+	037 Move V3, V8
+	038 Move V4, V14
+	039 Call LeanSmooth.damp, V0, V1, X0, V2, V3, V4
+	040 Move V1, V11
+	041 Move X30, [X31+64]
+	042 Move X19, [X31+72]
+	043 Move D9, [X31+48]
+	044 Move D8, [X31+56]
+	045 Move D11, [X31+32]
+	046 Move D10, [X31+40]
+	047 Move D13, [X31+16]
+	048 Move D12, [X31+24]
+	049 Move V2, V0
+	050 Move V0, V15
+	051 Move D15, [X31+80]
+	052 Move D14, [X31+88]
+	053 Return X0
+
+Method: UnityEngine.Color damp(UnityEngine.Color current, UnityEngine.Color target, ref UnityEngine.Color currentVelocity, System.Single smoothTime, System.Single maxSpeed = -1, System.Single deltaTime = -1)
+
+Disassembly:
+	0x031AB260 BL 0x1C16DFC
+	0x031AB264 MOV X0, X21
+	0x031AB268 BL 0x31AB668
+	0x031AB26C ADRP X8, 0xFFFFFFFFFD93F000
+	0x031AB270 LDR V1, [X8 + 0x190]
+	0x031AB274 MOVZ W9, 0x7F800000
+	0x031AB278 MOVZ W8, 0x28
+	0x031AB27C LDR X0, [X22]
+	0x031AB280 FMUL S0, S0, S1
+	0x031AB284 FMOV S2, W9
+	0x031AB288 FCVTZS W9, S0
+	0x031AB28C SUB W8, W8, W9
+	0x031AB290 MOVZ W9, 0x28
+	0x031AB294 FCMP S0, S2
+	0x031AB298 MOVK W9, 0x80000000
+	0x031AB29C CSEL W22, W9, W8, EQ
+	0x031AB2A0 CBZ X0, 0x31AB664
+	0x031AB2A4 ADRP X23, 0xF48000
+	0x031AB2A8 LDR X23, [X23 + 0x988]
+	0x031AB2AC MOV W1, W31
+	0x031AB2B0 MOV X2, X31
+	0x031AB2B4 BL 0x3222A1C
+	0x031AB2B8 LDR X8, [X23]
+	0x031AB2BC CBZ X8, 0x31AB664
+	0x031AB2C0 ADRP X23, 0xF48000
+	0x031AB2C4 LDR X23, [X23 + 0xAC8]
+	0x031AB2C8 MOV W2, W0
+	0x031AB2CC MOV X0, X8
+	0x031AB2D0 MOV W1, W22
+	0x031AB2D4 MOV X3, X31
+	0x031AB2D8 BL 0x3228A68
+	0x031AB2DC LDR X8, [X23]
+	0x031AB2E0 MOV X23, X0
+	0x031AB2E4 MOVZ W1, 0x6
+	0x031AB2E8 MOV X0, X8
+	0x031AB2EC BL 0x1C16D6C
+	0x031AB2F0 MOV X22, X0
+	0x031AB2F4 MOV X0, X21
+	0x031AB2F8 BL 0x31AAD8C
+	0x031AB2FC CBZ X22, 0x31AB664
+	0x031AB300 LDR W8, [X22 + 0x18]
+	0x031AB304 CBZ W8, 0x31AB660
+	0x031AB308 CMP W8, 0x1
+	0x031AB30C STR X0, [X22 + 0x20]
+	0x031AB310 B.EQ 0x31AB660
+	0x031AB314 ADRP X9, 0xF48000
+	0x031AB318 LDR X9, [X9 + 0xDD8]
+	0x031AB31C CMP W8, 0x2
+	0x031AB320 LDR X9, [X9]
+	0x031AB324 STR X9, [X22 + 0x28]
+	0x031AB328 B.LS 0x31AB660
+	0x031AB32C CMP W8, 0x3
+	0x031AB330 STR X23, [X22 + 0x30]
+	0x031AB334 B.EQ 0x31AB660
+
+ISIL:
+	001 Subtract X31, X31, 96
+	002 Move [X31+16], D15
+	003 Move [X31+24], D14
+	004 Move [X31+32], D13
+	005 Move [X31+40], D12
+	006 Move [X31+48], D11
+	007 Move [X31+56], D10
+	008 Move [X31+64], D9
+	009 Move [X31+72], D8
+	010 Move [X31+80], X30
+	011 Move [X31+88], X19
+	012 Move V14, [X31+96]
+	013 Move V15, [X31+104]
+	014 Move V8, [X31+112]
+	015 Move [X31+8], S3
+	016 Move [X31+16], S7
+	017 Move V12, V2
+	018 Move V13, V1
+	019 Move V1, V4
+	020 Move V2, V14
+	021 Move V3, V15
+	022 Move V4, V8
+	023 Move X19, X0
+	024 Move V9, V6
+	025 Move V10, V5
+	026 Call LeanSmooth.damp, V0, V1, X0, V2, V3, V4
+	027 Move V11, V0
+	028 Add X0, X19, 4
+	029 Move V0, V13
+	030 Move V1, V10
+	031 Move V2, V14
+	032 Move V3, V15
+	033 Move V4, V8
+	034 Call LeanSmooth.damp, V0, V1, X0, V2, V3, V4
+	035 Move V10, V0
+	036 Add X0, X19, 8
+	037 Move V0, V12
+	038 Move V1, V9
+	039 Move V2, V14
+	040 Move V3, V15
+	041 Move V4, V8
+	042 Call LeanSmooth.damp, V0, V1, X0, V2, V3, V4
+	043 Move V9, V0
+	044 Move S0, [X31+8]
+	045 Move S1, [X31+12]
+	046 Add X0, X19, 12
+	047 Move V2, V14
+	048 Move V3, V15
+	049 Move V4, V8
+	050 Call LeanSmooth.damp, V0, V1, X0, V2, V3, V4
+	051 Move V3, V0
+	052 Move V0, V11
+	053 Move V1, V10
+	054 Move V2, V9
+	055 Move X30, [X31+80]
+	056 Move X19, [X31+88]
+	057 Move D9, [X31+64]
+	058 Move D8, [X31+72]
+	059 Move D11, [X31+48]
+	060 Move D10, [X31+56]
+	061 Move D13, [X31+32]
+	062 Move D12, [X31+40]
+	063 Move D15, [X31+16]
+	064 Move D14, [X31+24]
+	065 Add X31, X31, 96
+	066 Return X0
+
+Method: System.Single spring(System.Single current, System.Single target, ref System.Single currentVelocity, System.Single smoothTime, System.Single maxSpeed = -1, System.Single deltaTime = -1, System.Single friction = 2, System.Single accelRate = 0.5)
+
+Disassembly:
+	0x031AB338 ADRP X8, 0xF74000
+	0x031AB33C LDR X8, [X8 + 0x340]
+	0x031AB340 ADRP X25, 0xF74000
+	0x031AB344 ADRP X26, 0xF74000
+	0x031AB348 ADRP X21, 0xF74000
+	0x031AB34C LDR X8, [X8]
+	0x031AB350 ADRP X23, 0xF74000
+	0x031AB354 STR X8, [X22 + 0x38]
+	0x031AB358 LDR X0, [X24]
+	0x031AB35C LDR W8, [X0 + 0xE0]
+	0x031AB360 LDR X25, [X25 + 0x318]
+	0x031AB364 LDR X26, [X26 + 0x338]
+	0x031AB368 LDR X21, [X21 + 0x2D0]
+	0x031AB36C LDR X23, [X23 + 0x2D8]
+	0x031AB370 CBNZ W8, 0x31AB378
+	0x031AB374 BL 0x1C16DFC
+	0x031AB378 ANDS W31, W19, 0x1
+	0x031AB37C CSEL X8, X25, X26, NE
+	0x031AB380 CSEL X9, X21, X23, NE
+	0x031AB384 LDR X0, [X8]
+	0x031AB388 LDR X1, [X9]
+	0x031AB38C BL 0x31AB790
+	0x031AB390 LDR W8, [X22 + 0x18]
+	0x031AB394 CMP W8, 0x4
+	0x031AB398 B.LS 0x31AB660
+	0x031AB39C CMP W8, 0x5
+	0x031AB3A0 STR X0, [X22 + 0x40]
+	0x031AB3A4 B.EQ 0x31AB660
+	0x031AB3A8 ADRP X8, 0xF74000
+	0x031AB3AC LDR X8, [X8 + 0x348]
+	0x031AB3B0 ADRP X23, 0xF48000
+	0x031AB3B4 MOV X0, X22
+	0x031AB3B8 MOV X1, X31
+	0x031AB3BC LDR X8, [X8]
+	0x031AB3C0 LDR X23, [X23 + 0xA28]
+	0x031AB3C4 STR X8, [X22 + 0x48]
+	0x031AB3C8 BL 0x32278CC
+	0x031AB3CC MOV X21, X0
+	0x031AB3D0 CBZ X20, 0x31AB3F8
+	0x031AB3D4 TBNZ X19, 0x0, 0x31AB3F8
+	0x031AB3D8 ADRP X8, 0xF74000
+
+ISIL:
+	001 Move [X31-64], D13
+	002 Move [X31-56], D12
+	003 Move [X31+16], D11
+	004 Move [X31+24], D10
+	005 Move [X31+32], D9
+	006 Move [X31+40], D8
+	007 Move [X31+48], X30
+	008 Move [X31+56], X19
+	009 Move V10, V6
+	010 Move V11, V5
+	011 Move V8, V3
+	012 Move V12, V2
+	013 Move X19, X0
+	014 Move V13, V1
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move V9, V0
+	017 Move X0, X31
+	018 Call Time.get_deltaTime
+	019 Move V4, V0
+	020 Move V1, [X19]
+	021 NotImplemented "Instruction FDIV not yet implemented."
+	022 Subtract S0, S13, S9
+	023 Multiply S2, S2, S10
+	024 Multiply S3, S4, S11
+	025 Move S4, 1
+	026 Multiply S0, S0, S2
+	027 Subtract S3, S4, S3
+	028 Add S0, S1, S0
+	029 Multiply S0, S3, S0
+	030 NotImplemented "Instruction FNEG not yet implemented."
+	031 NotImplemented "Instruction FABS not yet implemented."
+	032 NotImplemented "Instruction FCMP not yet implemented."
+	033 NotImplemented "Instruction FCSEL not yet implemented."
+	034 NotImplemented "Instruction FCMP not yet implemented."
+	035 Move S1, W31
+	036 NotImplemented "Instruction FCCMP not yet implemented."
+	037 NotImplemented "Instruction FCSEL not yet implemented."
+	038 Add S0, S1, S9
+	039 Move [X19], S1
+	040 Move X30, [X31+48]
+	041 Move X19, [X31+56]
+	042 Move D9, [X31+32]
+	043 Move D8, [X31+40]
+	044 Move D11, [X31+16]
+	045 Move D10, [X31+24]
+	046 Move D13, [X31+64]
+	047 Move D12, [X31+72]
+	048 Return V0
+
+Method: UnityEngine.Vector3 spring(UnityEngine.Vector3 current, UnityEngine.Vector3 target, ref UnityEngine.Vector3 currentVelocity, System.Single smoothTime, System.Single maxSpeed = -1, System.Single deltaTime = -1, System.Single friction = 2, System.Single accelRate = 0.5)
+
+Disassembly:
+	0x031AB3DC LDR X8, [X8 + 0x320]
+	0x031AB3E0 MOV X0, X21
+	0x031AB3E4 MOV X2, X20
+	0x031AB3E8 MOV X3, X31
+	0x031AB3EC LDR X1, [X8]
+	0x031AB3F0 BL 0x32274B8
+	0x031AB3F4 MOV X21, X0
+	0x031AB3F8 LDR X0, [X23]
+	0x031AB3FC LDR W8, [X0 + 0xE0]
+	0x031AB400 CBNZ W8, 0x31AB408
+	0x031AB404 BL 0x1C16DFC
+	0x031AB408 MOV X0, X21
+	0x031AB40C MOV X1, X31
+	0x031AB410 BL 0x3C06048
+	0x031AB414 LDR X0, [X24]
+	0x031AB418 TBZ X19, 0x0, 0x31AB43C
+	0x031AB41C LDR W8, [X0 + 0xE0]
+	0x031AB420 CBNZ W8, 0x31AB42C
+	0x031AB424 BL 0x1C16DFC
+	0x031AB428 LDR X0, [X24]
+	0x031AB42C LDR X8, [X0 + 0xB8]
+	0x031AB430 LDR W9, [X8 + 0x8]
+	0x031AB434 ADD W9, W9, 0x1
+	0x031AB438 STR W9, [X8 + 0x8]
+	0x031AB43C LDR W8, [X0 + 0xE0]
+	0x031AB440 CBNZ W8, 0x31AB44C
+	0x031AB444 BL 0x1C16DFC
+	0x031AB448 LDR X0, [X24]
+	0x031AB44C LDR X8, [X0 + 0xB8]
+	0x031AB450 LDP W10, W9, [X8]
+	0x031AB454 ADD W9, W9, 0x1
+	0x031AB458 CMP W9, W10
+	0x031AB45C STR W9, [X8 + 0x4]
+	0x031AB460 B.NE 0x31AB480
+	0x031AB464 LDR W9, [X0 + 0xE0]
+	0x031AB468 CBNZ W9, 0x31AB478
+	0x031AB46C BL 0x1C16DFC
+	0x031AB470 LDR X0, [X24]
+	0x031AB474 LDR X8, [X0 + 0xB8]
+	0x031AB478 LDRB W8, [X8 + 0x11]
+	0x031AB47C CBZ W8, 0x31AB518
+	0x031AB480 LDR W8, [X0 + 0xE0]
+	0x031AB484 CBNZ W8, 0x31AB490
+	0x031AB488 BL 0x1C16DFC
+	0x031AB48C LDR X0, [X24]
+	0x031AB490 LDR X8, [X0 + 0xB8]
+	0x031AB494 LDP W8, W9, [X8]
+	0x031AB498 CMP W9, W8
+	0x031AB49C B.LE 0x31AB528
+	0x031AB4A0 LDR W8, [X0 + 0xE0]
+	0x031AB4A4 CBNZ W8, 0x31AB4AC
+
+ISIL:
+	001 Subtract X31, X31, 96
+	002 Move [X31+16], D15
+	003 Move [X31+24], D14
+	004 Move [X31+32], D13
+	005 Move [X31+40], D12
+	006 Move [X31+48], D11
+	007 Move [X31+56], D10
+	008 Move [X31+64], D9
+	009 Move [X31+72], D8
+	010 Move [X31+80], X30
+	011 Move [X31+88], X19
+	012 Move V14, [X31+96]
+	013 Move V15, [X31+104]
+	014 Move V10, [X31+112]
+	015 Move V9, V6
+	016 Move [X31+8], S2
+	017 Move [X31+16], S5
+	018 Move V11, V4
+	019 Move V13, V1
+	020 Move V1, V3
+	021 Move V2, V6
+	022 Move V3, V7
+	023 Move V4, V14
+	024 Move V5, V15
+	025 Move V6, V10
+	026 Move V8, V7
+	027 Move X19, X0
+	028 Call LeanSmooth.spring, V0, V1, X0, V2, V3, V4, V5, V6
+	029 Move V12, V0
+	030 Add X0, X19, 4
+	031 Move V0, V13
+	032 Move V1, V11
+	033 Move V2, V9
+	034 Move V3, V8
+	035 Move V4, V14
+	036 Move V5, V15
+	037 Move V6, V10
+	038 Call LeanSmooth.spring, V0, V1, X0, V2, V3, V4, V5, V6
+	039 Move V11, V0
+	040 Move S0, [X31+8]
+	041 Move S1, [X31+12]
+	042 Add X0, X19, 8
+	043 Move V2, V9
+	044 Move V3, V8
+	045 Move V4, V14
+	046 Move V5, V15
+	047 Move V6, V10
+	048 Call LeanSmooth.spring, V0, V1, X0, V2, V3, V4, V5, V6
+	049 Move V2, V0
+	050 Move V0, V12
+	051 Move V1, V11
+	052 Move X30, [X31+80]
+	053 Move X19, [X31+88]
+	054 Move D9, [X31+64]
+	055 Move D8, [X31+72]
+	056 Move D11, [X31+48]
+	057 Move D10, [X31+56]
+	058 Move D13, [X31+32]
+	059 Move D12, [X31+40]
+	060 Move D15, [X31+16]
+	061 Move D14, [X31+24]
+	062 Add X31, X31, 96
+	063 Return X0
+
+Method: UnityEngine.Color spring(UnityEngine.Color current, UnityEngine.Color target, ref UnityEngine.Color currentVelocity, System.Single smoothTime, System.Single maxSpeed = -1, System.Single deltaTime = -1, System.Single friction = 2, System.Single accelRate = 0.5)
+
+Disassembly:
+	0x031AB4A8 BL 0x1C16DFC
+	0x031AB4AC ADRP X8, 0xF74000
+	0x031AB4B0 LDR X8, [X8 + 0x310]
+	0x031AB4B4 LDR X0, [X8]
+	0x031AB4B8 BL 0x31AAD8C
+	0x031AB4BC LDR X8, [X24]
+	0x031AB4C0 MOV X19, X0
+	0x031AB4C4 MOV X1, X31
+	0x031AB4C8 LDR X8, [X8 + 0xB8]
+	0x031AB4CC ADD X0, X8, 0x4
+	0x031AB4D0 BL 0x337B6E0
+	0x031AB4D4 ADRP X8, 0xF74000
+	0x031AB4D8 LDR X8, [X8 + 0x330]
+	0x031AB4DC MOV X2, X0
+	0x031AB4E0 MOV X0, X19
+	0x031AB4E4 MOV X3, X31
+	0x031AB4E8 LDR X1, [X8]
+	0x031AB4EC BL 0x32274B8
+	0x031AB4F0 LDR X8, [X23]
+	0x031AB4F4 MOV X19, X0
+	0x031AB4F8 LDR W9, [X8 + 0xE0]
+	0x031AB4FC CBNZ W9, 0x31AB508
+	0x031AB500 MOV X0, X8
+	0x031AB504 BL 0x1C16DFC
+	0x031AB508 MOV X0, X19
+	0x031AB50C MOV X1, X31
+	0x031AB510 BL 0x3C06048
+	0x031AB514 B 0x31AB528
+	0x031AB518 LDR W8, [X0 + 0xE0]
+	0x031AB51C CBNZ W8, 0x31AB524
+	0x031AB520 BL 0x1C16DFC
+	0x031AB524 BL 0x31AADF8
+	0x031AB528 LDR X0, [X24]
+	0x031AB52C LDR W8, [X0 + 0xE0]
+	0x031AB530 CBNZ W8, 0x31AB53C
+	0x031AB534 BL 0x1C16DFC
+	0x031AB538 LDR X0, [X24]
+	0x031AB53C LDR X8, [X0 + 0xB8]
+	0x031AB540 LDRB W9, [X8 + 0x10]
+	0x031AB544 CBZ W9, 0x31AB560
+	0x031AB548 LDP X20, X19, [X31 + 0x40]
+	0x031AB54C LDP X22, X21, [X31 + 0x30]
+	0x031AB550 LDP X24, X23, [X31 + 0x20]
+	0x031AB554 LDP X26, X25, [X31 + 0x10]
+	0x031AB558 LDR X30, [X31], #0x50
+	0x031AB55C RET
+	0x031AB560 LDR W9, [X0 + 0xE0]
+	0x031AB564 CBNZ W9, 0x31AB574
+	0x031AB568 BL 0x1C16DFC
+	0x031AB56C LDR X8, [X24]
+	0x031AB570 LDR X8, [X8 + 0xB8]
+	0x031AB574 MOVZ W9, 0x1
+	0x031AB578 STRB W9, [X8 + 0x10]
+	0x031AB57C ADRP X8, 0xF48000
+	0x031AB580 LDR X8, [X8 + 0xA58]
+	0x031AB584 LDR X0, [X8]
+	0x031AB588 BL 0x1C16F10
+	0x031AB58C MOV X1, X31
+	0x031AB590 MOV X19, X0
+	0x031AB594 BL 0x3C35A08
+	0x031AB598 CBZ X19, 0x31AB664
+	0x031AB59C ADRP X8, 0xF74000
+	0x031AB5A0 LDR X8, [X8 + 0x328]
+	0x031AB5A4 MOV X0, X19
+
+ISIL:
+	001 Subtract X31, X31, 96
+	002 Move [X31+16], D15
+	003 Move [X31+24], D14
+	004 Move [X31+32], D13
+	005 Move [X31+40], D12
+	006 Move [X31+48], D11
+	007 Move [X31+56], D10
+	008 Move [X31+64], D9
+	009 Move [X31+72], D8
+	010 Move [X31+80], X30
+	011 Move [X31+88], X19
+	012 Move V14, [X31+96]
+	013 Move V15, [X31+104]
+	014 Move V8, [X31+112]
+	015 Move V11, [X31+120]
+	016 Move V9, [X31+128]
+	017 Move [X31+8], S3
+	018 Move [X31+16], S7
+	019 Move [X31+4], S6
+	020 Move V10, V5
+	021 Move V12, V2
+	022 Move V13, V1
+	023 Move V1, V4
+	024 Move V2, V14
+	025 Move V3, V15
+	026 Move V4, V8
+	027 Move V5, V11
+	028 Move V6, V9
+	029 Move X19, X0
+	030 Call LeanSmooth.spring, V0, V1, X0, V2, V3, V4, V5, V6
+	031 Move [X31], S0
+	032 Add X0, X19, 4
+	033 Move V0, V13
+	034 Move V1, V10
+	035 Move V2, V14
+	036 Move V3, V15
+	037 Move V4, V8
+	038 Move V5, V11
+	039 Move V6, V9
+	040 Call LeanSmooth.spring, V0, V1, X0, V2, V3, V4, V5, V6
+	041 Move V1, [X31+4]
+	042 Move V10, V0
+	043 Add X0, X19, 8
+	044 Move V0, V12
+	045 Move V2, V14
+	046 Move V3, V15
+	047 Move V4, V8
+	048 Move V5, V11
+	049 Move V6, V9
+	050 Call LeanSmooth.spring, V0, V1, X0, V2, V3, V4, V5, V6
+	051 Move V12, V0
+	052 Move S0, [X31+8]
+	053 Move S1, [X31+12]
+	054 Add X0, X19, 12
+	055 Move V2, V14
+	056 Move V3, V15
+	057 Move V4, V8
+	058 Move V5, V11
+	059 Move V6, V9
+	060 Call LeanSmooth.spring, V0, V1, X0, V2, V3, V4, V5, V6
+	061 Move V3, V0
+	062 Move V0, [X31]
+	063 Move V1, V10
+	064 Move V2, V12
+	065 Move X30, [X31+80]
+	066 Move X19, [X31+88]
+	067 Move D9, [X31+64]
+	068 Move D8, [X31+72]
+	069 Move D11, [X31+48]
+	070 Move D10, [X31+56]
+	071 Move D13, [X31+32]
+	072 Move D12, [X31+40]
+	073 Move D15, [X31+16]
+	074 Move D14, [X31+24]
+	075 Add X31, X31, 96
+	076 Return X0
+
+Method: System.Single linear(System.Single current, System.Single target, System.Single moveSpeed, System.Single deltaTime = -1)
+
+Disassembly:
+	0x031AB5A8 MOV X2, X31
+	0x031AB5AC LDR X1, [X8]
+	0x031AB5B0 BL 0x3C38A84
+	0x031AB5B4 ADRP X8, 0xF48000
+	0x031AB5B8 LDR X8, [X8 + 0x6C0]
+	0x031AB5BC LDR X0, [X8]
+	0x031AB5C0 ADRP X8, 0xF74000
+	0x031AB5C4 LDR X8, [X8 + 0x300]
+	0x031AB5C8 LDR W9, [X0 + 0xE0]
+	0x031AB5CC LDR X20, [X8]
+	0x031AB5D0 CBNZ W9, 0x31AB5D8
+	0x031AB5D4 BL 0x1C16DFC
+	0x031AB5D8 MOV X0, X20
+	0x031AB5DC MOV X1, X31
+	0x031AB5E0 BL 0x338C698
+	0x031AB5E4 MOV X1, X0
+	0x031AB5E8 MOV X0, X19
+	0x031AB5EC MOV X2, X31
+	0x031AB5F0 BL 0x3C356B4
+	0x031AB5F4 CBZ X0, 0x31AB664
+	0x031AB5F8 ADRP X8, 0xF74000
+	0x031AB5FC LDR X8, [X8 + 0x308]
+	0x031AB600 LDR X9, [X0]
+	0x031AB604 LDR X8, [X8]
+	0x031AB608 LDRB W11, [X9 + 0x130]
+	0x031AB60C LDRB W10, [X8 + 0x130]
+	0x031AB610 CMP W11, W10
+	0x031AB614 B.CC 0x31AB664
+	0x031AB618 LDR X9, [X9 + 0xC8]
+
+ISIL:
+	001 Move [X31-32], D10
+	002 Move [X31+8], D9
+	003 Move [X31+16], D8
+	004 Move [X31+24], X30
+	005 Move V9, V2
+	006 Move V8, V1
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 Move V10, V0
+	009 Move X0, X31
+	010 Call Time.get_deltaTime
+	011 Move V3, V0
+	012 Multiply S0, S3, S9
+	013 NotImplemented "Instruction FNMUL not yet implemented."
+	014 NotImplemented "Instruction FCMP not yet implemented."
+	015 NotImplemented "Instruction FCSEL not yet implemented."
+	016 Add S0, S0, S10
+	017 Subtract S1, S0, S8
+	018 NotImplemented "Instruction FCMP not yet implemented."
+	019 NotImplemented "Instruction FCMP not yet implemented."
+	020 Move V8, V0
+	021 Move V0, V8
+	022 Move X30, [X31+24]
+	023 Move D9, [X31+8]
+	024 Move D8, [X31+16]
+	025 Move V10, [X31+32]
+	026 Return V0
+
+Method: UnityEngine.Vector3 linear(UnityEngine.Vector3 current, UnityEngine.Vector3 target, System.Single moveSpeed, System.Single deltaTime = -1)
+
+Disassembly:
+	0x031AB61C ADD X9, X9, X10, 0x3, LSL
+	0x031AB620 LDUR X9, [X9 - 0x8]
+	0x031AB624 CMP X9, X8
+	0x031AB628 B.NE 0x31AB664
+	0x031AB62C LDR X8, [X24]
+	0x031AB630 LDP X22, X21, [X31 + 0x30]
+	0x031AB634 LDP X24, X23, [X31 + 0x20]
+	0x031AB638 LDP X26, X25, [X31 + 0x10]
+	0x031AB63C LDR X8, [X8 + 0xB8]
+	0x031AB640 MOVZ W1, 0x3D
+	0x031AB644 MOV X2, X31
+	0x031AB648 LDR V0, [X8 + 0xC]
+	0x031AB64C STR S0, [X0 + 0x20]
+	0x031AB650 MOV X0, X19
+	0x031AB654 LDP X20, X19, [X31 + 0x40]
+	0x031AB658 LDR X30, [X31], #0x50
+	0x031AB65C B 0x3C396EC
+	0x031AB660 BL 0x1C16F28
+	0x031AB664 BL 0x1C16F20
+	0x031AB668 STR D10, [X31 - 0x50]!
+	0x031AB66C STP D9, D8, [X31 + 0x10]
+	0x031AB670 STP X30, X23, [X31 + 0x20]
+	0x031AB674 STP X22, X21, [X31 + 0x30]
+	0x031AB678 STP X20, X19, [X31 + 0x40]
+	0x031AB67C ADRP X20, 0x1230000
+	0x031AB680 LDRB W8, [X20 + 0xE42]
+	0x031AB684 MOV X19, X0
+	0x031AB688 TBNZ X8, 0x0, 0x31AB6AC
+	0x031AB68C ADRP X0, 0xF74000
+	0x031AB690 LDR X0, [X0 + 0x350]
+	0x031AB694 BL 0x1C16CF4
+	0x031AB698 ADRP X0, 0xF74000
+	0x031AB69C LDR X0, [X0 + 0x358]
+	0x031AB6A0 BL 0x1C16CF4
+	0x031AB6A4 MOVZ W8, 0x1
+	0x031AB6A8 STRB W8, [X20 + 0xE42]
+	0x031AB6AC CBZ X19, 0x31AB78C
+	0x031AB6B0 LDR W8, [X19 + 0x10]
+	0x031AB6B4 CMP W8, 0x1
+	0x031AB6B8 B.LT 0x31AB76C
+	0x031AB6BC ADRP X22, 0xF74000
+	0x031AB6C0 ADRP X8, 0xFFFFFFFFFD93F000
+	0x031AB6C4 ADRP X23, 0xF74000
+	0x031AB6C8 LDR X22, [X22 + 0x358]
+	0x031AB6CC LDR V9, [X8 + 0x2AC]
+	0x031AB6D0 LDR X23, [X23 + 0x350]
+	0x031AB6D4 MOV W20, W31
+	0x031AB6D8 FMOV S8, W31
+	0x031AB6DC FMOV S10, 1
+	0x031AB6E0 MOV X0, X19
+	0x031AB6E4 MOV W1, W20
+	0x031AB6E8 MOV X2, X31
+	0x031AB6EC BL 0x3222A1C
+	0x031AB6F0 LDR X8, [X22]
+	0x031AB6F4 CBZ X8, 0x31AB78C
+	0x031AB6F8 MOV W21, W0
+	0x031AB6FC MOV X0, X8
+	0x031AB700 MOV W1, W31
+	0x031AB704 MOV X2, X31
+	0x031AB708 BL 0x3222A1C
+	0x031AB70C AND W8, W21, 0xFFFF
+	0x031AB710 CMP W8, W0, UXTH
+	0x031AB714 FMOV S0, 0.5
+	0x031AB718 B.EQ 0x31AB754
+	0x031AB71C MOV X0, X19
+	0x031AB720 MOV W1, W20
+	0x031AB724 MOV X2, X31
+	0x031AB728 BL 0x3222A1C
+	0x031AB72C LDR X8, [X23]
+	0x031AB730 CBZ X8, 0x31AB78C
+	0x031AB734 MOV W21, W0
+	0x031AB738 MOV X0, X8
+	0x031AB73C MOV W1, W31
+	0x031AB740 MOV X2, X31
+	0x031AB744 BL 0x3222A1C
+	0x031AB748 AND W8, W21, 0xFFFF
+
+ISIL:
+	001 Move [X31-80], D15
+	002 Move [X31-72], D14
+	003 Move [X31+16], D13
+	004 Move [X31+24], D12
+	005 Move [X31+32], D11
+	006 Move [X31+40], D10
+	007 Move [X31+48], D9
+	008 Move [X31+56], D8
+	009 Move [X31+64], X30
+	010 Move V13, V7
+	011 Move V11, V6
+	012 Move V8, V5
+	013 Move V9, V4
+	014 Move V10, V3
+	015 Move V12, V2
+	016 Move V14, V1
+	017 Move V15, V0
+	018 NotImplemented "Instruction FCMP not yet implemented."
+	019 Move V0, V7
+	020 Move X0, X31
+	021 Call Time.get_deltaTime
+	022 Multiply S1, S0, S11
+	023 NotImplemented "Instruction FNMUL not yet implemented."
+	024 NotImplemented "Instruction FCMP not yet implemented."
+	025 NotImplemented "Instruction FCSEL not yet implemented."
+	026 Add S0, S15, S0
+	027 Subtract S1, S0, S10
+	028 NotImplemented "Instruction FCMP not yet implemented."
+	029 NotImplemented "Instruction FCMP not yet implemented."
+	030 Move V10, V0
+	031 NotImplemented "Instruction FCMP not yet implemented."
+	032 Move V0, V13
+	033 Move X0, X31
+	034 Call Time.get_deltaTime
+	035 Multiply S1, S0, S11
+	036 NotImplemented "Instruction FNMUL not yet implemented."
+	037 NotImplemented "Instruction FCMP not yet implemented."
+	038 NotImplemented "Instruction FCSEL not yet implemented."
+	039 Add S0, S14, S0
+	040 Subtract S1, S0, S9
+	041 NotImplemented "Instruction FCMP not yet implemented."
+	042 NotImplemented "Instruction FCMP not yet implemented."
+	043 Move V9, V0
+	044 NotImplemented "Instruction FCMP not yet implemented."
+	045 Move X0, X31
+	046 Call Time.get_deltaTime
+	047 Move V13, V0
+	048 Multiply S0, S13, S11
+	049 NotImplemented "Instruction FNMUL not yet implemented."
+	050 NotImplemented "Instruction FCMP not yet implemented."
+	051 NotImplemented "Instruction FCSEL not yet implemented."
+	052 Add S0, S12, S0
+	053 Subtract S1, S0, S8
+	054 NotImplemented "Instruction FCMP not yet implemented."
+	055 NotImplemented "Instruction FCMP not yet implemented."
+	056 Move V8, V0
+	057 Move V0, V10
+	058 Move V1, V9
+	059 Move V2, V8
+	060 Move X30, [X31+64]
+	061 Move D9, [X31+48]
+	062 Move D8, [X31+56]
+	063 Move D11, [X31+32]
+	064 Move D10, [X31+40]
+	065 Move D13, [X31+16]
+	066 Move D12, [X31+24]
+	067 Move D15, [X31+80]
+	068 Move D14, [X31+88]
+	069 Return X0
+
+Method: UnityEngine.Color linear(UnityEngine.Color current, UnityEngine.Color target, System.Single moveSpeed)
+
+Disassembly:
+	0x031AB74C CMP W8, W0, UXTH
+	0x031AB750 FCSEL S0, S9, S10, EQ
+	0x031AB754 LDR W8, [X19 + 0x10]
+	0x031AB758 ADD W20, W20, 0x1
+	0x031AB75C FADD S8, S8, S0
+	0x031AB760 CMP W20, W8
+	0x031AB764 B.LT 0x31AB6E0
+	0x031AB768 B 0x31AB770
+	0x031AB76C FMOV S8, W31
+	0x031AB770 MOV V0.16B, V8.16B
+	0x031AB774 LDP X20, X19, [X31 + 0x40]
+	0x031AB778 LDP X22, X21, [X31 + 0x30]
+	0x031AB77C LDP X30, X23, [X31 + 0x20]
+	0x031AB780 LDP D9, D8, [X31 + 0x10]
+	0x031AB784 LDR V10, [X31], #0x50
+	0x031AB788 RET
+	0x031AB78C BL 0x1C16F20
+	0x031AB790 STR X30, [X31 - 0x30]!
+	0x031AB794 STP X22, X21, [X31 + 0x10]
+	0x031AB798 STP X20, X19, [X31 + 0x20]
+	0x031AB79C ADRP X21, 0x1230000
+	0x031AB7A0 ADRP X22, 0xF48000
+	0x031AB7A4 LDRB W8, [X21 + 0xE45]
+	0x031AB7A8 LDR X22, [X22 + 0xAC8]
+	0x031AB7AC MOV X20, X1
+	0x031AB7B0 MOV X19, X0
+	0x031AB7B4 TBNZ X8, 0x0, 0x31AB7F0
+	0x031AB7B8 ADRP X0, 0xF48000
+	0x031AB7BC LDR X0, [X0 + 0xAC8]
+	0x031AB7C0 BL 0x1C16CF4
+	0x031AB7C4 ADRP X0, 0xF6F000
+	0x031AB7C8 LDR X0, [X0 + 0x218]
+	0x031AB7CC BL 0x1C16CF4
+	0x031AB7D0 ADRP X0, 0xF4A000
+	0x031AB7D4 LDR X0, [X0 + 0x260]
+	0x031AB7D8 BL 0x1C16CF4
+	0x031AB7DC ADRP X0, 0xF50000
+	0x031AB7E0 LDR X0, [X0 + 0x9C8]
+	0x031AB7E4 BL 0x1C16CF4
+	0x031AB7E8 MOVZ W8, 0x1
+	0x031AB7EC STRB W8, [X21 + 0xE45]
+	0x031AB7F0 LDR X0, [X22]
+	0x031AB7F4 MOVZ W1, 0x5
+	0x031AB7F8 BL 0x1C16D6C
+	0x031AB7FC CBZ X0, 0x31AB878
+	0x031AB800 LDR W8, [X0 + 0x18]
+	0x031AB804 CBZ W8, 0x31AB874
+	0x031AB808 ADRP X9, 0xF50000
+	0x031AB80C LDR X9, [X9 + 0x9C8]
+	0x031AB810 CMP W8, 0x1
+	0x031AB814 LDR X9, [X9]
+	0x031AB818 STR X9, [X0 + 0x20]
+	0x031AB81C B.EQ 0x31AB874
+	0x031AB820 CMP W8, 0x2
+	0x031AB824 STR X20, [X0 + 0x28]
+	0x031AB828 B.LS 0x31AB874
+	0x031AB82C ADRP X9, 0xF4A000
+	0x031AB830 LDR X9, [X9 + 0x260]
+	0x031AB834 CMP W8, 0x3
+	0x031AB838 LDR X9, [X9]
+	0x031AB83C STR X9, [X0 + 0x30]
+	0x031AB840 B.EQ 0x31AB874
+	0x031AB844 CMP W8, 0x4
+	0x031AB848 STR X19, [X0 + 0x38]
+	0x031AB84C B.LS 0x31AB874
+	0x031AB850 ADRP X8, 0xF6F000
+	0x031AB854 LDR X8, [X8 + 0x218]
+	0x031AB858 LDP X20, X19, [X31 + 0x20]
+	0x031AB85C LDP X22, X21, [X31 + 0x10]
+	0x031AB860 MOV X1, X31
+	0x031AB864 LDR X8, [X8]
+	0x031AB868 STR X8, [X0 + 0x40]
+	0x031AB86C LDR X30, [X31], #0x30
+	0x031AB870 B 0x32278CC
+	0x031AB874 BL 0x1C16F28
+	0x031AB878 BL 0x1C16F20
+	0x031AB87C STP X30, X21, [X31 - 0x20]!
+	0x031AB880 STP X20, X19, [X31 + 0x10]
+	0x031AB884 ADRP X20, 0x1230000
+	0x031AB888 ADRP X21, 0xF48000
+	0x031AB88C LDRB W8, [X20 + 0xE41]
+	0x031AB890 LDR X21, [X21 + 0x988]
+	0x031AB894 MOV W19, W0
+	0x031AB898 TBNZ X8, 0x0, 0x31AB8BC
+	0x031AB89C ADRP X0, 0xF48000
+
+ISIL:
+	001 Move [X31-80], D15
+	002 Move [X31-72], D14
+	003 Move [X31+16], D13
+	004 Move [X31+24], D12
+	005 Move [X31+32], D11
+	006 Move [X31+40], D10
+	007 Move [X31+48], D9
+	008 Move [X31+56], D8
+	009 Move [X31+64], X30
+	010 Move V12, [X31+80]
+	011 Move X0, X31
+	012 Move V8, V7
+	013 Move V9, V6
+	014 Move V10, V5
+	015 Move V11, V4
+	016 Move [X31+76], S3
+	017 Move V13, V2
+	018 Move V14, V1
+	019 Move V15, V0
+	020 Call Time.get_deltaTime
+	021 Multiply S1, S0, S12
+	022 NotImplemented "Instruction FNMUL not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 NotImplemented "Instruction FCSEL not yet implemented."
+	025 Add S0, S15, S0
+	026 Subtract S1, S0, S11
+	027 NotImplemented "Instruction FCMP not yet implemented."
+	028 NotImplemented "Instruction FCMP not yet implemented."
+	029 Move V11, V0
+	030 Move X0, X31
+	031 Call Time.get_deltaTime
+	032 Multiply S1, S0, S12
+	033 NotImplemented "Instruction FNMUL not yet implemented."
+	034 NotImplemented "Instruction FCMP not yet implemented."
+	035 NotImplemented "Instruction FCSEL not yet implemented."
+	036 Add S0, S14, S0
+	037 Subtract S1, S0, S10
+	038 NotImplemented "Instruction FCMP not yet implemented."
+	039 NotImplemented "Instruction FCMP not yet implemented."
+	040 Move V10, V0
+	041 Move X0, X31
+	042 Call Time.get_deltaTime
+	043 Multiply S1, S0, S12
+	044 NotImplemented "Instruction FNMUL not yet implemented."
+	045 NotImplemented "Instruction FCMP not yet implemented."
+	046 NotImplemented "Instruction FCSEL not yet implemented."
+	047 Add S0, S13, S0
+	048 Subtract S1, S0, S9
+	049 NotImplemented "Instruction FCMP not yet implemented."
+	050 NotImplemented "Instruction FCMP not yet implemented."
+	051 Move V9, V0
+	052 Move X0, X31
+	053 Call Time.get_deltaTime
+	054 Move V2, [X31+76]
+	055 Multiply S1, S0, S12
+	056 NotImplemented "Instruction FNMUL not yet implemented."
+	057 NotImplemented "Instruction FCMP not yet implemented."
+	058 NotImplemented "Instruction FCSEL not yet implemented."
+	059 Add S0, S2, S0
+	060 Subtract S1, S0, S8
+	061 NotImplemented "Instruction FCMP not yet implemented."
+	062 NotImplemented "Instruction FCMP not yet implemented."
+	063 Move V8, V0
+	064 Move V0, V11
+	065 Move V1, V10
+	066 Move V2, V9
+	067 Move V3, V8
+	068 Move X30, [X31+64]
+	069 Move D9, [X31+48]
+	070 Move D8, [X31+56]
+	071 Move D11, [X31+32]
+	072 Move D10, [X31+40]
+	073 Move D13, [X31+16]
+	074 Move D12, [X31+24]
+	075 Move D15, [X31+80]
+	076 Move D14, [X31+88]
+	077 Return X0
+
+Method: System.Single bounceOut(System.Single current, System.Single target, ref System.Single currentVelocity, System.Single smoothTime, System.Single maxSpeed = -1, System.Single deltaTime = -1, System.Single friction = 2, System.Single accelRate = 0.5, System.Single hitDamping = 0.9)
+
+Disassembly:
+	0x031AB8A0 LDR X0, [X0 + 0xDE0]
+	0x031AB8A4 BL 0x1C16CF4
+	0x031AB8A8 ADRP X0, 0xF48000
+	0x031AB8AC LDR X0, [X0 + 0x988]
+	0x031AB8B0 BL 0x1C16CF4
+	0x031AB8B4 MOVZ W8, 0x1
+	0x031AB8B8 STRB W8, [X20 + 0xE41]
+	0x031AB8BC LDR X0, [X21]
+	0x031AB8C0 CMP W19, 0x1
+	0x031AB8C4 B.LT 0x31AB8E4
+	0x031AB8C8 ADRP X20, 0xF48000
+	0x031AB8CC LDR X20, [X20 + 0xDE0]
+	0x031AB8D0 LDR X1, [X20]
+	0x031AB8D4 MOV X2, X31
+	0x031AB8D8 BL 0x321B938
+	0x031AB8DC SUBS W19, W19, 0x1
+	0x031AB8E0 B.NE 0x31AB8D0
+	0x031AB8E4 LDP X20, X19, [X31 + 0x10]
+	0x031AB8E8 LDP X30, X21, [X31], #0x20
+	0x031AB8EC RET
+	0x031AB8F0 STR X30, [X31 - 0x30]!
+	0x031AB8F4 STP X22, X21, [X31 + 0x10]
+	0x031AB8F8 STP X20, X19, [X31 + 0x20]
+	0x031AB8FC ADRP X21, 0x1230000
+	0x031AB900 ADRP X22, 0xF74000
+	0x031AB904 LDRB W8, [X21 + 0xE43]
+	0x031AB908 LDR X22, [X22 + 0x2B0]
+	0x031AB90C MOV X19, X1
+	0x031AB910 MOV X20, X0
+	0x031AB914 TBNZ X8, 0x0, 0x31AB92C
+	0x031AB918 ADRP X0, 0xF74000
+	0x031AB91C LDR X0, [X0 + 0x2B0]
+	0x031AB920 BL 0x1C16CF4
+	0x031AB924 MOVZ W8, 0x1
+	0x031AB928 STRB W8, [X21 + 0xE43]
+	0x031AB92C LDR X0, [X22]
+	0x031AB930 LDR W8, [X0 + 0xE0]
+	0x031AB934 CBNZ W8, 0x31AB93C
+	0x031AB938 BL 0x1C16DFC
+	0x031AB93C MOV X0, X20
+	0x031AB940 BL 0x31AAD8C
+	0x031AB944 MOV X1, X19
+	0x031AB948 LDP X20, X19, [X31 + 0x20]
+	0x031AB94C LDP X22, X21, [X31 + 0x10]
+	0x031AB950 LDR X30, [X31], #0x30
+	0x031AB954 B 0x31AB790
+	0x031AB958 MOV X1, X31
+	0x031AB95C B 0x33BDD8C
+	0x031AB960 STR X30, [X31 - 0x20]!
+	0x031AB964 STP X20, X19, [X31 + 0x10]
+	0x031AB968 ADRP X19, 0x1230000
+	0x031AB96C ADRP X20, 0xF74000
+	0x031AB970 LDRB W8, [X19 + 0xE47]
+	0x031AB974 LDR X20, [X20 + 0x2B0]
+	0x031AB978 TBNZ X8, 0x0, 0x31AB990
+	0x031AB97C ADRP X0, 0xF74000
+	0x031AB980 LDR X0, [X0 + 0x2B0]
+
+ISIL:
+	001 Move [X31-80], D14
+	002 Move [X31+16], D13
+	003 Move [X31+24], D12
+	004 Move [X31+32], D11
+	005 Move [X31+40], D10
+	006 Move [X31+48], D9
+	007 Move [X31+56], D8
+	008 Move [X31+64], X30
+	009 Move [X31+72], X19
+	010 Move V8, V7
+	011 Move V12, V6
+	012 Move V13, V5
+	013 Move V11, V3
+	014 Move V14, V2
+	015 Move X19, X0
+	016 Move V10, V1
+	017 NotImplemented "Instruction FCMP not yet implemented."
+	018 Move V9, V0
+	019 Move X0, X31
+	020 Call Time.get_deltaTime
+	021 Move V4, V0
+	022 Move V1, [X19]
+	023 NotImplemented "Instruction FDIV not yet implemented."
+	024 Subtract S0, S10, S9
+	025 Multiply S2, S2, S12
+	026 Multiply S3, S4, S13
+	027 Move S4, 1
+	028 Multiply S0, S0, S2
+	029 Subtract S3, S4, S3
+	030 Add S0, S1, S0
+	031 Multiply S0, S3, S0
+	032 NotImplemented "Instruction FNEG not yet implemented."
+	033 NotImplemented "Instruction FABS not yet implemented."
+	034 NotImplemented "Instruction FCMP not yet implemented."
+	035 Move S4, W31
+	036 NotImplemented "Instruction FCSEL not yet implemented."
+	037 NotImplemented "Instruction FCMP not yet implemented."
+	038 NotImplemented "Instruction FCCMP not yet implemented."
+	039 NotImplemented "Instruction FCSEL not yet implemented."
+	040 Add S0, S1, S9
+	041 NotImplemented "Instruction FCMP not yet implemented."
+	042 Subtract S2, S0, S10
+	043 Move [X19], S1
+	044 NotImplemented "Instruction FCMP not yet implemented."
+	045 NotImplemented "Instruction FCMP not yet implemented."
+	046 NotImplemented "Instruction FCMP not yet implemented."
+	047 NotImplemented "Instruction FNEG not yet implemented."
+	048 Multiply S0, S0, S8
+	049 Move [X19], S0
+	050 Add S0, S0, S9
+	051 Move X30, [X31+64]
+	052 Move X19, [X31+72]
+	053 Move D9, [X31+48]
+	054 Move D8, [X31+56]
+	055 Move D11, [X31+32]
+	056 Move D10, [X31+40]
+	057 Move D13, [X31+16]
+	058 Move D12, [X31+24]
+	059 Move V14, [X31+80]
+	060 Return V0
+
+Method: UnityEngine.Vector3 bounceOut(UnityEngine.Vector3 current, UnityEngine.Vector3 target, ref UnityEngine.Vector3 currentVelocity, System.Single smoothTime, System.Single maxSpeed = -1, System.Single deltaTime = -1, System.Single friction = 2, System.Single accelRate = 0.5, System.Single hitDamping = 0.9)
+
+Disassembly:
+	0x031AB984 BL 0x1C16CF4
+	0x031AB988 MOVZ W8, 0x1
+	0x031AB98C STRB W8, [X19 + 0xE47]
+	0x031AB990 LDR X8, [X20]
+	0x031AB994 LDP X20, X19, [X31 + 0x10]
+	0x031AB998 MOVZ X9, 0x41700000
+	0x031AB99C LDR X8, [X8 + 0xB8]
+	0x031AB9A0 STP X31, X9, [X8]
+	0x031AB9A4 STRH W31, [X8 + 0x10]
+	0x031AB9A8 LDR X30, [X31], #0x20
+	0x031AB9AC RET
+	0x031AB9B0 STR X30, [X31 - 0x20]!
+	0x031AB9B4 STP X20, X19, [X31 + 0x10]
+	0x031AB9B8 ADRP X20, 0x1230000
+	0x031AB9BC ADRP X19, 0xF4A000
+	0x031AB9C0 LDRB W8, [X20 + 0xE48]
+	0x031AB9C4 LDR X19, [X19 + 0x5A8]
+	0x031AB9C8 TBNZ X8, 0x0, 0x31AB9E0
+	0x031AB9CC ADRP X0, 0xF4A000
+	0x031AB9D0 LDR X0, [X0 + 0x5A8]
+	0x031AB9D4 BL 0x1C16CF4
+	0x031AB9D8 MOVZ W8, 0x1
+	0x031AB9DC STRB W8, [X20 + 0xE48]
+	0x031AB9E0 LDR X0, [X19]
+	0x031AB9E4 LDR W8, [X0 + 0xE0]
+	0x031AB9E8 CBNZ W8, 0x31AB9F4
+	0x031AB9EC BL 0x1C16DFC
+	0x031AB9F0 LDR X0, [X19]
+	0x031AB9F4 LDR X8, [X0 + 0xB8]
+	0x031AB9F8 LDP X20, X19, [X31 + 0x10]
+	0x031AB9FC LDR W0, [X8 + 0x3C]
+	0x031ABA00 LDR X30, [X31], #0x20
+	0x031ABA04 B 0x31ABA08
+	0x031ABA08 STP X30, X21, [X31 - 0x20]!
+	0x031ABA0C STP X20, X19, [X31 + 0x10]
+	0x031ABA10 ADRP X21, 0x1230000
+	0x031ABA14 ADRP X20, 0xF4A000
+	0x031ABA18 LDRB W8, [X21 + 0xE4C]
+	0x031ABA1C LDR X20, [X20 + 0x5A8]
+	0x031ABA20 MOV W19, W0
+	0x031ABA24 TBNZ X8, 0x0, 0x31ABA3C
+	0x031ABA28 ADRP X0, 0xF4A000
+	0x031ABA2C LDR X0, [X0 + 0x5A8]
+	0x031ABA30 BL 0x1C16CF4
+	0x031ABA34 MOVZ W8, 0x1
+	0x031ABA38 STRB W8, [X21 + 0xE4C]
+	0x031ABA3C LDR X0, [X20]
+	0x031ABA40 LDR W8, [X0 + 0xE0]
+	0x031ABA44 CBNZ W8, 0x31ABA50
+	0x031ABA48 BL 0x1C16DFC
+	0x031ABA4C LDR X0, [X20]
+	0x031ABA50 LDR X8, [X0 + 0xB8]
+	0x031ABA54 MOV W0, W19
+	0x031ABA58 LDP X20, X19, [X31 + 0x10]
+	0x031ABA5C LDR W1, [X8 + 0x40]
+
+ISIL:
+	001 Subtract X31, X31, 96
+	002 Move [X31+16], D15
+	003 Move [X31+24], D14
+	004 Move [X31+32], D13
+	005 Move [X31+40], D12
+	006 Move [X31+48], D11
+	007 Move [X31+56], D10
+	008 Move [X31+64], D9
+	009 Move [X31+72], D8
+	010 Move [X31+80], X30
+	011 Move [X31+88], X19
+	012 Move V14, [X31+96]
+	013 Move V15, [X31+104]
+	014 Move V10, [X31+112]
+	015 Move V12, [X31+120]
+	016 Move V8, V7
+	017 Move V9, V6
+	018 Move [X31+8], S2
+	019 Move [X31+16], S5
+	020 Move V11, V4
+	021 Move V13, V1
+	022 Move V1, V3
+	023 Move V2, V6
+	024 Move V3, V7
+	025 Move V4, V14
+	026 Move V5, V15
+	027 Move V6, V10
+	028 Move V7, V12
+	029 Move X19, X0
+	030 Call LeanSmooth.bounceOut, V0, V1, X0, V2, V3, V4, V5, V6, V7
+	031 Move [X31+4], S0
+	032 Add X0, X19, 4
+	033 Move V0, V13
+	034 Move V1, V11
+	035 Move V2, V9
+	036 Move V3, V8
+	037 Move V4, V14
+	038 Move V5, V15
+	039 Move V6, V10
+	040 Move V7, V12
+	041 Call LeanSmooth.bounceOut, V0, V1, X0, V2, V3, V4, V5, V6, V7
+	042 Move V11, V0
+	043 Move S0, [X31+8]
+	044 Move S1, [X31+12]
+	045 Add X0, X19, 8
+	046 Move V2, V9
+	047 Move V3, V8
+	048 Move V4, V14
+	049 Move V5, V15
+	050 Move V6, V10
+	051 Move V7, V12
+	052 Call LeanSmooth.bounceOut, V0, V1, X0, V2, V3, V4, V5, V6, V7
+	053 Move V2, V0
+	054 Move V0, [X31+4]
+	055 Move V1, V11
+	056 Move X30, [X31+80]
+	057 Move X19, [X31+88]
+	058 Move D9, [X31+64]
+	059 Move D8, [X31+72]
+	060 Move D11, [X31+48]
+	061 Move D10, [X31+56]
+	062 Move D13, [X31+32]
+	063 Move D12, [X31+40]
+	064 Move D15, [X31+16]
+	065 Move D14, [X31+24]
+	066 Add X31, X31, 96
+	067 Return X0
+
+Method: UnityEngine.Color bounceOut(UnityEngine.Color current, UnityEngine.Color target, ref UnityEngine.Color currentVelocity, System.Single smoothTime, System.Single maxSpeed = -1, System.Single deltaTime = -1, System.Single friction = 2, System.Single accelRate = 0.5, System.Single hitDamping = 0.9)
+
+Disassembly:
+	0x031ABA60 LDP X30, X21, [X31], #0x20
+	0x031ABA64 B 0x31ABBD0
+	0x031ABA68 STR X30, [X31 - 0x20]!
+	0x031ABA6C STP X20, X19, [X31 + 0x10]
+	0x031ABA70 ADRP X20, 0x1230000
+	0x031ABA74 ADRP X19, 0xF4A000
+	0x031ABA78 LDRB W8, [X20 + 0xE49]
+	0x031ABA7C LDR X19, [X19 + 0x5A8]
+	0x031ABA80 TBNZ X8, 0x0, 0x31ABA98
+	0x031ABA84 ADRP X0, 0xF4A000
+	0x031ABA88 LDR X0, [X0 + 0x5A8]
+	0x031ABA8C BL 0x1C16CF4
+	0x031ABA90 MOVZ W8, 0x1
+	0x031ABA94 STRB W8, [X20 + 0xE49]
+	0x031ABA98 LDR X0, [X19]
+	0x031ABA9C LDR W8, [X0 + 0xE0]
+	0x031ABAA0 CBNZ W8, 0x31ABAAC
+	0x031ABAA4 BL 0x1C16DFC
+	0x031ABAA8 LDR X0, [X19]
+	0x031ABAAC LDR X8, [X0 + 0xB8]
+	0x031ABAB0 LDP X20, X19, [X31 + 0x10]
+	0x031ABAB4 LDR W0, [X8 + 0x38]
+	0x031ABAB8 LDR X30, [X31], #0x20
+	0x031ABABC RET
+	0x031ABAC0 STR X30, [X31 - 0x20]!
+	0x031ABAC4 STP X20, X19, [X31 + 0x10]
+	0x031ABAC8 ADRP X20, 0x1230000
+	0x031ABACC ADRP X19, 0xF4A000
+	0x031ABAD0 LDRB W8, [X20 + 0xE4A]
+	0x031ABAD4 LDR X19, [X19 + 0x5A8]
+	0x031ABAD8 TBNZ X8, 0x0, 0x31ABAF0
+	0x031ABADC ADRP X0, 0xF4A000
+	0x031ABAE0 LDR X0, [X0 + 0x5A8]
+	0x031ABAE4 BL 0x1C16CF4
+	0x031ABAE8 MOVZ W8, 0x1
+	0x031ABAEC STRB W8, [X20 + 0xE4A]
+	0x031ABAF0 LDR X0, [X19]
+	0x031ABAF4 LDR W8, [X0 + 0xE0]
+	0x031ABAF8 CBNZ W8, 0x31ABB04
+	0x031ABAFC BL 0x1C16DFC
+	0x031ABB00 LDR X0, [X19]
+	0x031ABB04 LDR X8, [X0 + 0xB8]
+	0x031ABB08 LDP X20, X19, [X31 + 0x10]
+	0x031ABB0C LDR W0, [X8 + 0x3C]
+	0x031ABB10 LDR X30, [X31], #0x20
+	0x031ABB14 RET
+	0x031ABB18 STP X30, X21, [X31 - 0x20]!
+	0x031ABB1C STP X20, X19, [X31 + 0x10]
+	0x031ABB20 ADRP X19, 0x1230000
+	0x031ABB24 ADRP X20, 0xF4A000
+	0x031ABB28 LDRB W8, [X19 + 0xE4B]
+	0x031ABB2C LDR X20, [X20 + 0x5A8]
+	0x031ABB30 TBNZ X8, 0x0, 0x31ABB48
+	0x031ABB34 ADRP X0, 0xF4A000
+	0x031ABB38 LDR X0, [X0 + 0x5A8]
+	0x031ABB3C BL 0x1C16CF4
+	0x031ABB40 MOVZ W8, 0x1
+	0x031ABB44 STRB W8, [X19 + 0xE4B]
+	0x031ABB48 LDR X0, [X20]
+	0x031ABB4C MOV W21, W31
+	0x031ABB50 MOV W19, W31
+	0x031ABB54 LDR W8, [X0 + 0xE0]
+	0x031ABB58 CBNZ W8, 0x31ABB64
+	0x031ABB5C BL 0x1C16DFC
+	0x031ABB60 LDR X0, [X20]
+	0x031ABB64 LDR X8, [X0 + 0xB8]
+	0x031ABB68 LDR W8, [X8 + 0x38]
+	0x031ABB6C CMP W21, W8
+	0x031ABB70 B.GT 0x31ABBB8
+
+ISIL:
+	001 Subtract X31, X31, 112
+	002 Move [X31+32], D15
+	003 Move [X31+40], D14
+	004 Move [X31+48], D13
+	005 Move [X31+56], D12
+	006 Move [X31+64], D11
+	007 Move [X31+72], D10
+	008 Move [X31+80], D9
+	009 Move [X31+88], D8
+	010 Move [X31+96], X30
+	011 Move [X31+104], X19
+	012 Move V14, [X31+112]
+	013 Move V15, [X31+120]
+	014 Move V8, [X31+128]
+	015 Move V11, [X31+136]
+	016 Move V9, [X31+144]
+	017 Move V12, [X31+152]
+	018 Move [X31+24], S3
+	019 Move [X31+32], S7
+	020 Move [X31+20], S6
+	021 Move V10, V5
+	022 Move [X31+12], S2
+	023 Move V13, V1
+	024 Move V1, V4
+	025 Move V2, V14
+	026 Move V3, V15
+	027 Move V4, V8
+	028 Move V5, V11
+	029 Move V6, V9
+	030 Move V7, V12
+	031 Move X19, X0
+	032 Call LeanSmooth.bounceOut, V0, V1, X0, V2, V3, V4, V5, V6, V7
+	033 Move [X31+16], S0
+	034 Add X0, X19, 4
+	035 Move V0, V13
+	036 Move V1, V10
+	037 Move V2, V14
+	038 Move V3, V15
+	039 Move V4, V8
+	040 Move V5, V11
+	041 Move V6, V9
+	042 Move V7, V12
+	043 Call LeanSmooth.bounceOut, V0, V1, X0, V2, V3, V4, V5, V6, V7
+	044 Move V10, V0
+	045 Move V0, [X31+12]
+	046 Move V1, [X31+20]
+	047 Add X0, X19, 8
+	048 Move V2, V14
+	049 Move V3, V15
+	050 Move V4, V8
+	051 Move V5, V11
+	052 Move V6, V9
+	053 Move V7, V12
+	054 Call LeanSmooth.bounceOut, V0, V1, X0, V2, V3, V4, V5, V6, V7
+	055 Move V13, V0
+	056 Move S0, [X31+24]
+	057 Move S1, [X31+28]
+	058 Add X0, X19, 12
+	059 Move V2, V14
+	060 Move V3, V15
+	061 Move V4, V8
+	062 Move V5, V11
+	063 Move V6, V9
+	064 Move V7, V12
+	065 Call LeanSmooth.bounceOut, V0, V1, X0, V2, V3, V4, V5, V6, V7
+	066 Move V3, V0
+	067 Move V0, [X31+16]
+	068 Move V1, V10
+	069 Move V2, V13
+	070 Move X30, [X31+96]
+	071 Move X19, [X31+104]
+	072 Move D9, [X31+80]
+	073 Move D8, [X31+88]
+	074 Move D11, [X31+64]
+	075 Move D10, [X31+72]
+	076 Move D13, [X31+48]
+	077 Move D12, [X31+56]
+	078 Move D15, [X31+32]
+	079 Move D14, [X31+40]
+	080 Add X31, X31, 112
+	081 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x031ABB74 LDR W8, [X0 + 0xE0]
+	0x031ABB78 CBNZ W8, 0x31ABB84
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

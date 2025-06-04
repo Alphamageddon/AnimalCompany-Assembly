@@ -1,0 +1,261 @@
+Type: UnityEngine.Rendering.Universal.DebugDisplaySettingsRendering/WidgetFactory/<>c__DisplayClass4_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03A341D4 LDR X27, [X27 + 0x420]
+	0x03A341D8 LDR X23, [X23 + 0xB00]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Int32 <CreateOverdrawMode>b__0()
+
+Disassembly:
+	0x03A35F9C ADRP X22, 0x71F000
+	0x03A35FA0 LDR X22, [X22 + 0x948]
+	0x03A35FA4 LDR X0, [X22]
+	0x03A35FA8 LDR W8, [X0 + 0xE0]
+	0x03A35FAC CBNZ W8, 0x3A35FB8
+	0x03A35FB0 BL 0x1C16DFC
+	0x03A35FB4 LDR X0, [X22]
+	0x03A35FB8 LDR X8, [X0 + 0xB8]
+	0x03A35FBC CMP W21, 0x0
+	0x03A35FC0 FMOV S0, W31
+	0x03A35FC4 FMOV S1, 1
+	0x03A35FC8 LDR W1, [X8 + 0x4]
+	0x03A35FCC FCSEL S0, S1, S0, EQ
+	0x03A35FD0 FMOV S3, 1
+	0x03A35FD4 MOV X0, X19
+	0x03A35FD8 MOV V1.16B, V0.16B
+	0x03A35FDC MOV V2.16B, V0.16B
+	0x03A35FE0 MOV X2, X31
+	0x03A35FE4 BL 0x3C4CF88
+	0x03A35FE8 LDR X8, [X20 + 0x78]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x9AE000
+	005 Move W8, [X20+227]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x721000
+	012 Move X0, [X0+1136]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+227], W8
+	016 Move X8, [X19+16]
+	017 Compare X8, 0
+	018 JumpIfEqual {27}
+	019 Move X8, [X8+32]
+	020 Compare X8, 0
+	021 JumpIfEqual {27}
+	022 Move W0, [X8+24]
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move X30, [X31+32]
+	026 Return X0
+	027 Call 0x1C17F20
+
+Method: System.Void <CreateOverdrawMode>b__1(System.Int32 value)
+
+Disassembly:
+	0x03A35FEC CBZ X8, 0x3A36294
+	0x03A35FF0 LDR X9, [X8 + 0x20]
+	0x03A35FF4 CBZ X9, 0x3A36294
+	0x03A35FF8 LDR W9, [X9 + 0x44]
+	0x03A35FFC CMP W9, 0x2
+	0x03A36000 B.EQ 0x3A360A8
+	0x03A36004 CMP W9, 0x1
+	0x03A36008 B.NE 0x3A3612C
+	0x03A3600C ADRP X21, 0x71E000
+	0x03A36010 LDR X21, [X21 + 0x948]
+	0x03A36014 LDR X0, [X21]
+	0x03A36018 LDR W9, [X0 + 0xE0]
+	0x03A3601C CBNZ W9, 0x3A36030
+	0x03A36020 BL 0x1C16DFC
+	0x03A36024 LDR X8, [X20 + 0x78]
+	0x03A36028 CBZ X8, 0x3A36294
+	0x03A3602C LDR X0, [X21]
+	0x03A36030 LDR X8, [X8 + 0x20]
+	0x03A36034 CBZ X8, 0x3A36294
+	0x03A36038 LDR X9, [X0 + 0xB8]
+	0x03A3603C LDR V0, [X8 + 0x1C]
+	0x03A36040 MOV X0, X19
+	0x03A36044 MOV X2, X31
+	0x03A36048 LDR W1, [X9 + 0x48]
+	0x03A3604C BL 0x3C4CDDC
+	0x03A36050 LDR X8, [X20 + 0x78]
+	0x03A36054 CBZ X8, 0x3A36294
+	0x03A36058 LDR X8, [X8 + 0x20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x9AE000
+	006 Move W8, [X21+228]
+	007 Move W19, W1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x720000
+	014 Move X0, [X0+1136]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+228], W8
+	018 Move X8, [X20+16]
+	019 Compare X8, 0
+	020 JumpIfEqual {37}
+	021 Move X8, [X8+32]
+	022 Compare X8, 0
+	023 JumpIfEqual {37}
+	024 Move W9, [X8+16]
+	025 Move [X8+24], W19
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Move X20, [X31+16]
+	028 Move X19, [X31+24]
+	029 Subtract W10, W9, 1
+	030 NotImplemented "Instruction CSET not yet implemented."
+	031 NotImplemented "Instruction CMP not yet implemented."
+	032 NotImplemented "Instruction CSINC not yet implemented."
+	033 Move [X8+40], W9
+	034 Move X30, [X31+32]
+	035 Move X21, [X31+40]
+	036 Return 
+	037 Call 0x1C17F20
+
+Method: System.Int32 <CreateOverdrawMode>b__2()
+
+Disassembly:
+	0x03A3605C CBZ X8, 0x3A36294
+	0x03A36060 LDR X9, [X21]
+	0x03A36064 LDR V0, [X8 + 0x20]
+	0x03A36068 MOV X0, X19
+	0x03A3606C MOV X2, X31
+	0x03A36070 LDR X9, [X9 + 0xB8]
+	0x03A36074 LDR W1, [X9 + 0x4C]
+	0x03A36078 BL 0x3C4CDDC
+	0x03A3607C LDR X8, [X20 + 0x78]
+	0x03A36080 CBZ X8, 0x3A36294
+	0x03A36084 LDR X8, [X8 + 0x20]
+	0x03A36088 CBZ X8, 0x3A36294
+	0x03A3608C LDR X9, [X21]
+	0x03A36090 LDR W10, [X8 + 0x18]
+	0x03A36094 LDR X9, [X9 + 0xB8]
+	0x03A36098 LDR W1, [X9 + 0x50]
+	0x03A3609C CBZ W10, 0x3A3616C
+	0x03A360A0 LDR V0, [X8 + 0x28]
+	0x03A360A4 B 0x3A36170
+	0x03A360A8 ADRP X21, 0x71E000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x9AD000
+	005 Move W8, [X20+229]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x720000
+	012 Move X0, [X0+1136]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+229], W8
+	016 Move X8, [X19+16]
+	017 Compare X8, 0
+	018 JumpIfEqual {27}
+	019 Move X8, [X8+32]
+	020 Compare X8, 0
+	021 JumpIfEqual {27}
+	022 Move W0, [X8+24]
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move X30, [X31+32]
+	026 Return X0
+	027 Call 0x1C17F20
+
+Method: System.Void <CreateOverdrawMode>b__3(System.Int32 value)
+
+Disassembly:
+	0x03A360AC LDR X21, [X21 + 0x948]
+	0x03A360B0 LDR X0, [X21]
+	0x03A360B4 LDR W9, [X0 + 0xE0]
+	0x03A360B8 CBNZ W9, 0x3A360CC
+	0x03A360BC BL 0x1C16DFC
+	0x03A360C0 LDR X8, [X20 + 0x78]
+	0x03A360C4 CBZ X8, 0x3A36294
+	0x03A360C8 LDR X0, [X21]
+	0x03A360CC LDR X8, [X8 + 0x20]
+	0x03A360D0 CBZ X8, 0x3A36294
+	0x03A360D4 LDR X9, [X0 + 0xB8]
+	0x03A360D8 LDR V0, [X8 + 0x3C]
+	0x03A360DC MOV X0, X19
+	0x03A360E0 MOV X2, X31
+	0x03A360E4 LDR W1, [X9 + 0x5C]
+	0x03A360E8 BL 0x3C4CDDC
+	0x03A360EC LDR X8, [X20 + 0x78]
+	0x03A360F0 CBZ X8, 0x3A36294
+	0x03A360F4 LDR X8, [X8 + 0x20]
+	0x03A360F8 CBZ X8, 0x3A36294
+	0x03A360FC LDR X9, [X21]
+	0x03A36100 LDR V0, [X8 + 0x40]
+	0x03A36104 MOV X0, X19
+	0x03A36108 LDP X20, X19, [X31 + 0x40]
+	0x03A3610C LDR X9, [X9 + 0xB8]
+	0x03A36110 LDP X22, X21, [X31 + 0x30]
+	0x03A36114 LDR X30, [X31 + 0x20]
+	0x03A36118 LDP D9, D8, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x9AD000
+	006 Move W8, [X21+230]
+	007 Move W19, W1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x720000
+	014 Move X0, [X0+1136]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+230], W8
+	018 Move X8, [X20+16]
+	019 Compare X8, 0
+	020 JumpIfEqual {37}
+	021 Move X8, [X8+32]
+	022 Compare X8, 0
+	023 JumpIfEqual {37}
+	024 Move W9, [X8+16]
+	025 Move [X8+24], W19
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Move X20, [X31+16]
+	028 Move X19, [X31+24]
+	029 Subtract W10, W9, 1
+	030 NotImplemented "Instruction CSET not yet implemented."
+	031 NotImplemented "Instruction CMP not yet implemented."
+	032 NotImplemented "Instruction CSINC not yet implemented."
+	033 Move [X8+40], W9
+	034 Move X30, [X31+32]
+	035 Move X21, [X31+40]
+	036 Return 
+	037 Call 0x1C17F20
+

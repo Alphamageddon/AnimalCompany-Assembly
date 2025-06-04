@@ -1,0 +1,142 @@
+Type: UnityEngine.UI.Dropdown/OptionData
+
+Method: System.String get_text()
+
+Disassembly:
+	0x03CDB244 STUR V0, [X19 + 0x28]
+	0x03CDB248 STRH W8, [X19 + 0x3A]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_text(System.String value)
+
+Disassembly:
+	0x03CDB24C BL 0x3E4E160
+	0x03CDB250 LDR X20, [X19 + 0x98]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: UnityEngine.Sprite get_image()
+
+Disassembly:
+	0x03CDB254 CBNZ X20, 0x3CDB284
+	0x03CDB258 ADRP X8, 0x487000
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_image(UnityEngine.Sprite value)
+
+Disassembly:
+	0x03CDB25C LDR X8, [X8 + 0x458]
+	0x03CDB260 LDR X0, [X8]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03CD7800 ADRP X22, 0x41C000
+	0x03CD7804 LDRB W8, [X20 + 0x46B]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void .ctor(System.String text)
+
+Disassembly:
+	0x03CD8D4C FSUB S1, S1, S2
+	0x03CD8D50 SCVTF S2, S4
+	0x03CD8D54 FADD S10, S3, S12
+	0x03CD8D58 FMUL S2, S14, S2
+	0x03CD8D5C FADD S1, S1, S13
+	0x03CD8D60 FADD S2, S10, S2
+	0x03CD8D64 FSUB S1, S2, S1
+	0x03CD8D68 MOV X0, X19
+	0x03CD8D6C MOV X1, X31
+	0x03CD8D70 BL 0x3C3E99C
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void .ctor(UnityEngine.Sprite image)
+
+Disassembly:
+	0x03CD8EC8 MOV V12.16B, V1.16B
+	0x03CD8ECC FCMP S0, S9
+	0x03CD8ED0 B.PL 0x3CD8F28
+	0x03CD8ED4 LDRB W8, [X22 + 0x5AA]
+	0x03CD8ED8 ANDS W31, W29, 0x1
+	0x03CD8EDC FCSEL S8, S11, S12, NE
+	0x03CD8EE0 CBNZ W8, 0x3CD8EF0
+	0x03CD8EE4 MOV X0, X26
+	0x03CD8EE8 BL 0x1C16CF4
+	0x03CD8EEC STRB W21, [X22 + 0x5AA]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+24], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void .ctor(System.String text, UnityEngine.Sprite image)
+
+Disassembly:
+	0x03CDB264 BL 0x1C16F10
+	0x03CDB268 ADRP X8, 0x487000
+	0x03CDB26C LDR X8, [X8 + 0x450]
+	0x03CDB270 MOV X20, X0
+	0x03CDB274 LDR X1, [X8]
+	0x03CDB278 BL 0x2709254
+	0x03CDB27C STR X20, [X19 + 0x98]
+	0x03CDB280 CBZ X20, 0x3CDB29C
+	0x03CDB284 MOVZ W8, 0x1
+	0x03CDB288 STR X19, [X20 + 0x10]
+	0x03CDB28C STRB W8, [X19 + 0xA0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move X19, X2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+16], X20
+	011 Move [X21+24], X19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+

@@ -1,0 +1,204 @@
+Type: UnityEngine.XR.Interaction.Toolkit.UI.MouseButtonModel
+
+Method: System.Boolean get_isDown()
+
+Disassembly:
+	0x03B99BC0 BL 0x3C3883C
+	0x03B99BC4 TBNZ X0, 0x0, 0x3B99BE8
+
+ISIL:
+	001 Move W0, [X0+4]
+	002 Return X0
+
+Method: System.Void set_isDown(System.Boolean value)
+
+Disassembly:
+	0x03B99BC8 MOV X0, X19
+	0x03B99BCC BL 0x3B99BF8
+	0x03B99BD0 LDR X0, [X19 + 0x10]
+	0x03B99BD4 CBZ X0, 0x3B99BF4
+	0x03B99BD8 LDR X1, [X19 + 0x20]
+	0x03B99BDC BL 0x3B99F18
+	0x03B99BE0 LDR X8, [X19 + 0x10]
+	0x03B99BE4 STR X8, [X19 + 0x18]
+	0x03B99BE8 LDP X20, X19, [X31 + 0x10]
+	0x03B99BEC LDP X30, X21, [X31], #0x20
+	0x03B99BF0 RET
+	0x03B99BF4 BL 0x1C16F20
+
+ISIL:
+	001 Move W9, [X0+4]
+	002 And W8, W1, 1
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move [X0+4], W8
+	005 Move W8, [X0]
+	006 And W31, W1, 1
+	007 Move W9, 1
+	008 NotImplemented "Instruction CINC not yet implemented."
+	009 Or W8, W8, W9
+	010 Move [X0], W8
+	011 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.UI.ButtonDeltaState get_lastFrameDelta()
+
+Disassembly:
+	0x03B99BF8 STP X30, X21, [X31 - 0x20]!
+	0x03B99BFC STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Void set_lastFrameDelta(UnityEngine.XR.Interaction.Toolkit.UI.ButtonDeltaState value)
+
+Disassembly:
+	0x03B99C00 ADRP X21, 0x849000
+	0x03B99C04 ADRP X20, 0x55A000
+
+ISIL:
+	001 Move [X0], W1
+	002 Return 
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x03B99C08 LDRB W8, [X21 + 0xBFF]
+	0x03B99C0C LDR X20, [X20 + 0x598]
+	0x03B99C10 MOV X19, X0
+	0x03B99C14 TBNZ X8, 0x0, 0x3B99C2C
+	0x03B99C18 ADRP X0, 0x55A000
+
+ISIL:
+	001 Add X8, X0, 8
+	002 Move [X0], W31
+	003 Move [X0+4], W31
+	004 Move X0, X8
+
+Method: System.Void OnFrameFinished()
+
+Disassembly:
+	0x03B99C88 ADRP X20, 0x581000
+	0x03B99C8C LDRB W8, [X21 + 0xC00]
+
+ISIL:
+	001 Move [X0], W31
+	002 Return 
+
+Method: System.Void CopyTo(UnityEngine.EventSystems.PointerEventData eventData)
+
+Disassembly:
+	0x03B99C90 LDR X20, [X20 + 0xDF8]
+	0x03B99C94 MOV X19, X0
+	0x03B99C98 TBNZ X8, 0x0, 0x3B99D34
+	0x03B99C9C ADRP X0, 0x5C3000
+	0x03B99CA0 LDR X0, [X0 + 0x8B8]
+	0x03B99CA4 BL 0x1C16CF4
+	0x03B99CA8 ADRP X0, 0x5C3000
+	0x03B99CAC LDR X0, [X0 + 0x8C0]
+	0x03B99CB0 BL 0x1C16CF4
+	0x03B99CB4 ADRP X0, 0x5C3000
+	0x03B99CB8 LDR X0, [X0 + 0x8C8]
+	0x03B99CBC BL 0x1C16CF4
+	0x03B99CC0 ADRP X0, 0x581000
+	0x03B99CC4 LDR X0, [X0 + 0xDF0]
+	0x03B99CC8 BL 0x1C16CF4
+	0x03B99CCC ADRP X0, 0x581000
+	0x03B99CD0 LDR X0, [X0 + 0xDF8]
+	0x03B99CD4 BL 0x1C16CF4
+	0x03B99CD8 ADRP X0, 0x5C3000
+	0x03B99CDC LDR X0, [X0 + 0x8D0]
+	0x03B99CE0 BL 0x1C16CF4
+	0x03B99CE4 ADRP X0, 0x5C3000
+	0x03B99CE8 LDR X0, [X0 + 0x8D8]
+	0x03B99CEC BL 0x1C16CF4
+	0x03B99CF0 ADRP X0, 0x55A000
+	0x03B99CF4 LDR X0, [X0 + 0xA58]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Compare X1, 0
+	005 JumpIfEqual {29}
+	006 Move W8, [X0+8]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Move W2, 80
+	010 Move [X1+325], W8
+	011 Move V0, [X0+12]
+	012 Add X8, X1, 276
+	013 Move [X1+308], S0
+	014 Move V0, [X0+16]
+	015 Add X1, X0, 24
+	016 Add X0, X19, 160
+	017 Move [X8], D0
+	018 Call 0x3EB2B30
+	019 Move X1, [X20+104]
+	020 Move X0, X19
+	021 Move X2, X31
+	022 Call PointerEventData.set_pointerPress, X0, X1
+	023 Move V0, [X20+7]
+	024 Move [X19+56], V0
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+	029 Call 0x1C17F20
+
+Method: System.Void CopyFrom(UnityEngine.EventSystems.PointerEventData eventData)
+
+Disassembly:
+	0x03B99CF8 BL 0x1C16CF4
+	0x03B99CFC ADRP X0, 0x55A000
+	0x03B99D00 LDR X0, [X0 + 0x598]
+	0x03B99D04 BL 0x1C16CF4
+	0x03B99D08 ADRP X0, 0x562000
+	0x03B99D0C LDR X0, [X0 + 0xC60]
+	0x03B99D10 BL 0x1C16CF4
+	0x03B99D14 ADRP X0, 0x55A000
+	0x03B99D18 LDR X0, [X0 + 0x6C0]
+	0x03B99D1C BL 0x1C16CF4
+	0x03B99D20 ADRP X0, 0x581000
+	0x03B99D24 LDR X0, [X0 + 0x5A8]
+	0x03B99D28 BL 0x1C16CF4
+	0x03B99D2C MOVZ W8, 0x1
+	0x03B99D30 STRB W8, [X21 + 0xC00]
+	0x03B99D34 LDR X0, [X20]
+	0x03B99D38 STR X31, [X31]
+	0x03B99D3C ADRP X21, 0x55A000
+	0x03B99D40 LDR W8, [X0 + 0xE0]
+	0x03B99D44 LDR X21, [X21 + 0x598]
+	0x03B99D48 CBNZ W8, 0x3B99D50
+	0x03B99D4C BL 0x1C16DFC
+	0x03B99D50 MOV X0, X31
+	0x03B99D54 BL 0x3E4FF90
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Compare X1, 0
+	005 JumpIfEqual {27}
+	006 Move W8, [X1+325]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move W2, 80
+	010 Move [X0+8], W8
+	011 Move V0, [X1+308]
+	012 Add X8, X1, 276
+	013 Add X1, X1, 160
+	014 Move [X0+12], S0
+	015 Move V0, [X8]
+	016 Move [X0+16], D0
+	017 Add X0, X0, 24
+	018 Call 0x3EB2B30
+	019 Move X8, [X20+40]
+	020 Move [X19+104], X8
+	021 NotImplemented "Instruction LDUR not yet implemented."
+	022 Move [X19+7], V0
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move X30, [X31+32]
+	026 Return 
+	027 Call 0x1C17F20
+

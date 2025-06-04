@@ -1,0 +1,274 @@
+Type: System.Runtime.CompilerServices.RuntimeHelpers
+
+Method: System.Void InitializeArray(System.Array array, System.IntPtr fldHandle)
+
+Disassembly:
+	0x032C6BD4 MOV X1, X31
+
+ISIL:
+	001 Call 0x1C4DA10
+	002 Return 
+
+Method: System.Void InitializeArray(System.Array array, System.RuntimeFieldHandle fldHandle)
+
+Disassembly:
+	0x032C6BD8 BL 0x33E14E4
+	0x032C6BDC LDR X8, [X31]
+	0x032C6BE0 CBZ X8, 0x32C6C40
+	0x032C6BE4 LDR X0, [X31]
+	0x032C6BE8 BL 0x1C16F18
+	0x032C6BEC MOV X23, X1
+	0x032C6BF0 MOV X24, X0
+	0x032C6BF4 B 0x32C6BC8
+	0x032C6BF8 B 0x32C6C30
+	0x032C6BFC B 0x32C6C38
+	0x032C6C00 B 0x32C6C38
+	0x032C6C04 B 0x32C6C30
+	0x032C6C08 B 0x32C6C38
+	0x032C6C0C B 0x32C6C38
+	0x032C6C10 B 0x32C6C38
+	0x032C6C14 B 0x32C6C38
+	0x032C6C18 B 0x32C6C38
+	0x032C6C1C B 0x32C6C38
+	0x032C6C20 B 0x32C6C30
+	0x032C6C24 B 0x32C6C30
+	0x032C6C28 B 0x32C6C38
+	0x032C6C2C B 0x32C6C38
+	0x032C6C30 STR X27, [X31 + 0x8]
+	0x032C6C34 B 0x32C6C38
+	0x032C6C38 MOV X23, X1
+	0x032C6C3C MOV X24, X0
+	0x032C6C40 CMP W23, 0x1
+	0x032C6C44 B.NE 0x32C6C60
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Compare X0, 0
+	005 JumpIfEqual {23}
+	006 Move X19, X1
+	007 Move X20, X0
+	008 Move X0, X1
+	009 Move X1, X31
+	010 Move X2, X31
+	011 Call IntPtr.op_Equality, X0, X1
+	012 Move TEMP, X0
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {23}
+	016 Move X0, X20
+	017 Move X1, X19
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Call 0x1C4DA10
+	022 Return 
+	023 Move X0, 0xE33000
+	024 Move X0, [X0+1320]
+	025 Call 0x1C17D08
+	026 Call 0x1C17F10
+	027 Move X1, X31
+	028 Move X19, X0
+	029 Call ArgumentNullException..ctor, X0
+	030 Move X0, 0xE60000
+	031 Move X0, [X0+2432]
+	032 Call 0x1C17D08
+	033 Move X1, X0
+	034 Move X0, X19
+	035 Call 0x1C17DEC
+
+Method: System.Int32 get_OffsetToStringData()
+
+Disassembly:
+	0x032C2424 BL 0x3315F7C
+
+ISIL:
+	001 Call 0x1C4DA08
+	002 Return X0
+
+Method: System.Int32 GetHashCode(System.Object o)
+
+Disassembly:
+	0x032C6C48 MOV X0, X24
+	0x032C6C4C BL 0x3EB1AD0
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object.InternalGetHashCode, X0
+	003 Return X0
+
+Method: System.Boolean SufficientExecutionStack()
+
+Disassembly:
+	0x032C6C50 LDR X23, [X0]
+
+ISIL:
+	001 Call 0x1C4DAE4
+	002 Return X0
+
+Method: System.Boolean TryEnsureSufficientExecutionStack()
+
+Disassembly:
+	0x032C6C54 BL 0x3EB1AE0
+
+ISIL:
+	001 Call 0x1C4DAE4
+	002 Return X0
+
+Method: System.Void PrepareConstrainedRegions()
+
+Disassembly:
+	0x032C6C58 LDR X27, [X31 + 0x8]
+
+ISIL:
+	001 Return 
+
+Method: System.Boolean IsReferenceOrContainsReferences()
+
+Disassembly:
+	0x022443D4 STP X30, X21, [X31 - 0x20]!
+	0x022443D8 STP X20, X19, [X31 + 0x10]
+	0x022443DC LDR X8, [X0 + 0x38]
+	0x022443E0 MOV X19, X0
+	0x022443E4 CBNZ X8, 0x2244414
+	0x022443E8 ADRP X0, 0x1ED8000
+	0x022443EC LDR X0, [X0 + 0x4E8]
+	0x022443F0 BL 0x1C16CF4
+	0x022443F4 ADRP X0, 0x1EAF000
+	0x022443F8 LDR X0, [X0 + 0x6C0]
+	0x022443FC BL 0x1C16CF4
+	0x02244400 LDR X8, [X19 + 0x38]
+	0x02244404 CBNZ X8, 0x2244414
+	0x02244408 MOV X0, X19
+	0x0224440C BL 0x1C5C6E0
+	0x02244410 LDR X8, [X19 + 0x38]
+	0x02244414 ADRP X21, 0x1EAF000
+	0x02244418 LDR X21, [X21 + 0x6C0]
+	0x0224441C LDR X20, [X8]
+	0x02244420 LDR X0, [X21]
+	0x02244424 LDR W9, [X0 + 0xE0]
+	0x02244428 CBNZ W9, 0x2244430
+	0x0224442C BL 0x1C16DFC
+	0x02244430 MOV X0, X20
+	0x02244434 MOV X1, X31
+	0x02244438 BL 0x338C698
+	0x0224443C CBZ X0, 0x22444D0
+	0x02244440 MOV X1, X31
+	0x02244444 BL 0x33970C4
+	0x02244448 TBZ X0, 0x0, 0x224449C
+	0x0224444C LDR X0, [X21]
+	0x02244450 LDR X8, [X19 + 0x38]
+	0x02244454 LDR W9, [X0 + 0xE0]
+	0x02244458 LDR X19, [X8]
+	0x0224445C CBNZ W9, 0x2244464
+	0x02244460 BL 0x1C16DFC
+	0x02244464 MOV X0, X19
+	0x02244468 MOV X1, X31
+	0x0224446C BL 0x338C698
+	0x02244470 CBZ X0, 0x22444C0
+	0x02244474 ADRP X8, 0x1ED8000
+	0x02244478 LDR X8, [X8 + 0x4E8]
+	0x0224447C LDR X9, [X0]
+	0x02244480 LDR X8, [X8]
+	0x02244484 LDRB W11, [X9 + 0x130]
+	0x02244488 LDRB W10, [X8 + 0x130]
+	0x0224448C CMP W11, W10
+	0x02244490 B.CS 0x22444AC
+	0x02244494 MOV X0, X31
+	0x02244498 B 0x22444C0
+	0x0224449C LDP X20, X19, [X31 + 0x10]
+	0x022444A0 MOVZ W0, 0x1
+	0x022444A4 LDP X30, X21, [X31], #0x20
+	0x022444A8 RET
+	0x022444AC LDR X9, [X9 + 0xC8]
+	0x022444B0 ADD X9, X9, X10, 0x3, LSL
+	0x022444B4 LDUR X9, [X9 - 0x8]
+	0x022444B8 CMP X9, X8
+	0x022444BC CSEL X0, X0, X31, EQ
+	0x022444C0 LDP X20, X19, [X31 + 0x10]
+	0x022444C4 MOV X1, X31
+	0x022444C8 LDP X30, X21, [X31], #0x20
+	0x022444CC B 0x33CC440
+	0x022444D0 BL 0x1C16F20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X0+56]
+	006 Move X19, X0
+	007 Compare X8, 0
+	008 JumpIfNotEqual {21}
+	009 Move X0, 0x1ED9000
+	010 Move X0, [X0+1256]
+	011 Call 0x1C17CF4
+	012 Move X0, 0x1EB0000
+	013 Move X0, [X0+1728]
+	014 Call 0x1C17CF4
+	015 Move X8, [X19+56]
+	016 Compare X8, 0
+	017 JumpIfNotEqual {21}
+	018 Move X0, X19
+	019 Call 0x1C5D6E0
+	020 Move X8, [X19+56]
+	021 Move X21, 0x1EB0000
+	022 Move X21, [X21+1728]
+	023 Move X20, [X8]
+	024 Move X0, [X21]
+	025 Move W9, [X0+224]
+	026 Compare W9, 0
+	027 JumpIfNotEqual {29}
+	028 Call 0x1C17DFC
+	029 Move X0, X20
+	030 Move X1, X31
+	031 Call Type.GetTypeFromHandle, X0
+	032 Compare X0, 0
+	033 JumpIfEqual {78}
+	034 Move X1, X31
+	035 Call Type.get_IsValueType, X0
+	036 Move TEMP, X0
+	037 And TEMP, TEMP, 1
+	038 Compare TEMP, 1
+	039 JumpIfNotEqual {60}
+	040 Move X0, [X21]
+	041 Move X8, [X19+56]
+	042 Move W9, [X0+224]
+	043 Move X19, [X8]
+	044 Compare W9, 0
+	045 JumpIfNotEqual {47}
+	046 Call 0x1C17DFC
+	047 Move X0, X19
+	048 Move X1, X31
+	049 Call Type.GetTypeFromHandle, X0
+	050 Compare X0, 0
+	051 JumpIfEqual {71}
+	052 Move X8, 0x1ED9000
+	053 Move X8, [X8+1256]
+	054 Move X9, [X0]
+	055 Move X8, [X8]
+	056 Move W11, [X9+304]
+	057 Move W10, [X8+304]
+	058 NotImplemented "Instruction CMP not yet implemented."
+	059 Move X0, X31
+	060 Move X20, [X31+16]
+	061 Move X19, [X31+24]
+	062 Move W0, 1
+	063 Move X30, [X31+32]
+	064 Move X21, [X31+40]
+	065 Return X0
+	066 Move X9, [X9+200]
+	067 Add X9, X9, X10
+	068 NotImplemented "Instruction LDUR not yet implemented."
+	069 NotImplemented "Instruction CMP not yet implemented."
+	070 NotImplemented "Instruction CSEL not yet implemented."
+	071 Move X20, [X31+16]
+	072 Move X19, [X31+24]
+	073 Move X1, X31
+	074 Move X30, [X31+32]
+	075 Move X21, [X31+40]
+	076 Call RuntimeTypeHandle.HasReferences, X0
+	077 Return X0
+	078 Call 0x1C17F20
+

@@ -1,0 +1,103 @@
+Type: UnityEngine.Experimental.Rendering.RenderGraphModule.RenderGraphLogIndent
+
+Method: System.Void .ctor(UnityEngine.Experimental.Rendering.RenderGraphModule.RenderGraphLogger logger, System.Int32 indentation = 1)
+
+Disassembly:
+	0x03994D9C MOV W2, W20
+	0x03994DA0 BL 0x3994B94
+	0x03994DA4 B 0x3994D7C
+	0x03994DA8 LDR X1, [X22]
+	0x03994DAC ADD X0, X31, 0x20
+	0x03994DB0 BL 0x2BBDD9C
+	0x03994DB4 ADD W20, W20, 0x1
+	0x03994DB8 CMP W20, 0x2
+	0x03994DBC B.NE 0x3994D40
+	0x03994DC0 B 0x3994E00
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X0+16], W31
+	003 Move [X0], W2
+	004 Move [X0+8], X1
+	005 Compare X1, 0
+	006 JumpIfEqual {12}
+	007 Move X0, X1
+	008 Move W1, W2
+	009 Move X30, [X31+16]
+	010 Call RenderGraphLogger.IncrementIndentation, X0, X1
+	011 Return 
+	012 Call 0x1C17F20
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x0399847C MOV X2, X31
+	0x03998480 MOV X20, X0
+	0x03998484 BL 0x337DF1C
+	0x03998488 ADRP X0, 0x7B8000
+	0x0399848C LDR X0, [X0 + 0xED8]
+	0x03998490 BL 0x1C16D08
+	0x03998494 MOV X1, X0
+	0x03998498 MOV X0, X20
+	0x0399849C BL 0x1C16DEC
+	0x039984A0 STP X30, X21, [X31 - 0x20]!
+	0x039984A4 STP X20, X19, [X31 + 0x10]
+	0x039984A8 ADRP X21, 0xA49000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0+16]
+	004 Compare W8, 0
+	005 JumpIfNotEqual {14}
+	006 Move X19, X0
+	007 Move X0, [X0+8]
+	008 Compare X0, 0
+	009 JumpIfEqual {12}
+	010 Move W1, [X19]
+	011 Call RenderGraphLogger.DecrementIndentation, X0, X1
+	012 Move W8, 1
+	013 Move [X19+16], W8
+	014 Move X30, [X31+16]
+	015 Move X19, [X31+24]
+	016 Return 
+
+Method: System.Void Dispose(System.Boolean disposing)
+
+Disassembly:
+	0x039984AC LDRB W8, [X21 + 0xAEE]
+	0x039984B0 MOV W20, W1
+	0x039984B4 MOV X19, X0
+	0x039984B8 TBNZ X8, 0x0, 0x39984E8
+	0x039984BC ADRP X0, 0x7B8000
+	0x039984C0 LDR X0, [X0 + 0x9E0]
+	0x039984C4 BL 0x1C16CF4
+	0x039984C8 ADRP X0, 0x7B8000
+	0x039984CC LDR X0, [X0 + 0xEE0]
+	0x039984D0 BL 0x1C16CF4
+	0x039984D4 ADRP X0, 0x7B8000
+	0x039984D8 LDR X0, [X0 + 0xEE8]
+	0x039984DC BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0+16]
+	004 Compare W8, 0
+	005 JumpIfNotEqual {18}
+	006 Move X19, X0
+	007 Move TEMP, X1
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfNotEqual {16}
+	011 Move X0, [X19+8]
+	012 Compare X0, 0
+	013 JumpIfEqual {16}
+	014 Move W1, [X19]
+	015 Call RenderGraphLogger.DecrementIndentation, X0, X1
+	016 Move W8, 1
+	017 Move [X19+16], W8
+	018 Move X30, [X31+16]
+	019 Move X19, [X31+24]
+	020 Return 
+

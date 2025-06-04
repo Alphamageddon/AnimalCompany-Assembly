@@ -1,0 +1,152 @@
+Type: UnityEngine.Rendering.Universal.UTess.TessEventCompare
+
+Method: System.Int32 Compare(UnityEngine.Rendering.Universal.UTess.UEvent a, UnityEngine.Rendering.Universal.UTess.UEvent b)
+
+Disassembly:
+	0x03A24374 LDR X10, [X10 + 0xD8]
+	0x03A24378 ADD W8, W25, 0x1
+	0x03A2437C ADD W9, W25, 0x2
+	0x03A24380 LDRSW X24, [X22, W8, SXTW]
+	0x03A24384 LDRSW X26, [X22, W9, SXTW]
+	0x03A24388 LDR X0, [X10]
+	0x03A2438C ADD X8, X23, X21, 0x3, LSL
+	0x03A24390 LDP S9, S10, [X8]
+	0x03A24394 ADD X8, X23, X24, 0x3, LSL
+	0x03A24398 LDP S11, S12, [X8]
+	0x03A2439C ADD X8, X23, X26, 0x3, LSL
+	0x03A243A0 LDR W9, [X0 + 0xE0]
+	0x03A243A4 LDP S13, S14, [X8]
+	0x03A243A8 CBNZ W9, 0x3A243B0
+	0x03A243AC BL 0x1C16DFC
+	0x03A243B0 ADD X0, X31, 0x18
+	0x03A243B4 STP S9, S10, [X31 + 0x18]
+	0x03A243B8 STP S11, S12, [X31 + 0x20]
+	0x03A243BC STP S13, S14, [X31 + 0x28]
+	0x03A243C0 STP X31, X31, [X20]
+	0x03A243C4 STR W31, [X20 + 0x18]
+	0x03A243C8 STR X31, [X20 + 0x10]
+	0x03A243CC BL 0x3A23774
+	0x03A243D0 LDR V6, [X27]
+	0x03A243D4 FSUB S3, S9, S11
+	0x03A243D8 FSUB S5, S10, S14
+	0x03A243DC FSUB S4, S10, S12
+	0x03A243E0 FMUL S3, S3, S5
+	0x03A243E4 FSUB S5, S9, S13
+	0x03A243E8 FMUL S4, S4, S5
+	0x03A243EC FMOV W8, S6
+	0x03A243F0 FABD S3, S3, S3
+	0x03A243F4 AND W8, W8, 0x7FFFFFFF
+	0x03A243F8 MOVZ W10, 0x7F800000
+	0x03A243FC FMUL S3, S3, S8
+	0x03A24400 CMP W8, W10
+	0x03A24404 LDR X9, [X31]
+	0x03A24408 FCCMP S3, S6, 0x0, LS
+	0x03A2440C FCSEL S4, S3, S6, GT
+	0x03A24410 STR S4, [X27]
+	0x03A24414 LDR V4, [X9]
+	0x03A24418 MOVN W13, 0x0
+	0x03A2441C ADD W25, W25, 0x3
+	0x03A24420 FMOV W8, S4
+	0x03A24424 AND W8, W8, 0x7FFFFFFF
+	0x03A24428 CMP W8, W10
+	0x03A2442C LDR X8, [X31 + 0x10]
+	0x03A24430 FCCMP S3, S4, 0x8, LS
+	0x03A24434 FCSEL S4, S3, S4, MI
+	0x03A24438 STR S4, [X9]
+	0x03A2443C LDR V4, [X8]
+	0x03A24440 CMP W21, W24
+	0x03A24444 CSEL W10, W21, W24, LT
+	0x03A24448 CSEL W11, W21, W24, GT
+	0x03A2444C FADD S4, S3, S4
+	0x03A24450 STR S4, [X8]
+	0x03A24454 LDRSW X8, [X28]
+	0x03A24458 CMP W24, W26
+	0x03A2445C ADD W9, W8, 0x1
+	0x03A24460 STR W9, [X28]
+	0x03A24464 LDR X9, [X29]
+	0x03A24468 LDR W12, [X19]
+	0x03A2446C ADD X8, X9, X8, 0x4, LSL
+	0x03A24470 STP W10, W11, [X8]
+	0x03A24474 STP W12, W13, [X8 + 0x8]
+
+ISIL:
+	001 Move [X31-80], D13
+	002 Move [X31-72], D12
+	003 Move [X31+16], D11
+	004 Move [X31+24], D10
+	005 Move [X31+32], D9
+	006 Move [X31+40], D8
+	007 Move [X31+48], X30
+	008 Move [X31+56], X21
+	009 Move [X31+64], X20
+	010 Move [X31+72], X19
+	011 Move X21, 0x9BF000
+	012 Move W8, [X21+19]
+	013 Move X19, X2
+	014 Move X20, X1
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {24}
+	019 Move X0, 0x6F9000
+	020 Move X0, [X0+216]
+	021 Call 0x1C17CF4
+	022 Move W8, 1
+	023 Move [X21+19], W8
+	024 Move V8, [X20]
+	025 Move V0, [X19]
+	026 Subtract S0, S8, S0
+	027 NotImplemented "Instruction FCMP not yet implemented."
+	028 Move V9, [X20+4]
+	029 Move V0, [X19+4]
+	030 Subtract S0, S9, S0
+	031 NotImplemented "Instruction FCMP not yet implemented."
+	032 Move W8, [X20+20]
+	033 Move W9, [X19+20]
+	034 Subtract W0, W8, W9
+	035 Compare W8, 0
+	036 JumpIfEqual {62}
+	037 Move X8, 0x6F9000
+	038 Move X8, [X8+216]
+	039 Move S11, [X20+8]
+	040 Move S10, [X20+12]
+	041 Move S13, [X19+8]
+	042 Move S12, [X19+12]
+	043 Move X0, [X8]
+	044 Move W8, [X0+224]
+	045 Compare W8, 0
+	046 JumpIfNotEqual {48}
+	047 Call 0x1C17DFC
+	048 Subtract S0, S10, S9
+	049 Subtract S1, S13, S11
+	050 Subtract S2, S11, S8
+	051 Subtract S3, S12, S10
+	052 Move W8, 0x25000000
+	053 Multiply S0, S0, S1
+	054 Multiply S1, S2, S3
+	055 Move S2, W8
+	056 Subtract S3, S0, S1
+	057 NotImplemented "Instruction FABD not yet implemented."
+	058 NotImplemented "Instruction FCMP not yet implemented."
+	059 Move S0, W31
+	060 NotImplemented "Instruction FCSEL not yet implemented."
+	061 NotImplemented "Instruction FCMP not yet implemented."
+	062 Move W8, [X20+16]
+	063 Move W9, [X19+16]
+	064 Subtract W0, W8, W9
+	065 Move TEMP, 0
+	066 Not TEMP
+	067 Move W8, TEMP
+	068 NotImplemented "Instruction CSINC not yet implemented."
+	069 Move X20, [X31+64]
+	070 Move X19, [X31+72]
+	071 Move X30, [X31+48]
+	072 Move X21, [X31+56]
+	073 Move D9, [X31+32]
+	074 Move D8, [X31+40]
+	075 Move D11, [X31+16]
+	076 Move D10, [X31+24]
+	077 Move D13, [X31+80]
+	078 Move D12, [X31+88]
+	079 Return X0
+

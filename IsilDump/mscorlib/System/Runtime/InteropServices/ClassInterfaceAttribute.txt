@@ -1,0 +1,30 @@
+Type: System.Runtime.InteropServices.ClassInterfaceAttribute
+
+Method: System.Void .ctor(System.Runtime.InteropServices.ClassInterfaceType classInterfaceType)
+
+Disassembly:
+	0x032C0D94 ADRP X23, 0xE5B000
+	0x032C0D98 LDRB W8, [X24 + 0x870]
+	0x032C0D9C LDR X23, [X23 + 0x850]
+	0x032C0DA0 MOV W19, W3
+	0x032C0DA4 MOV W21, W2
+	0x032C0DA8 MOV X20, X1
+	0x032C0DAC MOV X22, X0
+	0x032C0DB0 TBNZ X8, 0x0, 0x32C0DC8
+	0x032C0DB4 ADRP X0, 0xE5B000
+	0x032C0DB8 LDR X0, [X0 + 0x850]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

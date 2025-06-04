@@ -1,0 +1,29 @@
+Type: Fusion.DisconnectReasonExt
+
+Method: Fusion.ShutdownReason ConvertToShutdownReason(Fusion.Protocol.DisconnectReason disconnectCause)
+
+Disassembly:
+	0x01E690D4 LDR W8, [X0 + 0xE0]
+	0x01E690D8 CBNZ W8, 0x1E690E4
+	0x01E690DC BL 0x1C16DFC
+	0x01E690E0 LDR X0, [X24]
+	0x01E690E4 ADRP X9, 0x228B000
+	0x01E690E8 LDR X8, [X0 + 0xB8]
+	0x01E690EC LDR X9, [X9 + 0xE68]
+	0x01E690F0 LDR X20, [X8]
+	0x01E690F4 LDR X0, [X9]
+	0x01E690F8 BL 0x1C16F10
+	0x01E690FC ADRP X8, 0x2293000
+
+ISIL:
+	001 Subtract W8, W0, 1
+	002 And W9, W8, 255
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move X9, -20164608
+	005 NotImplemented "Instruction SXTB not yet implemented."
+	006 Add X9, X9, 2988
+	007 Move W0, [X9]
+	008 Return X0
+	009 Move W0, 1
+	010 Return X0
+

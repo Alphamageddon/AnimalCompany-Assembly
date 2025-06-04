@@ -1,0 +1,126 @@
+Type: UnityEngine.XR.Interaction.Toolkit.TunnelingVignetteController/ProviderRecord
+
+Method: UnityEngine.XR.Interaction.Toolkit.ITunnelingVignetteProvider get_provider()
+
+Disassembly:
+	0x03B85E64 LDR W8, [X22 + 0x18]
+	0x03B85E68 CBZ W8, 0x3B8612C
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: UnityEngine.XR.Interaction.Toolkit.EaseState get_easeState()
+
+Disassembly:
+	0x03B85E6C CMP W8, 0x1
+	0x03B85E70 B.NE 0x3B85ED4
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_easeState(UnityEngine.XR.Interaction.Toolkit.EaseState value)
+
+Disassembly:
+	0x03B85E74 ADRP X8, 0x5D5000
+	0x03B85E78 LDR X8, [X8 + 0xEA0]
+
+ISIL:
+	001 Move [X0+24], W1
+	002 Return 
+
+Method: System.Single get_dynamicApertureSize()
+
+Disassembly:
+	0x03B85E7C MOV X0, X22
+	0x03B85E80 MOV W1, W31
+
+ISIL:
+	001 Move V0, [X0+28]
+	002 Return V0
+
+Method: System.Void set_dynamicApertureSize(System.Single value)
+
+Disassembly:
+	0x03B85E84 LDR X2, [X8]
+	0x03B85E88 BL 0x301BCCC
+
+ISIL:
+	001 Move [X0+28], S0
+	002 Return 
+
+Method: System.Boolean get_easeInLockEnded()
+
+Disassembly:
+	0x03B85E8C ADRP X9, 0x5D5000
+	0x03B85E90 LDR X9, [X9 + 0xE28]
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_easeInLockEnded(System.Boolean value)
+
+Disassembly:
+	0x03B85E94 LDR W10, [X19 + 0x1C]
+	0x03B85E98 LDR X8, [X19 + 0x10]
+	0x03B85E9C LDR X9, [X9]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+32], W8
+	003 Return 
+
+Method: System.Single get_dynamicEaseOutDelayTime()
+
+Disassembly:
+	0x03B85EA0 ADD W10, W10, 0x1
+	0x03B85EA4 STR W10, [X19 + 0x1C]
+
+ISIL:
+	001 Move V0, [X0+36]
+	002 Return V0
+
+Method: System.Void set_dynamicEaseOutDelayTime(System.Single value)
+
+Disassembly:
+	0x03B85EA8 CBZ X8, 0x3B86158
+	0x03B85EAC LDRSW X10, [X19 + 0x18]
+
+ISIL:
+	001 Move [X0+36], S0
+	002 Return 
+
+Method: System.Void .ctor(UnityEngine.XR.Interaction.Toolkit.ITunnelingVignetteProvider provider)
+
+Disassembly:
+	0x03B84A5C B 0x3B84A64
+	0x03B84A60 LDR X20, [X19 + 0x48]
+	0x03B84A64 LDR X0, [X21]
+	0x03B84A68 LDR W8, [X0 + 0xE0]
+	0x03B84A6C CBNZ W8, 0x3B84A74
+	0x03B84A70 BL 0x1C16DFC
+	0x03B84A74 MOV X0, X20
+	0x03B84A78 MOV X1, X31
+	0x03B84A7C MOV X2, X31
+	0x03B84A80 BL 0x3C3883C
+	0x03B84A84 TBZ X0, 0x0, 0x3B84AB0
+	0x03B84A88 MOV X0, X19
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move W8, 0x3F800000
+	006 Move X1, X31
+	007 Move X20, X0
+	008 Move [X0+28], W8
+	009 Call Object..ctor, X0
+	010 Move [X20+16], X19
+	011 Move X20, [X31+16]
+	012 Move X19, [X31+24]
+	013 Move X30, [X31+32]
+	014 Return 
+

@@ -1,0 +1,37 @@
+Type: UnityEngine.Scripting.APIUpdating.MovedFromAttributeData
+
+Method: System.Void Set(System.Boolean autoUpdateAPI, System.String sourceNamespace = null, System.String sourceAssembly = null, System.String sourceClassName = null)
+
+Disassembly:
+	0x03C46F98 MOVZ W8, 0x1
+	0x03C46F9C STRB W8, [X20 + 0xC73]
+	0x03C46FA0 LDR X0, [X21]
+	0x03C46FA4 LDR W8, [X0 + 0xE0]
+	0x03C46FA8 CBNZ W8, 0x3C46FB0
+	0x03C46FAC BL 0x1C16DFC
+	0x03C46FB0 BL 0x3C46AC8
+	0x03C46FB4 CBZ X0, 0x3C46FD8
+	0x03C46FB8 LDR X8, [X0]
+	0x03C46FBC MOV W1, W19
+	0x03C46FC0 LDP X9, X2, [X8 + 0x188]
+	0x03C46FC4 BLR X9
+	0x03C46FC8 LDP X20, X19, [X31 + 0x10]
+	0x03C46FCC AND X0, X0, 0x0
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move [X0+24], W9
+	005 NotImplemented "Instruction CSET not yet implemented."
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 And W8, W1, 1
+	008 Move [X0+25], W9
+	009 NotImplemented "Instruction CSET not yet implemented."
+	010 Move [X0], X4
+	011 Move [X0+8], X2
+	012 Move [X0+16], X3
+	013 Move [X0+26], W9
+	014 Move [X0+27], W8
+	015 Return 
+

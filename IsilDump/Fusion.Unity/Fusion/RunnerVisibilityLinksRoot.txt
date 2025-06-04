@@ -1,0 +1,26 @@
+Type: Fusion.RunnerVisibilityLinksRoot
+
+Method: System.Void Awake()
+
+Disassembly:
+	0x01F954A0 LDR X8, [X19]
+	0x01F954A4 MOV X0, X19
+	0x01F954A8 LDP X9, X1, [X8 + 0x188]
+
+ISIL:
+	001 Move W1, 2
+	002 Move X2, X31
+	003 Call Object.set_hideFlags, X0, X1
+	004 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01F954AC BLR X9
+	0x01F954B0 LDR X8, [X19]
+
+ISIL:
+	001 Move X1, X31
+	002 Call MonoBehaviour..ctor, X0
+	003 Return 
+

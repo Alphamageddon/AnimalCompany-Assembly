@@ -1,0 +1,78 @@
+Type: Mono.SafeGPtrArrayHandle
+
+Method: System.Void .ctor(System.IntPtr ptr)
+
+Disassembly:
+	0x0320C1A0 LDR X0, [X0 + 0x960]
+	0x0320C1A4 BL 0x1C16CF4
+	0x0320C1A8 MOVZ W8, 0x1
+	0x0320C1AC STRB W8, [X20 + 0x293]
+	0x0320C1B0 LDR X0, [X19 + 0x18]
+	0x0320C1B4 CBZ X0, 0x320C2E4
+	0x0320C1B8 LDR X8, [X0]
+	0x0320C1BC LDP X9, X1, [X8 + 0x1B8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, X1
+	005 Move X1, X31
+	006 Call IntPtr.op_Explicit, X0
+	007 Move [X19], X0
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x0320C1C0 BLR X9
+	0x0320C1C4 CMP W0, 0x23
+	0x0320C1C8 B.NE 0x320C1E4
+	0x0320C1CC MOV X0, X19
+	0x0320C1D0 BL 0x320BF3C
+	0x0320C1D4 MOV X0, X19
+	0x0320C1D8 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0]
+	005 Call 0x1C17890
+	006 Move [X19], X31
+	007 Move X30, [X31+16]
+	008 Move X19, [X31+24]
+	009 Return 
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0x0320C1DC LDR X30, [X31], #0x20
+	0x0320C1E0 B 0x320D158
+	0x0320C1E4 MOV X0, X19
+	0x0320C1E8 BL 0x320C31C
+	0x0320C1EC MOV X20, X0
+	0x0320C1F0 MOVZ W1, 0x3B
+	0x0320C1F4 MOV X0, X19
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {8}
+	005 Move W0, [X8+8]
+	006 Move X30, [X31+16]
+	007 Return X0
+	008 Call 0x1C17F20
+
+Method: System.IntPtr get_Item(System.Int32 i)
+
+Disassembly:
+	0x0320C1F8 BL 0x320BFB8
+
+ISIL:
+	001 Call RuntimeGPtrArrayHandle.Lookup, X0, X1
+	002 Return X0
+

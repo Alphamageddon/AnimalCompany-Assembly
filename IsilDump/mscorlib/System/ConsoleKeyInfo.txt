@@ -1,0 +1,245 @@
+Type: System.ConsoleKeyInfo
+
+Method: System.Void .ctor(System.Char keyChar, System.ConsoleKey key, System.Boolean shift, System.Boolean alt, System.Boolean control)
+
+Disassembly:
+	0x0339E33C LDR X0, [X0 + 0x858]
+	0x0339E340 BL 0x1C16D08
+	0x0339E344 MOV X1, X0
+	0x0339E348 MOV X0, X19
+	0x0339E34C BL 0x1C16DEC
+	0x0339E350 STR X30, [X31 - 0x30]!
+	0x0339E354 STP X22, X21, [X31 + 0x10]
+	0x0339E358 STP X20, X19, [X31 + 0x20]
+	0x0339E35C ADRP X21, 0x103F000
+	0x0339E360 ADRP X22, 0xD7F000
+	0x0339E364 ADRP X20, 0xD5D000
+	0x0339E368 LDRB W8, [X21 + 0x114]
+	0x0339E36C LDR X22, [X22 + 0x298]
+	0x0339E370 LDR X20, [X20 + 0x578]
+	0x0339E374 MOV X19, X0
+	0x0339E378 TBNZ X8, 0x0, 0x339E39C
+	0x0339E37C ADRP X0, 0xD5D000
+	0x0339E380 LDR X0, [X0 + 0x578]
+	0x0339E384 BL 0x1C16CF4
+	0x0339E388 ADRP X0, 0xD7F000
+	0x0339E38C LDR X0, [X0 + 0x298]
+	0x0339E390 BL 0x1C16CF4
+	0x0339E394 MOVZ W8, 0x1
+	0x0339E398 STRB W8, [X21 + 0x114]
+	0x0339E39C LDR X0, [X22]
+	0x0339E3A0 MOV X1, X19
+	0x0339E3A4 MOV X2, X31
+	0x0339E3A8 BL 0x32094D4
+	0x0339E3AC LDR X8, [X20]
+	0x0339E3B0 MOV X19, X0
+	0x0339E3B4 MOV X0, X8
+	0x0339E3B8 BL 0x1C16F10
+	0x0339E3BC MOV X1, X19
+	0x0339E3C0 MOV X2, X31
+	0x0339E3C4 MOV X20, X0
+	0x0339E3C8 BL 0x3314A68
+	0x0339E3CC MOV X0, X20
+	0x0339E3D0 LDP X20, X19, [X31 + 0x20]
+	0x0339E3D4 LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 And W31, W3, 1
+	006 Move W8, 2
+	007 NotImplemented "Instruction CSEL not yet implemented."
+	008 NotImplemented "Instruction BFM not yet implemented."
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 And W31, W5, 1
+	012 Or W9, W8, 4
+	013 NotImplemented "Instruction CSEL not yet implemented."
+	014 NotImplemented "Instruction STRH not yet implemented."
+	015 Move [X0+4], W2
+	016 Move [X0+8], W8
+	017 Move X30, [X31+32]
+	018 Return 
+	019 Move X0, 0xD5E000
+	020 Move X0, [X0+1888]
+	021 Call 0x1C17D08
+	022 Call 0x1C17F10
+	023 Move X19, X0
+	024 Move X0, 0xD80000
+	025 Move X0, [X0+112]
+	026 Call 0x1C17D08
+	027 Move X20, X0
+	028 Move X0, 0xD8E000
+	029 Move X0, [X0+1672]
+	030 Call 0x1C17D08
+	031 Move X2, X0
+	032 Move X0, X19
+	033 Move X1, X20
+	034 Move X3, X31
+	035 Call ArgumentOutOfRangeException..ctor, X0, X1, X2
+	036 Move X0, 0xD8E000
+	037 Move X0, [X0+1680]
+	038 Call 0x1C17D08
+	039 Move X1, X0
+	040 Move X0, X19
+	041 Call 0x1C17DEC
+
+Method: System.Char get_KeyChar()
+
+Disassembly:
+	0x0339E3D8 LDR X30, [X31], #0x30
+	0x0339E3DC RET
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 Return X0
+
+Method: System.ConsoleKey get_Key()
+
+Disassembly:
+	0x0339E3E0 STP X30, X19, [X31 - 0x10]!
+	0x0339E3E4 BL 0x339E350
+
+ISIL:
+	001 Move W0, [X0+4]
+	002 Return X0
+
+Method: System.Boolean Equals(System.Object value)
+
+Disassembly:
+	0x0339E3E8 MOV X19, X0
+	0x0339E3EC ADRP X0, 0xD8D000
+	0x0339E3F0 LDR X0, [X0 + 0x860]
+	0x0339E3F4 BL 0x1C16D08
+	0x0339E3F8 MOV X1, X0
+	0x0339E3FC MOV X0, X19
+	0x0339E400 BL 0x1C16DEC
+	0x0339E404 STR X30, [X31 - 0x20]!
+	0x0339E408 STP X20, X19, [X31 + 0x10]
+	0x0339E40C MOV X19, X0
+	0x0339E410 BL 0x19903C0
+	0x0339E414 LDR X8, [X19]
+	0x0339E418 MOV X0, X19
+	0x0339E41C LDP X9, X1, [X8 + 0x168]
+	0x0339E420 BLR X9
+	0x0339E424 MOV X19, X0
+	0x0339E428 ADRP X0, 0xD7F000
+	0x0339E42C LDR X0, [X0 + 0x2B8]
+	0x0339E430 BL 0x1C16D08
+	0x0339E434 MOV X1, X19
+	0x0339E438 MOV X2, X31
+	0x0339E43C BL 0x32094D4
+	0x0339E440 MOV X19, X0
+	0x0339E444 ADRP X0, 0xD58000
+	0x0339E448 LDR X0, [X0 + 0x78]
+	0x0339E44C BL 0x1C16D08
+	0x0339E450 BL 0x1C16F10
+	0x0339E454 MOV X1, X19
+	0x0339E458 MOV X2, X31
+	0x0339E45C MOV X20, X0
+	0x0339E460 BL 0x335DC08
+	0x0339E464 ADRP X0, 0xD8D000
+	0x0339E468 LDR X0, [X0 + 0x868]
+	0x0339E46C BL 0x1C16D08
+	0x0339E470 MOV X1, X0
+	0x0339E474 MOV X0, X20
+	0x0339E478 BL 0x1C16DEC
+	0x0339E47C STR X30, [X31 - 0x10]!
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x1040000
+	006 Move W8, [X21+267]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0xD8E000
+	014 Move X0, [X0+1688]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+267], W8
+	018 Compare X20, 0
+	019 JumpIfEqual {39}
+	020 Move X8, 0xD8E000
+	021 Move X8, [X8+1688]
+	022 Move X9, [X20]
+	023 Move X8, [X8]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move X0, X20
+	026 Call 0x1C17E08
+	027 Move X8, [X0]
+	028 NotImplemented "Instruction LDRH not yet implemented."
+	029 NotImplemented "Instruction CMP not yet implemented."
+	030 Move W9, [X19+4]
+	031 Move X8, X8
+	032 ShiftRight X8, 32
+	033 And X8, X8, 0x7FFFFFFF
+	034 NotImplemented "Instruction CMP not yet implemented."
+	035 Move W8, [X0+8]
+	036 Move W9, [X19+8]
+	037 NotImplemented "Instruction CMP not yet implemented."
+	038 NotImplemented "Instruction CSET not yet implemented."
+	039 Move W0, W31
+	040 Move X20, [X31+16]
+	041 Move X19, [X31+24]
+	042 Move X30, [X31+32]
+	043 Move X21, [X31+40]
+	044 Return X0
+
+Method: System.Boolean Equals(System.ConsoleKeyInfo obj)
+
+Disassembly:
+	0x0339E480 BL 0x339E404
+	0x0339E484 STR X30, [X31 - 0x20]!
+	0x0339E488 STP X20, X19, [X31 + 0x10]
+	0x0339E48C MOV X19, X0
+	0x0339E490 ADRP X0, 0xD8D000
+	0x0339E494 LDR X0, [X0 + 0x870]
+	0x0339E498 BL 0x1C16D08
+	0x0339E49C MOV X1, X19
+	0x0339E4A0 MOV X2, X31
+	0x0339E4A4 BL 0x32094D4
+	0x0339E4A8 MOV X19, X0
+	0x0339E4AC ADRP X0, 0xD5D000
+	0x0339E4B0 LDR X0, [X0 + 0x578]
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 Move W8, [X0+4]
+	004 Move X9, X1
+	005 ShiftRight X9, 32
+	006 And X9, X9, 0x7FFFFFFF
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 Move W8, [X0+8]
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 Return X0
+	012 Move W0, W31
+	013 Return X0
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x0339E4B4 BL 0x1C16D08
+	0x0339E4B8 BL 0x1C16F10
+	0x0339E4BC MOV X1, X19
+	0x0339E4C0 MOV X2, X31
+	0x0339E4C4 MOV X20, X0
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 Move W9, [X0+4]
+	003 Move W10, [X0+8]
+	004 NotImplemented "Instruction BFM not yet implemented."
+	005 Or W0, W8, W10
+	006 Return X0
+

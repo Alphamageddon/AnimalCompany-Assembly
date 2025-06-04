@@ -1,0 +1,378 @@
+Type: Unity.Profiling.LowLevel.Unsafe.ProfilerRecorderHandle
+
+Method: System.Void .ctor(System.UInt64 handle)
+
+Disassembly:
+	0x03C00190 MOV X3, X0
+	0x03C00194 STR X0, [X22 + 0xD48]
+
+ISIL:
+	001 Move [X0], X1
+	002 Return 
+
+Method: System.Boolean get_Valid()
+
+Disassembly:
+	0x03C00198 MOV X0, X21
+	0x03C0019C MOV W1, W20
+	0x03C001A0 MOV X2, X19
+	0x03C001A4 LDP X20, X19, [X31 + 0x20]
+	0x03C001A8 LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Add X8, X8, 1
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 Return X0
+
+Method: Unity.Profiling.LowLevel.Unsafe.ProfilerRecorderDescription GetDescription(Unity.Profiling.LowLevel.Unsafe.ProfilerRecorderHandle handle)
+
+Disassembly:
+	0x03C001AC LDR X30, [X31], #0x30
+	0x03C001B0 BR X3
+	0x03C001B4 STP X30, X21, [X31 - 0x20]!
+	0x03C001B8 STP X20, X19, [X31 + 0x10]
+	0x03C001BC ADRP X21, 0x7E3000
+	0x03C001C0 LDR X3, [X21 + 0xD48]
+	0x03C001C4 MOV X19, X1
+	0x03C001C8 MOV X20, X0
+	0x03C001CC CBNZ X3, 0x3C001E4
+	0x03C001D0 ADRP X0, 0xFFFFFFFFFCF1C000
+	0x03C001D4 ADD X0, X0, 0xBF9
+	0x03C001D8 BL 0x1C16CB8
+	0x03C001DC MOV X3, X0
+	0x03C001E0 STR X0, [X21 + 0xD48]
+	0x03C001E4 MOV X0, X20
+	0x03C001E8 MOV X2, X19
+	0x03C001EC LDP X20, X19, [X31 + 0x10]
+	0x03C001F0 MOV W1, W31
+	0x03C001F4 LDP X30, X21, [X31], #0x20
+	0x03C001F8 BR X3
+	0x03C001FC STR X30, [X31 - 0x30]!
+	0x03C00200 STP X22, X21, [X31 + 0x10]
+	0x03C00204 STP X20, X19, [X31 + 0x20]
+	0x03C00208 ADRP X22, 0x7E3000
+	0x03C0020C LDR X3, [X22 + 0xD50]
+	0x03C00210 MOV X19, X2
+	0x03C00214 MOV X20, X1
+	0x03C00218 MOV X21, X0
+	0x03C0021C CBNZ X3, 0x3C00234
+	0x03C00220 ADRP X0, 0xFFFFFFFFFCF04000
+	0x03C00224 ADD X0, X0, 0xE49
+	0x03C00228 BL 0x1C16CB8
+	0x03C0022C MOV X3, X0
+	0x03C00230 STR X0, [X22 + 0xD50]
+	0x03C00234 MOV X0, X21
+	0x03C00238 MOV X1, X20
+	0x03C0023C MOV X2, X19
+	0x03C00240 LDP X20, X19, [X31 + 0x20]
+	0x03C00244 LDP X22, X21, [X31 + 0x10]
+	0x03C00248 LDR X30, [X31], #0x30
+	0x03C0024C BR X3
+	0x03C00250 STR X30, [X31 - 0x20]!
+	0x03C00254 STP X20, X19, [X31 + 0x10]
+	0x03C00258 ADRP X20, 0x7E3000
+	0x03C0025C LDR X1, [X20 + 0xD58]
+	0x03C00260 MOV X19, X0
+	0x03C00264 CBNZ X1, 0x3C0027C
+	0x03C00268 ADRP X0, 0xFFFFFFFFFCF28000
+	0x03C0026C ADD X0, X0, 0x310
+	0x03C00270 BL 0x1C16CB8
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+32], X30
+	003 Move [X31+48], X20
+	004 Move [X31+56], X19
+	005 NotImplemented "Instruction MRS not yet implemented."
+	006 Move X19, X8
+	007 Move X8, [X20+40]
+	008 Add X9, X0, 1
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Move [X31+24], X8
+	011 Move [X31], X31
+	012 Move [X31+8], X31
+	013 Move [X31+16], X31
+	014 Add X8, X31, 0
+	015 Call ProfilerRecorderHandle.GetDescriptionInternal, X0
+	016 Move X8, [X31+16]
+	017 Move V0, [X31]
+	018 Move [X19+16], X8
+	019 Move [X19], V0
+	020 Move X8, [X20+40]
+	021 Move X9, [X31+24]
+	022 NotImplemented "Instruction CMP not yet implemented."
+	023 Move X20, [X31+48]
+	024 Move X19, [X31+56]
+	025 Move X30, [X31+32]
+	026 Add X31, X31, 64
+	027 Return X0
+	028 Move X0, 0x4FC000
+	029 Move X0, [X0+1400]
+	030 Call 0x1C17D08
+	031 Call 0x1C17F10
+	032 Move X19, X0
+	033 Move X0, 0x55F000
+	034 Move X0, [X0+2688]
+	035 Call 0x1C17D08
+	036 Move X20, X0
+	037 Move X0, 0x528000
+	038 Move X0, [X0+1088]
+	039 Call 0x1C17D08
+	040 Move X2, X0
+	041 Move X0, X19
+	042 Move X1, X20
+	043 Move X3, X31
+	044 Call ArgumentException..ctor, X0, X1, X2
+	045 Move X0, 0x55F000
+	046 Move X0, [X0+2696]
+	047 Call 0x1C17D08
+	048 Move X1, X0
+	049 Move X0, X19
+	050 Call 0x1C17DEC
+	051 Call 0x3EB2B20
+
+Method: Unity.Profiling.LowLevel.Unsafe.ProfilerRecorderHandle GetByName__Unmanaged(Unity.Profiling.ProfilerCategory category, System.Byte* name, System.Int32 nameLen)
+
+Disassembly:
+	0x03C002F8 LDP X20, X19, [X31 + 0x10]
+	0x03C002FC LDR X30, [X31], #0x20
+	0x03C00300 BR X1
+	0x03C00304 STR X30, [X31 - 0x20]!
+	0x03C00308 STP X20, X19, [X31 + 0x10]
+	0x03C0030C ADRP X20, 0x7E3000
+	0x03C00310 LDR X1, [X20 + 0xD70]
+	0x03C00314 MOV X19, X0
+	0x03C00318 CBNZ X1, 0x3C00330
+	0x03C0031C ADRP X0, 0xFFFFFFFFFCF08000
+	0x03C00320 ADD X0, X0, 0xD1C
+	0x03C00324 BL 0x1C16CB8
+	0x03C00328 MOV X1, X0
+	0x03C0032C STR X0, [X20 + 0xD70]
+	0x03C00330 MOV X0, X19
+	0x03C00334 LDP X20, X19, [X31 + 0x10]
+	0x03C00338 LDR X30, [X31], #0x20
+	0x03C0033C BR X1
+	0x03C00340 STR X30, [X31 - 0x20]!
+	0x03C00344 STP X20, X19, [X31 + 0x10]
+	0x03C00348 CBZ X0, 0x3C0039C
+	0x03C0034C MOV X1, X31
+	0x03C00350 MOV X19, X0
+	0x03C00354 BL 0x33970C4
+	0x03C00358 TBZ X0, 0x0, 0x3C0038C
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], X30
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x7E4000
+	007 Move X8, [X21+3216]
+	008 Move W19, W2
+	009 Move X20, X1
+	010 NotImplemented "Instruction STRH not yet implemented."
+	011 Move [X31], X31
+	012 Compare X8, 0
+	013 JumpIfNotEqual {19}
+	014 Move X0, -51204096
+	015 Add X0, X0, 1125
+	016 Call 0x1C17CB8
+	017 Move X8, X0
+	018 Move [X21+3216], X0
+	019 Add X0, X31, 8
+	020 Add X3, X31, 0
+	021 Move X1, X20
+	022 Move W2, W19
+	023 NotImplemented "Instruction BLR not yet implemented."
+	024 Move X0, [X31]
+	025 Move X20, [X31+32]
+	026 Move X19, [X31+40]
+	027 Move X30, [X31+16]
+	028 Move X21, [X31+24]
+	029 Add X31, X31, 48
+	030 Return X0
+
+Method: Unity.Profiling.LowLevel.Unsafe.ProfilerRecorderDescription GetDescriptionInternal(Unity.Profiling.LowLevel.Unsafe.ProfilerRecorderHandle handle)
+
+Disassembly:
+	0x03C00274 MOV X1, X0
+	0x03C00278 STR X0, [X20 + 0xD58]
+	0x03C0027C MOV X0, X19
+	0x03C00280 LDP X20, X19, [X31 + 0x10]
+	0x03C00284 LDR X30, [X31], #0x20
+	0x03C00288 BR X1
+	0x03C0028C STR X30, [X31 - 0x20]!
+	0x03C00290 STP X20, X19, [X31 + 0x10]
+	0x03C00294 ADRP X20, 0x7E3000
+	0x03C00298 LDR X1, [X20 + 0xD60]
+	0x03C0029C MOV X19, X0
+	0x03C002A0 CBNZ X1, 0x3C002B8
+	0x03C002A4 ADRP X0, 0xFFFFFFFFFCF06000
+	0x03C002A8 ADD X0, X0, 0xDB0
+	0x03C002AC BL 0x1C16CB8
+	0x03C002B0 MOV X1, X0
+	0x03C002B4 STR X0, [X20 + 0xD60]
+	0x03C002B8 MOV X0, X19
+	0x03C002BC LDP X20, X19, [X31 + 0x10]
+	0x03C002C0 LDR X30, [X31], #0x20
+	0x03C002C4 BR X1
+	0x03C002C8 STR X30, [X31 - 0x20]!
+	0x03C002CC STP X20, X19, [X31 + 0x10]
+	0x03C002D0 ADRP X20, 0x7E3000
+	0x03C002D4 LDR X1, [X20 + 0xD68]
+	0x03C002D8 MOV X19, X0
+	0x03C002DC CBNZ X1, 0x3C002F4
+	0x03C002E0 ADRP X0, 0xFFFFFFFFFCF0C000
+	0x03C002E4 ADD X0, X0, 0xB75
+	0x03C002E8 BL 0x1C16CB8
+	0x03C002EC MOV X1, X0
+	0x03C002F0 STR X0, [X20 + 0xD68]
+	0x03C002F4 MOV X0, X19
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+48], X30
+	003 Move [X31+56], X21
+	004 Move [X31+64], X20
+	005 Move [X31+72], X19
+	006 NotImplemented "Instruction MRS not yet implemented."
+	007 Move X19, X8
+	008 Move X8, [X20+40]
+	009 Move X21, 0x7E4000
+	010 Move [X31+40], X8
+	011 Move X8, [X21+3224]
+	012 Move [X31+8], X0
+	013 Move [X31+16], X31
+	014 Move [X31+24], X31
+	015 Move [X31+32], X31
+	016 Compare X8, 0
+	017 JumpIfNotEqual {23}
+	018 Move X0, -51343360
+	019 Add X0, X0, 3150
+	020 Call 0x1C17CB8
+	021 Move X8, X0
+	022 Move [X21+3224], X0
+	023 Add X0, X31, 8
+	024 Add X1, X31, 16
+	025 NotImplemented "Instruction BLR not yet implemented."
+	026 Move X8, [X31+32]
+	027 Move V0, [X31+1]
+	028 Move [X19+16], X8
+	029 Move [X19], V0
+	030 Move X8, [X20+40]
+	031 Move X9, [X31+40]
+	032 NotImplemented "Instruction CMP not yet implemented."
+	033 Move X20, [X31+64]
+	034 Move X19, [X31+72]
+	035 Move X30, [X31+48]
+	036 Move X21, [X31+56]
+	037 Add X31, X31, 80
+	038 Return X0
+	039 Call 0x3EB2B20
+
+Method: System.Void GetByName__Unmanaged_Injected(ref Unity.Profiling.ProfilerCategory category, System.Byte* name, System.Int32 nameLen, out Unity.Profiling.LowLevel.Unsafe.ProfilerRecorderHandle ret)
+
+Disassembly:
+	0x03C0035C ADRP X20, 0x7E3000
+	0x03C00360 LDR X1, [X20 + 0xD60]
+	0x03C00364 CBNZ X1, 0x3C0037C
+	0x03C00368 ADRP X0, 0xFFFFFFFFFCF06000
+	0x03C0036C ADD X0, X0, 0xDB0
+	0x03C00370 BL 0x1C16CB8
+	0x03C00374 MOV X1, X0
+	0x03C00378 STR X0, [X20 + 0xD60]
+	0x03C0037C MOV X0, X19
+	0x03C00380 LDP X20, X19, [X31 + 0x10]
+	0x03C00384 LDR X30, [X31], #0x20
+	0x03C00388 BR X1
+	0x03C0038C LDP X20, X19, [X31 + 0x10]
+	0x03C00390 MOV W0, W31
+	0x03C00394 LDR X30, [X31], #0x20
+	0x03C00398 RET
+	0x03C0039C BL 0x1C16F20
+	0x03C003A0 STP X30, X25, [X31 - 0x40]!
+	0x03C003A4 STP X24, X23, [X31 + 0x10]
+	0x03C003A8 STP X22, X21, [X31 + 0x20]
+	0x03C003AC STP X20, X19, [X31 + 0x30]
+	0x03C003B0 ADRP X20, 0x7E3000
+	0x03C003B4 LDRB W8, [X20 + 0xD78]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X23, 0x7E4000
+	008 Move X4, [X23+3216]
+	009 Move X19, X3
+	010 Move W20, W2
+	011 Move X21, X1
+	012 Move X22, X0
+	013 Compare X4, 0
+	014 JumpIfNotEqual {20}
+	015 Move X0, -51204096
+	016 Add X0, X0, 1125
+	017 Call 0x1C17CB8
+	018 Move X4, X0
+	019 Move [X23+3216], X0
+	020 Move X0, X22
+	021 Move X1, X21
+	022 Move W2, W20
+	023 Move X3, X19
+	024 Move X20, [X31+32]
+	025 Move X19, [X31+40]
+	026 Move X22, [X31+16]
+	027 Move X21, [X31+24]
+	028 Move X30, [X31+48]
+	029 Move X23, [X31+56]
+	030 CallNoReturn X4
+
+Method: System.Void GetDescriptionInternal_Injected(ref Unity.Profiling.LowLevel.Unsafe.ProfilerRecorderHandle handle, out Unity.Profiling.LowLevel.Unsafe.ProfilerRecorderDescription ret)
+
+Disassembly:
+	0x03C003B8 MOV X19, X1
+	0x03C003BC MOV X21, X0
+	0x03C003C0 TBNZ X8, 0x0, 0x3C003FC
+	0x03C003C4 ADRP X0, 0x55E000
+	0x03C003C8 LDR X0, [X0 + 0xAA8]
+	0x03C003CC BL 0x1C16CF4
+	0x03C003D0 ADRP X0, 0x55E000
+	0x03C003D4 LDR X0, [X0 + 0xAB0]
+	0x03C003D8 BL 0x1C16CF4
+	0x03C003DC ADRP X0, 0x55E000
+	0x03C003E0 LDR X0, [X0 + 0xAB8]
+	0x03C003E4 BL 0x1C16CF4
+	0x03C003E8 ADRP X0, 0x4F3000
+	0x03C003EC LDR X0, [X0 + 0x988]
+	0x03C003F0 BL 0x1C16CF4
+	0x03C003F4 MOVZ W8, 0x1
+	0x03C003F8 STRB W8, [X20 + 0xD78]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x7E4000
+	006 Move X2, [X21+3224]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Compare X2, 0
+	010 JumpIfNotEqual {16}
+	011 Move X0, -51343360
+	012 Add X0, X0, 3150
+	013 Call 0x1C17CB8
+	014 Move X2, X0
+	015 Move [X21+3224], X0
+	016 Move X0, X20
+	017 Move X1, X19
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Move X21, [X31+40]
+	022 CallNoReturn X2
+

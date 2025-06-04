@@ -1,0 +1,140 @@
+Type: ExitGames.Client.Photon.SocketTcpAsync/ReceiveContext
+
+Method: System.Void .ctor(System.Net.Sockets.Socket socket, System.Byte[] headerBuffer, System.Byte[] messageBuffer)
+
+Disassembly:
+	0x0351A4E4 BL 0x1C16D08
+	0x0351A4E8 MOV X23, X0
+	0x0351A4EC CBZ X0, 0x351A504
+	0x0351A4F0 LDR X8, [X21]
+	0x0351A4F4 MOV X0, X23
+	0x0351A4F8 LDR X1, [X8 + 0x40]
+	0x0351A4FC BL 0x1C16E00
+	0x0351A500 CBZ X0, 0x351AA74
+	0x0351A504 LDR W8, [X21 + 0x18]
+	0x0351A508 CMP W8, 0x2
+	0x0351A50C B.LS 0x351AA70
+	0x0351A510 STR X23, [X21 + 0x30]
+	0x0351A514 LDR X8, [X19 + 0x58]
+	0x0351A518 CBZ X8, 0x351AA6C
+	0x0351A51C LDRB W8, [X8 + 0x51]
+	0x0351A520 ADRP X9, 0xC1A000
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, X1
+	007 Move X1, X31
+	008 Move X19, X3
+	009 Move X20, X2
+	010 Move X22, X0
+	011 Call Object..ctor, X0
+	012 Move [X22+32], X20
+	013 Move [X22+48], X19
+	014 Move [X22+16], X21
+	015 Move X20, [X31+32]
+	016 Move X19, [X31+40]
+	017 Move X22, [X31+16]
+	018 Move X21, [X31+24]
+	019 Move X30, [X31+48]
+	020 Return 
+
+Method: System.Boolean get_ReadingHeader()
+
+Disassembly:
+	0x0351AC24 B.LT 0x351AB98
+	0x0351AC28 B 0x351AEE4
+	0x0351AC2C BL 0x1C16F20
+	0x0351AC30 B 0x351B058
+
+ISIL:
+	001 Move W8, [X0+40]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Boolean get_ReadingMessage()
+
+Disassembly:
+	0x0351AC40 B 0x351B058
+	0x0351AC44 B 0x351AC54
+	0x0351AC48 B 0x351AC54
+	0x0351AC4C B 0x351AC54
+
+ISIL:
+	001 Move W8, [X0+40]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Byte[] get_CurrentBuffer()
+
+Disassembly:
+	0x0351A524 ADRP X10, 0xC1A000
+	0x0351A528 LDR X9, [X9 + 0x450]
+	0x0351A52C LDR X10, [X10 + 0x458]
+	0x0351A530 CMP W8, 0x0
+	0x0351A534 CSEL X0, X10, X9, EQ
+	0x0351A538 BL 0x1C16D08
+	0x0351A53C MOV X23, X0
+
+ISIL:
+	001 Move W8, [X0+40]
+	002 Move W9, 48
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move W8, 32
+	005 NotImplemented "Instruction CSEL not yet implemented."
+	006 Move X0, [X0]
+	007 Return X0
+
+Method: System.Int32 get_CurrentOffset()
+
+Disassembly:
+	0x0351A540 CBZ X0, 0x351A558
+	0x0351A544 LDR X8, [X21]
+	0x0351A548 MOV X0, X23
+	0x0351A54C LDR X1, [X8 + 0x40]
+	0x0351A550 BL 0x1C16E00
+	0x0351A554 CBZ X0, 0x351AA74
+	0x0351A558 LDR W8, [X21 + 0x18]
+
+ISIL:
+	001 Move W8, [X0+40]
+	002 Move W9, 44
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move W8, 24
+	005 NotImplemented "Instruction CSEL not yet implemented."
+	006 Move W0, [X0]
+	007 Return X0
+
+Method: System.Int32 get_CurrentExpected()
+
+Disassembly:
+	0x0351A55C CMP W8, 0x3
+	0x0351A560 B.LS 0x351AA70
+	0x0351A564 MOV X0, X22
+	0x0351A568 MOV X1, X21
+	0x0351A56C MOV X2, X31
+
+ISIL:
+	001 Move W8, [X0+40]
+	002 Move W9, 9
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSEL not yet implemented."
+	005 Return X0
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x0351AC34 BL 0x1C16F20
+	0x0351AC38 B 0x351B058
+	0x0351AC3C BL 0x1C16F20
+
+ISIL:
+	001 Move [X0+24], W31
+	002 Move [X0+40], X31
+	003 Return 
+

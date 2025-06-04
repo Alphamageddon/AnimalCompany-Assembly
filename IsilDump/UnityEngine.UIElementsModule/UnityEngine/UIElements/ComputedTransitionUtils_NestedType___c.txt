@@ -1,0 +1,342 @@
+Type: UnityEngine.UIElements.ComputedTransitionUtils/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x03DE57AC LDR X9, [X8 + 0x338]
+	0x03DE57B0 LDR X3, [X8 + 0x340]
+	0x03DE57B4 BLR X9
+	0x03DE57B8 LDR X1, [X19 + 0x20]
+	0x03DE57BC CBZ X1, 0x3DE57EC
+	0x03DE57C0 LDR X19, [X1 + 0x2B8]
+	0x03DE57C4 ADD X0, X1, 0x2C0
+	0x03DE57C8 MOV X1, X31
+	0x03DE57CC BL 0x3DC6B14
+	0x03DE57D0 CBZ X19, 0x3DE57EC
+	0x03DE57D4 MOV X0, X19
+	0x03DE57D8 MOV X1, X31
+	0x03DE57DC LDP X30, X19, [X31], #0x10
+	0x03DE57E0 B 0x3CE68E0
+	0x03DE57E4 LDP X30, X19, [X31], #0x10
+	0x03DE57E8 RET
+	0x03DE57EC BL 0x1C16F20
+	0x03DE57F0 STP X30, X19, [X31 - 0x10]!
+	0x03DE57F4 MOV X8, X1
+	0x03DE57F8 MOVZ W1, 0x7
+	0x03DE57FC AND X3, X2, 0x0
+	0x03DE5800 MOVK W1, 0x20000
+	0x03DE5804 MOV X2, X8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x604000
+	005 Move X20, 0x385000
+	006 Move W8, [X19+513]
+	007 Move X20, [X20+2064]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x385000
+	013 Move X0, [X0+2064]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+513], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03DE5808 MOV X19, X0
+	0x03DE580C BL 0x3DE5128
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Single <ConvertTransitionFunction>b__12_0(System.Single t)
+
+Disassembly:
+	0x03DE5810 TBZ X0, 0x0, 0x3DE5870
+	0x03DE5814 LDR X1, [X19 + 0x20]
+	0x03DE5818 CBZ X1, 0x3DE5878
+	0x03DE581C LDR X0, [X1 + 0x3A0]
+	0x03DE5820 CBZ X0, 0x3DE5840
+	0x03DE5824 LDR X8, [X0]
+	0x03DE5828 MOVZ W2, 0x28
+	0x03DE582C LDR X9, [X8 + 0x338]
+	0x03DE5830 LDR X3, [X8 + 0x340]
+	0x03DE5834 BLR X9
+	0x03DE5838 LDR X1, [X19 + 0x20]
+	0x03DE583C CBZ X1, 0x3DE5878
+
+ISIL:
+	001 Move X8, -53452800
+	002 Move V1, [X8+716]
+	003 Move X8, -53452800
+	004 Move V2, [X8+776]
+	005 Move X8, -53456896
+	006 Move V3, [X8+4076]
+	007 Multiply S1, S0, S1
+	008 Add S1, S1, S2
+	009 Multiply S1, S1, S0
+	010 Add S1, S1, S3
+	011 Multiply S0, S1, S0
+	012 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_1(System.Single t)
+
+Disassembly:
+	0x03DE5840 LDR X19, [X1 + 0x2B8]
+	0x03DE5844 ADD X0, X1, 0x2C0
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InQuad, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_2(System.Single t)
+
+Disassembly:
+	0x03DE5848 MOV X1, X31
+	0x03DE584C BL 0x3DC67F4
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.OutQuad, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_3(System.Single t)
+
+Disassembly:
+	0x03DE5850 MOV X1, X31
+	0x03DE5854 BL 0x3DFFF30
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InOutQuad, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_4(System.Single t)
+
+Disassembly:
+	0x03DE5858 CBZ X19, 0x3DE5878
+	0x03DE585C MOV X1, X0
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.Linear, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_5(System.Single t)
+
+Disassembly:
+	0x03DE5860 MOV X0, X19
+	0x03DE5864 MOV X2, X31
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InSine, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_6(System.Single t)
+
+Disassembly:
+	0x03DE5868 LDP X30, X19, [X31], #0x10
+	0x03DE586C B 0x3CE66C8
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.OutSine, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_7(System.Single t)
+
+Disassembly:
+	0x03DE5870 LDP X30, X19, [X31], #0x10
+	0x03DE5874 RET
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InOutSine, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_8(System.Single t)
+
+Disassembly:
+	0x03DE5878 BL 0x1C16F20
+	0x03DE587C SUB X31, X31, 0x30
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InCubic, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_9(System.Single t)
+
+Disassembly:
+	0x03DE5880 STP X30, X19, [X31 + 0x20]
+	0x03DE5884 LDR W8, [X1 + 0x10]
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.OutCubic, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_10(System.Single t)
+
+Disassembly:
+	0x03DE5888 LDR V0, [X1]
+	0x03DE588C ADD X2, X31, 0x0
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InOutCubic, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_11(System.Single t)
+
+Disassembly:
+	0x03DE5890 MOVZ W1, 0x10000
+	0x03DE5894 MOV X19, X0
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InCirc, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_12(System.Single t)
+
+Disassembly:
+	0x03DE5898 STR W8, [X31 + 0x10]
+	0x03DE589C STR V0, [X31]
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.OutCirc, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_13(System.Single t)
+
+Disassembly:
+	0x03DE58A0 BL 0x3DE4EBC
+	0x03DE58A4 TBZ X0, 0x0, 0x3DE58CC
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InOutCirc, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_14(System.Single t)
+
+Disassembly:
+	0x03DE58A8 LDR X1, [X19 + 0x20]
+	0x03DE58AC CBZ X1, 0x3DE58D8
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InElastic, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_15(System.Single t)
+
+Disassembly:
+	0x03DE58B0 LDR X0, [X1 + 0x3A0]
+	0x03DE58B4 CBZ X0, 0x3DE58CC
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.OutElastic, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_16(System.Single t)
+
+Disassembly:
+	0x03DE58B8 LDR X8, [X0]
+	0x03DE58BC MOVZ W2, 0x2030
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InOutElastic, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_17(System.Single t)
+
+Disassembly:
+	0x03DE58C0 LDR X9, [X8 + 0x338]
+	0x03DE58C4 LDR X3, [X8 + 0x340]
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InBack, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_18(System.Single t)
+
+Disassembly:
+	0x03DE58C8 BLR X9
+	0x03DE58CC LDP X30, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.OutBack, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_19(System.Single t)
+
+Disassembly:
+	0x03DE58D0 ADD X31, X31, 0x30
+	0x03DE58D4 RET
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InOutBack, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_20(System.Single t)
+
+Disassembly:
+	0x03DE58D8 BL 0x1C16F20
+	0x03DE58DC SUB X31, X31, 0x30
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InBounce, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_21(System.Single t)
+
+Disassembly:
+	0x03DE58E0 STP X30, X21, [X31 + 0x10]
+	0x03DE58E4 STP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.OutBounce, V0
+	003 Return V0
+
+Method: System.Single <ConvertTransitionFunction>b__12_22(System.Single t)
+
+Disassembly:
+	0x03DE58E8 ADRP X21, 0x603000
+	0x03DE58EC ADRP X20, 0x384000
+
+ISIL:
+	001 Move X0, X31
+	002 Call Easing.InOutBounce, V0
+	003 Return V0
+

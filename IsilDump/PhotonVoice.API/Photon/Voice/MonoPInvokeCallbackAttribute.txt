@@ -1,0 +1,30 @@
+Type: Photon.Voice.MonoPInvokeCallbackAttribute
+
+Method: System.Void .ctor(System.Type t)
+
+Disassembly:
+	0x035585E0 STR X0, [X20 + 0xC0]
+	0x035585E4 LDR X0, [X26]
+	0x035585E8 MOVZ W1, 0x6
+	0x035585EC BL 0x1C16D6C
+	0x035585F0 CBZ X0, 0x35587A4
+	0x035585F4 LDR W8, [X0 + 0x18]
+	0x035585F8 MOV X23, X0
+	0x035585FC CBZ W8, 0x35587A0
+	0x03558600 ADRP X8, 0xBDD000
+	0x03558604 LDR X8, [X8 + 0x530]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

@@ -1,0 +1,39 @@
+Type: UnityEngine.InputSystem.InputActionRebindingExtensions/RebindingOperation/<>c__DisplayClass32_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03744564 ADRP X0, 0xA01000
+	0x03744568 LDR X0, [X0 + 0x760]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <WithTargetBinding>b__0(UnityEngine.InputSystem.InputControlScheme x)
+
+Disassembly:
+	0x03745F30 MOV X2, X31
+	0x03745F34 MOV X21, X0
+	0x03745F38 BL 0x373A4F8
+	0x03745F3C CBZ X21, 0x3745F6C
+	0x03745F40 MOV X0, X21
+	0x03745F44 MOV X1, X31
+	0x03745F48 BL 0x373A074
+	0x03745F4C MOV X0, X20
+	0x03745F50 MOV X1, X21
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+16]
+	003 Compare X0, 0
+	004 JumpIfEqual {11}
+	005 Move X1, [X1+8]
+	006 Move W2, 3
+	007 Move X3, X31
+	008 Move X30, [X31+16]
+	009 Call String.Equals, X0, X1, X2
+	010 Return X0
+	011 Call 0x1C17F20
+

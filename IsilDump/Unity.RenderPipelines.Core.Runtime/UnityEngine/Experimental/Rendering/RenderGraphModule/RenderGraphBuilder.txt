@@ -1,0 +1,1032 @@
+Type: UnityEngine.Experimental.Rendering.RenderGraphModule.RenderGraphBuilder
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle UseColorBuffer(in UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle input, System.Int32 index)
+
+Disassembly:
+	0x03997828 BL 0x3EB1AE0
+	0x0399782C ADRP X8, 0x7B9000
+	0x03997830 LDR X8, [X8 + 0xE40]
+	0x03997834 ADD X0, X31, 0x8
+	0x03997838 LDR X1, [X8]
+	0x0399783C BL 0x2BC434C
+	0x03997840 CBZ X20, 0x39977F0
+	0x03997844 MOV X0, X20
+	0x03997848 BL 0x1C16F18
+	0x0399784C MOV X20, X31
+	0x03997850 B 0x3997858
+	0x03997854 MOV X19, X0
+	0x03997858 ADRP X8, 0x7B9000
+	0x0399785C LDR X8, [X8 + 0xE40]
+	0x03997860 LDR X1, [X8]
+	0x03997864 ADD X0, X31, 0x8
+	0x03997868 BL 0x2BC434C
+	0x0399786C CBNZ X20, 0x3997878
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, X0
+	006 Move X0, [X0+8]
+	007 Compare X0, 0
+	008 JumpIfEqual {24}
+	009 Move W19, W2
+	010 Move X20, X1
+	011 Call RenderGraphResourceRegistry.IncrementWriteCount, X0, X1
+	012 Move X0, [X21]
+	013 Compare X0, 0
+	014 JumpIfEqual {24}
+	015 Move X1, [X20]
+	016 Move W2, W19
+	017 Call RenderGraphPass.SetColorBuffer, X0, X1, X2
+	018 Move X0, [X20]
+	019 Move X20, [X31+16]
+	020 Move X19, [X31+24]
+	021 Move X30, [X31+32]
+	022 Move X21, [X31+40]
+	023 Return X0
+	024 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle UseDepthBuffer(in UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle input, UnityEngine.Experimental.Rendering.RenderGraphModule.DepthAccess flags)
+
+Disassembly:
+	0x03997A00 ADRP X0, 0x7B9000
+	0x03997A04 LDR X0, [X0 + 0xE70]
+	0x03997A08 BL 0x1C16CF4
+	0x03997A0C ADRP X0, 0x7B9000
+	0x03997A10 LDR X0, [X0 + 0xE78]
+	0x03997A14 BL 0x1C16CF4
+	0x03997A18 ADRP X0, 0x7B9000
+	0x03997A1C LDR X0, [X0 + 0xE80]
+	0x03997A20 BL 0x1C16CF4
+	0x03997A24 ADRP X0, 0x7B9000
+	0x03997A28 LDR X0, [X0 + 0x8E0]
+	0x03997A2C BL 0x1C16CF4
+	0x03997A30 ADRP X0, 0x7B9000
+	0x03997A34 LDR X0, [X0 + 0xE88]
+	0x03997A38 BL 0x1C16CF4
+	0x03997A3C ADRP X0, 0x7B9000
+	0x03997A40 LDR X0, [X0 + 0x8C0]
+	0x03997A44 BL 0x1C16CF4
+	0x03997A48 ADRP X0, 0x7B9000
+	0x03997A4C LDR X0, [X0 + 0xE90]
+	0x03997A50 BL 0x1C16CF4
+	0x03997A54 MOVZ W8, 0x1
+	0x03997A58 STRB W8, [X20 + 0xAE2]
+	0x03997A5C LDR X0, [X21]
+	0x03997A60 ADRP X22, 0x7B9000
+	0x03997A64 ADRP X24, 0x7B9000
+	0x03997A68 ADRP X23, 0x7B9000
+	0x03997A6C ADRP X20, 0x7B9000
+	0x03997A70 LDR W8, [X0 + 0xE0]
+	0x03997A74 LDR X22, [X22 + 0xE90]
+	0x03997A78 LDR X24, [X24 + 0xE70]
+	0x03997A7C LDR X23, [X23 + 0x8E0]
+	0x03997A80 LDR X20, [X20 + 0xE78]
+	0x03997A84 CBNZ W8, 0x3997A90
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, W2
+	006 Move X19, X1
+	007 Move X21, X0
+	008 Move TEMP, X2
+	009 And TEMP, TEMP, 2
+	010 Compare TEMP, 2
+	011 JumpIfNotEqual {17}
+	012 Move X0, [X21+8]
+	013 Compare X0, 0
+	014 JumpIfEqual {54}
+	015 Move X1, X19
+	016 Call RenderGraphResourceRegistry.IncrementWriteCount, X0, X1
+	017 Move TEMP, X20
+	018 And TEMP, TEMP, 1
+	019 Compare TEMP, 1
+	020 JumpIfNotEqual {42}
+	021 Move X0, [X21+8]
+	022 Compare X0, 0
+	023 JumpIfEqual {54}
+	024 Move X1, X19
+	025 Call RenderGraphResourceRegistry.IsRenderGraphResourceImported, X0, X1
+	026 Move TEMP, X0
+	027 And TEMP, TEMP, 1
+	028 Compare TEMP, 1
+	029 JumpIfEqual {42}
+	030 Move X0, [X21+8]
+	031 Compare X0, 0
+	032 JumpIfEqual {54}
+	033 Move X1, X19
+	034 Call RenderGraphResourceRegistry.TextureNeedsFallback, X0, X1
+	035 Move TEMP, X0
+	036 And TEMP, TEMP, 1
+	037 Compare TEMP, 1
+	038 JumpIfNotEqual {42}
+	039 Move X0, X21
+	040 Move X1, X19
+	041 Call RenderGraphBuilder.WriteTexture, X0, X1
+	042 Move X0, [X21]
+	043 Compare X0, 0
+	044 JumpIfEqual {54}
+	045 Move X1, [X19]
+	046 Move W2, W20
+	047 Call RenderGraphPass.SetDepthBuffer, X0, X1, X2
+	048 Move X0, [X19]
+	049 Move X20, [X31+16]
+	050 Move X19, [X31+24]
+	051 Move X30, [X31+32]
+	052 Move X21, [X31+40]
+	053 Return X0
+	054 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle ReadTexture(in UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle input)
+
+Disassembly:
+	0x03997BA8 STR X20, [X8 + 0x20]
+	0x03997BAC LDR X0, [X21]
+	0x03997BB0 LDR X25, [X19 + 0x60]
+	0x03997BB4 BL 0x1C16F10
+	0x03997BB8 LDR X1, [X22]
+	0x03997BBC MOV X20, X0
+	0x03997BC0 BL 0x30491FC
+	0x03997BC4 CBZ X25, 0x3997C14
+	0x03997BC8 CBZ X20, 0x3997BE0
+	0x03997BCC LDR X8, [X25]
+	0x03997BD0 MOV X0, X20
+	0x03997BD4 LDR X1, [X8 + 0x40]
+	0x03997BD8 BL 0x1C16E00
+	0x03997BDC CBZ X0, 0x3997C1C
+	0x03997BE0 LDR W8, [X25 + 0x18]
+	0x03997BE4 CMP X23, X8
+	0x03997BE8 B.CS 0x3997C18
+	0x03997BEC MOV W8, W31
+	0x03997BF0 ADD X9, X25, X23, 0x3, LSL
+	0x03997BF4 MOVZ W23, 0x1
+	0x03997BF8 STR X20, [X9 + 0x20]
+	0x03997BFC TBNZ X24, 0x0, 0x3997B18
+	0x03997C00 LDP X20, X19, [X31 + 0x30]
+	0x03997C04 LDP X22, X21, [X31 + 0x20]
+	0x03997C08 LDP X24, X23, [X31 + 0x10]
+	0x03997C0C LDP X30, X25, [X31], #0x40
+	0x03997C10 RET
+	0x03997C14 BL 0x1C16F20
+	0x03997C18 BL 0x1C16F28
+	0x03997C1C BL 0x1C16F44
+	0x03997C20 MOV X1, X31
+	0x03997C24 BL 0x1C16DEC
+	0x03997C28 STP X30, X25, [X31 - 0x40]!
+	0x03997C2C STP X24, X23, [X31 + 0x10]
+	0x03997C30 STP X22, X21, [X31 + 0x20]
+	0x03997C34 STP X20, X19, [X31 + 0x30]
+	0x03997C38 ADRP X20, 0xA4A000
+	0x03997C3C ADRP X21, 0x75C000
+	0x03997C40 LDRB W8, [X20 + 0xAE3]
+	0x03997C44 LDR X21, [X21 + 0x988]
+	0x03997C48 MOV X19, X0
+	0x03997C4C TBNZ X8, 0x0, 0x3997C94
+	0x03997C50 ADRP X0, 0x7B9000
+	0x03997C54 LDR X0, [X0 + 0xB88]
+	0x03997C58 BL 0x1C16CF4
+	0x03997C5C ADRP X0, 0x7B9000
+	0x03997C60 LDR X0, [X0 + 0xE98]
+	0x03997C64 BL 0x1C16CF4
+	0x03997C68 ADRP X0, 0x7B9000
+	0x03997C6C LDR X0, [X0 + 0x8C0]
+	0x03997C70 BL 0x1C16CF4
+	0x03997C74 ADRP X0, 0x7B9000
+	0x03997C78 LDR X0, [X0 + 0xA88]
+	0x03997C7C BL 0x1C16CF4
+	0x03997C80 ADRP X0, 0x75C000
+	0x03997C84 LDR X0, [X0 + 0x988]
+	0x03997C88 BL 0x1C16CF4
+
+ISIL:
+	001 Subtract X31, X31, 304
+	002 Move [X31+256], X29
+	003 Move [X31+264], X30
+	004 Move [X31+272], X22
+	005 Move [X31+280], X21
+	006 Move [X31+288], X20
+	007 Move [X31+296], X19
+	008 Move [X31+248], X31
+	009 Move X20, X0
+	010 Move X0, [X0+8]
+	011 Compare X0, 0
+	012 JumpIfEqual {78}
+	013 Move X19, X1
+	014 Call RenderGraphResourceRegistry.IsRenderGraphResourceImported, X0, X1
+	015 Move TEMP, X0
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {63}
+	019 Move X0, [X20+8]
+	020 Compare X0, 0
+	021 JumpIfEqual {78}
+	022 Move X1, X19
+	023 Call RenderGraphResourceRegistry.TextureNeedsFallback, X0, X1
+	024 Move TEMP, X0
+	025 And TEMP, TEMP, 1
+	026 Compare TEMP, 1
+	027 JumpIfNotEqual {63}
+	028 Move X0, [X20+8]
+	029 Compare X0, 0
+	030 JumpIfEqual {78}
+	031 Move X1, X19
+	032 Call RenderGraphResourceRegistry.GetTextureResource, X0, X1
+	033 Compare X0, 0
+	034 JumpIfEqual {78}
+	035 Move X8, -48930816
+	036 Move V0, [X8+187]
+	037 Move W8, 1
+	038 Move [X0+150], W8
+	039 Add X1, X0, 48
+	040 Move [X0+152], V0
+	041 Move X21, [X20+16]
+	042 Add X0, X31, 128
+	043 Move W2, 120
+	044 Call 0x3EB2AC0
+	045 Compare X21, 0
+	046 JumpIfEqual {78}
+	047 Add X0, X31, 8
+	048 Add X1, X31, 128
+	049 Move W2, 120
+	050 Call 0x3EB2AC0
+	051 Add X1, X31, 8
+	052 Add X2, X31, 248
+	053 Move X0, X21
+	054 Add X22, X31, 248
+	055 Call RenderGraph.GetImportedFallback, X0, X1, X2
+	056 Move TEMP, X0
+	057 And TEMP, TEMP, 1
+	058 Compare TEMP, 1
+	059 JumpIfEqual {69}
+	060 Move X0, X20
+	061 Move X1, X19
+	062 Call RenderGraphBuilder.WriteTexture, X0, X1
+	063 Move X0, [X20]
+	064 Compare X0, 0
+	065 JumpIfEqual {78}
+	066 Move X1, X19
+	067 Call RenderGraphPass.AddResourceRead, X0, X1
+	068 Move X22, X19
+	069 Move X0, [X22]
+	070 Move X20, [X31+288]
+	071 Move X19, [X31+296]
+	072 Move X22, [X31+272]
+	073 Move X21, [X31+280]
+	074 Move X29, [X31+256]
+	075 Move X30, [X31+264]
+	076 Add X31, X31, 304
+	077 Return X0
+	078 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle WriteTexture(in UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle input)
+
+Disassembly:
+	0x03997B24 BL 0x1C16F10
+	0x03997B28 LDR X1, [X22]
+	0x03997B2C MOV X20, X0
+	0x03997B30 BL 0x30491FC
+	0x03997B34 CBZ X25, 0x3997C14
+	0x03997B38 CBZ X20, 0x3997B50
+	0x03997B3C LDR X8, [X25]
+	0x03997B40 MOV X0, X20
+	0x03997B44 LDR X1, [X8 + 0x40]
+	0x03997B48 BL 0x1C16E00
+	0x03997B4C CBZ X0, 0x3997C1C
+	0x03997B50 LDR W8, [X25 + 0x18]
+	0x03997B54 CMP X23, X8
+	0x03997B58 B.CS 0x3997C18
+	0x03997B5C ADD X8, X25, X23, 0x3, LSL
+	0x03997B60 STR X20, [X8 + 0x20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, X0
+	005 Move X0, [X0+8]
+	006 Compare X0, 0
+	007 JumpIfEqual {20}
+	008 Move X19, X1
+	009 Call RenderGraphResourceRegistry.IncrementWriteCount, X0, X1
+	010 Move X0, [X20]
+	011 Compare X0, 0
+	012 JumpIfEqual {20}
+	013 Move X1, X19
+	014 Call RenderGraphPass.AddResourceWrite, X0, X1
+	015 Move X0, [X19]
+	016 Move X20, [X31+16]
+	017 Move X19, [X31+24]
+	018 Move X30, [X31+32]
+	019 Return X0
+	020 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle ReadWriteTexture(in UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle input)
+
+Disassembly:
+	0x03997E7C STP X30, X21, [X31 - 0x20]!
+	0x03997E80 STP X20, X19, [X31 + 0x10]
+	0x03997E84 ADRP X20, 0xA4A000
+	0x03997E88 ADRP X21, 0x787000
+	0x03997E8C LDRB W8, [X20 + 0xB2A]
+	0x03997E90 LDR X21, [X21 + 0x730]
+	0x03997E94 MOV X19, X0
+	0x03997E98 TBNZ X8, 0x0, 0x3997EB0
+	0x03997E9C ADRP X0, 0x787000
+	0x03997EA0 LDR X0, [X0 + 0x730]
+	0x03997EA4 BL 0x1C16CF4
+	0x03997EA8 MOVZ W8, 0x1
+	0x03997EAC STRB W8, [X20 + 0xB2A]
+	0x03997EB0 LDR X0, [X21]
+	0x03997EB4 LDR W8, [X0 + 0xE0]
+	0x03997EB8 CBNZ W8, 0x3997EC0
+	0x03997EBC BL 0x1C16DFC
+	0x03997EC0 LDR W0, [X19 + 0x4]
+	0x03997EC4 LDP X20, X19, [X31 + 0x10]
+	0x03997EC8 LDP X30, X21, [X31], #0x20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, X0
+	005 Move X0, [X0+8]
+	006 Compare X0, 0
+	007 JumpIfEqual {25}
+	008 Move X19, X1
+	009 Call RenderGraphResourceRegistry.IncrementWriteCount, X0, X1
+	010 Move X0, [X20]
+	011 Compare X0, 0
+	012 JumpIfEqual {25}
+	013 Move X1, X19
+	014 Call RenderGraphPass.AddResourceWrite, X0, X1
+	015 Move X0, [X20]
+	016 Compare X0, 0
+	017 JumpIfEqual {25}
+	018 Move X1, X19
+	019 Call RenderGraphPass.AddResourceRead, X0, X1
+	020 Move X0, [X19]
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X30, [X31+32]
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle CreateTransientTexture(in UnityEngine.Experimental.Rendering.RenderGraphModule.TextureDesc desc)
+
+Disassembly:
+	0x03997ECC RET
+	0x03997ED0 STR X30, [X31 - 0x20]!
+	0x03997ED4 STP X20, X19, [X31 + 0x10]
+	0x03997ED8 ADRP X20, 0xA4A000
+	0x03997EDC ADRP X19, 0x7B9000
+	0x03997EE0 LDRB W8, [X20 + 0xAE9]
+	0x03997EE4 LDR X19, [X19 + 0xEA0]
+	0x03997EE8 TBNZ X8, 0x0, 0x3997F00
+	0x03997EEC ADRP X0, 0x7B9000
+	0x03997EF0 LDR X0, [X0 + 0xEA0]
+	0x03997EF4 BL 0x1C16CF4
+	0x03997EF8 MOVZ W8, 0x1
+	0x03997EFC STRB W8, [X20 + 0xAE9]
+	0x03997F00 LDR X0, [X19]
+	0x03997F04 LDR W8, [X0 + 0xE0]
+	0x03997F08 CBNZ W8, 0x3997F14
+	0x03997F0C BL 0x1C16DFC
+	0x03997F10 LDR X0, [X19]
+	0x03997F14 LDR X8, [X0 + 0xB8]
+	0x03997F18 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X0]
+	005 Compare X8, 0
+	006 JumpIfEqual {25}
+	007 Move X19, X0
+	008 Move X0, [X0+8]
+	009 Compare X0, 0
+	010 JumpIfEqual {25}
+	011 Move W2, [X8+24]
+	012 Call RenderGraphResourceRegistry.CreateTexture, X0, X1, X2
+	013 Move [X31+8], X0
+	014 Move X20, X0
+	015 Move X0, [X19]
+	016 Compare X0, 0
+	017 JumpIfEqual {25}
+	018 Add X1, X31, 8
+	019 Call RenderGraphPass.AddTransientResource, X0, X1
+	020 Move X0, X20
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X30, [X31+32]
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle CreateTransientTexture(in UnityEngine.Experimental.Rendering.RenderGraphModule.TextureHandle texture)
+
+Disassembly:
+	0x03998014 LDR X20, [X20 + 0xEA0]
+	0x03998018 TBNZ X8, 0x0, 0x3998030
+	0x0399801C ADRP X0, 0x7B8000
+	0x03998020 LDR X0, [X0 + 0xEA0]
+	0x03998024 BL 0x1C16CF4
+	0x03998028 MOVZ W8, 0x1
+	0x0399802C STRB W8, [X19 + 0xAEA]
+	0x03998030 LDR X0, [X20]
+	0x03998034 LDR W8, [X0 + 0xE0]
+	0x03998038 CBNZ W8, 0x3998040
+	0x0399803C BL 0x1C16DFC
+	0x03998040 ADD X0, X31, 0x8
+	0x03998044 BL 0x39980A4
+	0x03998048 TBZ X0, 0x0, 0x3998090
+	0x0399804C ADRP X19, 0xA49000
+	0x03998050 LDRB W8, [X19 + 0xB46]
+	0x03998054 CBNZ W8, 0x399806C
+	0x03998058 ADRP X0, 0x7B8000
+	0x0399805C LDR X0, [X0 + 0x960]
+	0x03998060 BL 0x1C16CF4
+	0x03998064 MOVZ W8, 0x1
+	0x03998068 STRB W8, [X19 + 0xB46]
+	0x0399806C ADRP X8, 0x7B8000
+	0x03998070 LDR X8, [X8 + 0x960]
+	0x03998074 LDR X8, [X8]
+	0x03998078 LDR X8, [X8 + 0xB8]
+	0x0399807C LDR X0, [X8]
+	0x03998080 CBZ X0, 0x39980A0
+	0x03998084 ADD X1, X31, 0x8
+	0x03998088 BL 0x39980F8
+	0x0399808C B 0x3998094
+	0x03998090 MOV X0, X31
+	0x03998094 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Subtract X31, X31, 160
+	002 Move [X31+128], X30
+	003 Move [X31+144], X20
+	004 Move [X31+152], X19
+	005 NotImplemented "Instruction MOVI not yet implemented."
+	006 Move [X31+112], X31
+	007 Move [X31+80], V0
+	008 Move [X31+88], V0
+	009 Move [X31+48], V0
+	010 Move [X31+56], V0
+	011 Move [X31+16], V0
+	012 Move [X31+24], V0
+	013 Move [X31], V0
+	014 Move X19, X0
+	015 Move X0, [X0+8]
+	016 Compare X0, 0
+	017 JumpIfEqual {42}
+	018 Add X8, X31, 0
+	019 Call RenderGraphResourceRegistry.GetTextureResourceDesc, X0, X1
+	020 Move X8, [X19]
+	021 Compare X8, 0
+	022 JumpIfEqual {42}
+	023 Move X0, [X19+8]
+	024 Compare X0, 0
+	025 JumpIfEqual {42}
+	026 Move W2, [X8+24]
+	027 Add X1, X31, 0
+	028 Call RenderGraphResourceRegistry.CreateTexture, X0, X1, X2
+	029 Move [X31+136], X0
+	030 Move X20, X0
+	031 Move X0, [X19]
+	032 Compare X0, 0
+	033 JumpIfEqual {42}
+	034 Add X1, X31, 136
+	035 Call RenderGraphPass.AddTransientResource, X0, X1
+	036 Move X0, X20
+	037 Move X20, [X31+144]
+	038 Move X19, [X31+152]
+	039 Move X30, [X31+128]
+	040 Add X31, X31, 160
+	041 Return X0
+	042 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.RendererListHandle UseRendererList(in UnityEngine.Experimental.Rendering.RenderGraphModule.RendererListHandle input)
+
+Disassembly:
+	0x03998098 LDR X30, [X31], #0x20
+	0x0399809C RET
+	0x039980A0 BL 0x1C16F20
+	0x039980A4 STP X30, X21, [X31 - 0x20]!
+	0x039980A8 STP X20, X19, [X31 + 0x10]
+	0x039980AC ADRP X20, 0xA49000
+	0x039980B0 ADRP X21, 0x786000
+	0x039980B4 LDRB W8, [X20 + 0xAEB]
+	0x039980B8 LDR X21, [X21 + 0x730]
+	0x039980BC MOV X19, X0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, [X0]
+	004 Compare X0, 0
+	005 JumpIfEqual {13}
+	006 Move X19, X1
+	007 Move X1, [X1]
+	008 Call RenderGraphPass.UseRendererList, X0, X1
+	009 Move X0, [X19]
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Return X0
+	013 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.ComputeBufferHandle ReadComputeBuffer(in UnityEngine.Experimental.Rendering.RenderGraphModule.ComputeBufferHandle input)
+
+Disassembly:
+	0x03998164 CBZ X0, 0x39981CC
+	0x03998168 LDR X0, [X0 + 0x48]
+	0x0399816C CBNZ X0, 0x39981BC
+	0x03998170 ADRP X0, 0x75B000
+	0x03998174 LDR X0, [X0 + 0x5B0]
+	0x03998178 BL 0x1C16D08
+	0x0399817C BL 0x1C16F10
+	0x03998180 MOV X19, X0
+	0x03998184 ADRP X0, 0x7B8000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, [X0]
+	004 Compare X0, 0
+	005 JumpIfEqual {12}
+	006 Move X19, X1
+	007 Call RenderGraphPass.AddResourceRead, X0, X1
+	008 Move X0, [X19]
+	009 Move X30, [X31+16]
+	010 Move X19, [X31+24]
+	011 Return X0
+	012 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.ComputeBufferHandle WriteComputeBuffer(in UnityEngine.Experimental.Rendering.RenderGraphModule.ComputeBufferHandle input)
+
+Disassembly:
+	0x03998188 LDR X0, [X0 + 0xEA8]
+	0x0399818C BL 0x1C16D08
+	0x03998190 MOV X1, X0
+	0x03998194 MOV X0, X19
+	0x03998198 MOV X2, X31
+	0x0399819C BL 0x337DF1C
+	0x039981A0 ADRP X0, 0x7B8000
+	0x039981A4 LDR X0, [X0 + 0xEB0]
+	0x039981A8 BL 0x1C16D08
+	0x039981AC MOV X1, X0
+	0x039981B0 MOV X0, X19
+	0x039981B4 BL 0x1C16DEC
+	0x039981B8 MOV X0, X31
+	0x039981BC LDP X20, X19, [X31 + 0x20]
+	0x039981C0 LDP X22, X21, [X31 + 0x10]
+	0x039981C4 LDR X30, [X31], #0x30
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, X0
+	005 Move X0, [X0]
+	006 Compare X0, 0
+	007 JumpIfEqual {20}
+	008 Move X19, X1
+	009 Call RenderGraphPass.AddResourceWrite, X0, X1
+	010 Move X0, [X20+8]
+	011 Compare X0, 0
+	012 JumpIfEqual {20}
+	013 Move X1, X19
+	014 Call RenderGraphResourceRegistry.IncrementWriteCount, X0, X1
+	015 Move X0, [X19]
+	016 Move X20, [X31+16]
+	017 Move X19, [X31+24]
+	018 Move X30, [X31+32]
+	019 Return X0
+	020 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.ComputeBufferHandle CreateTransientComputeBuffer(in UnityEngine.Experimental.Rendering.RenderGraphModule.ComputeBufferDesc desc)
+
+Disassembly:
+	0x039981C8 RET
+	0x039981CC BL 0x1C16F20
+	0x039981D0 STR X30, [X31 - 0x20]!
+	0x039981D4 STP X20, X19, [X31 + 0x10]
+	0x039981D8 ADRP X20, 0xA49000
+	0x039981DC LDRB W8, [X20 + 0xB2D]
+	0x039981E0 MOV X19, X0
+	0x039981E4 TBNZ X8, 0x0, 0x39981FC
+	0x039981E8 ADRP X0, 0x786000
+	0x039981EC LDR X0, [X0 + 0x730]
+	0x039981F0 BL 0x1C16CF4
+	0x039981F4 MOVZ W8, 0x1
+	0x039981F8 STRB W8, [X20 + 0xB2D]
+	0x039981FC LDRH W8, [X19 + 0x2]
+	0x03998200 UBFM W19, W8, 0x10, 0xF
+	0x03998204 CBZ W19, 0x399823C
+	0x03998208 ADRP X20, 0x786000
+	0x0399820C LDR X20, [X20 + 0x730]
+	0x03998210 LDR X0, [X20]
+	0x03998214 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X0]
+	005 Compare X8, 0
+	006 JumpIfEqual {25}
+	007 Move X19, X0
+	008 Move X0, [X0+8]
+	009 Compare X0, 0
+	010 JumpIfEqual {25}
+	011 Move W2, [X8+24]
+	012 Call RenderGraphResourceRegistry.CreateComputeBuffer, X0, X1, X2
+	013 Move [X31+8], X0
+	014 Move X20, X0
+	015 Move X0, [X19]
+	016 Compare X0, 0
+	017 JumpIfEqual {25}
+	018 Add X1, X31, 8
+	019 Call RenderGraphPass.AddTransientResource, X0, X1
+	020 Move X0, X20
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X30, [X31+32]
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.ComputeBufferHandle CreateTransientComputeBuffer(in UnityEngine.Experimental.Rendering.RenderGraphModule.ComputeBufferHandle computebuffer)
+
+Disassembly:
+	0x03998218 CBNZ W8, 0x3998224
+	0x0399821C BL 0x1C16DFC
+	0x03998220 LDR X0, [X20]
+	0x03998224 LDR X8, [X0 + 0xB8]
+	0x03998228 LDR W9, [X8]
+	0x0399822C CMP W19, W9
+	0x03998230 B.NE 0x3998244
+	0x03998234 MOVZ W0, 0x1
+	0x03998238 B 0x3998264
+	0x0399823C MOV W0, W31
+	0x03998240 B 0x3998264
+	0x03998244 LDR W9, [X0 + 0xE0]
+	0x03998248 CBNZ W9, 0x3998258
+	0x0399824C BL 0x1C16DFC
+	0x03998250 LDR X8, [X20]
+	0x03998254 LDR X8, [X8 + 0xB8]
+	0x03998258 LDR W8, [X8 + 0x4]
+	0x0399825C CMP W19, W8
+	0x03998260 CSET W0, EQ
+	0x03998264 LDP X20, X19, [X31 + 0x10]
+	0x03998268 LDR X30, [X31], #0x20
+	0x0399826C RET
+	0x03998270 RET
+	0x03998274 STR W31, [X0 + 0x14]
+	0x03998278 STUR X31, [X0 + 0xC]
+	0x0399827C STP W1, W2, [X0]
+	0x03998280 STR W31, [X0 + 0x8]
+	0x03998284 RET
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+24], X31
+	003 Move [X31+32], X30
+	004 Move [X31+48], X20
+	005 Move [X31+56], X19
+	006 Move [X31+8], X31
+	007 Move [X31+16], X31
+	008 Move X19, X0
+	009 Move X0, [X0+8]
+	010 Compare X0, 0
+	011 JumpIfEqual {36}
+	012 Add X8, X31, 8
+	013 Call RenderGraphResourceRegistry.GetComputeBufferResourceDesc, X0, X1
+	014 Move X8, [X19]
+	015 Compare X8, 0
+	016 JumpIfEqual {36}
+	017 Move X0, [X19+8]
+	018 Compare X0, 0
+	019 JumpIfEqual {36}
+	020 Move W2, [X8+24]
+	021 Add X1, X31, 8
+	022 Call RenderGraphResourceRegistry.CreateComputeBuffer, X0, X1, X2
+	023 Move [X31+40], X0
+	024 Move X20, X0
+	025 Move X0, [X19]
+	026 Compare X0, 0
+	027 JumpIfEqual {36}
+	028 Add X1, X31, 40
+	029 Call RenderGraphPass.AddTransientResource, X0, X1
+	030 Move X0, X20
+	031 Move X20, [X31+48]
+	032 Move X19, [X31+56]
+	033 Move X30, [X31+32]
+	034 Add X31, X31, 64
+	035 Return X0
+	036 Call 0x1C17F20
+
+Method: System.Void SetRenderFunc(UnityEngine.Experimental.Rendering.RenderGraphModule.RenderFunc`1<PassData> renderFunc)
+
+Disassembly:
+	0x0224207C STP X20, X19, [X31 + 0x10]
+	0x02242080 LDR X8, [X1 + 0x38]
+	0x02242084 MOV X19, X1
+	0x02242088 MOV X20, X0
+	0x0224208C CBNZ X8, 0x22420B0
+	0x02242090 ADRP X0, 0x1EB1000
+	0x02242094 LDR X0, [X0 + 0x6C0]
+	0x02242098 BL 0x1C16CF4
+	0x0224209C LDR X8, [X19 + 0x38]
+	0x022420A0 CBNZ X8, 0x22420B0
+	0x022420A4 MOV X0, X19
+	0x022420A8 BL 0x1C5C6E0
+	0x022420AC LDR X8, [X19 + 0x38]
+	0x022420B0 ADRP X9, 0x1EB1000
+	0x022420B4 LDR X9, [X9 + 0x6C0]
+	0x022420B8 LDR X21, [X8]
+	0x022420BC LDR X0, [X9]
+	0x022420C0 LDR W9, [X0 + 0xE0]
+	0x022420C4 CBNZ W9, 0x22420CC
+	0x022420C8 BL 0x1C16DFC
+	0x022420CC MOV X0, X21
+	0x022420D0 MOV X1, X31
+	0x022420D4 BL 0x338C698
+	0x022420D8 MOV X1, X0
+	0x022420DC MOV X0, X20
+	0x022420E0 MOV X2, X31
+	0x022420E4 BL 0x3C31354
+	0x022420E8 LDR X8, [X19 + 0x38]
+	0x022420EC LDP X20, X19, [X31 + 0x10]
+	0x022420F0 LDR X1, [X8 + 0x8]
+	0x022420F4 LDP X30, X21, [X31], #0x20
+	0x022420F8 B 0x2241D78
+	0x022420FC STR X30, [X31 - 0x20]!
+	0x02242100 STP X20, X19, [X31 + 0x10]
+	0x02242104 LDR X8, [X1 + 0x38]
+	0x02242108 MOV X19, X0
+	0x0224210C CBNZ X8, 0x2242134
+	0x02242110 ADRP X0, 0x1EB1000
+	0x02242114 LDR X0, [X0 + 0x6C0]
+	0x02242118 MOV X20, X1
+	0x0224211C BL 0x1C16CF4
+	0x02242120 LDR X8, [X20 + 0x38]
+	0x02242124 CBNZ X8, 0x2242134
+	0x02242128 MOV X0, X20
+	0x0224212C BL 0x1C5C6E0
+	0x02242130 LDR X8, [X20 + 0x38]
+	0x02242134 ADRP X9, 0x1EB1000
+	0x02242138 LDR X9, [X9 + 0x6C0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+56]
+	006 Move X20, X2
+	007 Move X21, X1
+	008 Move X19, X0
+	009 Compare X8, 0
+	010 JumpIfNotEqual {14}
+	011 Move X0, X20
+	012 Call 0x1C5D6E0
+	013 Move X8, [X20+56]
+	014 Move X1, [X8]
+	015 Move X19, [X19]
+	016 Move W8, [X1+309]
+	017 Move TEMP, X8
+	018 And TEMP, TEMP, 1
+	019 Compare TEMP, 1
+	020 JumpIfEqual {24}
+	021 Move X0, X1
+	022 Call 0x1C5D684
+	023 Move X1, X0
+	024 Compare X19, 0
+	025 JumpIfEqual {60}
+	026 Move X8, [X19]
+	027 NotImplemented "Instruction CMP not yet implemented."
+	028 Move X8, [X20+56]
+	029 Move X1, [X8]
+	030 Move W8, [X1+309]
+	031 Move TEMP, X8
+	032 And TEMP, TEMP, 1
+	033 Compare TEMP, 1
+	034 JumpIfEqual {38}
+	035 Move X0, X1
+	036 Call 0x1C5D684
+	037 Move X1, X0
+	038 Move X8, [X19]
+	039 NotImplemented "Instruction CMP not yet implemented."
+	040 Move [X19+120], X21
+	041 Move X8, [X20+56]
+	042 Move X1, [X8]
+	043 Move W8, [X1+309]
+	044 Move TEMP, X8
+	045 And TEMP, TEMP, 1
+	046 Compare TEMP, 1
+	047 JumpIfEqual {51}
+	048 Move X0, X1
+	049 Call 0x1C5D684
+	050 Move X1, X0
+	051 Move X8, [X19]
+	052 NotImplemented "Instruction CMP not yet implemented."
+	053 Move X20, [X31+16]
+	054 Move X19, [X31+24]
+	055 Move X30, [X31+32]
+	056 Move X21, [X31+40]
+	057 Return 
+	058 Move X0, X19
+	059 Call 0x1C181E0
+	060 Call 0x1C17F20
+
+Method: System.Void EnableAsyncCompute(System.Boolean value)
+
+Disassembly:
+	0x03998288 STR W31, [X0 + 0x14]
+	0x0399828C STUR X31, [X0 + 0xC]
+	0x03998290 STP W1, W2, [X0]
+	0x03998294 STR W3, [X0 + 0x8]
+	0x03998298 RET
+	0x0399829C LDP W8, W9, [X0]
+	0x039982A0 LDR W10, [X0 + 0x8]
+	0x039982A4 MOVZ W11, 0x17
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {9}
+	005 And W9, W1, 1
+	006 Move [X8+40], W9
+	007 Move X30, [X31+16]
+	008 Return 
+	009 Call 0x1C17F20
+
+Method: System.Void AllowPassCulling(System.Boolean value)
+
+Disassembly:
+	0x0398F404 B 0x3999A4C
+	0x0398F408 STP X30, X25, [X31 - 0x40]!
+	0x0398F40C STP X24, X23, [X31 + 0x10]
+	0x0398F410 STP X22, X21, [X31 + 0x20]
+	0x0398F414 STP X20, X19, [X31 + 0x30]
+	0x0398F418 ADRP X21, 0xA52000
+	0x0398F41C LDRB W8, [X21 + 0xAD2]
+	0x0398F420 MOV X20, X1
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {9}
+	005 And W9, W1, 1
+	006 Move [X8+41], W9
+	007 Move X30, [X31+16]
+	008 Return 
+	009 Call 0x1C17F20
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x039982C0 STP X30, X21, [X31 - 0x20]!
+	0x039982C4 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move W1, W31
+
+Method: System.Void AllowRendererListCulling(System.Boolean value)
+
+Disassembly:
+	0x039982FC CMP W8, 0x0
+	0x03998300 CSEL X8, X9, X20, EQ
+	0x03998304 LDR X0, [X8]
+	0x03998308 LDP X20, X19, [X31 + 0x10]
+	0x0399830C LDP X30, X21, [X31], #0x20
+	0x03998310 RET
+	0x03998314 STR X30, [X31 - 0x30]!
+	0x03998318 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {9}
+	005 And W9, W1, 1
+	006 Move [X8+73], W9
+	007 Move X30, [X31+16]
+	008 Return 
+	009 Call 0x1C17F20
+
+Method: UnityEngine.Experimental.Rendering.RenderGraphModule.RendererListHandle DependsOn(in UnityEngine.Experimental.Rendering.RenderGraphModule.RendererListHandle input)
+
+Disassembly:
+	0x03998328 MOV X19, X0
+	0x0399832C TBNZ X8, 0x0, 0x399835C
+	0x03998330 ADRP X0, 0x7B8000
+	0x03998334 LDR X0, [X0 + 0x9E0]
+	0x03998338 BL 0x1C16CF4
+	0x0399833C ADRP X0, 0x7B8000
+	0x03998340 LDR X0, [X0 + 0xEC0]
+	0x03998344 BL 0x1C16CF4
+	0x03998348 ADRP X0, 0x7B8000
+	0x0399834C LDR X0, [X0 + 0xEC8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, [X0]
+	004 Compare X0, 0
+	005 JumpIfEqual {13}
+	006 Move X19, X1
+	007 Move X1, [X1]
+	008 Call RenderGraphPass.UseRendererList, X0, X1
+	009 Move X0, [X19]
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Return X0
+	013 Call 0x1C17F20
+
+Method: System.Void .ctor(UnityEngine.Experimental.Rendering.RenderGraphModule.RenderGraphPass renderPass, UnityEngine.Experimental.Rendering.RenderGraphModule.RenderGraphResourceRegistry resources, UnityEngine.Experimental.Rendering.RenderGraphModule.RenderGraph renderGraph)
+
+Disassembly:
+	0x03998350 BL 0x1C16CF4
+	0x03998354 MOVZ W8, 0x1
+	0x03998358 STRB W8, [X20 + 0xAED]
+	0x0399835C MOV X2, X19
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Move [X0+16], X3
+	004 Move [X0+24], W31
+	005 Return 
+
+Method: System.Void Dispose(System.Boolean disposing)
+
+Disassembly:
+	0x039982C8 ADRP X21, 0xA49000
+	0x039982CC ADRP X20, 0x7B8000
+	0x039982D0 LDRB W8, [X21 + 0xAEC]
+	0x039982D4 LDR X20, [X20 + 0xEB8]
+	0x039982D8 MOV X19, X0
+	0x039982DC TBNZ X8, 0x0, 0x39982F4
+	0x039982E0 ADRP X0, 0x7B8000
+	0x039982E4 LDR X0, [X0 + 0xEB8]
+	0x039982E8 BL 0x1C16CF4
+	0x039982EC MOVZ W8, 0x1
+	0x039982F0 STRB W8, [X21 + 0xAEC]
+	0x039982F4 LDRB W8, [X19 + 0x10]
+	0x039982F8 ADD X9, X19, 0x40
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0+24]
+	004 Compare W8, 0
+	005 JumpIfNotEqual {14}
+	006 Move X19, X0
+	007 Move X0, [X0+16]
+	008 Compare X0, 0
+	009 JumpIfEqual {17}
+	010 Move X1, [X19]
+	011 Call RenderGraph.OnPassAdded, X0, X1
+	012 Move W8, 1
+	013 Move [X19+24], W8
+	014 Move X30, [X31+16]
+	015 Move X19, [X31+24]
+	016 Return 
+	017 Call 0x1C17F20
+
+Method: System.Void CheckResource(in UnityEngine.Experimental.Rendering.RenderGraphModule.ResourceHandle res, System.Boolean dontCheckTransientReadWrite = False)
+
+Disassembly:
+	0x03997870 MOV X0, X19
+
+ISIL:
+	001 Return 
+
+Method: System.Void GenerateDebugData(System.Boolean value)
+
+Disassembly:
+	0x0398F424 MOV X19, X0
+	0x0398F428 TBNZ X8, 0x0, 0x398F464
+	0x0398F42C ADRP X0, 0x7BF000
+	0x0398F430 LDR X0, [X0 + 0xE28]
+	0x0398F434 BL 0x1C16CF4
+	0x0398F438 ADRP X0, 0x76B000
+	0x0398F43C LDR X0, [X0 + 0x858]
+	0x0398F440 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {9}
+	005 And W9, W1, 1
+	006 Move [X8+72], W9
+	007 Move X30, [X31+16]
+	008 Return 
+	009 Call 0x1C17F20
+

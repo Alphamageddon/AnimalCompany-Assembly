@@ -1,0 +1,61 @@
+Type: UnityEngine.WaitUntil
+
+Method: System.Boolean get_keepWaiting()
+
+Disassembly:
+	0x03C3B76C BR X2
+	0x03C3B770 STP X30, X23, [X31 - 0x30]!
+	0x03C3B774 STP X22, X21, [X31 + 0x10]
+	0x03C3B778 STP X20, X19, [X31 + 0x20]
+	0x03C3B77C MOV W20, W1
+	0x03C3B780 MOV X21, X0
+	0x03C3B784 MOV X0, X2
+	0x03C3B788 MOV X1, X31
+	0x03C3B78C MOV X19, X3
+	0x03C3B790 BL 0x3C124EC
+	0x03C3B794 ADRP X23, 0x7AA000
+	0x03C3B798 LDR X4, [X23 + 0x640]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {13}
+	005 Move X9, [X8+24]
+	006 Move X0, [X8+64]
+	007 Move X1, [X8+40]
+	008 NotImplemented "Instruction BLR not yet implemented."
+	009 NotImplemented "Instruction ORN not yet implemented."
+	010 And W0, W8, 1
+	011 Move X30, [X31+16]
+	012 Return X0
+	013 Call 0x1C17F20
+
+Method: System.Void .ctor(System.Func`1<System.Boolean> predicate)
+
+Disassembly:
+	0x03C3B79C MOV W22, W0
+	0x03C3B7A0 CBNZ X4, 0x3C3B7B8
+	0x03C3B7A4 ADRP X0, 0xFFFFFFFFFCEB6000
+	0x03C3B7A8 ADD X0, X0, 0x1E3
+	0x03C3B7AC BL 0x1C16CB8
+	0x03C3B7B0 MOV X4, X0
+	0x03C3B7B4 STR X0, [X23 + 0x640]
+	0x03C3B7B8 MOV X0, X21
+	0x03C3B7BC MOV W1, W20
+	0x03C3B7C0 MOV W2, W22
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

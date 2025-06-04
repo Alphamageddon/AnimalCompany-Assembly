@@ -1,0 +1,285 @@
+Type: UnityEngine.Rendering.Universal.DebugHandler/DebugRenderPassEnumerable/Enumerator
+
+Method: UnityEngine.Rendering.Universal.DebugRenderSetup get_Current()
+
+Disassembly:
+	0x03A387AC MOV X20, X2
+	0x03A387B0 MOV X21, X1
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_Current(UnityEngine.Rendering.Universal.DebugRenderSetup value)
+
+Disassembly:
+	0x03A387B4 MOV X19, X0
+	0x03A387B8 TBNZ X8, 0x0, 0x3A38848
+
+ISIL:
+	001 Move [X0+72], X1
+	002 Return 
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x03A387BC ADRP X0, 0x71C000
+	0x03A387C0 LDR X0, [X0 + 0x70]
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: System.Void .ctor(UnityEngine.Rendering.Universal.DebugHandler debugHandler, UnityEngine.Rendering.ScriptableRenderContext context, UnityEngine.Rendering.CommandBuffer commandBuffer, UnityEngine.Rendering.FilteringSettings filteringSettings)
+
+Disassembly:
+	0x03A38724 LDP X20, X19, [X31 + 0x20]
+	0x03A38728 LDP X22, X21, [X31 + 0x10]
+	0x03A3872C MOV X3, X31
+	0x03A38730 LDR X30, [X31], #0x30
+	0x03A38734 B 0x3A3BAC0
+	0x03A38738 STR X30, [X31 - 0x10]!
+	0x03A3873C CBZ X1, 0x3A3874C
+	0x03A38740 LDR W0, [X1 + 0x30]
+	0x03A38744 LDR X30, [X31], #0x10
+	0x03A38748 RET
+	0x03A3874C BL 0x1C16F20
+	0x03A38750 LDR X0, [X0 + 0x138]
+	0x03A38754 RET
+	0x03A38758 STR X1, [X0 + 0x138]
+	0x03A3875C RET
+	0x03A38760 LDR X0, [X0 + 0x140]
+	0x03A38764 RET
+	0x03A38768 STR X1, [X0 + 0x140]
+	0x03A3876C RET
+	0x03A38770 LDR X0, [X0 + 0x130]
+	0x03A38774 RET
+	0x03A38778 SUB X31, X31, 0x90
+	0x03A3877C STP X29, X30, [X31 + 0x30]
+	0x03A38780 STP X28, X27, [X31 + 0x40]
+	0x03A38784 STP X26, X25, [X31 + 0x50]
+	0x03A38788 STP X24, X23, [X31 + 0x60]
+	0x03A3878C STP X22, X21, [X31 + 0x70]
+	0x03A38790 STP X20, X19, [X31 + 0x80]
+	0x03A38794 ADRP X25, 0x9AA000
+	0x03A38798 ADRP X24, 0x71B000
+	0x03A3879C LDRB W8, [X25 + 0x112]
+	0x03A387A0 LDR X24, [X24 + 0xFF0]
+	0x03A387A4 MOV W23, W4
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X23, X1
+	008 Move X1, X31
+	009 Move X20, X4
+	010 Move X21, X3
+	011 Move X22, X2
+	012 Move X19, X0
+	013 Call Object..ctor, X0
+	014 Compare X23, 0
+	015 JumpIfEqual {46}
+	016 Move X8, [X23+120]
+	017 Compare X8, 0
+	018 JumpIfEqual {46}
+	019 Move X8, [X8+40]
+	020 Compare X8, 0
+	021 JumpIfEqual {46}
+	022 Move W8, [X8+40]
+	023 Move [X19+16], X23
+	024 Move [X19+24], X22
+	025 Move [X19+32], X21
+	026 Move X10, [X20+16]
+	027 Move V0, [X20]
+	028 Subtract W8, W8, 3
+	029 Move W9, 1
+	030 NotImplemented "Instruction CMP not yet implemented."
+	031 Move TEMP, 0
+	032 Not TEMP
+	033 Move W11, TEMP
+	034 NotImplemented "Instruction CINC not yet implemented."
+	035 Move [X19+56], X10
+	036 Move [X19+40], V0
+	037 Move [X19+64], W8
+	038 Move [X19+68], W11
+	039 Move X20, [X31+32]
+	040 Move X19, [X31+40]
+	041 Move X22, [X31+16]
+	042 Move X21, [X31+24]
+	043 Move X30, [X31+48]
+	044 Move X23, [X31+56]
+	045 Return 
+	046 Call 0x1C17F20
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x03A387C4 BL 0x1C16CF4
+	0x03A387C8 ADRP X0, 0x71C000
+	0x03A387CC LDR X0, [X0 + 0x68]
+	0x03A387D0 BL 0x1C16CF4
+	0x03A387D4 ADRP X0, 0x71C000
+	0x03A387D8 LDR X0, [X0 + 0x60]
+	0x03A387DC BL 0x1C16CF4
+	0x03A387E0 ADRP X0, 0x71C000
+	0x03A387E4 LDR X0, [X0 + 0x78]
+	0x03A387E8 BL 0x1C16CF4
+	0x03A387EC ADRP X0, 0x718000
+	0x03A387F0 LDR X0, [X0 + 0x598]
+	0x03A387F4 BL 0x1C16CF4
+	0x03A387F8 ADRP X0, 0x71A000
+	0x03A387FC LDR X0, [X0 + 0xF30]
+	0x03A38800 BL 0x1C16CF4
+	0x03A38804 ADRP X0, 0x6E4000
+	0x03A38808 LDR X0, [X0 + 0xD28]
+	0x03A3880C BL 0x1C16CF4
+	0x03A38810 ADRP X0, 0x71B000
+	0x03A38814 LDR X0, [X0 + 0xFF0]
+	0x03A38818 BL 0x1C16CF4
+	0x03A3881C ADRP X0, 0x71D000
+	0x03A38820 LDR X0, [X0 + 0x6B0]
+	0x03A38824 BL 0x1C16CF4
+	0x03A38828 ADRP X0, 0x71D000
+	0x03A3882C LDR X0, [X0 + 0x6B8]
+	0x03A38830 BL 0x1C16CF4
+	0x03A38834 ADRP X0, 0x71D000
+	0x03A38838 LDR X0, [X0 + 0x6C0]
+	0x03A3883C BL 0x1C16CF4
+	0x03A38840 MOVZ W8, 0x1
+	0x03A38844 STRB W8, [X25 + 0x112]
+	0x03A38848 LDR X0, [X24]
+	0x03A3884C ADRP X25, 0x718000
+	0x03A38850 ADRP X26, 0x71D000
+	0x03A38854 ADRP X29, 0x71D000
+	0x03A38858 ADRP X28, 0x6E4000
+	0x03A3885C LDR X25, [X25 + 0x598]
+	0x03A38860 LDR W8, [X0 + 0xE0]
+	0x03A38864 LDR X26, [X26 + 0x6B0]
+	0x03A38868 LDR X29, [X29 + 0x6B8]
+	0x03A3886C LDR X28, [X28 + 0xD28]
+	0x03A38870 AND W24, W23, 0x1
+	0x03A38874 CBNZ W8, 0x3A3887C
+	0x03A38878 BL 0x1C16DFC
+	0x03A3887C ADRP X27, 0x71C000
+	0x03A38880 ADRP X23, 0x71C000
+	0x03A38884 LDR X27, [X27 + 0x78]
+	0x03A38888 LDR X23, [X23 + 0x60]
+	0x03A3888C MOV X0, X19
+	0x03A38890 MOV X1, X31
+
+ISIL:
+	001 Subtract X31, X31, 96
+	002 Move [X31+48], X30
+	003 Move [X31+56], X23
+	004 Move [X31+64], X22
+	005 Move [X31+72], X21
+	006 Move [X31+80], X20
+	007 Move [X31+88], X19
+	008 Move X20, 0x9AB000
+	009 Move W8, [X20+259]
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0x71E000
+	016 Move X0, [X0+1488]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X20+259], W8
+	020 Move X0, [X19+72]
+	021 Compare X0, 0
+	022 JumpIfEqual {24}
+	023 Call DebugRenderSetup.End, X0
+	024 Move W21, [X19+64]
+	025 Move W8, [X19+68]
+	026 Add W22, W8, 1
+	027 NotImplemented "Instruction CMP not yet implemented."
+	028 Move [X19+68], W22
+	029 Move X8, 0x71E000
+	030 Move X8, [X8+1488]
+	031 Move V1, [X19+1]
+	032 Move X9, [X19+56]
+	033 NotImplemented "Instruction LDUR not yet implemented."
+	034 Move X0, [X8]
+	035 Move X23, [X19+32]
+	036 Move [X31+32], X9
+	037 Move [X31], V1
+	038 Move [X31+8], V0
+	039 Call 0x1C17F10
+	040 Move X1, X31
+	041 Move X20, X0
+	042 Call Object..ctor, X0
+	043 Move V0, [X31]
+	044 Move [X20+32], X23
+	045 Move [X20+40], W22
+	046 Move X0, X20
+	047 Move [X20+1], V0
+	048 Move X8, [X31+32]
+	049 Move V0, [X31+1]
+	050 Move [X20+60], X8
+	051 Move [X20+44], V0
+	052 Call DebugRenderSetup.Begin, X0
+	053 Move [X19+72], X20
+	054 NotImplemented "Instruction CMP not yet implemented."
+	055 Move X20, [X31+80]
+	056 Move X19, [X31+88]
+	057 Move X22, [X31+64]
+	058 Move X21, [X31+72]
+	059 Move X30, [X31+48]
+	060 Move X23, [X31+56]
+	061 NotImplemented "Instruction CSET not yet implemented."
+	062 Add X31, X31, 96
+	063 Return X0
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x03A388FC BL 0x3C560AC
+	0x03A38900 LDR X2, [X27]
+	0x03A38904 MOV X1, X0
+	0x03A38908 ADD X0, X31, 0x20
+	0x03A3890C STR W31, [X31 + 0x28]
+	0x03A38910 STR X31, [X31 + 0x20]
+	0x03A38914 BL 0x2439504
+	0x03A38918 LDR X1, [X31 + 0x20]
+	0x03A3891C LDR W2, [X31 + 0x28]
+	0x03A38920 ADD X0, X31, 0x8
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+72]
+	005 Compare X0, 0
+	006 JumpIfEqual {9}
+	007 Call DebugRenderSetup.End, X0
+	008 Move [X19+72], X31
+	009 Move TEMP, 0
+	010 Not TEMP
+	011 Move W8, TEMP
+	012 Move [X19+68], W8
+	013 Move X30, [X31+16]
+	014 Move X19, [X31+24]
+	015 Return 
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x03A38924 MOVN W3, 0x0
+	0x03A38928 MOVN W4, 0x0
+	0x03A3892C MOV W5, W31
+	0x03A38930 MOV X6, X31
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Compare X0, 0
+	003 JumpIfEqual {6}
+	004 Call DebugRenderSetup.End, X0
+	005 Return 
+	006 Return 
+

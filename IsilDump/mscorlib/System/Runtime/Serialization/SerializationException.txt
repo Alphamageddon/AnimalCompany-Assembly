@@ -1,0 +1,198 @@
+Type: System.Runtime.Serialization.SerializationException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x032A008C CMP W1, 0x1
+	0x032A0090 B.NE 0x32A00BC
+	0x032A0094 MOV X0, X20
+	0x032A0098 BL 0x3EB1AD0
+	0x032A009C LDR X21, [X0]
+	0x032A00A0 BL 0x3EB1AE0
+	0x032A00A4 LDR X1, [X23]
+	0x032A00A8 ADD X0, X31, 0x20
+	0x032A00AC BL 0x2BC434C
+	0x032A00B0 CBZ X21, 0x32A003C
+	0x032A00B4 MOV X0, X21
+	0x032A00B8 BL 0x1C16F18
+	0x032A00BC MOV X21, X31
+	0x032A00C0 B 0x32A00C8
+	0x032A00C4 MOV X20, X0
+	0x032A00C8 LDR X1, [X23]
+	0x032A00CC ADD X0, X31, 0x20
+	0x032A00D0 BL 0x2BC434C
+	0x032A00D4 CBNZ X21, 0x32A00E0
+	0x032A00D8 MOV X0, X20
+	0x032A00DC BL 0x1D2C690
+	0x032A00E0 MOV X0, X21
+	0x032A00E4 BL 0x1C16F18
+	0x032A00E8 BL 0x1990590
+	0x032A00EC MOV X8, X2
+	0x032A00F0 LDR X2, [X0 + 0x28]
+	0x032A00F4 MOV X0, X1
+	0x032A00F8 MOV X1, X8
+	0x032A00FC B 0x329FEB0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x113D000
+	006 Move X20, 0xE7E000
+	007 Move W8, [X21+1876]
+	008 Move X20, [X20+736]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xE7E000
+	015 Move X0, [X0+736]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+1876], W8
+	019 Move X0, [X20]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {25}
+	023 Call 0x1C17DFC
+	024 Move X0, [X20]
+	025 Move X8, [X0+184]
+	026 Move X0, X19
+	027 Move X2, X31
+	028 Move X1, [X8]
+	029 Call SystemException..ctor, X0, X1
+	030 Move W8, 0x150C
+	031 NotImplemented "Instruction MOVK not yet implemented."
+	032 Move [X19+96], W8
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 Move X30, [X31+32]
+	036 Move X21, [X31+40]
+	037 Return 
+
+Method: System.Void .ctor(System.String message)
+
+Disassembly:
+	0x032A0100 STP X30, X23, [X31 - 0x30]!
+	0x032A0104 STP X22, X21, [X31 + 0x10]
+	0x032A0108 STP X20, X19, [X31 + 0x20]
+	0x032A010C ADRP X21, 0x113C000
+	0x032A0110 ADRP X20, 0xE84000
+	0x032A0114 LDRB W8, [X21 + 0x761]
+	0x032A0118 LDR X20, [X20 + 0xAE8]
+	0x032A011C MOV X19, X0
+	0x032A0120 TBNZ X8, 0x0, 0x32A0168
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X2, X31
+	004 Move X19, X0
+	005 Call SystemException..ctor, X0, X1
+	006 Move W8, 0x150C
+	007 NotImplemented "Instruction MOVK not yet implemented."
+	008 Move [X19+96], W8
+	009 Move X30, [X31+16]
+	010 Move X19, [X31+24]
+	011 Return 
+
+Method: System.Void .ctor(System.String message, System.Exception innerException)
+
+Disassembly:
+	0x032A0124 ADRP X0, 0xE84000
+	0x032A0128 LDR X0, [X0 + 0xAF0]
+	0x032A012C BL 0x1C16CF4
+	0x032A0130 ADRP X0, 0xE84000
+	0x032A0134 LDR X0, [X0 + 0xAF8]
+	0x032A0138 BL 0x1C16CF4
+	0x032A013C ADRP X0, 0xE84000
+	0x032A0140 LDR X0, [X0 + 0xAE8]
+	0x032A0144 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X3, X31
+	004 Move X19, X0
+	005 Call SystemException..ctor, X0, X1, X2
+	006 Move W8, 0x150C
+	007 NotImplemented "Instruction MOVK not yet implemented."
+	008 Move [X19+96], W8
+	009 Move X30, [X31+16]
+	010 Move X19, [X31+24]
+	011 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x032A0148 ADRP X0, 0xE84000
+	0x032A014C LDR X0, [X0 + 0xB00]
+
+ISIL:
+	001 Move X4, X31
+	002 Call SystemException..ctor, X0, X1, X2
+	003 Return 
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x032A0150 BL 0x1C16CF4
+	0x032A0154 ADRP X0, 0xE84000
+	0x032A0158 LDR X0, [X0 + 0xB08]
+	0x032A015C BL 0x1C16CF4
+	0x032A0160 MOVZ W8, 0x1
+	0x032A0164 STRB W8, [X21 + 0x761]
+	0x032A0168 LDR X8, [X20]
+	0x032A016C ADRP X23, 0xE84000
+	0x032A0170 LDR W9, [X8 + 0xE0]
+	0x032A0174 LDR X23, [X23 + 0xB08]
+	0x032A0178 CBNZ W9, 0x32A0188
+	0x032A017C MOV X0, X8
+	0x032A0180 BL 0x1C16DFC
+	0x032A0184 LDR X8, [X20]
+	0x032A0188 LDR X0, [X23]
+	0x032A018C LDR X8, [X8 + 0xB8]
+	0x032A0190 LDR W9, [X0 + 0xE0]
+	0x032A0194 LDR X20, [X8]
+	0x032A0198 CBNZ W9, 0x32A01A4
+	0x032A019C BL 0x1C16DFC
+	0x032A01A0 LDR X0, [X23]
+	0x032A01A4 LDR X8, [X0 + 0xB8]
+	0x032A01A8 LDR X21, [X8 + 0x8]
+	0x032A01AC CBNZ X21, 0x32A0200
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x113D000
+	006 Move X19, 0xE85000
+	007 Move X21, 0xE7E000
+	008 Move W8, [X20+1877]
+	009 Move X19, [X19+2640]
+	010 Move X21, [X21+736]
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {23}
+	015 Move X0, 0xE7E000
+	016 Move X0, [X0+736]
+	017 Call 0x1C17CF4
+	018 Move X0, 0xE85000
+	019 Move X0, [X0+2640]
+	020 Call 0x1C17CF4
+	021 Move W8, 1
+	022 Move [X20+1877], W8
+	023 Move X8, [X21]
+	024 Move X9, [X19]
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X8, [X8+184]
+	028 Move [X8], X9
+	029 Move X30, [X31+32]
+	030 Move X21, [X31+40]
+	031 Return 
+

@@ -1,0 +1,43 @@
+Type: System.Runtime.Serialization.FixupHolder
+
+Method: System.Void .ctor(System.Int64 id, System.Object fixupInfo, System.Int32 fixupType)
+
+Disassembly:
+	0x032A790C LDP X20, X19, [X31 + 0x30]
+	0x032A7910 LDP X22, X21, [X31 + 0x20]
+	0x032A7914 LDP X24, X23, [X31 + 0x10]
+	0x032A7918 LDP X30, X25, [X31], #0x40
+	0x032A791C RET
+	0x032A7920 BL 0x1C16F20
+	0x032A7924 STR X30, [X31 - 0x50]!
+	0x032A7928 STP X26, X25, [X31 + 0x10]
+	0x032A792C STP X24, X23, [X31 + 0x20]
+	0x032A7930 STP X22, X21, [X31 + 0x30]
+	0x032A7934 STP X20, X19, [X31 + 0x40]
+	0x032A7938 ADRP X21, 0x1135000
+	0x032A793C LDRB W8, [X21 + 0x7A4]
+	0x032A7940 MOV X20, X1
+	0x032A7944 MOV X19, X0
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, X1
+	007 Move X1, X31
+	008 Move W19, W3
+	009 Move X20, X2
+	010 Move X22, X0
+	011 Call Object..ctor, X0
+	012 Move [X22+16], X21
+	013 Move [X22+24], X20
+	014 Move [X22+32], W19
+	015 Move X20, [X31+32]
+	016 Move X19, [X31+40]
+	017 Move X22, [X31+16]
+	018 Move X21, [X31+24]
+	019 Move X30, [X31+48]
+	020 Return 
+

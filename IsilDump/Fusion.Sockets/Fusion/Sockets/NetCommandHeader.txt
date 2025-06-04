@@ -1,0 +1,30 @@
+Type: Fusion.Sockets.NetCommandHeader
+
+Method: Fusion.Sockets.NetCommandHeader Create(Fusion.Sockets.NetCommands command)
+
+Disassembly:
+	0x01EFC480 MOVI V0.2D, 0x0
+	0x01EFC484 STP V0, V0, [X31 + 0x20]
+	0x01EFC488 CBZ X20, 0x1EFC618
+	0x01EFC48C LDR W8, [X20 + 0x48]
+
+ISIL:
+	001 And X8, X0, 255
+	002 Move W0, 1
+	003 NotImplemented "Instruction BFM not yet implemented."
+	004 Return X0
+
+Method: Fusion.Sockets.NetCommandHeader op_Implicit(Fusion.Sockets.NetCommands commands)
+
+Disassembly:
+	0x01EFC490 CMP W8, 0x1
+	0x01EFC494 B.LT 0x1EFC60C
+	0x01EFC498 ADRP X24, 0x2204000
+	0x01EFC49C LDR X24, [X24 + 0xA38]
+
+ISIL:
+	001 And X8, X0, 255
+	002 Move W0, 1
+	003 NotImplemented "Instruction BFM not yet implemented."
+	004 Return X0
+

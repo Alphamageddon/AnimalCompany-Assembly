@@ -1,0 +1,187 @@
+Type: System.Runtime.CompilerServices.Unsafe
+
+Method: T Add(ref T source, System.Int32 elementOffset)
+
+Disassembly:
+	0x022A51BC CSET W0, CC
+	0x022A51C0 RET
+
+ISIL:
+	001 Add X0, X0, W1
+	002 Return X0
+
+Method: T Add(ref T source, System.IntPtr elementOffset)
+
+Disassembly:
+	0x022A534C RET
+	0x022A5350 CMP X0, X1
+
+ISIL:
+	001 Add X0, X0, X1
+	002 Return X0
+
+Method: System.Void* Add(System.Void* source, System.Int32 elementOffset)
+
+Disassembly:
+	0x022A5354 CSET W0, CC
+	0x022A5358 RET
+
+ISIL:
+	001 Add X0, X0, W1
+	002 Return X0
+
+Method: T AddByteOffset(ref T source, System.IntPtr byteOffset)
+
+Disassembly:
+	0x022A5AA0 MOV X21, X2
+	0x022A5AA4 BL 0x1C5C6E0
+
+ISIL:
+	001 Add X0, X0, X1
+	002 Return X0
+
+Method: System.Boolean AreSame(ref T left, ref T right)
+
+Disassembly:
+	0x022A5BE8 MOV X2, X22
+	0x022A5BEC CMP W8, 0x0
+	0x022A5BF0 SUB X8, X29, 0x10
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 Return X0
+
+Method: T As(System.Object o)
+
+Disassembly:
+	0x022A5C0C LDR X8, [X19 + 0x38]
+
+ISIL:
+	001 Return X0
+
+Method: TTo As(ref TFrom source)
+
+Disassembly:
+	0x022A5C10 LDR X0, [X8]
+
+ISIL:
+	001 Return X0
+
+Method: System.Void* AsPointer(ref T value)
+
+Disassembly:
+	0x022A5FAC MRS X23, 0xC000
+
+ISIL:
+	001 Return X0
+
+Method: T AsRef(System.Void* source)
+
+Disassembly:
+	0x022A5FC4 CBNZ X8, 0x22A5FD8
+
+ISIL:
+	001 Return X0
+
+Method: T AsRef(in T source)
+
+Disassembly:
+	0x022A5FC0 LDR X8, [X2 + 0x38]
+
+ISIL:
+	001 Return X0
+
+Method: System.Void InitBlockUnaligned(ref System.Byte startAddress, System.Byte value, System.UInt32 byteCount)
+
+Disassembly:
+	0x032C6C5C B 0x32C66DC
+	0x032C6C60 MOV X23, X31
+
+ISIL:
+	001 Move W2, W2
+	002 Call 0x3EB2B10
+	003 Return 
+
+Method: T Read(System.Void* source)
+
+Disassembly:
+	0x022A6974 RET
+	0x022A6978 STR X30, [X31 - 0x10]!
+	0x022A697C LDR X8, [X0 + 0x38]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X1, [X0+8]
+	003 Move X0, X8
+	004 Return X0
+
+Method: T ReadUnaligned(ref System.Byte source)
+
+Disassembly:
+	0x022A6A2C BL 0x1C5C6E0
+	0x022A6A30 MOVZ W0, 0x4
+	0x022A6A34 LDR X30, [X31], #0x10
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X1, [X0+8]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Int32 SizeOf()
+
+Disassembly:
+	0x022A6B14 LDR X30, [X31], #0x10
+	0x022A6B18 RET
+
+ISIL:
+	001 Move W0, 16
+	002 Return X0
+
+Method: System.Void WriteUnaligned(ref System.Byte destination, T value)
+
+Disassembly:
+	0x022A6B74 LDR X8, [X0 + 0x38]
+	0x022A6B78 CBNZ X8, 0x22A6B80
+
+ISIL:
+	001 Move [X0], W1
+	002 Return 
+
+Method: System.Boolean IsAddressLessThan(ref T left, ref T right)
+
+Disassembly:
+	0x022A5FE4 ADD X9, X21, 0xF
+	0x022A5FE8 AND X9, X9, 0x1FFFFFFFF
+	0x022A5FEC SUB X22, X8, X9
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 Return X0
+
+Method: T AddByteOffset(ref T source, System.UInt64 byteOffset)
+
+Disassembly:
+	0x022A5AA8 LDR X8, [X21 + 0x38]
+	0x022A5AAC LDR X8, [X8]
+	0x022A5AB0 LDR W21, [X8 + 0xFC]
+	0x022A5AB4 ADD X8, X31, 0x0
+	0x022A5AB8 ADD X9, X21, 0xF
+	0x022A5ABC AND X9, X9, 0x1FFFFFFFF
+	0x022A5AC0 SUB X22, X8, X9
+	0x022A5AC4 ADD X31, X22, 0x0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, X1
+	005 Move X1, X31
+	006 Call IntPtr.op_Explicit, X0
+	007 Add X0, X19, X0
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return X0
+

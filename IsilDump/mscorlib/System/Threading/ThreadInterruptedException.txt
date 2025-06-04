@@ -1,0 +1,90 @@
+Type: System.Threading.ThreadInterruptedException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x033E8484 B.GE 0x33E8310
+	0x033E8488 B 0x33E82C8
+	0x033E848C BL 0x1C16F20
+	0x033E8490 B 0x33E850C
+	0x033E8494 BL 0x1C16F28
+	0x033E8498 B 0x33E8504
+	0x033E849C BL 0x1C16F20
+	0x033E84A0 B 0x33E8504
+	0x033E84A4 BL 0x1C16F28
+	0x033E84A8 B 0x33E8504
+	0x033E84AC B 0x33E84D0
+	0x033E84B0 B 0x33E84D0
+	0x033E84B4 B 0x33E84D0
+	0x033E84B8 B 0x33E84D0
+	0x033E84BC B 0x33E84D0
+	0x033E84C0 B 0x33E84D0
+	0x033E84C4 B 0x33E84D0
+	0x033E84C8 B 0x33E84D0
+	0x033E84CC B 0x33E84D0
+	0x033E84D0 MOV X24, X0
+	0x033E84D4 CMP W1, 0x1
+	0x033E84D8 B.NE 0x33E8504
+	0x033E84DC MOV X0, X24
+	0x033E84E0 BL 0x3EB1AD0
+	0x033E84E4 LDR X23, [X0]
+	0x033E84E8 BL 0x3EB1AE0
+	0x033E84EC MOVZ W24, 0x1
+	0x033E84F0 B 0x33E8444
+	0x033E84F4 BL 0x1C16F28
+	0x033E84F8 BL 0x1C16F20
+	0x033E84FC MOV X0, X23
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xFF6000
+	006 Move X21, 0xD0C000
+	007 Move W8, [X20+1001]
+	008 Move X21, [X21+2000]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xD0C000
+	015 Move X0, [X0+2000]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1001], W8
+	019 Move X0, [X21]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move W0, 2
+	025 Move X1, X31
+	026 Call Exception.GetMessageFromNativeResources, X0
+	027 Move X1, X0
+	028 Move X0, X19
+	029 Move X2, X31
+	030 Call SystemException..ctor, X0, X1
+	031 Move X0, X19
+	032 Move X20, [X31+16]
+	033 Move X19, [X31+24]
+	034 Move W1, 0x1519
+	035 NotImplemented "Instruction MOVK not yet implemented."
+	036 Move X2, X31
+	037 Move X30, [X31+32]
+	038 Move X21, [X31+40]
+	039 Call Exception.SetErrorCode, X0, X1
+	040 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x033E8500 BL 0x1C16F18
+	0x033E8504 MOV X23, X31
+
+ISIL:
+	001 Move X4, X31
+	002 Call SystemException..ctor, X0, X1, X2
+	003 Return 
+

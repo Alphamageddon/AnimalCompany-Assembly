@@ -1,0 +1,110 @@
+Type: Unity.XR.CoreUtils.NativeArrayUtils
+
+Method: System.Void EnsureCapacity(ref Unity.Collections.NativeArray`1<T> array, System.Int32 capacity, Unity.Collections.Allocator allocator, Unity.Collections.NativeArrayOptions options = 1)
+
+Disassembly:
+	0x022236F8 MOV X20, X1
+	0x022236FC CBNZ X8, 0x2223708
+	0x02223700 MOV X0, X19
+	0x02223704 BL 0x1C5C6E0
+	0x02223708 CBZ X20, 0x22237B8
+	0x0222370C LDP W2, W8, [X20 + 0x18]
+	0x02223710 ADD W8, W8, 0x1
+	0x02223714 CMP W2, 0x1
+	0x02223718 STP W31, W8, [X20 + 0x18]
+	0x0222371C B.LT 0x2223730
+	0x02223720 LDR X0, [X20 + 0x10]
+	0x02223724 MOV W1, W31
+	0x02223728 MOV X3, X31
+	0x0222372C BL 0x339FA34
+	0x02223730 ADD X0, X31, 0x8
+	0x02223734 MOV X1, X31
+	0x02223738 BL 0x3C46504
+	0x0222373C CBZ X0, 0x22237B8
+	0x02223740 LDR W8, [X0 + 0x18]
+	0x02223744 MOV X22, X0
+	0x02223748 CMP W8, 0x1
+	0x0222374C B.LT 0x22237A0
+	0x02223750 MOV W23, W31
+	0x02223754 AND W21, W21, 0x1
+	0x02223758 CMP W23, W8
+	0x0222375C B.CS 0x22237B4
+	0x02223760 ADD X8, X22, W23, 0x3, SXTW
+	0x02223764 LDR X0, [X8 + 0x20]
+	0x02223768 CBZ X0, 0x22237B8
+	0x0222376C LDR X8, [X19 + 0x38]
+	0x02223770 MOV W1, W21
+	0x02223774 LDR X2, [X8 + 0x10]
+	0x02223778 BL 0x21E5F84
+	0x0222377C LDR X8, [X19 + 0x38]
+	0x02223780 MOV X1, X0
+	0x02223784 MOV X0, X20
+	0x02223788 LDR X2, [X8 + 0x20]
+	0x0222378C BL 0x301C194
+	0x02223790 LDR W8, [X22 + 0x18]
+	0x02223794 ADD W23, W23, 0x1
+	0x02223798 CMP W23, W8
+	0x0222379C B.LT 0x2223758
+	0x022237A0 LDP X20, X19, [X31 + 0x30]
+	0x022237A4 LDP X22, X21, [X31 + 0x20]
+	0x022237A8 LDP X30, X23, [X31 + 0x10]
+	0x022237AC ADD X31, X31, 0x40
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+16], X30
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X8, [X4+56]
+	009 Move X23, X4
+	010 Move W20, W3
+	011 Move W21, W2
+	012 Move W22, W1
+	013 Move X19, X0
+	014 Compare X8, 0
+	015 JumpIfNotEqual {19}
+	016 Move X0, X23
+	017 Call 0x1C5D6E0
+	018 Move X8, [X23+56]
+	019 Move X1, [X8+8]
+	020 Move X0, X19
+	021 Move X8, [X1]
+	022 NotImplemented "Instruction BLR not yet implemented."
+	023 NotImplemented "Instruction CMP not yet implemented."
+	024 Move X8, [X23+56]
+	025 Move X0, X19
+	026 Move X1, [X8+24]
+	027 Move X8, [X1]
+	028 NotImplemented "Instruction BLR not yet implemented."
+	029 Move TEMP, X0
+	030 And TEMP, TEMP, 1
+	031 Compare TEMP, 1
+	032 JumpIfNotEqual {38}
+	033 Move X8, [X23+56]
+	034 Move X0, X19
+	035 Move X1, [X8+32]
+	036 Move X8, [X1]
+	037 NotImplemented "Instruction BLR not yet implemented."
+	038 Move [X31], X31
+	039 Move [X31+8], X31
+	040 Move X8, [X23+56]
+	041 Add X0, X31, 0
+	042 Move W1, W22
+	043 Move W2, W21
+	044 Move X4, [X8+48]
+	045 Move W3, W20
+	046 Call NativeArray`1<__Il2CppFullySharedGenericStructType>..ctor, X0, X1, X2, X3
+	047 Move V0, [X31]
+	048 Move [X19], V0
+	049 Move X20, [X31+48]
+	050 Move X19, [X31+56]
+	051 Move X22, [X31+32]
+	052 Move X21, [X31+40]
+	053 Move X30, [X31+16]
+	054 Move X23, [X31+24]
+	055 Add X31, X31, 64
+	056 Return 
+

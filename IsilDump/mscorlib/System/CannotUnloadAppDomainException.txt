@@ -1,0 +1,92 @@
+Type: System.CannotUnloadAppDomainException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0339F840 MOV X1, X19
+	0x0339F844 LDP X20, X19, [X31 + 0x20]
+	0x0339F848 LDP X22, X21, [X31 + 0x10]
+	0x0339F84C LDP X30, X23, [X31], #0x30
+	0x0339F850 B 0x1C2500C
+	0x0339F854 ADRP X0, 0xD5E000
+	0x0339F858 LDR X0, [X0 + 0xF78]
+	0x0339F85C BL 0x1C16D08
+	0x0339F860 BL 0x1C16F10
+	0x0339F864 MOV X19, X0
+	0x0339F868 ADRP X0, 0xD8C000
+	0x0339F86C LDR X0, [X0 + 0x9B0]
+	0x0339F870 BL 0x1C16D08
+	0x0339F874 MOV X1, X0
+	0x0339F878 MOV X0, X19
+	0x0339F87C MOV X2, X31
+	0x0339F880 BL 0x3379B6C
+	0x0339F884 B 0x339F8F0
+	0x0339F888 BL 0x1C16F20
+	0x0339F88C ADRP X0, 0xD5C000
+	0x0339F890 LDR X0, [X0 + 0x578]
+	0x0339F894 BL 0x1C16D08
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x103F000
+	006 Move X21, 0xD8D000
+	007 Move W8, [X20+284]
+	008 Move X21, [X21+2224]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xD8D000
+	015 Move X0, [X0+2224]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+284], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Call SystemException..ctor, X0, X1
+	022 Move W8, 0x1015
+	023 NotImplemented "Instruction MOVK not yet implemented."
+	024 Move [X19+96], W8
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Move X21, [X31+40]
+	029 Return 
+
+Method: System.Void .ctor(System.String message)
+
+Disassembly:
+	0x0339F898 BL 0x1C16F10
+	0x0339F89C MOV X19, X0
+	0x0339F8A0 ADRP X0, 0xD7D000
+	0x0339F8A4 LDR X0, [X0 + 0x308]
+	0x0339F8A8 BL 0x1C16D08
+	0x0339F8AC MOV X1, X0
+	0x0339F8B0 MOV X0, X19
+	0x0339F8B4 MOV X2, X31
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Call SystemException..ctor, X0, X1
+	005 Move W8, 0x1015
+	006 NotImplemented "Instruction MOVK not yet implemented."
+	007 Move [X19+96], W8
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x0339F8B8 BL 0x3314A68
+
+ISIL:
+	001 Call SystemException..ctor, X0, X1, X2
+	002 Return 
+

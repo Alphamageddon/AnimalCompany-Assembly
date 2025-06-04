@@ -1,0 +1,198 @@
+Type: System.OperationCanceledException
+
+Method: System.Threading.CancellationToken get_CancellationToken()
+
+Disassembly:
+	0x0338D870 ADRP X0, 0xD9B000
+	0x0338D874 LDR X0, [X0 + 0x238]
+
+ISIL:
+	001 Move X0, [X0+144]
+	002 Return X0
+
+Method: System.Void set_CancellationToken(System.Threading.CancellationToken value)
+
+Disassembly:
+	0x0338D878 BL 0x1C16D08
+	0x0338D87C MOV X20, X0
+
+ISIL:
+	001 Move [X0+144], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0338D880 ADRP X0, 0xD94000
+	0x0338D884 LDR X0, [X0 + 0x730]
+	0x0338D888 BL 0x1C16D08
+	0x0338D88C MOV X2, X0
+	0x0338D890 MOV X0, X19
+	0x0338D894 MOV X1, X20
+	0x0338D898 MOV X3, X31
+	0x0338D89C BL 0x330E16C
+	0x0338D8A0 B 0x338D8D0
+	0x0338D8A4 ADRP X0, 0xD66000
+	0x0338D8A8 LDR X0, [X0 + 0x858]
+	0x0338D8AC BL 0x1C16D08
+	0x0338D8B0 BL 0x1C16F10
+	0x0338D8B4 MOV X19, X0
+	0x0338D8B8 ADRP X0, 0xD9B000
+	0x0338D8BC LDR X0, [X0 + 0x1B0]
+	0x0338D8C0 BL 0x1C16D08
+	0x0338D8C4 MOV X1, X0
+	0x0338D8C8 MOV X0, X19
+	0x0338D8CC BL 0x338CB50
+	0x0338D8D0 ADRP X0, 0xD9E000
+	0x0338D8D4 LDR X0, [X0 + 0x1C0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x1051000
+	006 Move X21, 0xD9F000
+	007 Move W8, [X20+13]
+	008 Move X21, [X21+392]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xD9F000
+	015 Move X0, [X0+392]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+13], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Call SystemException..ctor, X0, X1
+	022 Move W8, 0x153B
+	023 NotImplemented "Instruction MOVK not yet implemented."
+	024 Move [X19+96], W8
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Move X21, [X31+40]
+	029 Return 
+
+Method: System.Void .ctor(System.String message)
+
+Disassembly:
+	0x0338D950 ADD X9, X22, X10, 0x1, LSL
+	0x0338D954 SUB X10, X11, X10
+	0x0338D958 MOVZ W11, 0xCCCD
+	0x0338D95C MOV W0, W31
+	0x0338D960 MOVK W11, 0xCCC0000
+	0x0338D964 CMP W8, W20
+	0x0338D968 B.CS 0x338DABC
+	0x0338D96C LDRH W13, [X9]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Call SystemException..ctor, X0, X1
+	005 Move W8, 0x153B
+	006 NotImplemented "Instruction MOVK not yet implemented."
+	007 Move [X19+96], W8
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+
+Method: System.Void .ctor(System.String message, System.Exception innerException)
+
+Disassembly:
+	0x0338D970 SUB W12, W13, 0x30
+	0x0338D974 CMP W12, 0xA
+	0x0338D978 B.CC 0x338D9A0
+	0x0338D97C SUB W12, W13, 0x41
+	0x0338D980 CMP W12, 0x19
+	0x0338D984 B.HI 0x338D990
+	0x0338D988 SUB W12, W13, 0x37
+	0x0338D98C B 0x338D9A0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Call SystemException..ctor, X0, X1, X2
+	005 Move W8, 0x153B
+	006 NotImplemented "Instruction MOVK not yet implemented."
+	007 Move [X19+96], W8
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+
+Method: System.Void .ctor(System.String message, System.Threading.CancellationToken token)
+
+Disassembly:
+	0x0338DA10 MOV W10, W20
+	0x0338DA14 SXTW X11, W8
+	0x0338DA18 SXTW X13, W10
+	0x0338DA1C MOV W12, W31
+	0x0338DA20 ADD X10, X22, X11, 0x1, LSL
+	0x0338DA24 SUB X11, X13, X11
+	0x0338DA28 CMP W8, W20
+	0x0338DA2C B.CS 0x338DABC
+	0x0338DA30 LDRH W14, [X10]
+	0x0338DA34 SUB W13, W14, 0x30
+	0x0338DA38 CMP W13, 0xA
+	0x0338DA3C B.CC 0x338DA64
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X2
+	005 Move X20, X0
+	006 Call SystemException..ctor, X0, X1
+	007 Move W8, 0x153B
+	008 NotImplemented "Instruction MOVK not yet implemented."
+	009 Move [X20+96], W8
+	010 Move [X20+144], X19
+	011 Move X20, [X31+16]
+	012 Move X19, [X31+24]
+	013 Move X30, [X31+32]
+	014 Return 
+
+Method: System.Void .ctor(System.String message, System.Exception innerException, System.Threading.CancellationToken token)
+
+Disassembly:
+	0x0338DA40 SUB W13, W14, 0x41
+	0x0338DA44 CMP W13, 0x19
+	0x0338DA48 B.HI 0x338DA54
+	0x0338DA4C SUB W13, W14, 0x37
+	0x0338DA50 B 0x338DA64
+	0x0338DA54 SUB W13, W14, 0x61
+	0x0338DA58 CMP W13, 0x19
+	0x0338DA5C B.HI 0x338DAA4
+	0x0338DA60 SUB W13, W14, 0x57
+	0x0338DA64 CMP W13, W21
+	0x0338DA68 B.GE 0x338DAA4
+	0x0338DA6C CMP W12, W9
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X3
+	005 Move X20, X0
+	006 Call SystemException..ctor, X0, X1, X2
+	007 Move W8, 0x153B
+	008 NotImplemented "Instruction MOVK not yet implemented."
+	009 Move [X20+96], W8
+	010 Move [X20+144], X19
+	011 Move X20, [X31+16]
+	012 Move X19, [X31+24]
+	013 Move X30, [X31+32]
+	014 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x0338DA70 B.HI 0x338DAC0
+
+ISIL:
+No ISIL was generated

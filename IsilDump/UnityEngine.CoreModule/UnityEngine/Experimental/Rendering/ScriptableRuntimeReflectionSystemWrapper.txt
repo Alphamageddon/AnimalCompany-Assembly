@@ -1,0 +1,141 @@
+Type: UnityEngine.Experimental.Rendering.ScriptableRuntimeReflectionSystemWrapper
+
+Method: UnityEngine.Experimental.Rendering.IScriptableRuntimeReflectionSystem get_implementation()
+
+Disassembly:
+	0x03C6235C BL 0x3C623A0
+	0x03C62360 LDR X8, [X22]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_implementation(UnityEngine.Experimental.Rendering.IScriptableRuntimeReflectionSystem value)
+
+Disassembly:
+	0x03C62364 MOV X20, X0
+	0x03C62368 LDR W9, [X8 + 0xE0]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Void Internal_ScriptableRuntimeReflectionSystemWrapper_TickRealtimeProbes(out System.Boolean result)
+
+Disassembly:
+	0x03C6236C CBNZ W9, 0x3C62378
+	0x03C62370 MOV X0, X8
+	0x03C62374 BL 0x1C16DFC
+	0x03C62378 MOV X0, X20
+	0x03C6237C MOV X1, X19
+	0x03C62380 LDP X20, X19, [X31 + 0x20]
+	0x03C62384 LDP X22, X21, [X31 + 0x10]
+	0x03C62388 LDP X30, X23, [X31], #0x30
+	0x03C6238C B 0x3C61F24
+	0x03C62390 LDP X20, X19, [X31 + 0x20]
+	0x03C62394 LDP X22, X21, [X31 + 0x10]
+	0x03C62398 LDP X30, X23, [X31], #0x30
+	0x03C6239C RET
+	0x03C623A0 STP X30, X25, [X31 - 0x40]!
+	0x03C623A4 STP X24, X23, [X31 + 0x10]
+	0x03C623A8 STP X22, X21, [X31 + 0x20]
+	0x03C623AC STP X20, X19, [X31 + 0x30]
+	0x03C623B0 ADRP X22, 0x784000
+	0x03C623B4 ADRP X25, 0x491000
+	0x03C623B8 ADRP X23, 0x4FE000
+	0x03C623BC ADRP X24, 0x491000
+	0x03C623C0 LDRB W8, [X22 + 0x426]
+	0x03C623C4 LDR X25, [X25 + 0x9D0]
+	0x03C623C8 LDR X23, [X23 + 0xC0]
+	0x03C623CC LDR X24, [X24 + 0x988]
+	0x03C623D0 MOV W19, W2
+	0x03C623D4 MOV X20, X1
+	0x03C623D8 MOV X21, X0
+	0x03C623DC TBNZ X8, 0x0, 0x3C6243C
+	0x03C623E0 ADRP X0, 0x491000
+	0x03C623E4 LDR X0, [X0 + 0x9D0]
+	0x03C623E8 BL 0x1C16CF4
+	0x03C623EC ADRP X0, 0x4FE000
+	0x03C623F0 LDR X0, [X0 + 0xC8]
+	0x03C623F4 BL 0x1C16CF4
+	0x03C623F8 ADRP X0, 0x4FE000
+	0x03C623FC LDR X0, [X0 + 0xD0]
+	0x03C62400 BL 0x1C16CF4
+	0x03C62404 ADRP X0, 0x4FE000
+	0x03C62408 LDR X0, [X0 + 0xD8]
+	0x03C6240C BL 0x1C16CF4
+	0x03C62410 ADRP X0, 0x4FE000
+	0x03C62414 LDR X0, [X0 + 0xC0]
+	0x03C62418 BL 0x1C16CF4
+	0x03C6241C ADRP X0, 0x491000
+	0x03C62420 LDR X0, [X0 + 0x988]
+	0x03C62424 BL 0x1C16CF4
+	0x03C62428 ADRP X0, 0x4FE000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x785000
+	006 Move W8, [X21+809]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x4FF000
+	014 Move X0, [X0+104]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+809], W8
+	018 Move X19, [X19+16]
+	019 NotImplemented "Instruction CMP not yet implemented."
+	020 NotImplemented "Instruction CSEL not yet implemented."
+	021 Compare X19, 0
+	022 JumpIfEqual {39}
+	023 Move X10, 0x4FF000
+	024 Move X8, [X19]
+	025 Move X10, [X10+104]
+	026 NotImplemented "Instruction LDRH not yet implemented."
+	027 Move X1, [X10]
+	028 Compare X9, 0
+	029 JumpIfEqual {36}
+	030 Move X10, [X8+176]
+	031 Add X10, X10, 8
+	032 NotImplemented "Instruction LDUR not yet implemented."
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Subtract X9, X9, 1
+	035 Add X10, X10, 16
+	036 Move X0, X19
+	037 Move W2, W31
+	038 Call 0x1C5D788
+	039 Move W8, W31
+	040 NotImplemented "Instruction LDRSW not yet implemented."
+	041 Add X8, X8, X9
+	042 Add X0, X8, 312
+	043 Move X8, [X0]
+	044 Move X1, [X0+8]
+	045 Move X0, X19
+	046 NotImplemented "Instruction BLR not yet implemented."
+	047 And W8, W0, 1
+	048 Move X20, X21
+	049 Move [X20], W8
+	050 Move X20, [X31+16]
+	051 Move X19, [X31+24]
+	052 Move X30, [X31+32]
+	053 Move X21, [X31+40]
+	054 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03C62354 MOV X0, X20
+	0x03C62358 MOV X1, X21
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

@@ -1,0 +1,118 @@
+Type: Photon.Voice.DeviceFeatures
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03555EBC LDP X30, X21, [X31], #0x20
+	0x03555EC0 RET
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void .ctor(Photon.Voice.CameraFacing facing)
+
+Disassembly:
+	0x03555EC4 STP X30, X21, [X31 - 0x20]!
+	0x03555EC8 STP X20, X19, [X31 + 0x10]
+	0x03555ECC ADRP X20, 0xE8A000
+	0x03555ED0 ADRP X21, 0xBC7000
+	0x03555ED4 LDRB W8, [X20 + 0xD88]
+	0x03555ED8 LDR X21, [X21 + 0xE18]
+	0x03555EDC MOV X19, X0
+	0x03555EE0 TBNZ X8, 0x0, 0x3555EF8
+	0x03555EE4 ADRP X0, 0xBC7000
+	0x03555EE8 LDR X0, [X0 + 0xE18]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: Photon.Voice.CameraFacing get_CameraFacing()
+
+Disassembly:
+	0x03555EEC BL 0x1C16CF4
+	0x03555EF0 MOVZ W8, 0x1
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_CameraFacing(Photon.Voice.CameraFacing value)
+
+Disassembly:
+	0x03555EF4 STRB W8, [X20 + 0xD88]
+	0x03555EF8 LDR X0, [X21]
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x03555EFC LDR W8, [X0 + 0xE0]
+	0x03555F00 CBNZ W8, 0x3555F08
+	0x03555F04 BL 0x1C16DFC
+	0x03555F08 LDRB W8, [X19 + 0x31]
+	0x03555F0C LDP X20, X19, [X31 + 0x10]
+	0x03555F10 UBFM W0, W8, 0x1, 0x1
+	0x03555F14 LDP X30, X21, [X31], #0x20
+	0x03555F18 RET
+	0x03555F1C SUB X31, X31, 0x50
+	0x03555F20 STP X30, X23, [X31 + 0x20]
+	0x03555F24 STP X22, X21, [X31 + 0x30]
+	0x03555F28 STP X20, X19, [X31 + 0x40]
+	0x03555F2C ADRP X20, 0xE8A000
+	0x03555F30 LDRB W8, [X20 + 0xD89]
+	0x03555F34 MOV X19, X0
+	0x03555F38 TBNZ X8, 0x0, 0x3555FBC
+	0x03555F3C ADRP X0, 0xBC7000
+	0x03555F40 LDR X0, [X0 + 0xE18]
+	0x03555F44 BL 0x1C16CF4
+	0x03555F48 ADRP X0, 0xBE0000
+	0x03555F4C LDR X0, [X0 + 0x3E8]
+	0x03555F50 BL 0x1C16CF4
+	0x03555F54 ADRP X0, 0xB9E000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xE8B000
+	005 Move X20, 0xBE1000
+	006 Move W8, [X19+3442]
+	007 Move X20, [X20+920]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xBE1000
+	013 Move X0, [X0+920]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+3442], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+

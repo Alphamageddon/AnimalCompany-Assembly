@@ -1,0 +1,86 @@
+Type: System.Threading.Tasks.Task/SetOnInvokeMres
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x033F4BB0 LDR X0, [X0 + 0x898]
+	0x033F4BB4 BL 0x1C16D08
+	0x033F4BB8 MOV X1, X0
+	0x033F4BBC MOV X0, X19
+	0x033F4BC0 BL 0x1C16DEC
+	0x033F4BC4 STP X30, X21, [X31 - 0x20]!
+	0x033F4BC8 STP X20, X19, [X31 + 0x10]
+	0x033F4BCC ADRP X21, 0xFE9000
+	0x033F4BD0 ADRP X20, 0xD07000
+	0x033F4BD4 LDRB W8, [X21 + 0x477]
+	0x033F4BD8 LDR X20, [X20 + 0x7E8]
+	0x033F4BDC MOV X19, X0
+	0x033F4BE0 TBNZ X8, 0x0, 0x33F4C04
+	0x033F4BE4 ADRP X0, 0xD07000
+	0x033F4BE8 LDR X0, [X0 + 0x7E8]
+	0x033F4BEC BL 0x1C16CF4
+	0x033F4BF0 ADRP X0, 0xD00000
+	0x033F4BF4 LDR X0, [X0 + 0x7B8]
+	0x033F4BF8 BL 0x1C16CF4
+	0x033F4BFC MOVZ W8, 0x1
+	0x033F4C00 STRB W8, [X21 + 0x477]
+	0x033F4C04 LDR X0, [X20]
+	0x033F4C08 LDR W8, [X0 + 0xE0]
+	0x033F4C0C CBNZ W8, 0x33F4C14
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xFEA000
+	006 Move X21, 0xD39000
+	007 Move W8, [X20+1159]
+	008 Move X21, [X21+3992]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xD39000
+	015 Move X0, [X0+3992]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1159], W8
+	019 Move X0, [X21]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move X0, X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move W1, W31
+	028 Move W2, W31
+	029 Move X3, X31
+	030 Move X30, [X31+32]
+	031 Move X21, [X31+40]
+	032 Call ManualResetEventSlim..ctor, X0, X1, X2
+	033 Return 
+
+Method: System.Void Invoke(System.Threading.Tasks.Task completingTask)
+
+Disassembly:
+	0x033F7F80 LDR X0, [X0 + 0x9F8]
+	0x033F7F84 BL 0x1C16CF4
+
+ISIL:
+	001 Move X1, X31
+	002 Call ManualResetEventSlim.Set, X0
+	003 Return 
+
+Method: System.Boolean get_InvokeMayRunArbitraryCode()
+
+Disassembly:
+	0x033F7F88 ADRP X0, 0xD36000
+	0x033F7F8C LDR X0, [X0 + 0x9F0]
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+

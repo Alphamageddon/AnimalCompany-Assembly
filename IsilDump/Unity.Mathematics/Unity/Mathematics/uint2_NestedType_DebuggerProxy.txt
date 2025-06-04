@@ -1,0 +1,30 @@
+Type: Unity.Mathematics.uint2/DebuggerProxy
+
+Method: System.Void .ctor(Unity.Mathematics.uint2 v)
+
+Disassembly:
+	0x038CF2C4 MOV W8, W1
+	0x038CF2C8 MOV W9, W2
+	0x038CF2CC MOV W10, W3
+	0x038CF2D0 BFM X8, X4, 0x20, 0x1F
+	0x038CF2D4 BFM X9, X5, 0x20, 0x1F
+	0x038CF2D8 BFM X10, X6, 0x20, 0x1F
+	0x038CF2DC STP X8, X9, [X0]
+	0x038CF2E0 STR X10, [X0 + 0x10]
+	0x038CF2E4 RET
+	0x038CF2E8 MOV W8, W1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

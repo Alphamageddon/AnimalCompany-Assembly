@@ -1,0 +1,26 @@
+Type: System.Net.AutoWebProxyScriptEngine
+
+Method: System.Boolean GetProxies(System.Uri destination, out System.Collections.Generic.IList`1<System.String> proxyList)
+
+Disassembly:
+	0x036967EC RET
+	0x036967F0 B 0x36967FC
+	0x036967F4 MOV X21, X0
+
+ISIL:
+	001 Move W0, W31
+	002 Move [X2], X31
+	003 Return X0
+
+Method: System.Boolean GetProxies(System.Uri destination, out System.Collections.Generic.IList`1<System.String> proxyList, ref System.Int32 syncStatus)
+
+Disassembly:
+	0x03696B98 LDP X26, X25, [X31 + 0x20]
+	0x03696B9C LDP X28, X27, [X31 + 0x10]
+	0x03696BA0 LDR X30, [X31], #0x60
+
+ISIL:
+	001 Move W0, W31
+	002 Move [X2], X31
+	003 Return X0
+

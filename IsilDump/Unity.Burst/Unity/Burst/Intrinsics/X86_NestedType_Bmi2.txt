@@ -1,0 +1,260 @@
+Type: Unity.Burst.Intrinsics.X86/Bmi2
+
+Method: System.Boolean get_IsBmi2Supported()
+
+Disassembly:
+	0x0372A274 LDP S1, S2, [X2 + 0x10]
+	0x0372A278 LDP S3, S4, [X2 + 0x18]
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.UInt32 bzhi_u32(System.UInt32 a, System.UInt32 index)
+
+Disassembly:
+	0x0372A27C LDR V5, [X0 + 0x1]
+	0x0372A280 LDR V6, [X1 + 0x1]
+	0x0372A284 FNEG S2, S2
+	0x0372A288 FNEG S4, S4
+	0x0372A28C UNIMPLEMENTED
+	0x0372A290 UNIMPLEMENTED
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 NotImplemented "Instruction LSLV not yet implemented."
+	005 And W31, W1, 224
+	006 NotImplemented "Instruction CSINV not yet implemented."
+	007 And W0, W8, W0
+	008 Return X0
+
+Method: System.UInt64 bzhi_u64(System.UInt64 a, System.UInt64 index)
+
+Disassembly:
+	0x0372A294 UNIMPLEMENTED
+	0x0372A298 UNIMPLEMENTED
+	0x0372A29C MOV V1.S[1], V2.S[0]
+	0x00000000 INVALID
+	0x0372A2A4 MOV V3.S[1], V4.S[0]
+	0x0372A2A8 UNIMPLEMENTED
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move X8, TEMP
+	004 NotImplemented "Instruction LSLV not yet implemented."
+	005 And X31, X1, 255
+	006 NotImplemented "Instruction CSINV not yet implemented."
+	007 And X0, X8, X0
+	008 Return X0
+
+Method: System.UInt32 mulx_u32(System.UInt32 a, System.UInt32 b, out System.UInt32 hi)
+
+Disassembly:
+	0x00000000 INVALID
+	0x0372A2B0 UNIMPLEMENTED
+	0x0372A2B4 FADD V1.2D, V5.2D, V1.2D
+	0x0372A2B8 FADD V2.2D, V6.2D, V2.2D
+
+ISIL:
+	001 NotImplemented "Instruction UMADDL not yet implemented."
+	002 Move X8, X0
+	003 ShiftRight X8, 32
+	004 And X8, X8, 0x7FFFFFFF
+	005 Move [X2], W8
+	006 Return X0
+
+Method: System.UInt64 mulx_u64(System.UInt64 a, System.UInt64 b, out System.UInt64 hi)
+
+Disassembly:
+	0x0372A2BC UNIMPLEMENTED
+	0x0372A2C0 UNIMPLEMENTED
+	0x0372A2C4 STP V0, V1, [X8]
+	0x0372A2C8 RET
+	0x0372A2CC STP X30, X19, [X31 - 0x10]!
+	0x0372A2D0 ADRP X0, 0x9C9000
+	0x0372A2D4 LDR X0, [X0 + 0x7D0]
+	0x0372A2D8 BL 0x1C16D08
+	0x0372A2DC BL 0x1C16F10
+	0x0372A2E0 MOV X19, X0
+	0x0372A2E4 ADRP X0, 0xA1A000
+	0x0372A2E8 LDR X0, [X0 + 0xC70]
+	0x0372A2EC BL 0x1C16D08
+	0x0372A2F0 MOV X1, X0
+	0x0372A2F4 MOV X0, X19
+
+ISIL:
+	001 And X8, X0, 0
+	002 Move X10, X1
+	003 ShiftRight X10, 32
+	004 And X10, X10, 0x7FFFFFFF
+	005 And X9, X1, 0
+	006 Move X11, X0
+	007 ShiftRight X11, 32
+	008 And X11, X11, 0x7FFFFFFF
+	009 NotImplemented "Instruction UMADDL not yet implemented."
+	010 Multiply X8, X10, X8
+	011 Multiply X9, X9, X11
+	012 Multiply X11, X10, X11
+	013 Add X8, X8, X12
+	014 Add X10, X11, X9
+	015 Add X8, X8, W9
+	016 Add X8, X10, X8
+	017 Multiply X0, X1, X0
+	018 Move [X2], X8
+	019 Return X0
+
+Method: System.UInt32 pdep_u32(System.UInt32 a, System.UInt32 mask)
+
+Disassembly:
+	0x0372A2F8 MOV X2, X31
+	0x0372A2FC BL 0x33B2C70
+	0x0372A300 ADRP X0, 0xA1A000
+	0x0372A304 LDR X0, [X0 + 0xCC8]
+	0x0372A308 BL 0x1C16D08
+	0x0372A30C MOV X1, X0
+	0x0372A310 MOV X0, X19
+	0x0372A314 BL 0x1C16DEC
+	0x0372A318 STP X30, X19, [X31 - 0x10]!
+	0x0372A31C ADRP X0, 0x9C9000
+	0x0372A320 LDR X0, [X0 + 0x7D0]
+	0x0372A324 BL 0x1C16D08
+	0x0372A328 BL 0x1C16F10
+	0x0372A32C MOV X19, X0
+	0x0372A330 ADRP X0, 0xA1A000
+
+ISIL:
+	001 Move W8, W31
+	002 Move W9, W31
+	003 Move W10, W31
+	004 NotImplemented "Instruction LSRV not yet implemented."
+	005 Move TEMP, X11
+	006 And TEMP, TEMP, 1
+	007 Compare TEMP, 1
+	008 JumpIfNotEqual {14}
+	009 NotImplemented "Instruction LSRV not yet implemented."
+	010 And W11, W11, 1
+	011 NotImplemented "Instruction LSLV not yet implemented."
+	012 Or W8, W11, W8
+	013 Add W9, W9, 1
+	014 Add W10, W10, 1
+	015 NotImplemented "Instruction CMP not yet implemented."
+	016 Move W0, W8
+	017 Return X0
+
+Method: System.UInt64 pdep_u64(System.UInt64 a, System.UInt64 mask)
+
+Disassembly:
+	0x0372A334 LDR X0, [X0 + 0xC70]
+	0x0372A338 BL 0x1C16D08
+	0x0372A33C MOV X1, X0
+	0x0372A340 MOV X0, X19
+	0x0372A344 MOV X2, X31
+	0x0372A348 BL 0x33B2C70
+	0x0372A34C ADRP X0, 0xA1A000
+	0x0372A350 LDR X0, [X0 + 0xCD0]
+	0x0372A354 BL 0x1C16D08
+	0x0372A358 MOV X1, X0
+	0x0372A35C MOV X0, X19
+	0x0372A360 BL 0x1C16DEC
+	0x0372A364 FMOV S0, W0
+	0x0372A368 FMOV D1, X0
+	0x0372A36C FMOV S2, W2
+
+ISIL:
+	001 Move X9, X31
+	002 Move X8, X31
+	003 Move W10, W31
+	004 NotImplemented "Instruction LSRV not yet implemented."
+	005 Move TEMP, X11
+	006 And TEMP, TEMP, 1
+	007 Compare TEMP, 1
+	008 JumpIfNotEqual {14}
+	009 NotImplemented "Instruction LSRV not yet implemented."
+	010 And X11, X11, 1
+	011 NotImplemented "Instruction LSLV not yet implemented."
+	012 Or X8, X11, X8
+	013 Add W10, W10, 1
+	014 Add X9, X9, 1
+	015 NotImplemented "Instruction CMP not yet implemented."
+	016 Move X0, X8
+	017 Return X0
+
+Method: System.UInt32 pext_u32(System.UInt32 a, System.UInt32 mask)
+
+Disassembly:
+	0x0372A370 FMOV D3, X2
+	0x0372A374 FMOV D5, X4
+	0x0372A378 UNIMPLEMENTED
+	0x0372A37C UNIMPLEMENTED
+	0x0372A380 UNIMPLEMENTED
+	0x0372A384 UNIMPLEMENTED
+	0x0372A388 FMOV S4, W4
+	0x0372A38C UNIMPLEMENTED
+	0x0372A390 UNIMPLEMENTED
+	0x0372A394 UNIMPLEMENTED
+	0x0372A398 UNIMPLEMENTED
+	0x0372A39C UNIMPLEMENTED
+	0x0372A3A0 UNIMPLEMENTED
+	0x0372A3A4 UNIMPLEMENTED
+	0x00000000 INVALID
+
+ISIL:
+	001 Move W8, W31
+	002 Move W9, W31
+	003 Move W10, W31
+	004 NotImplemented "Instruction LSRV not yet implemented."
+	005 Move TEMP, X11
+	006 And TEMP, TEMP, 1
+	007 Compare TEMP, 1
+	008 JumpIfNotEqual {14}
+	009 NotImplemented "Instruction LSRV not yet implemented."
+	010 And W11, W11, 1
+	011 NotImplemented "Instruction LSLV not yet implemented."
+	012 Or W8, W11, W8
+	013 Add W9, W9, 1
+	014 Add W10, W10, 1
+	015 NotImplemented "Instruction CMP not yet implemented."
+	016 Move W0, W8
+	017 Return X0
+
+Method: System.UInt64 pext_u64(System.UInt64 a, System.UInt64 mask)
+
+Disassembly:
+	0x0372A3AC UNIMPLEMENTED
+	0x0372A3B0 UNIMPLEMENTED
+	0x0372A3B4 UNIMPLEMENTED
+	0x0372A3B8 UNIMPLEMENTED
+	0x00000000 INVALID
+	0x0372A3C0 FSUB V0.2D, V4.2D, V0.2D
+	0x0372A3C4 FSUB V1.2D, V3.2D, V1.2D
+	0x0372A3C8 UNIMPLEMENTED
+	0x0372A3CC UNIMPLEMENTED
+	0x0372A3D0 UNIMPLEMENTED
+	0x0372A3D4 UNIMPLEMENTED
+	0x0372A3D8 ORR V0.16B, V1.16B, V0.16B
+	0x0372A3DC UNIMPLEMENTED
+	0x0372A3E0 FMOV X0, D0
+	0x0372A3E4 RET
+
+ISIL:
+	001 Move X9, X31
+	002 Move X8, X31
+	003 Move W10, W31
+	004 NotImplemented "Instruction LSRV not yet implemented."
+	005 Move TEMP, X11
+	006 And TEMP, TEMP, 1
+	007 Compare TEMP, 1
+	008 JumpIfNotEqual {14}
+	009 NotImplemented "Instruction LSRV not yet implemented."
+	010 And X11, X11, 1
+	011 NotImplemented "Instruction LSLV not yet implemented."
+	012 Or X8, X11, X8
+	013 Add W10, W10, 1
+	014 Add X9, X9, 1
+	015 NotImplemented "Instruction CMP not yet implemented."
+	016 Move X0, X8
+	017 Return X0
+

@@ -1,0 +1,87 @@
+Type: System.Net.MonoChunkParser/Chunk
+
+Method: System.Void .ctor(System.Byte[] chunk)
+
+Disassembly:
+	0x036A5204 BL 0x1C16F10
+	0x036A5208 MOV X1, X19
+	0x036A520C MOV X2, X20
+	0x036A5210 MOV X21, X0
+	0x036A5214 BL 0x36A68C0
+	0x036A5218 STR X21, [X19 + 0x28]
+	0x036A521C LDR X0, [X27]
+	0x036A5220 BL 0x1C16F10
+	0x036A5224 LDR X1, [X26]
+	0x036A5228 MOV X20, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Int32 Read(System.Byte[] buffer, System.Int32 offset, System.Int32 size)
+
+Disassembly:
+	0x036A473C LDR X0, [X22 + 0x30]
+	0x036A4740 CBZ X0, 0x36A48A4
+	0x036A4744 LDR X8, [X0]
+	0x036A4748 LDR X4, [X19 + 0x20]
+	0x036A474C LDR X9, [X8 + 0x2D8]
+	0x036A4750 LDR X5, [X8 + 0x2E0]
+	0x036A4754 MOV W2, W31
+	0x036A4758 MOV W3, W20
+	0x036A475C BLR X9
+	0x036A4760 CBZ X0, 0x36A48A0
+	0x036A4764 ADRP X8, 0xA83000
+	0x036A4768 LDR X8, [X8 + 0x2D0]
+	0x036A476C LDR X2, [X8]
+	0x036A4770 MOV W1, W31
+	0x036A4774 BL 0x269D3A8
+	0x036A4778 ADRP X8, 0xA83000
+	0x036A477C LDR X8, [X8 + 0x2C8]
+	0x036A4780 STP X0, X1, [X31]
+	0x036A4784 LDR X8, [X8]
+	0x036A4788 ADD X0, X31, 0x0
+	0x036A478C MOV X1, X8
+	0x036A4790 BL 0x2998978
+	0x036A4794 TBZ X0, 0x0, 0x36A4850
+	0x036A4798 ADRP X8, 0xA83000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X0
+	005 Move X0, [X0+16]
+	006 Compare X0, 0
+	007 JumpIfEqual {27}
+	008 Move W8, W2
+	009 Move X2, X1
+	010 Move W1, [X19+24]
+	011 Move W9, [X0+24]
+	012 Move X5, X31
+	013 Subtract W9, W9, W1
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 NotImplemented "Instruction CSEL not yet implemented."
+	016 Move W3, W8
+	017 Move W4, W20
+	018 Call Buffer.BlockCopy, X0, X1, X2, X3, X4
+	019 Move W8, [X19+24]
+	020 Move W0, W20
+	021 Add W8, W20, W8
+	022 Move [X19+24], W8
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move X30, [X31+32]
+	026 Return X0
+	027 Call 0x1C17F20
+

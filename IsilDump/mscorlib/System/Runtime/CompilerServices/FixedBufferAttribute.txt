@@ -1,0 +1,56 @@
+Type: System.Runtime.CompilerServices.FixedBufferAttribute
+
+Method: System.Void .ctor(System.Type elementType, System.Int32 length)
+
+Disassembly:
+	0x032C3F2C STP X30, X21, [X31 - 0x20]!
+	0x032C3F30 STP X20, X19, [X31 + 0x10]
+	0x032C3F34 ADRP X20, 0x1119000
+	0x032C3F38 LDRB W8, [X20 + 0x89A]
+	0x032C3F3C MOV X19, X0
+	0x032C3F40 TBNZ X8, 0x0, 0x32C3F64
+	0x032C3F44 ADRP X0, 0xE38000
+	0x032C3F48 LDR X0, [X0 + 0x7E8]
+	0x032C3F4C BL 0x1C16CF4
+	0x032C3F50 ADRP X0, 0xE31000
+	0x032C3F54 LDR X0, [X0 + 0x7B8]
+	0x032C3F58 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move W19, W2
+	008 Move X21, X0
+	009 Call Attribute..ctor, X0
+	010 Move [X21+16], X20
+	011 Move [X21+24], W19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+
+Method: System.Type get_ElementType()
+
+Disassembly:
+	0x032C3F5C MOVZ W8, 0x1
+	0x032C3F60 STRB W8, [X20 + 0x89A]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0x032C3F64 MOV X0, X31
+	0x032C3F68 BL 0x3224FFC
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+

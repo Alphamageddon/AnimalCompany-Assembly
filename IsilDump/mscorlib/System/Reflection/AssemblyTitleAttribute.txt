@@ -1,0 +1,30 @@
+Type: System.Reflection.AssemblyTitleAttribute
+
+Method: System.Void .ctor(System.String title)
+
+Disassembly:
+	0x032CD778 CBZ X20, 0x32CD900
+	0x032CD77C LDR X0, [X25]
+	0x032CD780 ADRP X23, 0xE58000
+	0x032CD784 ADRP X24, 0xE58000
+	0x032CD788 LDR X23, [X23 + 0xCB0]
+	0x032CD78C LDR X24, [X24 + 0xCB8]
+	0x032CD790 MOVZ W1, 0x1
+	0x032CD794 BL 0x1C16D6C
+	0x032CD798 LDR X8, [X28]
+	0x032CD79C LDR X22, [X23]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

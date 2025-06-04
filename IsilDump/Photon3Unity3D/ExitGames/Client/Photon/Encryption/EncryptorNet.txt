@@ -1,0 +1,188 @@
+Type: ExitGames.Client.Photon.Encryption.EncryptorNet
+
+Method: System.Void Init(System.Byte[] encryptionSecret, System.Byte[] hmacSecret, System.Byte[] ivBytes = null, System.Boolean chainingModeGCM = False, System.Int32 mtu = 1200)
+
+Disassembly:
+	0x0352BAA0 STR X19, [X8 + 0x8]
+	0x0352BAA4 LDR X0, [X22]
+	0x0352BAA8 BL 0x1C16D6C
+	0x0352BAAC LDR X1, [X23]
+	0x0352BAB0 MOV X2, X31
+	0x0352BAB4 MOV X19, X0
+	0x0352BAB8 BL 0x32C5BD8
+	0x0352BABC LDR X8, [X20]
+	0x0352BAC0 MOVZ W1, 0xC0
+	0x0352BAC4 LDR X8, [X8 + 0xB8]
+	0x0352BAC8 STR X19, [X8 + 0x10]
+	0x0352BACC LDR X0, [X22]
+	0x0352BAD0 BL 0x1C16D6C
+	0x0352BAD4 LDR X1, [X21]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0xBD2000
+	004 Move X0, [X0+1880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotImplementedException..ctor, X0
+	010 Move X0, 0xC0A000
+	011 Move X0, [X0+2320]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Void Encrypt2(System.Byte[] data, System.Int32 len, System.Byte[] header, System.Byte[] output, System.Int32 outOffset, ref System.Int32 outSize)
+
+Disassembly:
+	0x0352BAD8 MOV X2, X31
+	0x0352BADC MOV X19, X0
+	0x0352BAE0 BL 0x32C5BD8
+	0x0352BAE4 LDR X8, [X20]
+	0x0352BAE8 LDP X22, X21, [X31 + 0x20]
+	0x0352BAEC LDP X24, X23, [X31 + 0x10]
+	0x0352BAF0 LDR X8, [X8 + 0xB8]
+	0x0352BAF4 STR X19, [X8 + 0x18]
+	0x0352BAF8 LDP X20, X19, [X31 + 0x30]
+	0x0352BAFC LDR X30, [X31], #0x40
+	0x0352BB00 RET
+	0x0352BB04 STP X30, X21, [X31 - 0x20]!
+	0x0352BB08 STP X20, X19, [X31 + 0x10]
+	0x0352BB0C ADRP X21, 0xEB4000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0xBD2000
+	004 Move X0, [X0+1880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotImplementedException..ctor, X0
+	010 Move X0, 0xC0A000
+	011 Move X0, [X0+2328]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Byte[] Decrypt2(System.Byte[] data, System.Int32 offset, System.Int32 len, System.Byte[] header, out System.Int32 outLen)
+
+Disassembly:
+	0x0352BB10 ADRP X20, 0xBF1000
+	0x0352BB14 LDRB W8, [X21 + 0xB81]
+	0x0352BB18 LDR X20, [X20 + 0xD08]
+	0x0352BB1C MOV X19, X0
+	0x0352BB20 TBNZ X8, 0x0, 0x352BB38
+	0x0352BB24 ADRP X0, 0xBF1000
+	0x0352BB28 LDR X0, [X0 + 0xD08]
+	0x0352BB2C BL 0x1C16CF4
+	0x0352BB30 MOVZ W8, 0x1
+	0x0352BB34 STRB W8, [X21 + 0xB81]
+	0x0352BB38 MOV X0, X19
+	0x0352BB3C MOV X1, X31
+	0x0352BB40 STR X31, [X19 + 0x10]
+	0x0352BB44 BL 0x33BDD8C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0xBD2000
+	004 Move X0, [X0+1880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotImplementedException..ctor, X0
+	010 Move X0, 0xC0A000
+	011 Move X0, [X0+2336]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Int32 CalculateEncryptedSize(System.Int32 unencryptedSize)
+
+Disassembly:
+	0x0352BB48 LDR X0, [X20]
+	0x0352BB4C MOVZ W1, 0x46
+	0x0352BB50 BL 0x1C16D6C
+	0x0352BB54 MOVZ W8, 0x1
+	0x0352BB58 STR X0, [X19 + 0x10]
+	0x0352BB5C STR W8, [X19 + 0x18]
+	0x0352BB60 LDP X20, X19, [X31 + 0x10]
+	0x0352BB64 LDP X30, X21, [X31], #0x20
+	0x0352BB68 RET
+	0x0352BB6C STR X30, [X31 - 0x30]!
+	0x0352BB70 STP X22, X21, [X31 + 0x10]
+	0x0352BB74 STP X20, X19, [X31 + 0x20]
+	0x0352BB78 ADRP X22, 0xEB4000
+	0x0352BB7C ADRP X21, 0xBF1000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0xBD2000
+	004 Move X0, [X0+1880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotImplementedException..ctor, X0
+	010 Move X0, 0xC0A000
+	011 Move X0, [X0+2344]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Int32 CalculateFragmentLength()
+
+Disassembly:
+	0x0352BB80 LDRB W8, [X22 + 0xB82]
+	0x0352BB84 LDR X21, [X21 + 0xD08]
+	0x0352BB88 MOV X20, X1
+	0x0352BB8C MOV X19, X0
+	0x0352BB90 TBNZ X8, 0x0, 0x352BBA8
+	0x0352BB94 ADRP X0, 0xBF1000
+	0x0352BB98 LDR X0, [X0 + 0xD08]
+	0x0352BB9C BL 0x1C16CF4
+	0x0352BBA0 MOVZ W8, 0x1
+	0x0352BBA4 STRB W8, [X22 + 0xB82]
+	0x0352BBA8 MOV X0, X19
+	0x0352BBAC MOV X1, X31
+	0x0352BBB0 STR X31, [X19 + 0x10]
+	0x0352BBB4 BL 0x33BDD8C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0xBD2000
+	004 Move X0, [X0+1880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotImplementedException..ctor, X0
+	010 Move X0, 0xC0A000
+	011 Move X0, [X0+2352]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0352BBB8 LDR X0, [X21]
+	0x0352BBBC MOVZ W1, 0x46
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

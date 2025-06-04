@@ -1,0 +1,163 @@
+Type: System.Threading.ExecutionContext/Reader
+
+Method: System.Void .ctor(System.Threading.ExecutionContext ec)
+
+Disassembly:
+	0x033E66D4 CBNZ W8, 0x33E66E0
+	0x033E66D8 BL 0x1C16DFC
+
+ISIL:
+	001 Move [X0], X1
+	002 Return 
+
+Method: System.Threading.ExecutionContext DangerousGetRawExecutionContext()
+
+Disassembly:
+	0x033E66DC LDR X0, [X22]
+	0x033E66E0 LDR X8, [X21]
+
+ISIL:
+	001 Move X0, [X0]
+	002 Return X0
+
+Method: System.Boolean get_IsNull()
+
+Disassembly:
+	0x033E5CB8 LDR X30, [X31], #0x10
+	0x033E5CBC RET
+	0x033E5CC0 LDR X30, [X31], #0x10
+	0x033E5CC4 B 0x33E5C50
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Boolean IsDefaultFTContext(System.Boolean ignoreSyncCtx)
+
+Disassembly:
+	0x033E5CC8 BL 0x1C16F20
+	0x033E5CCC STP X30, X23, [X31 - 0x30]!
+	0x033E5CD0 STP X22, X21, [X31 + 0x10]
+	0x033E5CD4 STP X20, X19, [X31 + 0x20]
+	0x033E5CD8 ADRP X19, 0xFF8000
+	0x033E5CDC ADRP X20, 0xD48000
+	0x033E5CE0 LDRB W8, [X19 + 0x3D1]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0]
+	003 Compare X0, 0
+	004 JumpIfEqual {7}
+	005 And W1, W1, 1
+	006 Move X30, [X31+16]
+	007 Call 0x1C17F20
+
+Method: System.Boolean get_IsFlowSuppressed()
+
+Disassembly:
+	0x033E66E4 LDR X9, [X0 + 0xB8]
+	0x033E66E8 LDR W10, [X8 + 0xE0]
+	0x033E66EC LDR X21, [X9]
+	0x033E66F0 CBNZ W10, 0x33E66FC
+	0x033E66F4 MOV X0, X8
+	0x033E66F8 BL 0x1C16DFC
+	0x033E66FC MOV X0, X20
+
+ISIL:
+	001 Move X8, [X0]
+	002 Compare X8, 0
+	003 JumpIfEqual {9}
+	004 Move W8, [X8+48]
+	005 Move W0, W8
+	006 ShiftRight W0, 1
+	007 And W0, W0, 1
+	008 Return X0
+	009 Move W0, W31
+	010 Return X0
+
+Method: System.Threading.SynchronizationContext get_SynchronizationContext()
+
+Disassembly:
+	0x033E5FA4 MOV X1, X31
+	0x033E5FA8 BL 0x33B3D58
+	0x033E5FAC B 0x33E5F2C
+	0x033E5FB0 MOVZ W0, 0x8
+	0x033E5FB4 BL 0x3EB1AF0
+	0x033E5FB8 LDR X8, [X19]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Compare X8, 0
+	003 JumpIfEqual {6}
+	004 Move X0, [X8+16]
+	005 Return X0
+	006 Move X0, X31
+	007 Return X0
+
+Method: System.Threading.SynchronizationContext get_SynchronizationContextNoFlow()
+
+Disassembly:
+	0x033E5FBC STR X8, [X0]
+	0x033E5FC0 ADRP X1, 0xACF000
+	0x033E5FC4 ADD X1, X1, 0xE58
+	0x033E5FC8 MOV X2, X31
+	0x033E5FCC BL 0x3EB1B00
+	0x033E5FD0 MOV X19, X0
+
+ISIL:
+	001 Move X8, [X0]
+	002 Compare X8, 0
+	003 JumpIfEqual {6}
+	004 Move X0, [X8+24]
+	005 Return X0
+	006 Move X0, X31
+	007 Return X0
+
+Method: System.Runtime.Remoting.Messaging.LogicalCallContext/Reader get_LogicalCallContext()
+
+Disassembly:
+	0x033E642C STR X19, [X20 + 0x18]
+	0x033E6430 MOV X0, X20
+	0x033E6434 LDP X20, X19, [X31 + 0x10]
+	0x033E6438 LDP X30, X21, [X31], #0x20
+	0x033E643C RET
+	0x033E6440 STR X30, [X31 - 0x20]!
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0]
+	003 Compare X0, 0
+	004 JumpIfEqual {6}
+	005 Call ExecutionContext.get_LogicalCallContext, X0
+	006 Move X30, [X31+16]
+	007 Return X0
+
+Method: System.Boolean HasSameLocalValues(System.Threading.ExecutionContext other)
+
+Disassembly:
+	0x033E5D34 LDR W8, [X0 + 0xE0]
+	0x033E5D38 CBNZ W8, 0x33E5D40
+	0x033E5D3C BL 0x1C16DFC
+	0x033E5D40 BL 0x1C4C018
+	0x033E5D44 CBZ X0, 0x33E5E10
+	0x033E5D48 LDR X8, [X20]
+	0x033E5D4C ADRP X23, 0xD48000
+	0x033E5D50 MOV X19, X0
+	0x033E5D54 LDR W9, [X8 + 0xE0]
+	0x033E5D58 LDR X23, [X23 + 0x370]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Compare X8, 0
+	003 JumpIfEqual {5}
+	004 Move X8, [X8+56]
+	005 Compare X1, 0
+	006 JumpIfEqual {8}
+	007 Move X9, [X1+56]
+	008 Move X9, X31
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 Return X0
+

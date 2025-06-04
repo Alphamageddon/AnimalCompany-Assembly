@@ -1,0 +1,155 @@
+Type: UnityEngine.InputSystem.Utilities.MemoryHelpers/BitRegion
+
+Method: System.Boolean get_isEmpty()
+
+Disassembly:
+	0x03763F48 LDP X30, X21, [X31 + 0x20]
+	0x03763F4C AND W0, W0, 0x1
+	0x03763F50 ADD X31, X31, 0x40
+	0x03763F54 RET
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Void .ctor(System.UInt32 bitOffset, System.UInt32 sizeInBits)
+
+Disassembly:
+	0x03763F58 SUB X31, X31, 0x30
+	0x03763F5C STP X31, X30, [X31 + 0x8]
+
+ISIL:
+	001 Move [X0], W1
+	002 Move [X0+4], W2
+	003 Return 
+
+Method: System.Void .ctor(System.UInt32 byteOffset, System.UInt32 bitOffset, System.UInt32 sizeInBits)
+
+Disassembly:
+	0x03763F60 STP X20, X19, [X31 + 0x20]
+	0x03763F64 STR X31, [X31]
+	0x03763F68 MOV X19, X0
+
+ISIL:
+	001 Add W8, W2, W1
+	002 Move [X0], W8
+	003 Move [X0+4], W3
+	004 Return 
+
+Method: UnityEngine.InputSystem.Utilities.MemoryHelpers/BitRegion Overlap(UnityEngine.InputSystem.Utilities.MemoryHelpers/BitRegion other)
+
+Disassembly:
+	0x03763F6C LDR X0, [X0]
+	0x03763F70 CBZ X0, 0x3763F8C
+	0x03763F74 LDR X8, [X0]
+	0x03763F78 LDP X9, X1, [X8 + 0x158]
+	0x03763F7C BLR X9
+	0x03763F80 MOVZ W8, 0x18D
+	0x03763F84 MUL W20, W0, W8
+	0x03763F88 B 0x3763F90
+	0x03763F8C MOV W20, W31
+	0x03763F90 LDUR V0, [X19 + 0x8]
+	0x03763F94 ADD X0, X31, 0x0
+	0x03763F98 MOV X1, X31
+	0x03763F9C STR V0, [X31]
+	0x03763FA0 BL 0x337B6D8
+	0x03763FA4 LDUR X8, [X31 + 0x4]
+	0x03763FA8 MOVZ W9, 0x18D
+	0x03763FAC MUL W9, W0, W9
+	0x03763FB0 EOR W9, W9, W20, 0x0
+	0x03763FB4 SUB X10, X31, X8
+	0x03763FB8 AND X11, X8, 0x7FFFFFFFFFFFFFFF
+	0x03763FBC ANDS X31, X10, 0x7FFFFFFFFFFFFFFF
+	0x03763FC0 CSEL X8, X11, X8, EQ
+	0x03763FC4 LDP X20, X19, [X31 + 0x20]
+	0x03763FC8 LDR X30, [X31 + 0x10]
+	0x03763FCC UBFM X10, X8, 0x20, 0x3F
+	0x03763FD0 EOR W8, W10, W8, 0x0
+	0x03763FD4 EOR W0, W9, W8, 0x0
+	0x03763FD8 ADD X31, X31, 0x30
+	0x03763FDC RET
+	0x03763FE0 STP X30, X19, [X31 - 0x10]!
+	0x03763FE4 MOV X1, X31
+	0x03763FE8 MOV X19, X0
+	0x03763FEC BL 0x337B6D8
+	0x03763FF0 LDUR X8, [X19 + 0x4]
+	0x03763FF4 MOVZ W9, 0x18D
+	0x03763FF8 MUL W9, W0, W9
+	0x03763FFC SUB X10, X31, X8
+	0x03764000 AND X11, X8, 0x7FFFFFFFFFFFFFFF
+	0x03764004 ANDS X31, X10, 0x7FFFFFFFFFFFFFFF
+	0x03764008 CSEL X8, X11, X8, EQ
+	0x0376400C UBFM X10, X8, 0x20, 0x3F
+	0x03764010 EOR W8, W10, W8, 0x0
+	0x03764014 EOR W0, W9, W8, 0x0
+	0x03764018 LDP X30, X19, [X31], #0x10
+	0x0376401C RET
+	0x03764020 SUB X31, X31, 0x30
+	0x03764024 STR X30, [X31 + 0x20]
+	0x03764028 LDR X8, [X1 + 0x10]
+	0x0376402C LDR V0, [X1]
+	0x03764030 ADD X1, X31, 0x0
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X22, 0xC7E000
+	007 Move W8, [X22+3683]
+	008 Move X19, X1
+	009 Move X20, X0
+	010 Move X21, X1
+	011 ShiftRight X21, 32
+	012 And X21, X21, 0x7FFFFFFF
+	013 Move TEMP, X8
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfEqual {22}
+	017 Move X0, 0x991000
+	018 Move X0, [X0+1448]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X22+3683], W8
+	022 Move W9, [X20]
+	023 Add W21, W21, W19
+	024 Move X8, X31
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move W10, [X20+4]
+	027 Add W22, W10, W9
+	028 NotImplemented "Instruction CMP not yet implemented."
+	029 Move X9, X8
+	030 Move X8, 0x991000
+	031 Move X8, [X8+1448]
+	032 Move X0, [X8]
+	033 Move W8, [X0+224]
+	034 Compare W8, 0
+	035 JumpIfNotEqual {37}
+	036 Call 0x1C17DFC
+	037 Move W0, W22
+	038 Move W1, W21
+	039 Move X2, X31
+	040 Call Math.Min, X0, X1
+	041 Move W8, [X20]
+	042 Move W20, W0
+	043 Move W1, W19
+	044 Move X2, X31
+	045 Move W0, W8
+	046 Call Math.Max, X0, X1
+	047 Subtract W8, W20, W0
+	048 Move X8, X8
+	049 ShiftRight X8, 32
+	050 And X8, X8, 0x7FFFFFFF
+	051 Move W9, W0
+	052 Move X9, X8
+	053 Move X20, [X31+32]
+	054 Move X19, [X31+40]
+	055 Move X22, [X31+16]
+	056 Move X21, [X31+24]
+	057 Or X0, X9, X8
+	058 Move X30, [X31+48]
+	059 Return X0
+

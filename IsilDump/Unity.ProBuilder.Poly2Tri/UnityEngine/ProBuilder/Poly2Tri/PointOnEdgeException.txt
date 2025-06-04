@@ -1,0 +1,43 @@
+Type: UnityEngine.ProBuilder.Poly2Tri.PointOnEdgeException
+
+Method: System.Void .ctor(System.String message, UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint a, UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint b, UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint c)
+
+Disassembly:
+	0x038F4260 LDR X8, [X20 + 0x10]
+	0x038F4264 LDR X9, [X9]
+	0x038F4268 ADD W10, W10, 0x1
+	0x038F426C STR W10, [X20 + 0x1C]
+	0x038F4270 CBZ X8, 0x38F42C0
+	0x038F4274 LDRSW X10, [X20 + 0x18]
+	0x038F4278 LDR W11, [X8 + 0x18]
+	0x038F427C CMP W10, W11
+	0x038F4280 B.CS 0x38F42A0
+	0x038F4284 ADD W9, W10, 0x1
+	0x038F4288 ADD X8, X8, X10, 0x3, LSL
+	0x038F428C STR W9, [X20 + 0x18]
+	0x038F4290 STR X19, [X8 + 0x20]
+	0x038F4294 LDP X20, X19, [X31 + 0x10]
+	0x038F4298 LDP X30, X21, [X31], #0x20
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, X2
+	007 Move X2, X31
+	008 Move X19, X4
+	009 Move X20, X3
+	010 Move X22, X0
+	011 Call NotImplementedException..ctor, X0, X1
+	012 Move [X22+144], X21
+	013 Move [X22+152], X20
+	014 Move [X22+160], X19
+	015 Move X20, [X31+32]
+	016 Move X19, [X31+40]
+	017 Move X22, [X31+16]
+	018 Move X21, [X31+24]
+	019 Move X30, [X31+48]
+	020 Return 
+

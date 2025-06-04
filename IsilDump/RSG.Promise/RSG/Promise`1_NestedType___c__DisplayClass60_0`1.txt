@@ -1,0 +1,57 @@
+Type: RSG.Promise`1/<>c__DisplayClass60_0`1
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0237D10C BL 0x3EB1AC0
+	0x0237D110 CBZ X24, 0x237D1F0
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <ContinueWith>b__0(PromisedT x)
+
+Disassembly:
+	0x0237D114 LDR X8, [X26 + 0xC0]
+	0x0237D118 LDP X9, X1, [X8 + 0x10]
+	0x0237D11C MOV X8, X19
+	0x0237D120 LDR W9, [X9 + 0x28]
+	0x0237D124 LDR X0, [X1]
+	0x0237D128 TBNZ X9, 0x1F, 0x237D130
+	0x0237D12C LDR X8, [X19]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+16]
+	003 Compare X0, 0
+	004 JumpIfEqual {9}
+	005 Move X1, X31
+	006 Move X30, [X31+16]
+	007 Call Promise.Resolve, X0
+	008 Return 
+	009 Call 0x1C17F20
+
+Method: System.Void <ContinueWith>b__1(System.Exception e)
+
+Disassembly:
+	0x0237D130 STUR X8, [X29 - 0x18]
+	0x0237D134 LDR X8, [X1 + 0x10]
+	0x0237D138 SUB X3, X29, 0x18
+	0x0237D13C SUB X4, X29, 0xC
+	0x0237D140 MOV X2, X24
+	0x0237D144 BLR X8
+	0x0237D148 LDURB W8, [X29 - 0xC]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+16]
+	003 Compare X0, 0
+	004 JumpIfEqual {9}
+	005 Move X1, X31
+	006 Move X30, [X31+16]
+	007 Call Promise.Resolve, X0
+	008 Return 
+	009 Call 0x1C17F20
+

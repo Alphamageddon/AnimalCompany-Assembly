@@ -1,0 +1,73 @@
+Type: Fusion.DefaultForPropertyAttribute
+
+Method: System.String get_PropertyName()
+
+Disassembly:
+	0x01E68480 BL 0x2BC434C
+	0x01E68484 LDR X0, [X19 + 0x38]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Int32 get_WordOffset()
+
+Disassembly:
+	0x01E68488 CBZ X0, 0x1E68520
+	0x01E6848C ADRP X8, 0x2294000
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: System.Int32 get_WordCount()
+
+Disassembly:
+	0x01E68490 LDR X19, [X19 + 0x28]
+	0x01E68494 LDR X8, [X8 + 0xEA8]
+
+ISIL:
+	001 Move W0, [X0+36]
+	002 Return X0
+
+Method: System.Void .ctor(System.String propertyName, System.Int32 wordOffset, System.Int32 wordCount)
+
+Disassembly:
+	0x01E68498 LDR X1, [X8]
+	0x01E6849C BL 0x2AA4F58
+	0x01E684A0 ADRP X8, 0x2294000
+	0x01E684A4 LDR X8, [X8 + 0xEE0]
+	0x01E684A8 MOV X21, X0
+	0x01E684AC LDR X8, [X8]
+	0x01E684B0 MOV X0, X8
+	0x01E684B4 BL 0x1C16F10
+	0x01E684B8 ADRP X8, 0x2294000
+	0x01E684BC LDR X8, [X8 + 0xED8]
+	0x01E684C0 MOV X1, X21
+	0x01E684C4 MOV X20, X0
+	0x01E684C8 LDR X2, [X8]
+	0x01E684CC BL 0x301B8E0
+	0x01E684D0 CBZ X19, 0x1E68520
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, X1
+	007 Move X1, X31
+	008 Move W19, W3
+	009 Move W20, W2
+	010 Move X22, X0
+	011 Call PropertyAttribute..ctor, X0
+	012 Move [X22+24], X21
+	013 Move [X22+32], W20
+	014 Move [X22+36], W19
+	015 Move X20, [X31+32]
+	016 Move X19, [X31+40]
+	017 Move X22, [X31+16]
+	018 Move X21, [X31+24]
+	019 Move X30, [X31+48]
+	020 Return 
+

@@ -1,0 +1,78 @@
+Type: Fusion.DisplayAsEnumAttribute
+
+Method: System.Void .ctor(System.Type enumType)
+
+Disassembly:
+	0x01E33A64 MOV X20, X1
+	0x01E33A68 MOV X19, X0
+	0x01E33A6C TBNZ X8, 0x0, 0x1E33A84
+	0x01E33A70 ADRP X0, 0x22C2000
+	0x01E33A74 LDR X0, [X0 + 0x278]
+	0x01E33A78 BL 0x1C16CF4
+	0x01E33A7C MOVZ W8, 0x1
+	0x01E33A80 STRB W8, [X21 + 0xEB2]
+	0x01E33A84 MOV X0, X20
+	0x01E33A88 MOV X1, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call PropertyAttribute..ctor, X0
+	008 Move [X20+24], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void .ctor(System.String enumTypeMemberName)
+
+Disassembly:
+	0x01E33A8C BL 0x32277A8
+	0x01E33A90 TBZ X0, 0x0, 0x1E33AA8
+	0x01E33A94 ADRP X8, 0x22C2000
+	0x01E33A98 LDR X8, [X8 + 0x278]
+	0x01E33A9C LDR X8, [X8]
+	0x01E33AA0 LDR X8, [X8 + 0xB8]
+	0x01E33AA4 LDR X20, [X8]
+	0x01E33AA8 STR X20, [X19]
+	0x01E33AAC LDP X20, X19, [X31 + 0x10]
+	0x01E33AB0 LDP X30, X21, [X31], #0x20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call PropertyAttribute..ctor, X0
+	008 Move [X20+32], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Type get_EnumType()
+
+Disassembly:
+	0x01E33AB4 RET
+	0x01E33AB8 SUB X31, X31, 0x40
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.String get_EnumTypeMemberName()
+
+Disassembly:
+	0x01E33ABC STP X30, X23, [X31 + 0x10]
+	0x01E33AC0 STP X22, X21, [X31 + 0x20]
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+

@@ -1,0 +1,87 @@
+Type: Fusion.NetworkBehaviourUtils/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x01E78DC8 ADD X2, X31, 0x2C
+	0x01E78DCC MOV X0, X8
+	0x01E78DD0 LDR X3, [X9]
+	0x01E78DD4 MOV W1, W23
+	0x01E78DD8 BL 0x2A0BC68
+	0x01E78DDC LDR W1, [X19]
+	0x01E78DE0 LDR W8, [X31 + 0x2C]
+	0x01E78DE4 ANDS W31, W0, 0x1
+	0x01E78DE8 MOV X0, X20
+	0x01E78DEC ADD W9, W1, 0x1
+	0x01E78DF0 STR W9, [X19]
+	0x01E78DF4 LDR X2, [X24]
+	0x01E78DF8 CSEL W23, W8, W23, NE
+	0x01E78DFC BL 0x22275B4
+	0x01E78E00 STR W23, [X0]
+	0x01E78E04 LDR W1, [X19]
+	0x01E78E08 MOV X0, X20
+	0x01E78E0C ADD W8, W1, 0x1
+	0x01E78E10 STR W8, [X19]
+	0x01E78E14 LDR X2, [X25]
+	0x01E78E18 BL 0x22275A8
+	0x01E78E1C MOV X23, X0
+	0x01E78E20 ADD X0, X31, 0x30
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x2562000
+	005 Move X20, 0x2286000
+	006 Move W8, [X19+397]
+	007 Move X20, [X20+1960]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x2286000
+	013 Move X0, [X0+1960]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+397], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E78E24 MOV X1, X31
+	0x01E78E28 BL 0x3BF5DA8
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Int32 <RegisterRpcInvokeDelegates>b__13_0(Fusion.RpcInvokeData a, Fusion.RpcInvokeData b)
+
+Disassembly:
+	0x01E78E2C LDRB W8, [X27 + 0xE8F]
+	0x01E78E30 MOV V8.16B, V0.16B
+	0x01E78E34 CBNZ W8, 0x1E78E48
+	0x01E78E38 MOV X0, X22
+	0x01E78E3C BL 0x1C16CF4
+
+ISIL:
+	001 Move W8, [X2]
+	002 Move X0, X1
+	003 Move X2, X31
+	004 Move W1, W8
+	005 Call Int32.CompareTo, X0, X1
+	006 Return X0
+

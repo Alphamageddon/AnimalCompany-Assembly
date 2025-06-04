@@ -1,0 +1,56 @@
+Type: Fusion.MaxStringByteCountAttribute
+
+Method: System.Void .ctor(System.Int32 count, System.String encoding)
+
+Disassembly:
+	0x01E3402C LDRB W8, [X21 + 0xEB6]
+	0x01E34030 MOV X20, X1
+	0x01E34034 MOV X19, X0
+	0x01E34038 TBNZ X8, 0x0, 0x1E34050
+	0x01E3403C ADRP X0, 0x22C7000
+	0x01E34040 LDR X0, [X0 + 0x5E0]
+	0x01E34044 BL 0x1C16CF4
+	0x01E34048 MOVZ W8, 0x1
+	0x01E3404C STRB W8, [X21 + 0xEB6]
+	0x01E34050 CBZ X20, 0x1E3406C
+	0x01E34054 ADRP X21, 0x22C7000
+	0x01E34058 LDR X21, [X21 + 0x5E0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, W1
+	006 Move X1, X31
+	007 Move X19, X2
+	008 Move X21, X0
+	009 Call PropertyAttribute..ctor, X0
+	010 Move [X21+20], W20
+	011 Move [X21+24], X19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+
+Method: System.Int32 get_ByteCount()
+
+Disassembly:
+	0x01E3405C LDR X9, [X20]
+	0x01E34060 LDR X8, [X21]
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.String get_Encoding()
+
+Disassembly:
+	0x01E34064 CMP X9, X8
+	0x01E34068 B.EQ 0x1E3407C
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+

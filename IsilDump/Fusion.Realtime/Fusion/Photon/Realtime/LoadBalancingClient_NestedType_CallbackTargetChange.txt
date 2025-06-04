@@ -1,0 +1,36 @@
+Type: Fusion.Photon.Realtime.LoadBalancingClient/CallbackTargetChange
+
+Method: System.Void .ctor(System.Object target, System.Boolean addTarget)
+
+Disassembly:
+	0x01E562EC MOV X2, X22
+	0x01E562F0 BL 0x29D3520
+	0x01E562F4 LDRB W8, [X20 + 0x20]
+	0x01E562F8 CBZ W8, 0x1E5632C
+	0x01E562FC LDR X0, [X24]
+	0x01E56300 MOVZ W8, 0x1
+	0x01E56304 ADD X1, X31, 0x8
+	0x01E56308 STRB W8, [X31 + 0x8]
+	0x01E5630C BL 0x1C16E04
+	0x01E56310 LDR X3, [X23]
+	0x01E56314 MOV X2, X0
+	0x01E56318 MOVZ W1, 0xF1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X19, X1
+	006 Move X1, X31
+	007 Move X20, X0
+	008 And W21, W2, 1
+	009 Call Object..ctor, X0
+	010 Move [X20+16], X19
+	011 Move [X20+24], W21
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+

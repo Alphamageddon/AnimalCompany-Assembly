@@ -1,0 +1,62 @@
+Type: UnityEngine.UIElements.EventInterestAttribute
+
+Method: System.Void .ctor(System.Type[] eventTypes)
+
+Disassembly:
+	0x03D185B8 MOV X3, X31
+	0x03D185BC MOV X21, X0
+	0x03D185C0 BL 0x295A080
+	0x03D185C4 LDR X2, [X25]
+	0x03D185C8 MOV X0, X20
+	0x03D185CC MOV X1, X21
+	0x03D185D0 BL 0x301DD30
+	0x03D185D4 LDR X1, [X26]
+	0x03D185D8 ADD X8, X31, 0x8
+	0x03D185DC MOV X0, X20
+	0x03D185E0 BL 0x301CB58
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Move [X0+24], W31
+	008 Call Attribute..ctor, X0
+	009 Move [X20+16], X19
+	010 Move X20, [X31+16]
+	011 Move X19, [X31+24]
+	012 Move X30, [X31+32]
+	013 Return 
+
+Method: System.Void .ctor(UnityEngine.UIElements.EventInterestOptions interests)
+
+Disassembly:
+	0x03D185E4 LDUR V0, [X31 + 0x8]
+	0x03D185E8 LDR X8, [X31 + 0x18]
+	0x03D185EC STR V0, [X31 + 0x2]
+	0x03D185F0 STR X8, [X31 + 0x30]
+	0x03D185F4 LDR X1, [X23]
+	0x03D185F8 ADD X0, X31, 0x20
+	0x03D185FC BL 0x2BC4350
+	0x03D18600 TBZ X0, 0x0, 0x3D186C8
+	0x03D18604 LDR X20, [X31 + 0x30]
+	0x03D18608 CBZ X20, 0x3D186F0
+	0x03D1860C LDR X0, [X20 + 0x18]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Move [X0+24], W31
+	008 Call Attribute..ctor, X0
+	009 Move [X20+24], W19
+	010 Move X20, [X31+16]
+	011 Move X19, [X31+24]
+	012 Move X30, [X31+32]
+	013 Return 
+

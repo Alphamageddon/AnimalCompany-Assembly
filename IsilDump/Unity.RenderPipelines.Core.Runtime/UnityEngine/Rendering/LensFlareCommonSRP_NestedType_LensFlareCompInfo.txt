@@ -1,0 +1,36 @@
+Type: UnityEngine.Rendering.LensFlareCommonSRP/LensFlareCompInfo
+
+Method: System.Void .ctor(System.Int32 idx, UnityEngine.Rendering.LensFlareComponentSRP cmp)
+
+Disassembly:
+	0x039CCA28 MOV V0.16B, V8.16B
+	0x039CCA2C MOV V1.16B, V9.16B
+	0x039CCA30 MOV V2.16B, V10.16B
+	0x039CCA34 MOV V3.16B, V11.16B
+	0x039CCA38 BL 0x3C2806C
+	0x039CCA3C LDP X30, X19, [X31 + 0xE0]
+	0x039CCA40 LDP D9, D8, [X31 + 0xD0]
+	0x039CCA44 LDP D11, D10, [X31 + 0xC0]
+	0x039CCA48 MOV V2.16B, V3.16B
+	0x039CCA4C FDIV S0, S0, S3
+	0x039CCA50 FDIV S1, S1, S3
+	0x039CCA54 FMOV S3, 0.5
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, W1
+	006 Move X1, X31
+	007 Move X19, X2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+16], W20
+	011 Move [X21+24], X19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+

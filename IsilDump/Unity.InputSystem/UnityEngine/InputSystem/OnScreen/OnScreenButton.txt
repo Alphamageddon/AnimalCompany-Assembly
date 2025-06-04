@@ -1,0 +1,137 @@
+Type: UnityEngine.InputSystem.OnScreen.OnScreenButton
+
+Method: System.Void OnPointerUp(UnityEngine.EventSystems.PointerEventData eventData)
+
+Disassembly:
+	0x037EF4BC LDR X30, [X31 + 0x10]
+	0x037EF4C0 LDP D9, D8, [X31], #0x40
+	0x037EF4C4 RET
+	0x037EF4C8 BL 0x1C16F20
+	0x037EF4CC BL 0x1C171E0
+	0x037EF4D0 STP D9, D8, [X31 - 0x20]!
+	0x037EF4D4 STP X30, X19, [X31 + 0x10]
+	0x037EF4D8 LDRB W8, [X0 + 0x4C]
+	0x037EF4DC CBZ W8, 0x37EF4EC
+	0x037EF4E0 LDP X30, X19, [X31 + 0x10]
+	0x037EF4E4 LDP D9, D8, [X31], #0x20
+	0x037EF4E8 RET
+	0x037EF4EC CBZ X1, 0x37EF524
+	0x037EF4F0 LDR V8, [X1 + 0x104]
+	0x037EF4F4 LDR V9, [X1 + 0x108]
+	0x037EF4F8 MOV X19, X0
+	0x037EF4FC MOV X0, X1
+	0x037EF500 MOV X1, X31
+	0x037EF504 BL 0x3E4F314
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xBF3000
+	006 Move X21, 0x95B000
+	007 Move W8, [X20+859]
+	008 Move X21, [X21+1568]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x95B000
+	015 Move X0, [X0+1568]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+859], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move S0, W31
+	024 Move X30, [X31+32]
+	025 Move X21, [X31+40]
+	026 Call 0x222F7E8, X0, X1
+	027 Return 
+
+Method: System.Void OnPointerDown(UnityEngine.EventSystems.PointerEventData eventData)
+
+Disassembly:
+	0x037EF508 MOV X1, X0
+	0x037EF50C MOV X0, X19
+	0x037EF510 LDP X30, X19, [X31 + 0x10]
+	0x037EF514 MOV V0.16B, V8.16B
+	0x037EF518 MOV V1.16B, V9.16B
+	0x037EF51C LDP D9, D8, [X31], #0x20
+	0x037EF520 B 0x37EF56C
+	0x037EF524 ADRP X0, 0x909000
+	0x037EF528 LDR X0, [X0 + 0x528]
+	0x037EF52C BL 0x1C16D08
+	0x037EF530 BL 0x1C16F10
+	0x037EF534 MOV X19, X0
+	0x037EF538 ADRP X0, 0x95A000
+	0x037EF53C LDR X0, [X0 + 0x348]
+	0x037EF540 BL 0x1C16D08
+	0x037EF544 MOV X1, X0
+	0x037EF548 MOV X0, X19
+	0x037EF54C MOV X2, X31
+	0x037EF550 BL 0x330E100
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xBF3000
+	006 Move X21, 0x95B000
+	007 Move W8, [X20+860]
+	008 Move X21, [X21+1568]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x95B000
+	015 Move X0, [X0+1568]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+860], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move S0, 1
+	024 Move X30, [X31+32]
+	025 Move X21, [X31+40]
+	026 Call 0x222F7E8, X0, X1
+	027 Return 
+
+Method: System.String get_controlPathInternal()
+
+Disassembly:
+	0x037EF554 ADRP X0, 0x95A000
+	0x037EF558 LDR X0, [X0 + 0x6C8]
+
+ISIL:
+	001 Move X0, [X0+56]
+	002 Return X0
+
+Method: System.Void set_controlPathInternal(System.String value)
+
+Disassembly:
+	0x037EF55C BL 0x1C16D08
+	0x037EF560 MOV X1, X0
+
+ISIL:
+	001 Move [X0+56], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x037EF564 MOV X0, X19
+	0x037EF568 BL 0x1C16DEC
+
+ISIL:
+	001 Move X1, X31
+	002 Call MonoBehaviour..ctor, X0
+	003 Return 
+

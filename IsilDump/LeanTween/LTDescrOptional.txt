@@ -1,0 +1,733 @@
+Type: LTDescrOptional
+
+Method: UnityEngine.Transform get_toTrans()
+
+Disassembly:
+	0x031CD670 MOV X20, X0
+	0x031CD674 BL 0x301B7C4
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_toTrans(UnityEngine.Transform value)
+
+Disassembly:
+	0x031CD678 STR X20, [X19 + 0x18]
+	0x031CD67C LDR X0, [X22]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: UnityEngine.Vector3 get_point()
+
+Disassembly:
+	0x031CD680 BL 0x1C16F10
+	0x031CD684 LDR X1, [X21]
+	0x031CD688 MOV X20, X0
+
+ISIL:
+	001 Move S0, [X0+24]
+	002 Move S1, [X0+28]
+	003 Move V2, [X0+32]
+	004 Return X0
+
+Method: System.Void set_point(UnityEngine.Vector3 value)
+
+Disassembly:
+	0x031CD68C BL 0x301B7C4
+	0x031CD690 STR X20, [X19 + 0x20]
+	0x031CD694 MOV X0, X19
+
+ISIL:
+	001 Move [X0+24], S0
+	002 Move [X0+32], S1
+	003 Move [X0+32], S2
+	004 Return 
+
+Method: UnityEngine.Vector3 get_axis()
+
+Disassembly:
+	0x031CD698 LDP X20, X19, [X31 + 0x30]
+	0x031CD69C LDP X22, X21, [X31 + 0x20]
+	0x031CD6A0 LDP X24, X23, [X31 + 0x10]
+
+ISIL:
+	001 Move S0, [X0+36]
+	002 Move S1, [X0+40]
+	003 Move V2, [X0+44]
+	004 Return X0
+
+Method: System.Void set_axis(UnityEngine.Vector3 value)
+
+Disassembly:
+	0x031CD6A4 MOV X1, X31
+	0x031CD6A8 LDR X30, [X31], #0x40
+	0x031CD6AC B 0x3C36D2C
+
+ISIL:
+	001 Move [X0+36], S0
+	002 Move [X0+44], S1
+	003 Move [X0+44], S2
+	004 Return 
+
+Method: System.Single get_lastVal()
+
+Disassembly:
+	0x031CD6B0 LDR X0, [X0 + 0x20]
+	0x031CD6B4 RET
+
+ISIL:
+	001 Move V0, [X0+48]
+	002 Return V0
+
+Method: System.Void set_lastVal(System.Single value)
+
+Disassembly:
+	0x031CD6B8 STR X1, [X0 + 0x20]
+	0x031CD6BC RET
+
+ISIL:
+	001 Move [X0+48], S0
+	002 Return 
+
+Method: UnityEngine.Quaternion get_origRotation()
+
+Disassembly:
+	0x031CD6C0 LDRB W0, [X0 + 0x28]
+	0x031CD6C4 RET
+	0x031CD6C8 AND W8, W1, 0x1
+
+ISIL:
+	001 Move S0, [X0+52]
+	002 Move S1, [X0+56]
+	003 Move S2, [X0+60]
+	004 Move S3, [X0+64]
+	005 Return X0
+
+Method: System.Void set_origRotation(UnityEngine.Quaternion value)
+
+Disassembly:
+	0x031CD6CC STRB W8, [X0 + 0x28]
+	0x031CD6D0 RET
+	0x031CD6D4 MOV X1, X31
+
+ISIL:
+	001 Move [X0+52], S0
+	002 Move [X0+60], S1
+	003 Move [X0+60], S2
+	004 Move [X0+68], S3
+	005 Return 
+
+Method: LTBezierPath get_path()
+
+Disassembly:
+	0x031CD6D8 B 0x3C389D4
+	0x031CD6DC MOV X1, X31
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_path(LTBezierPath value)
+
+Disassembly:
+	0x031CD6E0 B 0x3C36D2C
+	0x031CD6E4 MOV X1, X31
+
+ISIL:
+	001 Move [X0+72], X1
+	002 Return 
+
+Method: LTSpline get_spline()
+
+Disassembly:
+	0x031CD6E8 B 0x3C36C30
+	0x031CD6EC MOV X1, X31
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_spline(LTSpline value)
+
+Disassembly:
+	0x031CD6F0 B 0x3C36D2C
+	0x031CD6F4 STP X30, X23, [X31 - 0x30]!
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Return 
+
+Method: LTRect get_ltRect()
+
+Disassembly:
+	0x031CD6F8 STP X22, X21, [X31 + 0x10]
+	0x031CD6FC STP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move X0, [X0+120]
+	002 Return X0
+
+Method: System.Void set_ltRect(LTRect value)
+
+Disassembly:
+	0x031CD700 ADRP X23, 0x120F000
+	0x031CD704 ADRP X22, 0xF26000
+
+ISIL:
+	001 Move [X0+120], X1
+	002 Return 
+
+Method: System.Action`1<System.Single> get_onUpdateFloat()
+
+Disassembly:
+	0x031CD708 ADRP X20, 0xF52000
+	0x031CD70C ADRP X21, 0xF52000
+
+ISIL:
+	001 Move X0, [X0+128]
+	002 Return X0
+
+Method: System.Void set_onUpdateFloat(System.Action`1<System.Single> value)
+
+Disassembly:
+	0x031CD710 MOV X19, X8
+	0x031CD714 LDRB W8, [X23 + 0x9]
+
+ISIL:
+	001 Move [X0+128], X1
+	002 Return 
+
+Method: System.Action`2<System.Single, System.Single> get_onUpdateFloatRatio()
+
+Disassembly:
+	0x031CD718 LDR X22, [X22 + 0x618]
+	0x031CD71C LDR X20, [X20 + 0xBF0]
+
+ISIL:
+	001 Move X0, [X0+136]
+	002 Return X0
+
+Method: System.Void set_onUpdateFloatRatio(System.Action`2<System.Single, System.Single> value)
+
+Disassembly:
+	0x031CD720 LDR X21, [X21 + 0xBF8]
+	0x031CD724 TBNZ X8, 0x0, 0x31CD754
+
+ISIL:
+	001 Move [X0+136], X1
+	002 Return 
+
+Method: System.Action`2<System.Single, System.Object> get_onUpdateFloatObject()
+
+Disassembly:
+	0x031CD728 ADRP X0, 0xF26000
+	0x031CD72C LDR X0, [X0 + 0x618]
+
+ISIL:
+	001 Move X0, [X0+144]
+	002 Return X0
+
+Method: System.Void set_onUpdateFloatObject(System.Action`2<System.Single, System.Object> value)
+
+Disassembly:
+	0x031CD730 BL 0x1C16CF4
+	0x031CD734 ADRP X0, 0xF52000
+
+ISIL:
+	001 Move [X0+144], X1
+	002 Return 
+
+Method: System.Action`1<UnityEngine.Vector2> get_onUpdateVector2()
+
+Disassembly:
+	0x031CD738 LDR X0, [X0 + 0xBF0]
+	0x031CD73C BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, [X0+152]
+	002 Return X0
+
+Method: System.Void set_onUpdateVector2(System.Action`1<UnityEngine.Vector2> value)
+
+Disassembly:
+	0x031CD740 ADRP X0, 0xF52000
+	0x031CD744 LDR X0, [X0 + 0xBF8]
+
+ISIL:
+	001 Move [X0+152], X1
+	002 Return 
+
+Method: System.Action`1<UnityEngine.Vector3> get_onUpdateVector3()
+
+Disassembly:
+	0x031CD748 BL 0x1C16CF4
+	0x031CD74C MOVZ W8, 0x1
+
+ISIL:
+	001 Move X0, [X0+160]
+	002 Return X0
+
+Method: System.Void set_onUpdateVector3(System.Action`1<UnityEngine.Vector3> value)
+
+Disassembly:
+	0x031CD750 STRB W8, [X23 + 0x9]
+	0x031CD754 LDR X0, [X22]
+
+ISIL:
+	001 Move [X0+160], X1
+	002 Return 
+
+Method: System.Action`2<UnityEngine.Vector3, System.Object> get_onUpdateVector3Object()
+
+Disassembly:
+	0x031CD758 MOVZ W1, 0x347
+	0x031CD75C BL 0x1C16D6C
+
+ISIL:
+	001 Move X0, [X0+168]
+	002 Return X0
+
+Method: System.Void set_onUpdateVector3Object(System.Action`2<UnityEngine.Vector3, System.Object> value)
+
+Disassembly:
+	0x031CD760 LDR X1, [X20]
+	0x031CD764 MOV X2, X31
+
+ISIL:
+	001 Move [X0+168], X1
+	002 Return 
+
+Method: System.Action`1<UnityEngine.Color> get_onUpdateColor()
+
+Disassembly:
+	0x031CD768 MOV X20, X0
+	0x031CD76C BL 0x32C5BD8
+
+ISIL:
+	001 Move X0, [X0+176]
+	002 Return X0
+
+Method: System.Void set_onUpdateColor(System.Action`1<UnityEngine.Color> value)
+
+Disassembly:
+	0x031CD770 LDR X0, [X22]
+	0x031CD774 MOVZ W1, 0x2D7
+
+ISIL:
+	001 Move [X0+176], X1
+	002 Return 
+
+Method: System.Action`2<UnityEngine.Color, System.Object> get_onUpdateColorObject()
+
+Disassembly:
+	0x031CD778 BL 0x1C16D6C
+	0x031CD77C LDR X1, [X21]
+
+ISIL:
+	001 Move X0, [X0+184]
+	002 Return X0
+
+Method: System.Void set_onUpdateColorObject(System.Action`2<UnityEngine.Color, System.Object> value)
+
+Disassembly:
+	0x031CD780 MOV X2, X31
+	0x031CD784 MOV X21, X0
+
+ISIL:
+	001 Move [X0+184], X1
+	002 Return 
+
+Method: System.Action get_onComplete()
+
+Disassembly:
+	0x031CD788 BL 0x32C5BD8
+	0x031CD78C ADRP X8, 0xFFFFFFFFFD920000
+
+ISIL:
+	001 Move X0, [X0+192]
+	002 Return X0
+
+Method: System.Void set_onComplete(System.Action value)
+
+Disassembly:
+	0x031CD790 LDR V0, [X8 + 0x988]
+	0x031CD794 STP X20, X21, [X19]
+
+ISIL:
+	001 Move [X0+192], X1
+	002 Return 
+
+Method: System.Action`1<System.Object> get_onCompleteObject()
+
+Disassembly:
+	0x031CD798 STRB W31, [X19 + 0x18]
+	0x031CD79C STUR W31, [X19 + 0x19]
+
+ISIL:
+	001 Move X0, [X0+200]
+	002 Return X0
+
+Method: System.Void set_onCompleteObject(System.Action`1<System.Object> value)
+
+Disassembly:
+	0x031CD7A0 STR D0, [X19 + 0x10]
+	0x031CD7A4 STR W31, [X19 + 0x1C]
+
+ISIL:
+	001 Move [X0+200], X1
+	002 Return 
+
+Method: System.Object get_onCompleteParam()
+
+Disassembly:
+	0x031CD7A8 LDP X20, X19, [X31 + 0x20]
+	0x031CD7AC LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, [X0+208]
+	002 Return X0
+
+Method: System.Void set_onCompleteParam(System.Object value)
+
+Disassembly:
+	0x031CD7B0 LDP X30, X23, [X31], #0x30
+	0x031CD7B4 RET
+
+ISIL:
+	001 Move [X0+208], X1
+	002 Return 
+
+Method: System.Object get_onUpdateParam()
+
+Disassembly:
+	0x031CD7B8 MOV X1, X31
+	0x031CD7BC B 0x33BDD8C
+
+ISIL:
+	001 Move X0, [X0+216]
+	002 Return X0
+
+Method: System.Void set_onUpdateParam(System.Object value)
+
+Disassembly:
+	0x031CD7C0 SUB X31, X31, 0xD0
+	0x031CD7C4 STR D12, [X31 + 0x40]
+
+ISIL:
+	001 Move [X0+216], X1
+	002 Return 
+
+Method: System.Action get_onStart()
+
+Disassembly:
+	0x031CD7C8 STP D11, D10, [X31 + 0x50]
+	0x031CD7CC STP D9, D8, [X31 + 0x60]
+
+ISIL:
+	001 Move X0, [X0+224]
+	002 Return X0
+
+Method: System.Void set_onStart(System.Action value)
+
+Disassembly:
+	0x031CD7D0 STP X29, X30, [X31 + 0x70]
+	0x031CD7D4 STP X28, X27, [X31 + 0x80]
+
+ISIL:
+	001 Move [X0+224], X1
+	002 Return 
+
+Method: System.Void reset()
+
+Disassembly:
+	0x031C0EEC LDRB W8, [X23 + 0xF62]
+	0x031C0EF0 LDR X22, [X22 + 0x428]
+	0x031C0EF4 LDR X20, [X20 + 0x7E8]
+	0x031C0EF8 LDR X21, [X21 + 0x7F0]
+	0x031C0EFC MOV X19, X0
+	0x031C0F00 TBNZ X8, 0x0, 0x31C0F30
+	0x031C0F04 ADRP X0, 0xF5F000
+	0x031C0F08 LDR X0, [X0 + 0x428]
+	0x031C0F0C BL 0x1C16CF4
+	0x031C0F10 ADRP X0, 0xF5F000
+	0x031C0F14 LDR X0, [X0 + 0x7E8]
+	0x031C0F18 BL 0x1C16CF4
+	0x031C0F1C ADRP X0, 0xF5F000
+	0x031C0F20 LDR X0, [X0 + 0x7F0]
+	0x031C0F24 BL 0x1C16CF4
+	0x031C0F28 MOVZ W8, 0x1
+	0x031C0F2C STRB W8, [X23 + 0xF62]
+	0x031C0F30 MOVZ W8, 0x1A
+	0x031C0F34 STR W8, [X19 + 0x90]
+	0x031C0F38 LDR X0, [X22]
+	0x031C0F3C BL 0x1C16F10
+	0x031C0F40 LDR X2, [X20]
+	0x031C0F44 MOV X1, X19
+	0x031C0F48 MOV X20, X0
+	0x031C0F4C BL 0x31C0024
+	0x031C0F50 STR X20, [X19 + 0xB0]
+	0x031C0F54 LDR X0, [X22]
+	0x031C0F58 BL 0x1C16F10
+	0x031C0F5C LDR X2, [X21]
+	0x031C0F60 MOV X1, X19
+	0x031C0F64 MOV X20, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 NotImplemented "Instruction MOVI not yet implemented."
+	005 Move [X0+88], X31
+	006 Move [X0+224], X31
+	007 Move [X0+176], X31
+	008 Move [X0+200], X31
+	009 Move [X0+208], X31
+	010 Move [X0+192], X31
+	011 Move [X0+128], V0
+	012 Move [X0+136], V0
+	013 Move [X0+10], V0
+	014 Move X20, 0x1219000
+	015 Move W8, [X20+1923]
+	016 Move X19, X0
+	017 Compare W8, 0
+	018 JumpIfNotEqual {24}
+	019 Move X0, 0xF34000
+	020 Move X0, [X0+1440]
+	021 Call 0x1C17CF4
+	022 Move W8, 1
+	023 Move [X20+1923], W8
+	024 Move X8, 0xF34000
+	025 Move X8, [X8+1440]
+	026 Move X8, [X8]
+	027 Move X8, [X8+184]
+	028 Move V0, [X8]
+	029 Move V1, [X8+8]
+	030 Move [X19+96], W31
+	031 Move [X19+24], D0
+	032 Move [X19+32], S1
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 Move X30, [X31+32]
+	036 Return 
+
+Method: System.Void callOnUpdate(System.Single val, System.Single ratioPassed)
+
+Disassembly:
+	0x031C3ACC B.NE 0x31C3BF4
+	0x031C3AD0 LDR X1, [X25]
+	0x031C3AD4 MOV X0, X20
+	0x031C3AD8 BL 0x21A3894
+	0x031C3ADC MOV X21, X0
+	0x031C3AE0 LDR X0, [X26]
+	0x031C3AE4 LDR W8, [X0 + 0xE0]
+	0x031C3AE8 CBNZ W8, 0x31C3AF0
+	0x031C3AEC BL 0x1C16DFC
+	0x031C3AF0 MOV X0, X21
+	0x031C3AF4 MOV X1, X31
+	0x031C3AF8 MOV X2, X31
+	0x031C3AFC BL 0x3C354F8
+	0x031C3B00 TBZ X0, 0x0, 0x31C3B4C
+	0x031C3B04 CBZ X21, 0x31C3C00
+	0x031C3B08 MOV X0, X21
+	0x031C3B0C MOV X1, X31
+	0x031C3B10 BL 0x3C41290
+	0x031C3B14 MOV V9.16B, V0.16B
+	0x031C3B18 MOV X0, X21
+	0x031C3B1C MOV X1, X31
+	0x031C3B20 BL 0x3C41290
+	0x031C3B24 MOV V10.16B, V1.16B
+	0x031C3B28 MOV X0, X21
+	0x031C3B2C MOV X1, X31
+	0x031C3B30 BL 0x3C41290
+	0x031C3B34 MOV X0, X21
+	0x031C3B38 MOV V0.16B, V9.16B
+	0x031C3B3C MOV V1.16B, V10.16B
+	0x031C3B40 MOV V3.16B, V8.16B
+	0x031C3B44 MOV X1, X31
+	0x031C3B48 BL 0x3C4132C
+	0x031C3B4C MOV X0, X20
+	0x031C3B50 MOV V0.16B, V8.16B
+	0x031C3B54 BL 0x31C3918
+	0x031C3B58 B 0x31C39E4
+	0x031C3B5C MOV X20, X31
+	0x031C3B60 LDR X1, [X22]
+	0x031C3B64 MOV X0, X19
+	0x031C3B68 BL 0x1C16E00
+	0x031C3B6C CBZ X0, 0x31C3BCC
+	0x031C3B70 LDR X8, [X0]
+	0x031C3B74 LDR X1, [X22]
+	0x031C3B78 MOV X19, X0
+	0x031C3B7C LDRH W9, [X8 + 0x12E]
+	0x031C3B80 CBZ X9, 0x31C3BA4
+	0x031C3B84 LDR X10, [X8 + 0xB0]
+	0x031C3B88 ADD X10, X10, 0x8
+	0x031C3B8C LDUR X11, [X10 - 0x8]
+	0x031C3B90 CMP X11, X1
+	0x031C3B94 B.EQ 0x31C3BB4
+	0x031C3B98 SUBS X9, X9, 0x1
+	0x031C3B9C ADD X10, X10, 0x10
+	0x031C3BA0 B.NE 0x31C3B8C
+	0x031C3BA4 MOV X0, X19
+	0x031C3BA8 MOV W2, W31
+	0x031C3BAC BL 0x1C5C788
+	0x031C3BB0 B 0x31C3BC0
+	0x031C3BB4 LDRSW X9, [X10]
+	0x031C3BB8 ADD X8, X8, X9, 0x4, LSL
+	0x031C3BBC ADD X0, X8, 0x138
+	0x031C3BC0 LDP X8, X1, [X0]
+	0x031C3BC4 MOV X0, X19
+	0x031C3BC8 BLR X8
+	0x031C3BCC CBNZ X20, 0x31C3C0C
+	0x031C3BD0 LDP X20, X19, [X31 + 0x60]
+	0x031C3BD4 LDP X22, X21, [X31 + 0x50]
+	0x031C3BD8 LDP X24, X23, [X31 + 0x40]
+	0x031C3BDC LDP X26, X25, [X31 + 0x30]
+	0x031C3BE0 LDR X30, [X31 + 0x28]
+	0x031C3BE4 LDP D9, D8, [X31 + 0x18]
+	0x031C3BE8 LDR V10, [X31 + 0x10]
+	0x031C3BEC ADD X31, X31, 0x70
+	0x031C3BF0 RET
+	0x031C3BF4 MOV X0, X20
+	0x031C3BF8 BL 0x1C171E0
+	0x031C3BFC BL 0x1C16F20
+	0x031C3C00 BL 0x1C16F20
+	0x031C3C04 BL 0x1C16F20
+	0x031C3C08 BL 0x1C16F20
+	0x031C3C0C MOV X0, X20
+	0x031C3C10 BL 0x1C16F18
+	0x031C3C14 B 0x31C3C44
+	0x031C3C18 B 0x31C3C44
+	0x031C3C1C B 0x31C3C44
+	0x031C3C20 B 0x31C3C44
+	0x031C3C24 B 0x31C3C44
+	0x031C3C28 B 0x31C3C44
+	0x031C3C2C B 0x31C3C44
+
+ISIL:
+	001 Move [X31-48], D9
+	002 Move [X31-40], D8
+	003 Move [X31+16], X30
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, 0x1219000
+	007 Move W8, [X20+4090]
+	008 Move V9, V1
+	009 Move V8, V0
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0xF5D000
+	016 Move X0, [X0+872]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X20+4090], W8
+	020 Move X8, [X19+128]
+	021 Compare X8, 0
+	022 JumpIfEqual {28}
+	023 Move X9, [X8+24]
+	024 Move X0, [X8+64]
+	025 Move X1, [X8+40]
+	026 Move V0, V8
+	027 NotImplemented "Instruction BLR not yet implemented."
+	028 Move X8, [X19+136]
+	029 Compare X8, 0
+	030 JumpIfEqual {42}
+	031 Move X2, [X8+24]
+	032 Move X0, [X8+64]
+	033 Move X1, [X8+40]
+	034 Move V0, V8
+	035 Move V1, V9
+	036 Move X20, [X31+32]
+	037 Move X19, [X31+40]
+	038 Move X30, [X31+16]
+	039 Move D9, [X31+48]
+	040 Move D8, [X31+56]
+	041 CallNoReturn X2
+	042 Move X8, [X19+144]
+	043 Compare X8, 0
+	044 JumpIfEqual {56}
+	045 Move X1, [X19+216]
+	046 Move X3, [X8+24]
+	047 Move X0, [X8+64]
+	048 Move X2, [X8+40]
+	049 Move X20, [X31+32]
+	050 Move X19, [X31+40]
+	051 Move X30, [X31+16]
+	052 Move V0, V8
+	053 Move D9, [X31+48]
+	054 Move D8, [X31+56]
+	055 CallNoReturn X3
+	056 Move X8, [X19+168]
+	057 Compare X8, 0
+	058 JumpIfEqual {76}
+	059 Move X9, 0xF5D000
+	060 Move X9, [X9+872]
+	061 Move X1, [X19+216]
+	062 Move X3, [X8+24]
+	063 Move X0, [X8+64]
+	064 Move X9, [X9]
+	065 Move X2, [X8+40]
+	066 Move X20, [X31+32]
+	067 Move X19, [X31+40]
+	068 Move X30, [X31+16]
+	069 Move X9, [X9+184]
+	070 Move S0, [X9+8]
+	071 Move S1, [X9+12]
+	072 Move V2, [X9+16]
+	073 Move D9, [X31+48]
+	074 Move D8, [X31+56]
+	075 CallNoReturn X3
+	076 Move X8, [X19+160]
+	077 Compare X8, 0
+	078 JumpIfEqual {95}
+	079 Move X9, 0xF5D000
+	080 Move X9, [X9+872]
+	081 Move X2, [X8+24]
+	082 Move X0, [X8+64]
+	083 Move X1, [X8+40]
+	084 Move X9, [X9]
+	085 Move X20, [X31+32]
+	086 Move X19, [X31+40]
+	087 Move X30, [X31+16]
+	088 Move X9, [X9+184]
+	089 Move S0, [X9+8]
+	090 Move S1, [X9+12]
+	091 Move V2, [X9+16]
+	092 Move D9, [X31+48]
+	093 Move D8, [X31+56]
+	094 CallNoReturn X2
+	095 Move X8, [X19+152]
+	096 Compare X8, 0
+	097 JumpIfEqual {107}
+	098 Move X9, 0xF5D000
+	099 Move X9, [X9+872]
+	100 Move X2, [X8+24]
+	101 Move X0, [X8+64]
+	102 Move X1, [X8+40]
+	103 Move X9, [X9]
+	104 Move X9, [X9+184]
+	105 Move S0, [X9+8]
+	106 Move S1, [X9+12]
+	107 Move X20, [X31+32]
+	108 Move X19, [X31+40]
+	109 Move X30, [X31+16]
+	110 Move D9, [X31+48]
+	111 Move D8, [X31+56]
+	112 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x031C0C4C ADRP X0, 0xF5F000
+	0x031C0C50 LDR X0, [X0 + 0x7B0]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

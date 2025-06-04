@@ -1,0 +1,73 @@
+Type: System.Runtime.Serialization.Formatters.Binary.TypeInformation
+
+Method: System.String get_FullTypeName()
+
+Disassembly:
+	0x032B6720 STP X30, X23, [X31 - 0x30]!
+	0x032B6724 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.String get_AssemblyString()
+
+Disassembly:
+	0x032B6728 STP X20, X19, [X31 + 0x20]
+	0x032B672C ADRP X20, 0x1126000
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Boolean get_HasTypeForwardedFrom()
+
+Disassembly:
+	0x032B6730 LDRB W8, [X20 + 0x81A]
+	0x032B6734 MOV X19, X1
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: System.Void .ctor(System.String fullTypeName, System.String assemblyString, System.Boolean hasTypeForwardedFrom)
+
+Disassembly:
+	0x032B2A94 MOV X1, X0
+	0x032B2A98 CBNZ X0, 0x32B2AF0
+	0x032B2A9C MOV X0, X20
+	0x032B2AA0 MOV X1, X21
+	0x032B2AA4 BL 0x1C171E0
+	0x032B2AA8 LDR X0, [X28]
+	0x032B2AAC LDR W8, [X0 + 0xE0]
+	0x032B2AB0 CBNZ W8, 0x32B2AB8
+	0x032B2AB4 BL 0x1C16DFC
+	0x032B2AB8 MOV W0, W21
+	0x032B2ABC BL 0x32AF13C
+	0x032B2AC0 MOV W2, W0
+	0x032B2AC4 MOV X0, X19
+	0x032B2AC8 MOV X1, X20
+	0x032B2ACC BL 0x32B2B30
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, X1
+	007 Move X1, X31
+	008 Move X19, X2
+	009 Move X21, X0
+	010 And W22, W3, 1
+	011 Call Object..ctor, X0
+	012 Move [X21+16], X20
+	013 Move [X21+24], X19
+	014 Move [X21+32], W22
+	015 Move X20, [X31+32]
+	016 Move X19, [X31+40]
+	017 Move X22, [X31+16]
+	018 Move X21, [X31+24]
+	019 Move X30, [X31+48]
+	020 Return 
+

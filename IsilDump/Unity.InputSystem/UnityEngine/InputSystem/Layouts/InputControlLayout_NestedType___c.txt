@@ -1,0 +1,154 @@
+Type: UnityEngine.InputSystem.Layouts.InputControlLayout/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x0381A74C LDP X25, X24, [X19 + 0x40]
+	0x0381A750 STR X11, [X31 + 0x48]
+	0x0381A754 STP X9, X8, [X31 + 0x98]
+	0x0381A758 BL 0x3EB1AC0
+	0x0381A75C LDP V1, V0, [X19 + 0xC0]
+	0x0381A760 LDR V2, [X19 + 0xE]
+	0x0381A764 LDP W8, W22, [X19 + 0xB8]
+	0x0381A768 STP V1, V0, [X20]
+	0x0381A76C STR V2, [X20 + 0x2]
+	0x0381A770 STR W8, [X31 + 0x94]
+	0x0381A774 TBNZ X8, 0x0, 0x381A9AC
+	0x0381A778 ADD X0, X31, 0x3D0
+	0x0381A77C MOV X1, X31
+	0x0381A780 STR X25, [X31 + 0x3D0]
+	0x0381A784 STR X24, [X31 + 0x3D8]
+	0x0381A788 BL 0x375F7A0
+	0x0381A78C STR X25, [X31 + 0x88]
+	0x0381A790 TBNZ X0, 0x0, 0x381A800
+	0x0381A794 MOV X0, X25
+	0x0381A798 MOV X1, X24
+	0x0381A79C MOV X2, X31
+	0x0381A7A0 STR X24, [X31 + 0x78]
+	0x0381A7A4 BL 0x37577E0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xBC8000
+	005 Move X20, 0x931000
+	006 Move W8, [X19+1294]
+	007 Move X20, [X20+1936]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x931000
+	013 Move X0, [X0+1936]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+1294], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0381A7A8 MOV X19, X0
+	0x0381A7AC MOV X0, X27
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: UnityEngine.InputSystem.Utilities.InternedString <FromType>b__52_0(System.String x)
+
+Disassembly:
+	0x0381A7B0 MOV X1, X23
+	0x0381A7B4 MOV X2, X31
+	0x0381A7B8 BL 0x37577E0
+	0x0381A7BC ADRP X8, 0x8E2000
+	0x0381A7C0 LDR X8, [X8 + 0x848]
+	0x0381A7C4 LDR X8, [X8]
+	0x0381A7C8 CBZ X8, 0x381AB04
+	0x0381A7CC MOV X24, X0
+	0x0381A7D0 MOV X0, X8
+	0x0381A7D4 MOV W1, W31
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+8], X31
+	003 Move [X31+16], X30
+	004 Add X0, X31, 0
+	005 Move X2, X31
+	006 Move [X31], X31
+	007 Call InternedString..ctor, X0, X1
+	008 Move X0, [X31]
+	009 Move X1, [X31+8]
+	010 Move X30, [X31+16]
+	011 Add X31, X31, 32
+	012 Return X0
+
+Method: UnityEngine.InputSystem.Utilities.InternedString <CreateControlItemFromMember>b__75_0(System.String x)
+
+Disassembly:
+	0x0381A7D8 MOV X2, X31
+	0x0381A7DC BL 0x3222A1C
+	0x0381A7E0 MOV W2, W0
+	0x0381A7E4 MOV X0, X19
+	0x0381A7E8 MOV X1, X24
+	0x0381A7EC MOV X3, X31
+	0x0381A7F0 BL 0x37677D0
+	0x0381A7F4 LDR X25, [X31 + 0x88]
+	0x0381A7F8 LDR X24, [X31 + 0x78]
+	0x0381A7FC TBZ X0, 0x0, 0x381A9AC
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+8], X31
+	003 Move [X31+16], X30
+	004 Add X0, X31, 0
+	005 Move X2, X31
+	006 Move [X31], X31
+	007 Call InternedString..ctor, X0, X1
+	008 Move X0, [X31]
+	009 Move X1, [X31+8]
+	010 Move X30, [X31+16]
+	011 Add X31, X31, 32
+	012 Return X0
+
+Method: UnityEngine.InputSystem.Utilities.InternedString <CreateControlItemFromMember>b__75_1(System.String x)
+
+Disassembly:
+	0x0381A800 CBZ W22, 0x381A938
+	0x0381A804 CMP W22, 0x1
+	0x0381A808 STR W31, [X31 + 0x31C]
+	0x0381A80C B.LT 0x381A9AC
+	0x0381A810 STR X24, [X31 + 0x78]
+	0x0381A814 LDP X25, X24, [X31 + 0x98]
+	0x0381A818 MOV X2, X31
+	0x0381A81C MOV X0, X25
+	0x0381A820 MOV X1, X24
+	0x0381A824 BL 0x37577E0
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+8], X31
+	003 Move [X31+16], X30
+	004 Add X0, X31, 0
+	005 Move X2, X31
+	006 Move [X31], X31
+	007 Call InternedString..ctor, X0, X1
+	008 Move X0, [X31]
+	009 Move X1, [X31+8]
+	010 Move X30, [X31+16]
+	011 Add X31, X31, 32
+	012 Return X0
+

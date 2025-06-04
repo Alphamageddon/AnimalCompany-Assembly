@@ -1,0 +1,277 @@
+Type: UnityEngine.InputSystem.Users.InputUserSettings
+
+Method: System.String get_customBindings()
+
+Disassembly:
+	0x037E5954 B.EQ 0x37E59A8
+	0x037E5958 ADRP X8, 0x964000
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_customBindings(System.String value)
+
+Disassembly:
+	0x037E595C LDR X8, [X8 + 0x308]
+	0x037E5960 ADD X0, X19, 0x158
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Boolean get_invertMouseX()
+
+Disassembly:
+	0x037E5964 LDR X2, [X8]
+	0x037E5968 ADD X8, X31, 0x0
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_invertMouseX(System.Boolean value)
+
+Disassembly:
+	0x037E596C BL 0x2DEBA18
+	0x037E5970 LDR X8, [X31 + 0x1D0]
+	0x037E5974 CBZ X8, 0x37E59C4
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+24], W8
+	003 Return 
+
+Method: System.Boolean get_invertMouseY()
+
+Disassembly:
+	0x037E5978 ADRP X9, 0x90E000
+	0x037E597C LDR X9, [X9 + 0x598]
+
+ISIL:
+	001 Move W0, [X0+25]
+	002 Return X0
+
+Method: System.Void set_invertMouseY(System.Boolean value)
+
+Disassembly:
+	0x037E5980 LDR X19, [X8 + 0x20]
+	0x037E5984 LDR X0, [X9]
+	0x037E5988 LDR W9, [X0 + 0xE0]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+25], W8
+	003 Return 
+
+Method: System.Nullable`1<System.Single> get_mouseSmoothing()
+
+Disassembly:
+	0x037E598C CBNZ W9, 0x37E5994
+	0x037E5990 BL 0x1C16DFC
+
+ISIL:
+	001 NotImplemented "Instruction LDUR not yet implemented."
+	002 Return X0
+
+Method: System.Void set_mouseSmoothing(System.Nullable`1<System.Single> value)
+
+Disassembly:
+	0x037E5994 MOV X0, X19
+	0x037E5998 MOV X1, X31
+
+ISIL:
+	001 Move [X0+28], X1
+	002 Return 
+
+Method: System.Nullable`1<System.Single> get_mouseSensitivity()
+
+Disassembly:
+	0x037E599C MOV X2, X31
+	0x037E59A0 BL 0x3C354F8
+
+ISIL:
+	001 NotImplemented "Instruction LDUR not yet implemented."
+	002 Return X0
+
+Method: System.Void set_mouseSensitivity(System.Nullable`1<System.Single> value)
+
+Disassembly:
+	0x037E59A4 B 0x37E59AC
+	0x037E59A8 MOV W0, W31
+
+ISIL:
+	001 Move [X0+36], X1
+	002 Return 
+
+Method: System.Boolean get_invertStickX()
+
+Disassembly:
+	0x037E59AC AND W0, W0, 0x1
+	0x037E59B0 ADD X31, X31, 0x220
+
+ISIL:
+	001 Move W0, [X0+44]
+	002 Return X0
+
+Method: System.Void set_invertStickX(System.Boolean value)
+
+Disassembly:
+	0x037E59B4 LDP X20, X19, [X31 + 0x20]
+	0x037E59B8 LDP X22, X21, [X31 + 0x10]
+	0x037E59BC LDP X29, X30, [X31], #0x30
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+44], W8
+	003 Return 
+
+Method: System.Boolean get_invertStickY()
+
+Disassembly:
+	0x037E59C0 RET
+	0x037E59C4 BL 0x1C16F20
+
+ISIL:
+	001 Move W0, [X0+45]
+	002 Return X0
+
+Method: System.Void set_invertStickY(System.Boolean value)
+
+Disassembly:
+	0x037E59C8 STR X29, [X31 - 0x40]!
+	0x037E59CC STP X30, X23, [X31 + 0x10]
+	0x037E59D0 STP X22, X21, [X31 + 0x20]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+45], W8
+	003 Return 
+
+Method: System.Boolean get_swapSticks()
+
+Disassembly:
+	0x037E59D4 STP X20, X19, [X31 + 0x30]
+	0x037E59D8 SUB X31, X31, 0x220
+
+ISIL:
+	001 Move W0, [X0+46]
+	002 Return X0
+
+Method: System.Void set_swapSticks(System.Boolean value)
+
+Disassembly:
+	0x037E59DC ADRP X20, 0xBFC000
+	0x037E59E0 LDRB W8, [X20 + 0x32F]
+	0x037E59E4 MOV W19, W1
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+46], W8
+	003 Return 
+
+Method: System.Boolean get_swapBumpers()
+
+Disassembly:
+	0x037E59E8 MOV X21, X0
+	0x037E59EC TBNZ X8, 0x0, 0x37E5A10
+
+ISIL:
+	001 Move W0, [X0+47]
+	002 Return X0
+
+Method: System.Void set_swapBumpers(System.Boolean value)
+
+Disassembly:
+	0x037E59F0 ADRP X0, 0x964000
+	0x037E59F4 LDR X0, [X0 + 0x308]
+	0x037E59F8 BL 0x1C16CF4
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+47], W8
+	003 Return 
+
+Method: System.Boolean get_swapTriggers()
+
+Disassembly:
+	0x037E59FC ADRP X0, 0x964000
+	0x037E5A00 LDR X0, [X0 + 0x318]
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_swapTriggers(System.Boolean value)
+
+Disassembly:
+	0x037E5A04 BL 0x1C16CF4
+	0x037E5A08 MOVZ W8, 0x1
+	0x037E5A0C STRB W8, [X20 + 0x32F]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+48], W8
+	003 Return 
+
+Method: System.Boolean get_swapDpadAndLeftStick()
+
+Disassembly:
+	0x037E5A10 LDR W8, [X21 + 0x120]
+	0x037E5A14 CMP W8, W19
+
+ISIL:
+	001 Move W0, [X0+49]
+	002 Return X0
+
+Method: System.Void set_swapDpadAndLeftStick(System.Boolean value)
+
+Disassembly:
+	0x037E5A18 B.NE 0x37E5A24
+	0x037E5A1C LDR W20, [X21 + 0x124]
+	0x037E5A20 B 0x37E5AD8
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+49], W8
+	003 Return 
+
+Method: System.Single get_vibrationStrength()
+
+Disassembly:
+	0x037E5A24 LDR W8, [X21 + 0x130]
+	0x037E5A28 CMP W8, 0x1
+
+ISIL:
+	001 Move V0, [X0+52]
+	002 Return V0
+
+Method: System.Void set_vibrationStrength(System.Single value)
+
+Disassembly:
+	0x037E5A2C B.LT 0x37E5A68
+	0x037E5A30 ADRP X23, 0x964000
+
+ISIL:
+	001 Move [X0+52], S0
+	002 Return 
+
+Method: System.Void Apply(UnityEngine.InputSystem.IInputActionCollection actions)
+
+Disassembly:
+	0x037E5A34 LDR X23, [X23 + 0x318]
+
+ISIL:
+	001 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x037E5A38 MOV W20, W31
+	0x037E5A3C ADD X22, X21, 0x130
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

@@ -1,0 +1,171 @@
+Type: Fusion.NetworkObjectConnectionData
+
+Method: System.ValueTuple`2<Fusion.NetworkObjectHeader/PlayerUniqueData, Fusion.NetworkObjectHeader/PlayerUniqueDataChanges> GetPlayerData()
+
+Disassembly:
+	0x01E95CB0 MOV X2, X31
+	0x01E95CB4 LDR X1, [X25]
+	0x01E95CB8 BL 0x32333E0
+	0x01E95CBC CBZ X0, 0x1E9615C
+	0x01E95CC0 LDR X1, [X23]
+	0x01E95CC4 MOV X2, X31
+	0x01E95CC8 BL 0x32333E0
+	0x01E95CCC CBZ X0, 0x1E9615C
+	0x01E95CD0 LDRH W1, [X19 + 0x4]
+	0x01E95CD4 MOV X2, X31
+	0x01E95CD8 BL 0x3233DD8
+	0x01E95CDC LDR X1, [X24]
+	0x01E95CE0 MOV X0, X20
+	0x01E95CE4 MOV X2, X31
+	0x01E95CE8 BL 0x32333E0
+	0x01E95CEC CBZ X0, 0x1E9615C
+	0x01E95CF0 ADRP X8, 0x2269000
+	0x01E95CF4 LDR X8, [X8 + 0x380]
+	0x01E95CF8 MOV X2, X31
+	0x01E95CFC LDR X1, [X8]
+	0x01E95D00 BL 0x32333E0
+	0x01E95D04 CBZ X0, 0x1E9615C
+	0x01E95D08 LDR X1, [X23]
+	0x01E95D0C MOV X2, X31
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], X30
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x2545000
+	007 Move X20, 0x226A000
+	008 Move W8, [X21+676]
+	009 Move X20, [X20+840]
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0x226A000
+	016 Move X0, [X0+840]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X21+676], W8
+	020 Move W1, [X19+80]
+	021 Move W2, [X19+84]
+	022 Move X3, [X20]
+	023 Add X0, X31, 8
+	024 Move [X31+8], X31
+	025 Call ValueTuple`2<PlayerUniqueData, PlayerUniqueDataChanges>..ctor, X0, X1, X2
+	026 Move X0, [X31+8]
+	027 Move X20, [X31+32]
+	028 Move X19, [X31+40]
+	029 Move X30, [X31+16]
+	030 Move X21, [X31+24]
+	031 Add X31, X31, 48
+	032 Return X0
+
+Method: System.Void SetPlayerDataFlag(Fusion.NetworkObjectHeaderPlayerDataFlags flags, Fusion.Simulation simulation)
+
+Disassembly:
+	0x01E95D10 BL 0x32333E0
+	0x01E95D14 CBZ X0, 0x1E9615C
+	0x01E95D18 LDRH W1, [X19 + 0x6]
+	0x01E95D1C ADRP X22, 0x2269000
+	0x01E95D20 LDR X22, [X22 + 0x378]
+	0x01E95D24 MOV X2, X31
+	0x01E95D28 BL 0x3233DD8
+	0x01E95D2C LDR X0, [X22]
+	0x01E95D30 ADD X21, X19, 0x8
+	0x01E95D34 LDR W8, [X0 + 0xE0]
+	0x01E95D38 CBNZ W8, 0x1E95D40
+	0x01E95D3C BL 0x1C16DFC
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W8, [X0+80]
+	003 Or W8, W8, W1
+	004 Move [X0+80], W8
+	005 Compare X2, 0
+	006 JumpIfEqual {13}
+	007 Move W8, [X2+72]
+	008 Move [X0+84], W8
+	009 Move W8, [X2+72]
+	010 Move [X0+68], W8
+	011 Move X30, [X31+16]
+	012 Return 
+	013 Call 0x1C17F20
+
+Method: System.Void ClearPlayerDataFlag(Fusion.NetworkObjectHeaderPlayerDataFlags flags, Fusion.Simulation simulation)
+
+Disassembly:
+	0x01E95D40 MOV X0, X21
+	0x01E95D44 BL 0x1E96160
+	0x01E95D48 TBZ X0, 0x0, 0x1E95DB8
+	0x01E95D4C LDR X1, [X24]
+	0x01E95D50 MOV X0, X20
+	0x01E95D54 MOV X2, X31
+	0x01E95D58 BL 0x32333E0
+	0x01E95D5C CBZ X0, 0x1E9615C
+	0x01E95D60 ADRP X8, 0x2269000
+	0x01E95D64 LDR X8, [X8 + 0x3B0]
+	0x01E95D68 MOV X2, X31
+	0x01E95D6C LDR X1, [X8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W8, [X0+80]
+	003 NotImplemented "Instruction BIC not yet implemented."
+	004 Move [X0+80], W8
+	005 Compare X2, 0
+	006 JumpIfEqual {13}
+	007 Move W8, [X2+72]
+	008 Move [X0+84], W8
+	009 Move W8, [X2+72]
+	010 Move [X0+68], W8
+	011 Move X30, [X31+16]
+	012 Return 
+	013 Call 0x1C17F20
+
+Method: System.Boolean HasPlayerDataFlag(Fusion.NetworkObjectHeaderPlayerDataFlags flags)
+
+Disassembly:
+	0x01E95D70 BL 0x32333E0
+	0x01E95D74 CBZ X0, 0x1E9615C
+	0x01E95D78 LDR X1, [X23]
+	0x01E95D7C MOV X2, X31
+
+ISIL:
+	001 Move W8, [X0+80]
+	002 NotImplemented "Instruction BICS not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Boolean HasAnyPlayerDataFlag(Fusion.NetworkObjectHeaderPlayerDataFlags flags)
+
+Disassembly:
+	0x01E95D80 BL 0x32333E0
+	0x01E95D84 LDR X8, [X22]
+	0x01E95D88 MOV X22, X0
+	0x01E95D8C LDR W9, [X8 + 0xE0]
+
+ISIL:
+	001 Move W8, [X0+80]
+	002 And W31, W8, W1
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E95D90 CBNZ W9, 0x1E95D9C
+	0x01E95D94 MOV X0, X8
+	0x01E95D98 BL 0x1C16DFC
+	0x01E95D9C MOV X0, X21
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move X8, TEMP
+	004 Move X1, X31
+	005 Move [X0+72], X8
+	006 Call Object..ctor, X0
+	007 Return 
+

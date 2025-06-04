@@ -1,0 +1,28 @@
+Type: Fusion.InterpolatedErrorCorrectionSettings
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E8D9C4 CMP W0, W1
+	0x01E8D9C8 CSET W0, EQ
+	0x01E8D9CC RET
+	0x01E8D9D0 CMP W0, W1
+	0x01E8D9D4 CSET W0, NE
+	0x01E8D9D8 RET
+	0x01E8D9DC STR X30, [X31 - 0x30]!
+	0x01E8D9E0 STP X22, X21, [X31 + 0x10]
+	0x01E8D9E4 STP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move X8, -20578304
+	002 Move X9, -20578304
+	003 Move V0, [X8+97]
+	004 Move V1, [X9+123]
+	005 Move W8, 0x3FC00000
+	006 Move X1, X31
+	007 Move [X0+48], W8
+	008 Move [X0+16], V0
+	009 Move [X0+24], V1
+	010 Call Object..ctor, X0
+	011 Return 
+

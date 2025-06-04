@@ -1,0 +1,150 @@
+Type: UnityEngine.Rendering.Universal.DecalDrawErrorSystem
+
+Method: System.Void .ctor(UnityEngine.Rendering.Universal.DecalEntityManager entityManager, UnityEngine.Rendering.Universal.DecalTechnique technique)
+
+Disassembly:
+	0x03A3AB60 LDP X20, X19, [X31 + 0x10]
+	0x03A3AB64 MOV X1, X31
+	0x03A3AB68 MOV X2, X31
+	0x03A3AB6C LDP X30, X21, [X31], #0x20
+	0x03A3AB70 B 0x3C3883C
+	0x03A3AB74 STP X30, X21, [X31 - 0x20]!
+	0x03A3AB78 STP X20, X19, [X31 + 0x10]
+	0x03A3AB7C ADRP X21, 0x9A8000
+	0x03A3AB80 ADRP X20, 0x71B000
+	0x03A3AB84 LDRB W8, [X21 + 0x12C]
+	0x03A3AB88 LDR X20, [X20 + 0x758]
+	0x03A3AB8C MOV X19, X0
+	0x03A3AB90 TBNZ X8, 0x0, 0x3A3ABA8
+	0x03A3AB94 ADRP X0, 0x71B000
+	0x03A3AB98 LDR X0, [X0 + 0x758]
+	0x03A3AB9C BL 0x1C16CF4
+	0x03A3ABA0 MOVZ W8, 0x1
+	0x03A3ABA4 STRB W8, [X21 + 0x12C]
+	0x03A3ABA8 MOV X0, X19
+	0x03A3ABAC BL 0x3A3AB14
+	0x03A3ABB0 LDR X8, [X19 + 0x28]
+	0x03A3ABB4 STR X8, [X19 + 0x78]
+	0x03A3ABB8 LDR X8, [X20]
+	0x03A3ABBC LDR X8, [X8 + 0xB8]
+	0x03A3ABC0 LDR X8, [X8]
+	0x03A3ABC4 CBZ X8, 0x3A3ABE4
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X22, 0x9A9000
+	008 Move X23, 0x71C000
+	009 Move W8, [X22+283]
+	010 Move X23, [X23+1856]
+	011 Move W19, W2
+	012 Move X21, X1
+	013 Move X20, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {23}
+	018 Move X0, 0x71C000
+	019 Move X0, [X0+1856]
+	020 Call 0x1C17CF4
+	021 Move W8, 1
+	022 Move [X22+283], W8
+	023 Move X1, [X23]
+	024 Move X0, X20
+	025 Move X2, X21
+	026 Move X3, X31
+	027 Call DecalDrawSystem..ctor, X0, X1, X2
+	028 Move [X20+64], W19
+	029 Move X20, [X31+32]
+	030 Move X19, [X31+40]
+	031 Move X22, [X31+16]
+	032 Move X21, [X31+24]
+	033 Move X30, [X31+48]
+	034 Move X23, [X31+56]
+	035 Return 
+
+Method: System.Int32 GetPassIndex(UnityEngine.Rendering.Universal.DecalCachedChunk decalCachedChunk)
+
+Disassembly:
+	0x03A3ABC8 LDR X3, [X8 + 0x18]
+	0x03A3ABCC LDR X0, [X8 + 0x40]
+	0x03A3ABD0 LDR X2, [X8 + 0x28]
+	0x03A3ABD4 MOV X1, X19
+	0x03A3ABD8 LDP X20, X19, [X31 + 0x10]
+	0x03A3ABDC LDP X30, X21, [X31], #0x20
+	0x03A3ABE0 BR X3
+	0x03A3ABE4 LDP X20, X19, [X31 + 0x10]
+	0x03A3ABE8 LDP X30, X21, [X31], #0x20
+	0x03A3ABEC RET
+	0x03A3ABF0 STP X30, X21, [X31 - 0x20]!
+	0x03A3ABF4 STP X20, X19, [X31 + 0x10]
+	0x03A3ABF8 ADRP X20, 0x9A8000
+	0x03A3ABFC ADRP X21, 0x71B000
+	0x03A3AC00 LDRB W8, [X20 + 0x12D]
+	0x03A3AC04 LDR X21, [X21 + 0x758]
+	0x03A3AC08 MOV X19, X0
+	0x03A3AC0C TBNZ X8, 0x0, 0x3A3AC24
+	0x03A3AC10 ADRP X0, 0x71B000
+	0x03A3AC14 LDR X0, [X0 + 0x758]
+	0x03A3AC18 BL 0x1C16CF4
+	0x03A3AC1C MOVZ W8, 0x1
+	0x03A3AC20 STRB W8, [X20 + 0x12D]
+	0x03A3AC24 LDR X8, [X21]
+	0x03A3AC28 LDR X8, [X8 + 0xB8]
+	0x03A3AC2C LDR X8, [X8 + 0x8]
+	0x03A3AC30 CBZ X8, 0x3A3AC50
+	0x03A3AC34 LDR X3, [X8 + 0x18]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W8, [X0+64]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Compare X1, 0
+	007 JumpIfEqual {25}
+	008 Move W8, [X1+48]
+	009 Add W31, W8, 1
+	010 Move TEMP, 0
+	011 Not TEMP
+	012 Move W0, TEMP
+	013 Compare X1, 0
+	014 JumpIfEqual {25}
+	015 Move W8, [X1+60]
+	016 Compare X1, 0
+	017 JumpIfEqual {25}
+	018 Move W8, [X1+56]
+	019 Move W0, W31
+	020 Move W8, [X1+52]
+	021 Add W31, W8, 1
+	022 NotImplemented "Instruction CSINV not yet implemented."
+	023 Move X30, [X31+16]
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: UnityEngine.Material GetMaterial(UnityEngine.Rendering.Universal.DecalEntityChunk decalEntityChunk)
+
+Disassembly:
+	0x03A3AC38 LDR X0, [X8 + 0x40]
+	0x03A3AC3C LDR X2, [X8 + 0x28]
+	0x03A3AC40 MOV X1, X19
+	0x03A3AC44 LDP X20, X19, [X31 + 0x10]
+	0x03A3AC48 LDP X30, X21, [X31], #0x20
+	0x03A3AC4C BR X3
+	0x03A3AC50 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+16]
+	003 Compare X0, 0
+	004 JumpIfEqual {9}
+	005 Move X1, X31
+	006 Move X30, [X31+16]
+	007 Call DecalEntityManager.get_errorMaterial, X0
+	008 Return X0
+	009 Call 0x1C17F20
+

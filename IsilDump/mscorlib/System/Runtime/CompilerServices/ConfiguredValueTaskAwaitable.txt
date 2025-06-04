@@ -1,0 +1,26 @@
+Type: System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable
+
+Method: System.Void .ctor(System.Threading.Tasks.ValueTask value)
+
+Disassembly:
+	0x032C39C8 MOVZ W8, 0x1
+	0x032C39CC STRB W8, [X19 + 0x896]
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Return 
+
+Method: System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable/ConfiguredValueTaskAwaiter GetAwaiter()
+
+Disassembly:
+	0x032C39D0 LDR X0, [X20]
+	0x032C39D4 BL 0x1C16F10
+	0x032C39D8 MOV X1, X31
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X1, [X0+8]
+	003 Move X0, X8
+	004 Return X0
+

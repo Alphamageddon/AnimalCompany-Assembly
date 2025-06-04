@@ -1,0 +1,30 @@
+Type: UnityEngine.InspectorNameAttribute
+
+Method: System.Void .ctor(System.String displayName)
+
+Disassembly:
+	0x03C313DC MOV X19, X1
+	0x03C313E0 MOV X20, X0
+	0x03C313E4 CBNZ X2, 0x3C313FC
+	0x03C313E8 ADRP X0, 0xFFFFFFFFFCED6000
+	0x03C313EC ADD X0, X0, 0x1AE
+	0x03C313F0 BL 0x1C16CB8
+	0x03C313F4 MOV X2, X0
+	0x03C313F8 STR X0, [X21 + 0x260]
+	0x03C313FC MOV X0, X20
+	0x03C31400 MOV X1, X19
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+24], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

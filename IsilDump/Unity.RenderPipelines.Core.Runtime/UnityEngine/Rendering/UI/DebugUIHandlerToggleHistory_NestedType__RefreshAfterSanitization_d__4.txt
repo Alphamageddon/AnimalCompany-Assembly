@@ -1,0 +1,193 @@
+Type: UnityEngine.Rendering.UI.DebugUIHandlerToggleHistory/<RefreshAfterSanitization>d__4
+
+Method: System.Void .ctor(System.Int32 <>1__state)
+
+Disassembly:
+	0x039FF034 LDP X20, X19, [X31 + 0x10]
+	0x039FF038 LDP X30, X21, [X31], #0x20
+	0x039FF03C B 0x39F66FC
+	0x039FF040 MOV X0, X20
+	0x039FF044 LDP X20, X19, [X31 + 0x10]
+	0x039FF048 LDP X30, X21, [X31], #0x20
+	0x039FF04C RET
+	0x039FF050 BL 0x1C16F20
+	0x039FF054 ADRP X8, 0xFFFFFFFFFD0ED000
+	0x039FF058 ADRP X9, 0xFFFFFFFFFD0EC000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void System.IDisposable.Dispose()
+
+Disassembly:
+	0x039FF078 STP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x039FF07C ADRP X23, 0x9E2000
+	0x039FF080 ADRP X22, 0x754000
+	0x039FF084 ADRP X21, 0x754000
+	0x039FF088 LDRB W8, [X23 + 0xF29]
+	0x039FF08C LDR X22, [X22 + 0xED8]
+	0x039FF090 LDR X21, [X21 + 0x9E8]
+	0x039FF094 MOV X20, X1
+	0x039FF098 MOV X19, X0
+	0x039FF09C TBNZ X8, 0x0, 0x39FF108
+	0x039FF0A0 ADRP X0, 0x6F6000
+	0x039FF0A4 LDR X0, [X0 + 0x5B0]
+	0x039FF0A8 BL 0x1C16CF4
+	0x039FF0AC ADRP X0, 0x754000
+	0x039FF0B0 LDR X0, [X0 + 0x9E8]
+	0x039FF0B4 BL 0x1C16CF4
+	0x039FF0B8 ADRP X0, 0x754000
+	0x039FF0BC LDR X0, [X0 + 0xEE0]
+	0x039FF0C0 BL 0x1C16CF4
+	0x039FF0C4 ADRP X0, 0x754000
+	0x039FF0C8 LDR X0, [X0 + 0xEE8]
+	0x039FF0CC BL 0x1C16CF4
+	0x039FF0D0 ADRP X0, 0x754000
+	0x039FF0D4 LDR X0, [X0 + 0xEF0]
+	0x039FF0D8 BL 0x1C16CF4
+	0x039FF0DC ADRP X0, 0x754000
+	0x039FF0E0 LDR X0, [X0 + 0xEF8]
+	0x039FF0E4 BL 0x1C16CF4
+	0x039FF0E8 ADRP X0, 0x754000
+	0x039FF0EC LDR X0, [X0 + 0xED8]
+	0x039FF0F0 BL 0x1C16CF4
+	0x039FF0F4 ADRP X0, 0x753000
+	0x039FF0F8 LDR X0, [X0 + 0x690]
+	0x039FF0FC BL 0x1C16CF4
+	0x039FF100 MOVZ W8, 0x1
+	0x039FF104 STRB W8, [X23 + 0xF29]
+	0x039FF108 STR X20, [X19 + 0x58]
+	0x039FF10C LDR X1, [X22]
+	0x039FF110 MOV X0, X19
+	0x039FF114 BL 0x21A8CFC
+	0x039FF118 STR X0, [X19 + 0x80]
+	0x039FF11C LDR X1, [X21]
+	0x039FF120 MOV X0, X19
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x9E3000
+	005 Move W8, [X20+3868]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x755000
+	012 Move X0, [X0+3736]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+3868], W8
+	016 Move W8, [X19+16]
+	017 NotImplemented "Instruction CMP not yet implemented."
+	018 Compare W8, 0
+	019 JumpIfNotEqual {47}
+	020 Move W0, 1
+	021 Move [X19+24], X31
+	022 Move [X19+16], W0
+	023 Move X8, [X19+32]
+	024 Move TEMP, 0
+	025 Not TEMP
+	026 Move W9, TEMP
+	027 Move [X19+16], W9
+	028 Compare X8, 0
+	029 JumpIfEqual {52}
+	030 Move X9, [X8+120]
+	031 Compare X9, 0
+	032 JumpIfEqual {52}
+	033 Move X9, [X9+72]
+	034 Compare X9, 0
+	035 JumpIfEqual {52}
+	036 Move X19, [X8+104]
+	037 Move X8, [X9+24]
+	038 Move X0, [X9+64]
+	039 Move X1, [X9+40]
+	040 NotImplemented "Instruction BLR not yet implemented."
+	041 Compare X19, 0
+	042 JumpIfEqual {52}
+	043 And W1, W0, 1
+	044 Move X0, X19
+	045 Move X2, X31
+	046 Call Toggle.set_isOn, X0, X1
+	047 Move W0, W31
+	048 Move X20, [X31+16]
+	049 Move X19, [X31+24]
+	050 Move X30, [X31+32]
+	051 Return X0
+	052 Call 0x1C17F20
+
+Method: System.Object System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+
+Disassembly:
+	0x039FF124 BL 0x21A3894
+	0x039FF128 LDR X8, [X19 + 0x80]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void System.Collections.IEnumerator.Reset()
+
+Disassembly:
+	0x039FF12C STR X0, [X19 + 0x88]
+	0x039FF130 CBZ X8, 0x39FF25C
+	0x039FF134 LDR X0, [X19 + 0x60]
+	0x039FF138 CBZ X0, 0x39FF25C
+	0x039FF13C LDR X9, [X0]
+	0x039FF140 LDR X1, [X8 + 0x28]
+	0x039FF144 ADRP X21, 0x753000
+	0x039FF148 ADRP X20, 0x754000
+	0x039FF14C LDR X8, [X9 + 0x5E8]
+	0x039FF150 LDR X2, [X9 + 0x5F0]
+	0x039FF154 LDR X21, [X21 + 0x690]
+	0x039FF158 LDR X20, [X20 + 0xEE0]
+	0x039FF15C BLR X8
+	0x039FF160 LDR X0, [X21]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0x6F5000
+	004 Move X0, [X0+2880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotSupportedException..ctor, X0
+	010 Move X0, 0x755000
+	011 Move X0, [X0+3744]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x039FF164 LDR X23, [X19 + 0x70]
+	0x039FF168 BL 0x1C16F10
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+

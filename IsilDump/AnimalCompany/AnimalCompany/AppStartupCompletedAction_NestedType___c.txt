@@ -1,0 +1,89 @@
+Type: AnimalCompany.AppStartupCompletedAction/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x01D37F58 ADRP X21, 0x23BC000
+	0x01D37F5C ADRP X20, 0x23BC000
+	0x01D37F60 LDRB W8, [X23 + 0x6FA]
+	0x01D37F64 LDR X22, [X22 + 0xA88]
+	0x01D37F68 LDR X21, [X21 + 0xA90]
+	0x01D37F6C LDR X20, [X20 + 0xA98]
+	0x01D37F70 MOV V8.16B, V0.16B
+	0x01D37F74 MOV X19, X0
+	0x01D37F78 TBNZ X8, 0x0, 0x1D37FA8
+	0x01D37F7C ADRP X0, 0x23BC000
+	0x01D37F80 LDR X0, [X0 + 0xA88]
+	0x01D37F84 BL 0x1C16CF4
+	0x01D37F88 ADRP X0, 0x23BC000
+	0x01D37F8C LDR X0, [X0 + 0xA90]
+	0x01D37F90 BL 0x1C16CF4
+	0x01D37F94 ADRP X0, 0x23BC000
+	0x01D37F98 LDR X0, [X0 + 0xA98]
+	0x01D37F9C BL 0x1C16CF4
+	0x01D37FA0 MOVZ W8, 0x1
+	0x01D37FA4 STRB W8, [X23 + 0x6FA]
+	0x01D37FA8 LDR W8, [X19 + 0x78]
+	0x01D37FAC LDR X0, [X22]
+	0x01D37FB0 FMOV S9, 5
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x26A2000
+	005 Move X20, 0x23BD000
+	006 Move W8, [X19+1771]
+	007 Move X20, [X20+2344]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x23BD000
+	013 Move X0, [X0+2344]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+1771], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01D37FB4 ADD X1, X31, 0xC
+	0x01D37FB8 FSUB S10, S9, S8
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> <.ctor>b__0_0(AnimalCompany.AppState state)
+
+Disassembly:
+	0x01D37FBC STR W8, [X31 + 0xC]
+	0x01D37FC0 BL 0x1C16E04
+	0x01D37FC4 MOV X19, X0
+	0x01D37FC8 LDR X0, [X21]
+	0x01D37FCC ADD X1, X31, 0x8
+	0x01D37FD0 STR S10, [X31 + 0x8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {7}
+	004 Move X0, [X1+96]
+	005 Move X30, [X31+16]
+	006 Return X0
+	007 Call 0x1C17F20
+

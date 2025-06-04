@@ -1,0 +1,90 @@
+Type: RSG.Promise`1/<>c__DisplayClass55_1
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0237C5E4 MOV X0, X20
+	0x0237C5E8 MOV X1, X21
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <Race>b__1(System.Single v)
+
+Disassembly:
+	0x0237C5EC BL 0x1C5C788
+	0x0237C5F0 B 0x237C604
+	0x0237C5F4 LDR W9, [X10]
+	0x0237C5F8 ADD W9, W9, 0x4
+	0x0237C5FC ADD X8, X8, W9, 0x4, SXTW
+	0x0237C600 ADD X0, X8, 0x138
+	0x0237C604 LDP X8, X1, [X0]
+	0x0237C608 MOV X0, X20
+	0x0237C60C BLR X8
+	0x0237C610 LDR X1, [X19 + 0x10]
+	0x0237C614 MOV X2, X31
+	0x0237C618 BL 0x33CB4B0
+	0x0237C61C LDR X8, [X22 + 0x28]
+	0x0237C620 LDUR X9, [X29 - 0x8]
+	0x0237C624 CMP X8, X9
+	0x0237C628 B.NE 0x237C64C
+	0x0237C62C AND W0, W0, 0x1
+	0x0237C630 ADD X31, X29, 0x0
+	0x0237C634 LDP X20, X19, [X31 + 0x30]
+	0x0237C638 LDP X22, X21, [X31 + 0x20]
+	0x0237C63C LDP X24, X23, [X31 + 0x10]
+	0x0237C640 LDP X29, X30, [X31], #0x40
+	0x0237C644 RET
+	0x0237C648 BL 0x1C16F20
+	0x0237C64C BL 0x3EB1B20
+	0x0237C650 MOV X1, X31
+	0x0237C654 B 0x33BDD8C
+	0x0237C658 STP X30, X21, [X31 - 0x20]!
+	0x0237C65C STP X20, X19, [X31 + 0x10]
+	0x0237C660 LDR X8, [X0 + 0x10]
+	0x0237C664 CBZ X8, 0x237C6C0
+	0x0237C668 MOV X21, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X0+24]
+	005 Compare X8, 0
+	006 JumpIfEqual {38}
+	007 Move X20, [X8+16]
+	008 Compare X20, 0
+	009 JumpIfEqual {38}
+	010 Move W9, [X20+80]
+	011 Compare W9, 0
+	012 JumpIfEqual {17}
+	013 Move X20, [X31+16]
+	014 Move X19, [X31+24]
+	015 Move X30, [X31+32]
+	016 Return 
+	017 Move X8, [X8+24]
+	018 Compare X8, 0
+	019 JumpIfEqual {38}
+	020 NotImplemented "Instruction LDRSW not yet implemented."
+	021 Move W10, [X8+24]
+	022 NotImplemented "Instruction CMP not yet implemented."
+	023 Move X19, X1
+	024 Add X9, X8, X9
+	025 Move X0, X8
+	026 Move X1, X31
+	027 Move [X9+32], S0
+	028 Call Enumerable.Max, X0
+	029 Move X8, [X19+32]
+	030 Move X0, X20
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X8, [X8+192]
+	034 Move X1, [X8+32]
+	035 Move X30, [X31+32]
+	036 Call 0x24E1AD0, X0, V0
+	037 Return 
+	038 Call 0x1C17F20
+	039 Call 0x1C17F28
+

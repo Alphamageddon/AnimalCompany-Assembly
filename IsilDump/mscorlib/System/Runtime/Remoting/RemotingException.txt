@@ -1,0 +1,46 @@
+Type: System.Runtime.Remoting.RemotingException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0327EA04 BLR X9
+	0x0327EA08 ADRP X23, 0xEA6000
+
+ISIL:
+	001 Move X1, X31
+	002 Call SystemException..ctor, X0
+	003 Return 
+
+Method: System.Void .ctor(System.String message)
+
+Disassembly:
+	0x03274098 B.NE 0x32741A0
+	0x0327409C ADRP X8, 0xEAF000
+
+ISIL:
+	001 Move X2, X31
+	002 Call SystemException..ctor, X0, X1
+	003 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x0327EA0C LDR X23, [X23 + 0x2A0]
+	0x0327EA10 MOV X21, X0
+
+ISIL:
+	001 Move X4, X31
+	002 Call SystemException..ctor, X0, X1, X2
+	003 Return 
+
+Method: System.Void .ctor(System.String message, System.Exception InnerException)
+
+Disassembly:
+	0x0327BCD0 LDR X0, [X0 + 0xD20]
+	0x0327BCD4 BL 0x1C16D08
+
+ISIL:
+	001 Move X3, X31
+	002 Call SystemException..ctor, X0, X1, X2
+	003 Return 
+

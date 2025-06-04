@@ -1,0 +1,158 @@
+Type: Nakama.StreamState
+
+Method: Nakama.IUserPresence get_Sender()
+
+Disassembly:
+	0x034767F0 MOV X0, X20
+	0x034767F4 BLR X8
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: Nakama.UserPresence get_SenderField()
+
+Disassembly:
+	0x034767F8 MOV X2, X0
+	0x034767FC MOV X0, X21
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_SenderField(Nakama.UserPresence value)
+
+Disassembly:
+	0x03476800 MOV X1, X22
+	0x03476804 BL 0x3473DA8
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.String get_State()
+
+Disassembly:
+	0x03476808 STR X0, [X19 + 0x30]
+	0x0347680C LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.String get_StateField()
+
+Disassembly:
+	0x03476810 LDP X22, X21, [X31 + 0x10]
+	0x03476814 LDR X30, [X31], #0x30
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_StateField(System.String value)
+
+Disassembly:
+	0x03476818 RET
+	0x0347681C BL 0x1C16F20
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: Nakama.IStream get_Stream()
+
+Disassembly:
+	0x03476820 ADRP X0, 0xC7D000
+	0x03476824 LDR X0, [X0 + 0x5B0]
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: Nakama.Stream get_StreamField()
+
+Disassembly:
+	0x03476828 BL 0x1C16D08
+	0x0347682C BL 0x1C16F10
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_StreamField(Nakama.Stream value)
+
+Disassembly:
+	0x03476830 MOV X19, X0
+	0x03476834 ADRP X0, 0xCBA000
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.String ToString()
+
+Disassembly:
+	0x03476838 LDR X0, [X0 + 0x9F8]
+	0x0347683C BL 0x1C16D08
+	0x03476840 MOV X1, X0
+	0x03476844 MOV X0, X19
+	0x03476848 MOV X2, X31
+	0x0347684C BL 0x337DF1C
+	0x03476850 ADRP X0, 0xCBA000
+	0x03476854 LDR X0, [X0 + 0xA00]
+	0x03476858 BL 0x1C16D08
+	0x0347685C MOV X1, X0
+	0x03476860 MOV X0, X19
+	0x03476864 BL 0x1C16DEC
+	0x03476868 MOV X1, X31
+	0x0347686C B 0x33BDD8C
+	0x03476870 LDR X0, [X0 + 0x10]
+	0x03476874 RET
+	0x03476878 STR X1, [X0 + 0x10]
+	0x0347687C RET
+	0x03476880 LDR X0, [X0 + 0x18]
+	0x03476884 RET
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xF68000
+	006 Move X20, 0xCBB000
+	007 Move W8, [X21+2076]
+	008 Move X20, [X20+2440]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xCBB000
+	015 Move X0, [X0+2440]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+2076], W8
+	019 Move X1, [X19+16]
+	020 Move X2, [X19+24]
+	021 Move X3, [X19+32]
+	022 Move X0, [X20]
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move X4, X31
+	026 Move X30, [X31+32]
+	027 Move X21, [X31+40]
+	028 Call String.Format, X0, X1, X2, X3
+	029 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03476888 STR X1, [X0 + 0x18]
+	0x0347688C RET
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

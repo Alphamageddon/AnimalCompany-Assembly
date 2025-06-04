@@ -1,0 +1,40 @@
+Type: UnityEngine.XR.Interaction.Toolkit.Utilities.Internal.RequireInterfaceAttribute
+
+Method: System.Type get_interfaceType()
+
+Disassembly:
+	0x03B9472C RET
+	0x03B94730 STP X30, X21, [X31 - 0x20]!
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void .ctor(System.Type interfaceType)
+
+Disassembly:
+	0x03B94734 STP X20, X19, [X31 + 0x10]
+	0x03B94738 LDR X8, [X2 + 0x8]
+	0x03B9473C STP X1, X2, [X0 + 0x20]
+	0x03B94740 MOV X19, X0
+	0x03B94744 MOV X20, X1
+	0x03B94748 STR X8, [X0 + 0x10]
+	0x03B9474C LDRB W21, [X2 + 0x52]
+	0x03B94750 STR X0, [X0 + 0x40]
+	0x03B94754 MOV X0, X2
+	0x03B94758 BL 0x1C16D84
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call PropertyAttribute..ctor, X0
+	008 Move [X20+24], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

@@ -1,0 +1,422 @@
+Type: Fusion.DynamicHeap/BlockList
+
+Method: System.Void AddFirst(Fusion.DynamicHeap/Block* item)
+
+Disassembly:
+	0x01E8139C TBNZ X8, 0x0, 0x1E813B4
+	0x01E813A0 ADRP X0, 0x227C000
+	0x01E813A4 LDR X0, [X0 + 0xBA0]
+	0x01E813A8 BL 0x1C16CF4
+	0x01E813AC MOVZ W8, 0x1
+	0x01E813B0 STRB W8, [X22 + 0x1E0]
+	0x01E813B4 MOV X0, X19
+	0x01E813B8 MOV X1, X31
+	0x01E813BC BL 0x33BDD8C
+	0x01E813C0 LDR X0, [X21]
+	0x01E813C4 LDR W8, [X0 + 0xE0]
+	0x01E813C8 CBNZ W8, 0x1E813D0
+	0x01E813CC BL 0x1C16DFC
+	0x01E813D0 MOVZ W0, 0x40
+	0x01E813D4 MOV X1, X20
+	0x01E813D8 BL 0x1E7EA80
+	0x01E813DC STR X0, [X19 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, X0
+	003 Add X8, X8, 8
+	004 Move X9, [X8]
+	005 Compare X1, 0
+	006 JumpIfEqual {20}
+	007 Move [X1+8], X31
+	008 Move [X1+16], X9
+	009 Compare X9, 0
+	010 JumpIfEqual {12}
+	011 Move [X9+8], X1
+	012 Add X8, X0, 16
+	013 Move [X0+8], X1
+	014 Move [X8], X1
+	015 Move W8, [X0]
+	016 Add W8, W8, 1
+	017 Move [X0], W8
+	018 Move X30, [X31+16]
+	019 Return 
+	020 Call 0x1C17F20
+
+Method: System.Void MoveFirst(Fusion.DynamicHeap/Block* item)
+
+Disassembly:
+	0x01E81D34 MOVZ W8, 0x1
+	0x01E81D38 STRB W8, [X21 + 0x22B]
+	0x01E81D3C ADRP X21, 0x227C000
+	0x01E81D40 LDR X21, [X21 + 0xD58]
+	0x01E81D44 MOV X0, X20
+	0x01E81D48 MOV W1, W31
+	0x01E81D4C LDR X2, [X21]
+	0x01E81D50 BL 0x22275E4
+	0x01E81D54 LDRB W8, [X0]
+	0x01E81D58 TBNZ X8, 0x0, 0x1E81DA8
+	0x01E81D5C LDR X20, [X19 + 0x48]
+	0x01E81D60 CBZ X20, 0x1E81EC4
+	0x01E81D64 ADRP X22, 0x2558000
+	0x01E81D68 LDRB W8, [X22 + 0x22A]
+	0x01E81D6C CBNZ W8, 0x1E81D84
+	0x01E81D70 ADRP X0, 0x227C000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X0+8]
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Move X19, X0
+	007 Move X20, X1
+	008 Call BlockList.Remove, X0, X1
+	009 Move X0, X19
+	010 Move X1, X20
+	011 Move X20, [X31+16]
+	012 Move X19, [X31+24]
+	013 Move X30, [X31+32]
+	014 Call BlockList.AddFirst, X0, X1
+	015 Return 
+	016 Move X20, [X31+16]
+	017 Move X19, [X31+24]
+	018 Move X30, [X31+32]
+	019 Return 
+
+Method: System.Void MoveLast(Fusion.DynamicHeap/Block* item)
+
+Disassembly:
+	0x01E81D74 LDR X0, [X0 + 0xD58]
+	0x01E81D78 BL 0x1C16CF4
+	0x01E81D7C MOVZ W8, 0x1
+	0x01E81D80 STRB W8, [X22 + 0x22A]
+	0x01E81D84 LDR X2, [X21]
+	0x01E81D88 MOV X0, X20
+	0x01E81D8C MOV W1, W31
+	0x01E81D90 BL 0x22275E4
+	0x01E81D94 LDR W8, [X19 + 0x50]
+	0x01E81D98 LDR W9, [X0]
+	0x01E81D9C ADD W8, W8, 0x1
+	0x01E81DA0 LSRV W8, W9, W8
+	0x01E81DA4 TBZ X8, 0x0, 0x1E81DB4
+	0x01E81DA8 ADRP X8, 0xFFFFFFFFFEC69000
+	0x01E81DAC LDR V0, [X8 + 0xBC]
+	0x01E81DB0 FMUL S9, S9, S0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X0+16]
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Move X19, X0
+	007 Move X20, X1
+	008 Call BlockList.Remove, X0, X1
+	009 Move X0, X19
+	010 Move X1, X20
+	011 Move X20, [X31+16]
+	012 Move X19, [X31+24]
+	013 Move X30, [X31+32]
+	014 Call BlockList.AddLast, X0, X1
+	015 Return 
+	016 Move X20, [X31+16]
+	017 Move X19, [X31+24]
+	018 Move X30, [X31+32]
+	019 Return 
+
+Method: System.Void AddLast(Fusion.DynamicHeap/Block* item)
+
+Disassembly:
+	0x01E817F4 ADD X8, X9, X8, 0x3, LSL
+	0x01E817F8 LDR X8, [X8 + 0x20]
+	0x01E817FC CMP X8, X19
+	0x01E81800 B.EQ 0x1E81818
+	0x01E81804 MOV W0, W31
+	0x01E81808 LDP X20, X19, [X31 + 0x20]
+	0x01E8180C LDP X30, X21, [X31 + 0x10]
+	0x01E81810 ADD X31, X31, 0x30
+	0x01E81814 RET
+	0x01E81818 ADRP X21, 0x2558000
+	0x01E8181C LDRB W8, [X21 + 0x22A]
+	0x01E81820 CBNZ W8, 0x1E81838
+	0x01E81824 ADRP X0, 0x227C000
+	0x01E81828 LDR X0, [X0 + 0xD58]
+	0x01E8182C BL 0x1C16CF4
+	0x01E81830 MOVZ W8, 0x1
+	0x01E81834 STRB W8, [X21 + 0x22A]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {18}
+	004 Move [X1+16], X31
+	005 Move X8, [X0+16]
+	006 Add X9, X0, 8
+	007 Add X10, X8, 16
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move [X1+8], X8
+	010 NotImplemented "Instruction CSEL not yet implemented."
+	011 Move [X8], X1
+	012 Move W8, [X0]
+	013 Move [X0+16], X1
+	014 Add W8, W8, 1
+	015 Move [X0], W8
+	016 Move X30, [X31+16]
+	017 Return 
+	018 Call 0x1C17F20
+
+Method: System.Void AddBefore(Fusion.DynamicHeap/Block* before, Fusion.DynamicHeap/Block* item)
+
+Disassembly:
+	0x01E81DB4 MOV X0, X19
+	0x01E81DB8 MOV X1, X31
+	0x01E81DBC BL 0x3C32E90
+	0x01E81DC0 CBZ X0, 0x1E81EC4
+	0x01E81DC4 MOV X1, X31
+	0x01E81DC8 STP S11, S9, [X31 + 0x14]
+	0x01E81DCC STR S8, [X31 + 0x1C]
+	0x01E81DD0 BL 0x3C3F58C
+	0x01E81DD4 MOV X0, X19
+	0x01E81DD8 MOV X1, X31
+	0x01E81DDC MOV V12.16B, V0.16B
+	0x01E81DE0 MOV V13.16B, V1.16B
+	0x01E81DE4 MOV V14.16B, V2.16B
+	0x01E81DE8 BL 0x3C32E90
+	0x01E81DEC CBZ X0, 0x1E81EC4
+	0x01E81DF0 MOV X1, X31
+	0x01E81DF4 BL 0x3C3DEB4
+	0x01E81DF8 ADRP X20, 0x2557000
+	0x01E81DFC LDRB W8, [X20 + 0x85B]
+	0x01E81E00 MOV V15.16B, V0.16B
+	0x01E81E04 MOV V8.16B, V1.16B
+	0x01E81E08 MOV V9.16B, V2.16B
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+8]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Compare X2, 0
+	005 JumpIfEqual {25}
+	006 Move [X2+16], X1
+	007 Compare X1, 0
+	008 JumpIfEqual {25}
+	009 Move X8, [X1+8]
+	010 Move [X2+8], X8
+	011 Move X8, [X1+8]
+	012 Compare X8, 0
+	013 JumpIfEqual {25}
+	014 Move [X8+16], X2
+	015 Move [X1+8], X2
+	016 Move W8, [X0]
+	017 Add W8, W8, 1
+	018 Move [X0], W8
+	019 Move X30, [X31+16]
+	020 Return 
+	021 Move X1, X2
+	022 Move X30, [X31+16]
+	023 Call BlockList.AddFirst, X0, X1
+	024 Return 
+	025 Call 0x1C17F20
+
+Method: System.Void AddAfter(Fusion.DynamicHeap/Block* after, Fusion.DynamicHeap/Block* item)
+
+Disassembly:
+	0x01E81E0C MOV V11.16B, V3.16B
+	0x01E81E10 CBNZ W8, 0x1E81E28
+	0x01E81E14 ADRP X0, 0x2272000
+	0x01E81E18 LDR X0, [X0 + 0x5A0]
+	0x01E81E1C BL 0x1C16CF4
+	0x01E81E20 MOVZ W8, 0x1
+	0x01E81E24 STRB W8, [X20 + 0x85B]
+	0x01E81E28 ADRP X8, 0x2272000
+	0x01E81E2C LDR X8, [X8 + 0x5A0]
+	0x01E81E30 MOV V1.16B, V13.16B
+	0x01E81E34 MOV V2.16B, V14.16B
+	0x01E81E38 MOV V3.16B, V15.16B
+	0x01E81E3C LDR X8, [X8]
+	0x01E81E40 MOV V4.16B, V8.16B
+	0x01E81E44 MOV V5.16B, V9.16B
+	0x01E81E48 MOV V6.16B, V11.16B
+	0x01E81E4C LDR X8, [X8 + 0xB8]
+	0x01E81E50 MOV X0, X31
+	0x01E81E54 LDR V0, [X8 + 0x14]
+	0x01E81E58 LDUR X9, [X8 + 0xC]
+	0x01E81E5C ADD X8, X31, 0x20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Compare X1, 0
+	005 JumpIfEqual {25}
+	006 Compare X2, 0
+	007 JumpIfEqual {25}
+	008 Move X8, [X1+16]
+	009 Move [X2+8], X1
+	010 Move [X2+16], X8
+	011 Move X8, [X1+16]
+	012 Compare X8, 0
+	013 JumpIfEqual {25}
+	014 Move [X8+8], X2
+	015 Move [X1+16], X2
+	016 Move W8, [X0]
+	017 Add W8, W8, 1
+	018 Move [X0], W8
+	019 Move X30, [X31+16]
+	020 Return 
+	021 Move X1, X2
+	022 Move X30, [X31+16]
+	023 Call BlockList.AddLast, X0, X1
+	024 Return 
+	025 Call 0x1C17F20
+
+Method: System.Boolean TryRemoveHead(out Fusion.DynamicHeap/Block* head)
+
+Disassembly:
+	0x01E81E60 STR S0, [X31 + 0x8]
+	0x01E81E64 MOV V0.16B, V12.16B
+	0x01E81E68 STR X9, [X31]
+	0x01E81E6C BL 0x3C26FA8
+	0x01E81E70 LDP V0, V1, [X31 + 0x20]
+	0x01E81E74 LDP V2, V3, [X31 + 0x40]
+	0x01E81E78 ADD X1, X31, 0x60
+	0x01E81E7C MOV X0, X19
+	0x01E81E80 STP V0, V1, [X31 + 0x60]
+	0x01E81E84 STP V2, V3, [X31 + 0x80]
+	0x01E81E88 LDR X8, [X19]
+	0x01E81E8C LDP S3, S1, [X31 + 0x18]
+	0x01E81E90 LDR V2, [X31 + 0x14]
+	0x01E81E94 MOV V0.16B, V10.16B
+	0x01E81E98 LDP X9, X2, [X8 + 0x198]
+	0x01E81E9C BLR X9
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W21, [X0]
+	006 Move X19, X1
+	007 Compare W21, 0
+	008 JumpIfEqual {12}
+	009 Move X20, [X0+8]
+	010 Move X1, X20
+	011 Call BlockList.Remove, X0, X1
+	012 Move X20, X31
+	013 Move [X19], X20
+	014 Move X20, [X31+16]
+	015 Move X19, [X31+24]
+	016 NotImplemented "Instruction CMP not yet implemented."
+	017 NotImplemented "Instruction CSET not yet implemented."
+	018 Move X30, [X31+32]
+	019 Move X21, [X31+40]
+	020 Return X0
+
+Method: Fusion.DynamicHeap/Block* RemoveHead()
+
+Disassembly:
+	0x01E81EA0 LDP X20, X19, [X31 + 0x100]
+	0x01E81EA4 LDP X22, X21, [X31 + 0xF0]
+	0x01E81EA8 LDP X29, X30, [X31 + 0xE0]
+	0x01E81EAC LDP D9, D8, [X31 + 0xD0]
+	0x01E81EB0 LDP D11, D10, [X31 + 0xC0]
+	0x01E81EB4 LDP D13, D12, [X31 + 0xB0]
+	0x01E81EB8 LDP D15, D14, [X31 + 0xA0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, [X0+8]
+	004 Move X1, X19
+	005 Call BlockList.Remove, X0, X1
+	006 Move X0, X19
+	007 Move X30, [X31+16]
+	008 Move X19, [X31+24]
+	009 Return X0
+
+Method: System.Void Remove(Fusion.DynamicHeap/Block* item)
+
+Disassembly:
+	0x01E81150 STR X20, [X19]
+	0x01E81154 LDP X20, X19, [X31 + 0x10]
+	0x01E81158 CMP W21, 0x0
+	0x01E8115C CSET W0, NE
+	0x01E81160 LDP X30, X21, [X31], #0x20
+	0x01E81164 RET
+	0x01E81168 ADD X9, X0, 0x8
+	0x01E8116C LDR X8, [X9]
+	0x01E81170 CBZ X8, 0x1E81180
+	0x01E81174 CMP X8, X1
+	0x01E81178 ADD X9, X8, 0x18
+	0x01E8117C B.NE 0x1E8116C
+	0x01E81180 CMP X8, 0x0
+	0x01E81184 CSET W0, NE
+	0x01E81188 RET
+	0x01E8118C MOV X1, X31
+	0x01E81190 B 0x33A51F0
+	0x01E81194 STR X30, [X31 - 0x30]!
+	0x01E81198 STP X22, X21, [X31 + 0x10]
+	0x01E8119C STP X20, X19, [X31 + 0x20]
+	0x01E811A0 ADRP X21, 0x2558000
+	0x01E811A4 ADRP X22, 0x2273000
+	0x01E811A8 ADRP X19, 0x227C000
+	0x01E811AC ADRP X20, 0x227C000
+	0x01E811B0 LDRB W8, [X21 + 0x1DB]
+	0x01E811B4 LDR X22, [X22 + 0xE58]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {29}
+	004 Move X8, X1
+	005 Add X8, X8, 8
+	006 Move X10, [X8]
+	007 Compare X10, 0
+	008 JumpIfEqual {11}
+	009 Move X9, [X1+16]
+	010 Move [X10+16], X9
+	011 Move X9, [X1+16]
+	012 Compare X9, 0
+	013 JumpIfEqual {15}
+	014 Move [X9+8], X10
+	015 Move X10, [X0+16]
+	016 NotImplemented "Instruction CMP not yet implemented."
+	017 Move X10, [X8]
+	018 Move [X0+16], X10
+	019 Move X10, [X0+8]
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 Move [X0+8], X9
+	022 Move [X8], X31
+	023 Move [X8+8], X31
+	024 Move W8, [X0]
+	025 Subtract W8, W8, 1
+	026 Move [X0], W8
+	027 Move X30, [X31+16]
+	028 Return 
+	029 Call 0x1C17F20
+
+Method: System.Boolean IsInList(Fusion.DynamicHeap/Block* item)
+
+Disassembly:
+	0x01E81EBC ADD X31, X31, 0x110
+	0x01E81EC0 RET
+	0x01E81EC4 BL 0x1C16F20
+	0x01E81EC8 SUB X31, X31, 0xB0
+	0x01E81ECC STP D11, D10, [X31 + 0x80]
+	0x01E81ED0 STP D9, D8, [X31 + 0x90]
+	0x01E81ED4 STP X30, X19, [X31 + 0xA0]
+	0x01E81ED8 MOV V8.16B, V3.16B
+	0x01E81EDC MOV V9.16B, V2.16B
+
+ISIL:
+	001 Add X9, X0, 8
+	002 Move X8, [X9]
+	003 Compare X8, 0
+	004 JumpIfEqual {7}
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Add X9, X8, 16
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Return X0
+

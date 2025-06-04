@@ -1,0 +1,40 @@
+Type: System.Linq.Expressions.MemberExpression
+
+Method: System.Reflection.MemberInfo get_Member()
+
+Disassembly:
+	0x035E1600 BL 0x31E8704
+	0x035E1604 CBZ X0, 0x35E17EC
+	0x035E1608 LDRB W8, [X0 + 0x10]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X2, [X8+392]
+	003 Move X1, [X8+400]
+	004 CallNoReturn X2
+
+Method: System.Reflection.MemberInfo GetMember()
+
+Disassembly:
+	0x035E160C CMP W8, 0x3
+	0x035E1610 B.EQ 0x35E16CC
+	0x035E1614 MOV X0, X19
+	0x035E1618 MOV X1, X31
+	0x035E161C BL 0x31E7CC4
+	0x035E1620 CMP W0, 0x3
+	0x035E1624 B.NE 0x35E16D4
+	0x035E1628 MOV X0, X19
+	0x035E162C MOV W1, W31
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Call ContractUtils.get_Unreachable
+	004 Move X19, X0
+	005 Move X0, 0xB59000
+	006 Move X0, [X0+408]
+	007 Call 0x1C17D08
+	008 Move X1, X0
+	009 Move X0, X19
+	010 Call 0x1C17DEC
+

@@ -1,0 +1,35 @@
+Type: Fusion.AssemblyNameAttribute
+
+Method: System.Boolean get_RequiresUnsafeCode()
+
+Disassembly:
+	0x01E339E0 MOVZ W8, 0x1
+	0x01E339E4 STRB W8, [X21 + 0xEB1]
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void set_RequiresUnsafeCode(System.Boolean value)
+
+Disassembly:
+	0x01E339E8 LDR X0, [X22]
+	0x01E339EC LDR W8, [X0 + 0xE0]
+	0x01E339F0 CBNZ W8, 0x1E339F8
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+20], W8
+	003 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E339F4 BL 0x1C16DFC
+	0x01E339F8 MOV X0, X20
+
+ISIL:
+	001 Move X1, X31
+	002 Call PropertyAttribute..ctor, X0
+	003 Return 
+

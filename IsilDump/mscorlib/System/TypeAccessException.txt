@@ -1,0 +1,72 @@
+Type: System.TypeAccessException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03399838 LDR W8, [X0 + 0xE0]
+	0x0339983C CBNZ W8, 0x3399844
+	0x03399840 BL 0x1C16DFC
+	0x03399844 MOV W0, W19
+	0x03399848 LDP X20, X19, [X31 + 0x10]
+	0x0339984C MOV X1, X31
+	0x03399850 LDP X30, X21, [X31], #0x20
+	0x03399854 B 0x3321D3C
+	0x03399858 STR X30, [X31 - 0x20]!
+	0x0339985C STP X20, X19, [X31 + 0x10]
+	0x03399860 ADRP X0, 0xD8F000
+	0x03399864 LDR X0, [X0 + 0x30]
+	0x03399868 BL 0x1C16D08
+	0x0339986C MOV X19, X0
+	0x03399870 ADRP X0, 0xD8C000
+	0x03399874 LDR X0, [X0 + 0x90]
+	0x03399878 BL 0x1C16D08
+	0x0339987C MOV X20, X0
+	0x03399880 ADRP X0, 0xD8C000
+	0x03399884 LDR X0, [X0 + 0x98]
+	0x03399888 BL 0x1C16D08
+	0x0339988C MOV X2, X0
+	0x03399890 MOV X0, X19
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x1045000
+	006 Move X21, 0xD93000
+	007 Move W8, [X20+164]
+	008 Move X21, [X21+1368]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xD93000
+	015 Move X0, [X0+1368]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+164], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X2, X31
+	022 Call TypeLoadException..ctor, X0, X1
+	023 Move W8, 0x1543
+	024 NotImplemented "Instruction MOVK not yet implemented."
+	025 Move [X19+96], W8
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x03399894 MOV X1, X20
+	0x03399898 MOV X3, X31
+
+ISIL:
+	001 Move X4, X31
+	002 Call TypeLoadException..ctor, X0, X1, X2
+	003 Return 
+

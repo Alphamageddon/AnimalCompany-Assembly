@@ -1,0 +1,112 @@
+Type: Photon.Voice.ImageBufferNative/PlaneSet
+
+Method: System.Void .ctor(System.Int32 length, System.IntPtr p0 = null, System.IntPtr p1 = null, System.IntPtr p2 = null, System.IntPtr p3 = null)
+
+Disassembly:
+	0x03567E48 LDR X0, [X19 + 0x138]
+	0x03567E4C CBZ X0, 0x3567E74
+	0x03567E50 LDR W2, [X21 + 0x18]
+	0x03567E54 LDR X3, [X25]
+
+ISIL:
+	001 Move [X0+32], W1
+	002 Move [X0], X2
+	003 Move [X0+8], X3
+	004 Move [X0+16], X4
+	005 Move [X0+24], X5
+	006 Return 
+
+Method: System.IntPtr get_Item(System.Int32 key)
+
+Disassembly:
+	0x03567FC4 LDR X23, [X8]
+	0x03567FC8 LDR X8, [X23 + 0x38]
+	0x03567FCC CBNZ X8, 0x3567FDC
+	0x03567FD0 MOV X0, X23
+	0x03567FD4 BL 0x1C5C6E0
+	0x03567FD8 LDR X8, [X23 + 0x38]
+	0x03567FDC LDR X0, [X8 + 0x10]
+	0x03567FE0 LDRB W8, [X0 + 0x135]
+	0x03567FE4 TBNZ X8, 0x0, 0x3567FEC
+	0x03567FE8 BL 0x1C5C684
+	0x03567FEC LDR W8, [X0 + 0xE0]
+	0x03567FF0 CBNZ W8, 0x3567FF8
+	0x03567FF4 BL 0x1C16DFC
+	0x03567FF8 LDR X8, [X23 + 0x38]
+	0x03567FFC LDR X0, [X8 + 0x10]
+	0x03568000 LDRB W8, [X0 + 0x135]
+	0x03568004 TBNZ X8, 0x0, 0x356800C
+	0x03568008 BL 0x1C5C684
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 Move X9, -43843584
+	003 Move W8, W1
+	004 Add X9, X9, 3510
+	005 NotImplemented "Instruction ADR not yet implemented."
+	006 Move W11, [X9]
+	007 Add X10, X10, X11
+	008 CallNoReturn X10
+	009 Add X0, X0, 8
+	010 Move X0, X31
+	011 Return X0
+	012 Add X0, X0, 16
+	013 Add X0, X0, 24
+	014 Move X0, [X0]
+	015 Return X0
+
+Method: System.Void set_Item(System.Int32 key, System.IntPtr value)
+
+Disassembly:
+	0x0356800C CBZ X21, 0x35680B0
+	0x03568010 ADRP X10, 0xB90000
+	0x03568014 LDR X9, [X0 + 0xB8]
+	0x03568018 LDR X8, [X21]
+	0x0356801C LDR X10, [X10 + 0x348]
+	0x03568020 LDR X23, [X9]
+	0x03568024 LDRH W9, [X8 + 0x12E]
+	0x03568028 LDR X1, [X10]
+	0x0356802C CBZ X9, 0x3568050
+	0x03568030 LDR X10, [X8 + 0xB0]
+	0x03568034 ADD X10, X10, 0x8
+	0x03568038 LDUR X11, [X10 - 0x8]
+	0x0356803C CMP X11, X1
+	0x03568040 B.EQ 0x3568060
+	0x03568044 SUBS X9, X9, 0x1
+	0x03568048 ADD X10, X10, 0x10
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 Move X9, -43847680
+	003 Move W8, W1
+	004 Add X9, X9, 3514
+	005 NotImplemented "Instruction ADR not yet implemented."
+	006 Move W11, [X9]
+	007 Add X10, X10, X11
+	008 CallNoReturn X10
+	009 Add X0, X0, 8
+	010 Add X0, X0, 16
+	011 Add X0, X0, 24
+	012 Move [X0], X2
+	013 Return 
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0x0356804C B.NE 0x3568038
+	0x03568050 MOVZ W2, 0x1
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_Length(System.Int32 value)
+
+Disassembly:
+	0x03568054 MOV X0, X21
+	0x03568058 BL 0x1C5C788
+
+ISIL:
+	001 Move [X0+32], W1
+	002 Return 
+

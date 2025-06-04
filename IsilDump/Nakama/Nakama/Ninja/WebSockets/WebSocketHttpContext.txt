@@ -1,0 +1,160 @@
+Type: Nakama.Ninja.WebSockets.WebSocketHttpContext
+
+Method: System.Boolean get_IsWebSocketRequest()
+
+Disassembly:
+	0x03491E88 B.CC 0x3492174
+	0x03491E8C LDR X9, [X9 + 0xC8]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_IsWebSocketRequest(System.Boolean value)
+
+Disassembly:
+	0x03491E90 ADD X9, X9, X10, 0x3, LSL
+	0x03491E94 LDUR X9, [X9 - 0x8]
+	0x03491E98 CMP X9, X8
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+16], W8
+	003 Return 
+
+Method: System.Collections.Generic.IList`1<System.String> get_WebSocketRequestedProtocols()
+
+Disassembly:
+	0x03491E9C B.NE 0x3492174
+	0x03491EA0 MOV X0, X20
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_WebSocketRequestedProtocols(System.Collections.Generic.IList`1<System.String> value)
+
+Disassembly:
+	0x03491EA4 MOV X1, X31
+	0x03491EA8 BL 0x32C2380
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.String get_HttpHeader()
+
+Disassembly:
+	0x03491EAC CBZ X0, 0x3492190
+	0x03491EB0 MOV X1, X31
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_HttpHeader(System.String value)
+
+Disassembly:
+	0x03491EB4 BL 0x32C2440
+	0x03491EB8 B 0x34920E8
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.String get_Path()
+
+Disassembly:
+	0x03491EBC LDR X8, [X19 + 0x50]
+	0x03491EC0 MOVN W9, 0x0
+
+ISIL:
+	001 Move X0, [X0+40]
+	002 Return X0
+
+Method: System.Void set_Path(System.String value)
+
+Disassembly:
+	0x03491EC4 STR X8, [X31 + 0x8]
+	0x03491EC8 STR X31, [X19 + 0x50]
+
+ISIL:
+	001 Move [X0+40], X1
+	002 Return 
+
+Method: System.IO.Stream get_Stream()
+
+Disassembly:
+	0x03491ECC STR W9, [X19]
+	0x03491ED0 B 0x3492004
+
+ISIL:
+	001 Move X0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_Stream(System.IO.Stream value)
+
+Disassembly:
+	0x03491ED4 STR W31, [X19 + 0x48]
+	0x03491ED8 ADRP X8, 0xC6A000
+
+ISIL:
+	001 Move [X0+48], X1
+	002 Return 
+
+Method: System.Void .ctor(System.Boolean isWebSocketRequest, System.Collections.Generic.IList`1<System.String> webSocketRequestedProtocols, System.String httpHeader, System.String path, System.IO.Stream stream)
+
+Disassembly:
+	0x03491EDC LDR X8, [X8 + 0x600]
+	0x03491EE0 LDR X0, [X8]
+	0x03491EE4 BL 0x1C16F10
+	0x03491EE8 ADRP X8, 0xCA0000
+	0x03491EEC LDR X8, [X8 + 0x610]
+	0x03491EF0 MOV X20, X0
+	0x03491EF4 LDR X1, [X8]
+	0x03491EF8 MOVZ W2, 0x1
+	0x03491EFC MOV X3, X31
+	0x03491F00 BL 0x3633518
+	0x03491F04 LDR X0, [X19 + 0x20]
+	0x03491F08 BL 0x349134C
+	0x03491F0C CBZ X20, 0x3492198
+	0x03491F10 LDR X1, [X19 + 0x20]
+	0x03491F14 MOV X0, X20
+	0x03491F18 MOV X2, X31
+	0x03491F1C BL 0x3632C2C
+	0x03491F20 MOV X20, X0
+	0x03491F24 CBZ X0, 0x349219C
+	0x03491F28 MOV X0, X20
+	0x03491F2C MOV X1, X31
+
+ISIL:
+	001 Move [X31-64], X30
+	002 Move [X31+16], X24
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move W23, W1
+	009 Move X1, X31
+	010 Move X19, X5
+	011 Move X20, X4
+	012 Move X21, X3
+	013 Move X22, X2
+	014 Move X24, X0
+	015 Call Object..ctor, X0
+	016 And W8, W23, 1
+	017 Move [X24+24], X22
+	018 Move [X24+32], X21
+	019 Move [X24+16], W8
+	020 Move [X24+40], X20
+	021 Move [X24+48], X19
+	022 Move X20, [X31+48]
+	023 Move X19, [X31+56]
+	024 Move X22, [X31+32]
+	025 Move X21, [X31+40]
+	026 Move X24, [X31+16]
+	027 Move X23, [X31+24]
+	028 Move X30, [X31+64]
+	029 Return 
+

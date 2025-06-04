@@ -1,0 +1,36 @@
+Type: UnityEngine.TextCore.Text.SpriteCharacter
+
+Method: System.String get_name()
+
+Disassembly:
+	0x03CAC814 STR W20, [X0 + 0x18]
+	0x03CAC818 BL 0x3C36D2C
+
+ISIL:
+	001 Move X0, [X0+48]
+	002 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03CAD6F4 LDR X8, [X27]
+	0x03CAD6F8 ADD X9, X19, 0x11C
+	0x03CAD6FC ADD X1, X31, 0x70
+	0x03CAD700 STR X8, [X20 + 0x190]
+	0x03CAD704 LDR W8, [X9 + 0x8]
+	0x03CAD708 LDR X9, [X9]
+	0x03CAD70C LDR X0, [X26]
+	0x03CAD710 STR W8, [X31 + 0x78]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X1, X31
+	004 Move X19, X0
+	005 Call Object..ctor, X0
+	006 Move W8, 2
+	007 Move [X19+16], W8
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+

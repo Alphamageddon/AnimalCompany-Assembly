@@ -1,0 +1,49 @@
+Type: Mono.Globalization.Unicode.Contraction
+
+Method: System.Void .ctor(System.Int32 index, System.Char[] source, System.String replacement, System.Byte[] sortkey)
+
+Disassembly:
+	0x0320E7B8 LDR W8, [X0 + 0xE0]
+	0x0320E7BC CBNZ W8, 0x320E7C4
+	0x0320E7C0 BL 0x1C16DFC
+	0x0320E7C4 MOV W0, W19
+	0x0320E7C8 LDP X20, X19, [X31 + 0x10]
+	0x0320E7CC MOVZ W1, 0x4
+	0x0320E7D0 LDP X30, X21, [X31], #0x20
+	0x0320E7D4 B 0x320E668
+	0x0320E7D8 MOVN W8, 0x3040
+	0x0320E7DC ADD W8, W0, W8
+	0x0320E7E0 ADD W9, W0, 0x60
+	0x0320E7E4 CMP W8, 0x54
+	0x0320E7E8 CSEL W0, W9, W0, CC
+	0x0320E7EC RET
+	0x0320E7F0 MOVZ W8, 0x2190
+	0x0320E7F4 CMP W0, W8
+	0x0320E7F8 B.LT 0x320E894
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move W22, W1
+	008 Move X1, X31
+	009 Move X19, X4
+	010 Move X20, X3
+	011 Move X21, X2
+	012 Move X23, X0
+	013 Call Object..ctor, X0
+	014 Move [X23+16], W22
+	015 Move [X23+24], X21
+	016 Move [X23+32], X20
+	017 Move [X23+40], X19
+	018 Move X20, [X31+32]
+	019 Move X19, [X31+40]
+	020 Move X22, [X31+16]
+	021 Move X21, [X31+24]
+	022 Move X30, [X31+48]
+	023 Move X23, [X31+56]
+	024 Return 
+

@@ -1,0 +1,45 @@
+Type: Unity.Mathematics.uint3/DebuggerProxy
+
+Method: System.Void .ctor(Unity.Mathematics.uint3 v)
+
+Disassembly:
+	0x038D4D18 CMP W10, W11
+	0x038D4D1C LDP W10, W11, [X0 + 0x10]
+	0x038D4D20 CSET W16, NE
+	0x038D4D24 CMP W9, W13
+	0x038D4D28 LDR W13, [X1 + 0x14]
+	0x038D4D2C CSET W9, NE
+	0x038D4D30 CMP W8, W12
+	0x038D4D34 LDP W15, W8, [X1 + 0xC]
+	0x038D4D38 CSET W12, NE
+	0x038D4D3C CMP W11, W13
+	0x038D4D40 CSET W11, NE
+	0x038D4D44 CMP W10, W8
+	0x038D4D48 BFM X12, X16, 0x30, 0x0
+	0x038D4D4C CSET W8, NE
+	0x038D4D50 CMP W14, W15
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, X1
+	007 Move X22, X1
+	008 ShiftRight X22, 32
+	009 And X22, X22, 0x7FFFFFFF
+	010 Move X1, X31
+	011 Move X19, X2
+	012 Move X21, X0
+	013 Call Object..ctor, X0
+	014 Move [X21+16], W20
+	015 Move [X21+20], W22
+	016 Move [X21+24], W19
+	017 Move X20, [X31+32]
+	018 Move X19, [X31+40]
+	019 Move X22, [X31+16]
+	020 Move X21, [X31+24]
+	021 Move X30, [X31+48]
+	022 Return 
+

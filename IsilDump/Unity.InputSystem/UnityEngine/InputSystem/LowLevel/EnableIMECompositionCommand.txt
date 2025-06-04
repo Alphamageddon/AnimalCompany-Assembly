@@ -1,0 +1,124 @@
+Type: UnityEngine.InputSystem.LowLevel.EnableIMECompositionCommand
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_Type()
+
+Disassembly:
+	0x037FF750 ORR X0, X8, X9, 0x0
+	0x037FF754 ADD X31, X31, 0x20
+	0x037FF758 RET
+	0x037FF75C STR X30, [X31 - 0x10]!
+	0x037FF760 ADD X0, X31, 0x8
+	0x037FF764 MOVZ W1, 0x57
+	0x037FF768 MOVZ W2, 0x50
+	0x037FF76C MOVZ W3, 0x4D
+	0x037FF770 MOVZ W4, 0x53
+	0x037FF774 MOV X5, X31
+	0x037FF778 STR W31, [X31 + 0x8]
+	0x037FF77C BL 0x375AA28
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 73
+	004 Move W2, 77
+	005 Move W3, 69
+	006 Move W4, 77
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: System.Boolean get_imeEnabled()
+
+Disassembly:
+	0x037FF780 LDR W0, [X31 + 0x8]
+	0x037FF784 LDR X30, [X31], #0x10
+	0x037FF788 RET
+	0x037FF78C STR X30, [X31 - 0x10]!
+
+ISIL:
+	001 Move W8, [X0+8]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_typeStatic()
+
+Disassembly:
+	0x037FF790 ADD X0, X31, 0x8
+	0x037FF794 MOVZ W1, 0x57
+	0x037FF798 MOVZ W2, 0x50
+	0x037FF79C MOVZ W3, 0x4D
+	0x037FF7A0 MOVZ W4, 0x53
+	0x037FF7A4 MOV X5, X31
+	0x037FF7A8 STR W31, [X31 + 0x8]
+	0x037FF7AC BL 0x375AA28
+	0x037FF7B0 LDR W0, [X31 + 0x8]
+	0x037FF7B4 LDR X30, [X31], #0x10
+	0x037FF7B8 RET
+	0x037FF7BC STP D9, D8, [X31 - 0x20]!
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 73
+	004 Move W2, 77
+	005 Move W3, 69
+	006 Move W4, 77
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.LowLevel.EnableIMECompositionCommand Create(System.Boolean enabled)
+
+Disassembly:
+	0x037FF7C0 STR X30, [X31 + 0x10]
+	0x037FF7C4 ADD X0, X31, 0x18
+	0x037FF7C8 MOVZ W1, 0x57
+	0x037FF7CC MOVZ W2, 0x50
+	0x037FF7D0 MOVZ W3, 0x4D
+	0x037FF7D4 MOVZ W4, 0x53
+	0x037FF7D8 MOV X5, X31
+	0x037FF7DC MOV V8.16B, V1.16B
+	0x037FF7E0 MOV V9.16B, V0.16B
+	0x037FF7E4 STR W31, [X31 + 0x18]
+	0x037FF7E8 BL 0x375AA28
+	0x037FF7EC LDR W8, [X31 + 0x18]
+	0x037FF7F0 LDR X30, [X31 + 0x10]
+	0x037FF7F4 FMOV W1, S9
+	0x037FF7F8 FMOV W9, S8
+	0x037FF7FC ORR X0, X8, 0x1FFFFFFFFF
+	0x037FF800 BFM X1, X9, 0x20, 0x1F
+	0x037FF804 LDP D9, D8, [X31], #0x20
+	0x037FF808 RET
+	0x037FF80C STR X30, [X31 - 0x10]!
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move W19, W0
+	005 Add X0, X31, 8
+	006 Move W1, 73
+	007 Move W2, 77
+	008 Move W3, 69
+	009 Move W4, 77
+	010 Move X5, X31
+	011 Move [X31+8], W31
+	012 Call FourCC..ctor, X0, X1, X2, X3, X4
+	013 Move W8, [X31+8]
+	014 And W31, W19, 1
+	015 Move X30, [X31+16]
+	016 Move X19, [X31+24]
+	017 Move X9, 9
+	018 Move W10, 255
+	019 Or X0, X8, X9
+	020 NotImplemented "Instruction CSEL not yet implemented."
+	021 Add X31, X31, 32
+	022 Return X0
+

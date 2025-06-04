@@ -1,0 +1,128 @@
+Type: System.Reflection.CustomAttributeFormatException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x032CD974 ADRP X0, 0xE58000
+	0x032CD978 LDR X0, [X0 + 0xC88]
+	0x032CD97C BL 0x1C16CF4
+	0x032CD980 ADRP X0, 0xE58000
+	0x032CD984 LDR X0, [X0 + 0xCC0]
+	0x032CD988 BL 0x1C16CF4
+	0x032CD98C ADRP X0, 0xE58000
+	0x032CD990 LDR X0, [X0 + 0xCC8]
+	0x032CD994 BL 0x1C16CF4
+	0x032CD998 ADRP X0, 0xE26000
+	0x032CD99C LDR X0, [X0 + 0xEF0]
+	0x032CD9A0 BL 0x1C16CF4
+	0x032CD9A4 ADRP X0, 0xE30000
+	0x032CD9A8 LDR X0, [X0 + 0x968]
+	0x032CD9AC BL 0x1C16CF4
+	0x032CD9B0 ADRP X0, 0xE26000
+	0x032CD9B4 LDR X0, [X0 + 0x6C0]
+	0x032CD9B8 BL 0x1C16CF4
+	0x032CD9BC MOVZ W8, 0x1
+	0x032CD9C0 STRB W8, [X22 + 0x91A]
+	0x032CD9C4 LDR X0, [X26]
+	0x032CD9C8 LDR W8, [X0 + 0xE0]
+	0x032CD9CC CBNZ W8, 0x32CD9D4
+	0x032CD9D0 BL 0x1C16DFC
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x1110000
+	006 Move X21, 0xE59000
+	007 Move W8, [X20+2274]
+	008 Move X21, [X21+3072]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xE59000
+	015 Move X0, [X0+3072]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+2274], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X2, X31
+	022 Move X3, X31
+	023 Call FormatException..ctor, X0, X1, X2
+	024 Move W8, 0x1605
+	025 NotImplemented "Instruction MOVK not yet implemented."
+	026 Move [X19+96], W8
+	027 Move X20, [X31+16]
+	028 Move X19, [X31+24]
+	029 Move X30, [X31+32]
+	030 Move X21, [X31+40]
+	031 Return 
+
+Method: System.Void .ctor(System.String message)
+
+Disassembly:
+	0x032CD9D4 MOV X0, X21
+	0x032CD9D8 MOV X1, X31
+	0x032CD9DC MOV X2, X31
+	0x032CD9E0 BL 0x3395194
+	0x032CD9E4 TBNZ X0, 0x0, 0x32CDB94
+	0x032CD9E8 CBZ X20, 0x32CDB6C
+	0x032CD9EC ADRP X22, 0xE26000
+	0x032CD9F0 LDR X22, [X22 + 0xEF0]
+	0x032CD9F4 MOV X0, X20
+	0x032CD9F8 BL 0x32D42F0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X2, X31
+	004 Move X3, X31
+	005 Move X19, X0
+	006 Call FormatException..ctor, X0, X1, X2
+	007 Move W8, 0x1605
+	008 NotImplemented "Instruction MOVK not yet implemented."
+	009 Move [X19+96], W8
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Return 
+
+Method: System.Void .ctor(System.String message, System.Exception inner)
+
+Disassembly:
+	0x032CD9FC STP X21, X0, [X19]
+	0x032CDA00 LDR X9, [X20]
+	0x032CDA04 LDR X8, [X22]
+	0x032CDA08 LDRB W11, [X9 + 0x130]
+	0x032CDA0C LDRB W10, [X8 + 0x130]
+	0x032CDA10 CMP W11, W10
+	0x032CDA14 B.CC 0x32CDB70
+	0x032CDA18 LDR X9, [X9 + 0xC8]
+	0x032CDA1C ADD X9, X9, X10, 0x3, LSL
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X3, X31
+	004 Move X19, X0
+	005 Call FormatException..ctor, X0, X1, X2
+	006 Move W8, 0x1605
+	007 NotImplemented "Instruction MOVK not yet implemented."
+	008 Move [X19+96], W8
+	009 Move X30, [X31+16]
+	010 Move X19, [X31+24]
+	011 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x032CDA20 LDUR X9, [X9 - 0x8]
+	0x032CDA24 CMP X9, X8
+
+ISIL:
+	001 Move X4, X31
+	002 Call FormatException..ctor, X0, X1, X2
+	003 Return 
+

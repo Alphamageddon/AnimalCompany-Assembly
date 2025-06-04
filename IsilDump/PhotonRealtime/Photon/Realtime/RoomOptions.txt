@@ -1,0 +1,246 @@
+Type: Photon.Realtime.RoomOptions
+
+Method: System.Boolean get_IsVisible()
+
+Disassembly:
+	0x03549204 STR X8, [X0]
+	0x03549208 ADRP X1, 0x96B000
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_IsVisible(System.Boolean value)
+
+Disassembly:
+	0x0354920C ADD X1, X1, 0xE58
+	0x03549210 MOV X2, X31
+	0x03549214 BL 0x3EB1B00
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+16], W8
+	003 Return 
+
+Method: System.Boolean get_IsOpen()
+
+Disassembly:
+	0x03549218 MOV X20, X0
+	0x0354921C BL 0x3EB1AE0
+
+ISIL:
+	001 Move W0, [X0+17]
+	002 Return X0
+
+Method: System.Void set_IsOpen(System.Boolean value)
+
+Disassembly:
+	0x03549220 MOV X0, X20
+	0x03549224 BL 0x1D2C690
+	0x03549228 BL 0x1990590
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+17], W8
+	003 Return 
+
+Method: System.Boolean get_CleanupCacheOnLeave()
+
+Disassembly:
+	0x0354922C STP X30, X21, [X31 - 0x20]!
+	0x03549230 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_CleanupCacheOnLeave(System.Boolean value)
+
+Disassembly:
+	0x03549234 ADRP X20, 0xE96000
+	0x03549238 ADRP X21, 0xBEB000
+	0x0354923C LDRB W8, [X20 + 0xC66]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+32], W8
+	003 Return 
+
+Method: System.Boolean get_SuppressRoomEvents()
+
+Disassembly:
+	0x03549240 LDR X21, [X21 + 0xFF8]
+	0x03549244 MOV X19, X0
+
+ISIL:
+	001 Move W0, [X0+64]
+	002 Return X0
+
+Method: System.Void set_SuppressRoomEvents(System.Boolean value)
+
+Disassembly:
+	0x03549248 TBNZ X8, 0x0, 0x3549260
+	0x0354924C ADRP X0, 0xBEB000
+	0x03549250 LDR X0, [X0 + 0xFF8]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+64], W8
+	003 Return 
+
+Method: System.Boolean get_SuppressPlayerInfo()
+
+Disassembly:
+	0x03549254 BL 0x1C16CF4
+	0x03549258 MOVZ W8, 0x1
+
+ISIL:
+	001 Move W0, [X0+65]
+	002 Return X0
+
+Method: System.Void set_SuppressPlayerInfo(System.Boolean value)
+
+Disassembly:
+	0x0354925C STRB W8, [X20 + 0xC66]
+	0x03549260 LDR X0, [X21]
+	0x03549264 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+65], W8
+	003 Return 
+
+Method: System.Boolean get_PublishUserId()
+
+Disassembly:
+	0x03549268 CBNZ W8, 0x3549270
+	0x0354926C BL 0x1C16DFC
+
+ISIL:
+	001 Move W0, [X0+66]
+	002 Return X0
+
+Method: System.Void set_PublishUserId(System.Boolean value)
+
+Disassembly:
+	0x03549270 MOV X0, X19
+	0x03549274 LDP X20, X19, [X31 + 0x10]
+	0x03549278 LDP X30, X21, [X31], #0x20
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+66], W8
+	003 Return 
+
+Method: System.Boolean get_DeleteNullProperties()
+
+Disassembly:
+	0x0354927C B 0x3548C40
+	0x03549280 LDR X0, [X0 + 0x10]
+
+ISIL:
+	001 Move W0, [X0+67]
+	002 Return X0
+
+Method: System.Void set_DeleteNullProperties(System.Boolean value)
+
+Disassembly:
+	0x03549284 RET
+	0x03549288 STR X1, [X0 + 0x10]
+	0x0354928C RET
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+67], W8
+	003 Return 
+
+Method: System.Boolean get_BroadcastPropsChangeToAll()
+
+Disassembly:
+	0x03549290 LDR W0, [X0 + 0x18]
+	0x03549294 RET
+
+ISIL:
+	001 Move W0, [X0+68]
+	002 Return X0
+
+Method: System.Void set_BroadcastPropsChangeToAll(System.Boolean value)
+
+Disassembly:
+	0x03549298 LDRB W0, [X0 + 0x1D]
+	0x0354929C RET
+	0x035492A0 AND W8, W1, 0x1
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+68], W8
+	003 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03546AC4 BL 0x29D3520
+	0x03546AC8 ADRP X21, 0xBB6000
+	0x03546ACC LDR X21, [X21 + 0x548]
+	0x03546AD0 LDR X0, [X21]
+	0x03546AD4 LDR W8, [X0 + 0xE0]
+	0x03546AD8 CBNZ W8, 0x3546AE4
+	0x03546ADC BL 0x1C16DFC
+	0x03546AE0 LDR X0, [X21]
+	0x03546AE4 LDR X8, [X0 + 0xB8]
+	0x03546AE8 LDR X9, [X19]
+	0x03546AEC MOVZ W1, 0xFE
+	0x03546AF0 MOV X0, X19
+	0x03546AF4 LDR X3, [X8]
+	0x03546AF8 LDR X8, [X9 + 0x228]
+	0x03546AFC LDR X4, [X9 + 0x230]
+	0x03546B00 MOV X2, X20
+	0x03546B04 BLR X8
+	0x03546B08 LDP X20, X19, [X31 + 0x30]
+	0x03546B0C LDP X22, X21, [X31 + 0x20]
+	0x03546B10 LDP X24, X23, [X31 + 0x10]
+	0x03546B14 AND W0, W0, 0x1
+	0x03546B18 LDR X30, [X31], #0x40
+	0x03546B1C RET
+	0x03546B20 BL 0x1C16F20
+	0x03546B24 SUB X31, X31, 0x40
+	0x03546B28 STP X30, X23, [X31 + 0x10]
+	0x03546B2C STP X22, X21, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xE9A000
+	006 Move X20, 0xBAE000
+	007 Move W8, [X21+3160]
+	008 Move X20, [X20+2760]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xBAE000
+	015 Move X0, [X0+2760]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+3160], W8
+	019 Move W8, 257
+	020 Move W21, 1
+	021 NotImplemented "Instruction STRH not yet implemented."
+	022 Move [X19+32], W21
+	023 Move X0, [X20]
+	024 Move W1, W31
+	025 Call 0x1C17D6C
+	026 Move [X19+48], X0
+	027 Move [X19+68], W21
+	028 Move X0, X19
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X1, X31
+	032 Move X30, [X31+32]
+	033 Move X21, [X31+40]
+	034 Call Object..ctor, X0
+	035 Return 
+

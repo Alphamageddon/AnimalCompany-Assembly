@@ -1,0 +1,153 @@
+Type: Photon.Voice.RemoteVoiceInfo
+
+Method: System.Void .ctor(System.Int32 channelId, System.Int32 playerId, System.Byte voiceId, Photon.Voice.VoiceInfo info)
+
+Disassembly:
+	0x03567444 STR W8, [X31 + 0x38]
+	0x03567448 STR X9, [X31 + 0x30]
+	0x0356744C STR W10, [X20 + 0x60]
+	0x03567450 BL 0x33BDD8C
+	0x03567454 LDR V0, [X31 + 0x4]
+	0x03567458 LDR X8, [X31 + 0x50]
+	0x0356745C STR W26, [X20 + 0x28]
+	0x03567460 MOV X24, X20
+	0x03567464 STR V0, [X20 + 0x1]
+	0x03567468 STR X8, [X20 + 0x20]
+	0x0356746C LDR X8, [X31 + 0x30]
+	0x03567470 LDR W9, [X31 + 0x38]
+	0x03567474 MOVI V0.2D, 0x0
+	0x03567478 STR V0, [X24 + 0x38]!
+	0x0356747C STR V0, [X24 + 0x1]
+	0x03567480 STP W26, W31, [X24 + 0x20]
+	0x03567484 STR X21, [X24 + 0x30]
+	0x03567488 STUR W9, [X24 - 0x4]
+	0x0356748C STUR X8, [X24 - 0xC]
+	0x03567490 LDR W1, [X19 + 0x18]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move W22, W1
+	008 Move X1, X31
+	009 Move X19, X4
+	010 Move W20, W3
+	011 Move W21, W2
+	012 Move X23, X0
+	013 Call Object..ctor, X0
+	014 Move [X23+64], W22
+	015 Move [X23+68], W21
+	016 Move [X23+72], W20
+	017 Move V1, [X19+16]
+	018 Move V0, [X19+32]
+	019 Move V2, [X19]
+	020 Move X20, [X31+32]
+	021 Move X19, [X31+40]
+	022 Move X22, [X31+16]
+	023 Move X21, [X31+24]
+	024 Move [X23+32], V1
+	025 Move [X23+40], V0
+	026 Move [X23+1], V2
+	027 Move X30, [X31+48]
+	028 Move X23, [X31+56]
+	029 Return 
+
+Method: Photon.Voice.VoiceInfo get_Info()
+
+Disassembly:
+	0x03568A08 LDR X1, [X9]
+	0x03568A0C LDR X10, [X10 + 0xD38]
+	0x03568A10 LDRH W9, [X8 + 0x12E]
+	0x03568A14 LDR X21, [X10]
+	0x03568A18 CBZ X9, 0x3568A3C
+
+ISIL:
+	001 Move V1, [X0+32]
+	002 Move V0, [X0+48]
+	003 Move V2, [X0+1]
+	004 Move [X8+16], V1
+	005 Move [X8+24], V0
+	006 Move [X8], V2
+	007 Return X0
+
+Method: System.Void set_Info(Photon.Voice.VoiceInfo value)
+
+Disassembly:
+	0x03568A1C LDR X10, [X8 + 0xB0]
+	0x03568A20 ADD X10, X10, 0x8
+	0x03568A24 LDUR X11, [X10 - 0x8]
+	0x03568A28 CMP X11, X1
+	0x03568A2C B.EQ 0x3568A4C
+
+ISIL:
+	001 Move V1, [X1+16]
+	002 Move V0, [X1+32]
+	003 Move V2, [X1]
+	004 Move [X0+32], V1
+	005 Move [X0+40], V0
+	006 Move [X0+1], V2
+	007 Return 
+
+Method: System.Int32 get_ChannelId()
+
+Disassembly:
+	0x03568A30 SUBS X9, X9, 0x1
+	0x03568A34 ADD X10, X10, 0x10
+
+ISIL:
+	001 Move W0, [X0+64]
+	002 Return X0
+
+Method: System.Void set_ChannelId(System.Int32 value)
+
+Disassembly:
+	0x03568A38 B.NE 0x3568A24
+	0x03568A3C MOVZ W2, 0x1
+
+ISIL:
+	001 Move [X0+64], W1
+	002 Return 
+
+Method: System.Int32 get_PlayerId()
+
+Disassembly:
+	0x03568A40 MOV X0, X19
+	0x03568A44 BL 0x1C5C788
+
+ISIL:
+	001 Move W0, [X0+68]
+	002 Return X0
+
+Method: System.Void set_PlayerId(System.Int32 value)
+
+Disassembly:
+	0x03568A48 B 0x3568A5C
+	0x03568A4C LDR W9, [X10]
+
+ISIL:
+	001 Move [X0+68], W1
+	002 Return 
+
+Method: System.Byte get_VoiceId()
+
+Disassembly:
+	0x03568A50 ADD W9, W9, 0x1
+	0x03568A54 ADD X8, X8, W9, 0x4, SXTW
+
+ISIL:
+	001 Move W0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_VoiceId(System.Byte value)
+
+Disassembly:
+	0x03568A58 ADD X0, X8, 0x138
+	0x03568A5C LDP X8, X4, [X0]
+
+ISIL:
+	001 Move [X0+72], W1
+	002 Return 
+

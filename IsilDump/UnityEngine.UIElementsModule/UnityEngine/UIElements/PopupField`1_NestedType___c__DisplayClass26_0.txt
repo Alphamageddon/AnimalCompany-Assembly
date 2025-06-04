@@ -1,0 +1,43 @@
+Type: UnityEngine.UIElements.PopupField`1/<>c__DisplayClass26_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x02375A80 CBZ X9, 0x2375AA4
+	0x02375A84 LDR X10, [X8 + 0xB0]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <AddMenuItems>b__0()
+
+Disassembly:
+	0x02375A88 ADD X10, X10, 0x8
+	0x02375A8C LDUR X11, [X10 - 0x8]
+	0x02375A90 CMP X11, X1
+	0x02375A94 B.EQ 0x2375AB4
+	0x02375A98 SUBS X9, X9, 0x1
+	0x02375A9C ADD X10, X10, 0x10
+	0x02375AA0 B.NE 0x2375A8C
+	0x02375AA4 MOVZ W2, 0x3
+	0x02375AA8 MOV X0, X19
+	0x02375AAC BL 0x1C5C788
+	0x02375AB0 B 0x2375AC4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, X0
+	003 Move X0, [X0+24]
+	004 Compare X0, 0
+	005 JumpIfEqual {13}
+	006 Move X9, [X1+32]
+	007 Move X1, [X8+16]
+	008 Move X9, [X9+192]
+	009 Move X2, [X9+24]
+	010 Move X30, [X31+16]
+	011 Call 0x24A87B4, X0, X1
+	012 Return 
+	013 Call 0x1C17F20
+

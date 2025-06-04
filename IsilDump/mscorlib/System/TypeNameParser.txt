@@ -1,0 +1,60 @@
+Type: System.TypeNameParser
+
+Method: System.Type GetType(System.String typeName, System.Func`2<System.Reflection.AssemblyName, System.Reflection.Assembly> assemblyResolver, System.Func`4<System.Reflection.Assembly, System.String, System.Boolean, System.Type> typeResolver, System.Boolean throwOnError, System.Boolean ignoreCase, ref System.Threading.StackCrawlMark stackMark)
+
+Disassembly:
+	0x033C344C CBNZ W8, 0x33C3458
+	0x033C3450 BL 0x1C16DFC
+	0x033C3454 LDR X0, [X19]
+	0x033C3458 LDR X8, [X0 + 0xB8]
+	0x033C345C LDP X20, X19, [X31 + 0x10]
+	0x033C3460 LDR X0, [X8 + 0x20]
+	0x033C3464 LDR X30, [X31], #0x20
+	0x033C3468 RET
+	0x033C346C STR X30, [X31 - 0x20]!
+	0x033C3470 STP X20, X19, [X31 + 0x10]
+	0x033C3474 ADRP X20, 0x101A000
+	0x033C3478 ADRP X19, 0xD38000
+	0x033C347C LDRB W8, [X20 + 0x23B]
+	0x033C3480 LDR X19, [X19 + 0x958]
+	0x033C3484 TBNZ X8, 0x0, 0x33C349C
+	0x033C3488 ADRP X0, 0xD38000
+	0x033C348C LDR X0, [X0 + 0x958]
+	0x033C3490 BL 0x1C16CF4
+	0x033C3494 MOVZ W8, 0x1
+	0x033C3498 STRB W8, [X20 + 0x23B]
+	0x033C349C LDR X0, [X19]
+	0x033C34A0 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X21, X1
+	008 Move X1, X31
+	009 Move X19, X5
+	010 Move W22, W4
+	011 Move W23, W3
+	012 Move X20, X2
+	013 Call TypeSpec.Parse, X0
+	014 Compare X0, 0
+	015 JumpIfEqual {30}
+	016 And W4, W22, 1
+	017 Move X1, X21
+	018 Move X2, X20
+	019 Move X5, X19
+	020 Move X20, [X31+32]
+	021 Move X19, [X31+40]
+	022 Move X22, [X31+16]
+	023 Move X21, [X31+24]
+	024 And W3, W23, 1
+	025 Move X6, X31
+	026 Move X30, [X31+48]
+	027 Move X23, [X31+56]
+	028 Call TypeSpec.Resolve, X0, X1, X2, X3, X4, X5
+	029 Return X0
+	030 Call 0x1C17F20
+

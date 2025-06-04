@@ -1,0 +1,168 @@
+Type: AnimalCompany.ByteNormalizedVec3
+
+Method: System.Void .ctor(UnityEngine.Vector3 input, System.Single range)
+
+Disassembly:
+	0x01DBAC6C LDR X20, [X20 + 0x598]
+	0x01DBAC70 MOV X19, X0
+	0x01DBAC74 TBNZ X8, 0x0, 0x1DBAC8C
+	0x01DBAC78 ADRP X0, 0x2339000
+	0x01DBAC7C LDR X0, [X0 + 0x598]
+	0x01DBAC80 BL 0x1C16CF4
+	0x01DBAC84 MOVZ W8, 0x1
+	0x01DBAC88 STRB W8, [X21 + 0xB3F]
+	0x01DBAC8C LDR X0, [X20]
+	0x01DBAC90 LDR X20, [X19 + 0x40]
+	0x01DBAC94 LDR W8, [X0 + 0xE0]
+	0x01DBAC98 CBNZ W8, 0x1DBACA0
+	0x01DBAC9C BL 0x1C16DFC
+	0x01DBACA0 MOV X0, X20
+	0x01DBACA4 MOV X1, X31
+	0x01DBACA8 MOV X2, X31
+	0x01DBACAC BL 0x3C354F8
+	0x01DBACB0 MOV W8, W0
+	0x01DBACB4 MOV X0, X31
+	0x01DBACB8 TBZ X8, 0x0, 0x1DBACC8
+	0x01DBACBC LDR X8, [X19 + 0x40]
+	0x01DBACC0 CBZ X8, 0x1DBACD4
+
+ISIL:
+	001 Move [X31-48], D10
+	002 Move [X31+16], D9
+	003 Move [X31+24], D8
+	004 Move [X31+32], X30
+	005 Move [X31+40], X19
+	006 Move V10, V1
+	007 Move V1, V3
+	008 Move V8, V3
+	009 Move V9, V2
+	010 Move X19, X0
+	011 Call ByteNormalizedVec3.EncodeValue, V0, V1
+	012 Move V0, V10
+	013 Move V1, V8
+	014 Move [X19], W0
+	015 Call ByteNormalizedVec3.EncodeValue, V0, V1
+	016 Move V0, V9
+	017 Move V1, V8
+	018 Move [X19+4], W0
+	019 Call ByteNormalizedVec3.EncodeValue, V0, V1
+	020 Move [X19+8], W0
+	021 Move X30, [X31+32]
+	022 Move X19, [X31+40]
+	023 Move D9, [X31+16]
+	024 Move D8, [X31+24]
+	025 Move V10, [X31+48]
+	026 Return 
+
+Method: System.Byte EncodeValue(System.Single inValue, System.Single range)
+
+Disassembly:
+	0x01DBACC4 LDR X0, [X8 + 0x58]
+	0x01DBACC8 LDP X20, X19, [X31 + 0x10]
+	0x01DBACCC LDP X30, X21, [X31], #0x20
+	0x01DBACD0 RET
+	0x01DBACD4 BL 0x1C16F20
+	0x01DBACD8 STR X30, [X31 - 0x20]!
+	0x01DBACDC STP X20, X19, [X31 + 0x10]
+	0x01DBACE0 ADRP X19, 0x261E000
+	0x01DBACE4 ADRP X20, 0x233C000
+	0x01DBACE8 LDRB W8, [X19 + 0xB40]
+	0x01DBACEC LDR X20, [X20 + 0xD28]
+	0x01DBACF0 TBNZ X8, 0x0, 0x1DBAD08
+	0x01DBACF4 ADRP X0, 0x233C000
+	0x01DBACF8 LDR X0, [X0 + 0xD28]
+	0x01DBACFC BL 0x1C16CF4
+	0x01DBAD00 MOVZ W8, 0x1
+	0x01DBAD04 STRB W8, [X19 + 0xB40]
+	0x01DBAD08 LDR X8, [X20]
+	0x01DBAD0C LDP X20, X19, [X31 + 0x10]
+	0x01DBAD10 LDR X8, [X8 + 0xB8]
+	0x01DBAD14 LDR X0, [X8 + 0x38]
+	0x01DBAD18 LDR X30, [X31], #0x20
+	0x01DBAD1C RET
+	0x01DBAD20 SUB X31, X31, 0x70
+	0x01DBAD24 STP X30, X27, [X31 + 0x20]
+	0x01DBAD28 STP X26, X25, [X31 + 0x30]
+	0x01DBAD2C STP X24, X23, [X31 + 0x40]
+	0x01DBAD30 STP X22, X21, [X31 + 0x50]
+	0x01DBAD34 STP X20, X19, [X31 + 0x60]
+	0x01DBAD38 ADRP X21, 0x261E000
+	0x01DBAD3C ADRP X20, 0x233C000
+	0x01DBAD40 LDRB W8, [X21 + 0xB41]
+	0x01DBAD44 LDR X20, [X20 + 0xD28]
+	0x01DBAD48 MOV X19, X0
+	0x01DBAD4C TBNZ X8, 0x0, 0x1DBADE8
+	0x01DBAD50 ADRP X0, 0x2339000
+	0x01DBAD54 LDR X0, [X0 + 0x648]
+	0x01DBAD58 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], D9
+	002 Move [X31-24], D8
+	003 Move [X31+16], X30
+	004 Move [X31+24], X19
+	005 Move X19, 0x261F000
+	006 Move W8, [X19+2595]
+	007 Move V8, V1
+	008 Move V9, V0
+	009 Compare W8, 0
+	010 JumpIfNotEqual {16}
+	011 Move X0, 0x233A000
+	012 Move X0, [X0+1448]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X19+2595], W8
+	016 Move X8, 0x233A000
+	017 Move X8, [X8+1448]
+	018 NotImplemented "Instruction FDIV not yet implemented."
+	019 Move X0, [X8]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move S0, 0.5
+	025 Move W8, 0x437F0000
+	026 NotImplemented "Instruction FMIN not yet implemented."
+	027 Move S1, -0.5
+	028 Add S0, S2, S0
+	029 Move S2, W8
+	030 NotImplemented "Instruction FCMP not yet implemented."
+	031 Move S1, W31
+	032 Multiply S0, S0, S2
+	033 Move W9, 0x7F800000
+	034 NotImplemented "Instruction FCSEL not yet implemented."
+	035 Move X30, [X31+16]
+	036 Move X19, [X31+24]
+	037 NotImplemented "Instruction FRINTM not yet implemented."
+	038 NotImplemented "Instruction FCVTMS not yet implemented."
+	039 Move S0, W9
+	040 NotImplemented "Instruction FCMP not yet implemented."
+	041 NotImplemented "Instruction CSEL not yet implemented."
+	042 Move D9, [X31+32]
+	043 Move D8, [X31+40]
+	044 Return X0
+
+Method: System.Single DecodeValue(System.Byte inValue, System.Single range)
+
+Disassembly:
+	0x01DBAD5C ADRP X0, 0x2339000
+	0x01DBAD60 LDR X0, [X0 + 0xAB0]
+	0x01DBAD64 BL 0x1C16CF4
+	0x01DBAD68 ADRP X0, 0x2339000
+	0x01DBAD6C LDR X0, [X0 + 0xDB0]
+	0x01DBAD70 BL 0x1C16CF4
+	0x01DBAD74 ADRP X0, 0x233D000
+	0x01DBAD78 LDR X0, [X0 + 0xD90]
+	0x01DBAD7C BL 0x1C16CF4
+
+ISIL:
+	001 And W8, W0, 255
+	002 Move W9, 0x437F0000
+	003 NotImplemented "Instruction UCVTF not yet implemented."
+	004 Move S2, W9
+	005 NotImplemented "Instruction FDIV not yet implemented."
+	006 Move S2, -0.5
+	007 Add S1, S1, S2
+	008 Multiply S0, S1, S0
+	009 Return V0
+

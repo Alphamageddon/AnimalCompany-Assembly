@@ -1,0 +1,84 @@
+Type: UnityEngine.UIElements.TemplateAsset
+
+Method: System.Collections.Generic.List`1<UnityEngine.UIElements.TemplateAsset/AttributeOverride> get_attributeOverrides()
+
+Disassembly:
+	0x03E0AB8C ANDS W31, W9, 0xFF
+	0x03E0AB90 CSET W9, EQ
+	0x03E0AB94 B 0x3E0ABA0
+	0x03E0AB98 MOV W8, W31
+	0x03E0AB9C MOVZ W9, 0x1
+	0x03E0ABA0 CMP W19, 0x0
+	0x03E0ABA4 LDP X20, X19, [X31 + 0x10]
+	0x03E0ABA8 CSET W10, NE
+	0x03E0ABAC EOR W8, W10, W8, 0x0
+	0x03E0ABB0 ORR W0, W9, W8, 0x0
+	0x03E0ABB4 LDR X30, [X31], #0x20
+	0x03E0ABB8 RET
+	0x03E0ABBC STP X30, X23, [X31 - 0x30]!
+	0x03E0ABC0 STP X22, X21, [X31 + 0x10]
+	0x03E0ABC4 STP X20, X19, [X31 + 0x20]
+	0x03E0ABC8 ADRP X21, 0x5DE000
+	0x03E0ABCC LDRB W8, [X21 + 0x34C]
+	0x03E0ABD0 MOV X20, X1
+	0x03E0ABD4 MOV X19, X0
+	0x03E0ABD8 TBNZ X8, 0x0, 0x3E0ABF0
+	0x03E0ABDC ADRP X0, 0x356000
+	0x03E0ABE0 LDR X0, [X0 + 0x5B0]
+	0x03E0ABE4 BL 0x1C16CF4
+	0x03E0ABE8 MOVZ W8, 0x1
+	0x03E0ABEC STRB W8, [X21 + 0x34C]
+	0x03E0ABF0 MOV X0, X19
+	0x03E0ABF4 MOV X1, X31
+	0x03E0ABF8 STR X31, [X19 + 0x30]
+	0x03E0ABFC BL 0x33BDD8C
+	0x03E0AC00 STR X20, [X19 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x5DF000
+	005 Move W8, [X20+1024]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {19}
+	011 Move X0, 0x361000
+	012 Move X0, [X0+720]
+	013 Call 0x1C17CF4
+	014 Move X0, 0x361000
+	015 Move X0, [X0+728]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1024], W8
+	019 Move X20, [X19+120]
+	020 Compare X20, 0
+	021 JumpIfNotEqual {32}
+	022 Move X8, 0x361000
+	023 Move X8, [X8+728]
+	024 Move X0, [X8]
+	025 Call 0x1C17F10
+	026 Move X8, 0x361000
+	027 Move X8, [X8+720]
+	028 Move X20, X0
+	029 Move X1, [X8]
+	030 Call List`1<AttributeOverride>..ctor, X0
+	031 Move [X19+120], X20
+	032 Move X0, X20
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 Move X30, [X31+32]
+	036 Return X0
+
+Method: System.Collections.Generic.List`1<UnityEngine.UIElements.VisualTreeAsset/SlotUsageEntry> get_slotUsages()
+
+Disassembly:
+	0x03E1BDE8 LDR W8, [X0 + 0xE0]
+	0x03E1BDEC CBNZ W8, 0x3E1BDF8
+
+ISIL:
+	001 Move X0, [X0+128]
+	002 Return X0
+

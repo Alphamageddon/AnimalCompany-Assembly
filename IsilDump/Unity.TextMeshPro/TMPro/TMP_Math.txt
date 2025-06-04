@@ -1,0 +1,113 @@
+Type: TMPro.TMP_Math
+
+Method: System.Boolean Approximately(System.Single a, System.Single b)
+
+Disassembly:
+	0x03ADC03C LDR V0, [X20]
+	0x03ADC040 LDR X0, [X21]
+	0x03ADC044 ADD X1, X31, 0x20
+	0x03ADC048 STR W8, [X31 + 0x30]
+	0x03ADC04C STR V0, [X31 + 0x2]
+	0x03ADC050 BL 0x1C16E04
+	0x03ADC054 MOV X20, X0
+	0x03ADC058 LDR W8, [X19 + 0x10]
+	0x03ADC05C LDR V0, [X19]
+	0x03ADC060 LDR X0, [X21]
+	0x03ADC064 ADD X1, X31, 0x0
+	0x03ADC068 STR W8, [X31 + 0x10]
+
+ISIL:
+	001 Move X8, -50270208
+	002 Move X9, -50274304
+	003 Move V2, [X8+752]
+	004 Move V3, [X9+3880]
+	005 Add S2, S1, S2
+	006 Add S1, S1, S3
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 NotImplemented "Instruction FCMP not yet implemented."
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 And W0, W8, W9
+	012 Return X0
+
+Method: System.Int32 Mod(System.Int32 a, System.Int32 b)
+
+Disassembly:
+	0x03ADC06C STR V0, [X31]
+	0x03ADC070 BL 0x1C16E04
+	0x03ADC074 MOV X1, X0
+	0x03ADC078 MOV X0, X20
+	0x03ADC07C MOV X2, X31
+
+ISIL:
+	001 NotImplemented "Instruction SDIV not yet implemented."
+	002 NotImplemented "Instruction MSUB not yet implemented."
+	003 And W9, W1, W8
+	004 Add W0, W9, W8
+	005 Return X0
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x03ADC080 BL 0x33D55D0
+	0x03ADC084 LDP X20, X19, [X31 + 0x60]
+	0x03ADC088 LDP X22, X21, [X31 + 0x50]
+	0x03ADC08C LDR X30, [X31 + 0x40]
+	0x03ADC090 AND W0, W0, 0x1
+	0x03ADC094 ADD X31, X31, 0x70
+	0x03ADC098 RET
+	0x03ADC09C STP X30, X21, [X31 - 0x20]!
+	0x03ADC0A0 STP X20, X19, [X31 + 0x10]
+	0x03ADC0A4 ADRP X21, 0x906000
+	0x03ADC0A8 ADRP X20, 0x67C000
+	0x03ADC0AC LDRB W8, [X21 + 0x559]
+	0x03ADC0B0 LDR X20, [X20 + 0x890]
+	0x03ADC0B4 MOV X19, X0
+	0x03ADC0B8 TBNZ X8, 0x0, 0x3ADC0D0
+	0x03ADC0BC ADRP X0, 0x67C000
+	0x03ADC0C0 LDR X0, [X0 + 0x890]
+	0x03ADC0C4 BL 0x1C16CF4
+	0x03ADC0C8 MOVZ W8, 0x1
+	0x03ADC0CC STRB W8, [X21 + 0x559]
+	0x03ADC0D0 MOVZ W21, 0x3
+	0x03ADC0D4 MOV X0, X19
+	0x03ADC0D8 MOV X1, X31
+	0x03ADC0DC STR W21, [X19 + 0x18]
+	0x03ADC0E0 BL 0x3C36D2C
+	0x03ADC0E4 STR W21, [X19 + 0x18]
+	0x03ADC0E8 LDR X0, [X20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x907000
+	005 Move X19, 0x67D000
+	006 Move W8, [X20+1350]
+	007 Move X19, [X19+832]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x67D000
+	013 Move X0, [X0+832]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+1350], W8
+	017 Move X8, [X19]
+	018 Move W9, 0xFE00
+	019 NotImplemented "Instruction MOVK not yet implemented."
+	020 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	021 Move X8, [X8+184]
+	022 Move W9, 0xFE00
+	023 NotImplemented "Instruction MOVK not yet implemented."
+	024 Move [X8], D0
+	025 Move X8, [X19]
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	029 Move X8, [X8+184]
+	030 Move [X8+8], D0
+	031 Move X30, [X31+32]
+	032 Return 
+

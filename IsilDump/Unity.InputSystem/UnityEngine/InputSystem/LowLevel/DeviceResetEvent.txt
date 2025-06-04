@@ -1,0 +1,95 @@
+Type: UnityEngine.InputSystem.LowLevel.DeviceResetEvent
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_typeStatic()
+
+Disassembly:
+	0x03801DCC BL 0x1C16E04
+	0x03801DD0 MOV X19, X0
+	0x03801DD4 ADRP X0, 0x949000
+
+ISIL:
+	001 Move W0, 0x5354
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 Return X0
+
+Method: UnityEngine.InputSystem.LowLevel.DeviceResetEvent Create(System.Int32 deviceId, System.Boolean hardReset = False, System.Double time = -1)
+
+Disassembly:
+	0x03801DD8 LDR X0, [X0 + 0x120]
+	0x03801DDC BL 0x1C16D08
+	0x03801DE0 MOV X1, X21
+	0x03801DE4 MOV X2, X19
+	0x03801DE8 MOV X3, X31
+	0x03801DEC BL 0x3227BD4
+	0x03801DF0 MOV X19, X0
+	0x03801DF4 ADRP X0, 0x8FA000
+	0x03801DF8 LDR X0, [X0 + 0x578]
+	0x03801DFC BL 0x1C16D08
+	0x03801E00 BL 0x1C16F10
+	0x03801E04 MOV X20, X0
+	0x03801E08 ADRP X0, 0x949000
+	0x03801E0C LDR X0, [X0 + 0x108]
+	0x03801E10 BL 0x1C16D08
+	0x03801E14 MOV X2, X0
+	0x03801E18 MOV X0, X20
+	0x03801E1C MOV X1, X19
+	0x03801E20 MOV X3, X31
+	0x03801E24 BL 0x330E16C
+	0x03801E28 ADRP X0, 0x949000
+	0x03801E2C LDR X0, [X0 + 0x128]
+	0x03801E30 BL 0x1C16D08
+	0x03801E34 MOV X1, X0
+	0x03801E38 MOV X0, X20
+	0x03801E3C BL 0x1C16DEC
+	0x03801E40 ADRP X0, 0x8FB000
+	0x03801E44 LDR X0, [X0 + 0x758]
+	0x03801E48 BL 0x1C16D08
+	0x03801E4C BL 0x1C16F10
+	0x03801E50 MOV X19, X0
+	0x03801E54 ADRP X0, 0x949000
+	0x03801E58 LDR X0, [X0 + 0x130]
+	0x03801E5C BL 0x1C16D08
+	0x03801E60 MOV X1, X0
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+48], X30
+	003 Move [X31+56], X21
+	004 Move [X31+64], X20
+	005 Move [X31+72], X19
+	006 NotImplemented "Instruction MRS not yet implemented."
+	007 Move X19, X8
+	008 Move X8, [X20+40]
+	009 And W21, W1, 1
+	010 Move W1, 0x5354
+	011 Move W3, W0
+	012 Add X0, X31, 0
+	013 NotImplemented "Instruction MOVK not yet implemented."
+	014 Move W2, 20
+	015 Move [X31+40], X8
+	016 Move [X31], X31
+	017 Move [X31+8], X31
+	018 Move [X31+16], W31
+	019 Call InputEvent..ctor, X0, X1, X2, X3, V0
+	020 Move X10, [X31]
+	021 Move X8, [X31+8]
+	022 Move W9, [X31+16]
+	023 Move [X19+8], W21
+	024 Move [X31+24], X8
+	025 Move [X31+32], W9
+	026 Move W8, W9
+	027 NotImplemented "Instruction LDUR not yet implemented."
+	028 Move [X19], X10
+	029 Move [X19+16], W8
+	030 Move [X19+9], X9
+	031 Move X8, [X20+40]
+	032 Move X9, [X31+40]
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move X20, [X31+64]
+	035 Move X19, [X31+72]
+	036 Move X30, [X31+48]
+	037 Move X21, [X31+56]
+	038 Add X31, X31, 80
+	039 Return X0
+	040 Call 0x3EB2B20
+

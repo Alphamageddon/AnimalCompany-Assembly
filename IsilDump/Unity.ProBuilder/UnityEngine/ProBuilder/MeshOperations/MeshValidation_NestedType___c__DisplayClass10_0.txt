@@ -1,0 +1,74 @@
+Type: UnityEngine.ProBuilder.MeshOperations.MeshValidation/<>c__DisplayClass10_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03978F14 FADD S1, S1, S4
+	0x03978F18 FMOV S6, -0.25
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <RebuildSelectionIndexes>b__0(UnityEngine.ProBuilder.Face x)
+
+Disassembly:
+	0x03979878 STP X29, X30, [X31 + 0x20]
+	0x0397987C STP X28, X27, [X31 + 0x30]
+	0x03979880 STP X26, X25, [X31 + 0x40]
+	0x03979884 STP X24, X23, [X31 + 0x50]
+	0x03979888 STP X22, X21, [X31 + 0x60]
+	0x0397988C STP X20, X19, [X31 + 0x70]
+	0x03979890 ADRP X21, 0xA68000
+	0x03979894 LDRB W8, [X21 + 0xA1F]
+	0x03979898 MOV X19, X2
+	0x0397989C MOV X28, X1
+	0x039798A0 MOV X27, X0
+	0x039798A4 TBNZ X8, 0x0, 0x3979958
+	0x039798A8 ADRP X0, 0x7D4000
+	0x039798AC LDR X0, [X0 + 0xC80]
+	0x039798B0 BL 0x1C16CF4
+	0x039798B4 ADRP X0, 0x7D6000
+	0x039798B8 LDR X0, [X0 + 0x1F0]
+	0x039798BC BL 0x1C16CF4
+	0x039798C0 ADRP X0, 0x7D5000
+	0x039798C4 LDR X0, [X0 + 0x560]
+	0x039798C8 BL 0x1C16CF4
+	0x039798CC ADRP X0, 0x77B000
+	0x039798D0 LDR X0, [X0 + 0xE58]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xA69000
+	006 Move W8, [X21+2585]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x7D8000
+	014 Move X0, [X0+392]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+2585], W8
+	018 Move X8, [X20+16]
+	019 Compare X8, 0
+	020 JumpIfEqual {32}
+	021 Move X9, 0x7D8000
+	022 Move X9, [X9+392]
+	023 Move X0, [X8+40]
+	024 Move X1, X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X2, [X9]
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Call Enumerable.Contains, X0, X1
+	031 Return X0
+	032 Call 0x1C17F20
+

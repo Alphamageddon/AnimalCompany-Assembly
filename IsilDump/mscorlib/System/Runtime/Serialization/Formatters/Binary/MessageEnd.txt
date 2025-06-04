@@ -1,0 +1,66 @@
+Type: System.Runtime.Serialization.Formatters.Binary.MessageEnd
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x032AF1A4 LDR W8, [X0 + 0xE0]
+	0x032AF1A8 LDR X19, [X19 + 0xC60]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void Write(System.Runtime.Serialization.Formatters.Binary.__BinaryWriter sout)
+
+Disassembly:
+	0x032AF1AC CBNZ W8, 0x32AF1B8
+	0x032AF1B0 BL 0x1C16DFC
+	0x032AF1B4 LDR X0, [X21]
+	0x032AF1B8 LDR X8, [X0 + 0xB8]
+	0x032AF1BC LDR X0, [X19]
+	0x032AF1C0 LDR W1, [X8]
+	0x032AF1C4 BL 0x1C16D6C
+	0x032AF1C8 CBZ X0, 0x32AF514
+	0x032AF1CC LDR W8, [X0 + 0x18]
+	0x032AF1D0 MOV X19, X0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {13}
+	004 Move X0, [X1+48]
+	005 Compare X0, 0
+	006 JumpIfEqual {13}
+	007 Move X8, [X0]
+	008 Move W1, 11
+	009 Move X3, [X8+456]
+	010 Move X2, [X8+464]
+	011 Move X30, [X31+16]
+	012 CallNoReturn X3
+	013 Call 0x1C17F20
+
+Method: System.Void Read(System.Runtime.Serialization.Formatters.Binary.__BinaryParser input)
+
+Disassembly:
+	0x032AF1D4 CBZ W8, 0x32AF504
+
+ISIL:
+	001 Return 
+
+Method: System.Void Dump()
+
+Disassembly:
+	0x032AF1D8 STR X31, [X19 + 0x20]
+
+ISIL:
+	001 Return 
+
+Method: System.Void Dump(System.IO.Stream sout)
+
+Disassembly:
+	0x032AF1DC LDR X9, [X21]
+
+ISIL:
+	001 Return 
+

@@ -1,0 +1,105 @@
+Type: UnityEngine.EventSystems.AxisEventData
+
+Method: UnityEngine.Vector2 get_moveVector()
+
+Disassembly:
+	0x03E4FB30 MOV X0, X20
+	0x03E4FB34 LDP X9, X1, [X8 + 0x168]
+
+ISIL:
+	001 Move S0, [X0+32]
+	002 Move S1, [X0+36]
+	003 Return X0
+
+Method: System.Void set_moveVector(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x03E4FB38 BLR X9
+	0x03E4FB3C LDP X20, X19, [X31 + 0xD0]
+
+ISIL:
+	001 Move [X0+32], S0
+	002 Move [X0+40], S1
+	003 Return 
+
+Method: UnityEngine.EventSystems.MoveDirection get_moveDir()
+
+Disassembly:
+	0x03E4FB40 LDP X22, X21, [X31 + 0xC0]
+	0x03E4FB44 LDP X24, X23, [X31 + 0xB0]
+
+ISIL:
+	001 Move W0, [X0+40]
+	002 Return X0
+
+Method: System.Void set_moveDir(UnityEngine.EventSystems.MoveDirection value)
+
+Disassembly:
+	0x03E4FB48 LDP X26, X25, [X31 + 0xA0]
+	0x03E4FB4C LDP X28, X27, [X31 + 0x90]
+
+ISIL:
+	001 Move [X0+40], W1
+	002 Return 
+
+Method: System.Void .ctor(UnityEngine.EventSystems.EventSystem eventSystem)
+
+Disassembly:
+	0x03E4FB50 LDP X29, X30, [X31 + 0x80]
+	0x03E4FB54 ADD X31, X31, 0xE0
+	0x03E4FB58 RET
+	0x03E4FB5C BL 0x1C16F20
+	0x03E4FB60 SUB X31, X31, 0x40
+	0x03E4FB64 STR X30, [X31 + 0x20]
+	0x03E4FB68 STP X20, X19, [X31 + 0x30]
+	0x03E4FB6C ADRP X20, 0x599000
+	0x03E4FB70 LDRB W8, [X20 + 0x8CF]
+	0x03E4FB74 MOV X19, X0
+	0x03E4FB78 TBNZ X8, 0x0, 0x3E4FC2C
+	0x03E4FB7C ADRP X0, 0x2A4000
+	0x03E4FB80 LDR X0, [X0 + 0xAC8]
+	0x03E4FB84 BL 0x1C16CF4
+	0x03E4FB88 ADRP X0, 0x31C000
+	0x03E4FB8C LDR X0, [X0 + 0x880]
+	0x03E4FB90 BL 0x1C16CF4
+	0x03E4FB94 ADRP X0, 0x31C000
+	0x03E4FB98 LDR X0, [X0 + 0x888]
+	0x03E4FB9C BL 0x1C16CF4
+	0x03E4FBA0 ADRP X0, 0x31C000
+	0x03E4FBA4 LDR X0, [X0 + 0x890]
+	0x03E4FBA8 BL 0x1C16CF4
+	0x03E4FBAC ADRP X0, 0x31C000
+	0x03E4FBB0 LDR X0, [X0 + 0x898]
+	0x03E4FBB4 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, X1
+	005 Move X1, X31
+	006 Move X19, X0
+	007 Call Object..ctor, X0
+	008 Move [X19+24], X20
+	009 Move X20, 0x58B000
+	010 Move W8, [X20+1935]
+	011 Compare W8, 0
+	012 JumpIfNotEqual {18}
+	013 Move X0, 0x2AD000
+	014 Move X0, [X0+3848]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X20+1935], W8
+	018 Move X8, 0x2AD000
+	019 Move X8, [X8+3848]
+	020 Move X8, [X8]
+	021 Move X8, [X8+184]
+	022 Move V0, [X8]
+	023 Move W8, 4
+	024 Move [X19+40], W8
+	025 Move [X19+32], D0
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Return 
+

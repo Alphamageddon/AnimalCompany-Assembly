@@ -1,0 +1,36 @@
+Type: UnityEngine.InputSystem.InputControlScheme/SchemeJson/DeviceJson
+
+Method: UnityEngine.InputSystem.InputControlScheme/DeviceRequirement ToDeviceEntry()
+
+Disassembly:
+	0x0376D2D4 STP X31, X31, [X31]
+	0x0376D2D8 BL 0x3757420
+	0x0376D2DC CBZ X20, 0x376D348
+	0x0376D2E0 LDP X1, X2, [X31]
+	0x0376D2E4 MOV X0, X20
+
+ISIL:
+	001 Move W8, [X0+8]
+	002 Move W9, [X0+9]
+	003 Move X0, [X0]
+	004 Or X1, X8, X9
+	005 Return X0
+
+Method: UnityEngine.InputSystem.InputControlScheme/SchemeJson/DeviceJson From(UnityEngine.InputSystem.InputControlScheme/DeviceRequirement requirement)
+
+Disassembly:
+	0x0376D3C8 LDR X0, [X20]
+	0x0376D3CC LDR X8, [X0 + 0xB8]
+	0x0376D3D0 LDR X0, [X8 + 0x28]
+	0x0376D3D4 CBZ X0, 0x376D460
+	0x0376D3D8 ADRP X8, 0x9AE000
+
+ISIL:
+	001 Move W8, W1
+	002 ShiftRight W8, 25
+	003 And W8, W8, 0xFFFFFF
+	004 And X8, X8, 511
+	005 NotImplemented "Instruction BFM not yet implemented."
+	006 Move X1, X8
+	007 Return X0
+

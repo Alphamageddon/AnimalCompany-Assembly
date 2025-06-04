@@ -1,0 +1,105 @@
+Type: Unity.Burst.Intrinsics.X86/Popcnt
+
+Method: System.Boolean get_IsPopcntSupported()
+
+Disassembly:
+	0x0372B718 LDR X30, [X31 + 0x40]
+	0x0372B71C ADD X31, X31, 0x90
+	0x0372B720 RET
+	0x0372B724 BL 0x3EB1B20
+	0x0372B728 SUB X31, X31, 0x90
+	0x0372B72C STR X30, [X31 + 0x40]
+	0x0372B730 STP X26, X25, [X31 + 0x50]
+	0x0372B734 STP X24, X23, [X31 + 0x60]
+	0x0372B738 STP X22, X21, [X31 + 0x70]
+	0x0372B73C STP X20, X19, [X31 + 0x80]
+	0x0372B740 MRS X21, 0xC000
+	0x0372B744 LDR X8, [X21 + 0x28]
+	0x0372B748 ADRP X19, 0xCB5000
+	0x0372B74C STR X8, [X31 + 0x38]
+	0x0372B750 LDRB W8, [X19 + 0xC8F]
+	0x0372B754 STP X0, X1, [X31 + 0x28]
+	0x0372B758 STP X2, X3, [X31 + 0x18]
+	0x0372B75C TBNZ X8, 0x0, 0x372B774
+	0x0372B760 ADRP X0, 0x9C8000
+	0x0372B764 LDR X0, [X0 + 0x5A8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xCB6000
+	005 Move X20, 0x9F2000
+	006 Move W8, [X19+3201]
+	007 Move X20, [X20+2712]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x9F2000
+	013 Move X0, [X0+2712]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+3201], W8
+	017 Move X0, [X20]
+	018 Move W8, [X0+224]
+	019 Compare W8, 0
+	020 JumpIfNotEqual {22}
+	021 Call 0x1C17DFC
+	022 Move X20, [X31+16]
+	023 Move X19, [X31+24]
+	024 Move X0, X31
+	025 Move X30, [X31+32]
+	026 Call Sse4_2.get_IsSse42Supported
+	027 Return X0
+
+Method: System.Int32 popcnt_u32(System.UInt32 v)
+
+Disassembly:
+	0x0372B768 BL 0x1C16CF4
+	0x0372B76C MOVZ W8, 0x1
+	0x0372B770 STRB W8, [X19 + 0xC8F]
+	0x0372B774 ADRP X23, 0x9C8000
+	0x0372B778 LDR X23, [X23 + 0x5A8]
+	0x0372B77C MOV X22, X31
+	0x0372B780 ADD X24, X31, 0x28
+	0x0372B784 ADD X25, X31, 0x18
+
+ISIL:
+	001 Move W8, W0
+	002 Move W0, W31
+	003 Move W9, 0x80000000
+	004 And W31, W9, W8
+	005 Move W9, W9
+	006 ShiftRight W9, 1
+	007 And W9, W9, 0x7FFFFFFF
+	008 NotImplemented "Instruction CINC not yet implemented."
+	009 Compare W9, 0
+	010 JumpIfNotEqual {4}
+	011 Return X0
+
+Method: System.Int32 popcnt_u64(System.UInt64 v)
+
+Disassembly:
+	0x0372B788 ADD X26, X31, 0x8
+	0x0372B78C STP X31, X31, [X31 + 0x8]
+	0x0372B790 LDR X0, [X23]
+	0x0372B794 LDRH W19, [X24, X22, LSL]
+	0x0372B798 LDRH W20, [X25, X22, LSL]
+	0x0372B79C LDR W8, [X0 + 0xE0]
+	0x0372B7A0 CBNZ W8, 0x372B7A8
+	0x0372B7A4 BL 0x1C16DFC
+
+ISIL:
+	001 Move X8, X0
+	002 Move W0, W31
+	003 Move X9, 0x80000000
+	004 And X31, X9, X8
+	005 Move X9, X9
+	006 ShiftRight X9, 1
+	007 And X9, X9, 0x7FFFFFFF
+	008 NotImplemented "Instruction CINC not yet implemented."
+	009 Compare X9, 0
+	010 JumpIfNotEqual {4}
+	011 Return X0
+

@@ -1,0 +1,376 @@
+Type: Fusion.Allocator/BlockList
+
+Method: System.Boolean get_IsEmpty()
+
+Disassembly:
+	0x01E676D8 LDR W0, [X0 + 0x14]
+	0x01E676DC RET
+	0x01E676E0 LDR W0, [X0 + 0x18]
+	0x01E676E4 RET
+
+ISIL:
+	001 Move W8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Void AddFirst(Fusion.Allocator* a, Fusion.Allocator/Block* item)
+
+Disassembly:
+	0x01E6770C STP W21, W20, [X22 + 0x10]
+	0x01E67710 STR W19, [X22 + 0x18]
+	0x01E67714 LDP X20, X19, [X31 + 0x20]
+	0x01E67718 LDP X22, X21, [X31 + 0x10]
+	0x01E6771C LDR X30, [X31], #0x30
+	0x01E67720 RET
+	0x01E67724 LDR W0, [X0 + 0x10]
+	0x01E67728 RET
+	0x01E6772C STR W1, [X0 + 0x10]
+	0x01E67730 RET
+	0x01E67734 MOV X1, X31
+	0x01E67738 B 0x33A51F0
+	0x01E6773C LDR W0, [X0 + 0x10]
+	0x01E67740 RET
+	0x01E67744 LDRB W0, [X0 + 0x14]
+	0x01E67748 RET
+	0x01E6774C STR X30, [X31 - 0x20]!
+	0x01E67750 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X2, 0
+	003 JumpIfEqual {19}
+	004 Move W8, [X0]
+	005 Move W10, [X1]
+	006 Move [X2], W31
+	007 Move [X2+4], W8
+	008 NotImplemented "Instruction LDRSW not yet implemented."
+	009 Subtract W8, W2, W10
+	010 Compare W9, 0
+	011 JumpIfEqual {15}
+	012 Move X10, [X1]
+	013 Add X9, X10, X9
+	014 Move [X9], W8
+	015 Move [X0+4], W8
+	016 Move [X0], W8
+	017 Move X30, [X31+16]
+	018 Return 
+	019 Call 0x1C17F20
+
+Method: System.Void AddLast(Fusion.Allocator* a, Fusion.Allocator/Block* item)
+
+Disassembly:
+	0x01E67D4C STP X22, X21, [X31 + 0x10]
+	0x01E67D50 STP X20, X19, [X31 + 0x20]
+	0x01E67D54 ADRP X21, 0x2572000
+	0x01E67D58 LDRB W8, [X21 + 0x104]
+	0x01E67D5C MOV W20, W1
+	0x01E67D60 MOV X19, X0
+	0x01E67D64 TBNZ X8, 0x0, 0x1E67D94
+	0x01E67D68 ADRP X0, 0x2295000
+	0x01E67D6C LDR X0, [X0 + 0xE68]
+	0x01E67D70 BL 0x1C16CF4
+	0x01E67D74 ADRP X0, 0x2295000
+	0x01E67D78 LDR X0, [X0 + 0xE78]
+	0x01E67D7C BL 0x1C16CF4
+	0x01E67D80 ADRP X0, 0x2295000
+	0x01E67D84 LDR X0, [X0 + 0xE70]
+	0x01E67D88 BL 0x1C16CF4
+	0x01E67D8C MOVZ W8, 0x1
+	0x01E67D90 STRB W8, [X21 + 0x104]
+	0x01E67D94 MOV W0, W20
+	0x01E67D98 BL 0x1E67E9C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X2, 0
+	003 JumpIfEqual {20}
+	004 Move W8, [X1]
+	005 Move [X2+4], W31
+	006 Move W9, [X0+4]
+	007 Move [X2], W9
+	008 NotImplemented "Instruction LDRSW not yet implemented."
+	009 Compare W9, 0
+	010 JumpIfEqual {14}
+	011 Move X10, [X1]
+	012 Add X9, X10, X9
+	013 Add X9, X9, 4
+	014 Move X9, X0
+	015 Subtract W8, W2, W8
+	016 Move [X9], W8
+	017 Move [X0+4], W8
+	018 Move X30, [X31+16]
+	019 Return 
+	020 Call 0x1C17F20
+
+Method: System.Void MoveFirst(Fusion.Allocator* a, Fusion.Allocator/Block* item)
+
+Disassembly:
+	0x01E6795C B 0x33A51F0
+	0x01E67960 LDR X0, [X0 + 0x38]
+	0x01E67964 RET
+	0x01E67968 STR X1, [X0 + 0x38]
+	0x01E6796C RET
+	0x01E67970 STR X30, [X31 - 0x10]!
+	0x01E67974 LDR X8, [X0 + 0x38]
+	0x01E67978 CBZ X8, 0x1E67990
+	0x01E6797C LDR X0, [X8 + 0x108]
+	0x01E67980 CBZ X0, 0x1E6799C
+	0x01E67984 MOV X1, X31
+	0x01E67988 LDR X30, [X31], #0x10
+	0x01E6798C B 0x1E5A61C
+	0x01E67990 MOVN W0, 0x0
+	0x01E67994 LDR X30, [X31], #0x10
+	0x01E67998 RET
+	0x01E6799C BL 0x1C16F20
+	0x01E679A0 LDRB W0, [X0 + 0x40]
+	0x01E679A4 RET
+	0x01E679A8 AND W8, W1, 0x1
+	0x01E679AC STRB W8, [X0 + 0x40]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W8, [X1]
+	006 Move W9, [X0]
+	007 Move X21, X2
+	008 Subtract W8, W21, W8
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Move X20, [X31+16]
+	011 Move X19, [X31+24]
+	012 Move X30, [X31+32]
+	013 Move X21, [X31+40]
+	014 Return 
+	015 Move X2, X21
+	016 Move X19, X1
+	017 Move X20, X0
+	018 Call BlockList.Remove, X0, X1, X2
+	019 Move X0, X20
+	020 Move X1, X19
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X2, X21
+	024 Move X30, [X31+32]
+	025 Move X21, [X31+40]
+	026 Call BlockList.AddFirst, X0, X1, X2
+	027 Return 
+
+Method: System.Void MoveLast(Fusion.Allocator* a, Fusion.Allocator/Block* item)
+
+Disassembly:
+	0x01E67754 MOV W19, W1
+	0x01E67758 MOV X1, X31
+	0x01E6775C MOV X20, X0
+	0x01E67760 BL 0x33A51F0
+	0x01E67764 STR W19, [X20 + 0x10]
+	0x01E67768 LDP X20, X19, [X31 + 0x10]
+	0x01E6776C LDR X30, [X31], #0x20
+	0x01E67770 RET
+	0x01E67774 STP X30, X21, [X31 - 0x20]!
+	0x01E67778 STP X20, X19, [X31 + 0x10]
+	0x01E6777C MOV W19, W1
+	0x01E67780 MOV X1, X31
+	0x01E67784 MOV X20, X0
+	0x01E67788 AND W21, W2, 0x1
+	0x01E6778C BL 0x33A51F0
+	0x01E67790 STR W19, [X20 + 0x10]
+	0x01E67794 STRB W21, [X20 + 0x14]
+	0x01E67798 LDP X20, X19, [X31 + 0x10]
+	0x01E6779C LDP X30, X21, [X31], #0x20
+	0x01E677A0 RET
+	0x01E677A4 STR D8, [X31 - 0x20]!
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W8, [X1]
+	006 Move W9, [X0+4]
+	007 Move X21, X2
+	008 Subtract W8, W21, W8
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Move X20, [X31+16]
+	011 Move X19, [X31+24]
+	012 Move X30, [X31+32]
+	013 Move X21, [X31+40]
+	014 Return 
+	015 Move X2, X21
+	016 Move X19, X1
+	017 Move X20, X0
+	018 Call BlockList.Remove, X0, X1, X2
+	019 Move X0, X20
+	020 Move X1, X19
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X2, X21
+	024 Move X30, [X31+32]
+	025 Move X21, [X31+40]
+	026 Call BlockList.AddLast, X0, X1, X2
+	027 Return 
+
+Method: Fusion.Allocator/Block* RemoveHead(Fusion.Allocator* a)
+
+Disassembly:
+	0x01E676E8 STR X30, [X31 - 0x30]!
+	0x01E676EC STP X22, X21, [X31 + 0x10]
+	0x01E676F0 STP X20, X19, [X31 + 0x20]
+	0x01E676F4 MOV W21, W1
+	0x01E676F8 MOV X1, X31
+	0x01E676FC MOV W19, W3
+	0x01E67700 MOV W20, W2
+	0x01E67704 MOV X22, X0
+	0x01E67708 BL 0x33A51F0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 NotImplemented "Instruction LDRSW not yet implemented."
+	004 Move X9, [X1]
+	005 Add X19, X9, X8
+	006 Move X2, X19
+	007 Call BlockList.Remove, X0, X1, X2
+	008 Move X0, X19
+	009 Move X30, [X31+16]
+	010 Move X19, [X31+24]
+	011 Return X0
+
+Method: System.Void Remove(Fusion.Allocator* a, Fusion.Allocator/Block* item)
+
+Disassembly:
+	0x01E678DC RET
+	0x01E678E0 STR W1, [X0 + 0x10]
+	0x01E678E4 RET
+	0x01E678E8 MOV X1, X31
+	0x01E678EC B 0x33A51F0
+	0x01E678F0 LDR W0, [X0 + 0x10]
+	0x01E678F4 RET
+	0x01E678F8 STR W1, [X0 + 0x10]
+	0x01E678FC RET
+	0x01E67900 MOV X1, X31
+	0x01E67904 B 0x33A51F0
+	0x01E67908 MOV X1, X31
+	0x01E6790C B 0x33A51F0
+	0x01E67910 MOV X1, X31
+	0x01E67914 B 0x33A51F0
+	0x01E67918 LDR W0, [X0 + 0x10]
+	0x01E6791C RET
+	0x01E67920 STR W1, [X0 + 0x10]
+	0x01E67924 RET
+	0x01E67928 MOV X1, X31
+	0x01E6792C B 0x33A51F0
+	0x01E67930 LDR W0, [X0 + 0x10]
+	0x01E67934 RET
+	0x01E67938 STR W1, [X0 + 0x10]
+	0x01E6793C RET
+	0x01E67940 MOV X1, X31
+	0x01E67944 B 0x33A51F0
+	0x01E67948 MOV X1, X31
+	0x01E6794C B 0x33A51F0
+	0x01E67950 MOV X1, X31
+	0x01E67954 B 0x33A51F0
+	0x01E67958 MOV X1, X31
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X2, 0
+	003 JumpIfEqual {31}
+	004 NotImplemented "Instruction LDRSW not yet implemented."
+	005 Compare W8, 0
+	006 JumpIfEqual {11}
+	007 Move X9, [X1]
+	008 Add X8, X9, X8
+	009 Move W9, [X2+4]
+	010 Move [X8+4], W9
+	011 NotImplemented "Instruction LDRSW not yet implemented."
+	012 Compare W8, 0
+	013 JumpIfEqual {18}
+	014 Move X9, [X1]
+	015 Add X8, X9, X8
+	016 Move W9, [X2]
+	017 Move [X8], W9
+	018 Move W8, [X1]
+	019 Move W9, [X0+4]
+	020 Subtract W8, W2, W8
+	021 NotImplemented "Instruction CMP not yet implemented."
+	022 Move W9, [X2]
+	023 Move [X0+4], W9
+	024 Move W9, [X0]
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move W8, [X2+4]
+	027 Move [X0], W8
+	028 Move [X2], X31
+	029 Move X30, [X31+16]
+	030 Return 
+	031 Call 0x1C17F20
+
+Method: System.Boolean Contains(Fusion.Allocator* a, Fusion.Allocator/Block* item)
+
+Disassembly:
+	0x01E67DF0 B 0x1E67E00
+	0x01E67DF4 MOV X22, X31
+	0x01E67DF8 B 0x1E67E04
+	0x01E67DFC MOVZ W20, 0x1
+	0x01E67E00 LDR X22, [X8 + 0x20]
+	0x01E67E04 ADRP X8, 0x2295000
+	0x01E67E08 LDR X8, [X8 + 0xE70]
+	0x01E67E0C LDR X0, [X8]
+	0x01E67E10 BL 0x1C16F10
+	0x01E67E14 MOV W1, W20
+	0x01E67E18 MOV X2, X22
+	0x01E67E1C MOV X3, X31
+	0x01E67E20 MOV X21, X0
+	0x01E67E24 BL 0x1EB3CE4
+	0x01E67E28 LDR X0, [X19 + 0x40]
+	0x01E67E2C CBZ X0, 0x1E67E44
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W9, [X0]
+	003 Compare W9, 0
+	004 JumpIfEqual {14}
+	005 Move X8, [X1]
+	006 Add X9, X8, W9
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Compare X9, 0
+	010 JumpIfEqual {17}
+	011 Move W9, [X9+4]
+	012 Compare W9, 0
+	013 JumpIfNotEqual {6}
+	014 Move W0, W31
+	015 Move X30, [X31+16]
+	016 Return X0
+	017 Call 0x1C17F20
+
+Method: System.Void DebugVerifyListIntegrity(Fusion.Allocator* a)
+
+Disassembly:
+	0x01E67E30 ADRP X8, 0x2295000
+	0x01E67E34 LDR X8, [X8 + 0xE78]
+	0x01E67E38 MOV X1, X21
+	0x01E67E3C LDR X2, [X8]
+	0x01E67E40 BL 0x24DA2F4
+	0x01E67E44 LDR X0, [X19 + 0x28]
+	0x01E67E48 CBZ X0, 0x1E67E98
+	0x01E67E4C LDR X8, [X0 + 0x1A8]
+	0x01E67E50 CBZ X8, 0x1E67E78
+	0x01E67E54 ADRP X9, 0x2295000
+	0x01E67E58 LDR X9, [X9 + 0xE68]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W9, [X0]
+	003 Compare W9, 0
+	004 JumpIfEqual {10}
+	005 Move X8, [X1]
+	006 Add X9, X8, W9
+	007 Move W9, [X9+4]
+	008 Compare W9, 0
+	009 JumpIfNotEqual {6}
+	010 Move X30, [X31+16]
+	011 Return 
+	012 Call 0x1C17F20
+

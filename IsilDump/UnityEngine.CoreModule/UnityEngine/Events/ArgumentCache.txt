@@ -1,0 +1,117 @@
+Type: UnityEngine.Events.ArgumentCache
+
+Method: UnityEngine.Object get_unityObjectArgument()
+
+Disassembly:
+	0x03C44C94 LDR X0, [X21]
+	0x03C44C98 BL 0x1C16F10
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.String get_unityObjectArgumentAssemblyTypeName()
+
+Disassembly:
+	0x03C44C9C LDR X1, [X20]
+	0x03C44CA0 MOV X20, X0
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Int32 get_intArgument()
+
+Disassembly:
+	0x03C44CA4 BL 0x301B7C4
+	0x03C44CA8 STR X20, [X19 + 0x10]
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: System.Single get_floatArgument()
+
+Disassembly:
+	0x03C44CAC LDP X20, X19, [X31 + 0x20]
+	0x03C44CB0 LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move V0, [X0+36]
+	002 Return V0
+
+Method: System.String get_stringArgument()
+
+Disassembly:
+	0x03C44CB4 LDR X30, [X31], #0x30
+	0x03C44CB8 RET
+
+ISIL:
+	001 Move X0, [X0+40]
+	002 Return X0
+
+Method: System.Boolean get_boolArgument()
+
+Disassembly:
+	0x03C44CBC STR X30, [X31 - 0x20]!
+	0x03C44CC0 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: System.Void OnBeforeSerialize()
+
+Disassembly:
+	0x03C44CC4 ADRP X20, 0x7A1000
+	0x03C44CC8 LDRB W8, [X20 + 0xBD2]
+	0x03C44CCC MOV X19, X0
+	0x03C44CD0 TBNZ X8, 0x0, 0x3C44CE8
+	0x03C44CD4 ADRP X0, 0x51B000
+	0x03C44CD8 LDR X0, [X0 + 0x948]
+	0x03C44CDC BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+24]
+	005 Call UnityEventTools.TidyAssemblyTypeName, X0
+	006 Move [X19+24], X0
+	007 Move X30, [X31+16]
+	008 Move X19, [X31+24]
+	009 Return 
+
+Method: System.Void OnAfterDeserialize()
+
+Disassembly:
+	0x03C44CE0 MOVZ W8, 0x1
+	0x03C44CE4 STRB W8, [X20 + 0xBD2]
+	0x03C44CE8 LDR X8, [X19 + 0x10]
+	0x03C44CEC CBZ X8, 0x3C44D00
+	0x03C44CF0 LDR W0, [X8 + 0x18]
+	0x03C44CF4 LDP X20, X19, [X31 + 0x10]
+	0x03C44CF8 LDR X30, [X31], #0x20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+24]
+	005 Call UnityEventTools.TidyAssemblyTypeName, X0
+	006 Move [X19+24], X0
+	007 Move X30, [X31+16]
+	008 Move X19, [X31+24]
+	009 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03C44CFC RET
+	0x03C44D00 BL 0x1C16F20
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

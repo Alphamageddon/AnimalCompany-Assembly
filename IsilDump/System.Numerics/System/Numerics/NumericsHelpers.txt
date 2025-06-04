@@ -1,0 +1,144 @@
+Type: System.Numerics.NumericsHelpers
+
+Method: System.Void DangerousMakeTwosComplement(System.UInt32[] d)
+
+Disassembly:
+	0x0360CCB0 CMP X8, X9
+	0x0360CCB4 B.NE 0x360CD2C
+	0x0360CCB8 BL 0x1C16E08
+	0x0360CCBC LDP X1, X2, [X0]
+	0x0360CCC0 MOV X0, X19
+	0x0360CCC4 LDP X20, X19, [X31 + 0x10]
+	0x0360CCC8 LDP X30, X21, [X31], #0x20
+	0x0360CCCC B 0x360CB04
+	0x0360CCD0 ADRP X0, 0xAEF000
+	0x0360CCD4 LDR X0, [X0 + 0x578]
+	0x0360CCD8 BL 0x1C16D08
+	0x0360CCDC BL 0x1C16F10
+	0x0360CCE0 MOV X19, X0
+	0x0360CCE4 ADRP X0, 0xB2E000
+	0x0360CCE8 LDR X0, [X0 + 0xEA8]
+	0x0360CCEC BL 0x1C16D08
+	0x0360CCF0 MOV X20, X0
+	0x0360CCF4 ADRP X0, 0xAF2000
+	0x0360CCF8 LDR X0, [X0 + 0x8A8]
+	0x0360CCFC BL 0x1C16D08
+	0x0360CD00 MOV X2, X0
+	0x0360CD04 MOV X0, X19
+	0x0360CD08 MOV X1, X20
+	0x0360CD0C MOV X3, X31
+	0x0360CD10 BL 0x330E16C
+	0x0360CD14 ADRP X0, 0xB2E000
+	0x0360CD18 LDR X0, [X0 + 0xEB0]
+	0x0360CD1C BL 0x1C16D08
+	0x0360CD20 MOV X1, X0
+	0x0360CD24 MOV X0, X19
+	0x0360CD28 BL 0x1C16DEC
+	0x0360CD2C BL 0x1C171E0
+	0x0360CD30 STP X30, X21, [X31 - 0x20]!
+	0x0360CD34 STP X20, X19, [X31 + 0x10]
+	0x0360CD38 ADRP X20, 0xDD4000
+	0x0360CD3C ADRP X21, 0xB28000
+	0x0360CD40 LDRB W8, [X20 + 0x402]
+	0x0360CD44 LDR X21, [X21 + 0x940]
+	0x0360CD48 MOV X19, X0
+	0x0360CD4C TBNZ X8, 0x0, 0x360CD64
+	0x0360CD50 ADRP X0, 0xB28000
+	0x0360CD54 LDR X0, [X0 + 0x940]
+	0x0360CD58 BL 0x1C16CF4
+	0x0360CD5C MOVZ W8, 0x1
+	0x0360CD60 STRB W8, [X20 + 0x402]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X0, 0
+	003 JumpIfEqual {43}
+	004 Move X8, [X0+24]
+	005 Compare X8, 0
+	006 JumpIfEqual {43}
+	007 Compare W8, 0
+	008 JumpIfEqual {45}
+	009 Move W11, [X0+32]
+	010 Or X10, X31, 0x100000001
+	011 NotImplemented "Instruction CMP not yet implemented."
+	012 And X9, X8, 0
+	013 Subtract W10, W31, W11
+	014 Move [X0+32], W10
+	015 Move W10, 1
+	016 Compare W11, 0
+	017 JumpIfNotEqual {35}
+	018 Move X13, X31
+	019 Move X10, W8
+	020 Add X11, X0, 36
+	021 Subtract X12, X9, 1
+	022 NotImplemented "Instruction CMP not yet implemented."
+	023 Move W15, [X11]
+	024 Add X16, X13, 2
+	025 Add X14, X13, 1
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Subtract W15, W31, W15
+	028 Move [X11], W15
+	029 Add X13, X0, W14
+	030 Move W15, [X13+32]
+	031 Move X13, X14
+	032 Compare W15, 0
+	033 JumpIfEqual {22}
+	034 Add X10, X14, 1
+	035 NotImplemented "Instruction CMP not yet implemented."
+	036 Add X8, X0, X10
+	037 Add X8, X8, 32
+	038 Subtract X9, X9, X10
+	039 Move W10, [X8]
+	040 Subtract X9, X9, 1
+	041 NotImplemented "Instruction ORN not yet implemented."
+	042 Move [X8+4], W10
+	043 Move X30, [X31+16]
+	044 Return 
+	045 Call 0x1C17F28
+
+Method: System.UInt64 MakeUlong(System.UInt32 uHi, System.UInt32 uLo)
+
+Disassembly:
+	0x0360DAF4 TBNZ X8, 0x0, 0x360DB0C
+	0x0360DAF8 ADRP X0, 0xB0F000
+	0x0360DAFC LDR X0, [X0 + 0xD08]
+	0x0360DB00 BL 0x1C16CF4
+
+ISIL:
+	001 Move W8, W1
+	002 NotImplemented "Instruction BFM not yet implemented."
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.UInt32 Abs(System.Int32 a)
+
+Disassembly:
+	0x0360D30C ADRP X0, 0xB2D000
+	0x0360D310 LDR X0, [X0 + 0xEB8]
+	0x0360D314 BL 0x1C16D08
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSNEG not yet implemented."
+	003 Return X0
+
+Method: System.UInt32 CombineHash(System.UInt32 u1, System.UInt32 u2)
+
+Disassembly:
+	0x03612FF0 ADD X27, X27, 0x2
+	0x03612FF4 B 0x36132AC
+
+ISIL:
+	001 Xor W0, W1, W0
+	002 Return X0
+
+Method: System.Int32 CombineHash(System.Int32 n1, System.Int32 n2)
+
+Disassembly:
+	0x0360D890 LDP X30, X23, [X31], #0x30
+	0x0360D894 RET
+
+ISIL:
+	001 Xor W0, W1, W0
+	002 Return X0
+

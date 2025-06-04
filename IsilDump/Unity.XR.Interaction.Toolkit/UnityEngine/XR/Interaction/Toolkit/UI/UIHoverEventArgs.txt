@@ -1,0 +1,86 @@
+Type: UnityEngine.XR.Interaction.Toolkit.UI.UIHoverEventArgs
+
+Method: UnityEngine.XR.Interaction.Toolkit.UI.IUIInteractor get_interactorObject()
+
+Disassembly:
+	0x03BA5F80 CBZ X0, 0x3BA61CC
+	0x03BA5F84 LDR X2, [X29]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_interactorObject(UnityEngine.XR.Interaction.Toolkit.UI.IUIInteractor value)
+
+Disassembly:
+	0x03BA5F88 ADD X8, X31, 0x300
+	0x03BA5F8C MOV W1, W25
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceModel get_deviceModel()
+
+Disassembly:
+	0x03BA5F90 BL 0x318154C
+	0x03BA5F94 LDR X8, [X31 + 0x300]
+	0x03BA5F98 LDR W9, [X31 + 0x308]
+	0x03BA5F9C LDRB W10, [X23 + 0x2]
+
+ISIL:
+	001 Add X1, X0, 24
+	002 Move W2, 344
+	003 Move X0, X8
+	004 Call 0x3EB2AC0
+	005 Return X0
+
+Method: System.Void set_deviceModel(UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceModel value)
+
+Disassembly:
+	0x03BA5FA0 LDRH W11, [X23]
+	0x03BA5FA4 LDR W21, [X31 + 0x30C]
+	0x03BA5FA8 LDRB W20, [X31 + 0x310]
+	0x03BA5FAC LDR V9, [X31 + 0x314]
+	0x03BA5FB0 LDR V12, [X31 + 0x318]
+	0x03BA5FB4 LDR W27, [X31 + 0x31C]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X0, 24
+	003 Move W2, 344
+	004 Call 0x3EB2B30
+	005 Move X30, [X31+16]
+	006 Return 
+
+Method: UnityEngine.GameObject get_uiObject()
+
+Disassembly:
+	0x03BA5FB8 LDR V10, [X31 + 0x320]
+	0x03BA5FBC LDR V11, [X31 + 0x324]
+
+ISIL:
+	001 Move X0, [X0+368]
+	002 Return X0
+
+Method: System.Void set_uiObject(UnityEngine.GameObject value)
+
+Disassembly:
+	0x03BA5FC0 ADD X0, X31, 0x220
+	0x03BA5FC4 MOVZ W2, 0x88
+
+ISIL:
+	001 Move [X0+368], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03BA5FC8 MOV X1, X24
+	0x03BA5FCC STR W9, [X31 + 0x460]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

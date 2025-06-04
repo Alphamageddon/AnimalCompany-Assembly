@@ -1,0 +1,253 @@
+Type: System.Reflection.MonoMethodInfo
+
+Method: System.Void get_method_info(System.IntPtr handle, out System.Reflection.MonoMethodInfo info)
+
+Disassembly:
+	0x032DB650 LDR X8, [X0 + 0x18]
+
+ISIL:
+	001 Call 0x1C851C8
+	002 Return 
+
+Method: System.Int32 get_method_attributes(System.IntPtr handle)
+
+Disassembly:
+	0x032DB654 CBZ X8, 0x32DB660
+
+ISIL:
+	001 Call 0x1C2C380
+	002 Return X0
+
+Method: System.Reflection.MonoMethodInfo GetMethodInfo(System.IntPtr handle)
+
+Disassembly:
+	0x032DB658 MOV X0, X8
+	0x032DB65C RET
+	0x032DB660 B 0x1C72118
+	0x032DB664 STP X30, X23, [X31 - 0x30]!
+	0x032DB668 STP X22, X21, [X31 + 0x10]
+	0x032DB66C STP X20, X19, [X31 + 0x20]
+	0x032DB670 ADRP X22, 0x1101000
+	0x032DB674 ADRP X23, 0xE4B000
+	0x032DB678 LDRB W8, [X22 + 0x961]
+	0x032DB67C LDR X23, [X23 + 0x3E0]
+	0x032DB680 MOV W21, W2
+	0x032DB684 MOV X19, X1
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 Move [X31+40], X19
+	004 NotImplemented "Instruction MOVI not yet implemented."
+	005 Add X1, X31, 0
+	006 Move X19, X8
+	007 Move [X31], V0
+	008 Move [X31+8], V0
+	009 Call 0x1C851C8
+	010 Move V1, [X31]
+	011 Move V0, [X31+16]
+	012 Move [X19], V1
+	013 Move [X19+8], V0
+	014 Move X30, [X31+32]
+	015 Move X19, [X31+40]
+	016 Add X31, X31, 48
+	017 Return X0
+
+Method: System.Type GetDeclaringType(System.IntPtr handle)
+
+Disassembly:
+	0x032DB688 MOV X20, X0
+	0x032DB68C TBNZ X8, 0x0, 0x32DB6A4
+	0x032DB690 ADRP X0, 0xE4B000
+	0x032DB694 LDR X0, [X0 + 0x3E0]
+	0x032DB698 BL 0x1C16CF4
+	0x032DB69C MOVZ W8, 0x1
+	0x032DB6A0 STRB W8, [X22 + 0x961]
+	0x032DB6A4 LDR X0, [X23]
+	0x032DB6A8 LDR W8, [X0 + 0xE0]
+	0x032DB6AC CBNZ W8, 0x32DB6B4
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MOVI not yet implemented."
+	004 Add X1, X31, 0
+	005 Move [X31], V0
+	006 Move [X31+8], V0
+	007 Call 0x1C851C8
+	008 Move X0, [X31]
+	009 Move X30, [X31+32]
+	010 Add X31, X31, 48
+	011 Return X0
+
+Method: System.Type GetReturnType(System.IntPtr handle)
+
+Disassembly:
+	0x032DB6B0 BL 0x1C16DFC
+	0x032DB6B4 AND W2, W21, 0x1
+	0x032DB6B8 MOV X0, X20
+	0x032DB6BC MOV X1, X19
+	0x032DB6C0 LDP X20, X19, [X31 + 0x20]
+	0x032DB6C4 LDP X22, X21, [X31 + 0x10]
+	0x032DB6C8 MOV X3, X31
+	0x032DB6CC LDP X30, X23, [X31], #0x30
+	0x032DB6D0 B 0x33C9FDC
+	0x032DB6D4 STR X30, [X31 - 0x30]!
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MOVI not yet implemented."
+	004 Add X1, X31, 0
+	005 Move [X31], V0
+	006 Move [X31+8], V0
+	007 Call 0x1C851C8
+	008 Move X0, [X31+8]
+	009 Move X30, [X31+32]
+	010 Add X31, X31, 48
+	011 Return X0
+
+Method: System.Reflection.MethodAttributes GetAttributes(System.IntPtr handle)
+
+Disassembly:
+	0x032DB6D8 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Call 0x1C2C380
+	002 Return X0
+
+Method: System.Reflection.CallingConventions GetCallingConvention(System.IntPtr handle)
+
+Disassembly:
+	0x032DB6DC STP X20, X19, [X31 + 0x20]
+	0x032DB6E0 ADRP X21, 0x1101000
+	0x032DB6E4 ADRP X22, 0xE4B000
+	0x032DB6E8 LDRB W8, [X21 + 0x962]
+	0x032DB6EC LDR X22, [X22 + 0x3E0]
+	0x032DB6F0 MOV W20, W1
+	0x032DB6F4 MOV X19, X0
+	0x032DB6F8 TBNZ X8, 0x0, 0x32DB710
+	0x032DB6FC ADRP X0, 0xE4B000
+	0x032DB700 LDR X0, [X0 + 0x3E0]
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MOVI not yet implemented."
+	004 Add X1, X31, 0
+	005 Move [X31], V0
+	006 Move [X31+8], V0
+	007 Call 0x1C851C8
+	008 Move W0, [X31+24]
+	009 Move X30, [X31+32]
+	010 Add X31, X31, 48
+	011 Return X0
+
+Method: System.Reflection.MethodImplAttributes GetMethodImplementationFlags(System.IntPtr handle)
+
+Disassembly:
+	0x032DB704 BL 0x1C16CF4
+	0x032DB708 MOVZ W8, 0x1
+	0x032DB70C STRB W8, [X21 + 0x962]
+	0x032DB710 LDR X0, [X22]
+	0x032DB714 LDR W8, [X0 + 0xE0]
+	0x032DB718 CBNZ W8, 0x32DB720
+	0x032DB71C BL 0x1C16DFC
+	0x032DB720 AND W1, W20, 0x1
+	0x032DB724 MOV X0, X19
+	0x032DB728 LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X30
+	003 NotImplemented "Instruction MOVI not yet implemented."
+	004 Add X1, X31, 0
+	005 Move [X31], V0
+	006 Move [X31+8], V0
+	007 Call 0x1C851C8
+	008 Move W0, [X31+20]
+	009 Move X30, [X31+32]
+	010 Add X31, X31, 48
+	011 Return X0
+
+Method: System.Reflection.ParameterInfo[] get_parameter_info(System.IntPtr handle, System.Reflection.MemberInfo member)
+
+Disassembly:
+	0x032DB72C LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Call 0x1C8522C
+	002 Return X0
+
+Method: System.Reflection.ParameterInfo[] GetParametersInfo(System.IntPtr handle, System.Reflection.MemberInfo member)
+
+Disassembly:
+	0x032DB730 MOV X2, X31
+
+ISIL:
+	001 Call 0x1C8522C
+	002 Return X0
+
+Method: System.Runtime.InteropServices.MarshalAsAttribute get_retval_marshal(System.IntPtr handle)
+
+Disassembly:
+	0x032DB734 LDR X30, [X31], #0x30
+
+ISIL:
+	001 Call 0x1C4D018
+	002 Return X0
+
+Method: System.Reflection.ParameterInfo GetReturnParameterInfo(System.Reflection.RuntimeMethodInfo method)
+
+Disassembly:
+	0x032DB738 B 0x33C82AC
+	0x032DB73C STP X30, X23, [X31 - 0x30]!
+	0x032DB740 STP X22, X21, [X31 + 0x10]
+	0x032DB744 STP X20, X19, [X31 + 0x20]
+	0x032DB748 ADRP X22, 0x1101000
+	0x032DB74C ADRP X23, 0xE4B000
+	0x032DB750 LDRB W8, [X22 + 0x963]
+	0x032DB754 LDR X23, [X23 + 0x3E0]
+	0x032DB758 MOV W21, W2
+	0x032DB75C MOV X19, X1
+	0x032DB760 MOV X20, X0
+	0x032DB764 TBNZ X8, 0x0, 0x32DB77C
+	0x032DB768 ADRP X0, 0xE4B000
+	0x032DB76C LDR X0, [X0 + 0x3E0]
+	0x032DB770 BL 0x1C16CF4
+	0x032DB774 MOVZ W8, 0x1
+	0x032DB778 STRB W8, [X22 + 0x963]
+	0x032DB77C LDR X0, [X23]
+	0x032DB780 LDR W8, [X0 + 0xE0]
+	0x032DB784 CBNZ W8, 0x32DB78C
+	0x032DB788 BL 0x1C16DFC
+	0x032DB78C AND W2, W21, 0x1
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+32], X30
+	003 Move [X31+48], X20
+	004 Move [X31+56], X19
+	005 Compare X0, 0
+	006 JumpIfEqual {26}
+	007 Move X19, X0
+	008 Move X0, [X0+16]
+	009 NotImplemented "Instruction MOVI not yet implemented."
+	010 Add X1, X31, 0
+	011 Move [X31], V0
+	012 Move [X31+8], V0
+	013 Call 0x1C851C8
+	014 Move X0, [X19+16]
+	015 Move X20, [X31+8]
+	016 Call 0x1C4D018
+	017 Move X2, X0
+	018 Move X0, X20
+	019 Move X1, X19
+	020 Call RuntimeParameterInfo.New, X0, X1, X2
+	021 Move X20, [X31+48]
+	022 Move X19, [X31+56]
+	023 Move X30, [X31+32]
+	024 Add X31, X31, 64
+	025 Return X0
+	026 Call 0x1C17F20
+

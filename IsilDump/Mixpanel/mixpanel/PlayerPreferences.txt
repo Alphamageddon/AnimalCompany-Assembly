@@ -1,0 +1,138 @@
+Type: mixpanel.PlayerPreferences
+
+Method: System.Void DeleteKey(System.String key)
+
+Disassembly:
+	0x031DA5B4 LDR X0, [X0 + 0x368]
+	0x031DA5B8 BL 0x1C16CF4
+	0x031DA5BC ADRP X0, 0xF24000
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X31
+	003 Call PlayerPrefs.DeleteKey, X0
+	004 Return 
+
+Method: System.Single GetFloat(System.String key)
+
+Disassembly:
+	0x031DA5C0 LDR X0, [X0 + 0x6D8]
+	0x031DA5C4 BL 0x1C16CF4
+	0x031DA5C8 ADRP X0, 0xF19000
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X31
+	003 Call PlayerPrefs.GetFloat, X0
+	004 Return V0
+
+Method: System.Int32 GetInt(System.String key)
+
+Disassembly:
+	0x031DA5CC LDR X0, [X0 + 0x830]
+	0x031DA5D0 BL 0x1C16CF4
+	0x031DA5D4 ADRP X0, 0xF19000
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X31
+	003 Call PlayerPrefs.GetInt, X0
+	004 Return X0
+
+Method: System.Int32 GetInt(System.String key, System.Int32 defaultValue)
+
+Disassembly:
+	0x031DA5D8 LDR X0, [X0 + 0x838]
+	0x031DA5DC BL 0x1C16CF4
+	0x031DA5E0 ADRP X0, 0xF23000
+	0x031DA5E4 LDR X0, [X0 + 0xFF8]
+
+ISIL:
+	001 Move X0, X1
+	002 Move W1, W2
+	003 Move X2, X31
+	004 Call PlayerPrefs.GetInt, X0, X1
+	005 Return X0
+
+Method: System.String GetString(System.String key)
+
+Disassembly:
+	0x031DA5E8 BL 0x1C16CF4
+	0x031DA5EC ADRP X0, 0xF24000
+	0x031DA5F0 LDR X0, [X0]
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X31
+	003 Call PlayerPrefs.GetString, X0
+	004 Return X0
+
+Method: System.String GetString(System.String key, System.String defaultValue)
+
+Disassembly:
+	0x031DA5F4 BL 0x1C16CF4
+	0x031DA5F8 ADRP X0, 0xF46000
+	0x031DA5FC LDR X0, [X0 + 0x370]
+	0x031DA600 BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X2
+	003 Move X2, X31
+	004 Call PlayerPrefs.GetString, X0, X1
+	005 Return X0
+
+Method: System.Boolean HasKey(System.String key)
+
+Disassembly:
+	0x031DA604 ADRP X0, 0xF24000
+	0x031DA608 LDR X0, [X0 + 0xCD8]
+	0x031DA60C BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X31
+	003 Call PlayerPrefs.HasKey, X0
+	004 Return X0
+
+Method: System.Void SetInt(System.String key, System.Int32 value)
+
+Disassembly:
+	0x031DA610 ADRP X0, 0xF46000
+	0x031DA614 LDR X0, [X0 + 0x378]
+	0x031DA618 BL 0x1C16CF4
+	0x031DA61C ADRP X0, 0xF19000
+
+ISIL:
+	001 Move X0, X1
+	002 Move W1, W2
+	003 Move X2, X31
+	004 Call PlayerPrefs.SetInt, X0, X1
+	005 Return 
+
+Method: System.Void SetString(System.String key, System.String value)
+
+Disassembly:
+	0x031DA620 LDR X0, [X0 + 0xEC8]
+	0x031DA624 BL 0x1C16CF4
+	0x031DA628 ADRP X0, 0xF19000
+	0x031DA62C LDR X0, [X0 + 0x848]
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X2
+	003 Move X2, X31
+	004 Call PlayerPrefs.SetString, X0, X1
+	005 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x031DA630 BL 0x1C16CF4
+	0x031DA634 MOVZ W8, 0x1
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

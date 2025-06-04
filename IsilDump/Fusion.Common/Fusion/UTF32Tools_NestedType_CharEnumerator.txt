@@ -1,0 +1,171 @@
+Type: Fusion.UTF32Tools/CharEnumerator
+
+Method: System.Void .ctor(System.UInt32* utf32, System.Int32 length)
+
+Disassembly:
+	0x01E3A484 MOV X19, X0
+	0x01E3A488 LDR X9, [X8 + 0x18]
+	0x01E3A48C LDR X0, [X8 + 0x40]
+	0x01E3A490 LDR X1, [X8 + 0x28]
+	0x01E3A494 BLR X9
+
+ISIL:
+	001 NotImplemented "Instruction STRH not yet implemented."
+	002 NotImplemented "Instruction STRH not yet implemented."
+	003 Move [X0+16], X1
+	004 Move [X0], W31
+	005 Move [X0+4], W2
+	006 Return 
+
+Method: System.Char get_Current()
+
+Disassembly:
+	0x01E3A498 LDR X0, [X19 + 0x18]
+	0x01E3A49C LDP X30, X19, [X31], #0x10
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 Return X0
+
+Method: System.Void set_Current(System.Char value)
+
+Disassembly:
+	0x01E3A4A0 RET
+	0x01E3A4A4 BL 0x1C16F20
+
+ISIL:
+	001 NotImplemented "Instruction STRH not yet implemented."
+	002 Return 
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x01E3A4A8 SUB X31, X31, 0x80
+	0x01E3A4AC STP X30, X21, [X31 + 0x60]
+	0x01E3A4B0 STP X20, X19, [X31 + 0x70]
+	0x01E3A4B4 ADRP X21, 0x259E000
+	0x01E3A4B8 ADRP X20, 0x22BC000
+	0x01E3A4BC LDRB W8, [X21 + 0xF08]
+	0x01E3A4C0 LDR X20, [X20 + 0x280]
+	0x01E3A4C4 MOV X19, X0
+	0x01E3A4C8 TBNZ X8, 0x0, 0x1E3A4EC
+	0x01E3A4CC ADRP X0, 0x22C1000
+	0x01E3A4D0 LDR X0, [X0 + 0x878]
+	0x01E3A4D4 BL 0x1C16CF4
+	0x01E3A4D8 ADRP X0, 0x22BC000
+	0x01E3A4DC LDR X0, [X0 + 0x280]
+	0x01E3A4E0 BL 0x1C16CF4
+	0x01E3A4E4 MOVZ W8, 0x1
+	0x01E3A4E8 STRB W8, [X21 + 0xF08]
+	0x01E3A4EC LDR X0, [X20]
+	0x01E3A4F0 MOVI V0.2D, 0x0
+	0x01E3A4F4 STR X31, [X31 + 0x50]
+	0x01E3A4F8 STP V0, V0, [X31 + 0x30]
+	0x01E3A4FC STR V0, [X31 + 0x2]
+	0x01E3A500 ADRP X20, 0x22C1000
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+16], X30
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x259F000
+	007 Move X20, 0x22BC000
+	008 Move W8, [X21+3834]
+	009 Move X20, [X20+368]
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0x22BC000
+	016 Move X0, [X0+368]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X21+3834], W8
+	020 NotImplemented "Instruction LDRH not yet implemented."
+	021 Move X0, [X20]
+	022 Add X1, X31, 12
+	023 NotImplemented "Instruction STRH not yet implemented."
+	024 Call 0x1C17E04
+	025 Move X20, [X31+32]
+	026 Move X19, [X31+40]
+	027 Move X30, [X31+16]
+	028 Move X21, [X31+24]
+	029 Add X31, X31, 48
+	030 Return X0
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x01E3A504 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x01E3A508 LDR X20, [X20 + 0x878]
+	0x01E3A50C CBNZ W8, 0x1E3A514
+	0x01E3A510 BL 0x1C16DFC
+	0x01E3A514 ADD X8, X31, 0x8
+	0x01E3A518 MOV X0, X31
+	0x01E3A51C BL 0x32C4770
+	0x01E3A520 LDUR V0, [X31 + 0x8]
+	0x01E3A524 LDR X9, [X31 + 0x18]
+	0x01E3A528 LDR X2, [X20]
+	0x01E3A52C ADD X8, X31, 0x20
+	0x01E3A530 ORR X20, X8, 0xF
+	0x01E3A534 MOVN W10, 0x0
+	0x01E3A538 ADD X1, X31, 0x20
+	0x01E3A53C MOV X0, X20
+	0x01E3A540 STUR V0, [X31 + 0x28]
+	0x01E3A544 STP X9, X19, [X31 + 0x38]
+	0x01E3A548 STR W10, [X31 + 0x20]
+	0x01E3A54C BL 0x2197BB8
+	0x01E3A550 MOV X0, X20
+	0x01E3A554 MOV X1, X31
+	0x01E3A558 BL 0x32C47F8
+	0x01E3A55C LDP X20, X19, [X31 + 0x70]
+	0x01E3A560 LDP X30, X21, [X31 + 0x60]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 NotImplemented "Instruction LDRH not yet implemented."
+	005 Compare W0, 0
+	006 JumpIfEqual {8}
+	007 Move W8, W31
+	008 Move W8, [X19]
+	009 Move W9, [X19+4]
+	010 Move X8, W8
+	011 NotImplemented "Instruction CMP not yet implemented."
+	012 Move X9, [X19+16]
+	013 Add W10, W8, 1
+	014 Move [X19], W10
+	015 Move W0, [X9]
+	016 Call UTF32Tools.ToUTF16, X0
+	017 Move X8, X0
+	018 ShiftRight X8, 16
+	019 And X8, X8, 0x7FFFFFFF
+	020 NotImplemented "Instruction STRH not yet implemented."
+	021 Move W0, 1
+	022 NotImplemented "Instruction STRH not yet implemented."
+	023 Move W0, W31
+	024 Move X30, [X31+16]
+	025 Move X19, [X31+24]
+	026 Return X0
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x01E3A564 ADD X31, X31, 0x80
+	0x01E3A568 RET
+
+ISIL:
+	001 Move [X0], W31
+	002 Return 
+

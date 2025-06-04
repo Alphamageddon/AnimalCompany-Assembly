@@ -1,0 +1,42 @@
+Type: UnityEngine.InputSystem.InputBindingCompositeContext/PartBinding
+
+Method: System.Int32 get_part()
+
+Disassembly:
+	0x03754940 B 0x37550BC
+	0x03754944 LDR W9, [X8 + 0x18]
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Void set_part(System.Int32 value)
+
+Disassembly:
+	0x03754948 LDR W10, [X31 + 0x98]
+	0x0375494C CMP W10, W9
+
+ISIL:
+	001 Move [X0], W1
+	002 Return 
+
+Method: UnityEngine.InputSystem.InputControl get_control()
+
+Disassembly:
+	0x03754950 B.CS 0x37549C0
+	0x03754954 LDR W9, [X31 + 0x98]
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Return X0
+
+Method: System.Void set_control(UnityEngine.InputSystem.InputControl value)
+
+Disassembly:
+	0x03754958 MOV X20, X0
+	0x0375495C ADD X8, X8, W9, 0x3, SXTW
+
+ISIL:
+	001 Move [X0+8], X1
+	002 Return 
+

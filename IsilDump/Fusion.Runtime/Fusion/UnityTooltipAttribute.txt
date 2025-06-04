@@ -1,0 +1,33 @@
+Type: Fusion.UnityTooltipAttribute
+
+Method: System.Int32 get_order()
+
+Disassembly:
+	0x01E68930 BL 0x1C16CF4
+	0x01E68934 MOVZ W8, 0x1
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_order(System.Int32 value)
+
+Disassembly:
+	0x01E68938 STRB W8, [X20 + 0x108]
+	0x01E6893C ADRP X20, 0x228E000
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+
+Method: System.Void .ctor(System.String tooltip)
+
+Disassembly:
+	0x01E68940 LDR X8, [X19 + 0x20]
+	0x01E68944 LDR X20, [X20 + 0xE40]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Attribute..ctor, X0
+	003 Return 
+

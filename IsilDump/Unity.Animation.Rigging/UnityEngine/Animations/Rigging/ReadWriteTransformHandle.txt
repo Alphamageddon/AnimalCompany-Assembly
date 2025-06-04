@@ -1,0 +1,842 @@
+Type: UnityEngine.Animations.Rigging.ReadWriteTransformHandle
+
+Method: UnityEngine.Vector3 GetLocalPosition(UnityEngine.Animations.AnimationStream stream)
+
+Disassembly:
+	0x036E4454 STRB W8, [X19 + 0x793]
+	0x036E4458 ADRP X8, 0xA10000
+	0x036E445C LDR X8, [X8 + 0x5A8]
+	0x036E4460 LDR X8, [X8]
+	0x036E4464 LDR X8, [X8 + 0xB8]
+	0x036E4468 LDP S0, S1, [X8]
+	0x036E446C LDP S2, S3, [X8 + 0x8]
+	0x036E4470 B 0x36E458C
+	0x036E4474 ADRP X20, 0xCF4000
+	0x036E4478 LDRB W8, [X20 + 0xB70]
+	0x036E447C CBNZ W8, 0x36E4494
+	0x036E4480 ADRP X0, 0xA0F000
+	0x036E4484 LDR X0, [X0 + 0x5A0]
+	0x036E4488 BL 0x1C16CF4
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call TransformStreamHandle.GetLocalPosition, X0, X1
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return X0
+
+Method: UnityEngine.Quaternion GetLocalRotation(UnityEngine.Animations.AnimationStream stream)
+
+Disassembly:
+	0x036E45A4 LDP D15, D14, [X31], #0x70
+	0x036E45A8 RET
+	0x036E45AC LDP X8, X1, [X0 + 0x88]
+	0x036E45B0 MOV X0, X8
+	0x036E45B4 RET
+	0x036E45B8 STP X1, X2, [X0 + 0x88]
+	0x036E45BC RET
+	0x036E45C0 RET
+	0x036E45C4 STP D15, D14, [X31 - 0xA0]!
+	0x036E45C8 STP D13, D12, [X31 + 0x10]
+	0x036E45CC STP D11, D10, [X31 + 0x20]
+	0x036E45D0 STP D9, D8, [X31 + 0x30]
+	0x036E45D4 STP X29, X30, [X31 + 0x40]
+	0x036E45D8 STP X28, X27, [X31 + 0x50]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call TransformStreamHandle.GetLocalRotation, X0, X1
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return X0
+
+Method: UnityEngine.Vector3 GetLocalScale(UnityEngine.Animations.AnimationStream stream)
+
+Disassembly:
+	0x036EBCD0 LDR X1, [X19]
+	0x036EBCD4 LDR W2, [X19 + 0x8]
+	0x036EBCD8 BL 0x36E3614
+	0x036EBCDC LDR X8, [X20 + 0x30]
+	0x036EBCE0 LDP V1, V0, [X20 + 0x10]
+	0x036EBCE4 LDR V2, [X20]
+	0x036EBCE8 ADD X0, X31, 0x60
+	0x036EBCEC STR X8, [X31 + 0x90]
+	0x036EBCF0 STP V1, V0, [X31 + 0x70]
+	0x036EBCF4 STR V2, [X31 + 0x6]
+	0x036EBCF8 LDUR X1, [X19 + 0xC]
+	0x036EBCFC LDR W2, [X19 + 0x14]
+	0x036EBD00 BL 0x36E3614
+	0x036EBD04 LDR X8, [X20 + 0x30]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call TransformStreamHandle.GetLocalScale, X0, X1
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return X0
+
+Method: System.Void GetLocalTRS(UnityEngine.Animations.AnimationStream stream, out UnityEngine.Vector3 position, out UnityEngine.Quaternion rotation, out UnityEngine.Vector3 scale)
+
+Disassembly:
+	0x036EB3F0 LDR X8, [X19 + 0x30]
+	0x036EB3F4 LDP V1, V0, [X19 + 0x10]
+	0x036EB3F8 LDR V2, [X19]
+	0x036EB3FC STR X8, [X31 + 0x190]
+	0x036EB400 STP V1, V0, [X31 + 0x170]
+	0x036EB404 STR V2, [X31 + 0x16]
+	0x036EB408 BL 0x3BF871C
+	0x036EB40C LDR V6, [X31 + 0x1E8]
+	0x036EB410 MOV V4.16B, V10.16B
+	0x036EB414 MOV V5.16B, V15.16B
+	0x036EB418 MOV V7.16B, V8.16B
+	0x036EB41C MOV X0, X31
+	0x036EB420 STR S9, [X31]
+	0x036EB424 STP S15, S10, [X31 + 0x18]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X5, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call TransformStreamHandle.GetLocalTRS, X0, X1, X2, X3, X4
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return 
+
+Method: System.Void SetLocalPosition(UnityEngine.Animations.AnimationStream stream, UnityEngine.Vector3 position)
+
+Disassembly:
+	0x036E448C MOVZ W8, 0x1
+	0x036E4490 STRB W8, [X20 + 0xB70]
+	0x036E4494 LDR X8, [X19]
+	0x036E4498 LDP S9, S8, [X31 + 0x48]
+	0x036E449C LDR X8, [X8 + 0xB8]
+	0x036E44A0 LDP S2, S0, [X8 + 0x40]
+	0x036E44A4 LDR V3, [X8 + 0x3C]
+	0x036E44A8 FMUL S1, S8, S0
+	0x036E44AC FMUL S4, S9, S2
+	0x036E44B0 FSUB S1, S1, S4
+	0x036E44B4 FMUL S4, S9, S3
+	0x036E44B8 FMUL S0, S10, S0
+	0x036E44BC FMUL S5, S10, S2
+	0x036E44C0 FMUL S3, S8, S3
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V4, [X1+16]
+	005 Move V3, [X1+32]
+	006 Move V5, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V4
+	011 Move [X31+24], V3
+	012 Move [X31], V5
+	013 Call TransformStreamHandle.SetLocalPosition, X0, X1, X2
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return 
+
+Method: System.Void SetLocalRotation(UnityEngine.Animations.AnimationStream stream, UnityEngine.Quaternion rotation)
+
+Disassembly:
+	0x036E45DC STP X26, X25, [X31 + 0x60]
+	0x036E45E0 STP X24, X23, [X31 + 0x70]
+	0x036E45E4 STP X22, X21, [X31 + 0x80]
+	0x036E45E8 STP X20, X19, [X31 + 0x90]
+	0x036E45EC SUB X31, X31, 0x220
+	0x036E45F0 ADRP X21, 0xCFC000
+	0x036E45F4 LDRB W8, [X21 + 0xB1D]
+	0x036E45F8 MOV X20, X1
+	0x036E45FC MOV X19, X0
+	0x036E4600 TBNZ X8, 0x0, 0x36E4618
+	0x036E4604 ADRP X0, 0xA38000
+	0x036E4608 LDR X0, [X0 + 0xE40]
+	0x036E460C BL 0x1C16CF4
+	0x036E4610 MOVZ W8, 0x1
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V5, [X1+16]
+	005 Move V4, [X1+32]
+	006 Move V6, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V5
+	011 Move [X31+24], V4
+	012 Move [X31], V6
+	013 Call TransformStreamHandle.SetLocalRotation, X0, X1, X2
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return 
+
+Method: System.Void SetLocalScale(UnityEngine.Animations.AnimationStream stream, UnityEngine.Vector3 scale)
+
+Disassembly:
+	0x036EBD08 LDP V1, V0, [X20 + 0x10]
+	0x036EBD0C LDR V2, [X20]
+	0x036EBD10 ADD X0, X31, 0x20
+	0x036EBD14 STR X8, [X31 + 0x50]
+	0x036EBD18 STP V1, V0, [X31 + 0x30]
+	0x036EBD1C STR V2, [X31 + 0x2]
+	0x036EBD20 LDR X1, [X19 + 0x18]
+	0x036EBD24 LDR W2, [X19 + 0x20]
+	0x036EBD28 BL 0x36E3614
+	0x036EBD2C ADD X31, X31, 0x210
+	0x036EBD30 LDP X20, X19, [X31 + 0x60]
+	0x036EBD34 LDP X22, X21, [X31 + 0x50]
+	0x036EBD38 LDP X24, X23, [X31 + 0x40]
+	0x036EBD3C LDP X26, X25, [X31 + 0x30]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V4, [X1+16]
+	005 Move V3, [X1+32]
+	006 Move V5, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V4
+	011 Move [X31+24], V3
+	012 Move [X31], V5
+	013 Call TransformStreamHandle.SetLocalScale, X0, X1, X2
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return 
+
+Method: System.Void SetLocalTRS(UnityEngine.Animations.AnimationStream stream, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation, UnityEngine.Vector3 scale, System.Boolean useMask = False)
+
+Disassembly:
+	0x036EB428 MOV V10.16B, V8.16B
+	0x036EB42C BL 0x3C2A4A0
+	0x036EB430 LDP V4, V5, [X31 + 0xF0]
+	0x036EB434 LDR V6, [X31 + 0x11]
+	0x036EB438 LDR X8, [X31 + 0x120]
+	0x036EB43C ADD X0, X31, 0x140
+	0x036EB440 ADD X1, X31, 0x160
+	0x036EB444 MOV X2, X31
+	0x036EB448 STP V4, V5, [X31 + 0x160]
+	0x036EB44C STR V6, [X31 + 0x18]
+	0x036EB450 STR X8, [X31 + 0x190]
+	0x036EB454 BL 0x3BF87A4
+	0x036EB458 LDR W8, [X20 + 0x20]
+	0x036EB45C SUB W8, W8, 0x1
+	0x036EB460 CMP W8, 0x1
+	0x036EB464 B.LE 0x36EB610
+	0x036EB468 MOV X21, X31
+	0x036EB46C MOVZ W22, 0x1
+	0x036EB470 MOVZ W23, 0xC
+
+ISIL:
+	001 Subtract X31, X31, 96
+	002 Move [X31+80], X30
+	003 Move V7, [X1]
+	004 Move V16, [X1+16]
+	005 Move X8, [X1+48]
+	006 Move V17, [X1+2]
+	007 Move X9, [X31+96]
+	008 Move V18, [X31+104]
+	009 And W2, W2, 1
+	010 Add X1, X31, 16
+	011 Move X3, X31
+	012 Move [X31+64], X8
+	013 Move [X31+32], V16
+	014 Move [X31+40], V17
+	015 Move [X31+1], V7
+	016 Move [X31+8], S18
+	017 Move [X31], X9
+	018 Call TransformStreamHandle.SetLocalTRS, X0, X1, X2, X3, X4, X5
+	019 Move X30, [X31+80]
+	020 Add X31, X31, 96
+	021 Return 
+
+Method: UnityEngine.Vector3 GetPosition(UnityEngine.Animations.AnimationStream stream)
+
+Disassembly:
+	0x036E43E4 LDR X0, [X22]
+	0x036E43E8 FSUB S10, S8, S9
+	0x036E43EC FSUB S9, S14, S11
+	0x036E43F0 FSUB S8, S12, S13
+	0x036E43F4 LDR W8, [X0 + 0xE0]
+	0x036E43F8 CBNZ W8, 0x36E4408
+	0x036E43FC MOV V11.16B, V0.16B
+	0x036E4400 BL 0x1C16DFC
+	0x036E4404 MOV V0.16B, V11.16B
+	0x036E4408 FMUL S2, S10, S10
+	0x036E440C FMUL S1, S9, S9
+	0x036E4410 FADD S2, S2, S1
+	0x036E4414 FMUL S1, S8, S8
+	0x036E4418 FADD S1, S1, S2
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call TransformStreamHandle.GetPosition, X0, X1
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return X0
+
+Method: UnityEngine.Quaternion GetRotation(UnityEngine.Animations.AnimationStream stream)
+
+Disassembly:
+	0x036E4534 FSUB S3, S6, S7
+	0x036E4538 MOVZ W8, 0x43340000
+	0x036E453C FMOV S0, W8
+	0x036E4540 B 0x36E4584
+	0x036E4544 LDRB W8, [X20 + 0x783]
+	0x036E4548 CBNZ W8, 0x36E4568
+	0x036E454C ADRP X0, 0xA0F000
+	0x036E4550 LDR X0, [X0 + 0x5A0]
+	0x036E4554 MOV V8.16B, V0.16B
+	0x036E4558 BL 0x1C16CF4
+	0x036E455C MOV V0.16B, V8.16B
+	0x036E4560 MOVZ W8, 0x1
+	0x036E4564 STRB W8, [X20 + 0x783]
+	0x036E4568 LDR X8, [X19]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call TransformStreamHandle.GetRotation, X0, X1
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return X0
+
+Method: System.Void GetGlobalTR(UnityEngine.Animations.AnimationStream stream, out UnityEngine.Vector3 position, out UnityEngine.Quaternion rotation)
+
+Disassembly:
+	0x036E5DA8 BL 0x3BFB030
+	0x036E5DAC MOV X26, X0
+	0x036E5DB0 MOV X27, X1
+	0x036E5DB4 MOV X0, X22
+	0x036E5DB8 MOV X1, X31
+	0x036E5DBC BL 0x3C32E90
+	0x036E5DC0 LDR X1, [X28]
+	0x036E5DC4 MOV X22, X0
+	0x036E5DC8 MOV X0, X21
+	0x036E5DCC MOV X2, X31
+	0x036E5DD0 BL 0x321B938
+	0x036E5DD4 MOV X3, X0
+	0x036E5DD8 MOV X0, X20
+	0x036E5DDC MOV X1, X22
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X4, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call TransformStreamHandle.GetGlobalTR, X0, X1, X2, X3
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return 
+
+Method: System.Void SetPosition(UnityEngine.Animations.AnimationStream stream, UnityEngine.Vector3 position)
+
+Disassembly:
+	0x036E441C FSQRT S3, S1
+	0x036E4420 FCMP S3, S15
+	0x036E4424 B.LE 0x36E4544
+	0x036E4428 FDIV S1, S10, S3
+	0x036E442C FDIV S2, S9, S3
+	0x036E4430 FDIV S3, S8, S3
+	0x036E4434 B 0x36E4578
+	0x036E4438 ADRP X19, 0xCF4000
+	0x036E443C LDRB W8, [X19 + 0x793]
+	0x036E4440 CBNZ W8, 0x36E4458
+	0x036E4444 ADRP X0, 0xA10000
+	0x036E4448 LDR X0, [X0 + 0x5A8]
+	0x036E444C BL 0x1C16CF4
+	0x036E4450 MOVZ W8, 0x1
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V4, [X1+16]
+	005 Move V3, [X1+32]
+	006 Move V5, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V4
+	011 Move [X31+24], V3
+	012 Move [X31], V5
+	013 Call TransformStreamHandle.SetPosition, X0, X1, X2
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return 
+
+Method: System.Void SetRotation(UnityEngine.Animations.AnimationStream stream, UnityEngine.Quaternion rotation)
+
+Disassembly:
+	0x036E456C LDR X8, [X8 + 0xB8]
+	0x036E4570 LDP S1, S2, [X8]
+	0x036E4574 LDR V3, [X8 + 0x8]
+	0x036E4578 ADRP X8, 0xFFFFFFFFFD406000
+	0x036E457C LDR V4, [X8 + 0x448]
+	0x036E4580 FMUL S0, S0, S4
+	0x036E4584 MOV X0, X31
+	0x036E4588 BL 0x3C2A758
+	0x036E458C LDP X20, X19, [X31 + 0x60]
+	0x036E4590 LDP X22, X21, [X31 + 0x50]
+	0x036E4594 LDR X30, [X31 + 0x40]
+	0x036E4598 LDP D9, D8, [X31 + 0x30]
+	0x036E459C LDP D11, D10, [X31 + 0x20]
+	0x036E45A0 LDP D13, D12, [X31 + 0x10]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V5, [X1+16]
+	005 Move V4, [X1+32]
+	006 Move V6, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V5
+	011 Move [X31+24], V4
+	012 Move [X31], V6
+	013 Call TransformStreamHandle.SetRotation, X0, X1, X2
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return 
+
+Method: System.Void SetGlobalTR(UnityEngine.Animations.AnimationStream stream, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation, System.Boolean useMask = False)
+
+Disassembly:
+	0x036E5F88 STR V2, [X31 + 0x4]
+	0x036E5F8C BL 0x3BF9B18
+	0x036E5F90 LDP V1, V0, [X19 + 0x10]
+	0x036E5F94 LDR X8, [X19 + 0x30]
+	0x036E5F98 LDR V2, [X19]
+	0x036E5F9C MOV W22, W0
+	0x036E5FA0 ADD X0, X20, 0x20
+	0x036E5FA4 ADD X1, X31, 0x0
+	0x036E5FA8 MOV X2, X31
+	0x036E5FAC STR X8, [X31 + 0x30]
+	0x036E5FB0 STP V1, V0, [X31 + 0x10]
+	0x036E5FB4 STR V2, [X31]
+	0x036E5FB8 BL 0x3BF9B18
+	0x036E5FBC ANDS W31, W0, 0x1
+	0x036E5FC0 MOVZ W8, 0x10000
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V16, [X1+16]
+	005 Move V7, [X1+32]
+	006 Move V17, [X1]
+	007 And W2, W2, 1
+	008 Add X1, X31, 0
+	009 Move X3, X31
+	010 Move [X31+48], X8
+	011 Move [X31+16], V16
+	012 Move [X31+24], V7
+	013 Move [X31], V17
+	014 Call TransformStreamHandle.SetGlobalTR, X0, X1, X2, X3, X4
+	015 Move X30, [X31+64]
+	016 Add X31, X31, 80
+	017 Return 
+
+Method: System.Boolean IsResolved(UnityEngine.Animations.AnimationStream stream)
+
+Disassembly:
+	0x036EBD40 LDP X29, X30, [X31 + 0x20]
+	0x036EBD44 LDP D9, D8, [X31 + 0x10]
+	0x036EBD48 LDR V10, [X31], #0x70
+	0x036EBD4C RET
+	0x036EBD50 STP D15, D14, [X31 - 0x90]!
+	0x036EBD54 STP D13, D12, [X31 + 0x10]
+	0x036EBD58 STP D11, D10, [X31 + 0x20]
+	0x036EBD5C STP D9, D8, [X31 + 0x30]
+	0x036EBD60 STR X29, [X31 + 0x40]
+	0x036EBD64 STP X30, X25, [X31 + 0x50]
+	0x036EBD68 STP X24, X23, [X31 + 0x60]
+	0x036EBD6C STP X22, X21, [X31 + 0x70]
+	0x036EBD70 STP X20, X19, [X31 + 0x80]
+	0x036EBD74 SUB X31, X31, 0x300
+	0x036EBD78 ADRP X24, 0xCF5000
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call TransformStreamHandle.IsResolved, X0, X1
+	014 Move X30, [X31+64]
+	015 And W0, W0, 1
+	016 Add X31, X31, 80
+	017 Return X0
+
+Method: System.Boolean IsValid(UnityEngine.Animations.AnimationStream stream)
+
+Disassembly:
+	0x036EBD7C LDR X23, [X31 + 0x398]
+	0x036EBD80 LDR X20, [X31 + 0x390]
+	0x036EBD84 LDRB W8, [X24 + 0xBD9]
+	0x036EBD88 MOV V14.16B, V2.16B
+	0x036EBD8C MOV V11.16B, V0.16B
+	0x036EBD90 MOV X21, X7
+	0x036EBD94 MOV X19, X0
+	0x036EBD98 ADD X22, X31, 0x130
+	0x036EBD9C STR S1, [X31 + 0x50]
+	0x036EBDA0 STR X1, [X31 + 0x2B0]
+	0x036EBDA4 STR W2, [X31 + 0x2B8]
+	0x036EBDA8 STR X3, [X31 + 0x2A0]
+	0x036EBDAC STR W4, [X31 + 0x2A8]
+	0x036EBDB0 STR X5, [X31 + 0x290]
+	0x036EBDB4 STR W6, [X31 + 0x298]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call TransformStreamHandle.IsValid, X0, X1
+	014 Move X30, [X31+64]
+	015 And W0, W0, 1
+	016 Add X31, X31, 80
+	017 Return X0
+
+Method: System.Void Resolve(UnityEngine.Animations.AnimationStream stream)
+
+Disassembly:
+	0x036EBDB8 TBNZ X8, 0x0, 0x36EBDD0
+	0x036EBDBC ADRP X0, 0xA34000
+	0x036EBDC0 LDR X0, [X0 + 0x230]
+	0x036EBDC4 BL 0x1C16CF4
+	0x036EBDC8 MOVZ W8, 0x1
+	0x036EBDCC STRB W8, [X24 + 0xBD9]
+	0x036EBDD0 STR W31, [X31 + 0x288]
+	0x036EBDD4 STR X31, [X31 + 0x280]
+	0x036EBDD8 STR X31, [X31 + 0x278]
+	0x036EBDDC STR X31, [X31 + 0x270]
+	0x036EBDE0 LDR X8, [X19 + 0x30]
+	0x036EBDE4 LDP V1, V0, [X19 + 0x10]
+	0x036EBDE8 LDR V2, [X19]
+	0x036EBDEC ADD X0, X31, 0x2B0
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 Move X8, [X1+48]
+	004 Move V1, [X1+16]
+	005 Move V0, [X1+32]
+	006 Move V2, [X1]
+	007 Add X1, X31, 0
+	008 Move X2, X31
+	009 Move [X31+48], X8
+	010 Move [X31+16], V1
+	011 Move [X31+24], V0
+	012 Move [X31], V2
+	013 Call TransformStreamHandle.Resolve, X0, X1
+	014 Move X30, [X31+64]
+	015 Add X31, X31, 80
+	016 Return 
+
+Method: UnityEngine.Animations.Rigging.ReadWriteTransformHandle Bind(UnityEngine.Animator animator, UnityEngine.Transform transform)
+
+Disassembly:
+	0x036EBDF0 ADD X1, X31, 0x2C0
+	0x036EBDF4 MOV X2, X31
+	0x036EBDF8 STR X8, [X31 + 0x2F0]
+	0x036EBDFC STP V1, V0, [X22 + 0x1A0]
+	0x036EBE00 STR V2, [X22 + 0x19]
+	0x036EBE04 BL 0x3BF85E4
+	0x036EBE08 STR D0, [X31 + 0x90]
+	0x036EBE0C STR D1, [X31 + 0x80]
+	0x036EBE10 STR S2, [X31 + 0x34C]
+	0x036EBE14 LDR X8, [X19 + 0x30]
+	0x036EBE18 LDP V1, V0, [X19 + 0x10]
+	0x036EBE1C LDR V2, [X19]
+	0x036EBE20 ADD X0, X31, 0x2A0
+	0x036EBE24 ADD X1, X31, 0x2C0
+	0x036EBE28 MOV X2, X31
+	0x036EBE2C STR X8, [X31 + 0x2F0]
+	0x036EBE30 STP V1, V0, [X22 + 0x1A0]
+	0x036EBE34 STR V2, [X22 + 0x19]
+	0x036EBE38 BL 0x3BF85E4
+	0x036EBE3C MOV V8.16B, V0.16B
+	0x036EBE40 MOV V9.16B, V1.16B
+	0x036EBE44 MOV V15.16B, V2.16B
+	0x036EBE48 LDR X8, [X19 + 0x30]
+	0x036EBE4C LDP V1, V0, [X19 + 0x10]
+	0x036EBE50 LDR V2, [X19]
+	0x036EBE54 ADD X0, X31, 0x290
+	0x036EBE58 ADD X1, X31, 0x2C0
+	0x036EBE5C MOV X2, X31
+	0x036EBE60 STR X8, [X31 + 0x2F0]
+	0x036EBE64 STP V1, V0, [X22 + 0x1A0]
+	0x036EBE68 STR V2, [X22 + 0x19]
+	0x036EBE6C BL 0x3BF85E4
+	0x036EBE70 STR D0, [X31 + 0x70]
+	0x036EBE74 STR D1, [X31 + 0x60]
+	0x036EBE78 STR S2, [X31 + 0x38]
+	0x036EBE7C LDR X8, [X19 + 0x30]
+	0x036EBE80 LDP V1, V0, [X19 + 0x10]
+	0x036EBE84 LDR V2, [X19]
+	0x036EBE88 ADD X1, X31, 0x230
+	0x036EBE8C ADD X2, X31, 0x280
+	0x036EBE90 ADD X3, X31, 0x270
+	0x036EBE94 MOV X0, X21
+	0x036EBE98 STR X8, [X31 + 0x260]
+	0x036EBE9C STP V1, V0, [X22 + 0x110]
+	0x036EBEA0 STR V2, [X22 + 0x10]
+	0x036EBEA4 BL 0x36E4DE0
+	0x036EBEA8 FMOV S0, 1
+	0x036EBEAC LDP V2, V3, [X19]
+	0x036EBEB0 LDR X8, [X19 + 0x30]
+	0x036EBEB4 LDR V4, [X19 + 0x2]
+	0x036EBEB8 LDR V12, [X31 + 0x280]
+	0x036EBEBC LDR V13, [X31 + 0x288]
+	0x036EBEC0 LDR V10, [X23]
+	0x036EBEC4 FCMP S11, 0x0
+	0x036EBEC8 FMIN S0, S11, S0
+	0x036EBECC LDR V11, [X23 + 0x8]
+	0x036EBED0 FMOV S1, W31
+	0x036EBED4 FCSEL S0, S0, S1, PL
+	0x036EBED8 ADD X0, X31, 0x290
+	0x036EBEDC ADD X1, X31, 0x2C0
+	0x036EBEE0 MOV X2, X31
+	0x036EBEE4 STR V0, [X31 + 0x2]
+	0x036EBEE8 STR X8, [X31 + 0x2F0]
+	0x036EBEEC STP V3, V4, [X22 + 0x1A0]
+	0x036EBEF0 STR V2, [X22 + 0x19]
+	0x036EBEF4 BL 0x3BF871C
+	0x036EBEF8 LDR V4, [X31 + 0x278]
+	0x036EBEFC LDR V5, [X31 + 0x27C]
+	0x036EBF00 LDP S6, S19, [X23 + 0xC]
+	0x036EBF04 LDP S7, S16, [X23 + 0x14]
+	0x036EBF08 LDR V17, [X31 + 0x270]
+	0x036EBF0C LDR V18, [X31 + 0x274]
+	0x036EBF10 FMUL S20, S5, S6
+	0x036EBF14 FMUL S23, S4, S19
+	0x036EBF18 FMUL S21, S17, S16
+	0x036EBF1C FMUL S22, S18, S7
+	0x036EBF20 FMUL S24, S5, S19
+	0x036EBF24 FMUL S25, S18, S16
+	0x036EBF28 FMUL S26, S4, S6
+	0x036EBF2C FMUL S27, S17, S7
+	0x036EBF30 FMUL S28, S17, S19
+	0x036EBF34 FMUL S17, S17, S6
+	0x036EBF38 FMUL S6, S18, S6
+	0x036EBF3C FMUL S18, S18, S19
+	0x036EBF40 FMUL S19, S5, S7
+	0x036EBF44 FMUL S5, S5, S16
+	0x036EBF48 FMUL S16, S4, S16
+	0x036EBF4C FADD S16, S19, S16
+	0x036EBF50 FADD S16, S28, S16
+	0x036EBF54 FSUB S6, S16, S6
+	0x036EBF58 LDR V16, [X31 + 0x50]
+	0x036EBF5C FMUL S7, S4, S7
+	0x036EBF60 FADD S4, S20, S21
+	0x036EBF64 FADD S20, S24, S25
+	0x036EBF68 FSUB S5, S5, S17
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0xCF6000
+	007 Move X22, 0xA09000
+	008 Move W8, [X21+2868]
+	009 Move X22, [X22+1432]
+	010 Move X19, X1
+	011 Move X20, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0xA09000
+	017 Move X0, [X0+1432]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+2868], W8
+	021 Move X0, [X22]
+	022 Move W8, [X0+224]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {26}
+	025 Call 0x1C17DFC
+	026 Move X0, X19
+	027 Move X1, X31
+	028 Move X2, X31
+	029 Call Object.op_Equality, X0, X1
+	030 Move TEMP, X0
+	031 And TEMP, TEMP, 1
+	032 Compare TEMP, 1
+	033 JumpIfEqual {61}
+	034 Compare X20, 0
+	035 JumpIfEqual {60}
+	036 Move X0, X20
+	037 Move X1, X31
+	038 Call Component.get_transform, X0
+	039 Compare X19, 0
+	040 JumpIfEqual {60}
+	041 Move X1, X0
+	042 Move X0, X19
+	043 Move X2, X31
+	044 Call Transform.IsChildOf, X0, X1
+	045 Move TEMP, X0
+	046 And TEMP, TEMP, 1
+	047 Compare TEMP, 1
+	048 JumpIfNotEqual {79}
+	049 Move X0, X20
+	050 Move X1, X19
+	051 Move X2, X31
+	052 Call AnimatorJobExtensions.BindStreamTransform, X0, X1
+	053 Move X20, [X31+32]
+	054 Move X19, [X31+40]
+	055 Move X22, [X31+16]
+	056 Move X21, [X31+24]
+	057 And X1, X1, 0
+	058 Move X30, [X31+48]
+	059 Return X0
+	060 Call 0x1C17F20
+	061 Move X0, 0xA0E000
+	062 Move X0, [X0+1320]
+	063 Call 0x1C17D08
+	064 Call 0x1C17F10
+	065 Move X19, X0
+	066 Move X0, 0xA34000
+	067 Move X0, [X0+3400]
+	068 Call 0x1C17D08
+	069 Move X1, X0
+	070 Move X0, X19
+	071 Move X2, X31
+	072 Call ArgumentNullException..ctor, X0, X1
+	073 Move X0, 0xA56000
+	074 Move X0, [X0+1936]
+	075 Call 0x1C17D08
+	076 Move X1, X0
+	077 Move X0, X19
+	078 Call 0x1C17DEC
+	079 Move X0, X19
+	080 Call 0x19913C0
+	081 Move X0, X19
+	082 Move X1, X31
+	083 Call Object.get_name, X0
+	084 Move X19, X0
+	085 Move X0, 0xA56000
+	086 Move X0, [X0+1944]
+	087 Call 0x1C17D08
+	088 Move X20, X0
+	089 Move X0, 0xA56000
+	090 Move X0, [X0+1952]
+	091 Call 0x1C17D08
+	092 Move X2, X0
+	093 Move X0, X20
+	094 Move X1, X19
+	095 Move X3, X31
+	096 Call String.Concat, X0, X1, X2
+	097 Move X19, X0
+	098 Move X0, 0xA09000
+	099 Move X0, [X0+1456]
+	100 Call 0x1C17D08
+	101 Call 0x1C17F10
+	102 Move X1, X19
+	103 Move X2, X31
+	104 Move X20, X0
+	105 Call InvalidOperationException..ctor, X0, X1
+	106 Move X0, 0xA56000
+	107 Move X0, [X0+1936]
+	108 Call 0x1C17D08
+	109 Move X1, X0
+	110 Move X0, X20
+	111 Call 0x1C17DEC
+

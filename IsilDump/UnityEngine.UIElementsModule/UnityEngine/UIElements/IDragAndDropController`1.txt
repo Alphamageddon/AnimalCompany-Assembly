@@ -1,0 +1,135 @@
+Type: UnityEngine.UIElements.IDragAndDropController`1
+
+Method: System.Boolean CanStartDrag(System.Collections.Generic.IEnumerable`1<System.Int32> itemIds)
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated
+Method: UnityEngine.UIElements.StartDragArgs SetupDragAndDrop(System.Collections.Generic.IEnumerable`1<System.Int32> itemIds, System.Boolean skipText = False)
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated
+Method: UnityEngine.UIElements.DragVisualMode HandleDragAndDrop(TArgs args)
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated
+Method: System.Void OnDrop(TArgs args)
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated
+Method: System.Void DragCleanup()
+
+Disassembly:
+	0x02DE2C30 LDR X2, [X8 + 0xB0]
+
+ISIL:
+	001 Return 
+
+Method: System.Void HandleAutoExpand(UnityEngine.UIElements.ReusableCollectionItem item, UnityEngine.Vector2 pointerPosition)
+
+Disassembly:
+	0x02DE2C34 LDP X30, X23, [X31], #0x30
+
+ISIL:
+	001 Return 
+
+Method: System.Collections.Generic.IEnumerable`1<System.Int32> GetSortedSelectedIds()
+
+Disassembly:
+	0x02DE2C38 B 0x2AA03C4
+	0x02DE2C3C BL 0x1C16F20
+	0x02DE2C40 STR X30, [X31 - 0x40]!
+	0x02DE2C44 STP X24, X23, [X31 + 0x10]
+	0x02DE2C48 STP X22, X21, [X31 + 0x20]
+	0x02DE2C4C STP X20, X19, [X31 + 0x30]
+	0x02DE2C50 CMP W1, W2
+	0x02DE2C54 B.NE 0x2DE2C6C
+	0x02DE2C58 LDP X20, X19, [X31 + 0x30]
+	0x02DE2C5C LDP X22, X21, [X31 + 0x20]
+	0x02DE2C60 LDP X24, X23, [X31 + 0x10]
+	0x02DE2C64 LDR X30, [X31], #0x40
+	0x02DE2C68 RET
+	0x02DE2C6C MOV X21, X0
+	0x02DE2C70 LDR X0, [X0 + 0x10]
+	0x02DE2C74 CBZ X0, 0x2DE2D50
+	0x02DE2C78 LDR X8, [X3 + 0x20]
+	0x02DE2C7C MOV W19, W2
+	0x02DE2C80 MOV X20, X3
+	0x02DE2C84 MOV W22, W1
+	0x02DE2C88 LDR X8, [X8 + 0xC0]
+	0x02DE2C8C LDR X2, [X8 + 0xA0]
+	0x02DE2C90 BL 0x301BCCC
+	0x02DE2C94 LDR X8, [X21 + 0x10]
+	0x02DE2C98 CBZ X8, 0x2DE2D50
+	0x02DE2C9C LDR X9, [X20 + 0x20]
+	0x02DE2CA0 MOV X23, X0
+	0x02DE2CA4 MOV X0, X8
+	0x02DE2CA8 MOV W1, W19
+	0x02DE2CAC LDR X9, [X9 + 0xC0]
+	0x02DE2CB0 LDR X2, [X9 + 0xA0]
+	0x02DE2CB4 BL 0x301BCCC
+	0x02DE2CB8 LDR X8, [X21 + 0x10]
+	0x02DE2CBC CBZ X8, 0x2DE2D50
+	0x02DE2CC0 LDR X9, [X20 + 0x20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x15FA000
+	005 Move X20, 0x133D000
+	006 Move W8, [X19+2487]
+	007 Move X20, [X20+3896]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x133D000
+	013 Move X0, [X0+3896]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2487], W8
+	017 Move X19, [X20]
+	018 Move X8, [X19+56]
+	019 Compare X8, 0
+	020 JumpIfNotEqual {24}
+	021 Move X0, X19
+	022 Call 0x1C5D6E0
+	023 Move X8, [X19+56]
+	024 Move X0, [X8+16]
+	025 Move W8, [X0+309]
+	026 Move TEMP, X8
+	027 And TEMP, TEMP, 1
+	028 Compare TEMP, 1
+	029 JumpIfEqual {31}
+	030 Call 0x1C5D684
+	031 Move W8, [X0+224]
+	032 Compare W8, 0
+	033 JumpIfNotEqual {35}
+	034 Call 0x1C17DFC
+	035 Move X8, [X19+56]
+	036 Move X0, [X8+16]
+	037 Move W8, [X0+309]
+	038 Move TEMP, X8
+	039 And TEMP, TEMP, 1
+	040 Compare TEMP, 1
+	041 JumpIfEqual {43}
+	042 Call 0x1C5D684
+	043 Move X8, [X0+184]
+	044 Move X20, [X31+16]
+	045 Move X19, [X31+24]
+	046 Move X0, [X8]
+	047 Move X30, [X31+32]
+	048 Return X0
+

@@ -1,0 +1,40 @@
+Type: WebSocketSharp.Server.WebSocketSessionManager/<>c__DisplayClass34_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03EADA9C CBZ X0, 0x3EADB88
+	0x03EADAA0 LDR W22, [X0 + 0x18]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <broadcastAsync>b__0(System.Object state)
+
+Disassembly:
+	0x03EB0F08 B 0x3E77364
+	0x03EB0F0C ADRP X0, 0x2BE000
+	0x03EB0F10 LDR X0, [X0 + 0x6E0]
+	0x03EB0F14 BL 0x1C16D08
+	0x03EB0F18 MOV X19, X0
+	0x03EB0F1C ADRP X0, 0x243000
+	0x03EB0F20 LDR X0, [X0 + 0x5B0]
+	0x03EB0F24 BL 0x1C16D08
+	0x03EB0F28 BL 0x1C16F10
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {12}
+	005 Move X2, [X0+32]
+	006 Move X3, [X0+40]
+	007 Move W1, [X0+24]
+	008 Move X0, X8
+	009 Move X30, [X31+16]
+	010 Call WebSocketSessionManager.broadcast, X0, X1, X2, X3
+	011 Return 
+	012 Call 0x1C17F20
+

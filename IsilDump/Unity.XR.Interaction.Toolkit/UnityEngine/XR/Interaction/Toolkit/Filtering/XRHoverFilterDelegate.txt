@@ -1,0 +1,140 @@
+Type: UnityEngine.XR.Interaction.Toolkit.Filtering.XRHoverFilterDelegate
+
+Method: System.Func`3<UnityEngine.XR.Interaction.Toolkit.IXRHoverInteractor, UnityEngine.XR.Interaction.Toolkit.IXRHoverInteractable, System.Boolean> get_delegateToProcess()
+
+Disassembly:
+	0x03BB31C0 CBZ X9, 0x3BB31E4
+	0x03BB31C4 LDR X10, [X8 + 0xB0]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_delegateToProcess(System.Func`3<UnityEngine.XR.Interaction.Toolkit.IXRHoverInteractor, UnityEngine.XR.Interaction.Toolkit.IXRHoverInteractable, System.Boolean> value)
+
+Disassembly:
+	0x03BB31C8 ADD X10, X10, 0x8
+	0x03BB31CC LDUR X11, [X10 - 0x8]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Boolean get_canProcess()
+
+Disassembly:
+	0x03BB31D0 CMP X11, X1
+	0x03BB31D4 B.EQ 0x3BB31F4
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_canProcess(System.Boolean value)
+
+Disassembly:
+	0x03BB31D8 SUBS X9, X9, 0x1
+	0x03BB31DC ADD X10, X10, 0x10
+	0x03BB31E0 B.NE 0x3BB31CC
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+24], W8
+	003 Return 
+
+Method: System.Void .ctor(System.Func`3<UnityEngine.XR.Interaction.Toolkit.IXRHoverInteractor, UnityEngine.XR.Interaction.Toolkit.IXRHoverInteractable, System.Boolean> delegateToProcess)
+
+Disassembly:
+	0x03BB31E4 MOVZ W2, 0x2
+	0x03BB31E8 MOV X0, X20
+	0x03BB31EC BL 0x1C5C788
+	0x03BB31F0 B 0x3BB3204
+	0x03BB31F4 LDR W9, [X10]
+	0x03BB31F8 ADD W9, W9, 0x2
+	0x03BB31FC ADD X8, X8, W9, 0x4, SXTW
+	0x03BB3200 ADD X0, X8, 0x138
+	0x03BB3204 LDP X8, X2, [X0]
+	0x03BB3208 MOV X0, X20
+	0x03BB320C MOV X1, X19
+	0x03BB3210 BLR X8
+	0x03BB3214 LDR X8, [X19 + 0x20]
+	0x03BB3218 CBZ X8, 0x3BB32B4
+	0x03BB321C LDR X20, [X8 + 0x140]
+	0x03BB3220 CBZ X20, 0x3BB32B4
+	0x03BB3224 ADRP X10, 0x5A9000
+	0x03BB3228 LDR X8, [X20]
+	0x03BB322C LDR X10, [X10 + 0xF98]
+	0x03BB3230 LDRH W9, [X8 + 0x12E]
+	0x03BB3234 LDR X1, [X10]
+	0x03BB3238 CBZ X9, 0x3BB325C
+	0x03BB323C LDR X10, [X8 + 0xB0]
+	0x03BB3240 ADD X10, X10, 0x8
+	0x03BB3244 LDUR X11, [X10 - 0x8]
+	0x03BB3248 CMP X11, X1
+	0x03BB324C B.EQ 0x3BB326C
+	0x03BB3250 SUBS X9, X9, 0x1
+	0x03BB3254 ADD X10, X10, 0x10
+	0x03BB3258 B.NE 0x3BB3244
+	0x03BB325C MOVZ W2, 0x2
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move W8, 1
+	006 Move X1, X31
+	007 Move X20, X0
+	008 Move [X0+24], W8
+	009 Call Object..ctor, X0
+	010 Compare X19, 0
+	011 JumpIfEqual {17}
+	012 Move [X20+16], X19
+	013 Move X20, [X31+16]
+	014 Move X19, [X31+24]
+	015 Move X30, [X31+32]
+	016 Return 
+	017 Move X0, 0x549000
+	018 Move X0, [X0+1400]
+	019 Call 0x1C17D08
+	020 Call 0x1C17F10
+	021 Move X19, X0
+	022 Move X0, 0x5AA000
+	023 Move X0, [X0+3896]
+	024 Call 0x1C17D08
+	025 Move X1, X0
+	026 Move X0, X19
+	027 Move X2, X31
+	028 Call ArgumentException..ctor, X0, X1
+	029 Move X0, 0x5AA000
+	030 Move X0, [X0+3904]
+	031 Call 0x1C17D08
+	032 Move X1, X0
+	033 Move X0, X19
+	034 Call 0x1C17DEC
+
+Method: System.Boolean Process(UnityEngine.XR.Interaction.Toolkit.IXRHoverInteractor interactor, UnityEngine.XR.Interaction.Toolkit.IXRHoverInteractable interactable)
+
+Disassembly:
+	0x03BB3260 MOV X0, X20
+	0x03BB3264 BL 0x1C5C788
+	0x03BB3268 B 0x3BB327C
+	0x03BB326C LDR W9, [X10]
+	0x03BB3270 ADD W9, W9, 0x2
+	0x03BB3274 ADD X8, X8, W9, 0x4, SXTW
+	0x03BB3278 ADD X0, X8, 0x138
+	0x03BB327C LDP X8, X2, [X0]
+	0x03BB3280 MOV X0, X20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {10}
+	005 Move X4, [X8+24]
+	006 Move X0, [X8+64]
+	007 Move X3, [X8+40]
+	008 Move X30, [X31+16]
+	009 CallNoReturn X4
+	010 Call 0x1C17F20
+

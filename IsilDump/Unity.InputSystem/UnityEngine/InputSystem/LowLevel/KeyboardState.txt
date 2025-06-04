@@ -1,0 +1,207 @@
+Type: UnityEngine.InputSystem.LowLevel.KeyboardState
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_Format()
+
+Disassembly:
+	0x03800A10 MOVK W1, 0x444C0000
+	0x03800A14 MOV W2, W26
+	0x03800A18 MOV W3, W28
+	0x03800A1C STP X31, X31, [X31 + 0x30]
+	0x03800A20 STR W31, [X31 + 0x40]
+	0x03800A24 BL 0x3800BC8
+	0x03800A28 CBZ X27, 0x3800AB4
+	0x03800A2C LDR V0, [X31 + 0x3]
+	0x03800A30 LDR W9, [X31 + 0x40]
+	0x03800A34 LDR W8, [X31 + 0xC]
+	0x03800A38 ADD X1, X25, X19
+	0x03800A3C STR V0, [X27]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 75
+	004 Move W2, 69
+	005 Move W3, 89
+	006 Move W4, 83
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: System.Void .ctor(UnityEngine.InputSystem.Key[] pressedKeys)
+
+Disassembly:
+	0x03800A40 ADD X0, X27, 0x1C
+	0x03800A44 STP W9, W8, [X27 + 0x10]
+	0x03800A48 LDR W8, [X20 + 0x14]
+	0x03800A4C LDR W9, [X21 + 0x14]
+	0x03800A50 MOV W2, W22
+	0x03800A54 MOV X3, X31
+	0x03800A58 SUB W8, W8, W9
+	0x03800A5C STR W8, [X27 + 0x18]
+	0x03800A60 BL 0x3BFF954
+	0x03800A64 LDR X8, [X31 + 0x18]
+	0x03800A68 STR X27, [X8]
+	0x03800A6C LDR X8, [X31 + 0x10]
+	0x03800A70 LDR X8, [X8 + 0x28]
+	0x03800A74 LDR X9, [X31 + 0x48]
+	0x03800A78 CMP X8, X9
+	0x03800A7C B.NE 0x3800B68
+	0x03800A80 MOV X0, X23
+	0x03800A84 MOV X1, X24
+	0x03800A88 LDP X20, X19, [X31 + 0xA0]
+	0x03800A8C LDP X22, X21, [X31 + 0x90]
+	0x03800A90 LDP X24, X23, [X31 + 0x80]
+	0x03800A94 LDP X26, X25, [X31 + 0x70]
+	0x03800A98 LDP X28, X27, [X31 + 0x60]
+	0x03800A9C LDP X29, X30, [X31 + 0x50]
+	0x03800AA0 ADD X31, X31, 0xB0
+	0x03800AA4 RET
+	0x03800AA8 BL 0x1C16DFC
+	0x03800AAC CBNZ W22, 0x38008D0
+	0x03800AB0 B 0x3800904
+	0x03800AB4 BL 0x1C16F20
+	0x03800AB8 ADRP X0, 0x8F8000
+	0x03800ABC LDR X0, [X0 + 0x528]
+	0x03800AC0 BL 0x1C16D08
+	0x03800AC4 BL 0x1C16F10
+	0x03800AC8 MOV X19, X0
+	0x03800ACC ADRP X0, 0x91B000
+	0x03800AD0 LDR X0, [X0 + 0xD60]
+	0x03800AD4 BL 0x1C16D08
+	0x03800AD8 MOV X1, X0
+	0x03800ADC MOV X0, X19
+	0x03800AE0 MOV X2, X31
+	0x03800AE4 BL 0x330E100
+	0x03800AE8 ADRP X0, 0x94A000
+	0x03800AEC LDR X0, [X0 + 0x80]
+	0x03800AF0 BL 0x1C16D08
+	0x03800AF4 MOV X1, X0
+	0x03800AF8 MOV X0, X19
+	0x03800AFC BL 0x1C16DEC
+	0x03800B00 ADRP X0, 0x94A000
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Compare X1, 0
+	007 JumpIfEqual {34}
+	008 Move X19, X1
+	009 Move W1, 14
+	010 Move X2, X31
+	011 Move X20, X0
+	012 Call UnsafeUtility.MemClear, X0, X1
+	013 Move X8, [X19+24]
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 Move X21, X31
+	016 And X8, X8, 0
+	017 Add X22, X19, 32
+	018 NotImplemented "Instruction CMP not yet implemented."
+	019 Move W1, [X22]
+	020 Move W2, 1
+	021 Move X0, X20
+	022 Move X3, X31
+	023 Call MemoryHelpers.WriteSingleBit, X0, X1, X2
+	024 Move W8, [X19+24]
+	025 Add X21, X21, 1
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Move X20, [X31+32]
+	028 Move X19, [X31+40]
+	029 Move X22, [X31+16]
+	030 Move X21, [X31+24]
+	031 Move X30, [X31+48]
+	032 Return 
+	033 Call 0x1C17F28
+	034 Move X0, 0x8F9000
+	035 Move X0, [X0+1320]
+	036 Call 0x1C17D08
+	037 Call 0x1C17F10
+	038 Move X19, X0
+	039 Move X0, 0x94A000
+	040 Move X0, [X0+4088]
+	041 Call 0x1C17D08
+	042 Move X1, X0
+	043 Move X0, X19
+	044 Move X2, X31
+	045 Call ArgumentNullException..ctor, X0, X1
+	046 Move X0, 0x94B000
+	047 Move X0, [X0]
+	048 Call 0x1C17D08
+	049 Move X1, X0
+	050 Move X0, X19
+	051 Call 0x1C17DEC
+
+Method: System.Void Set(UnityEngine.InputSystem.Key key, System.Boolean state)
+
+Disassembly:
+	0x03800B04 LDR X0, [X0 + 0x88]
+	0x03800B08 BL 0x1C16D08
+	0x03800B0C MOV X1, X20
+
+ISIL:
+	001 And W2, W2, 1
+	002 Move X3, X31
+	003 Call MemoryHelpers.WriteSingleBit, X0, X1, X2
+	004 Return 
+
+Method: System.Void Press(UnityEngine.InputSystem.Key key)
+
+Disassembly:
+	0x03800B10 MOV X2, X31
+	0x03800B14 BL 0x321EFD0
+	0x03800B18 MOV X19, X0
+
+ISIL:
+	001 Move W2, 1
+	002 Move X3, X31
+	003 Call MemoryHelpers.WriteSingleBit, X0, X1, X2
+	004 Return 
+
+Method: System.Void Release(UnityEngine.InputSystem.Key key)
+
+Disassembly:
+	0x03800B1C ADRP X0, 0x8FB000
+	0x03800B20 LDR X0, [X0 + 0x578]
+	0x03800B24 BL 0x1C16D08
+
+ISIL:
+	001 Move W2, W31
+	002 Move X3, X31
+	003 Call MemoryHelpers.WriteSingleBit, X0, X1, X2
+	004 Return 
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_format()
+
+Disassembly:
+	0x03800B28 BL 0x1C16F10
+	0x03800B2C MOV X20, X0
+	0x03800B30 ADRP X0, 0x91B000
+	0x03800B34 LDR X0, [X0 + 0xD60]
+	0x03800B38 BL 0x1C16D08
+	0x03800B3C MOV X2, X0
+	0x03800B40 MOV X0, X20
+	0x03800B44 MOV X1, X19
+	0x03800B48 MOV X3, X31
+	0x03800B4C BL 0x330E16C
+	0x03800B50 ADRP X0, 0x94A000
+	0x03800B54 LDR X0, [X0 + 0x80]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 75
+	004 Move W2, 69
+	005 Move W3, 89
+	006 Move W4, 83
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+

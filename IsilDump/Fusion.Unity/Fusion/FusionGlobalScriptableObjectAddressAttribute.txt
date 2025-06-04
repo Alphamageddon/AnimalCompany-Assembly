@@ -1,0 +1,52 @@
+Type: Fusion.FusionGlobalScriptableObjectAddressAttribute
+
+Method: System.Void .ctor(System.Type objectType, System.String address)
+
+Disassembly:
+	0x01F81F18 B.EQ 0x1F81F20
+	0x01F81F1C CBNZ W24, 0x1F81F80
+	0x01F81F20 ANDS W8, W20, 0xFF
+	0x01F81F24 B.EQ 0x1F81F94
+	0x01F81F28 CMP W8, 0x1
+	0x01F81F2C B.NE 0x1F81FE4
+	0x01F81F30 LDR X19, [X19 + 0x18]
+	0x01F81F34 MOV X0, X31
+	0x01F81F38 BL 0x33E3C68
+	0x01F81F3C ADRP X8, 0x2172000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X2
+	005 Move X2, X31
+	006 Move X20, X0
+	007 Call FusionGlobalScriptableObjectSourceAttribute..ctor, X0, X1
+	008 Move [X20+32], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.String get_Address()
+
+Disassembly:
+	0x01F81F40 LDR X8, [X8 + 0xA28]
+	0x01F81F44 CMP X19, X0
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: Fusion.FusionGlobalScriptableObjectLoadResult Load(System.Type type)
+
+Disassembly:
+	0x01F81F48 CSEL X19, X21, X31, EQ
+	0x01F81F4C LDR X8, [X8]
+	0x01F81F50 LDR W9, [X8 + 0xE0]
+
+ISIL:
+	001 Move X0, X31
+	002 Move X1, X31
+	003 Return X0
+

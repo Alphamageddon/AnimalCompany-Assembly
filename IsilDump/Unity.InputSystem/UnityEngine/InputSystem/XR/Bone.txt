@@ -1,0 +1,76 @@
+Type: UnityEngine.InputSystem.XR.Bone
+
+Method: System.UInt32 get_parentBoneIndex()
+
+Disassembly:
+	0x037DF658 MOVZ W2, 0x1
+	0x037DF65C MOV X3, X31
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Void set_parentBoneIndex(System.UInt32 value)
+
+Disassembly:
+	0x037DF660 STR X31, [X31 + 0xC8]
+	0x037DF664 BL 0x3755CF8
+
+ISIL:
+	001 Move [X0], W1
+	002 Return 
+
+Method: UnityEngine.Vector3 get_position()
+
+Disassembly:
+	0x037DF668 LDR X1, [X19]
+	0x037DF66C STR X0, [X31 + 0xC8]
+	0x037DF670 ADD X0, X31, 0xC8
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, [X0+12]
+	004 Return X0
+
+Method: System.Void set_position(UnityEngine.Vector3 value)
+
+Disassembly:
+	0x037DF674 MOVZ W2, 0x1
+	0x037DF678 MOV X3, X31
+	0x037DF67C BL 0x3755FF4
+
+ISIL:
+	001 Move [X0+4], S0
+	002 Move [X0+12], S1
+	003 Move [X0+12], S2
+	004 Return 
+
+Method: UnityEngine.Quaternion get_rotation()
+
+Disassembly:
+	0x037DF680 ADRP X8, 0x969000
+	0x037DF684 LDR X8, [X8 + 0xFF8]
+	0x037DF688 STR X0, [X31 + 0xC8]
+
+ISIL:
+	001 Move S0, [X0+16]
+	002 Move S1, [X0+20]
+	003 Move S2, [X0+24]
+	004 Move S3, [X0+28]
+	005 Return X0
+
+Method: System.Void set_rotation(UnityEngine.Quaternion value)
+
+Disassembly:
+	0x037DF68C ADD X0, X31, 0xC8
+	0x037DF690 MOVZ W2, 0x1
+	0x037DF694 LDR X1, [X8]
+
+ISIL:
+	001 Move [X0+16], S0
+	002 Move [X0+24], S1
+	003 Move [X0+24], S2
+	004 Move [X0+32], S3
+	005 Return 
+

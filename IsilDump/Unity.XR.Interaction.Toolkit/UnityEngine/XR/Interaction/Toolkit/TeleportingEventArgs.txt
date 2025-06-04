@@ -1,0 +1,49 @@
+Type: UnityEngine.XR.Interaction.Toolkit.TeleportingEventArgs
+
+Method: UnityEngine.XR.Interaction.Toolkit.TeleportRequest get_teleportRequest()
+
+Disassembly:
+	0x03B6C6C0 BL 0x1C16E00
+	0x03B6C6C4 MOV X1, X0
+	0x03B6C6C8 CBNZ X0, 0x3B6C6D4
+	0x03B6C6CC B 0x3B6C700
+	0x03B6C6D0 MOV X1, X31
+
+ISIL:
+	001 Move W9, [X0+64]
+	002 Move V1, [X0+32]
+	003 Move V0, [X0+48]
+	004 Move [X8+32], W9
+	005 Move [X8], V1
+	006 Move [X8+8], V0
+	007 Return X0
+
+Method: System.Void set_teleportRequest(UnityEngine.XR.Interaction.Toolkit.TeleportRequest value)
+
+Disassembly:
+	0x03B6C6D4 MOV X0, X20
+	0x03B6C6D8 MOV X2, X21
+	0x03B6C6DC BL 0x1C24138
+	0x03B6C6E0 CMP X21, X0
+	0x03B6C6E4 MOV X21, X0
+
+ISIL:
+	001 Move W8, [X1+32]
+	002 Move V1, [X1]
+	003 Move V0, [X1+16]
+	004 Move [X0+64], W8
+	005 Move [X0+32], V1
+	006 Move [X0+40], V0
+	007 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03B6C6E8 B.NE 0x3B6C6A0
+	0x03B6C6EC LDP X20, X19, [X31 + 0x30]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

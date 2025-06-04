@@ -1,0 +1,202 @@
+Type: UnityEngine.ProBuilder.MeshOperations.InternalMeshUtility/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x039738C4 ADRP X22, 0x780000
+	0x039738C8 LDRB W8, [X21 + 0xA0F]
+	0x039738CC LDR X22, [X22 + 0x598]
+	0x039738D0 MOV X20, X1
+	0x039738D4 MOV X19, X0
+	0x039738D8 TBNZ X8, 0x0, 0x3973980
+	0x039738DC ADRP X0, 0x7DA000
+	0x039738E0 LDR X0, [X0 + 0xFA0]
+	0x039738E4 BL 0x1C16CF4
+	0x039738E8 ADRP X0, 0x7DA000
+	0x039738EC LDR X0, [X0 + 0xFA8]
+	0x039738F0 BL 0x1C16CF4
+	0x039738F4 ADRP X0, 0x781000
+	0x039738F8 LDR X0, [X0 + 0xDF8]
+	0x039738FC BL 0x1C16CF4
+	0x03973900 ADRP X0, 0x781000
+	0x03973904 LDR X0, [X0 + 0xE00]
+	0x03973908 BL 0x1C16CF4
+	0x0397390C ADRP X0, 0x781000
+	0x03973910 LDR X0, [X0 + 0xE08]
+	0x03973914 BL 0x1C16CF4
+	0x03973918 ADRP X0, 0x781000
+	0x0397391C LDR X0, [X0 + 0xE10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xA6F000
+	005 Move X20, 0x7DD000
+	006 Move W8, [X19+2553]
+	007 Move X20, [X20+3904]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x7DD000
+	013 Move X0, [X0+3904]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2553], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03973920 BL 0x1C16CF4
+	0x03973924 ADRP X0, 0x787000
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: UnityEngine.Vector3[] <CreateMeshWithTransform>b__1_0(UnityEngine.Mesh x)
+
+Disassembly:
+	0x03973928 LDR X0, [X0 + 0x858]
+	0x0397392C BL 0x1C16CF4
+	0x03973930 ADRP X0, 0x784000
+	0x03973934 LDR X0, [X0 + 0xB70]
+	0x03973938 BL 0x1C16CF4
+	0x0397393C ADRP X0, 0x781000
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {7}
+	003 Move X0, X1
+	004 Move X1, X31
+	005 Call Mesh.get_vertices, X0
+	006 Return X0
+	007 Move [X31-16], X30
+	008 Call 0x1C17F20
+
+Method: UnityEngine.Color[] <CreateMeshWithTransform>b__1_1(UnityEngine.Mesh x)
+
+Disassembly:
+	0x03973940 LDR X0, [X0 + 0xE28]
+	0x03973944 BL 0x1C16CF4
+	0x03973948 ADRP X0, 0x781000
+	0x0397394C LDR X0, [X0 + 0xE30]
+	0x03973950 BL 0x1C16CF4
+	0x03973954 ADRP X0, 0x780000
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {7}
+	003 Move X0, X1
+	004 Move X1, X31
+	005 Call Mesh.get_colors, X0
+	006 Return X0
+	007 Move [X31-16], X30
+	008 Call 0x1C17F20
+
+Method: UnityEngine.Vector2[] <CreateMeshWithTransform>b__1_2(UnityEngine.Mesh x)
+
+Disassembly:
+	0x03973958 LDR X0, [X0 + 0x598]
+	0x0397395C BL 0x1C16CF4
+	0x03973960 ADRP X0, 0x7DC000
+	0x03973964 LDR X0, [X0 + 0xFE0]
+	0x03973968 BL 0x1C16CF4
+	0x0397396C ADRP X0, 0x7DC000
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {7}
+	003 Move X0, X1
+	004 Move X1, X31
+	005 Call Mesh.get_uv, X0
+	006 Return X0
+	007 Move [X31-16], X30
+	008 Call 0x1C17F20
+
+Method: UnityEngine.Vector3[] <ResetPbObjectWithMeshFilter>b__2_0(UnityEngine.Mesh x)
+
+Disassembly:
+	0x03973970 LDR X0, [X0 + 0xFE8]
+	0x03973974 BL 0x1C16CF4
+	0x03973978 MOVZ W8, 0x1
+	0x0397397C STRB W8, [X21 + 0xA0F]
+	0x03973980 LDR X0, [X22]
+	0x03973984 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {7}
+	003 Move X0, X1
+	004 Move X1, X31
+	005 Call Mesh.get_vertices, X0
+	006 Return X0
+	007 Move [X31-16], X30
+	008 Call 0x1C17F20
+
+Method: UnityEngine.Color[] <ResetPbObjectWithMeshFilter>b__2_1(UnityEngine.Mesh x)
+
+Disassembly:
+	0x03973988 CBNZ W8, 0x3973990
+	0x0397398C BL 0x1C16DFC
+	0x03973990 MOV X0, X19
+	0x03973994 MOV X1, X31
+	0x03973998 MOV X2, X31
+	0x0397399C BL 0x3C3883C
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {7}
+	003 Move X0, X1
+	004 Move X1, X31
+	005 Call Mesh.get_colors, X0
+	006 Return X0
+	007 Move [X31-16], X30
+	008 Call 0x1C17F20
+
+Method: UnityEngine.Vector2[] <ResetPbObjectWithMeshFilter>b__2_2(UnityEngine.Mesh x)
+
+Disassembly:
+	0x039739A0 TBNZ X0, 0x0, 0x3973B88
+	0x039739A4 CBZ X20, 0x39739BC
+	0x039739A8 LDR W8, [X20 + 0x1C]
+	0x039739AC ADD W8, W8, 0x1
+	0x039739B0 STP W31, W8, [X20 + 0x18]
+	0x039739B4 CBNZ X19, 0x39739E4
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {7}
+	003 Move X0, X1
+	004 Move X1, X31
+	005 Call Mesh.get_uv, X0
+	006 Return X0
+	007 Move [X31-16], X30
+	008 Call 0x1C17F20
+
+Method: System.Boolean <FilterUnusedSubmeshIndexes>b__3_0(System.Boolean x)
+
+Disassembly:
+	0x039739B8 B 0x3973B4C
+	0x039739BC ADRP X8, 0x781000
+	0x039739C0 LDR X8, [X8 + 0xE30]
+
+ISIL:
+	001 NotImplemented "Instruction ORN not yet implemented."
+	002 And W0, W8, 1
+	003 Return X0
+

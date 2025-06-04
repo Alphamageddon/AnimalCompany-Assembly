@@ -1,0 +1,402 @@
+Type: UnityEngine.UIElements.AtlasBase
+
+Method: System.Boolean TryGetAtlas(UnityEngine.UIElements.VisualElement ctx, UnityEngine.Texture2D src, out UnityEngine.UIElements.TextureId atlas, out UnityEngine.RectInt atlasRect)
+
+Disassembly:
+	0x03CE9170 LDR X0, [X0 + 0x768]
+	0x03CE9174 BL 0x1C16CF4
+	0x03CE9178 ADRP X0, 0x479000
+	0x03CE917C LDR X0, [X0 + 0x760]
+	0x03CE9180 BL 0x1C16CF4
+	0x03CE9184 ADRP X0, 0x479000
+	0x03CE9188 LDR X0, [X0 + 0x748]
+	0x03CE918C BL 0x1C16CF4
+	0x03CE9190 ADRP X0, 0x479000
+	0x03CE9194 LDR X0, [X0 + 0x758]
+	0x03CE9198 BL 0x1C16CF4
+	0x03CE919C ADRP X0, 0x479000
+	0x03CE91A0 LDR X0, [X0 + 0x700]
+	0x03CE91A4 BL 0x1C16CF4
+	0x03CE91A8 MOVZ W8, 0x1
+	0x03CE91AC STRB W8, [X25 + 0x726]
+	0x03CE91B0 LDR X0, [X26]
+	0x03CE91B4 BL 0x1C16F10
+	0x03CE91B8 LDR X2, [X19]
+	0x03CE91BC MOV X1, X31
+	0x03CE91C0 MOV X3, X31
+	0x03CE91C4 MOV X19, X0
+	0x03CE91C8 BL 0x2D27AA8
+	0x03CE91CC LDR X0, [X24]
+	0x03CE91D0 BL 0x1C16F10
+	0x03CE91D4 LDR X2, [X20]
+	0x03CE91D8 MOV X1, X31
+	0x03CE91DC MOV X3, X31
+	0x03CE91E0 MOV X20, X0
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X22, 0x6FF000
+	007 Move X21, 0x433000
+	008 Move W8, [X22+1817]
+	009 Move X21, [X21+1568]
+	010 Move X19, X4
+	011 Move X20, X3
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x433000
+	017 Move X0, [X0+1568]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X22+1817], W8
+	021 Move X0, [X21]
+	022 Move W8, [X0+224]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {27}
+	025 Call 0x1C17DFC
+	026 Move X0, [X21]
+	027 Move X8, [X0+184]
+	028 Move X22, [X31+16]
+	029 Move X21, [X31+24]
+	030 Move W0, W31
+	031 Move W8, [X8]
+	032 Move [X20], W8
+	033 Move [X19], X31
+	034 Move [X19+8], X31
+	035 Move X20, [X31+32]
+	036 Move X19, [X31+40]
+	037 Move X30, [X31+48]
+	038 Return X0
+
+Method: System.Void ReturnAtlas(UnityEngine.UIElements.VisualElement ctx, UnityEngine.Texture2D src, UnityEngine.UIElements.TextureId atlas)
+
+Disassembly:
+	0x03CE91E4 BL 0x2A6B948
+
+ISIL:
+	001 Return 
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x03CE91E8 LDR X0, [X23]
+
+ISIL:
+	001 Return 
+
+Method: System.Void OnAssignedToPanel(UnityEngine.UIElements.IPanel panel)
+
+Disassembly:
+	0x03CE91EC BL 0x1C16F10
+
+ISIL:
+	001 Return 
+
+Method: System.Void OnRemovedFromPanel(UnityEngine.UIElements.IPanel panel)
+
+Disassembly:
+	0x03CE91F0 LDR X4, [X21]
+
+ISIL:
+	001 Return 
+
+Method: System.Void OnUpdateDynamicTextures(UnityEngine.UIElements.IPanel panel)
+
+Disassembly:
+	0x03CE91F4 MOVZ W3, 0x400
+
+ISIL:
+	001 Return 
+
+Method: System.Void InvokeAssignedToPanel(UnityEngine.UIElements.IPanel panel)
+
+Disassembly:
+	0x03CE91F8 MOV X1, X19
+	0x03CE91FC MOV X2, X20
+	0x03CE9200 MOV X21, X0
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X3, [X8+424]
+	003 Move X2, [X8+432]
+	004 CallNoReturn X3
+
+Method: System.Void InvokeRemovedFromPanel(UnityEngine.UIElements.IPanel panel)
+
+Disassembly:
+	0x03CE9204 BL 0x2EF0D58
+	0x03CE9208 LDR X8, [X22]
+	0x03CE920C LDP X20, X19, [X31 + 0x40]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X3, [X8+440]
+	003 Move X2, [X8+448]
+	004 CallNoReturn X3
+
+Method: System.Void InvokeUpdateDynamicTextures(UnityEngine.UIElements.IPanel panel)
+
+Disassembly:
+	0x03CE9210 LDP X24, X23, [X31 + 0x20]
+	0x03CE9214 LDP X26, X25, [X31 + 0x10]
+	0x03CE9218 LDR X8, [X8 + 0xB8]
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X3, [X8+456]
+	003 Move X2, [X8+464]
+	004 CallNoReturn X3
+
+Method: System.Void RepaintTexturedElements(UnityEngine.UIElements.IPanel panel)
+
+Disassembly:
+	0x03CE921C STR X21, [X8]
+	0x03CE9220 LDP X22, X21, [X31 + 0x30]
+	0x03CE9224 LDR X30, [X31], #0x50
+	0x03CE9228 RET
+	0x03CE922C SUB X31, X31, 0x20
+	0x03CE9230 STP X30, X19, [X31 + 0x10]
+	0x03CE9234 MOV X19, X0
+	0x03CE9238 STR W1, [X0]
+	0x03CE923C ADD X0, X31, 0x8
+	0x03CE9240 FMOV S0, W31
+	0x03CE9244 MOV X1, X31
+	0x03CE9248 STR X31, [X31 + 0x8]
+	0x03CE924C BL 0x3DFD4F0
+	0x03CE9250 LDR X8, [X31 + 0x8]
+	0x03CE9254 STUR X8, [X19 + 0x4]
+	0x03CE9258 LDP X30, X19, [X31 + 0x10]
+	0x03CE925C ADD X31, X31, 0x20
+	0x03CE9260 RET
+	0x03CE9264 STR W1, [X0]
+	0x03CE9268 STUR X2, [X0 + 0x4]
+	0x03CE926C RET
+	0x03CE9270 SUB X31, X31, 0x20
+	0x03CE9274 STP X30, X31, [X31 + 0x10]
+	0x03CE9278 ADD X0, X31, 0x18
+	0x03CE927C FMOV S0, W31
+	0x03CE9280 MOV X1, X31
+	0x03CE9284 STR W31, [X31 + 0x8]
+	0x03CE9288 STR X31, [X31]
+	0x03CE928C BL 0x3DFD4F0
+	0x03CE9290 LDP X30, X8, [X31 + 0x10]
+	0x03CE9294 STUR X8, [X31 + 0x4]
+	0x03CE9298 LDR X0, [X31], #0x20
+	0x03CE929C UBFM X1, X8, 0x20, 0x3F
+	0x03CE92A0 RET
+	0x03CE92A4 SUB X31, X31, 0x20
+	0x03CE92A8 STP X30, X31, [X31 + 0x10]
+	0x03CE92AC ADD X0, X31, 0x18
+	0x03CE92B0 FMOV S0, W31
+	0x03CE92B4 MOV X1, X31
+	0x03CE92B8 STR W31, [X31 + 0x8]
+	0x03CE92BC STR X31, [X31]
+	0x03CE92C0 BL 0x3DFD4F0
+	0x03CE92C4 LDP X30, X8, [X31 + 0x10]
+	0x03CE92C8 STUR X8, [X31 + 0x4]
+	0x03CE92CC LDR X0, [X31], #0x20
+	0x03CE92D0 UBFM X1, X8, 0x20, 0x3F
+	0x03CE92D4 RET
+	0x03CE92D8 STP X30, X21, [X31 - 0x20]!
+	0x03CE92DC STP X20, X19, [X31 + 0x10]
+	0x03CE92E0 ADRP X21, 0x6FE000
+	0x03CE92E4 LDRB W8, [X21 + 0x727]
+	0x03CE92E8 MOV X20, X1
+	0x03CE92EC MOV X19, X0
+	0x03CE92F0 TBNZ X8, 0x0, 0x3CE9308
+	0x03CE92F4 ADRP X0, 0x435000
+	0x03CE92F8 LDR X0, [X0 + 0xDE0]
+	0x03CE92FC BL 0x1C16CF4
+	0x03CE9300 MOVZ W8, 0x1
+	0x03CE9304 STRB W8, [X21 + 0x727]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x6FF000
+	005 Move W8, [X20+1818]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {19}
+	011 Move X0, 0x435000
+	012 Move X0, [X0+3336]
+	013 Call 0x1C17CF4
+	014 Move X0, 0x47A000
+	015 Move X0, [X0+1704]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1818], W8
+	019 Compare X19, 0
+	020 JumpIfEqual {32}
+	021 Move X9, 0x435000
+	022 Move X9, [X9+3336]
+	023 Move X8, [X19]
+	024 Move X9, [X9]
+	025 Move W11, [X8+304]
+	026 Move W10, [X9+304]
+	027 NotImplemented "Instruction CMP not yet implemented."
+	028 Move X11, [X8+200]
+	029 Add X10, X11, X10
+	030 NotImplemented "Instruction LDUR not yet implemented."
+	031 NotImplemented "Instruction CMP not yet implemented."
+	032 Move X20, [X31+16]
+	033 Move X19, [X31+24]
+	034 Move X30, [X31+32]
+	035 Return 
+	036 Move X9, [X8+1080]
+	037 Move X2, [X8+1088]
+	038 Move W1, 6
+	039 Move X0, X19
+	040 NotImplemented "Instruction BLR not yet implemented."
+	041 Compare X0, 0
+	042 JumpIfEqual {32}
+	043 Move X8, 0x47A000
+	044 Move X8, [X8+1704]
+	045 Move X9, [X0]
+	046 Move X8, [X8]
+	047 Move W11, [X9+304]
+	048 Move W10, [X8+304]
+	049 NotImplemented "Instruction CMP not yet implemented."
+	050 Move X9, [X9+200]
+	051 Add X9, X9, X10
+	052 NotImplemented "Instruction LDUR not yet implemented."
+	053 NotImplemented "Instruction CMP not yet implemented."
+	054 NotImplemented "Instruction CSEL not yet implemented."
+	055 Compare X8, 0
+	056 JumpIfEqual {66}
+	057 Move X0, [X8+40]
+	058 Compare X0, 0
+	059 JumpIfEqual {32}
+	060 Move X20, [X31+16]
+	061 Move X19, [X31+24]
+	062 Move X1, X31
+	063 Move X30, [X31+32]
+	064 Call RenderChain.RepaintTexturedElements, X0
+	065 Return 
+	066 Call 0x1C17F20
+
+Method: System.Void SetDynamicTexture(UnityEngine.UIElements.TextureId id, UnityEngine.Texture texture)
+
+Disassembly:
+	0x03CE9308 CBZ X20, 0x3CE9324
+	0x03CE930C ADRP X8, 0x435000
+	0x03CE9310 LDR X8, [X8 + 0xDE0]
+	0x03CE9314 LDR X9, [X20]
+	0x03CE9318 LDR X8, [X8]
+	0x03CE931C CMP X9, X8
+	0x03CE9320 B.EQ 0x3CE9334
+	0x03CE9324 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+16]
+	003 Compare X0, 0
+	004 JumpIfEqual {10}
+	005 And X1, X1, 0
+	006 Move X3, X31
+	007 Move X30, [X31+16]
+	008 Call TextureRegistry.UpdateDynamic, X0, X1, X2
+	009 Return 
+	010 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03CE9328 MOV W0, W31
+	0x03CE932C LDP X30, X21, [X31], #0x20
+	0x03CE9330 RET
+	0x03CE9334 MOV X0, X20
+	0x03CE9338 BL 0x1C16E08
+	0x03CE933C LDR X1, [X0]
+	0x03CE9340 LDR W2, [X0 + 0x8]
+	0x03CE9344 MOV X0, X19
+	0x03CE9348 LDP X20, X19, [X31 + 0x10]
+	0x03CE934C LDP X30, X21, [X31], #0x20
+	0x03CE9350 B 0x3CE9354
+	0x03CE9354 SUB X31, X31, 0x30
+	0x03CE9358 STR X30, [X31 + 0x10]
+	0x03CE935C STP X20, X19, [X31 + 0x20]
+	0x03CE9360 MOV X20, X0
+	0x03CE9364 STR X1, [X31]
+	0x03CE9368 STR W2, [X31 + 0x8]
+	0x03CE936C MOV X19, X1
+	0x03CE9370 LDUR X0, [X31 + 0x4]
+	0x03CE9374 LDUR X1, [X20 + 0x4]
+	0x03CE9378 MOV X2, X31
+	0x03CE937C BL 0x3DFAD2C
+	0x03CE9380 TBZ X0, 0x0, 0x3CE9394
+	0x03CE9384 LDR W8, [X20]
+	0x03CE9388 CMP W8, W19
+	0x03CE938C CSET W0, EQ
+	0x03CE9390 B 0x3CE9398
+	0x03CE9394 MOV W0, W31
+	0x03CE9398 LDP X20, X19, [X31 + 0x20]
+	0x03CE939C LDR X30, [X31 + 0x10]
+	0x03CE93A0 ADD X31, X31, 0x30
+	0x03CE93A4 RET
+	0x03CE93A8 STR X30, [X31 - 0x20]!
+	0x03CE93AC STP X20, X19, [X31 + 0x10]
+	0x03CE93B0 MOV X1, X31
+	0x03CE93B4 MOV X19, X0
+	0x03CE93B8 BL 0x337B6D8
+	0x03CE93BC MOV W20, W0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x6FF000
+	006 Move X20, 0x47A000
+	007 Move W8, [X21+1819]
+	008 Move X20, [X20+1712]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x47A000
+	015 Move X0, [X0+1712]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+1819], W8
+	019 Move X0, [X20]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move X21, 0x6FF000
+	025 Move W8, [X21+2021]
+	026 Compare W8, 0
+	027 JumpIfNotEqual {33}
+	028 Move X0, 0x47A000
+	029 Move X0, [X0+1712]
+	030 Call 0x1C17CF4
+	031 Move W8, 1
+	032 Move [X21+2021], W8
+	033 Move X0, [X20]
+	034 Move W8, [X0+224]
+	035 Compare W8, 0
+	036 JumpIfNotEqual {39}
+	037 Call 0x1C17DFC
+	038 Move X0, [X20]
+	039 Move X8, [X0+184]
+	040 Move X0, X19
+	041 Move X1, X31
+	042 Move X8, [X8]
+	043 Move [X19+16], X8
+	044 Move X20, [X31+16]
+	045 Move X19, [X31+24]
+	046 Move X30, [X31+32]
+	047 Move X21, [X31+40]
+	048 Call Object..ctor, X0
+	049 Return 
+

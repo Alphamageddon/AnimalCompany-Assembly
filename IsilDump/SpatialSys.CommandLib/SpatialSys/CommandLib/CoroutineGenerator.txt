@@ -1,0 +1,136 @@
+Type: SpatialSys.CommandLib.CoroutineGenerator
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0x035BD6F0 BL 0x1C16CF4
+	0x035BD6F4 MOVZ W8, 0x1
+	0x035BD6F8 STRB W8, [X20 + 0x142]
+	0x035BD6FC LDR X0, [X21]
+	0x035BD700 BL 0x1C16F10
+	0x035BD704 MOV X1, X31
+	0x035BD708 MOV X20, X0
+	0x035BD70C BL 0x33BDD8C
+	0x035BD710 CBZ X20, 0x35BD7A4
+	0x035BD714 STR X19, [X20 + 0x10]
+	0x035BD718 CBZ X19, 0x35BD7A4
+	0x035BD71C MOV X0, X19
+	0x035BD720 MOV X1, X31
+	0x035BD724 BL 0x33BE520
+	0x035BD728 CBZ X0, 0x35BD7A4
+	0x035BD72C LDR X8, [X0]
+	0x035BD730 ADRP X19, 0xB36000
+	0x035BD734 ADRP X21, 0xB7A000
+	0x035BD738 ADRP X22, 0xB36000
+	0x035BD73C LDP X9, X1, [X8 + 0x1A8]
+	0x035BD740 LDR X19, [X19 + 0xB60]
+	0x035BD744 LDR X21, [X21 + 0xB20]
+	0x035BD748 LDR X22, [X22 + 0xD48]
+	0x035BD74C BLR X9
+	0x035BD750 LDR X8, [X19]
+	0x035BD754 MOV X19, X0
+	0x035BD758 MOV X0, X8
+	0x035BD75C BL 0x1C16F10
+	0x035BD760 LDR X2, [X21]
+	0x035BD764 MOV X1, X20
+	0x035BD768 MOV X21, X0
+	0x035BD76C BL 0x35BC5A4
+	0x035BD770 LDR X0, [X22]
+	0x035BD774 BL 0x1C16F10
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+8]
+	006 Move [X0+32], X1
+	007 Move [X0+40], X2
+	008 Move X19, X0
+	009 Move X20, X1
+	010 Move [X0+16], X8
+	011 Move W21, [X2+82]
+	012 Move [X0+64], X0
+	013 Move X0, X2
+	014 Call 0x1C17D84
+	015 Move TEMP, X0
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfNotEqual {24}
+	019 Compare W21, 0
+	020 JumpIfNotEqual {26}
+	021 Move X8, -27242496
+	022 Add X8, X8, 3012
+	023 Move [X19+24], X8
+	024 Compare X20, 0
+	025 JumpIfEqual {38}
+	026 Move X8, [X19+16]
+	027 Move X9, [X19+32]
+	028 Move [X19+24], X8
+	029 Move [X19+64], X9
+	030 Move X8, -27242496
+	031 Add X8, X8, 2940
+	032 Move [X19+56], X8
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 Move X30, [X31+32]
+	036 Move X21, [X31+40]
+	037 Return 
+	038 Move X1, -44699648
+	039 Add X1, X1, 3811
+	040 Move X0, X31
+	041 Call 0x1C17F3C
+	042 Move X1, X31
+	043 Call 0x1C17DEC
+
+Method: System.Collections.Generic.IEnumerator`1<SpatialSys.CommandLib.Command> Invoke()
+
+Disassembly:
+	0x035BD778 MOVZ W2, 0x1
+	0x035BD77C MOV X1, X19
+	0x035BD780 MOV X20, X0
+	0x035BD784 BL 0x35BC984
+	0x035BD788 STR W31, [X20 + 0x38]
+
+ISIL:
+	001 Move X8, [X0+64]
+	002 Move X2, [X0+24]
+	003 Move X1, [X0+40]
+	004 Move X0, X8
+	005 CallNoReturn X2
+
+Method: System.IAsyncResult BeginInvoke(System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x035BD78C STR X21, [X20 + 0x40]
+	0x035BD790 MOV X0, X20
+	0x035BD794 LDP X20, X19, [X31 + 0x20]
+	0x035BD798 LDP X22, X21, [X31 + 0x10]
+	0x035BD79C LDR X30, [X31], #0x30
+	0x035BD7A0 RET
+	0x035BD7A4 BL 0x1C16F20
+	0x035BD7A8 MOV X1, X31
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X3, X2
+	003 Move X2, X1
+	004 Add X1, X31, 8
+	005 Move [X31+8], X31
+	006 Call 0x1C17CB0
+	007 Move X30, [X31+16]
+	008 Return X0
+
+Method: System.Collections.Generic.IEnumerator`1<SpatialSys.CommandLib.Command> EndInvoke(System.IAsyncResult result)
+
+Disassembly:
+	0x035BD7AC B 0x33BDD8C
+	0x035BD7B0 STR X30, [X31 - 0x30]!
+	0x035BD7B4 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X31
+	003 Call 0x1C17CB4
+	004 Return X0
+

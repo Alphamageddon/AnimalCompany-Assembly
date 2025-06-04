@@ -1,0 +1,191 @@
+Type: System.Net.Sockets.SocketException
+
+Method: System.Int32 WSAGetLastError_icall()
+
+Disassembly:
+	0x036CB96C LDR X0, [X0 + 0x7B8]
+
+ISIL:
+	001 Call 0x1C88504
+	002 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x036CB970 BL 0x1C16CF4
+	0x036CB974 MOVZ W8, 0x1
+	0x036CB978 STRB W8, [X23 + 0xF1B]
+	0x036CB97C LDR X0, [X22]
+	0x036CB980 ADRP X26, 0xA74000
+	0x036CB984 ADRP X23, 0xA74000
+	0x036CB988 ADRP X25, 0xA73000
+	0x036CB98C ADRP X24, 0xA74000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Call 0x1C88504
+	005 Move W1, W0
+	006 Move X0, X19
+	007 Move X2, X31
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Call Win32Exception..ctor, X0, X1
+	011 Return 
+
+Method: System.Void .ctor(System.Int32 error, System.String message)
+
+Disassembly:
+	0x036CB990 LDR W8, [X0 + 0xE0]
+	0x036CB994 LDR X26, [X26 + 0xDE0]
+
+ISIL:
+	001 Move X3, X31
+	002 Call Win32Exception..ctor, X0, X1, X2
+	003 Return 
+
+Method: System.Void .ctor(System.Int32 errorCode)
+
+Disassembly:
+	0x036C7F04 ADD X1, X1, 0xE58
+	0x036C7F08 MOV X2, X31
+
+ISIL:
+	001 Move X2, X31
+	002 Call Win32Exception..ctor, X0, X1
+	003 Return 
+
+Method: System.Void .ctor(System.Net.Sockets.SocketError socketError)
+
+Disassembly:
+	0x036CB10C B 0x36CB130
+	0x036CB110 B 0x36CB130
+
+ISIL:
+	001 Move X2, X31
+	002 Call Win32Exception..ctor, X0, X1
+	003 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
+
+Disassembly:
+	0x036CB998 LDR X23, [X23 + 0xDF0]
+	0x036CB99C LDR X25, [X25 + 0xFD8]
+
+ISIL:
+	001 Move X4, X31
+	002 Call Win32Exception..ctor, X0, X1, X2
+	003 Return 
+
+Method: System.Int32 get_ErrorCode()
+
+Disassembly:
+	0x036CB9A0 LDR X24, [X24 + 0xDD8]
+	0x036CB9A4 CBNZ W8, 0x36CB9B0
+
+ISIL:
+	001 Move W0, [X0+140]
+	002 Return X0
+
+Method: System.String get_Message()
+
+Disassembly:
+	0x036CB9A8 BL 0x1C16DFC
+	0x036CB9AC LDR X0, [X22]
+	0x036CB9B0 LDR X8, [X0 + 0xB8]
+	0x036CB9B4 LDR X0, [X26]
+	0x036CB9B8 LDR X22, [X8 + 0x28]
+	0x036CB9BC BL 0x1C16F10
+	0x036CB9C0 LDR X2, [X23]
+	0x036CB9C4 MOV X1, X21
+	0x036CB9C8 MOV X3, X31
+	0x036CB9CC MOV X23, X0
+	0x036CB9D0 BL 0x2D41148
+	0x036CB9D4 LDR X0, [X25]
+	0x036CB9D8 BL 0x1C16F10
+	0x036CB9DC LDR X2, [X24]
+	0x036CB9E0 MOV X1, X21
+	0x036CB9E4 MOV X3, X31
+	0x036CB9E8 MOV X24, X0
+	0x036CB9EC BL 0x2A6B948
+	0x036CB9F0 CBZ X22, 0x36CBA30
+	0x036CB9F4 ADRP X8, 0xA74000
+	0x036CB9F8 LDR X8, [X8 + 0xDE8]
+	0x036CB9FC MOV X0, X22
+	0x036CBA00 MOV X1, X23
+	0x036CBA04 MOV X2, X24
+	0x036CBA08 LDR X6, [X8]
+	0x036CBA0C MOV X3, X20
+	0x036CBA10 MOV W4, W19
+	0x036CBA14 LDP X20, X19, [X31 + 0x40]
+	0x036CBA18 LDP X22, X21, [X31 + 0x30]
+	0x036CBA1C LDP X24, X23, [X31 + 0x20]
+	0x036CBA20 LDP X26, X25, [X31 + 0x10]
+	0x036CBA24 MOV X5, X31
+	0x036CBA28 LDR X30, [X31], #0x50
+	0x036CBA2C B 0x229B348
+	0x036CBA30 BL 0x1C16F20
+	0x036CBA34 STP X30, X21, [X31 - 0x20]!
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xD16000
+	006 Move W8, [X20+2631]
+	007 Move X19, X0
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xA29000
+	013 Move X0, [X0+3544]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+2631], W8
+	017 Move X21, [X19+144]
+	018 Move X0, X19
+	019 Move X1, X31
+	020 Call Exception.get_Message, X0
+	021 Move X20, X0
+	022 Compare X21, 0
+	023 JumpIfEqual {43}
+	024 Move X0, [X19+144]
+	025 Compare X0, 0
+	026 JumpIfEqual {49}
+	027 Move X8, [X0]
+	028 Move X19, 0xA29000
+	029 Move X9, [X8+360]
+	030 Move X1, [X8+368]
+	031 Move X19, [X19+3544]
+	032 NotImplemented "Instruction BLR not yet implemented."
+	033 Move X1, [X19]
+	034 Move X2, X0
+	035 Move X0, X20
+	036 Move X20, [X31+16]
+	037 Move X19, [X31+24]
+	038 Move X3, X31
+	039 Move X30, [X31+32]
+	040 Move X21, [X31+40]
+	041 Call String.Concat, X0, X1, X2
+	042 Return X0
+	043 Move X0, X20
+	044 Move X20, [X31+16]
+	045 Move X19, [X31+24]
+	046 Move X30, [X31+32]
+	047 Move X21, [X31+40]
+	048 Return X0
+	049 Call 0x1C17F20
+
+Method: System.Net.Sockets.SocketError get_SocketErrorCode()
+
+Disassembly:
+	0x036C9880 BL 0x3EB1AF0
+	0x036C9884 LDR X8, [X20]
+
+ISIL:
+	001 Move W0, [X0+140]
+	002 Return X0
+

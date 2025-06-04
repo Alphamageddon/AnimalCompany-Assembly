@@ -1,0 +1,188 @@
+Type: Photon.Voice.AudioUtil/LevelMeterShort
+
+Method: System.Void .ctor(System.Int32 samplingRate, System.Int32 numChannels)
+
+Disassembly:
+	0x035559C0 MOV X1, X21
+	0x035559C4 MOV X2, X31
+	0x035559C8 STR X31, [X31 + 0x20]
+	0x035559CC STP V0, V0, [X31]
+	0x035559D0 BL 0x3555108
+	0x035559D4 CBZ X20, 0x3555A80
+	0x035559D8 LDP V0, V1, [X31]
+	0x035559DC LDR X8, [X31 + 0x20]
+	0x035559E0 ADRP X9, 0xBE0000
+	0x035559E4 LDR X9, [X9 + 0x3C8]
+	0x035559E8 STP V0, V1, [X31 + 0x30]
+	0x035559EC STR X8, [X31 + 0x50]
+	0x035559F0 LDR W11, [X20 + 0x1C]
+	0x035559F4 LDR X8, [X20 + 0x10]
+	0x035559F8 LDR X10, [X9]
+	0x035559FC ADD W9, W11, 0x1
+	0x03555A00 STR W9, [X20 + 0x1C]
+	0x03555A04 CBZ X8, 0x3555A80
+	0x03555A08 LDRSW X9, [X20 + 0x18]
+	0x03555A0C LDR W11, [X8 + 0x18]
+	0x03555A10 CMP W9, W11
+	0x03555A14 B.CS 0x3555A3C
+	0x03555A18 ADD W10, W9, 0x1
+	0x03555A1C STR W10, [X20 + 0x18]
+	0x03555A20 LDR X10, [X31 + 0x50]
+	0x03555A24 LDP V0, V1, [X31 + 0x30]
+	0x03555A28 MOVZ W11, 0x28
+	0x03555A2C MADD X8, X9, X11, X8
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X22, 0xE8B000
+	008 Move X23, 0xBE1000
+	009 Move W8, [X22+3436]
+	010 Move X23, [X23+848]
+	011 Move W20, W2
+	012 Move W21, W1
+	013 Move X19, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {23}
+	018 Move X0, 0xBE1000
+	019 Move X0, [X0+848]
+	020 Call 0x1C17CF4
+	021 Move W8, 1
+	022 Move [X22+3436], W8
+	023 Move X3, [X23]
+	024 Move X0, X19
+	025 Move W1, W21
+	026 Move W2, W20
+	027 Call 0x2EEB22C, X0, X1, X2
+	028 Move W8, 256
+	029 NotImplemented "Instruction MOVK not yet implemented."
+	030 Move [X19+56], W8
+	031 Move X20, [X31+32]
+	032 Move X19, [X31+40]
+	033 Move X22, [X31+16]
+	034 Move X21, [X31+24]
+	035 Move X30, [X31+48]
+	036 Move X23, [X31+56]
+	037 Return 
+
+Method: System.Int16[] Process(System.Int16[] buf)
+
+Disassembly:
+	0x03555A30 STR X10, [X8 + 0x40]
+	0x03555A34 STP V0, V1, [X8 + 0x20]
+	0x03555A38 B 0x3555A64
+	0x03555A3C LDR X8, [X10 + 0x20]
+	0x03555A40 LDP V0, V1, [X31 + 0x30]
+	0x03555A44 LDR X9, [X31 + 0x50]
+	0x03555A48 ADD X1, X31, 0x60
+	0x03555A4C LDR X8, [X8 + 0xC0]
+	0x03555A50 MOV X0, X20
+	0x03555A54 LDR X2, [X8 + 0x70]
+	0x03555A58 STP V0, V1, [X31 + 0x60]
+	0x03555A5C STR X9, [X31 + 0x80]
+	0x03555A60 BL 0x2FAEE50
+	0x03555A64 STR X20, [X19 + 0x10]
+	0x03555A68 LDP X20, X19, [X31 + 0xC0]
+	0x03555A6C LDP X22, X21, [X31 + 0xB0]
+	0x03555A70 LDP X24, X23, [X31 + 0xA0]
+	0x03555A74 LDR X30, [X31 + 0x90]
+	0x03555A78 ADD X31, X31, 0xD0
+	0x03555A7C RET
+	0x03555A80 BL 0x1C16F20
+	0x03555A84 LDR X8, [X0 + 0x28]
+	0x03555A88 CBZ X8, 0x3555A9C
+	0x03555A8C LDR X2, [X8 + 0x18]
+	0x03555A90 LDR X0, [X8 + 0x40]
+	0x03555A94 LDR X1, [X8 + 0x28]
+	0x03555A98 BR X2
+	0x03555A9C RET
+	0x03555AA0 RET
+	0x03555AA4 MOV W0, W31
+	0x03555AA8 RET
+	0x03555AAC STR X30, [X31 - 0x20]!
+	0x03555AB0 STP X20, X19, [X31 + 0x10]
+	0x03555AB4 MOV X19, X2
+	0x03555AB8 MOV X20, X0
+	0x03555ABC BL 0x3555758
+	0x03555AC0 STR X19, [X20 + 0x30]
+	0x03555AC4 LDP X20, X19, [X31 + 0x10]
+	0x03555AC8 LDR X30, [X31], #0x20
+	0x03555ACC RET
+	0x03555AD0 LDR X8, [X0 + 0x28]
+	0x03555AD4 CBZ X8, 0x3555AE8
+	0x03555AD8 LDR X2, [X8 + 0x18]
+	0x03555ADC LDR X0, [X8 + 0x40]
+	0x03555AE0 LDR X1, [X8 + 0x28]
+	0x03555AE4 BR X2
+	0x03555AE8 RET
+	0x03555AEC LDR X0, [X0 + 0x30]
+	0x03555AF0 RET
+	0x03555AF4 RET
+	0x03555AF8 STR X30, [X31 - 0x30]!
+	0x03555AFC STP X22, X21, [X31 + 0x10]
+	0x03555B00 STP X20, X19, [X31 + 0x20]
+	0x03555B04 ADRP X21, 0xE8A000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {55}
+	004 Move X8, [X1+24]
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 And X8, X8, 0
+	007 Compare X8, 0
+	008 JumpIfEqual {51}
+	009 Add X9, X1, 32
+	010 Compare X8, 0
+	011 JumpIfEqual {54}
+	012 NotImplemented "Instruction LDRSH not yet implemented."
+	013 Move X12, [X0+32]
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 NotImplemented "Instruction CSNEG not yet implemented."
+	016 Compare X12, 0
+	017 JumpIfEqual {55}
+	018 NotImplemented "Instruction LDRSW not yet implemented."
+	019 Move W13, [X12+24]
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 Move V0, [X0+16]
+	022 Add X12, X12, X10
+	023 Move V2, [X12+32]
+	024 NotImplemented "Instruction SXTH not yet implemented."
+	025 NotImplemented "Instruction SCVTF not yet implemented."
+	026 Add S0, S0, S1
+	027 Subtract S0, S0, S2
+	028 Move [X0+16], S0
+	029 Move [X12+32], S1
+	030 Move V0, [X0+20]
+	031 NotImplemented "Instruction FCMP not yet implemented."
+	032 Move V0, V1
+	033 Move [X0+20], S1
+	034 Compare W10, 0
+	035 JumpIfNotEqual {44}
+	036 Move V1, [X0+44]
+	037 Move W11, [X0+48]
+	038 Move [X0+52], S0
+	039 Move [X0+20], W31
+	040 Add S0, S0, S1
+	041 Add W11, W11, 1
+	042 Move [X0+44], S0
+	043 Move [X0+48], W11
+	044 Move W11, [X0+24]
+	045 Add W10, W10, 1
+	046 Subtract X8, X8, 1
+	047 Add X9, X9, 2
+	048 NotImplemented "Instruction SDIV not yet implemented."
+	049 NotImplemented "Instruction MSUB not yet implemented."
+	050 Move [X0+40], W10
+	051 Move X0, X1
+	052 Move X30, [X31+16]
+	053 Return X0
+	054 Call 0x1C17F28
+	055 Call 0x1C17F20
+

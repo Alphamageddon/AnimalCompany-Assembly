@@ -1,0 +1,62 @@
+Type: UnityEngine.InputSystem.LowLevel.PointerState
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_kFormat()
+
+Disassembly:
+	0x03800C80 LDR W9, [X10]
+	0x03800C84 ADD W9, W9, 0x13
+	0x03800C88 ADD X8, X8, W9, 0x4, SXTW
+	0x03800C8C ADD X0, X8, 0x138
+	0x03800C90 LDP X8, X1, [X0]
+	0x03800C94 MOV X0, X23
+	0x03800C98 BLR X8
+	0x03800C9C MOV V8.16B, V0.16B
+	0x03800CA0 STR W22, [X21]
+	0x03800CA4 STRH W20, [X21 + 0x4]
+	0x03800CA8 STRH W19, [X21 + 0x6]
+	0x03800CAC STR D8, [X21 + 0x8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 80
+	004 Move W2, 84
+	005 Move W3, 82
+	006 Move W4, 32
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_format()
+
+Disassembly:
+	0x03800CB0 STR W31, [X21 + 0x10]
+	0x03800CB4 LDP X20, X19, [X31 + 0x30]
+	0x03800CB8 LDP X22, X21, [X31 + 0x20]
+	0x03800CBC LDP X30, X23, [X31 + 0x10]
+	0x03800CC0 LDR V8, [X31], #0x40
+	0x03800CC4 RET
+	0x03800CC8 BL 0x1C16F20
+	0x03800CCC MOVZ W0, 0x4647
+	0x03800CD0 MOVK W0, 0x44430000
+	0x03800CD4 RET
+	0x03800CD8 RET
+	0x03800CDC SUB X31, X31, 0x40
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 80
+	004 Move W2, 84
+	005 Move W3, 82
+	006 Move W4, 32
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+

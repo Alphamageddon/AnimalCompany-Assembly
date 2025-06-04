@@ -1,0 +1,180 @@
+Type: UnityEngine.Experimental.Rendering.RenderGraphModule.RendererListHandle
+
+Method: System.Int32 get_handle()
+
+Disassembly:
+	0x0399B334 TBNZ X8, 0x0, 0x399B364
+	0x0399B338 ADRP X0, 0x758000
+
+ISIL:
+	001 Move W0, [X0+4]
+	002 Return X0
+
+Method: System.Void set_handle(System.Int32 value)
+
+Disassembly:
+	0x0399B33C LDR X0, [X0 + 0x9C8]
+	0x0399B340 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+4], W1
+	002 Return 
+
+Method: System.Void .ctor(System.Int32 handle)
+
+Disassembly:
+	0x0399AAE0 MADD W9, W9, W8, W10
+	0x0399AAE4 LDRB W10, [X19 + 0x34]
+	0x0399AAE8 MADD W9, W9, W8, W11
+	0x0399AAEC LDRB W11, [X19 + 0x35]
+
+ISIL:
+	001 Move W8, 1
+	002 Move [X0+4], W1
+	003 Move [X0], W8
+	004 Return 
+
+Method: System.Int32 op_Implicit(UnityEngine.Experimental.Rendering.RenderGraphModule.RendererListHandle handle)
+
+Disassembly:
+	0x0399A0E4 LDR X10, [X19 + 0x10]
+	0x0399A0E8 CBZ X10, 0x399A1A4
+
+ISIL:
+	001 Move X0, X0
+	002 ShiftRight X0, 32
+	003 And X0, X0, 0x7FFFFFFF
+	004 Return X0
+
+Method: UnityEngine.Rendering.RendererList op_Implicit(UnityEngine.Experimental.Rendering.RenderGraphModule.RendererListHandle rendererList)
+
+Disassembly:
+	0x0399B344 ADRP X0, 0x758000
+	0x0399B348 LDR X0, [X0 + 0xB58]
+	0x0399B34C BL 0x1C16CF4
+	0x0399B350 ADRP X0, 0x7B6000
+	0x0399B354 LDR X0, [X0 + 0x38]
+	0x0399B358 BL 0x1C16CF4
+	0x0399B35C MOVZ W8, 0x1
+	0x0399B360 STRB W8, [X21 + 0xB4D]
+	0x0399B364 LDRB W8, [X20 + 0x96]
+	0x0399B368 LDR X0, [X24]
+	0x0399B36C LDR X21, [X20 + 0x80]
+	0x0399B370 ADD X1, X31, 0xC
+	0x0399B374 STRB W8, [X31 + 0xC]
+	0x0399B378 BL 0x1C16E04
+	0x0399B37C LDR X8, [X23]
+	0x0399B380 MOV X2, X0
+	0x0399B384 MOV X1, X21
+	0x0399B388 MOV X3, X31
+	0x0399B38C MOV X0, X8
+	0x0399B390 BL 0x3227BD4
+	0x0399B394 LDR X21, [X22]
+	0x0399B398 MOV X20, X0
+	0x0399B39C LDR X8, [X21 + 0x38]
+	0x0399B3A0 CBNZ X8, 0x399B3B0
+	0x0399B3A4 MOV X0, X21
+	0x0399B3A8 BL 0x1C5C6E0
+	0x0399B3AC LDR X8, [X21 + 0x38]
+	0x0399B3B0 LDR X0, [X8 + 0x10]
+	0x0399B3B4 LDRB W8, [X0 + 0x135]
+	0x0399B3B8 TBNZ X8, 0x0, 0x399B3C0
+	0x0399B3BC BL 0x1C5C684
+	0x0399B3C0 LDR W8, [X0 + 0xE0]
+	0x0399B3C4 CBNZ W8, 0x399B3CC
+	0x0399B3C8 BL 0x1C16DFC
+	0x0399B3CC LDR X8, [X21 + 0x38]
+	0x0399B3D0 LDR X0, [X8 + 0x10]
+	0x0399B3D4 LDRB W8, [X0 + 0x135]
+	0x0399B3D8 TBNZ X8, 0x0, 0x399B3E0
+	0x0399B3DC BL 0x1C5C684
+	0x0399B3E0 CBZ X19, 0x399B410
+	0x0399B3E4 LDR X8, [X0 + 0xB8]
+	0x0399B3E8 MOV X0, X19
+	0x0399B3EC MOV X1, X20
+	0x0399B3F0 MOV X3, X31
+	0x0399B3F4 LDR X2, [X8]
+	0x0399B3F8 BL 0x39904A0
+	0x0399B3FC LDP X20, X19, [X31 + 0x30]
+	0x0399B400 LDP X22, X21, [X31 + 0x20]
+	0x0399B404 LDP X24, X23, [X31 + 0x10]
+	0x0399B408 LDR X30, [X31], #0x40
+	0x0399B40C RET
+	0x0399B410 BL 0x1C16F20
+	0x0399B414 STP X30, X23, [X31 - 0x30]!
+	0x0399B418 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+32], X30
+	003 Move [X31+40], X21
+	004 Move [X31+48], X20
+	005 Move [X31+56], X19
+	006 Move X21, 0xA47000
+	007 Move X19, X8
+	008 Move W8, [X21+2857]
+	009 Move X20, X0
+	010 Move [X31+24], X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0x784000
+	016 Move X0, [X0+1824]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X21+2857], W8
+	020 And W31, W20, 255
+	021 Move X20, 0xA47000
+	022 Move W8, [X20+2886]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {30}
+	025 Move X0, 0x7B6000
+	026 Move X0, [X0+2400]
+	027 Call 0x1C17CF4
+	028 Move W8, 1
+	029 Move [X20+2886], W8
+	030 Move X8, 0x7B6000
+	031 Move X8, [X8+2400]
+	032 Move X8, [X8]
+	033 Move X8, [X8+184]
+	034 Move X0, [X8]
+	035 Compare X0, 0
+	036 JumpIfEqual {62}
+	037 Add X8, X31, 0
+	038 Add X1, X31, 24
+	039 Call RenderGraphResourceRegistry.GetRendererList, X0, X1
+	040 Move X8, [X31+16]
+	041 Move V0, [X31]
+	042 Move [X19+16], X8
+	043 Move X20, 0x784000
+	044 Move X20, [X20+1824]
+	045 Move X0, [X20]
+	046 Move W8, [X0+224]
+	047 Compare W8, 0
+	048 JumpIfNotEqual {51}
+	049 Call 0x1C17DFC
+	050 Move X0, [X20]
+	051 Move X8, [X0+184]
+	052 Move X9, [X8+16]
+	053 Move V0, [X8]
+	054 Move [X19+16], X9
+	055 Move [X19], V0
+	056 Move X20, [X31+48]
+	057 Move X19, [X31+56]
+	058 Move X30, [X31+32]
+	059 Move X21, [X31+40]
+	060 Add X31, X31, 64
+	061 Return X0
+	062 Call 0x1C17F20
+
+Method: System.Boolean IsValid()
+
+Disassembly:
+	0x0399B41C STP X20, X19, [X31 + 0x20]
+	0x0399B420 ADRP X23, 0xA46000
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+

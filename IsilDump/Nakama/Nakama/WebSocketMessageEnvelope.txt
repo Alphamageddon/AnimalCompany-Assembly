@@ -1,0 +1,1016 @@
+Type: Nakama.WebSocketMessageEnvelope
+
+Method: System.String get_Cid()
+
+Disassembly:
+	0x03487A44 MOV X2, X19
+	0x03487A48 BL 0x218B6C0
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_Cid(System.String value)
+
+Disassembly:
+	0x03487A4C B 0x3487A9C
+	0x03487A50 LDR X8, [X19 + 0x28]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: Nakama.Channel get_Channel()
+
+Disassembly:
+	0x03487A54 MOVN W9, 0x0
+	0x03487A58 STR X8, [X31 + 0x8]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_Channel(Nakama.Channel value)
+
+Disassembly:
+	0x03487A5C STR X31, [X19 + 0x28]
+	0x03487A60 STR W9, [X19]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: Nakama.ChannelJoinMessage get_ChannelJoin()
+
+Disassembly:
+	0x03487A64 ADD X0, X31, 0x8
+	0x03487A68 MOV X1, X31
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_ChannelJoin(Nakama.ChannelJoinMessage value)
+
+Disassembly:
+	0x03487A6C BL 0x32C3B4C
+	0x03487A70 CBZ X22, 0x3487AE0
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: Nakama.ChannelLeaveMessage get_ChannelLeave()
+
+Disassembly:
+	0x03487A74 STR X31, [X22 + 0x40]
+	0x03487A78 MOVN W8, 0x1
+
+ISIL:
+	001 Move X0, [X0+40]
+	002 Return X0
+
+Method: System.Void set_ChannelLeave(Nakama.ChannelLeaveMessage value)
+
+Disassembly:
+	0x03487A7C STR W8, [X19], #0x8
+	0x03487A80 LDR X0, [X21]
+
+ISIL:
+	001 Move [X0+40], X1
+	002 Return 
+
+Method: Nakama.ApiChannelMessage get_ChannelMessage()
+
+Disassembly:
+	0x03487A84 LDR W8, [X0 + 0xE0]
+	0x03487A88 CBNZ W8, 0x3487A90
+
+ISIL:
+	001 Move X0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_ChannelMessage(Nakama.ApiChannelMessage value)
+
+Disassembly:
+	0x03487A8C BL 0x1C16DFC
+	0x03487A90 MOV X0, X19
+
+ISIL:
+	001 Move [X0+48], X1
+	002 Return 
+
+Method: Nakama.ChannelMessageAck get_ChannelMessageAck()
+
+Disassembly:
+	0x03487A94 MOV X1, X31
+	0x03487A98 BL 0x32C4864
+
+ISIL:
+	001 Move X0, [X0+56]
+	002 Return X0
+
+Method: System.Void set_ChannelMessageAck(Nakama.ChannelMessageAck value)
+
+Disassembly:
+	0x03487A9C LDP X20, X19, [X31 + 0x20]
+	0x03487AA0 LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+56], X1
+	002 Return 
+
+Method: Nakama.ChannelRemoveMessage get_ChannelMessageRemove()
+
+Disassembly:
+	0x03487AA4 LDR X30, [X31], #0x30
+	0x03487AA8 RET
+
+ISIL:
+	001 Move X0, [X0+64]
+	002 Return X0
+
+Method: System.Void set_ChannelMessageRemove(Nakama.ChannelRemoveMessage value)
+
+Disassembly:
+	0x03487AAC CBZ X20, 0x3487AE4
+	0x03487AB0 LDR X8, [X20]
+
+ISIL:
+	001 Move [X0+64], X1
+	002 Return 
+
+Method: Nakama.ChannelSendMessage get_ChannelMessageSend()
+
+Disassembly:
+	0x03487AB4 LDP X9, X1, [X8 + 0x1B8]
+	0x03487AB8 MOV X0, X20
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_ChannelMessageSend(Nakama.ChannelSendMessage value)
+
+Disassembly:
+	0x03487ABC BLR X9
+	0x03487AC0 CMP W0, 0x1
+
+ISIL:
+	001 Move [X0+72], X1
+	002 Return 
+
+Method: Nakama.ChannelUpdateMessage get_ChannelMessageUpdate()
+
+Disassembly:
+	0x03487AC4 B.NE 0x3487A74
+	0x03487AC8 LDR X0, [X22 + 0x30]
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_ChannelMessageUpdate(Nakama.ChannelUpdateMessage value)
+
+Disassembly:
+	0x03487ACC CBZ X0, 0x3487A74
+	0x03487AD0 MOV X1, X31
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Return 
+
+Method: Nakama.ChannelPresenceEvent get_ChannelPresenceEvent()
+
+Disassembly:
+	0x03487AD4 BL 0x33DFCF8
+	0x03487AD8 B 0x3487A74
+
+ISIL:
+	001 Move X0, [X0+88]
+	002 Return X0
+
+Method: System.Void set_ChannelPresenceEvent(Nakama.ChannelPresenceEvent value)
+
+Disassembly:
+	0x03487ADC BL 0x1C16F20
+	0x03487AE0 BL 0x1C16F20
+
+ISIL:
+	001 Move [X0+88], X1
+	002 Return 
+
+Method: Nakama.WebSocketErrorMessage get_Error()
+
+Disassembly:
+	0x03487AE4 BL 0x1C16F20
+	0x03487AE8 BL 0x1C16F20
+
+ISIL:
+	001 Move X0, [X0+96]
+	002 Return X0
+
+Method: System.Void set_Error(Nakama.WebSocketErrorMessage value)
+
+Disassembly:
+	0x03487AEC BL 0x1C16F20
+	0x03487AF0 B 0x3487B20
+
+ISIL:
+	001 Move [X0+96], X1
+	002 Return 
+
+Method: Nakama.MatchmakerAddMessage get_MatchmakerAdd()
+
+Disassembly:
+	0x03487AF4 B 0x3487B20
+	0x03487AF8 B 0x3487B20
+
+ISIL:
+	001 Move X0, [X0+104]
+	002 Return X0
+
+Method: System.Void set_MatchmakerAdd(Nakama.MatchmakerAddMessage value)
+
+Disassembly:
+	0x03487AFC B 0x3487B20
+	0x03487B00 B 0x3487B20
+
+ISIL:
+	001 Move [X0+104], X1
+	002 Return 
+
+Method: Nakama.MatchmakerMatched get_MatchmakerMatched()
+
+Disassembly:
+	0x03487B04 B 0x3487B20
+	0x03487B08 B 0x3487B20
+
+ISIL:
+	001 Move X0, [X0+112]
+	002 Return X0
+
+Method: System.Void set_MatchmakerMatched(Nakama.MatchmakerMatched value)
+
+Disassembly:
+	0x03487B0C B 0x3487B20
+	0x03487B10 B 0x3487B20
+
+ISIL:
+	001 Move [X0+112], X1
+	002 Return 
+
+Method: Nakama.MatchmakerRemoveMessage get_MatchmakerRemove()
+
+Disassembly:
+	0x03487B14 B 0x3487B20
+	0x03487B18 B 0x3487B20
+
+ISIL:
+	001 Move X0, [X0+120]
+	002 Return X0
+
+Method: System.Void set_MatchmakerRemove(Nakama.MatchmakerRemoveMessage value)
+
+Disassembly:
+	0x03487B1C B 0x3487B20
+	0x03487B20 MOV X20, X0
+
+ISIL:
+	001 Move [X0+120], X1
+	002 Return 
+
+Method: Nakama.MatchmakerTicket get_MatchmakerTicket()
+
+Disassembly:
+	0x03487B24 CMP W1, 0x1
+	0x03487B28 B.NE 0x3487BB8
+
+ISIL:
+	001 Move X0, [X0+128]
+	002 Return X0
+
+Method: System.Void set_MatchmakerTicket(Nakama.MatchmakerTicket value)
+
+Disassembly:
+	0x03487B2C MOV X0, X20
+	0x03487B30 BL 0x3EB1AD0
+
+ISIL:
+	001 Move [X0+128], X1
+	002 Return 
+
+Method: Nakama.Match get_Match()
+
+Disassembly:
+	0x03487B34 MOV X20, X0
+	0x03487B38 ADRP X0, 0xC6C000
+
+ISIL:
+	001 Move X0, [X0+136]
+	002 Return X0
+
+Method: System.Void set_Match(Nakama.Match value)
+
+Disassembly:
+	0x03487B3C LDR X0, [X0 + 0x7D0]
+	0x03487B40 BL 0x1C16D08
+
+ISIL:
+	001 Move [X0+136], X1
+	002 Return 
+
+Method: Nakama.MatchCreateMessage get_MatchCreate()
+
+Disassembly:
+	0x03487B44 LDR X8, [X20]
+	0x03487B48 LDR X1, [X8]
+
+ISIL:
+	001 Move X0, [X0+144]
+	002 Return X0
+
+Method: System.Void set_MatchCreate(Nakama.MatchCreateMessage value)
+
+Disassembly:
+	0x03487B4C BL 0x1C17270
+	0x03487B50 TBZ X0, 0x0, 0x3487B90
+
+ISIL:
+	001 Move [X0+144], X1
+	002 Return 
+
+Method: Nakama.MatchJoinMessage get_MatchJoin()
+
+Disassembly:
+	0x03487B54 LDR X20, [X20]
+	0x03487B58 BL 0x3EB1AE0
+
+ISIL:
+	001 Move X0, [X0+152]
+	002 Return X0
+
+Method: System.Void set_MatchJoin(Nakama.MatchJoinMessage value)
+
+Disassembly:
+	0x03487B5C MOVN W8, 0x1
+	0x03487B60 STR W8, [X19], #0x8
+
+ISIL:
+	001 Move [X0+152], X1
+	002 Return 
+
+Method: Nakama.MatchLeaveMessage get_MatchLeave()
+
+Disassembly:
+	0x03487B64 ADRP X0, 0xC6F000
+	0x03487B68 LDR X0, [X0 + 0x280]
+
+ISIL:
+	001 Move X0, [X0+160]
+	002 Return X0
+
+Method: System.Void set_MatchLeave(Nakama.MatchLeaveMessage value)
+
+Disassembly:
+	0x03487B6C BL 0x1C16D08
+	0x03487B70 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X0+160], X1
+	002 Return 
+
+Method: Nakama.MatchPresenceEvent get_MatchPresenceEvent()
+
+Disassembly:
+	0x03487B74 CBNZ W8, 0x3487B7C
+	0x03487B78 BL 0x1C16DFC
+
+ISIL:
+	001 Move X0, [X0+168]
+	002 Return X0
+
+Method: System.Void set_MatchPresenceEvent(Nakama.MatchPresenceEvent value)
+
+Disassembly:
+	0x03487B7C MOV X0, X19
+	0x03487B80 MOV X1, X20
+
+ISIL:
+	001 Move [X0+168], X1
+	002 Return 
+
+Method: Nakama.MatchState get_MatchState()
+
+Disassembly:
+	0x03487B84 MOV X2, X31
+	0x03487B88 BL 0x32C4908
+
+ISIL:
+	001 Move X0, [X0+176]
+	002 Return X0
+
+Method: System.Void set_MatchState(Nakama.MatchState value)
+
+Disassembly:
+	0x03487B8C B 0x3487A9C
+	0x03487B90 MOVZ W0, 0x8
+
+ISIL:
+	001 Move [X0+176], X1
+	002 Return 
+
+Method: Nakama.MatchSendMessage get_MatchStateSend()
+
+Disassembly:
+	0x03487B94 BL 0x3EB1AF0
+	0x03487B98 LDR X8, [X20]
+
+ISIL:
+	001 Move X0, [X0+184]
+	002 Return X0
+
+Method: System.Void set_MatchStateSend(Nakama.MatchSendMessage value)
+
+Disassembly:
+	0x03487B9C STR X8, [X0]
+	0x03487BA0 ADRP X1, 0xA2D000
+
+ISIL:
+	001 Move [X0+184], X1
+	002 Return 
+
+Method: Nakama.ApiNotificationList get_NotificationList()
+
+Disassembly:
+	0x03487BA4 ADD X1, X1, 0xE58
+	0x03487BA8 MOV X2, X31
+
+ISIL:
+	001 Move X0, [X0+192]
+	002 Return X0
+
+Method: System.Void set_NotificationList(Nakama.ApiNotificationList value)
+
+Disassembly:
+	0x03487BAC BL 0x3EB1B00
+	0x03487BB0 MOV X20, X0
+
+ISIL:
+	001 Move [X0+192], X1
+	002 Return 
+
+Method: Nakama.ApiRpc get_Rpc()
+
+Disassembly:
+	0x03487BB4 BL 0x3EB1AE0
+	0x03487BB8 MOV X0, X20
+
+ISIL:
+	001 Move X0, [X0+200]
+	002 Return X0
+
+Method: System.Void set_Rpc(Nakama.ApiRpc value)
+
+Disassembly:
+	0x03487BBC BL 0x1D2C690
+	0x03487BC0 BL 0x1990590
+
+ISIL:
+	001 Move [X0+200], X1
+	002 Return 
+
+Method: Nakama.Status get_Status()
+
+Disassembly:
+	0x03487BC4 STR X30, [X31 - 0x30]!
+	0x03487BC8 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, [X0+208]
+	002 Return X0
+
+Method: System.Void set_Status(Nakama.Status value)
+
+Disassembly:
+	0x03487BCC STP X20, X19, [X31 + 0x20]
+	0x03487BD0 ADRP X21, 0xF56000
+
+ISIL:
+	001 Move [X0+208], X1
+	002 Return 
+
+Method: Nakama.StatusFollowMessage get_StatusFollow()
+
+Disassembly:
+	0x03487BD4 ADRP X22, 0xC6F000
+	0x03487BD8 LDRB W8, [X21 + 0x900]
+
+ISIL:
+	001 Move X0, [X0+216]
+	002 Return X0
+
+Method: System.Void set_StatusFollow(Nakama.StatusFollowMessage value)
+
+Disassembly:
+	0x03487BDC LDR X22, [X22 + 0x280]
+	0x03487BE0 MOV X19, X1
+
+ISIL:
+	001 Move [X0+216], X1
+	002 Return 
+
+Method: Nakama.StatusPresenceEvent get_StatusPresenceEvent()
+
+Disassembly:
+	0x03487BE4 MOV X20, X0
+	0x03487BE8 TBNZ X8, 0x0, 0x3487C00
+
+ISIL:
+	001 Move X0, [X0+224]
+	002 Return X0
+
+Method: System.Void set_StatusPresenceEvent(Nakama.StatusPresenceEvent value)
+
+Disassembly:
+	0x03487BEC ADRP X0, 0xC6F000
+	0x03487BF0 LDR X0, [X0 + 0x280]
+
+ISIL:
+	001 Move [X0+224], X1
+	002 Return 
+
+Method: Nakama.StatusUnfollowMessage get_StatusUnfollow()
+
+Disassembly:
+	0x03487BF4 BL 0x1C16CF4
+	0x03487BF8 MOVZ W8, 0x1
+
+ISIL:
+	001 Move X0, [X0+232]
+	002 Return X0
+
+Method: System.Void set_StatusUnfollow(Nakama.StatusUnfollowMessage value)
+
+Disassembly:
+	0x03487BFC STRB W8, [X21 + 0x900]
+	0x03487C00 LDR X0, [X22]
+
+ISIL:
+	001 Move [X0+232], X1
+	002 Return 
+
+Method: Nakama.StatusUpdateMessage get_StatusUpdate()
+
+Disassembly:
+	0x03487C04 LDR W8, [X0 + 0xE0]
+	0x03487C08 CBNZ W8, 0x3487C10
+
+ISIL:
+	001 Move X0, [X0+240]
+	002 Return X0
+
+Method: System.Void set_StatusUpdate(Nakama.StatusUpdateMessage value)
+
+Disassembly:
+	0x03487C0C BL 0x1C16DFC
+	0x03487C10 ADD X0, X20, 0x8
+
+ISIL:
+	001 Move [X0+240], X1
+	002 Return 
+
+Method: Nakama.StreamPresenceEvent get_StreamPresenceEvent()
+
+Disassembly:
+	0x03487C14 MOV X1, X19
+	0x03487C18 LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move X0, [X0+248]
+	002 Return X0
+
+Method: System.Void set_StreamPresenceEvent(Nakama.StreamPresenceEvent value)
+
+Disassembly:
+	0x03487C1C LDP X22, X21, [X31 + 0x10]
+	0x03487C20 MOV X2, X31
+
+ISIL:
+	001 Move [X0+248], X1
+	002 Return 
+
+Method: Nakama.StreamState get_StreamState()
+
+Disassembly:
+	0x03487C24 LDR X30, [X31], #0x30
+	0x03487C28 B 0x32C477C
+
+ISIL:
+	001 Move X0, [X0+256]
+	002 Return X0
+
+Method: System.Void set_StreamState(Nakama.StreamState value)
+
+Disassembly:
+	0x03487C2C SUB X31, X31, 0x50
+	0x03487C30 STR X30, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+256], X1
+	002 Return 
+
+Method: Nakama.Party get_Party()
+
+Disassembly:
+	0x03487C34 STP X24, X23, [X31 + 0x20]
+	0x03487C38 STP X22, X21, [X31 + 0x30]
+
+ISIL:
+	001 Move X0, [X0+264]
+	002 Return X0
+
+Method: System.Void set_Party(Nakama.Party value)
+
+Disassembly:
+	0x03487C3C STP X20, X19, [X31 + 0x40]
+	0x03487C40 ADRP X20, 0xF56000
+
+ISIL:
+	001 Move [X0+264], X1
+	002 Return 
+
+Method: Nakama.PartyCreate get_PartyCreate()
+
+Disassembly:
+	0x03487C44 LDRB W8, [X20 + 0x901]
+	0x03487C48 MOV X19, X0
+
+ISIL:
+	001 Move X0, [X0+272]
+	002 Return X0
+
+Method: System.Void set_PartyCreate(Nakama.PartyCreate value)
+
+Disassembly:
+	0x03487C4C TBNZ X8, 0x0, 0x3487C94
+	0x03487C50 ADRP X0, 0xCAA000
+
+ISIL:
+	001 Move [X0+272], X1
+	002 Return 
+
+Method: Nakama.PartyJoin get_PartyJoin()
+
+Disassembly:
+	0x03487C54 LDR X0, [X0 + 0x1F8]
+	0x03487C58 BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, [X0+280]
+	002 Return X0
+
+Method: System.Void set_PartyJoin(Nakama.PartyJoin value)
+
+Disassembly:
+	0x03487C5C ADRP X0, 0xC6F000
+	0x03487C60 LDR X0, [X0 + 0x280]
+
+ISIL:
+	001 Move [X0+280], X1
+	002 Return 
+
+Method: Nakama.PartyLeave get_PartyLeave()
+
+Disassembly:
+	0x03487C64 BL 0x1C16CF4
+	0x03487C68 ADRP X0, 0xC6E000
+
+ISIL:
+	001 Move X0, [X0+288]
+	002 Return X0
+
+Method: System.Void set_PartyLeave(Nakama.PartyLeave value)
+
+Disassembly:
+	0x03487C6C LDR X0, [X0 + 0xA50]
+	0x03487C70 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+288], X1
+	002 Return 
+
+Method: Nakama.PartyPromote get_PartyPromote()
+
+Disassembly:
+	0x03487C74 ADRP X0, 0xCAA000
+	0x03487C78 LDR X0, [X0 + 0x1C0]
+
+ISIL:
+	001 Move X0, [X0+296]
+	002 Return X0
+
+Method: System.Void set_PartyPromote(Nakama.PartyPromote value)
+
+Disassembly:
+	0x03487C7C BL 0x1C16CF4
+	0x03487C80 ADRP X0, 0xC6E000
+
+ISIL:
+	001 Move [X0+296], X1
+	002 Return 
+
+Method: Nakama.PartyLeader get_PartyLeader()
+
+Disassembly:
+	0x03487C84 LDR X0, [X0 + 0x570]
+	0x03487C88 BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, [X0+304]
+	002 Return X0
+
+Method: System.Void set_PartyLeader(Nakama.PartyLeader value)
+
+Disassembly:
+	0x03487C8C MOVZ W8, 0x1
+	0x03487C90 STRB W8, [X20 + 0x901]
+
+ISIL:
+	001 Move [X0+304], X1
+	002 Return 
+
+Method: Nakama.PartyAccept get_PartyAccept()
+
+Disassembly:
+	0x03487C94 STP X31, X31, [X31]
+	0x03487C98 ADRP X23, 0xC6F000
+
+ISIL:
+	001 Move X0, [X0+312]
+	002 Return X0
+
+Method: System.Void set_PartyAccept(Nakama.PartyAccept value)
+
+Disassembly:
+	0x03487C9C LDR W8, [X19]
+	0x03487CA0 LDR X20, [X19 + 0x20]
+
+ISIL:
+	001 Move [X0+312], X1
+	002 Return 
+
+Method: Nakama.PartyMemberRemove get_PartyMemberRemove()
+
+Disassembly:
+	0x03487CA4 LDR X23, [X23 + 0x280]
+	0x03487CA8 CBZ W8, 0x3487E44
+
+ISIL:
+	001 Move X0, [X0+320]
+	002 Return X0
+
+Method: System.Void set_PartyMemberRemove(Nakama.PartyMemberRemove value)
+
+Disassembly:
+	0x03487CAC CBZ X20, 0x3487EE0
+	0x03487CB0 LDR X0, [X20 + 0x40]
+
+ISIL:
+	001 Move [X0+320], X1
+	002 Return 
+
+Method: Nakama.PartyClose get_PartyClose()
+
+Disassembly:
+	0x03487CB4 CBZ X0, 0x3487CE8
+	0x03487CB8 LDR X8, [X0]
+
+ISIL:
+	001 Move X0, [X0+328]
+	002 Return X0
+
+Method: System.Void set_PartyClose(Nakama.PartyClose value)
+
+Disassembly:
+	0x03487CBC LDP X9, X1, [X8 + 0x1B8]
+	0x03487CC0 BLR X9
+
+ISIL:
+	001 Move [X0+328], X1
+	002 Return 
+
+Method: Nakama.PartyJoinRequestList get_PartyJoinRequestList()
+
+Disassembly:
+	0x03487CC4 CMP W0, 0x2
+	0x03487CC8 B.EQ 0x3487EA4
+
+ISIL:
+	001 Move X0, [X0+336]
+	002 Return X0
+
+Method: System.Void set_PartyJoinRequestList(Nakama.PartyJoinRequestList value)
+
+Disassembly:
+	0x03487CCC LDR X0, [X20 + 0x40]
+	0x03487CD0 CBZ X0, 0x3487CE8
+
+ISIL:
+	001 Move [X0+336], X1
+	002 Return 
+
+Method: Nakama.PartyJoinRequest get_PartyJoinRequest()
+
+Disassembly:
+	0x03487CD4 LDR X8, [X0]
+	0x03487CD8 LDP X9, X1, [X8 + 0x1B8]
+
+ISIL:
+	001 Move X0, [X0+344]
+	002 Return X0
+
+Method: System.Void set_PartyJoinRequest(Nakama.PartyJoinRequest value)
+
+Disassembly:
+	0x03487CDC BLR X9
+	0x03487CE0 CMP W0, 0x1
+
+ISIL:
+	001 Move [X0+344], X1
+	002 Return 
+
+Method: Nakama.PartyMatchmakerAdd get_PartyMatchmakerAdd()
+
+Disassembly:
+	0x03487CE4 B.EQ 0x3487EA4
+	0x03487CE8 ADRP X24, 0xC6E000
+
+ISIL:
+	001 Move X0, [X0+352]
+	002 Return X0
+
+Method: System.Void set_PartyMatchmakerAdd(Nakama.PartyMatchmakerAdd value)
+
+Disassembly:
+	0x03487CEC LDR X24, [X24 + 0xA50]
+	0x03487CF0 LDR X0, [X24]
+
+ISIL:
+	001 Move [X0+352], X1
+	002 Return 
+
+Method: Nakama.PartyMatchmakerRemove get_PartyMatchmakerRemove()
+
+Disassembly:
+	0x03487CF4 BL 0x1C16F10
+	0x03487CF8 MOV X21, X0
+
+ISIL:
+	001 Move X0, [X0+360]
+	002 Return X0
+
+Method: System.Void set_PartyMatchmakerRemove(Nakama.PartyMatchmakerRemove value)
+
+Disassembly:
+	0x03487CFC MOV X1, X31
+	0x03487D00 BL 0x33DFA8C
+
+ISIL:
+	001 Move [X0+360], X1
+	002 Return 
+
+Method: Nakama.PartyMatchmakerTicket get_PartyMatchmakerTicket()
+
+Disassembly:
+	0x03487D04 STR X21, [X20 + 0x30]
+	0x03487D08 LDR X8, [X19 + 0x28]
+
+ISIL:
+	001 Move X0, [X0+368]
+	002 Return X0
+
+Method: System.Void set_PartyMatchmakerTicket(Nakama.PartyMatchmakerTicket value)
+
+Disassembly:
+	0x03487D0C STR X8, [X20 + 0x38]
+	0x03487D10 ADRP X8, 0xCAA000
+
+ISIL:
+	001 Move [X0+368], X1
+	002 Return 
+
+Method: Nakama.PartyData get_PartyData()
+
+Disassembly:
+	0x03487D14 LDR X8, [X8 + 0x1C0]
+	0x03487D18 LDR X0, [X8]
+
+ISIL:
+	001 Move X0, [X0+376]
+	002 Return X0
+
+Method: System.Void set_PartyData(Nakama.PartyData value)
+
+Disassembly:
+	0x03487D1C BL 0x1C16F10
+	0x03487D20 MOV X21, X0
+
+ISIL:
+	001 Move [X0+376], X1
+	002 Return 
+
+Method: Nakama.PartyDataSend get_PartyDataSend()
+
+Disassembly:
+	0x03487D24 MOV X1, X31
+	0x03487D28 BL 0x36D822C
+
+ISIL:
+	001 Move X0, [X0+384]
+	002 Return X0
+
+Method: System.Void set_PartyDataSend(Nakama.PartyDataSend value)
+
+Disassembly:
+	0x03487D2C STR X21, [X20 + 0x40]
+	0x03487D30 ADRP X8, 0xC6E000
+
+ISIL:
+	001 Move [X0+384], X1
+	002 Return 
+
+Method: Nakama.PartyPresenceEvent get_PartyPresenceEvent()
+
+Disassembly:
+	0x03487D34 LDR X8, [X8 + 0x570]
+	0x03487D38 LDR W21, [X19 + 0x30]
+
+ISIL:
+	001 Move X0, [X0+392]
+	002 Return X0
+
+Method: System.Void set_PartyPresenceEvent(Nakama.PartyPresenceEvent value)
+
+Disassembly:
+	0x03487D3C LDR X0, [X8]
+	0x03487D40 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X0+392], X1
+	002 Return 
+
+Method: System.String ToString()
+
+Disassembly:
+	0x03487D44 CBNZ W8, 0x3487D4C
+	0x03487D48 BL 0x1C16DFC
+	0x03487D4C SCVTF D0, W21
+	0x03487D50 MOV X0, X31
+	0x03487D54 BL 0x3394754
+	0x03487D58 MOV X22, X0
+	0x03487D5C LDR X0, [X24]
+	0x03487D60 BL 0x1C16F10
+	0x03487D64 MOV X21, X0
+	0x03487D68 MOV X1, X22
+	0x03487D6C MOV X2, X31
+	0x03487D70 BL 0x33DFAC0
+	0x03487D74 LDR X0, [X20 + 0x30]
+	0x03487D78 CBZ X0, 0x3487EEC
+	0x03487D7C MOV X1, X31
+	0x03487D80 BL 0x33DFA08
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xF57000
+	005 Move X20, 0xCAB000
+	006 Move W8, [X19+2288]
+	007 Move X20, [X20+440]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xCAB000
+	013 Move X0, [X0+440]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2288], W8
+	017 Move X0, [X20]
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0348168C LDR X30, [X31], #0x30
+	0x03481690 B 0x2632228
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

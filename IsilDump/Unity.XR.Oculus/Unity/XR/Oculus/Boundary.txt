@@ -1,0 +1,40 @@
+Type: Unity.XR.Oculus.Boundary
+
+Method: System.Boolean GetBoundaryConfigured()
+
+Disassembly:
+	0x03BDBFE8 BL 0x3C45BE8
+
+ISIL:
+	001 Call Internal.GetBoundaryConfigured
+	002 Return X0
+
+Method: System.Boolean GetBoundaryDimensions(Unity.XR.Oculus.Boundary/BoundaryType boundaryType, out UnityEngine.Vector3 dimensions)
+
+Disassembly:
+	0x03BDBFF0 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Call Internal.GetBoundaryDimensions, X0, X1
+	002 Return X0
+
+Method: System.Boolean GetBoundaryVisible()
+
+Disassembly:
+	0x03BDBFF8 BL 0x1C16DFC
+
+ISIL:
+	001 Call Internal.GetBoundaryVisible
+	002 Return X0
+
+Method: System.Void SetBoundaryVisible(System.Boolean boundaryVisible)
+
+Disassembly:
+	0x03BDC000 LDP X20, X19, [X31 + 0x20]
+	0x03BDC004 LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 And W0, W0, 1
+	002 Call Internal.SetBoundaryVisible, X0
+	003 Return 
+

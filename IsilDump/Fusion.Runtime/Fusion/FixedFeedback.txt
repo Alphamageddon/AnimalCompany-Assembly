@@ -1,0 +1,111 @@
+Type: Fusion.FixedFeedback
+
+Method: System.Void .ctor(System.Double outputMin, System.Double outputMax, System.Double deadzoneMin, System.Double deadzoneMax)
+
+Disassembly:
+	0x01EDE020 LDR X30, [X31], #0x30
+	0x01EDE024 RET
+	0x01EDE028 BL 0x1C16F20
+	0x01EDE02C LDR W0, [X0 + 0x8]
+	0x01EDE030 RET
+	0x01EDE034 LDR X8, [X0]
+	0x01EDE038 ADD X9, X8, 0x4
+	0x01EDE03C CMP X8, 0x0
+	0x01EDE040 CSEL X0, X31, X9, EQ
+	0x01EDE044 RET
+	0x01EDE048 LDR X8, [X0]
+	0x01EDE04C CMP X8, 0x0
+	0x01EDE050 CSET W0, NE
+	0x01EDE054 RET
+	0x01EDE058 LDR X0, [X0]
+	0x01EDE05C RET
+	0x01EDE060 LDR X8, [X0]
+
+ISIL:
+	001 Move [X31-48], D11
+	002 Move [X31-40], D10
+	003 Move [X31+16], D9
+	004 Move [X31+24], D8
+	005 Move [X31+32], X30
+	006 Move [X31+40], X19
+	007 Move X1, X31
+	008 Move V8, V3
+	009 Move V9, V2
+	010 Move V10, V1
+	011 Move V11, V0
+	012 Move X19, X0
+	013 Call Object..ctor, X0
+	014 Move [X19+16], D11
+	015 Move [X19+24], D10
+	016 Move [X19+32], D9
+	017 Move [X19+40], D8
+	018 Move [X19+48], X31
+	019 Move X30, [X31+32]
+	020 Move X19, [X31+40]
+	021 Move D9, [X31+16]
+	022 Move D8, [X31+24]
+	023 Move D11, [X31+48]
+	024 Move D10, [X31+56]
+	025 Return 
+
+Method: System.Double Fusion.IFeedbackController.Output()
+
+Disassembly:
+	0x01EDE064 CBZ X8, 0x1EDE070
+	0x01EDE068 LDR W0, [X8]
+
+ISIL:
+	001 Move V0, [X0+48]
+	002 Return V0
+
+Method: System.Void Fusion.IFeedbackController.Update(System.Double sample, System.Double target, System.Double dt)
+
+Disassembly:
+	0x01EDE06C RET
+	0x01EDE070 MOVN W0, 0x0
+	0x01EDE074 RET
+	0x01EDE078 LDR X8, [X0]
+	0x01EDE07C CBZ X8, 0x1EDE084
+	0x01EDE080 STR W1, [X8]
+	0x01EDE084 RET
+	0x01EDE088 LDR X8, [X0]
+	0x01EDE08C CBZ X8, 0x1EDE0A0
+	0x01EDE090 LDR W0, [X8]
+	0x01EDE094 ADDS W31, W0, 0x1
+	0x01EDE098 B.EQ 0x1EDE0A0
+	0x01EDE09C B 0x1EDDCF0
+	0x01EDE0A0 MOV X0, X31
+
+ISIL:
+	001 Move V2, [X0+40]
+	002 Subtract D0, D1, D0
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 Add X8, X0, 24
+	005 Move V1, [X0+32]
+	006 NotImplemented "Instruction FCMP not yet implemented."
+	007 Move D0, X31
+	008 Add X8, X0, 16
+	009 Move V0, [X8]
+	010 Move [X0+48], D0
+	011 Return 
+
+Method: System.Void Fusion.IFeedbackController.Reset()
+
+Disassembly:
+	0x01EDE0A4 RET
+	0x01EDE0A8 MOV W1, W1
+
+ISIL:
+	001 Move [X0+48], X31
+	002 Return 
+
+Method: System.Void Fusion.IFeedbackController.ResetOutput()
+
+Disassembly:
+	0x01EDE0AC RET
+	0x01EDE0B0 MOV W1, W1
+
+ISIL:
+	001 Move [X0+48], X31
+	002 Return 
+

@@ -1,0 +1,76 @@
+Type: Photon.Voice.SendFrameParams
+
+Method: System.Boolean get_TargetMe()
+
+Disassembly:
+	0x03560DD4 TBNZ X8, 0x0, 0x3560DDC
+	0x03560DD8 BL 0x1C5C684
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Int32[] get_TargetPlayers()
+
+Disassembly:
+	0x03560DDC LDR W8, [X0 + 0xE0]
+	0x03560DE0 CBNZ W8, 0x3560DE8
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Return X0
+
+Method: System.Byte get_InterestGroup()
+
+Disassembly:
+	0x03560DE4 BL 0x1C16DFC
+	0x03560DE8 LDR X8, [X21 + 0x38]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Boolean get_Reliable()
+
+Disassembly:
+	0x03560DEC LDR X0, [X8 + 0x10]
+	0x03560DF0 LDRB W8, [X0 + 0x135]
+
+ISIL:
+	001 Move W0, [X0+17]
+	002 Return X0
+
+Method: System.Boolean get_Encrypt()
+
+Disassembly:
+	0x03560DF4 TBNZ X8, 0x0, 0x3560DFC
+	0x03560DF8 BL 0x1C5C684
+
+ISIL:
+	001 Move W0, [X0+18]
+	002 Return X0
+
+Method: System.Void .ctor(System.Boolean targetMe, System.Int32[] targetPlayers, System.Byte interestGroup, System.Boolean reliable, System.Boolean encrypt)
+
+Disassembly:
+	0x0355B1B0 LDRB W8, [X0 + 0x135]
+	0x0355B1B4 TBNZ X8, 0x0, 0x355B1BC
+	0x0355B1B8 BL 0x1C5C684
+	0x0355B1BC CBZ X21, 0x355B404
+	0x0355B1C0 ADRP X10, 0xB9D000
+	0x0355B1C4 LDR X9, [X0 + 0xB8]
+	0x0355B1C8 LDR X8, [X21]
+	0x0355B1CC LDR X10, [X10 + 0x348]
+	0x0355B1D0 LDR X22, [X9]
+
+ISIL:
+	001 And W8, W1, 1
+	002 And W9, W4, 1
+	003 And W10, W5, 1
+	004 Move [X0+8], X2
+	005 Move [X0+16], W3
+	006 Move [X0], W8
+	007 Move [X0+17], W9
+	008 Move [X0+18], W10
+	009 Return 
+

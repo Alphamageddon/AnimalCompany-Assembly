@@ -1,0 +1,448 @@
+Type: System.Net.WebException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03680D80 LDR X0, [X0 + 0x9D0]
+	0x03680D84 BL 0x1C16D08
+	0x03680D88 MOVZ W1, 0x1
+	0x03680D8C BL 0x1C16D6C
+
+ISIL:
+	001 Move W8, 16
+	002 Move X1, X31
+	003 Move [X0+140], W8
+	004 Call InvalidOperationException..ctor, X0
+	005 Return 
+
+Method: System.Void .ctor(System.String message)
+
+Disassembly:
+	0x0367F910 BL 0x366E898
+	0x0367F914 LDP X20, X19, [X31 + 0x10]
+	0x0367F918 MOV X0, X21
+	0x0367F91C LDP X30, X21, [X31], #0x20
+	0x0367F920 RET
+
+ISIL:
+	001 Move W8, 16
+	002 Move X2, X31
+	003 Move X3, X31
+	004 Move [X0+140], W8
+	005 Call InvalidOperationException..ctor, X0, X1, X2
+	006 Return 
+
+Method: System.Void .ctor(System.String message, System.Exception innerException)
+
+Disassembly:
+	0x0367C5B4 B.EQ 0x367C5D8
+	0x0367C5B8 SUBS X9, X9, 0x1
+	0x0367C5BC ADD X10, X10, 0x10
+	0x0367C5C0 B.NE 0x367C5AC
+
+ISIL:
+	001 Move W8, 16
+	002 Move X3, X31
+	003 Move [X0+140], W8
+	004 Call InvalidOperationException..ctor, X0, X1, X2
+	005 Return 
+
+Method: System.Void .ctor(System.String message, System.Net.WebExceptionStatus status)
+
+Disassembly:
+	0x0367B0D4 LDR X0, [X19 + 0x28]
+	0x0367B0D8 CBZ X0, 0x367B0E8
+	0x0367B0DC MOV X1, X31
+	0x0367B0E0 LDP X30, X19, [X31], #0x10
+	0x0367B0E4 B 0x36CBDA4
+
+ISIL:
+	001 Move W4, W2
+	002 Move X2, X31
+	003 Move X3, X31
+	004 Move X5, X31
+	005 Call WebException..ctor, X0, X1, X2, X3, X4, X5
+	006 Return 
+
+Method: System.Void .ctor(System.String message, System.Net.WebExceptionStatus status, System.Net.WebExceptionInternalStatus internalStatus, System.Exception innerException)
+
+Disassembly:
+	0x03680D90 MOVZ W8, 0xFFFF
+	0x03680D94 MOV X20, X0
+	0x03680D98 STRH W8, [X31 + 0xC]
+	0x03680D9C ADRP X0, 0xA78000
+	0x03680DA0 LDR X0, [X0 + 0x658]
+	0x03680DA4 BL 0x1C16D08
+	0x03680DA8 ADD X1, X31, 0xC
+
+ISIL:
+	001 Move W8, W2
+	002 Move W6, W3
+	003 Move X2, X31
+	004 Move X3, X4
+	005 Move W4, W8
+	006 Move X5, X31
+	007 Call WebException..ctor, X0, X1, X2, X3, X4, X5, X6
+	008 Return 
+
+Method: System.Void .ctor(System.String message, System.Exception innerException, System.Net.WebExceptionStatus status, System.Net.WebResponse response)
+
+Disassembly:
+	0x0367C5A0 CBZ X9, 0x367C5C4
+	0x0367C5A4 LDR X10, [X8 + 0xB0]
+	0x0367C5A8 ADD X10, X10, 0x8
+	0x0367C5AC LDUR X11, [X10 - 0x8]
+	0x0367C5B0 CMP X11, X23
+
+ISIL:
+	001 Move X5, X4
+	002 Move W4, W3
+	003 Move X3, X2
+	004 Move X2, X31
+	005 Call WebException..ctor, X0, X1, X2, X3, X4, X5
+	006 Return 
+
+Method: System.Void .ctor(System.String message, System.String data, System.Exception innerException, System.Net.WebExceptionStatus status, System.Net.WebResponse response)
+
+Disassembly:
+	0x03680DC4 BL 0x19980B4
+	0x03680DC8 MOV X0, X20
+	0x03680DCC MOV X1, X31
+	0x03680DD0 MOV X2, X21
+	0x03680DD4 BL 0x1993444
+	0x03680DD8 ADRP X0, 0xABD000
+	0x03680DDC LDR X0, [X0 + 0xF98]
+	0x03680DE0 BL 0x1C16D08
+	0x03680DE4 MOV X1, X20
+	0x03680DE8 MOV X2, X31
+	0x03680DEC BL 0x320A16C
+	0x03680DF0 MOV X20, X0
+	0x03680DF4 ADRP X0, 0xA7B000
+	0x03680DF8 LDR X0, [X0 + 0x760]
+	0x03680DFC BL 0x1C16D08
+	0x03680E00 BL 0x1C16F10
+	0x03680E04 MOV X21, X0
+	0x03680E08 ADRP X0, 0xA7D000
+	0x03680E0C LDR X0, [X0 + 0xEC8]
+	0x03680E10 BL 0x1C16D08
+	0x03680E14 MOV X1, X0
+	0x03680E18 MOV X0, X21
+	0x03680E1C MOV X2, X19
+	0x03680E20 MOV X3, X20
+	0x03680E24 MOV X4, X31
+	0x03680E28 BL 0x3312C8C
+	0x03680E2C ADRP X0, 0xABD000
+	0x03680E30 LDR X0, [X0 + 0xFA0]
+	0x03680E34 BL 0x1C16D08
+	0x03680E38 MOV X1, X0
+	0x03680E3C MOV X0, X21
+	0x03680E40 BL 0x1C16DEC
+	0x03680E44 SUB X31, X31, 0x40
+	0x03680E48 STP X30, X23, [X31 + 0x10]
+	0x03680E4C STP X22, X21, [X31 + 0x20]
+	0x03680E50 STP X20, X19, [X31 + 0x30]
+	0x03680E54 ADRP X21, 0xD60000
+	0x03680E58 ADRP X22, 0xABD000
+	0x03680E5C LDRB W8, [X21 + 0x7E8]
+	0x03680E60 LDR X22, [X22 + 0xE28]
+	0x03680E64 MOV X20, X1
+	0x03680E68 MOV X19, X0
+	0x03680E6C TBNZ X8, 0x0, 0x3680E90
+	0x03680E70 ADRP X0, 0xABD000
+	0x03680E74 LDR X0, [X0 + 0xE28]
+	0x03680E78 BL 0x1C16CF4
+	0x03680E7C ADRP X0, 0xABD000
+	0x03680E80 LDR X0, [X0 + 0xDF8]
+	0x03680E84 BL 0x1C16CF4
+	0x03680E88 MOVZ W8, 0x1
+	0x03680E8C STRB W8, [X21 + 0x7E8]
+	0x03680E90 LDR X0, [X22]
+	0x03680E94 LDR W8, [X0 + 0xE0]
+	0x03680E98 CBNZ W8, 0x3680EA0
+	0x03680E9C BL 0x1C16DFC
+	0x03680EA0 CBZ X20, 0x3680F9C
+
+ISIL:
+	001 Move [X31-64], X30
+	002 Move [X31-56], X25
+	003 Move [X31+16], X24
+	004 Move [X31+24], X23
+	005 Move [X31+32], X22
+	006 Move [X31+40], X21
+	007 Move [X31+48], X20
+	008 Move [X31+56], X19
+	009 Move X25, 0xD61000
+	010 Move W8, [X25+2013]
+	011 Move X19, X5
+	012 Move W20, W4
+	013 Move X21, X3
+	014 Move X24, X2
+	015 Move X23, X1
+	016 Move X22, X0
+	017 Move TEMP, X8
+	018 And TEMP, TEMP, 1
+	019 Compare TEMP, 1
+	020 JumpIfEqual {32}
+	021 Move X0, 0xA7C000
+	022 Move X0, [X0+2480]
+	023 Call 0x1C17CF4
+	024 Move X0, 0xABE000
+	025 Move X0, [X0+3848]
+	026 Call 0x1C17CF4
+	027 Move X0, 0xA74000
+	028 Move X0, [X0+2440]
+	029 Call 0x1C17CF4
+	030 Move W8, 1
+	031 Move [X25+2013], W8
+	032 Move W8, 16
+	033 Move [X22+140], W8
+	034 Compare X24, 0
+	035 JumpIfEqual {46}
+	036 Move X8, 0xABE000
+	037 Move X9, 0xA7C000
+	038 Move X8, [X8+3848]
+	039 Move X9, [X9+2480]
+	040 Move X1, X24
+	041 Move X3, X31
+	042 Move X0, [X8]
+	043 Move X2, [X9]
+	044 Call String.Concat, X0, X1, X2
+	045 Move X1, X0
+	046 Move X8, 0xA74000
+	047 Move X8, [X8+2440]
+	048 Move X1, [X8]
+	049 Move X0, X23
+	050 Move X2, X31
+	051 Call String.Concat, X0, X1
+	052 Move X1, X0
+	053 Move X0, X22
+	054 Move X2, X21
+	055 Move X3, X31
+	056 Call InvalidOperationException..ctor, X0, X1, X2
+	057 Move [X22+140], W20
+	058 Move [X22+144], X19
+	059 Move X20, [X31+48]
+	060 Move X19, [X31+56]
+	061 Move X22, [X31+32]
+	062 Move X21, [X31+40]
+	063 Move X24, [X31+16]
+	064 Move X23, [X31+24]
+	065 Move X30, [X31+64]
+	066 Move X25, [X31+72]
+	067 Return 
+
+Method: System.Void .ctor(System.String message, System.Exception innerException, System.Net.WebExceptionStatus status, System.Net.WebResponse response, System.Net.WebExceptionInternalStatus internalStatus)
+
+Disassembly:
+	0x03680DAC BL 0x1C16E04
+	0x03680DB0 MOV X21, X0
+	0x03680DB4 MOV X0, X20
+	0x03680DB8 BL 0x19903C0
+	0x03680DBC MOV X0, X20
+	0x03680DC0 MOV X1, X21
+
+ISIL:
+	001 Move W6, W5
+	002 Move X5, X4
+	003 Move W4, W3
+	004 Move X3, X2
+	005 Move X2, X31
+	006 Call WebException..ctor, X0, X1, X2, X3, X4, X5, X6
+	007 Return 
+
+Method: System.Void .ctor(System.String message, System.String data, System.Exception innerException, System.Net.WebExceptionStatus status, System.Net.WebResponse response, System.Net.WebExceptionInternalStatus internalStatus)
+
+Disassembly:
+	0x03680EA4 LDR W8, [X20 + 0x10]
+	0x03680EA8 CBZ W8, 0x3680F9C
+	0x03680EAC MOVZ W1, 0x3A
+	0x03680EB0 MOV X0, X20
+	0x03680EB4 MOV X2, X31
+	0x03680EB8 BL 0x322BD98
+	0x03680EBC TBNZ X0, 0x1F, 0x3680FE4
+	0x03680EC0 ADRP X23, 0xABD000
+	0x03680EC4 LDR X23, [X23 + 0xDF8]
+	0x03680EC8 MOV W22, W0
+	0x03680ECC MOV X0, X20
+	0x03680ED0 MOV W1, W31
+	0x03680ED4 MOV W2, W22
+	0x03680ED8 MOV X3, X31
+	0x03680EDC BL 0x3228DE4
+	0x03680EE0 MOV X21, X0
+	0x03680EE4 ADD W1, W22, 0x1
+	0x03680EE8 MOV X0, X20
+	0x03680EEC MOV X2, X31
+	0x03680EF0 BL 0x322B484
+	0x03680EF4 LDR X8, [X23]
+	0x03680EF8 MOV X20, X0
+	0x03680EFC LDR W9, [X8 + 0xE0]
+	0x03680F00 CBNZ W9, 0x3680F0C
+	0x03680F04 MOV X0, X8
+	0x03680F08 BL 0x1C16DFC
+	0x03680F0C MOV X0, X21
+	0x03680F10 MOV W1, W31
+	0x03680F14 BL 0x3680714
+	0x03680F18 MOV X21, X0
+	0x03680F1C MOV X0, X19
+	0x03680F20 MOV X1, X21
+	0x03680F24 BL 0x3680B28
+	0x03680F28 MOVZ W1, 0x1
+	0x03680F2C MOV X0, X20
+	0x03680F30 BL 0x3680714
+	0x03680F34 MOV X20, X0
+	0x03680F38 CBZ X0, 0x3680F54
+	0x03680F3C LDRH W8, [X19 + 0x80]
+	0x03680F40 CMP W8, 0x6
+	0x03680F44 B.NE 0x3680F54
+	0x03680F48 LDR W8, [X20 + 0x10]
+	0x03680F4C CMP W8, 0x10000
+	0x03680F50 B.GE 0x368104C
+	0x03680F54 MOV X0, X19
+	0x03680F58 BL 0x36801C0
+	0x03680F5C MOV X0, X19
+	0x03680F60 MOV X1, X31
+	0x03680F64 BL 0x3663ABC
+	0x03680F68 MOV X0, X19
+	0x03680F6C BL 0x36802C0
+	0x03680F70 CBZ X0, 0x3681048
+	0x03680F74 LDR X8, [X0]
+	0x03680F78 MOV X1, X21
+	0x03680F7C MOV X2, X20
+	0x03680F80 LDP X20, X19, [X31 + 0x30]
+	0x03680F84 LDR X4, [X8 + 0x248]
+	0x03680F88 LDR X3, [X8 + 0x250]
+	0x03680F8C LDP X22, X21, [X31 + 0x20]
+	0x03680F90 LDP X30, X23, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-80], X30
+	002 Move [X31+16], X26
+	003 Move [X31+24], X25
+	004 Move [X31+32], X24
+	005 Move [X31+40], X23
+	006 Move [X31+48], X22
+	007 Move [X31+56], X21
+	008 Move [X31+64], X20
+	009 Move [X31+72], X19
+	010 Move X26, 0xD61000
+	011 Move W8, [X26+2014]
+	012 Move W19, W6
+	013 Move X20, X5
+	014 Move W21, W4
+	015 Move X23, X3
+	016 Move X25, X2
+	017 Move X24, X1
+	018 Move X22, X0
+	019 Move TEMP, X8
+	020 And TEMP, TEMP, 1
+	021 Compare TEMP, 1
+	022 JumpIfEqual {34}
+	023 Move X0, 0xA7C000
+	024 Move X0, [X0+2480]
+	025 Call 0x1C17CF4
+	026 Move X0, 0xABE000
+	027 Move X0, [X0+3848]
+	028 Call 0x1C17CF4
+	029 Move X0, 0xA74000
+	030 Move X0, [X0+2440]
+	031 Call 0x1C17CF4
+	032 Move W8, 1
+	033 Move [X26+2014], W8
+	034 Move W8, 16
+	035 Move [X22+140], W8
+	036 Compare X25, 0
+	037 JumpIfEqual {48}
+	038 Move X8, 0xABE000
+	039 Move X9, 0xA7C000
+	040 Move X8, [X8+3848]
+	041 Move X9, [X9+2480]
+	042 Move X1, X25
+	043 Move X3, X31
+	044 Move X0, [X8]
+	045 Move X2, [X9]
+	046 Call String.Concat, X0, X1, X2
+	047 Move X1, X0
+	048 Move X8, 0xA74000
+	049 Move X8, [X8+2440]
+	050 Move X1, [X8]
+	051 Move X0, X24
+	052 Move X2, X31
+	053 Call String.Concat, X0, X1
+	054 Move X1, X0
+	055 Move X0, X22
+	056 Move X2, X23
+	057 Move X3, X31
+	058 Call InvalidOperationException..ctor, X0, X1, X2
+	059 Move [X22+140], W21
+	060 Move [X22+144], X20
+	061 Move [X22+152], W19
+	062 Move X20, [X31+64]
+	063 Move X19, [X31+72]
+	064 Move X22, [X31+48]
+	065 Move X21, [X31+56]
+	066 Move X24, [X31+32]
+	067 Move X23, [X31+40]
+	068 Move X26, [X31+16]
+	069 Move X25, [X31+24]
+	070 Move X30, [X31+80]
+	071 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
+
+Disassembly:
+	0x03680F94 ADD X31, X31, 0x40
+	0x03680F98 BR X4
+	0x03680F9C ADRP X0, 0xA78000
+	0x03680FA0 LDR X0, [X0 + 0x528]
+
+ISIL:
+	001 Move W8, 16
+	002 Move X4, X31
+	003 Move [X0+140], W8
+	004 Call InvalidOperationException..ctor, X0, X1, X2
+	005 Return 
+
+Method: System.Void System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
+
+Disassembly:
+	0x03680FA4 BL 0x1C16D08
+	0x03680FA8 BL 0x1C16F10
+	0x03680FAC MOV X19, X0
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X5, [X8+472]
+	003 Move X4, [X8+480]
+	004 CallNoReturn X5
+
+Method: System.Void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
+
+Disassembly:
+	0x03680FB0 ADRP X0, 0xABD000
+	0x03680FB4 LDR X0, [X0 + 0xFA8]
+
+ISIL:
+	001 Move X4, X31
+	002 Call Exception.GetObjectData, X0, X1, X2
+	003 Return 
+
+Method: System.Net.WebExceptionStatus get_Status()
+
+Disassembly:
+	0x03680FB8 BL 0x1C16D08
+	0x03680FBC MOV X1, X0
+
+ISIL:
+	001 Move W0, [X0+140]
+	002 Return X0
+
+Method: System.Net.WebResponse get_Response()
+
+Disassembly:
+	0x03680FC0 MOV X0, X19
+	0x03680FC4 MOV X2, X31
+
+ISIL:
+	001 Move X0, [X0+144]
+	002 Return X0
+

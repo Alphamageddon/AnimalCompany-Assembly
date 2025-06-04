@@ -1,0 +1,4311 @@
+Type: Fusion.Native
+
+Method: System.Void MemMove(System.Void* destination, System.Void* source, System.Int32 size)
+
+Disassembly:
+	0x01E36758 ADD X8, X8, W22, SXTW
+	0x01E3675C STR X8, [X9]
+	0x01E36760 LDR X9, [X31 + 0x28]
+
+ISIL:
+	001 Move X3, X31
+	002 Move X2, W2
+	003 Call UnsafeUtility.MemMove, X0, X1, X2
+	004 Return 
+
+Method: System.Void MemCpy(System.Void* destination, System.Void* source, System.Int32 size)
+
+Disassembly:
+	0x01E36764 ADD X8, X8, W21, SXTW
+	0x01E36768 LDP X22, X21, [X31 + 0x70]
+	0x01E3676C STR X8, [X9]
+
+ISIL:
+	001 Move X3, X31
+	002 Move X2, W2
+	003 Call UnsafeUtility.MemCpy, X0, X1, X2
+	004 Return 
+
+Method: System.Void MemClear(System.Void* ptr, System.Int32 size)
+
+Disassembly:
+	0x01E36770 ADD X31, X31, 0x90
+	0x01E36774 RET
+	0x01E36778 SUB X31, X31, 0xA0
+
+ISIL:
+	001 Move X2, X31
+	002 Move X1, W1
+	003 Call UnsafeUtility.MemClear, X0, X1
+	004 Return 
+
+Method: System.Int32 MemCmp(System.Void* ptr1, System.Void* ptr2, System.Int32 size)
+
+Disassembly:
+	0x01E3677C STP X29, X30, [X31 + 0x40]
+	0x01E36780 STP X28, X27, [X31 + 0x50]
+	0x01E36784 STP X26, X25, [X31 + 0x60]
+
+ISIL:
+	001 Move X3, X31
+	002 Move X2, W2
+	003 Call UnsafeUtility.MemCmp, X0, X1, X2
+	004 Return X0
+
+Method: System.Void* Malloc(System.Int32 size)
+
+Disassembly:
+	0x01E36788 STP X24, X23, [X31 + 0x70]
+	0x01E3678C STP X22, X21, [X31 + 0x80]
+	0x01E36790 STP X20, X19, [X31 + 0x90]
+	0x01E36794 LDR X9, [X31 + 0xE8]
+	0x01E36798 LDR X8, [X31 + 0xE0]
+	0x01E3679C LDR W28, [X31 + 0xF0]
+	0x01E367A0 LDR W27, [X31 + 0xA0]
+	0x01E367A4 MOV W20, W1
+	0x01E367A8 STP X8, X9, [X31 + 0x30]
+	0x01E367AC LDR X9, [X31 + 0xD8]
+	0x01E367B0 LDR X8, [X31 + 0xD0]
+	0x01E367B4 MOV W1, W28
+	0x01E367B8 MOV W21, W7
+	0x01E367BC MOV W22, W6
+	0x01E367C0 STP X8, X9, [X31 + 0x20]
+	0x01E367C4 LDR X9, [X31 + 0xC8]
+	0x01E367C8 LDR X8, [X31 + 0xC0]
+	0x01E367CC MOV W23, W5
+	0x01E367D0 MOV W24, W4
+	0x01E367D4 MOV W25, W3
+	0x01E367D8 STP X8, X9, [X31 + 0x10]
+	0x01E367DC LDR X9, [X31 + 0xB8]
+	0x01E367E0 LDP X29, X8, [X31 + 0xA8]
+	0x01E367E4 MOV W26, W2
+	0x01E367E8 STP X8, X9, [X31]
+	0x01E367EC BL 0x1E35B3C
+	0x01E367F0 MOV W19, W0
+	0x01E367F4 MOV W0, W20
+	0x01E367F8 MOV W1, W28
+	0x01E367FC BL 0x1E35B3C
+	0x01E36800 MOV W20, W0
+	0x01E36804 MOV W0, W26
+	0x01E36808 MOV W1, W28
+	0x01E3680C BL 0x1E35B3C
+	0x01E36810 MOV W26, W0
+	0x01E36814 MOV W0, W25
+	0x01E36818 MOV W1, W28
+	0x01E3681C BL 0x1E35B3C
+	0x01E36820 MOV W25, W0
+	0x01E36824 MOV W0, W24
+	0x01E36828 MOV W1, W28
+	0x01E3682C BL 0x1E35B3C
+	0x01E36830 MOV W24, W0
+	0x01E36834 MOV W0, W23
+	0x01E36838 MOV W1, W28
+	0x01E3683C BL 0x1E35B3C
+	0x01E36840 MOV W23, W0
+	0x01E36844 MOV W0, W22
+	0x01E36848 MOV W1, W28
+	0x01E3684C BL 0x1E35B3C
+	0x01E36850 MOV W22, W0
+	0x01E36854 MOV W0, W21
+	0x01E36858 MOV W1, W28
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Move W8, 1
+	006 NotImplemented "Instruction MOVK not yet implemented."
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 Move X20, [X31+16]
+	009 Move X19, [X31+24]
+	010 Move W0, W0
+	011 Move W1, 8
+	012 Move W2, 4
+	013 Move X3, X31
+	014 Move X30, [X31+32]
+	015 Call UnsafeUtility.Malloc, X0, X1, X2
+	016 Return X0
+	017 Move [X31+12], W0
+	018 Move X0, 0x22BE000
+	019 Move X0, [X0+1880]
+	020 Call 0x1C17D08
+	021 Add X1, X31, 12
+	022 Call 0x1C17E04
+	023 Move X19, X0
+	024 Move X0, 0x22C6000
+	025 Move X0, [X0+1712]
+	026 Move [X31+8], W0
+	027 Move X0, 0x22BE000
+	028 Move X0, [X0+1880]
+	029 Call 0x1C17D08
+	030 Add X1, X31, 8
+	031 Call 0x1C17E04
+	032 Move X19, X0
+	033 Move X0, 0x22C6000
+	034 Move X0, [X0+1720]
+	035 Call 0x1C17D08
+	036 Move X1, X19
+	037 Move X2, X31
+	038 Call String.Format, X0, X1
+	039 Move X19, X0
+	040 Move X0, 0x22BE000
+	041 Move X0, [X0+2000]
+	042 Call 0x1C17D08
+	043 Call 0x1C17F10
+	044 Move X1, X19
+	045 Move X2, X31
+	046 Move X20, X0
+	047 Call Exception..ctor, X0, X1
+	048 Move X0, 0x22C6000
+	049 Move X0, [X0+1728]
+	050 Call 0x1C17D08
+	051 Move X1, X0
+	052 Move X0, X20
+	053 Call 0x1C17DEC
+
+Method: System.Void Free(System.Void* memory)
+
+Disassembly:
+	0x01E3685C BL 0x1E35B3C
+	0x01E36860 MOV W21, W0
+	0x01E36864 MOV W0, W27
+
+ISIL:
+	001 Move W1, 4
+	002 Move X2, X31
+	003 Call UnsafeUtility.Free, X0, X1
+	004 Return 
+
+Method: System.Int32 SizeOf(System.Type t)
+
+Disassembly:
+	0x01E36868 MOV W1, W28
+	0x01E3686C BL 0x1E35B3C
+
+ISIL:
+	001 Move X1, X31
+	002 Call UnsafeUtility.SizeOf, X0
+	003 Return X0
+
+Method: System.Int32 GetFieldOffset(System.Reflection.FieldInfo fi)
+
+Disassembly:
+	0x01E36870 ADD W8, W20, W19
+	0x01E36874 ADD W8, W8, W26
+
+ISIL:
+	001 Move X1, X31
+	002 Call UnsafeUtility.GetFieldOffset, X0
+	003 Return X0
+
+Method: System.Void* MallocAndClear(System.Int32 size)
+
+Disassembly:
+	0x01E36878 ADD W8, W8, W25
+	0x01E3687C ADD W8, W8, W24
+	0x01E36880 ADD W8, W8, W23
+	0x01E36884 ADD W8, W8, W22
+	0x01E36888 ADD W8, W8, W21
+	0x01E3688C ADD W27, W8, W0
+	0x01E36890 MOV W0, W27
+	0x01E36894 BL 0x1E35788
+	0x01E36898 SXTW X1, W27
+	0x01E3689C MOV X2, X31
+	0x01E368A0 MOV X28, X0
+	0x01E368A4 BL 0x3C001B4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W0
+	005 Call Native.Malloc, X0
+	006 Move X1, W19
+	007 Move X2, X31
+	008 Move X20, X0
+	009 Call UnsafeUtility.MemClear, X0, X1
+	010 Move X0, X20
+	011 Move X20, [X31+16]
+	012 Move X19, [X31+24]
+	013 Move X30, [X31+32]
+	014 Return X0
+
+Method: T* MallocAndClear()
+
+Disassembly:
+	0x02222EE4 MOV X2, X31
+	0x02222EE8 BL 0x321EFD0
+	0x02222EEC MOV X20, X0
+	0x02222EF0 ADRP X0, 0x1ED9000
+	0x02222EF4 LDR X0, [X0 + 0x578]
+	0x02222EF8 BL 0x1C16D08
+	0x02222EFC BL 0x1C16F10
+	0x02222F00 MOV X21, X0
+	0x02222F04 ADRP X0, 0x1ED9000
+	0x02222F08 LDR X0, [X0 + 0x768]
+	0x02222F0C B 0x2222F68
+	0x02222F10 STR W1, [X31 + 0x8]
+	0x02222F14 ADRP X0, 0x1ED1000
+	0x02222F18 LDR X0, [X0 + 0x758]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X8, [X0+56]
+	004 Compare X8, 0
+	005 JumpIfNotEqual {7}
+	006 Call 0x1C5D6E0
+	007 Move W0, 136
+	008 Move X1, X31
+	009 Call Native.Malloc, X0
+	010 Move W1, 136
+	011 Move X2, X31
+	012 Move X19, X0
+	013 Call Native.MemClear, X0, X1
+	014 Move X0, X19
+	015 Move X30, [X31+16]
+	016 Move X19, [X31+24]
+	017 Return X0
+
+Method: T* Malloc()
+
+Disassembly:
+	0x02222E7C MOV X0, X21
+	0x02222E80 MOV X1, X19
+	0x02222E84 BL 0x1C16DEC
+
+ISIL:
+	001 Move W0, 136
+	002 Move X1, X31
+	003 Call Native.Malloc, X0
+	004 Return X0
+
+Method: System.Void* MallocAndClearArray(System.Int32 stride, System.Int32 length)
+
+Disassembly:
+	0x01E368A8 LDR X9, [X31]
+	0x01E368AC ADD X8, X28, W19, SXTW
+	0x01E368B0 STR X28, [X29]
+	0x01E368B4 MOV W0, W27
+	0x01E368B8 STR X8, [X9]
+	0x01E368BC LDR X9, [X31 + 0x8]
+	0x01E368C0 ADD X8, X8, W20, SXTW
+	0x01E368C4 LDP X20, X19, [X31 + 0x90]
+	0x01E368C8 LDP X28, X27, [X31 + 0x50]
+	0x01E368CC STR X8, [X9]
+	0x01E368D0 LDR X9, [X31 + 0x10]
+	0x01E368D4 ADD X8, X8, W26, SXTW
+	0x01E368D8 LDP X29, X30, [X31 + 0x40]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Multiply W19, W1, W0
+	005 Move W0, W19
+	006 Call Native.Malloc, X0
+	007 Move X1, W19
+	008 Move X2, X31
+	009 Move X20, X0
+	010 Call UnsafeUtility.MemClear, X0, X1
+	011 Move X0, X20
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Return X0
+
+Method: T* MallocAndClearArray(System.Int32 length)
+
+Disassembly:
+	0x0222304C MOV X20, X0
+	0x02223050 ADRP X0, 0x1ED8000
+	0x02223054 LDR X0, [X0 + 0x578]
+	0x02223058 BL 0x1C16D08
+
+ISIL:
+	001 Move W1, W0
+	002 Move W0, 1
+	003 Move X2, X31
+	004 Call Native.MallocAndClearArray, X0, X1
+	005 Return X0
+
+Method: T* MallocAndClearArrayMin1(System.Int32 length)
+
+Disassembly:
+	0x022230FC LDR X0, [X0 + 0x578]
+	0x02223100 BL 0x1C16D08
+	0x02223104 BL 0x1C16F10
+	0x02223108 MOV X21, X0
+	0x0222310C ADRP X0, 0x1ED8000
+	0x02223110 LDR X0, [X0 + 0x768]
+	0x02223114 B 0x2223170
+	0x02223118 STR W1, [X31 + 0x8]
+	0x0222311C ADRP X0, 0x1ED0000
+	0x02223120 LDR X0, [X0 + 0x758]
+	0x02223124 MOV X19, X3
+	0x02223128 BL 0x1C16D08
+	0x0222312C ADD X1, X31, 0x8
+	0x02223130 BL 0x1C16E04
+	0x02223134 MOV X20, X0
+	0x02223138 ADRP X0, 0x1EF9000
+	0x0222313C LDR X0, [X0 + 0x148]
+	0x02223140 BL 0x1C16D08
+	0x02223144 MOV X1, X20
+	0x02223148 MOV X2, X31
+	0x0222314C BL 0x321EFD0
+	0x02223150 MOV X20, X0
+	0x02223154 ADRP X0, 0x1ED8000
+	0x02223158 LDR X0, [X0 + 0x578]
+	0x0222315C BL 0x1C16D08
+	0x02223160 BL 0x1C16F10
+	0x02223164 MOV X21, X0
+	0x02223168 ADRP X0, 0x1EF9000
+	0x0222316C LDR X0, [X0 + 0x150]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X1+56]
+	005 Move X19, X1
+	006 Move W20, W0
+	007 Compare X8, 0
+	008 JumpIfNotEqual {17}
+	009 Move X0, 0x1ED1000
+	010 Move X0, [X0+1448]
+	011 Call 0x1C17CF4
+	012 Move X8, [X19+56]
+	013 Compare X8, 0
+	014 JumpIfNotEqual {17}
+	015 Move X0, X19
+	016 Call 0x1C5D6E0
+	017 Move X8, 0x1ED1000
+	018 Move X8, [X8+1448]
+	019 Move X0, [X8]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move W0, 1
+	025 Move W1, W20
+	026 Move X2, X31
+	027 Call Math.Max, X0, X1
+	028 Move X8, [X19+56]
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X1, [X8]
+	032 Move X2, [X1]
+	033 Move X30, [X31+32]
+	034 CallNoReturn X2
+
+Method: T* MallocAndClearPtrArray(System.Int32 length)
+
+Disassembly:
+	0x02223170 BL 0x1C16D08
+	0x02223174 MOV X2, X0
+	0x02223178 MOV X0, X21
+	0x0222317C MOV X1, X20
+
+ISIL:
+	001 Move W1, W0
+	002 Move W0, 8
+	003 Move X2, X31
+	004 Call Native.MallocAndClearArray, X0, X1
+	005 Return X0
+
+Method: T* MallocAndClearPtrArrayMin1(System.Int32 length)
+
+Disassembly:
+	0x022231B0 MOV W1, W1
+	0x022231B4 BFM X1, X2, 0x20, 0x1F
+	0x022231B8 ADD X31, X31, 0x30
+	0x022231BC RET
+	0x022231C0 STR W2, [X31 + 0xC]
+	0x022231C4 ADRP X0, 0x1ED0000
+	0x022231C8 LDR X0, [X0 + 0x758]
+	0x022231CC MOV X19, X3
+	0x022231D0 BL 0x1C16D08
+	0x022231D4 ADD X1, X31, 0xC
+	0x022231D8 BL 0x1C16E04
+	0x022231DC MOV X20, X0
+	0x022231E0 ADRP X0, 0x1EF9000
+	0x022231E4 LDR X0, [X0 + 0x140]
+	0x022231E8 BL 0x1C16D08
+	0x022231EC MOV X1, X20
+	0x022231F0 MOV X2, X31
+	0x022231F4 BL 0x321EFD0
+	0x022231F8 MOV X20, X0
+	0x022231FC ADRP X0, 0x1ED8000
+	0x02223200 LDR X0, [X0 + 0x578]
+	0x02223204 BL 0x1C16D08
+	0x02223208 BL 0x1C16F10
+	0x0222320C MOV X21, X0
+	0x02223210 ADRP X0, 0x1ED8000
+	0x02223214 LDR X0, [X0 + 0x768]
+	0x02223218 B 0x2223274
+	0x0222321C STR W1, [X31 + 0x8]
+	0x02223220 ADRP X0, 0x1ED0000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X1+56]
+	005 Move X19, X1
+	006 Move W20, W0
+	007 Compare X8, 0
+	008 JumpIfNotEqual {17}
+	009 Move X0, 0x1ED1000
+	010 Move X0, [X0+1448]
+	011 Call 0x1C17CF4
+	012 Move X8, [X19+56]
+	013 Compare X8, 0
+	014 JumpIfNotEqual {17}
+	015 Move X0, X19
+	016 Call 0x1C5D6E0
+	017 Move X8, 0x1ED1000
+	018 Move X8, [X8+1448]
+	019 Move X0, [X8]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move W0, 1
+	025 Move W1, W20
+	026 Move X2, X31
+	027 Call Math.Max, X0, X1
+	028 Move X8, [X19+56]
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X1, [X8]
+	032 Move X2, [X1]
+	033 Move X30, [X31+32]
+	034 CallNoReturn X2
+
+Method: System.Void ArrayCopy(System.Void* source, System.Int32 sourceIndex, System.Void* destination, System.Int32 destinationIndex, System.Int32 count, System.Int32 elementStride)
+
+Disassembly:
+	0x01E368DC STR X8, [X9]
+	0x01E368E0 LDR X9, [X31 + 0x18]
+	0x01E368E4 ADD X8, X8, W25, SXTW
+	0x01E368E8 LDP X26, X25, [X31 + 0x60]
+	0x01E368EC STR X8, [X9]
+	0x01E368F0 LDR X9, [X31 + 0x20]
+	0x01E368F4 ADD X8, X8, W24, SXTW
+	0x01E368F8 STR X8, [X9]
+	0x01E368FC LDR X9, [X31 + 0x28]
+
+ISIL:
+	001 Multiply W8, W5, W3
+	002 Multiply W9, W5, W1
+	003 Multiply W10, W5, W4
+	004 Add X8, X2, W8
+	005 Add X1, X0, W9
+	006 Move X2, W10
+	007 Move X0, X8
+	008 Move X3, X31
+	009 Call UnsafeUtility.MemCpy, X0, X1, X2
+	010 Return 
+
+Method: System.Void ArrayClear(T* ptr, System.Int32 size)
+
+Disassembly:
+	0x02222880 LDP X22, X21, [X31 + 0x20]
+	0x02222884 LDP X30, X23, [X31 + 0x10]
+	0x02222888 ADD X31, X31, 0x40
+	0x0222288C RET
+	0x02222890 SUB X31, X31, 0x40
+	0x02222894 STP X30, X23, [X31 + 0x10]
+	0x02222898 STP X22, X21, [X31 + 0x20]
+	0x0222289C STP X20, X19, [X31 + 0x30]
+	0x022228A0 LDR X8, [X4 + 0x38]
+	0x022228A4 MOV W19, W3
+	0x022228A8 MOV W20, W2
+	0x022228AC MOV X21, X1
+	0x022228B0 MOV X22, X0
+	0x022228B4 CBNZ X8, 0x22228C8
+	0x022228B8 MOV X0, X4
+	0x022228BC MOV X23, X4
+	0x022228C0 BL 0x1C5C6E0
+	0x022228C4 LDR X8, [X23 + 0x38]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+56]
+	006 Move W19, W1
+	007 Move X20, X0
+	008 Compare X8, 0
+	009 JumpIfNotEqual {14}
+	010 Move X0, X2
+	011 Move X21, X2
+	012 Call 0x1C5D6E0
+	013 Move X8, [X21+56]
+	014 Move X8, [X8+8]
+	015 Move X0, X20
+	016 Move X2, X31
+	017 Move W8, [X8+252]
+	018 Multiply W1, W8, W19
+	019 Move X20, [X31+16]
+	020 Move X19, [X31+24]
+	021 Move X30, [X31+32]
+	022 Move X21, [X31+40]
+	023 Call Native.MemClear, X0, X1
+	024 Return 
+
+Method: System.Int32 ArrayCompare(T* ptr1, T* ptr2, System.Int32 size)
+
+Disassembly:
+	0x022228C8 STP X31, X31, [X31]
+	0x022228CC LDR X5, [X8 + 0x10]
+	0x022228D0 ADD X0, X31, 0x0
+	0x022228D4 MOV X1, X22
+	0x022228D8 MOV X2, X21
+	0x022228DC MOV W3, W20
+	0x022228E0 MOV W4, W19
+	0x022228E4 BL 0x2405428
+	0x022228E8 LDP X0, X1, [X31]
+	0x022228EC LDP X20, X19, [X31 + 0x30]
+	0x022228F0 LDP X22, X21, [X31 + 0x20]
+	0x022228F4 LDP X30, X23, [X31 + 0x10]
+	0x022228F8 ADD X31, X31, 0x40
+	0x022228FC RET
+	0x02222900 SUB X31, X31, 0x40
+	0x02222904 STP X30, X23, [X31 + 0x10]
+	0x02222908 STP X22, X21, [X31 + 0x20]
+	0x0222290C STP X20, X19, [X31 + 0x30]
+	0x02222910 LDR X8, [X4 + 0x38]
+	0x02222914 MOV W19, W3
+	0x02222918 MOV W20, W2
+	0x0222291C MOV X21, X1
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X8, [X3+56]
+	007 Move W20, W2
+	008 Move X19, X1
+	009 Move X21, X0
+	010 Compare X8, 0
+	011 JumpIfNotEqual {16}
+	012 Move X0, X3
+	013 Move X22, X3
+	014 Call 0x1C5D6E0
+	015 Move X8, [X22+56]
+	016 Move X8, [X8+8]
+	017 Move X0, X21
+	018 Move X1, X19
+	019 Move X22, [X31+16]
+	020 Move X21, [X31+24]
+	021 Move W8, [X8+252]
+	022 Move X3, X31
+	023 Multiply W2, W8, W20
+	024 Move X20, [X31+32]
+	025 Move X19, [X31+40]
+	026 Move X30, [X31+48]
+	027 Call Native.MemCmp, X0, X1, X2
+	028 Return X0
+
+Method: T* DoubleArray(T* array, System.Int32 currentLength)
+
+Disassembly:
+	0x02222AD8 MOV W20, W2
+	0x02222ADC MOV X21, X1
+	0x02222AE0 MOV X22, X0
+	0x02222AE4 CBNZ X8, 0x2222AF8
+	0x02222AE8 MOV X0, X4
+	0x02222AEC MOV X23, X4
+	0x02222AF0 BL 0x1C5C6E0
+	0x02222AF4 LDR X8, [X23 + 0x38]
+	0x02222AF8 STP X31, X31, [X31]
+	0x02222AFC LDR X5, [X8 + 0x10]
+	0x02222B00 ADD X0, X31, 0x0
+	0x02222B04 MOV X1, X22
+	0x02222B08 MOV X2, X21
+	0x02222B0C MOV W3, W20
+	0x02222B10 MOV W4, W19
+	0x02222B14 BL 0x24087E8
+	0x02222B18 LDP X0, X1, [X31]
+	0x02222B1C LDP X20, X19, [X31 + 0x30]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+56]
+	006 Move W19, W1
+	007 Move X20, X0
+	008 Compare X8, 0
+	009 JumpIfNotEqual {14}
+	010 Move X0, X2
+	011 Move X21, X2
+	012 Call 0x1C5D6E0
+	013 Move X8, [X21+56]
+	014 Move X3, [X8+8]
+	015 Move W2, W19
+	016 ShiftRight W2, 31
+	017 And W2, W2, 0x3FFFFFFF
+	018 Move X0, X20
+	019 Move W1, W19
+	020 Move X4, [X3]
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X30, [X31+32]
+	024 Move X21, [X31+40]
+	025 CallNoReturn X4
+
+Method: T* ExpandArray(T* array, System.Int32 currentLength, System.Int32 newLength)
+
+Disassembly:
+	0x02222C9C MOV W1, W1
+	0x02222CA0 BFM X1, X2, 0x20, 0x1F
+	0x02222CA4 ADD X31, X31, 0x30
+	0x02222CA8 RET
+	0x02222CAC STR W2, [X31 + 0xC]
+	0x02222CB0 ADRP X0, 0x1ED1000
+	0x02222CB4 LDR X0, [X0 + 0x758]
+	0x02222CB8 MOV X19, X3
+	0x02222CBC BL 0x1C16D08
+	0x02222CC0 ADD X1, X31, 0xC
+	0x02222CC4 BL 0x1C16E04
+	0x02222CC8 MOV X20, X0
+	0x02222CCC ADRP X0, 0x1EFA000
+	0x02222CD0 LDR X0, [X0 + 0x140]
+	0x02222CD4 BL 0x1C16D08
+	0x02222CD8 MOV X1, X20
+	0x02222CDC MOV X2, X31
+	0x02222CE0 BL 0x321EFD0
+	0x02222CE4 MOV X20, X0
+	0x02222CE8 ADRP X0, 0x1ED9000
+	0x02222CEC LDR X0, [X0 + 0x578]
+	0x02222CF0 BL 0x1C16D08
+	0x02222CF4 BL 0x1C16F10
+	0x02222CF8 MOV X21, X0
+	0x02222CFC ADRP X0, 0x1ED9000
+	0x02222D00 LDR X0, [X0 + 0x768]
+	0x02222D04 B 0x2222D60
+	0x02222D08 STR W1, [X31 + 0x8]
+	0x02222D0C ADRP X0, 0x1ED1000
+	0x02222D10 LDR X0, [X0 + 0x758]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X8, [X3+56]
+	007 Move W21, W2
+	008 Move W20, W1
+	009 Move X19, X0
+	010 Compare X8, 0
+	011 JumpIfNotEqual {16}
+	012 Move X0, X3
+	013 Move X22, X3
+	014 Call 0x1C5D6E0
+	015 Move X8, [X22+56]
+	016 Move X1, [X8+8]
+	017 Move X9, [X8+16]
+	018 Move W0, W21
+	019 Move X8, [X1]
+	020 Move W22, [X9+252]
+	021 NotImplemented "Instruction BLR not yet implemented."
+	022 Multiply W2, W22, W20
+	023 Move X1, X19
+	024 Move X3, X31
+	025 Move X21, X0
+	026 Call Native.MemCpy, X0, X1, X2
+	027 Move X0, X19
+	028 Move X1, X31
+	029 Call Native.Free, X0
+	030 Move X0, X21
+	031 Move X20, [X31+32]
+	032 Move X19, [X31+40]
+	033 Move X22, [X31+16]
+	034 Move X21, [X31+24]
+	035 Move X30, [X31+48]
+	036 Return X0
+
+Method: T* DoublePtrArray(T* array, System.Int32 currentLength)
+
+Disassembly:
+	0x02222B20 LDP X22, X21, [X31 + 0x20]
+	0x02222B24 LDP X30, X23, [X31 + 0x10]
+	0x02222B28 ADD X31, X31, 0x40
+	0x02222B2C RET
+	0x02222B30 SUB X31, X31, 0x40
+	0x02222B34 STP X30, X23, [X31 + 0x10]
+	0x02222B38 STP X22, X21, [X31 + 0x20]
+	0x02222B3C STP X20, X19, [X31 + 0x30]
+	0x02222B40 LDR X8, [X4 + 0x38]
+	0x02222B44 MOV W19, W3
+	0x02222B48 MOV W20, W2
+	0x02222B4C MOV X21, X1
+	0x02222B50 MOV X22, X0
+	0x02222B54 CBNZ X8, 0x2222B68
+	0x02222B58 MOV X0, X4
+	0x02222B5C MOV X23, X4
+	0x02222B60 BL 0x1C5C6E0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+56]
+	006 Move W19, W1
+	007 Move X20, X0
+	008 Compare X8, 0
+	009 JumpIfNotEqual {14}
+	010 Move X0, X2
+	011 Move X21, X2
+	012 Call 0x1C5D6E0
+	013 Move X8, [X21+56]
+	014 Move X3, [X8+8]
+	015 Move W2, W19
+	016 ShiftRight W2, 31
+	017 And W2, W2, 0x3FFFFFFF
+	018 Move X0, X20
+	019 Move W1, W19
+	020 Move X20, [X31+16]
+	021 Move X19, [X31+24]
+	022 Move X30, [X31+32]
+	023 Move X21, [X31+40]
+	024 Call 0x2222D14, X0, X1, X2
+	025 Return X0
+
+Method: T* ExpandPtrArray(T* array, System.Int32 currentLength, System.Int32 newLength)
+
+Disassembly:
+	0x02222D14 MOV X19, X3
+	0x02222D18 BL 0x1C16D08
+	0x02222D1C ADD X1, X31, 0x8
+	0x02222D20 BL 0x1C16E04
+	0x02222D24 MOV X20, X0
+	0x02222D28 ADRP X0, 0x1EFA000
+	0x02222D2C LDR X0, [X0 + 0x148]
+	0x02222D30 BL 0x1C16D08
+	0x02222D34 MOV X1, X20
+	0x02222D38 MOV X2, X31
+	0x02222D3C BL 0x321EFD0
+	0x02222D40 MOV X20, X0
+	0x02222D44 ADRP X0, 0x1ED9000
+	0x02222D48 LDR X0, [X0 + 0x578]
+	0x02222D4C BL 0x1C16D08
+	0x02222D50 BL 0x1C16F10
+	0x02222D54 MOV X21, X0
+	0x02222D58 ADRP X0, 0x1EFA000
+	0x02222D5C LDR X0, [X0 + 0x150]
+	0x02222D60 BL 0x1C16D08
+	0x02222D64 MOV X2, X0
+	0x02222D68 MOV X0, X21
+	0x02222D6C MOV X1, X20
+	0x02222D70 MOV X3, X31
+	0x02222D74 BL 0x330E16C
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X3+56]
+	006 Move W21, W2
+	007 Move W20, W1
+	008 Move X19, X0
+	009 Compare X8, 0
+	010 JumpIfNotEqual {13}
+	011 Move X0, X3
+	012 Call 0x1C5D6E0
+	013 Move W0, 8
+	014 Move W1, W21
+	015 Move X2, X31
+	016 Call Native.MallocAndClearArray, X0, X1
+	017 Move W2, W20
+	018 ShiftRight W2, 29
+	019 And W2, W2, 0xFFFFFFF
+	020 Move X1, X19
+	021 Move X3, X31
+	022 Move X21, X0
+	023 Call Native.MemCpy, X0, X1, X2
+	024 Move X0, X19
+	025 Move X1, X31
+	026 Call Native.Free, X0
+	027 Move X20, [X31+16]
+	028 Move X19, [X31+24]
+	029 Move X0, X21
+	030 Move X30, [X31+32]
+	031 Move X21, [X31+40]
+	032 Return X0
+
+Method: System.Void* Expand(System.Void* buffer, System.Int32 currentSize, System.Int32 newSize)
+
+Disassembly:
+	0x01E36900 ADD X8, X8, W23, SXTW
+	0x01E36904 LDP X24, X23, [X31 + 0x70]
+	0x01E36908 STR X8, [X9]
+	0x01E3690C LDR X9, [X31 + 0x30]
+	0x01E36910 ADD X8, X8, W22, SXTW
+	0x01E36914 STR X8, [X9]
+	0x01E36918 LDR X9, [X31 + 0x38]
+	0x01E3691C ADD X8, X8, W21, SXTW
+	0x01E36920 LDP X22, X21, [X31 + 0x80]
+	0x01E36924 STR X8, [X9]
+	0x01E36928 ADD X31, X31, 0xA0
+	0x01E3692C RET
+	0x01E36930 SUB X31, X31, 0xB0
+	0x01E36934 STP X29, X30, [X31 + 0x50]
+	0x01E36938 STP X28, X27, [X31 + 0x60]
+	0x01E3693C STP X26, X25, [X31 + 0x70]
+	0x01E36940 STP X24, X23, [X31 + 0x80]
+	0x01E36944 STP X22, X21, [X31 + 0x90]
+	0x01E36948 STP X20, X19, [X31 + 0xA0]
+	0x01E3694C LDR X9, [X31 + 0x108]
+	0x01E36950 LDR X8, [X31 + 0x100]
+	0x01E36954 LDR W29, [X31 + 0x110]
+	0x01E36958 LDR W27, [X31 + 0xB8]
+	0x01E3695C LDR W28, [X31 + 0xB0]
+	0x01E36960 STP X8, X9, [X31 + 0x40]
+	0x01E36964 LDR X9, [X31 + 0xF8]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, X0
+	007 Move W0, W2
+	008 Move W19, W2
+	009 Move W20, W1
+	010 Call Native.Malloc, X0
+	011 Move X1, W19
+	012 Move X2, X31
+	013 Move X22, X0
+	014 Call UnsafeUtility.MemClear, X0, X1
+	015 Move X2, W20
+	016 Move X0, X22
+	017 Move X1, X21
+	018 Move X3, X31
+	019 Call UnsafeUtility.MemCpy, X0, X1, X2
+	020 Move W1, 4
+	021 Move X0, X21
+	022 Move X2, X31
+	023 Call UnsafeUtility.Free, X0, X1
+	024 Move X0, X22
+	025 Move X20, [X31+32]
+	026 Move X19, [X31+40]
+	027 Move X22, [X31+16]
+	028 Move X21, [X31+24]
+	029 Move X30, [X31+48]
+	030 Return X0
+
+Method: System.Void MemCpyFast(System.Void* d, System.Void* s, System.Int32 size)
+
+Disassembly:
+	0x01E36968 LDR X8, [X31 + 0xF0]
+	0x01E3696C MOV W20, W1
+	0x01E36970 MOV W1, W29
+	0x01E36974 MOV W23, W7
+	0x01E36978 STP X8, X9, [X31 + 0x30]
+	0x01E3697C LDR X9, [X31 + 0xE8]
+	0x01E36980 LDR X8, [X31 + 0xE0]
+	0x01E36984 MOV W24, W6
+	0x01E36988 MOV W25, W5
+	0x01E3698C MOV W26, W4
+	0x01E36990 STP X8, X9, [X31 + 0x20]
+	0x01E36994 LDR X9, [X31 + 0xD8]
+	0x01E36998 LDR X8, [X31 + 0xD0]
+	0x01E3699C MOV W22, W3
+	0x01E369A0 MOV W21, W2
+	0x01E369A4 STP X8, X9, [X31 + 0x10]
+	0x01E369A8 LDR X9, [X31 + 0xC8]
+	0x01E369AC LDR X8, [X31 + 0xC0]
+	0x01E369B0 STP X8, X9, [X31]
+	0x01E369B4 BL 0x1E35B3C
+	0x01E369B8 MOV W19, W0
+	0x01E369BC MOV W0, W20
+	0x01E369C0 MOV W1, W29
+	0x01E369C4 BL 0x1E35B3C
+	0x01E369C8 MOV W20, W0
+	0x01E369CC MOV W0, W21
+	0x01E369D0 MOV W1, W29
+	0x01E369D4 BL 0x1E35B3C
+	0x01E369D8 MOV W21, W0
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move X8, [X1]
+	005 Move [X0], X8
+	006 Move X8, [X1+8]
+	007 Move [X0+8], X8
+	008 Return 
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 NotImplemented "Instruction CMP not yet implemented."
+	011 Move X8, [X1]
+	012 Move [X0], X8
+	013 Return 
+	014 Move X2, W2
+	015 Move X3, X31
+	016 Call UnsafeUtility.MemCpy, X0, X1, X2
+	017 Return 
+	018 Move X8, [X1]
+	019 Move [X0], X8
+	020 Move W8, [X1+8]
+	021 Move [X0+8], W8
+	022 Return 
+	023 Move W8, [X1]
+	024 Move [X0], W8
+	025 Return 
+
+Method: System.Int32 CopyFromArray(System.Void* destination, T[] source)
+
+Disassembly:
+	0x02222920 MOV X22, X0
+	0x02222924 CBNZ X8, 0x2222938
+	0x02222928 MOV X0, X4
+	0x0222292C MOV X23, X4
+	0x02222930 BL 0x1C5C6E0
+	0x02222934 LDR X8, [X23 + 0x38]
+	0x02222938 STP X31, X31, [X31]
+	0x0222293C LDR X5, [X8 + 0x10]
+	0x02222940 ADD X0, X31, 0x0
+	0x02222944 MOV X1, X22
+	0x02222948 MOV X2, X21
+	0x0222294C MOV W3, W20
+	0x02222950 MOV W4, W19
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Compare X1, 0
+	004 JumpIfEqual {16}
+	005 Move W2, [X1+24]
+	006 Add X8, X1, 32
+	007 Move X19, X1
+	008 Move X3, X31
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 NotImplemented "Instruction CSEL not yet implemented."
+	011 Call Native.MemCpy, X0, X1, X2
+	012 Move W0, [X19+24]
+	013 Move X30, [X31+16]
+	014 Move X19, [X31+24]
+	015 Return X0
+	016 Call 0x1C17F20
+
+Method: System.Int32 CopyToArray(T[] destination, System.Void* source)
+
+Disassembly:
+	0x022229FC MOV X21, X1
+	0x02222A00 MOV X22, X0
+	0x02222A04 CBNZ X8, 0x2222A18
+	0x02222A08 MOV X0, X4
+	0x02222A0C MOV X23, X4
+	0x02222A10 BL 0x1C5C6E0
+	0x02222A14 LDR X8, [X23 + 0x38]
+	0x02222A18 STP X31, X31, [X31]
+	0x02222A1C LDR X5, [X8 + 0x10]
+	0x02222A20 ADD X0, X31, 0x0
+	0x02222A24 MOV X1, X22
+	0x02222A28 MOV X2, X21
+	0x02222A2C MOV W3, W20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Compare X0, 0
+	004 JumpIfEqual {16}
+	005 Move W2, [X0+24]
+	006 Add X8, X0, 32
+	007 Move X19, X0
+	008 Move X3, X31
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 NotImplemented "Instruction CSEL not yet implemented."
+	011 Call Native.MemCpy, X0, X1, X2
+	012 Move W0, [X19+24]
+	013 Move X30, [X31+16]
+	014 Move X19, [X31+24]
+	015 Return X0
+	016 Call 0x1C17F20
+
+Method: System.Int32 GetLengthPrefixedUTF8ByteCount(System.String str)
+
+Disassembly:
+	0x01E369DC MOV W0, W22
+	0x01E369E0 MOV W1, W29
+	0x01E369E4 BL 0x1E35B3C
+	0x01E369E8 MOV W22, W0
+	0x01E369EC MOV W0, W26
+	0x01E369F0 MOV W1, W29
+	0x01E369F4 BL 0x1E35B3C
+	0x01E369F8 MOV W26, W0
+	0x01E369FC MOV W0, W25
+	0x01E36A00 MOV W1, W29
+	0x01E36A04 BL 0x1E35B3C
+	0x01E36A08 MOV W25, W0
+	0x01E36A0C MOV W0, W24
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, X31
+	005 Call Encoding.get_UTF8
+	006 Compare X0, 0
+	007 JumpIfEqual {17}
+	008 Move X8, [X0]
+	009 Move X1, X19
+	010 Move X9, [X8+504]
+	011 Move X2, [X8+512]
+	012 NotImplemented "Instruction BLR not yet implemented."
+	013 Add W0, W0, 4
+	014 Move X30, [X31+16]
+	015 Move X19, [X31+24]
+	016 Return X0
+	017 Call 0x1C17F20
+
+Method: System.Int32 WriteLengthPrefixedUTF8(System.Void* destination, System.String str)
+
+Disassembly:
+	0x01E36A10 MOV W1, W29
+	0x01E36A14 BL 0x1E35B3C
+	0x01E36A18 MOV W24, W0
+	0x01E36A1C MOV W0, W23
+	0x01E36A20 MOV W1, W29
+	0x01E36A24 BL 0x1E35B3C
+	0x01E36A28 MOV W23, W0
+	0x01E36A2C MOV W0, W28
+	0x01E36A30 MOV W1, W29
+	0x01E36A34 BL 0x1E35B3C
+	0x01E36A38 MOV W28, W0
+	0x01E36A3C MOV W0, W27
+	0x01E36A40 MOV W1, W29
+	0x01E36A44 BL 0x1E35B3C
+	0x01E36A48 ADD W8, W20, W19
+	0x01E36A4C ADD W8, W8, W21
+	0x01E36A50 ADD W8, W8, W22
+	0x01E36A54 ADD W8, W8, W26
+	0x01E36A58 ADD W8, W8, W25
+	0x01E36A5C ADD W8, W8, W24
+	0x01E36A60 ADD W8, W8, W23
+	0x01E36A64 ADD W8, W8, W28
+	0x01E36A68 ADD W27, W8, W0
+	0x01E36A6C MOV W0, W27
+	0x01E36A70 BL 0x1E35788
+	0x01E36A74 SXTW X1, W27
+	0x01E36A78 MOV X2, X31
+	0x01E36A7C MOV X29, X0
+	0x01E36A80 BL 0x3C001B4
+	0x01E36A84 LDP X8, X9, [X31]
+	0x01E36A88 MOV W0, W27
+	0x01E36A8C STR X29, [X8]
+	0x01E36A90 ADD X8, X29, W19, SXTW
+	0x01E36A94 STR X8, [X9]
+	0x01E36A98 LDR X9, [X31 + 0x10]
+	0x01E36A9C ADD X8, X8, W20, SXTW
+	0x01E36AA0 LDP X20, X19, [X31 + 0xA0]
+	0x01E36AA4 LDP X29, X30, [X31 + 0x50]
+	0x01E36AA8 STR X8, [X9]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, X1
+	007 Move X19, X0
+	008 Compare X1, 0
+	009 JumpIfEqual {13}
+	010 Move X0, X31
+	011 Call RuntimeHelpers.get_OffsetToStringData
+	012 Add X21, X20, W0
+	013 Move X21, X20
+	014 Move X0, X31
+	015 Call Encoding.get_UTF8
+	016 Compare X0, 0
+	017 JumpIfEqual {47}
+	018 Move X8, [X0]
+	019 Move X1, X20
+	020 Move X9, [X8+504]
+	021 Move X2, [X8+512]
+	022 NotImplemented "Instruction BLR not yet implemented."
+	023 Move W22, W0
+	024 Move X0, X31
+	025 Call Encoding.get_UTF8
+	026 Compare X20, 0
+	027 JumpIfEqual {47}
+	028 Compare X0, 0
+	029 JumpIfEqual {47}
+	030 Move X8, [X0]
+	031 Move W2, [X20+16]
+	032 Add X3, X19, 4
+	033 Move X1, X21
+	034 Move X9, [X8+664]
+	035 Move X5, [X8+672]
+	036 Move W4, W22
+	037 NotImplemented "Instruction BLR not yet implemented."
+	038 Move [X19], W0
+	039 Move X20, [X31+32]
+	040 Move X19, [X31+40]
+	041 Move X22, [X31+16]
+	042 Move X21, [X31+24]
+	043 Add W8, W0, 4
+	044 Move W0, W8
+	045 Move X30, [X31+48]
+	046 Return X0
+	047 Call 0x1C17F20
+
+Method: System.Int32 ReadLengthPrefixedUTF8(System.Void* source, out System.String result)
+
+Disassembly:
+	0x01E36AAC LDR X9, [X31 + 0x18]
+	0x01E36AB0 ADD X8, X8, W21, SXTW
+	0x01E36AB4 STR X8, [X9]
+	0x01E36AB8 LDR X9, [X31 + 0x20]
+	0x01E36ABC ADD X8, X8, W22, SXTW
+	0x01E36AC0 LDP X22, X21, [X31 + 0x90]
+	0x01E36AC4 STR X8, [X9]
+	0x01E36AC8 LDR X9, [X31 + 0x28]
+	0x01E36ACC ADD X8, X8, W26, SXTW
+	0x01E36AD0 STR X8, [X9]
+	0x01E36AD4 LDR X9, [X31 + 0x30]
+	0x01E36AD8 ADD X8, X8, W25, SXTW
+	0x01E36ADC LDP X26, X25, [X31 + 0x70]
+	0x01E36AE0 STR X8, [X9]
+	0x01E36AE4 LDR X9, [X31 + 0x38]
+	0x01E36AE8 ADD X8, X8, W24, SXTW
+	0x01E36AEC STR X8, [X9]
+	0x01E36AF0 LDR X9, [X31 + 0x40]
+	0x01E36AF4 ADD X8, X8, W23, SXTW
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, [X0]
+	006 Move X21, X0
+	007 Move X0, X31
+	008 Move X19, X1
+	009 Call Encoding.get_UTF8
+	010 Compare X0, 0
+	011 JumpIfEqual {24}
+	012 Add X1, X21, 4
+	013 Move W2, W20
+	014 Move X3, X31
+	015 Call Encoding.GetString, X0, X1, X2
+	016 Add W8, W20, 4
+	017 Move [X19], X0
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move W0, W8
+	021 Move X30, [X31+32]
+	022 Move X21, [X31+40]
+	023 Return X0
+	024 Call 0x1C17F20
+
+Method: System.Boolean IsPointerAligned(System.Void* pointer, System.Int32 alignment)
+
+Disassembly:
+	0x01E36AF8 LDP X24, X23, [X31 + 0x80]
+	0x01E36AFC STR X8, [X9]
+	0x01E36B00 LDR X9, [X31 + 0x48]
+	0x01E36B04 ADD X8, X8, W28, SXTW
+	0x01E36B08 LDP X28, X27, [X31 + 0x60]
+	0x01E36B0C STR X8, [X9]
+
+ISIL:
+	001 Move X8, W1
+	002 NotImplemented "Instruction SDIV not yet implemented."
+	003 NotImplemented "Instruction MSUB not yet implemented."
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 NotImplemented "Instruction CSET not yet implemented."
+	006 Return X0
+
+Method: System.Void* AlignPointer(System.Void* pointer, System.Int32 alignment)
+
+Disassembly:
+	0x01E36B10 ADD X31, X31, 0xB0
+	0x01E36B14 RET
+	0x01E36B18 SUB X31, X31, 0xD0
+	0x01E36B1C STP X29, X30, [X31 + 0x70]
+	0x01E36B20 STP X28, X27, [X31 + 0x80]
+	0x01E36B24 STP X26, X25, [X31 + 0x90]
+	0x01E36B28 STP X24, X23, [X31 + 0xA0]
+	0x01E36B2C STP X22, X21, [X31 + 0xB0]
+
+ISIL:
+	001 Move X8, W1
+	002 NotImplemented "Instruction SDIV not yet implemented."
+	003 Add X9, X0, W1
+	004 NotImplemented "Instruction MSUB not yet implemented."
+	005 Subtract X9, X9, X8
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 NotImplemented "Instruction CSEL not yet implemented."
+	008 Return X0
+
+Method: System.Int32 RoundToMaxAlignment(System.Int32 stride)
+
+Disassembly:
+	0x01E36B30 STP X20, X19, [X31 + 0xC0]
+	0x01E36B34 LDR X9, [X31 + 0x138]
+	0x01E36B38 LDR X8, [X31 + 0x130]
+
+ISIL:
+	001 Add W8, W0, 7
+	002 And W0, W8, 0xFFFFFFF8
+	003 Return X0
+
+Method: System.Int32 WordCount(System.Int32 stride, System.Int32 wordSize)
+
+Disassembly:
+	0x01E36C2C MOV W1, W24
+	0x01E36C30 BL 0x1E35B3C
+	0x01E36C34 MOV W29, W0
+	0x01E36C38 MOV W0, W28
+	0x01E36C3C MOV W1, W24
+	0x01E36C40 BL 0x1E35B3C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W19, W1
+	004 Call Native.RoundToAlignment, X0, X1
+	005 NotImplemented "Instruction SDIV not yet implemented."
+	006 Move X30, [X31+16]
+	007 Move X19, [X31+24]
+	008 Return X0
+
+Method: System.Boolean IsAligned(System.Int32 stride, System.Int32 alignment)
+
+Disassembly:
+	0x01E36C44 MOV W28, W0
+	0x01E36C48 LDR W0, [X31 + 0x10]
+	0x01E36C4C MOV W1, W24
+	0x01E36C50 BL 0x1E35B3C
+	0x01E36C54 ADD W8, W20, W22
+	0x01E36C58 MOV W21, W20
+	0x01E36C5C MOV W20, W22
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W19, W0
+	004 Call Native.RoundToAlignment, X0, X1
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X30, [X31+16]
+	008 Move X19, [X31+24]
+	009 Return X0
+
+Method: System.Int32 RoundToAlignment(System.Int32 stride, System.Int32 alignment)
+
+Disassembly:
+	0x01E36B3C LDR W24, [X31 + 0x140]
+	0x01E36B40 LDR W28, [X31 + 0xD8]
+	0x01E36B44 LDR W29, [X31 + 0xD0]
+	0x01E36B48 STP X8, X9, [X31 + 0x60]
+	0x01E36B4C LDR X9, [X31 + 0x128]
+	0x01E36B50 LDR X8, [X31 + 0x120]
+	0x01E36B54 MOV W20, W1
+	0x01E36B58 MOV W1, W24
+	0x01E36B5C STR W7, [X31 + 0x14]
+	0x01E36B60 STP X8, X9, [X31 + 0x50]
+	0x01E36B64 LDR X9, [X31 + 0x118]
+	0x01E36B68 LDR X8, [X31 + 0x110]
+	0x01E36B6C STR W6, [X31 + 0xC]
+	0x01E36B70 MOV W27, W5
+	0x01E36B74 MOV W26, W4
+	0x01E36B78 STP X8, X9, [X31 + 0x40]
+	0x01E36B7C LDR X9, [X31 + 0x108]
+	0x01E36B80 LDR X8, [X31 + 0x100]
+	0x01E36B84 MOV W19, W3
+	0x01E36B88 MOV W21, W2
+	0x01E36B8C STP X8, X9, [X31 + 0x30]
+	0x01E36B90 LDR X9, [X31 + 0xF8]
+	0x01E36B94 LDR X8, [X31 + 0xF0]
+	0x01E36B98 STP X8, X9, [X31 + 0x20]
+	0x01E36B9C LDR X8, [X31 + 0xE8]
+	0x01E36BA0 STR X8, [X31 + 0x18]
+	0x01E36BA4 LDR W8, [X31 + 0xE0]
+	0x01E36BA8 STR W8, [X31 + 0x10]
+	0x01E36BAC BL 0x1E35B3C
+	0x01E36BB0 MOV W22, W0
+	0x01E36BB4 MOV W0, W20
+	0x01E36BB8 MOV W1, W24
+	0x01E36BBC BL 0x1E35B3C
+	0x01E36BC0 MOV W20, W0
+	0x01E36BC4 MOV W0, W21
+	0x01E36BC8 MOV W1, W24
+	0x01E36BCC BL 0x1E35B3C
+	0x01E36BD0 STR W0, [X31 + 0x8]
+	0x01E36BD4 MOV W0, W19
+	0x01E36BD8 MOV W1, W24
+	0x01E36BDC BL 0x1E35B3C
+	0x01E36BE0 MOV W23, W0
+	0x01E36BE4 MOV W0, W26
+	0x01E36BE8 MOV W1, W24
+	0x01E36BEC BL 0x1E35B3C
+	0x01E36BF0 MOV W25, W0
+	0x01E36BF4 MOV W0, W27
+	0x01E36BF8 MOV W1, W24
+	0x01E36BFC BL 0x1E35B3C
+	0x01E36C00 MOV W27, W0
+	0x01E36C04 LDR W0, [X31 + 0xC]
+	0x01E36C08 MOV W1, W24
+	0x01E36C0C BL 0x1E35B3C
+	0x01E36C10 MOV W19, W0
+	0x01E36C14 STR W0, [X31 + 0xC]
+	0x01E36C18 LDR W0, [X31 + 0x14]
+	0x01E36C1C MOV W1, W24
+	0x01E36C20 BL 0x1E35B3C
+	0x01E36C24 MOV W26, W0
+	0x01E36C28 MOV W0, W29
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Add W8, W0, 31
+	005 And W0, W8, 0xFFFFFFE0
+	006 Return X0
+	007 Subtract W8, W1, 1
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move X9, -19955712
+	010 Add X9, X9, 2682
+	011 NotImplemented "Instruction ADR not yet implemented."
+	012 Move W11, [X9]
+	013 Add X10, X10, X11
+	014 CallNoReturn X10
+	015 Add W8, W0, 1
+	016 And W0, W8, 0xFFFFFFFE
+	017 Return X0
+	018 Add W8, W0, 15
+	019 And W0, W8, 0xFFFFFFF0
+	020 Return X0
+	021 Add W8, W0, 3
+	022 And W0, W8, 0xFFFFFFFC
+	023 Return X0
+	024 Add W8, W0, 7
+	025 And W0, W8, 0xFFFFFFF8
+	026 Return X0
+	027 Move [X31-32], X30
+	028 Move [X31+16], X20
+	029 Move [X31+24], X19
+	030 Move [X31+12], W1
+	031 Move X0, 0x22BE000
+	032 Move X0, [X0+1880]
+	033 Call 0x1C17D08
+	034 Add X1, X31, 12
+	035 Call 0x1C17E04
+	036 Move X19, X0
+	037 Move X0, 0x22C6000
+	038 Move X0, [X0+1736]
+	039 Call 0x1C17D08
+	040 Move X1, X19
+	041 Move X2, X31
+	042 Call String.Format, X0, X1
+	043 Move X19, X0
+	044 Move X0, 0x22BE000
+	045 Move X0, [X0+1456]
+	046 Call 0x1C17D08
+	047 Call 0x1C17F10
+	048 Move X1, X19
+	049 Move X2, X31
+	050 Move X20, X0
+	051 Call InvalidOperationException..ctor, X0, X1
+	052 Move X0, 0x22C6000
+	053 Move X0, [X0+1744]
+	054 Call 0x1C17D08
+	055 Move X1, X0
+	056 Move X0, X20
+	057 Call 0x1C17DEC
+
+Method: System.Int64 RoundToAlignment(System.Int64 stride, System.Int32 alignment)
+
+Disassembly:
+	0x01E36C60 LDR W22, [X31 + 0x8]
+	0x01E36C64 ADD W8, W8, W22
+	0x01E36C68 ADD W8, W8, W23
+	0x01E36C6C ADD W8, W8, W25
+	0x01E36C70 ADD W8, W8, W27
+	0x01E36C74 ADD W8, W8, W19
+	0x01E36C78 ADD W8, W8, W26
+	0x01E36C7C ADD W8, W8, W29
+	0x01E36C80 ADD W8, W8, W28
+	0x01E36C84 ADD W24, W8, W0
+	0x01E36C88 MOV W0, W24
+	0x01E36C8C BL 0x1E35788
+	0x01E36C90 SXTW X1, W24
+	0x01E36C94 MOV X2, X31
+	0x01E36C98 MOV X19, X0
+	0x01E36C9C BL 0x3C001B4
+	0x01E36CA0 LDP X8, X9, [X31 + 0x18]
+	0x01E36CA4 MOV W0, W24
+	0x01E36CA8 STR X19, [X8]
+	0x01E36CAC ADD X8, X19, W20, SXTW
+	0x01E36CB0 STR X8, [X9]
+	0x01E36CB4 LDR X9, [X31 + 0x28]
+	0x01E36CB8 ADD X8, X8, W21, SXTW
+	0x01E36CBC LDP X20, X19, [X31 + 0xC0]
+	0x01E36CC0 STR X8, [X9]
+	0x01E36CC4 LDR X9, [X31 + 0x30]
+	0x01E36CC8 ADD X8, X8, W22, SXTW
+	0x01E36CCC LDP X22, X21, [X31 + 0xB0]
+	0x01E36CD0 STR X8, [X9]
+	0x01E36CD4 LDR X9, [X31 + 0x38]
+	0x01E36CD8 ADD X8, X8, W23, SXTW
+	0x01E36CDC LDP X24, X23, [X31 + 0xA0]
+	0x01E36CE0 STR X8, [X9]
+	0x01E36CE4 LDR X9, [X31 + 0x40]
+	0x01E36CE8 ADD X8, X8, W25, SXTW
+	0x01E36CEC STR X8, [X9]
+	0x01E36CF0 LDR X9, [X31 + 0x48]
+	0x01E36CF4 ADD X8, X8, W27, SXTW
+	0x01E36CF8 STR X8, [X9]
+	0x01E36CFC LDR W9, [X31 + 0xC]
+	0x01E36D00 ADD X8, X8, W9, SXTW
+	0x01E36D04 LDR X9, [X31 + 0x50]
+	0x01E36D08 STR X8, [X9]
+	0x01E36D0C LDR X9, [X31 + 0x58]
+	0x01E36D10 ADD X8, X8, W26, SXTW
+	0x01E36D14 LDP X26, X25, [X31 + 0x90]
+	0x01E36D18 STR X8, [X9]
+	0x01E36D1C LDR X9, [X31 + 0x60]
+	0x01E36D20 ADD X8, X8, W29, SXTW
+	0x01E36D24 LDP X29, X30, [X31 + 0x70]
+	0x01E36D28 STR X8, [X9]
+	0x01E36D2C LDR X9, [X31 + 0x68]
+	0x01E36D30 ADD X8, X8, W28, SXTW
+	0x01E36D34 LDP X28, X27, [X31 + 0x80]
+	0x01E36D38 STR X8, [X9]
+	0x01E36D3C ADD X31, X31, 0xD0
+	0x01E36D40 RET
+	0x01E36D44 SUB X31, X31, 0xF0
+	0x01E36D48 STP X29, X30, [X31 + 0x90]
+	0x01E36D4C STP X28, X27, [X31 + 0xA0]
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Add X8, X0, 31
+	005 And X0, X8, 0xFFFFFFFF
+	006 Return X0
+	007 Subtract W8, W1, 1
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move X9, -19955712
+	010 Add X9, X9, 2682
+	011 NotImplemented "Instruction ADR not yet implemented."
+	012 Move W11, [X9]
+	013 Add X10, X10, X11
+	014 CallNoReturn X10
+	015 Add X8, X0, 1
+	016 And X0, X8, 0xFFFFFFFF
+	017 Return X0
+	018 Add X8, X0, 15
+	019 And X0, X8, 0xFFFFFFFF
+	020 Return X0
+	021 Add X8, X0, 3
+	022 And X0, X8, 0xFFFFFFFF
+	023 Return X0
+	024 Add X8, X0, 7
+	025 And X0, X8, 0xFFFFFFFF
+	026 Return X0
+	027 Move [X31-32], X30
+	028 Move [X31+16], X20
+	029 Move [X31+24], X19
+	030 Move [X31+12], W1
+	031 Move X0, 0x22BE000
+	032 Move X0, [X0+1880]
+	033 Call 0x1C17D08
+	034 Add X1, X31, 12
+	035 Call 0x1C17E04
+	036 Move X19, X0
+	037 Move X0, 0x22C6000
+	038 Move X0, [X0+1736]
+	039 Call 0x1C17D08
+	040 Move X1, X19
+	041 Move X2, X31
+	042 Call String.Format, X0, X1
+	043 Move X19, X0
+	044 Move X0, 0x22BE000
+	045 Move X0, [X0+1456]
+	046 Call 0x1C17D08
+	047 Call 0x1C17F10
+	048 Move X1, X19
+	049 Move X2, X31
+	050 Move X20, X0
+	051 Call InvalidOperationException..ctor, X0, X1
+	052 Move X0, 0x22C6000
+	053 Move X0, [X0+1752]
+	054 Call 0x1C17D08
+	055 Move X1, X0
+	056 Move X0, X20
+	057 Call 0x1C17DEC
+
+Method: T Empty()
+
+Disassembly:
+	0x02222BF0 MOV W4, W19
+	0x02222BF4 BL 0x2408F2C
+	0x02222BF8 LDP X0, X1, [X31]
+	0x02222BFC LDP X20, X19, [X31 + 0x30]
+	0x02222C00 LDP X22, X21, [X31 + 0x20]
+	0x02222C04 LDP X30, X23, [X31 + 0x10]
+	0x02222C08 ADD X31, X31, 0x40
+	0x02222C0C RET
+	0x02222C10 SUB X31, X31, 0x40
+	0x02222C14 STP X30, X23, [X31 + 0x10]
+	0x02222C18 STP X22, X21, [X31 + 0x20]
+	0x02222C1C STP X20, X19, [X31 + 0x30]
+	0x02222C20 LDR X8, [X4 + 0x38]
+	0x02222C24 MOV W19, W3
+	0x02222C28 MOV W20, W2
+	0x02222C2C MOV X21, X1
+	0x02222C30 MOV X22, X0
+	0x02222C34 CBNZ X8, 0x2222C48
+	0x02222C38 MOV X0, X4
+	0x02222C3C MOV X23, X4
+	0x02222C40 BL 0x1C5C6E0
+	0x02222C44 LDR X8, [X23 + 0x38]
+	0x02222C48 STP X31, X31, [X31]
+	0x02222C4C LDR X5, [X8 + 0x8]
+	0x02222C50 ADD X0, X31, 0x0
+	0x02222C54 MOV X1, X22
+	0x02222C58 MOV X2, X21
+	0x02222C5C MOV W3, W20
+	0x02222C60 MOV W4, W19
+	0x02222C64 BL 0x2408DC0
+	0x02222C68 LDP X0, X1, [X31]
+	0x02222C6C LDP X20, X19, [X31 + 0x30]
+	0x02222C70 LDP X22, X21, [X31 + 0x20]
+	0x02222C74 LDP X30, X23, [X31 + 0x10]
+	0x02222C78 ADD X31, X31, 0x40
+	0x02222C7C RET
+	0x02222C80 SUB X31, X31, 0x30
+	0x02222C84 STP X30, X21, [X31 + 0x10]
+	0x02222C88 STP X20, X19, [X31 + 0x20]
+	0x02222C8C TBNZ X2, 0x1F, 0x2222CAC
+	0x02222C90 TBNZ X1, 0x1F, 0x2222D08
+	0x02222C94 LDP X20, X19, [X31 + 0x20]
+	0x02222C98 LDP X30, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-48], X29
+	002 Move [X31-40], X30
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Add X29, X31, 0
+	008 Subtract X31, X31, 16
+	009 NotImplemented "Instruction MRS not yet implemented."
+	010 Move X8, [X22+40]
+	011 Move X19, X0
+	012 Move [X29-8], X8
+	013 Move X8, [X1+56]
+	014 Compare X8, 0
+	015 JumpIfNotEqual {20}
+	016 Move X0, X1
+	017 Move X20, X1
+	018 Call 0x1C5D6E0
+	019 Move X8, [X20+56]
+	020 Move X1, [X8]
+	021 Move X9, [X8+8]
+	022 Move W20, [X9+252]
+	023 Add X9, X31, 0
+	024 Add X10, X20, 15
+	025 And X10, X10, 0x1FFFFFFFF
+	026 Subtract X21, X9, X10
+	027 Add X31, X21, 0
+	028 Move X0, [X1]
+	029 Move [X29-16], X21
+	030 Move X8, [X1+16]
+	031 Subtract X3, X29, 16
+	032 Move X2, X31
+	033 Move X4, X21
+	034 NotImplemented "Instruction BLR not yet implemented."
+	035 Move X0, X19
+	036 Move X1, X21
+	037 Move X2, X20
+	038 Call 0x3EB2AC0
+	039 Move X8, [X22+40]
+	040 NotImplemented "Instruction LDUR not yet implemented."
+	041 NotImplemented "Instruction CMP not yet implemented."
+	042 Add X31, X29, 0
+	043 Move X20, [X31+32]
+	044 Move X19, [X31+40]
+	045 Move X22, [X31+16]
+	046 Move X21, [X31+24]
+	047 Move X29, [X31+48]
+	048 Move X30, [X31+56]
+	049 Return X0
+	050 Call 0x3EB2B20
+
+Method: System.Int32 RoundBitsUpTo64(System.Int32 bits)
+
+Disassembly:
+	0x01E36D50 STP X26, X25, [X31 + 0xB0]
+	0x01E36D54 STP X24, X23, [X31 + 0xC0]
+	0x01E36D58 STP X22, X21, [X31 + 0xD0]
+
+ISIL:
+	001 Add W8, W0, 63
+	002 And W0, W8, 0xFFFFFFC0
+	003 Return X0
+
+Method: System.Int32 RoundBitsUpTo32(System.Int32 bits)
+
+Disassembly:
+	0x01E36D5C STP X20, X19, [X31 + 0xE0]
+	0x01E36D60 LDR X9, [X31 + 0x168]
+	0x01E36D64 LDR X8, [X31 + 0x160]
+
+ISIL:
+	001 Add W8, W0, 31
+	002 And W0, W8, 0xFFFFFFE0
+	003 Return X0
+
+Method: System.Int32 GetAlignment()
+
+Disassembly:
+	0x02222E50 BL 0x1C16D08
+	0x02222E54 BL 0x1C16F10
+	0x02222E58 MOV X21, X0
+	0x02222E5C ADRP X0, 0x1EFA000
+	0x02222E60 LDR X0, [X0 + 0x150]
+	0x02222E64 BL 0x1C16D08
+	0x02222E68 MOV X2, X0
+	0x02222E6C MOV X0, X21
+	0x02222E70 MOV X1, X20
+	0x02222E74 MOV X3, X31
+	0x02222E78 BL 0x330E16C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X8, [X0+56]
+	004 Compare X8, 0
+	005 JumpIfNotEqual {9}
+	006 Move X19, X0
+	007 Call 0x1C5D6E0
+	008 Move X8, [X19+56]
+	009 Move X8, [X8]
+	010 Move X1, X31
+	011 Move W0, [X8+252]
+	012 Move X30, [X31+16]
+	013 Move X19, [X31+24]
+	014 Call Native.GetAlignment, X0
+	015 Return X0
+
+Method: System.Int32 GetAlignment(System.Int32 stride)
+
+Disassembly:
+	0x01E36D68 LDR W26, [X31 + 0x170]
+	0x01E36D6C LDR W19, [X31 + 0xF0]
+	0x01E36D70 MOV W20, W1
+	0x01E36D74 STP X8, X9, [X31 + 0x80]
+	0x01E36D78 LDR X9, [X31 + 0x158]
+	0x01E36D7C LDR X8, [X31 + 0x150]
+	0x01E36D80 MOV W1, W26
+	0x01E36D84 STR W7, [X31 + 0x28]
+	0x01E36D88 MOV W29, W6
+	0x01E36D8C STP X8, X9, [X31 + 0x70]
+	0x01E36D90 LDR X9, [X31 + 0x148]
+	0x01E36D94 LDR X8, [X31 + 0x140]
+	0x01E36D98 MOV W22, W5
+	0x01E36D9C MOV W23, W4
+	0x01E36DA0 MOV W27, W3
+	0x01E36DA4 STP X8, X9, [X31 + 0x60]
+
+ISIL:
+	001 And W31, W0, 15
+	002 And W31, W0, 7
+	003 And W31, W0, 3
+	004 And W31, W0, 1
+	005 Move W8, 1
+	006 NotImplemented "Instruction CINC not yet implemented."
+	007 Return X0
+	008 Move W0, 16
+	009 Return X0
+	010 Move W0, 8
+	011 Return X0
+	012 Move W0, 4
+	013 Return X0
+
+Method: System.Int32 GetMaxAlignment(System.Int32 a, System.Int32 b)
+
+Disassembly:
+	0x01E36DA8 LDR X9, [X31 + 0x138]
+	0x01E36DAC LDR X8, [X31 + 0x130]
+	0x01E36DB0 MOV W21, W2
+	0x01E36DB4 STP X8, X9, [X31 + 0x50]
+	0x01E36DB8 LDR X9, [X31 + 0x128]
+	0x01E36DBC LDR X8, [X31 + 0x120]
+	0x01E36DC0 STP X8, X9, [X31 + 0x40]
+	0x01E36DC4 LDR X9, [X31 + 0x118]
+	0x01E36DC8 LDR X8, [X31 + 0x110]
+	0x01E36DCC STP X8, X9, [X31 + 0x30]
+	0x01E36DD0 LDR W8, [X31 + 0x108]
+	0x01E36DD4 LDR W9, [X31 + 0x100]
+	0x01E36DD8 STR W8, [X31 + 0x2C]
+	0x01E36DDC LDR W8, [X31 + 0xF8]
+	0x01E36DE0 STP W8, W9, [X31 + 0x1C]
+	0x01E36DE4 BL 0x1E35B3C
+	0x01E36DE8 STR W0, [X31 + 0x24]
+	0x01E36DEC MOV W0, W20
+	0x01E36DF0 MOV W1, W26
+	0x01E36DF4 BL 0x1E35B3C
+	0x01E36DF8 MOV W24, W0
+	0x01E36DFC STR W0, [X31 + 0xC]
+	0x01E36E00 MOV W0, W21
+	0x01E36E04 MOV W1, W26
+	0x01E36E08 BL 0x1E35B3C
+	0x01E36E0C STR W0, [X31 + 0x18]
+	0x01E36E10 MOV W0, W27
+	0x01E36E14 MOV W1, W26
+	0x01E36E18 BL 0x1E35B3C
+	0x01E36E1C STR W0, [X31 + 0x14]
+	0x01E36E20 MOV W0, W23
+	0x01E36E24 MOV W1, W26
+	0x01E36E28 BL 0x1E35B3C
+	0x01E36E2C MOV W27, W0
+	0x01E36E30 MOV W0, W22
+	0x01E36E34 MOV W1, W26
+	0x01E36E38 BL 0x1E35B3C
+	0x01E36E3C MOV W28, W0
+	0x01E36E40 MOV W0, W29
+	0x01E36E44 MOV W1, W26
+	0x01E36E48 BL 0x1E35B3C
+	0x01E36E4C MOV W20, W0
+	0x01E36E50 STR W0, [X31 + 0x10]
+	0x01E36E54 LDR W0, [X31 + 0x28]
+	0x01E36E58 MOV W1, W26
+	0x01E36E5C BL 0x1E35B3C
+	0x01E36E60 MOV W29, W0
+	0x01E36E64 MOV W0, W19
+	0x01E36E68 MOV W1, W26
+	0x01E36E6C BL 0x1E35B3C
+	0x01E36E70 MOV W25, W0
+	0x01E36E74 LDR W0, [X31 + 0x1C]
+	0x01E36E78 MOV W1, W26
+	0x01E36E7C BL 0x1E35B3C
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x25A3000
+	006 Move W8, [X21+3789]
+	007 Move W20, W1
+	008 Move W19, W0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x22BE000
+	014 Move X0, [X0+1448]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+3789], W8
+	018 And W31, W19, 15
+	019 And W31, W19, 7
+	020 And W31, W19, 3
+	021 And W31, W19, 1
+	022 Move W8, 1
+	023 NotImplemented "Instruction CINC not yet implemented."
+	024 Move W19, 16
+	025 Move W19, 8
+	026 Move W19, 4
+	027 Move X8, 0x22BE000
+	028 Move X8, [X8+1448]
+	029 And W31, W20, 15
+	030 And W31, W20, 7
+	031 And W31, W20, 3
+	032 And W31, W20, 1
+	033 Move W9, 1
+	034 NotImplemented "Instruction CINC not yet implemented."
+	035 Move W20, 16
+	036 Move W20, 8
+	037 Move W20, 4
+	038 Move X0, [X8]
+	039 Move W8, [X0+224]
+	040 Compare W8, 0
+	041 JumpIfNotEqual {43}
+	042 Call 0x1C17DFC
+	043 Move W0, W19
+	044 Move W1, W20
+	045 Move X20, [X31+16]
+	046 Move X19, [X31+24]
+	047 Move X2, X31
+	048 Move X30, [X31+32]
+	049 Move X21, [X31+40]
+	050 Call Math.Max, X0, X1
+	051 Return X0
+
+Method: System.Int32 GetMaxAlignment(System.Int32 a, System.Int32 b, System.Int32 c)
+
+Disassembly:
+	0x01E36E80 MOV W19, W0
+	0x01E36E84 LDR W0, [X31 + 0x20]
+	0x01E36E88 MOV W1, W26
+	0x01E36E8C BL 0x1E35B3C
+	0x01E36E90 MOV W22, W0
+	0x01E36E94 LDR W0, [X31 + 0x2C]
+	0x01E36E98 MOV W1, W26
+	0x01E36E9C BL 0x1E35B3C
+	0x01E36EA0 LDR W21, [X31 + 0x24]
+	0x01E36EA4 ADD W8, W24, W21
+	0x01E36EA8 LDP W24, W23, [X31 + 0x14]
+	0x01E36EAC ADD W8, W8, W23
+	0x01E36EB0 ADD W8, W8, W24
+	0x01E36EB4 ADD W8, W8, W27
+	0x01E36EB8 ADD W8, W8, W28
+	0x01E36EBC ADD W8, W8, W20
+	0x01E36EC0 ADD W8, W8, W29
+	0x01E36EC4 ADD W8, W8, W25
+	0x01E36EC8 ADD W8, W8, W19
+	0x01E36ECC ADD W8, W8, W22
+	0x01E36ED0 ADD W26, W8, W0
+	0x01E36ED4 MOV W0, W26
+	0x01E36ED8 BL 0x1E35788
+	0x01E36EDC SXTW X1, W26
+	0x01E36EE0 MOV X2, X31
+	0x01E36EE4 MOV X20, X0
+	0x01E36EE8 BL 0x3C001B4
+	0x01E36EEC LDP X8, X9, [X31 + 0x30]
+	0x01E36EF0 MOV W0, W26
+	0x01E36EF4 STR X20, [X8]
+	0x01E36EF8 ADD X8, X20, W21, SXTW
+	0x01E36EFC STR X8, [X9]
+	0x01E36F00 LDR W9, [X31 + 0xC]
+	0x01E36F04 ADD X8, X8, W9, SXTW
+	0x01E36F08 LDR X9, [X31 + 0x40]
+	0x01E36F0C STR X8, [X9]
+	0x01E36F10 LDR X9, [X31 + 0x48]
+	0x01E36F14 ADD X8, X8, W23, SXTW
+	0x01E36F18 STR X8, [X9]
+	0x01E36F1C LDR X9, [X31 + 0x50]
+	0x01E36F20 ADD X8, X8, W24, SXTW
+	0x01E36F24 LDP X24, X23, [X31 + 0xC0]
+	0x01E36F28 STR X8, [X9]
+	0x01E36F2C LDR X9, [X31 + 0x58]
+	0x01E36F30 ADD X8, X8, W27, SXTW
+	0x01E36F34 STR X8, [X9]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X22, 0x25A3000
+	007 Move W8, [X22+3790]
+	008 Move W20, W2
+	009 Move W19, W1
+	010 Move W21, W0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0x22BE000
+	016 Move X0, [X0+1448]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X22+3790], W8
+	020 Move X22, 0x22BE000
+	021 Move X22, [X22+1448]
+	022 Move W0, W21
+	023 Move W1, W19
+	024 Call Native.GetMaxAlignment, X0, X1
+	025 And W31, W20, 15
+	026 Move W19, W0
+	027 And W31, W20, 7
+	028 And W31, W20, 3
+	029 And W31, W20, 1
+	030 Move W8, 1
+	031 NotImplemented "Instruction CINC not yet implemented."
+	032 Move W20, 16
+	033 Move W20, 8
+	034 Move W20, 4
+	035 Move X0, [X22]
+	036 Move W8, [X0+224]
+	037 Compare W8, 0
+	038 JumpIfNotEqual {40}
+	039 Call 0x1C17DFC
+	040 Move W0, W19
+	041 Move W1, W20
+	042 Move X20, [X31+32]
+	043 Move X19, [X31+40]
+	044 Move X22, [X31+16]
+	045 Move X21, [X31+24]
+	046 Move X2, X31
+	047 Move X30, [X31+48]
+	048 Call Math.Max, X0, X1
+	049 Return X0
+
+Method: System.Int32 GetMaxAlignment(System.Int32 a, System.Int32 b, System.Int32 c, System.Int32 d)
+
+Disassembly:
+	0x01E36F38 LDR X9, [X31 + 0x60]
+	0x01E36F3C ADD X8, X8, W28, SXTW
+	0x01E36F40 LDP X28, X27, [X31 + 0xA0]
+	0x01E36F44 STR X8, [X9]
+	0x01E36F48 LDR W9, [X31 + 0x10]
+	0x01E36F4C ADD X8, X8, W9, SXTW
+	0x01E36F50 LDR X9, [X31 + 0x68]
+	0x01E36F54 STR X8, [X9]
+	0x01E36F58 LDR X9, [X31 + 0x70]
+	0x01E36F5C ADD X8, X8, W29, SXTW
+	0x01E36F60 LDP X29, X30, [X31 + 0x90]
+	0x01E36F64 STR X8, [X9]
+	0x01E36F68 LDR X9, [X31 + 0x78]
+	0x01E36F6C ADD X8, X8, W25, SXTW
+	0x01E36F70 LDP X26, X25, [X31 + 0xB0]
+	0x01E36F74 STR X8, [X9]
+	0x01E36F78 LDR X9, [X31 + 0x80]
+	0x01E36F7C ADD X8, X8, W19, SXTW
+	0x01E36F80 LDP X20, X19, [X31 + 0xE0]
+	0x01E36F84 STR X8, [X9]
+	0x01E36F88 LDR X9, [X31 + 0x88]
+	0x01E36F8C ADD X8, X8, W22, SXTW
+	0x01E36F90 LDP X22, X21, [X31 + 0xD0]
+	0x01E36F94 STR X8, [X9]
+	0x01E36F98 ADD X31, X31, 0xF0
+	0x01E36F9C RET
+	0x01E36FA0 STR X30, [X31 - 0x30]!
+	0x01E36FA4 STP X22, X21, [X31 + 0x10]
+	0x01E36FA8 STP X20, X19, [X31 + 0x20]
+	0x01E36FAC ADRP X21, 0x25A2000
+	0x01E36FB0 ADRP X20, 0x22C5000
+	0x01E36FB4 LDRB W8, [X21 + 0xED1]
+	0x01E36FB8 LDR X20, [X20 + 0x6E0]
+	0x01E36FBC MOV W19, W0
+	0x01E36FC0 TBNZ X8, 0x0, 0x1E36FD8
+	0x01E36FC4 ADRP X0, 0x22C5000
+	0x01E36FC8 LDR X0, [X0 + 0x6E0]
+	0x01E36FCC BL 0x1C16CF4
+	0x01E36FD0 MOVZ W8, 0x1
+	0x01E36FD4 STRB W8, [X21 + 0xED1]
+	0x01E36FD8 LDR X0, [X20]
+	0x01E36FDC MOV W8, W31
+	0x01E36FE0 LDR W9, [X0 + 0xE0]
+	0x01E36FE4 MOV W21, W8
+	0x01E36FE8 CBNZ W9, 0x1E36FF4
+	0x01E36FEC BL 0x1C16DFC
+	0x01E36FF0 LDR X0, [X20]
+	0x01E36FF4 LDR X8, [X0 + 0xB8]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X23, 0x25A3000
+	008 Move W8, [X23+3791]
+	009 Move W20, W3
+	010 Move W19, W2
+	011 Move W21, W1
+	012 Move W22, W0
+	013 Move TEMP, X8
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfEqual {22}
+	017 Move X0, 0x22BE000
+	018 Move X0, [X0+1448]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X23+3791], W8
+	022 Move X23, 0x22BE000
+	023 Move X23, [X23+1448]
+	024 Move W0, W22
+	025 Move W1, W21
+	026 Move W2, W19
+	027 Call Native.GetMaxAlignment, X0, X1, X2
+	028 And W31, W20, 15
+	029 Move W19, W0
+	030 And W31, W20, 7
+	031 And W31, W20, 3
+	032 And W31, W20, 1
+	033 Move W8, 1
+	034 NotImplemented "Instruction CINC not yet implemented."
+	035 Move W20, 16
+	036 Move W20, 8
+	037 Move W20, 4
+	038 Move X0, [X23]
+	039 Move W8, [X0+224]
+	040 Compare W8, 0
+	041 JumpIfNotEqual {43}
+	042 Call 0x1C17DFC
+	043 Move W0, W19
+	044 Move W1, W20
+	045 Move X20, [X31+32]
+	046 Move X19, [X31+40]
+	047 Move X22, [X31+16]
+	048 Move X21, [X31+24]
+	049 Move X2, X31
+	050 Move X30, [X31+48]
+	051 Move X23, [X31+56]
+	052 Call Math.Max, X0, X1
+	053 Return X0
+
+Method: System.Int32 GetMaxAlignment(System.Int32 a, System.Int32 b, System.Int32 c, System.Int32 d, System.Int32 e)
+
+Disassembly:
+	0x01E36FF8 LDR X8, [X8]
+	0x01E36FFC CBZ X8, 0x1E37060
+	0x01E37000 LDR W22, [X8 + 0x18]
+	0x01E37004 CMP W21, W22
+	0x01E37008 B.GE 0x1E37048
+	0x01E3700C LDR W8, [X0 + 0xE0]
+	0x01E37010 CBNZ W8, 0x1E3701C
+	0x01E37014 BL 0x1C16DFC
+	0x01E37018 LDR X0, [X20]
+	0x01E3701C LDR X8, [X0 + 0xB8]
+	0x01E37020 LDR X8, [X8]
+	0x01E37024 CBZ X8, 0x1E37060
+	0x01E37028 LDR W9, [X8 + 0x18]
+	0x01E3702C CMP W21, W9
+	0x01E37030 B.CS 0x1E37064
+	0x01E37034 ADD X8, X8, W21, 0x2, SXTW
+	0x01E37038 LDR W8, [X8 + 0x20]
+	0x01E3703C CMP W8, W19
+	0x01E37040 ADD W8, W21, 0x1
+	0x01E37044 B.NE 0x1E36FE0
+	0x01E37048 CMP W21, W22
+	0x01E3704C LDP X20, X19, [X31 + 0x20]
+	0x01E37050 LDP X22, X21, [X31 + 0x10]
+	0x01E37054 CSET W0, LT
+	0x01E37058 LDR X30, [X31], #0x30
+	0x01E3705C RET
+	0x01E37060 BL 0x1C16F20
+	0x01E37064 BL 0x1C16F28
+	0x01E37068 STR X30, [X31 - 0x30]!
+	0x01E3706C STP X22, X21, [X31 + 0x10]
+	0x01E37070 STP X20, X19, [X31 + 0x20]
+	0x01E37074 ADRP X21, 0x25A1000
+	0x01E37078 ADRP X20, 0x22C4000
+	0x01E3707C LDRB W8, [X21 + 0xED2]
+	0x01E37080 LDR X20, [X20 + 0x6E0]
+	0x01E37084 MOV W19, W0
+	0x01E37088 TBNZ X8, 0x0, 0x1E370A0
+	0x01E3708C ADRP X0, 0x22C4000
+	0x01E37090 LDR X0, [X0 + 0x6E0]
+	0x01E37094 BL 0x1C16CF4
+	0x01E37098 MOVZ W8, 0x1
+	0x01E3709C STRB W8, [X21 + 0xED2]
+	0x01E370A0 LDR X0, [X20]
+	0x01E370A4 MOV W21, W31
+	0x01E370A8 LDR W8, [X0 + 0xE0]
+	0x01E370AC CBNZ W8, 0x1E370B8
+	0x01E370B0 BL 0x1C16DFC
+	0x01E370B4 LDR X0, [X20]
+	0x01E370B8 LDR X8, [X0 + 0xB8]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X23, 0x25A2000
+	008 Move W8, [X23+3792]
+	009 Move W20, W4
+	010 Move W19, W2
+	011 Move W21, W1
+	012 Move W22, W0
+	013 Move TEMP, X8
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfEqual {22}
+	017 Move X0, 0x22BD000
+	018 Move X0, [X0+1448]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X23+3792], W8
+	022 Move X23, 0x22BD000
+	023 Move X23, [X23+1448]
+	024 Move W0, W22
+	025 Move W1, W21
+	026 Move W2, W19
+	027 Move W3, W20
+	028 Call Native.GetMaxAlignment, X0, X1, X2, X3
+	029 And W31, W20, 15
+	030 Move W19, W0
+	031 And W31, W20, 7
+	032 And W31, W20, 3
+	033 And W31, W20, 1
+	034 Move W8, 1
+	035 NotImplemented "Instruction CINC not yet implemented."
+	036 Move W20, 16
+	037 Move W20, 8
+	038 Move W20, 4
+	039 Move X0, [X23]
+	040 Move W8, [X0+224]
+	041 Compare W8, 0
+	042 JumpIfNotEqual {44}
+	043 Call 0x1C17DFC
+	044 Move W0, W19
+	045 Move W1, W20
+	046 Move X20, [X31+32]
+	047 Move X19, [X31+40]
+	048 Move X22, [X31+16]
+	049 Move X21, [X31+24]
+	050 Move X2, X31
+	051 Move X30, [X31+48]
+	052 Move X23, [X31+56]
+	053 Call Math.Max, X0, X1
+	054 Return X0
+
+Method: System.Byte* ReferenceToPointer(ref T obj)
+
+Disassembly:
+	0x02223224 LDR X0, [X0 + 0x758]
+
+ISIL:
+	001 Return X0
+
+Method: System.Int32 MallocAndClearBlock(System.Int32 size0, System.Int32 size1, out System.Void* ptr0, out System.Void* ptr1, System.Int32 alignment = 8)
+
+Disassembly:
+	0x01E370BC LDR X8, [X8]
+	0x01E370C0 CBZ X8, 0x1E37154
+	0x01E370C4 LDR W8, [X8 + 0x18]
+	0x01E370C8 CMP W21, W8
+	0x01E370CC B.GE 0x1E37158
+	0x01E370D0 LDR W8, [X0 + 0xE0]
+	0x01E370D4 CBNZ W8, 0x1E370E0
+	0x01E370D8 BL 0x1C16DFC
+	0x01E370DC LDR X0, [X20]
+	0x01E370E0 LDR X8, [X0 + 0xB8]
+	0x01E370E4 LDR X8, [X8]
+	0x01E370E8 CBZ X8, 0x1E37154
+	0x01E370EC LDR W9, [X8 + 0x18]
+	0x01E370F0 CMP W21, W9
+	0x01E370F4 B.CS 0x1E37220
+	0x01E370F8 SXTW X22, W21
+	0x01E370FC ADD X9, X8, X22, 0x2, LSL
+	0x01E37100 LDR W9, [X9 + 0x20]
+	0x01E37104 CMP W9, W19
+	0x01E37108 B.GT 0x1E37114
+	0x01E3710C ADD W21, W21, 0x1
+	0x01E37110 B 0x1E370A8
+	0x01E37114 LDR W9, [X0 + 0xE0]
+	0x01E37118 CBNZ W9, 0x1E37130
+	0x01E3711C BL 0x1C16DFC
+	0x01E37120 LDR X8, [X20]
+	0x01E37124 LDR X8, [X8 + 0xB8]
+	0x01E37128 LDR X8, [X8]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move W22, W1
+	008 Move W1, W4
+	009 Move W19, W4
+	010 Move X20, X3
+	011 Move X21, X2
+	012 Call Native.RoundToAlignment, X0, X1
+	013 Move W23, W0
+	014 Move W0, W22
+	015 Move W1, W19
+	016 Call Native.RoundToAlignment, X0, X1
+	017 Add W19, W0, W23
+	018 Move W0, W19
+	019 Call Native.Malloc, X0
+	020 Move X1, W19
+	021 Move X2, X31
+	022 Move X22, X0
+	023 Call UnsafeUtility.MemClear, X0, X1
+	024 Add X8, X22, W23
+	025 Move [X21], X22
+	026 Move [X20], X8
+	027 Move W0, W19
+	028 Move X20, [X31+32]
+	029 Move X19, [X31+40]
+	030 Move X22, [X31+16]
+	031 Move X21, [X31+24]
+	032 Move X30, [X31+48]
+	033 Move X23, [X31+56]
+	034 Return X0
+
+Method: System.Int32 MallocAndClearBlock(System.Int32 size0, System.Int32 size1, System.Int32 size2, out System.Void* ptr0, out System.Void* ptr1, out System.Void* ptr2, System.Int32 alignment = 8)
+
+Disassembly:
+	0x01E3712C CBZ X8, 0x1E37154
+	0x01E37130 LDR W9, [X8 + 0x18]
+	0x01E37134 CMP W21, W9
+	0x01E37138 B.CS 0x1E37220
+	0x01E3713C ADD X8, X8, X22, 0x2, LSL
+	0x01E37140 LDR W0, [X8 + 0x20]
+	0x01E37144 LDP X20, X19, [X31 + 0x20]
+	0x01E37148 LDP X22, X21, [X31 + 0x10]
+	0x01E3714C LDR X30, [X31], #0x30
+	0x01E37150 RET
+	0x01E37154 BL 0x1C16F20
+	0x01E37158 ADRP X19, 0x22C4000
+	0x01E3715C LDR X19, [X19 + 0x6E0]
+	0x01E37160 MOV X0, X19
+	0x01E37164 BL 0x1C16D08
+	0x01E37168 BL 0x19903D0
+	0x01E3716C MOV X0, X19
+	0x01E37170 BL 0x1C16D08
+	0x01E37174 LDR X8, [X0 + 0xB8]
+	0x01E37178 MOV X0, X19
+	0x01E3717C LDR X20, [X8]
+	0x01E37180 BL 0x1C16D08
+	0x01E37184 LDR X8, [X0 + 0xB8]
+	0x01E37188 LDR X19, [X8]
+	0x01E3718C MOV X0, X19
+	0x01E37190 BL 0x19903C0
+	0x01E37194 MOV X0, X20
+	0x01E37198 BL 0x19903C0
+	0x01E3719C LDR W8, [X19 + 0x18]
+	0x01E371A0 MOV X0, X20
+	0x01E371A4 SUB W8, W8, 0x1
+	0x01E371A8 SXTW X1, W8
+	0x01E371AC BL 0x1991DF4
+	0x01E371B0 STR W0, [X31 + 0xC]
+	0x01E371B4 ADRP X0, 0x22BC000
+	0x01E371B8 LDR X0, [X0 + 0x758]
+	0x01E371BC BL 0x1C16D08
+	0x01E371C0 ADD X1, X31, 0xC
+	0x01E371C4 BL 0x1C16E04
+
+ISIL:
+	001 Move [X31-64], X30
+	002 Move [X31-56], X25
+	003 Move [X31+16], X24
+	004 Move [X31+24], X23
+	005 Move [X31+32], X22
+	006 Move [X31+40], X21
+	007 Move [X31+48], X20
+	008 Move [X31+56], X19
+	009 Move W24, W1
+	010 Move W1, W6
+	011 Move W19, W6
+	012 Move X20, X5
+	013 Move X21, X4
+	014 Move X22, X3
+	015 Move W23, W2
+	016 Call Native.RoundToAlignment, X0, X1
+	017 Move W25, W0
+	018 Move W0, W24
+	019 Move W1, W19
+	020 Call Native.RoundToAlignment, X0, X1
+	021 Move W24, W0
+	022 Move W0, W23
+	023 Move W1, W19
+	024 Call Native.RoundToAlignment, X0, X1
+	025 Add W8, W24, W25
+	026 Add W19, W8, W0
+	027 Move W0, W19
+	028 Call Native.Malloc, X0
+	029 Move X1, W19
+	030 Move X2, X31
+	031 Move X23, X0
+	032 Call UnsafeUtility.MemClear, X0, X1
+	033 Add X8, X23, W25
+	034 Move [X22], X23
+	035 Move [X21], X8
+	036 Add X8, X8, W24
+	037 Move [X20], X8
+	038 Move W0, W19
+	039 Move X20, [X31+48]
+	040 Move X19, [X31+56]
+	041 Move X22, [X31+32]
+	042 Move X21, [X31+40]
+	043 Move X24, [X31+16]
+	044 Move X23, [X31+24]
+	045 Move X30, [X31+64]
+	046 Move X25, [X31+72]
+	047 Return X0
+
+Method: System.Int32 MallocAndClearBlock(System.Int32 size0, System.Int32 size1, System.Int32 size2, System.Int32 size3, out System.Void* ptr0, out System.Void* ptr1, out System.Void* ptr2, out System.Void* ptr3, System.Int32 alignment = 8)
+
+Disassembly:
+	0x01E371C8 MOV X19, X0
+	0x01E371CC ADRP X0, 0x22C4000
+	0x01E371D0 LDR X0, [X0 + 0x6E8]
+	0x01E371D4 BL 0x1C16D08
+	0x01E371D8 MOV X1, X19
+	0x01E371DC MOV X2, X31
+	0x01E371E0 BL 0x321EFD0
+	0x01E371E4 MOV X19, X0
+	0x01E371E8 ADRP X0, 0x22BC000
+	0x01E371EC LDR X0, [X0 + 0x5B0]
+	0x01E371F0 BL 0x1C16D08
+	0x01E371F4 BL 0x1C16F10
+	0x01E371F8 MOV X1, X19
+	0x01E371FC MOV X2, X31
+	0x01E37200 MOV X20, X0
+	0x01E37204 BL 0x337DF1C
+	0x01E37208 ADRP X0, 0x22C4000
+	0x01E3720C LDR X0, [X0 + 0x6F0]
+	0x01E37210 BL 0x1C16D08
+	0x01E37214 MOV X1, X0
+	0x01E37218 MOV X0, X20
+	0x01E3721C BL 0x1C16DEC
+	0x01E37220 BL 0x1C16F28
+	0x01E37224 STR X30, [X31 - 0x30]!
+	0x01E37228 STP X22, X21, [X31 + 0x10]
+	0x01E3722C STP X20, X19, [X31 + 0x20]
+	0x01E37230 ADRP X21, 0x25A1000
+	0x01E37234 ADRP X20, 0x22C4000
+	0x01E37238 LDRB W8, [X21 + 0xED3]
+	0x01E3723C LDR X20, [X20 + 0x6E0]
+	0x01E37240 MOV W19, W0
+	0x01E37244 TBNZ X8, 0x0, 0x1E3725C
+	0x01E37248 ADRP X0, 0x22C4000
+	0x01E3724C LDR X0, [X0 + 0x6E0]
+	0x01E37250 BL 0x1C16CF4
+	0x01E37254 MOVZ W8, 0x1
+	0x01E37258 STRB W8, [X21 + 0xED3]
+	0x01E3725C LDR X0, [X20]
+	0x01E37260 MOV W21, W31
+	0x01E37264 LDR W8, [X0 + 0xE0]
+	0x01E37268 CBNZ W8, 0x1E37274
+	0x01E3726C BL 0x1C16DFC
+	0x01E37270 LDR X0, [X20]
+	0x01E37274 LDR X8, [X0 + 0xB8]
+	0x01E37278 LDR X8, [X8]
+	0x01E3727C CBZ X8, 0x1E37310
+	0x01E37280 LDR W8, [X8 + 0x18]
+	0x01E37284 CMP W21, W8
+	0x01E37288 B.GE 0x1E37314
+	0x01E3728C LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X31-80], X30
+	002 Move [X31-72], X27
+	003 Move [X31+16], X26
+	004 Move [X31+24], X25
+	005 Move [X31+32], X24
+	006 Move [X31+40], X23
+	007 Move [X31+48], X22
+	008 Move [X31+56], X21
+	009 Move [X31+64], X20
+	010 Move [X31+72], X19
+	011 Move W26, [X31+80]
+	012 Move W25, W1
+	013 Move X19, X7
+	014 Move X20, X6
+	015 Move W1, W26
+	016 Move X21, X5
+	017 Move X22, X4
+	018 Move W23, W3
+	019 Move W24, W2
+	020 Call Native.RoundToAlignment, X0, X1
+	021 Move W27, W0
+	022 Move W0, W25
+	023 Move W1, W26
+	024 Call Native.RoundToAlignment, X0, X1
+	025 Move W25, W0
+	026 Move W0, W24
+	027 Move W1, W26
+	028 Call Native.RoundToAlignment, X0, X1
+	029 Move W24, W0
+	030 Move W0, W23
+	031 Move W1, W26
+	032 Call Native.RoundToAlignment, X0, X1
+	033 Add W8, W25, W27
+	034 Add W8, W8, W24
+	035 Add W23, W8, W0
+	036 Move W0, W23
+	037 Call Native.Malloc, X0
+	038 Move X1, W23
+	039 Move X2, X31
+	040 Move X26, X0
+	041 Call UnsafeUtility.MemClear, X0, X1
+	042 Add X8, X26, W27
+	043 Move [X22], X26
+	044 Move [X21], X8
+	045 Add X8, X8, W25
+	046 Move [X20], X8
+	047 Add X8, X8, W24
+	048 Move [X19], X8
+	049 Move W0, W23
+	050 Move X20, [X31+64]
+	051 Move X19, [X31+72]
+	052 Move X22, [X31+48]
+	053 Move X21, [X31+56]
+	054 Move X24, [X31+32]
+	055 Move X23, [X31+40]
+	056 Move X26, [X31+16]
+	057 Move X25, [X31+24]
+	058 Move X30, [X31+80]
+	059 Move X27, [X31+88]
+	060 Return X0
+
+Method: System.Int32 MallocAndClearBlock(System.Int32 size0, System.Int32 size1, System.Int32 size2, System.Int32 size3, System.Int32 size4, out System.Void* ptr0, out System.Void* ptr1, out System.Void* ptr2, out System.Void* ptr3, out System.Void* ptr4, System.Int32 alignment = 8)
+
+Disassembly:
+	0x01E37290 CBNZ W8, 0x1E3729C
+	0x01E37294 BL 0x1C16DFC
+	0x01E37298 LDR X0, [X20]
+	0x01E3729C LDR X8, [X0 + 0xB8]
+	0x01E372A0 LDR X8, [X8]
+	0x01E372A4 CBZ X8, 0x1E37310
+	0x01E372A8 LDR W9, [X8 + 0x18]
+	0x01E372AC CMP W21, W9
+	0x01E372B0 B.CS 0x1E373DC
+	0x01E372B4 SXTW X22, W21
+	0x01E372B8 ADD X9, X8, X22, 0x2, LSL
+	0x01E372BC LDR W9, [X9 + 0x20]
+	0x01E372C0 CMP W9, W19
+	0x01E372C4 B.HI 0x1E372D0
+	0x01E372C8 ADD W21, W21, 0x1
+	0x01E372CC B 0x1E37264
+	0x01E372D0 LDR W9, [X0 + 0xE0]
+	0x01E372D4 CBNZ W9, 0x1E372EC
+	0x01E372D8 BL 0x1C16DFC
+	0x01E372DC LDR X8, [X20]
+	0x01E372E0 LDR X8, [X8 + 0xB8]
+	0x01E372E4 LDR X8, [X8]
+	0x01E372E8 CBZ X8, 0x1E37310
+	0x01E372EC LDR W9, [X8 + 0x18]
+	0x01E372F0 CMP W21, W9
+	0x01E372F4 B.CS 0x1E373DC
+	0x01E372F8 ADD X8, X8, X22, 0x2, LSL
+	0x01E372FC LDR W0, [X8 + 0x20]
+	0x01E37300 LDP X20, X19, [X31 + 0x20]
+	0x01E37304 LDP X22, X21, [X31 + 0x10]
+	0x01E37308 LDR X30, [X31], #0x30
+	0x01E3730C RET
+	0x01E37310 BL 0x1C16F20
+	0x01E37314 ADRP X19, 0x22C4000
+	0x01E37318 LDR X19, [X19 + 0x6E0]
+	0x01E3731C MOV X0, X19
+	0x01E37320 BL 0x1C16D08
+	0x01E37324 BL 0x19903D0
+	0x01E37328 MOV X0, X19
+	0x01E3732C BL 0x1C16D08
+	0x01E37330 LDR X8, [X0 + 0xB8]
+	0x01E37334 MOV X0, X19
+	0x01E37338 LDR X20, [X8]
+	0x01E3733C BL 0x1C16D08
+	0x01E37340 LDR X8, [X0 + 0xB8]
+	0x01E37344 LDR X19, [X8]
+	0x01E37348 MOV X0, X19
+	0x01E3734C BL 0x19903C0
+	0x01E37350 MOV X0, X20
+	0x01E37354 BL 0x19903C0
+	0x01E37358 LDR W8, [X19 + 0x18]
+	0x01E3735C MOV X0, X20
+	0x01E37360 SUB W8, W8, 0x1
+	0x01E37364 SXTW X1, W8
+	0x01E37368 BL 0x1991DF4
+	0x01E3736C STR W0, [X31 + 0xC]
+	0x01E37370 ADRP X0, 0x22BC000
+	0x01E37374 LDR X0, [X0 + 0x758]
+	0x01E37378 BL 0x1C16D08
+	0x01E3737C ADD X1, X31, 0xC
+
+ISIL:
+	001 Move [X31-96], X29
+	002 Move [X31-88], X30
+	003 Move [X31+16], X28
+	004 Move [X31+24], X27
+	005 Move [X31+32], X26
+	006 Move [X31+40], X25
+	007 Move [X31+48], X24
+	008 Move [X31+56], X23
+	009 Move [X31+64], X22
+	010 Move [X31+72], X21
+	011 Move [X31+80], X20
+	012 Move [X31+88], X19
+	013 Move W26, [X31+112]
+	014 Move X29, [X31+96]
+	015 Move X28, [X31+104]
+	016 Move W25, W1
+	017 Move X19, X7
+	018 Move W1, W26
+	019 Move X20, X6
+	020 Move X21, X5
+	021 Move W22, W4
+	022 Move W23, W3
+	023 Move W24, W2
+	024 Call Native.RoundToAlignment, X0, X1
+	025 Move W27, W0
+	026 Move W0, W25
+	027 Move W1, W26
+	028 Call Native.RoundToAlignment, X0, X1
+	029 Move W25, W0
+	030 Move W0, W24
+	031 Move W1, W26
+	032 Call Native.RoundToAlignment, X0, X1
+	033 Move W24, W0
+	034 Move W0, W23
+	035 Move W1, W26
+	036 Call Native.RoundToAlignment, X0, X1
+	037 Move W23, W0
+	038 Move W0, W22
+	039 Move W1, W26
+	040 Call Native.RoundToAlignment, X0, X1
+	041 Add W8, W25, W27
+	042 Add W8, W8, W24
+	043 Add W8, W8, W23
+	044 Add W22, W8, W0
+	045 Move W0, W22
+	046 Call Native.Malloc, X0
+	047 Move X1, W22
+	048 Move X2, X31
+	049 Move X26, X0
+	050 Call UnsafeUtility.MemClear, X0, X1
+	051 Add X8, X26, W27
+	052 Move [X21], X26
+	053 Move [X20], X8
+	054 Add X8, X8, W25
+	055 Move [X19], X8
+	056 Add X8, X8, W24
+	057 Move [X29], X8
+	058 Add X8, X8, W23
+	059 Move [X28], X8
+	060 Move W0, W22
+	061 Move X20, [X31+80]
+	062 Move X19, [X31+88]
+	063 Move X22, [X31+64]
+	064 Move X21, [X31+72]
+	065 Move X24, [X31+48]
+	066 Move X23, [X31+56]
+	067 Move X26, [X31+32]
+	068 Move X25, [X31+40]
+	069 Move X28, [X31+16]
+	070 Move X27, [X31+24]
+	071 Move X29, [X31+96]
+	072 Move X30, [X31+104]
+	073 Return X0
+
+Method: System.Int32 MallocAndClearBlock(System.Int32 size0, System.Int32 size1, System.Int32 size2, System.Int32 size3, System.Int32 size4, System.Int32 size5, out System.Void* ptr0, out System.Void* ptr1, out System.Void* ptr2, out System.Void* ptr3, out System.Void* ptr4, out System.Void* ptr5, System.Int32 alignment = 8)
+
+Disassembly:
+	0x01E37380 BL 0x1C16E04
+	0x01E37384 MOV X19, X0
+	0x01E37388 ADRP X0, 0x22C4000
+	0x01E3738C LDR X0, [X0 + 0x6E8]
+	0x01E37390 BL 0x1C16D08
+	0x01E37394 MOV X1, X19
+	0x01E37398 MOV X2, X31
+	0x01E3739C BL 0x321EFD0
+	0x01E373A0 MOV X19, X0
+	0x01E373A4 ADRP X0, 0x22BC000
+	0x01E373A8 LDR X0, [X0 + 0x5B0]
+	0x01E373AC BL 0x1C16D08
+	0x01E373B0 BL 0x1C16F10
+	0x01E373B4 MOV X1, X19
+	0x01E373B8 MOV X2, X31
+	0x01E373BC MOV X20, X0
+	0x01E373C0 BL 0x337DF1C
+	0x01E373C4 ADRP X0, 0x22C4000
+	0x01E373C8 LDR X0, [X0 + 0x6F8]
+	0x01E373CC BL 0x1C16D08
+	0x01E373D0 MOV X1, X0
+	0x01E373D4 MOV X0, X20
+	0x01E373D8 BL 0x1C16DEC
+	0x01E373DC BL 0x1C16F28
+	0x01E373E0 STR X30, [X31 - 0x30]!
+	0x01E373E4 STP X22, X21, [X31 + 0x10]
+	0x01E373E8 STP X20, X19, [X31 + 0x20]
+	0x01E373EC ADRP X21, 0x25A1000
+	0x01E373F0 ADRP X22, 0x22BD000
+	0x01E373F4 ADRP X19, 0x22C4000
+	0x01E373F8 ADRP X20, 0x22C4000
+	0x01E373FC LDRB W8, [X21 + 0xED4]
+	0x01E37400 LDR X22, [X22 + 0xE58]
+	0x01E37404 LDR X19, [X19 + 0x700]
+	0x01E37408 LDR X20, [X20 + 0x6E0]
+	0x01E3740C TBNZ X8, 0x0, 0x1E3743C
+	0x01E37410 ADRP X0, 0x22BD000
+	0x01E37414 LDR X0, [X0 + 0xE58]
+	0x01E37418 BL 0x1C16CF4
+	0x01E3741C ADRP X0, 0x22C4000
+	0x01E37420 LDR X0, [X0 + 0x6E0]
+	0x01E37424 BL 0x1C16CF4
+	0x01E37428 ADRP X0, 0x22C4000
+	0x01E3742C LDR X0, [X0 + 0x700]
+	0x01E37430 BL 0x1C16CF4
+	0x01E37434 MOVZ W8, 0x1
+	0x01E37438 STRB W8, [X21 + 0xED4]
+	0x01E3743C LDR X0, [X22]
+	0x01E37440 MOVZ W1, 0x1E
+	0x01E37444 BL 0x1C16D6C
+	0x01E37448 LDR X1, [X19]
+	0x01E3744C MOV X2, X31
+	0x01E37450 MOV X19, X0
+	0x01E37454 BL 0x32C5BD8
+	0x01E37458 LDR X8, [X20]
+	0x01E3745C LDP X22, X21, [X31 + 0x10]
+	0x01E37460 LDR X8, [X8 + 0xB8]
+	0x01E37464 STR X19, [X8]
+	0x01E37468 LDP X20, X19, [X31 + 0x20]
+	0x01E3746C LDR X30, [X31], #0x30
+	0x01E37470 RET
+	0x01E37474 STR X30, [X31 - 0x20]!
+	0x01E37478 STP X20, X19, [X31 + 0x10]
+	0x01E3747C ADRP X20, 0x25A1000
+	0x01E37480 MOV X19, X8
+	0x01E37484 LDRB W8, [X20 + 0xF16]
+	0x01E37488 STUR W31, [X31 + 0xB]
+	0x01E3748C STR W31, [X31 + 0x8]
+	0x01E37490 CBNZ W8, 0x1E374A8
+	0x01E37494 ADRP X0, 0x22C4000
+	0x01E37498 LDR X0, [X0 + 0x708]
+	0x01E3749C BL 0x1C16CF4
+
+ISIL:
+	001 Subtract X31, X31, 112
+	002 Move [X31+16], X29
+	003 Move [X31+24], X30
+	004 Move [X31+32], X28
+	005 Move [X31+40], X27
+	006 Move [X31+48], X26
+	007 Move [X31+56], X25
+	008 Move [X31+64], X24
+	009 Move [X31+72], X23
+	010 Move [X31+80], X22
+	011 Move [X31+88], X21
+	012 Move [X31+96], X20
+	013 Move [X31+104], X19
+	014 Move W26, [X31+144]
+	015 Move X29, [X31+128]
+	016 Move X8, [X31+136]
+	017 Move X19, [X31+112]
+	018 Move X28, [X31+120]
+	019 Move W25, W1
+	020 Move W1, W26
+	021 Move X20, X6
+	022 Move W21, W5
+	023 Move W22, W4
+	024 Move W23, W3
+	025 Move W24, W2
+	026 Move [X31], X8
+	027 Move [X31+8], X7
+	028 Call Native.RoundToAlignment, X0, X1
+	029 Move W27, W0
+	030 Move W0, W25
+	031 Move W1, W26
+	032 Call Native.RoundToAlignment, X0, X1
+	033 Move W25, W0
+	034 Move W0, W24
+	035 Move W1, W26
+	036 Call Native.RoundToAlignment, X0, X1
+	037 Move W24, W0
+	038 Move W0, W23
+	039 Move W1, W26
+	040 Call Native.RoundToAlignment, X0, X1
+	041 Move W23, W0
+	042 Move W0, W22
+	043 Move W1, W26
+	044 Call Native.RoundToAlignment, X0, X1
+	045 Move W22, W0
+	046 Move W0, W21
+	047 Move W1, W26
+	048 Call Native.RoundToAlignment, X0, X1
+	049 Add W8, W25, W27
+	050 Add W8, W8, W24
+	051 Add W8, W8, W23
+	052 Add W8, W8, W22
+	053 Add W21, W8, W0
+	054 Move W0, W21
+	055 Call Native.Malloc, X0
+	056 Move X1, W21
+	057 Move X2, X31
+	058 Move X26, X0
+	059 Call UnsafeUtility.MemClear, X0, X1
+	060 Move X9, [X31+8]
+	061 Add X8, X26, W27
+	062 Move [X20], X26
+	063 Move W0, W21
+	064 Move [X9], X8
+	065 Add X8, X8, W25
+	066 Move [X19], X8
+	067 Add X8, X8, W24
+	068 Move [X28], X8
+	069 Add X8, X8, W23
+	070 Move X9, [X31]
+	071 Move [X29], X8
+	072 Add X8, X8, W22
+	073 Move X20, [X31+96]
+	074 Move X19, [X31+104]
+	075 Move X22, [X31+80]
+	076 Move X21, [X31+88]
+	077 Move X24, [X31+64]
+	078 Move X23, [X31+72]
+	079 Move X26, [X31+48]
+	080 Move X25, [X31+56]
+	081 Move X28, [X31+32]
+	082 Move X27, [X31+40]
+	083 Move X29, [X31+16]
+	084 Move X30, [X31+24]
+	085 Move [X9], X8
+	086 Add X31, X31, 112
+	087 Return X0
+
+Method: System.Int32 MallocAndClearBlock(System.Int32 size0, System.Int32 size1, System.Int32 size2, System.Int32 size3, System.Int32 size4, System.Int32 size5, System.Int32 size6, out System.Void* ptr0, out System.Void* ptr1, out System.Void* ptr2, out System.Void* ptr3, out System.Void* ptr4, out System.Void* ptr5, out System.Void* ptr6, System.Int32 alignment = 8)
+
+Disassembly:
+	0x01E374A0 MOVZ W8, 0x1
+	0x01E374A4 STRB W8, [X20 + 0xF16]
+	0x01E374A8 ADRP X8, 0x22C4000
+	0x01E374AC LDR X8, [X8 + 0x708]
+	0x01E374B0 LDR X0, [X8]
+	0x01E374B4 LDR W8, [X0 + 0xE0]
+	0x01E374B8 CBNZ W8, 0x1E374C0
+	0x01E374BC BL 0x1C16DFC
+	0x01E374C0 MOV X0, X31
+	0x01E374C4 BL 0x364BF5C
+	0x01E374C8 LDR W8, [X31 + 0x8]
+	0x01E374CC LDUR W9, [X31 + 0xB]
+	0x01E374D0 MOVZ W10, 0x1
+	0x01E374D4 STP X0, X31, [X19]
+	0x01E374D8 STRB W10, [X19 + 0x10]
+	0x01E374DC STUR W8, [X19 + 0x11]
+	0x01E374E0 STR W9, [X19 + 0x14]
+	0x01E374E4 LDP X20, X19, [X31 + 0x10]
+	0x01E374E8 LDR X30, [X31], #0x20
+	0x01E374EC RET
+	0x01E374F0 STP X30, X21, [X31 - 0x20]!
+	0x01E374F4 STP X20, X19, [X31 + 0x10]
+	0x01E374F8 LDRB W8, [X0 + 0x10]
+	0x01E374FC LDR X19, [X0 + 0x8]
+	0x01E37500 CMP W8, 0x1
+	0x01E37504 B.NE 0x1E37558
+	0x01E37508 ADRP X21, 0x25A1000
+	0x01E3750C LDRB W8, [X21 + 0xF17]
+	0x01E37510 MOV X20, X0
+	0x01E37514 CBNZ W8, 0x1E3752C
+	0x01E37518 ADRP X0, 0x22C4000
+	0x01E3751C LDR X0, [X0 + 0x708]
+	0x01E37520 BL 0x1C16CF4
+	0x01E37524 MOVZ W8, 0x1
+	0x01E37528 STRB W8, [X21 + 0xF17]
+	0x01E3752C ADRP X8, 0x22C4000
+	0x01E37530 LDR X8, [X8 + 0x708]
+	0x01E37534 LDR X0, [X8]
+	0x01E37538 LDR W8, [X0 + 0xE0]
+	0x01E3753C CBNZ W8, 0x1E37544
+	0x01E37540 BL 0x1C16DFC
+	0x01E37544 MOV X0, X31
+	0x01E37548 BL 0x364BF5C
+	0x01E3754C LDR X8, [X20]
+	0x01E37550 ADD X9, X0, X19
+	0x01E37554 SUB X19, X9, X8
+	0x01E37558 MOV X0, X19
+	0x01E3755C LDP X20, X19, [X31 + 0x10]
+	0x01E37560 LDP X30, X21, [X31], #0x20
+	0x01E37564 RET
+	0x01E37568 STR X30, [X31 - 0x30]!
+	0x01E3756C STP X22, X21, [X31 + 0x10]
+	0x01E37570 STP X20, X19, [X31 + 0x20]
+	0x01E37574 ADRP X20, 0x25A1000
+	0x01E37578 LDRB W8, [X20 + 0xF18]
+	0x01E3757C MOV X19, X0
+	0x01E37580 CBNZ W8, 0x1E37598
+	0x01E37584 ADRP X0, 0x22C4000
+	0x01E37588 LDR X0, [X0 + 0x708]
+	0x01E3758C BL 0x1C16CF4
+	0x01E37590 MOVZ W8, 0x1
+	0x01E37594 STRB W8, [X20 + 0xF18]
+	0x01E37598 LDRB W8, [X19 + 0x10]
+	0x01E3759C ADRP X21, 0x22C4000
+	0x01E375A0 LDR X20, [X19 + 0x8]
+	0x01E375A4 LDR X21, [X21 + 0x708]
+	0x01E375A8 CMP W8, 0x1
+	0x01E375AC B.NE 0x1E375F4
+	0x01E375B0 ADRP X22, 0x25A1000
+	0x01E375B4 LDRB W8, [X22 + 0xF17]
+	0x01E375B8 CBNZ W8, 0x1E375D0
+	0x01E375BC ADRP X0, 0x22C4000
+	0x01E375C0 LDR X0, [X0 + 0x708]
+	0x01E375C4 BL 0x1C16CF4
+	0x01E375C8 MOVZ W8, 0x1
+	0x01E375CC STRB W8, [X22 + 0xF17]
+	0x01E375D0 LDR X0, [X21]
+	0x01E375D4 LDR W8, [X0 + 0xE0]
+	0x01E375D8 CBNZ W8, 0x1E375E0
+	0x01E375DC BL 0x1C16DFC
+	0x01E375E0 MOV X0, X31
+	0x01E375E4 BL 0x364BF5C
+	0x01E375E8 LDR X8, [X19]
+	0x01E375EC ADD X9, X0, X20
+
+ISIL:
+	001 Subtract X31, X31, 128
+	002 Move [X31+32], X29
+	003 Move [X31+40], X30
+	004 Move [X31+48], X28
+	005 Move [X31+56], X27
+	006 Move [X31+64], X26
+	007 Move [X31+72], X25
+	008 Move [X31+80], X24
+	009 Move [X31+88], X23
+	010 Move [X31+96], X22
+	011 Move [X31+104], X21
+	012 Move [X31+112], X20
+	013 Move [X31+120], X19
+	014 Move X8, [X31+168]
+	015 Move W26, [X31+176]
+	016 Move X28, [X31+128]
+	017 Move X19, [X31+136]
+	018 Move W25, W1
+	019 Move [X31+24], X8
+	020 Move X8, [X31+160]
+	021 Move W1, W26
+	022 Move W20, W6
+	023 Move W21, W5
+	024 Move [X31+8], X7
+	025 Move [X31+16], X8
+	026 Move X29, [X31+144]
+	027 Move X8, [X31+152]
+	028 Move W22, W4
+	029 Move W23, W3
+	030 Move W24, W2
+	031 Move [X31], X8
+	032 Call Native.RoundToAlignment, X0, X1
+	033 Move W27, W0
+	034 Move W0, W25
+	035 Move W1, W26
+	036 Call Native.RoundToAlignment, X0, X1
+	037 Move W25, W0
+	038 Move W0, W24
+	039 Move W1, W26
+	040 Call Native.RoundToAlignment, X0, X1
+	041 Move W24, W0
+	042 Move W0, W23
+	043 Move W1, W26
+	044 Call Native.RoundToAlignment, X0, X1
+	045 Move W23, W0
+	046 Move W0, W22
+	047 Move W1, W26
+	048 Call Native.RoundToAlignment, X0, X1
+	049 Move W22, W0
+	050 Move W0, W21
+	051 Move W1, W26
+	052 Call Native.RoundToAlignment, X0, X1
+	053 Move W21, W0
+	054 Move W0, W20
+	055 Move W1, W26
+	056 Call Native.RoundToAlignment, X0, X1
+	057 Add W8, W25, W27
+	058 Add W8, W8, W24
+	059 Add W8, W8, W23
+	060 Add W8, W8, W22
+	061 Add W8, W8, W21
+	062 Add W20, W8, W0
+	063 Move W0, W20
+	064 Call Native.Malloc, X0
+	065 Move X1, W20
+	066 Move X2, X31
+	067 Move X26, X0
+	068 Call UnsafeUtility.MemClear, X0, X1
+	069 Move X9, [X31]
+	070 Move X8, [X31+8]
+	071 Move W0, W20
+	072 Move [X8], X26
+	073 Add X8, X26, W27
+	074 Move [X28], X8
+	075 Add X8, X8, W25
+	076 Move [X19], X8
+	077 Add X8, X8, W24
+	078 Move [X29], X8
+	079 Add X8, X8, W23
+	080 Move [X9], X8
+	081 Move X9, [X31+16]
+	082 Add X8, X8, W22
+	083 Move X20, [X31+112]
+	084 Move X19, [X31+120]
+	085 Move X24, [X31+80]
+	086 Move X23, [X31+88]
+	087 Move [X9], X8
+	088 Move X9, [X31+24]
+	089 Add X8, X8, W21
+	090 Move X22, [X31+96]
+	091 Move X21, [X31+104]
+	092 Move X26, [X31+64]
+	093 Move X25, [X31+72]
+	094 Move X28, [X31+48]
+	095 Move X27, [X31+56]
+	096 Move X29, [X31+32]
+	097 Move X30, [X31+40]
+	098 Move [X9], X8
+	099 Add X31, X31, 128
+	100 Return X0
+
+Method: System.Int32 MallocAndClearBlock(System.Int32 size0, System.Int32 size1, System.Int32 size2, System.Int32 size3, System.Int32 size4, System.Int32 size5, System.Int32 size6, System.Int32 size7, out System.Void* ptr0, out System.Void* ptr1, out System.Void* ptr2, out System.Void* ptr3, out System.Void* ptr4, out System.Void* ptr5, out System.Void* ptr6, out System.Void* ptr7, System.Int32 alignment = 8)
+
+Disassembly:
+	0x01E375F0 SUB X20, X9, X8
+	0x01E375F4 LDR X0, [X21]
+	0x01E375F8 LDR W8, [X0 + 0xE0]
+	0x01E375FC CBNZ W8, 0x1E37608
+	0x01E37600 BL 0x1C16DFC
+	0x01E37604 LDR X0, [X21]
+	0x01E37608 LDR X8, [X0 + 0xB8]
+	0x01E3760C SCVTF D2, X20
+	0x01E37610 LDP X20, X19, [X31 + 0x20]
+	0x01E37614 LDP X22, X21, [X31 + 0x10]
+	0x01E37618 LDR V0, [X8]
+	0x01E3761C ADRP X8, 0xFFFFFFFFFECB6000
+	0x01E37620 LDR V1, [X8 + 0xB58]
+	0x01E37624 SCVTF D0, D0
+	0x01E37628 FDIV D0, D2, D0
+	0x01E3762C FMUL D0, D0, D1
+	0x01E37630 LDR X30, [X31], #0x30
+	0x01E37634 RET
+	0x01E37638 STR X30, [X31 - 0x30]!
+	0x01E3763C STP X22, X21, [X31 + 0x10]
+	0x01E37640 STP X20, X19, [X31 + 0x20]
+	0x01E37644 ADRP X20, 0x25A1000
+	0x01E37648 LDRB W8, [X20 + 0xED5]
+	0x01E3764C MOV X19, X0
+	0x01E37650 TBNZ X8, 0x0, 0x1E37668
+	0x01E37654 ADRP X0, 0x22C4000
+	0x01E37658 LDR X0, [X0 + 0x708]
+	0x01E3765C BL 0x1C16CF4
+	0x01E37660 MOVZ W8, 0x1
+	0x01E37664 STRB W8, [X20 + 0xED5]
+	0x01E37668 LDRB W8, [X19 + 0x10]
+	0x01E3766C ADRP X21, 0x22C4000
+	0x01E37670 LDR X20, [X19 + 0x8]
+	0x01E37674 LDR X21, [X21 + 0x708]
+	0x01E37678 CMP W8, 0x1
+	0x01E3767C B.NE 0x1E376C4
+	0x01E37680 ADRP X22, 0x25A1000
+	0x01E37684 LDRB W8, [X22 + 0xF17]
+	0x01E37688 CBNZ W8, 0x1E376A0
+	0x01E3768C ADRP X0, 0x22C4000
+	0x01E37690 LDR X0, [X0 + 0x708]
+	0x01E37694 BL 0x1C16CF4
+	0x01E37698 MOVZ W8, 0x1
+	0x01E3769C STRB W8, [X22 + 0xF17]
+	0x01E376A0 LDR X0, [X21]
+	0x01E376A4 LDR W8, [X0 + 0xE0]
+	0x01E376A8 CBNZ W8, 0x1E376B0
+	0x01E376AC BL 0x1C16DFC
+	0x01E376B0 MOV X0, X31
+	0x01E376B4 BL 0x364BF5C
+	0x01E376B8 LDR X8, [X19]
+	0x01E376BC ADD X9, X0, X20
+	0x01E376C0 SUB X20, X9, X8
+	0x01E376C4 LDR X0, [X21]
+	0x01E376C8 LDR W8, [X0 + 0xE0]
+	0x01E376CC CBNZ W8, 0x1E376D8
+	0x01E376D0 BL 0x1C16DFC
+	0x01E376D4 LDR X0, [X21]
+	0x01E376D8 LDR X8, [X0 + 0xB8]
+	0x01E376DC SCVTF D1, X20
+	0x01E376E0 LDP X20, X19, [X31 + 0x20]
+	0x01E376E4 LDP X22, X21, [X31 + 0x10]
+	0x01E376E8 LDR V0, [X8]
+	0x01E376EC SCVTF D0, D0
+	0x01E376F0 FDIV D0, D1, D0
+	0x01E376F4 LDR X30, [X31], #0x30
+	0x01E376F8 RET
+	0x01E376FC LDRB W8, [X0 + 0x10]
+	0x01E37700 CMP W8, 0x1
+	0x01E37704 CSET W0, EQ
+	0x01E37708 RET
+	0x01E3770C STR X30, [X31 - 0x20]!
+	0x01E37710 STP X20, X19, [X31 + 0x10]
+	0x01E37714 ADRP X20, 0x25A1000
+	0x01E37718 LDRB W8, [X20 + 0xED6]
+	0x01E3771C MOV X19, X0
+	0x01E37720 TBNZ X8, 0x0, 0x1E37738
+	0x01E37724 ADRP X0, 0x22C4000
+	0x01E37728 LDR X0, [X0 + 0x708]
+	0x01E3772C BL 0x1C16CF4
+	0x01E37730 MOVZ W8, 0x1
+	0x01E37734 STRB W8, [X20 + 0xED6]
+	0x01E37738 LDRB W8, [X19 + 0x10]
+	0x01E3773C CBNZ W8, 0x1E3776C
+	0x01E37740 ADRP X8, 0x22C4000
+	0x01E37744 LDR X8, [X8 + 0x708]
+	0x01E37748 LDR X0, [X8]
+	0x01E3774C LDR W8, [X0 + 0xE0]
+	0x01E37750 CBNZ W8, 0x1E37758
+	0x01E37754 BL 0x1C16DFC
+	0x01E37758 MOV X0, X31
+	0x01E3775C BL 0x364BF5C
+	0x01E37760 MOVZ W8, 0x1
+	0x01E37764 STR X0, [X19]
+	0x01E37768 STRB W8, [X19 + 0x10]
+	0x01E3776C LDP X20, X19, [X31 + 0x10]
+	0x01E37770 LDR X30, [X31], #0x20
+	0x01E37774 RET
+
+ISIL:
+	001 Subtract X31, X31, 144
+	002 Move [X31+48], X29
+	003 Move [X31+56], X30
+	004 Move [X31+64], X28
+	005 Move [X31+72], X27
+	006 Move [X31+80], X26
+	007 Move [X31+88], X25
+	008 Move [X31+96], X24
+	009 Move [X31+104], X23
+	010 Move [X31+112], X22
+	011 Move [X31+120], X21
+	012 Move [X31+128], X20
+	013 Move [X31+136], X19
+	014 Move X9, [X31+200]
+	015 Move X8, [X31+192]
+	016 Move W27, [X31+208]
+	017 Move X29, [X31+144]
+	018 Move W26, W1
+	019 Move [X31+32], X8
+	020 Move [X31+40], X9
+	021 Move X9, [X31+184]
+	022 Move X8, [X31+176]
+	023 Move W1, W27
+	024 Move W20, W7
+	025 Move W21, W6
+	026 Move [X31+16], X8
+	027 Move [X31+24], X9
+	028 Move X9, [X31+168]
+	029 Move X28, [X31+152]
+	030 Move X8, [X31+160]
+	031 Move W22, W5
+	032 Move W23, W4
+	033 Move W24, W3
+	034 Move W25, W2
+	035 Move [X31], X8
+	036 Move [X31+8], X9
+	037 Call Native.RoundToAlignment, X0, X1
+	038 Move W19, W0
+	039 Move W0, W26
+	040 Move W1, W27
+	041 Call Native.RoundToAlignment, X0, X1
+	042 Move W26, W0
+	043 Move W0, W25
+	044 Move W1, W27
+	045 Call Native.RoundToAlignment, X0, X1
+	046 Move W25, W0
+	047 Move W0, W24
+	048 Move W1, W27
+	049 Call Native.RoundToAlignment, X0, X1
+	050 Move W24, W0
+	051 Move W0, W23
+	052 Move W1, W27
+	053 Call Native.RoundToAlignment, X0, X1
+	054 Move W23, W0
+	055 Move W0, W22
+	056 Move W1, W27
+	057 Call Native.RoundToAlignment, X0, X1
+	058 Move W22, W0
+	059 Move W0, W21
+	060 Move W1, W27
+	061 Call Native.RoundToAlignment, X0, X1
+	062 Move W21, W0
+	063 Move W0, W20
+	064 Move W1, W27
+	065 Call Native.RoundToAlignment, X0, X1
+	066 Add W8, W26, W19
+	067 Add W8, W8, W25
+	068 Add W8, W8, W24
+	069 Add W8, W8, W23
+	070 Add W8, W8, W22
+	071 Add W8, W8, W21
+	072 Add W20, W8, W0
+	073 Move W0, W20
+	074 Call Native.Malloc, X0
+	075 Move X1, W20
+	076 Move X2, X31
+	077 Move X27, X0
+	078 Call UnsafeUtility.MemClear, X0, X1
+	079 Move X9, [X31]
+	080 Add X8, X27, W19
+	081 Move [X29], X27
+	082 Move [X28], X8
+	083 Add X8, X8, W26
+	084 Move [X9], X8
+	085 Move X9, [X31+8]
+	086 Add X8, X8, W25
+	087 Move W0, W20
+	088 Move X20, [X31+128]
+	089 Move X19, [X31+136]
+	090 Move [X9], X8
+	091 Move X9, [X31+16]
+	092 Add X8, X8, W24
+	093 Move X26, [X31+80]
+	094 Move X25, [X31+88]
+	095 Move X28, [X31+64]
+	096 Move X27, [X31+72]
+	097 Move [X9], X8
+	098 Move X9, [X31+24]
+	099 Add X8, X8, W23
+	100 Move X24, [X31+96]
+	101 Move X23, [X31+104]
+	102 Move X29, [X31+48]
+	103 Move X30, [X31+56]
+	104 Move [X9], X8
+	105 Move X9, [X31+32]
+	106 Add X8, X8, W22
+	107 Move [X9], X8
+	108 Move X9, [X31+40]
+	109 Add X8, X8, W21
+	110 Move X22, [X31+112]
+	111 Move X21, [X31+120]
+	112 Move [X9], X8
+	113 Add X31, X31, 144
+	114 Return X0
+
+Method: System.Int32 MallocAndClearBlock(System.Int32 size0, System.Int32 size1, System.Int32 size2, System.Int32 size3, System.Int32 size4, System.Int32 size5, System.Int32 size6, System.Int32 size7, System.Int32 size8, out System.Void* ptr0, out System.Void* ptr1, out System.Void* ptr2, out System.Void* ptr3, out System.Void* ptr4, out System.Void* ptr5, out System.Void* ptr6, out System.Void* ptr7, out System.Void* ptr8, System.Int32 alignment = 8)
+
+Disassembly:
+	0x01E37778 STR X30, [X31 - 0x20]!
+	0x01E3777C STP X20, X19, [X31 + 0x10]
+	0x01E37780 ADRP X20, 0x25A1000
+	0x01E37784 LDRB W8, [X20 + 0xF17]
+	0x01E37788 MOV X19, X0
+	0x01E3778C CBNZ W8, 0x1E377A4
+	0x01E37790 ADRP X0, 0x22C4000
+	0x01E37794 LDR X0, [X0 + 0x708]
+	0x01E37798 BL 0x1C16CF4
+	0x01E3779C MOVZ W8, 0x1
+	0x01E377A0 STRB W8, [X20 + 0xF17]
+	0x01E377A4 ADRP X8, 0x22C4000
+	0x01E377A8 LDR X8, [X8 + 0x708]
+	0x01E377AC LDR X0, [X8]
+	0x01E377B0 LDR W8, [X0 + 0xE0]
+	0x01E377B4 CBNZ W8, 0x1E377BC
+	0x01E377B8 BL 0x1C16DFC
+	0x01E377BC MOV X0, X31
+	0x01E377C0 BL 0x364BF5C
+	0x01E377C4 LDRB W8, [X19 + 0x10]
+	0x01E377C8 CMP W8, 0x1
+	0x01E377CC B.NE 0x1E377EC
+	0x01E377D0 LDP X8, X9, [X19]
+	0x01E377D4 STRB W31, [X19 + 0x10]
+	0x01E377D8 SUB X8, X0, X8
+	0x01E377DC ADDS X8, X8, X9
+	0x01E377E0 STR X8, [X19 + 0x8]
+	0x01E377E4 B.PL 0x1E377EC
+	0x01E377E8 STR X31, [X19 + 0x8]
+	0x01E377EC LDP X20, X19, [X31 + 0x10]
+	0x01E377F0 LDR X30, [X31], #0x20
+	0x01E377F4 RET
+	0x01E377F8 STP X31, X31, [X0]
+	0x01E377FC STRB W31, [X0 + 0x10]
+	0x01E37800 RET
+	0x01E37804 STP X30, X21, [X31 - 0x20]!
+	0x01E37808 STP X20, X19, [X31 + 0x10]
+	0x01E3780C ADRP X21, 0x25A1000
+	0x01E37810 ADRP X20, 0x22C4000
+	0x01E37814 LDRB W8, [X21 + 0xED7]
+	0x01E37818 LDR X20, [X20 + 0x708]
+	0x01E3781C MOV X19, X0
+	0x01E37820 TBNZ X8, 0x0, 0x1E37838
+	0x01E37824 ADRP X0, 0x22C4000
+	0x01E37828 LDR X0, [X0 + 0x708]
+	0x01E3782C BL 0x1C16CF4
+	0x01E37830 MOVZ W8, 0x1
+	0x01E37834 STRB W8, [X21 + 0xED7]
+	0x01E37838 MOVZ W8, 0x1
+	0x01E3783C STR X31, [X19 + 0x8]
+	0x01E37840 STRB W8, [X19 + 0x10]
+	0x01E37844 LDR X0, [X20]
+	0x01E37848 LDR W8, [X0 + 0xE0]
+	0x01E3784C CBNZ W8, 0x1E37854
+	0x01E37850 BL 0x1C16DFC
+	0x01E37854 MOV X0, X31
+	0x01E37858 BL 0x364BF5C
+	0x01E3785C STR X0, [X19]
+	0x01E37860 LDP X20, X19, [X31 + 0x10]
+	0x01E37864 LDP X30, X21, [X31], #0x20
+	0x01E37868 RET
+	0x01E3786C STP X30, X21, [X31 - 0x20]!
+	0x01E37870 STP X20, X19, [X31 + 0x10]
+	0x01E37874 ADRP X20, 0x25A1000
+	0x01E37878 ADRP X21, 0x22C4000
+	0x01E3787C LDRB W8, [X20 + 0xED8]
+	0x01E37880 LDR X21, [X21 + 0x708]
+	0x01E37884 MOV X19, X0
+	0x01E37888 TBNZ X8, 0x0, 0x1E378A0
+	0x01E3788C ADRP X0, 0x22C4000
+	0x01E37890 LDR X0, [X0 + 0x708]
+	0x01E37894 BL 0x1C16CF4
+	0x01E37898 MOVZ W8, 0x1
+	0x01E3789C STRB W8, [X20 + 0xED8]
+	0x01E378A0 LDR X0, [X21]
+	0x01E378A4 LDR W8, [X0 + 0xE0]
+	0x01E378A8 CBNZ W8, 0x1E378B0
+	0x01E378AC BL 0x1C16DFC
+	0x01E378B0 MOV X0, X31
+	0x01E378B4 BL 0x364BF5C
+	0x01E378B8 LDR X8, [X19]
+	0x01E378BC LDP X20, X19, [X31 + 0x10]
+	0x01E378C0 SUB X0, X0, X8
+	0x01E378C4 LDP X30, X21, [X31], #0x20
+	0x01E378C8 RET
+	0x01E378CC LDRB W8, [X0 + 0x10]
+	0x01E378D0 CMP W8, 0x1
+	0x01E378D4 CSET W0, EQ
+	0x01E378D8 RET
+	0x01E378DC STP D9, D8, [X31 - 0x40]!
+	0x01E378E0 STR X30, [X31 + 0x10]
+	0x01E378E4 STP X22, X21, [X31 + 0x20]
+	0x01E378E8 STP X20, X19, [X31 + 0x30]
+	0x01E378EC ADRP X20, 0x25A1000
+	0x01E378F0 LDRB W8, [X20 + 0xED9]
+	0x01E378F4 MOV X19, X0
+	0x01E378F8 TBNZ X8, 0x0, 0x1E37910
+	0x01E378FC ADRP X0, 0x22BC000
+	0x01E37900 LDR X0, [X0 + 0x5A8]
+	0x01E37904 BL 0x1C16CF4
+	0x01E37908 MOVZ W8, 0x1
+	0x01E3790C STRB W8, [X20 + 0xED9]
+	0x01E37910 ADRP X20, 0x25A1000
+	0x01E37914 LDRB W8, [X20 + 0xF18]
+	0x01E37918 CBNZ W8, 0x1E37930
+	0x01E3791C ADRP X0, 0x22C4000
+	0x01E37920 LDR X0, [X0 + 0x708]
+	0x01E37924 BL 0x1C16CF4
+	0x01E37928 MOVZ W8, 0x1
+	0x01E3792C STRB W8, [X20 + 0xF18]
+
+ISIL:
+	001 Subtract X31, X31, 160
+	002 Move [X31+64], X29
+	003 Move [X31+72], X30
+	004 Move [X31+80], X28
+	005 Move [X31+88], X27
+	006 Move [X31+96], X26
+	007 Move [X31+104], X25
+	008 Move [X31+112], X24
+	009 Move [X31+120], X23
+	010 Move [X31+128], X22
+	011 Move [X31+136], X21
+	012 Move [X31+144], X20
+	013 Move [X31+152], X19
+	014 Move X9, [X31+232]
+	015 Move X8, [X31+224]
+	016 Move W28, [X31+240]
+	017 Move W27, [X31+160]
+	018 Move W20, W1
+	019 Move [X31+48], X8
+	020 Move [X31+56], X9
+	021 Move X9, [X31+216]
+	022 Move X8, [X31+208]
+	023 Move W1, W28
+	024 Move W21, W7
+	025 Move W22, W6
+	026 Move [X31+32], X8
+	027 Move [X31+40], X9
+	028 Move X9, [X31+200]
+	029 Move X8, [X31+192]
+	030 Move W23, W5
+	031 Move W24, W4
+	032 Move W25, W3
+	033 Move [X31+16], X8
+	034 Move [X31+24], X9
+	035 Move X9, [X31+184]
+	036 Move X29, [X31+168]
+	037 Move X8, [X31+176]
+	038 Move W26, W2
+	039 Move [X31], X8
+	040 Move [X31+8], X9
+	041 Call Native.RoundToAlignment, X0, X1
+	042 Move W19, W0
+	043 Move W0, W20
+	044 Move W1, W28
+	045 Call Native.RoundToAlignment, X0, X1
+	046 Move W20, W0
+	047 Move W0, W26
+	048 Move W1, W28
+	049 Call Native.RoundToAlignment, X0, X1
+	050 Move W26, W0
+	051 Move W0, W25
+	052 Move W1, W28
+	053 Call Native.RoundToAlignment, X0, X1
+	054 Move W25, W0
+	055 Move W0, W24
+	056 Move W1, W28
+	057 Call Native.RoundToAlignment, X0, X1
+	058 Move W24, W0
+	059 Move W0, W23
+	060 Move W1, W28
+	061 Call Native.RoundToAlignment, X0, X1
+	062 Move W23, W0
+	063 Move W0, W22
+	064 Move W1, W28
+	065 Call Native.RoundToAlignment, X0, X1
+	066 Move W22, W0
+	067 Move W0, W21
+	068 Move W1, W28
+	069 Call Native.RoundToAlignment, X0, X1
+	070 Move W21, W0
+	071 Move W0, W27
+	072 Move W1, W28
+	073 Call Native.RoundToAlignment, X0, X1
+	074 Add W8, W20, W19
+	075 Add W8, W8, W26
+	076 Add W8, W8, W25
+	077 Add W8, W8, W24
+	078 Add W8, W8, W23
+	079 Add W8, W8, W22
+	080 Add W8, W8, W21
+	081 Add W27, W8, W0
+	082 Move W0, W27
+	083 Call Native.Malloc, X0
+	084 Move X1, W27
+	085 Move X2, X31
+	086 Move X28, X0
+	087 Call UnsafeUtility.MemClear, X0, X1
+	088 Move X9, [X31]
+	089 Add X8, X28, W19
+	090 Move [X29], X28
+	091 Move W0, W27
+	092 Move [X9], X8
+	093 Move X9, [X31+8]
+	094 Add X8, X8, W20
+	095 Move X20, [X31+144]
+	096 Move X19, [X31+152]
+	097 Move X28, [X31+80]
+	098 Move X27, [X31+88]
+	099 Move [X9], X8
+	100 Move X9, [X31+16]
+	101 Add X8, X8, W26
+	102 Move X29, [X31+64]
+	103 Move X30, [X31+72]
+	104 Move [X9], X8
+	105 Move X9, [X31+24]
+	106 Add X8, X8, W25
+	107 Move X26, [X31+96]
+	108 Move X25, [X31+104]
+	109 Move [X9], X8
+	110 Move X9, [X31+32]
+	111 Add X8, X8, W24
+	112 Move [X9], X8
+	113 Move X9, [X31+40]
+	114 Add X8, X8, W23
+	115 Move X24, [X31+112]
+	116 Move X23, [X31+120]
+	117 Move [X9], X8
+	118 Move X9, [X31+48]
+	119 Add X8, X8, W22
+	120 Move [X9], X8
+	121 Move X9, [X31+56]
+	122 Add X8, X8, W21
+	123 Move X22, [X31+128]
+	124 Move X21, [X31+136]
+	125 Move [X9], X8
+	126 Add X31, X31, 160
+	127 Return X0
+
+Method: System.Int32 MallocAndClearBlock(System.Int32 size0, System.Int32 size1, System.Int32 size2, System.Int32 size3, System.Int32 size4, System.Int32 size5, System.Int32 size6, System.Int32 size7, System.Int32 size8, System.Int32 size9, out System.Void* ptr0, out System.Void* ptr1, out System.Void* ptr2, out System.Void* ptr3, out System.Void* ptr4, out System.Void* ptr5, out System.Void* ptr6, out System.Void* ptr7, out System.Void* ptr8, out System.Void* ptr9, System.Int32 alignment = 8)
+
+Disassembly:
+	0x01E37930 LDRB W8, [X19 + 0x10]
+	0x01E37934 ADRP X21, 0x22C4000
+	0x01E37938 LDR X20, [X19 + 0x8]
+	0x01E3793C LDR X21, [X21 + 0x708]
+	0x01E37940 CMP W8, 0x1
+	0x01E37944 B.NE 0x1E3798C
+	0x01E37948 ADRP X22, 0x25A1000
+	0x01E3794C LDRB W8, [X22 + 0xF17]
+	0x01E37950 CBNZ W8, 0x1E37968
+	0x01E37954 ADRP X0, 0x22C4000
+	0x01E37958 LDR X0, [X0 + 0x708]
+	0x01E3795C BL 0x1C16CF4
+	0x01E37960 MOVZ W8, 0x1
+	0x01E37964 STRB W8, [X22 + 0xF17]
+	0x01E37968 LDR X0, [X21]
+	0x01E3796C LDR W8, [X0 + 0xE0]
+	0x01E37970 CBNZ W8, 0x1E37978
+	0x01E37974 BL 0x1C16DFC
+	0x01E37978 MOV X0, X31
+	0x01E3797C BL 0x364BF5C
+	0x01E37980 LDR X8, [X19]
+	0x01E37984 ADD X9, X0, X20
+	0x01E37988 SUB X20, X9, X8
+	0x01E3798C LDR X0, [X21]
+	0x01E37990 ADRP X22, 0x22BC000
+	0x01E37994 LDR W8, [X0 + 0xE0]
+	0x01E37998 LDR X22, [X22 + 0x5A8]
+	0x01E3799C CBNZ W8, 0x1E379A8
+	0x01E379A0 BL 0x1C16DFC
+	0x01E379A4 LDR X0, [X21]
+	0x01E379A8 LDR X8, [X0 + 0xB8]
+	0x01E379AC LDR X0, [X22]
+	0x01E379B0 LDR V9, [X19 + 0x18]
+	0x01E379B4 SCVTF D1, X20
+	0x01E379B8 LDR V0, [X8]
+	0x01E379BC LDR W8, [X0 + 0xE0]
+	0x01E379C0 SCVTF D0, D0
+	0x01E379C4 FDIV D8, D1, D0
+	0x01E379C8 CBNZ W8, 0x1E379D0
+	0x01E379CC BL 0x1C16DFC
+	0x01E379D0 FSUB D0, D8, D9
+	0x01E379D4 FMOV D1, X31
+	0x01E379D8 MOV X0, X31
+	0x01E379DC BL 0x337EDC0
+	0x01E379E0 STR D8, [X19 + 0x18]
+	0x01E379E4 LDP X20, X19, [X31 + 0x30]
+	0x01E379E8 LDP X22, X21, [X31 + 0x20]
+	0x01E379EC LDR X30, [X31 + 0x10]
+	0x01E379F0 LDP D9, D8, [X31], #0x40
+	0x01E379F4 RET
+	0x01E379F8 STR D8, [X31 - 0x30]!
+	0x01E379FC STR X30, [X31 + 0x8]
+	0x01E37A00 STP X22, X21, [X31 + 0x10]
+	0x01E37A04 STP X20, X19, [X31 + 0x20]
+	0x01E37A08 ADRP X20, 0x25A1000
+	0x01E37A0C LDRB W8, [X20 + 0xEDA]
+	0x01E37A10 MOV X19, X0
+	0x01E37A14 TBNZ X8, 0x0, 0x1E37A2C
+	0x01E37A18 ADRP X0, 0x22BC000
+	0x01E37A1C LDR X0, [X0 + 0x5A8]
+	0x01E37A20 BL 0x1C16CF4
+	0x01E37A24 MOVZ W8, 0x1
+	0x01E37A28 STRB W8, [X20 + 0xEDA]
+	0x01E37A2C ADRP X20, 0x25A1000
+	0x01E37A30 LDRB W8, [X20 + 0xF18]
+	0x01E37A34 CBNZ W8, 0x1E37A4C
+	0x01E37A38 ADRP X0, 0x22C4000
+	0x01E37A3C LDR X0, [X0 + 0x708]
+	0x01E37A40 BL 0x1C16CF4
+	0x01E37A44 MOVZ W8, 0x1
+	0x01E37A48 STRB W8, [X20 + 0xF18]
+	0x01E37A4C LDRB W8, [X19 + 0x10]
+	0x01E37A50 ADRP X21, 0x22C4000
+	0x01E37A54 LDR X20, [X19 + 0x8]
+	0x01E37A58 LDR X21, [X21 + 0x708]
+	0x01E37A5C CMP W8, 0x1
+	0x01E37A60 B.NE 0x1E37AA8
+	0x01E37A64 ADRP X22, 0x25A1000
+	0x01E37A68 LDRB W8, [X22 + 0xF17]
+	0x01E37A6C CBNZ W8, 0x1E37A84
+	0x01E37A70 ADRP X0, 0x22C4000
+	0x01E37A74 LDR X0, [X0 + 0x708]
+	0x01E37A78 BL 0x1C16CF4
+	0x01E37A7C MOVZ W8, 0x1
+	0x01E37A80 STRB W8, [X22 + 0xF17]
+	0x01E37A84 LDR X0, [X21]
+	0x01E37A88 LDR W8, [X0 + 0xE0]
+	0x01E37A8C CBNZ W8, 0x1E37A94
+	0x01E37A90 BL 0x1C16DFC
+	0x01E37A94 MOV X0, X31
+	0x01E37A98 BL 0x364BF5C
+	0x01E37A9C LDR X8, [X19]
+	0x01E37AA0 ADD X9, X0, X20
+	0x01E37AA4 SUB X20, X9, X8
+	0x01E37AA8 LDR X0, [X21]
+	0x01E37AAC ADRP X22, 0x22BC000
+	0x01E37AB0 LDR W8, [X0 + 0xE0]
+	0x01E37AB4 LDR X22, [X22 + 0x5A8]
+	0x01E37AB8 CBNZ W8, 0x1E37AC4
+	0x01E37ABC BL 0x1C16DFC
+	0x01E37AC0 LDR X0, [X21]
+	0x01E37AC4 LDR X8, [X0 + 0xB8]
+	0x01E37AC8 LDR X0, [X22]
+	0x01E37ACC LDR V8, [X19 + 0x18]
+	0x01E37AD0 LDR X21, [X8]
+	0x01E37AD4 LDR W8, [X0 + 0xE0]
+	0x01E37AD8 CBNZ W8, 0x1E37AE0
+	0x01E37ADC BL 0x1C16DFC
+	0x01E37AE0 SCVTF D0, X20
+	0x01E37AE4 SCVTF D1, X21
+	0x01E37AE8 LDP X20, X19, [X31 + 0x20]
+	0x01E37AEC LDP X22, X21, [X31 + 0x10]
+	0x01E37AF0 LDR X30, [X31 + 0x8]
+	0x01E37AF4 FDIV D0, D0, D1
+	0x01E37AF8 FSUB D0, D0, D8
+	0x01E37AFC FMOV D1, X31
+	0x01E37B00 MOV X0, X31
+	0x01E37B04 LDR V8, [X31], #0x30
+	0x01E37B08 B 0x337EDC0
+	0x01E37B0C SUB X31, X31, 0x30
+	0x01E37B10 STP X30, X19, [X31 + 0x20]
+	0x01E37B14 MOV X19, X8
+
+ISIL:
+	001 Subtract X31, X31, 176
+	002 Move [X31+80], X29
+	003 Move [X31+88], X30
+	004 Move [X31+96], X28
+	005 Move [X31+104], X27
+	006 Move [X31+112], X26
+	007 Move [X31+120], X25
+	008 Move [X31+128], X24
+	009 Move [X31+136], X23
+	010 Move [X31+144], X22
+	011 Move [X31+152], X21
+	012 Move [X31+160], X20
+	013 Move [X31+168], X19
+	014 Move X9, [X31+264]
+	015 Move X8, [X31+256]
+	016 Move W29, [X31+272]
+	017 Move W27, [X31+184]
+	018 Move W28, [X31+176]
+	019 Move [X31+64], X8
+	020 Move [X31+72], X9
+	021 Move X9, [X31+248]
+	022 Move X8, [X31+240]
+	023 Move W20, W1
+	024 Move W1, W29
+	025 Move W23, W7
+	026 Move [X31+48], X8
+	027 Move [X31+56], X9
+	028 Move X9, [X31+232]
+	029 Move X8, [X31+224]
+	030 Move W24, W6
+	031 Move W25, W5
+	032 Move W26, W4
+	033 Move [X31+32], X8
+	034 Move [X31+40], X9
+	035 Move X9, [X31+216]
+	036 Move X8, [X31+208]
+	037 Move W22, W3
+	038 Move W21, W2
+	039 Move [X31+16], X8
+	040 Move [X31+24], X9
+	041 Move X9, [X31+200]
+	042 Move X8, [X31+192]
+	043 Move [X31], X8
+	044 Move [X31+8], X9
+	045 Call Native.RoundToAlignment, X0, X1
+	046 Move W19, W0
+	047 Move W0, W20
+	048 Move W1, W29
+	049 Call Native.RoundToAlignment, X0, X1
+	050 Move W20, W0
+	051 Move W0, W21
+	052 Move W1, W29
+	053 Call Native.RoundToAlignment, X0, X1
+	054 Move W21, W0
+	055 Move W0, W22
+	056 Move W1, W29
+	057 Call Native.RoundToAlignment, X0, X1
+	058 Move W22, W0
+	059 Move W0, W26
+	060 Move W1, W29
+	061 Call Native.RoundToAlignment, X0, X1
+	062 Move W26, W0
+	063 Move W0, W25
+	064 Move W1, W29
+	065 Call Native.RoundToAlignment, X0, X1
+	066 Move W25, W0
+	067 Move W0, W24
+	068 Move W1, W29
+	069 Call Native.RoundToAlignment, X0, X1
+	070 Move W24, W0
+	071 Move W0, W23
+	072 Move W1, W29
+	073 Call Native.RoundToAlignment, X0, X1
+	074 Move W23, W0
+	075 Move W0, W28
+	076 Move W1, W29
+	077 Call Native.RoundToAlignment, X0, X1
+	078 Move W28, W0
+	079 Move W0, W27
+	080 Move W1, W29
+	081 Call Native.RoundToAlignment, X0, X1
+	082 Add W8, W20, W19
+	083 Add W8, W8, W21
+	084 Add W8, W8, W22
+	085 Add W8, W8, W26
+	086 Add W8, W8, W25
+	087 Add W8, W8, W24
+	088 Add W8, W8, W23
+	089 Add W8, W8, W28
+	090 Add W27, W8, W0
+	091 Move W0, W27
+	092 Call Native.Malloc, X0
+	093 Move X1, W27
+	094 Move X2, X31
+	095 Move X29, X0
+	096 Call UnsafeUtility.MemClear, X0, X1
+	097 Move X8, [X31]
+	098 Move X9, [X31+8]
+	099 Move W0, W27
+	100 Move [X8], X29
+	101 Add X8, X29, W19
+	102 Move [X9], X8
+	103 Move X9, [X31+16]
+	104 Add X8, X8, W20
+	105 Move X20, [X31+160]
+	106 Move X19, [X31+168]
+	107 Move X29, [X31+80]
+	108 Move X30, [X31+88]
+	109 Move [X9], X8
+	110 Move X9, [X31+24]
+	111 Add X8, X8, W21
+	112 Move [X9], X8
+	113 Move X9, [X31+32]
+	114 Add X8, X8, W22
+	115 Move X22, [X31+144]
+	116 Move X21, [X31+152]
+	117 Move [X9], X8
+	118 Move X9, [X31+40]
+	119 Add X8, X8, W26
+	120 Move [X9], X8
+	121 Move X9, [X31+48]
+	122 Add X8, X8, W25
+	123 Move X26, [X31+112]
+	124 Move X25, [X31+120]
+	125 Move [X9], X8
+	126 Move X9, [X31+56]
+	127 Add X8, X8, W24
+	128 Move [X9], X8
+	129 Move X9, [X31+64]
+	130 Add X8, X8, W23
+	131 Move X24, [X31+128]
+	132 Move X23, [X31+136]
+	133 Move [X9], X8
+	134 Move X9, [X31+72]
+	135 Add X8, X8, W28
+	136 Move X28, [X31+96]
+	137 Move X27, [X31+104]
+	138 Move [X9], X8
+	139 Add X31, X31, 176
+	140 Return X0
+
+Method: System.Int32 MallocAndClearBlock(System.Int32 size0, System.Int32 size1, System.Int32 size2, System.Int32 size3, System.Int32 size4, System.Int32 size5, System.Int32 size6, System.Int32 size7, System.Int32 size8, System.Int32 size9, System.Int32 size10, out System.Void* ptr0, out System.Void* ptr1, out System.Void* ptr2, out System.Void* ptr3, out System.Void* ptr4, out System.Void* ptr5, out System.Void* ptr6, out System.Void* ptr7, out System.Void* ptr8, out System.Void* ptr9, out System.Void* ptr10, System.Int32 alignment = 8)
+
+Disassembly:
+	0x01E37B18 MOVI V0.2D, 0x0
+	0x01E37B1C ADD X8, X31, 0x0
+	0x01E37B20 STP V0, V0, [X31]
+	0x01E37B24 BL 0x1E37474
+	0x01E37B28 LDP V1, V0, [X31]
+	0x01E37B2C STP V1, V0, [X19]
+	0x01E37B30 LDP X30, X19, [X31 + 0x20]
+	0x01E37B34 ADD X31, X31, 0x30
+	0x01E37B38 RET
+	0x01E37B3C STR X30, [X31 - 0x20]!
+	0x01E37B40 STP X20, X19, [X31 + 0x10]
+	0x01E37B44 ADRP X19, 0x25A1000
+	0x01E37B48 ADRP X20, 0x22C4000
+	0x01E37B4C LDRB W8, [X19 + 0xEDB]
+	0x01E37B50 LDR X20, [X20 + 0x710]
+	0x01E37B54 TBNZ X8, 0x0, 0x1E37B6C
+	0x01E37B58 ADRP X0, 0x22C4000
+	0x01E37B5C LDR X0, [X0 + 0x710]
+	0x01E37B60 BL 0x1C16CF4
+	0x01E37B64 MOVZ W8, 0x1
+	0x01E37B68 STRB W8, [X19 + 0xEDB]
+	0x01E37B6C LDR X8, [X20]
+	0x01E37B70 LDP X20, X19, [X31 + 0x10]
+	0x01E37B74 LDR X8, [X8 + 0xB8]
+	0x01E37B78 LDRB W8, [X8]
+	0x01E37B7C UBFM W0, W8, 0x1, 0x1
+	0x01E37B80 LDR X30, [X31], #0x20
+	0x01E37B84 RET
+	0x01E37B88 STR X30, [X31 - 0x20]!
+	0x01E37B8C STP X20, X19, [X31 + 0x10]
+	0x01E37B90 ADRP X19, 0x25A1000
+	0x01E37B94 ADRP X20, 0x22C4000
+	0x01E37B98 LDRB W8, [X19 + 0xEDC]
+	0x01E37B9C LDR X20, [X20 + 0x710]
+	0x01E37BA0 TBNZ X8, 0x0, 0x1E37BB8
+	0x01E37BA4 ADRP X0, 0x22C4000
+	0x01E37BA8 LDR X0, [X0 + 0x710]
+	0x01E37BAC BL 0x1C16CF4
+	0x01E37BB0 MOVZ W8, 0x1
+	0x01E37BB4 STRB W8, [X19 + 0xEDC]
+	0x01E37BB8 LDR X8, [X20]
+	0x01E37BBC LDP X20, X19, [X31 + 0x10]
+	0x01E37BC0 LDR X8, [X8 + 0xB8]
+	0x01E37BC4 LDRB W8, [X8]
+	0x01E37BC8 UBFM W0, W8, 0x2, 0x2
+	0x01E37BCC LDR X30, [X31], #0x20
+	0x01E37BD0 RET
+	0x01E37BD4 STR X30, [X31 - 0x20]!
+	0x01E37BD8 STP X20, X19, [X31 + 0x10]
+	0x01E37BDC ADRP X19, 0x25A1000
+	0x01E37BE0 ADRP X20, 0x22C4000
+	0x01E37BE4 LDRB W8, [X19 + 0xEDD]
+	0x01E37BE8 LDR X20, [X20 + 0x710]
+	0x01E37BEC TBNZ X8, 0x0, 0x1E37C04
+	0x01E37BF0 ADRP X0, 0x22C4000
+	0x01E37BF4 LDR X0, [X0 + 0x710]
+	0x01E37BF8 BL 0x1C16CF4
+	0x01E37BFC MOVZ W8, 0x1
+	0x01E37C00 STRB W8, [X19 + 0xEDD]
+	0x01E37C04 LDR X8, [X20]
+	0x01E37C08 LDP X20, X19, [X31 + 0x10]
+	0x01E37C0C LDR X8, [X8 + 0xB8]
+	0x01E37C10 LDRB W8, [X8]
+	0x01E37C14 UBFM W0, W8, 0x3, 0x3
+	0x01E37C18 LDR X30, [X31], #0x20
+	0x01E37C1C RET
+	0x01E37C20 STR X30, [X31 - 0x20]!
+	0x01E37C24 STP X20, X19, [X31 + 0x10]
+	0x01E37C28 ADRP X19, 0x25A1000
+	0x01E37C2C ADRP X20, 0x22C4000
+	0x01E37C30 LDRB W8, [X19 + 0xEDE]
+	0x01E37C34 LDR X20, [X20 + 0x710]
+	0x01E37C38 TBNZ X8, 0x0, 0x1E37C50
+	0x01E37C3C ADRP X0, 0x22C4000
+	0x01E37C40 LDR X0, [X0 + 0x710]
+	0x01E37C44 BL 0x1C16CF4
+	0x01E37C48 MOVZ W8, 0x1
+	0x01E37C4C STRB W8, [X19 + 0xEDE]
+	0x01E37C50 LDR X8, [X20]
+	0x01E37C54 LDP X20, X19, [X31 + 0x10]
+	0x01E37C58 LDR X8, [X8 + 0xB8]
+	0x01E37C5C LDRB W8, [X8]
+	0x01E37C60 UBFM W0, W8, 0x4, 0x4
+	0x01E37C64 LDR X30, [X31], #0x20
+	0x01E37C68 RET
+	0x01E37C6C STR X30, [X31 - 0x20]!
+	0x01E37C70 STP X20, X19, [X31 + 0x10]
+	0x01E37C74 ADRP X19, 0x25A1000
+	0x01E37C78 ADRP X20, 0x22C4000
+	0x01E37C7C LDRB W8, [X19 + 0xEDF]
+	0x01E37C80 LDR X20, [X20 + 0x710]
+	0x01E37C84 TBNZ X8, 0x0, 0x1E37C9C
+	0x01E37C88 ADRP X0, 0x22C4000
+	0x01E37C8C LDR X0, [X0 + 0x710]
+	0x01E37C90 BL 0x1C16CF4
+	0x01E37C94 MOVZ W8, 0x1
+	0x01E37C98 STRB W8, [X19 + 0xEDF]
+	0x01E37C9C LDR X8, [X20]
+	0x01E37CA0 LDP X20, X19, [X31 + 0x10]
+	0x01E37CA4 LDR X8, [X8 + 0xB8]
+	0x01E37CA8 LDRB W8, [X8]
+	0x01E37CAC UBFM W0, W8, 0x5, 0x5
+	0x01E37CB0 LDR X30, [X31], #0x20
+	0x01E37CB4 RET
+	0x01E37CB8 STR X30, [X31 - 0x20]!
+	0x01E37CBC STP X20, X19, [X31 + 0x10]
+	0x01E37CC0 ADRP X19, 0x25A1000
+	0x01E37CC4 ADRP X20, 0x22C4000
+	0x01E37CC8 LDRB W8, [X19 + 0xEE0]
+	0x01E37CCC LDR X20, [X20 + 0x710]
+	0x01E37CD0 TBNZ X8, 0x0, 0x1E37CE8
+	0x01E37CD4 ADRP X0, 0x22C4000
+	0x01E37CD8 LDR X0, [X0 + 0x710]
+	0x01E37CDC BL 0x1C16CF4
+	0x01E37CE0 MOVZ W8, 0x1
+	0x01E37CE4 STRB W8, [X19 + 0xEE0]
+	0x01E37CE8 LDR X8, [X20]
+	0x01E37CEC LDP X20, X19, [X31 + 0x10]
+	0x01E37CF0 LDR X8, [X8 + 0xB8]
+	0x01E37CF4 LDRB W8, [X8]
+	0x01E37CF8 UBFM W0, W8, 0x6, 0x6
+	0x01E37CFC LDR X30, [X31], #0x20
+	0x01E37D00 RET
+	0x01E37D04 STR X30, [X31 - 0x20]!
+	0x01E37D08 STP X20, X19, [X31 + 0x10]
+	0x01E37D0C ADRP X19, 0x25A1000
+	0x01E37D10 ADRP X20, 0x22C4000
+	0x01E37D14 LDRB W8, [X19 + 0xEE1]
+	0x01E37D18 LDR X20, [X20 + 0x710]
+	0x01E37D1C TBNZ X8, 0x0, 0x1E37D34
+	0x01E37D20 ADRP X0, 0x22C4000
+	0x01E37D24 LDR X0, [X0 + 0x710]
+	0x01E37D28 BL 0x1C16CF4
+	0x01E37D2C MOVZ W8, 0x1
+	0x01E37D30 STRB W8, [X19 + 0xEE1]
+	0x01E37D34 LDR X8, [X20]
+	0x01E37D38 LDP X20, X19, [X31 + 0x10]
+	0x01E37D3C LDR X8, [X8 + 0xB8]
+	0x01E37D40 LDR W9, [X8]
+
+ISIL:
+	001 Subtract X31, X31, 208
+	002 Move [X31+112], X29
+	003 Move [X31+120], X30
+	004 Move [X31+128], X28
+	005 Move [X31+136], X27
+	006 Move [X31+144], X26
+	007 Move [X31+152], X25
+	008 Move [X31+160], X24
+	009 Move [X31+168], X23
+	010 Move [X31+176], X22
+	011 Move [X31+184], X21
+	012 Move [X31+192], X20
+	013 Move [X31+200], X19
+	014 Move X9, [X31+312]
+	015 Move X8, [X31+304]
+	016 Move W24, [X31+320]
+	017 Move W28, [X31+216]
+	018 Move W29, [X31+208]
+	019 Move [X31+96], X8
+	020 Move [X31+104], X9
+	021 Move X9, [X31+296]
+	022 Move X8, [X31+288]
+	023 Move W20, W1
+	024 Move W1, W24
+	025 Move [X31+20], W7
+	026 Move [X31+80], X8
+	027 Move [X31+88], X9
+	028 Move X9, [X31+280]
+	029 Move X8, [X31+272]
+	030 Move [X31+12], W6
+	031 Move W27, W5
+	032 Move W26, W4
+	033 Move [X31+64], X8
+	034 Move [X31+72], X9
+	035 Move X9, [X31+264]
+	036 Move X8, [X31+256]
+	037 Move W19, W3
+	038 Move W21, W2
+	039 Move [X31+48], X8
+	040 Move [X31+56], X9
+	041 Move X9, [X31+248]
+	042 Move X8, [X31+240]
+	043 Move [X31+32], X8
+	044 Move [X31+40], X9
+	045 Move X8, [X31+232]
+	046 Move [X31+24], X8
+	047 Move W8, [X31+224]
+	048 Move [X31+16], W8
+	049 Call Native.RoundToAlignment, X0, X1
+	050 Move W22, W0
+	051 Move W0, W20
+	052 Move W1, W24
+	053 Call Native.RoundToAlignment, X0, X1
+	054 Move W20, W0
+	055 Move W0, W21
+	056 Move W1, W24
+	057 Call Native.RoundToAlignment, X0, X1
+	058 Move [X31+8], W0
+	059 Move W0, W19
+	060 Move W1, W24
+	061 Call Native.RoundToAlignment, X0, X1
+	062 Move W23, W0
+	063 Move W0, W26
+	064 Move W1, W24
+	065 Call Native.RoundToAlignment, X0, X1
+	066 Move W25, W0
+	067 Move W0, W27
+	068 Move W1, W24
+	069 Call Native.RoundToAlignment, X0, X1
+	070 Move W27, W0
+	071 Move W0, [X31+12]
+	072 Move W1, W24
+	073 Call Native.RoundToAlignment, X0, X1
+	074 Move W19, W0
+	075 Move [X31+12], W0
+	076 Move W0, [X31+20]
+	077 Move W1, W24
+	078 Call Native.RoundToAlignment, X0, X1
+	079 Move W26, W0
+	080 Move W0, W29
+	081 Move W1, W24
+	082 Call Native.RoundToAlignment, X0, X1
+	083 Move W29, W0
+	084 Move W0, W28
+	085 Move W1, W24
+	086 Call Native.RoundToAlignment, X0, X1
+	087 Move W28, W0
+	088 Move W0, [X31+16]
+	089 Move W1, W24
+	090 Call Native.RoundToAlignment, X0, X1
+	091 Add W8, W20, W22
+	092 Move W21, W20
+	093 Move W20, W22
+	094 Move W22, [X31+8]
+	095 Add W8, W8, W22
+	096 Add W8, W8, W23
+	097 Add W8, W8, W25
+	098 Add W8, W8, W27
+	099 Add W8, W8, W19
+	100 Add W8, W8, W26
+	101 Add W8, W8, W29
+	102 Add W8, W8, W28
+	103 Add W24, W8, W0
+	104 Move W0, W24
+	105 Call Native.Malloc, X0
+	106 Move X1, W24
+	107 Move X2, X31
+	108 Move X19, X0
+	109 Call UnsafeUtility.MemClear, X0, X1
+	110 Move X8, [X31+24]
+	111 Move X9, [X31+32]
+	112 Move W0, W24
+	113 Move [X8], X19
+	114 Add X8, X19, W20
+	115 Move [X9], X8
+	116 Move X9, [X31+40]
+	117 Add X8, X8, W21
+	118 Move X20, [X31+192]
+	119 Move X19, [X31+200]
+	120 Move [X9], X8
+	121 Move X9, [X31+48]
+	122 Add X8, X8, W22
+	123 Move X22, [X31+176]
+	124 Move X21, [X31+184]
+	125 Move [X9], X8
+	126 Move X9, [X31+56]
+	127 Add X8, X8, W23
+	128 Move X24, [X31+160]
+	129 Move X23, [X31+168]
+	130 Move [X9], X8
+	131 Move X9, [X31+64]
+	132 Add X8, X8, W25
+	133 Move [X9], X8
+	134 Move X9, [X31+72]
+	135 Add X8, X8, W27
+	136 Move [X9], X8
+	137 Move W9, [X31+12]
+	138 Add X8, X8, W9
+	139 Move X9, [X31+80]
+	140 Move [X9], X8
+	141 Move X9, [X31+88]
+	142 Add X8, X8, W26
+	143 Move X26, [X31+144]
+	144 Move X25, [X31+152]
+	145 Move [X9], X8
+	146 Move X9, [X31+96]
+	147 Add X8, X8, W29
+	148 Move X29, [X31+112]
+	149 Move X30, [X31+120]
+	150 Move [X9], X8
+	151 Move X9, [X31+104]
+	152 Add X8, X8, W28
+	153 Move X28, [X31+128]
+	154 Move X27, [X31+136]
+	155 Move [X9], X8
+	156 Add X31, X31, 208
+	157 Return X0
+
+Method: System.Int32 MallocAndClearBlock(System.Int32 size0, System.Int32 size1, System.Int32 size2, System.Int32 size3, System.Int32 size4, System.Int32 size5, System.Int32 size6, System.Int32 size7, System.Int32 size8, System.Int32 size9, System.Int32 size10, System.Int32 size11, out System.Void* ptr0, out System.Void* ptr1, out System.Void* ptr2, out System.Void* ptr3, out System.Void* ptr4, out System.Void* ptr5, out System.Void* ptr6, out System.Void* ptr7, out System.Void* ptr8, out System.Void* ptr9, out System.Void* ptr10, out System.Void* ptr11, System.Int32 alignment = 8)
+
+Disassembly:
+	0x01E37D44 ORR W9, W9, 0x2
+	0x01E37D48 STR W9, [X8]
+	0x01E37D4C LDR X30, [X31], #0x20
+	0x01E37D50 RET
+	0x01E37D54 STR X30, [X31 - 0x20]!
+	0x01E37D58 STP X20, X19, [X31 + 0x10]
+	0x01E37D5C ADRP X19, 0x25A1000
+	0x01E37D60 ADRP X20, 0x22C4000
+	0x01E37D64 LDRB W8, [X19 + 0xEE2]
+	0x01E37D68 LDR X20, [X20 + 0x710]
+	0x01E37D6C TBNZ X8, 0x0, 0x1E37D84
+	0x01E37D70 ADRP X0, 0x22C4000
+	0x01E37D74 LDR X0, [X0 + 0x710]
+	0x01E37D78 BL 0x1C16CF4
+	0x01E37D7C MOVZ W8, 0x1
+	0x01E37D80 STRB W8, [X19 + 0xEE2]
+	0x01E37D84 LDR X8, [X20]
+	0x01E37D88 LDP X20, X19, [X31 + 0x10]
+	0x01E37D8C LDR X8, [X8 + 0xB8]
+	0x01E37D90 LDR W9, [X8]
+	0x01E37D94 ORR W9, W9, 0x4
+	0x01E37D98 STR W9, [X8]
+	0x01E37D9C LDR X30, [X31], #0x20
+	0x01E37DA0 RET
+	0x01E37DA4 STR X30, [X31 - 0x20]!
+	0x01E37DA8 STP X20, X19, [X31 + 0x10]
+	0x01E37DAC ADRP X19, 0x25A1000
+	0x01E37DB0 ADRP X20, 0x22C4000
+	0x01E37DB4 LDRB W8, [X19 + 0xEE3]
+	0x01E37DB8 LDR X20, [X20 + 0x710]
+	0x01E37DBC TBNZ X8, 0x0, 0x1E37DD4
+	0x01E37DC0 ADRP X0, 0x22C4000
+	0x01E37DC4 LDR X0, [X0 + 0x710]
+	0x01E37DC8 BL 0x1C16CF4
+	0x01E37DCC MOVZ W8, 0x1
+	0x01E37DD0 STRB W8, [X19 + 0xEE3]
+	0x01E37DD4 LDR X8, [X20]
+	0x01E37DD8 LDP X20, X19, [X31 + 0x10]
+	0x01E37DDC LDR X8, [X8 + 0xB8]
+	0x01E37DE0 LDR W9, [X8]
+	0x01E37DE4 ORR W9, W9, 0x8
+	0x01E37DE8 STR W9, [X8]
+	0x01E37DEC LDR X30, [X31], #0x20
+	0x01E37DF0 RET
+	0x01E37DF4 STR X30, [X31 - 0x20]!
+	0x01E37DF8 STP X20, X19, [X31 + 0x10]
+	0x01E37DFC ADRP X19, 0x25A1000
+	0x01E37E00 ADRP X20, 0x22C4000
+	0x01E37E04 LDRB W8, [X19 + 0xEE4]
+	0x01E37E08 LDR X20, [X20 + 0x710]
+	0x01E37E0C TBNZ X8, 0x0, 0x1E37E24
+	0x01E37E10 ADRP X0, 0x22C4000
+	0x01E37E14 LDR X0, [X0 + 0x710]
+	0x01E37E18 BL 0x1C16CF4
+	0x01E37E1C MOVZ W8, 0x1
+	0x01E37E20 STRB W8, [X19 + 0xEE4]
+	0x01E37E24 LDR X8, [X20]
+	0x01E37E28 LDP X20, X19, [X31 + 0x10]
+	0x01E37E2C LDR X8, [X8 + 0xB8]
+	0x01E37E30 LDR W9, [X8]
+	0x01E37E34 ORR W9, W9, 0x10
+	0x01E37E38 STR W9, [X8]
+	0x01E37E3C LDR X30, [X31], #0x20
+	0x01E37E40 RET
+	0x01E37E44 STR X30, [X31 - 0x20]!
+	0x01E37E48 STP X20, X19, [X31 + 0x10]
+	0x01E37E4C ADRP X19, 0x25A1000
+	0x01E37E50 ADRP X20, 0x22C4000
+	0x01E37E54 LDRB W8, [X19 + 0xEE5]
+	0x01E37E58 LDR X20, [X20 + 0x710]
+	0x01E37E5C TBNZ X8, 0x0, 0x1E37E74
+	0x01E37E60 ADRP X0, 0x22C4000
+	0x01E37E64 LDR X0, [X0 + 0x710]
+	0x01E37E68 BL 0x1C16CF4
+	0x01E37E6C MOVZ W8, 0x1
+	0x01E37E70 STRB W8, [X19 + 0xEE5]
+	0x01E37E74 LDR X8, [X20]
+	0x01E37E78 LDP X20, X19, [X31 + 0x10]
+	0x01E37E7C LDR X8, [X8 + 0xB8]
+	0x01E37E80 LDR W9, [X8]
+	0x01E37E84 ORR W9, W9, 0x20
+	0x01E37E88 STR W9, [X8]
+	0x01E37E8C LDR X30, [X31], #0x20
+	0x01E37E90 RET
+	0x01E37E94 STR X30, [X31 - 0x20]!
+	0x01E37E98 STP X20, X19, [X31 + 0x10]
+	0x01E37E9C ADRP X19, 0x25A1000
+	0x01E37EA0 ADRP X20, 0x22C4000
+	0x01E37EA4 LDRB W8, [X19 + 0xEE6]
+	0x01E37EA8 LDR X20, [X20 + 0x710]
+	0x01E37EAC TBNZ X8, 0x0, 0x1E37EC4
+	0x01E37EB0 ADRP X0, 0x22C4000
+	0x01E37EB4 LDR X0, [X0 + 0x710]
+	0x01E37EB8 BL 0x1C16CF4
+	0x01E37EBC MOVZ W8, 0x1
+	0x01E37EC0 STRB W8, [X19 + 0xEE6]
+	0x01E37EC4 LDR X8, [X20]
+	0x01E37EC8 LDP X20, X19, [X31 + 0x10]
+	0x01E37ECC LDR X8, [X8 + 0xB8]
+	0x01E37ED0 LDR W9, [X8]
+	0x01E37ED4 ORR W9, W9, 0x40
+	0x01E37ED8 STR W9, [X8]
+	0x01E37EDC LDR X30, [X31], #0x20
+	0x01E37EE0 RET
+	0x01E37EE4 STR X30, [X31 - 0x20]!
+	0x01E37EE8 STP X20, X19, [X31 + 0x10]
+	0x01E37EEC ADRP X19, 0x25A1000
+	0x01E37EF0 ADRP X20, 0x22C4000
+	0x01E37EF4 LDRB W8, [X19 + 0xEE7]
+	0x01E37EF8 LDR X20, [X20 + 0x710]
+	0x01E37EFC TBNZ X8, 0x0, 0x1E37F14
+	0x01E37F00 ADRP X0, 0x22C4000
+	0x01E37F04 LDR X0, [X0 + 0x710]
+	0x01E37F08 BL 0x1C16CF4
+	0x01E37F0C MOVZ W8, 0x1
+	0x01E37F10 STRB W8, [X19 + 0xEE7]
+	0x01E37F14 LDR X8, [X20]
+	0x01E37F18 LDP X20, X19, [X31 + 0x10]
+	0x01E37F1C LDR X8, [X8 + 0xB8]
+	0x01E37F20 LDRB W8, [X8 + 0x4]
+	0x01E37F24 UBFM W0, W8, 0x1, 0x1
+	0x01E37F28 LDR X30, [X31], #0x20
+	0x01E37F2C RET
+	0x01E37F30 STR X30, [X31 - 0x20]!
+	0x01E37F34 STP X20, X19, [X31 + 0x10]
+	0x01E37F38 ADRP X19, 0x25A1000
+	0x01E37F3C ADRP X20, 0x22C4000
+	0x01E37F40 LDRB W8, [X19 + 0xEE8]
+	0x01E37F44 LDR X20, [X20 + 0x710]
+	0x01E37F48 TBNZ X8, 0x0, 0x1E37F60
+	0x01E37F4C ADRP X0, 0x22C4000
+	0x01E37F50 LDR X0, [X0 + 0x710]
+	0x01E37F54 BL 0x1C16CF4
+	0x01E37F58 MOVZ W8, 0x1
+	0x01E37F5C STRB W8, [X19 + 0xEE8]
+	0x01E37F60 LDR X8, [X20]
+	0x01E37F64 LDP X20, X19, [X31 + 0x10]
+	0x01E37F68 LDR X8, [X8 + 0xB8]
+	0x01E37F6C LDRB W8, [X8 + 0x4]
+	0x01E37F70 UBFM W0, W8, 0x2, 0x2
+	0x01E37F74 LDR X30, [X31], #0x20
+	0x01E37F78 RET
+	0x01E37F7C STR X30, [X31 - 0x20]!
+	0x01E37F80 STP X20, X19, [X31 + 0x10]
+	0x01E37F84 ADRP X19, 0x25A1000
+	0x01E37F88 ADRP X20, 0x22C4000
+	0x01E37F8C LDRB W8, [X19 + 0xEE9]
+	0x01E37F90 LDR X20, [X20 + 0x710]
+	0x01E37F94 TBNZ X8, 0x0, 0x1E37FAC
+	0x01E37F98 ADRP X0, 0x22C4000
+	0x01E37F9C LDR X0, [X0 + 0x710]
+
+ISIL:
+	001 Subtract X31, X31, 240
+	002 Move [X31+144], X29
+	003 Move [X31+152], X30
+	004 Move [X31+160], X28
+	005 Move [X31+168], X27
+	006 Move [X31+176], X26
+	007 Move [X31+184], X25
+	008 Move [X31+192], X24
+	009 Move [X31+200], X23
+	010 Move [X31+208], X22
+	011 Move [X31+216], X21
+	012 Move [X31+224], X20
+	013 Move [X31+232], X19
+	014 Move X9, [X31+360]
+	015 Move X8, [X31+352]
+	016 Move W26, [X31+368]
+	017 Move W19, [X31+240]
+	018 Move W20, W1
+	019 Move [X31+128], X8
+	020 Move [X31+136], X9
+	021 Move X9, [X31+344]
+	022 Move X8, [X31+336]
+	023 Move W1, W26
+	024 Move [X31+40], W7
+	025 Move W29, W6
+	026 Move [X31+112], X8
+	027 Move [X31+120], X9
+	028 Move X9, [X31+328]
+	029 Move X8, [X31+320]
+	030 Move W22, W5
+	031 Move W23, W4
+	032 Move W27, W3
+	033 Move [X31+96], X8
+	034 Move [X31+104], X9
+	035 Move X9, [X31+312]
+	036 Move X8, [X31+304]
+	037 Move W21, W2
+	038 Move [X31+80], X8
+	039 Move [X31+88], X9
+	040 Move X9, [X31+296]
+	041 Move X8, [X31+288]
+	042 Move [X31+64], X8
+	043 Move [X31+72], X9
+	044 Move X9, [X31+280]
+	045 Move X8, [X31+272]
+	046 Move [X31+48], X8
+	047 Move [X31+56], X9
+	048 Move W8, [X31+264]
+	049 Move W9, [X31+256]
+	050 Move [X31+44], W8
+	051 Move W8, [X31+248]
+	052 Move [X31+28], W8
+	053 Move [X31+32], W9
+	054 Call Native.RoundToAlignment, X0, X1
+	055 Move [X31+36], W0
+	056 Move W0, W20
+	057 Move W1, W26
+	058 Call Native.RoundToAlignment, X0, X1
+	059 Move W24, W0
+	060 Move [X31+12], W0
+	061 Move W0, W21
+	062 Move W1, W26
+	063 Call Native.RoundToAlignment, X0, X1
+	064 Move [X31+24], W0
+	065 Move W0, W27
+	066 Move W1, W26
+	067 Call Native.RoundToAlignment, X0, X1
+	068 Move [X31+20], W0
+	069 Move W0, W23
+	070 Move W1, W26
+	071 Call Native.RoundToAlignment, X0, X1
+	072 Move W27, W0
+	073 Move W0, W22
+	074 Move W1, W26
+	075 Call Native.RoundToAlignment, X0, X1
+	076 Move W28, W0
+	077 Move W0, W29
+	078 Move W1, W26
+	079 Call Native.RoundToAlignment, X0, X1
+	080 Move W20, W0
+	081 Move [X31+16], W0
+	082 Move W0, [X31+40]
+	083 Move W1, W26
+	084 Call Native.RoundToAlignment, X0, X1
+	085 Move W29, W0
+	086 Move W0, W19
+	087 Move W1, W26
+	088 Call Native.RoundToAlignment, X0, X1
+	089 Move W25, W0
+	090 Move W0, [X31+28]
+	091 Move W1, W26
+	092 Call Native.RoundToAlignment, X0, X1
+	093 Move W19, W0
+	094 Move W0, [X31+32]
+	095 Move W1, W26
+	096 Call Native.RoundToAlignment, X0, X1
+	097 Move W22, W0
+	098 Move W0, [X31+44]
+	099 Move W1, W26
+	100 Call Native.RoundToAlignment, X0, X1
+	101 Move W21, [X31+36]
+	102 Add W8, W24, W21
+	103 Move W24, [X31+20]
+	104 Move W23, [X31+24]
+	105 Add W8, W8, W23
+	106 Add W8, W8, W24
+	107 Add W8, W8, W27
+	108 Add W8, W8, W28
+	109 Add W8, W8, W20
+	110 Add W8, W8, W29
+	111 Add W8, W8, W25
+	112 Add W8, W8, W19
+	113 Add W8, W8, W22
+	114 Add W26, W8, W0
+	115 Move W0, W26
+	116 Call Native.Malloc, X0
+	117 Move X1, W26
+	118 Move X2, X31
+	119 Move X20, X0
+	120 Call UnsafeUtility.MemClear, X0, X1
+	121 Move X8, [X31+48]
+	122 Move X9, [X31+56]
+	123 Move W0, W26
+	124 Move [X8], X20
+	125 Add X8, X20, W21
+	126 Move [X9], X8
+	127 Move W9, [X31+12]
+	128 Add X8, X8, W9
+	129 Move X9, [X31+64]
+	130 Move [X9], X8
+	131 Move X9, [X31+72]
+	132 Add X8, X8, W23
+	133 Move [X9], X8
+	134 Move X9, [X31+80]
+	135 Add X8, X8, W24
+	136 Move X24, [X31+192]
+	137 Move X23, [X31+200]
+	138 Move [X9], X8
+	139 Move X9, [X31+88]
+	140 Add X8, X8, W27
+	141 Move [X9], X8
+	142 Move X9, [X31+96]
+	143 Add X8, X8, W28
+	144 Move X28, [X31+160]
+	145 Move X27, [X31+168]
+	146 Move [X9], X8
+	147 Move W9, [X31+16]
+	148 Add X8, X8, W9
+	149 Move X9, [X31+104]
+	150 Move [X9], X8
+	151 Move X9, [X31+112]
+	152 Add X8, X8, W29
+	153 Move X29, [X31+144]
+	154 Move X30, [X31+152]
+	155 Move [X9], X8
+	156 Move X9, [X31+120]
+	157 Add X8, X8, W25
+	158 Move X26, [X31+176]
+	159 Move X25, [X31+184]
+	160 Move [X9], X8
+	161 Move X9, [X31+128]
+	162 Add X8, X8, W19
+	163 Move X20, [X31+224]
+	164 Move X19, [X31+232]
+	165 Move [X9], X8
+	166 Move X9, [X31+136]
+	167 Add X8, X8, W22
+	168 Move X22, [X31+208]
+	169 Move X21, [X31+216]
+	170 Move [X9], X8
+	171 Add X31, X31, 240
+	172 Return X0
+

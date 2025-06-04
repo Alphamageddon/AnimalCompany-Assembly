@@ -1,0 +1,68 @@
+Type: System.Net.TimerThread/InfiniteTimer
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03689D54 ADRP X0, 0xA6A000
+	0x03689D58 LDR X0, [X0 + 0x9D0]
+	0x03689D5C BL 0x1C16D08
+	0x03689D60 MOVZ W1, 0x2
+	0x03689D64 BL 0x1C16D6C
+	0x03689D68 MOV X20, X0
+	0x03689D6C BL 0x19903C0
+	0x03689D70 ADRP X21, 0xAB5000
+	0x03689D74 LDR X21, [X21 + 0x2D0]
+	0x03689D78 MOV X0, X21
+	0x03689D7C BL 0x1C16D08
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X1, X31
+	004 Move X19, X0
+	005 Call Object..ctor, X0
+	006 Move TEMP, 0
+	007 Not TEMP
+	008 Move W8, TEMP
+	009 Move X0, X31
+	010 Move [X19+20], W8
+	011 Call Environment.get_TickCount
+	012 Move [X19+16], W0
+	013 Move X30, [X31+16]
+	014 Move X19, [X31+24]
+	015 Return 
+
+Method: System.Boolean get_HasExpired()
+
+Disassembly:
+	0x03689ED0 B.LT 0x3689F58
+	0x03689ED4 MOV W20, W31
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Boolean Cancel()
+
+Disassembly:
+	0x03689ED8 MOV X0, X19
+	0x03689EDC MOV W1, W20
+	0x03689EE0 MOV X2, X31
+	0x03689EE4 BL 0x3222A1C
+	0x03689EE8 SUB W9, W0, 0x30
+	0x03689EEC SUB W10, W0, 0x2D
+	0x03689EF0 AND W11, W0, 0xFFFFFFDF
+	0x03689EF4 AND W9, W9, 0xFFFF
+	0x03689EF8 AND W10, W10, 0xFFFF
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X0, 24
+	003 Move W1, 1
+	004 Move X2, X31
+	005 Call Interlocked.Exchange, X0, X1
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 NotImplemented "Instruction CSET not yet implemented."
+	008 Move X30, [X31+16]
+	009 Return X0
+

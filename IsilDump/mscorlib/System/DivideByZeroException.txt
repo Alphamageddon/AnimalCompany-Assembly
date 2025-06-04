@@ -1,0 +1,72 @@
+Type: System.DivideByZeroException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03366E00 STP X30, X21, [X31 + 0x10]
+	0x03366E04 STP X20, X19, [X31 + 0x20]
+	0x03366E08 ADRP X21, 0x1076000
+	0x03366E0C ADRP X20, 0xD96000
+	0x03366E10 LDRB W8, [X21 + 0xEA2]
+	0x03366E14 LDR X20, [X20 + 0x9E8]
+	0x03366E18 MOV X19, X0
+	0x03366E1C TBNZ X8, 0x0, 0x3366E34
+	0x03366E20 ADRP X0, 0xD96000
+	0x03366E24 LDR X0, [X0 + 0x9E8]
+	0x03366E28 BL 0x1C16CF4
+	0x03366E2C MOVZ W8, 0x1
+	0x03366E30 STRB W8, [X21 + 0xEA2]
+	0x03366E34 LDR X0, [X20]
+	0x03366E38 LDR V8, [X19]
+	0x03366E3C LDR W8, [X0 + 0xE0]
+	0x03366E40 CBNZ W8, 0x3366E48
+	0x03366E44 BL 0x1C16DFC
+	0x03366E48 LDP X20, X19, [X31 + 0x20]
+	0x03366E4C LDP X30, X21, [X31 + 0x10]
+	0x03366E50 MOV V0.16B, V8.16B
+	0x03366E54 MOV X0, X31
+	0x03366E58 LDR V8, [X31], #0x30
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x1077000
+	006 Move X21, 0xDC5000
+	007 Move W8, [X20+3727]
+	008 Move X21, [X21+2864]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xDC5000
+	015 Move X0, [X0+2864]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+3727], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X2, X31
+	022 Call ArithmeticException..ctor, X0, X1
+	023 Move W8, 18
+	024 NotImplemented "Instruction MOVK not yet implemented."
+	025 Move [X19+96], W8
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x03366E5C B 0x3320A04
+	0x03366E60 STR D8, [X31 - 0x30]!
+
+ISIL:
+	001 Move X4, X31
+	002 Call ArithmeticException..ctor, X0, X1, X2
+	003 Return 
+

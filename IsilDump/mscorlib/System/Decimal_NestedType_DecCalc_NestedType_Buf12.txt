@@ -1,0 +1,42 @@
+Type: System.Decimal/DecCalc/Buf12
+
+Method: System.UInt64 get_Low64()
+
+Disassembly:
+	0x033DC080 MADD W10, W9, W2, W10
+	0x033DC084 B.MI 0x33DC0BC
+
+ISIL:
+	001 Move X0, [X0]
+	002 Return X0
+
+Method: System.Void set_Low64(System.UInt64 value)
+
+Disassembly:
+	0x033DC088 MOV W11, W12
+	0x033DC08C ADD X11, X11, 0x1
+
+ISIL:
+	001 Move [X0], X1
+	002 Return 
+
+Method: System.UInt64 get_High64()
+
+Disassembly:
+	0x033DC070 MOVK W9, 0x55E60000
+	0x033DC074 SUBS W12, W21, 0x1
+
+ISIL:
+	001 NotImplemented "Instruction LDUR not yet implemented."
+	002 Return X0
+
+Method: System.Void set_High64(System.UInt64 value)
+
+Disassembly:
+	0x033DC078 MUL X9, X10, X9
+	0x033DC07C UBFM X9, X9, 0x39, 0x3F
+
+ISIL:
+	001 Move [X0+4], X1
+	002 Return 
+

@@ -1,0 +1,105 @@
+Type: UnityEngine.InputSystem.Processors.InvertProcessor
+
+Method: System.Single Process(System.Single value, UnityEngine.InputSystem.InputControl control)
+
+Disassembly:
+	0x03810B18 LDR X8, [X0 + 0x40]
+	0x03810B1C LDR X5, [X0 + 0x18]
+
+ISIL:
+	001 NotImplemented "Instruction FNEG not yet implemented."
+	002 Return V0
+
+Method: System.String ToString()
+
+Disassembly:
+	0x03810B20 LDR X4, [X0 + 0x28]
+	0x03810B24 MOV X0, X8
+	0x03810B28 BR X5
+	0x03810B2C SUB X31, X31, 0x70
+	0x03810B30 STR X30, [X31 + 0x20]
+	0x03810B34 STP X26, X25, [X31 + 0x30]
+	0x03810B38 STP X24, X23, [X31 + 0x40]
+	0x03810B3C STP X22, X21, [X31 + 0x50]
+	0x03810B40 STP X20, X19, [X31 + 0x60]
+	0x03810B44 ADRP X26, 0xBD1000
+	0x03810B48 ADRP X25, 0x90E000
+	0x03810B4C LDRB W8, [X26 + 0x4C5]
+	0x03810B50 LDR X25, [X25 + 0x4F0]
+	0x03810B54 MOV X19, X5
+	0x03810B58 MOV X20, X4
+	0x03810B5C MOV X22, X3
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xBD2000
+	005 Move X20, 0x93B000
+	006 Move W8, [X19+1199]
+	007 Move X20, [X20+1704]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x93B000
+	013 Move X0, [X0+1704]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+1199], W8
+	017 Move X0, [X20]
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X30, [X31+32]
+	021 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03810B60 MOV X23, X2
+	0x03810B64 MOV X24, X1
+	0x03810B68 MOV X21, X0
+	0x03810B6C TBNZ X8, 0x0, 0x3810B84
+	0x03810B70 ADRP X0, 0x90E000
+	0x03810B74 LDR X0, [X0 + 0x4F0]
+	0x03810B78 BL 0x1C16CF4
+	0x03810B7C MOVZ W8, 0x1
+	0x03810B80 STRB W8, [X26 + 0x4C5]
+	0x03810B84 LDR X0, [X25]
+	0x03810B88 MOV X1, X24
+	0x03810B8C STR X31, [X31 + 0x18]
+	0x03810B90 BL 0x1C16E04
+	0x03810B94 STP X0, X23, [X31]
+	0x03810B98 ADD X1, X31, 0x0
+	0x03810B9C MOV X0, X21
+	0x03810BA0 MOV X2, X20
+	0x03810BA4 MOV X3, X19
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xBD2000
+	006 Move X21, 0x93B000
+	007 Move W8, [X20+1200]
+	008 Move X21, [X21+1656]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x93B000
+	015 Move X0, [X0+1656]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1200], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X30, [X31+32]
+	024 Move X21, [X31+40]
+	025 Call InputProcessor`1<Single>..ctor, X0
+	026 Return 
+

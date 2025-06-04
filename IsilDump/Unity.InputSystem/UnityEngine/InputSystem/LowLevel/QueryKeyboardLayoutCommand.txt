@@ -1,0 +1,155 @@
+Type: UnityEngine.InputSystem.LowLevel.QueryKeyboardLayoutCommand
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_Type()
+
+Disassembly:
+	0x037FFE14 MOVZ W4, 0x44
+	0x037FFE18 MOV X5, X31
+	0x037FFE1C STR W31, [X31 + 0x8]
+	0x037FFE20 BL 0x375AA28
+	0x037FFE24 LDR W0, [X31 + 0x8]
+	0x037FFE28 LDR X30, [X31], #0x10
+	0x037FFE2C RET
+	0x037FFE30 STR X30, [X31 - 0x10]!
+	0x037FFE34 ADD X0, X31, 0x8
+	0x037FFE38 MOVZ W1, 0x41
+	0x037FFE3C MOVZ W2, 0x54
+	0x037FFE40 MOVZ W3, 0x54
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 75
+	004 Move W2, 66
+	005 Move W3, 76
+	006 Move W4, 84
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: System.String ReadLayoutName()
+
+Disassembly:
+	0x037FFE44 MOVZ W4, 0x44
+	0x037FFE48 MOV X5, X31
+	0x037FFE4C STR W31, [X31 + 0x8]
+	0x037FFE50 BL 0x375AA28
+
+ISIL:
+	001 Add X0, X0, 8
+	002 Move W1, 256
+	003 Move X2, X31
+	004 Call StringHelpers.ReadStringFromBuffer, X0, X1
+	005 Return X0
+
+Method: System.Void WriteLayoutName(System.String name)
+
+Disassembly:
+	0x037FFE54 LDR W0, [X31 + 0x8]
+	0x037FFE58 LDR X30, [X31], #0x10
+	0x037FFE5C RET
+	0x037FFE60 STR X30, [X31 - 0x10]!
+	0x037FFE64 ADD X0, X31, 0x8
+	0x037FFE68 MOVZ W1, 0x4C
+	0x037FFE6C MOVZ W2, 0x41
+	0x037FFE70 MOVZ W3, 0x41
+	0x037FFE74 MOVZ W4, 0x43
+
+ISIL:
+	001 Compare X0, 0
+	002 JumpIfEqual {10}
+	003 Add X8, X0, 8
+	004 Move W2, 256
+	005 Move X0, X1
+	006 Move X1, X8
+	007 Move X3, X31
+	008 Call StringHelpers.WriteStringToBuffer, X0, X1, X2
+	009 Return 
+	010 Move [X31-16], X30
+	011 Call 0x1C17F20
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_typeStatic()
+
+Disassembly:
+	0x037FFE78 MOV X5, X31
+	0x037FFE7C STR W31, [X31 + 0x8]
+	0x037FFE80 BL 0x375AA28
+	0x037FFE84 LDR W0, [X31 + 0x8]
+	0x037FFE88 LDR X30, [X31], #0x10
+	0x037FFE8C RET
+	0x037FFE90 STR X30, [X31 - 0x10]!
+	0x037FFE94 ADD X0, X31, 0x8
+	0x037FFE98 MOVZ W1, 0x4C
+	0x037FFE9C MOVZ W2, 0x41
+	0x037FFEA0 MOVZ W3, 0x41
+	0x037FFEA4 MOVZ W4, 0x43
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 75
+	004 Move W2, 66
+	005 Move W3, 76
+	006 Move W4, 84
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.LowLevel.QueryKeyboardLayoutCommand Create()
+
+Disassembly:
+	0x037FFEA8 MOV X5, X31
+	0x037FFEAC STR W31, [X31 + 0x8]
+	0x037FFEB0 BL 0x375AA28
+	0x037FFEB4 LDR W0, [X31 + 0x8]
+	0x037FFEB8 LDR X30, [X31], #0x10
+	0x037FFEBC RET
+	0x037FFEC0 STR X30, [X31 - 0x10]!
+	0x037FFEC4 ADD X0, X31, 0x8
+	0x037FFEC8 MOVZ W1, 0x54
+	0x037FFECC MOVZ W2, 0x4F
+	0x037FFED0 MOVZ W3, 0x55
+	0x037FFED4 MOVZ W4, 0x43
+	0x037FFED8 MOV X5, X31
+	0x037FFEDC STR W31, [X31 + 0x8]
+	0x037FFEE0 BL 0x375AA28
+	0x037FFEE4 LDR W0, [X31 + 0x8]
+	0x037FFEE8 LDR X30, [X31], #0x10
+	0x037FFEEC RET
+	0x037FFEF0 LDRB W0, [X0 + 0x20]
+	0x037FFEF4 RET
+	0x037FFEF8 LDRB W8, [X0 + 0x20]
+	0x037FFEFC CMP W8, 0x4
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Add X0, X31, 8
+	005 Move W1, 75
+	006 Move W2, 66
+	007 Move W3, 76
+	008 Move W4, 84
+	009 Move X5, X31
+	010 Move X19, X8
+	011 Move [X31+8], W31
+	012 Call FourCC..ctor, X0, X1, X2, X3, X4
+	013 Move W8, [X31+8]
+	014 Move X9, 264
+	015 Move W2, 256
+	016 Move W1, W31
+	017 Or X8, X8, X9
+	018 Move [X19+8], X8
+	019 Move X0, X19
+	020 Call 0x3EB2B10
+	021 Move X30, [X31+16]
+	022 Move X19, [X31+24]
+	023 Add X31, X31, 32
+	024 Return X0
+

@@ -1,0 +1,38 @@
+Type: Fusion.NormalizedRectAttribute
+
+Method: System.Void .ctor(System.Boolean invertY = True, System.Single aspectRatio = 0)
+
+Disassembly:
+	0x01E687A4 MOV X19, X0
+	0x01E687A8 BL 0x1E68684
+	0x01E687AC TBZ X0, 0x0, 0x1E687D4
+	0x01E687B0 LDR X8, [X19 + 0x30]
+	0x01E687B4 CBZ X8, 0x1E687E0
+	0x01E687B8 LDR X8, [X8 + 0x38]
+	0x01E687BC CBZ X8, 0x1E687E0
+	0x01E687C0 LDR X0, [X8 + 0x108]
+	0x01E687C4 CBZ X0, 0x1E687E0
+	0x01E687C8 MOV X1, X31
+	0x01E687CC LDP X30, X19, [X31], #0x10
+	0x01E687D0 B 0x1E5A768
+	0x01E687D4 MOV W0, W31
+	0x01E687D8 LDP X30, X19, [X31], #0x10
+
+ISIL:
+	001 Move [X31-32], D8
+	002 Move [X31+8], X30
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 And W20, W1, 1
+	006 Move X1, X31
+	007 Move V8, V0
+	008 Move X19, X0
+	009 Call PropertyAttribute..ctor, X0
+	010 Move [X19+20], W20
+	011 Move [X19+24], S8
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+8]
+	015 Move V8, [X31+32]
+	016 Return 
+

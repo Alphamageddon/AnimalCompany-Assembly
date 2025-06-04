@@ -1,0 +1,108 @@
+Type: AnimalCompany.GameGen.Tile/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x01E10910 MOV X1, X21
+	0x01E10914 MOV X2, X31
+	0x01E10918 MOV X20, X0
+	0x01E1091C BL 0x1E08F4C
+	0x01E10920 ADRP X23, 0x25C8000
+	0x01E10924 LDRB W8, [X23 + 0x783]
+	0x01E10928 LDR X22, [X19 + 0x38]
+	0x01E1092C MOV X21, X0
+	0x01E10930 CBNZ W8, 0x1E10948
+	0x01E10934 ADRP X0, 0x22E3000
+	0x01E10938 LDR X0, [X0 + 0x5A0]
+	0x01E1093C BL 0x1C16CF4
+	0x01E10940 MOVZ W8, 0x1
+	0x01E10944 STRB W8, [X23 + 0x783]
+	0x01E10948 CBZ X22, 0x1E10A34
+	0x01E1094C ADRP X8, 0x22E3000
+	0x01E10950 LDR X8, [X8 + 0x5A0]
+	0x01E10954 FMOV S2, 0.5
+	0x01E10958 MOVI V3.2S, 0x3F, 0x18
+	0x01E1095C LDR X8, [X8]
+	0x01E10960 LDR X8, [X8 + 0xB8]
+	0x01E10964 LDR V0, [X8 + 0x8]
+	0x01E10968 LDR V1, [X8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x25C9000
+	005 Move X20, 0x22EA000
+	006 Move W8, [X19+3551]
+	007 Move X20, [X20+2680]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x22EA000
+	013 Move X0, [X0+2680]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+3551], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E1096C FMUL S2, S0, S2
+	0x00000000 INVALID
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <GetRandomSocket>b__5_0(AnimalCompany.GameGen.Socket x)
+
+Disassembly:
+	0x01E10974 STR D1, [X22 + 0x48]
+	0x01E10978 STR S0, [X22 + 0x50]
+	0x01E1097C STUR D3, [X22 + 0x54]
+	0x01E10980 STR S2, [X22 + 0x5C]
+	0x01E10984 LDR W8, [X19 + 0x24]
+	0x01E10988 STR W31, [X19 + 0x20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {7}
+	004 Move W0, [X1+36]
+	005 Move X30, [X31+16]
+	006 Return X0
+	007 Call 0x1C17F20
+
+Method: System.Boolean <TryGetRandomSocket>b__6_1(AnimalCompany.GameGen.Socket x)
+
+Disassembly:
+	0x01E1098C CMP W8, 0x1
+	0x01E10990 B.LT 0x1E10A14
+	0x01E10994 ADRP X26, 0x22E9000
+	0x01E10998 ADRP X27, 0x22E9000
+	0x01E1099C LDR X26, [X26 + 0xEA0]
+	0x01E109A0 LDR X27, [X27 + 0xEA8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {7}
+	004 Move W0, [X1+36]
+	005 Move X30, [X31+16]
+	006 Return X0
+	007 Call 0x1C17F20
+

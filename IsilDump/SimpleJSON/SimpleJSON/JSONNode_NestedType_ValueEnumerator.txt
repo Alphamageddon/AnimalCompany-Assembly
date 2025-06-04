@@ -1,0 +1,190 @@
+Type: SimpleJSON.JSONNode/ValueEnumerator
+
+Method: System.Void .ctor(System.Collections.Generic.List`1/Enumerator<SimpleJSON.JSONNode> aArrayEnum)
+
+Disassembly:
+	0x035B5994 BL 0x1C16CF4
+	0x035B5998 ADRP X0, 0xB82000
+	0x035B599C LDR X0, [X0 + 0x7D0]
+	0x035B59A0 BL 0x1C16CF4
+	0x035B59A4 MOVZ W8, 0x1
+	0x035B59A8 STRB W8, [X21 + 0xB8]
+	0x035B59AC LDR X0, [X22]
+	0x035B59B0 LDR W8, [X0 + 0xE0]
+	0x035B59B4 CBNZ W8, 0x35B59BC
+	0x035B59B8 BL 0x1C16DFC
+	0x035B59BC MOV X0, X19
+	0x035B59C0 MOV X1, X31
+	0x035B59C4 BL 0x35AD170
+	0x035B59C8 TBZ X0, 0x0, 0x35B59EC
+	0x035B59CC ADRP X8, 0xB82000
+	0x035B59D0 LDR X8, [X8 + 0x648]
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move X8, [X1+16]
+	003 Move V0, [X1]
+	004 NotImplemented "Instruction MOVI not yet implemented."
+	005 Move [X31+16], X8
+	006 Move W8, 1
+	007 Move [X31], V0
+	008 Move [X0], W8
+	009 Move [X0+4], V1
+	010 Move [X0+20], V1
+	011 Move X8, [X31+16]
+	012 Move V0, [X31]
+	013 Move [X0+64], X8
+	014 Move [X0+32], V1
+	015 Move [X0+40], V0
+	016 Add X31, X31, 32
+	017 Return 
+
+Method: System.Void .ctor(System.Collections.Generic.Dictionary`2/Enumerator<System.String, SimpleJSON.JSONNode> aDictEnum)
+
+Disassembly:
+	0x035B59D4 LDR X0, [X8]
+	0x035B59D8 LDR W8, [X0 + 0xE0]
+	0x035B59DC CBNZ W8, 0x35B59E4
+	0x035B59E0 BL 0x1C16DFC
+	0x035B59E4 BL 0x35AD064
+	0x035B59E8 MOV X19, X0
+	0x035B59EC LDR X0, [X20 + 0x10]
+	0x035B59F0 CBZ X0, 0x35B5A64
+	0x035B59F4 ADRP X9, 0xB82000
+	0x035B59F8 LDR X9, [X9 + 0x7D0]
+	0x035B59FC LDR W10, [X0 + 0x1C]
+	0x035B5A00 LDR X8, [X0 + 0x10]
+	0x035B5A04 LDR X9, [X9]
+	0x035B5A08 ADD W10, W10, 0x1
+	0x035B5A0C STR W10, [X0 + 0x1C]
+	0x035B5A10 CBZ X8, 0x35B5A64
+	0x035B5A14 LDRSW X10, [X0 + 0x18]
+	0x035B5A18 LDR W11, [X8 + 0x18]
+	0x035B5A1C CMP W10, W11
+	0x035B5A20 B.CS 0x35B5A44
+	0x035B5A24 ADD W9, W10, 0x1
+	0x035B5A28 ADD X8, X8, X10, 0x3, LSL
+	0x035B5A2C STR W9, [X0 + 0x18]
+	0x035B5A30 STR X19, [X8 + 0x20]
+	0x035B5A34 LDP X20, X19, [X31 + 0x20]
+	0x035B5A38 LDP X22, X21, [X31 + 0x10]
+	0x035B5A3C LDR X30, [X31], #0x30
+	0x035B5A40 RET
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 Move W10, 2
+	006 Move [X31+56], X9
+	007 Move [X31+12], W31
+	008 Move X9, [X1+32]
+	009 Move V1, [X1]
+	010 Move V0, [X1+16]
+	011 Move [X31+48], X9
+	012 Move [X31+16], V1
+	013 Move [X31+24], V0
+	014 Move [X0], W10
+	015 NotImplemented "Instruction LDUR not yet implemented."
+	016 NotImplemented "Instruction LDUR not yet implemented."
+	017 NotImplemented "Instruction LDUR not yet implemented."
+	018 Move [X0+56], X31
+	019 Move [X0+64], X31
+	020 Move [X0+48], X31
+	021 Move [X0+4], V0
+	022 Move [X0+2], V2
+	023 Move [X0+20], V1
+	024 Move X8, [X8+40]
+	025 Move X9, [X31+56]
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Move X30, [X31+64]
+	028 Add X31, X31, 80
+	029 Return 
+	030 Call 0x3EB2B20
+
+Method: System.Void .ctor(SimpleJSON.JSONNode/Enumerator aEnumerator)
+
+Disassembly:
+	0x035B5A44 LDR X8, [X9 + 0x20]
+	0x035B5A48 MOV X1, X19
+	0x035B5A4C LDP X20, X19, [X31 + 0x20]
+	0x035B5A50 LDP X22, X21, [X31 + 0x10]
+	0x035B5A54 LDR X8, [X8 + 0xC0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W2, 72
+	003 Call 0x3EB2B30
+	004 Move X30, [X31+16]
+	005 Return 
+
+Method: SimpleJSON.JSONNode get_Current()
+
+Disassembly:
+	0x035B5A58 LDR X2, [X8 + 0x70]
+	0x035B5A5C LDR X30, [X31], #0x30
+	0x035B5A60 B 0x301BF90
+	0x035B5A64 BL 0x1C16F20
+	0x035B5A68 STR X30, [X31 - 0x20]!
+	0x035B5A6C STP X20, X19, [X31 + 0x10]
+	0x035B5A70 ADRP X20, 0xE2B000
+	0x035B5A74 LDRB W8, [X20 + 0xB9]
+	0x035B5A78 MOV X19, X0
+	0x035B5A7C TBNZ X8, 0x0, 0x35B5A94
+	0x035B5A80 ADRP X0, 0xB82000
+	0x035B5A84 LDR X0, [X0 + 0x7C0]
+	0x035B5A88 BL 0x1C16CF4
+	0x035B5A8C MOVZ W8, 0x1
+	0x035B5A90 STRB W8, [X20 + 0xB9]
+	0x035B5A94 LDR X8, [X19 + 0x10]
+	0x035B5A98 CBZ X8, 0x35B5AAC
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xE2C000
+	005 Move W8, [X20+168]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0xB69000
+	012 Move X0, [X0+840]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+168], W8
+	016 Move X0, X19
+	017 Call Enumerator.get_Current, X0
+	018 Move X20, [X31+16]
+	019 Move X19, [X31+24]
+	020 Move X0, X1
+	021 Move X30, [X31+32]
+	022 Return X0
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x035B5A9C LDR W0, [X8 + 0x18]
+
+ISIL:
+	001 Call Enumerator.MoveNext, X0
+	002 Return X0
+
+Method: SimpleJSON.JSONNode/ValueEnumerator GetEnumerator()
+
+Disassembly:
+	0x035B5AA0 LDP X20, X19, [X31 + 0x10]
+	0x035B5AA4 LDR X30, [X31], #0x20
+	0x035B5AA8 RET
+	0x035B5AAC BL 0x1C16F20
+
+ISIL:
+	001 Move X1, X0
+	002 Move W2, 72
+	003 Move X0, X8
+	004 Call 0x3EB2AC0
+	005 Return X0
+

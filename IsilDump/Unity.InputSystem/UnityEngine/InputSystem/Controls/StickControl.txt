@@ -1,0 +1,232 @@
+Type: UnityEngine.InputSystem.Controls.StickControl
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_up()
+
+Disassembly:
+	0x0375B724 BL 0x1C16DFC
+	0x0375B728 LDR X0, [X20]
+
+ISIL:
+	001 Move X0, [X0+288]
+	002 Return X0
+
+Method: System.Void set_up(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x0375B72C LDR X8, [X0 + 0xB8]
+	0x0375B730 ADD X8, X8, 0x34
+
+ISIL:
+	001 Move [X0+288], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_down()
+
+Disassembly:
+	0x0375B734 B 0x375B750
+	0x0375B738 LDR X0, [X20]
+
+ISIL:
+	001 Move X0, [X0+296]
+	002 Return X0
+
+Method: System.Void set_down(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x0375B73C LDR W8, [X0 + 0xE0]
+	0x0375B740 CBNZ W8, 0x375B74C
+
+ISIL:
+	001 Move [X0+296], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_left()
+
+Disassembly:
+	0x0375B744 BL 0x1C16DFC
+	0x0375B748 LDR X0, [X20]
+
+ISIL:
+	001 Move X0, [X0+304]
+	002 Return X0
+
+Method: System.Void set_left(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x0375B74C LDR X8, [X0 + 0xB8]
+	0x0375B750 LDR W0, [X8]
+
+ISIL:
+	001 Move [X0+304], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Controls.ButtonControl get_right()
+
+Disassembly:
+	0x0375B754 LDP X20, X19, [X31 + 0x20]
+	0x0375B758 LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, [X0+312]
+	002 Return X0
+
+Method: System.Void set_right(UnityEngine.InputSystem.Controls.ButtonControl value)
+
+Disassembly:
+	0x0375B75C LDR X30, [X31], #0x30
+	0x0375B760 RET
+
+ISIL:
+	001 Move [X0+312], X1
+	002 Return 
+
+Method: System.Void FinishSetup()
+
+Disassembly:
+	0x0375B764 BL 0x1C16F20
+	0x0375B768 LDR X0, [X0 + 0x118]
+	0x0375B76C RET
+	0x0375B770 STR X1, [X0 + 0x118]
+	0x0375B774 RET
+	0x0375B778 LDR X0, [X0 + 0x120]
+	0x0375B77C RET
+	0x0375B780 STR X1, [X0 + 0x120]
+	0x0375B784 RET
+	0x0375B788 LDR X0, [X0 + 0x128]
+	0x0375B78C RET
+	0x0375B790 STR X1, [X0 + 0x128]
+	0x0375B794 RET
+	0x0375B798 STR X30, [X31 - 0x30]!
+	0x0375B79C STP X22, X21, [X31 + 0x10]
+	0x0375B7A0 STP X20, X19, [X31 + 0x20]
+	0x0375B7A4 ADRP X21, 0xC85000
+	0x0375B7A8 ADRP X22, 0x9EB000
+	0x0375B7AC ADRP X20, 0x9C0000
+	0x0375B7B0 LDRB W8, [X21 + 0xE19]
+	0x0375B7B4 LDR X22, [X22 + 0x118]
+	0x0375B7B8 LDR X20, [X20 + 0xD18]
+	0x0375B7BC MOV X19, X0
+	0x0375B7C0 TBNZ X8, 0x0, 0x375B7E4
+	0x0375B7C4 ADRP X0, 0x9EB000
+	0x0375B7C8 LDR X0, [X0 + 0x118]
+	0x0375B7CC BL 0x1C16CF4
+	0x0375B7D0 ADRP X0, 0x9C0000
+	0x0375B7D4 LDR X0, [X0 + 0xD18]
+	0x0375B7D8 BL 0x1C16CF4
+	0x0375B7DC MOVZ W8, 0x1
+	0x0375B7E0 STRB W8, [X21 + 0xE19]
+	0x0375B7E4 LDR X1, [X22]
+	0x0375B7E8 MOV X0, X19
+	0x0375B7EC BL 0x2E0B65C
+	0x0375B7F0 LDR X0, [X20]
+	0x0375B7F4 LDR W8, [X0 + 0xE0]
+	0x0375B7F8 CBNZ W8, 0x375B804
+	0x0375B7FC BL 0x1C16DFC
+	0x0375B800 LDR X0, [X20]
+	0x0375B804 LDR X8, [X0 + 0xB8]
+	0x0375B808 LDP X22, X21, [X31 + 0x10]
+	0x0375B80C LDR W8, [X8 + 0x38]
+	0x0375B810 STR W8, [X19 + 0x10]
+	0x0375B814 LDP X20, X19, [X31 + 0x20]
+	0x0375B818 LDR X30, [X31], #0x30
+	0x0375B81C RET
+	0x0375B820 STP X30, X25, [X31 - 0x40]!
+	0x0375B824 STP X24, X23, [X31 + 0x10]
+	0x0375B828 STP X22, X21, [X31 + 0x20]
+	0x0375B82C STP X20, X19, [X31 + 0x30]
+	0x0375B830 ADRP X24, 0xC85000
+	0x0375B834 ADRP X25, 0x9C0000
+	0x0375B838 ADRP X21, 0x9E9000
+	0x0375B83C ADRP X23, 0x9C0000
+	0x0375B840 ADRP X22, 0x9C5000
+	0x0375B844 ADRP X20, 0x9EB000
+	0x0375B848 LDRB W8, [X24 + 0xE1A]
+	0x0375B84C LDR X25, [X25 + 0x780]
+	0x0375B850 LDR X21, [X21 + 0xE30]
+	0x0375B854 LDR X23, [X23 + 0x788]
+	0x0375B858 LDR X22, [X22 + 0x3D0]
+
+ISIL:
+	001 Move [X31-64], X30
+	002 Move [X31-56], X25
+	003 Move [X31+16], X24
+	004 Move [X31+24], X23
+	005 Move [X31+32], X22
+	006 Move [X31+40], X21
+	007 Move [X31+48], X20
+	008 Move [X31+56], X19
+	009 Move X25, 0xC86000
+	010 Move X24, 0x9EB000
+	011 Move X20, 0x9EA000
+	012 Move X23, 0x9EB000
+	013 Move X22, 0x9D2000
+	014 Move X21, 0x9DD000
+	015 Move W8, [X25+3592]
+	016 Move X24, [X24+4008]
+	017 Move X20, [X20+3608]
+	018 Move X23, [X23+4016]
+	019 Move X22, [X22+2872]
+	020 Move X21, [X21+1888]
+	021 Move X19, X0
+	022 Move TEMP, X8
+	023 And TEMP, TEMP, 1
+	024 Compare TEMP, 1
+	025 JumpIfEqual {43}
+	026 Move X0, 0x9EA000
+	027 Move X0, [X0+3608]
+	028 Call 0x1C17CF4
+	029 Move X0, 0x9EB000
+	030 Move X0, [X0+4008]
+	031 Call 0x1C17CF4
+	032 Move X0, 0x9EB000
+	033 Move X0, [X0+4016]
+	034 Call 0x1C17CF4
+	035 Move X0, 0x9D2000
+	036 Move X0, [X0+2872]
+	037 Call 0x1C17CF4
+	038 Move X0, 0x9DD000
+	039 Move X0, [X0+1888]
+	040 Call 0x1C17CF4
+	041 Move W8, 1
+	042 Move [X25+3592], W8
+	043 Move X0, X19
+	044 Call Vector2Control.FinishSetup, X0
+	045 Move X1, [X24]
+	046 Move X2, [X20]
+	047 Move X0, X19
+	048 Call 0x21FD754, X0, X1
+	049 Move [X19+288], X0
+	050 Move X1, [X23]
+	051 Move X2, [X20]
+	052 Move X0, X19
+	053 Call 0x21FD754, X0, X1
+	054 Move [X19+296], X0
+	055 Move X1, [X22]
+	056 Move X2, [X20]
+	057 Move X0, X19
+	058 Call 0x21FD754, X0, X1
+	059 Move [X19+304], X0
+	060 Move X1, [X21]
+	061 Move X2, [X20]
+	062 Move X0, X19
+	063 Call 0x21FD754, X0, X1
+	064 Move [X19+312], X0
+	065 Move X20, [X31+48]
+	066 Move X19, [X31+56]
+	067 Move X22, [X31+32]
+	068 Move X21, [X31+40]
+	069 Move X24, [X31+16]
+	070 Move X23, [X31+24]
+	071 Move X30, [X31+64]
+	072 Move X25, [X31+72]
+	073 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0375B85C LDR X20, [X20 + 0x120]
+
+ISIL:
+	001 Call Vector2Control..ctor, X0
+	002 Return 
+

@@ -1,0 +1,96 @@
+Type: System.Runtime.Serialization.Formatters.Binary.ObjectReader/TopLevelAssemblyTypeResolver
+
+Method: System.Void .ctor(System.Reflection.Assembly topLevelAssembly)
+
+Disassembly:
+	0x032B9738 STP X22, X21, [X31 + 0x60]
+	0x032B973C STP X20, X19, [X31 + 0x70]
+	0x032B9740 ADRP X21, 0x1123000
+	0x032B9744 LDRB W8, [X21 + 0x825]
+	0x032B9748 MOV X19, X7
+	0x032B974C MOV X25, X6
+	0x032B9750 MOV X20, X5
+	0x032B9754 MOV X26, X2
+	0x032B9758 MOV X24, X1
+	0x032B975C STP X0, X4, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Type ResolveType(System.Reflection.Assembly assembly, System.String simpleTypeName, System.Boolean ignoreCase)
+
+Disassembly:
+	0x032B9760 STR X3, [X31 + 0x8]
+	0x032B9764 TBNZ X8, 0x0, 0x32B977C
+	0x032B9768 ADRP X0, 0xE6B000
+	0x032B976C LDR X0, [X0 + 0xF80]
+	0x032B9770 BL 0x1C16CF4
+	0x032B9774 MOVZ W8, 0x1
+	0x032B9778 STRB W8, [X21 + 0x825]
+	0x032B977C LDR X8, [X31 + 0x18]
+	0x032B9780 CBZ X8, 0x32B9964
+	0x032B9784 CBZ X24, 0x32B9964
+	0x032B9788 LDR X8, [X31 + 0x18]
+	0x032B978C LDR X27, [X8 + 0x18]
+	0x032B9790 LDR X8, [X24 + 0x68]
+	0x032B9794 CBZ X26, 0x32B98AC
+	0x032B9798 STR X8, [X26 + 0x18]
+	0x032B979C LDR X8, [X31 + 0x10]
+	0x032B97A0 LDR X0, [X8 + 0x40]
+	0x032B97A4 CBZ X0, 0x32B9964
+	0x032B97A8 LDR X2, [X31 + 0x8]
+	0x032B97AC LDR X4, [X31 + 0x18]
+	0x032B97B0 MOV X1, X26
+	0x032B97B4 MOV W3, W27
+	0x032B97B8 MOV X5, X20
+	0x032B97BC MOV X6, X19
+	0x032B97C0 BL 0x32B20F4
+	0x032B97C4 MOV X9, X26
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X19, X2
+	007 Move X21, X1
+	008 Move X22, X0
+	009 Move X0, X1
+	010 Move X1, X31
+	011 Move X2, X31
+	012 Move W20, W3
+	013 Call Assembly.op_Equality, X0, X1
+	014 Move TEMP, X0
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfNotEqual {19}
+	018 Move X21, [X22+16]
+	019 Compare X21, 0
+	020 JumpIfEqual {34}
+	021 Move X8, [X21]
+	022 And W3, W20, 1
+	023 Move X0, X21
+	024 Move X1, X19
+	025 Move X5, [X8+632]
+	026 Move X4, [X8+640]
+	027 Move X20, [X31+32]
+	028 Move X19, [X31+40]
+	029 Move X22, [X31+16]
+	030 Move X21, [X31+24]
+	031 Move W2, W31
+	032 Move X30, [X31+48]
+	033 CallNoReturn X5
+	034 Call 0x1C17F20
+

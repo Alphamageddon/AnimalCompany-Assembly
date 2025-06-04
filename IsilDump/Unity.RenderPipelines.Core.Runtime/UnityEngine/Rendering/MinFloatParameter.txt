@@ -1,0 +1,56 @@
+Type: UnityEngine.Rendering.MinFloatParameter
+
+Method: System.Single get_value()
+
+Disassembly:
+	0x039F3F18 BL 0x1C16DFC
+	0x039F3F1C MOV X0, X19
+
+ISIL:
+	001 Move V0, [X0+20]
+	002 Return V0
+
+Method: System.Void set_value(System.Single value)
+
+Disassembly:
+	0x039F3F20 MOV X1, X31
+	0x039F3F24 BL 0x39DA35C
+	0x039F3F28 MOVZ W8, 0x17
+	0x039F3F2C MUL W20, W0, W8
+	0x039F3F30 MOV W0, W20
+
+ISIL:
+	001 Move V1, [X0+24]
+	002 NotImplemented "Instruction FCMP not yet implemented."
+	003 NotImplemented "Instruction FCSEL not yet implemented."
+	004 Move [X0+20], S0
+	005 Return 
+
+Method: System.Void .ctor(System.Single value, System.Single min, System.Boolean overrideState = False)
+
+Disassembly:
+	0x039F3F34 LDP X20, X19, [X31 + 0x20]
+	0x039F3F38 LDP X22, X21, [X31 + 0x10]
+	0x039F3F3C LDR X30, [X31], #0x30
+	0x039F3F40 RET
+	0x039F3F44 STP X30, X23, [X31 - 0x30]!
+	0x039F3F48 STP X22, X21, [X31 + 0x10]
+	0x039F3F4C STP X20, X19, [X31 + 0x20]
+	0x039F3F50 ADRP X22, 0x9EE000
+	0x039F3F54 ADRP X23, 0x760000
+	0x039F3F58 LDRB W8, [X22 + 0xE9D]
+
+ISIL:
+	001 Move [X31-32], D8
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 And W1, W1, 1
+	005 Move V8, V1
+	006 Move X19, X0
+	007 Call FloatParameter..ctor, X0, V0, X1
+	008 Move [X19+24], S8
+	009 Move X30, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move V8, [X31+32]
+	012 Return 
+

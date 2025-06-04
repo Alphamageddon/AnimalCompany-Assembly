@@ -1,0 +1,60 @@
+Type: AnimalCompany.UpdateUserInventoryAction
+
+Method: System.Void .ctor(AnimalCompany.API.ApiUserInventory inventory)
+
+Disassembly:
+	0x01D4CDE8 MOVZ W0, 0x8
+	0x01D4CDEC BL 0x3EB1AF0
+	0x01D4CDF0 LDR X8, [X21]
+	0x01D4CDF4 STR X8, [X0]
+	0x01D4CDF8 ADRP X1, 0x2168000
+	0x01D4CDFC ADD X1, X1, 0xE58
+	0x01D4CE00 MOV X2, X31
+	0x01D4CE04 BL 0x3EB1B00
+	0x01D4CE08 MOV X21, X0
+	0x01D4CE0C BL 0x3EB1AE0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call BaseAction..ctor, X0
+	008 Move [X20+24], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void Execute(AnimalCompany.AppState state)
+
+Disassembly:
+	0x01D4DE1C ADD X2, X31, 0x58
+	0x01D4DE20 BL 0x2609E34
+	0x01D4DE24 TBZ X0, 0x0, 0x1D4DD04
+	0x01D4DE28 LDR X8, [X31 + 0x58]
+	0x01D4DE2C CBZ X8, 0x1D4E03C
+	0x01D4DE30 LDR X8, [X8 + 0x58]
+	0x01D4DE34 CBZ X8, 0x1D4E034
+	0x01D4DE38 LDR X9, [X20 + 0x58]
+	0x01D4DE3C CBZ X9, 0x1D4E038
+	0x01D4DE40 LDR W8, [X8 + 0x4C]
+	0x01D4DE44 LDR W9, [X9 + 0x4C]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {13}
+	004 Move X8, [X1+184]
+	005 Compare X8, 0
+	006 JumpIfEqual {13}
+	007 Move X8, [X8+136]
+	008 Compare X8, 0
+	009 JumpIfEqual {13}
+	010 Move X1, [X0+24]
+	011 Move X0, X8
+	012 Move X30, [X31+16]
+	013 Call 0x1C17F20
+

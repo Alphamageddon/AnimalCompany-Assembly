@@ -1,0 +1,747 @@
+Type: UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+
+Method: System.Int32 get_version()
+
+Disassembly:
+	0x03A831B0 LDR X0, [X8]
+	0x03A831B4 MOVZ W10, 0x1F4
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: System.Boolean get_usePipelineSettings()
+
+Disassembly:
+	0x03A831B8 CSEL W22, W10, W9, EQ
+	0x03A831BC LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move W0, [X0+36]
+	002 Return X0
+
+Method: System.Void set_usePipelineSettings(System.Boolean value)
+
+Disassembly:
+	0x03A831C0 CBNZ W8, 0x3A831C8
+	0x03A831C4 BL 0x1C16DFC
+	0x03A831C8 ADRP X25, 0x6D3000
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+36], W8
+	003 Return 
+
+Method: UnityEngine.Light get_light()
+
+Disassembly:
+	0x03A831CC ADRP X28, 0x6D4000
+	0x03A831D0 LDR X25, [X25 + 0x4E0]
+	0x03A831D4 LDR X28, [X28 + 0x178]
+	0x03A831D8 MOV X0, X31
+	0x03A831DC BL 0x3A71E5C
+	0x03A831E0 TBZ X0, 0x0, 0x3A831F4
+	0x03A831E4 MOV X0, X31
+	0x03A831E8 BL 0x3C3BE8C
+	0x03A831EC AND W26, W0, 0x1
+	0x03A831F0 B 0x3A831F8
+	0x03A831F4 MOV W26, W31
+	0x03A831F8 ADRP X8, 0x6D3000
+	0x03A831FC LDR X8, [X8 + 0xA88]
+	0x03A83200 CMP W24, 0x1
+	0x03A83204 CSET W27, EQ
+	0x03A83208 LDR X0, [X8]
+	0x03A8320C BL 0x1C16F10
+	0x03A83210 AND W5, W26, W27, 0x0
+	0x03A83214 MOVZ W3, 0x1
+	0x03A83218 MOV W1, W22
+	0x03A8321C MOV X2, X23
+	0x03A83220 MOV W4, W31
+	0x03A83224 MOV X6, X31
+	0x03A83228 MOV X24, X0
+	0x03A8322C BL 0x3AAB90C
+	0x03A83230 STR X24, [X19 + 0x218]
+	0x03A83234 LDR X0, [X25]
+	0x03A83238 LDR X23, [X19 + 0x338]
+	0x03A8323C LDR X24, [X19 + 0x340]
+	0x03A83240 BL 0x1C16F10
+	0x03A83244 ORR W1, W22, 0x1
+	0x03A83248 MOV X2, X23
+	0x03A8324C MOV X3, X24
+	0x03A83250 MOV X4, X31
+	0x03A83254 MOV X25, X0
+	0x03A83258 BL 0x3A5DC2C
+	0x03A8325C STR X25, [X19 + 0x1C8]
+	0x03A83260 LDR X0, [X28]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, 0x960000
+	007 Move X22, 0x671000
+	008 Move W8, [X20+819]
+	009 Move X22, [X22+1432]
+	010 Move X19, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {23}
+	015 Move X0, 0x6D5000
+	016 Move X0, [X0+304]
+	017 Call 0x1C17CF4
+	018 Move X0, 0x671000
+	019 Move X0, [X0+1432]
+	020 Call 0x1C17CF4
+	021 Move W8, 1
+	022 Move [X20+819], W8
+	023 Move X20, X19
+	024 Add X20, X20, 40
+	025 Move X21, [X20]
+	026 Move X0, [X22]
+	027 Move W8, [X0+224]
+	028 Compare W8, 0
+	029 JumpIfNotEqual {31}
+	030 Call 0x1C17DFC
+	031 Move X0, X21
+	032 Move X1, X31
+	033 Call Object.op_Implicit, X0
+	034 Move TEMP, X0
+	035 And TEMP, TEMP, 1
+	036 Compare TEMP, 1
+	037 JumpIfEqual {44}
+	038 Move X8, 0x6D5000
+	039 Move X8, [X8+304]
+	040 Move X0, X19
+	041 Move X1, X20
+	042 Move X2, [X8]
+	043 Call 0x21A5990, X0, X1
+	044 Move X0, [X20]
+	045 Move X20, [X31+32]
+	046 Move X19, [X31+40]
+	047 Move X22, [X31+16]
+	048 Move X21, [X31+24]
+	049 Move X30, [X31+48]
+	050 Return X0
+
+Method: System.Int32 get_additionalLightsShadowResolutionTier()
+
+Disassembly:
+	0x03A83264 BL 0x1C16F10
+	0x03A83268 MOVZ W1, 0x15E
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: UnityEngine.Rendering.Universal.LightLayerEnum get_lightLayerMask()
+
+Disassembly:
+	0x03A8326C MOV X2, X31
+	0x03A83270 MOV X22, X0
+
+ISIL:
+	001 Move W0, [X0+52]
+	002 Return X0
+
+Method: System.Void set_lightLayerMask(UnityEngine.Rendering.Universal.LightLayerEnum value)
+
+Disassembly:
+	0x03A83274 BL 0x3A5C110
+	0x03A83278 STR X22, [X19 + 0x210]
+
+ISIL:
+	001 Move [X0+52], W1
+	002 Return 
+
+Method: System.UInt32 get_renderingLayers()
+
+Disassembly:
+	0x03A8327C ADRP X8, 0x6D4000
+	0x03A83280 LDR X22, [X19 + 0x328]
+
+ISIL:
+	001 Move W0, [X0+56]
+	002 Return X0
+
+Method: System.Void set_renderingLayers(System.UInt32 value)
+
+Disassembly:
+	0x03A83284 LDR X23, [X19 + 0x310]
+	0x03A83288 LDR X8, [X8 + 0x140]
+	0x03A8328C LDR X0, [X8]
+	0x03A83290 BL 0x1C16F10
+	0x03A83294 MOVZ W1, 0x190
+	0x03A83298 MOV X2, X22
+
+ISIL:
+	001 Move W8, [X0+56]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 Return 
+	004 Move [X0+56], W1
+
+Method: System.Boolean get_customShadowLayers()
+
+Disassembly:
+	0x03A83344 STR X31, [X31 + 0x8]
+	0x03A83348 STR W26, [X31]
+
+ISIL:
+	001 Move W0, [X0+60]
+	002 Return X0
+
+Method: System.Void set_customShadowLayers(System.Boolean value)
+
+Disassembly:
+	0x03A8334C BL 0x3AAEE8C
+	0x03A83350 STR X25, [X19 + 0x230]
+	0x03A83354 ADRP X8, 0x6D4000
+	0x03A83358 LDR X8, [X8 + 0x198]
+	0x03A8335C LDR X0, [X8]
+	0x03A83360 BL 0x1C16F10
+	0x03A83364 MOVZ W1, 0x226
+
+ISIL:
+	001 Move W9, [X0+60]
+	002 And W8, W1, 1
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Return 
+	005 Move [X0+60], W8
+	006 Call UniversalAdditionalLightData.SyncLightAndShadowLayers, X0
+	007 Return 
+
+Method: UnityEngine.Rendering.Universal.LightLayerEnum get_shadowLayerMask()
+
+Disassembly:
+	0x03A83368 MOV X2, X31
+	0x03A8336C MOV X21, X0
+
+ISIL:
+	001 Move W0, [X0+64]
+	002 Return X0
+
+Method: System.Void set_shadowLayerMask(UnityEngine.Rendering.Universal.LightLayerEnum value)
+
+Disassembly:
+	0x03A83370 BL 0x3A5D80C
+	0x03A83374 STR X21, [X19 + 0x238]
+
+ISIL:
+	001 Move [X0+64], W1
+	002 Return 
+
+Method: System.UInt32 get_shadowRenderingLayers()
+
+Disassembly:
+	0x03A83378 ADRP X22, 0x6D1000
+	0x03A8337C LDR X22, [X22 + 0x8D0]
+
+ISIL:
+	001 Move W0, [X0+68]
+	002 Return X0
+
+Method: System.Void set_shadowRenderingLayers(System.UInt32 value)
+
+Disassembly:
+	0x03A83380 LDR X0, [X22]
+	0x03A83384 BL 0x1C16F10
+	0x03A83388 MOVZ W1, 0x226
+	0x03A8338C MOVZ W2, 0x1
+	0x03A83390 MOV X3, X31
+	0x03A83394 MOV X21, X0
+
+ISIL:
+	001 Move W8, [X0+68]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 Return 
+	004 Move [X0+68], W1
+	005 Call UniversalAdditionalLightData.SyncLightAndShadowLayers, X0
+	006 Return 
+
+Method: UnityEngine.Vector2 get_lightCookieSize()
+
+Disassembly:
+	0x03A83398 BL 0x3A5B21C
+	0x03A8339C STR X21, [X19 + 0x260]
+
+ISIL:
+	001 Move S0, [X0+72]
+	002 Move S1, [X0+76]
+	003 Return X0
+
+Method: System.Void set_lightCookieSize(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x03A833A0 LDR X0, [X22]
+	0x03A833A4 BL 0x1C16F10
+
+ISIL:
+	001 Move [X0+72], S0
+	002 Move [X0+80], S1
+	003 Return 
+
+Method: UnityEngine.Vector2 get_lightCookieOffset()
+
+Disassembly:
+	0x03A833A8 MOVZ W1, 0x3EA
+	0x03A833AC MOV W2, W31
+
+ISIL:
+	001 Move S0, [X0+80]
+	002 Move S1, [X0+84]
+	003 Return X0
+
+Method: System.Void set_lightCookieOffset(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x03A833B0 MOV X3, X31
+	0x03A833B4 MOV X21, X0
+
+ISIL:
+	001 Move [X0+80], S0
+	002 Move [X0+88], S1
+	003 Return 
+
+Method: UnityEngine.Rendering.Universal.SoftShadowQuality get_softShadowQuality()
+
+Disassembly:
+	0x03A833B8 BL 0x3A5B21C
+	0x03A833BC MOV X0, X31
+
+ISIL:
+	001 Move W0, [X0+88]
+	002 Return X0
+
+Method: System.Void set_softShadowQuality(UnityEngine.Rendering.Universal.SoftShadowQuality value)
+
+Disassembly:
+	0x03A833C0 STR X21, [X19 + 0x268]
+	0x03A833C4 BL 0x3A67808
+
+ISIL:
+	001 Move [X0+88], W1
+	002 Return 
+
+Method: System.Void OnBeforeSerialize()
+
+Disassembly:
+	0x03A833C8 STR X1, [X31 + 0x88]
+
+ISIL:
+	001 Return 
+
+Method: System.Void OnAfterDeserialize()
+
+Disassembly:
+	0x03A833CC ADRP X22, 0x699000
+	0x03A833D0 LDR X8, [X19 + 0x310]
+	0x03A833D4 LDR X22, [X22 + 0x8A8]
+	0x03A833D8 MOVZ W9, 0x4A
+	0x03A833DC STR W9, [X31 + 0x88]
+	0x03A833E0 STR X8, [X31 + 0x80]
+	0x03A833E4 LDR X0, [X22]
+	0x03A833E8 LDR W8, [X0 + 0xE0]
+	0x03A833EC CBNZ W8, 0x3A833F4
+	0x03A833F0 BL 0x1C16DFC
+	0x03A833F4 MOV X0, X31
+	0x03A833F8 BL 0x3A8AB60
+	0x03A833FC ADRP X8, 0x670000
+	0x03A83400 LDR X8, [X8 + 0x598]
+	0x03A83404 MOV X21, X0
+	0x03A83408 LDR X8, [X8]
+	0x03A8340C LDR W9, [X8 + 0xE0]
+	0x03A83410 CBNZ W9, 0x3A8341C
+	0x03A83414 MOV X0, X8
+	0x03A83418 BL 0x1C16DFC
+	0x03A8341C MOV X0, X21
+	0x03A83420 MOV X1, X31
+	0x03A83424 BL 0x3C38948
+	0x03A83428 TBZ X0, 0x0, 0x3A83464
+	0x03A8342C CBZ X21, 0x3A83614
+	0x03A83430 LDR X0, [X22]
+	0x03A83434 LDRB W22, [X21 + 0x55]
+	0x03A83438 LDR W21, [X21 + 0x58]
+	0x03A8343C LDR W8, [X0 + 0xE0]
+	0x03A83440 CBNZ W8, 0x3A83448
+	0x03A83444 BL 0x1C16DFC
+	0x03A83448 CMP W22, 0x0
+	0x03A8344C CSET W0, NE
+	0x03A83450 MOV W1, W21
+	0x03A83454 MOV W2, W31
+	0x03A83458 MOV X3, X31
+	0x03A8345C BL 0x3A9125C
+	0x03A83460 STR W0, [X31 + 0x88]
+	0x03A83464 ADRP X21, 0x6D3000
+	0x03A83468 ADRP X22, 0x6D1000
+	0x03A8346C ADRP X25, 0x6D1000
+	0x03A83470 ADRP X24, 0x6D1000
+	0x03A83474 ADRP X23, 0x6D1000
+	0x03A83478 LDR X21, [X21 + 0x3A0]
+	0x03A8347C LDR X22, [X22 + 0x8D8]
+	0x03A83480 LDR X25, [X25 + 0x8E8]
+	0x03A83484 LDR X24, [X24 + 0x900]
+	0x03A83488 LDR X23, [X23 + 0x8F0]
+	0x03A8348C LDR X1, [X20 + 0x40]
+	0x03A83490 MOVI V0.2D, 0x0
+	0x03A83494 ADD X0, X31, 0x30
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x960000
+	006 Move W8, [X20+820]
+	007 Move X19, X0
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x671000
+	013 Move X0, [X0+1448]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+820], W8
+	017 Move W8, [X19+32]
+	018 NotImplemented "Instruction CMP not yet implemented."
+	019 NotImplemented "Instruction CMP not yet implemented."
+	020 Move W8, [X19+52]
+	021 Move W9, [X19+64]
+	022 Move W10, 2
+	023 Move [X19+32], W10
+	024 Move [X19+56], W8
+	025 Move [X19+68], W9
+	026 Move X8, 0x671000
+	027 Move X8, [X8+1448]
+	028 Move W20, [X19+88]
+	029 Move X0, [X8]
+	030 Move W8, [X0+224]
+	031 Compare W8, 0
+	032 JumpIfNotEqual {34}
+	033 Call 0x1C17DFC
+	034 Move X21, 0x95B000
+	035 Move W8, [X21+6]
+	036 Add W20, W20, 1
+	037 Compare W8, 0
+	038 JumpIfNotEqual {47}
+	039 Move X0, 0x6A8000
+	040 Move X0, [X0+3840]
+	041 Call 0x1C17CF4
+	042 Move X0, 0x671000
+	043 Move X0, [X0+1448]
+	044 Call 0x1C17CF4
+	045 Move W8, 1
+	046 Move [X21+6], W8
+	047 NotImplemented "Instruction CMP not yet implemented."
+	048 Move W8, 3
+	049 NotImplemented "Instruction CSEL not yet implemented."
+	050 NotImplemented "Instruction BIC not yet implemented."
+	051 Move [X19+88], W9
+	052 Move [X19+32], W8
+	053 Move X20, [X31+16]
+	054 Move X19, [X31+24]
+	055 Move X30, [X31+32]
+	056 Move X21, [X31+40]
+	057 Return 
+
+Method: System.Void SyncLightAndShadowLayers()
+
+Disassembly:
+	0x03A8329C MOV X3, X23
+	0x03A832A0 MOV X4, X31
+	0x03A832A4 MOV X24, X0
+	0x03A832A8 BL 0x3AAA588
+	0x03A832AC STR X24, [X19 + 0x220]
+	0x03A832B0 ADRP X8, 0x6D3000
+	0x03A832B4 LDRB W22, [X20 + 0x70]
+	0x03A832B8 LDR X8, [X8 + 0x8C0]
+	0x03A832BC LDR X0, [X8]
+	0x03A832C0 BL 0x1C16F10
+	0x03A832C4 MOVZ W1, 0x1C2
+	0x03A832C8 MOV W2, W22
+	0x03A832CC MOV X3, X31
+	0x03A832D0 MOV X23, X0
+	0x03A832D4 BL 0x3A66F7C
+	0x03A832D8 STR X23, [X19 + 0x228]
+	0x03A832DC ADRP X8, 0x699000
+	0x03A832E0 LDR X8, [X8 + 0xD28]
+	0x03A832E4 LDR X0, [X8]
+	0x03A832E8 LDR W8, [X0 + 0xE0]
+	0x03A832EC CBNZ W8, 0x3A832F4
+	0x03A832F0 BL 0x1C16DFC
+	0x03A832F4 MOV X0, X31
+	0x03A832F8 BL 0x3C560B4
+	0x03A832FC ADRP X8, 0x6D4000
+	0x03A83300 LDR W22, [X20 + 0x60]
+	0x03A83304 LDR X23, [X21]
+	0x03A83308 LDR W21, [X21 + 0x8]
+	0x03A8330C LDR W26, [X29 + 0x14]
+	0x03A83310 LDR X8, [X8 + 0x168]
+	0x03A83314 MOV X24, X0
+	0x03A83318 LDR X8, [X8]
+	0x03A8331C MOV X0, X8
+	0x03A83320 BL 0x1C16F10
+	0x03A83324 MOVZ W1, 0xB
+	0x03A83328 MOVZ W3, 0x1C2
+	0x03A8332C MOV W2, W31
+	0x03A83330 MOV X4, X24
+	0x03A83334 MOV X5, X22
+	0x03A83338 MOV X6, X23
+	0x03A8333C MOV X7, X21
+	0x03A83340 MOV X25, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x960000
+	006 Move X20, 0x671000
+	007 Move W8, [X21+821]
+	008 Move X20, [X20+1432]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x671000
+	015 Move X0, [X0+1432]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+821], W8
+	019 Move X0, X19
+	020 Call UniversalAdditionalLightData.get_light, X0
+	021 Move X8, [X20]
+	022 Move X20, X0
+	023 Move W9, [X8+224]
+	024 Compare W9, 0
+	025 JumpIfNotEqual {28}
+	026 Move X0, X8
+	027 Call 0x1C17DFC
+	028 Move X0, X20
+	029 Move X1, X31
+	030 Call Object.op_Implicit, X0
+	031 Move TEMP, X0
+	032 And TEMP, TEMP, 1
+	033 Compare TEMP, 1
+	034 JumpIfNotEqual {52}
+	035 Move X0, X19
+	036 Call UniversalAdditionalLightData.get_light, X0
+	037 Compare X0, 0
+	038 JumpIfEqual {57}
+	039 Move W8, [X19+60]
+	040 Move W9, 68
+	041 Move X2, X31
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 Move W8, 56
+	044 NotImplemented "Instruction CSEL not yet implemented."
+	045 Move W1, [X19]
+	046 Move X20, [X31+16]
+	047 Move X19, [X31+24]
+	048 Move X30, [X31+32]
+	049 Move X21, [X31+40]
+	050 Call Light.set_renderingLayerMask, X0, X1
+	051 Return 
+	052 Move X20, [X31+16]
+	053 Move X19, [X31+24]
+	054 Move X30, [X31+32]
+	055 Move X21, [X31+40]
+	056 Return 
+	057 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03A83498 ADD X2, X31, 0x80
+	0x03A8349C MOV X3, X31
+	0x03A834A0 STP V0, V0, [X31 + 0x50]
+	0x03A834A4 STP V0, V0, [X31 + 0x30]
+	0x03A834A8 BL 0x3A6789C
+	0x03A834AC LDP V0, V1, [X31 + 0x50]
+	0x03A834B0 LDP V2, V3, [X31 + 0x30]
+	0x03A834B4 ADD X8, X19, 0x348
+	0x03A834B8 STP V0, V1, [X8 + 0x20]
+	0x03A834BC STP V2, V3, [X8]
+	0x03A834C0 LDR X0, [X21]
+	0x03A834C4 BL 0x1C16F10
+	0x03A834C8 MOVZ W1, 0x3E8
+	0x03A834CC MOV X2, X31
+	0x03A834D0 MOV X20, X0
+	0x03A834D4 BL 0x3A5AE04
+	0x03A834D8 STR X20, [X19 + 0x248]
+	0x03A834DC LDR X0, [X22]
+	0x03A834E0 LDR X20, [X19 + 0x310]
+	0x03A834E4 LDR X21, [X19 + 0x318]
+	0x03A834E8 BL 0x1C16F10
+	0x03A834EC MOVZ W1, 0x3E9
+	0x03A834F0 MOV X2, X20
+	0x03A834F4 MOV X3, X21
+	0x03A834F8 MOV X4, X31
+	0x03A834FC MOV X22, X0
+	0x03A83500 BL 0x3AB04E8
+	0x03A83504 STR X22, [X19 + 0x240]
+	0x03A83508 LDR X0, [X25]
+	0x03A8350C BL 0x1C16F10
+	0x03A83510 LDR X1, [X24]
+	0x03A83514 MOV X2, X31
+	0x03A83518 MOV X20, X0
+	0x03A8351C BL 0x3AB58B4
+	0x03A83520 STR X20, [X19 + 0x270]
+	0x03A83524 LDR X0, [X23]
+	0x03A83528 BL 0x1C16F10
+	0x03A8352C MOV X1, X31
+	0x03A83530 MOV X20, X0
+	0x03A83534 BL 0x3A532F8
+	0x03A83538 ADRP X21, 0x6D1000
+	0x03A8353C LDR X21, [X21 + 0x8C8]
+	0x03A83540 LDR X0, [X21]
+	0x03A83544 LDR W8, [X0 + 0xE0]
+	0x03A83548 CBNZ W8, 0x3A83550
+	0x03A8354C BL 0x1C16DFC
+	0x03A83550 LDR W8, [X19 + 0x2E0]
+	0x03A83554 STR X20, [X19 + 0xE8]
+	0x03A83558 CMP W8, 0x1
+	0x03A8355C B.NE 0x3A835AC
+	0x03A83560 LDR X0, [X21]
+	0x03A83564 LDR W8, [X0 + 0xE0]
+	0x03A83568 CBNZ W8, 0x3A83574
+	0x03A8356C BL 0x1C16DFC
+	0x03A83570 LDR X20, [X19 + 0xE8]
+	0x03A83574 CBZ X20, 0x3A83614
+	0x03A83578 STRB W31, [X20 + 0x11]
+	0x03A8357C ADRP X8, 0x6D2000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x960000
+	006 Move X20, 0x6D2000
+	007 Move W8, [X21+822]
+	008 Move X20, [X20+3120]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x6D2000
+	015 Move X0, [X0+3120]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+822], W8
+	019 Move W8, 3
+	020 Move W9, 1
+	021 Move [X19+32], W8
+	022 Move [X19+36], W9
+	023 Move X0, [X20]
+	024 Move W8, [X0+224]
+	025 Compare W8, 0
+	026 JumpIfNotEqual {29}
+	027 Call 0x1C17DFC
+	028 Move X0, [X20]
+	029 Move X8, [X0+184]
+	030 NotImplemented "Instruction MOVI not yet implemented."
+	031 Move X20, 0x95F000
+	032 Move W8, [X8+16]
+	033 Move [X19+52], D0
+	034 Move [X19+64], D0
+	035 Move [X19+48], W8
+	036 Move W8, [X20+2632]
+	037 Compare W8, 0
+	038 JumpIfNotEqual {44}
+	039 Move X0, 0x679000
+	040 Move X0, [X0+3848]
+	041 Call 0x1C17CF4
+	042 Move W8, 1
+	043 Move [X20+2632], W8
+	044 Move X20, 0x679000
+	045 Move X20, [X20+3848]
+	046 Move X21, 0x957000
+	047 Move X8, [X20]
+	048 Move X9, [X8+184]
+	049 Move V0, [X9+8]
+	050 Move [X19+72], D0
+	051 Move W9, [X21+1935]
+	052 Compare W9, 0
+	053 JumpIfNotEqual {59}
+	054 Move X0, X20
+	055 Call 0x1C17CF4
+	056 Move X8, [X20]
+	057 Move W9, 1
+	058 Move [X21+1935], W9
+	059 Move X8, [X8+184]
+	060 Move X0, X19
+	061 Move X1, X31
+	062 Move V0, [X8]
+	063 Move [X19+80], D0
+	064 Move X20, [X31+16]
+	065 Move X19, [X31+24]
+	066 Move X30, [X31+32]
+	067 Move X21, [X31+40]
+	068 Call MonoBehaviour..ctor, X0
+	069 Return 
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x03A83580 LDR X8, [X8 + 0xCC0]
+	0x03A83584 MOVZ W1, 0x3
+	0x03A83588 LDR X0, [X8]
+	0x03A8358C BL 0x1C16D6C
+	0x03A83590 ADRP X8, 0x6D4000
+	0x03A83594 LDR X8, [X8 + 0x1A8]
+	0x03A83598 MOV X2, X31
+	0x03A8359C MOV X20, X0
+	0x03A835A0 LDR X1, [X8]
+	0x03A835A4 BL 0x32C5BD8
+	0x03A835A8 STR X20, [X19 + 0xF0]
+	0x03A835AC ADRP X20, 0x6CF000
+	0x03A835B0 LDR X20, [X20 + 0xD98]
+	0x03A835B4 LDR X0, [X20]
+	0x03A835B8 LDR W8, [X0 + 0xE0]
+	0x03A835BC CBNZ W8, 0x3A835C8
+	0x03A835C0 BL 0x1C16DFC
+	0x03A835C4 LDR X0, [X20]
+	0x03A835C8 ADRP X9, 0xFFFFFFFFFD06A000
+	0x03A835CC LDR X8, [X0 + 0xB8]
+	0x03A835D0 LDR V0, [X9 + 0xEC0]
+	0x03A835D4 MOV X0, X31
+	0x03A835D8 STUR D0, [X8 + 0x24]
+	0x03A835DC BL 0x39CB084
+	0x03A835E0 MOVZ W0, 0x1D
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x960000
+	005 Move X20, 0x6D2000
+	006 Move W8, [X19+823]
+	007 Move X20, [X20+3120]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x6D2000
+	013 Move X0, [X0+3120]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+823], W8
+	017 Move X8, [X20]
+	018 Move X9, -49901568
+	019 Move X10, -49893376
+	020 Move V0, [X9+87]
+	021 Move X8, [X8+184]
+	022 Move V1, [X10+4032]
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move W9, 128
+	026 Move [X8], V0
+	027 Move [X8+16], D1
+	028 Move [X8+24], W9
+	029 Move X30, [X31+32]
+	030 Return 
+

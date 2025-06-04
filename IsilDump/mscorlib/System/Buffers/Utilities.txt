@@ -1,0 +1,92 @@
+Type: System.Buffers.Utilities
+
+Method: System.Int32 SelectBucketIndex(System.Int32 bufferSize)
+
+Disassembly:
+	0x0335F578 BL 0x330E16C
+	0x0335F57C ADRP X0, 0xDCB000
+	0x0335F580 LDR X0, [X0 + 0x938]
+	0x0335F584 BL 0x1C16D08
+	0x0335F588 MOV X1, X0
+	0x0335F58C MOV X0, X19
+	0x0335F590 BL 0x1C16DEC
+	0x0335F594 SUB X31, X31, 0x60
+	0x0335F598 STP X30, X27, [X31 + 0x10]
+	0x0335F59C STP X26, X25, [X31 + 0x20]
+	0x0335F5A0 STP X24, X23, [X31 + 0x30]
+	0x0335F5A4 STP X22, X21, [X31 + 0x40]
+	0x0335F5A8 STP X20, X19, [X31 + 0x50]
+	0x0335F5AC ADRP X27, 0x107D000
+	0x0335F5B0 LDRB W8, [X27 + 0xE30]
+	0x0335F5B4 MOV W19, W7
+	0x0335F5B8 MOV W21, W6
+	0x0335F5BC MOV W22, W5
+	0x0335F5C0 MOV W23, W4
+	0x0335F5C4 MOV W24, W3
+	0x0335F5C8 MOV W25, W2
+	0x0335F5CC MOV W26, W1
+	0x0335F5D0 MOV X20, X0
+	0x0335F5D4 TBNZ X8, 0x0, 0x335F5EC
+	0x0335F5D8 ADRP X0, 0xD95000
+	0x0335F5DC LDR X0, [X0 + 0x9F0]
+	0x0335F5E0 BL 0x1C16CF4
+	0x0335F5E4 MOVZ W8, 0x1
+	0x0335F5E8 STRB W8, [X27 + 0xE30]
+	0x0335F5EC CMP W19, 0x3E8
+	0x0335F5F0 B.CS 0x335F674
+
+ISIL:
+	001 Subtract W8, W0, 1
+	002 Move W12, W8
+	003 ShiftRight W12, 20
+	004 And W12, W12, 0x7FFFFFFF
+	005 Move W9, 4
+	006 Move W10, 20
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSEL not yet implemented."
+	009 NotImplemented "Instruction LSRV not yet implemented."
+	010 Move W11, 8
+	011 NotImplemented "Instruction CSET not yet implemented."
+	012 Move W9, W8
+	013 ShiftRight W9, 8
+	014 And W9, W9, 0x7FFFFFFF
+	015 NotImplemented "Instruction CMP not yet implemented."
+	016 Move W10, W12
+	017 ShiftRight W10, 28
+	018 And W10, W10, 0x7FFFFFF
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 NotImplemented "Instruction CSEL not yet implemented."
+	021 NotImplemented "Instruction CSEL not yet implemented."
+	022 Move W9, W8
+	023 ShiftRight W9, 4
+	024 And W9, W9, 0x7FFFFFFF
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Or W11, W10, 4
+	027 NotImplemented "Instruction CSEL not yet implemented."
+	028 NotImplemented "Instruction CSEL not yet implemented."
+	029 Move W9, W8
+	030 ShiftRight W9, 2
+	031 And W9, W9, 0x7FFFFFFF
+	032 NotImplemented "Instruction CMP not yet implemented."
+	033 Or W11, W10, 2
+	034 NotImplemented "Instruction CSEL not yet implemented."
+	035 NotImplemented "Instruction CSEL not yet implemented."
+	036 NotImplemented "Instruction CMP not yet implemented."
+	037 NotImplemented "Instruction CSET not yet implemented."
+	038 NotImplemented "Instruction CINC not yet implemented."
+	039 NotImplemented "Instruction LSRV not yet implemented."
+	040 Add W0, W10, W8
+	041 Return X0
+
+Method: System.Int32 GetMaxSizeForBucket(System.Int32 binIndex)
+
+Disassembly:
+	0x0335F5F4 ADRP X8, 0xD95000
+	0x0335F5F8 LDR X8, [X8 + 0x9F0]
+	0x0335F5FC LDR X0, [X8]
+
+ISIL:
+	001 Move W8, 16
+	002 NotImplemented "Instruction LSLV not yet implemented."
+	003 Return X0
+

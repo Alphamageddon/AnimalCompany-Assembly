@@ -1,0 +1,16 @@
+Type: System.Xml.Res
+
+Method: System.String GetString(System.String name, System.Object[] args)
+
+Disassembly:
+	0x0361798C LDR W2, [X8 + 0x34]
+	0x03617990 LDRB W3, [X20 + 0x8]
+	0x03617994 MOV X1, X21
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {5}
+	003 Call SR.GetString, X0, X1
+	004 Return X0
+	005 Return X0
+

@@ -1,0 +1,135 @@
+Type: UnityEngine.XR.Interaction.Toolkit.InteractorRegisteredEventArgs
+
+Method: UnityEngine.XR.Interaction.Toolkit.IXRInteractor get_interactorObject()
+
+Disassembly:
+	0x03B6CF14 ADRP X0, 0x5EF000
+	0x03B6CF18 LDR X0, [X0 + 0x600]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_interactorObject(UnityEngine.XR.Interaction.Toolkit.IXRInteractor value)
+
+Disassembly:
+	0x03B6CF1C BL 0x1C16CF4
+	0x03B6CF20 ADRP X0, 0x5EF000
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.IXRInteractionGroup get_containingGroupObject()
+
+Disassembly:
+	0x03B6CF24 LDR X0, [X0 + 0x608]
+	0x03B6CF28 BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_containingGroupObject(UnityEngine.XR.Interaction.Toolkit.IXRInteractionGroup value)
+
+Disassembly:
+	0x03B6CF2C ADRP X0, 0x5EF000
+	0x03B6CF30 LDR X0, [X0 + 0x610]
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor get_interactor()
+
+Disassembly:
+	0x03B6CF34 BL 0x1C16CF4
+	0x03B6CF38 ADRP X0, 0x5EF000
+	0x03B6CF3C LDR X0, [X0 + 0x618]
+	0x03B6CF40 BL 0x1C16CF4
+	0x03B6CF44 ADRP X0, 0x5EF000
+	0x03B6CF48 LDR X0, [X0 + 0x620]
+	0x03B6CF4C BL 0x1C16CF4
+	0x03B6CF50 ADRP X0, 0x5EF000
+	0x03B6CF54 LDR X0, [X0 + 0x628]
+	0x03B6CF58 BL 0x1C16CF4
+	0x03B6CF5C ADRP X0, 0x5EF000
+	0x03B6CF60 LDR X0, [X0 + 0x630]
+	0x03B6CF64 BL 0x1C16CF4
+	0x03B6CF68 ADRP X0, 0x5EF000
+	0x03B6CF6C LDR X0, [X0 + 0x638]
+	0x03B6CF70 BL 0x1C16CF4
+	0x03B6CF74 ADRP X0, 0x5EF000
+	0x03B6CF78 LDR X0, [X0 + 0x640]
+	0x03B6CF7C BL 0x1C16CF4
+	0x03B6CF80 ADRP X0, 0x5EF000
+	0x03B6CF84 LDR X0, [X0 + 0x128]
+	0x03B6CF88 BL 0x1C16CF4
+	0x03B6CF8C ADRP X0, 0x5EF000
+	0x03B6CF90 LDR X0, [X0 + 0x648]
+	0x03B6CF94 BL 0x1C16CF4
+	0x03B6CF98 ADRP X0, 0x5EF000
+	0x03B6CF9C LDR X0, [X0 + 0x650]
+	0x03B6CFA0 BL 0x1C16CF4
+	0x03B6CFA4 ADRP X0, 0x5EE000
+	0x03B6CFA8 LDR X0, [X0 + 0xE20]
+	0x03B6CFAC BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x877000
+	005 Move W8, [X20+2561]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x5EF000
+	012 Move X0, [X0+872]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2561], W8
+	016 Move X8, [X19+24]
+	017 Compare X8, 0
+	018 JumpIfEqual {26}
+	019 Move X9, 0x5EF000
+	020 Move X9, [X9+872]
+	021 Move X10, [X8]
+	022 Move X9, [X9]
+	023 Move W12, [X10+304]
+	024 Move W11, [X9+304]
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move X0, X31
+	027 Move X10, [X10+200]
+	028 Add X10, X10, X11
+	029 NotImplemented "Instruction LDUR not yet implemented."
+	030 NotImplemented "Instruction CMP not yet implemented."
+	031 NotImplemented "Instruction CSEL not yet implemented."
+	032 Move X20, [X31+16]
+	033 Move X19, [X31+24]
+	034 Move X30, [X31+32]
+	035 Return X0
+
+Method: System.Void set_interactor(UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor value)
+
+Disassembly:
+	0x03B6CFB0 MOVZ W8, 0x1
+	0x03B6CFB4 STRB W8, [X20 + 0xA6D]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03B6CFB8 STP X31, X31, [X31 + 0x40]
+	0x03B6CFBC STR X31, [X31 + 0x50]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

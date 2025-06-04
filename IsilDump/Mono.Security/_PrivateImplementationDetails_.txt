@@ -1,0 +1,72 @@
+Type: <PrivateImplementationDetails>
+
+Method: System.UInt32 ComputeStringHash(System.String s)
+
+Disassembly:
+	0x03200BAC MOV X0, X22
+	0x03200BB0 MOV X1, X31
+	0x03200BB4 BL 0x31E8E7C
+	0x03200BB8 MOV X1, X0
+	0x03200BBC MOV X0, X19
+	0x03200BC0 MOV X2, X31
+	0x03200BC4 BL 0x31E7ED0
+	0x03200BC8 MOV X0, X21
+	0x03200BCC MOV X1, X31
+	0x03200BD0 BL 0x31E8E7C
+	0x03200BD4 MOV X1, X0
+	0x03200BD8 MOV X0, X19
+	0x03200BDC MOV X2, X31
+	0x03200BE0 BL 0x31E7ED0
+	0x03200BE4 MOV X0, X20
+	0x03200BE8 MOV X1, X31
+	0x03200BEC BL 0x31E8E7C
+	0x03200BF0 MOV X1, X0
+	0x03200BF4 MOV X0, X19
+	0x03200BF8 MOV X2, X31
+	0x03200BFC BL 0x31E7ED0
+	0x03200C00 LDR X8, [X19]
+	0x03200C04 MOV X0, X19
+	0x03200C08 LDP X9, X1, [X8 + 0x178]
+	0x03200C0C BLR X9
+	0x03200C10 LDP X20, X19, [X31 + 0x90]
+	0x03200C14 LDP X22, X21, [X31 + 0x80]
+	0x03200C18 LDP X24, X23, [X31 + 0x70]
+	0x03200C1C LDP X26, X25, [X31 + 0x60]
+	0x03200C20 LDP X28, X27, [X31 + 0x50]
+	0x03200C24 LDP X29, X30, [X31 + 0x40]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Compare X0, 0
+	007 JumpIfEqual {26}
+	008 Move W8, [X0+16]
+	009 Move W20, 0x9DC5
+	010 Move X19, X0
+	011 NotImplemented "Instruction MOVK not yet implemented."
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 Move W22, 403
+	014 Move W21, W31
+	015 NotImplemented "Instruction MOVK not yet implemented."
+	016 Move X0, X19
+	017 Move W1, W21
+	018 Move X2, X31
+	019 Call String.get_Chars, X0, X1
+	020 Move W8, [X19+16]
+	021 And W9, W0, 0xFFFF
+	022 Xor W9, W20, W9
+	023 Add W21, W21, 1
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Multiply W20, W9, W22
+	026 Move W20, W31
+	027 Move W0, W20
+	028 Move X20, [X31+32]
+	029 Move X19, [X31+40]
+	030 Move X22, [X31+16]
+	031 Move X21, [X31+24]
+	032 Move X30, [X31+48]
+	033 Return X0
+

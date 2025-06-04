@@ -1,0 +1,30 @@
+Type: UnityEngine.MinAttribute
+
+Method: System.Void .ctor(System.Single min)
+
+Disassembly:
+	0x03C314C8 MOV X19, X0
+	0x03C314CC CBNZ X1, 0x3C314E4
+	0x03C314D0 ADRP X0, 0xFFFFFFFFFCEF2000
+	0x03C314D4 ADD X0, X0, 0x1AF
+	0x03C314D8 BL 0x1C16CB8
+	0x03C314DC MOV X1, X0
+	0x03C314E0 STR X0, [X20 + 0x280]
+	0x03C314E4 MOV X0, X19
+	0x03C314E8 LDP X20, X19, [X31 + 0x10]
+	0x03C314EC LDR X30, [X31], #0x20
+
+ISIL:
+	001 Move [X31-32], D8
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move X1, X31
+	005 Move V8, V0
+	006 Move X19, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X19+20], S8
+	009 Move X30, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move V8, [X31+32]
+	012 Return 
+

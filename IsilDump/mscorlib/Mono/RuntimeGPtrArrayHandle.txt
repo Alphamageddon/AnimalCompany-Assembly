@@ -1,0 +1,146 @@
+Type: Mono.RuntimeGPtrArrayHandle
+
+Method: System.Void .ctor(System.IntPtr ptr)
+
+Disassembly:
+	0x0320BE9C MOVK X22, 0x1
+	0x0320BEA0 LDR X8, [X0]
+	0x0320BEA4 LDP X9, X1, [X8 + 0x1B8]
+	0x0320BEA8 BLR X9
+	0x0320BEAC CMP W0, 0x20
+	0x0320BEB0 B.HI 0x320BEF0
+	0x0320BEB4 MOV W8, W0
+	0x0320BEB8 LSLV X8, X21, X8
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, X1
+	005 Move X1, X31
+	006 Call IntPtr.op_Explicit, X0
+	007 Move [X19], X0
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+
+Method: System.Int32 get_Length()
+
+Disassembly:
+	0x0320BEBC ANDS X31, X8, X22, 0x0
+	0x0320BEC0 B.EQ 0x320BEF0
+	0x0320BEC4 LDR X20, [X19 + 0x38]
+	0x0320BEC8 MOV X0, X19
+	0x0320BECC BL 0x320BF3C
+	0x0320BED0 CBZ X20, 0x320BF38
+	0x0320BED4 MOV W1, W0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {8}
+	005 Move W0, [X8+8]
+	006 Move X30, [X31+16]
+	007 Return X0
+	008 Call 0x1C17F20
+
+Method: System.IntPtr get_Item(System.Int32 i)
+
+Disassembly:
+	0x0320BED8 MOV X0, X20
+
+ISIL:
+No ISIL was generated
+Method: System.IntPtr Lookup(System.Int32 i)
+
+Disassembly:
+	0x0320BEDC MOV X2, X31
+	0x0320BEE0 BL 0x3233D30
+	0x0320BEE4 LDR X0, [X19 + 0x18]
+	0x0320BEE8 CBNZ X0, 0x320BEA0
+	0x0320BEEC B 0x320BF38
+	0x0320BEF0 LDR X0, [X19 + 0x18]
+	0x0320BEF4 CBZ X0, 0x320BF38
+	0x0320BEF8 LDR X8, [X0]
+	0x0320BEFC LDP X9, X1, [X8 + 0x1B8]
+	0x0320BF00 BLR X9
+	0x0320BF04 CMP W0, 0x3C
+	0x0320BF08 B.EQ 0x320BF28
+	0x0320BF0C LDR X0, [X19 + 0x18]
+	0x0320BF10 CBZ X0, 0x320BF38
+	0x0320BF14 LDR X8, [X0]
+	0x0320BF18 LDP X9, X1, [X8 + 0x1B8]
+	0x0320BF1C BLR X9
+	0x0320BF20 TBNZ X0, 0x1F, 0x320BF28
+	0x0320BF24 STRB W31, [X19 + 0x48]
+	0x0320BF28 LDP X20, X19, [X31 + 0x20]
+	0x0320BF2C LDP X22, X21, [X31 + 0x10]
+	0x0320BF30 LDR X30, [X31], #0x30
+	0x0320BF34 RET
+	0x0320BF38 BL 0x1C16F20
+	0x0320BF3C STP X30, X19, [X31 - 0x10]!
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move TEMP, X1
+	004 And TEMP, TEMP, -2147483648
+	005 Compare TEMP, -2147483648
+	006 JumpIfEqual {17}
+	007 Move X8, [X0]
+	008 Compare X8, 0
+	009 JumpIfEqual {30}
+	010 Move W9, [X8+8]
+	011 NotImplemented "Instruction CMP not yet implemented."
+	012 Move X8, [X8]
+	013 Move X0, [X8]
+	014 Move X30, [X31+16]
+	015 Move X19, [X31+24]
+	016 Return X0
+	017 Move X0, 0xEF3000
+	018 Move X0, [X0+3960]
+	019 Call 0x1C17D08
+	020 Call 0x1C17F10
+	021 Move X1, X31
+	022 Move X19, X0
+	023 Call IndexOutOfRangeException..ctor, X0
+	024 Move X0, 0xF17000
+	025 Move X0, [X0+2240]
+	026 Call 0x1C17D08
+	027 Move X1, X0
+	028 Move X0, X19
+	029 Call 0x1C17DEC
+	030 Call 0x1C17F20
+
+Method: System.Void GPtrArrayFree(Mono.RuntimeStructs/GPtrArray* value)
+
+Disassembly:
+	0x0320BF40 MOV X19, X0
+
+ISIL:
+	001 Call 0x1C17890
+	002 Return 
+
+Method: System.Void DestroyAndFree(ref Mono.RuntimeGPtrArrayHandle h)
+
+Disassembly:
+	0x0320BF44 LDR X0, [X0 + 0x18]
+	0x0320BF48 CBZ X0, 0x320BF94
+	0x0320BF4C LDR X8, [X0]
+	0x0320BF50 LDP X9, X1, [X8 + 0x1C8]
+	0x0320BF54 BLR X9
+	0x0320BF58 CMP W0, 0xA
+	0x0320BF5C B.EQ 0x320BF68
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0]
+	005 Call 0x1C17890
+	006 Move [X19], X31
+	007 Move X30, [X31+16]
+	008 Move X19, [X31+24]
+	009 Return 
+

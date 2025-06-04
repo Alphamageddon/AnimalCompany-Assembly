@@ -1,0 +1,43 @@
+Type: AnimalCompany.LeftRoomAction
+
+Method: System.Void Execute(AnimalCompany.AppState state)
+
+Disassembly:
+	0x01DBAFB4 LDR X0, [X25]
+	0x01DBAFB8 BL 0x1C16F10
+	0x01DBAFBC LDR X2, [X21]
+	0x01DBAFC0 MOV X1, X19
+	0x01DBAFC4 MOV X3, X31
+	0x01DBAFC8 MOV X20, X0
+	0x01DBAFCC BL 0x35C52F0
+	0x01DBAFD0 LDR X0, [X24]
+	0x01DBAFD4 MOVZ W1, 0x1
+	0x01DBAFD8 MOVZ W22, 0x1
+	0x01DBAFDC BL 0x1C16D6C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {13}
+	004 Move X0, [X1+224]
+	005 Compare X0, 0
+	006 JumpIfEqual {13}
+	007 Move X8, [X0]
+	008 Move W1, 1
+	009 Move X3, [X8+1000]
+	010 Move X2, [X8+1008]
+	011 Move X30, [X31+16]
+	012 CallNoReturn X3
+	013 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01DBAFE0 ADRP X26, 0x261E000
+	0x01DBAFE4 LDRB W8, [X26 + 0x787]
+
+ISIL:
+	001 Move X1, X31
+	002 Call BaseAction..ctor, X0
+	003 Return 
+

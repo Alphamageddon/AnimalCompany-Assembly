@@ -1,0 +1,85 @@
+Type: UnityEngine.Rendering.Universal.ScriptableRenderer/RTHandleRenderTargetIdentifierCompat
+
+Method: System.Boolean get_useRTHandle()
+
+Disassembly:
+	0x03A54358 STP X30, X19, [X31 - 0x10]!
+	0x03A5435C ADRP X0, 0x69F000
+	0x03A54360 LDR X0, [X0 + 0xB40]
+	0x03A54364 BL 0x1C16D08
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: UnityEngine.Rendering.RenderTargetIdentifier get_nameID()
+
+Disassembly:
+	0x03A54368 BL 0x1C16F10
+	0x03A5436C MOV X19, X0
+	0x03A54370 ADRP X0, 0x702000
+	0x03A54374 LDR X0, [X0 + 0xE0]
+	0x03A54378 BL 0x1C16D08
+	0x03A5437C MOV X1, X0
+	0x03A54380 MOV X0, X19
+	0x03A54384 MOV X2, X31
+	0x03A54388 BL 0x3379A44
+	0x03A5438C ADRP X0, 0x702000
+	0x03A54390 LDR X0, [X0 + 0x128]
+	0x03A54394 BL 0x1C16D08
+	0x03A54398 MOV X1, X0
+	0x03A5439C MOV X0, X19
+	0x03A543A0 BL 0x1C16DEC
+	0x03A543A4 STP X30, X19, [X31 - 0x10]!
+	0x03A543A8 ADRP X0, 0x69F000
+	0x03A543AC LDR X0, [X0 + 0xB40]
+	0x03A543B0 BL 0x1C16D08
+	0x03A543B4 BL 0x1C16F10
+	0x03A543B8 MOV X19, X0
+	0x03A543BC ADRP X0, 0x702000
+	0x03A543C0 LDR X0, [X0 + 0xE0]
+	0x03A543C4 BL 0x1C16D08
+	0x03A543C8 MOV X1, X0
+	0x03A543CC MOV X0, X19
+	0x03A543D0 MOV X2, X31
+	0x03A543D4 BL 0x3379A44
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+48], X30
+	003 Move X9, [X0]
+	004 Compare X9, 0
+	005 JumpIfEqual {27}
+	006 NotImplemented "Instruction LDUR not yet implemented."
+	007 Move X10, [X9+72]
+	008 NotImplemented "Instruction LDUR not yet implemented."
+	009 NotImplemented "Instruction MOVI not yet implemented."
+	010 Add X1, X31, 0
+	011 Move TEMP, 0
+	012 Not TEMP
+	013 Move W3, TEMP
+	014 Move TEMP, 0
+	015 Not TEMP
+	016 Move W4, TEMP
+	017 Move X0, X8
+	018 Move W2, W31
+	019 Move X5, X31
+	020 Move [X8+32], X31
+	021 Move [X31+32], X10
+	022 Move [X31], V0
+	023 Move [X31+8], V1
+	024 Move [X8], V2
+	025 Move [X8+8], V2
+	026 Call RenderTargetIdentifier..ctor, X0, X1, X2, X3, X4
+	027 Move X9, [X0+40]
+	028 NotImplemented "Instruction LDUR not yet implemented."
+	029 NotImplemented "Instruction LDUR not yet implemented."
+	030 Move [X8+32], X9
+	031 Move [X8], V1
+	032 Move [X8+8], V0
+	033 Move X30, [X31+48]
+	034 Add X31, X31, 64
+	035 Return X0
+

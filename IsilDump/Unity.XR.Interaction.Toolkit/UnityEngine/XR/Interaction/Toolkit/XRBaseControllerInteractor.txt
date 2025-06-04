@@ -1,0 +1,5337 @@
+Type: UnityEngine.XR.Interaction.Toolkit.XRBaseControllerInteractor
+
+Method: UnityEngine.XR.Interaction.Toolkit.XRBaseControllerInteractor/InputTriggerType get_selectActionTrigger()
+
+Disassembly:
+	0x03B4FC94 LDP X26, X25, [X31 + 0x70]
+	0x03B4FC98 LDP X30, X27, [X31 + 0x60]
+
+ISIL:
+	001 Move W0, [X0+424]
+	002 Return X0
+
+Method: System.Void set_selectActionTrigger(UnityEngine.XR.Interaction.Toolkit.XRBaseControllerInteractor/InputTriggerType value)
+
+Disassembly:
+	0x03B4FC9C ADD X31, X31, 0xB0
+	0x03B4FCA0 RET
+
+ISIL:
+	001 Move [X0+424], W1
+	002 Return 
+
+Method: System.Boolean get_hideControllerOnSelect()
+
+Disassembly:
+	0x03B4FCA4 MOV X0, X21
+	0x03B4FCA8 BL 0x1C16F18
+
+ISIL:
+	001 Move W0, [X0+428]
+	002 Return X0
+
+Method: System.Void set_hideControllerOnSelect(System.Boolean value)
+
+Disassembly:
+	0x03B4FCAC BL 0x1C16F20
+	0x03B4FCB0 MOV X21, X31
+	0x03B4FCB4 LDR X1, [X23]
+	0x03B4FCB8 ADD X0, X31, 0x28
+	0x03B4FCBC BL 0x24A6DD0
+	0x03B4FCC0 LDR X1, [X31 + 0x8]
+	0x03B4FCC4 CBZ X21, 0x3B4FCFC
+	0x03B4FCC8 MOV X0, X21
+	0x03B4FCCC BL 0x1C16F18
+	0x03B4FCD0 BL 0x1C16F20
+	0x03B4FCD4 MOV X20, X0
+	0x03B4FCD8 STR X1, [X31 + 0x8]
+	0x03B4FCDC B 0x3B4FCB4
+	0x03B4FCE0 B 0x3B4FCF8
+	0x03B4FCE4 B 0x3B4FCF8
+	0x03B4FCE8 B 0x3B4FCF8
+	0x03B4FCEC B 0x3B4FCF8
+	0x03B4FCF0 B 0x3B4FCF8
+	0x03B4FCF4 B 0x3B4FCF8
+	0x03B4FCF8 MOV X20, X0
+	0x03B4FCFC CMP W1, 0x1
+	0x03B4FD00 B.NE 0x3B4FD2C
+	0x03B4FD04 MOV X0, X20
+	0x03B4FD08 BL 0x3EB1AD0
+	0x03B4FD0C LDR X19, [X0]
+	0x03B4FD10 BL 0x3EB1AE0
+	0x03B4FD14 LDR X1, [X22]
+	0x03B4FD18 ADD X0, X31, 0x40
+	0x03B4FD1C BL 0x2BC434C
+	0x03B4FD20 CBZ X19, 0x3B4FC88
+	0x03B4FD24 MOV X0, X19
+	0x03B4FD28 BL 0x1C16F18
+	0x03B4FD2C MOV X19, X31
+	0x03B4FD30 B 0x3B4FD38
+	0x03B4FD34 MOV X20, X0
+	0x03B4FD38 LDR X1, [X22]
+	0x03B4FD3C ADD X0, X31, 0x40
+	0x03B4FD40 BL 0x2BC434C
+	0x03B4FD44 CBNZ X19, 0x3B4FD50
+	0x03B4FD48 MOV X0, X20
+	0x03B4FD4C BL 0x1D2C690
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X22, 0x894000
+	007 Move W8, [X22+2272]
+	008 Move W20, W1
+	009 Move X19, X0
+	010 And W21, W1, 1
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {20}
+	015 Move X0, 0x5A5000
+	016 Move X0, [X0+1432]
+	017 Call 0x1C17CF4
+	018 Move W8, 1
+	019 Move [X22+2272], W8
+	020 Move [X19+428], W21
+	021 Move TEMP, X20
+	022 And TEMP, TEMP, 1
+	023 Compare TEMP, 1
+	024 JumpIfEqual {53}
+	025 Move X8, 0x5A5000
+	026 Move X8, [X8+1432]
+	027 Move X20, [X19+608]
+	028 Move X0, [X8]
+	029 Move W8, [X0+224]
+	030 Compare W8, 0
+	031 JumpIfNotEqual {33}
+	032 Call 0x1C17DFC
+	033 Move X0, X20
+	034 Move X1, X31
+	035 Move X2, X31
+	036 Call Object.op_Inequality, X0, X1
+	037 Move TEMP, X0
+	038 And TEMP, TEMP, 1
+	039 Compare TEMP, 1
+	040 JumpIfNotEqual {53}
+	041 Move X0, [X19+608]
+	042 Compare X0, 0
+	043 JumpIfEqual {59}
+	044 Move X20, [X31+32]
+	045 Move X19, [X31+40]
+	046 Move X22, [X31+16]
+	047 Move X21, [X31+24]
+	048 Move W1, W31
+	049 Move X2, X31
+	050 Move X30, [X31+48]
+	051 Call XRBaseController.set_hideControllerModel, X0, X1
+	052 Return 
+	053 Move X20, [X31+32]
+	054 Move X19, [X31+40]
+	055 Move X22, [X31+16]
+	056 Move X21, [X31+24]
+	057 Move X30, [X31+48]
+	058 Return 
+	059 Call 0x1C17F20
+
+Method: System.Boolean get_allowHoveredActivate()
+
+Disassembly:
+	0x03B4FD50 MOV X0, X19
+	0x03B4FD54 BL 0x1C16F18
+
+ISIL:
+	001 Move W0, [X0+429]
+	002 Return X0
+
+Method: System.Void set_allowHoveredActivate(System.Boolean value)
+
+Disassembly:
+	0x03B4FD58 BL 0x1990590
+	0x03B4FD5C STP X30, X21, [X31 - 0x20]!
+	0x03B4FD60 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+429], W8
+	003 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.TargetPriorityMode get_targetPriorityMode()
+
+Disassembly:
+	0x03B4FD64 ADRP X20, 0x893000
+	0x03B4FD68 LDRB W8, [X20 + 0x8E8]
+
+ISIL:
+	001 Move W0, [X0+432]
+	002 Return X0
+
+Method: System.Void set_targetPriorityMode(UnityEngine.XR.Interaction.Toolkit.TargetPriorityMode value)
+
+Disassembly:
+	0x03B4FD6C MOV X19, X0
+	0x03B4FD70 TBNZ X8, 0x0, 0x3B4FD88
+
+ISIL:
+	001 Move [X0+432], W1
+	002 Return 
+
+Method: System.Boolean get_playAudioClipOnSelectEntered()
+
+Disassembly:
+	0x03B4FD74 ADRP X0, 0x5A4000
+	0x03B4FD78 LDR X0, [X0 + 0x598]
+
+ISIL:
+	001 Move W0, [X0+436]
+	002 Return X0
+
+Method: System.Void set_playAudioClipOnSelectEntered(System.Boolean value)
+
+Disassembly:
+	0x03B4FD7C BL 0x1C16CF4
+	0x03B4FD80 MOVZ W8, 0x1
+	0x03B4FD84 STRB W8, [X20 + 0x8E8]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+436], W8
+	003 Return 
+
+Method: UnityEngine.AudioClip get_audioClipForOnSelectEntered()
+
+Disassembly:
+	0x03B4FD88 LDRB W8, [X19 + 0x99]
+	0x03B4FD8C CBZ W8, 0x3B4FF38
+
+ISIL:
+	001 Move X0, [X0+440]
+	002 Return X0
+
+Method: System.Void set_audioClipForOnSelectEntered(UnityEngine.AudioClip value)
+
+Disassembly:
+	0x03B4FD90 LDRB W8, [X19 + 0x9A]
+	0x03B4FD94 CBZ W8, 0x3B4FDA0
+
+ISIL:
+	001 Move [X0+440], X1
+	002 Return 
+
+Method: System.Boolean get_playAudioClipOnSelectExited()
+
+Disassembly:
+	0x03B4FD98 MOVZ W0, 0x1
+	0x03B4FD9C B 0x3B4FF3C
+
+ISIL:
+	001 Move W0, [X0+448]
+	002 Return X0
+
+Method: System.Void set_playAudioClipOnSelectExited(System.Boolean value)
+
+Disassembly:
+	0x03B4FDA0 LDR W8, [X19 + 0x1A8]
+	0x03B4FDA4 CMP W8, 0x3
+	0x03B4FDA8 B.HI 0x3B4FF38
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+448], W8
+	003 Return 
+
+Method: UnityEngine.AudioClip get_audioClipForOnSelectExited()
+
+Disassembly:
+	0x03B4FDAC ADRP X9, 0xFFFFFFFFFD048000
+	0x03B4FDB0 ADD X9, X9, 0xD8C
+
+ISIL:
+	001 Move X0, [X0+456]
+	002 Return X0
+
+Method: System.Void set_audioClipForOnSelectExited(UnityEngine.AudioClip value)
+
+Disassembly:
+	0x03B4FDB4 ADR X10, 0x10
+	0x03B4FDB8 LDRB W11, [X9, X8, LSL]
+
+ISIL:
+	001 Move [X0+456], X1
+	002 Return 
+
+Method: System.Boolean get_playAudioClipOnSelectCanceled()
+
+Disassembly:
+	0x03B4FDBC ADD X10, X10, X11, 0x2, LSL
+	0x03B4FDC0 BR X10
+
+ISIL:
+	001 Move W0, [X0+464]
+	002 Return X0
+
+Method: System.Void set_playAudioClipOnSelectCanceled(System.Boolean value)
+
+Disassembly:
+	0x03B4FDC4 ADRP X8, 0x5A4000
+	0x03B4FDC8 LDR X8, [X8 + 0x598]
+	0x03B4FDCC LDR X20, [X19 + 0x260]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+464], W8
+	003 Return 
+
+Method: UnityEngine.AudioClip get_audioClipForOnSelectCanceled()
+
+Disassembly:
+	0x03B4FDD0 LDR X0, [X8]
+	0x03B4FDD4 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move X0, [X0+472]
+	002 Return X0
+
+Method: System.Void set_audioClipForOnSelectCanceled(UnityEngine.AudioClip value)
+
+Disassembly:
+	0x03B4FDD8 CBNZ W8, 0x3B4FDE0
+	0x03B4FDDC BL 0x1C16DFC
+
+ISIL:
+	001 Move [X0+472], X1
+	002 Return 
+
+Method: System.Boolean get_playAudioClipOnHoverEntered()
+
+Disassembly:
+	0x03B4FDE0 MOV X0, X20
+	0x03B4FDE4 MOV X1, X31
+
+ISIL:
+	001 Move W0, [X0+480]
+	002 Return X0
+
+Method: System.Void set_playAudioClipOnHoverEntered(System.Boolean value)
+
+Disassembly:
+	0x03B4FDE8 MOV X2, X31
+	0x03B4FDEC BL 0x3C354F8
+	0x03B4FDF0 TBZ X0, 0x0, 0x3B4FF38
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+480], W8
+	003 Return 
+
+Method: UnityEngine.AudioClip get_audioClipForOnHoverEntered()
+
+Disassembly:
+	0x03B4FDF4 LDR X8, [X19 + 0x260]
+	0x03B4FDF8 CBZ X8, 0x3B4FF48
+
+ISIL:
+	001 Move X0, [X0+488]
+	002 Return X0
+
+Method: System.Void set_audioClipForOnHoverEntered(UnityEngine.AudioClip value)
+
+Disassembly:
+	0x03B4FDFC LDRB W8, [X8 + 0x60]
+	0x03B4FE00 CMP W8, 0x0
+
+ISIL:
+	001 Move [X0+488], X1
+	002 Return 
+
+Method: System.Boolean get_playAudioClipOnHoverExited()
+
+Disassembly:
+	0x03B4FE04 CSET W0, NE
+	0x03B4FE08 B 0x3B4FF3C
+
+ISIL:
+	001 Move W0, [X0+496]
+	002 Return X0
+
+Method: System.Void set_playAudioClipOnHoverExited(System.Boolean value)
+
+Disassembly:
+	0x03B4FE0C ADRP X21, 0x5A4000
+	0x03B4FE10 LDR X21, [X21 + 0x598]
+	0x03B4FE14 LDR X20, [X19 + 0x260]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+496], W8
+	003 Return 
+
+Method: UnityEngine.AudioClip get_audioClipForOnHoverExited()
+
+Disassembly:
+	0x03B4FE18 LDR X0, [X21]
+	0x03B4FE1C LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move X0, [X0+504]
+	002 Return X0
+
+Method: System.Void set_audioClipForOnHoverExited(UnityEngine.AudioClip value)
+
+Disassembly:
+	0x03B4FE20 CBNZ W8, 0x3B4FE28
+	0x03B4FE24 BL 0x1C16DFC
+
+ISIL:
+	001 Move [X0+504], X1
+	002 Return 
+
+Method: System.Boolean get_playAudioClipOnHoverCanceled()
+
+Disassembly:
+	0x03B4FE28 MOV X0, X20
+	0x03B4FE2C MOV X1, X31
+
+ISIL:
+	001 Move W0, [X0+512]
+	002 Return X0
+
+Method: System.Void set_playAudioClipOnHoverCanceled(System.Boolean value)
+
+Disassembly:
+	0x03B4FE30 MOV X2, X31
+	0x03B4FE34 BL 0x3C354F8
+	0x03B4FE38 TBZ X0, 0x0, 0x3B4FE4C
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+512], W8
+	003 Return 
+
+Method: UnityEngine.AudioClip get_audioClipForOnHoverCanceled()
+
+Disassembly:
+	0x03B4FE3C LDR X8, [X19 + 0x260]
+	0x03B4FE40 CBZ X8, 0x3B4FF48
+
+ISIL:
+	001 Move X0, [X0+520]
+	002 Return X0
+
+Method: System.Void set_audioClipForOnHoverCanceled(UnityEngine.AudioClip value)
+
+Disassembly:
+	0x03B4FE44 LDRB W8, [X8 + 0x61]
+	0x03B4FE48 CBNZ W8, 0x3B4FD98
+
+ISIL:
+	001 Move [X0+520], X1
+	002 Return 
+
+Method: System.Boolean get_allowHoverAudioWhileSelecting()
+
+Disassembly:
+	0x03B4FE4C MOV X0, X19
+	0x03B4FE50 BL 0x3B4B6D0
+
+ISIL:
+	001 Move W0, [X0+528]
+	002 Return X0
+
+Method: System.Void set_allowHoverAudioWhileSelecting(System.Boolean value)
+
+Disassembly:
+	0x03B4FE54 TBZ X0, 0x0, 0x3B4FF38
+	0x03B4FE58 LDR X0, [X21]
+	0x03B4FE5C LDR X20, [X19 + 0x260]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+528], W8
+	003 Return 
+
+Method: System.Boolean get_playHapticsOnSelectEntered()
+
+Disassembly:
+	0x03B4FE60 LDR W8, [X0 + 0xE0]
+	0x03B4FE64 CBNZ W8, 0x3B4FE6C
+
+ISIL:
+	001 Move W0, [X0+529]
+	002 Return X0
+
+Method: System.Void set_playHapticsOnSelectEntered(System.Boolean value)
+
+Disassembly:
+	0x03B4FE68 BL 0x1C16DFC
+	0x03B4FE6C MOV X0, X20
+	0x03B4FE70 MOV X1, X31
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+529], W8
+	003 Return 
+
+Method: System.Single get_hapticSelectEnterIntensity()
+
+Disassembly:
+	0x03B4FE74 MOV X2, X31
+	0x03B4FE78 BL 0x3C354F8
+
+ISIL:
+	001 Move V0, [X0+532]
+	002 Return V0
+
+Method: System.Void set_hapticSelectEnterIntensity(System.Single value)
+
+Disassembly:
+	0x03B4FE7C TBZ X0, 0x0, 0x3B4FF38
+	0x03B4FE80 LDR X8, [X19 + 0x260]
+
+ISIL:
+	001 Move [X0+532], S0
+	002 Return 
+
+Method: System.Single get_hapticSelectEnterDuration()
+
+Disassembly:
+	0x03B4FE84 CBZ X8, 0x3B4FF48
+	0x03B4FE88 LDRB W8, [X8 + 0x62]
+
+ISIL:
+	001 Move V0, [X0+536]
+	002 Return V0
+
+Method: System.Void set_hapticSelectEnterDuration(System.Single value)
+
+Disassembly:
+	0x03B4FE8C B 0x3B4FEDC
+	0x03B4FE90 LDRB W8, [X19 + 0x278]
+
+ISIL:
+	001 Move [X0+536], S0
+	002 Return 
+
+Method: System.Boolean get_playHapticsOnSelectExited()
+
+Disassembly:
+	0x03B4FE94 CBNZ W8, 0x3B4FD98
+	0x03B4FE98 ADRP X8, 0x5A4000
+
+ISIL:
+	001 Move W0, [X0+540]
+	002 Return X0
+
+Method: System.Void set_playHapticsOnSelectExited(System.Boolean value)
+
+Disassembly:
+	0x03B4FE9C LDR X8, [X8 + 0x598]
+	0x03B4FEA0 LDR X20, [X19 + 0x260]
+	0x03B4FEA4 LDR X0, [X8]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+540], W8
+	003 Return 
+
+Method: System.Single get_hapticSelectExitIntensity()
+
+Disassembly:
+	0x03B4FEA8 LDR W8, [X0 + 0xE0]
+	0x03B4FEAC CBNZ W8, 0x3B4FEB4
+
+ISIL:
+	001 Move V0, [X0+544]
+	002 Return V0
+
+Method: System.Void set_hapticSelectExitIntensity(System.Single value)
+
+Disassembly:
+	0x03B4FEB0 BL 0x1C16DFC
+	0x03B4FEB4 MOV X0, X20
+
+ISIL:
+	001 Move [X0+544], S0
+	002 Return 
+
+Method: System.Single get_hapticSelectExitDuration()
+
+Disassembly:
+	0x03B4FEB8 MOV X1, X31
+	0x03B4FEBC MOV X2, X31
+
+ISIL:
+	001 Move V0, [X0+548]
+	002 Return V0
+
+Method: System.Void set_hapticSelectExitDuration(System.Single value)
+
+Disassembly:
+	0x03B4FEC0 BL 0x3C354F8
+	0x03B4FEC4 TBZ X0, 0x0, 0x3B4FF38
+
+ISIL:
+	001 Move [X0+548], S0
+	002 Return 
+
+Method: System.Boolean get_playHapticsOnSelectCanceled()
+
+Disassembly:
+	0x03B4FEC8 LDR X8, [X19 + 0x260]
+	0x03B4FECC CBZ X8, 0x3B4FF48
+
+ISIL:
+	001 Move W0, [X0+552]
+	002 Return X0
+
+Method: System.Void set_playHapticsOnSelectCanceled(System.Boolean value)
+
+Disassembly:
+	0x03B4FED0 LDRB W8, [X8 + 0x61]
+	0x03B4FED4 CBZ W8, 0x3B4FF38
+	0x03B4FED8 LDRB W8, [X19 + 0x279]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+552], W8
+	003 Return 
+
+Method: System.Single get_hapticSelectCancelIntensity()
+
+Disassembly:
+	0x03B4FEDC CMP W8, 0x0
+	0x03B4FEE0 CSET W0, EQ
+
+ISIL:
+	001 Move V0, [X0+556]
+	002 Return V0
+
+Method: System.Void set_hapticSelectCancelIntensity(System.Single value)
+
+Disassembly:
+	0x03B4FEE4 B 0x3B4FF3C
+	0x03B4FEE8 LDRB W8, [X19 + 0x278]
+
+ISIL:
+	001 Move [X0+556], S0
+	002 Return 
+
+Method: System.Single get_hapticSelectCancelDuration()
+
+Disassembly:
+	0x03B4FEEC CBNZ W8, 0x3B4FD98
+	0x03B4FEF0 LDRB W8, [X19 + 0x27A]
+
+ISIL:
+	001 Move V0, [X0+560]
+	002 Return V0
+
+Method: System.Void set_hapticSelectCancelDuration(System.Single value)
+
+Disassembly:
+	0x03B4FEF4 CBNZ W8, 0x3B4FD98
+	0x03B4FEF8 ADRP X8, 0x5A4000
+
+ISIL:
+	001 Move [X0+560], S0
+	002 Return 
+
+Method: System.Boolean get_playHapticsOnHoverEntered()
+
+Disassembly:
+	0x03B4FEFC LDR X8, [X8 + 0x598]
+	0x03B4FF00 LDR X20, [X19 + 0x260]
+
+ISIL:
+	001 Move W0, [X0+564]
+	002 Return X0
+
+Method: System.Void set_playHapticsOnHoverEntered(System.Boolean value)
+
+Disassembly:
+	0x03B4FF04 LDR X0, [X8]
+	0x03B4FF08 LDR W8, [X0 + 0xE0]
+	0x03B4FF0C CBNZ W8, 0x3B4FF14
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+564], W8
+	003 Return 
+
+Method: System.Single get_hapticHoverEnterIntensity()
+
+Disassembly:
+	0x03B4FF10 BL 0x1C16DFC
+	0x03B4FF14 MOV X0, X20
+
+ISIL:
+	001 Move V0, [X0+568]
+	002 Return V0
+
+Method: System.Void set_hapticHoverEnterIntensity(System.Single value)
+
+Disassembly:
+	0x03B4FF18 MOV X1, X31
+	0x03B4FF1C MOV X2, X31
+
+ISIL:
+	001 Move [X0+568], S0
+	002 Return 
+
+Method: System.Single get_hapticHoverEnterDuration()
+
+Disassembly:
+	0x03B4FF20 BL 0x3C354F8
+	0x03B4FF24 TBZ X0, 0x0, 0x3B4FF38
+
+ISIL:
+	001 Move V0, [X0+572]
+	002 Return V0
+
+Method: System.Void set_hapticHoverEnterDuration(System.Single value)
+
+Disassembly:
+	0x03B4FF28 LDR X8, [X19 + 0x260]
+	0x03B4FF2C CBZ X8, 0x3B4FF48
+
+ISIL:
+	001 Move [X0+572], S0
+	002 Return 
+
+Method: System.Boolean get_playHapticsOnHoverExited()
+
+Disassembly:
+	0x03B4FF30 LDRB W8, [X8 + 0x61]
+	0x03B4FF34 B 0x3B4FE00
+
+ISIL:
+	001 Move W0, [X0+576]
+	002 Return X0
+
+Method: System.Void set_playHapticsOnHoverExited(System.Boolean value)
+
+Disassembly:
+	0x03B4FF38 MOV W0, W31
+	0x03B4FF3C LDP X20, X19, [X31 + 0x10]
+	0x03B4FF40 LDP X30, X21, [X31], #0x20
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+576], W8
+	003 Return 
+
+Method: System.Single get_hapticHoverExitIntensity()
+
+Disassembly:
+	0x03B4FF44 RET
+	0x03B4FF48 BL 0x1C16F20
+
+ISIL:
+	001 Move V0, [X0+580]
+	002 Return V0
+
+Method: System.Void set_hapticHoverExitIntensity(System.Single value)
+
+Disassembly:
+	0x03B4FF4C STP X30, X21, [X31 - 0x20]!
+	0x03B4FF50 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+580], S0
+	002 Return 
+
+Method: System.Single get_hapticHoverExitDuration()
+
+Disassembly:
+	0x03B4FF54 ADRP X21, 0x893000
+	0x03B4FF58 ADRP X20, 0x5A4000
+
+ISIL:
+	001 Move V0, [X0+584]
+	002 Return V0
+
+Method: System.Void set_hapticHoverExitDuration(System.Single value)
+
+Disassembly:
+	0x03B4FF5C LDRB W8, [X21 + 0x8E9]
+	0x03B4FF60 LDR X20, [X20 + 0x598]
+
+ISIL:
+	001 Move [X0+584], S0
+	002 Return 
+
+Method: System.Boolean get_playHapticsOnHoverCanceled()
+
+Disassembly:
+	0x03B4FF64 MOV X19, X0
+	0x03B4FF68 TBNZ X8, 0x0, 0x3B4FF80
+
+ISIL:
+	001 Move W0, [X0+588]
+	002 Return X0
+
+Method: System.Void set_playHapticsOnHoverCanceled(System.Boolean value)
+
+Disassembly:
+	0x03B4FF6C ADRP X0, 0x5A4000
+	0x03B4FF70 LDR X0, [X0 + 0x598]
+	0x03B4FF74 BL 0x1C16CF4
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+588], W8
+	003 Return 
+
+Method: System.Single get_hapticHoverCancelIntensity()
+
+Disassembly:
+	0x03B4FF78 MOVZ W8, 0x1
+	0x03B4FF7C STRB W8, [X21 + 0x8E9]
+
+ISIL:
+	001 Move V0, [X0+592]
+	002 Return V0
+
+Method: System.Void set_hapticHoverCancelIntensity(System.Single value)
+
+Disassembly:
+	0x03B4FF80 LDR X0, [X20]
+	0x03B4FF84 LDR X20, [X19 + 0x260]
+
+ISIL:
+	001 Move [X0+592], S0
+	002 Return 
+
+Method: System.Single get_hapticHoverCancelDuration()
+
+Disassembly:
+	0x03B4FF88 LDR W8, [X0 + 0xE0]
+	0x03B4FF8C CBNZ W8, 0x3B4FF94
+
+ISIL:
+	001 Move V0, [X0+596]
+	002 Return V0
+
+Method: System.Void set_hapticHoverCancelDuration(System.Single value)
+
+Disassembly:
+	0x03B4FF90 BL 0x1C16DFC
+	0x03B4FF94 MOV X0, X20
+
+ISIL:
+	001 Move [X0+596], S0
+	002 Return 
+
+Method: System.Boolean get_allowHoverHapticsWhileSelecting()
+
+Disassembly:
+	0x03B4FF98 MOV X1, X31
+	0x03B4FF9C MOV X2, X31
+
+ISIL:
+	001 Move W0, [X0+600]
+	002 Return X0
+
+Method: System.Void set_allowHoverHapticsWhileSelecting(System.Boolean value)
+
+Disassembly:
+	0x03B4FFA0 BL 0x3C354F8
+	0x03B4FFA4 TBZ X0, 0x0, 0x3B4FFC0
+	0x03B4FFA8 LDR X8, [X19 + 0x260]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+600], W8
+	003 Return 
+
+Method: System.Boolean get_allowActivate()
+
+Disassembly:
+	0x03B4FFAC CBZ X8, 0x3B4FFD0
+	0x03B4FFB0 LDRB W8, [X8 + 0x70]
+
+ISIL:
+	001 Move W0, [X0+601]
+	002 Return X0
+
+Method: System.Void set_allowActivate(System.Boolean value)
+
+Disassembly:
+	0x03B4FFB4 CMP W8, 0x0
+	0x03B4FFB8 CSET W0, NE
+	0x03B4FFBC B 0x3B4FFC4
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+601], W8
+	003 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.XRBaseController get_xrController()
+
+Disassembly:
+	0x03B4FFC0 MOV W0, W31
+	0x03B4FFC4 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, [X0+608]
+	002 Return X0
+
+Method: System.Void set_xrController(UnityEngine.XR.Interaction.Toolkit.XRBaseController value)
+
+Disassembly:
+	0x03B4FFC8 LDP X30, X21, [X31], #0x20
+	0x03B4FFCC RET
+	0x03B4FFD0 BL 0x1C16F20
+	0x03B4FFD4 STP X30, X21, [X31 - 0x20]!
+	0x03B4FFD8 STP X20, X19, [X31 + 0x10]
+	0x03B4FFDC ADRP X21, 0x893000
+	0x03B4FFE0 ADRP X20, 0x5A4000
+	0x03B4FFE4 LDRB W8, [X21 + 0x8EA]
+	0x03B4FFE8 LDR X20, [X20 + 0x598]
+	0x03B4FFEC MOV X19, X0
+	0x03B4FFF0 TBNZ X8, 0x0, 0x3B50008
+	0x03B4FFF4 ADRP X0, 0x5A4000
+	0x03B4FFF8 LDR X0, [X0 + 0x598]
+	0x03B4FFFC BL 0x1C16CF4
+	0x03B50000 MOVZ W8, 0x1
+	0x03B50004 STRB W8, [X21 + 0x8EA]
+	0x03B50008 LDR X0, [X20]
+	0x03B5000C LDR X20, [X19 + 0x260]
+	0x03B50010 LDR W8, [X0 + 0xE0]
+	0x03B50014 CBNZ W8, 0x3B5001C
+	0x03B50018 BL 0x1C16DFC
+	0x03B5001C MOV X0, X20
+	0x03B50020 MOV X1, X31
+	0x03B50024 MOV X2, X31
+	0x03B50028 BL 0x3C354F8
+	0x03B5002C TBZ X0, 0x0, 0x3B50044
+	0x03B50030 LDR X9, [X19 + 0x260]
+	0x03B50034 CBZ X9, 0x3B5008C
+	0x03B50038 ADD X8, X9, 0x74
+	0x03B5003C ADD X9, X9, 0x78
+	0x03B50040 B 0x3B50078
+	0x03B50044 ADRP X19, 0x889000
+	0x03B50048 LDRB W8, [X19 + 0x78F]
+	0x03B5004C CBNZ W8, 0x3B50064
+	0x03B50050 ADRP X0, 0x5AB000
+	0x03B50054 LDR X0, [X0 + 0xF08]
+	0x03B50058 BL 0x1C16CF4
+	0x03B5005C MOVZ W8, 0x1
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X22, 0x894000
+	007 Move X21, 0x5A5000
+	008 Move W8, [X22+2273]
+	009 Move X21, [X21+1432]
+	010 Move X20, X1
+	011 Move X19, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x5A5000
+	017 Move X0, [X0+1432]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X22+2273], W8
+	021 Move X0, [X21]
+	022 Move X21, [X19+608]
+	023 Move W8, [X0+224]
+	024 Compare W8, 0
+	025 JumpIfNotEqual {27}
+	026 Call 0x1C17DFC
+	027 Move X0, X21
+	028 Move X1, X20
+	029 Move X2, X31
+	030 Call Object.op_Inequality, X0, X1
+	031 Move TEMP, X0
+	032 And TEMP, TEMP, 1
+	033 Compare TEMP, 1
+	034 JumpIfNotEqual {46}
+	035 Move X8, [X19]
+	036 Move [X19+608], X20
+	037 Move X0, X19
+	038 Move X20, [X31+32]
+	039 Move X19, [X31+40]
+	040 Move X2, [X8+1880]
+	041 Move X1, [X8+1888]
+	042 Move X22, [X31+16]
+	043 Move X21, [X31+24]
+	044 Move X30, [X31+48]
+	045 CallNoReturn X2
+	046 Move X20, [X31+32]
+	047 Move X19, [X31+40]
+	048 Move X22, [X31+16]
+	049 Move X21, [X31+24]
+	050 Move X30, [X31+48]
+	051 Return 
+
+Method: System.Void Awake()
+
+Disassembly:
+	0x03B50060 STRB W8, [X19 + 0x78F]
+	0x03B50064 ADRP X8, 0x5AB000
+	0x03B50068 LDR X8, [X8 + 0xF08]
+	0x03B5006C LDR X8, [X8]
+	0x03B50070 LDR X8, [X8 + 0xB8]
+	0x03B50074 ADD X9, X8, 0x4
+	0x03B50078 LDR V1, [X9]
+	0x03B5007C LDR V0, [X8]
+	0x03B50080 LDP X20, X19, [X31 + 0x10]
+	0x03B50084 LDP X30, X21, [X31], #0x20
+	0x03B50088 RET
+	0x03B5008C BL 0x1C16F20
+	0x03B50090 STR X30, [X31 - 0x20]!
+	0x03B50094 STP X20, X19, [X31 + 0x10]
+	0x03B50098 ADRP X20, 0x892000
+	0x03B5009C LDRB W8, [X20 + 0x8EB]
+	0x03B500A0 MOV X19, X0
+	0x03B500A4 TBNZ X8, 0x0, 0x3B500BC
+	0x03B500A8 ADRP X0, 0x5A3000
+	0x03B500AC LDR X0, [X0 + 0x598]
+	0x03B500B0 BL 0x1C16CF4
+	0x03B500B4 MOVZ W8, 0x1
+	0x03B500B8 STRB W8, [X20 + 0x8EB]
+	0x03B500BC LDRB W8, [X19 + 0x259]
+	0x03B500C0 CBZ W8, 0x3B5012C
+	0x03B500C4 MOV X0, X19
+	0x03B500C8 BL 0x3B4B6D0
+	0x03B500CC TBNZ X0, 0x0, 0x3B500E4
+	0x03B500D0 LDRB W8, [X19 + 0x1AD]
+	0x03B500D4 CBZ W8, 0x3B5012C
+	0x03B500D8 MOV X0, X19
+	0x03B500DC BL 0x3B4B11C
+	0x03B500E0 TBZ X0, 0x0, 0x3B5012C
+	0x03B500E4 ADRP X8, 0x5A3000
+	0x03B500E8 LDR X8, [X8 + 0x598]
+	0x03B500EC LDR X20, [X19 + 0x260]
+	0x03B500F0 LDR X0, [X8]
+	0x03B500F4 LDR W8, [X0 + 0xE0]
+	0x03B500F8 CBNZ W8, 0x3B50100
+	0x03B500FC BL 0x1C16DFC
+	0x03B50100 MOV X0, X20
+	0x03B50104 MOV X1, X31
+	0x03B50108 MOV X2, X31
+	0x03B5010C BL 0x3C354F8
+	0x03B50110 TBZ X0, 0x0, 0x3B5012C
+	0x03B50114 LDR X8, [X19 + 0x260]
+	0x03B50118 CBZ X8, 0x3B5013C
+	0x03B5011C LDRB W8, [X8 + 0x69]
+	0x03B50120 CMP W8, 0x0
+	0x03B50124 CSET W0, NE
+	0x03B50128 B 0x3B50130
+	0x03B5012C MOV W0, W31
+	0x03B50130 LDP X20, X19, [X31 + 0x10]
+	0x03B50134 LDR X30, [X31], #0x20
+	0x03B50138 RET
+	0x03B5013C BL 0x1C16F20
+	0x03B50140 STR X30, [X31 - 0x20]!
+	0x03B50144 STP X20, X19, [X31 + 0x10]
+	0x03B50148 ADRP X20, 0x892000
+	0x03B5014C LDRB W8, [X20 + 0x8EC]
+	0x03B50150 MOV X19, X0
+	0x03B50154 TBNZ X8, 0x0, 0x3B5016C
+	0x03B50158 ADRP X0, 0x5A3000
+	0x03B5015C LDR X0, [X0 + 0x598]
+	0x03B50160 BL 0x1C16CF4
+	0x03B50164 MOVZ W8, 0x1
+	0x03B50168 STRB W8, [X20 + 0x8EC]
+	0x03B5016C LDRB W8, [X19 + 0x259]
+	0x03B50170 CBZ W8, 0x3B501DC
+	0x03B50174 MOV X0, X19
+	0x03B50178 BL 0x3B4B6D0
+	0x03B5017C TBNZ X0, 0x0, 0x3B50194
+	0x03B50180 LDRB W8, [X19 + 0x1AD]
+	0x03B50184 CBZ W8, 0x3B501DC
+	0x03B50188 MOV X0, X19
+	0x03B5018C BL 0x3B4B11C
+	0x03B50190 TBZ X0, 0x0, 0x3B501DC
+	0x03B50194 ADRP X8, 0x5A3000
+	0x03B50198 LDR X8, [X8 + 0x598]
+	0x03B5019C LDR X20, [X19 + 0x260]
+	0x03B501A0 LDR X0, [X8]
+	0x03B501A4 LDR W8, [X0 + 0xE0]
+	0x03B501A8 CBNZ W8, 0x3B501B0
+	0x03B501AC BL 0x1C16DFC
+	0x03B501B0 MOV X0, X20
+	0x03B501B4 MOV X1, X31
+	0x03B501B8 MOV X2, X31
+	0x03B501BC BL 0x3C354F8
+	0x03B501C0 TBZ X0, 0x0, 0x3B501DC
+	0x03B501C4 LDR X8, [X19 + 0x260]
+	0x03B501C8 CBZ X8, 0x3B501EC
+	0x03B501CC LDRB W8, [X8 + 0x6A]
+	0x03B501D0 CMP W8, 0x0
+	0x03B501D4 CSET W0, NE
+	0x03B501D8 B 0x3B501E0
+	0x03B501DC MOV W0, W31
+	0x03B501E0 LDP X20, X19, [X31 + 0x10]
+	0x03B501E4 LDR X30, [X31], #0x20
+	0x03B501E8 RET
+	0x03B501EC BL 0x1C16F20
+	0x03B501F0 SUB X31, X31, 0x80
+	0x03B501F4 STP X30, X23, [X31 + 0x50]
+	0x03B501F8 STP X22, X21, [X31 + 0x60]
+	0x03B501FC STP X20, X19, [X31 + 0x70]
+	0x03B50200 ADRP X21, 0x892000
+	0x03B50204 LDRB W8, [X21 + 0x8ED]
+	0x03B50208 MOV X19, X1
+	0x03B5020C MOV X20, X0
+	0x03B50210 TBNZ X8, 0x0, 0x3B502A0
+	0x03B50214 ADRP X0, 0x60A000
+	0x03B50218 LDR X0, [X0 + 0xB90]
+	0x03B5021C BL 0x1C16CF4
+	0x03B50220 ADRP X0, 0x60A000
+	0x03B50224 LDR X0, [X0 + 0x9C0]
+	0x03B50228 BL 0x1C16CF4
+	0x03B5022C ADRP X0, 0x60A000
+	0x03B50230 LDR X0, [X0 + 0xB98]
+	0x03B50234 BL 0x1C16CF4
+	0x03B50238 ADRP X0, 0x60A000
+	0x03B5023C LDR X0, [X0 + 0x9C8]
+	0x03B50240 BL 0x1C16CF4
+	0x03B50244 ADRP X0, 0x60A000
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X22, 0x893000
+	008 Move X23, 0x60B000
+	009 Move X20, 0x60B000
+	010 Move X21, 0x5A4000
+	011 Move W8, [X22+2274]
+	012 Move X23, [X23+2840]
+	013 Move X20, [X20+2848]
+	014 Move X21, [X21+1432]
+	015 Move X19, X0
+	016 Move TEMP, X8
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {40}
+	020 Move X0, 0x5A4000
+	021 Move X0, [X0+2600]
+	022 Call 0x1C17CF4
+	023 Move X0, 0x60B000
+	024 Move X0, [X0+2848]
+	025 Call 0x1C17CF4
+	026 Move X0, 0x60B000
+	027 Move X0, [X0+2840]
+	028 Call 0x1C17CF4
+	029 Move X0, 0x5A4000
+	030 Move X0, [X0+1432]
+	031 Call 0x1C17CF4
+	032 Move X0, 0x60B000
+	033 Move X0, [X0+2856]
+	034 Call 0x1C17CF4
+	035 Move X0, 0x60B000
+	036 Move X0, [X0+2864]
+	037 Call 0x1C17CF4
+	038 Move W8, 1
+	039 Move [X22+2274], W8
+	040 Move X0, [X23]
+	041 Call 0x1C17F10
+	042 Move X1, [X20]
+	043 Move X20, X0
+	044 Call List`1<Object>..ctor, X0
+	045 Move X8, [X19]
+	046 Move X0, X19
+	047 Move X1, X20
+	048 Move X9, [X8+1320]
+	049 Move X2, [X8+1328]
+	050 NotImplemented "Instruction BLR not yet implemented."
+	051 Move X0, X19
+	052 Call XRBaseInteractor.Awake, X0
+	053 Move X0, X19
+	054 Call XRBaseControllerInteractor.FindControllerComponent, X0
+	055 Move X1, X0
+	056 Move X0, X19
+	057 Call XRBaseControllerInteractor.set_xrController, X0, X1
+	058 Move X0, [X21]
+	059 Move X20, [X19+608]
+	060 Move W8, [X0+224]
+	061 Compare W8, 0
+	062 JumpIfNotEqual {64}
+	063 Call 0x1C17DFC
+	064 Move X0, X20
+	065 Move X1, X31
+	066 Move X2, X31
+	067 Call Object.op_Equality, X0, X1
+	068 Move TEMP, X0
+	069 And TEMP, TEMP, 1
+	070 Compare TEMP, 1
+	071 JumpIfNotEqual {98}
+	072 Move X20, 0x60B000
+	073 Move X22, 0x60B000
+	074 Move X23, 0x5A4000
+	075 Move X20, [X20+2864]
+	076 Move X22, [X22+2856]
+	077 Move X23, [X23+2600]
+	078 Move X0, X19
+	079 Move X1, X31
+	080 Call Component.get_gameObject, X0
+	081 Move X8, [X20]
+	082 Move X1, [X22]
+	083 Move X2, X0
+	084 Move X3, X31
+	085 Move X0, X8
+	086 Call String.Format, X0, X1, X2
+	087 Move X8, [X23]
+	088 Move X20, X0
+	089 Move W9, [X8+224]
+	090 Compare W9, 0
+	091 JumpIfNotEqual {94}
+	092 Move X0, X8
+	093 Call 0x1C17DFC
+	094 Move X0, X20
+	095 Move X1, X19
+	096 Move X2, X31
+	097 Call Debug.LogWarning, X0, X1
+	098 Move W8, [X19+424]
+	099 NotImplemented "Instruction CMP not yet implemented."
+	100 Move X0, [X21]
+	101 Move X20, [X19+96]
+	102 Move W8, [X0+224]
+	103 Compare W8, 0
+	104 JumpIfNotEqual {106}
+	105 Call 0x1C17DFC
+	106 Move X0, X20
+	107 Move X1, X31
+	108 Move X2, X31
+	109 Call Object.op_Inequality, X0, X1
+	110 Move TEMP, X0
+	111 And TEMP, TEMP, 1
+	112 Compare TEMP, 1
+	113 JumpIfNotEqual {116}
+	114 Move W8, 1
+	115 Move [X19+632], W8
+	116 Move W8, [X19+436]
+	117 Compare W8, 0
+	118 JumpIfNotEqual {134}
+	119 Move W8, [X19+448]
+	120 Compare W8, 0
+	121 JumpIfNotEqual {134}
+	122 Move W8, [X19+464]
+	123 Compare W8, 0
+	124 JumpIfNotEqual {134}
+	125 Move W8, [X19+480]
+	126 Compare W8, 0
+	127 JumpIfNotEqual {134}
+	128 Move W8, [X19+496]
+	129 Compare W8, 0
+	130 JumpIfNotEqual {134}
+	131 Move W8, [X19+512]
+	132 Compare W8, 0
+	133 JumpIfEqual {143}
+	134 Move X0, X19
+	135 Move X20, [X31+32]
+	136 Move X19, [X31+40]
+	137 Move X22, [X31+16]
+	138 Move X21, [X31+24]
+	139 Move X30, [X31+48]
+	140 Move X23, [X31+56]
+	141 Call XRBaseControllerInteractor.CreateEffectsAudioSource, X0
+	142 Return 
+	143 Move X20, [X31+32]
+	144 Move X19, [X31+40]
+	145 Move X22, [X31+16]
+	146 Move X21, [X31+24]
+	147 Move X30, [X31+48]
+	148 Move X23, [X31+56]
+	149 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.XRBaseController FindControllerComponent()
+
+Disassembly:
+	0x03B503D8 LDR X22, [X0]
+	0x03B503DC BL 0x3EB1AE0
+	0x03B503E0 ADRP X8, 0x60A000
+	0x03B503E4 LDR X8, [X8 + 0xB90]
+	0x03B503E8 ADD X0, X31, 0x30
+	0x03B503EC LDR X1, [X8]
+	0x03B503F0 BL 0x2BC434C
+	0x03B503F4 CBNZ X22, 0x3B504F4
+	0x03B503F8 LDRB W8, [X20 + 0x1AD]
+	0x03B503FC CBZ W8, 0x3B504D0
+	0x03B50400 MOV X0, X20
+	0x03B50404 BL 0x3B4B11C
+	0x03B50408 TBZ X0, 0x0, 0x3B504D0
+	0x03B5040C MOV X0, X20
+	0x03B50410 BL 0x3B4B178
+	0x03B50414 CBZ X0, 0x3B504E8
+	0x03B50418 ADRP X8, 0x60A000
+	0x03B5041C LDR X8, [X8 + 0x9D8]
+	0x03B50420 LDR X1, [X8]
+	0x03B50424 ADD X8, X31, 0x18
+	0x03B50428 BL 0x301CB58
+	0x03B5042C ADRP X20, 0x60A000
+	0x03B50430 ADRP X21, 0x60A000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x893000
+	005 Move W8, [X20+2275]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x60B000
+	012 Move X0, [X0+2880]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2275], W8
+	016 Move X0, X19
+	017 Move X1, X31
+	018 Call Component.get_gameObject, X0
+	019 Compare X0, 0
+	020 JumpIfEqual {30}
+	021 Move X8, 0x60B000
+	022 Move X8, [X8+2880]
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move W1, 1
+	026 Move X2, [X8]
+	027 Move X30, [X31+32]
+	028 Call 0x21E6A08, X0, X1
+	029 Return X0
+	030 Call 0x1C17F20
+
+Method: System.Void OnXRControllerChanged()
+
+Disassembly:
+	0x03B504B4 BL 0x301BF90
+
+ISIL:
+	001 Return 
+
+Method: System.Void PreprocessInteractor(UnityEngine.XR.Interaction.Toolkit.XRInteractionUpdateOrder/UpdatePhase updatePhase)
+
+Disassembly:
+	0x03B504B8 B 0x3B50444
+	0x03B504BC ADRP X8, 0x60A000
+	0x03B504C0 LDR X8, [X8 + 0x9C0]
+	0x03B504C4 ADD X0, X31, 0x18
+	0x03B504C8 LDR X1, [X8]
+	0x03B504CC BL 0x2BC434C
+	0x03B504D0 LDP X20, X19, [X31 + 0x70]
+	0x03B504D4 LDP X22, X21, [X31 + 0x60]
+	0x03B504D8 LDP X30, X23, [X31 + 0x50]
+	0x03B504DC ADD X31, X31, 0x80
+	0x03B504E0 RET
+	0x03B504E4 BL 0x1C16F20
+	0x03B504E8 BL 0x1C16F20
+	0x03B504EC MOV X22, X31
+	0x03B504F0 B 0x3B50500
+	0x03B504F4 MOV X0, X22
+	0x03B504F8 BL 0x1C16F18
+	0x03B504FC MOV X21, X0
+	0x03B50500 ADRP X8, 0x60A000
+	0x03B50504 LDR X8, [X8 + 0xB90]
+	0x03B50508 LDR X1, [X8]
+	0x03B5050C ADD X0, X31, 0x30
+	0x03B50510 BL 0x2BC434C
+	0x03B50514 CBZ X22, 0x3B5058C
+	0x03B50518 MOV X0, X22
+	0x03B5051C BL 0x1C16F18
+	0x03B50520 B 0x3B5052C
+	0x03B50524 B 0x3B5052C
+	0x03B50528 B 0x3B5052C
+	0x03B5052C MOV X21, X0
+	0x03B50530 CMP W1, 0x1
+	0x03B50534 B.NE 0x3B50568
+	0x03B50538 MOV X0, X21
+	0x03B5053C BL 0x3EB1AD0
+	0x03B50540 LDR X19, [X0]
+	0x03B50544 BL 0x3EB1AE0
+	0x03B50548 ADRP X8, 0x60A000
+	0x03B5054C LDR X8, [X8 + 0x9C0]
+	0x03B50550 ADD X0, X31, 0x18
+	0x03B50554 LDR X1, [X8]
+	0x03B50558 BL 0x2BC434C
+	0x03B5055C CBZ X19, 0x3B504D0
+	0x03B50560 MOV X0, X19
+	0x03B50564 BL 0x1C16F18
+	0x03B50568 MOV X19, X31
+	0x03B5056C B 0x3B50574
+	0x03B50570 MOV X21, X0
+	0x03B50574 ADRP X8, 0x60A000
+	0x03B50578 LDR X8, [X8 + 0x9C0]
+	0x03B5057C LDR X1, [X8]
+	0x03B50580 ADD X0, X31, 0x18
+	0x03B50584 BL 0x2BC434C
+	0x03B50588 CBNZ X19, 0x3B50594
+	0x03B5058C MOV X0, X21
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x893000
+	006 Move W8, [X21+2276]
+	007 Move W20, W1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x5A4000
+	014 Move X0, [X0+1432]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+2276], W8
+	018 Move W8, [X19+280]
+	019 Compare W8, 0
+	020 JumpIfEqual {23}
+	021 Move X0, X19
+	022 Call XRBaseInteractor.UpdateVelocityAndAngularVelocity, X0
+	023 NotImplemented "Instruction CMP not yet implemented."
+	024 Move W8, [X19+424]
+	025 Move [X19+633], W31
+	026 And W8, W8, 0xFFFFFFFE
+	027 NotImplemented "Instruction CMP not yet implemented."
+	028 Move X8, 0x5A4000
+	029 Move X8, [X8+1432]
+	030 Move X20, [X19+608]
+	031 Move X0, [X8]
+	032 Move W8, [X0+224]
+	033 Compare W8, 0
+	034 JumpIfNotEqual {36}
+	035 Call 0x1C17DFC
+	036 Move X0, X20
+	037 Move X1, X31
+	038 Move X2, X31
+	039 Call Object.op_Equality, X0, X1
+	040 Move TEMP, X0
+	041 And TEMP, TEMP, 1
+	042 Compare TEMP, 1
+	043 JumpIfEqual {63}
+	044 Move W9, [X19+632]
+	045 Move X8, [X19+608]
+	046 Compare W9, 0
+	047 JumpIfEqual {57}
+	048 Compare X8, 0
+	049 JumpIfEqual {68}
+	050 Move W9, [X8+97]
+	051 Compare W9, 0
+	052 JumpIfEqual {59}
+	053 Move W9, 256
+	054 Move W10, 1
+	055 NotImplemented "Instruction STRH not yet implemented."
+	056 Move [X19+634], W10
+	057 Compare X8, 0
+	058 JumpIfEqual {68}
+	059 Move W8, [X8+98]
+	060 Compare W8, 0
+	061 JumpIfEqual {63}
+	062 Move [X19+634], W31
+	063 Move X20, [X31+16]
+	064 Move X19, [X31+24]
+	065 Move X30, [X31+32]
+	066 Move X21, [X31+40]
+	067 Return 
+	068 Call 0x1C17F20
+
+Method: System.Void ProcessInteractor(UnityEngine.XR.Interaction.Toolkit.XRInteractionUpdateOrder/UpdatePhase updatePhase)
+
+Disassembly:
+	0x03B505A0 STR X30, [X31 - 0x20]!
+	0x03B505A4 STP X20, X19, [X31 + 0x10]
+	0x03B505A8 ADRP X20, 0x892000
+	0x03B505AC LDRB W8, [X20 + 0x901]
+	0x03B505B0 MOV X19, X0
+	0x03B505B4 TBNZ X8, 0x0, 0x3B505D8
+	0x03B505B8 ADRP X0, 0x60A000
+	0x03B505BC LDR X0, [X0 + 0xBC0]
+	0x03B505C0 BL 0x1C16CF4
+	0x03B505C4 ADRP X0, 0x60A000
+	0x03B505C8 LDR X0, [X0 + 0xB18]
+	0x03B505CC BL 0x1C16CF4
+	0x03B505D0 MOVZ W8, 0x1
+	0x03B505D4 STRB W8, [X20 + 0x901]
+	0x03B505D8 LDR X8, [X19 + 0xA8]
+	0x03B505DC CBZ X8, 0x3B5062C
+	0x03B505E0 LDR X0, [X8 + 0x10]
+	0x03B505E4 CBZ X0, 0x3B5061C
+	0x03B505E8 ADRP X9, 0x60A000
+	0x03B505EC LDR X9, [X9 + 0xB18]
+	0x03B505F0 LDR X8, [X0]
+	0x03B505F4 LDR X1, [X9]
+	0x03B505F8 LDRB W10, [X8 + 0x130]
+	0x03B505FC LDRB W9, [X1 + 0x130]
+	0x03B50600 CMP W10, W9
+	0x03B50604 B.CC 0x3B50628
+	0x03B50608 LDR X8, [X8 + 0xC8]
+	0x03B5060C ADD X8, X8, X9, 0x3, LSL
+	0x03B50610 LDUR X8, [X8 - 0x8]
+	0x03B50614 CMP X8, X1
+	0x03B50618 B.NE 0x3B50628
+	0x03B5061C LDP X20, X19, [X31 + 0x10]
+	0x03B50620 LDR X30, [X31], #0x20
+	0x03B50624 RET
+	0x03B50628 BL 0x1C171E0
+	0x03B5062C BL 0x1C16F20
+	0x03B50630 STP X30, X19, [X31 - 0x10]!
+	0x03B50634 MOV X19, X0
+	0x03B50638 BL 0x3B50688
+	0x03B5063C MOV X0, X19
+	0x03B50640 BL 0x3B507C8
+	0x03B50644 LDRB W8, [X19 + 0x211]
+	0x03B50648 CBZ W8, 0x3B5065C
+	0x03B5064C LDR V0, [X19 + 0x214]
+	0x03B50650 LDR V1, [X19 + 0x218]
+	0x03B50654 MOV X0, X19
+	0x03B50658 BL 0x3B50864
+	0x03B5065C LDRB W8, [X19 + 0x1B4]
+	0x03B50660 CBZ W8, 0x3B50680
+	0x03B50664 LDR X8, [X19]
+	0x03B50668 LDR X1, [X19 + 0x1B8]
+	0x03B5066C MOV X0, X19
+	0x03B50670 LDR X3, [X8 + 0x7A8]
+	0x03B50674 LDR X2, [X8 + 0x7B0]
+	0x03B50678 LDP X30, X19, [X31], #0x10
+	0x03B5067C BR X3
+	0x03B50680 LDP X30, X19, [X31], #0x10
+	0x03B50684 RET
+	0x03B50688 STR X30, [X31 - 0x30]!
+	0x03B5068C STP X22, X21, [X31 + 0x10]
+	0x03B50690 STP X20, X19, [X31 + 0x20]
+	0x03B50694 ADRP X21, 0x892000
+	0x03B50698 LDRB W8, [X21 + 0x91C]
+	0x03B5069C MOV X20, X1
+	0x03B506A0 MOV X19, X0
+	0x03B506A4 TBNZ X8, 0x0, 0x3B506E0
+	0x03B506A8 ADRP X0, 0x60A000
+	0x03B506AC LDR X0, [X0 + 0xBC8]
+	0x03B506B0 BL 0x1C16CF4
+	0x03B506B4 ADRP X0, 0x60A000
+	0x03B506B8 LDR X0, [X0 + 0xBD0]
+	0x03B506BC BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x893000
+	007 Move W8, [X21+2277]
+	008 Move W20, W1
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x60B000
+	015 Move X0, [X0+936]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+2277], W8
+	019 NotImplemented "Instruction CMP not yet implemented."
+	020 Move W8, [X19+601]
+	021 Compare W8, 0
+	022 JumpIfEqual {92}
+	023 Move X8, [X19]
+	024 Move X0, X19
+	025 Move X9, [X8+1912]
+	026 Move X1, [X8+1920]
+	027 NotImplemented "Instruction BLR not yet implemented."
+	028 Move X8, [X19]
+	029 Move W21, W0
+	030 Move X0, X19
+	031 Move X9, [X8+1928]
+	032 Move X1, [X8+1936]
+	033 NotImplemented "Instruction BLR not yet implemented."
+	034 Move W20, W0
+	035 Move TEMP, X21
+	036 And TEMP, TEMP, 1
+	037 Compare TEMP, 1
+	038 JumpIfEqual {43}
+	039 Move TEMP, X20
+	040 And TEMP, TEMP, 1
+	041 Compare TEMP, 1
+	042 JumpIfNotEqual {92}
+	043 Move X22, 0x60B000
+	044 Move X22, [X22+936]
+	045 Move X0, [X22]
+	046 Move W8, [X0+224]
+	047 Compare W8, 0
+	048 JumpIfNotEqual {51}
+	049 Call 0x1C17DFC
+	050 Move X0, [X22]
+	051 Move X8, [X0+184]
+	052 Move X9, [X19]
+	053 Move X0, X19
+	054 Move X1, [X8]
+	055 Move X8, [X9+1944]
+	056 Move X2, [X9+1952]
+	057 NotImplemented "Instruction BLR not yet implemented."
+	058 Move TEMP, X21
+	059 And TEMP, TEMP, 1
+	060 Compare TEMP, 1
+	061 JumpIfNotEqual {72}
+	062 Move X0, [X22]
+	063 Move W8, [X0+224]
+	064 Compare W8, 0
+	065 JumpIfNotEqual {68}
+	066 Call 0x1C17DFC
+	067 Move X0, [X22]
+	068 Move X8, [X0+184]
+	069 Move X0, X19
+	070 Move X1, [X8]
+	071 Call XRBaseControllerInteractor.SendActivateEvent, X0, X1
+	072 Move TEMP, X20
+	073 And TEMP, TEMP, 1
+	074 Compare TEMP, 1
+	075 JumpIfNotEqual {92}
+	076 Move X0, [X22]
+	077 Move W8, [X0+224]
+	078 Compare W8, 0
+	079 JumpIfNotEqual {82}
+	080 Call 0x1C17DFC
+	081 Move X0, [X22]
+	082 Move X8, [X0+184]
+	083 Move X0, X19
+	084 Move X20, [X31+32]
+	085 Move X19, [X31+40]
+	086 Move X22, [X31+16]
+	087 Move X21, [X31+24]
+	088 Move X1, [X8]
+	089 Move X30, [X31+48]
+	090 Call XRBaseControllerInteractor.SendDeactivateEvent, X0, X1
+	091 Return 
+	092 Move X20, [X31+32]
+	093 Move X19, [X31+40]
+	094 Move X22, [X31+16]
+	095 Move X21, [X31+24]
+	096 Move X30, [X31+48]
+	097 Return 
+
+Method: System.Void SendActivateEvent(System.Collections.Generic.List`1<UnityEngine.XR.Interaction.Toolkit.IXRActivateInteractable> targets)
+
+Disassembly:
+	0x03B506C4 LDR X0, [X0 + 0xA60]
+	0x03B506C8 BL 0x1C16CF4
+	0x03B506CC ADRP X0, 0x60A000
+	0x03B506D0 LDR X0, [X0 + 0xBD8]
+	0x03B506D4 BL 0x1C16CF4
+	0x03B506D8 MOVZ W8, 0x1
+	0x03B506DC STRB W8, [X21 + 0x91C]
+	0x03B506E0 CBZ X20, 0x3B507C4
+	0x03B506E4 LDR X21, [X19 + 0xA8]
+	0x03B506E8 MOV X0, X20
+	0x03B506EC MOV X1, X31
+	0x03B506F0 BL 0x3B66614
+	0x03B506F4 CBZ X21, 0x3B507C4
+	0x03B506F8 ADRP X8, 0x60A000
+	0x03B506FC LDR X8, [X8 + 0xBD0]
+	0x03B50700 ADRP X22, 0x60A000
+	0x03B50704 MOV X1, X0
+	0x03B50708 MOV X0, X21
+	0x03B5070C LDR X2, [X8]
+	0x03B50710 LDR X22, [X22 + 0xBD8]
+	0x03B50714 BL 0x2D57DD8
+	0x03B50718 MOV X0, X20
+	0x03B5071C MOV X1, X31
+	0x03B50720 BL 0x3B66614
+	0x03B50724 LDR X1, [X22]
+	0x03B50728 BL 0x1C16E00
+	0x03B5072C CBZ X0, 0x3B5074C
+	0x03B50730 MOV X1, X0
+	0x03B50734 LDR X0, [X19 + 0xF8]
+	0x03B50738 CBZ X0, 0x3B507C4
+	0x03B5073C ADRP X8, 0x60A000
+	0x03B50740 LDR X8, [X8 + 0xBC8]
+	0x03B50744 LDR X2, [X8]
+	0x03B50748 BL 0x2D57DD8
+	0x03B5074C LDR X0, [X19 + 0xA8]
+	0x03B50750 CBZ X0, 0x3B507C4
+	0x03B50754 ADRP X8, 0x60A000
+	0x03B50758 LDR X8, [X8 + 0xA60]
+	0x03B5075C LDR X1, [X8]
+	0x03B50760 BL 0x2D57B54
+	0x03B50764 CMP W0, 0x1
+	0x03B50768 B.NE 0x3B5077C
+	0x03B5076C MOV X0, X20
+	0x03B50770 MOV X1, X31
+	0x03B50774 BL 0x3B66614
+	0x03B50778 STR X0, [X19 + 0xB0]
+	0x03B5077C MOV X0, X20
+	0x03B50780 MOV X1, X31
+	0x03B50784 BL 0x3B66614
+	0x03B50788 MOV X1, X0
+	0x03B5078C MOV X0, X19
+	0x03B50790 BL 0x3B52DA4
+	0x03B50794 MOV X0, X20
+	0x03B50798 MOV X1, X31
+	0x03B5079C BL 0x3B6B5EC
+	0x03B507A0 LDR X8, [X19]
+	0x03B507A4 MOV X1, X0
+	0x03B507A8 MOV X0, X19
+	0x03B507AC LDP X20, X19, [X31 + 0x20]
+	0x03B507B0 LDR X3, [X8 + 0x698]
+	0x03B507B4 LDR X2, [X8 + 0x6A0]
+	0x03B507B8 LDP X22, X21, [X31 + 0x10]
+	0x03B507BC LDR X30, [X31], #0x30
+	0x03B507C0 BR X3
+	0x03B507C4 BL 0x1C16F20
+	0x03B507C8 STR X30, [X31 - 0x20]!
+	0x03B507CC STP X20, X19, [X31 + 0x10]
+	0x03B507D0 ADRP X20, 0x892000
+	0x03B507D4 LDRB W8, [X20 + 0x8F1]
+	0x03B507D8 MOV X19, X0
+	0x03B507DC TBNZ X8, 0x0, 0x3B507F4
+	0x03B507E0 ADRP X0, 0x5A3000
+	0x03B507E4 LDR X0, [X0 + 0x598]
+	0x03B507E8 BL 0x1C16CF4
+	0x03B507EC MOVZ W8, 0x1
+	0x03B507F0 STRB W8, [X20 + 0x8F1]
+	0x03B507F4 LDRB W8, [X19 + 0x1AC]
+	0x03B507F8 MOVZ W9, 0x1
+	0x03B507FC STRB W9, [X19 + 0x278]
+	0x03B50800 STRB W31, [X19 + 0x27A]
+	0x03B50804 CBZ W8, 0x3B50854
+	0x03B50808 ADRP X8, 0x5A3000
+	0x03B5080C LDR X8, [X8 + 0x598]
+	0x03B50810 LDR X20, [X19 + 0x260]
+	0x03B50814 LDR X0, [X8]
+	0x03B50818 LDR W8, [X0 + 0xE0]
+	0x03B5081C CBNZ W8, 0x3B50824
+	0x03B50820 BL 0x1C16DFC
+	0x03B50824 MOV X0, X20
+	0x03B50828 MOV X1, X31
+	0x03B5082C MOV X2, X31
+	0x03B50830 BL 0x3C354F8
+	0x03B50834 TBZ X0, 0x0, 0x3B50854
+	0x03B50838 LDR X0, [X19 + 0x260]
+	0x03B5083C CBZ X0, 0x3B50860
+	0x03B50840 LDP X20, X19, [X31 + 0x10]
+	0x03B50844 MOVZ W1, 0x1
+	0x03B50848 MOV X2, X31
+	0x03B5084C LDR X30, [X31], #0x20
+	0x03B50850 B 0x3B341B4
+	0x03B50854 LDP X20, X19, [X31 + 0x10]
+	0x03B50858 LDR X30, [X31], #0x20
+	0x03B5085C RET
+	0x03B50860 BL 0x1C16F20
+	0x03B50864 STP D9, D8, [X31 - 0x30]!
+	0x03B50868 STP X30, X21, [X31 + 0x10]
+	0x03B5086C STP X20, X19, [X31 + 0x20]
+	0x03B50870 ADRP X21, 0x892000
+	0x03B50874 ADRP X20, 0x5A3000
+	0x03B50878 LDRB W8, [X21 + 0x8EE]
+	0x03B5087C LDR X20, [X20 + 0x598]
+	0x03B50880 MOV V8.16B, V1.16B
+	0x03B50884 MOV V9.16B, V0.16B
+	0x03B50888 MOV X19, X0
+	0x03B5088C TBNZ X8, 0x0, 0x3B508A4
+	0x03B50890 ADRP X0, 0x5A3000
+	0x03B50894 LDR X0, [X0 + 0x598]
+	0x03B50898 BL 0x1C16CF4
+	0x03B5089C MOVZ W8, 0x1
+	0x03B508A0 STRB W8, [X21 + 0x8EE]
+	0x03B508A4 LDR X0, [X20]
+	0x03B508A8 LDR X20, [X19 + 0x260]
+	0x03B508AC LDR W8, [X0 + 0xE0]
+	0x03B508B0 CBNZ W8, 0x3B508B8
+	0x03B508B4 BL 0x1C16DFC
+	0x03B508B8 MOV X0, X20
+	0x03B508BC MOV X1, X31
+	0x03B508C0 MOV X2, X31
+	0x03B508C4 BL 0x3C354F8
+	0x03B508C8 TBZ X0, 0x0, 0x3B508F8
+	0x03B508CC LDR X0, [X19 + 0x260]
+	0x03B508D0 CBZ X0, 0x3B5090C
+	0x03B508D4 LDR X8, [X0]
+	0x03B508D8 LDP X20, X19, [X31 + 0x20]
+	0x03B508DC LDP X30, X21, [X31 + 0x10]
+	0x03B508E0 MOV V0.16B, V9.16B
+	0x03B508E4 LDR X2, [X8 + 0x228]
+	0x03B508E8 LDR X1, [X8 + 0x230]
+	0x03B508EC MOV V1.16B, V8.16B
+	0x03B508F0 LDP D9, D8, [X31], #0x30
+	0x03B508F4 BR X2
+	0x03B508F8 LDP X20, X19, [X31 + 0x20]
+	0x03B508FC LDP X30, X21, [X31 + 0x10]
+	0x03B50900 MOV W0, W31
+	0x03B50904 LDP D9, D8, [X31], #0x30
+	0x03B50908 RET
+	0x03B5090C BL 0x1C16F20
+	0x03B50910 STR X30, [X31 - 0x20]!
+	0x03B50914 STP X20, X19, [X31 + 0x10]
+	0x03B50918 MOV X20, X1
+	0x03B5091C MOV X19, X0
+	0x03B50920 BL 0x3B509B4
+	0x03B50924 MOV X0, X19
+	0x03B50928 BL 0x3B50AD8
+	0x03B5092C CBZ X20, 0x3B509B0
+	0x03B50930 LDRB W8, [X20 + 0x28]
+	0x03B50934 CBZ W8, 0x3B50964
+	0x03B50938 LDRB W8, [X19 + 0x228]
+	0x03B5093C CBZ W8, 0x3B50950
+	0x03B50940 LDR V0, [X19 + 0x22C]
+	0x03B50944 LDR V1, [X19 + 0x230]
+	0x03B50948 MOV X0, X19
+	0x03B5094C BL 0x3B50864
+	0x03B50950 LDRB W8, [X19 + 0x1D0]
+	0x03B50954 CBZ W8, 0x3B509A4
+	0x03B50958 LDR X8, [X19]
+	0x03B5095C LDR X1, [X19 + 0x1D8]
+	0x03B50960 B 0x3B5098C
+	0x03B50964 LDRB W8, [X19 + 0x21C]
+	0x03B50968 CBZ W8, 0x3B5097C
+	0x03B5096C LDR V0, [X19 + 0x220]
+	0x03B50970 LDR V1, [X19 + 0x224]
+	0x03B50974 MOV X0, X19
+	0x03B50978 BL 0x3B50864
+	0x03B5097C LDRB W8, [X19 + 0x1C0]
+	0x03B50980 CBZ W8, 0x3B509A4
+	0x03B50984 LDR X8, [X19]
+	0x03B50988 LDR X1, [X19 + 0x1C8]
+	0x03B5098C LDR X3, [X8 + 0x7A8]
+	0x03B50990 LDR X2, [X8 + 0x7B0]
+	0x03B50994 MOV X0, X19
+	0x03B50998 LDP X20, X19, [X31 + 0x10]
+	0x03B5099C LDR X30, [X31], #0x20
+	0x03B509A0 BR X3
+	0x03B509A4 LDP X20, X19, [X31 + 0x10]
+	0x03B509A8 LDR X30, [X31], #0x20
+	0x03B509AC RET
+	0x03B509B0 BL 0x1C16F20
+	0x03B509B4 STP X30, X21, [X31 - 0x20]!
+	0x03B509B8 STP X20, X19, [X31 + 0x10]
+	0x03B509BC ADRP X21, 0x892000
+	0x03B509C0 LDRB W8, [X21 + 0x91E]
+	0x03B509C4 MOV X20, X1
+	0x03B509C8 MOV X19, X0
+	0x03B509CC TBNZ X8, 0x0, 0x3B50A08
+	0x03B509D0 ADRP X0, 0x60A000
+	0x03B509D4 LDR X0, [X0 + 0xBE0]
+	0x03B509D8 BL 0x1C16CF4
+	0x03B509DC ADRP X0, 0x60A000
+	0x03B509E0 LDR X0, [X0 + 0xBE8]
+	0x03B509E4 BL 0x1C16CF4
+	0x03B509E8 ADRP X0, 0x60A000
+	0x03B509EC LDR X0, [X0 + 0xBF0]
+	0x03B509F0 BL 0x1C16CF4
+	0x03B509F4 ADRP X0, 0x60A000
+	0x03B509F8 LDR X0, [X0 + 0xBD8]
+	0x03B509FC BL 0x1C16CF4
+	0x03B50A00 MOVZ W8, 0x1
+	0x03B50A04 STRB W8, [X21 + 0x91E]
+	0x03B50A08 CBZ X20, 0x3B50AD4
+	0x03B50A0C LDR X21, [X19 + 0xA8]
+
+ISIL:
+	001 Subtract X31, X31, 176
+	002 Move [X31+96], X30
+	003 Move [X31+104], X27
+	004 Move [X31+112], X26
+	005 Move [X31+120], X25
+	006 Move [X31+128], X24
+	007 Move [X31+136], X23
+	008 Move [X31+144], X22
+	009 Move [X31+152], X21
+	010 Move [X31+160], X20
+	011 Move [X31+168], X19
+	012 Move X21, 0x893000
+	013 Move W8, [X21+2278]
+	014 Move X20, X1
+	015 Move X19, X0
+	016 Move TEMP, X8
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {46}
+	020 Move X0, 0x60B000
+	021 Move X0, [X0+2888]
+	022 Call 0x1C17CF4
+	023 Move X0, 0x60B000
+	024 Move X0, [X0+2896]
+	025 Call 0x1C17CF4
+	026 Move X0, 0x60B000
+	027 Move X0, [X0+2904]
+	028 Call 0x1C17CF4
+	029 Move X0, 0x60B000
+	030 Move X0, [X0+2912]
+	031 Call 0x1C17CF4
+	032 Move X0, 0x60B000
+	033 Move X0, [X0+2920]
+	034 Call 0x1C17CF4
+	035 Move X0, 0x60B000
+	036 Move X0, [X0+2928]
+	037 Call 0x1C17CF4
+	038 Move X0, 0x5A4000
+	039 Move X0, [X0+1432]
+	040 Call 0x1C17CF4
+	041 Move X0, 0x60B000
+	042 Move X0, [X0+2936]
+	043 Call 0x1C17CF4
+	044 Move W8, 1
+	045 Move [X21+2278], W8
+	046 Move [X31+64], X31
+	047 Move [X31+72], X31
+	048 Move [X31+80], X31
+	049 Move [X31+48], X31
+	050 Move [X31+56], X31
+	051 Move [X31+40], X31
+	052 Compare X20, 0
+	053 JumpIfEqual {197}
+	054 Move X8, 0x60B000
+	055 Move X8, [X8+2928]
+	056 Move X24, 0x60B000
+	057 Move X25, 0x5A4000
+	058 Move X26, 0x60B000
+	059 Move X24, [X24+2896]
+	060 Move X25, [X25+1432]
+	061 Move X26, [X26+2920]
+	062 Move X1, [X8]
+	063 Move X23, 0x60B000
+	064 Move X27, 0x60B000
+	065 Move X22, 0x60B000
+	066 Move X23, [X23+2936]
+	067 Move X27, [X27+2912]
+	068 Move X22, [X22+2888]
+	069 Add X8, X31, 16
+	070 Move X0, X20
+	071 Call List`1<Object>.GetEnumerator, X0
+	072 Move V0, [X31+1]
+	073 Move X8, [X31+32]
+	074 Move [X31+4], V0
+	075 Move [X31+80], X8
+	076 Move X1, [X24]
+	077 Add X0, X31, 64
+	078 Call Enumerator<Object>.MoveNext, X0
+	079 Move TEMP, X0
+	080 And TEMP, TEMP, 1
+	081 Compare TEMP, 1
+	082 JumpIfNotEqual {170}
+	083 Move X20, [X31+80]
+	084 Compare X20, 0
+	085 JumpIfEqual {76}
+	086 Move X0, [X25]
+	087 Move W8, [X0+224]
+	088 Compare W8, 0
+	089 JumpIfNotEqual {92}
+	090 Call 0x1C17DFC
+	091 Move X0, [X25]
+	092 Move X8, [X20]
+	093 Move W9, [X0+304]
+	094 Move W10, [X8+304]
+	095 NotImplemented "Instruction CMP not yet implemented."
+	096 Move X0, X31
+	097 Move X8, [X8+200]
+	098 Add X8, X8, X9
+	099 NotImplemented "Instruction LDUR not yet implemented."
+	100 NotImplemented "Instruction CMP not yet implemented."
+	101 NotImplemented "Instruction CSEL not yet implemented."
+	102 Move X1, X31
+	103 Move X2, X31
+	104 Call Object.op_Equality, X0, X1
+	105 Move TEMP, X0
+	106 And TEMP, TEMP, 1
+	107 Compare TEMP, 1
+	108 JumpIfEqual {76}
+	109 Move X0, [X19+616]
+	110 Compare X0, 0
+	111 JumpIfEqual {187}
+	112 Move X2, [X26]
+	113 Add X1, X31, 56
+	114 Call 0x2EF2058, X0, X1
+	115 Move X8, [X31+56]
+	116 Move [X31+40], X0
+	117 Move [X31+48], X1
+	118 Compare X8, 0
+	119 JumpIfEqual {160}
+	120 Move X0, X8
+	121 Move X1, X19
+	122 Move X2, X31
+	123 Call ActivateEventArgs.set_interactorObject, X0, X1
+	124 Move X0, [X31+56]
+	125 Compare X0, 0
+	126 JumpIfEqual {161}
+	127 Move X1, X20
+	128 Move X2, X31
+	129 Call ActivateEventArgs.set_interactableObject, X0, X1
+	130 Move X8, [X20]
+	131 Move X21, [X31+56]
+	132 Move X1, [X27]
+	133 NotImplemented "Instruction LDRH not yet implemented."
+	134 Compare X9, 0
+	135 JumpIfEqual {142}
+	136 Move X10, [X8+176]
+	137 Add X10, X10, 8
+	138 NotImplemented "Instruction LDUR not yet implemented."
+	139 NotImplemented "Instruction CMP not yet implemented."
+	140 Subtract X9, X9, 1
+	141 Add X10, X10, 16
+	142 Move W2, 2
+	143 Move X0, X20
+	144 Call 0x1C5D788
+	145 Move W9, [X10]
+	146 Add W9, W9, 2
+	147 Add X8, X8, W9
+	148 Add X0, X8, 312
+	149 Move X8, [X0]
+	150 Move X2, [X0+8]
+	151 Move X0, X20
+	152 Move X1, X21
+	153 NotImplemented "Instruction BLR not yet implemented."
+	154 Move X21, X31
+	155 Move X1, [X23]
+	156 Add X0, X31, 40
+	157 Call 0x24A7DD0, X0
+	158 Compare X21, 0
+	159 JumpIfEqual {76}
+	160 Call 0x1C17F20
+	161 Call 0x1C17F20
+	162 Move X8, X1
+	163 Move X20, X0
+	164 NotImplemented "Instruction CMP not yet implemented."
+	165 Move [X31+8], X1
+	166 Move X0, X20
+	167 Call 0x3EB2AD0
+	168 Move X21, [X0]
+	169 Call 0x3EB2AE0
+	170 Move X1, [X22]
+	171 Add X0, X31, 64
+	172 Call Enumerator<Object>.Dispose, X0
+	173 Move X20, [X31+160]
+	174 Move X19, [X31+168]
+	175 Move X22, [X31+144]
+	176 Move X21, [X31+152]
+	177 Move X24, [X31+128]
+	178 Move X23, [X31+136]
+	179 Move X26, [X31+112]
+	180 Move X25, [X31+120]
+	181 Move X30, [X31+96]
+	182 Move X27, [X31+104]
+	183 Add X31, X31, 176
+	184 Return 
+	185 Move X0, X21
+	186 Call 0x1C17F18
+	187 Call 0x1C17F20
+	188 Move X21, X31
+	189 Move X1, [X23]
+	190 Add X0, X31, 40
+	191 Call 0x24A7DD0, X0
+	192 Move X1, [X31+8]
+	193 Compare X21, 0
+	194 JumpIfEqual {201}
+	195 Move X0, X21
+	196 Call 0x1C17F18
+	197 Call 0x1C17F20
+	198 Move X20, X0
+	199 Move [X31+8], X1
+	200 Move X20, X0
+	201 NotImplemented "Instruction CMP not yet implemented."
+	202 Move X0, X20
+	203 Call 0x3EB2AD0
+	204 Move X19, [X0]
+	205 Call 0x3EB2AE0
+	206 Move X1, [X22]
+	207 Add X0, X31, 64
+	208 Call Enumerator<Object>.Dispose, X0
+	209 Compare X19, 0
+	210 JumpIfEqual {173}
+	211 Move X0, X19
+	212 Call 0x1C17F18
+	213 Move X19, X31
+	214 Move X20, X0
+	215 Move X1, [X22]
+	216 Add X0, X31, 64
+	217 Call Enumerator<Object>.Dispose, X0
+	218 Compare X19, 0
+	219 JumpIfNotEqual {222}
+	220 Move X0, X20
+	221 Call 0x1D2D690
+	222 Move X0, X19
+	223 Call 0x1C17F18
+	224 Call 0x1991590
+
+Method: System.Void SendDeactivateEvent(System.Collections.Generic.List`1<UnityEngine.XR.Interaction.Toolkit.IXRActivateInteractable> targets)
+
+Disassembly:
+	0x03B50A10 MOV X0, X20
+	0x03B50A14 MOV X1, X31
+	0x03B50A18 BL 0x3B66758
+	0x03B50A1C CBZ X21, 0x3B50AD4
+	0x03B50A20 ADRP X8, 0x60A000
+	0x03B50A24 LDR X8, [X8 + 0xBE8]
+	0x03B50A28 MOV X1, X0
+	0x03B50A2C MOV X0, X21
+	0x03B50A30 LDR X2, [X8]
+	0x03B50A34 BL 0x2D57E88
+	0x03B50A38 LDR X0, [X19 + 0xF8]
+	0x03B50A3C CBZ X0, 0x3B50AD4
+	0x03B50A40 ADRP X8, 0x60A000
+	0x03B50A44 LDR X8, [X8 + 0xBF0]
+	0x03B50A48 LDR X1, [X8]
+	0x03B50A4C BL 0x2D57B54
+	0x03B50A50 CMP W0, 0x1
+	0x03B50A54 B.LT 0x3B50AA8
+	0x03B50A58 ADRP X21, 0x60A000
+	0x03B50A5C LDR X21, [X21 + 0xBD8]
+	0x03B50A60 MOV X0, X20
+	0x03B50A64 MOV X1, X31
+	0x03B50A68 BL 0x3B66758
+	0x03B50A6C LDR X1, [X21]
+	0x03B50A70 BL 0x1C16E00
+	0x03B50A74 CBZ X0, 0x3B50AA8
+	0x03B50A78 MOV X21, X0
+	0x03B50A7C MOV X0, X19
+	0x03B50A80 MOV X1, X21
+	0x03B50A84 BL 0x3B52D28
+	0x03B50A88 TBNZ X0, 0x0, 0x3B50AA8
+	0x03B50A8C LDR X0, [X19 + 0xF8]
+	0x03B50A90 CBZ X0, 0x3B50AD4
+	0x03B50A94 ADRP X8, 0x60A000
+	0x03B50A98 LDR X8, [X8 + 0xBE0]
+	0x03B50A9C MOV X1, X21
+	0x03B50AA0 LDR X2, [X8]
+	0x03B50AA4 BL 0x2D57E88
+	0x03B50AA8 MOV X0, X20
+	0x03B50AAC MOV X1, X31
+	0x03B50AB0 BL 0x3B6B5EC
+	0x03B50AB4 LDR X8, [X19]
+	0x03B50AB8 MOV X1, X0
+	0x03B50ABC MOV X0, X19
+	0x03B50AC0 LDP X20, X19, [X31 + 0x10]
+	0x03B50AC4 LDR X3, [X8 + 0x6B8]
+	0x03B50AC8 LDR X2, [X8 + 0x6C0]
+	0x03B50ACC LDP X30, X21, [X31], #0x20
+	0x03B50AD0 BR X3
+	0x03B50AD4 BL 0x1C16F20
+	0x03B50AD8 STR X30, [X31 - 0x20]!
+	0x03B50ADC STP X20, X19, [X31 + 0x10]
+	0x03B50AE0 ADRP X20, 0x892000
+	0x03B50AE4 LDRB W8, [X20 + 0x8F2]
+	0x03B50AE8 MOV X19, X0
+	0x03B50AEC TBNZ X8, 0x0, 0x3B50B04
+	0x03B50AF0 ADRP X0, 0x5A3000
+	0x03B50AF4 LDR X0, [X0 + 0x598]
+	0x03B50AF8 BL 0x1C16CF4
+	0x03B50AFC MOVZ W8, 0x1
+	0x03B50B00 STRB W8, [X20 + 0x8F2]
+	0x03B50B04 MOV X0, X19
+	0x03B50B08 BL 0x3B4B6D0
+	0x03B50B0C TBNZ X0, 0x0, 0x3B50B64
+	0x03B50B10 STRB W31, [X19 + 0x278]
+	0x03B50B14 STRB W31, [X19 + 0x27A]
+	0x03B50B18 ADRP X8, 0x5A3000
+	0x03B50B1C LDR X8, [X8 + 0x598]
+	0x03B50B20 LDR X20, [X19 + 0x260]
+	0x03B50B24 LDR X0, [X8]
+	0x03B50B28 LDR W8, [X0 + 0xE0]
+	0x03B50B2C CBNZ W8, 0x3B50B34
+	0x03B50B30 BL 0x1C16DFC
+	0x03B50B34 MOV X0, X20
+	0x03B50B38 MOV X1, X31
+	0x03B50B3C MOV X2, X31
+	0x03B50B40 BL 0x3C354F8
+	0x03B50B44 TBZ X0, 0x0, 0x3B50B64
+	0x03B50B48 LDR X0, [X19 + 0x260]
+	0x03B50B4C CBZ X0, 0x3B50B70
+	0x03B50B50 LDP X20, X19, [X31 + 0x10]
+	0x03B50B54 MOV W1, W31
+	0x03B50B58 MOV X2, X31
+	0x03B50B5C LDR X30, [X31], #0x20
+	0x03B50B60 B 0x3B341B4
+	0x03B50B64 LDP X20, X19, [X31 + 0x10]
+	0x03B50B68 LDR X30, [X31], #0x20
+	0x03B50B6C RET
+	0x03B50B70 BL 0x1C16F20
+	0x03B50B74 STR X30, [X31 - 0x20]!
+	0x03B50B78 STP X20, X19, [X31 + 0x10]
+	0x03B50B7C MOV X20, X1
+	0x03B50B80 MOV X19, X0
+	0x03B50B84 BL 0x3B50C1C
+	0x03B50B88 CBZ X20, 0x3B50C18
+	0x03B50B8C MOV X0, X20
+	0x03B50B90 MOV X1, X31
+	0x03B50B94 BL 0x3B66278
+	0x03B50B98 LDRB W8, [X19 + 0x234]
+	0x03B50B9C MOV X20, X0
+	0x03B50BA0 CBZ W8, 0x3B50BCC
+	0x03B50BA4 LDRB W8, [X19 + 0x258]
+	0x03B50BA8 CBNZ W8, 0x3B50BBC
+	0x03B50BAC MOV X0, X19
+	0x03B50BB0 MOV X1, X20
+	0x03B50BB4 BL 0x3B5103C
+	0x03B50BB8 TBNZ X0, 0x0, 0x3B50BCC
+	0x03B50BBC LDR V0, [X19 + 0x238]
+	0x03B50BC0 LDR V1, [X19 + 0x23C]
+	0x03B50BC4 MOV X0, X19
+	0x03B50BC8 BL 0x3B50864
+	0x03B50BCC LDRB W8, [X19 + 0x1E0]
+	0x03B50BD0 CBZ W8, 0x3B50BEC
+	0x03B50BD4 LDRB W8, [X19 + 0x210]
+	0x03B50BD8 CBNZ W8, 0x3B50BF8
+	0x03B50BDC MOV X0, X19
+	0x03B50BE0 MOV X1, X20
+	0x03B50BE4 BL 0x3B5103C
+	0x03B50BE8 TBZ X0, 0x0, 0x3B50BF8
+	0x03B50BEC LDP X20, X19, [X31 + 0x10]
+	0x03B50BF0 LDR X30, [X31], #0x20
+	0x03B50BF4 RET
+	0x03B50BF8 LDR X8, [X19]
+	0x03B50BFC LDR X1, [X19 + 0x1E8]
+	0x03B50C00 MOV X0, X19
+	0x03B50C04 LDP X20, X19, [X31 + 0x10]
+	0x03B50C08 LDR X3, [X8 + 0x7A8]
+	0x03B50C0C LDR X2, [X8 + 0x7B0]
+	0x03B50C10 LDR X30, [X31], #0x20
+	0x03B50C14 BR X3
+	0x03B50C18 BL 0x1C16F20
+	0x03B50C1C STR X30, [X31 - 0x30]!
+	0x03B50C20 STP X22, X21, [X31 + 0x10]
+	0x03B50C24 STP X20, X19, [X31 + 0x20]
+	0x03B50C28 ADRP X21, 0x892000
+	0x03B50C2C LDRB W8, [X21 + 0x918]
+	0x03B50C30 MOV X20, X1
+	0x03B50C34 MOV X19, X0
+	0x03B50C38 TBNZ X8, 0x0, 0x3B50C74
+	0x03B50C3C ADRP X0, 0x60A000
+	0x03B50C40 LDR X0, [X0 + 0xBC8]
+	0x03B50C44 BL 0x1C16CF4
+	0x03B50C48 ADRP X0, 0x60A000
+	0x03B50C4C LDR X0, [X0 + 0xBF8]
+	0x03B50C50 BL 0x1C16CF4
+	0x03B50C54 ADRP X0, 0x60A000
+	0x03B50C58 LDR X0, [X0 + 0xBD8]
+	0x03B50C5C BL 0x1C16CF4
+	0x03B50C60 ADRP X0, 0x60A000
+	0x03B50C64 LDR X0, [X0 + 0xC00]
+	0x03B50C68 BL 0x1C16CF4
+	0x03B50C6C MOVZ W8, 0x1
+	0x03B50C70 STRB W8, [X21 + 0x918]
+	0x03B50C74 CBZ X20, 0x3B50D80
+	0x03B50C78 LDR X21, [X19 + 0xA0]
+	0x03B50C7C MOV X0, X20
+	0x03B50C80 MOV X1, X31
+	0x03B50C84 BL 0x3B66278
+	0x03B50C88 CBZ X21, 0x3B50D80
+	0x03B50C8C ADRP X8, 0x60A000
+	0x03B50C90 LDR X8, [X8 + 0xBF8]
+	0x03B50C94 ADRP X22, 0x60A000
+	0x03B50C98 MOV X1, X0
+	0x03B50C9C MOV X0, X21
+	0x03B50CA0 LDR X2, [X8]
+	0x03B50CA4 LDR X22, [X22 + 0xBD8]
+	0x03B50CA8 BL 0x2D57DD8
+	0x03B50CAC MOV X0, X20
+	0x03B50CB0 MOV X1, X31
+	0x03B50CB4 BL 0x3B66278
+	0x03B50CB8 LDR X1, [X22]
+	0x03B50CBC BL 0x1C16E00
+	0x03B50CC0 CBZ X0, 0x3B50CE0
+	0x03B50CC4 MOV X1, X0
+	0x03B50CC8 LDR X0, [X19 + 0xF8]
+	0x03B50CCC CBZ X0, 0x3B50D80
+	0x03B50CD0 ADRP X8, 0x60A000
+	0x03B50CD4 LDR X8, [X8 + 0xBC8]
+	0x03B50CD8 LDR X2, [X8]
+	0x03B50CDC BL 0x2D57DD8
+	0x03B50CE0 LDR X21, [X19 + 0x1A0]
+	0x03B50CE4 MOV X0, X20
+	0x03B50CE8 MOV X1, X31
+	0x03B50CEC BL 0x3B6B5EC
+	0x03B50CF0 CBZ X21, 0x3B50D80
+	0x03B50CF4 ADRP X9, 0x60A000
+	0x03B50CF8 LDR X9, [X9 + 0xC00]
+	0x03B50CFC LDR W10, [X21 + 0x1C]
+	0x03B50D00 LDR X8, [X21 + 0x10]
+	0x03B50D04 LDR X9, [X9]
+	0x03B50D08 ADD W10, W10, 0x1
+	0x03B50D0C STR W10, [X21 + 0x1C]
+	0x03B50D10 CBZ X8, 0x3B50D80
+	0x03B50D14 LDRSW X10, [X21 + 0x18]
+	0x03B50D18 LDR W11, [X8 + 0x18]
+	0x03B50D1C MOV X1, X0
+	0x03B50D20 CMP W10, W11
+	0x03B50D24 B.CS 0x3B50D3C
+	0x03B50D28 ADD W9, W10, 0x1
+	0x03B50D2C ADD X8, X8, X10, 0x3, LSL
+	0x03B50D30 STR W9, [X21 + 0x18]
+	0x03B50D34 STR X1, [X8 + 0x20]
+	0x03B50D38 B 0x3B50D50
+	0x03B50D3C LDR X8, [X9 + 0x20]
+	0x03B50D40 MOV X0, X21
+	0x03B50D44 LDR X8, [X8 + 0xC0]
+	0x03B50D48 LDR X2, [X8 + 0x70]
+	0x03B50D4C BL 0x301BF90
+	0x03B50D50 MOV X0, X20
+	0x03B50D54 MOV X1, X31
+	0x03B50D58 BL 0x3B6B5EC
+
+ISIL:
+	001 Subtract X31, X31, 176
+	002 Move [X31+96], X30
+	003 Move [X31+104], X27
+	004 Move [X31+112], X26
+	005 Move [X31+120], X25
+	006 Move [X31+128], X24
+	007 Move [X31+136], X23
+	008 Move [X31+144], X22
+	009 Move [X31+152], X21
+	010 Move [X31+160], X20
+	011 Move [X31+168], X19
+	012 Move X21, 0x893000
+	013 Move W8, [X21+2279]
+	014 Move X20, X1
+	015 Move X19, X0
+	016 Move TEMP, X8
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {46}
+	020 Move X0, 0x60B000
+	021 Move X0, [X0+2888]
+	022 Call 0x1C17CF4
+	023 Move X0, 0x60B000
+	024 Move X0, [X0+2896]
+	025 Call 0x1C17CF4
+	026 Move X0, 0x60B000
+	027 Move X0, [X0+2904]
+	028 Call 0x1C17CF4
+	029 Move X0, 0x60B000
+	030 Move X0, [X0+2912]
+	031 Call 0x1C17CF4
+	032 Move X0, 0x60B000
+	033 Move X0, [X0+2944]
+	034 Call 0x1C17CF4
+	035 Move X0, 0x60B000
+	036 Move X0, [X0+2928]
+	037 Call 0x1C17CF4
+	038 Move X0, 0x5A4000
+	039 Move X0, [X0+1432]
+	040 Call 0x1C17CF4
+	041 Move X0, 0x60B000
+	042 Move X0, [X0+2952]
+	043 Call 0x1C17CF4
+	044 Move W8, 1
+	045 Move [X21+2279], W8
+	046 Move [X31+64], X31
+	047 Move [X31+72], X31
+	048 Move [X31+80], X31
+	049 Move [X31+48], X31
+	050 Move [X31+56], X31
+	051 Move [X31+40], X31
+	052 Compare X20, 0
+	053 JumpIfEqual {197}
+	054 Move X8, 0x60B000
+	055 Move X8, [X8+2928]
+	056 Move X24, 0x60B000
+	057 Move X25, 0x5A4000
+	058 Move X26, 0x60B000
+	059 Move X24, [X24+2896]
+	060 Move X25, [X25+1432]
+	061 Move X26, [X26+2944]
+	062 Move X1, [X8]
+	063 Move X23, 0x60B000
+	064 Move X27, 0x60B000
+	065 Move X22, 0x60B000
+	066 Move X23, [X23+2952]
+	067 Move X27, [X27+2912]
+	068 Move X22, [X22+2888]
+	069 Add X8, X31, 16
+	070 Move X0, X20
+	071 Call List`1<Object>.GetEnumerator, X0
+	072 Move V0, [X31+1]
+	073 Move X8, [X31+32]
+	074 Move [X31+4], V0
+	075 Move [X31+80], X8
+	076 Move X1, [X24]
+	077 Add X0, X31, 64
+	078 Call Enumerator<Object>.MoveNext, X0
+	079 Move TEMP, X0
+	080 And TEMP, TEMP, 1
+	081 Compare TEMP, 1
+	082 JumpIfNotEqual {170}
+	083 Move X20, [X31+80]
+	084 Compare X20, 0
+	085 JumpIfEqual {76}
+	086 Move X0, [X25]
+	087 Move W8, [X0+224]
+	088 Compare W8, 0
+	089 JumpIfNotEqual {92}
+	090 Call 0x1C17DFC
+	091 Move X0, [X25]
+	092 Move X8, [X20]
+	093 Move W9, [X0+304]
+	094 Move W10, [X8+304]
+	095 NotImplemented "Instruction CMP not yet implemented."
+	096 Move X0, X31
+	097 Move X8, [X8+200]
+	098 Add X8, X8, X9
+	099 NotImplemented "Instruction LDUR not yet implemented."
+	100 NotImplemented "Instruction CMP not yet implemented."
+	101 NotImplemented "Instruction CSEL not yet implemented."
+	102 Move X1, X31
+	103 Move X2, X31
+	104 Call Object.op_Equality, X0, X1
+	105 Move TEMP, X0
+	106 And TEMP, TEMP, 1
+	107 Compare TEMP, 1
+	108 JumpIfEqual {76}
+	109 Move X0, [X19+624]
+	110 Compare X0, 0
+	111 JumpIfEqual {187}
+	112 Move X2, [X26]
+	113 Add X1, X31, 56
+	114 Call 0x2EF2058, X0, X1
+	115 Move X8, [X31+56]
+	116 Move [X31+40], X0
+	117 Move [X31+48], X1
+	118 Compare X8, 0
+	119 JumpIfEqual {160}
+	120 Move X0, X8
+	121 Move X1, X19
+	122 Move X2, X31
+	123 Call DeactivateEventArgs.set_interactorObject, X0, X1
+	124 Move X0, [X31+56]
+	125 Compare X0, 0
+	126 JumpIfEqual {161}
+	127 Move X1, X20
+	128 Move X2, X31
+	129 Call DeactivateEventArgs.set_interactableObject, X0, X1
+	130 Move X8, [X20]
+	131 Move X21, [X31+56]
+	132 Move X1, [X27]
+	133 NotImplemented "Instruction LDRH not yet implemented."
+	134 Compare X9, 0
+	135 JumpIfEqual {142}
+	136 Move X10, [X8+176]
+	137 Add X10, X10, 8
+	138 NotImplemented "Instruction LDUR not yet implemented."
+	139 NotImplemented "Instruction CMP not yet implemented."
+	140 Subtract X9, X9, 1
+	141 Add X10, X10, 16
+	142 Move W2, 3
+	143 Move X0, X20
+	144 Call 0x1C5D788
+	145 Move W9, [X10]
+	146 Add W9, W9, 3
+	147 Add X8, X8, W9
+	148 Add X0, X8, 312
+	149 Move X8, [X0]
+	150 Move X2, [X0+8]
+	151 Move X0, X20
+	152 Move X1, X21
+	153 NotImplemented "Instruction BLR not yet implemented."
+	154 Move X21, X31
+	155 Move X1, [X23]
+	156 Add X0, X31, 40
+	157 Call 0x24A7DD0, X0
+	158 Compare X21, 0
+	159 JumpIfEqual {76}
+	160 Call 0x1C17F20
+	161 Call 0x1C17F20
+	162 Move X8, X1
+	163 Move X20, X0
+	164 NotImplemented "Instruction CMP not yet implemented."
+	165 Move [X31+8], X1
+	166 Move X0, X20
+	167 Call 0x3EB2AD0
+	168 Move X21, [X0]
+	169 Call 0x3EB2AE0
+	170 Move X1, [X22]
+	171 Add X0, X31, 64
+	172 Call Enumerator<Object>.Dispose, X0
+	173 Move X20, [X31+160]
+	174 Move X19, [X31+168]
+	175 Move X22, [X31+144]
+	176 Move X21, [X31+152]
+	177 Move X24, [X31+128]
+	178 Move X23, [X31+136]
+	179 Move X26, [X31+112]
+	180 Move X25, [X31+120]
+	181 Move X30, [X31+96]
+	182 Move X27, [X31+104]
+	183 Add X31, X31, 176
+	184 Return 
+	185 Move X0, X21
+	186 Call 0x1C17F18
+	187 Call 0x1C17F20
+	188 Move X21, X31
+	189 Move X1, [X23]
+	190 Add X0, X31, 40
+	191 Call 0x24A7DD0, X0
+	192 Move X1, [X31+8]
+	193 Compare X21, 0
+	194 JumpIfEqual {201}
+	195 Move X0, X21
+	196 Call 0x1C17F18
+	197 Call 0x1C17F20
+	198 Move X20, X0
+	199 Move [X31+8], X1
+	200 Move X20, X0
+	201 NotImplemented "Instruction CMP not yet implemented."
+	202 Move X0, X20
+	203 Call 0x3EB2AD0
+	204 Move X19, [X0]
+	205 Call 0x3EB2AE0
+	206 Move X1, [X22]
+	207 Add X0, X31, 64
+	208 Call Enumerator<Object>.Dispose, X0
+	209 Compare X19, 0
+	210 JumpIfEqual {173}
+	211 Move X0, X19
+	212 Call 0x1C17F18
+	213 Move X19, X31
+	214 Move X20, X0
+	215 Move X1, [X22]
+	216 Add X0, X31, 64
+	217 Call Enumerator<Object>.Dispose, X0
+	218 Compare X19, 0
+	219 JumpIfNotEqual {222}
+	220 Move X0, X20
+	221 Call 0x1D2D690
+	222 Move X0, X19
+	223 Call 0x1C17F18
+	224 Call 0x1991590
+
+Method: System.Boolean get_isSelectActive()
+
+Disassembly:
+	0x03B50D5C LDR X8, [X19]
+	0x03B50D60 MOV X1, X0
+	0x03B50D64 MOV X0, X19
+	0x03B50D68 LDP X20, X19, [X31 + 0x20]
+	0x03B50D6C LDR X3, [X8 + 0x658]
+	0x03B50D70 LDR X2, [X8 + 0x660]
+	0x03B50D74 LDP X22, X21, [X31 + 0x10]
+	0x03B50D78 LDR X30, [X31], #0x30
+	0x03B50D7C BR X3
+	0x03B50D80 BL 0x1C16F20
+	0x03B50D84 STR X30, [X31 - 0x10]!
+	0x03B50D88 LDRB W8, [X0 + 0x258]
+	0x03B50D8C CBZ W8, 0x3B50D98
+	0x03B50D90 MOVZ W8, 0x1
+	0x03B50D94 B 0x3B50DA0
+	0x03B50D98 BL 0x3B5103C
+	0x03B50D9C EOR W8, W0, 0x1
+	0x03B50DA0 AND W0, W8, 0x1
+	0x03B50DA4 LDR X30, [X31], #0x10
+	0x03B50DA8 RET
+	0x03B50DAC STR X30, [X31 - 0x10]!
+	0x03B50DB0 LDRB W8, [X0 + 0x210]
+	0x03B50DB4 CBZ W8, 0x3B50DC0
+	0x03B50DB8 MOVZ W8, 0x1
+	0x03B50DBC B 0x3B50DC8
+	0x03B50DC0 BL 0x3B5103C
+	0x03B50DC4 EOR W8, W0, 0x1
+	0x03B50DC8 AND W0, W8, 0x1
+	0x03B50DCC LDR X30, [X31], #0x10
+	0x03B50DD0 RET
+	0x03B50DD4 STR X30, [X31 - 0x20]!
+	0x03B50DD8 STP X20, X19, [X31 + 0x10]
+	0x03B50DDC MOV X20, X1
+	0x03B50DE0 MOV X19, X0
+	0x03B50DE4 BL 0x3B50EE0
+	0x03B50DE8 CBZ X20, 0x3B50EDC
+	0x03B50DEC MOV X0, X20
+	0x03B50DF0 MOV X1, X31
+	0x03B50DF4 BL 0x3B664F4
+	0x03B50DF8 LDRB W8, [X20 + 0x28]
+	0x03B50DFC MOV X20, X0
+	0x03B50E00 CBZ W8, 0x3B50E60
+	0x03B50E04 LDRB W8, [X19 + 0x24C]
+	0x03B50E08 CBZ W8, 0x3B50E34
+	0x03B50E0C LDRB W8, [X19 + 0x258]
+	0x03B50E10 CBNZ W8, 0x3B50E24
+	0x03B50E14 MOV X0, X19
+	0x03B50E18 MOV X1, X20
+	0x03B50E1C BL 0x3B5103C
+	0x03B50E20 TBNZ X0, 0x0, 0x3B50E34
+	0x03B50E24 LDR V0, [X19 + 0x250]
+	0x03B50E28 LDR V1, [X19 + 0x254]
+	0x03B50E2C MOV X0, X19
+	0x03B50E30 BL 0x3B50864
+	0x03B50E34 LDRB W8, [X19 + 0x200]
+	0x03B50E38 CBZ W8, 0x3B50EB0
+	0x03B50E3C LDRB W8, [X19 + 0x210]
+	0x03B50E40 CBNZ W8, 0x3B50E54
+	0x03B50E44 MOV X0, X19
+	0x03B50E48 MOV X1, X20
+	0x03B50E4C BL 0x3B5103C
+	0x03B50E50 TBNZ X0, 0x0, 0x3B50EB0
+	0x03B50E54 LDR X8, [X19]
+	0x03B50E58 LDR X1, [X19 + 0x208]
+	0x03B50E5C B 0x3B50EC4
+	0x03B50E60 LDRB W8, [X19 + 0x240]
+	0x03B50E64 CBZ W8, 0x3B50E90
+	0x03B50E68 LDRB W8, [X19 + 0x258]
+	0x03B50E6C CBNZ W8, 0x3B50E80
+	0x03B50E70 MOV X0, X19
+	0x03B50E74 MOV X1, X20
+	0x03B50E78 BL 0x3B5103C
+	0x03B50E7C TBNZ X0, 0x0, 0x3B50E90
+	0x03B50E80 LDR V0, [X19 + 0x244]
+	0x03B50E84 LDR V1, [X19 + 0x248]
+	0x03B50E88 MOV X0, X19
+	0x03B50E8C BL 0x3B50864
+	0x03B50E90 LDRB W8, [X19 + 0x1F0]
+	0x03B50E94 CBZ W8, 0x3B50EB0
+	0x03B50E98 LDRB W8, [X19 + 0x210]
+	0x03B50E9C CBNZ W8, 0x3B50EBC
+	0x03B50EA0 MOV X0, X19
+	0x03B50EA4 MOV X1, X20
+	0x03B50EA8 BL 0x3B5103C
+	0x03B50EAC TBZ X0, 0x0, 0x3B50EBC
+	0x03B50EB0 LDP X20, X19, [X31 + 0x10]
+	0x03B50EB4 LDR X30, [X31], #0x20
+	0x03B50EB8 RET
+	0x03B50EBC LDR X8, [X19]
+	0x03B50EC0 LDR X1, [X19 + 0x1F8]
+	0x03B50EC4 LDR X3, [X8 + 0x7A8]
+	0x03B50EC8 LDR X2, [X8 + 0x7B0]
+	0x03B50ECC MOV X0, X19
+	0x03B50ED0 LDP X20, X19, [X31 + 0x10]
+	0x03B50ED4 LDR X30, [X31], #0x20
+	0x03B50ED8 BR X3
+	0x03B50EDC BL 0x1C16F20
+	0x03B50EE0 STP X30, X21, [X31 - 0x20]!
+	0x03B50EE4 STP X20, X19, [X31 + 0x10]
+	0x03B50EE8 ADRP X21, 0x892000
+	0x03B50EEC LDRB W8, [X21 + 0x91A]
+	0x03B50EF0 MOV X20, X1
+	0x03B50EF4 MOV X19, X0
+	0x03B50EF8 TBNZ X8, 0x0, 0x3B50F40
+	0x03B50EFC ADRP X0, 0x60A000
+	0x03B50F00 LDR X0, [X0 + 0xBE0]
+	0x03B50F04 BL 0x1C16CF4
+	0x03B50F08 ADRP X0, 0x60A000
+	0x03B50F0C LDR X0, [X0 + 0xC08]
+	0x03B50F10 BL 0x1C16CF4
+	0x03B50F14 ADRP X0, 0x60A000
+	0x03B50F18 LDR X0, [X0 + 0xBF0]
+	0x03B50F1C BL 0x1C16CF4
+	0x03B50F20 ADRP X0, 0x60A000
+	0x03B50F24 LDR X0, [X0 + 0xBD8]
+	0x03B50F28 BL 0x1C16CF4
+	0x03B50F2C ADRP X0, 0x60A000
+	0x03B50F30 LDR X0, [X0 + 0xC10]
+	0x03B50F34 BL 0x1C16CF4
+	0x03B50F38 MOVZ W8, 0x1
+	0x03B50F3C STRB W8, [X21 + 0x91A]
+	0x03B50F40 CBZ X20, 0x3B51038
+	0x03B50F44 LDR X21, [X19 + 0xA0]
+	0x03B50F48 MOV X0, X20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x893000
+	006 Move W8, [X20+2280]
+	007 Move X19, X0
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x5A4000
+	013 Move X0, [X0+1432]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+2280], W8
+	017 Move W8, [X19+153]
+	018 Compare W8, 0
+	019 JumpIfEqual {154}
+	020 Move W8, [X19+154]
+	021 Compare W8, 0
+	022 JumpIfEqual {24}
+	023 Move W0, 1
+	024 Move W8, [X19+424]
+	025 NotImplemented "Instruction CMP not yet implemented."
+	026 Move X9, -50036736
+	027 Add X9, X9, 3468
+	028 NotImplemented "Instruction ADR not yet implemented."
+	029 Move W11, [X9]
+	030 Add X10, X10, X11
+	031 CallNoReturn X10
+	032 Move X8, 0x5A4000
+	033 Move X8, [X8+1432]
+	034 Move X20, [X19+608]
+	035 Move X0, [X8]
+	036 Move W8, [X0+224]
+	037 Compare W8, 0
+	038 JumpIfNotEqual {40}
+	039 Call 0x1C17DFC
+	040 Move X0, X20
+	041 Move X1, X31
+	042 Move X2, X31
+	043 Call Object.op_Inequality, X0, X1
+	044 Move TEMP, X0
+	045 And TEMP, TEMP, 1
+	046 Compare TEMP, 1
+	047 JumpIfNotEqual {154}
+	048 Move X8, [X19+608]
+	049 Compare X8, 0
+	050 JumpIfEqual {160}
+	051 Move W8, [X8+96]
+	052 NotImplemented "Instruction CMP not yet implemented."
+	053 NotImplemented "Instruction CSET not yet implemented."
+	054 Move X21, 0x5A4000
+	055 Move X21, [X21+1432]
+	056 Move X20, [X19+608]
+	057 Move X0, [X21]
+	058 Move W8, [X0+224]
+	059 Compare W8, 0
+	060 JumpIfNotEqual {62}
+	061 Call 0x1C17DFC
+	062 Move X0, X20
+	063 Move X1, X31
+	064 Move X2, X31
+	065 Call Object.op_Inequality, X0, X1
+	066 Move TEMP, X0
+	067 And TEMP, TEMP, 1
+	068 Compare TEMP, 1
+	069 JumpIfNotEqual {76}
+	070 Move X8, [X19+608]
+	071 Compare X8, 0
+	072 JumpIfEqual {160}
+	073 Move W8, [X8+97]
+	074 Compare W8, 0
+	075 JumpIfNotEqual {23}
+	076 Move X0, X19
+	077 Call XRBaseInteractor.get_hasSelection, X0
+	078 Move TEMP, X0
+	079 And TEMP, TEMP, 1
+	080 Compare TEMP, 1
+	081 JumpIfNotEqual {154}
+	082 Move X0, [X21]
+	083 Move X20, [X19+608]
+	084 Move W8, [X0+224]
+	085 Compare W8, 0
+	086 JumpIfNotEqual {88}
+	087 Call 0x1C17DFC
+	088 Move X0, X20
+	089 Move X1, X31
+	090 Move X2, X31
+	091 Call Object.op_Inequality, X0, X1
+	092 Move TEMP, X0
+	093 And TEMP, TEMP, 1
+	094 Compare TEMP, 1
+	095 JumpIfNotEqual {154}
+	096 Move X8, [X19+608]
+	097 Compare X8, 0
+	098 JumpIfEqual {160}
+	099 Move W8, [X8+98]
+	100 Move W8, [X19+632]
+	101 Compare W8, 0
+	102 JumpIfNotEqual {23}
+	103 Move X8, 0x5A4000
+	104 Move X8, [X8+1432]
+	105 Move X20, [X19+608]
+	106 Move X0, [X8]
+	107 Move W8, [X0+224]
+	108 Compare W8, 0
+	109 JumpIfNotEqual {111}
+	110 Call 0x1C17DFC
+	111 Move X0, X20
+	112 Move X1, X31
+	113 Move X2, X31
+	114 Call Object.op_Inequality, X0, X1
+	115 Move TEMP, X0
+	116 And TEMP, TEMP, 1
+	117 Compare TEMP, 1
+	118 JumpIfNotEqual {154}
+	119 Move X8, [X19+608]
+	120 Compare X8, 0
+	121 JumpIfEqual {160}
+	122 Move W8, [X8+97]
+	123 Compare W8, 0
+	124 JumpIfEqual {154}
+	125 Move W8, [X19+633]
+	126 NotImplemented "Instruction CMP not yet implemented."
+	127 NotImplemented "Instruction CSET not yet implemented."
+	128 Move W8, [X19+632]
+	129 Compare W8, 0
+	130 JumpIfNotEqual {23}
+	131 Move W8, [X19+634]
+	132 Compare W8, 0
+	133 JumpIfNotEqual {23}
+	134 Move X8, 0x5A4000
+	135 Move X8, [X8+1432]
+	136 Move X20, [X19+608]
+	137 Move X0, [X8]
+	138 Move W8, [X0+224]
+	139 Compare W8, 0
+	140 JumpIfNotEqual {142}
+	141 Call 0x1C17DFC
+	142 Move X0, X20
+	143 Move X1, X31
+	144 Move X2, X31
+	145 Call Object.op_Inequality, X0, X1
+	146 Move TEMP, X0
+	147 And TEMP, TEMP, 1
+	148 Compare TEMP, 1
+	149 JumpIfNotEqual {154}
+	150 Move X8, [X19+608]
+	151 Compare X8, 0
+	152 JumpIfEqual {160}
+	153 Move W8, [X8+97]
+	154 Move W0, W31
+	155 Move X20, [X31+16]
+	156 Move X19, [X31+24]
+	157 Move X30, [X31+32]
+	158 Move X21, [X31+40]
+	159 Return X0
+	160 Call 0x1C17F20
+
+Method: System.Boolean get_isUISelectActive()
+
+Disassembly:
+	0x03B50F4C MOV X1, X31
+	0x03B50F50 BL 0x3B664F4
+	0x03B50F54 CBZ X21, 0x3B51038
+	0x03B50F58 ADRP X8, 0x60A000
+	0x03B50F5C LDR X8, [X8 + 0xC08]
+	0x03B50F60 MOV X1, X0
+	0x03B50F64 MOV X0, X21
+	0x03B50F68 LDR X2, [X8]
+	0x03B50F6C BL 0x2D57E88
+	0x03B50F70 LDR X0, [X19 + 0xF8]
+	0x03B50F74 CBZ X0, 0x3B51038
+	0x03B50F78 ADRP X8, 0x60A000
+	0x03B50F7C LDR X8, [X8 + 0xBF0]
+	0x03B50F80 LDR X1, [X8]
+	0x03B50F84 BL 0x2D57B54
+	0x03B50F88 CMP W0, 0x1
+	0x03B50F8C B.LT 0x3B50FE0
+	0x03B50F90 ADRP X21, 0x60A000
+	0x03B50F94 LDR X21, [X21 + 0xBD8]
+	0x03B50F98 MOV X0, X20
+	0x03B50F9C MOV X1, X31
+	0x03B50FA0 BL 0x3B664F4
+	0x03B50FA4 LDR X1, [X21]
+	0x03B50FA8 BL 0x1C16E00
+	0x03B50FAC CBZ X0, 0x3B50FE0
+	0x03B50FB0 MOV X21, X0
+	0x03B50FB4 MOV X0, X19
+	0x03B50FB8 MOV X1, X21
+	0x03B50FBC BL 0x3B5103C
+	0x03B50FC0 TBNZ X0, 0x0, 0x3B50FE0
+	0x03B50FC4 LDR X0, [X19 + 0xF8]
+	0x03B50FC8 CBZ X0, 0x3B51038
+	0x03B50FCC ADRP X8, 0x60A000
+	0x03B50FD0 LDR X8, [X8 + 0xBE0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x893000
+	006 Move X20, 0x5A4000
+	007 Move W8, [X21+2281]
+	008 Move X20, [X20+1432]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x5A4000
+	015 Move X0, [X0+1432]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+2281], W8
+	019 Move X0, [X20]
+	020 Move X20, [X19+608]
+	021 Move W8, [X0+224]
+	022 Compare W8, 0
+	023 JumpIfNotEqual {25}
+	024 Call 0x1C17DFC
+	025 Move X0, X20
+	026 Move X1, X31
+	027 Move X2, X31
+	028 Call Object.op_Inequality, X0, X1
+	029 Move TEMP, X0
+	030 And TEMP, TEMP, 1
+	031 Compare TEMP, 1
+	032 JumpIfNotEqual {39}
+	033 Move X8, [X19+608]
+	034 Compare X8, 0
+	035 JumpIfEqual {45}
+	036 Move W8, [X8+112]
+	037 NotImplemented "Instruction CMP not yet implemented."
+	038 NotImplemented "Instruction CSET not yet implemented."
+	039 Move W0, W31
+	040 Move X20, [X31+16]
+	041 Move X19, [X31+24]
+	042 Move X30, [X31+32]
+	043 Move X21, [X31+40]
+	044 Return X0
+	045 Call 0x1C17F20
+
+Method: UnityEngine.Vector2 get_uiScrollValue()
+
+Disassembly:
+	0x03B50FD4 MOV X1, X21
+	0x03B50FD8 LDR X2, [X8]
+	0x03B50FDC BL 0x2D57E88
+	0x03B50FE0 LDR X21, [X19 + 0x1A0]
+	0x03B50FE4 MOV X0, X20
+	0x03B50FE8 MOV X1, X31
+	0x03B50FEC BL 0x3B6B5EC
+	0x03B50FF0 CBZ X21, 0x3B51038
+	0x03B50FF4 ADRP X8, 0x60A000
+	0x03B50FF8 LDR X8, [X8 + 0xC10]
+	0x03B50FFC MOV X1, X0
+	0x03B51000 MOV X0, X21
+	0x03B51004 LDR X2, [X8]
+	0x03B51008 BL 0x301D7A8
+	0x03B5100C MOV X0, X20
+	0x03B51010 MOV X1, X31
+	0x03B51014 BL 0x3B6B5EC
+	0x03B51018 LDR X8, [X19]
+	0x03B5101C MOV X1, X0
+	0x03B51020 MOV X0, X19
+	0x03B51024 LDP X20, X19, [X31 + 0x10]
+	0x03B51028 LDR X3, [X8 + 0x678]
+	0x03B5102C LDR X2, [X8 + 0x680]
+	0x03B51030 LDP X30, X21, [X31], #0x20
+	0x03B51034 BR X3
+	0x03B51038 BL 0x1C16F20
+	0x03B5103C STR X30, [X31 - 0x30]!
+	0x03B51040 STP X22, X21, [X31 + 0x10]
+	0x03B51044 STP X20, X19, [X31 + 0x20]
+	0x03B51048 ADRP X21, 0x891000
+	0x03B5104C ADRP X22, 0x609000
+	0x03B51050 LDRB W8, [X21 + 0x910]
+	0x03B51054 LDR X22, [X22 + 0x160]
+	0x03B51058 MOV X20, X1
+	0x03B5105C MOV X19, X0
+	0x03B51060 TBNZ X8, 0x0, 0x3B51078
+	0x03B51064 ADRP X0, 0x609000
+	0x03B51068 LDR X0, [X0 + 0x160]
+	0x03B5106C BL 0x1C16CF4
+	0x03B51070 MOVZ W8, 0x1
+	0x03B51074 STRB W8, [X21 + 0x910]
+	0x03B51078 LDR X1, [X22]
+	0x03B5107C MOV X0, X20
+	0x03B51080 BL 0x1C16E00
+	0x03B51084 CBZ X0, 0x3B510A0
+	0x03B51088 MOV X1, X0
+	0x03B5108C MOV X0, X19
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x893000
+	006 Move X20, 0x5A4000
+	007 Move W8, [X21+2282]
+	008 Move X20, [X20+1432]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x5A4000
+	015 Move X0, [X0+1432]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+2282], W8
+	019 Move X0, [X20]
+	020 Move X20, [X19+608]
+	021 Move W8, [X0+224]
+	022 Compare W8, 0
+	023 JumpIfNotEqual {25}
+	024 Call 0x1C17DFC
+	025 Move X0, X20
+	026 Move X1, X31
+	027 Move X2, X31
+	028 Call Object.op_Inequality, X0, X1
+	029 Move TEMP, X0
+	030 And TEMP, TEMP, 1
+	031 Compare TEMP, 1
+	032 JumpIfNotEqual {38}
+	033 Move X9, [X19+608]
+	034 Compare X9, 0
+	035 JumpIfEqual {59}
+	036 Add X8, X9, 116
+	037 Add X9, X9, 120
+	038 Move X19, 0x889000
+	039 Move W8, [X19+1935]
+	040 Compare W8, 0
+	041 JumpIfNotEqual {47}
+	042 Move X0, 0x5AB000
+	043 Move X0, [X0+3848]
+	044 Call 0x1C17CF4
+	045 Move W8, 1
+	046 Move [X19+1935], W8
+	047 Move X8, 0x5AB000
+	048 Move X8, [X8+3848]
+	049 Move X8, [X8]
+	050 Move X8, [X8+184]
+	051 Add X9, X8, 4
+	052 Move V1, [X9]
+	053 Move V0, [X8]
+	054 Move X20, [X31+16]
+	055 Move X19, [X31+24]
+	056 Move X30, [X31+32]
+	057 Move X21, [X31+40]
+	058 Return X0
+	059 Call 0x1C17F20
+
+Method: System.Boolean get_shouldActivate()
+
+Disassembly:
+	0x03B51090 LDP X20, X19, [X31 + 0x20]
+	0x03B51094 LDP X22, X21, [X31 + 0x10]
+	0x03B51098 LDR X30, [X31], #0x30
+	0x03B5109C B 0x3B52CD0
+	0x03B510A0 LDP X20, X19, [X31 + 0x20]
+	0x03B510A4 LDP X22, X21, [X31 + 0x10]
+	0x03B510A8 LDR X30, [X31], #0x30
+	0x03B510AC RET
+	0x03B510B0 STR X30, [X31 - 0x30]!
+	0x03B510B4 STP X22, X21, [X31 + 0x10]
+	0x03B510B8 STP X20, X19, [X31 + 0x20]
+	0x03B510BC ADRP X22, 0x891000
+	0x03B510C0 ADRP X21, 0x5A2000
+	0x03B510C4 LDRB W8, [X22 + 0x8EF]
+	0x03B510C8 LDR X21, [X21 + 0x598]
+	0x03B510CC MOV X19, X1
+	0x03B510D0 MOV X20, X0
+	0x03B510D4 TBNZ X8, 0x0, 0x3B510EC
+	0x03B510D8 ADRP X0, 0x5A2000
+	0x03B510DC LDR X0, [X0 + 0x598]
+	0x03B510E0 BL 0x1C16CF4
+	0x03B510E4 MOVZ W8, 0x1
+	0x03B510E8 STRB W8, [X22 + 0x8EF]
+	0x03B510EC LDR X0, [X21]
+	0x03B510F0 LDR W8, [X0 + 0xE0]
+	0x03B510F4 CBNZ W8, 0x3B510FC
+	0x03B510F8 BL 0x1C16DFC
+	0x03B510FC MOV X0, X19
+	0x03B51100 MOV X1, X31
+	0x03B51104 MOV X2, X31
+	0x03B51108 BL 0x3C3883C
+	0x03B5110C TBZ X0, 0x0, 0x3B51120
+	0x03B51110 LDP X20, X19, [X31 + 0x20]
+	0x03B51114 LDP X22, X21, [X31 + 0x10]
+	0x03B51118 LDR X30, [X31], #0x30
+	0x03B5111C RET
+	0x03B51120 LDR X0, [X21]
+	0x03B51124 LDR X21, [X20 + 0x280]
+	0x03B51128 LDR W8, [X0 + 0xE0]
+	0x03B5112C CBNZ W8, 0x3B51134
+	0x03B51130 BL 0x1C16DFC
+	0x03B51134 MOV X0, X21
+	0x03B51138 MOV X1, X31
+	0x03B5113C MOV X2, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x892000
+	005 Move W8, [X20+2283]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x5A3000
+	012 Move X0, [X0+1432]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2283], W8
+	016 Move W8, [X19+601]
+	017 Compare W8, 0
+	018 JumpIfEqual {56}
+	019 Move X0, X19
+	020 Call XRBaseInteractor.get_hasSelection, X0
+	021 Move TEMP, X0
+	022 And TEMP, TEMP, 1
+	023 Compare TEMP, 1
+	024 JumpIfEqual {34}
+	025 Move W8, [X19+429]
+	026 Compare W8, 0
+	027 JumpIfEqual {56}
+	028 Move X0, X19
+	029 Call XRBaseInteractor.get_hasHover, X0
+	030 Move TEMP, X0
+	031 And TEMP, TEMP, 1
+	032 Compare TEMP, 1
+	033 JumpIfNotEqual {56}
+	034 Move X8, 0x5A3000
+	035 Move X8, [X8+1432]
+	036 Move X20, [X19+608]
+	037 Move X0, [X8]
+	038 Move W8, [X0+224]
+	039 Compare W8, 0
+	040 JumpIfNotEqual {42}
+	041 Call 0x1C17DFC
+	042 Move X0, X20
+	043 Move X1, X31
+	044 Move X2, X31
+	045 Call Object.op_Inequality, X0, X1
+	046 Move TEMP, X0
+	047 And TEMP, TEMP, 1
+	048 Compare TEMP, 1
+	049 JumpIfNotEqual {56}
+	050 Move X8, [X19+608]
+	051 Compare X8, 0
+	052 JumpIfEqual {61}
+	053 Move W8, [X8+105]
+	054 NotImplemented "Instruction CMP not yet implemented."
+	055 NotImplemented "Instruction CSET not yet implemented."
+	056 Move W0, W31
+	057 Move X20, [X31+16]
+	058 Move X19, [X31+24]
+	059 Move X30, [X31+32]
+	060 Return X0
+	061 Call 0x1C17F20
+
+Method: System.Boolean get_shouldDeactivate()
+
+Disassembly:
+	0x03B51140 BL 0x3C3883C
+	0x03B51144 TBZ X0, 0x0, 0x3B51150
+	0x03B51148 MOV X0, X20
+	0x03B5114C BL 0x3B4F434
+	0x03B51150 LDR X0, [X20 + 0x280]
+	0x03B51154 CBZ X0, 0x3B51170
+	0x03B51158 MOV X1, X19
+	0x03B5115C LDP X20, X19, [X31 + 0x20]
+	0x03B51160 LDP X22, X21, [X31 + 0x10]
+	0x03B51164 MOV X2, X31
+	0x03B51168 LDR X30, [X31], #0x30
+	0x03B5116C B 0x3BFCB00
+	0x03B51170 BL 0x1C16F20
+	0x03B51174 LDRB W0, [X0 + 0x1B4]
+	0x03B51178 RET
+	0x03B5117C LDR X0, [X0 + 0x1B8]
+	0x03B51180 RET
+	0x03B51184 LDR X0, [X0 + 0x1B8]
+	0x03B51188 RET
+	0x03B5118C STR X1, [X0 + 0x1B8]
+	0x03B51190 RET
+	0x03B51194 LDRB W0, [X0 + 0x1C0]
+	0x03B51198 RET
+	0x03B5119C LDR X0, [X0 + 0x1C8]
+	0x03B511A0 RET
+	0x03B511A4 LDR X0, [X0 + 0x1C8]
+	0x03B511A8 RET
+	0x03B511AC STR X1, [X0 + 0x1C8]
+	0x03B511B0 RET
+	0x03B511B4 LDRB W0, [X0 + 0x1E0]
+	0x03B511B8 RET
+	0x03B511BC LDR X0, [X0 + 0x1E8]
+	0x03B511C0 RET
+	0x03B511C4 LDR X0, [X0 + 0x1E8]
+	0x03B511C8 RET
+	0x03B511CC STR X1, [X0 + 0x1E8]
+	0x03B511D0 RET
+	0x03B511D4 LDRB W0, [X0 + 0x1F0]
+	0x03B511D8 RET
+	0x03B511DC LDR X0, [X0 + 0x1F8]
+	0x03B511E0 RET
+	0x03B511E4 LDR X0, [X0 + 0x1F8]
+	0x03B511E8 RET
+	0x03B511EC STR X1, [X0 + 0x1F8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x892000
+	005 Move W8, [X20+2284]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x5A3000
+	012 Move X0, [X0+1432]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2284], W8
+	016 Move W8, [X19+601]
+	017 Compare W8, 0
+	018 JumpIfEqual {56}
+	019 Move X0, X19
+	020 Call XRBaseInteractor.get_hasSelection, X0
+	021 Move TEMP, X0
+	022 And TEMP, TEMP, 1
+	023 Compare TEMP, 1
+	024 JumpIfEqual {34}
+	025 Move W8, [X19+429]
+	026 Compare W8, 0
+	027 JumpIfEqual {56}
+	028 Move X0, X19
+	029 Call XRBaseInteractor.get_hasHover, X0
+	030 Move TEMP, X0
+	031 And TEMP, TEMP, 1
+	032 Compare TEMP, 1
+	033 JumpIfNotEqual {56}
+	034 Move X8, 0x5A3000
+	035 Move X8, [X8+1432]
+	036 Move X20, [X19+608]
+	037 Move X0, [X8]
+	038 Move W8, [X0+224]
+	039 Compare W8, 0
+	040 JumpIfNotEqual {42}
+	041 Call 0x1C17DFC
+	042 Move X0, X20
+	043 Move X1, X31
+	044 Move X2, X31
+	045 Call Object.op_Inequality, X0, X1
+	046 Move TEMP, X0
+	047 And TEMP, TEMP, 1
+	048 Compare TEMP, 1
+	049 JumpIfNotEqual {56}
+	050 Move X8, [X19+608]
+	051 Compare X8, 0
+	052 JumpIfEqual {61}
+	053 Move W8, [X8+106]
+	054 NotImplemented "Instruction CMP not yet implemented."
+	055 NotImplemented "Instruction CSET not yet implemented."
+	056 Move W0, W31
+	057 Move X20, [X31+16]
+	058 Move X19, [X31+24]
+	059 Move X30, [X31+32]
+	060 Return X0
+	061 Call 0x1C17F20
+
+Method: System.Void GetActivateTargets(System.Collections.Generic.List`1<UnityEngine.XR.Interaction.Toolkit.IXRActivateInteractable> targets)
+
+Disassembly:
+	0x03B511F0 RET
+	0x03B511F4 LDRB W0, [X0 + 0x211]
+	0x03B511F8 RET
+	0x03B511FC LDRB W0, [X0 + 0x21C]
+	0x03B51200 RET
+	0x03B51204 LDRB W0, [X0 + 0x234]
+	0x03B51208 RET
+	0x03B5120C LDR X0, [X0 + 0x288]
+	0x03B51210 RET
+	0x03B51214 STP X30, X27, [X31 - 0x50]!
+	0x03B51218 STP X26, X25, [X31 + 0x10]
+	0x03B5121C STP X24, X23, [X31 + 0x20]
+	0x03B51220 STP X22, X21, [X31 + 0x30]
+	0x03B51224 STP X20, X19, [X31 + 0x40]
+	0x03B51228 ADRP X20, 0x891000
+	0x03B5122C ADRP X22, 0x609000
+	0x03B51230 LDRB W8, [X20 + 0x8F3]
+	0x03B51234 LDR X22, [X22 + 0xC18]
+	0x03B51238 MOV X19, X0
+	0x03B5123C TBNZ X8, 0x0, 0x3B512D8
+	0x03B51240 ADRP X0, 0x609000
+	0x03B51244 LDR X0, [X0 + 0xC20]
+	0x03B51248 BL 0x1C16CF4
+	0x03B5124C ADRP X0, 0x609000
+	0x03B51250 LDR X0, [X0 + 0xC28]
+	0x03B51254 BL 0x1C16CF4
+	0x03B51258 ADRP X0, 0x609000
+	0x03B5125C LDR X0, [X0 + 0xC30]
+	0x03B51260 BL 0x1C16CF4
+	0x03B51264 ADRP X0, 0x609000
+	0x03B51268 LDR X0, [X0 + 0xC38]
+	0x03B5126C BL 0x1C16CF4
+	0x03B51270 ADRP X0, 0x609000
+	0x03B51274 LDR X0, [X0 + 0xC40]
+	0x03B51278 BL 0x1C16CF4
+	0x03B5127C ADRP X0, 0x609000
+	0x03B51280 LDR X0, [X0 + 0xC48]
+	0x03B51284 BL 0x1C16CF4
+	0x03B51288 ADRP X0, 0x609000
+	0x03B5128C LDR X0, [X0 + 0xC50]
+	0x03B51290 BL 0x1C16CF4
+	0x03B51294 ADRP X0, 0x609000
+	0x03B51298 LDR X0, [X0 + 0xC58]
+	0x03B5129C BL 0x1C16CF4
+	0x03B512A0 ADRP X0, 0x609000
+	0x03B512A4 LDR X0, [X0 + 0xC60]
+	0x03B512A8 BL 0x1C16CF4
+	0x03B512AC ADRP X0, 0x609000
+	0x03B512B0 LDR X0, [X0 + 0xC68]
+	0x03B512B4 BL 0x1C16CF4
+	0x03B512B8 ADRP X0, 0x609000
+	0x03B512BC LDR X0, [X0 + 0xC18]
+	0x03B512C0 BL 0x1C16CF4
+	0x03B512C4 ADRP X0, 0x609000
+	0x03B512C8 LDR X0, [X0 + 0x368]
+	0x03B512CC BL 0x1C16CF4
+	0x03B512D0 MOVZ W8, 0x1
+	0x03B512D4 STRB W8, [X20 + 0x8F3]
+	0x03B512D8 MOVZ W8, 0x1
+	0x03B512DC MOVZ W9, 0x101
+	0x03B512E0 STR W8, [X19 + 0x1A8]
+	0x03B512E4 STRB W8, [X19 + 0x210]
+	0x03B512E8 STRH W9, [X19 + 0x258]
+	0x03B512EC LDR X0, [X22]
+	0x03B512F0 LDR W8, [X0 + 0xE0]
+	0x03B512F4 CBNZ W8, 0x3B51300
+	0x03B512F8 BL 0x1C16DFC
+	0x03B512FC LDR X0, [X22]
+	0x03B51300 LDR X8, [X0 + 0xB8]
+	0x03B51304 ADRP X24, 0x609000
+	0x03B51308 ADRP X23, 0x609000
+	0x03B5130C LDR X20, [X8 + 0x8]
+	0x03B51310 LDR X24, [X24 + 0xC48]
+	0x03B51314 LDR X23, [X23 + 0xC38]
+	0x03B51318 CBNZ X20, 0x3B5136C
+	0x03B5131C LDR W8, [X0 + 0xE0]
+	0x03B51320 CBNZ W8, 0x3B5132C
+	0x03B51324 BL 0x1C16DFC
+	0x03B51328 LDR X0, [X22]
+	0x03B5132C ADRP X9, 0x609000
+	0x03B51330 LDR X8, [X0 + 0xB8]
+	0x03B51334 LDR X9, [X9 + 0xC28]
+	0x03B51338 LDR X21, [X8]
+	0x03B5133C LDR X0, [X9]
+	0x03B51340 BL 0x1C16F10
+	0x03B51344 ADRP X8, 0x609000
+	0x03B51348 LDR X8, [X8 + 0xC60]
+	0x03B5134C MOV X1, X21
+	0x03B51350 MOV X3, X31
+	0x03B51354 MOV X20, X0
+	0x03B51358 LDR X2, [X8]
+	0x03B5135C BL 0x2D27AA8
+	0x03B51360 LDR X8, [X22]
+	0x03B51364 LDR X8, [X8 + 0xB8]
+	0x03B51368 STR X20, [X8 + 0x8]
+	0x03B5136C LDR X0, [X24]
+	0x03B51370 BL 0x1C16F10
+	0x03B51374 LDR X7, [X23]
+	0x03B51378 MOVZ W6, 0x2710
+	0x03B5137C MOV X1, X20
+	0x03B51380 MOV X2, X31
+	0x03B51384 MOV X3, X31
+	0x03B51388 MOV X4, X31
+	0x03B5138C MOV W5, W31
+	0x03B51390 MOV X21, X0
+	0x03B51394 BL 0x2EF0EC8
+	0x03B51398 STR X21, [X19 + 0x268]
+	0x03B5139C LDR X0, [X22]
+	0x03B513A0 LDR W8, [X0 + 0xE0]
+	0x03B513A4 CBNZ W8, 0x3B513B0
+	0x03B513A8 BL 0x1C16DFC
+	0x03B513AC LDR X0, [X22]
+	0x03B513B0 LDR X8, [X0 + 0xB8]
+	0x03B513B4 ADRP X27, 0x609000
+	0x03B513B8 ADRP X26, 0x609000
+	0x03B513BC ADRP X25, 0x609000
+	0x03B513C0 ADRP X24, 0x609000
+	0x03B513C4 ADRP X23, 0x609000
+	0x03B513C8 LDR X27, [X27 + 0xC40]
+	0x03B513CC LDR X20, [X8 + 0x10]
+	0x03B513D0 LDR X26, [X26 + 0xC30]
+	0x03B513D4 LDR X25, [X25 + 0xC58]
+	0x03B513D8 LDR X24, [X24 + 0xC50]
+	0x03B513DC LDR X23, [X23 + 0x368]
+	0x03B513E0 CBNZ X20, 0x3B51434
+	0x03B513E4 LDR W8, [X0 + 0xE0]
+	0x03B513E8 CBNZ W8, 0x3B513F4
+	0x03B513EC BL 0x1C16DFC
+	0x03B513F0 LDR X0, [X22]
+	0x03B513F4 ADRP X9, 0x609000
+	0x03B513F8 LDR X8, [X0 + 0xB8]
+	0x03B513FC LDR X9, [X9 + 0xC20]
+	0x03B51400 LDR X21, [X8]
+	0x03B51404 LDR X0, [X9]
+	0x03B51408 BL 0x1C16F10
+	0x03B5140C ADRP X8, 0x609000
+	0x03B51410 LDR X8, [X8 + 0xC68]
+	0x03B51414 MOV X1, X21
+	0x03B51418 MOV X3, X31
+	0x03B5141C MOV X20, X0
+	0x03B51420 LDR X2, [X8]
+	0x03B51424 BL 0x2D27AA8
+	0x03B51428 LDR X8, [X22]
+	0x03B5142C LDR X8, [X8 + 0xB8]
+	0x03B51430 STR X20, [X8 + 0x10]
+	0x03B51434 LDR X0, [X27]
+	0x03B51438 BL 0x1C16F10
+	0x03B5143C LDR X7, [X26]
+	0x03B51440 MOVZ W6, 0x2710
+	0x03B51444 MOV X1, X20
+	0x03B51448 MOV X2, X31
+	0x03B5144C MOV X3, X31
+	0x03B51450 MOV X4, X31
+	0x03B51454 MOV W5, W31
+	0x03B51458 MOV X21, X0
+	0x03B5145C BL 0x2EF0EC8
+	0x03B51460 STR X21, [X19 + 0x270]
+	0x03B51464 LDR X0, [X25]
+	0x03B51468 BL 0x1C16F10
+	0x03B5146C LDR X1, [X24]
+	0x03B51470 MOV X20, X0
+	0x03B51474 BL 0x301B7C4
+	0x03B51478 STR X20, [X19 + 0x288]
+	0x03B5147C LDR X0, [X23]
+	0x03B51480 LDR W8, [X0 + 0xE0]
+	0x03B51484 CBNZ W8, 0x3B5148C
+	0x03B51488 BL 0x1C16DFC
+	0x03B5148C MOV X0, X19
+	0x03B51490 LDP X20, X19, [X31 + 0x40]
+	0x03B51494 LDP X22, X21, [X31 + 0x30]
+	0x03B51498 LDP X24, X23, [X31 + 0x20]
+	0x03B5149C LDP X26, X25, [X31 + 0x10]
+	0x03B514A0 LDP X30, X27, [X31], #0x50
+	0x03B514A4 B 0x3B514A8
+	0x03B514A8 STP X29, X30, [X31 - 0x60]!
+	0x03B514AC STP X28, X27, [X31 + 0x10]
+	0x03B514B0 STP X26, X25, [X31 + 0x20]
+	0x03B514B4 STP X24, X23, [X31 + 0x30]
+	0x03B514B8 STP X22, X21, [X31 + 0x40]
+	0x03B514BC STP X20, X19, [X31 + 0x50]
+	0x03B514C0 ADRP X25, 0x891000
+	0x03B514C4 ADRP X20, 0x609000
+	0x03B514C8 ADRP X24, 0x609000
+	0x03B514CC ADRP X23, 0x609000
+	0x03B514D0 ADRP X29, 0x609000
+	0x03B514D4 ADRP X28, 0x609000
+	0x03B514D8 ADRP X27, 0x609000
+	0x03B514DC ADRP X26, 0x609000
+	0x03B514E0 ADRP X22, 0x5A4000
+	0x03B514E4 ADRP X21, 0x5A4000
+	0x03B514E8 LDR X20, [X20 + 0x490]
+	0x03B514EC LDR X24, [X24 + 0x498]
+	0x03B514F0 LDR X23, [X23 + 0x4A0]
+	0x03B514F4 LDR X29, [X29 + 0x4A8]
+	0x03B514F8 LDR X28, [X28 + 0xC70]
+	0x03B514FC LDR X27, [X27 + 0xC78]
+	0x03B51500 LDR X26, [X26 + 0xC80]
+	0x03B51504 LDRB W8, [X25 + 0x92B]
+	0x03B51508 LDR X22, [X22 + 0x850]
+	0x03B5150C LDR X21, [X21 + 0x858]
+	0x03B51510 MOV X19, X0
+	0x03B51514 TBNZ X8, 0x0, 0x3B51670
+	0x03B51518 ADRP X0, 0x609000
+	0x03B5151C LDR X0, [X0 + 0x4C8]
+	0x03B51520 BL 0x1C16CF4
+	0x03B51524 ADRP X0, 0x609000
+	0x03B51528 LDR X0, [X0 + 0x4D0]
+	0x03B5152C BL 0x1C16CF4
+	0x03B51530 ADRP X0, 0x609000
+	0x03B51534 LDR X0, [X0 + 0xC88]
+	0x03B51538 BL 0x1C16CF4
+	0x03B5153C ADRP X0, 0x609000
+	0x03B51540 LDR X0, [X0 + 0xC90]
+	0x03B51544 BL 0x1C16CF4
+	0x03B51548 ADRP X0, 0x609000
+	0x03B5154C LDR X0, [X0 + 0xC98]
+	0x03B51550 BL 0x1C16CF4
+	0x03B51554 ADRP X0, 0x609000
+	0x03B51558 LDR X0, [X0 + 0xCA0]
+	0x03B5155C BL 0x1C16CF4
+	0x03B51560 ADRP X0, 0x609000
+	0x03B51564 LDR X0, [X0 + 0x518]
+	0x03B51568 BL 0x1C16CF4
+	0x03B5156C ADRP X0, 0x609000
+	0x03B51570 LDR X0, [X0 + 0x520]
+	0x03B51574 BL 0x1C16CF4
+	0x03B51578 ADRP X0, 0x609000
+	0x03B5157C LDR X0, [X0 + 0x528]
+	0x03B51580 BL 0x1C16CF4
+	0x03B51584 ADRP X0, 0x609000
+	0x03B51588 LDR X0, [X0 + 0x530]
+	0x03B5158C BL 0x1C16CF4
+	0x03B51590 ADRP X0, 0x609000
+	0x03B51594 LDR X0, [X0 + 0xCA8]
+	0x03B51598 BL 0x1C16CF4
+	0x03B5159C ADRP X0, 0x609000
+
+ISIL:
+	001 Subtract X31, X31, 128
+	002 Move [X31+80], X30
+	003 Move [X31+88], X23
+	004 Move [X31+96], X22
+	005 Move [X31+104], X21
+	006 Move [X31+112], X20
+	007 Move [X31+120], X19
+	008 Move X21, 0x892000
+	009 Move W8, [X21+2285]
+	010 Move X19, X1
+	011 Move X20, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {51}
+	016 Move X0, 0x60A000
+	017 Move X0, [X0+2960]
+	018 Call 0x1C17CF4
+	019 Move X0, 0x60A000
+	020 Move X0, [X0+2496]
+	021 Call 0x1C17CF4
+	022 Move X0, 0x60A000
+	023 Move X0, [X0+2968]
+	024 Call 0x1C17CF4
+	025 Move X0, 0x60A000
+	026 Move X0, [X0+2504]
+	027 Call 0x1C17CF4
+	028 Move X0, 0x60A000
+	029 Move X0, [X0+2512]
+	030 Call 0x1C17CF4
+	031 Move X0, 0x60A000
+	032 Move X0, [X0+2976]
+	033 Call 0x1C17CF4
+	034 Move X0, 0x60A000
+	035 Move X0, [X0+2912]
+	036 Call 0x1C17CF4
+	037 Move X0, 0x60A000
+	038 Move X0, [X0+2984]
+	039 Call 0x1C17CF4
+	040 Move X0, 0x60A000
+	041 Move X0, [X0+2992]
+	042 Call 0x1C17CF4
+	043 Move X0, 0x60A000
+	044 Move X0, [X0+2520]
+	045 Call 0x1C17CF4
+	046 Move X0, 0x60A000
+	047 Move X0, [X0+3000]
+	048 Call 0x1C17CF4
+	049 Move W8, 1
+	050 Move [X21+2285], W8
+	051 Move [X31+48], X31
+	052 Move [X31+56], X31
+	053 Move [X31+64], X31
+	054 Move [X31+24], X31
+	055 Move [X31+32], X31
+	056 Move [X31+40], X31
+	057 Compare X19, 0
+	058 JumpIfEqual {213}
+	059 Move W2, [X19+24]
+	060 Move W8, [X19+28]
+	061 Add W8, W8, 1
+	062 NotImplemented "Instruction CMP not yet implemented."
+	063 Move [X19+24], W31
+	064 Move [X19+28], W8
+	065 Move X0, [X19+16]
+	066 Move W1, W31
+	067 Move X3, X31
+	068 Call Array.Clear, X0, X1, X2
+	069 Move X0, X20
+	070 Call XRBaseInteractor.get_hasSelection, X0
+	071 Move TEMP, X0
+	072 And TEMP, TEMP, 1
+	073 Compare TEMP, 1
+	074 JumpIfNotEqual {143}
+	075 Move X0, X20
+	076 Call XRBaseInteractor.get_interactablesSelected, X0
+	077 Compare X0, 0
+	078 JumpIfEqual {213}
+	079 Move X8, 0x60A000
+	080 Move X8, [X8+3000]
+	081 Move X1, [X8]
+	082 Add X8, X31, 0
+	083 Call List`1<Object>.GetEnumerator, X0
+	084 Move V0, [X31]
+	085 Move X8, [X31+16]
+	086 Move X21, 0x60A000
+	087 Move X22, 0x60A000
+	088 Move X21, [X21+2968]
+	089 Move X22, [X22+2912]
+	090 Move [X31+3], V0
+	091 Move [X31+64], X8
+	092 Move X23, 0x60A000
+	093 Move X23, [X23+2984]
+	094 Move X1, [X21]
+	095 Add X0, X31, 48
+	096 Call Enumerator<Object>.MoveNext, X0
+	097 Move TEMP, X0
+	098 And TEMP, TEMP, 1
+	099 Compare TEMP, 1
+	100 JumpIfNotEqual {126}
+	101 Move X0, [X31+64]
+	102 Move X1, [X22]
+	103 Call 0x1C17E00
+	104 Move X1, X0
+	105 Compare X1, 0
+	106 JumpIfEqual {94}
+	107 Move W10, [X19+28]
+	108 Move X8, [X19+16]
+	109 Move X9, [X23]
+	110 Add W10, W10, 1
+	111 Move [X19+28], W10
+	112 Compare X8, 0
+	113 JumpIfEqual {129}
+	114 NotImplemented "Instruction LDRSW not yet implemented."
+	115 Move W11, [X8+24]
+	116 NotImplemented "Instruction CMP not yet implemented."
+	117 Add W9, W10, 1
+	118 Add X8, X8, X10
+	119 Move [X19+24], W9
+	120 Move [X8+32], X1
+	121 Move X8, [X9+32]
+	122 Move X8, [X8+192]
+	123 Move X2, [X8+112]
+	124 Move X0, X19
+	125 Call List`1<Object>.AddWithResize, X0, X1
+	126 Move X8, 0x60A000
+	127 Move X8, [X8+2960]
+	128 Add X0, X31, 48
+	129 Call 0x1C17F20
+	130 Move X21, X0
+	131 NotImplemented "Instruction CMP not yet implemented."
+	132 Move X0, X21
+	133 Call 0x3EB2AD0
+	134 Move X22, [X0]
+	135 Call 0x3EB2AE0
+	136 Move X8, 0x60A000
+	137 Move X8, [X8+2960]
+	138 Add X0, X31, 48
+	139 Move X1, [X8]
+	140 Call Enumerator<Object>.Dispose, X0
+	141 Compare X22, 0
+	142 JumpIfNotEqual {215}
+	143 Move W8, [X20+429]
+	144 Compare W8, 0
+	145 JumpIfEqual {204}
+	146 Move X0, X20
+	147 Call XRBaseInteractor.get_hasHover, X0
+	148 Move TEMP, X0
+	149 And TEMP, TEMP, 1
+	150 Compare TEMP, 1
+	151 JumpIfNotEqual {204}
+	152 Move X0, X20
+	153 Call XRBaseInteractor.get_interactablesHovered, X0
+	154 Compare X0, 0
+	155 JumpIfEqual {213}
+	156 Move X8, 0x60A000
+	157 Move X8, [X8+2520]
+	158 Move X1, [X8]
+	159 Add X8, X31, 24
+	160 Call List`1<Object>.GetEnumerator, X0
+	161 Move X20, 0x60A000
+	162 Move X21, 0x60A000
+	163 Move X22, 0x60A000
+	164 Move X20, [X20+2504]
+	165 Move X21, [X21+2912]
+	166 Move X22, [X22+2984]
+	167 Move X1, [X20]
+	168 Add X0, X31, 24
+	169 Call Enumerator<Object>.MoveNext, X0
+	170 Move TEMP, X0
+	171 And TEMP, TEMP, 1
+	172 Compare TEMP, 1
+	173 JumpIfNotEqual {199}
+	174 Move X0, [X31+40]
+	175 Move X1, [X21]
+	176 Call 0x1C17E00
+	177 Move X1, X0
+	178 Compare X1, 0
+	179 JumpIfEqual {167}
+	180 Move W10, [X19+28]
+	181 Move X8, [X19+16]
+	182 Move X9, [X22]
+	183 Add W10, W10, 1
+	184 Move [X19+28], W10
+	185 Compare X8, 0
+	186 JumpIfEqual {212}
+	187 NotImplemented "Instruction LDRSW not yet implemented."
+	188 Move W11, [X8+24]
+	189 NotImplemented "Instruction CMP not yet implemented."
+	190 Add W9, W10, 1
+	191 Add X8, X8, X10
+	192 Move [X19+24], W9
+	193 Move [X8+32], X1
+	194 Move X8, [X9+32]
+	195 Move X8, [X8+192]
+	196 Move X2, [X8+112]
+	197 Move X0, X19
+	198 Call List`1<Object>.AddWithResize, X0, X1
+	199 Move X8, 0x60A000
+	200 Move X8, [X8+2496]
+	201 Add X0, X31, 24
+	202 Move X1, [X8]
+	203 Call Enumerator<Object>.Dispose, X0
+	204 Move X20, [X31+112]
+	205 Move X19, [X31+120]
+	206 Move X22, [X31+96]
+	207 Move X21, [X31+104]
+	208 Move X30, [X31+80]
+	209 Move X23, [X31+88]
+	210 Add X31, X31, 128
+	211 Return 
+	212 Call 0x1C17F20
+	213 Call 0x1C17F20
+	214 Move X22, X31
+	215 Move X0, X22
+	216 Call 0x1C17F18
+	217 Move X21, X0
+	218 Move X8, 0x60A000
+	219 Move X8, [X8+2960]
+	220 Move X1, [X8]
+	221 Add X0, X31, 48
+	222 Call Enumerator<Object>.Dispose, X0
+	223 Compare X22, 0
+	224 JumpIfEqual {251}
+	225 Move X0, X22
+	226 Call 0x1C17F18
+	227 Move X21, X0
+	228 NotImplemented "Instruction CMP not yet implemented."
+	229 Move X0, X21
+	230 Call 0x3EB2AD0
+	231 Move X19, [X0]
+	232 Call 0x3EB2AE0
+	233 Move X8, 0x60A000
+	234 Move X8, [X8+2496]
+	235 Add X0, X31, 24
+	236 Move X1, [X8]
+	237 Call Enumerator<Object>.Dispose, X0
+	238 Compare X19, 0
+	239 JumpIfEqual {204}
+	240 Move X0, X19
+	241 Call 0x1C17F18
+	242 Move X19, X31
+	243 Move X21, X0
+	244 Move X8, 0x60A000
+	245 Move X8, [X8+2496]
+	246 Move X1, [X8]
+	247 Add X0, X31, 24
+	248 Call Enumerator<Object>.Dispose, X0
+	249 Compare X19, 0
+	250 JumpIfNotEqual {253}
+	251 Move X0, X21
+	252 Call 0x1D2D690
+	253 Move X0, X19
+	254 Call 0x1C17F18
+	255 Call 0x1991590
+
+Method: System.Void OnSelectEntering(UnityEngine.XR.Interaction.Toolkit.SelectEnterEventArgs args)
+
+Disassembly:
+	0x03B51630 LDR X0, [X0 + 0x4A8]
+	0x03B51634 BL 0x1C16CF4
+	0x03B51638 ADRP X0, 0x609000
+	0x03B5163C LDR X0, [X0 + 0x598]
+	0x03B51640 BL 0x1C16CF4
+	0x03B51644 ADRP X0, 0x609000
+	0x03B51648 LDR X0, [X0 + 0x5A0]
+	0x03B5164C BL 0x1C16CF4
+	0x03B51650 ADRP X0, 0x5A4000
+	0x03B51654 LDR X0, [X0 + 0x9B0]
+	0x03B51658 BL 0x1C16CF4
+	0x03B5165C ADRP X0, 0x609000
+	0x03B51660 LDR X0, [X0 + 0xCC0]
+	0x03B51664 BL 0x1C16CF4
+	0x03B51668 MOVZ W8, 0x1
+	0x03B5166C STRB W8, [X25 + 0x92B]
+	0x03B51670 MOVN W0, 0x0
+	0x03B51674 MOV X1, X31
+	0x03B51678 BL 0x3C35CBC
+	0x03B5167C STR W0, [X19 + 0x40]
+	0x03B51680 MOVN W0, 0x0
+	0x03B51684 MOV X1, X31
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Call XRBaseInteractor.OnSelectEntering, X0, X1
+	005 Move X0, X19
+	006 Call XRBaseControllerInteractor.HandleSelecting, X0
+	007 Move W8, [X19+529]
+	008 Compare W8, 0
+	009 JumpIfEqual {14}
+	010 Move V0, [X19+532]
+	011 Move V1, [X19+536]
+	012 Move X0, X19
+	013 Call XRBaseControllerInteractor.SendHapticImpulse, X0, V0, V1
+	014 Move W8, [X19+436]
+	015 Compare W8, 0
+	016 JumpIfEqual {25}
+	017 Move X8, [X19]
+	018 Move X1, [X19+440]
+	019 Move X0, X19
+	020 Move X3, [X8+1960]
+	021 Move X2, [X8+1968]
+	022 Move X30, [X31+16]
+	023 Move X19, [X31+24]
+	024 CallNoReturn X3
+	025 Move X30, [X31+16]
+	026 Move X19, [X31+24]
+	027 Return 
+
+Method: System.Void OnSelectExiting(UnityEngine.XR.Interaction.Toolkit.SelectExitEventArgs args)
+
+Disassembly:
+	0x03B51910 MOV X1, X31
+	0x03B51914 MOV X20, X0
+	0x03B51918 BL 0x3B6C1F4
+	0x03B5191C STR X20, [X19 + 0x188]
+	0x03B51920 LDR X0, [X23]
+	0x03B51924 BL 0x1C16F10
+	0x03B51928 MOV X1, X31
+	0x03B5192C MOV X20, X0
+	0x03B51930 BL 0x3B6C1F4
+	0x03B51934 STR X20, [X19 + 0x190]
+	0x03B51938 LDR X0, [X23]
+	0x03B5193C BL 0x1C16F10
+	0x03B51940 MOV X1, X31
+	0x03B51944 MOV X20, X0
+	0x03B51948 BL 0x3B6C1F4
+	0x03B5194C STR X20, [X19 + 0x198]
+	0x03B51950 ADRP X8, 0x609000
+	0x03B51954 LDR X8, [X8 + 0xC58]
+	0x03B51958 LDR X0, [X8]
+	0x03B5195C BL 0x1C16F10
+	0x03B51960 ADRP X8, 0x609000
+	0x03B51964 LDR X8, [X8 + 0xC50]
+	0x03B51968 MOV X20, X0
+	0x03B5196C LDR X1, [X8]
+	0x03B51970 BL 0x301B7C4
+	0x03B51974 STR X20, [X19 + 0x1A0]
+	0x03B51978 MOV X0, X19
+	0x03B5197C LDP X20, X19, [X31 + 0x50]
+	0x03B51980 LDP X22, X21, [X31 + 0x40]
+	0x03B51984 LDP X24, X23, [X31 + 0x30]
+	0x03B51988 LDP X26, X25, [X31 + 0x20]
+	0x03B5198C LDP X28, X27, [X31 + 0x10]
+	0x03B51990 MOV X1, X31
+	0x03B51994 LDP X29, X30, [X31], #0x60
+	0x03B51998 B 0x3C36C30
+	0x03B5199C BL 0x1C16F20
+	0x03B519A0 STR X30, [X31 - 0x30]!
+	0x03B519A4 STP X22, X21, [X31 + 0x10]
+	0x03B519A8 STP X20, X19, [X31 + 0x20]
+	0x03B519AC ADRP X21, 0x891000
+	0x03B519B0 ADRP X22, 0x609000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, X1
+	005 Move X19, X0
+	006 Call XRBaseInteractor.OnSelectExiting, X0, X1
+	007 Move X0, X19
+	008 Call XRBaseControllerInteractor.HandleDeselecting, X0
+	009 Compare X20, 0
+	010 JumpIfEqual {49}
+	011 Move W8, [X20+40]
+	012 Compare W8, 0
+	013 JumpIfEqual {26}
+	014 Move W8, [X19+552]
+	015 Compare W8, 0
+	016 JumpIfEqual {21}
+	017 Move V0, [X19+556]
+	018 Move V1, [X19+560]
+	019 Move X0, X19
+	020 Call XRBaseControllerInteractor.SendHapticImpulse, X0, V0, V1
+	021 Move W8, [X19+464]
+	022 Compare W8, 0
+	023 JumpIfEqual {45}
+	024 Move X8, [X19]
+	025 Move X1, [X19+472]
+	026 Move W8, [X19+540]
+	027 Compare W8, 0
+	028 JumpIfEqual {33}
+	029 Move V0, [X19+544]
+	030 Move V1, [X19+548]
+	031 Move X0, X19
+	032 Call XRBaseControllerInteractor.SendHapticImpulse, X0, V0, V1
+	033 Move W8, [X19+448]
+	034 Compare W8, 0
+	035 JumpIfEqual {45}
+	036 Move X8, [X19]
+	037 Move X1, [X19+456]
+	038 Move X3, [X8+1960]
+	039 Move X2, [X8+1968]
+	040 Move X0, X19
+	041 Move X20, [X31+16]
+	042 Move X19, [X31+24]
+	043 Move X30, [X31+32]
+	044 CallNoReturn X3
+	045 Move X20, [X31+16]
+	046 Move X19, [X31+24]
+	047 Move X30, [X31+32]
+	048 Return 
+	049 Call 0x1C17F20
+
+Method: System.Void OnHoverEntering(UnityEngine.XR.Interaction.Toolkit.HoverEnterEventArgs args)
+
+Disassembly:
+	0x03B51B74 STRB W8, [X21 + 0x8F8]
+	0x03B51B78 ADRP X24, 0x609000
+	0x03B51B7C LDR X21, [X20 + 0x20]!
+	0x03B51B80 LDR X24, [X24 + 0xCE8]
+	0x03B51B84 MOV X0, X21
+	0x03B51B88 MOV X1, X19
+	0x03B51B8C MOV X2, X31
+	0x03B51B90 BL 0x33C0DE4
+	0x03B51B94 CBZ X0, 0x3B51BB4
+	0x03B51B98 LDR X23, [X24]
+	0x03B51B9C MOV X22, X0
+	0x03B51BA0 MOV X1, X23
+	0x03B51BA4 BL 0x1C16E00
+	0x03B51BA8 MOV X1, X0
+	0x03B51BAC CBNZ X0, 0x3B51BB8
+	0x03B51BB0 B 0x3B51BE4
+	0x03B51BB4 MOV X1, X31
+	0x03B51BB8 MOV X0, X20
+	0x03B51BBC MOV X2, X21
+	0x03B51BC0 BL 0x1C24138
+	0x03B51BC4 CMP X21, X0
+	0x03B51BC8 MOV X21, X0
+	0x03B51BCC B.NE 0x3B51B84
+	0x03B51BD0 LDP X20, X19, [X31 + 0x30]
+	0x03B51BD4 LDP X22, X21, [X31 + 0x20]
+	0x03B51BD8 LDP X24, X23, [X31 + 0x10]
+	0x03B51BDC LDR X30, [X31], #0x40
+	0x03B51BE0 RET
+	0x03B51BE4 MOV X0, X22
+	0x03B51BE8 MOV X1, X23
+	0x03B51BEC BL 0x1C171E0
+	0x03B51BF0 STR X30, [X31 - 0x40]!
+	0x03B51BF4 STP X24, X23, [X31 + 0x10]
+	0x03B51BF8 STP X22, X21, [X31 + 0x20]
+	0x03B51BFC STP X20, X19, [X31 + 0x30]
+	0x03B51C00 ADRP X21, 0x891000
+	0x03B51C04 LDRB W8, [X21 + 0x8F9]
+	0x03B51C08 MOV X19, X1
+	0x03B51C0C MOV X20, X0
+	0x03B51C10 TBNZ X8, 0x0, 0x3B51C28
+	0x03B51C14 ADRP X0, 0x609000
+	0x03B51C18 LDR X0, [X0 + 0xCE8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, X1
+	005 Move X19, X0
+	006 Call XRBaseInteractor.OnHoverEntering, X0, X1
+	007 Compare X20, 0
+	008 JumpIfEqual {56}
+	009 Move X0, X20
+	010 Move X1, X31
+	011 Call HoverEnterEventArgs.get_interactableObject, X0
+	012 Move W8, [X19+564]
+	013 Move X20, X0
+	014 Compare W8, 0
+	015 JumpIfEqual {30}
+	016 Move W8, [X19+600]
+	017 Compare W8, 0
+	018 JumpIfNotEqual {26}
+	019 Move X0, X19
+	020 Move X1, X20
+	021 Call XRBaseInteractor.IsSelecting, X0, X1
+	022 Move TEMP, X0
+	023 And TEMP, TEMP, 1
+	024 Compare TEMP, 1
+	025 JumpIfEqual {30}
+	026 Move V0, [X19+568]
+	027 Move V1, [X19+572]
+	028 Move X0, X19
+	029 Call XRBaseControllerInteractor.SendHapticImpulse, X0, V0, V1
+	030 Move W8, [X19+480]
+	031 Compare W8, 0
+	032 JumpIfEqual {43}
+	033 Move W8, [X19+528]
+	034 Compare W8, 0
+	035 JumpIfNotEqual {47}
+	036 Move X0, X19
+	037 Move X1, X20
+	038 Call XRBaseInteractor.IsSelecting, X0, X1
+	039 Move TEMP, X0
+	040 And TEMP, TEMP, 1
+	041 Compare TEMP, 1
+	042 JumpIfNotEqual {47}
+	043 Move X20, [X31+16]
+	044 Move X19, [X31+24]
+	045 Move X30, [X31+32]
+	046 Return 
+	047 Move X8, [X19]
+	048 Move X1, [X19+488]
+	049 Move X0, X19
+	050 Move X20, [X31+16]
+	051 Move X19, [X31+24]
+	052 Move X3, [X8+1960]
+	053 Move X2, [X8+1968]
+	054 Move X30, [X31+32]
+	055 CallNoReturn X3
+	056 Call 0x1C17F20
+
+Method: System.Void OnHoverExiting(UnityEngine.XR.Interaction.Toolkit.HoverExitEventArgs args)
+
+Disassembly:
+	0x03B51DD4 CMP X21, X0
+	0x03B51DD8 MOV X21, X0
+	0x03B51DDC B.NE 0x3B51D94
+	0x03B51DE0 LDP X20, X19, [X31 + 0x30]
+	0x03B51DE4 LDP X22, X21, [X31 + 0x20]
+	0x03B51DE8 LDP X24, X23, [X31 + 0x10]
+	0x03B51DEC LDR X30, [X31], #0x40
+	0x03B51DF0 RET
+	0x03B51DF4 MOV X0, X22
+	0x03B51DF8 MOV X1, X23
+	0x03B51DFC BL 0x1C171E0
+	0x03B51E00 LDR X0, [X0 + 0x30]
+	0x03B51E04 RET
+	0x03B51E08 STR X30, [X31 - 0x30]!
+	0x03B51E0C STP X22, X21, [X31 + 0x10]
+	0x03B51E10 STP X20, X19, [X31 + 0x20]
+	0x03B51E14 ADRP X22, 0x891000
+	0x03B51E18 ADRP X21, 0x5A2000
+	0x03B51E1C LDRB W8, [X22 + 0x8FC]
+	0x03B51E20 LDR X21, [X21 + 0x970]
+	0x03B51E24 MOV X20, X1
+	0x03B51E28 MOV X19, X0
+	0x03B51E2C TBNZ X8, 0x0, 0x3B51E44
+	0x03B51E30 ADRP X0, 0x5A2000
+	0x03B51E34 LDR X0, [X0 + 0x970]
+	0x03B51E38 BL 0x1C16CF4
+	0x03B51E3C MOVZ W8, 0x1
+	0x03B51E40 STRB W8, [X22 + 0x8FC]
+	0x03B51E44 STR X20, [X19 + 0x30]
+	0x03B51E48 LDR X0, [X21]
+	0x03B51E4C LDR W8, [X0 + 0xE0]
+	0x03B51E50 CBNZ W8, 0x3B51E58
+	0x03B51E54 BL 0x1C16DFC
+	0x03B51E58 MOV X0, X31
+	0x03B51E5C BL 0x3C018E4
+	0x03B51E60 TBZ X0, 0x0, 0x3B51E88
+	0x03B51E64 MOV X0, X19
+	0x03B51E68 MOV X1, X31
+	0x03B51E6C BL 0x3C32454
+	0x03B51E70 TBZ X0, 0x0, 0x3B51E88
+	0x03B51E74 MOV X0, X19
+	0x03B51E78 LDP X20, X19, [X31 + 0x20]
+	0x03B51E7C LDP X22, X21, [X31 + 0x10]
+	0x03B51E80 LDR X30, [X31], #0x30
+	0x03B51E84 B 0x3B51E98
+	0x03B51E88 LDP X20, X19, [X31 + 0x20]
+	0x03B51E8C LDP X22, X21, [X31 + 0x10]
+	0x03B51E90 LDR X30, [X31], #0x30
+	0x03B51E94 RET
+	0x03B51E98 STR X30, [X31 - 0x30]!
+	0x03B51E9C STP X22, X21, [X31 + 0x10]
+	0x03B51EA0 STP X20, X19, [X31 + 0x20]
+	0x03B51EA4 ADRP X20, 0x891000
+	0x03B51EA8 ADRP X22, 0x5A2000
+	0x03B51EAC LDRB W8, [X20 + 0x90B]
+	0x03B51EB0 LDR X22, [X22 + 0x598]
+	0x03B51EB4 MOV X19, X0
+	0x03B51EB8 TBNZ X8, 0x0, 0x3B51ED0
+	0x03B51EBC ADRP X0, 0x5A2000
+	0x03B51EC0 LDR X0, [X0 + 0x598]
+	0x03B51EC4 BL 0x1C16CF4
+	0x03B51EC8 MOVZ W8, 0x1
+	0x03B51ECC STRB W8, [X20 + 0x90B]
+	0x03B51ED0 LDR X0, [X22]
+	0x03B51ED4 LDR X20, [X19 + 0x110]
+	0x03B51ED8 LDR X21, [X19 + 0x30]
+	0x03B51EDC LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, X1
+	005 Move X19, X0
+	006 Call XRBaseInteractor.OnHoverExiting, X0, X1
+	007 Compare X20, 0
+	008 JumpIfEqual {91}
+	009 Move X0, X20
+	010 Move X1, X31
+	011 Call HoverExitEventArgs.get_interactableObject, X0
+	012 Move W8, [X20+40]
+	013 Move X20, X0
+	014 Compare W8, 0
+	015 JumpIfEqual {48}
+	016 Move W8, [X19+588]
+	017 Compare W8, 0
+	018 JumpIfEqual {33}
+	019 Move W8, [X19+600]
+	020 Compare W8, 0
+	021 JumpIfNotEqual {29}
+	022 Move X0, X19
+	023 Move X1, X20
+	024 Call XRBaseInteractor.IsSelecting, X0, X1
+	025 Move TEMP, X0
+	026 And TEMP, TEMP, 1
+	027 Compare TEMP, 1
+	028 JumpIfEqual {33}
+	029 Move V0, [X19+592]
+	030 Move V1, [X19+596]
+	031 Move X0, X19
+	032 Call XRBaseControllerInteractor.SendHapticImpulse, X0, V0, V1
+	033 Move W8, [X19+512]
+	034 Compare W8, 0
+	035 JumpIfEqual {78}
+	036 Move W8, [X19+528]
+	037 Compare W8, 0
+	038 JumpIfNotEqual {46}
+	039 Move X0, X19
+	040 Move X1, X20
+	041 Call XRBaseInteractor.IsSelecting, X0, X1
+	042 Move TEMP, X0
+	043 And TEMP, TEMP, 1
+	044 Compare TEMP, 1
+	045 JumpIfEqual {78}
+	046 Move X8, [X19]
+	047 Move X1, [X19+520]
+	048 Move W8, [X19+576]
+	049 Compare W8, 0
+	050 JumpIfEqual {65}
+	051 Move W8, [X19+600]
+	052 Compare W8, 0
+	053 JumpIfNotEqual {61}
+	054 Move X0, X19
+	055 Move X1, X20
+	056 Call XRBaseInteractor.IsSelecting, X0, X1
+	057 Move TEMP, X0
+	058 And TEMP, TEMP, 1
+	059 Compare TEMP, 1
+	060 JumpIfEqual {65}
+	061 Move V0, [X19+580]
+	062 Move V1, [X19+584]
+	063 Move X0, X19
+	064 Call XRBaseControllerInteractor.SendHapticImpulse, X0, V0, V1
+	065 Move W8, [X19+496]
+	066 Compare W8, 0
+	067 JumpIfEqual {78}
+	068 Move W8, [X19+528]
+	069 Compare W8, 0
+	070 JumpIfNotEqual {82}
+	071 Move X0, X19
+	072 Move X1, X20
+	073 Call XRBaseInteractor.IsSelecting, X0, X1
+	074 Move TEMP, X0
+	075 And TEMP, TEMP, 1
+	076 Compare TEMP, 1
+	077 JumpIfNotEqual {82}
+	078 Move X20, [X31+16]
+	079 Move X19, [X31+24]
+	080 Move X30, [X31+32]
+	081 Return 
+	082 Move X8, [X19]
+	083 Move X1, [X19+504]
+	084 Move X3, [X8+1960]
+	085 Move X2, [X8+1968]
+	086 Move X0, X19
+	087 Move X20, [X31+16]
+	088 Move X19, [X31+24]
+	089 Move X30, [X31+32]
+	090 CallNoReturn X3
+	091 Call 0x1C17F20
+
+Method: System.Boolean CanPlayHoverAudio(UnityEngine.XR.Interaction.Toolkit.IXRHoverInteractable hoveredInteractable)
+
+Disassembly:
+	0x03B51DAC MOV X22, X0
+	0x03B51DB0 MOV X1, X23
+	0x03B51DB4 BL 0x1C16E00
+	0x03B51DB8 MOV X1, X0
+	0x03B51DBC CBNZ X0, 0x3B51DC8
+	0x03B51DC0 B 0x3B51DF4
+	0x03B51DC4 MOV X1, X31
+	0x03B51DC8 MOV X0, X20
+	0x03B51DCC MOV X2, X21
+	0x03B51DD0 BL 0x1C24138
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W8, [X0+528]
+	003 Compare W8, 0
+	004 JumpIfEqual {6}
+	005 Move W8, 1
+	006 Call XRBaseInteractor.IsSelecting, X0, X1
+	007 Xor W8, W0, 1
+	008 And W0, W8, 1
+	009 Move X30, [X31+16]
+	010 Return X0
+
+Method: System.Boolean CanPlayHoverHaptics(UnityEngine.XR.Interaction.Toolkit.IXRHoverInteractable hoveredInteractable)
+
+Disassembly:
+	0x03B51D84 STRB W8, [X21 + 0x8FB]
+	0x03B51D88 ADRP X24, 0x609000
+	0x03B51D8C LDR X21, [X20 + 0x28]!
+	0x03B51D90 LDR X24, [X24 + 0xCF0]
+	0x03B51D94 MOV X0, X21
+	0x03B51D98 MOV X1, X19
+	0x03B51D9C MOV X2, X31
+	0x03B51DA0 BL 0x33C0FDC
+	0x03B51DA4 CBZ X0, 0x3B51DC4
+	0x03B51DA8 LDR X23, [X24]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W8, [X0+600]
+	003 Compare W8, 0
+	004 JumpIfEqual {6}
+	005 Move W8, 1
+	006 Call XRBaseInteractor.IsSelecting, X0, X1
+	007 Xor W8, W0, 1
+	008 And W0, W8, 1
+	009 Move X30, [X31+16]
+	010 Return X0
+
+Method: System.Boolean SendHapticImpulse(System.Single amplitude, System.Single duration)
+
+Disassembly:
+	0x03B51864 LDR X0, [X22]
+	0x03B51868 BL 0x1C16F10
+	0x03B5186C LDR X1, [X25]
+	0x03B51870 MOV X20, X0
+	0x03B51874 BL 0x2AA7868
+	0x03B51878 STR X20, [X19 + 0xE8]
+	0x03B5187C LDR X0, [X22]
+	0x03B51880 BL 0x1C16F10
+	0x03B51884 LDR X1, [X25]
+	0x03B51888 MOV X20, X0
+	0x03B5188C BL 0x2AA7868
+	0x03B51890 STR X20, [X19 + 0xF0]
+	0x03B51894 LDR X0, [X28]
+	0x03B51898 BL 0x1C16F10
+	0x03B5189C LDR X2, [X27]
+	0x03B518A0 MOV W1, W31
+	0x03B518A4 MOV X20, X0
+	0x03B518A8 BL 0x2D57B9C
+	0x03B518AC STR X20, [X19 + 0xF8]
+	0x03B518B0 LDR X0, [X26]
+	0x03B518B4 BL 0x1C16F10
+	0x03B518B8 ADRP X8, 0x609000
+	0x03B518BC LDR X8, [X8 + 0xC88]
+	0x03B518C0 MOV X20, X0
+	0x03B518C4 LDR X1, [X8]
+	0x03B518C8 BL 0x2AB41F4
+	0x03B518CC STR X20, [X19 + 0x100]
+	0x03B518D0 LDR X0, [X24]
+	0x03B518D4 MOVZ W1, 0x6
+	0x03B518D8 BL 0x1C16D6C
+	0x03B518DC STR X0, [X19 + 0x158]
+	0x03B518E0 LDR X0, [X24]
+	0x03B518E4 MOVZ W1, 0x6
+	0x03B518E8 BL 0x1C16D6C
+	0x03B518EC STR X0, [X19 + 0x160]
+	0x03B518F0 LDR X0, [X23]
+	0x03B518F4 BL 0x1C16F10
+	0x03B518F8 MOV X1, X31
+	0x03B518FC MOV X20, X0
+	0x03B51900 BL 0x3B6C1F4
+	0x03B51904 STR X20, [X19 + 0x180]
+	0x03B51908 LDR X0, [X23]
+	0x03B5190C BL 0x1C16F10
+
+ISIL:
+	001 Move [X31-48], D9
+	002 Move [X31-40], D8
+	003 Move [X31+16], X30
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X21, 0x892000
+	008 Move X20, 0x5A3000
+	009 Move W8, [X21+2286]
+	010 Move X20, [X20+1432]
+	011 Move V8, V1
+	012 Move V9, V0
+	013 Move X19, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {23}
+	018 Move X0, 0x5A3000
+	019 Move X0, [X0+1432]
+	020 Call 0x1C17CF4
+	021 Move W8, 1
+	022 Move [X21+2286], W8
+	023 Move X0, [X20]
+	024 Move X20, [X19+608]
+	025 Move W8, [X0+224]
+	026 Compare W8, 0
+	027 JumpIfNotEqual {29}
+	028 Call 0x1C17DFC
+	029 Move X0, X20
+	030 Move X1, X31
+	031 Move X2, X31
+	032 Call Object.op_Inequality, X0, X1
+	033 Move TEMP, X0
+	034 And TEMP, TEMP, 1
+	035 Compare TEMP, 1
+	036 JumpIfNotEqual {52}
+	037 Move X0, [X19+608]
+	038 Compare X0, 0
+	039 JumpIfEqual {60}
+	040 Move X8, [X0]
+	041 Move X20, [X31+32]
+	042 Move X19, [X31+40]
+	043 Move X30, [X31+16]
+	044 Move X21, [X31+24]
+	045 Move V0, V9
+	046 Move X2, [X8+552]
+	047 Move X1, [X8+560]
+	048 Move V1, V8
+	049 Move D9, [X31+48]
+	050 Move D8, [X31+56]
+	051 CallNoReturn X2
+	052 Move X20, [X31+32]
+	053 Move X19, [X31+40]
+	054 Move X30, [X31+16]
+	055 Move X21, [X31+24]
+	056 Move W0, W31
+	057 Move D9, [X31+48]
+	058 Move D8, [X31+56]
+	059 Return X0
+	060 Call 0x1C17F20
+
+Method: System.Void PlayAudio(UnityEngine.AudioClip audioClip)
+
+Disassembly:
+	0x03B520B0 LDP X20, X19, [X31 + 0x10]
+	0x03B520B4 LDR X30, [X31], #0x20
+	0x03B520B8 RET
+	0x03B520BC STR X30, [X31 - 0x30]!
+	0x03B520C0 STP X22, X21, [X31 + 0x10]
+	0x03B520C4 STP X20, X19, [X31 + 0x20]
+	0x03B520C8 ADRP X21, 0x890000
+	0x03B520CC ADRP X22, 0x5A1000
+	0x03B520D0 LDRB W8, [X21 + 0x8FE]
+	0x03B520D4 LDR X22, [X22 + 0x970]
+	0x03B520D8 MOV X20, X1
+	0x03B520DC MOV X19, X0
+	0x03B520E0 TBNZ X8, 0x0, 0x3B52104
+	0x03B520E4 ADRP X0, 0x5A1000
+	0x03B520E8 LDR X0, [X0 + 0x970]
+	0x03B520EC BL 0x1C16CF4
+	0x03B520F0 ADRP X0, 0x608000
+	0x03B520F4 LDR X0, [X0 + 0xCF8]
+	0x03B520F8 BL 0x1C16CF4
+	0x03B520FC MOVZ W8, 0x1
+	0x03B52100 STRB W8, [X21 + 0x8FE]
+	0x03B52104 LDR X0, [X22]
+	0x03B52108 LDR W8, [X0 + 0xE0]
+	0x03B5210C CBNZ W8, 0x3B52114
+	0x03B52110 BL 0x1C16DFC
+	0x03B52114 MOV X0, X31
+	0x03B52118 BL 0x3C018E4
+	0x03B5211C TBZ X0, 0x0, 0x3B52178
+	0x03B52120 MOV X0, X19
+	0x03B52124 BL 0x3B5201C
+	0x03B52128 CBZ X0, 0x3B521A0
+	0x03B5212C ADRP X10, 0x608000
+	0x03B52130 LDR X8, [X0]
+	0x03B52134 LDR X10, [X10 + 0xCF8]
+	0x03B52138 MOV X21, X0
+	0x03B5213C LDRH W9, [X8 + 0x12E]
+	0x03B52140 LDR X1, [X10]
+	0x03B52144 CBZ X9, 0x3B52168
+	0x03B52148 LDR X10, [X8 + 0xB0]
+	0x03B5214C ADD X10, X10, 0x8
+	0x03B52150 LDUR X11, [X10 - 0x8]
+	0x03B52154 CMP X11, X1
+	0x03B52158 B.EQ 0x3B52180
+	0x03B5215C SUBS X9, X9, 0x1
+	0x03B52160 ADD X10, X10, 0x10
+	0x03B52164 B.NE 0x3B52150
+	0x03B52168 MOVZ W2, 0x2
+	0x03B5216C MOV X0, X21
+	0x03B52170 BL 0x1C5C788
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X22, 0x891000
+	007 Move X21, 0x5A2000
+	008 Move W8, [X22+2287]
+	009 Move X21, [X21+1432]
+	010 Move X19, X1
+	011 Move X20, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x5A2000
+	017 Move X0, [X0+1432]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X22+2287], W8
+	021 Move X0, [X21]
+	022 Move W8, [X0+224]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {26}
+	025 Call 0x1C17DFC
+	026 Move X0, X19
+	027 Move X1, X31
+	028 Move X2, X31
+	029 Call Object.op_Equality, X0, X1
+	030 Move TEMP, X0
+	031 And TEMP, TEMP, 1
+	032 Compare TEMP, 1
+	033 JumpIfNotEqual {40}
+	034 Move X20, [X31+32]
+	035 Move X19, [X31+40]
+	036 Move X22, [X31+16]
+	037 Move X21, [X31+24]
+	038 Move X30, [X31+48]
+	039 Return 
+	040 Move X0, [X21]
+	041 Move X21, [X20+640]
+	042 Move W8, [X0+224]
+	043 Compare W8, 0
+	044 JumpIfNotEqual {46}
+	045 Call 0x1C17DFC
+	046 Move X0, X21
+	047 Move X1, X31
+	048 Move X2, X31
+	049 Call Object.op_Equality, X0, X1
+	050 Move TEMP, X0
+	051 And TEMP, TEMP, 1
+	052 Compare TEMP, 1
+	053 JumpIfNotEqual {56}
+	054 Move X0, X20
+	055 Call XRBaseControllerInteractor.CreateEffectsAudioSource, X0
+	056 Move X0, [X20+640]
+	057 Compare X0, 0
+	058 JumpIfEqual {68}
+	059 Move X1, X19
+	060 Move X20, [X31+32]
+	061 Move X19, [X31+40]
+	062 Move X22, [X31+16]
+	063 Move X21, [X31+24]
+	064 Move X2, X31
+	065 Move X30, [X31+48]
+	066 Call AudioSource.PlayOneShot, X0, X1
+	067 Return 
+	068 Call 0x1C17F20
+
+Method: System.Void CreateEffectsAudioSource()
+
+Disassembly:
+	0x03B50434 ADRP X22, 0x60A000
+	0x03B50438 LDR X20, [X20 + 0x9C8]
+	0x03B5043C LDR X21, [X21 + 0xB60]
+	0x03B50440 LDR X22, [X22 + 0xBA8]
+	0x03B50444 LDR X1, [X20]
+	0x03B50448 ADD X0, X31, 0x18
+	0x03B5044C BL 0x2BC4350
+	0x03B50450 TBZ X0, 0x0, 0x3B504BC
+	0x03B50454 LDR X0, [X31 + 0x28]
+	0x03B50458 LDR X1, [X21]
+	0x03B5045C BL 0x1C16E00
+	0x03B50460 MOV X1, X0
+	0x03B50464 CBZ X1, 0x3B50444
+	0x03B50468 LDR W10, [X19 + 0x1C]
+	0x03B5046C LDR X8, [X19 + 0x10]
+	0x03B50470 LDR X9, [X22]
+	0x03B50474 ADD W10, W10, 0x1
+	0x03B50478 STR W10, [X19 + 0x1C]
+	0x03B5047C CBZ X8, 0x3B504E4
+	0x03B50480 LDRSW X10, [X19 + 0x18]
+	0x03B50484 LDR W11, [X8 + 0x18]
+	0x03B50488 CMP W10, W11
+	0x03B5048C B.CS 0x3B504A4
+	0x03B50490 ADD W9, W10, 0x1
+	0x03B50494 ADD X8, X8, X10, 0x3, LSL
+	0x03B50498 STR W9, [X19 + 0x18]
+	0x03B5049C STR X1, [X8 + 0x20]
+	0x03B504A0 B 0x3B50444
+	0x03B504A4 LDR X8, [X9 + 0x20]
+	0x03B504A8 LDR X8, [X8 + 0xC0]
+	0x03B504AC LDR X2, [X8 + 0x70]
+	0x03B504B0 MOV X0, X19
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x893000
+	005 Move W8, [X20+2288]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x5A9000
+	012 Move X0, [X0+1600]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2288], W8
+	016 Move X0, X19
+	017 Move X1, X31
+	018 Call Component.get_gameObject, X0
+	019 Compare X0, 0
+	020 JumpIfEqual {41}
+	021 Move X8, 0x5A9000
+	022 Move X8, [X8+1600]
+	023 Move X1, [X8]
+	024 Call 0x21E61FC, X0
+	025 Move [X19+640], X0
+	026 Compare X0, 0
+	027 JumpIfEqual {41}
+	028 Move W1, W31
+	029 Move X2, X31
+	030 Call AudioSource.set_loop, X0, X1
+	031 Move X0, [X19+640]
+	032 Compare X0, 0
+	033 JumpIfEqual {41}
+	034 Move X20, [X31+16]
+	035 Move X19, [X31+24]
+	036 Move W1, W31
+	037 Move X2, X31
+	038 Move X30, [X31+32]
+	039 Call AudioSource.set_playOnAwake, X0, X1
+	040 Return 
+	041 Call 0x1C17F20
+
+Method: System.Void HandleSelecting()
+
+Disassembly:
+	0x03B517C8 LDR X1, [X24]
+	0x03B517CC MOV X20, X0
+	0x03B517D0 BL 0x2D109CC
+	0x03B517D4 CBZ X20, 0x3B5199C
+	0x03B517D8 ADRP X8, 0x609000
+	0x03B517DC LDR X8, [X8 + 0x5A0]
+	0x03B517E0 ADRP X29, 0x609000
+	0x03B517E4 ADRP X21, 0x609000
+	0x03B517E8 ADRP X22, 0x609000
+	0x03B517EC ADRP X25, 0x609000
+	0x03B517F0 ADRP X28, 0x609000
+	0x03B517F4 ADRP X27, 0x609000
+	0x03B517F8 ADRP X26, 0x609000
+	0x03B517FC ADRP X24, 0x5A4000
+	0x03B51800 LDR X29, [X29 + 0x4D0]
+	0x03B51804 LDR X21, [X21 + 0x4C8]
+	0x03B51808 LDR X22, [X22 + 0xC98]
+	0x03B5180C LDR X25, [X25 + 0xC90]
+	0x03B51810 LDR X28, [X28 + 0xCB8]
+	0x03B51814 LDR X27, [X27 + 0xCB0]
+	0x03B51818 LDR X26, [X26 + 0xCA0]
+	0x03B5181C LDR X24, [X24 + 0x9B0]
+	0x03B51820 LDR X2, [X8]
+	0x03B51824 ADRP X23, 0x609000
+	0x03B51828 LDR X23, [X23 + 0xCC0]
+	0x03B5182C MOV X0, X20
+	0x03B51830 MOV W1, W31
+	0x03B51834 BL 0x25E89B0
+	0x03B51838 STR X20, [X19 + 0xD8]
+	0x03B5183C LDR X0, [X29]
+	0x03B51840 BL 0x1C16F10
+	0x03B51844 LDR X4, [X21]
+	0x03B51848 FMOV S0, W31
+	0x03B5184C MOVZ W1, 0x1
+	0x03B51850 MOV X2, X31
+	0x03B51854 MOV W3, W31
+	0x03B51858 MOV X20, X0
+	0x03B5185C BL 0x28E2A78
+	0x03B51860 STR X20, [X19 + 0xE0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x892000
+	005 Move W8, [X20+2289]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x5A3000
+	012 Move X0, [X0+1432]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2289], W8
+	016 Move W8, [X19+428]
+	017 Move W9, 1
+	018 Move [X19+632], W9
+	019 Move [X19+634], W31
+	020 Compare W8, 0
+	021 JumpIfEqual {48}
+	022 Move X8, 0x5A3000
+	023 Move X8, [X8+1432]
+	024 Move X20, [X19+608]
+	025 Move X0, [X8]
+	026 Move W8, [X0+224]
+	027 Compare W8, 0
+	028 JumpIfNotEqual {30}
+	029 Call 0x1C17DFC
+	030 Move X0, X20
+	031 Move X1, X31
+	032 Move X2, X31
+	033 Call Object.op_Inequality, X0, X1
+	034 Move TEMP, X0
+	035 And TEMP, TEMP, 1
+	036 Compare TEMP, 1
+	037 JumpIfNotEqual {48}
+	038 Move X0, [X19+608]
+	039 Compare X0, 0
+	040 JumpIfEqual {52}
+	041 Move X20, [X31+16]
+	042 Move X19, [X31+24]
+	043 Move W1, 1
+	044 Move X2, X31
+	045 Move X30, [X31+32]
+	046 Call XRBaseController.set_hideControllerModel, X0, X1
+	047 Return 
+	048 Move X20, [X31+16]
+	049 Move X19, [X31+24]
+	050 Move X30, [X31+32]
+	051 Return 
+	052 Call 0x1C17F20
+
+Method: System.Void HandleDeselecting()
+
+Disassembly:
+	0x03B51AD8 BL 0x3B6BD94
+	0x03B51ADC MOV X0, X19
+	0x03B51AE0 LDP X20, X19, [X31 + 0x10]
+	0x03B51AE4 LDR X30, [X31], #0x20
+	0x03B51AE8 RET
+	0x03B51AEC STR X30, [X31 - 0x20]!
+	0x03B51AF0 STP X20, X19, [X31 + 0x10]
+	0x03B51AF4 ADRP X19, 0x891000
+	0x03B51AF8 ADRP X20, 0x609000
+	0x03B51AFC LDRB W8, [X19 + 0x8F7]
+	0x03B51B00 LDR X20, [X20 + 0xCE0]
+	0x03B51B04 TBNZ X8, 0x0, 0x3B51B1C
+	0x03B51B08 ADRP X0, 0x609000
+	0x03B51B0C LDR X0, [X0 + 0xCE0]
+	0x03B51B10 BL 0x1C16CF4
+	0x03B51B14 MOVZ W8, 0x1
+	0x03B51B18 STRB W8, [X19 + 0x8F7]
+	0x03B51B1C LDR X0, [X20]
+	0x03B51B20 BL 0x1C16F10
+	0x03B51B24 MOV X1, X31
+	0x03B51B28 MOV X19, X0
+	0x03B51B2C BL 0x3B6BECC
+	0x03B51B30 MOV X0, X19
+	0x03B51B34 LDP X20, X19, [X31 + 0x10]
+	0x03B51B38 LDR X30, [X31], #0x20
+	0x03B51B3C RET
+	0x03B51B40 STR X30, [X31 - 0x40]!
+	0x03B51B44 STP X24, X23, [X31 + 0x10]
+	0x03B51B48 STP X22, X21, [X31 + 0x20]
+	0x03B51B4C STP X20, X19, [X31 + 0x30]
+	0x03B51B50 ADRP X21, 0x891000
+	0x03B51B54 LDRB W8, [X21 + 0x8F8]
+	0x03B51B58 MOV X19, X1
+	0x03B51B5C MOV X20, X0
+	0x03B51B60 TBNZ X8, 0x0, 0x3B51B78
+	0x03B51B64 ADRP X0, 0x609000
+	0x03B51B68 LDR X0, [X0 + 0xCE8]
+	0x03B51B6C BL 0x1C16CF4
+	0x03B51B70 MOVZ W8, 0x1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x892000
+	005 Move W8, [X20+2290]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x5A3000
+	012 Move X0, [X0+1432]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2290], W8
+	016 Move X0, X19
+	017 Call XRBaseInteractor.get_hasSelection, X0
+	018 Move TEMP, X0
+	019 And TEMP, TEMP, 1
+	020 Compare TEMP, 1
+	021 JumpIfEqual {50}
+	022 Move [X19+632], W31
+	023 Move [X19+634], W31
+	024 Move X8, 0x5A3000
+	025 Move X8, [X8+1432]
+	026 Move X20, [X19+608]
+	027 Move X0, [X8]
+	028 Move W8, [X0+224]
+	029 Compare W8, 0
+	030 JumpIfNotEqual {32}
+	031 Call 0x1C17DFC
+	032 Move X0, X20
+	033 Move X1, X31
+	034 Move X2, X31
+	035 Call Object.op_Inequality, X0, X1
+	036 Move TEMP, X0
+	037 And TEMP, TEMP, 1
+	038 Compare TEMP, 1
+	039 JumpIfNotEqual {50}
+	040 Move X0, [X19+608]
+	041 Compare X0, 0
+	042 JumpIfEqual {54}
+	043 Move X20, [X31+16]
+	044 Move X19, [X31+24]
+	045 Move W1, W31
+	046 Move X2, X31
+	047 Move X30, [X31+32]
+	048 Call XRBaseController.set_hideControllerModel, X0, X1
+	049 Return 
+	050 Move X20, [X31+16]
+	051 Move X19, [X31+24]
+	052 Move X30, [X31+32]
+	053 Return 
+	054 Call 0x1C17F20
+
+Method: System.Boolean get_playAudioClipOnSelectEnter()
+
+Disassembly:
+	0x03B52174 B 0x3B52190
+	0x03B52178 STR X20, [X19 + 0x90]
+
+ISIL:
+	001 Move W0, [X0+436]
+	002 Return X0
+
+Method: UnityEngine.AudioClip get_audioClipForOnSelectEnter()
+
+Disassembly:
+	0x03B5217C B 0x3B521FC
+	0x03B52180 LDR W9, [X10]
+
+ISIL:
+	001 Move X0, [X0+440]
+	002 Return X0
+
+Method: UnityEngine.AudioClip get_AudioClipForOnSelectEnter()
+
+Disassembly:
+	0x03B52184 ADD W9, W9, 0x2
+	0x03B52188 ADD X8, X8, W9, 0x4, SXTW
+
+ISIL:
+	001 Move X0, [X0+440]
+	002 Return X0
+
+Method: System.Void set_AudioClipForOnSelectEnter(UnityEngine.AudioClip value)
+
+Disassembly:
+	0x03B5218C ADD X0, X8, 0x138
+	0x03B52190 LDP X8, X2, [X0]
+
+ISIL:
+	001 Move [X0+440], X1
+	002 Return 
+
+Method: System.Boolean get_playAudioClipOnSelectExit()
+
+Disassembly:
+	0x03B52194 MOV X0, X21
+	0x03B52198 MOV X1, X19
+
+ISIL:
+	001 Move W0, [X0+448]
+	002 Return X0
+
+Method: UnityEngine.AudioClip get_audioClipForOnSelectExit()
+
+Disassembly:
+	0x03B5219C BLR X8
+	0x03B521A0 MOV X0, X19
+
+ISIL:
+	001 Move X0, [X0+456]
+	002 Return X0
+
+Method: UnityEngine.AudioClip get_AudioClipForOnSelectExit()
+
+Disassembly:
+	0x03B521A4 STR X20, [X19 + 0x90]
+	0x03B521A8 BL 0x3B5201C
+
+ISIL:
+	001 Move X0, [X0+456]
+	002 Return X0
+
+Method: System.Void set_AudioClipForOnSelectExit(UnityEngine.AudioClip value)
+
+Disassembly:
+	0x03B521AC CBZ X0, 0x3B521FC
+	0x03B521B0 ADRP X10, 0x608000
+
+ISIL:
+	001 Move [X0+456], X1
+	002 Return 
+
+Method: System.Boolean get_playAudioClipOnHoverEnter()
+
+Disassembly:
+	0x03B521B4 LDR X8, [X0]
+	0x03B521B8 LDR X10, [X10 + 0xCF8]
+
+ISIL:
+	001 Move W0, [X0+480]
+	002 Return X0
+
+Method: UnityEngine.AudioClip get_audioClipForOnHoverEnter()
+
+Disassembly:
+	0x03B521BC MOV X20, X0
+	0x03B521C0 LDRH W9, [X8 + 0x12E]
+
+ISIL:
+	001 Move X0, [X0+488]
+	002 Return X0
+
+Method: UnityEngine.AudioClip get_AudioClipForOnHoverEnter()
+
+Disassembly:
+	0x03B521C4 LDR X1, [X10]
+	0x03B521C8 CBZ X9, 0x3B521EC
+
+ISIL:
+	001 Move X0, [X0+488]
+	002 Return X0
+
+Method: System.Void set_AudioClipForOnHoverEnter(UnityEngine.AudioClip value)
+
+Disassembly:
+	0x03B521CC LDR X10, [X8 + 0xB0]
+	0x03B521D0 ADD X10, X10, 0x8
+
+ISIL:
+	001 Move [X0+488], X1
+	002 Return 
+
+Method: System.Boolean get_playAudioClipOnHoverExit()
+
+Disassembly:
+	0x03B521D4 LDUR X11, [X10 - 0x8]
+	0x03B521D8 CMP X11, X1
+
+ISIL:
+	001 Move W0, [X0+496]
+	002 Return X0
+
+Method: UnityEngine.AudioClip get_audioClipForOnHoverExit()
+
+Disassembly:
+	0x03B521DC B.EQ 0x3B5220C
+	0x03B521E0 SUBS X9, X9, 0x1
+
+ISIL:
+	001 Move X0, [X0+504]
+	002 Return X0
+
+Method: UnityEngine.AudioClip get_AudioClipForOnHoverExit()
+
+Disassembly:
+	0x03B521E4 ADD X10, X10, 0x10
+	0x03B521E8 B.NE 0x3B521D4
+
+ISIL:
+	001 Move X0, [X0+504]
+	002 Return X0
+
+Method: System.Void set_AudioClipForOnHoverExit(UnityEngine.AudioClip value)
+
+Disassembly:
+	0x03B521EC MOVZ W2, 0x1
+	0x03B521F0 MOV X0, X20
+
+ISIL:
+	001 Move [X0+504], X1
+	002 Return 
+
+Method: System.Boolean get_playHapticsOnSelectEnter()
+
+Disassembly:
+	0x03B521F4 BL 0x1C5C788
+	0x03B521F8 B 0x3B5221C
+
+ISIL:
+	001 Move W0, [X0+529]
+	002 Return X0
+
+Method: System.Boolean get_playHapticsOnSelectExit()
+
+Disassembly:
+	0x03B521FC LDP X20, X19, [X31 + 0x20]
+	0x03B52200 LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move W0, [X0+540]
+	002 Return X0
+
+Method: System.Boolean get_playHapticsOnHoverEnter()
+
+Disassembly:
+	0x03B52204 LDR X30, [X31], #0x30
+	0x03B52208 RET
+
+ISIL:
+	001 Move W0, [X0+564]
+	002 Return X0
+
+Method: System.Collections.Generic.List`1<UnityEngine.XR.Interaction.Toolkit.XRBaseInteractable> get_validTargets()
+
+Disassembly:
+	0x03B5220C LDR W9, [X10]
+	0x03B52210 ADD W9, W9, 0x1
+
+ISIL:
+	001 Move X0, [X0+648]
+	002 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03B52214 ADD X8, X8, W9, 0x4, SXTW
+	0x03B52218 ADD X0, X8, 0x138
+	0x03B5221C LDP X3, X2, [X0]
+	0x03B52220 MOV X0, X20
+	0x03B52224 MOV X1, X19
+	0x03B52228 LDP X20, X19, [X31 + 0x20]
+	0x03B5222C LDP X22, X21, [X31 + 0x10]
+	0x03B52230 LDR X30, [X31], #0x30
+	0x03B52234 BR X3
+	0x03B52238 LDRB W0, [X0 + 0x98]
+	0x03B5223C RET
+	0x03B52240 AND W8, W1, 0x1
+	0x03B52244 STRB W8, [X0 + 0x98]
+	0x03B52248 RET
+	0x03B5224C LDRB W0, [X0 + 0x99]
+	0x03B52250 RET
+	0x03B52254 AND W8, W1, 0x1
+	0x03B52258 STRB W8, [X0 + 0x99]
+	0x03B5225C RET
+	0x03B52260 LDRB W0, [X0 + 0x9A]
+	0x03B52264 RET
+	0x03B52268 LDR X0, [X0 + 0xB0]
+	0x03B5226C RET
+	0x03B52270 STR X1, [X0 + 0xB0]
+	0x03B52274 RET
+	0x03B52278 LDRB W0, [X0 + 0xB8]
+	0x03B5227C RET
+	0x03B52280 AND W8, W1, 0x1
+	0x03B52284 STRB W8, [X0 + 0xB8]
+	0x03B52288 RET
+	0x03B5228C LDR X0, [X0 + 0xC0]
+	0x03B52290 RET
+	0x03B52294 STR X1, [X0 + 0xC0]
+	0x03B52298 RET
+	0x03B5229C LDR X0, [X0 + 0xC8]
+	0x03B522A0 RET
+	0x03B522A4 LDR X0, [X0 + 0xD0]
+	0x03B522A8 RET
+	0x03B522AC STR X1, [X0 + 0xD0]
+	0x03B522B0 RET
+	0x03B522B4 LDR X0, [X0 + 0xD8]
+	0x03B522B8 RET
+	0x03B522BC LDR X0, [X0 + 0xE0]
+	0x03B522C0 RET
+	0x03B522C4 LDRB W0, [X0 + 0x118]
+	0x03B522C8 RET
+	0x03B522CC AND W8, W1, 0x1
+	0x03B522D0 STRB W8, [X0 + 0x118]
+	0x03B522D4 RET
+	0x03B522D8 SUB X31, X31, 0x20
+	0x03B522DC STP X30, X19, [X31 + 0x10]
+	0x03B522E0 ADD X1, X31, 0x8
+	0x03B522E4 MOV X19, X0
+	0x03B522E8 STR X31, [X31 + 0x8]
+	0x03B522EC BL 0x3B52330
+	0x03B522F0 TBZ X0, 0x0, 0x3B52314
+	0x03B522F4 LDR X0, [X31 + 0x8]
+	0x03B522F8 CBZ X0, 0x3B5232C
+	0x03B522FC LDR V2, [X19 + 0x124]
+	0x03B52300 LDR V1, [X19 + 0x120]
+	0x03B52304 LDR V0, [X19 + 0x11C]
+	0x03B52308 MOV X1, X31
+	0x03B5230C BL 0x3C40610
+	0x03B52310 B 0x3B52320
+	0x03B52314 LDR V0, [X19 + 0x11C]
+	0x03B52318 LDR V1, [X19 + 0x120]
+	0x03B5231C LDR V2, [X19 + 0x124]
+	0x03B52320 LDP X30, X19, [X31 + 0x10]
+	0x03B52324 ADD X31, X31, 0x20
+	0x03B52328 RET
+	0x03B5232C BL 0x1C16F20
+	0x03B52330 STR X30, [X31 - 0x30]!
+	0x03B52334 STP X22, X21, [X31 + 0x10]
+	0x03B52338 STP X20, X19, [X31 + 0x20]
+	0x03B5233C ADRP X21, 0x890000
+	0x03B52340 LDRB W8, [X21 + 0x903]
+	0x03B52344 MOV X19, X1
+	0x03B52348 MOV X20, X0
+	0x03B5234C TBNZ X8, 0x0, 0x3B52370
+	0x03B52350 ADRP X0, 0x608000
+	0x03B52354 LDR X0, [X0 + 0xD00]
+	0x03B52358 BL 0x1C16CF4
+	0x03B5235C ADRP X0, 0x5A1000
+	0x03B52360 LDR X0, [X0 + 0x598]
+	0x03B52364 BL 0x1C16CF4
+	0x03B52368 MOVZ W8, 0x1
+	0x03B5236C STRB W8, [X21 + 0x903]
+	0x03B52370 LDRB W8, [X20 + 0x140]
+	0x03B52374 CBZ W8, 0x3B52384
+	0x03B52378 LDR X0, [X20 + 0x138]
+	0x03B5237C MOVZ W8, 0x1
+	0x03B52380 B 0x3B5243C
+	0x03B52384 LDRB W8, [X20 + 0x141]
+	0x03B52388 CBZ W8, 0x3B52398
+	0x03B5238C MOV X0, X31
+	0x03B52390 MOV W8, W31
+	0x03B52394 B 0x3B5243C
+	0x03B52398 ADRP X8, 0x608000
+	0x03B5239C LDR X8, [X8 + 0xD00]
+	0x03B523A0 MOV X0, X20
+	0x03B523A4 LDR X1, [X8]
+	0x03B523A8 BL 0x21A3F50
+	0x03B523AC ADRP X22, 0x5A1000
+	0x03B523B0 LDR X22, [X22 + 0x598]
+	0x03B523B4 MOV X21, X0
+	0x03B523B8 LDR X8, [X22]
+	0x03B523BC LDR W9, [X8 + 0xE0]
+	0x03B523C0 CBNZ W9, 0x3B523CC
+	0x03B523C4 MOV X0, X8
+	0x03B523C8 BL 0x1C16DFC
+	0x03B523CC MOV X0, X21
+	0x03B523D0 MOV X1, X31
+	0x03B523D4 MOV X2, X31
+	0x03B523D8 BL 0x3C354F8
+	0x03B523DC TBZ X0, 0x0, 0x3B5242C
+	0x03B523E0 CBZ X21, 0x3B52454
+	0x03B523E4 LDR X0, [X22]
+	0x03B523E8 LDR X21, [X21 + 0x38]
+	0x03B523EC LDR W8, [X0 + 0xE0]
+	0x03B523F0 CBNZ W8, 0x3B523F8
+	0x03B523F4 BL 0x1C16DFC
+	0x03B523F8 MOV X0, X21
+	0x03B523FC MOV X1, X31
+	0x03B52400 MOV X2, X31
+	0x03B52404 BL 0x3C354F8
+	0x03B52408 TBZ X0, 0x0, 0x3B5242C
+	0x03B5240C CBZ X21, 0x3B52454
+	0x03B52410 MOV X0, X21
+	0x03B52414 MOV X1, X31
+	0x03B52418 BL 0x3C356F8
+	0x03B5241C MOVZ W8, 0x1
+	0x03B52420 STR X0, [X20 + 0x138]
+	0x03B52424 STRB W8, [X20 + 0x140]
+	0x03B52428 B 0x3B5243C
+	0x03B5242C MOV X0, X31
+	0x03B52430 MOV W8, W31
+	0x03B52434 MOVZ W9, 0x1
+	0x03B52438 STRB W9, [X20 + 0x141]
+	0x03B5243C STR X0, [X19]
+	0x03B52440 LDP X20, X19, [X31 + 0x20]
+	0x03B52444 LDP X22, X21, [X31 + 0x10]
+	0x03B52448 MOV W0, W8
+	0x03B5244C LDR X30, [X31], #0x30
+	0x03B52450 RET
+	0x03B52454 BL 0x1C16F20
+	0x03B52458 SUB X31, X31, 0x20
+	0x03B5245C STP X30, X19, [X31 + 0x10]
+	0x03B52460 ADD X1, X31, 0x8
+	0x03B52464 MOV X19, X0
+	0x03B52468 STR X31, [X31 + 0x8]
+	0x03B5246C BL 0x3B52330
+	0x03B52470 TBZ X0, 0x0, 0x3B52494
+	0x03B52474 LDR X0, [X31 + 0x8]
+	0x03B52478 CBZ X0, 0x3B524AC
+	0x03B5247C LDR V2, [X19 + 0x130]
+	0x03B52480 LDR V1, [X19 + 0x12C]
+	0x03B52484 LDR V0, [X19 + 0x128]
+	0x03B52488 MOV X1, X31
+	0x03B5248C BL 0x3C40610
+	0x03B52490 B 0x3B524A0
+	0x03B52494 LDR V0, [X19 + 0x128]
+	0x03B52498 LDR V1, [X19 + 0x12C]
+	0x03B5249C LDR V2, [X19 + 0x130]
+	0x03B524A0 LDP X30, X19, [X31 + 0x10]
+	0x03B524A4 ADD X31, X31, 0x20
+
+ISIL:
+	001 Move [X31-80], X30
+	002 Move [X31-72], X27
+	003 Move [X31+16], X26
+	004 Move [X31+24], X25
+	005 Move [X31+32], X24
+	006 Move [X31+40], X23
+	007 Move [X31+48], X22
+	008 Move [X31+56], X21
+	009 Move [X31+64], X20
+	010 Move [X31+72], X19
+	011 Move X20, 0x891000
+	012 Move X22, 0x609000
+	013 Move W8, [X20+2291]
+	014 Move X22, [X22+3096]
+	015 Move X19, X0
+	016 Move TEMP, X8
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {58}
+	020 Move X0, 0x609000
+	021 Move X0, [X0+3104]
+	022 Call 0x1C17CF4
+	023 Move X0, 0x609000
+	024 Move X0, [X0+3112]
+	025 Call 0x1C17CF4
+	026 Move X0, 0x609000
+	027 Move X0, [X0+3120]
+	028 Call 0x1C17CF4
+	029 Move X0, 0x609000
+	030 Move X0, [X0+3128]
+	031 Call 0x1C17CF4
+	032 Move X0, 0x609000
+	033 Move X0, [X0+3136]
+	034 Call 0x1C17CF4
+	035 Move X0, 0x609000
+	036 Move X0, [X0+3144]
+	037 Call 0x1C17CF4
+	038 Move X0, 0x609000
+	039 Move X0, [X0+3152]
+	040 Call 0x1C17CF4
+	041 Move X0, 0x609000
+	042 Move X0, [X0+3160]
+	043 Call 0x1C17CF4
+	044 Move X0, 0x609000
+	045 Move X0, [X0+3168]
+	046 Call 0x1C17CF4
+	047 Move X0, 0x609000
+	048 Move X0, [X0+3176]
+	049 Call 0x1C17CF4
+	050 Move X0, 0x609000
+	051 Move X0, [X0+3096]
+	052 Call 0x1C17CF4
+	053 Move X0, 0x609000
+	054 Move X0, [X0+872]
+	055 Call 0x1C17CF4
+	056 Move W8, 1
+	057 Move [X20+2291], W8
+	058 Move W8, 1
+	059 Move W9, 257
+	060 Move [X19+424], W8
+	061 Move [X19+528], W8
+	062 NotImplemented "Instruction STRH not yet implemented."
+	063 Move X0, [X22]
+	064 Move W8, [X0+224]
+	065 Compare W8, 0
+	066 JumpIfNotEqual {69}
+	067 Call 0x1C17DFC
+	068 Move X0, [X22]
+	069 Move X8, [X0+184]
+	070 Move X24, 0x609000
+	071 Move X23, 0x609000
+	072 Move X20, [X8+8]
+	073 Move X24, [X24+3144]
+	074 Move X23, [X23+3128]
+	075 Compare X20, 0
+	076 JumpIfNotEqual {98}
+	077 Move W8, [X0+224]
+	078 Compare W8, 0
+	079 JumpIfNotEqual {82}
+	080 Call 0x1C17DFC
+	081 Move X0, [X22]
+	082 Move X9, 0x609000
+	083 Move X8, [X0+184]
+	084 Move X9, [X9+3112]
+	085 Move X21, [X8]
+	086 Move X0, [X9]
+	087 Call 0x1C17F10
+	088 Move X8, 0x609000
+	089 Move X8, [X8+3168]
+	090 Move X1, X21
+	091 Move X3, X31
+	092 Move X20, X0
+	093 Move X2, [X8]
+	094 Call Func`1<Object>..ctor, X0, X1, X2
+	095 Move X8, [X22]
+	096 Move X8, [X8+184]
+	097 Move [X8+8], X20
+	098 Move X0, [X24]
+	099 Call 0x1C17F10
+	100 Move X7, [X23]
+	101 Move W6, 0x2710
+	102 Move X1, X20
+	103 Move X2, X31
+	104 Move X3, X31
+	105 Move X4, X31
+	106 Move W5, W31
+	107 Move X21, X0
+	108 Call 0x2EF1EC8, X0, X1, X2, X3, X4, X5, X6
+	109 Move [X19+616], X21
+	110 Move X0, [X22]
+	111 Move W8, [X0+224]
+	112 Compare W8, 0
+	113 JumpIfNotEqual {116}
+	114 Call 0x1C17DFC
+	115 Move X0, [X22]
+	116 Move X8, [X0+184]
+	117 Move X27, 0x609000
+	118 Move X26, 0x609000
+	119 Move X25, 0x609000
+	120 Move X24, 0x609000
+	121 Move X23, 0x609000
+	122 Move X27, [X27+3136]
+	123 Move X20, [X8+16]
+	124 Move X26, [X26+3120]
+	125 Move X25, [X25+3160]
+	126 Move X24, [X24+3152]
+	127 Move X23, [X23+872]
+	128 Compare X20, 0
+	129 JumpIfNotEqual {151}
+	130 Move W8, [X0+224]
+	131 Compare W8, 0
+	132 JumpIfNotEqual {135}
+	133 Call 0x1C17DFC
+	134 Move X0, [X22]
+	135 Move X9, 0x609000
+	136 Move X8, [X0+184]
+	137 Move X9, [X9+3104]
+	138 Move X21, [X8]
+	139 Move X0, [X9]
+	140 Call 0x1C17F10
+	141 Move X8, 0x609000
+	142 Move X8, [X8+3176]
+	143 Move X1, X21
+	144 Move X3, X31
+	145 Move X20, X0
+	146 Move X2, [X8]
+	147 Call Func`1<Object>..ctor, X0, X1, X2
+	148 Move X8, [X22]
+	149 Move X8, [X8+184]
+	150 Move [X8+16], X20
+	151 Move X0, [X27]
+	152 Call 0x1C17F10
+	153 Move X7, [X26]
+	154 Move W6, 0x2710
+	155 Move X1, X20
+	156 Move X2, X31
+	157 Move X3, X31
+	158 Move X4, X31
+	159 Move W5, W31
+	160 Move X21, X0
+	161 Call 0x2EF1EC8, X0, X1, X2, X3, X4, X5, X6
+	162 Move [X19+624], X21
+	163 Move X0, [X25]
+	164 Call 0x1C17F10
+	165 Move X1, [X24]
+	166 Move X20, X0
+	167 Call List`1<Object>..ctor, X0
+	168 Move [X19+648], X20
+	169 Move X0, [X23]
+	170 Move W8, [X0+224]
+	171 Compare W8, 0
+	172 JumpIfNotEqual {174}
+	173 Call 0x1C17DFC
+	174 Move X0, X19
+	175 Move X20, [X31+64]
+	176 Move X19, [X31+72]
+	177 Move X22, [X31+48]
+	178 Move X21, [X31+56]
+	179 Move X24, [X31+32]
+	180 Move X23, [X31+40]
+	181 Move X26, [X31+16]
+	182 Move X25, [X31+24]
+	183 Move X30, [X31+80]
+	184 Move X27, [X31+88]
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x03B529A0 LDRH W9, [X8 + 0x12E]
+	0x03B529A4 LDR X1, [X10]
+	0x03B529A8 CBZ X9, 0x3B529CC
+	0x03B529AC LDR X10, [X8 + 0xB0]
+	0x03B529B0 ADD X10, X10, 0x8
+	0x03B529B4 LDUR X11, [X10 - 0x8]
+	0x03B529B8 CMP X11, X1
+	0x03B529BC B.EQ 0x3B529E8
+	0x03B529C0 SUBS X9, X9, 0x1
+	0x03B529C4 ADD X10, X10, 0x10
+	0x03B529C8 B.NE 0x3B529B4
+	0x03B529CC MOVZ W2, 0xD
+	0x03B529D0 MOV X0, X20
+	0x03B529D4 BL 0x1C5C788
+	0x03B529D8 B 0x3B529F8
+	0x03B529DC LDP X20, X19, [X31 + 0x10]
+	0x03B529E0 LDR X30, [X31], #0x20
+	0x03B529E4 RET
+	0x03B529E8 LDR W9, [X10]
+	0x03B529EC ADD W9, W9, 0xD
+	0x03B529F0 ADD X8, X8, W9, 0x4, SXTW
+	0x03B529F4 ADD X0, X8, 0x138
+	0x03B529F8 LDP X3, X2, [X0]
+	0x03B529FC MOV X0, X20
+	0x03B52A00 MOV X1, X19
+	0x03B52A04 LDP X20, X19, [X31 + 0x10]
+	0x03B52A08 LDR X30, [X31], #0x20
+	0x03B52A0C BR X3
+	0x03B52A10 BL 0x1C16F20
+	0x03B52A14 STP X30, X21, [X31 - 0x20]!
+	0x03B52A18 STP X20, X19, [X31 + 0x10]
+	0x03B52A1C ADRP X21, 0x890000
+	0x03B52A20 ADRP X20, 0x5A1000
+	0x03B52A24 LDRB W8, [X21 + 0x907]
+	0x03B52A28 LDR X20, [X20 + 0x598]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x891000
+	007 Move X22, 0x609000
+	008 Move X19, 0x609000
+	009 Move X20, 0x609000
+	010 Move W8, [X21+2292]
+	011 Move X22, [X22+3272]
+	012 Move X19, [X19+3280]
+	013 Move X20, [X20+936]
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {29}
+	018 Move X0, 0x609000
+	019 Move X0, [X0+3280]
+	020 Call 0x1C17CF4
+	021 Move X0, 0x609000
+	022 Move X0, [X0+3272]
+	023 Call 0x1C17CF4
+	024 Move X0, 0x609000
+	025 Move X0, [X0+936]
+	026 Call 0x1C17CF4
+	027 Move W8, 1
+	028 Move [X21+2292], W8
+	029 Move X0, [X22]
+	030 Call 0x1C17F10
+	031 Move X1, [X19]
+	032 Move X19, X0
+	033 Call List`1<Object>..ctor, X0
+	034 Move X8, [X20]
+	035 Move X22, [X31+16]
+	036 Move X21, [X31+24]
+	037 Move X8, [X8+184]
+	038 Move [X8], X19
+	039 Move X20, [X31+32]
+	040 Move X19, [X31+40]
+	041 Move X30, [X31+48]
+	042 Return 
+
+Method: UnityEngine.Transform UnityEngine.XR.Interaction.Toolkit.IXRInteractor.get_transform()
+
+Disassembly:
+	0x03B52A2C MOV X19, X0
+	0x03B52A30 TBNZ X8, 0x0, 0x3B52A48
+
+ISIL:
+	001 Move X1, X31
+	002 Call Component.get_transform, X0
+	003 Return X0
+

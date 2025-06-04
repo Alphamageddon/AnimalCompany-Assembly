@@ -1,0 +1,173 @@
+Type: UnityEngine.XR.Eyes
+
+Method: System.UInt64 get_deviceId()
+
+Disassembly:
+	0x03E659F0 MOV X1, X0
+	0x03E659F4 MOV X0, X19
+
+ISIL:
+	001 Move X0, [X0]
+	002 Return X0
+
+Method: System.UInt32 get_featureIndex()
+
+Disassembly:
+	0x03E659F8 MOV X2, X31
+	0x03E659FC BL 0x330E100
+
+ISIL:
+	001 Move W0, [X0+8]
+	002 Return X0
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x03E65A00 ADRP X0, 0x307000
+	0x03E65A04 LDR X0, [X0 + 0x1C0]
+	0x03E65A08 BL 0x1C16D08
+	0x03E65A0C MOV X1, X0
+	0x03E65A10 MOV X0, X19
+	0x03E65A14 BL 0x1C16DEC
+	0x03E65A18 STP X30, X21, [X31 - 0x20]!
+	0x03E65A1C STP X20, X19, [X31 + 0x10]
+	0x03E65A20 ADRP X21, 0x583000
+	0x03E65A24 LDR X2, [X21 + 0xC00]
+	0x03E65A28 MOV X19, X1
+	0x03E65A2C MOV X20, X0
+	0x03E65A30 CBNZ X2, 0x3E65A48
+	0x03E65A34 ADRP X0, 0xFFFFFFFFFCCC6000
+	0x03E65A38 ADD X0, X0, 0x4F7
+	0x03E65A3C BL 0x1C16CB8
+	0x03E65A40 MOV X2, X0
+	0x03E65A44 STR X0, [X21 + 0xC00]
+	0x03E65A48 MOV X0, X20
+	0x03E65A4C MOV X1, X19
+	0x03E65A50 LDP X20, X19, [X31 + 0x10]
+	0x03E65A54 LDP X30, X21, [X31], #0x20
+	0x03E65A58 BR X2
+	0x03E65A5C STP X30, X21, [X31 - 0x20]!
+	0x03E65A60 STP X20, X19, [X31 + 0x10]
+	0x03E65A64 ADRP X21, 0x583000
+	0x03E65A68 LDRB W8, [X21 + 0xC08]
+	0x03E65A6C MOV X19, X1
+	0x03E65A70 MOV X20, X0
+	0x03E65A74 TBNZ X8, 0x0, 0x3E65A8C
+	0x03E65A78 ADRP X0, 0x28E000
+	0x03E65A7C LDR X0, [X0 + 0x598]
+	0x03E65A80 BL 0x1C16CF4
+	0x03E65A84 MOVZ W8, 0x1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x584000
+	006 Move W8, [X21+2885]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x308000
+	014 Move X0, [X0+384]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+2885], W8
+	018 Compare X20, 0
+	019 JumpIfEqual {34}
+	020 Move X8, 0x308000
+	021 Move X8, [X8+384]
+	022 Move X9, [X20]
+	023 Move X8, [X8]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move X0, X20
+	026 Call 0x1C17E08
+	027 Move X8, [X0]
+	028 Move X9, [X19]
+	029 NotImplemented "Instruction CMP not yet implemented."
+	030 Move W8, [X0+8]
+	031 Move W9, [X19+8]
+	032 NotImplemented "Instruction CMP not yet implemented."
+	033 NotImplemented "Instruction CSET not yet implemented."
+	034 Move W0, W31
+	035 Move X20, [X31+16]
+	036 Move X19, [X31+24]
+	037 Move X30, [X31+32]
+	038 Move X21, [X31+40]
+	039 Return X0
+
+Method: System.Boolean Equals(UnityEngine.XR.Eyes other)
+
+Disassembly:
+	0x03E65A88 STRB W8, [X21 + 0xC08]
+	0x03E65A8C ADRP X21, 0x583000
+	0x03E65A90 LDR X8, [X21 + 0xC10]
+	0x03E65A94 CBNZ X8, 0x3E65AAC
+	0x03E65A98 ADRP X0, 0xFFFFFFFFFCC97000
+	0x03E65A9C ADD X0, X0, 0x29
+	0x03E65AA0 BL 0x1C16CB8
+	0x03E65AA4 MOV X8, X0
+	0x03E65AA8 STR X0, [X21 + 0xC10]
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 Move W8, [X0+8]
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 NotImplemented "Instruction CSET not yet implemented."
+	006 Return X0
+	007 Move W0, W31
+	008 Return X0
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x03E65AAC MOV X0, X20
+	0x03E65AB0 MOV X1, X19
+	0x03E65AB4 BLR X8
+	0x03E65AB8 TBNZ X0, 0x0, 0x3E65AE8
+	0x03E65ABC ADRP X8, 0x28E000
+	0x03E65AC0 LDR X8, [X8 + 0x598]
+	0x03E65AC4 LDR X0, [X8]
+	0x03E65AC8 LDR W8, [X0 + 0xE0]
+	0x03E65ACC CBNZ W8, 0x3E65AD4
+	0x03E65AD0 BL 0x1C16DFC
+	0x03E65AD4 MOV X0, X19
+	0x03E65AD8 MOV X1, X31
+	0x03E65ADC MOV X2, X31
+	0x03E65AE0 BL 0x3C3883C
+	0x03E65AE4 TBNZ X0, 0x0, 0x3E65AF4
+	0x03E65AE8 LDP X20, X19, [X31 + 0x10]
+	0x03E65AEC LDP X30, X21, [X31], #0x20
+	0x03E65AF0 RET
+	0x03E65AF4 ADRP X0, 0x293000
+	0x03E65AF8 LDR X0, [X0 + 0x528]
+
+ISIL:
+	001 Subtract X31, X31, 48
+	002 Move [X31+32], X20
+	003 Move [X31+40], X19
+	004 Move [X31+12], W31
+	005 Move X8, [X0]
+	006 Move X19, X0
+	007 Add X0, X31, 24
+	008 Move X1, X31
+	009 Move [X31+16], X30
+	010 Move [X31+24], X8
+	011 Call UInt64.GetHashCode, X0
+	012 Move W8, [X19+8]
+	013 Move W20, W0
+	014 Add X0, X31, 12
+	015 Move X1, X31
+	016 Move [X31+12], W8
+	017 Call UInt32.GetHashCode, X0
+	018 Xor W0, W20, W0
+	019 Move X20, [X31+32]
+	020 Move X19, [X31+40]
+	021 Move X30, [X31+16]
+	022 Add X31, X31, 48
+	023 Return X0
+

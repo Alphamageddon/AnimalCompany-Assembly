@@ -1,0 +1,18 @@
+Type: System.Decimal/DecCalc/PowerOvfl
+
+Method: System.Void .ctor(System.UInt32 hi, System.UInt32 mid, System.UInt32 lo)
+
+Disassembly:
+	0x033DD9F8 BL 0x25FFC8C
+	0x033DD9FC STP X23, X0, [X31 + 0x8]
+	0x033DDA00 STR X1, [X31 + 0x18]
+	0x033DDA04 LDR W22, [X22 + 0x20]
+	0x033DDA08 BL 0x1C16D44
+
+ISIL:
+	001 Move W8, W3
+	002 NotImplemented "Instruction BFM not yet implemented."
+	003 Move [X0], W1
+	004 Move [X0+8], X8
+	005 Return 
+

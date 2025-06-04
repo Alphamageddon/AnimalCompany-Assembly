@@ -1,0 +1,85 @@
+Type: Fusion.NetworkPrefabAcquireContext
+
+Method: System.Void .ctor(Fusion.NetworkPrefabId prefabId, Fusion.NetworkObjectMeta meta = null, System.Boolean isSynchronous = True, System.Boolean dontDestroyOnLoad = False)
+
+Disassembly:
+	0x01E99AEC LDRB W8, [X21 + 0xE8F]
+	0x01E99AF0 LDR X20, [X19 + 0x20]
+	0x01E99AF4 CBNZ W8, 0x1E99B0C
+	0x01E99AF8 ADRP X0, 0x2261000
+	0x01E99AFC LDR X0, [X0 + 0xC68]
+	0x01E99B00 BL 0x1C16CF4
+	0x01E99B04 MOVZ W8, 0x1
+
+ISIL:
+	001 And W8, W3, 1
+	002 And W9, W4, 1
+	003 Move [X0], W1
+	004 Move [X0+8], X2
+	005 Move [X0+16], W8
+	006 Move [X0+17], W9
+	007 Return 
+
+Method: System.Boolean get_HasHeader()
+
+Disassembly:
+	0x01E99B08 STRB W8, [X21 + 0xE8F]
+	0x01E99B0C LDR X0, [X24]
+	0x01E99B10 LDR W8, [X0 + 0xE0]
+	0x01E99B14 CBNZ W8, 0x1E99B1C
+
+ISIL:
+	001 Move X8, [X0+8]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Int32* get_Data()
+
+Disassembly:
+	0x01E99B18 BL 0x1C16DFC
+	0x01E99B1C FMOV W8, S14
+	0x01E99B20 MOVZ W9, 0x44800000
+	0x01E99B24 UBFM W8, W8, 0x1F, 0x1F
+	0x01E99B28 FMOV S0, 0.5
+	0x01E99B2C FMOV S1, W9
+	0x01E99B30 UCVTF S2, W8
+	0x01E99B34 MOVZ W9, 0x7F800000
+	0x01E99B38 FMUL S1, S14, S1
+	0x01E99B3C FSUB S0, S0, S2
+	0x01E99B40 FMOV S2, W9
+	0x01E99B44 FADD S0, S1, S0
+	0x01E99B48 FCVTZS W8, S0
+	0x01E99B4C FCMP S0, S2
+	0x01E99B50 MOVZ W9, 0x80000000
+	0x01E99B54 CSEL W8, W9, W8, EQ
+	0x01E99B58 SBFM W9, W8, 0x1F, 0x1F
+	0x01E99B5C EOR W1, W9, W8, 0x1
+	0x01E99B60 MOVZ W2, 0x4
+	0x01E99B64 MOV X0, X20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X8, [X0+8]
+	004 Compare X8, 0
+	005 JumpIfEqual {11}
+	006 Move X8, [X8+176]
+	007 Add X0, X8, 80
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return X0
+	011 Move X0, 0x225B000
+	012 Move X0, [X0+1456]
+	013 Call 0x1C17D08
+	014 Call 0x1C17F10
+	015 Move X1, X31
+	016 Move X19, X0
+	017 Call InvalidOperationException..ctor, X0
+	018 Move X0, 0x2266000
+	019 Move X0, [X0+1192]
+	020 Call 0x1C17D08
+	021 Move X1, X0
+	022 Move X0, X19
+	023 Call 0x1C17DEC
+

@@ -1,0 +1,53 @@
+Type: Photon.Voice.Unity.PhotonVoiceCreatedParams
+
+Method: Photon.Voice.LocalVoice get_Voice()
+
+Disassembly:
+	0x0356F6A0 STRB W8, [X21 + 0xE4E]
+	0x0356F6A4 LDR X8, [X20 + 0x28]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_Voice(Photon.Voice.LocalVoice value)
+
+Disassembly:
+	0x0356F6A8 CBZ X8, 0x356F6C0
+	0x0356F6AC MOV W0, W31
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: Photon.Voice.IAudioDesc get_AudioDesc()
+
+Disassembly:
+	0x0356F6B0 LDP X20, X19, [X31 + 0x20]
+	0x0356F6B4 LDP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_AudioDesc(Photon.Voice.IAudioDesc value)
+
+Disassembly:
+	0x0356F6B8 LDP X30, X23, [X31], #0x30
+	0x0356F6BC RET
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0356F6C0 LDR X0, [X20 + 0x18]
+	0x0356F6C4 MOV X1, X31
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

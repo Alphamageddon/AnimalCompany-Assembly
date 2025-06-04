@@ -1,0 +1,106 @@
+Type: Unity.Properties.DelegateProperty`2
+
+Method: System.String get_Name()
+
+Disassembly:
+	0x029B54F4 MOV X0, X1
+	0x029B54F8 BL 0x1C5C684
+
+ISIL:
+	001 Move X0, [X0+40]
+	002 Return X0
+
+Method: System.Void .ctor(System.String name, Unity.Properties.PropertyGetter`2<TContainer, TValue> getter, Unity.Properties.PropertySetter`2<TContainer, TValue> setter = null)
+
+Disassembly:
+	0x029B54FC MOV X1, X0
+	0x029B5500 LDR X8, [X20]
+	0x029B5504 LDRH W9, [X8 + 0x12E]
+	0x029B5508 CBZ X9, 0x29B552C
+	0x029B550C LDR X10, [X8 + 0xB0]
+	0x029B5510 ADD X10, X10, 0x8
+	0x029B5514 LDUR X11, [X10 - 0x8]
+	0x029B5518 CMP X11, X1
+	0x029B551C B.EQ 0x29B553C
+	0x029B5520 SUBS X9, X9, 0x1
+	0x029B5524 ADD X10, X10, 0x10
+	0x029B5528 B.NE 0x29B5514
+	0x029B552C MOV X0, X20
+	0x029B5530 MOV W2, W31
+	0x029B5534 BL 0x1C5C788
+	0x029B5538 B 0x29B5548
+	0x029B553C LDRSW X9, [X10]
+	0x029B5540 ADD X8, X8, X9, 0x4, LSL
+	0x029B5544 ADD X0, X8, 0x138
+	0x029B5548 LDP X9, X1, [X0]
+	0x029B554C ADD X8, X31, 0x8
+	0x029B5550 MOV X0, X20
+	0x029B5554 BLR X9
+	0x029B5558 LDR X8, [X19 + 0x20]
+	0x029B555C LDP X9, X10, [X31 + 0x8]
+	0x029B5560 ADD X1, X31, 0x8
+	0x029B5564 LDR X8, [X8 + 0xC0]
+	0x029B5568 STP X9, X10, [X31 + 0x8]
+	0x029B556C LDR X0, [X8 + 0x40]
+	0x029B5570 BL 0x1C16E04
+	0x029B5574 LDP X20, X19, [X31 + 0x30]
+	0x029B5578 LDR X30, [X31 + 0x20]
+	0x029B557C ADD X31, X31, 0x40
+	0x029B5580 RET
+	0x029B5584 BL 0x1C16F20
+	0x029B5588 SUB X31, X31, 0x30
+	0x029B558C STP X30, X19, [X31 + 0x20]
+	0x029B5590 LDR X19, [X0 + 0x10]
+	0x029B5594 CBZ X19, 0x29B5620
+	0x029B5598 LDR X8, [X1 + 0x20]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X8, [X4+32]
+	008 Move X23, X1
+	009 Move X19, X4
+	010 Move X20, X3
+	011 Move X8, [X8+192]
+	012 Move X21, X2
+	013 Move X22, X0
+	014 Move X1, [X8+8]
+	015 Move X8, [X1]
+	016 NotImplemented "Instruction BLR not yet implemented."
+	017 NotImplemented "Instruction CMP not yet implemented."
+	018 NotImplemented "Instruction CSEL not yet implemented."
+	019 Move [X22+40], X23
+	020 Compare X21, 0
+	021 JumpIfEqual {33}
+	022 Compare X8, 0
+	023 JumpIfEqual {48}
+	024 Move [X8+24], X21
+	025 Move [X22+32], X20
+	026 Move X20, [X31+32]
+	027 Move X19, [X31+40]
+	028 Move X22, [X31+16]
+	029 Move X21, [X31+24]
+	030 Move X30, [X31+48]
+	031 Move X23, [X31+56]
+	032 Return 
+	033 Move X0, 0x1747000
+	034 Move X0, [X0+1400]
+	035 Call 0x1C17D08
+	036 Call 0x1C17F10
+	037 Move X20, X0
+	038 Move X0, 0x176A000
+	039 Move X0, [X0+1568]
+	040 Call 0x1C17D08
+	041 Move X1, X0
+	042 Move X0, X20
+	043 Move X2, X31
+	044 Call ArgumentException..ctor, X0, X1
+	045 Move X0, X20
+	046 Move X1, X19
+	047 Call 0x1C17DEC
+	048 Call 0x1C17F20
+

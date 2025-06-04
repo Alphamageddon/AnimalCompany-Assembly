@@ -1,0 +1,65 @@
+Type: UnityEngine.InputSystem.UI.TrackedDeviceRaycaster/RaycastHitData
+
+Method: System.Void .ctor(UnityEngine.UI.Graphic graphic, UnityEngine.Vector3 worldHitPosition, UnityEngine.Vector2 screenPosition, System.Single distance)
+
+Disassembly:
+	0x037EDDCC MOV X0, X21
+	0x037EDDD0 MOV X1, X31
+	0x037EDDD4 BL 0x3745120
+	0x037EDDD8 CBZ X0, 0x37EDDE4
+	0x037EDDDC MOV X1, X31
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], S0
+	003 Move [X0+16], S1
+	004 Move [X0+16], S2
+	005 Move [X0+24], S3
+	006 Move [X0+24], S4
+	007 Move [X0+32], S5
+	008 Return 
+
+Method: UnityEngine.UI.Graphic get_graphic()
+
+Disassembly:
+	0x037EDEF0 BL 0x37ED58C
+	0x037EDEF4 STP X31, X31, [X19 + 0x110]
+
+ISIL:
+	001 Move X0, [X0]
+	002 Return X0
+
+Method: UnityEngine.Vector3 get_worldHitPosition()
+
+Disassembly:
+	0x037EDEF8 LDP X20, X19, [X31 + 0xD0]
+	0x037EDEFC LDP X22, X21, [X31 + 0xC0]
+	0x037EDF00 LDP X24, X23, [X31 + 0xB0]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, [X0+16]
+	004 Return X0
+
+Method: UnityEngine.Vector2 get_screenPosition()
+
+Disassembly:
+	0x037EDF04 LDR X30, [X31 + 0xA0]
+	0x037EDF08 ADD X31, X31, 0xE0
+
+ISIL:
+	001 Move S0, [X0+20]
+	002 Move S1, [X0+24]
+	003 Return X0
+
+Method: System.Single get_distance()
+
+Disassembly:
+	0x037EDF0C RET
+	0x037EDF10 STR D14, [X31 - 0x60]!
+
+ISIL:
+	001 Move V0, [X0+28]
+	002 Return V0
+

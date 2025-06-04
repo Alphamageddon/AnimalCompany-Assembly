@@ -1,0 +1,89 @@
+Type: UnityEngine.Rendering.DebugUI/HistoryBoolField
+
+Method: System.Func`1<System.Boolean>[] get_historyGetter()
+
+Disassembly:
+	0x039AFA30 STRB W8, [X20 + 0xC25]
+	0x039AFA34 LDR X0, [X19 + 0x28]
+
+ISIL:
+	001 Move X0, [X0+96]
+	002 Return X0
+
+Method: System.Void set_historyGetter(System.Func`1<System.Boolean>[] value)
+
+Disassembly:
+	0x039AFA38 CBZ X0, 0x39AFABC
+	0x039AFA3C ADRP X8, 0x7A2000
+
+ISIL:
+	001 Move [X0+96], X1
+	002 Return 
+
+Method: System.Int32 get_historyDepth()
+
+Disassembly:
+	0x039AFA40 LDR X8, [X8 + 0xBC0]
+	0x039AFA44 LDR X1, [X8]
+	0x039AFA48 BL 0x2497BA8
+	0x039AFA4C CMP W0, 0x1
+	0x039AFA50 B.LT 0x39AFA94
+	0x039AFA54 ADRP X22, 0x7A2000
+
+ISIL:
+	001 Move X8, [X0+96]
+	002 Compare X8, 0
+	003 JumpIfEqual {6}
+	004 Move W0, [X8+24]
+	005 Return X0
+	006 Move W0, W31
+	007 Return X0
+
+Method: System.Boolean GetHistoryValue(System.Int32 historyIndex)
+
+Disassembly:
+	0x039AFA58 LDR X22, [X22 + 0xBC8]
+	0x039AFA5C MOV W20, W0
+	0x039AFA60 MOV W21, W31
+	0x039AFA64 LDR X0, [X19 + 0x28]
+	0x039AFA68 CBZ X0, 0x39AFABC
+	0x039AFA6C LDR X2, [X22]
+	0x039AFA70 MOV W1, W21
+	0x039AFA74 BL 0x2497990
+	0x039AFA78 CBZ X0, 0x39AFABC
+	0x039AFA7C LDR X8, [X0]
+	0x039AFA80 LDP X9, X1, [X8 + 0x1E8]
+	0x039AFA84 BLR X9
+	0x039AFA88 ADD W21, W21, 0x1
+	0x039AFA8C CMP W20, W21
+	0x039AFA90 B.NE 0x39AFA64
+	0x039AFA94 LDR X8, [X19 + 0x30]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+96]
+	003 Compare X8, 0
+	004 JumpIfEqual {16}
+	005 Move W9, [X8+24]
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 Add X8, X8, W1
+	008 Move X8, [X8+32]
+	009 Compare X8, 0
+	010 JumpIfEqual {16}
+	011 Move X2, [X8+24]
+	012 Move X0, [X8+64]
+	013 Move X1, [X8+40]
+	014 Move X30, [X31+16]
+	015 CallNoReturn X2
+	016 Call 0x1C17F20
+	017 Call 0x1C17F28
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x039AFA98 CBZ X8, 0x39AFABC
+
+ISIL:
+	001 Call BoolField..ctor, X0
+	002 Return 
+

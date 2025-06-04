@@ -1,0 +1,47 @@
+Type: Fusion.NetworkObjectBaker/Result
+
+Method: System.Boolean get_HadChanges()
+
+Disassembly:
+	0x01F86F20 MOV W3, W21
+	0x01F86F24 MOV W4, W21
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Int32 get_ObjectCount()
+
+Disassembly:
+	0x01F86F28 MOV X5, X31
+	0x01F86F2C MOV X24, X0
+
+ISIL:
+	001 Move W0, [X0+4]
+	002 Return X0
+
+Method: System.Int32 get_BehaviourCount()
+
+Disassembly:
+	0x01F86F30 BL 0x3C0C3DC
+	0x01F86F34 CBZ X23, 0x1F86FA4
+
+ISIL:
+	001 Move W0, [X0+8]
+	002 Return X0
+
+Method: System.Void .ctor(System.Boolean dirty, System.Int32 objectCount, System.Int32 behaviourCount)
+
+Disassembly:
+	0x01F86688 LDP X30, X21, [X31], #0x20
+	0x01F8668C B 0x2414038
+	0x01F86690 LDP X8, X1, [X0 + 0x30]
+	0x01F86694 MOV X0, X8
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0], W8
+	003 Move [X0+4], W2
+	004 Move [X0+8], W3
+	005 Return 
+

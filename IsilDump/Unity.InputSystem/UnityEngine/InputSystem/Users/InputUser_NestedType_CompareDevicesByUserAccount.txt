@@ -1,0 +1,56 @@
+Type: UnityEngine.InputSystem.Users.InputUser/CompareDevicesByUserAccount
+
+Method: System.Int32 Compare(UnityEngine.InputSystem.InputDevice x, UnityEngine.InputSystem.InputDevice y)
+
+Disassembly:
+	0x037E5500 ADD X8, X31, 0x8
+	0x037E5504 ADD X0, X31, 0x20
+	0x037E5508 MOV X1, X9
+	0x037E550C BL 0x24FD990
+	0x037E5510 LDUR V0, [X31 + 0x8]
+	0x037E5514 LDR X8, [X31 + 0x18]
+	0x037E5518 MOV W22, W31
+	0x037E551C STR V0, [X31 + 0x3]
+	0x037E5520 STR X8, [X31 + 0x40]
+	0x037E5524 LDR X1, [X23]
+	0x037E5528 ADD X0, X31, 0x30
+	0x037E552C BL 0x2BC496C
+	0x037E5530 TBZ X0, 0x0, 0x37E5580
+	0x037E5534 LDR X1, [X24]
+	0x037E5538 ADD X0, X31, 0x30
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, 0xBFD000
+	004 Move W8, [X19+783]
+	005 Move TEMP, X8
+	006 And TEMP, TEMP, 1
+	007 Compare TEMP, 1
+	008 JumpIfEqual {17}
+	009 Move X0, 0x965000
+	010 Move X0, [X0+384]
+	011 Call 0x1C17CF4
+	012 Move X0, 0x965000
+	013 Move X0, [X0+264]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+783], W8
+	017 Move W0, W31
+	018 Move X30, [X31+16]
+	019 Move X19, [X31+24]
+	020 Return X0
+
+Method: System.Nullable`1<UnityEngine.InputSystem.Users.InputUserAccountHandle> GetUserAccountHandleForDevice(UnityEngine.InputSystem.InputDevice device)
+
+Disassembly:
+	0x037E553C BL 0x2BC4998
+	0x037E5540 CBZ X0, 0x37E5524
+	0x037E5544 LDR X9, [X0]
+
+ISIL:
+	001 Move [X8], X31
+	002 Move [X8+8], X31
+	003 Move [X8+16], X31
+	004 Return X0
+

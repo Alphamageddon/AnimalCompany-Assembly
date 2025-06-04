@@ -1,0 +1,40 @@
+Type: UnityEngine.Bindings.NotNullAttribute
+
+Method: System.Void set_Exception(System.String value)
+
+Disassembly:
+	0x03C97C74 MOVZ W1, 0x1
+	0x03C97C78 LDR X0, [X8]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Void .ctor(System.String exception = ArgumentNullException)
+
+Disassembly:
+	0x03C97C7C BL 0x1C16D6C
+	0x03C97C80 ADRP X8, 0x4C9000
+	0x03C97C84 LDR X8, [X8 + 0xFB0]
+	0x03C97C88 MOV X21, X0
+	0x03C97C8C MOVN X9, 0x0
+	0x03C97C90 ADD X0, X31, 0x48
+	0x03C97C94 LDR X8, [X8]
+	0x03C97C98 MOV X1, X31
+	0x03C97C9C STR W20, [X31 + 0x58]
+	0x03C97CA0 STP X8, X9, [X31 + 0x48]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

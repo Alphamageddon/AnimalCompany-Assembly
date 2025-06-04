@@ -1,0 +1,300 @@
+Type: Fusion.Sockets.NetSendEnvelopeRingBuffer
+
+Method: System.Boolean get_IsFull()
+
+Disassembly:
+	0x01F01EB8 LDUR X11, [X10 - 0x8]
+	0x01F01EBC CMP X11, X1
+	0x01F01EC0 B.EQ 0x1F01F4C
+	0x01F01EC4 SUBS X9, X9, 0x1
+	0x01F01EC8 ADD X10, X10, 0x10
+
+ISIL:
+	001 Move W8, [X0+20]
+	002 Move W9, [X0+8]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 Return X0
+
+Method: System.Boolean get_IsEmpty()
+
+Disassembly:
+	0x01F038A0 MOV X1, X21
+	0x01F038A4 MOV W2, W23
+	0x01F038A8 BL 0x1F03DC8
+	0x01F038AC MOVN W0, 0x0
+
+ISIL:
+	001 Move W8, [X0+20]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Void Push(Fusion.Sockets.NetSendEnvelope envelope)
+
+Disassembly:
+	0x01F01ECC B.NE 0x1F01EB8
+	0x01F01ED0 MOVZ W2, 0x5
+	0x01F01ED4 MOV X0, X20
+	0x01F01ED8 BL 0x1C5C788
+	0x01F01EDC B 0x1F01F5C
+	0x01F01EE0 LDR W8, [X31 + 0x38]
+	0x01F01EE4 LDRH W9, [X31 + 0x3C]
+	0x01F01EE8 STR W8, [X31 + 0x28]
+	0x01F01EEC STRH W9, [X31 + 0x2C]
+	0x01F01EF0 CBZ X20, 0x1F02008
+	0x01F01EF4 LDR W8, [X31 + 0x28]
+	0x01F01EF8 LDRH W9, [X31 + 0x2C]
+	0x01F01EFC ADRP X10, 0x21FF000
+	0x01F01F00 STR W8, [X31 + 0x20]
+	0x01F01F04 STRH W9, [X31 + 0x24]
+	0x01F01F08 LDR X8, [X20]
+	0x01F01F0C LDRH W9, [X8 + 0x12E]
+	0x01F01F10 LDR X10, [X10 + 0xA38]
+	0x01F01F14 LDR X1, [X10]
+	0x01F01F18 CBZ X9, 0x1F01F3C
+	0x01F01F1C LDR X10, [X8 + 0xB0]
+	0x01F01F20 ADD X10, X10, 0x8
+	0x01F01F24 LDUR X11, [X10 - 0x8]
+	0x01F01F28 CMP X11, X1
+	0x01F01F2C B.EQ 0x1F01F6C
+	0x01F01F30 SUBS X9, X9, 0x1
+	0x01F01F34 ADD X10, X10, 0x10
+	0x01F01F38 B.NE 0x1F01F24
+	0x01F01F3C MOVZ W2, 0x6
+	0x01F01F40 MOV X0, X20
+	0x01F01F44 BL 0x1C5C788
+	0x01F01F48 B 0x1F01F7C
+	0x01F01F4C LDR W9, [X10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0+20]
+	004 Move W9, [X0+8]
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Move X8, [X0]
+	007 NotImplemented "Instruction LDRSW not yet implemented."
+	008 Move V1, [X1]
+	009 Move V0, [X1+16]
+	010 Add X8, X8, X9
+	011 Move [X8], V1
+	012 Move [X8+8], V0
+	013 Move W9, [X0+8]
+	014 Move W8, [X0+12]
+	015 Move W10, [X0+20]
+	016 Add W8, W8, 1
+	017 NotImplemented "Instruction SDIV not yet implemented."
+	018 NotImplemented "Instruction MSUB not yet implemented."
+	019 Add W9, W10, 1
+	020 Move [X0+12], W8
+	021 Move [X0+20], W9
+	022 Move X30, [X31+16]
+	023 Move X19, [X31+24]
+	024 Return 
+	025 Move X0, 0x21F3000
+	026 Move X0, [X0+1456]
+	027 Call 0x1C17D08
+	028 Call 0x1C17F10
+	029 Move X1, X31
+	030 Move X19, X0
+	031 Call InvalidOperationException..ctor, X0
+	032 Move X0, 0x2200000
+	033 Move X0, [X0+2704]
+	034 Call 0x1C17D08
+	035 Move X1, X0
+	036 Move X0, X19
+	037 Call 0x1C17DEC
+
+Method: System.Boolean TryPush(Fusion.Sockets.NetSendEnvelope envelope)
+
+Disassembly:
+	0x01F038B0 B 0x1F038F8
+	0x01F038B4 ADRP X8, 0x21FD000
+	0x01F038B8 LDR X8, [X8 + 0xB38]
+	0x01F038BC MOV X1, X31
+	0x01F038C0 LDR X0, [X8]
+	0x01F038C4 BL 0x1E32108
+	0x01F038C8 ADD X2, X31, 0x18
+	0x01F038CC ADD X4, X31, 0xC
+	0x01F038D0 MOV X0, X22
+	0x01F038D4 MOV X1, X19
+	0x01F038D8 MOV W3, W20
+	0x01F038DC BL 0x1F03FCC
+	0x01F038E0 MOV W19, W0
+	0x01F038E4 MOV X0, X31
+	0x01F038E8 BL 0x1E32194
+	0x01F038EC LDR W8, [X31 + 0xC]
+	0x01F038F0 ANDS W31, W19, 0x1
+	0x01F038F4 CSINV W0, W8, W31, NE
+	0x01F038F8 LDP X20, X19, [X31 + 0x40]
+	0x01F038FC LDP X22, X21, [X31 + 0x30]
+
+ISIL:
+	001 Move W8, [X0+20]
+	002 Move W9, [X0+8]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move X10, [X0]
+	005 NotImplemented "Instruction LDRSW not yet implemented."
+	006 Move V1, [X1]
+	007 Move V0, [X1+16]
+	008 Add X10, X10, X11
+	009 Move [X10], V1
+	010 Move [X10+8], V0
+	011 Move W11, [X0+8]
+	012 Move W10, [X0+12]
+	013 Move W12, [X0+20]
+	014 Add W10, W10, 1
+	015 NotImplemented "Instruction SDIV not yet implemented."
+	016 NotImplemented "Instruction MSUB not yet implemented."
+	017 Add W11, W12, 1
+	018 Move [X0+12], W10
+	019 Move [X0+20], W11
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 NotImplemented "Instruction CSET not yet implemented."
+	022 Return X0
+
+Method: Fusion.Sockets.NetSendEnvelope Peek()
+
+Disassembly:
+	0x01EFD634 STP X29, X30, [X31 + 0x10]
+	0x01EFD638 STP X28, X27, [X31 + 0x20]
+	0x01EFD63C STP X26, X25, [X31 + 0x30]
+	0x01EFD640 STP X24, X23, [X31 + 0x40]
+	0x01EFD644 STP X22, X21, [X31 + 0x50]
+	0x01EFD648 STP X20, X19, [X31 + 0x60]
+
+ISIL:
+	001 Move X9, [X0]
+	002 NotImplemented "Instruction LDRSW not yet implemented."
+	003 Add X9, X9, X10
+	004 Move V1, [X9]
+	005 Move V0, [X9+16]
+	006 Move [X8], V1
+	007 Move [X8+8], V0
+	008 Return X0
+
+Method: System.Void Pop()
+
+Disassembly:
+	0x01EFD64C ADRP X22, 0x24DC000
+	0x01EFD650 LDRB W8, [X22 + 0x63E]
+	0x01EFD654 MOV X19, X2
+	0x01EFD658 MOV X20, X1
+	0x01EFD65C MOV X21, X0
+	0x01EFD660 TBNZ X8, 0x0, 0x1EFD678
+	0x01EFD664 ADRP X0, 0x2200000
+	0x01EFD668 LDR X0, [X0 + 0x158]
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 Move W9, [X0+20]
+	003 Move W10, [X0+8]
+	004 Add W8, W8, 1
+	005 NotImplemented "Instruction SDIV not yet implemented."
+	006 Subtract W9, W9, 1
+	007 NotImplemented "Instruction MSUB not yet implemented."
+	008 Move [X0+16], W8
+	009 Move [X0+20], W9
+	010 Return 
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x01EFD130 CSINC X0, X0, X10, GE
+	0x01EFD134 CMP X0, X8
+	0x01EFD138 B.CC 0x1EFD114
+
+ISIL:
+	001 Move [X0+16], X31
+	002 Move [X0+12], W31
+	003 Return 
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x01EFD66C BL 0x1C16CF4
+	0x01EFD670 MOVZ W8, 0x1
+	0x01EFD674 STRB W8, [X22 + 0x63E]
+	0x01EFD678 CBZ X21, 0x1EFD870
+	0x01EFD67C ADRP X22, 0x24DB000
+	0x01EFD680 LDRB W8, [X22 + 0xF19]
+	0x01EFD684 CBNZ W8, 0x1EFD69C
+	0x01EFD688 ADRP X0, 0x21FE000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0]
+	005 Move X1, X31
+	006 Call Native.Free, X0
+	007 Move [X19], X31
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+
+Method: Fusion.Sockets.NetSendEnvelopeRingBuffer Create(System.Int32 capacity)
+
+Disassembly:
+	0x01EFCF00 BL 0x1C16F10
+	0x01EFCF04 MOV X1, X31
+	0x01EFCF08 MOV X19, X0
+	0x01EFCF0C BL 0x3379B10
+	0x01EFCF10 ADRP X0, 0x2204000
+	0x01EFCF14 LDR X0, [X0 + 0xA48]
+	0x01EFCF18 BL 0x1C16D08
+	0x01EFCF1C MOV X1, X0
+	0x01EFCF20 MOV X0, X19
+	0x01EFCF24 BL 0x1C16DEC
+	0x01EFCF28 STR X30, [X31 - 0x30]!
+	0x01EFCF2C STP X22, X21, [X31 + 0x10]
+	0x01EFCF30 STP X20, X19, [X31 + 0x20]
+	0x01EFCF34 MOV W19, W2
+	0x01EFCF38 MOV X21, X1
+	0x01EFCF3C MOV X20, X0
+	0x01EFCF40 BL 0x1EFD100
+	0x01EFCF44 LDR X8, [X20 + 0x18]
+	0x01EFCF48 ADDS X1, X8, X0, 0x4, LSL
+	0x01EFCF4C B.EQ 0x1EFCFB4
+	0x01EFCF50 LDR X8, [X1]
+	0x01EFCF54 CMP X8, X21
+	0x01EFCF58 B.NE 0x1EFCF64
+	0x01EFCF5C STRH W19, [X1 + 0x8]
+	0x01EFCF60 B 0x1EFCFA4
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x24DE000
+	007 Move X22, 0x2205000
+	008 Move X19, X8
+	009 Move W8, [X21+1619]
+	010 Move X22, [X22+2584]
+	011 Move W20, W0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x2205000
+	017 Move X0, [X0+2584]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+1619], W8
+	021 Move X1, [X22]
+	022 Move W0, W20
+	023 Call Native.MallocAndClearArray, X0
+	024 Move [X19], X0
+	025 Move [X19+8], W20
+	026 Move [X19+12], W31
+	027 Move [X19+16], X31
+	028 Move X20, [X31+32]
+	029 Move X19, [X31+40]
+	030 Move X22, [X31+16]
+	031 Move X21, [X31+24]
+	032 Move X30, [X31+48]
+	033 Return X0
+

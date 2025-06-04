@@ -1,0 +1,45 @@
+Type: UnityEngine.U2D.SpriteChannelInfo
+
+Method: System.Void* get_buffer()
+
+Disassembly:
+	0x03C43670 LDP X30, X21, [X31], #0x20
+	0x03C43674 BR X2
+	0x03C43678 MOV X8, X0
+
+ISIL:
+	001 Move X0, [X0]
+	002 Move X1, X31
+	003 Call IntPtr.op_Explicit, X0
+	004 Return X0
+
+Method: System.Int32 get_count()
+
+Disassembly:
+	0x03C4367C MOV W0, W1
+	0x03C43680 MOV W1, W2
+
+ISIL:
+	001 Move W0, [X0+8]
+	002 Return X0
+
+Method: System.Int32 get_offset()
+
+Disassembly:
+	0x03C43684 MOV X2, X8
+	0x03C43688 B 0x3C4368C
+
+ISIL:
+	001 Move W0, [X0+12]
+	002 Return X0
+
+Method: System.Int32 get_stride()
+
+Disassembly:
+	0x03C4368C STR X30, [X31 - 0x30]!
+	0x03C43690 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+

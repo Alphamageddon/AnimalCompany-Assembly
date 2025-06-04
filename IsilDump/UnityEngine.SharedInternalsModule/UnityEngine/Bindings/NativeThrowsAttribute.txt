@@ -1,0 +1,38 @@
+Type: UnityEngine.Bindings.NativeThrowsAttribute
+
+Method: System.Void set_ThrowsException(System.Boolean value)
+
+Disassembly:
+	0x03C97DA0 LDP X20, X19, [X31 + 0x70]
+	0x03C97DA4 LDP X30, X21, [X31 + 0x60]
+	0x03C97DA8 ADD X31, X31, 0x80
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+16], W8
+	003 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03C97DAC B 0x3C97838
+	0x03C97DB0 BL 0x1C16F20
+	0x03C97DB4 BL 0x1C16F28
+	0x03C97DB8 BL 0x1C16F44
+	0x03C97DBC MOV X1, X31
+	0x03C97DC0 BL 0x1C16DEC
+	0x03C97DC4 STR X30, [X31 - 0x30]!
+	0x03C97DC8 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X1, X31
+	004 Move X19, X0
+	005 Call Attribute..ctor, X0
+	006 Move W8, 1
+	007 Move [X19+16], W8
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+

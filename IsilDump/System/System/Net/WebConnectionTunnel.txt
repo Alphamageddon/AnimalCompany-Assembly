@@ -1,0 +1,572 @@
+Type: System.Net.WebConnectionTunnel
+
+Method: System.Net.HttpWebRequest get_Request()
+
+Disassembly:
+	0x036AF4CC LDR X0, [X0 + 0x108]
+	0x036AF4D0 BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Uri get_ConnectUri()
+
+Disassembly:
+	0x036AF4D4 ADRP X0, 0xA44000
+	0x036AF4D8 LDR X0, [X0 + 0x618]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void .ctor(System.Net.HttpWebRequest request, System.Uri connectUri)
+
+Disassembly:
+	0x036ADB28 BL 0x36ADA64
+	0x036ADB2C CBZ X23, 0x36ADBE8
+	0x036ADB30 TBNZ X22, 0x1F, 0x36ADC1C
+	0x036ADB34 LDR W8, [X23 + 0x18]
+	0x036ADB38 SUBS W8, W8, W22
+	0x036ADB3C B.LT 0x36ADC1C
+	0x036ADB40 TBNZ X21, 0x1F, 0x36ADC3C
+	0x036ADB44 CMP W8, W21
+	0x036ADB48 B.LT 0x36ADC3C
+	0x036ADB4C ADRP X8, 0xA4E000
+	0x036ADB50 LDR X8, [X8 + 0x7D8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move X19, X2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+16], X20
+	011 Move [X21+24], X19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+
+Method: System.Boolean get_Success()
+
+Disassembly:
+	0x036AF4DC BL 0x1C16CF4
+	0x036AF4E0 ADRP X0, 0xA4C000
+
+ISIL:
+	001 Move W0, [X0+44]
+	002 Return X0
+
+Method: System.Void set_Success(System.Boolean value)
+
+Disassembly:
+	0x036AF4E4 LDR X0, [X0 + 0x7D8]
+	0x036AF4E8 BL 0x1C16CF4
+	0x036AF4EC ADRP X0, 0xA78000
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+44], W8
+	003 Return 
+
+Method: System.Boolean get_CloseConnection()
+
+Disassembly:
+	0x036AF4F0 LDR X0, [X0 + 0x2B8]
+	0x036AF4F4 BL 0x1C16CF4
+
+ISIL:
+	001 Move W0, [X0+45]
+	002 Return X0
+
+Method: System.Void set_CloseConnection(System.Boolean value)
+
+Disassembly:
+	0x036AF4F8 ADRP X0, 0xA78000
+	0x036AF4FC LDR X0, [X0 + 0x2C0]
+	0x036AF500 BL 0x1C16CF4
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+45], W8
+	003 Return 
+
+Method: System.Int32 get_StatusCode()
+
+Disassembly:
+	0x036AF504 ADRP X0, 0xA78000
+	0x036AF508 LDR X0, [X0 + 0x2C8]
+
+ISIL:
+	001 Move W0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_StatusCode(System.Int32 value)
+
+Disassembly:
+	0x036AF50C BL 0x1C16CF4
+	0x036AF510 ADRP X0, 0xA8B000
+
+ISIL:
+	001 Move [X0+48], W1
+	002 Return 
+
+Method: System.Void set_StatusDescription(System.String value)
+
+Disassembly:
+	0x036AF514 LDR X0, [X0 + 0x168]
+	0x036AF518 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+56], X1
+	002 Return 
+
+Method: System.String[] get_Challenge()
+
+Disassembly:
+	0x036AF51C ADRP X0, 0xA4C000
+	0x036AF520 LDR X0, [X0 + 0x558]
+
+ISIL:
+	001 Move X0, [X0+64]
+	002 Return X0
+
+Method: System.Void set_Challenge(System.String[] value)
+
+Disassembly:
+	0x036AF524 BL 0x1C16CF4
+	0x036AF528 ADRP X0, 0xA78000
+
+ISIL:
+	001 Move [X0+64], X1
+	002 Return 
+
+Method: System.Net.WebHeaderCollection get_Headers()
+
+Disassembly:
+	0x036AF52C LDR X0, [X0 + 0x2D0]
+	0x036AF530 BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_Headers(System.Net.WebHeaderCollection value)
+
+Disassembly:
+	0x036AF534 ADRP X0, 0xA90000
+	0x036AF538 LDR X0, [X0 + 0x1B0]
+
+ISIL:
+	001 Move [X0+72], X1
+	002 Return 
+
+Method: System.Version get_ProxyVersion()
+
+Disassembly:
+	0x036AF53C BL 0x1C16CF4
+	0x036AF540 ADRP X0, 0xA90000
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_ProxyVersion(System.Version value)
+
+Disassembly:
+	0x036AF544 LDR X0, [X0 + 0x1B8]
+	0x036AF548 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Return 
+
+Method: System.Byte[] get_Data()
+
+Disassembly:
+	0x036AF54C ADRP X0, 0xA8E000
+	0x036AF550 LDR X0, [X0 + 0xDF8]
+
+ISIL:
+	001 Move X0, [X0+88]
+	002 Return X0
+
+Method: System.Void set_Data(System.Byte[] value)
+
+Disassembly:
+	0x036AF554 BL 0x1C16CF4
+	0x036AF558 ADRP X0, 0xA90000
+
+ISIL:
+	001 Move [X0+88], X1
+	002 Return 
+
+Method: System.Threading.Tasks.Task Initialize(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
+
+Disassembly:
+	0x036ADB54 LDR X0, [X8]
+	0x036ADB58 LDR W8, [X0 + 0xE0]
+	0x036ADB5C CBNZ W8, 0x36ADB64
+	0x036ADB60 BL 0x1C16DFC
+	0x036ADB64 MOV X0, X31
+	0x036ADB68 BL 0x33DD2A8
+	0x036ADB6C LDR X8, [X24]
+	0x036ADB70 MOV X4, X0
+	0x036ADB74 MOV X0, X24
+	0x036ADB78 MOV X1, X23
+	0x036ADB7C LDR X9, [X8 + 0x2D8]
+	0x036ADB80 LDR X5, [X8 + 0x2E0]
+	0x036ADB84 MOV W2, W22
+	0x036ADB88 MOV W3, W21
+	0x036ADB8C BLR X9
+	0x036ADB90 MOV X1, X20
+	0x036ADB94 MOV X2, X19
+	0x036ADB98 LDP X20, X19, [X31 + 0x30]
+	0x036ADB9C LDP X22, X21, [X31 + 0x20]
+	0x036ADBA0 LDP X24, X23, [X31 + 0x10]
+	0x036ADBA4 MOV X3, X31
+	0x036ADBA8 LDP X30, X25, [X31], #0x40
+	0x036ADBAC B 0x33ED028
+	0x036ADBB0 ADRP X0, 0xA46000
+	0x036ADBB4 LDR X0, [X0 + 0xB40]
+	0x036ADBB8 BL 0x1C16D08
+	0x036ADBBC BL 0x1C16F10
+	0x036ADBC0 MOV X19, X0
+	0x036ADBC4 ADRP X0, 0xA92000
+	0x036ADBC8 LDR X0, [X0 + 0xA0]
+	0x036ADBCC BL 0x1C16D08
+	0x036ADBD0 MOV X1, X0
+	0x036ADBD4 MOV X0, X19
+	0x036ADBD8 MOV X2, X31
+	0x036ADBDC BL 0x3379A44
+	0x036ADBE0 B 0x36ADC6C
+	0x036ADBE4 BL 0x1C16F20
+	0x036ADBE8 ADRP X0, 0xA4B000
+	0x036ADBEC LDR X0, [X0 + 0x528]
+	0x036ADBF0 BL 0x1C16D08
+	0x036ADBF4 BL 0x1C16F10
+	0x036ADBF8 MOV X19, X0
+	0x036ADBFC ADRP X0, 0xA71000
+	0x036ADC00 LDR X0, [X0 + 0xF48]
+	0x036ADC04 BL 0x1C16D08
+	0x036ADC08 MOV X1, X0
+	0x036ADC0C MOV X0, X19
+	0x036ADC10 MOV X2, X31
+	0x036ADC14 BL 0x330E100
+	0x036ADC18 B 0x36ADC6C
+	0x036ADC1C ADRP X0, 0xA4E000
+	0x036ADC20 LDR X0, [X0 + 0x760]
+	0x036ADC24 BL 0x1C16D08
+	0x036ADC28 BL 0x1C16F10
+	0x036ADC2C MOV X19, X0
+
+ISIL:
+	001 Subtract X31, X31, 176
+	002 Move [X31+128], X30
+	003 Move [X31+136], X23
+	004 Move [X31+144], X22
+	005 Move [X31+152], X21
+	006 Move [X31+160], X20
+	007 Move [X31+168], X19
+	008 Move X23, 0xD34000
+	009 Move X22, 0xA4A000
+	010 Move W8, [X23+2372]
+	011 Move X22, [X22+640]
+	012 Move X19, X2
+	013 Move X20, X1
+	014 Move X21, X0
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {27}
+	019 Move X0, 0xA93000
+	020 Move X0, [X0+80]
+	021 Call 0x1C17CF4
+	022 Move X0, 0xA4A000
+	023 Move X0, [X0+640]
+	024 Call 0x1C17CF4
+	025 Move W8, 1
+	026 Move [X23+2372], W8
+	027 Move X0, [X22]
+	028 NotImplemented "Instruction MOVI not yet implemented."
+	029 Move [X31+64], V0
+	030 Move [X31+72], V0
+	031 Move [X31+96], V0
+	032 Move [X31+104], V0
+	033 Move [X31+32], V0
+	034 Move [X31+40], V0
+	035 Move [X31+64], X21
+	036 Move [X31+72], X20
+	037 Move [X31+80], X19
+	038 Move X19, 0xA93000
+	039 Move W8, [X0+224]
+	040 Move X19, [X19+80]
+	041 Compare W8, 0
+	042 JumpIfNotEqual {44}
+	043 Call 0x1C17DFC
+	044 Add X8, X31, 8
+	045 Move X0, X31
+	046 Call AsyncTaskMethodBuilder.Create
+	047 NotImplemented "Instruction LDUR not yet implemented."
+	048 Move X9, [X31+24]
+	049 Move X2, [X19]
+	050 Add X8, X31, 32
+	051 Or X19, X8, 15
+	052 Move TEMP, 0
+	053 Not TEMP
+	054 Move W10, TEMP
+	055 Add X1, X31, 32
+	056 Move X0, X19
+	057 Move [X31+40], V0
+	058 Move [X31+56], X9
+	059 Move [X31+32], W10
+	060 Call AsyncTaskMethodBuilder.Start, X0, X1
+	061 Move X0, X19
+	062 Move X1, X31
+	063 Call AsyncTaskMethodBuilder.get_Task, X0
+	064 Move X20, [X31+160]
+	065 Move X19, [X31+168]
+	066 Move X22, [X31+144]
+	067 Move X21, [X31+152]
+	068 Move X30, [X31+128]
+	069 Move X23, [X31+136]
+	070 Add X31, X31, 176
+	071 Return X0
+
+Method: System.Threading.Tasks.Task`1<System.ValueTuple`3<System.Net.WebHeaderCollection, System.Byte[], System.Int32>> ReadHeaders(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken)
+
+Disassembly:
+	0x036AF55C LDR X0, [X0 + 0x1C0]
+	0x036AF560 BL 0x1C16CF4
+	0x036AF564 ADRP X0, 0xA44000
+	0x036AF568 LDR X0, [X0 + 0xDD8]
+	0x036AF56C BL 0x1C16CF4
+	0x036AF570 ADRP X0, 0xA90000
+	0x036AF574 LDR X0, [X0 + 0x1C8]
+	0x036AF578 BL 0x1C16CF4
+	0x036AF57C ADRP X0, 0xA6C000
+	0x036AF580 LDR X0, [X0 + 0xB28]
+	0x036AF584 BL 0x1C16CF4
+	0x036AF588 MOVZ W8, 0x1
+	0x036AF58C STRB W8, [X20 + 0x949]
+	0x036AF590 STP X31, X31, [X31 + 0x40]
+	0x036AF594 STR X31, [X31 + 0x50]
+	0x036AF598 STP X31, X31, [X31 + 0x20]
+	0x036AF59C STR W31, [X31 + 0x1C]
+	0x036AF5A0 ADRP X9, 0xA44000
+	0x036AF5A4 LDR W8, [X19]
+	0x036AF5A8 LDR X24, [X19 + 0x30]
+	0x036AF5AC LDR X9, [X9 + 0x618]
+	0x036AF5B0 CBZ W8, 0x36AF948
+	0x036AF5B4 MOVZ W8, 0xC8
+	0x036AF5B8 STR X31, [X19 + 0x38]
+	0x036AF5BC STR W8, [X19 + 0x40]
+	0x036AF5C0 LDR X0, [X9]
+	0x036AF5C4 MOVZ W1, 0x400
+	0x036AF5C8 BL 0x1C16D6C
+	0x036AF5CC ADRP X8, 0xA4C000
+	0x036AF5D0 LDR X8, [X8 + 0x558]
+	0x036AF5D4 STR X0, [X19 + 0x48]
+	0x036AF5D8 LDR X0, [X8]
+	0x036AF5DC BL 0x1C16F10
+	0x036AF5E0 MOV X20, X0
+	0x036AF5E4 MOV X1, X31
+	0x036AF5E8 BL 0x32E23B4
+	0x036AF5EC STR X20, [X19 + 0x50]
+	0x036AF5F0 ADRP X8, 0xA4C000
+	0x036AF5F4 LDR X8, [X8 + 0x7D8]
+	0x036AF5F8 LDR X0, [X8]
+	0x036AF5FC LDR W8, [X0 + 0xE0]
+	0x036AF600 CBNZ W8, 0x36AF608
+	0x036AF604 BL 0x1C16DFC
+	0x036AF608 ADD X0, X19, 0x20
+	0x036AF60C MOV X1, X31
+	0x036AF610 BL 0x33DDC30
+	0x036AF614 LDR X0, [X19 + 0x28]
+	0x036AF618 CBZ X0, 0x36AFAFC
+	0x036AF61C LDR X8, [X0]
+	0x036AF620 LDR X1, [X19 + 0x48]
+	0x036AF624 LDR X4, [X19 + 0x20]
+	0x036AF628 LDR X9, [X8 + 0x2D8]
+	0x036AF62C LDR X5, [X8 + 0x2E0]
+	0x036AF630 MOVZ W3, 0x400
+	0x036AF634 MOV W2, W31
+	0x036AF638 BLR X9
+	0x036AF63C CBZ X0, 0x36AFAF8
+	0x036AF640 ADRP X8, 0xA78000
+	0x036AF644 LDR X8, [X8 + 0x2D0]
+	0x036AF648 LDR X2, [X8]
+	0x036AF64C MOV W1, W31
+	0x036AF650 BL 0x269D3A8
+
+ISIL:
+	001 Subtract X31, X31, 160
+	002 Move [X31+112], X30
+	003 Move [X31+120], X23
+	004 Move [X31+128], X22
+	005 Move [X31+136], X21
+	006 Move [X31+144], X20
+	007 Move [X31+152], X19
+	008 Move X23, 0xD32000
+	009 Move X22, 0xA91000
+	010 Move W8, [X23+2373]
+	011 Move X22, [X22+264]
+	012 Move X19, X2
+	013 Move X20, X1
+	014 Move X21, X0
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {33}
+	019 Move X0, 0xA91000
+	020 Move X0, [X0+272]
+	021 Call 0x1C17CF4
+	022 Move X0, 0xA91000
+	023 Move X0, [X0+280]
+	024 Call 0x1C17CF4
+	025 Move X0, 0xA91000
+	026 Move X0, [X0+288]
+	027 Call 0x1C17CF4
+	028 Move X0, 0xA91000
+	029 Move X0, [X0+264]
+	030 Call 0x1C17CF4
+	031 Move W8, 1
+	032 Move [X23+2373], W8
+	033 Move X0, [X22]
+	034 NotImplemented "Instruction MOVI not yet implemented."
+	035 Move [X31+96], X31
+	036 Move [X31+32], V0
+	037 Move [X31+40], V0
+	038 Move [X31+64], V0
+	039 Move [X31+72], V0
+	040 Move [X31], V0
+	041 Move [X31+8], V0
+	042 Move [X31+40], X20
+	043 Move [X31+48], X21
+	044 Move [X31+32], X19
+	045 Move X19, 0xA91000
+	046 Move X21, 0xA91000
+	047 Move X20, 0xA91000
+	048 Move W8, [X0+224]
+	049 Move X19, [X19+272]
+	050 Move X21, [X21+280]
+	051 Move X20, [X20+288]
+	052 Compare W8, 0
+	053 JumpIfNotEqual {55}
+	054 Call 0x1C17DFC
+	055 Move X0, [X19]
+	056 Add X8, X31, 0
+	057 Or X19, X8, 15
+	058 Move X8, X19
+	059 Call AsyncTaskMethodBuilder`1<ValueTuple`3<Object, Object, Int32>>.Create
+	060 Move X2, [X21]
+	061 Move TEMP, 0
+	062 Not TEMP
+	063 Move W8, TEMP
+	064 Add X1, X31, 0
+	065 Move X0, X19
+	066 Move [X31], W8
+	067 Call AsyncTaskMethodBuilder`1<ValueTuple`3<Object, Object, Int32>>.Start, X0, X1
+	068 Move X1, [X20]
+	069 Move X0, X19
+	070 Call AsyncTaskMethodBuilder`1<ValueTuple`3<Object, Object, Int32>>.get_Task, X0
+	071 Move X20, [X31+144]
+	072 Move X19, [X31+152]
+	073 Move X22, [X31+128]
+	074 Move X21, [X31+136]
+	075 Move X30, [X31+112]
+	076 Move X23, [X31+120]
+	077 Add X31, X31, 160
+	078 Return X0
+
+Method: System.Void FlushContents(System.IO.Stream stream, System.Int32 contentLength)
+
+Disassembly:
+	0x036AF654 ADRP X8, 0xA78000
+	0x036AF658 LDR X8, [X8 + 0x2C8]
+	0x036AF65C STP X0, X1, [X31 + 0x20]
+	0x036AF660 LDR X8, [X8]
+	0x036AF664 ADD X0, X31, 0x20
+	0x036AF668 MOV X1, X8
+	0x036AF66C BL 0x2998978
+	0x036AF670 TBZ X0, 0x0, 0x36AFA48
+	0x036AF674 ADRP X8, 0xA78000
+	0x036AF678 LDR X8, [X8 + 0x2C0]
+	0x036AF67C LDR X1, [X8]
+	0x036AF680 ADD X0, X31, 0x20
+	0x036AF684 BL 0x29989C4
+	0x036AF688 MOV W3, W0
+	0x036AF68C CBZ W0, 0x36AFB04
+	0x036AF690 LDR X0, [X19 + 0x50]
+	0x036AF694 CBZ X0, 0x36AFB00
+	0x036AF698 LDR X8, [X0]
+	0x036AF69C ADD X25, X19, 0x48
+	0x036AF6A0 LDR X1, [X25]
+	0x036AF6A4 LDR X9, [X8 + 0x388]
+	0x036AF6A8 LDR X4, [X8 + 0x390]
+	0x036AF6AC MOV W2, W31
+	0x036AF6B0 BLR X9
+	0x036AF6B4 ADRP X8, 0xA8E000
+	0x036AF6B8 LDR X8, [X8 + 0xDF8]
+	0x036AF6BC STR W31, [X31 + 0x3C]
+	0x036AF6C0 STR X31, [X31 + 0x30]
+	0x036AF6C4 LDR X0, [X8]
+	0x036AF6C8 BL 0x1C16F10
+	0x036AF6CC MOV X20, X0
+	0x036AF6D0 MOV X1, X31
+	0x036AF6D4 BL 0x367CAA0
+	0x036AF6D8 LDR X0, [X19 + 0x50]
+	0x036AF6DC CBZ X0, 0x36AF864
+	0x036AF6E0 ADRP X29, 0xA90000
+	0x036AF6E4 ADRP X22, 0xA8B000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xD32000
+	006 Move W8, [X21+2374]
+	007 Move W19, W2
+	008 Move X20, X1
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0xA45000
+	014 Move X0, [X0+1560]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+2374], W8
+	018 NotImplemented "Instruction CMP not yet implemented."
+	019 Move X21, 0xA45000
+	020 Move X21, [X21+1560]
+	021 Move X0, [X21]
+	022 Move W1, W19
+	023 Call 0x1C17D6C
+	024 Compare X20, 0
+	025 JumpIfEqual {42}
+	026 Move X8, [X20]
+	027 Move X1, X0
+	028 Move X0, X20
+	029 Move W2, W31
+	030 Move X9, [X8+856]
+	031 Move X4, [X8+864]
+	032 Move W3, W19
+	033 NotImplemented "Instruction BLR not yet implemented."
+	034 NotImplemented "Instruction CMP not yet implemented."
+	035 Subtract W19, W19, W0
+	036 NotImplemented "Instruction CMP not yet implemented."
+	037 Move X20, [X31+16]
+	038 Move X19, [X31+24]
+	039 Move X30, [X31+32]
+	040 Move X21, [X31+40]
+	041 Return 
+	042 Call 0x1C17F20
+

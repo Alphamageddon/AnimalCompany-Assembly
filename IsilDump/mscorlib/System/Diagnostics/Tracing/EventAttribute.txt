@@ -1,0 +1,70 @@
+Type: System.Diagnostics.Tracing.EventAttribute
+
+Method: System.Void .ctor(System.Int32 eventId)
+
+Disassembly:
+	0x03350798 LDP X20, X19, [X31 + 0x20]
+	0x0335079C LDR X30, [X31], #0x30
+	0x033507A0 RET
+	0x033507A4 MOV X1, X31
+	0x033507A8 B 0x33BDD8C
+	0x033507AC STR X30, [X31 - 0x20]!
+	0x033507B0 STP X20, X19, [X31 + 0x10]
+	0x033507B4 CBZ X1, 0x3350804
+	0x033507B8 LDR X20, [X0 + 0x10]
+	0x033507BC CBZ X20, 0x33507E8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void set_EventId(System.Int32 value)
+
+Disassembly:
+	0x033507C0 MOV X19, X1
+	0x033507C4 LDR X0, [X20 + 0x10]
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+
+Method: System.Void set_Level(System.Diagnostics.Tracing.EventLevel value)
+
+Disassembly:
+	0x033507C8 CBZ X0, 0x3350800
+	0x033507CC LDR X8, [X0]
+
+ISIL:
+	001 Move [X0+20], W1
+	002 Return 
+
+Method: System.Void set_Keywords(System.Diagnostics.Tracing.EventKeywords value)
+
+Disassembly:
+	0x033507D0 MOV X1, X19
+	0x033507D4 LDP X9, X2, [X8 + 0x138]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Void set_Message(System.String value)
+
+Disassembly:
+	0x033507D8 BLR X9
+	0x033507DC TBNZ X0, 0x0, 0x33507F0
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+

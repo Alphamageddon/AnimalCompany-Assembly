@@ -1,0 +1,276 @@
+Type: UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Receiver.Rendering.BlendShapeAffordanceReceiver
+
+Method: UnityEngine.SkinnedMeshRenderer get_skinnedMeshRenderer()
+
+Disassembly:
+	0x03BD57CC TBZ X0, 0x0, 0x3BD57E8
+	0x03BD57D0 ADRP X8, 0x588000
+
+ISIL:
+	001 Move X0, [X0+168]
+	002 Return X0
+
+Method: System.Void set_skinnedMeshRenderer(UnityEngine.SkinnedMeshRenderer value)
+
+Disassembly:
+	0x03BD57D4 LDR X8, [X8 + 0xC20]
+	0x03BD57D8 MOV X0, X19
+
+ISIL:
+	001 Move [X0+168], X1
+	002 Return 
+
+Method: System.Int32 get_blendShapeIndex()
+
+Disassembly:
+	0x03BD57DC LDR X1, [X8]
+	0x03BD57E0 BL 0x21A3894
+
+ISIL:
+	001 Move W0, [X0+176]
+	002 Return X0
+
+Method: System.Void set_blendShapeIndex(System.Int32 value)
+
+Disassembly:
+	0x03BD57E4 STR X0, [X19 + 0xB0]
+	0x03BD57E8 LDR X0, [X19 + 0xB8]
+
+ISIL:
+	001 Move [X0+176], W1
+	002 Return 
+
+Method: System.Void OnEnable()
+
+Disassembly:
+	0x03BD57EC MOV X1, X31
+	0x03BD57F0 BL 0x3C124EC
+	0x03BD57F4 STR W0, [X19 + 0xC0]
+	0x03BD57F8 LDP X20, X19, [X31 + 0x20]
+	0x03BD57FC LDP X22, X21, [X31 + 0x10]
+	0x03BD5800 LDR X30, [X31], #0x30
+	0x03BD5804 RET
+	0x03BD5808 STR D10, [X31 - 0x40]!
+	0x03BD580C STP D9, D8, [X31 + 0x10]
+	0x03BD5810 STP X30, X21, [X31 + 0x20]
+	0x03BD5814 STP X20, X19, [X31 + 0x30]
+	0x03BD5818 LDR X8, [X0 + 0xB0]
+	0x03BD581C CBZ X8, 0x3BD5890
+	0x03BD5820 LDR X20, [X8 + 0x30]
+	0x03BD5824 MOV V8.16B, V2.16B
+	0x03BD5828 MOV V9.16B, V1.16B
+	0x03BD582C MOV X19, X0
+	0x03BD5830 MOV V10.16B, V0.16B
+	0x03BD5834 MOVZ W9, 0x1
+	0x03BD5838 STRB W9, [X8 + 0x38]
+	0x03BD583C CBZ X20, 0x3BD586C
+	0x03BD5840 LDR W21, [X19 + 0xC0]
+	0x03BD5844 MOV V0.16B, V10.16B
+	0x03BD5848 MOV V1.16B, V9.16B
+	0x03BD584C MOV V2.16B, V8.16B
+	0x03BD5850 MOV X0, X31
+	0x03BD5854 BL 0x3887BE0
+	0x03BD5858 FMOV S3, W31
+	0x03BD585C MOV X0, X20
+	0x03BD5860 MOV W1, W21
+	0x03BD5864 MOV X2, X31
+	0x03BD5868 BL 0x3C12720
+	0x03BD586C MOV X0, X19
+	0x03BD5870 MOV V1.16B, V9.16B
+	0x03BD5874 MOV V2.16B, V8.16B
+	0x03BD5878 LDP X20, X19, [X31 + 0x30]
+	0x03BD587C LDP X30, X21, [X31 + 0x20]
+	0x03BD5880 LDP D9, D8, [X31 + 0x10]
+	0x03BD5884 MOV V0.16B, V10.16B
+	0x03BD5888 LDR V10, [X31], #0x40
+	0x03BD588C B 0x3BD5894
+	0x03BD5890 BL 0x1C16F20
+	0x03BD5894 STR D10, [X31 - 0x30]!
+	0x03BD5898 STP D9, D8, [X31 + 0x8]
+	0x03BD589C STR X30, [X31 + 0x18]
+	0x03BD58A0 STP X20, X19, [X31 + 0x20]
+	0x03BD58A4 ADRP X20, 0x80D000
+	0x03BD58A8 LDRB W8, [X20 + 0xE93]
+	0x03BD58AC MOV V8.16B, V2.16B
+	0x03BD58B0 MOV V9.16B, V1.16B
+	0x03BD58B4 MOV V10.16B, V0.16B
+	0x03BD58B8 MOV X19, X0
+	0x03BD58BC TBNZ X8, 0x0, 0x3BD58D4
+	0x03BD58C0 ADRP X0, 0x588000
+	0x03BD58C4 LDR X0, [X0 + 0xC60]
+	0x03BD58C8 BL 0x1C16CF4
+	0x03BD58CC MOVZ W8, 0x1
+	0x03BD58D0 STRB W8, [X20 + 0xE93]
+	0x03BD58D4 LDR X19, [X19 + 0xA0]
+	0x03BD58D8 CBZ X19, 0x3BD5914
+	0x03BD58DC ADRP X20, 0x588000
+	0x03BD58E0 LDR X20, [X20 + 0xC60]
+	0x03BD58E4 MOV V0.16B, V10.16B
+	0x03BD58E8 MOV V1.16B, V9.16B
+	0x03BD58EC MOV V2.16B, V8.16B
+	0x03BD58F0 MOV X0, X31
+	0x03BD58F4 BL 0x3887BE0
+	0x03BD58F8 LDR X1, [X20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x80E000
+	006 Move X20, 0x51F000
+	007 Move W8, [X21+3694]
+	008 Move X20, [X20+1432]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {28}
+	014 Move X0, 0x589000
+	015 Move X0, [X0+3016]
+	016 Call 0x1C17CF4
+	017 Move X0, 0x51F000
+	018 Move X0, [X0+1432]
+	019 Call 0x1C17CF4
+	020 Move X0, 0x549000
+	021 Move X0, [X0+488]
+	022 Call 0x1C17CF4
+	023 Move X0, 0x589000
+	024 Move X0, [X0+3032]
+	025 Call 0x1C17CF4
+	026 Move W8, 1
+	027 Move [X21+3694], W8
+	028 Move X0, [X20]
+	029 Move X20, [X19+168]
+	030 Move W8, [X0+224]
+	031 Compare W8, 0
+	032 JumpIfNotEqual {34}
+	033 Call 0x1C17DFC
+	034 Move X0, X20
+	035 Move X1, X31
+	036 Move X2, X31
+	037 Call Object.op_Equality, X0, X1
+	038 Move TEMP, X0
+	039 And TEMP, TEMP, 1
+	040 Compare TEMP, 1
+	041 JumpIfNotEqual {76}
+	042 Move X9, 0x589000
+	043 Move X8, [X19]
+	044 Move X9, [X9+3032]
+	045 Move X21, 0x549000
+	046 Move X0, X19
+	047 Move X20, [X9]
+	048 Move X9, [X8+360]
+	049 Move X1, [X8+368]
+	050 Move X21, [X21+488]
+	051 NotImplemented "Instruction BLR not yet implemented."
+	052 Move X1, X0
+	053 Move X0, X20
+	054 Move X2, X31
+	055 Call String.Concat, X0, X1
+	056 Move X8, [X21]
+	057 Move X20, X0
+	058 Move W9, [X8+224]
+	059 Compare W9, 0
+	060 JumpIfNotEqual {63}
+	061 Move X0, X8
+	062 Call 0x1C17DFC
+	063 Move X0, X20
+	064 Move X1, X19
+	065 Move X2, X31
+	066 Call XRLoggingUtils.LogError, X0, X1
+	067 Move X0, X19
+	068 Move X20, [X31+16]
+	069 Move X19, [X31+24]
+	070 Move W1, W31
+	071 Move X2, X31
+	072 Move X30, [X31+32]
+	073 Move X21, [X31+40]
+	074 Call Behaviour.set_enabled, X0, X1
+	075 Return 
+	076 Move X8, 0x589000
+	077 Move X8, [X8+3016]
+	078 Move X0, X19
+	079 Move X20, [X31+16]
+	080 Move X19, [X31+24]
+	081 Move X1, [X8]
+	082 Move X30, [X31+32]
+	083 Move X21, [X31+40]
+	084 Call BaseAffordanceStateReceiver`1<Single>.OnEnable, X0
+	085 Return 
+
+Method: System.Void OnAffordanceValueUpdated(System.Single newValue)
+
+Disassembly:
+	0x03BD58FC MOV X0, X19
+	0x03BD5900 LDP X20, X19, [X31 + 0x20]
+	0x03BD5904 LDR X30, [X31 + 0x18]
+	0x03BD5908 LDP D9, D8, [X31 + 0x8]
+	0x03BD590C LDR V10, [X31], #0x30
+	0x03BD5910 B 0x272B054
+	0x03BD5914 LDP X20, X19, [X31 + 0x20]
+	0x03BD5918 LDR X30, [X31 + 0x18]
+	0x03BD591C LDP D9, D8, [X31 + 0x8]
+	0x03BD5920 LDR V10, [X31], #0x30
+	0x03BD5924 RET
+	0x03BD5928 STP X30, X19, [X31 - 0x10]!
+	0x03BD592C MOV X19, X0
+	0x03BD5930 LDR X0, [X0 + 0xB0]
+	0x03BD5934 CBZ X0, 0x3BD5958
+
+ISIL:
+	001 Move [X31-32], D8
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move X19, X0
+	005 Move X0, [X0+168]
+	006 Compare X0, 0
+	007 JumpIfEqual {19}
+	008 Move W1, [X19+176]
+	009 Move X2, X31
+	010 Move V8, V0
+	011 Call SkinnedMeshRenderer.SetBlendShapeWeight, X0, X1, V0
+	012 Move X0, X19
+	013 Move X30, [X31+16]
+	014 Move X19, [X31+24]
+	015 Move V0, V8
+	016 Move V8, [X31+32]
+	017 Call FloatAffordanceReceiver.OnAffordanceValueUpdated, X0, V0
+	018 Return 
+	019 Call 0x1C17F20
+
+Method: System.Single GetCurrentValueForCapture()
+
+Disassembly:
+	0x03BD5938 BL 0x3BD3DD4
+	0x03BD593C CBZ X0, 0x3BD5958
+	0x03BD5940 LDR W1, [X19 + 0xC0]
+	0x03BD5944 MOV X2, X31
+	0x03BD5948 BL 0x3C15FDC
+	0x03BD594C MOV X0, X31
+	0x03BD5950 LDP X30, X19, [X31], #0x10
+	0x03BD5954 B 0x3887BE4
+	0x03BD5958 BL 0x1C16F20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, X0
+	003 Move X0, [X0+168]
+	004 Compare X0, 0
+	005 JumpIfEqual {11}
+	006 Move W1, [X8+176]
+	007 Move X2, X31
+	008 Move X30, [X31+16]
+	009 Call SkinnedMeshRenderer.GetBlendShapeWeight, X0, X1
+	010 Return V0
+	011 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03BD595C B 0x3BD5960
+
+ISIL:
+	001 Call FloatAffordanceReceiver..ctor, X0
+	002 Return 
+

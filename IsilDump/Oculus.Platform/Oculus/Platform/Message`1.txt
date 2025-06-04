@@ -1,0 +1,77 @@
+Type: Oculus.Platform.Message`1
+
+Method: System.Void .ctor(System.IntPtr c_message)
+
+Disassembly:
+	0x031A0DA4 ADD W9, W9, 0x1
+	0x031A0DA8 ADD X8, X8, W9, 0x4, SXTW
+	0x031A0DAC ADD X0, X8, 0x138
+	0x031A0DB0 LDP X8, X1, [X0]
+	0x031A0DB4 MOV X0, X20
+	0x031A0DB8 BLR X8
+	0x031A0DBC LDR X0, [X21 + 0x20]
+	0x031A0DC0 MOV V8.16B, V0.16B
+	0x031A0DC4 MOV V9.16B, V1.16B
+	0x031A0DC8 LDRB W8, [X0 + 0x135]
+	0x031A0DCC TBNZ X8, 0x0, 0x31A0DD4
+	0x031A0DD0 BL 0x1C5C684
+	0x031A0DD4 STP S8, S9, [X19 + 0x88]
+	0x031A0DD8 LDR X8, [X20]
+	0x031A0DDC LDR X1, [X23]
+	0x031A0DE0 LDRH W9, [X8 + 0x12E]
+	0x031A0DE4 CBZ X9, 0x31A0E08
+	0x031A0DE8 LDR X10, [X8 + 0xB0]
+	0x031A0DEC ADD X10, X10, 0x8
+	0x031A0DF0 LDUR X11, [X10 - 0x8]
+	0x031A0DF4 CMP X11, X1
+	0x031A0DF8 B.EQ 0x31A0E18
+	0x031A0DFC SUBS X9, X9, 0x1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X2, X31
+	005 Move X20, X1
+	006 Move X19, X0
+	007 Call Message..ctor, X0, X1
+	008 Compare X19, 0
+	009 JumpIfEqual {29}
+	010 Move X0, X19
+	011 Move X1, X31
+	012 Call Message.get_IsError, X0
+	013 Move TEMP, X0
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfEqual {25}
+	017 Move X8, [X19]
+	018 Move X0, X19
+	019 Move X1, X20
+	020 Move X9, [X8+1480]
+	021 Move X2, [X8+1488]
+	022 NotImplemented "Instruction BLR not yet implemented."
+	023 And W8, W0, 1
+	024 Move [X19+40], W8
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+	029 Call 0x1C17F20
+
+Method: T get_Data()
+
+Disassembly:
+	0x031A0E00 ADD X10, X10, 0x10
+	0x031A0E04 B.NE 0x31A0DF0
+
+ISIL:
+	001 Move W0, [X0+40]
+	002 Return X0
+
+Method: T GetDataFromMessage(System.IntPtr c_message)
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated

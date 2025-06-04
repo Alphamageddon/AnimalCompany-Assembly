@@ -1,0 +1,106 @@
+Type: Fusion.RenderAttribute
+
+Method: Fusion.RenderTimeframe get_Timeframe()
+
+Disassembly:
+	0x01E687E4 STP X30, X19, [X31 - 0x10]!
+	0x01E687E8 LDR X8, [X0 + 0x30]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_Timeframe(Fusion.RenderTimeframe value)
+
+Disassembly:
+	0x01E687EC CBZ X8, 0x1E68828
+	0x01E687F0 MOV X19, X0
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+
+Method: Fusion.RenderSource get_Source()
+
+Disassembly:
+	0x01E687F4 LDR X0, [X8 + 0x38]
+	0x01E687F8 CBZ X0, 0x1E6882C
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void set_Source(Fusion.RenderSource value)
+
+Disassembly:
+	0x01E687FC MOV X1, X31
+	0x01E68800 BL 0x1E4546C
+
+ISIL:
+	001 Move [X0+20], W1
+	002 Return 
+
+Method: System.String get_Method()
+
+Disassembly:
+	0x01E68804 MOV W8, W0
+	0x01E68808 MOV X0, X31
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_Method(System.String value)
+
+Disassembly:
+	0x01E6880C TBZ X8, 0x0, 0x1E6882C
+	0x01E68810 LDR X8, [X19 + 0x30]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E68814 CBZ X8, 0x1E68834
+	0x01E68818 LDR X8, [X8 + 0x38]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Attribute..ctor, X0
+	003 Return 
+
+Method: System.Void .ctor(Fusion.RenderTimeframe timeframe, Fusion.RenderSource source)
+
+Disassembly:
+	0x01E6881C CBZ X8, 0x1E68834
+	0x01E68820 LDR X0, [X8 + 0x30]
+	0x01E68824 B 0x1E6882C
+	0x01E68828 MOV X0, X31
+	0x01E6882C LDP X30, X19, [X31], #0x10
+	0x01E68830 RET
+	0x01E68834 BL 0x1C16F20
+	0x01E68838 LDR X0, [X0 + 0x30]
+	0x01E6883C RET
+	0x01E68840 STR X30, [X31 - 0x10]!
+	0x01E68844 LDR X8, [X0 + 0x30]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, W1
+	006 Move X1, X31
+	007 Move W19, W2
+	008 Move X21, X0
+	009 Call Attribute..ctor, X0
+	010 Move [X21+16], W20
+	011 Move [X21+20], W19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+

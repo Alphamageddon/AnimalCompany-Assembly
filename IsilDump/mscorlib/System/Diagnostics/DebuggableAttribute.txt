@@ -1,0 +1,30 @@
+Type: System.Diagnostics.DebuggableAttribute
+
+Method: System.Void .ctor(System.Diagnostics.DebuggableAttribute/DebuggingModes modes)
+
+Disassembly:
+	0x0334EB54 MOVZ W25, 0x1
+	0x0334EB58 LDR X8, [X22]
+	0x0334EB5C MOV X0, X22
+	0x0334EB60 ADD W23, W23, 0x1
+	0x0334EB64 LDP X9, X1, [X8 + 0x178]
+	0x0334EB68 BLR X9
+	0x0334EB6C CMP W23, W0
+	0x0334EB70 B.LT 0x334E814
+	0x0334EB74 B 0x334EB7C
+	0x0334EB78 MOV W25, W31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

@@ -1,0 +1,133 @@
+Type: UnityEngine.InputSystem.LowLevel.QueryKeyNameCommand
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_Type()
+
+Disassembly:
+	0x037FFF00 B.HI 0x37FFF14
+	0x037FFF04 MOVZ W9, 0x19
+	0x037FFF08 LSRV W8, W9, W8
+	0x037FFF0C AND W0, W8, 0x1
+	0x037FFF10 RET
+	0x037FFF14 MOV W0, W31
+	0x037FFF18 RET
+	0x037FFF1C LDRB W8, [X0 + 0x20]
+	0x037FFF20 SUB W8, W8, 0x1
+	0x037FFF24 CMP W8, 0x4
+	0x037FFF28 B.HI 0x37FFF3C
+	0x037FFF2C MOVZ W9, 0x13
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 75
+	004 Move W2, 89
+	005 Move W3, 67
+	006 Move W4, 70
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: System.String ReadKeyName()
+
+Disassembly:
+	0x037FFF30 LSRV W8, W9, W8
+	0x037FFF34 AND W0, W8, 0x1
+	0x037FFF38 RET
+	0x037FFF3C MOV W0, W31
+
+ISIL:
+	001 Add X0, X0, 12
+	002 Move W1, 256
+	003 Move X2, X31
+	004 Call StringHelpers.ReadStringFromBuffer, X0, X1
+	005 Return X0
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_typeStatic()
+
+Disassembly:
+	0x037FFF40 RET
+	0x037FFF44 LDRB W8, [X0 + 0x23]
+	0x037FFF48 UBFM W0, W8, 0x6, 0x6
+	0x037FFF4C RET
+	0x037FFF50 LDRB W8, [X0 + 0x23]
+	0x037FFF54 ANDS W31, W1, 0x1
+	0x037FFF58 MOVZ W9, 0x40
+	0x037FFF5C CSEL W9, W9, W31, NE
+	0x037FFF60 AND W8, W8, 0xFFFFFFBF
+	0x037FFF64 ORR W8, W8, W9, 0x0
+	0x037FFF68 STRB W8, [X0 + 0x23]
+	0x037FFF6C RET
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 75
+	004 Move W2, 89
+	005 Move W3, 67
+	006 Move W4, 70
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.LowLevel.QueryKeyNameCommand Create(UnityEngine.InputSystem.Key key)
+
+Disassembly:
+	0x037FFF70 LDRB W8, [X0 + 0x23]
+	0x037FFF74 AND W0, W8, 0x1
+	0x037FFF78 RET
+	0x037FFF7C LDRB W8, [X0 + 0x23]
+	0x037FFF80 BFM W8, W1, 0x0, 0x0
+	0x037FFF84 STRB W8, [X0 + 0x23]
+	0x037FFF88 RET
+	0x037FFF8C LDRB W8, [X0 + 0x23]
+	0x037FFF90 UBFM W0, W8, 0x4, 0x4
+	0x037FFF94 RET
+	0x037FFF98 LDRB W8, [X0 + 0x23]
+	0x037FFF9C ANDS W31, W1, 0x1
+	0x037FFFA0 MOVZ W9, 0x10
+	0x037FFFA4 CSEL W9, W9, W31, NE
+	0x037FFFA8 AND W8, W8, 0xFFFFFFEF
+	0x037FFFAC ORR W8, W8, W9, 0x0
+	0x037FFFB0 STRB W8, [X0 + 0x23]
+	0x037FFFB4 RET
+	0x037FFFB8 LDRB W8, [X0 + 0x23]
+	0x037FFFBC ANDS W31, W1, 0x1
+	0x037FFFC0 MOVZ W9, 0x20
+	0x037FFFC4 CSEL W9, W9, W31, NE
+	0x037FFFC8 AND W8, W8, 0xFFFFFFDF
+	0x037FFFCC ORR W8, W8, W9, 0x0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W0
+	005 Add X0, X31, 8
+	006 Move W1, 75
+	007 Move W2, 89
+	008 Move W3, 67
+	009 Move W4, 70
+	010 Move X5, X31
+	011 Move X20, X8
+	012 Move [X31+8], W31
+	013 Call FourCC..ctor, X0, X1, X2, X3, X4
+	014 Move W8, [X31+8]
+	015 Move X9, 268
+	016 Add X0, X20, 12
+	017 Move W2, 256
+	018 Or X8, X8, X9
+	019 Move W1, W31
+	020 Move [X20+8], W19
+	021 Move [X20], X8
+	022 Call 0x3EB2B10
+	023 Move X20, [X31+16]
+	024 Move X19, [X31+24]
+	025 Move X30, [X31+32]
+	026 Return X0
+

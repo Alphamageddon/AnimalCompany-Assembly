@@ -1,0 +1,30 @@
+Type: System.Runtime.Remoting.Messaging.CADArgHolder
+
+Method: System.Void .ctor(System.Int32 i)
+
+Disassembly:
+	0x03294108 ADD X8, X8, W9, 0x4, SXTW
+	0x0329410C ADD X0, X8, 0x138
+	0x03294110 LDP X8, X1, [X0]
+	0x03294114 MOV X0, X22
+	0x03294118 BLR X8
+	0x0329411C CBZ X0, 0x3294230
+	0x03294120 LDR X8, [X0]
+	0x03294124 LDR X1, [X27]
+	0x03294128 LDR X8, [X8 + 0x40]
+	0x0329412C LDR X9, [X1 + 0x40]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

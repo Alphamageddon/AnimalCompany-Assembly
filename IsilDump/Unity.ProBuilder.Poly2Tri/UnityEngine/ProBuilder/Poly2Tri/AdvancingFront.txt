@@ -1,0 +1,396 @@
+Type: UnityEngine.ProBuilder.Poly2Tri.AdvancingFront
+
+Method: System.Void .ctor(UnityEngine.ProBuilder.Poly2Tri.AdvancingFrontNode head, UnityEngine.ProBuilder.Poly2Tri.AdvancingFrontNode tail)
+
+Disassembly:
+	0x038F18C4 BL 0x38EFFA4
+	0x038F18C8 STR W0, [X31 + 0x8]
+	0x038F18CC MOV X0, X20
+	0x038F18D0 MOV X1, X26
+	0x038F18D4 BL 0x38EF414
+	0x038F18D8 ADD W8, W0, 0x1
+	0x038F18DC SMADDL X9, X8, X28, X31
+	0x038F18E0 UBFM X10, X9, 0x3F, 0x3F
+	0x038F18E4 UBFM X9, X9, 0x20, 0x3F
+	0x038F18E8 ADD W9, W9, W10
+	0x038F18EC ADD W9, W9, W9, 0x1, LSL
+	0x038F18F0 SUB W1, W8, W9
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move X19, X2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+16], X20
+	011 Move [X21+24], X19
+	012 Move [X21+32], X20
+	013 Move X20, [X31+16]
+	014 Move X19, [X31+24]
+	015 Move X30, [X31+32]
+	016 Move X21, [X31+40]
+	017 Return 
+
+Method: System.Void AddNode(UnityEngine.ProBuilder.Poly2Tri.AdvancingFrontNode node)
+
+Disassembly:
+	0x038F18F4 MOV X0, X21
+
+ISIL:
+	001 Return 
+
+Method: System.Void RemoveNode(UnityEngine.ProBuilder.Poly2Tri.AdvancingFrontNode node)
+
+Disassembly:
+	0x038F18F8 BL 0x38EFFA4
+
+ISIL:
+	001 Return 
+
+Method: System.String ToString()
+
+Disassembly:
+	0x038F18FC STR W0, [X31 + 0x10]
+	0x038F1900 MOV X0, X19
+	0x038F1904 MOV X1, X25
+	0x038F1908 ADD X21, X19, 0x40
+	0x038F190C BL 0x38EF414
+	0x038F1910 ADD W8, W0, 0x2
+	0x038F1914 SMADDL X9, X8, X28, X31
+	0x038F1918 UBFM X10, X9, 0x3F, 0x3F
+	0x038F191C UBFM X9, X9, 0x20, 0x3F
+	0x038F1920 ADD W9, W9, W10
+	0x038F1924 ADD W9, W9, W9, 0x1, LSL
+	0x038F1928 SUB W1, W8, W9
+	0x038F192C MOV X0, X21
+	0x038F1930 STR X21, [X31]
+	0x038F1934 BL 0x38EFFA4
+	0x038F1938 STR W0, [X31 + 0xC]
+	0x038F193C MOV X0, X19
+	0x038F1940 MOV X1, X25
+	0x038F1944 BL 0x38EF414
+	0x038F1948 ADD W8, W0, 0x1
+	0x038F194C SMADDL X9, X8, X28, X31
+	0x038F1950 UBFM X10, X9, 0x3F, 0x3F
+	0x038F1954 UBFM X9, X9, 0x20, 0x3F
+	0x038F1958 ADD W9, W9, W10
+	0x038F195C ADD W9, W9, W9, 0x1, LSL
+	0x038F1960 SUB W1, W8, W9
+	0x038F1964 MOV X0, X21
+	0x038F1968 BL 0x38EFFA4
+	0x038F196C STR W0, [X31 + 0x14]
+	0x038F1970 MOV X0, X20
+	0x038F1974 MOV X1, X26
+	0x038F1978 ADD X24, X20, 0x43
+	0x038F197C BL 0x38EF414
+	0x038F1980 ADD W8, W0, 0x2
+	0x038F1984 SMADDL X9, X8, X28, X31
+	0x038F1988 UBFM X10, X9, 0x3F, 0x3F
+	0x038F198C UBFM X9, X9, 0x20, 0x3F
+	0x038F1990 ADD W9, W9, W10
+	0x038F1994 ADD W9, W9, W9, 0x1, LSL
+	0x038F1998 SUB W1, W8, W9
+	0x038F199C MOV X0, X24
+	0x038F19A0 BL 0x38EFFA4
+	0x038F19A4 MOV W27, W0
+	0x038F19A8 MOV X0, X20
+	0x038F19AC MOV X1, X26
+	0x038F19B0 BL 0x38EF414
+	0x038F19B4 ADD W8, W0, 0x1
+	0x038F19B8 SMADDL X9, X8, X28, X31
+	0x038F19BC UBFM X10, X9, 0x3F, 0x3F
+	0x038F19C0 UBFM X9, X9, 0x20, 0x3F
+	0x038F19C4 ADD W9, W9, W10
+	0x038F19C8 ADD W9, W9, W9, 0x1, LSL
+	0x038F19CC SUB W1, W8, W9
+	0x038F19D0 MOV X0, X24
+	0x038F19D4 BL 0x38EFFA4
+	0x038F19D8 MOV W22, W0
+	0x038F19DC MOV X0, X19
+	0x038F19E0 MOV X1, X25
+	0x038F19E4 ADD X29, X19, 0x43
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X19, 0xAF1000
+	007 Move X21, 0x803000
+	008 Move W8, [X19+1811]
+	009 Move X21, [X21+2288]
+	010 Move X20, X0
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {23}
+	015 Move X0, 0x803000
+	016 Move X0, [X0+2288]
+	017 Call 0x1C17CF4
+	018 Move X0, 0x80D000
+	019 Move X0, [X0+2840]
+	020 Call 0x1C17CF4
+	021 Move W8, 1
+	022 Move [X19+1811], W8
+	023 Move X0, [X21]
+	024 Call 0x1C17F10
+	025 Move X1, X31
+	026 Move X19, X0
+	027 Call StringBuilder..ctor, X0
+	028 Move X21, [X20+16]
+	029 Move X8, [X20+24]
+	030 NotImplemented "Instruction CMP not yet implemented."
+	031 Move X22, 0x80D000
+	032 Move X22, [X22+2840]
+	033 Compare X21, 0
+	034 JumpIfEqual {73}
+	035 Move X8, [X21+40]
+	036 Compare X8, 0
+	037 JumpIfEqual {73}
+	038 Compare X19, 0
+	039 JumpIfEqual {73}
+	040 Move V0, [X8+24]
+	041 Move X0, X19
+	042 Move X1, X31
+	043 Call StringBuilder.Append, X0, V0
+	044 Compare X0, 0
+	045 JumpIfEqual {73}
+	046 Move X1, [X22]
+	047 Move X2, X31
+	048 Call StringBuilder.Append, X0, X1
+	049 Move X21, [X21+16]
+	050 Move X8, [X20+24]
+	051 NotImplemented "Instruction CMP not yet implemented."
+	052 Compare X8, 0
+	053 JumpIfEqual {73}
+	054 Move X8, [X8+40]
+	055 Compare X8, 0
+	056 JumpIfEqual {73}
+	057 Compare X19, 0
+	058 JumpIfEqual {73}
+	059 Move V0, [X8+24]
+	060 Move X0, X19
+	061 Move X1, X31
+	062 Call StringBuilder.Append, X0, V0
+	063 Move X8, [X19]
+	064 Move X0, X19
+	065 Move X20, [X31+32]
+	066 Move X19, [X31+40]
+	067 Move X22, [X31+16]
+	068 Move X21, [X31+24]
+	069 Move X2, [X8+360]
+	070 Move X1, [X8+368]
+	071 Move X30, [X31+48]
+	072 CallNoReturn X2
+	073 Call 0x1C17F20
+
+Method: UnityEngine.ProBuilder.Poly2Tri.AdvancingFrontNode FindSearchNode(System.Double x)
+
+Disassembly:
+	0x038F19E8 BL 0x38EF414
+	0x038F19EC ADD W8, W0, 0x2
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: UnityEngine.ProBuilder.Poly2Tri.AdvancingFrontNode LocateNode(UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint point)
+
+Disassembly:
+	0x038F19F0 SMADDL X9, X8, X28, X31
+	0x038F19F4 UBFM X10, X9, 0x3F, 0x3F
+	0x038F19F8 UBFM X9, X9, 0x20, 0x3F
+	0x038F19FC ADD W9, W9, W10
+	0x038F1A00 ADD W9, W9, W9, 0x1, LSL
+	0x038F1A04 SUB W1, W8, W9
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {6}
+	004 Move V0, [X1+24]
+	005 Move X30, [X31+16]
+	006 Call 0x1C17F20
+
+Method: UnityEngine.ProBuilder.Poly2Tri.AdvancingFrontNode LocateNode(System.Double x)
+
+Disassembly:
+	0x038F1A08 MOV X0, X29
+	0x038F1A0C BL 0x38EFFA4
+	0x038F1A10 MOV W23, W0
+	0x038F1A14 MOV X0, X19
+	0x038F1A18 MOV X1, X25
+	0x038F1A1C BL 0x38EF414
+	0x038F1A20 ADD W8, W0, 0x1
+	0x038F1A24 SMADDL X9, X8, X28, X31
+	0x038F1A28 UBFM X10, X9, 0x3F, 0x3F
+	0x038F1A2C UBFM X9, X9, 0x20, 0x3F
+	0x038F1A30 ADD W9, W9, W10
+	0x038F1A34 ADD W9, W9, W9, 0x1, LSL
+	0x038F1A38 SUB W1, W8, W9
+	0x038F1A3C MOV X0, X29
+	0x038F1A40 BL 0x38EFFA4
+	0x038F1A44 MOV W21, W0
+	0x038F1A48 MOV X0, X20
+	0x038F1A4C MOV X1, X26
+	0x038F1A50 MOV X2, X25
+	0x038F1A54 BL 0x38EFC9C
+	0x038F1A58 MOV X0, X19
+	0x038F1A5C MOV X1, X25
+	0x038F1A60 MOV X2, X26
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, X0
+	003 Move X0, [X0+32]
+	004 Compare X0, 0
+	005 JumpIfEqual {22}
+	006 Move V1, [X0+32]
+	007 NotImplemented "Instruction FCMP not yet implemented."
+	008 Move X0, [X0+24]
+	009 Compare X0, 0
+	010 JumpIfEqual {20}
+	011 Move V1, [X0+32]
+	012 NotImplemented "Instruction FCMP not yet implemented."
+	013 Move X0, [X0+16]
+	014 Compare X0, 0
+	015 JumpIfEqual {20}
+	016 Move V1, [X0+32]
+	017 NotImplemented "Instruction FCMP not yet implemented."
+	018 Move X0, [X0+24]
+	019 Move [X8+32], X0
+	020 Move X30, [X31+16]
+	021 Return X0
+	022 Call 0x1C17F20
+
+Method: UnityEngine.ProBuilder.Poly2Tri.AdvancingFrontNode LocatePoint(UnityEngine.ProBuilder.Poly2Tri.TriangulationPoint point)
+
+Disassembly:
+	0x038F1A64 BL 0x38EFC9C
+	0x038F1A68 MOV X0, X19
+	0x038F1A6C MOV X1, X26
+	0x038F1A70 BL 0x38EF414
+	0x038F1A74 ADD W8, W0, 0x2
+	0x038F1A78 SMADDL X9, X8, X28, X31
+	0x038F1A7C UBFM X10, X9, 0x3F, 0x3F
+	0x038F1A80 UBFM X9, X9, 0x20, 0x3F
+	0x038F1A84 ADD W9, W9, W10
+	0x038F1A88 ADD W9, W9, W9, 0x1, LSL
+	0x038F1A8C SUB W1, W8, W9
+	0x038F1A90 AND W2, W27, 0x1
+	0x038F1A94 MOV X0, X29
+	0x038F1A98 BL 0x38F0354
+	0x038F1A9C MOV X0, X20
+	0x038F1AA0 MOV X1, X26
+	0x038F1AA4 BL 0x38EF414
+	0x038F1AA8 ADD W8, W0, 0x1
+	0x038F1AAC SMADDL X9, X8, X28, X31
+	0x038F1AB0 UBFM X10, X9, 0x3F, 0x3F
+	0x038F1AB4 UBFM X9, X9, 0x20, 0x3F
+	0x038F1AB8 ADD W9, W9, W10
+	0x038F1ABC ADD W9, W9, W9, 0x1, LSL
+	0x038F1AC0 SUB W1, W8, W9
+	0x038F1AC4 AND W2, W22, 0x1
+	0x038F1AC8 MOV X0, X24
+	0x038F1ACC BL 0x38F0354
+	0x038F1AD0 MOV X0, X20
+	0x038F1AD4 MOV X1, X25
+	0x038F1AD8 BL 0x38EF414
+	0x038F1ADC ADD W8, W0, 0x2
+	0x038F1AE0 SMADDL X9, X8, X28, X31
+	0x038F1AE4 UBFM X10, X9, 0x3F, 0x3F
+	0x038F1AE8 UBFM X9, X9, 0x20, 0x3F
+	0x038F1AEC ADD W9, W9, W10
+	0x038F1AF0 ADD W9, W9, W9, 0x1, LSL
+	0x038F1AF4 SUB W1, W8, W9
+	0x038F1AF8 AND W2, W23, 0x1
+	0x038F1AFC MOV X0, X24
+	0x038F1B00 BL 0x38F0354
+	0x038F1B04 MOV X0, X19
+	0x038F1B08 MOV X1, X25
+	0x038F1B0C BL 0x38EF414
+	0x038F1B10 ADD W8, W0, 0x1
+	0x038F1B14 SMADDL X9, X8, X28, X31
+	0x038F1B18 UBFM X10, X9, 0x3F, 0x3F
+	0x038F1B1C UBFM X9, X9, 0x20, 0x3F
+	0x038F1B20 ADD W9, W9, W10
+	0x038F1B24 ADD W9, W9, W9, 0x1, LSL
+	0x038F1B28 SUB W1, W8, W9
+	0x038F1B2C AND W2, W21, 0x1
+	0x038F1B30 MOV X0, X29
+	0x038F1B34 BL 0x38F0354
+	0x038F1B38 MOV X0, X19
+	0x038F1B3C MOV X1, X26
+	0x038F1B40 BL 0x38EF414
+	0x038F1B44 ADD W8, W0, 0x2
+	0x038F1B48 SMADDL X9, X8, X28, X31
+	0x038F1B4C UBFM X10, X9, 0x3F, 0x3F
+	0x038F1B50 UBFM X9, X9, 0x20, 0x3F
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Compare X1, 0
+	004 JumpIfEqual {60}
+	005 Move X9, [X0+32]
+	006 Compare X9, 0
+	007 JumpIfEqual {60}
+	008 Move X8, [X9+40]
+	009 Compare X8, 0
+	010 JumpIfEqual {60}
+	011 Move V0, [X1+24]
+	012 Move V1, [X8+24]
+	013 NotImplemented "Instruction FCMP not yet implemented."
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 Move X8, [X9+24]
+	016 Compare X8, 0
+	017 JumpIfEqual {60}
+	018 Move X10, [X8+40]
+	019 NotImplemented "Instruction CMP not yet implemented."
+	020 Move X8, [X9+16]
+	021 Compare X8, 0
+	022 JumpIfEqual {60}
+	023 Move X9, [X8+40]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move X0, 0x803000
+	026 Move X0, [X0+2000]
+	027 Call 0x1C17D08
+	028 Call 0x1C17F10
+	029 Move X19, X0
+	030 Move X0, 0x85D000
+	031 Move X0, [X0+2056]
+	032 Call 0x1C17D08
+	033 Move X1, X0
+	034 Move X0, X19
+	035 Move X2, X31
+	036 Call Exception..ctor, X0, X1
+	037 Move X0, 0x85D000
+	038 Move X0, [X0+2064]
+	039 Call 0x1C17D08
+	040 Move X1, X0
+	041 Move X0, X19
+	042 Call 0x1C17DEC
+	043 Move X8, X9
+	044 Move X8, [X8+24]
+	045 Compare X8, 0
+	046 JumpIfEqual {55}
+	047 Move X9, [X8+40]
+	048 NotImplemented "Instruction CMP not yet implemented."
+	049 Move X8, [X8+16]
+	050 Compare X8, 0
+	051 JumpIfEqual {55}
+	052 Move X9, [X8+40]
+	053 NotImplemented "Instruction CMP not yet implemented."
+	054 Move X8, X9
+	055 Move [X0+32], X8
+	056 Move X0, X8
+	057 Move X30, [X31+16]
+	058 Move X19, [X31+24]
+	059 Return X0
+	060 Call 0x1C17F20
+

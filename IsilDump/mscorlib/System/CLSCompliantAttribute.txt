@@ -1,0 +1,30 @@
+Type: System.CLSCompliantAttribute
+
+Method: System.Void .ctor(System.Boolean isCompliant)
+
+Disassembly:
+	0x0331B560 ADRP X0, 0xE0A000
+	0x0331B564 LDR X0, [X0 + 0x98]
+	0x0331B568 BL 0x1C16D08
+	0x0331B56C MOV X2, X0
+	0x0331B570 MOV X0, X19
+	0x0331B574 MOV X1, X20
+	0x0331B578 MOV X3, X31
+	0x0331B57C BL 0x320A264
+	0x0331B580 MOV X19, X0
+	0x0331B584 ADRP X0, 0xDE0000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 And W20, W1, 1
+	005 Move X1, X31
+	006 Move X19, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X19+16], W20
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

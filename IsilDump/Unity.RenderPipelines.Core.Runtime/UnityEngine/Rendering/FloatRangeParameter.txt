@@ -1,0 +1,144 @@
+Type: UnityEngine.Rendering.FloatRangeParameter
+
+Method: UnityEngine.Vector2 get_value()
+
+Disassembly:
+	0x039F41B4 ADRP X20, 0x727000
+	0x039F41B8 MOV X0, X19
+
+ISIL:
+	001 Move S0, [X0+20]
+	002 Move S1, [X0+24]
+	003 Return X0
+
+Method: System.Void set_value(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x039F41BC LDR X9, [X8 + 0x218]
+	0x039F41C0 LDR X1, [X8 + 0x220]
+	0x039F41C4 LDR X20, [X20 + 0x8F8]
+	0x039F41C8 BLR X9
+	0x039F41CC LDR X8, [X20]
+	0x039F41D0 MOV X19, X0
+	0x039F41D4 LDR W9, [X8 + 0xE0]
+
+ISIL:
+	001 Move S2, [X0+28]
+	002 Move S3, [X0+32]
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction FCSEL not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction FCSEL not yet implemented."
+	007 Move [X0+20], S0
+	008 Move [X0+28], S1
+	009 Return 
+
+Method: System.Void .ctor(UnityEngine.Vector2 value, System.Single min, System.Single max, System.Boolean overrideState = False)
+
+Disassembly:
+	0x039F41D8 CBNZ W9, 0x39F41E4
+	0x039F41DC MOV X0, X8
+	0x039F41E0 BL 0x1C16DFC
+	0x039F41E4 MOV X0, X19
+	0x039F41E8 MOV X1, X31
+	0x039F41EC BL 0x39DA35C
+	0x039F41F0 MOVZ W8, 0x17
+	0x039F41F4 MUL W20, W0, W8
+	0x039F41F8 MOV W0, W20
+	0x039F41FC LDP X20, X19, [X31 + 0x20]
+	0x039F4200 LDP X22, X21, [X31 + 0x10]
+	0x039F4204 LDR X30, [X31], #0x30
+	0x039F4208 RET
+	0x039F420C STP X30, X23, [X31 - 0x30]!
+	0x039F4210 STP X22, X21, [X31 + 0x10]
+	0x039F4214 STP X20, X19, [X31 + 0x20]
+	0x039F4218 ADRP X22, 0x9ED000
+	0x039F421C ADRP X23, 0x75F000
+	0x039F4220 LDRB W8, [X22 + 0xEA1]
+	0x039F4224 LDR X23, [X23 + 0x950]
+	0x039F4228 MOV W20, W2
+	0x039F422C MOV X19, X1
+	0x039F4230 MOV X21, X0
+	0x039F4234 TBNZ X8, 0x0, 0x39F424C
+	0x039F4238 ADRP X0, 0x75F000
+	0x039F423C LDR X0, [X0 + 0x950]
+	0x039F4240 BL 0x1C16CF4
+	0x039F4244 MOVZ W8, 0x1
+	0x039F4248 STRB W8, [X22 + 0xEA1]
+	0x039F424C LDR X3, [X23]
+	0x039F4250 AND W2, W20, 0x1
+	0x039F4254 MOV X0, X21
+	0x039F4258 MOV X1, X19
+	0x039F425C LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-80], D11
+	002 Move [X31-72], D10
+	003 Move [X31+16], D9
+	004 Move [X31+24], D8
+	005 Move [X31+32], X30
+	006 Move [X31+48], X22
+	007 Move [X31+56], X21
+	008 Move [X31+64], X20
+	009 Move [X31+72], X19
+	010 Move X21, 0x9EE000
+	011 Move X22, 0x760000
+	012 Move W8, [X21+3721]
+	013 Move X22, [X22+2352]
+	014 Move W20, W1
+	015 Move V8, V3
+	016 Move V9, V2
+	017 Move V10, V1
+	018 Move V11, V0
+	019 Move X19, X0
+	020 Move TEMP, X8
+	021 And TEMP, TEMP, 1
+	022 Compare TEMP, 1
+	023 JumpIfEqual {29}
+	024 Move X0, 0x760000
+	025 Move X0, [X0+2352]
+	026 Call 0x1C17CF4
+	027 Move W8, 1
+	028 Move [X21+3721], W8
+	029 Move X2, [X22]
+	030 And W1, W20, 1
+	031 Move X0, X19
+	032 Move V0, V11
+	033 Move V1, V10
+	034 Call VolumeParameter`1<Vector2>..ctor, X0, X1, X2
+	035 Move [X19+28], S9
+	036 Move [X19+36], S8
+	037 Move X20, [X31+64]
+	038 Move X19, [X31+72]
+	039 Move X22, [X31+48]
+	040 Move X21, [X31+56]
+	041 Move X30, [X31+32]
+	042 Move D9, [X31+16]
+	043 Move D8, [X31+24]
+	044 Move D11, [X31+80]
+	045 Move D10, [X31+88]
+	046 Return 
+
+Method: System.Void Interp(UnityEngine.Vector2 from, UnityEngine.Vector2 to, System.Single t)
+
+Disassembly:
+	0x039F4260 LDP X22, X21, [X31 + 0x10]
+	0x039F4264 LDP X30, X23, [X31], #0x30
+	0x039F4268 B 0x284B9B8
+	0x039F426C STR X30, [X31 - 0x30]!
+	0x039F4270 STP X22, X21, [X31 + 0x10]
+	0x039F4274 STP X20, X19, [X31 + 0x20]
+	0x039F4278 ADRP X20, 0x9ED000
+	0x039F427C ADRP X22, 0x75F000
+
+ISIL:
+	001 Subtract S2, S2, S0
+	002 Subtract S3, S3, S1
+	003 Multiply S2, S2, S4
+	004 Multiply S3, S3, S4
+	005 Add S0, S0, S2
+	006 Add S1, S1, S3
+	007 Move [X0+20], S0
+	008 Move [X0+28], S1
+	009 Return 
+

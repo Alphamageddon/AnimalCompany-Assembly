@@ -1,0 +1,154 @@
+Type: UnityEngine.UIElements.RectIntField/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x03D093AC CBZ X0, 0x3D09478
+	0x03D093B0 LDR X8, [X0]
+	0x03D093B4 LDP V0, V1, [X31 + 0x40]
+	0x03D093B8 ADD X2, X31, 0x80
+	0x03D093BC MOV X1, X20
+	0x03D093C0 LDR X9, [X8 + 0x178]
+	0x03D093C4 STP V0, V1, [X31 + 0x80]
+	0x03D093C8 LDR X3, [X8 + 0x180]
+	0x03D093CC BLR X9
+	0x03D093D0 MOV V8.16B, V0.16B
+	0x03D093D4 LDP V0, V1, [X21]
+	0x03D093D8 LDR X0, [X22 + 0x88]
+	0x03D093DC STP V0, V1, [X31 + 0x20]
+	0x03D093E0 CBZ X0, 0x3D09478
+	0x03D093E4 LDR X8, [X0]
+	0x03D093E8 LDP V0, V1, [X31 + 0x20]
+	0x03D093EC ADD X2, X31, 0x80
+	0x03D093F0 MOV X1, X20
+	0x03D093F4 LDR X9, [X8 + 0x178]
+	0x03D093F8 STP V0, V1, [X31 + 0x80]
+	0x03D093FC LDR X3, [X8 + 0x180]
+	0x03D09400 BLR X9
+	0x03D09404 MOV V9.16B, V0.16B
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x6DF000
+	005 Move X20, 0x45B000
+	006 Move W8, [X19+2128]
+	007 Move X20, [X20+1264]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x45B000
+	013 Move X0, [X0+1264]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2128], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03D09408 LDP V0, V1, [X21]
+	0x03D0940C LDR X0, [X22 + 0x90]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Int32 <DescribeFields>b__0_0(UnityEngine.RectInt r)
+
+Disassembly:
+	0x03D09410 STP V0, V1, [X31]
+	0x03D09414 CBZ X0, 0x3D09478
+
+ISIL:
+	001 Move X0, X1
+	002 Return X0
+
+Method: System.Void <DescribeFields>b__0_1(ref UnityEngine.RectInt r, System.Int32 v)
+
+Disassembly:
+	0x03D09418 LDR X8, [X0]
+	0x03D0941C LDP V0, V1, [X31]
+
+ISIL:
+	001 Move [X1], W2
+	002 Return 
+
+Method: System.Int32 <DescribeFields>b__0_2(UnityEngine.RectInt r)
+
+Disassembly:
+	0x03D09420 ADD X2, X31, 0x80
+	0x03D09424 MOV X1, X20
+
+ISIL:
+	001 Move X0, X1
+	002 ShiftRight X0, 32
+	003 And X0, X0, 0x7FFFFFFF
+	004 Return X0
+
+Method: System.Void <DescribeFields>b__0_3(ref UnityEngine.RectInt r, System.Int32 v)
+
+Disassembly:
+	0x03D09428 LDR X9, [X8 + 0x178]
+	0x03D0942C STP V0, V1, [X31 + 0x80]
+
+ISIL:
+	001 Move [X1+4], W2
+	002 Return 
+
+Method: System.Int32 <DescribeFields>b__0_4(UnityEngine.RectInt r)
+
+Disassembly:
+	0x03D09430 LDR X3, [X8 + 0x180]
+	0x03D09434 BLR X9
+
+ISIL:
+	001 Move X0, X2
+	002 Return X0
+
+Method: System.Void <DescribeFields>b__0_5(ref UnityEngine.RectInt r, System.Int32 v)
+
+Disassembly:
+	0x03D09438 CBZ X19, 0x3D09478
+	0x03D0943C LDR X8, [X19]
+
+ISIL:
+	001 Move [X1+8], W2
+	002 Return 
+
+Method: System.Int32 <DescribeFields>b__0_6(UnityEngine.RectInt r)
+
+Disassembly:
+	0x03D09440 MOV V2.16B, V0.16B
+	0x03D09444 MOV X0, X19
+
+ISIL:
+	001 Move X0, X2
+	002 ShiftRight X0, 32
+	003 And X0, X0, 0x7FFFFFFF
+	004 Return X0
+
+Method: System.Void <DescribeFields>b__0_7(ref UnityEngine.RectInt r, System.Int32 v)
+
+Disassembly:
+	0x03D09448 MOV V0.16B, V8.16B
+	0x03D0944C LDR X9, [X8 + 0x888]
+
+ISIL:
+	001 Move [X1+12], W2
+	002 Return 
+

@@ -1,0 +1,53 @@
+Type: SpatialSys.ObservableState.StateSerializationPair
+
+Method: System.Func`2<System.Object, SimpleJSON.JSONNode> get_objectSerializer()
+
+Disassembly:
+	0x035CE8A0 ADRP X0, 0xB25000
+	0x035CE8A4 LDR X0, [X0 + 0xE18]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_objectSerializer(System.Func`2<System.Object, SimpleJSON.JSONNode> value)
+
+Disassembly:
+	0x035CE8A8 BL 0x1C16CF4
+	0x035CE8AC ADRP X0, 0xB26000
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Func`2<SimpleJSON.JSONNode, System.Object> get_objectDeserializer()
+
+Disassembly:
+	0x035CE8B0 LDR X0, [X0 + 0x1B0]
+	0x035CE8B4 BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_objectDeserializer(System.Func`2<SimpleJSON.JSONNode, System.Object> value)
+
+Disassembly:
+	0x035CE8B8 ADRP X0, 0xB4F000
+	0x035CE8BC LDR X0, [X0 + 0x340]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x035CE8C0 BL 0x1C16CF4
+	0x035CE8C4 ADRP X0, 0xB6A000
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

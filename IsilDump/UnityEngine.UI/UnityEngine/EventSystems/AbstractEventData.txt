@@ -1,0 +1,45 @@
+Type: UnityEngine.EventSystems.AbstractEventData
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x03E4FBE0 LDR X0, [X0 + 0x8B8]
+	0x03E4FBE4 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+16], W31
+	002 Return 
+
+Method: System.Void Use()
+
+Disassembly:
+	0x03E4FBE8 ADRP X0, 0x2A5000
+	0x03E4FBEC LDR X0, [X0 + 0xEE0]
+	0x03E4FBF0 BL 0x1C16CF4
+
+ISIL:
+	001 Move W8, 1
+	002 Move [X0+16], W8
+	003 Return 
+
+Method: System.Boolean get_used()
+
+Disassembly:
+	0x03E4FBF4 ADRP X0, 0x31C000
+	0x03E4FBF8 LDR X0, [X0 + 0x8C0]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03E4FBFC BL 0x1C16CF4
+	0x03E4FC00 ADRP X0, 0x31C000
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

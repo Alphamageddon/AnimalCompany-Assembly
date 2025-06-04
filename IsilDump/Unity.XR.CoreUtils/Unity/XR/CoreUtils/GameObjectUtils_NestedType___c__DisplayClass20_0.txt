@@ -1,0 +1,45 @@
+Type: Unity.XR.CoreUtils.GameObjectUtils/<>c__DisplayClass20_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03B28A0C FMUL S4, S8, S2
+	0x03B28A10 FMUL S1, S13, S1
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <GetNamedChild>b__0(UnityEngine.Transform currentTransform)
+
+Disassembly:
+	0x03B28AF0 LDR X0, [X23]
+	0x03B28AF4 STR X31, [X31 + 0xD8]
+	0x03B28AF8 LDR V9, [X31 + 0x128]
+	0x03B28AFC LDR V14, [X31 + 0x124]
+	0x03B28B00 LDR V15, [X31 + 0x120]
+	0x03B28B04 LDR V12, [X31 + 0x138]
+	0x03B28B08 LDR V10, [X31 + 0x134]
+	0x03B28B0C LDR V11, [X31 + 0x130]
+	0x03B28B10 LDR W8, [X0 + 0xE0]
+	0x03B28B14 LDR V8, [X31 + 0x140]
+	0x03B28B18 CBNZ W8, 0x3B28B24
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Compare X1, 0
+	004 JumpIfEqual {15}
+	005 Move X19, X0
+	006 Move X0, X1
+	007 Move X1, X31
+	008 Call Object.get_name, X0
+	009 Move X1, [X19+16]
+	010 Move X2, X31
+	011 Move X30, [X31+16]
+	012 Move X19, [X31+24]
+	013 Call String.op_Equality, X0, X1
+	014 Return X0
+	015 Call 0x1C17F20
+

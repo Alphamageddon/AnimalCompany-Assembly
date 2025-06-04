@@ -1,0 +1,198 @@
+Type: UnityEngine.ProBuilder.MeshOperations.Bevel/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x0395D36C BL 0x301BF90
+	0x0395D370 CBZ X20, 0x395D53C
+	0x0395D374 LDR W8, [X20 + 0x18]
+	0x0395D378 CMP W8, 0x2
+	0x0395D37C B.GE 0x395D3E0
+	0x0395D380 CMP W8, 0x1
+	0x0395D384 B.NE 0x395CEF0
+	0x0395D388 ADRP X8, 0x7F2000
+	0x0395D38C LDR X8, [X8 + 0x820]
+	0x0395D390 MOV X0, X20
+	0x0395D394 MOV W1, W31
+	0x0395D398 LDR X2, [X8]
+	0x0395D39C BL 0x301BCCC
+	0x0395D3A0 LDR W10, [X29 + 0x1C]
+	0x0395D3A4 LDR X8, [X29 + 0x10]
+	0x0395D3A8 LDR X9, [X21]
+	0x0395D3AC ADD W10, W10, 0x1
+	0x0395D3B0 STR W10, [X29 + 0x1C]
+	0x0395D3B4 CBZ X8, 0x395D53C
+	0x0395D3B8 LDRSW X10, [X29 + 0x18]
+	0x0395D3BC LDR W11, [X8 + 0x18]
+	0x0395D3C0 MOV X1, X0
+	0x0395D3C4 CMP W10, W11
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xA85000
+	005 Move X20, 0x7F3000
+	006 Move W8, [X19+2469]
+	007 Move X20, [X20+1872]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x7F3000
+	013 Move X0, [X0+1872]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2469], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0395D3C8 B.CS 0x395D4AC
+	0x0395D3CC ADD W9, W10, 0x1
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: UnityEngine.ProBuilder.Face <BevelEdges>b__0_0(UnityEngine.ProBuilder.FaceRebuildData x)
+
+Disassembly:
+	0x0395D3D0 ADD X8, X8, X10, 0x3, LSL
+	0x0395D3D4 STR W9, [X29 + 0x18]
+	0x0395D3D8 STR X1, [X8 + 0x20]
+	0x0395D3DC B 0x395CEF0
+	0x0395D3E0 MOV X0, X20
+	0x0395D3E4 BL 0x395C658
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {7}
+	004 Move X0, [X1+16]
+	005 Move X30, [X31+16]
+	006 Return X0
+	007 Call 0x1C17F20
+
+Method: System.Int32 <BevelEdges>b__0_6(UnityEngine.ProBuilder.SimpleTuple`2<UnityEngine.ProBuilder.FaceRebuildData, System.Collections.Generic.List`1<System.Int32>> x)
+
+Disassembly:
+	0x0395D3E8 CBZ X0, 0x395D53C
+	0x0395D3EC ADRP X8, 0x7F2000
+	0x0395D3F0 LDR X8, [X8 + 0x7C0]
+	0x0395D3F4 LDR X1, [X8]
+	0x0395D3F8 ADD X8, X31, 0x58
+	0x0395D3FC BL 0x301CB58
+	0x0395D400 LDUR V0, [X31 + 0x58]
+	0x0395D404 LDR X8, [X31 + 0x68]
+	0x0395D408 ADRP X22, 0x7F2000
+	0x0395D40C STR V0, [X31 + 0x7]
+	0x0395D410 STR X8, [X31 + 0x80]
+	0x0395D414 LDR X22, [X22 + 0x7B0]
+	0x0395D418 LDR X1, [X22]
+	0x0395D41C ADD X0, X31, 0x70
+	0x0395D420 BL 0x2BC4350
+	0x0395D424 TBZ X0, 0x0, 0x395D494
+	0x0395D428 LDR X19, [X31 + 0x80]
+	0x0395D42C ADD X1, X31, 0x8C
+	0x0395D430 MOV X0, X19
+	0x0395D434 MOV X2, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xA85000
+	005 Move W8, [X20+2470]
+	006 Move X19, X2
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {19}
+	011 Move X0, 0x798000
+	012 Move X0, [X0+3624]
+	013 Call 0x1C17CF4
+	014 Move X0, 0x7F3000
+	015 Move X0, [X0+1776]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+2470], W8
+	019 Compare X19, 0
+	020 JumpIfEqual {26}
+	021 Move W0, [X19+24]
+	022 Move X20, [X31+16]
+	023 Move X19, [X31+24]
+	024 Move X30, [X31+32]
+	025 Return X0
+	026 Call 0x1C17F20
+
+Method: UnityEngine.ProBuilder.Face <BevelEdges>b__0_1(UnityEngine.ProBuilder.FaceRebuildData x)
+
+Disassembly:
+	0x0395D438 BL 0x3977F1C
+	0x0395D43C LDR W10, [X29 + 0x1C]
+	0x0395D440 LDR X8, [X29 + 0x10]
+	0x0395D444 LDR X9, [X21]
+	0x0395D448 ADD W10, W10, 0x1
+	0x0395D44C STR W10, [X29 + 0x1C]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {7}
+	004 Move X0, [X1+16]
+	005 Move X30, [X31+16]
+	006 Return X0
+	007 Call 0x1C17F20
+
+Method: UnityEngine.ProBuilder.Face <BevelEdges>b__0_2(UnityEngine.ProBuilder.FaceRebuildData x)
+
+Disassembly:
+	0x0395D450 CBZ X8, 0x395D4D0
+	0x0395D454 LDRSW X10, [X29 + 0x18]
+	0x0395D458 LDR W11, [X8 + 0x18]
+	0x0395D45C CMP W10, W11
+	0x0395D460 B.CS 0x395D478
+	0x0395D464 ADD W9, W10, 0x1
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {7}
+	004 Move X0, [X1+16]
+	005 Move X30, [X31+16]
+	006 Return X0
+	007 Call 0x1C17F20
+
+Method: UnityEngine.ProBuilder.Face <BevelEdges>b__0_3(UnityEngine.ProBuilder.FaceRebuildData x)
+
+Disassembly:
+	0x0395D468 ADD X8, X8, X10, 0x3, LSL
+	0x0395D46C STR W9, [X29 + 0x18]
+	0x0395D470 STR X19, [X8 + 0x20]
+	0x0395D474 B 0x395D418
+	0x0395D478 LDR X8, [X9 + 0x20]
+	0x0395D47C LDR X8, [X8 + 0xC0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {7}
+	004 Move X0, [X1+16]
+	005 Move X30, [X31+16]
+	006 Return X0
+	007 Call 0x1C17F20
+

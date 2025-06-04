@@ -1,0 +1,77 @@
+Type: Photon.Voice.DeviceEnumeratorNotSupported
+
+Method: System.Boolean get_IsSupported()
+
+Disassembly:
+	0x03556AA4 MOV X21, X0
+	0x03556AA8 BL 0x33BDD8C
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.Void .ctor(Photon.Voice.ILogger logger, System.String message)
+
+Disassembly:
+	0x03556AAC STP X20, X19, [X21 + 0x10]
+	0x03556AB0 LDP X20, X19, [X31 + 0x10]
+	0x03556AB4 LDP X30, X21, [X31], #0x20
+	0x03556AB8 RET
+	0x03556ABC SUB X31, X31, 0x50
+	0x03556AC0 STP X30, X25, [X31 + 0x10]
+	0x03556AC4 STP X24, X23, [X31 + 0x20]
+	0x03556AC8 STP X22, X21, [X31 + 0x30]
+	0x03556ACC STP X20, X19, [X31 + 0x40]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X2
+	005 Move X20, X0
+	006 Call DeviceEnumeratorBase..ctor, X0, X1
+	007 Move [X20+48], X19
+	008 Move X20, [X31+16]
+	009 Move X19, [X31+24]
+	010 Move X30, [X31+32]
+	011 Return 
+
+Method: System.Void Refresh()
+
+Disassembly:
+	0x03556AD0 ADRP X22, 0xE89000
+	0x03556AD4 LDRB W8, [X22 + 0xD93]
+	0x03556AD8 MOV W21, W2
+	0x03556ADC MOV X19, X1
+	0x03556AE0 MOV X20, X0
+	0x03556AE4 TBNZ X8, 0x0, 0x3556B38
+	0x03556AE8 ADRP X0, 0xB9D000
+
+ISIL:
+	001 Move X8, [X0+40]
+	002 Compare X8, 0
+	003 JumpIfEqual {8}
+	004 Move X2, [X8+24]
+	005 Move X0, [X8+64]
+	006 Move X1, [X8+40]
+	007 CallNoReturn X2
+	008 Return 
+
+Method: System.String get_Error()
+
+Disassembly:
+	0x03556AEC LDR X0, [X0 + 0x9C8]
+	0x03556AF0 BL 0x1C16CF4
+
+ISIL:
+	001 Move X0, [X0+48]
+	002 Return X0
+
+Method: System.Void Dispose()
+
+Disassembly:
+	0x03556AF4 ADRP X0, 0xBC6000
+
+ISIL:
+	001 Return 
+

@@ -1,0 +1,35 @@
+Type: WebSocketSharp.WebSocket/<>c__DisplayClass125_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03E732F4 LDRB W8, [X19 + 0x11C]
+	0x03E732F8 CBZ W8, 0x3E733E8
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <closeAsync>b__0(System.IAsyncResult ar)
+
+Disassembly:
+	0x03E7B070 BL 0x1C16DEC
+	0x03E7B074 MOVZ W1, 0x4
+	0x03E7B078 MOV X2, X31
+	0x03E7B07C MOV X3, X31
+	0x03E7B080 B 0x3E7B084
+	0x03E7B084 STP X30, X23, [X31 - 0x30]!
+	0x03E7B088 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+16]
+	003 Compare X0, 0
+	004 JumpIfEqual {9}
+	005 Move X2, X31
+	006 Move X30, [X31+16]
+	007 Call Action`4<Object, Boolean, Boolean, Boolean>.EndInvoke, X0, X1
+	008 Return 
+	009 Call 0x1C17F20
+

@@ -1,0 +1,116 @@
+Type: UnityEngine.Rendering.DebugUI/UIntField
+
+Method: System.UInt32 ValidateValue(System.UInt32 value)
+
+Disassembly:
+	0x039AFB50 MOVZ W8, 0x1
+	0x039AFB54 STRB W8, [X20 + 0xC26]
+	0x039AFB58 LDR X0, [X19 + 0x18]
+	0x039AFB5C CBZ X0, 0x39AFBF4
+	0x039AFB60 LDR X8, [X0]
+	0x039AFB64 LDP X9, X1, [X8 + 0x158]
+	0x039AFB68 BLR X9
+	0x039AFB6C LDR X8, [X19 + 0x28]
+	0x039AFB70 CBZ X8, 0x39AFBF4
+	0x039AFB74 ADRP X9, 0x7A2000
+	0x039AFB78 LDR X9, [X9 + 0xBC0]
+	0x039AFB7C ADD W20, W0, 0x187
+	0x039AFB80 MOV X0, X8
+	0x039AFB84 LDR X1, [X9]
+	0x039AFB88 BL 0x2497BA8
+	0x039AFB8C CMP W0, 0x1
+	0x039AFB90 B.LT 0x39AFBDC
+	0x039AFB94 ADRP X23, 0x7A2000
+	0x039AFB98 LDR X23, [X23 + 0xBC8]
+	0x039AFB9C MOV W21, W0
+	0x039AFBA0 MOV W22, W31
+	0x039AFBA4 MOVZ W24, 0x17
+	0x039AFBA8 LDR X0, [X19 + 0x28]
+	0x039AFBAC CBZ X0, 0x39AFBF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X0+96]
+	005 Move X20, X0
+	006 Move W19, W1
+	007 Compare X8, 0
+	008 JumpIfEqual {15}
+	009 Move X9, [X8+24]
+	010 Move X0, [X8+64]
+	011 Move X1, [X8+40]
+	012 NotImplemented "Instruction BLR not yet implemented."
+	013 NotImplemented "Instruction CMP not yet implemented."
+	014 NotImplemented "Instruction CSEL not yet implemented."
+	015 Move X8, [X20+104]
+	016 Compare X8, 0
+	017 JumpIfEqual {24}
+	018 Move X9, [X8+24]
+	019 Move X0, [X8+64]
+	020 Move X1, [X8+40]
+	021 NotImplemented "Instruction BLR not yet implemented."
+	022 NotImplemented "Instruction CMP not yet implemented."
+	023 NotImplemented "Instruction CSEL not yet implemented."
+	024 Move W0, W19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x039AFBB0 LDR X2, [X23]
+	0x039AFBB4 MOV W1, W22
+	0x039AFBB8 BL 0x2497990
+	0x039AFBBC CBZ X0, 0x39AFBF4
+	0x039AFBC0 LDR X8, [X0]
+	0x039AFBC4 LDP X9, X1, [X8 + 0x158]
+	0x039AFBC8 BLR X9
+	0x039AFBCC ADD W22, W22, 0x1
+	0x039AFBD0 CMP W21, W22
+	0x039AFBD4 MADD W20, W20, W24, W0
+	0x039AFBD8 B.NE 0x39AFBA8
+	0x039AFBDC MOV W0, W20
+	0x039AFBE0 LDP X20, X19, [X31 + 0x30]
+	0x039AFBE4 LDP X22, X21, [X31 + 0x20]
+	0x039AFBE8 LDP X24, X23, [X31 + 0x10]
+	0x039AFBEC LDR X30, [X31], #0x40
+	0x039AFBF0 RET
+	0x039AFBF4 BL 0x1C16F20
+	0x039AFBF8 CBZ X1, 0x39AFC20
+	0x039AFBFC STR X30, [X31 - 0x10]!
+	0x039AFC00 LDR W8, [X0 + 0x20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xA33000
+	006 Move X20, 0x7A3000
+	007 Move W8, [X21+3087]
+	008 Move X20, [X20+3136]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x7A3000
+	015 Move X0, [X0+3136]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+3087], W8
+	019 Move X8, -49020928
+	020 Move V0, [X8+1040]
+	021 Move X0, X19
+	022 Move [X19+112], D0
+	023 Move X1, [X20]
+	024 Move X20, [X31+16]
+	025 Move X19, [X31+24]
+	026 Move X30, [X31+32]
+	027 Move X21, [X31+40]
+	028 Call Field`1<UInt32>..ctor, X0
+	029 Return 
+

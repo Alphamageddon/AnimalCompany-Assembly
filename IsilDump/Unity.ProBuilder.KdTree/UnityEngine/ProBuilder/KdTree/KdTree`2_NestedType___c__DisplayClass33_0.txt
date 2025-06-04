@@ -1,0 +1,89 @@
+Type: UnityEngine.ProBuilder.KdTree.KdTree`2/<>c__DisplayClass33_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x02375C48 LDR X8, [X19]
+	0x02375C4C LDR X10, [X10 + 0x718]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <GetEnumerator>b__0(UnityEngine.ProBuilder.KdTree.KdTreeNode`2<TKey, TValue> node)
+
+Disassembly:
+	0x02375C50 LDRH W9, [X8 + 0x12E]
+	0x02375C54 LDR X1, [X10]
+	0x02375C58 CBZ X9, 0x2375C7C
+	0x02375C5C LDR X10, [X8 + 0xB0]
+	0x02375C60 ADD X10, X10, 0x8
+	0x02375C64 LDUR X11, [X10 - 0x8]
+	0x02375C68 CMP X11, X1
+	0x02375C6C B.EQ 0x2375C8C
+	0x02375C70 SUBS X9, X9, 0x1
+	0x02375C74 ADD X10, X10, 0x10
+	0x02375C78 B.NE 0x2375C64
+	0x02375C7C MOVZ W2, 0x3
+	0x02375C80 MOV X0, X19
+	0x02375C84 BL 0x1C5C788
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {18}
+	004 Move X1, [X1+40]
+	005 Compare X1, 0
+	006 JumpIfEqual {16}
+	007 Move X0, [X0+16]
+	008 Compare X0, 0
+	009 JumpIfEqual {18}
+	010 Move X8, [X2+32]
+	011 Move X8, [X8+192]
+	012 Move X2, [X8+24]
+	013 Move X30, [X31+16]
+	014 Call Stack`1<Object>.Push, X0, X1
+	015 Return 
+	016 Move X30, [X31+16]
+	017 Return 
+	018 Call 0x1C17F20
+
+Method: System.Void <GetEnumerator>b__1(UnityEngine.ProBuilder.KdTree.KdTreeNode`2<TKey, TValue> node)
+
+Disassembly:
+	0x02375C88 B 0x2375C9C
+	0x02375C8C LDR W9, [X10]
+	0x02375C90 ADD W9, W9, 0x3
+	0x02375C94 ADD X8, X8, W9, 0x4, SXTW
+	0x02375C98 ADD X0, X8, 0x138
+	0x02375C9C LDP X8, X1, [X0]
+	0x02375CA0 MOV X0, X19
+	0x02375CA4 BLR X8
+	0x02375CA8 TBZ X0, 0x0, 0x2375CBC
+	0x02375CAC LDP X20, X19, [X31 + 0x20]
+	0x02375CB0 LDP X22, X21, [X31 + 0x10]
+	0x02375CB4 LDR X30, [X31], #0x30
+	0x02375CB8 RET
+	0x02375CBC LDR X8, [X20 + 0x20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {18}
+	004 Move X1, [X1+48]
+	005 Compare X1, 0
+	006 JumpIfEqual {16}
+	007 Move X0, [X0+24]
+	008 Compare X0, 0
+	009 JumpIfEqual {18}
+	010 Move X8, [X2+32]
+	011 Move X8, [X8+192]
+	012 Move X2, [X8+24]
+	013 Move X30, [X31+16]
+	014 Call Stack`1<Object>.Push, X0, X1
+	015 Return 
+	016 Move X30, [X31+16]
+	017 Return 
+	018 Call 0x1C17F20
+

@@ -1,0 +1,272 @@
+Type: UnityEngine.Yoga.YogaValue
+
+Method: UnityEngine.Yoga.YogaUnit get_Unit()
+
+Disassembly:
+	0x03CE76D4 MOV X0, X19
+	0x03CE76D8 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move W0, [X0+4]
+	002 Return X0
+
+Method: System.Single get_Value()
+
+Disassembly:
+	0x03CE76DC LDR X30, [X31 + 0x8]
+	0x03CE76E0 MOV V0.16B, V8.16B
+
+ISIL:
+	001 Move V0, [X0]
+	002 Return V0
+
+Method: UnityEngine.Yoga.YogaValue Point(System.Single value)
+
+Disassembly:
+	0x03CE8FC0 LDR X0, [X0 + 0x730]
+	0x03CE8FC4 BL 0x1C16CF4
+	0x03CE8FC8 ADRP X0, 0x47A000
+	0x03CE8FCC LDR X0, [X0 + 0x728]
+	0x03CE8FD0 BL 0x1C16CF4
+	0x03CE8FD4 MOVZ W8, 0x1
+	0x03CE8FD8 STRB W8, [X23 + 0x723]
+	0x03CE8FDC LDR X0, [X24]
+
+ISIL:
+	001 Move W0, S0
+	002 Move W9, 1
+	003 And W8, W0, 0x7FFFFFFF
+	004 NotImplemented "Instruction MOVK not yet implemented."
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction BFM not yet implemented."
+	008 Return X0
+
+Method: System.Boolean Equals(UnityEngine.Yoga.YogaValue other)
+
+Disassembly:
+	0x03CE8FE0 BL 0x1C16F10
+	0x03CE8FE4 LDR X1, [X20]
+	0x03CE8FE8 MOV X20, X0
+	0x03CE8FEC BL 0x2AA4804
+	0x03CE8FF0 STR X20, [X19 + 0x18]
+	0x03CE8FF4 LDR X0, [X22]
+	0x03CE8FF8 BL 0x1C16F10
+	0x03CE8FFC LDR X2, [X21]
+	0x03CE9000 MOVZ W1, 0x1
+	0x03CE9004 MOV X20, X0
+	0x03CE9008 BL 0x301B830
+	0x03CE900C ADRP X8, 0xFFFFFFFFFCE03000
+	0x03CE9010 LDR V0, [X8 + 0xB9]
+	0x03CE9014 STR X20, [X19 + 0x38]
+	0x03CE9018 MOV X0, X19
+	0x03CE901C LDP X22, X21, [X31 + 0x20]
+	0x03CE9020 STR V0, [X19 + 0x4]
+	0x03CE9024 LDP X20, X19, [X31 + 0x30]
+	0x03CE9028 LDP X24, X23, [X31 + 0x10]
+	0x03CE902C LDR X30, [X31], #0x40
+	0x03CE9030 B 0x3CE8328
+	0x03CE9034 STR X30, [X31 - 0x20]!
+	0x03CE9038 STP X20, X19, [X31 + 0x10]
+	0x03CE903C ADRP X19, 0x6FE000
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move W8, [X0+4]
+	005 Move X9, X1
+	006 ShiftRight X9, 32
+	007 And X9, X9, 0x7FFFFFFF
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move V1, [X0]
+	010 Move X19, X0
+	011 Move S0, W1
+	012 Add X0, X31, 12
+	013 Move X1, X31
+	014 Move [X31+12], S1
+	015 Call Single.Equals, X0, V0
+	016 Move TEMP, X0
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfNotEqual {22}
+	020 Move W0, 1
+	021 Move W0, W31
+	022 Move W8, [X19+4]
+	023 NotImplemented "Instruction CMP not yet implemented."
+	024 NotImplemented "Instruction CSET not yet implemented."
+	025 Move X30, [X31+16]
+	026 Move X19, [X31+24]
+	027 Add X31, X31, 32
+	028 Return X0
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x03CE9040 ADRP X20, 0x479000
+	0x03CE9044 LDRB W8, [X19 + 0x724]
+	0x03CE9048 LDR X20, [X20 + 0x700]
+	0x03CE904C TBNZ X8, 0x0, 0x3CE9064
+	0x03CE9050 ADRP X0, 0x479000
+	0x03CE9054 LDR X0, [X0 + 0x700]
+	0x03CE9058 BL 0x1C16CF4
+	0x03CE905C MOVZ W8, 0x1
+	0x03CE9060 STRB W8, [X19 + 0x724]
+	0x03CE9064 LDR X0, [X20]
+	0x03CE9068 BL 0x1C16F10
+	0x03CE906C MOV X19, X0
+	0x03CE9070 BL 0x3CE9084
+	0x03CE9074 MOV X0, X19
+	0x03CE9078 LDP X20, X19, [X31 + 0x10]
+	0x03CE907C LDR X30, [X31], #0x20
+	0x03CE9080 RET
+	0x03CE9084 STP X30, X21, [X31 - 0x20]!
+	0x03CE9088 STP X20, X19, [X31 + 0x10]
+	0x03CE908C ADRP X20, 0x6FE000
+	0x03CE9090 ADRP X21, 0x479000
+	0x03CE9094 LDRB W8, [X20 + 0x725]
+	0x03CE9098 LDR X21, [X21 + 0x738]
+	0x03CE909C MOV X19, X0
+	0x03CE90A0 TBNZ X8, 0x0, 0x3CE90B8
+	0x03CE90A4 ADRP X0, 0x479000
+	0x03CE90A8 LDR X0, [X0 + 0x738]
+	0x03CE90AC BL 0x1C16CF4
+	0x03CE90B0 MOVZ W8, 0x1
+	0x03CE90B4 STRB W8, [X20 + 0x725]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x6FF000
+	006 Move W8, [X21+1816]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x47A000
+	014 Move X0, [X0+1696]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+1816], W8
+	018 Compare X20, 0
+	019 JumpIfEqual {25}
+	020 Move X8, 0x47A000
+	021 Move X8, [X8+1696]
+	022 Move X9, [X20]
+	023 Move X8, [X8]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move W0, W31
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Return X0
+	031 Move X0, X20
+	032 Call 0x1C17E08
+	033 Move X1, [X0]
+	034 Move X0, X19
+	035 Move X20, [X31+16]
+	036 Move X19, [X31+24]
+	037 Move X30, [X31+32]
+	038 Move X21, [X31+40]
+	039 Call YogaValue.Equals, X0, X1
+	040 Return X0
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x03CE90B8 LDR X1, [X21]
+	0x03CE90BC MOV X0, X19
+	0x03CE90C0 LDP X20, X19, [X31 + 0x10]
+	0x03CE90C4 LDP X30, X21, [X31], #0x20
+	0x03CE90C8 B 0x2EF0D48
+	0x03CE90CC STR X30, [X31 - 0x10]!
+	0x03CE90D0 CBZ X0, 0x3CE90F8
+	0x03CE90D4 MOVI V0.2D, 0x0
+	0x03CE90D8 STR X31, [X0 + 0x18]
+	0x03CE90DC STR W31, [X0 + 0x20]
+	0x03CE90E0 STUR V0, [X0 + 0x28]
+	0x03CE90E4 STUR V0, [X0 + 0x38]
+	0x03CE90E8 STUR V0, [X0 + 0x48]
+	0x03CE90EC STUR V0, [X0 + 0x58]
+	0x03CE90F0 LDR X30, [X31], #0x10
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move V0, [X0]
+	005 Move X19, X0
+	006 Add X0, X31, 12
+	007 Move X1, X31
+	008 Move [X31+12], S0
+	009 Call Single.GetHashCode, X0
+	010 Move W8, [X19+4]
+	011 Move X30, [X31+16]
+	012 Move X19, [X31+24]
+	013 Move W9, 397
+	014 Multiply W9, W0, W9
+	015 Xor W0, W9, W8
+	016 Add X31, X31, 32
+	017 Return X0
+
+Method: UnityEngine.Yoga.YogaValue Auto()
+
+Disassembly:
+	0x03CE90F4 RET
+	0x03CE90F8 BL 0x1C16F20
+	0x03CE90FC STR X30, [X31 - 0x50]!
+
+ISIL:
+	001 Move X0, 0x7FC00000
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 Return X0
+
+Method: UnityEngine.Yoga.YogaValue Percent(System.Single value)
+
+Disassembly:
+	0x03CE9100 STP X26, X25, [X31 + 0x10]
+	0x03CE9104 STP X24, X23, [X31 + 0x20]
+	0x03CE9108 STP X22, X21, [X31 + 0x30]
+	0x03CE910C STP X20, X19, [X31 + 0x40]
+	0x03CE9110 ADRP X25, 0x6FE000
+	0x03CE9114 ADRP X26, 0x479000
+	0x03CE9118 ADRP X19, 0x479000
+	0x03CE911C ADRP X24, 0x479000
+
+ISIL:
+	001 Move W0, S0
+	002 Move W9, 1
+	003 And W8, W0, 0x7FFFFFFF
+	004 NotImplemented "Instruction MOVK not yet implemented."
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction BFM not yet implemented."
+	008 Return X0
+
+Method: UnityEngine.Yoga.YogaValue op_Implicit(System.Single pointValue)
+
+Disassembly:
+	0x03CE9120 ADRP X20, 0x479000
+	0x03CE9124 ADRP X23, 0x479000
+	0x03CE9128 ADRP X21, 0x479000
+	0x03CE912C ADRP X22, 0x479000
+	0x03CE9130 LDR X26, [X26 + 0x740]
+	0x03CE9134 LDR X19, [X19 + 0x748]
+	0x03CE9138 LDRB W8, [X25 + 0x726]
+	0x03CE913C LDR X24, [X24 + 0x750]
+
+ISIL:
+	001 Move W0, S0
+	002 Move W9, 1
+	003 And W8, W0, 0x7FFFFFFF
+	004 NotImplemented "Instruction MOVK not yet implemented."
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 NotImplemented "Instruction BFM not yet implemented."
+	008 Return X0
+

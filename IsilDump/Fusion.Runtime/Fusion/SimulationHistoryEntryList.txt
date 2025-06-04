@@ -1,0 +1,374 @@
+Type: Fusion.SimulationHistoryEntryList
+
+Method: System.Void AddFirst(Fusion.Simulation/History/Entry item)
+
+Disassembly:
+	0x01EBEA9C CBNZ W8, 0x1EBEAB4
+	0x01EBEAA0 ADRP X0, 0x223A000
+	0x01EBEAA4 LDR X0, [X0 + 0x20]
+	0x01EBEAA8 BL 0x1C16CF4
+	0x01EBEAAC MOVZ W8, 0x1
+	0x01EBEAB0 STRB W8, [X22 + 0xB73]
+	0x01EBEAB4 STR X31, [X31 + 0x8]
+	0x01EBEAB8 LDR X0, [X20 + 0xB8]
+	0x01EBEABC CBZ X0, 0x1EBEBF0
+	0x01EBEAC0 ADRP X8, 0x223A000
+	0x01EBEAC4 LDR X8, [X8 + 0x20]
+	0x01EBEAC8 AND X1, X21, 0x0
+	0x01EBEACC ADD X2, X31, 0x8
+	0x01EBEAD0 LDR X3, [X8]
+	0x01EBEAD4 BL 0x2AE89D0
+	0x01EBEAD8 LDR X8, [X31 + 0x8]
+	0x01EBEADC CBZ X8, 0x1EBEBD0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, X0
+	003 Add X8, X8, 24
+	004 Move X9, [X8]
+	005 Compare X1, 0
+	006 JumpIfEqual {20}
+	007 Move [X1+16], X31
+	008 Move [X1+24], X9
+	009 Compare X9, 0
+	010 JumpIfEqual {12}
+	011 Move [X9+16], X1
+	012 Add X8, X0, 32
+	013 Move [X0+24], X1
+	014 Move [X8], X1
+	015 Move W8, [X0+16]
+	016 Add W8, W8, 1
+	017 Move [X0+16], W8
+	018 Move X30, [X31+16]
+	019 Return 
+	020 Call 0x1C17F20
+
+Method: System.Void AddLast(Fusion.Simulation/History/Entry item)
+
+Disassembly:
+	0x01EBEAE0 TBZ X0, 0x0, 0x1EBEBD0
+	0x01EBEAE4 LDR X0, [X8 + 0x30]
+	0x01EBEAE8 CBZ X0, 0x1EBEBF0
+	0x01EBEAEC ADRP X8, 0x223C000
+	0x01EBEAF0 LDR X8, [X8 + 0x848]
+	0x01EBEAF4 LDR X1, [X8]
+	0x01EBEAF8 ADD X8, X31, 0x8
+	0x01EBEAFC BL 0x2DAAA30
+	0x01EBEB00 LDUR V0, [X31 + 0x8]
+	0x01EBEB04 LDR X8, [X31 + 0x18]
+	0x01EBEB08 ADRP X22, 0x223C000
+	0x01EBEB0C LDR X22, [X22 + 0x838]
+	0x01EBEB10 STR V0, [X31 + 0x2]
+	0x01EBEB14 STR X8, [X31 + 0x30]
+	0x01EBEB18 ADRP X23, 0x2240000
+	0x01EBEB1C LDR X23, [X23 + 0xAD8]
+	0x01EBEB20 LDR X1, [X22]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {18}
+	004 Move [X1+24], X31
+	005 Move X8, [X0+32]
+	006 Add X9, X0, 24
+	007 Add X10, X8, 24
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move [X1+16], X8
+	010 NotImplemented "Instruction CSEL not yet implemented."
+	011 Move [X8], X1
+	012 Move W8, [X0+16]
+	013 Move [X0+32], X1
+	014 Add W8, W8, 1
+	015 Move [X0+16], W8
+	016 Move X30, [X31+16]
+	017 Return 
+	018 Call 0x1C17F20
+
+Method: System.Void AddBefore(Fusion.Simulation/History/Entry item, Fusion.Simulation/History/Entry before)
+
+Disassembly:
+	0x01EBEB24 ADD X0, X31, 0x20
+	0x01EBEB28 BL 0x2BBDA6C
+	0x01EBEB2C TBZ X0, 0x0, 0x1EBEBBC
+	0x01EBEB30 LDR W1, [X31 + 0x30]
+	0x01EBEB34 MOV X0, X20
+	0x01EBEB38 MOV W2, W31
+	0x01EBEB3C BL 0x1EBEC78
+	0x01EBEB40 CBZ X0, 0x1EBEB20
+	0x01EBEB44 LDR X21, [X0 + 0x20]
+	0x01EBEB48 CBZ X21, 0x1EBEB20
+	0x01EBEB4C MOV X0, X21
+	0x01EBEB50 MOV X1, X31
+	0x01EBEB54 BL 0x1E97370
+	0x01EBEB58 CBZ X19, 0x1EBEBE8
+	0x01EBEB5C LDR W10, [X19 + 0x1C]
+	0x01EBEB60 LDR X8, [X19 + 0x10]
+	0x01EBEB64 LDR X9, [X23]
+	0x01EBEB68 ADD W10, W10, 0x1
+	0x01EBEB6C STR W10, [X19 + 0x1C]
+	0x01EBEB70 CBZ X8, 0x1EBEBEC
+	0x01EBEB74 LDRSW X10, [X19 + 0x18]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Compare X1, 0
+	005 JumpIfEqual {24}
+	006 Move [X1+24], X2
+	007 Compare X2, 0
+	008 JumpIfEqual {24}
+	009 Move X8, [X2+16]
+	010 Move [X1+16], X8
+	011 Move X8, [X2+16]
+	012 Compare X8, 0
+	013 JumpIfEqual {24}
+	014 Move [X8+24], X1
+	015 Move [X2+16], X1
+	016 Move W8, [X0+16]
+	017 Add W8, W8, 1
+	018 Move [X0+16], W8
+	019 Move X30, [X31+16]
+	020 Return 
+	021 Move X30, [X31+16]
+	022 Call SimulationHistoryEntryList.AddFirst, X0, X1
+	023 Return 
+	024 Call 0x1C17F20
+
+Method: System.Void AddAfter(Fusion.Simulation/History/Entry item, Fusion.Simulation/History/Entry after)
+
+Disassembly:
+	0x01EBEB78 LDR W11, [X8 + 0x18]
+	0x01EBEB7C CMP W10, W11
+	0x01EBEB80 B.CS 0x1EBEB98
+	0x01EBEB84 ADD W9, W10, 0x1
+	0x01EBEB88 ADD X8, X8, X10, 0x2, LSL
+	0x01EBEB8C STR W9, [X19 + 0x18]
+	0x01EBEB90 STR W0, [X8 + 0x20]
+	0x01EBEB94 B 0x1EBEBB0
+	0x01EBEB98 LDR X8, [X9 + 0x20]
+	0x01EBEB9C AND X1, X0, 0x0
+	0x01EBEBA0 LDR X8, [X8 + 0xC0]
+	0x01EBEBA4 LDR X2, [X8 + 0x70]
+	0x01EBEBA8 MOV X0, X19
+	0x01EBEBAC BL 0x3016AB0
+	0x01EBEBB0 LDR X21, [X21 + 0x80]
+	0x01EBEBB4 CBNZ X21, 0x1EBEB4C
+	0x01EBEBB8 B 0x1EBEB20
+	0x01EBEBBC ADRP X8, 0x223C000
+	0x01EBEBC0 LDR X8, [X8 + 0x830]
+	0x01EBEBC4 ADD X0, X31, 0x20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+32]
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Compare X2, 0
+	005 JumpIfEqual {24}
+	006 Compare X1, 0
+	007 JumpIfEqual {24}
+	008 Move X8, [X2+24]
+	009 Move [X1+16], X2
+	010 Move [X1+24], X8
+	011 Move X8, [X2+24]
+	012 Compare X8, 0
+	013 JumpIfEqual {24}
+	014 Move [X8+16], X1
+	015 Move [X2+24], X1
+	016 Move W8, [X0+16]
+	017 Add W8, W8, 1
+	018 Move [X0+16], W8
+	019 Move X30, [X31+16]
+	020 Return 
+	021 Move X30, [X31+16]
+	022 Call SimulationHistoryEntryList.AddLast, X0, X1
+	023 Return 
+	024 Call 0x1C17F20
+
+Method: Fusion.Simulation/History/Entry RemoveHead()
+
+Disassembly:
+	0x01EBEBC8 LDR X1, [X8]
+	0x01EBEBCC BL 0x2BBDA68
+	0x01EBEBD0 MOV X0, X19
+	0x01EBEBD4 LDP X20, X19, [X31 + 0x60]
+	0x01EBEBD8 LDP X22, X21, [X31 + 0x50]
+	0x01EBEBDC LDP X30, X23, [X31 + 0x40]
+	0x01EBEBE0 ADD X31, X31, 0x70
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, [X0+24]
+	004 Move X1, X19
+	005 Call SimulationHistoryEntryList.Remove, X0, X1
+	006 Move X0, X19
+	007 Move X30, [X31+16]
+	008 Move X19, [X31+24]
+	009 Return X0
+
+Method: System.Void Remove(Fusion.Simulation/History/Entry item)
+
+Disassembly:
+	0x01EBEBE4 RET
+	0x01EBEBE8 BL 0x1C16F20
+	0x01EBEBEC BL 0x1C16F20
+	0x01EBEBF0 BL 0x1C16F20
+	0x01EBEBF4 B 0x1EBEC04
+	0x01EBEBF8 B 0x1EBEC04
+	0x01EBEBFC B 0x1EBEC04
+	0x01EBEC00 B 0x1EBEC04
+	0x01EBEC04 MOV X20, X0
+	0x01EBEC08 CMP W1, 0x1
+	0x01EBEC0C B.NE 0x1EBEC40
+	0x01EBEC10 MOV X0, X20
+	0x01EBEC14 BL 0x3EB1AD0
+	0x01EBEC18 LDR X21, [X0]
+	0x01EBEC1C BL 0x3EB1AE0
+	0x01EBEC20 ADRP X8, 0x223C000
+	0x01EBEC24 LDR X8, [X8 + 0x830]
+	0x01EBEC28 ADD X0, X31, 0x20
+	0x01EBEC2C LDR X1, [X8]
+	0x01EBEC30 BL 0x2BBDA68
+	0x01EBEC34 CBZ X21, 0x1EBEBD0
+	0x01EBEC38 MOV X0, X21
+	0x01EBEC3C BL 0x1C16F18
+	0x01EBEC40 MOV X21, X31
+	0x01EBEC44 B 0x1EBEC4C
+	0x01EBEC48 MOV X20, X0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {29}
+	004 Move X8, X1
+	005 Add X8, X8, 16
+	006 Move X10, [X8]
+	007 Compare X10, 0
+	008 JumpIfEqual {11}
+	009 Move X9, [X1+24]
+	010 Move [X10+24], X9
+	011 Move X9, [X1+24]
+	012 Compare X9, 0
+	013 JumpIfEqual {15}
+	014 Move [X9+16], X10
+	015 Move X10, [X0+32]
+	016 NotImplemented "Instruction CMP not yet implemented."
+	017 Move X10, [X8]
+	018 Move [X0+32], X10
+	019 Move X10, [X0+24]
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 Move [X0+24], X9
+	022 Move [X8], X31
+	023 Move [X8+8], X31
+	024 Move W8, [X0+16]
+	025 Subtract W8, W8, 1
+	026 Move [X0+16], W8
+	027 Move X30, [X31+16]
+	028 Return 
+	029 Call 0x1C17F20
+
+Method: System.Boolean IsInList(Fusion.Simulation/History/Entry item)
+
+Disassembly:
+	0x01EBEC4C ADRP X8, 0x223C000
+	0x01EBEC50 LDR X8, [X8 + 0x830]
+	0x01EBEC54 LDR X1, [X8]
+	0x01EBEC58 ADD X0, X31, 0x20
+	0x01EBEC5C BL 0x2BBDA68
+	0x01EBEC60 CBNZ X21, 0x1EBEC6C
+	0x01EBEC64 MOV X0, X20
+	0x01EBEC68 BL 0x1D2C690
+	0x01EBEC6C MOV X0, X21
+
+ISIL:
+	001 Add X9, X0, 24
+	002 Move X8, [X9]
+	003 Compare X8, 0
+	004 JumpIfEqual {7}
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Add X9, X8, 24
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Return X0
+
+Method: Fusion.SimulationHistoryEntryList RemoveAll()
+
+Disassembly:
+	0x01EBEC70 BL 0x1C16F18
+	0x01EBEC74 BL 0x1990590
+	0x01EBEC78 STR X30, [X31 - 0x30]!
+
+ISIL:
+	001 Move [X0+16], W31
+	002 Move [X0+24], X31
+	003 Move [X0+32], X31
+	004 Return X0
+
+Method: System.Void Concat(Fusion.SimulationHistoryEntryList other)
+
+Disassembly:
+	0x01EBEC7C STP X22, X21, [X31 + 0x10]
+	0x01EBEC80 STP X20, X19, [X31 + 0x20]
+	0x01EBEC84 ADRP X22, 0x251B000
+	0x01EBEC88 LDRB W8, [X22 + 0x447]
+	0x01EBEC8C MOV W21, W2
+	0x01EBEC90 MOV W19, W1
+	0x01EBEC94 MOV X20, X0
+	0x01EBEC98 TBNZ X8, 0x0, 0x1EBECE0
+	0x01EBEC9C ADRP X0, 0x2241000
+	0x01EBECA0 LDR X0, [X0 + 0x890]
+	0x01EBECA4 BL 0x1C16CF4
+	0x01EBECA8 ADRP X0, 0x2241000
+	0x01EBECAC LDR X0, [X0 + 0x898]
+	0x01EBECB0 BL 0x1C16CF4
+	0x01EBECB4 ADRP X0, 0x2241000
+	0x01EBECB8 LDR X0, [X0 + 0x8A0]
+	0x01EBECBC BL 0x1C16CF4
+	0x01EBECC0 ADRP X0, 0x2241000
+	0x01EBECC4 LDR X0, [X0 + 0x8A8]
+	0x01EBECC8 BL 0x1C16CF4
+	0x01EBECCC ADRP X0, 0x2241000
+	0x01EBECD0 LDR X0, [X0 + 0x8B0]
+	0x01EBECD4 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {27}
+	004 Move W8, [X1+16]
+	005 Compare W8, 0
+	006 JumpIfEqual {25}
+	007 Move W9, [X0+16]
+	008 Compare W9, 0
+	009 JumpIfEqual {22}
+	010 Move X10, [X0+32]
+	011 Compare X10, 0
+	012 JumpIfEqual {27}
+	013 Move X11, [X1+24]
+	014 Move [X10+24], X11
+	015 Compare X11, 0
+	016 JumpIfEqual {27}
+	017 Move [X11+16], X10
+	018 Move X10, [X1+32]
+	019 Add W8, W9, W8
+	020 Move [X0+16], W8
+	021 Move [X0+32], X10
+	022 Move [X0+16], W8
+	023 NotImplemented "Instruction LDUR not yet implemented."
+	024 Move [X0+24], V0
+	025 Move X30, [X31+16]
+	026 Return 
+	027 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01EBECD8 MOVZ W8, 0x1
+	0x01EBECDC STRB W8, [X22 + 0x447]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

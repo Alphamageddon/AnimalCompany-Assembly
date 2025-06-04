@@ -1,0 +1,223 @@
+Type: Mono.Unity.UnityTlsConversions
+
+Method: Mono.Unity.UnityTls/unitytls_protocol GetMinProtocol(System.Security.Authentication.SslProtocols protocols)
+
+Disassembly:
+	0x035E53FC CMP W8, 0x5
+	0x035E5400 B.HI 0x35E54C8
+	0x035E5404 ADRP X9, 0xFFFFFFFFFD5B1000
+	0x035E5408 ADD X9, X9, 0xE02
+	0x035E540C ADR X10, 0x1C
+	0x035E5410 LDRB W11, [X9, X8, LSL]
+	0x035E5414 ADD X10, X10, X11, 0x2, LSL
+	0x035E5418 MOV W20, W3
+	0x035E541C MOV W21, W2
+	0x035E5420 MOV X22, X1
+	0x035E5424 BR X10
+	0x035E5428 LDR X23, [X19 + 0x48]
+	0x035E542C B 0x35E5454
+	0x035E5430 LDR X23, [X19 + 0x58]
+
+ISIL:
+	001 NotImplemented "Instruction ORN not yet implemented."
+	002 And W31, W8, 192
+	003 Move W0, W31
+	004 Return X0
+	005 And W31, W8, 768
+	006 Move W0, 1
+	007 Return X0
+	008 Move W8, 3072
+	009 NotImplemented "Instruction BICS not yet implemented."
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 Move W0, W8
+	012 ShiftRight W0, 31
+	013 And W0, W0, 0x3FFFFFFF
+	014 Return X0
+
+Method: Mono.Unity.UnityTls/unitytls_protocol GetMaxProtocol(System.Security.Authentication.SslProtocols protocols)
+
+Disassembly:
+	0x035E5434 B 0x35E5454
+	0x035E5438 LDR X0, [X19 + 0x38]
+	0x035E543C CBZ X0, 0x35E54C4
+	0x035E5440 LDR X8, [X0]
+	0x035E5444 LDR X23, [X19 + 0x50]
+	0x035E5448 LDR X1, [X8 + 0x220]
+	0x035E544C LDR X9, [X8 + 0x218]
+	0x035E5450 BLR X9
+	0x035E5454 CBNZ X23, 0x35E5464
+	0x035E5458 LDR W8, [X19 + 0x80]
+	0x035E545C CMP W8, 0x6
+	0x035E5460 B.NE 0x35E5494
+	0x035E5464 LDR X2, [X19 + 0x68]
+	0x035E5468 MOV X0, X19
+
+ISIL:
+	001 NotImplemented "Instruction ORN not yet implemented."
+	002 And W31, W8, 3072
+	003 Move W0, 2
+	004 Return X0
+	005 And W31, W8, 768
+	006 Move W0, 1
+	007 Return X0
+	008 Move W8, 192
+	009 NotImplemented "Instruction BICS not yet implemented."
+	010 NotImplemented "Instruction CSET not yet implemented."
+	011 Move W0, W8
+	012 ShiftRight W0, 31
+	013 And W0, W0, 0x3FFFFFFF
+	014 Return X0
+
+Method: Mono.Security.Interface.TlsProtocols ConvertProtocolVersion(Mono.Unity.UnityTls/unitytls_protocol protocol)
+
+Disassembly:
+	0x035E6164 ADRP X0, 0xB46000
+	0x035E6168 LDR X0, [X0 + 0x260]
+	0x035E616C BL 0x1C16CF4
+	0x035E6170 ADRP X0, 0xB53000
+	0x035E6174 LDR X0, [X0 + 0x2A0]
+	0x035E6178 BL 0x1C16CF4
+	0x035E617C ADRP X0, 0xB53000
+	0x035E6180 LDR X0, [X0 + 0x340]
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 Move X8, -44359680
+	003 Add X8, X8, 624
+	004 Move W0, [X8]
+	005 Return X0
+	006 Move W0, W31
+	007 Return X0
+
+Method: Mono.Security.Interface.AlertDescription VerifyResultToAlertDescription(Mono.Unity.UnityTls/unitytls_x509verify_result verifyResult, Mono.Security.Interface.AlertDescription defaultAlert = 80)
+
+Disassembly:
+	0x035E2F64 STR X8, [X19 + 0x38]
+	0x035E2F68 LDP X20, X19, [X31 + 0x10]
+	0x035E2F6C LDP X30, X21, [X31], #0x20
+	0x035E2F70 RET
+	0x035E2F74 ADRP X1, 0xFFFFFFFFFD539000
+	0x035E2F78 ADD X1, X1, 0xEE3
+	0x035E2F7C MOV X0, X31
+	0x035E2F80 BL 0x1C16F3C
+	0x035E2F84 MOV X1, X31
+	0x035E2F88 BL 0x1C16DEC
+	0x035E2F8C SUB X31, X31, 0x30
+	0x035E2F90 STR X30, [X31 + 0x20]
+	0x035E2F94 LDR X9, [X2 + 0x10]
+	0x035E2F98 LDR V0, [X2]
+	0x035E2F9C LDR X10, [X0 + 0x18]
+	0x035E2FA0 LDR X8, [X0 + 0x40]
+	0x035E2FA4 STR X9, [X31 + 0x10]
+	0x035E2FA8 STR V0, [X31]
+	0x035E2FAC LDR X6, [X0 + 0x28]
+	0x035E2FB0 ADD X2, X31, 0x0
+	0x035E2FB4 MOV X0, X8
+
+ISIL:
+	001 Add W31, W0, 1
+	002 Move W8, W0
+	003 Move TEMP, X0
+	004 And TEMP, TEMP, 1
+	005 Compare TEMP, 1
+	006 JumpIfEqual {26}
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 2
+	009 Compare TEMP, 2
+	010 JumpIfEqual {28}
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 4
+	013 Compare TEMP, 4
+	014 JumpIfEqual {30}
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 8
+	017 Compare TEMP, 8
+	018 JumpIfEqual {24}
+	019 And W31, W8, 0x7F0000
+	020 Move W0, 90
+	021 And W31, W8, 0x800000
+	022 NotImplemented "Instruction CSEL not yet implemented."
+	023 Return X0
+	024 Move W0, 46
+	025 Return X0
+	026 Move W0, 45
+	027 Return X0
+	028 Move W0, 44
+	029 Return X0
+	030 Move W0, 48
+	031 Return X0
+
+Method: System.Net.Security.SslPolicyErrors VerifyResultToPolicyErrror(Mono.Unity.UnityTls/unitytls_x509verify_result verifyResult)
+
+Disassembly:
+	0x035E762C BL 0x35E1D34
+	0x035E7630 CBNZ X0, 0x35E7508
+	0x035E7634 B 0x35E76CC
+	0x035E7638 LDRB W8, [X19 + 0x30]
+	0x035E763C CBZ W8, 0x35E76A8
+	0x035E7640 LDR X0, [X25]
+	0x035E7644 BL 0x1C16F10
+	0x035E7648 MOV X1, X31
+	0x035E764C MOV X20, X0
+	0x035E7650 BL 0x3658ECC
+	0x035E7654 LDR X0, [X19 + 0x10]
+	0x035E7658 CBZ X0, 0x35E76CC
+
+ISIL:
+	001 Add W31, W0, 1
+	002 Compare W0, 0
+	003 JumpIfNotEqual {7}
+	004 Return X0
+	005 Move W0, 4
+	006 Return X0
+	007 Move W8, W0
+	008 ShiftRight W8, 1
+	009 And W8, W8, 0x7FFFFFFF
+	010 And W8, W8, 2
+	011 Or W9, W8, 4
+	012 NotImplemented "Instruction CMP not yet implemented."
+	013 NotImplemented "Instruction CSEL not yet implemented."
+	014 Return X0
+
+Method: System.Security.Cryptography.X509Certificates.X509ChainStatusFlags VerifyResultToChainStatus(Mono.Unity.UnityTls/unitytls_x509verify_result verifyResult)
+
+Disassembly:
+	0x035E765C MOV X1, X31
+	0x035E7660 BL 0x3658F30
+	0x035E7664 SUBS W21, W0, 0x1
+	0x035E7668 B.MI 0x35E76A0
+	0x035E766C LDR X0, [X19 + 0x10]
+	0x035E7670 CBZ X0, 0x35E76CC
+	0x035E7674 MOV W1, W21
+	0x035E7678 MOV X2, X31
+	0x035E767C BL 0x3658F78
+	0x035E7680 CBZ X0, 0x35E76CC
+	0x035E7684 CBZ X20, 0x35E76CC
+	0x035E7688 LDR X1, [X0 + 0x10]
+	0x035E768C MOV X0, X20
+	0x035E7690 MOV X2, X31
+	0x035E7694 BL 0x36591C4
+	0x035E7698 SUBS W21, W21, 0x1
+
+ISIL:
+	001 Add W31, W0, 1
+	002 Compare W0, 0
+	003 JumpIfNotEqual {7}
+	004 Return X0
+	005 Move W0, 32
+	006 Return X0
+	007 Move W8, W0
+	008 ShiftRight W8, 1
+	009 And W8, W8, 0x7FFFFFFF
+	010 And W9, W0, 1
+	011 Move W10, W0
+	012 ShiftRight W10, 29
+	013 And W10, W10, 0xFFFFFFF
+	014 And W31, W0, 8
+	015 NotImplemented "Instruction BFM not yet implemented."
+	016 And W8, W10, 32
+	017 Move W10, 32
+	018 NotImplemented "Instruction CSEL not yet implemented."
+	019 Or W0, W9, W8
+	020 Return X0
+

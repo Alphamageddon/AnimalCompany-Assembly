@@ -1,0 +1,29 @@
+Type: UnityEngine.Rendering.Universal.UTess.TessCellCompare
+
+Method: System.Int32 Compare(Unity.Mathematics.int3 a, Unity.Mathematics.int3 b)
+
+Disassembly:
+	0x03A244C8 STP W12, W13, [X8 + 0x8]
+	0x03A244CC LDRSW X8, [X19]
+	0x03A244D0 LDR W10, [X31 + 0x5C]
+	0x03A244D4 ADD W9, W8, 0x1
+	0x03A244D8 STR W9, [X19]
+	0x03A244DC LDR X9, [X31 + 0x8]
+	0x03A244E0 CMP W25, W10
+	0x03A244E4 MOVZ W10, 0x34
+	0x03A244E8 LDR X9, [X9]
+
+ISIL:
+	001 Subtract W0, W1, W3
+	002 Return X0
+	003 Move X8, X3
+	004 ShiftRight X8, 32
+	005 And X8, X8, 0x7FFFFFFF
+	006 Move X9, X1
+	007 ShiftRight X9, 32
+	008 And X9, X9, 0x7FFFFFFF
+	009 Subtract W8, W9, W8
+	010 Subtract W9, W2, W4
+	011 NotImplemented "Instruction CSEL not yet implemented."
+	012 Return X0
+

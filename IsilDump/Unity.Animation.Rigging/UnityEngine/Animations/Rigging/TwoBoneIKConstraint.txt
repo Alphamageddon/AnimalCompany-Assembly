@@ -1,0 +1,160 @@
+Type: UnityEngine.Animations.Rigging.TwoBoneIKConstraint
+
+Method: System.Void OnValidate()
+
+Disassembly:
+	0x036F170C B.LT 0x36F1898
+	0x036F1710 CBZ X21, 0x36F1978
+	0x036F1714 ADRP X27, 0xA2C000
+	0x036F1718 ADRP X28, 0xA4F000
+	0x036F171C ADRP X29, 0xA4F000
+	0x036F1720 LDR X27, [X27 + 0xF38]
+	0x036F1724 LDR X28, [X28 + 0x9F0]
+	0x036F1728 LDR X29, [X29 + 0x9D8]
+	0x036F172C MOV X22, X31
+	0x036F1730 LDR X8, [X21]
+	0x036F1734 LDR X1, [X25]
+	0x036F1738 LDRH W9, [X8 + 0x12E]
+	0x036F173C CBZ X9, 0x36F1760
+	0x036F1740 LDR X10, [X8 + 0xB0]
+	0x036F1744 ADD X10, X10, 0x8
+	0x036F1748 LDUR X11, [X10 - 0x8]
+	0x036F174C CMP X11, X1
+	0x036F1750 B.EQ 0x36F1770
+	0x036F1754 SUBS X9, X9, 0x1
+	0x036F1758 ADD X10, X10, 0x10
+	0x036F175C B.NE 0x36F1748
+	0x036F1760 MOVZ W2, 0x2
+	0x036F1764 MOV X0, X21
+	0x036F1768 BL 0x1C5C788
+	0x036F176C B 0x36F1780
+	0x036F1770 LDR W9, [X10]
+	0x036F1774 ADD W9, W9, 0x2
+	0x036F1778 ADD X8, X8, W9, 0x4, SXTW
+	0x036F177C ADD X0, X8, 0x138
+	0x036F1780 LDP X8, X1, [X0]
+	0x036F1784 MOV X0, X21
+	0x036F1788 BLR X8
+	0x036F178C LDR X8, [X19 + 0x28]
+	0x036F1790 CBZ X8, 0x36F1978
+	0x036F1794 LDR X2, [X27]
+	0x036F1798 MOV X23, X0
+	0x036F179C MOV X0, X8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xCF0000
+	006 Move X21, 0xA50000
+	007 Move W8, [X20+2943]
+	008 Move X21, [X21+2432]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xA50000
+	015 Move X0, [X0+2432]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+2943], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Call RigConstraint`3<TwoBoneIKConstraintJob, TwoBoneIKConstraintData, Object>.OnValidate, X0
+	022 Move S4, [X19+84]
+	023 Move S0, [X19+88]
+	024 Move V3, [X19+80]
+	025 Move S1, 1
+	026 Move S2, W31
+	027 NotImplemented "Instruction FCMP not yet implemented."
+	028 NotImplemented "Instruction FMIN not yet implemented."
+	029 NotImplemented "Instruction FCSEL not yet implemented."
+	030 NotImplemented "Instruction FCMP not yet implemented."
+	031 NotImplemented "Instruction FMIN not yet implemented."
+	032 NotImplemented "Instruction FMIN not yet implemented."
+	033 NotImplemented "Instruction FCSEL not yet implemented."
+	034 NotImplemented "Instruction FCMP not yet implemented."
+	035 NotImplemented "Instruction FCSEL not yet implemented."
+	036 NotImplemented "Instruction FMAX not yet implemented."
+	037 NotImplemented "Instruction FMAX not yet implemented."
+	038 NotImplemented "Instruction FMAX not yet implemented."
+	039 Move [X19+80], S0
+	040 Move [X19+84], S1
+	041 Move [X19+92], S4
+	042 Move X20, [X31+16]
+	043 Move X19, [X31+24]
+	044 Move X30, [X31+32]
+	045 Move X21, [X31+40]
+	046 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x036F17A0 MOV W1, W22
+	0x036F17A4 BL 0x2FDC41C
+	0x036F17A8 CBZ X20, 0x36F1978
+	0x036F17AC LDR X8, [X20]
+	0x036F17B0 LDR X1, [X28]
+	0x036F17B4 MOV W24, W0
+	0x036F17B8 LDRH W9, [X8 + 0x12E]
+	0x036F17BC CBZ X9, 0x36F17E0
+	0x036F17C0 LDR X10, [X8 + 0xB0]
+	0x036F17C4 ADD X10, X10, 0x8
+	0x036F17C8 LDUR X11, [X10 - 0x8]
+	0x036F17CC CMP X11, X1
+	0x036F17D0 B.EQ 0x36F17F0
+	0x036F17D4 SUBS X9, X9, 0x1
+	0x036F17D8 ADD X10, X10, 0x10
+	0x036F17DC B.NE 0x36F17C8
+	0x036F17E0 MOV X0, X20
+	0x036F17E4 MOV W2, W31
+	0x036F17E8 BL 0x1C5C788
+	0x036F17EC B 0x36F17FC
+	0x036F17F0 LDRSW X9, [X10]
+	0x036F17F4 ADD X8, X8, X9, 0x4, LSL
+	0x036F17F8 ADD X0, X8, 0x138
+	0x036F17FC LDP X8, X2, [X0]
+	0x036F1800 MOV X0, X20
+	0x036F1804 MOV W1, W24
+	0x036F1808 BLR X8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xCF0000
+	006 Move X20, 0xA50000
+	007 Move W8, [X21+2944]
+	008 Move X20, [X20+2440]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {22}
+	014 Move X0, 0xA50000
+	015 Move X0, [X0+2448]
+	016 Call 0x1C17CF4
+	017 Move X0, 0xA50000
+	018 Move X0, [X0+2440]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X21+2944], W8
+	022 Move X0, [X20]
+	023 Move X20, 0xA50000
+	024 Move W8, [X0+224]
+	025 Move X20, [X20+2448]
+	026 Compare W8, 0
+	027 JumpIfNotEqual {29}
+	028 Call 0x1C17DFC
+	029 Move X1, [X20]
+	030 Move X0, X19
+	031 Move X20, [X31+16]
+	032 Move X19, [X31+24]
+	033 Move X30, [X31+32]
+	034 Move X21, [X31+40]
+	035 Call RigConstraint`3<TwoBoneIKConstraintJob, TwoBoneIKConstraintData, Object>..ctor, X0
+	036 Return 
+

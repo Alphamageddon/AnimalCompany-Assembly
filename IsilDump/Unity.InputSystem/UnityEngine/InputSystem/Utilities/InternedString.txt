@@ -1,0 +1,900 @@
+Type: UnityEngine.InputSystem.Utilities.InternedString
+
+Method: System.Int32 get_length()
+
+Disassembly:
+	0x03760788 B.CS 0x37607B8
+	0x0376078C LDP W8, W10, [X20 + 0x8]
+	0x03760790 MUL X9, X23, X22
+	0x03760794 ADD X9, X9, W0, UXTH
+	0x03760798 SUB X23, X9, 0x30
+	0x0376079C ADD W1, W10, 0x1
+
+ISIL:
+	001 Move X8, [X0+8]
+	002 Compare X8, 0
+	003 JumpIfEqual {6}
+	004 Move W0, [X8+16]
+	005 Return X0
+	006 Move W0, W31
+	007 Return X0
+
+Method: System.Void .ctor(System.String text)
+
+Disassembly:
+	0x03758420 B.NE 0x3758444
+	0x03758424 LDR W8, [X19 + 0x14]
+	0x03758428 LDR V0, [X8, X20, LSL]
+	0x0375842C B 0x3758538
+	0x03758430 LDR W8, [X19 + 0x14]
+	0x03758434 FMOV S0, 1
+	0x03758438 FMOV S1, W31
+	0x0375843C LDRB W8, [X8, X20, LSL]
+	0x03758440 B 0x3758530
+	0x03758444 ADRP X8, 0x9C3000
+	0x03758448 LDR V0, [X19 + 0x1]
+	0x0375844C LDR X8, [X8 + 0xD18]
+	0x03758450 STR V0, [X31]
+	0x03758454 LDR X0, [X8]
+	0x03758458 LDR W8, [X0 + 0xE0]
+	0x0375845C CBNZ W8, 0x3758464
+	0x03758460 BL 0x1C16DFC
+	0x03758464 ADD X0, X31, 0x0
+	0x03758468 MOV X1, X20
+	0x0375846C MOV X2, X31
+	0x03758470 BL 0x380A3A0
+	0x03758474 LDRB W8, [X19 + 0x124]
+	0x03758478 MOV V1.16B, V0.16B
+	0x0375847C CBZ W8, 0x3758488
+	0x03758480 LDR V0, [X19 + 0x128]
+	0x03758484 FMUL S1, S1, S0
+	0x03758488 LDR W8, [X19 + 0x104]
+	0x0375848C CMP W8, 0x1
+	0x03758490 B.EQ 0x37584C0
+	0x03758494 CMP W8, 0x3
+	0x03758498 B.NE 0x37584DC
+	0x0375849C LDR V0, [X19 + 0x108]
+	0x037584A0 FCMP S1, S0
+	0x037584A4 B.MI 0x37584B8
+	0x037584A8 LDR V0, [X19 + 0x10C]
+	0x037584AC FCMP S1, S0
+	0x037584B0 MOV V0.16B, V1.16B
+	0x037584B4 B.LE 0x37584E0
+	0x037584B8 LDR V0, [X19 + 0x110]
+	0x037584BC B 0x37584E0
+	0x037584C0 LDR V0, [X19 + 0x108]
+	0x037584C4 FCMP S1, S0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xC89000
+	006 Move W8, [X21+3655]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x99E000
+	014 Move X0, [X0+3144]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+3655], W8
+	018 Move X0, X20
+	019 Move X1, X31
+	020 Call String.IsNullOrEmpty, X0
+	021 Move TEMP, X0
+	022 And TEMP, TEMP, 1
+	023 Compare TEMP, 1
+	024 JumpIfNotEqual {27}
+	025 Move [X19], X31
+	026 Move [X19+8], X31
+	027 Move X0, X20
+	028 Move X1, X31
+	029 Call String.Intern, X0
+	030 Move [X19], X0
+	031 Move X8, 0x99E000
+	032 Move X8, [X8+3144]
+	033 Move X0, [X8]
+	034 Move W8, [X0+224]
+	035 Compare W8, 0
+	036 JumpIfNotEqual {38}
+	037 Call 0x1C17DFC
+	038 Move X0, X31
+	039 Call CultureInfo.get_InvariantCulture
+	040 Compare X20, 0
+	041 JumpIfEqual {54}
+	042 Move X1, X0
+	043 Move X0, X20
+	044 Move X2, X31
+	045 Call String.ToLower, X0, X1
+	046 Move X1, X31
+	047 Call String.Intern, X0
+	048 Move [X19+8], X0
+	049 Move X20, [X31+16]
+	050 Move X19, [X31+24]
+	051 Move X30, [X31+32]
+	052 Move X21, [X31+40]
+	053 Return 
+	054 Call 0x1C17F20
+
+Method: System.Boolean IsEmpty()
+
+Disassembly:
+	0x037607A0 CMP W1, W8
+	0x037607A4 STR W1, [X20 + 0xC]
+	0x037607A8 B.LT 0x376076C
+	0x037607AC B 0x37607BC
+
+ISIL:
+	001 Move X8, [X0+8]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.String ToLower()
+
+Disassembly:
+	0x037607B0 MOV X23, X31
+	0x037607B4 B 0x37607BC
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Return X0
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x037607B8 LDP W8, W1, [X20 + 0x8]
+	0x037607BC CMP W1, W8
+	0x037607C0 FMOV D8, X31
+	0x037607C4 B.GE 0x37608C4
+	0x037607C8 LDR X0, [X20]
+	0x037607CC CBZ X0, 0x3760B04
+	0x037607D0 MOV X2, X31
+	0x037607D4 BL 0x3222A1C
+	0x037607D8 AND W8, W0, 0xFFFF
+	0x037607DC CMP W8, 0x2E
+	0x037607E0 B.NE 0x37608C4
+	0x037607E4 LDP W9, W8, [X20 + 0x8]
+	0x037607E8 ADD W1, W8, 0x1
+	0x037607EC CMP W1, W9
+	0x037607F0 STR W1, [X20 + 0xC]
+	0x037607F4 B.EQ 0x376089C
+	0x037607F8 LDR X0, [X20]
+	0x037607FC CBZ X0, 0x3760B04
+	0x03760800 MOV X2, X31
+	0x03760804 BL 0x3222A1C
+	0x03760808 LDR X8, [X24]
+	0x0376080C MOV W22, W0
+	0x03760810 LDR W9, [X8 + 0xE0]
+	0x03760814 CBNZ W9, 0x3760820
+	0x03760818 MOV X0, X8
+	0x0376081C BL 0x1C16DFC
+	0x03760820 MOV W0, W22
+	0x03760824 MOV X1, X31
+	0x03760828 BL 0x33141B4
+	0x0376082C TBZ X0, 0x0, 0x376089C
+	0x03760830 LDP W8, W1, [X20 + 0x8]
+	0x03760834 CMP W1, W8
+	0x03760838 B.GE 0x3760AFC
+	0x0376083C FMOV D9, 8.000000000465661
+	0x03760840 FMOV D8, X31
+	0x03760844 FMOV D10, 8.000000000465661
+	0x03760848 LDR X0, [X20]
+	0x0376084C CBZ X0, 0x3760B04
+	0x03760850 MOV X2, X31
+	0x03760854 BL 0x3222A1C
+	0x03760858 SUB W8, W0, 0x30
+	0x0376085C AND W8, W8, 0xFFFF
+	0x03760860 CMP W8, 0x9
+	0x03760864 B.HI 0x3760AFC
+	0x03760868 LDP W10, W9, [X20 + 0x8]
+	0x0376086C AND W8, W0, 0xFFFF
+	0x03760870 SUB W8, W8, 0x30
+	0x03760874 SCVTF D0, W8
+	0x03760878 FDIV D0, D0, D10
+	0x0376087C ADD W1, W9, 0x1
+	0x03760880 MOV W25, W31
+	0x03760884 FMUL D10, D10, D9
+	0x03760888 FADD D8, D8, D0
+	0x0376088C CMP W1, W10
+	0x03760890 STR W1, [X20 + 0xC]
+	0x03760894 B.LT 0x3760848
+	0x03760898 B 0x37608C8
+	0x0376089C MOV W0, W31
+	0x037608A0 LDP X20, X19, [X31 + 0x60]
+	0x037608A4 LDP X22, X21, [X31 + 0x50]
+	0x037608A8 LDP X24, X23, [X31 + 0x40]
+	0x037608AC LDP X26, X25, [X31 + 0x30]
+	0x037608B0 LDP X28, X27, [X31 + 0x20]
+	0x037608B4 LDR X30, [X31 + 0x18]
+	0x037608B8 LDP D9, D8, [X31 + 0x8]
+	0x037608BC LDR V10, [X31], #0x70
+	0x037608C0 RET
+	0x037608C4 MOVZ W25, 0x1
+	0x037608C8 LDP W8, W1, [X20 + 0x8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xC81000
+	006 Move W8, [X21+3656]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {24}
+	013 Move X0, 0x996000
+	014 Move X0, [X0+3144]
+	015 Call 0x1C17CF4
+	016 Move X0, 0x9BF000
+	017 Move X0, [X0+1296]
+	018 Call 0x1C17CF4
+	019 Move X0, 0x996000
+	020 Move X0, [X0+632]
+	021 Call 0x1C17CF4
+	022 Move W8, 1
+	023 Move [X21+3656], W8
+	024 Compare X20, 0
+	025 JumpIfEqual {36}
+	026 Move X8, 0x9BF000
+	027 Move X8, [X8+1296]
+	028 Move X9, [X8]
+	029 Move X8, [X20]
+	030 NotImplemented "Instruction CMP not yet implemented."
+	031 Move X9, 0x996000
+	032 Move X9, [X9+632]
+	033 Move X9, [X9]
+	034 NotImplemented "Instruction CMP not yet implemented."
+	035 NotImplemented "Instruction CSEL not yet implemented."
+	036 Move W0, W31
+	037 Move X0, X20
+	038 Call 0x1C17E08
+	039 Move X8, [X0+8]
+	040 Move X9, [X19+8]
+	041 NotImplemented "Instruction CMP not yet implemented."
+	042 NotImplemented "Instruction CSET not yet implemented."
+	043 Move X20, [X31+16]
+	044 Move X19, [X31+24]
+	045 Move X30, [X31+32]
+	046 Move X21, [X31+40]
+	047 Return X0
+	048 Move X19, [X19+8]
+	049 Compare X19, 0
+	050 JumpIfEqual {75}
+	051 Move X8, 0x996000
+	052 Move X8, [X8+3144]
+	053 Move X0, [X8]
+	054 Move W8, [X0+224]
+	055 Compare W8, 0
+	056 JumpIfNotEqual {58}
+	057 Call 0x1C17DFC
+	058 Move X0, X31
+	059 Call CultureInfo.get_InvariantCulture
+	060 Compare X20, 0
+	061 JumpIfEqual {83}
+	062 Move X1, X0
+	063 Move X0, X20
+	064 Move X2, X31
+	065 Call String.ToLower, X0, X1
+	066 Move X1, X0
+	067 Move X0, X19
+	068 Move X20, [X31+16]
+	069 Move X19, [X31+24]
+	070 Move X2, X31
+	071 Move X30, [X31+32]
+	072 Move X21, [X31+40]
+	073 Call String.Equals, X0, X1
+	074 Return X0
+	075 Move X0, X20
+	076 Move X20, [X31+16]
+	077 Move X19, [X31+24]
+	078 Move X1, X31
+	079 Move X30, [X31+32]
+	080 Move X21, [X31+40]
+	081 Call String.IsNullOrEmpty, X0
+	082 Return X0
+	083 Call 0x1C17F20
+
+Method: System.Boolean Equals(UnityEngine.InputSystem.Utilities.InternedString other)
+
+Disassembly:
+	0x037608CC CMP W1, W8
+	0x037608D0 B.GE 0x3760954
+	0x037608D4 LDR X0, [X20]
+	0x037608D8 CBZ X0, 0x3760B04
+
+ISIL:
+	001 Move X8, [X0+8]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Int32 CompareTo(UnityEngine.InputSystem.Utilities.InternedString other)
+
+Disassembly:
+	0x037608DC MOV X2, X31
+	0x037608E0 BL 0x3222A1C
+	0x037608E4 AND W8, W0, 0xFFFF
+	0x037608E8 CMP W8, 0x65
+	0x037608EC B.EQ 0x3760910
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Move X1, X2
+	003 Move W2, 3
+	004 Move X3, X31
+	005 Call String.Compare, X0, X1, X2
+	006 Return X0
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x037608F0 LDR X0, [X20]
+	0x037608F4 CBZ X0, 0x3760B04
+	0x037608F8 LDR W1, [X20 + 0xC]
+	0x037608FC MOV X2, X31
+	0x03760900 BL 0x3222A1C
+	0x03760904 AND W8, W0, 0xFFFF
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Compare X0, 0
+	003 JumpIfEqual {8}
+	004 Move X8, [X0]
+	005 Move X2, [X8+344]
+	006 Move X1, [X8+352]
+	007 CallNoReturn X2
+	008 Return X0
+
+Method: System.String ToString()
+
+Disassembly:
+	0x037575F4 LDR W10, [X8 + 0xE0]
+	0x037575F8 CBNZ W10, 0x375760C
+	0x037575FC MOV X0, X8
+	0x03757600 BL 0x1C16DFC
+	0x03757604 LDR X8, [X21]
+	0x03757608 LDR X9, [X8 + 0xB8]
+	0x0375760C LDR X10, [X9 + 0x18]
+	0x03757610 CMP X22, X10
+	0x03757614 B.EQ 0x37576F4
+	0x03757618 LDR W10, [X8 + 0xE0]
+	0x0375761C CBNZ W10, 0x3757630
+	0x03757620 MOV X0, X8
+	0x03757624 BL 0x1C16DFC
+	0x03757628 LDR X8, [X21]
+	0x0375762C LDR X9, [X8 + 0xB8]
+	0x03757630 LDR X10, [X9 + 0x28]
+	0x03757634 CMP X22, X10
+	0x03757638 B.EQ 0x3757708
+	0x0375763C LDR W10, [X8 + 0xE0]
+	0x03757640 CBNZ W10, 0x3757654
+	0x03757644 MOV X0, X8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xC8A000
+	005 Move W8, [X20+3657]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x99F000
+	012 Move X0, [X0+632]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+3657], W8
+	016 Move X0, [X19]
+	017 Compare X0, 0
+	018 JumpIfNotEqual {24}
+	019 Move X8, 0x99F000
+	020 Move X8, [X8+632]
+	021 Move X8, [X8]
+	022 Move X8, [X8+184]
+	023 Move X0, [X8]
+	024 Move X20, [X31+16]
+	025 Move X19, [X31+24]
+	026 Move X30, [X31+32]
+	027 Return X0
+
+Method: System.Boolean op_Equality(UnityEngine.InputSystem.Utilities.InternedString a, UnityEngine.InputSystem.Utilities.InternedString b)
+
+Disassembly:
+	0x037574A4 MOV X2, X31
+	0x037574A8 BL 0x322B660
+	0x037574AC MOV X1, X31
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 Return X0
+
+Method: System.Boolean op_Inequality(UnityEngine.InputSystem.Utilities.InternedString a, UnityEngine.InputSystem.Utilities.InternedString b)
+
+Disassembly:
+	0x03758138 STP X30, X19, [X31 - 0x10]!
+	0x0375813C LDRB W8, [X0 + 0x124]
+	0x03758140 MOV X19, X0
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 Return X0
+
+Method: System.Boolean op_Equality(UnityEngine.InputSystem.Utilities.InternedString a, System.String b)
+
+Disassembly:
+	0x03760908 CMP W8, 0x45
+	0x0376090C B.NE 0x3760954
+	0x03760910 LDP W8, W9, [X20 + 0x8]
+	0x03760914 ADD W1, W9, 0x1
+	0x03760918 CMP W1, W8
+	0x0376091C STR W1, [X20 + 0xC]
+	0x03760920 B.GE 0x3760960
+	0x03760924 LDR X0, [X20]
+	0x03760928 CBZ X0, 0x3760B04
+	0x0376092C MOV X2, X31
+	0x03760930 BL 0x3222A1C
+	0x03760934 LDR W1, [X20 + 0xC]
+	0x03760938 AND W8, W0, 0xFFFF
+	0x0376093C CMP W8, 0x2D
+	0x03760940 B.NE 0x376095C
+	0x03760944 ADD W1, W1, 0x1
+	0x03760948 STR W1, [X20 + 0xC]
+	0x0376094C MOVZ W26, 0x1
+	0x03760950 B 0x376099C
+	0x03760954 MOV W8, W31
+	0x03760958 B 0x3760A34
+	0x0376095C LDR W8, [X20 + 0x8]
+	0x03760960 CMP W1, W8
+	0x03760964 B.GE 0x3760998
+	0x03760968 LDR X0, [X20]
+	0x0376096C CBZ X0, 0x3760B04
+	0x03760970 MOV X2, X31
+	0x03760974 BL 0x3222A1C
+	0x03760978 LDR W1, [X20 + 0xC]
+	0x0376097C AND W8, W0, 0xFFFF
+	0x03760980 CMP W8, 0x2B
+	0x03760984 B.NE 0x3760998
+	0x03760988 MOV W26, W31
+	0x0376098C ADD W1, W1, 0x1
+	0x03760990 STR W1, [X20 + 0xC]
+	0x03760994 B 0x376099C
+	0x03760998 MOV W26, W31
+	0x0376099C LDR W8, [X20 + 0x8]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0xC81000
+	007 Move X22, 0x996000
+	008 Move W8, [X21+3658]
+	009 Move X22, [X22+3144]
+	010 Move X20, X2
+	011 Move X19, X1
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x996000
+	017 Move X0, [X0+3144]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+3658], W8
+	021 Move X0, [X22]
+	022 Move W8, [X0+224]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {26}
+	025 Call 0x1C17DFC
+	026 Move X0, X31
+	027 Call CultureInfo.get_InvariantCulture
+	028 Compare X20, 0
+	029 JumpIfEqual {47}
+	030 Move X1, X0
+	031 Move X0, X20
+	032 Move X2, X31
+	033 Call String.ToLower, X0, X1
+	034 Move X1, X0
+	035 Move W2, 3
+	036 Move X0, X19
+	037 Move X3, X31
+	038 Call String.Compare, X0, X1, X2
+	039 Move X20, [X31+32]
+	040 Move X19, [X31+40]
+	041 Move X22, [X31+16]
+	042 Move X21, [X31+24]
+	043 NotImplemented "Instruction CMP not yet implemented."
+	044 NotImplemented "Instruction CSET not yet implemented."
+	045 Move X30, [X31+48]
+	046 Return X0
+	047 Call 0x1C17F20
+
+Method: System.Boolean op_Inequality(UnityEngine.InputSystem.Utilities.InternedString a, System.String b)
+
+Disassembly:
+	0x037609A0 CMP W1, W8
+	0x037609A4 B.GE 0x3760A28
+	0x037609A8 MOV W28, W31
+	0x037609AC MOVZ W27, 0x1
+	0x037609B0 LDR X0, [X20]
+	0x037609B4 CBZ X0, 0x3760B04
+	0x037609B8 MOV X2, X31
+	0x037609BC BL 0x3222A1C
+	0x037609C0 LDR X8, [X24]
+	0x037609C4 MOV W22, W0
+	0x037609C8 LDR W9, [X8 + 0xE0]
+	0x037609CC CBNZ W9, 0x37609D8
+	0x037609D0 MOV X0, X8
+	0x037609D4 BL 0x1C16DFC
+	0x037609D8 MOV W0, W22
+	0x037609DC MOV X1, X31
+	0x037609E0 BL 0x33141B4
+	0x037609E4 TBZ X0, 0x0, 0x3760A2C
+	0x037609E8 LDR X0, [X20]
+	0x037609EC CBZ X0, 0x3760B04
+	0x037609F0 LDR W1, [X20 + 0xC]
+	0x037609F4 MOV X2, X31
+	0x037609F8 BL 0x3222A1C
+	0x037609FC LDP W10, W9, [X20 + 0x8]
+	0x03760A00 MUL W8, W28, W27
+	0x03760A04 ADD W8, W8, W0, UXTH
+	0x03760A08 SUB W28, W8, 0x30
+	0x03760A0C ADD W8, W27, W27, 0x2, LSL
+	0x03760A10 ADD W1, W9, 0x1
+	0x03760A14 UBFM W27, W8, 0x1F, 0x1E
+	0x03760A18 CMP W1, W10
+	0x03760A1C STR W1, [X20 + 0xC]
+	0x03760A20 B.LT 0x37609B0
+	0x03760A24 B 0x3760A2C
+	0x03760A28 MOV W28, W31
+	0x03760A2C CMP W26, 0x0
+	0x03760A30 CSNEG W8, W28, W28, EQ
+	0x03760A34 LDRB W9, [X20 + 0x11]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0xC81000
+	007 Move X22, 0x996000
+	008 Move W8, [X21+3659]
+	009 Move X22, [X22+3144]
+	010 Move X20, X2
+	011 Move X19, X1
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x996000
+	017 Move X0, [X0+3144]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+3659], W8
+	021 Move X0, [X22]
+	022 Move W8, [X0+224]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {26}
+	025 Call 0x1C17DFC
+	026 Move X0, X31
+	027 Call CultureInfo.get_InvariantCulture
+	028 Compare X20, 0
+	029 JumpIfEqual {47}
+	030 Move X1, X0
+	031 Move X0, X20
+	032 Move X2, X31
+	033 Call String.ToLower, X0, X1
+	034 Move X1, X0
+	035 Move W2, 3
+	036 Move X0, X19
+	037 Move X3, X31
+	038 Call String.Compare, X0, X1, X2
+	039 Move X20, [X31+32]
+	040 Move X19, [X31+40]
+	041 Move X22, [X31+16]
+	042 Move X21, [X31+24]
+	043 NotImplemented "Instruction CMP not yet implemented."
+	044 NotImplemented "Instruction CSET not yet implemented."
+	045 Move X30, [X31+48]
+	046 Return X0
+	047 Call 0x1C17F20
+
+Method: System.Boolean op_Equality(System.String a, UnityEngine.InputSystem.Utilities.InternedString b)
+
+Disassembly:
+	0x03760A38 CBNZ W9, 0x3760AF4
+	0x03760A3C CMP W8, 0x0
+	0x03760A40 CSET W9, NE
+	0x03760A44 EOR W10, W25, 0x1
+	0x03760A48 ORR W9, W10, W9, 0x0
+	0x03760A4C TBNZ X9, 0x0, 0x3760A7C
+	0x03760A50 AND W8, W21, 0xFFFF
+	0x03760A54 CMP W8, 0x2D
+	0x03760A58 B.NE 0x3760AD0
+	0x03760A5C SUB X8, X31, X23
+	0x03760A60 MOVZ W9, 0x3
+	0x03760A64 STUR X31, [X19 + 0x4]
+	0x03760A68 STR W31, [X19 + 0xC]
+	0x03760A6C MOVI V0.2D, 0x0
+	0x03760A70 STR W9, [X19]
+	0x03760A74 STR X8, [X19 + 0x10]
+	0x03760A78 B 0x3760AE8
+	0x03760A7C SCVTF D0, X23
+	0x03760A80 AND W9, W21, 0xFFFF
+	0x03760A84 FADD D0, D8, D0
+	0x03760A88 FNEG D1, D0
+	0x03760A8C CMP W9, 0x2D
+	0x03760A90 FCSEL D0, D1, D0, EQ
+	0x00000000 INVALID
+	0x03760A98 CBZ W8, 0x3760AAC
+	0x03760A9C SCVTF S1, W8
+	0x03760AA0 FMOV S0, 10
+	0x03760AA4 BL 0x3EB1B50
+	0x03760AA8 FMUL S8, S0, S8
+	0x03760AAC ADRP X8, 0xFFFFFFFFFD38D000
+	0x03760AB0 LDR V2, [X8 + 0x898]
+	0x03760AB4 FCVT S0, S8
+	0x03760AB8 MOVI V1.2D, 0x0
+	0x03760ABC STR X31, [X19 + 0x40]
+	0x03760AC0 STP V1, V1, [X19 + 0x10]
+	0x03760AC4 STR V1, [X19 + 0x3]
+	0x03760AC8 STP D2, D0, [X19]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0xC81000
+	007 Move X22, 0x996000
+	008 Move W8, [X21+3660]
+	009 Move X22, [X22+3144]
+	010 Move X19, X2
+	011 Move X20, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x996000
+	017 Move X0, [X0+3144]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+3660], W8
+	021 Move X0, [X22]
+	022 Move W8, [X0+224]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {26}
+	025 Call 0x1C17DFC
+	026 Move X0, X31
+	027 Call CultureInfo.get_InvariantCulture
+	028 Compare X20, 0
+	029 JumpIfEqual {46}
+	030 Move X1, X0
+	031 Move X0, X20
+	032 Move X2, X31
+	033 Call String.ToLower, X0, X1
+	034 Move W2, 3
+	035 Move X1, X19
+	036 Move X3, X31
+	037 Call String.Compare, X0, X1, X2
+	038 Move X20, [X31+32]
+	039 Move X19, [X31+40]
+	040 Move X22, [X31+16]
+	041 Move X21, [X31+24]
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 NotImplemented "Instruction CSET not yet implemented."
+	044 Move X30, [X31+48]
+	045 Return X0
+	046 Call 0x1C17F20
+
+Method: System.Boolean op_Inequality(System.String a, UnityEngine.InputSystem.Utilities.InternedString b)
+
+Disassembly:
+	0x03760ACC B 0x3760AF4
+	0x03760AD0 MOVZ W8, 0x3
+	0x03760AD4 MOVI V0.2D, 0x0
+	0x03760AD8 STUR X31, [X19 + 0x4]
+	0x03760ADC STR W31, [X19 + 0xC]
+	0x03760AE0 STR X23, [X19 + 0x10]
+	0x03760AE4 STR W8, [X19]
+	0x03760AE8 STUR V0, [X19 + 0x18]
+	0x03760AEC STUR V0, [X19 + 0x28]
+	0x03760AF0 STUR V0, [X19 + 0x38]
+	0x03760AF4 MOVZ W0, 0x1
+	0x03760AF8 B 0x37608A0
+	0x03760AFC MOV W25, W31
+	0x03760B00 B 0x37608C8
+	0x03760B04 BL 0x1C16F20
+	0x03760B08 SUB X31, X31, 0x50
+	0x03760B0C STR X30, [X31 + 0x40]
+	0x03760B10 MRS X9, 0xC000
+	0x03760B14 LDR X10, [X9 + 0x28]
+	0x03760B18 MOVZ W11, 0x4
+	0x03760B1C STR X10, [X31 + 0x38]
+	0x03760B20 STP X31, X31, [X31 + 0x8]
+	0x03760B24 STR W31, [X31 + 0x18]
+	0x03760B28 LDR V0, [X0]
+	0x03760B2C LDR X10, [X0 + 0x10]
+	0x03760B30 STR W11, [X8]
+	0x03760B34 STP X31, X31, [X8 + 0x38]
+	0x03760B38 STUR V0, [X31 + 0x1C]
+	0x03760B3C STUR X10, [X31 + 0x2C]
+	0x03760B40 LDUR V0, [X31 + 0x8]
+	0x03760B44 LDUR V1, [X31 + 0x18]
+	0x03760B48 LDUR V2, [X31 + 0x24]
+	0x03760B4C STR X31, [X8 + 0x30]
+	0x03760B50 STUR V0, [X8 + 0x4]
+	0x03760B54 STR V2, [X8 + 0x2]
+	0x03760B58 STUR V1, [X8 + 0x14]
+	0x03760B5C LDR X8, [X9 + 0x28]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0xC81000
+	007 Move X22, 0x996000
+	008 Move W8, [X21+3661]
+	009 Move X22, [X22+3144]
+	010 Move X19, X2
+	011 Move X20, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x996000
+	017 Move X0, [X0+3144]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+3661], W8
+	021 Move X0, [X22]
+	022 Move W8, [X0+224]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {26}
+	025 Call 0x1C17DFC
+	026 Move X0, X31
+	027 Call CultureInfo.get_InvariantCulture
+	028 Compare X20, 0
+	029 JumpIfEqual {46}
+	030 Move X1, X0
+	031 Move X0, X20
+	032 Move X2, X31
+	033 Call String.ToLower, X0, X1
+	034 Move W2, 3
+	035 Move X1, X19
+	036 Move X3, X31
+	037 Call String.Compare, X0, X1, X2
+	038 Move X20, [X31+32]
+	039 Move X19, [X31+40]
+	040 Move X22, [X31+16]
+	041 Move X21, [X31+24]
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 NotImplemented "Instruction CSET not yet implemented."
+	044 Move X30, [X31+48]
+	045 Return X0
+	046 Call 0x1C17F20
+
+Method: System.Boolean op_LessThan(UnityEngine.InputSystem.Utilities.InternedString left, UnityEngine.InputSystem.Utilities.InternedString right)
+
+Disassembly:
+	0x03760B60 LDR X9, [X31 + 0x38]
+	0x03760B64 CMP X8, X9
+	0x03760B68 B.NE 0x3760B78
+	0x03760B6C LDR X30, [X31 + 0x40]
+	0x03760B70 ADD X31, X31, 0x50
+	0x03760B74 RET
+	0x03760B78 BL 0x3EB1B20
+	0x03760B7C MOVZ W9, 0x5
+	0x03760B80 MOVI V0.2D, 0x0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, X1
+	003 Move W2, 3
+	004 Move X1, X3
+	005 Move X3, X31
+	006 Call String.Compare, X0, X1, X2
+	007 Move W0, W0
+	008 ShiftRight W0, 31
+	009 And W0, W0, 0x7FFFFFFF
+	010 Move X30, [X31+16]
+	011 Return X0
+
+Method: System.Boolean op_GreaterThan(UnityEngine.InputSystem.Utilities.InternedString left, UnityEngine.InputSystem.Utilities.InternedString right)
+
+Disassembly:
+	0x03760B84 STP X31, X31, [X8 + 0x38]
+	0x03760B88 STR W9, [X8]
+	0x03760B8C STUR V0, [X8 + 0x4]
+	0x03760B90 STUR V0, [X8 + 0x14]
+	0x03760B94 STR V0, [X8 + 0x2]
+	0x03760B98 STR X0, [X8 + 0x30]
+	0x03760B9C RET
+	0x03760BA0 MOVZ W9, 0x3
+	0x03760BA4 MOVI V0.2D, 0x0
+	0x03760BA8 STUR X31, [X8 + 0x4]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, X1
+	003 Move W2, 3
+	004 Move X1, X3
+	005 Move X3, X31
+	006 Call String.Compare, X0, X1, X2
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Move X30, [X31+16]
+	010 Return X0
+
+Method: System.String op_Implicit(UnityEngine.InputSystem.Utilities.InternedString str)
+
+Disassembly:
+	0x037587E0 LDP D9, D8, [X31], #0x20
+	0x037587E4 RET
+	0x037587E8 FMOV S3, W31
+	0x037587EC MOV V1.16B, V8.16B
+	0x037587F0 LDP X30, X19, [X31 + 0x10]
+	0x037587F4 MOV X0, X31
+	0x037587F8 LDP D9, D8, [X31], #0x20
+	0x037587FC B 0x380FE18
+	0x03758800 LDR W8, [X0]
+	0x03758804 CMP W8, 0x0
+	0x03758808 CSET W0, EQ
+	0x0375880C RET
+	0x03758810 STR X30, [X31 - 0x10]!
+	0x03758814 BL 0x3765CBC
+	0x00000000 INVALID
+	0x0375881C LDR X30, [X31], #0x10
+	0x03758820 RET
+	0x03758824 STR X30, [X31 - 0x20]!
+	0x03758828 STP X20, X19, [X31 + 0x10]
+	0x0375882C ADRP X20, 0xC88000
+	0x03758830 LDRB W8, [X20 + 0xDEC]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xC89000
+	005 Move W8, [X20+3657]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x99E000
+	012 Move X0, [X0+632]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+3657], W8
+	016 Compare X19, 0
+	017 JumpIfNotEqual {23}
+	018 Move X8, 0x99E000
+	019 Move X8, [X8+632]
+	020 Move X8, [X8]
+	021 Move X8, [X8+184]
+	022 Move X19, [X8]
+	023 Move X0, X19
+	024 Move X20, [X31+16]
+	025 Move X19, [X31+24]
+	026 Move X30, [X31+32]
+	027 Return X0
+

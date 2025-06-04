@@ -1,0 +1,173 @@
+Type: AnimalCompany.AvatarItemState
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_id()
+
+Disassembly:
+	0x01D3C448 MOV X1, X0
+	0x01D3C44C CBZ X23, 0x1D3C7AC
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_id(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01D3C450 LDR X2, [X27]
+	0x01D3C454 MOV X0, X23
+
+ISIL:
+	001 Move [X0+72], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_name()
+
+Disassembly:
+	0x01D3C458 BL 0x265C3F4
+	0x01D3C45C LDR X8, [X21]
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_name(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01D3C460 LDR X1, [X28]
+	0x01D3C464 LDRH W9, [X8 + 0x12E]
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.API.ApiAvatarItemType> get_type()
+
+Disassembly:
+	0x01D3C468 CBZ X9, 0x1D3C48C
+	0x01D3C46C LDR X10, [X8 + 0xB0]
+
+ISIL:
+	001 Move X0, [X0+88]
+	002 Return X0
+
+Method: System.Void set_type(SpatialSys.ObservableState.StatePrimitive`1<AnimalCompany.API.ApiAvatarItemType> value)
+
+Disassembly:
+	0x01D3C470 ADD X10, X10, 0x8
+	0x01D3C474 LDUR X11, [X10 - 0x8]
+
+ISIL:
+	001 Move [X0+88], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> get_showInShop()
+
+Disassembly:
+	0x01D3C478 CMP X11, X1
+	0x01D3C47C B.EQ 0x1D3C49C
+
+ISIL:
+	001 Move X0, [X0+96]
+	002 Return X0
+
+Method: System.Void set_showInShop(SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> value)
+
+Disassembly:
+	0x01D3C480 SUBS X9, X9, 0x1
+	0x01D3C484 ADD X10, X10, 0x10
+
+ISIL:
+	001 Move [X0+96], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> get_isNew()
+
+Disassembly:
+	0x01D3C488 B.NE 0x1D3C474
+	0x01D3C48C MOVZ W2, 0x2
+
+ISIL:
+	001 Move X0, [X0+104]
+	002 Return X0
+
+Method: System.Void set_isNew(SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> value)
+
+Disassembly:
+	0x01D3C490 MOV X0, X21
+	0x01D3C494 BL 0x1C5C788
+
+ISIL:
+	001 Move [X0+104], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Int32> get_hardPrice()
+
+Disassembly:
+	0x01D3C498 B 0x1D3C4AC
+	0x01D3C49C LDR W9, [X10]
+
+ISIL:
+	001 Move X0, [X0+112]
+	002 Return X0
+
+Method: System.Void set_hardPrice(SpatialSys.ObservableState.StatePrimitive`1<System.Int32> value)
+
+Disassembly:
+	0x01D3C4A0 ADD W9, W9, 0x2
+	0x01D3C4A4 ADD X8, X8, W9, 0x4, SXTW
+
+ISIL:
+	001 Move [X0+112], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> get_subItems()
+
+Disassembly:
+	0x01D3C4A8 ADD X0, X8, 0x138
+	0x01D3C4AC LDP X8, X1, [X0]
+
+ISIL:
+	001 Move X0, [X0+120]
+	002 Return X0
+
+Method: System.Void set_subItems(SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> value)
+
+Disassembly:
+	0x01D3C4B0 MOV X0, X21
+	0x01D3C4B4 BLR X8
+
+ISIL:
+	001 Move [X0+120], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> get_subItemsFlat()
+
+Disassembly:
+	0x01D3C4B8 MOV X23, X0
+	0x01D3C4BC CBZ X0, 0x1D3C798
+
+ISIL:
+	001 Move X0, [X0+128]
+	002 Return X0
+
+Method: System.Void set_subItemsFlat(SpatialSys.ObservableState.StatePrimitiveSet`1<System.String> value)
+
+Disassembly:
+	0x01D3C4C0 LDR X8, [X23]
+	0x01D3C4C4 LDR X1, [X29]
+
+ISIL:
+	001 Move [X0+128], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01D3C4C8 LDRH W9, [X8 + 0x12E]
+	0x01D3C4CC CBZ X9, 0x1D3C4F0
+
+ISIL:
+	001 Move X1, X31
+	002 Call StateObject..ctor, X0
+	003 Return 
+

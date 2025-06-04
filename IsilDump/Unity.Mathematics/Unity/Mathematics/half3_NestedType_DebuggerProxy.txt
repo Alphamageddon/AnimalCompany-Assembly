@@ -1,0 +1,48 @@
+Type: Unity.Mathematics.half3/DebuggerProxy
+
+Method: System.Void .ctor(Unity.Mathematics.half3 v)
+
+Disassembly:
+	0x038A0028 LDRH W9, [X0]
+	0x038A002C BFM X8, X9, 0x20, 0xF
+	0x038A0030 BFM X8, X9, 0x10, 0xF
+	0x038A0034 BFM X8, X9, 0x30, 0xF
+	0x038A0038 MOV X0, X8
+	0x038A003C RET
+	0x038A0040 LDRH W8, [X0 + 0x2]
+	0x038A0044 LDRH W9, [X0]
+	0x038A0048 BFM X8, X8, 0x10, 0xF
+	0x038A004C BFM X8, X9, 0x20, 0xF
+	0x038A0050 BFM X8, X9, 0x30, 0xF
+	0x038A0054 MOV X0, X8
+	0x038A0058 RET
+	0x038A005C LDRH W8, [X0 + 0x2]
+	0x038A0060 LDRH W9, [X0]
+	0x038A0064 LDRH W10, [X0 + 0x4]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X19, X1
+	007 Move X21, X1
+	008 ShiftRight X21, 16
+	009 And X21, X21, 0x7FFFFFFF
+	010 Move X22, X1
+	011 ShiftRight X22, 32
+	012 And X22, X22, 0x7FFFFFFF
+	013 Move X1, X31
+	014 Move X20, X0
+	015 Call Object..ctor, X0
+	016 NotImplemented "Instruction STRH not yet implemented."
+	017 NotImplemented "Instruction STRH not yet implemented."
+	018 NotImplemented "Instruction STRH not yet implemented."
+	019 Move X20, [X31+32]
+	020 Move X19, [X31+40]
+	021 Move X22, [X31+16]
+	022 Move X21, [X31+24]
+	023 Move X30, [X31+48]
+	024 Return 
+

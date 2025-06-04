@@ -1,0 +1,106 @@
+Type: System.Runtime.Remoting.Messaging.LogicalCallContext/Reader
+
+Method: System.Void .ctor(System.Runtime.Remoting.Messaging.LogicalCallContext ctx)
+
+Disassembly:
+	0x03293938 MOV X0, X20
+	0x0329393C LDR X9, [X8 + 0x2F8]
+
+ISIL:
+	001 Move [X0], X1
+	002 Return 
+
+Method: System.Boolean get_IsNull()
+
+Disassembly:
+	0x03293940 LDR X1, [X8 + 0x300]
+	0x03293944 BLR X9
+	0x03293948 CBZ X0, 0x32939E0
+	0x0329394C MOV X20, X0
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Boolean get_HasInfo()
+
+Disassembly:
+	0x03293950 LDR X0, [X23]
+	0x03293954 LDR W1, [X20 + 0x18]
+	0x03293958 BL 0x1C16D6C
+	0x0329395C STR X0, [X19 + 0x30]
+
+ISIL:
+	001 Move X0, [X0]
+	002 Compare X0, 0
+	003 JumpIfEqual {6}
+	004 Call LogicalCallContext.get_HasInfo, X0
+	005 Return X0
+	006 Return X0
+
+Method: System.Runtime.Remoting.Messaging.LogicalCallContext Clone()
+
+Disassembly:
+	0x03293960 LDR W8, [X20 + 0x18]
+	0x03293964 CMP W8, 0x1
+	0x03293968 B.LT 0x32939CC
+	0x0329396C MOV X21, X0
+	0x03293970 MOVZ W22, 0x4
+	0x03293974 LDR X0, [X20, X22, LSL #3]
+	0x03293978 CBZ X0, 0x32939E0
+	0x0329397C LDR X8, [X0]
+	0x03293980 LDR X9, [X8 + 0x2D8]
+	0x03293984 LDR X1, [X8 + 0x2E0]
+	0x03293988 BLR X9
+	0x0329398C CBZ X21, 0x32939E0
+	0x03293990 LDR W8, [X21 + 0x18]
+	0x03293994 SUB X9, X22, 0x4
+	0x03293998 CMP W9, W8
+	0x0329399C B.CS 0x32939C8
+	0x032939A0 STR X0, [X21, X22, LSL #3]
+	0x032939A4 LDR W8, [X20 + 0x18]
+	0x032939A8 SUB W9, W22, 0x3
+	0x032939AC CMP W9, W8
+	0x032939B0 B.GE 0x32939CC
+	0x032939B4 LDR X21, [X19 + 0x30]
+	0x032939B8 ADD X22, X22, 0x1
+	0x032939BC SUB W9, W22, 0x4
+	0x032939C0 CMP W9, W8
+	0x032939C4 B.CC 0x3293974
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x114A000
+	005 Move W8, [X20+1752]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0xE92000
+	012 Move X0, [X0+880]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+1752], W8
+	016 Move X0, [X19]
+	017 Compare X0, 0
+	018 JumpIfEqual {31}
+	019 Call LogicalCallContext.Clone, X0
+	020 Compare X0, 0
+	021 JumpIfEqual {27}
+	022 Move X8, 0xE92000
+	023 Move X8, [X8+880]
+	024 Move X1, [X8]
+	025 Move X8, [X0]
+	026 NotImplemented "Instruction CMP not yet implemented."
+	027 Move X20, [X31+16]
+	028 Move X19, [X31+24]
+	029 Move X30, [X31+32]
+	030 Return X0
+	031 Call 0x1C17F20
+	032 Call 0x1C181E0
+

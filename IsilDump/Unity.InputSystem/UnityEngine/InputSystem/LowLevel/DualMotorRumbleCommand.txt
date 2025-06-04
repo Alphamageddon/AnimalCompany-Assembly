@@ -1,0 +1,110 @@
+Type: UnityEngine.InputSystem.LowLevel.DualMotorRumbleCommand
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_Type()
+
+Disassembly:
+	0x03800950 ADD W26, W22, 0x1C
+	0x03800954 ANDS W31, W22, 0x3
+	0x03800958 AND W8, W8, 0xFFFFFFFC
+	0x0380095C MOV X25, X0
+	0x03800960 CSEL W1, W26, W8, EQ
+	0x03800964 ADD X0, X31, 0x20
+	0x03800968 MOVZ W3, 0x1
+	0x0380096C MOV W2, W23
+	0x03800970 STP X31, X31, [X31 + 0x20]
+	0x03800974 BL 0x23C9B94
+	0x03800978 LDP X23, X24, [X31 + 0x20]
+	0x0380097C LDR X2, [X28]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 82
+	004 Move W2, 77
+	005 Move W3, 66
+	006 Move W4, 76
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_typeStatic()
+
+Disassembly:
+	0x03800980 MOV X0, X23
+	0x03800984 MOV X1, X24
+	0x03800988 BL 0x2222688
+	0x0380098C LDR X8, [X27]
+	0x03800990 LDR X8, [X8 + 0xB8]
+	0x03800994 LDR X29, [X8]
+	0x03800998 CBZ X29, 0x3800AB4
+	0x0380099C ADRP X10, 0x91B000
+	0x038009A0 LDR X8, [X29]
+	0x038009A4 LDR X10, [X10 + 0xED0]
+	0x038009A8 LDR W28, [X21 + 0xE0]
+	0x038009AC MOV X27, X0
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 82
+	004 Move W2, 77
+	005 Move W3, 66
+	006 Move W4, 76
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.LowLevel.DualMotorRumbleCommand Create(System.Single lowFrequency, System.Single highFrequency)
+
+Disassembly:
+	0x037FF37C STR W31, [X31 + 0x8]
+	0x037FF380 BL 0x375AA28
+	0x037FF384 LDR W0, [X31 + 0x8]
+	0x037FF388 LDR X30, [X31], #0x10
+	0x037FF38C RET
+	0x037FF390 ADD X0, X0, 0x8
+	0x037FF394 MOVZ W1, 0x100
+	0x037FF398 MOV X2, X31
+	0x037FF39C B 0x3767CCC
+	0x037FF3A0 STR X30, [X31 - 0x10]!
+	0x037FF3A4 ADD X0, X31, 0x8
+	0x037FF3A8 MOVZ W1, 0x55
+	0x037FF3AC MOVZ W2, 0x53
+	0x037FF3B0 MOVZ W3, 0x45
+	0x037FF3B4 MOVZ W4, 0x52
+	0x037FF3B8 MOV X5, X31
+	0x037FF3BC STR W31, [X31 + 0x8]
+	0x037FF3C0 BL 0x375AA28
+	0x037FF3C4 LDR W0, [X31 + 0x8]
+	0x037FF3C8 LDR X30, [X31], #0x10
+
+ISIL:
+	001 Move [X31-32], D9
+	002 Move [X31-24], D8
+	003 Move [X31+16], X30
+	004 Add X0, X31, 24
+	005 Move W1, 82
+	006 Move W2, 77
+	007 Move W3, 66
+	008 Move W4, 76
+	009 Move X5, X31
+	010 Move V8, V1
+	011 Move V9, V0
+	012 Move [X31+24], W31
+	013 Call FourCC..ctor, X0, X1, X2, X3, X4
+	014 Move W8, [X31+24]
+	015 Move X30, [X31+16]
+	016 Move W1, S9
+	017 Move W9, S8
+	018 Or X0, X8, 0x1FFFFFFFFF
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 Move D9, [X31+32]
+	021 Move D8, [X31+40]
+	022 Return X0
+

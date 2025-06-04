@@ -1,0 +1,51 @@
+Type: System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1
+
+Method: System.Void .ctor(System.Threading.Tasks.ValueTask`1<TResult> value)
+
+Disassembly:
+	0x0299AA0C ADRP X0, 0x1783000
+	0x0299AA10 LDR X0, [X0 + 0xE40]
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Return 
+
+Method: System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<TResult> GetAwaiter()
+
+Disassembly:
+	0x0299AA14 BL 0x1C16CF4
+	0x0299AA18 MOVZ W8, 0x1
+	0x0299AA1C STRB W8, [X21 + 0xF14]
+	0x0299AA20 STP X31, X31, [X31 + 0x20]
+	0x0299AA24 STP X31, X31, [X31 + 0x10]
+	0x0299AA28 STP X31, X31, [X31]
+	0x0299AA2C LDR X0, [X20 + 0x20]
+	0x0299AA30 LDRB W8, [X0 + 0x135]
+	0x0299AA34 TBNZ X8, 0x0, 0x299AA3C
+	0x0299AA38 BL 0x1C5C684
+	0x0299AA3C LDR X8, [X0 + 0xC0]
+	0x0299AA40 MOV X0, X22
+	0x0299AA44 LDR X8, [X8 + 0x8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, X0
+	005 Move X0, [X1+32]
+	006 Move X20, [X8]
+	007 Move X19, [X8+8]
+	008 Move W9, [X0+309]
+	009 Move TEMP, X9
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {14}
+	013 Call 0x1C5D684
+	014 Move X0, X20
+	015 Move X1, X19
+	016 Move X20, [X31+16]
+	017 Move X19, [X31+24]
+	018 Move X30, [X31+32]
+	019 Return X0
+

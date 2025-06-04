@@ -1,0 +1,29 @@
+Type: UnityEngine.UIElements.UIR.MeshBuilder/AllocMeshData
+
+Method: UnityEngine.UIElements.MeshWriteData Allocate(System.UInt32 vertexCount, System.UInt32 indexCount)
+
+Disassembly:
+	0x03D23E6C LDP X24, X23, [X31 + 0xF0]
+	0x03D23E70 LDP X26, X25, [X31 + 0xE0]
+	0x03D23E74 LDP X28, X27, [X31 + 0xD0]
+	0x03D23E78 LDP X29, X30, [X31 + 0xC0]
+	0x03D23E7C ADD X31, X31, 0x120
+	0x03D23E80 RET
+	0x03D23E84 BL 0x1C16F20
+	0x03D23E88 STR X30, [X31 - 0x10]!
+	0x03D23E8C LDR X8, [X0 + 0x10]
+	0x03D23E90 CBZ X8, 0x3D23EFC
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {11}
+	005 Move X3, X0
+	006 Move X5, [X8+24]
+	007 Move X0, [X8+64]
+	008 Move X4, [X8+40]
+	009 Move X30, [X31+16]
+	010 CallNoReturn X5
+	011 Call 0x1C17F20
+

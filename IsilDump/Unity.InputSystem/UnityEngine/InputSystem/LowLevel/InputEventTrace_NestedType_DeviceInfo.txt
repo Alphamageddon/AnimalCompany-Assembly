@@ -1,0 +1,82 @@
+Type: UnityEngine.InputSystem.LowLevel.InputEventTrace/DeviceInfo
+
+Method: System.Int32 get_deviceId()
+
+Disassembly:
+	0x03808258 B 0x3C86684
+	0x0380825C STP X30, X21, [X31 - 0x20]!
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Void set_deviceId(System.Int32 value)
+
+Disassembly:
+	0x03808260 STP X20, X19, [X31 + 0x10]
+	0x03808264 ADRP X20, 0xBD9000
+
+ISIL:
+	001 Move [X0], W1
+	002 Return 
+
+Method: System.String get_layout()
+
+Disassembly:
+	0x03808268 ADRP X21, 0x942000
+	0x0380826C LDRB W8, [X20 + 0x456]
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Return X0
+
+Method: System.Void set_layout(System.String value)
+
+Disassembly:
+	0x03808270 LDR X21, [X21 + 0x420]
+	0x03808274 MOV X19, X1
+
+ISIL:
+	001 Move [X0+8], X1
+	002 Return 
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_stateFormat()
+
+Disassembly:
+	0x03808278 TBNZ X8, 0x0, 0x3808290
+	0x0380827C ADRP X0, 0x942000
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_stateFormat(UnityEngine.InputSystem.Utilities.FourCC value)
+
+Disassembly:
+	0x03808280 LDR X0, [X0 + 0x420]
+	0x03808284 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+
+Method: System.Int32 get_stateSizeInBytes()
+
+Disassembly:
+	0x03808288 MOVZ W8, 0x1
+	0x0380828C STRB W8, [X20 + 0x456]
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void set_stateSizeInBytes(System.Int32 value)
+
+Disassembly:
+	0x03808290 LDR X0, [X21]
+	0x03808294 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X0+20], W1
+	002 Return 
+

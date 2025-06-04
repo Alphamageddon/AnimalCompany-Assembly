@@ -1,0 +1,143 @@
+Type: System.Runtime.Serialization.StreamingContext
+
+Method: System.Void .ctor(System.Runtime.Serialization.StreamingContextStates state)
+
+Disassembly:
+	0x032AB0D0 BL 0x32AB584
+	0x032AB0D4 STR X0, [X19]
+	0x032AB0D8 ADRP X19, 0xE79000
+
+ISIL:
+	001 Move [X0+8], W1
+	002 Move [X0], X31
+	003 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.StreamingContextStates state, System.Object additional)
+
+Disassembly:
+	0x032AB0DC LDR X19, [X19 + 0xF80]
+	0x032AB0E0 MOV X21, X0
+	0x032AB0E4 LDR X0, [X19]
+
+ISIL:
+	001 Move [X0+8], W1
+	002 Move [X0], X2
+	003 Return 
+
+Method: System.Boolean Equals(System.Object obj)
+
+Disassembly:
+	0x032AB0E8 LDR W8, [X0 + 0xE0]
+	0x032AB0EC CBNZ W8, 0x32AB0F8
+	0x032AB0F0 BL 0x1C16DFC
+	0x032AB0F4 LDR X0, [X19]
+	0x032AB0F8 LDR X8, [X0 + 0xB8]
+	0x032AB0FC LDR X8, [X8 + 0xC0]
+	0x032AB100 CMP X21, X8
+	0x032AB104 B.NE 0x32AB280
+	0x032AB108 MOVZ W8, 0x1
+	0x032AB10C STRB W8, [X20]
+	0x032AB110 B 0x32AB280
+	0x032AB114 CBZ X23, 0x32AB29C
+	0x032AB118 ADRP X8, 0xE79000
+	0x032AB11C LDR X8, [X8 + 0xF88]
+	0x032AB120 LDR X9, [X23]
+	0x032AB124 LDR X1, [X8]
+	0x032AB128 LDR X8, [X9 + 0x40]
+	0x032AB12C LDR X9, [X1 + 0x40]
+	0x032AB130 CMP X8, X9
+	0x032AB134 B.NE 0x32AB2A0
+	0x032AB138 MOV X0, X23
+	0x032AB13C BL 0x1C16E08
+	0x032AB140 LDR W20, [X0]
+	0x032AB144 ADRP X8, 0xE79000
+	0x032AB148 STR W20, [X21]
+	0x032AB14C LDR X8, [X8 + 0xF80]
+	0x032AB150 LDR X0, [X8]
+	0x032AB154 LDR W8, [X0 + 0xE0]
+	0x032AB158 CBNZ W8, 0x32AB160
+	0x032AB15C BL 0x1C16DFC
+	0x032AB160 MOV W0, W20
+	0x032AB164 BL 0x32AB35C
+	0x032AB168 STR X0, [X22]
+	0x032AB16C LDR W0, [X21]
+	0x032AB170 BL 0x32AB414
+	0x032AB174 B 0x32AB27C
+	0x032AB178 ADRP X20, 0xE79000
+	0x032AB17C LDR X20, [X20 + 0xF80]
+	0x032AB180 LDR X0, [X20]
+	0x032AB184 LDR W8, [X0 + 0xE0]
+	0x032AB188 CBNZ W8, 0x32AB194
+	0x032AB18C BL 0x1C16DFC
+	0x032AB190 LDR X0, [X20]
+	0x032AB194 LDR X8, [X0 + 0xB8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x1132000
+	006 Move W8, [X21+1984]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0xE7A000
+	014 Move X0, [X0+3960]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+1984], W8
+	018 Compare X19, 0
+	019 JumpIfEqual {41}
+	020 Move X21, 0xE7A000
+	021 Move X21, [X21+3960]
+	022 Move X9, [X19]
+	023 Move X8, [X21]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move X0, X19
+	026 Call 0x1C17E08
+	027 Move X8, [X0]
+	028 Move X9, [X20]
+	029 NotImplemented "Instruction CMP not yet implemented."
+	030 Move X8, [X19]
+	031 Move X1, [X21]
+	032 Move X0, X19
+	033 Move X8, [X8+64]
+	034 Move X9, [X1+64]
+	035 NotImplemented "Instruction CMP not yet implemented."
+	036 Call 0x1C17E08
+	037 Move W8, [X0+8]
+	038 Move W9, [X20+8]
+	039 NotImplemented "Instruction CMP not yet implemented."
+	040 Move W0, 1
+	041 Move W0, W31
+	042 Move X20, [X31+16]
+	043 Move X19, [X31+24]
+	044 Move X30, [X31+32]
+	045 Move X21, [X31+40]
+	046 Return X0
+	047 Call 0x1C181E0
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x032AB198 LDR X8, [X8 + 0x38]
+	0x032AB19C B 0x32AB220
+
+ISIL:
+	001 Move W0, [X0+8]
+	002 Return X0
+
+Method: System.Runtime.Serialization.StreamingContextStates get_State()
+
+Disassembly:
+	0x032AB1A0 ADRP X21, 0xE79000
+	0x032AB1A4 LDR X21, [X21 + 0xF80]
+
+ISIL:
+	001 Move W0, [X0+8]
+	002 Return X0
+

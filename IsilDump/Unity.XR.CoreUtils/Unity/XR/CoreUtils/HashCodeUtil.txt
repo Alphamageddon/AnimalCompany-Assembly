@@ -1,0 +1,160 @@
+Type: Unity.XR.CoreUtils.HashCodeUtil
+
+Method: System.Int32 Combine(System.Int32 hash1, System.Int32 hash2)
+
+Disassembly:
+	0x03B22D94 STR X19, [X8 + 0x8]
+	0x03B22D98 LDP X20, X19, [X31 + 0x30]
+	0x03B22D9C LDR X30, [X31], #0x40
+	0x03B22DA0 RET
+
+ISIL:
+	001 Move W8, 0xA2DB
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 NotImplemented "Instruction MADD not yet implemented."
+	004 Return X0
+
+Method: System.Int32 ReferenceHash(System.Object obj)
+
+Disassembly:
+	0x03B22D80 BL 0x301B7C4
+	0x03B22D84 LDR X8, [X20]
+	0x03B22D88 LDP X22, X21, [X31 + 0x20]
+	0x03B22D8C LDP X24, X23, [X31 + 0x10]
+	0x03B22D90 LDR X8, [X8 + 0xB8]
+
+ISIL:
+	001 Compare X0, 0
+	002 JumpIfEqual {7}
+	003 Move X8, [X0]
+	004 Move X2, [X8+344]
+	005 Move X1, [X8+352]
+	006 CallNoReturn X2
+	007 Return X0
+
+Method: System.Int32 Combine(System.Int32 hash1, System.Int32 hash2, System.Int32 hash3)
+
+Disassembly:
+	0x03B2D158 BL 0x1C16F20
+	0x03B2D15C B 0x3B2D220
+	0x03B2D160 B 0x3B2D17C
+	0x03B2D164 B 0x3B2D17C
+	0x03B2D168 B 0x3B2D17C
+
+ISIL:
+	001 Move W8, 0xA2DB
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 NotImplemented "Instruction MADD not yet implemented."
+	004 NotImplemented "Instruction MADD not yet implemented."
+	005 Return X0
+
+Method: System.Int32 Combine(System.Int32 hash1, System.Int32 hash2, System.Int32 hash3, System.Int32 hash4)
+
+Disassembly:
+	0x03B2D16C B 0x3B2D17C
+	0x03B2D170 B 0x3B2D17C
+	0x03B2D174 B 0x3B2D17C
+	0x03B2D178 B 0x3B2D17C
+	0x03B2D17C MOV X20, X1
+	0x03B2D180 CMP W20, 0x1
+
+ISIL:
+	001 Move W8, 0xA2DB
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 NotImplemented "Instruction MADD not yet implemented."
+	004 NotImplemented "Instruction MADD not yet implemented."
+	005 NotImplemented "Instruction MADD not yet implemented."
+	006 Return X0
+
+Method: System.Int32 Combine(System.Int32 hash1, System.Int32 hash2, System.Int32 hash3, System.Int32 hash4, System.Int32 hash5)
+
+Disassembly:
+	0x03B2D184 MOVZ W21, 0x1
+	0x03B2D188 B.NE 0x3B2D1F4
+	0x03B2D18C BL 0x3EB1AD0
+	0x03B2D190 MOV X20, X0
+	0x03B2D194 MOV X0, X19
+	0x03B2D198 BL 0x1C16D08
+	0x03B2D19C LDR X8, [X20]
+
+ISIL:
+	001 Move W8, 0xA2DB
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 NotImplemented "Instruction MADD not yet implemented."
+	004 NotImplemented "Instruction MADD not yet implemented."
+	005 NotImplemented "Instruction MADD not yet implemented."
+	006 NotImplemented "Instruction MADD not yet implemented."
+	007 Return X0
+
+Method: System.Int32 Combine(System.Int32 hash1, System.Int32 hash2, System.Int32 hash3, System.Int32 hash4, System.Int32 hash5, System.Int32 hash6)
+
+Disassembly:
+	0x03B2D1A0 LDR X1, [X8]
+	0x03B2D1A4 BL 0x1C17270
+	0x03B2D1A8 TBZ X0, 0x0, 0x3B2D200
+	0x03B2D1AC BL 0x3EB1AE0
+	0x03B2D1B0 B 0x3B2D040
+	0x03B2D1B4 ADRP X8, 0x62C000
+	0x03B2D1B8 LDR X8, [X8 + 0xC18]
+	0x03B2D1BC ADD X0, X31, 0x20
+
+ISIL:
+	001 Move W8, 0xA2DB
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 NotImplemented "Instruction MADD not yet implemented."
+	004 NotImplemented "Instruction MADD not yet implemented."
+	005 NotImplemented "Instruction MADD not yet implemented."
+	006 NotImplemented "Instruction MADD not yet implemented."
+	007 NotImplemented "Instruction MADD not yet implemented."
+	008 Return X0
+
+Method: System.Int32 Combine(System.Int32 hash1, System.Int32 hash2, System.Int32 hash3, System.Int32 hash4, System.Int32 hash5, System.Int32 hash6, System.Int32 hash7)
+
+Disassembly:
+	0x03B2D1C0 LDR X1, [X8]
+	0x03B2D1C4 BL 0x2BC434C
+	0x03B2D1C8 LDR X8, [X22]
+	0x03B2D1CC LDP X20, X19, [X31 + 0x90]
+	0x03B2D1D0 LDP X22, X21, [X31 + 0x80]
+	0x03B2D1D4 LDP X24, X23, [X31 + 0x70]
+	0x03B2D1D8 LDR X8, [X8 + 0xB8]
+	0x03B2D1DC LDP X26, X25, [X31 + 0x60]
+	0x03B2D1E0 LDP X28, X27, [X31 + 0x50]
+
+ISIL:
+	001 Move W8, 0xA2DB
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 NotImplemented "Instruction MADD not yet implemented."
+	004 NotImplemented "Instruction MADD not yet implemented."
+	005 NotImplemented "Instruction MADD not yet implemented."
+	006 NotImplemented "Instruction MADD not yet implemented."
+	007 NotImplemented "Instruction MADD not yet implemented."
+	008 NotImplemented "Instruction MADD not yet implemented."
+	009 Return X0
+
+Method: System.Int32 Combine(System.Int32 hash1, System.Int32 hash2, System.Int32 hash3, System.Int32 hash4, System.Int32 hash5, System.Int32 hash6, System.Int32 hash7, System.Int32 hash8)
+
+Disassembly:
+	0x03B2D1E4 LDP X29, X30, [X31 + 0x40]
+	0x03B2D1E8 LDR X0, [X8 + 0x10]
+	0x03B2D1EC ADD X31, X31, 0xA0
+	0x03B2D1F0 RET
+	0x03B2D1F4 MOV X19, X0
+	0x03B2D1F8 B 0x3B2D248
+	0x03B2D1FC BL 0x1C16F20
+	0x03B2D200 MOVZ W0, 0x8
+	0x03B2D204 BL 0x3EB1AF0
+	0x03B2D208 LDR X8, [X20]
+
+ISIL:
+	001 Move W8, 0xA2DB
+	002 NotImplemented "Instruction MOVK not yet implemented."
+	003 NotImplemented "Instruction MADD not yet implemented."
+	004 NotImplemented "Instruction MADD not yet implemented."
+	005 NotImplemented "Instruction MADD not yet implemented."
+	006 NotImplemented "Instruction MADD not yet implemented."
+	007 NotImplemented "Instruction MADD not yet implemented."
+	008 NotImplemented "Instruction MADD not yet implemented."
+	009 NotImplemented "Instruction MADD not yet implemented."
+	010 Return X0
+

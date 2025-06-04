@@ -1,0 +1,40 @@
+Type: Unity.Burst.Intrinsics.X86/Sse4_2/StrBoolArray
+
+Method: System.Void SetBit(System.Int32 aindex, System.Int32 bindex, System.Boolean val)
+
+Disassembly:
+	0x03732CBC RET
+	0x03732CC0 LDR X0, [X0 + 0x1B8]
+	0x03732CC4 RET
+	0x03732CC8 STR X1, [X0 + 0x1B8]
+	0x03732CCC RET
+	0x03732CD0 LDR X0, [X0 + 0x1C0]
+	0x03732CD4 RET
+	0x03732CD8 STR X1, [X0 + 0x1C0]
+	0x03732CDC RET
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 Move W9, 1
+	003 NotImplemented "Instruction LSLV not yet implemented."
+	004 And W31, W3, 1
+	005 NotImplemented "Instruction BIC not yet implemented."
+	006 Or W8, W8, W9
+	007 NotImplemented "Instruction CSEL not yet implemented."
+	008 NotImplemented "Instruction STRH not yet implemented."
+	009 Return 
+
+Method: System.Boolean GetBit(System.Int32 aindex, System.Int32 bindex)
+
+Disassembly:
+	0x03732CE0 LDR X0, [X0 + 0x1C8]
+	0x03732CE4 RET
+	0x03732CE8 STR X1, [X0 + 0x1C8]
+	0x03732CEC RET
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 NotImplemented "Instruction LSRV not yet implemented."
+	003 And W0, W8, 1
+	004 Return X0
+

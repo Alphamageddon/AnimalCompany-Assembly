@@ -1,0 +1,30 @@
+Type: AnimalCompany.AuthCommands/AuthResult
+
+Method: System.Boolean get_success()
+
+Disassembly:
+	0x01D48F24 BL 0x263AB8C
+	0x01D48F28 B 0x1D48FA4
+	0x01D48F2C STR W31, [X19]
+	0x01D48F30 LDR X8, [X31 + 0x88]
+
+ISIL:
+	001 Move X8, [X0]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Boolean get_hasError()
+
+Disassembly:
+	0x01D490C4 ADRP X21, 0x23AB000
+	0x01D490C8 LDRB W8, [X22 + 0x77E]
+	0x01D490CC LDR X21, [X21 + 0x698]
+	0x01D490D0 MOV X19, X1
+
+ISIL:
+	001 Move W8, [X0+8]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+

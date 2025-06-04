@@ -1,0 +1,60 @@
+Type: Oculus.Platform.CAPI/ovrKeyValuePair
+
+Method: System.Void .ctor(System.String key, System.String value)
+
+Disassembly:
+	0x034B47C8 CMP W20, 0x0
+	0x034B47CC LDP X20, X19, [X31 + 0x40]
+	0x034B47D0 LDR X30, [X31 + 0x30]
+	0x034B47D4 CSET W0, NE
+	0x034B47D8 ADD X31, X31, 0x50
+	0x034B47DC RET
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], W31
+	003 Move [X0+16], X2
+	004 Move [X0+24], W31
+	005 Move [X0+32], X31
+	006 Return 
+
+Method: System.Void .ctor(System.String key, System.Int32 value)
+
+Disassembly:
+	0x034B42CC CMP W19, 0x0
+	0x034B42D0 LDP X20, X19, [X31 + 0x40]
+	0x034B42D4 LDP X30, X21, [X31 + 0x30]
+	0x034B42D8 CSET W0, NE
+	0x034B42DC ADD X31, X31, 0x50
+	0x034B42E0 RET
+	0x034B42E4 SUB X31, X31, 0x80
+
+ISIL:
+	001 Move W8, 1
+	002 Move [X0], X1
+	003 Move [X0+24], W2
+	004 Move [X0+16], X31
+	005 Move [X0+8], W8
+	006 Move [X0+32], X31
+	007 Return 
+
+Method: System.Void .ctor(System.String key, System.Double value)
+
+Disassembly:
+	0x034B47E0 STR X30, [X31 - 0x20]!
+	0x034B47E4 STP X20, X19, [X31 + 0x10]
+	0x034B47E8 ADRP X19, 0xF29000
+	0x034B47EC ADRP X20, 0xC7E000
+	0x034B47F0 LDRB W8, [X19 + 0xBC8]
+	0x034B47F4 LDR X20, [X20 + 0x328]
+	0x034B47F8 TBNZ X8, 0x0, 0x34B4810
+
+ISIL:
+	001 Move W8, 2
+	002 Move [X0], X1
+	003 Move [X0+32], D0
+	004 Move [X0+16], X31
+	005 Move [X0+8], W8
+	006 Move [X0+24], W31
+	007 Return 
+

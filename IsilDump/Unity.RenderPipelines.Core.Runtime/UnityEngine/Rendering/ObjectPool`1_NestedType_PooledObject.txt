@@ -1,0 +1,62 @@
+Type: UnityEngine.Rendering.ObjectPool`1/PooledObject
+
+Method: System.Void .ctor(T value, UnityEngine.Rendering.ObjectPool`1<T> pool)
+
+Disassembly:
+	0x024A79B4 LDP X20, X19, [X31 + 0x10]
+	0x024A79B8 LDP X30, X21, [X31], #0x20
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], X2
+	003 Return 
+
+Method: System.Void System.IDisposable.Dispose()
+
+Disassembly:
+	0x024A79BC RET
+	0x024A79C0 STP X29, X30, [X31 - 0x50]!
+	0x024A79C4 STP X26, X25, [X31 + 0x10]
+	0x024A79C8 STP X24, X23, [X31 + 0x20]
+	0x024A79CC STP X22, X21, [X31 + 0x30]
+	0x024A79D0 STP X20, X19, [X31 + 0x40]
+	0x024A79D4 ADD X29, X31, 0x0
+	0x024A79D8 SUB X31, X31, 0x20
+	0x024A79DC MRS X25, 0xC000
+	0x024A79E0 LDR X8, [X25 + 0x28]
+	0x024A79E4 ADRP X21, 0x1F32000
+	0x024A79E8 MOV X19, X1
+	0x024A79EC MOV X20, X0
+	0x024A79F0 STUR X8, [X29 - 0x8]
+	0x024A79F4 LDRB W8, [X21 + 0xBCB]
+	0x024A79F8 TBNZ X8, 0x0, 0x24A7A1C
+	0x024A79FC ADRP X0, 0x1C4E000
+	0x024A7A00 LDR X0, [X0 + 0x278]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, [X0+8]
+	005 Compare X19, 0
+	006 JumpIfEqual {25}
+	007 Move X8, X0
+	008 Move X0, [X1+32]
+	009 Move X20, [X8]
+	010 Move W9, [X0+309]
+	011 Move TEMP, X9
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {16}
+	015 Call 0x1C5D684
+	016 Move X8, [X0+192]
+	017 Move X0, X19
+	018 Move X1, X20
+	019 Move X20, [X31+16]
+	020 Move X19, [X31+24]
+	021 Move X2, [X8+24]
+	022 Move X30, [X31+32]
+	023 Call 0x2494D8C, X0, X1
+	024 Return 
+	025 Call 0x1C17F20
+

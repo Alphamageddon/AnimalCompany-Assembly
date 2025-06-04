@@ -1,0 +1,705 @@
+Type: Mono.Security.Interface.MonoTlsSettings
+
+Method: Mono.Security.Interface.MonoRemoteCertificateValidationCallback get_RemoteCertificateValidationCallback()
+
+Disassembly:
+	0x031FE6E0 CMP W8, 0x3
+	0x031FE6E4 B.EQ 0x31FED18
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_RemoteCertificateValidationCallback(Mono.Security.Interface.MonoRemoteCertificateValidationCallback value)
+
+Disassembly:
+	0x031FE6E8 LDR X1, [X0 + 0x40]
+	0x031FE6EC LDP W23, W21, [X19 + 0x20]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: Mono.Security.Interface.MonoLocalCertificateSelectionCallback get_ClientCertificateSelectionCallback()
+
+Disassembly:
+	0x031FE6F0 LDP W22, W24, [X19 + 0x28]
+	0x031FE6F4 MOV X20, X0
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_ClientCertificateSelectionCallback(Mono.Security.Interface.MonoLocalCertificateSelectionCallback value)
+
+Disassembly:
+	0x031FE6F8 BL 0x31FF058
+	0x031FE6FC LDR X1, [X20 + 0x40]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Nullable`1<System.Boolean> get_UseServicePointManagerCallback()
+
+Disassembly:
+	0x031FE700 CBZ X1, 0x31FED1C
+	0x031FE704 LDR W8, [X1 + 0x18]
+
+ISIL:
+	001 NotImplemented "Instruction LDURH not yet implemented."
+	002 Return X0
+
+Method: System.Void set_UseServicePointManagerCallback(System.Nullable`1<System.Boolean> value)
+
+Disassembly:
+	0x031FE708 CBZ W8, 0x31FED18
+	0x031FE70C CMP W8, 0x1
+
+ISIL:
+	001 NotImplemented "Instruction STURH not yet implemented."
+	002 Return 
+
+Method: System.Boolean get_CallbackNeedsCertificateChain()
+
+Disassembly:
+	0x031FE710 B.EQ 0x31FED18
+	0x031FE714 CMP W8, 0x2
+
+ISIL:
+	001 Move W0, [X0+118]
+	002 Return X0
+
+Method: System.Nullable`1<System.DateTime> get_CertificateValidationTime()
+
+Disassembly:
+	0x031FE718 B.LS 0x31FED18
+	0x031FE71C CMP W8, 0x3
+	0x031FE720 B.EQ 0x31FED18
+
+ISIL:
+	001 Move X8, [X0+32]
+	002 Move X1, [X0+40]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void set_CertificateValidationTime(System.Nullable`1<System.DateTime> value)
+
+Disassembly:
+	0x031FE724 CMP W8, 0x4
+	0x031FE728 B.LS 0x31FED18
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Move [X0+40], X2
+	003 Return 
+
+Method: System.Security.Cryptography.X509Certificates.X509CertificateCollection get_TrustAnchors()
+
+Disassembly:
+	0x031FE72C CMP W8, 0x5
+	0x031FE730 B.EQ 0x31FED18
+
+ISIL:
+	001 Move X0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_TrustAnchors(System.Security.Cryptography.X509Certificates.X509CertificateCollection value)
+
+Disassembly:
+	0x031FE734 CMP W8, 0x6
+	0x031FE738 B.LS 0x31FED18
+
+ISIL:
+	001 Move [X0+48], X1
+	002 Return 
+
+Method: System.Object get_UserSettings()
+
+Disassembly:
+	0x031FE73C CMP W8, 0x7
+	0x031FE740 B.EQ 0x31FED18
+
+ISIL:
+	001 Move X0, [X0+56]
+	002 Return X0
+
+Method: System.Void set_UserSettings(System.Object value)
+
+Disassembly:
+	0x031FE744 CMP W8, 0x8
+	0x031FE748 B.LS 0x31FED18
+
+ISIL:
+	001 Move [X0+56], X1
+	002 Return 
+
+Method: System.String[] get_CertificateSearchPaths()
+
+Disassembly:
+	0x031FE74C CMP W8, 0x9
+	0x031FE750 B.EQ 0x31FED18
+
+ISIL:
+	001 Move X0, [X0+64]
+	002 Return X0
+
+Method: System.Void set_CertificateSearchPaths(System.String[] value)
+
+Disassembly:
+	0x031FE754 CMP W8, 0xA
+	0x031FE758 B.LS 0x31FED18
+
+ISIL:
+	001 Move [X0+64], X1
+	002 Return 
+
+Method: System.Boolean get_SendCloseNotify()
+
+Disassembly:
+	0x031FE75C CMP W8, 0xB
+	0x031FE760 B.EQ 0x31FED18
+
+ISIL:
+	001 Move W0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_SendCloseNotify(System.Boolean value)
+
+Disassembly:
+	0x031FE764 CMP W8, 0xC
+	0x031FE768 B.LS 0x31FED18
+	0x031FE76C CMP W8, 0xD
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+72], W8
+	003 Return 
+
+Method: System.String[] get_ClientCertificateIssuers()
+
+Disassembly:
+	0x031FE770 B.EQ 0x31FED18
+	0x031FE774 CMP W8, 0xE
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_ClientCertificateIssuers(System.String[] value)
+
+Disassembly:
+	0x031FE778 B.LS 0x31FED18
+	0x031FE77C CMP W8, 0xF
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Return 
+
+Method: System.Boolean get_DisallowUnauthenticatedCertificateRequest()
+
+Disassembly:
+	0x031FE780 B.EQ 0x31FED18
+	0x031FE784 LDR W8, [X19 + 0x18]
+
+ISIL:
+	001 Move W0, [X0+88]
+	002 Return X0
+
+Method: System.Void set_DisallowUnauthenticatedCertificateRequest(System.Boolean value)
+
+Disassembly:
+	0x031FE788 CBZ W8, 0x31FED18
+	0x031FE78C LDP W0, W9, [X1 + 0x20]
+	0x031FE790 AND W20, W22, W21, 0x0
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+88], W8
+	003 Return 
+
+Method: System.Nullable`1<Mono.Security.Interface.TlsProtocols> get_EnabledProtocols()
+
+Disassembly:
+	0x031FE794 BIC W25, W24, W21, 0x0
+	0x031FE798 ADD W20, W20, W23
+
+ISIL:
+	001 NotImplemented "Instruction LDUR not yet implemented."
+	002 Return X0
+
+Method: System.Void set_EnabledProtocols(System.Nullable`1<Mono.Security.Interface.TlsProtocols> value)
+
+Disassembly:
+	0x031FE79C ADD W20, W20, W25
+	0x031FE7A0 ADD W20, W20, W0
+
+ISIL:
+	001 Move [X0+92], X1
+	002 Return 
+
+Method: Mono.Security.Interface.CipherSuiteCode[] get_EnabledCiphers()
+
+Disassembly:
+	0x031FE7A4 EXTR W20, W20, W20, 0x1D
+	0x031FE7A8 AND W23, W20, W21, 0x0
+
+ISIL:
+	001 Move X0, [X0+104]
+	002 Return X0
+
+Method: System.Void set_EnabledCiphers(Mono.Security.Interface.CipherSuiteCode[] value)
+
+Disassembly:
+	0x031FE7AC BIC W25, W22, W20, 0x0
+	0x031FE7B0 ADD W23, W23, W24
+
+ISIL:
+	001 Move [X0+104], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x031FE7B4 ADD W23, W23, W25
+	0x031FE7B8 ADD W23, W23, W9
+	0x031FE7BC LDP W12, W10, [X1 + 0x28]
+	0x031FE7C0 EXTR W23, W23, W23, 0x19
+	0x031FE7C4 AND W24, W23, W20, 0x0
+
+ISIL:
+	001 Move W8, 1
+	002 Move X1, X31
+	003 Move [X0+113], W8
+	004 Move [X0+118], W8
+	005 Call Object..ctor, X0
+	006 Return 
+
+Method: Mono.Security.Interface.MonoTlsSettings get_DefaultSettings()
+
+Disassembly:
+	0x031FE7C8 BIC W25, W21, W23, 0x0
+	0x031FE7CC ADD W22, W24, W22
+	0x031FE7D0 ADD W22, W22, W25
+	0x031FE7D4 ADD W22, W22, W12
+	0x031FE7D8 EXTR W22, W22, W22, 0x15
+	0x031FE7DC AND W24, W22, W23, 0x0
+	0x031FE7E0 BIC W25, W20, W22, 0x0
+	0x031FE7E4 ADD W21, W24, W21
+	0x031FE7E8 ADD W21, W21, W25
+	0x031FE7EC ADD W21, W21, W10
+	0x031FE7F0 LDP W14, W13, [X1 + 0x30]
+	0x031FE7F4 EXTR W21, W21, W21, 0xD
+	0x031FE7F8 AND W24, W21, W22, 0x0
+	0x031FE7FC BIC W25, W23, W21, 0x0
+	0x031FE800 ADD W20, W24, W20
+	0x031FE804 ADD W20, W20, W25
+	0x031FE808 ADD W20, W20, W14
+	0x031FE80C EXTR W20, W20, W20, 0x1D
+	0x031FE810 AND W24, W20, W21, 0x0
+	0x031FE814 BIC W25, W22, W20, 0x0
+	0x031FE818 ADD W23, W24, W23
+	0x031FE81C ADD W23, W23, W25
+	0x031FE820 ADD W23, W23, W13
+	0x031FE824 LDP W15, W11, [X1 + 0x38]
+	0x031FE828 EXTR W23, W23, W23, 0x19
+	0x031FE82C AND W24, W23, W20, 0x0
+	0x031FE830 BIC W25, W21, W23, 0x0
+	0x031FE834 ADD W22, W24, W22
+	0x031FE838 ADD W22, W22, W25
+	0x031FE83C ADD W22, W22, W15
+	0x031FE840 EXTR W22, W22, W22, 0x15
+	0x031FE844 AND W24, W22, W23, 0x0
+	0x031FE848 BIC W25, W20, W22, 0x0
+	0x031FE84C ADD W21, W24, W21
+	0x031FE850 ADD W21, W21, W25
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x11DF000
+	005 Move X20, 0xF24000
+	006 Move W8, [X19+521]
+	007 Move X20, [X20+1016]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0xF24000
+	013 Move X0, [X0+1016]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+521], W8
+	017 Move X0, [X20]
+	018 Move X8, [X0+184]
+	019 Move X8, [X8]
+	020 Compare X8, 0
+	021 JumpIfNotEqual {37}
+	022 Call 0x1C17F10
+	023 Move W8, 1
+	024 Move X1, X31
+	025 Move X19, X0
+	026 Move [X0+113], W8
+	027 Move [X0+118], W8
+	028 Call Object..ctor, X0
+	029 Move X8, [X20]
+	030 Move X1, X19
+	031 Move X2, X31
+	032 Move X0, [X8+184]
+	033 Call 0x1C25138
+	034 Move X8, [X20]
+	035 Move X8, [X8+184]
+	036 Move X8, [X8]
+	037 Move X20, [X31+16]
+	038 Move X19, [X31+24]
+	039 Move X0, X8
+	040 Move X30, [X31+32]
+	041 Return X0
+
+Method: Mono.Security.Interface.MonoTlsSettings CopyDefaultSettings()
+
+Disassembly:
+	0x031FE854 ADD W21, W21, W11
+	0x031FE858 LDP W6, W17, [X1 + 0x40]
+	0x031FE85C EXTR W21, W21, W21, 0xD
+	0x031FE860 AND W24, W21, W22, 0x0
+	0x031FE864 BIC W25, W23, W21, 0x0
+	0x031FE868 ADD W20, W24, W20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Call MonoTlsSettings.get_DefaultSettings
+	003 Compare X0, 0
+	004 JumpIfEqual {6}
+	005 Move X30, [X31+16]
+	006 Call 0x1C17F20
+
+Method: Mono.Security.Interface.ICertificateValidator get_CertificateValidator()
+
+Disassembly:
+	0x031FE8C4 EXTR W21, W21, W21, 0xD
+	0x031FE8C8 AND W24, W21, W22, 0x0
+
+ISIL:
+	001 Move X0, [X0+120]
+	002 Return X0
+
+Method: Mono.Security.Interface.MonoTlsSettings CloneWithValidator(Mono.Security.Interface.ICertificateValidator validator)
+
+Disassembly:
+	0x031FE8CC BIC W25, W23, W21, 0x0
+	0x031FE8D0 ADD W20, W24, W20
+	0x031FE8D4 ADD W20, W20, W25
+	0x031FE8D8 ADD W20, W20, W4
+	0x031FE8DC EXTR W20, W20, W20, 0x1D
+	0x031FE8E0 AND W24, W20, W21, 0x0
+	0x031FE8E4 BIC W25, W22, W20, 0x0
+	0x031FE8E8 ADD W23, W24, W23
+	0x031FE8EC ADD W23, W23, W25
+	0x031FE8F0 ADD W23, W23, W3
+	0x031FE8F4 LDP W5, W1, [X1 + 0x58]
+	0x031FE8F8 EXTR W23, W23, W23, 0x19
+	0x031FE8FC AND W24, W23, W20, 0x0
+	0x031FE900 BIC W25, W21, W23, 0x0
+	0x031FE904 ADD W22, W24, W22
+	0x031FE908 ADD W22, W22, W25
+	0x031FE90C ADD W22, W22, W5
+	0x031FE910 EXTR W22, W22, W22, 0x15
+	0x031FE914 AND W24, W22, W23, 0x0
+	0x031FE918 ADD W26, W0, W20
+	0x031FE91C BIC W20, W20, W22, 0x0
+	0x031FE920 ADD W21, W24, W21
+	0x031FE924 ADD W20, W21, W20
+	0x031FE928 ADD W27, W14, W23
+	0x031FE92C ORR W23, W22, W23, 0x0
+	0x031FE930 ADD W20, W20, W1
+	0x031FE934 AND W23, W23, W20, 0xD
+	0x031FE938 MOVZ W7, 0x7999
+	0x031FE93C ORR W23, W23, W24, 0x0
+	0x031FE940 MOVK W7, 0x5A820000
+	0x031FE944 ADD W23, W26, W23
+	0x031FE948 ORR W24, W22, W20, 0xD
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x11DF000
+	006 Move W8, [X21+522]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0xF24000
+	014 Move X0, [X0+1016]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+522], W8
+	018 Move W8, [X20+112]
+	019 Compare W8, 0
+	020 JumpIfEqual {22}
+	021 Add X8, X20, 120
+	022 Move X8, 0xF24000
+	023 Move X8, [X8+1016]
+	024 Move X0, [X8]
+	025 Call 0x1C17F10
+	026 Move X1, X20
+	027 Move X21, X0
+	028 Call MonoTlsSettings..ctor, X0, X1
+	029 Compare X21, 0
+	030 JumpIfEqual {40}
+	031 Add X8, X21, 120
+	032 Move X20, X21
+	033 Move [X8], X19
+	034 Move X0, X20
+	035 Move X20, [X31+16]
+	036 Move X19, [X31+24]
+	037 Move X30, [X31+32]
+	038 Move X21, [X31+40]
+	039 Return X0
+	040 Call 0x1C17F20
+
+Method: Mono.Security.Interface.MonoTlsSettings Clone()
+
+Disassembly:
+	0x031FE86C ADD W20, W20, W25
+	0x031FE870 ADD W20, W20, W6
+	0x031FE874 EXTR W20, W20, W20, 0x1D
+	0x031FE878 AND W24, W20, W21, 0x0
+	0x031FE87C BIC W25, W22, W20, 0x0
+	0x031FE880 ADD W23, W24, W23
+	0x031FE884 ADD W23, W23, W25
+	0x031FE888 ADD W23, W23, W17
+	0x031FE88C LDP W2, W16, [X1 + 0x48]
+	0x031FE890 EXTR W23, W23, W23, 0x19
+	0x031FE894 AND W24, W23, W20, 0x0
+	0x031FE898 BIC W25, W21, W23, 0x0
+	0x031FE89C ADD W22, W24, W22
+	0x031FE8A0 ADD W22, W22, W25
+	0x031FE8A4 ADD W22, W22, W2
+	0x031FE8A8 EXTR W22, W22, W22, 0x15
+	0x031FE8AC AND W24, W22, W23, 0x0
+	0x031FE8B0 BIC W25, W20, W22, 0x0
+	0x031FE8B4 ADD W21, W24, W21
+	0x031FE8B8 ADD W21, W21, W25
+	0x031FE8BC ADD W21, W21, W16
+	0x031FE8C0 LDP W4, W3, [X1 + 0x50]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x11DF000
+	006 Move X21, 0xF24000
+	007 Move W8, [X20+523]
+	008 Move X21, [X21+1016]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xF24000
+	015 Move X0, [X0+1016]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+523], W8
+	019 Move X0, [X21]
+	020 Call 0x1C17F10
+	021 Move X1, X19
+	022 Move X20, X0
+	023 Call MonoTlsSettings..ctor, X0, X1
+	024 Move X0, X20
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Move X21, [X31+40]
+	029 Return X0
+
+Method: System.Void .ctor(Mono.Security.Interface.MonoTlsSettings other)
+
+Disassembly:
+	0x031FE94C ADD W23, W23, W7
+	0x031FE950 ADD W25, W6, W22
+	0x031FE954 AND W22, W22, W20, 0xD
+	0x031FE958 AND W24, W24, W23, 0x1D
+	0x031FE95C ORR W22, W24, W22, 0x0
+	0x031FE960 EXTR W26, W23, W23, 0x1D
+	0x031FE964 ADD W22, W27, W22
+	0x031FE968 ORR W24, W26, W20, 0xD
+	0x031FE96C ADD W22, W22, W7
+	0x031FE970 EXTR W21, W20, W20, 0xD
+	0x031FE974 AND W20, W26, W20, 0xD
+	0x031FE978 AND W24, W24, W22, 0x1B
+	0x031FE97C ORR W20, W24, W20, 0x0
+	0x031FE980 EXTR W27, W22, W22, 0x1B
+	0x031FE984 ADD W20, W25, W20
+	0x031FE988 ORR W24, W27, W23, 0x1D
+	0x031FE98C ADD W20, W20, W7
+	0x031FE990 AND W23, W27, W23, 0x1D
+	0x031FE994 AND W24, W24, W20, 0x17
+	0x031FE998 ADD W21, W4, W21
+	0x031FE99C ORR W23, W24, W23, 0x0
+	0x031FE9A0 EXTR W25, W20, W20, 0x17
+	0x031FE9A4 ADD W21, W21, W23
+	0x031FE9A8 ORR W24, W25, W22, 0x1B
+	0x031FE9AC ADD W21, W21, W7
+	0x031FE9B0 AND W22, W25, W22, 0x1B
+	0x031FE9B4 AND W24, W24, W21, 0x13
+	0x031FE9B8 ADD W26, W9, W26
+	0x031FE9BC ORR W22, W24, W22, 0x0
+	0x031FE9C0 EXTR W23, W21, W21, 0x13
+	0x031FE9C4 ADD W22, W26, W22
+	0x031FE9C8 ORR W24, W23, W20, 0x17
+	0x031FE9CC ADD W22, W22, W7
+	0x031FE9D0 AND W20, W23, W20, 0x17
+	0x031FE9D4 AND W24, W24, W22, 0x1D
+	0x031FE9D8 ADD W27, W13, W27
+	0x031FE9DC ORR W20, W24, W20, 0x0
+	0x031FE9E0 EXTR W26, W22, W22, 0x1D
+	0x031FE9E4 ADD W20, W27, W20
+	0x031FE9E8 ORR W24, W26, W21, 0x13
+	0x031FE9EC ADD W20, W20, W7
+	0x031FE9F0 AND W21, W26, W21, 0x13
+	0x031FE9F4 AND W24, W24, W20, 0x1B
+	0x031FE9F8 ADD W25, W17, W25
+	0x031FE9FC ORR W21, W24, W21, 0x0
+	0x031FEA00 EXTR W27, W20, W20, 0x1B
+	0x031FEA04 ADD W21, W25, W21
+	0x031FEA08 ORR W24, W27, W22, 0x1D
+	0x031FEA0C ADD W21, W21, W7
+	0x031FEA10 AND W22, W27, W22, 0x1D
+	0x031FEA14 AND W24, W24, W21, 0x17
+	0x031FEA18 ADD W23, W3, W23
+	0x031FEA1C ORR W22, W24, W22, 0x0
+	0x031FEA20 EXTR W25, W21, W21, 0x17
+	0x031FEA24 ADD W22, W23, W22
+	0x031FEA28 ORR W24, W25, W20, 0x1B
+	0x031FEA2C ADD W22, W22, W7
+	0x031FEA30 AND W20, W25, W20, 0x1B
+	0x031FEA34 AND W24, W24, W22, 0x13
+	0x031FEA38 ADD W26, W12, W26
+	0x031FEA3C ORR W20, W24, W20, 0x0
+	0x031FEA40 EXTR W23, W22, W22, 0x13
+	0x031FEA44 ADD W20, W26, W20
+	0x031FEA48 ORR W24, W23, W21, 0x17
+	0x031FEA4C ADD W20, W20, W7
+	0x031FEA50 AND W21, W23, W21, 0x17
+	0x031FEA54 AND W24, W24, W20, 0x1D
+	0x031FEA58 ADD W27, W15, W27
+	0x031FEA5C ORR W21, W24, W21, 0x0
+	0x031FEA60 EXTR W26, W20, W20, 0x1D
+	0x031FEA64 ADD W21, W27, W21
+	0x031FEA68 ORR W24, W26, W22, 0x13
+	0x031FEA6C ADD W21, W21, W7
+	0x031FEA70 AND W22, W26, W22, 0x13
+	0x031FEA74 AND W24, W24, W21, 0x1B
+	0x031FEA78 ADD W25, W2, W25
+	0x031FEA7C EXTR W27, W21, W21, 0x1B
+	0x031FEA80 ORR W22, W24, W22, 0x0
+	0x031FEA84 ORR W24, W27, W20, 0x1D
+	0x031FEA88 AND W28, W27, W20, 0x1D
+	0x031FEA8C ADD W20, W25, W22
+	0x031FEA90 ADD W22, W20, W7
+	0x031FEA94 AND W24, W24, W22, 0x17
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x11DF000
+	007 Move W8, [X21+524]
+	008 Move X20, X1
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {22}
+	014 Move X0, 0xEF6000
+	015 Move X0, [X0+2760]
+	016 Call 0x1C17CF4
+	017 Move X0, 0xF24000
+	018 Move X0, [X0+1024]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X21+524], W8
+	022 Move W8, 1
+	023 Move X0, X19
+	024 Move X1, X31
+	025 Move [X19+113], W8
+	026 Move [X19+118], W8
+	027 Call Object..ctor, X0
+	028 Compare X20, 0
+	029 JumpIfEqual {94}
+	030 Move X8, [X20+16]
+	031 Move [X19+16], X8
+	032 Move X8, [X20+24]
+	033 Move [X19+24], X8
+	034 Move W8, [X20+113]
+	035 Move [X19+113], W8
+	036 Move W8, [X20+114]
+	037 Move [X19+114], W8
+	038 NotImplemented "Instruction LDURH not yet implemented."
+	039 NotImplemented "Instruction STURH not yet implemented."
+	040 Move W8, [X20+117]
+	041 Move [X19+117], W8
+	042 Move W8, [X20+118]
+	043 Move [X19+118], W8
+	044 Move X8, [X20+56]
+	045 Move [X19+56], X8
+	046 NotImplemented "Instruction LDUR not yet implemented."
+	047 Move [X19+92], X8
+	048 Move X8, [X20+104]
+	049 Move [X19+104], X8
+	050 Move V0, [X20+2]
+	051 Move [X19+2], V0
+	052 Move W8, [X20+72]
+	053 Move [X19+72], W8
+	054 Move X8, [X20+80]
+	055 Move [X19+80], X8
+	056 Move W8, [X20+88]
+	057 Move [X19+88], W8
+	058 Move X21, [X20+48]
+	059 Compare X21, 0
+	060 JumpIfEqual {70}
+	061 Move X8, 0xF24000
+	062 Move X8, [X8+1024]
+	063 Move X0, [X8]
+	064 Call 0x1C17F10
+	065 Move X1, X21
+	066 Move X2, X31
+	067 Move X22, X0
+	068 Call X509CertificateCollection..ctor, X0, X1
+	069 Move [X19+48], X22
+	070 Move X8, [X20+64]
+	071 Compare X8, 0
+	072 JumpIfEqual {86}
+	073 Move X9, 0xEF6000
+	074 Move X9, [X9+2760]
+	075 Move W1, [X8+24]
+	076 Move X0, [X9]
+	077 Call 0x1C17D6C
+	078 Move [X19+64], X0
+	079 Move X1, X0
+	080 Move X0, [X20+64]
+	081 Compare X0, 0
+	082 JumpIfEqual {94}
+	083 Move W2, W31
+	084 Move X3, X31
+	085 Call Array.CopyTo, X0, X1, X2
+	086 Move W8, 1
+	087 Move [X19+112], W8
+	088 Move X20, [X31+32]
+	089 Move X19, [X31+40]
+	090 Move X22, [X31+16]
+	091 Move X21, [X31+24]
+	092 Move X30, [X31+48]
+	093 Return 
+	094 Call 0x1C17F20
+

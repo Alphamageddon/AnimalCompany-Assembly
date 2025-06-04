@@ -1,0 +1,168 @@
+Type: UnityEngine.XR.Interaction.Toolkit.UI.CanvasOptimizer/CanvasState/CanvasScalerSettings
+
+Method: System.Boolean get_present()
+
+Disassembly:
+	0x03B9899C BL 0x3C3DEB4
+	0x03B989A0 MOV W0, W31
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_present(System.Boolean value)
+
+Disassembly:
+	0x03B989A4 STP S0, S1, [X19]
+	0x03B989A8 STP S2, S3, [X19 + 0x8]
+	0x03B989AC B 0x3B98AEC
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+16], W8
+	003 Return 
+
+Method: System.Void CopyFrom(UnityEngine.UI.CanvasScaler source)
+
+Disassembly:
+	0x03B98664 RET
+	0x03B98668 MOV X1, X31
+	0x03B9866C BL 0x3C3F58C
+	0x03B98670 LDR X0, [X20 + 0x20]
+	0x03B98674 CBZ X0, 0x3B986D0
+	0x03B98678 MOV V8.16B, V0.16B
+	0x03B9867C MOV V9.16B, V1.16B
+	0x03B98680 MOV V10.16B, V2.16B
+	0x03B98684 LDP S1, S2, [X20 + 0x2C]
+	0x03B98688 LDR V0, [X20 + 0x28]
+	0x03B9868C MOV X1, X31
+	0x03B98690 BL 0x3C40988
+	0x03B98694 FADD S0, S8, S0
+	0x03B98698 FADD S1, S9, S1
+	0x03B9869C FADD S2, S10, S2
+	0x03B986A0 STP S0, S1, [X19]
+	0x03B986A4 STR S2, [X19 + 0x8]
+	0x03B986A8 LDR X19, [X20 + 0x78]
+	0x03B986AC MOV X0, X31
+	0x03B986B0 BL 0x3887BE4
+	0x03B986B4 CBZ X19, 0x3B986D0
+	0x03B986B8 MOV X0, X19
+	0x03B986BC LDP X20, X19, [X31 + 0x30]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {24}
+	004 NotImplemented "Instruction LDUR not yet implemented."
+	005 Move [X0+20], D0
+	006 Move V0, [X1+64]
+	007 Move [X0+28], S0
+	008 Move V0, [X1+56]
+	009 Move [X0+32], S0
+	010 Move W8, [X1+60]
+	011 Move [X0+36], W8
+	012 Move V0, [X1+36]
+	013 Move [X0+40], S0
+	014 NotImplemented "Instruction LDUR not yet implemented."
+	015 Move [X0+44], D0
+	016 Move V0, [X1+40]
+	017 Move [X0+52], S0
+	018 Move W8, [X1+52]
+	019 Move [X0+56], W8
+	020 Move W8, [X1+32]
+	021 Move [X0+60], W8
+	022 Move X30, [X31+16]
+	023 Return 
+	024 Call 0x1C17F20
+
+Method: System.Void CopyTo(UnityEngine.UI.CanvasScaler dest)
+
+Disassembly:
+	0x03B988B8 BL 0x3C3F830
+	0x03B988BC B 0x3B989A0
+	0x03B988C0 MOV X0, X20
+	0x03B988C4 MOV X1, X31
+	0x03B988C8 BL 0x3C32E90
+	0x03B988CC CBZ X0, 0x3B98B0C
+	0x03B988D0 MOV X1, X31
+	0x03B988D4 BL 0x3C3F58C
+	0x03B988D8 LDR X0, [X20 + 0x20]
+	0x03B988DC CBZ X0, 0x3B98B0C
+	0x03B988E0 MOV X1, X31
+	0x03B988E4 MOV V9.16B, V0.16B
+	0x03B988E8 MOV V10.16B, V1.16B
+	0x03B988EC MOV V8.16B, V2.16B
+	0x03B988F0 BL 0x3C3F58C
+	0x03B988F4 ADRP X21, 0x840000
+	0x03B988F8 LDRB W8, [X21 + 0x785]
+	0x03B988FC FSUB S9, S9, S0
+	0x03B98900 FSUB S10, S10, S1
+	0x03B98904 FSUB S8, S8, S2
+	0x03B98908 STP S9, S10, [X31 + 0x20]
+	0x03B9890C STR S8, [X31 + 0x28]
+	0x03B98910 CBNZ W8, 0x3B98928
+	0x03B98914 ADRP X0, 0x55B000
+	0x03B98918 LDR X0, [X0 + 0x5A8]
+	0x03B9891C BL 0x1C16CF4
+	0x03B98920 MOVZ W8, 0x1
+	0x03B98924 STRB W8, [X21 + 0x785]
+	0x03B98928 ADRP X8, 0x55B000
+	0x03B9892C LDR X8, [X8 + 0x5A8]
+	0x03B98930 LDR X0, [X8]
+	0x03B98934 LDR W8, [X0 + 0xE0]
+	0x03B98938 CBNZ W8, 0x3B98940
+	0x03B9893C BL 0x1C16DFC
+	0x03B98940 FMUL S0, S9, S9
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Compare X1, 0
+	005 JumpIfEqual {39}
+	006 Move V0, [X0+20]
+	007 Move X19, X1
+	008 Move X20, X0
+	009 Move X0, X1
+	010 Move X1, X31
+	011 Call CanvasScaler.set_defaultSpriteDPI, X0, V0
+	012 Move V0, [X20+24]
+	013 Move X0, X19
+	014 Move X1, X31
+	015 Move [X19+72], S0
+	016 Move V0, [X20+28]
+	017 Move [X19+64], S0
+	018 Move V0, [X20+32]
+	019 Move [X19+56], S0
+	020 Move W8, [X20+36]
+	021 Move [X19+60], W8
+	022 Move V0, [X20+40]
+	023 Move [X19+36], S0
+	024 Move S0, [X20+44]
+	025 Move S1, [X20+48]
+	026 Call CanvasScaler.set_referenceResolution, X0, X1
+	027 Move V0, [X20+52]
+	028 Move X0, X19
+	029 Move X1, X31
+	030 Call CanvasScaler.set_scaleFactor, X0, V0
+	031 Move W8, [X20+56]
+	032 Move [X19+52], W8
+	033 Move W8, [X20+60]
+	034 Move [X19+32], W8
+	035 Move X20, [X31+16]
+	036 Move X19, [X31+24]
+	037 Move X30, [X31+32]
+	038 Return 
+	039 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03B98978 FDIV S2, S8, S2
+	0x03B9897C B 0x3B98A74
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

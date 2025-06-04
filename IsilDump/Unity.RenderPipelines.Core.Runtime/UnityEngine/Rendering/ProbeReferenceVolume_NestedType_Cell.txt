@@ -1,0 +1,172 @@
+Type: UnityEngine.Rendering.ProbeReferenceVolume/Cell
+
+Method: Unity.Collections.NativeArray`1<UnityEngine.Rendering.ProbeBrickIndex/Brick> get_bricks()
+
+Disassembly:
+	0x039C4A50 STRB W8, [X20 + 0xCC6]
+	0x039C4A54 LDR X0, [X19]
+	0x039C4A58 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move X8, [X0+64]
+	002 Move X1, [X0+72]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void set_bricks(Unity.Collections.NativeArray`1<UnityEngine.Rendering.ProbeBrickIndex/Brick> value)
+
+Disassembly:
+	0x039C4A5C CBNZ W8, 0x39C4A64
+	0x039C4A60 BL 0x1C16DFC
+
+ISIL:
+	001 Move [X0+64], X1
+	002 Move [X0+72], X2
+	003 Return 
+
+Method: Unity.Collections.NativeArray`1<System.Byte> get_validityNeighMaskData()
+
+Disassembly:
+	0x039C4A64 ADRP X20, 0xA1D000
+	0x039C4A68 LDRB W8, [X20 + 0xCB9]
+	0x039C4A6C CBNZ W8, 0x39C4A84
+
+ISIL:
+	001 Move X8, [X0+80]
+	002 Move X1, [X0+88]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void set_validityNeighMaskData(Unity.Collections.NativeArray`1<System.Byte> value)
+
+Disassembly:
+	0x039C4A70 ADRP X0, 0x78D000
+	0x039C4A74 LDR X0, [X0 + 0xF48]
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Move [X0+88], X2
+	003 Return 
+
+Method: Unity.Collections.NativeArray`1<UnityEngine.Vector3> get_probePositions()
+
+Disassembly:
+	0x039C4A78 BL 0x1C16CF4
+	0x039C4A7C MOVZ W8, 0x1
+	0x039C4A80 STRB W8, [X20 + 0xCB9]
+
+ISIL:
+	001 Move X8, [X0+96]
+	002 Move X1, [X0+104]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void set_probePositions(Unity.Collections.NativeArray`1<UnityEngine.Vector3> value)
+
+Disassembly:
+	0x039C4A84 LDR X0, [X19]
+	0x039C4A88 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X0+96], X1
+	002 Move [X0+104], X2
+	003 Return 
+
+Method: Unity.Collections.NativeArray`1<System.Single> get_touchupVolumeInteraction()
+
+Disassembly:
+	0x039C4A8C CBNZ W8, 0x39C4A98
+	0x039C4A90 BL 0x1C16DFC
+	0x039C4A94 LDR X0, [X19]
+
+ISIL:
+	001 Move X8, [X0+112]
+	002 Move X1, [X0+120]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void set_touchupVolumeInteraction(Unity.Collections.NativeArray`1<System.Single> value)
+
+Disassembly:
+	0x039C4A98 LDR X8, [X0 + 0xB8]
+	0x039C4A9C LDR X8, [X8 + 0x8]
+
+ISIL:
+	001 Move [X0+112], X1
+	002 Move [X0+120], X2
+	003 Return 
+
+Method: Unity.Collections.NativeArray`1<UnityEngine.Vector3> get_offsetVectors()
+
+Disassembly:
+	0x039C4AA0 CBZ X8, 0x39C4AB4
+	0x039C4AA4 LDR W0, [X8 + 0x168]
+	0x039C4AA8 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move X8, [X0+128]
+	002 Move X1, [X0+136]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void set_offsetVectors(Unity.Collections.NativeArray`1<UnityEngine.Vector3> value)
+
+Disassembly:
+	0x039C4AAC LDR X30, [X31], #0x20
+	0x039C4AB0 RET
+
+ISIL:
+	001 Move [X0+128], X1
+	002 Move [X0+136], X2
+	003 Return 
+
+Method: Unity.Collections.NativeArray`1<System.Single> get_validity()
+
+Disassembly:
+	0x039C4AB4 BL 0x1C16F20
+	0x039C4AB8 STP X30, X21, [X31 - 0x20]!
+	0x039C4ABC STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move X8, [X0+144]
+	002 Move X1, [X0+152]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void set_validity(Unity.Collections.NativeArray`1<System.Single> value)
+
+Disassembly:
+	0x039C4AC0 ADRP X21, 0xA1D000
+	0x039C4AC4 ADRP X20, 0x78D000
+
+ISIL:
+	001 Move [X0+144], X1
+	002 Move [X0+152], X2
+	003 Return 
+
+Method: UnityEngine.Rendering.ProbeReferenceVolume/Cell/PerScenarioData get_bakingScenario()
+
+Disassembly:
+	0x039C4AC8 LDRB W8, [X21 + 0xCC7]
+	0x039C4ACC LDR X20, [X20 + 0xF48]
+	0x039C4AD0 MOV W19, W1
+	0x039C4AD4 TBNZ X8, 0x0, 0x39C4AEC
+
+ISIL:
+	001 Add X1, X0, 160
+	002 Move W2, 112
+	003 Move X0, X8
+	004 Call 0x3EB2AC0
+	005 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x039C4AD8 ADRP X0, 0x78D000
+	0x039C4ADC LDR X0, [X0 + 0xF48]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

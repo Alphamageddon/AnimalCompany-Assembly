@@ -1,0 +1,73 @@
+Type: Fusion.NetworkRpcWeavedInvokerAttribute
+
+Method: System.Int32 get_Key()
+
+Disassembly:
+	0x01E686D0 BL 0x1C16F20
+	0x01E686D4 STP X30, X19, [X31 - 0x10]!
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Int32 get_Sources()
+
+Disassembly:
+	0x01E686D8 LDR X8, [X0 + 0x30]
+	0x01E686DC CBZ X8, 0x1E68714
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Int32 get_Targets()
+
+Disassembly:
+	0x01E686E0 MOV X19, X0
+	0x01E686E4 LDR X0, [X8 + 0x38]
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void .ctor(System.Int32 key, System.Int32 sources, System.Int32 targets)
+
+Disassembly:
+	0x01E686E8 CBZ X0, 0x1E68714
+	0x01E686EC MOV X1, X31
+	0x01E686F0 BL 0x1E4546C
+	0x01E686F4 TBZ X0, 0x0, 0x1E68714
+	0x01E686F8 LDR X8, [X19 + 0x30]
+	0x01E686FC CBZ X8, 0x1E68720
+	0x01E68700 LDR X0, [X8 + 0x38]
+	0x01E68704 CBZ X0, 0x1E68720
+	0x01E68708 MOV X1, X31
+	0x01E6870C LDP X30, X19, [X31], #0x10
+	0x01E68710 B 0x1E4B1F4
+	0x01E68714 MOV W0, W31
+	0x01E68718 LDP X30, X19, [X31], #0x10
+	0x01E6871C RET
+	0x01E68720 BL 0x1C16F20
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move W21, W1
+	007 Move X1, X31
+	008 Move W19, W3
+	009 Move W20, W2
+	010 Move X22, X0
+	011 Call Attribute..ctor, X0
+	012 Move [X22+16], W21
+	013 Move [X22+20], W20
+	014 Move [X22+24], W19
+	015 Move X20, [X31+32]
+	016 Move X19, [X31+40]
+	017 Move X22, [X31+16]
+	018 Move X21, [X31+24]
+	019 Move X30, [X31+48]
+	020 Return 
+

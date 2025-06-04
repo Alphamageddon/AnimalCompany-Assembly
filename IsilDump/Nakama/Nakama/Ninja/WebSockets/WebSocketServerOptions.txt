@@ -1,0 +1,138 @@
+Type: Nakama.Ninja.WebSockets.WebSocketServerOptions
+
+Method: System.TimeSpan get_KeepAliveInterval()
+
+Disassembly:
+	0x034937E0 BL 0x1C16DFC
+	0x034937E4 ADRP X0, 0xC9E000
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_KeepAliveInterval(System.TimeSpan value)
+
+Disassembly:
+	0x034937E8 LDR X0, [X0 + 0x718]
+	0x034937EC BL 0x1C16D08
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Boolean get_IncludeExceptionInCloseResponse()
+
+Disassembly:
+	0x034937F0 MOV X2, X0
+	0x034937F4 MOV X0, X19
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_IncludeExceptionInCloseResponse(System.Boolean value)
+
+Disassembly:
+	0x034937F8 MOV X1, X20
+	0x034937FC BL 0x2634DB0
+	0x03493800 B 0x3493754
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+24], W8
+	003 Return 
+
+Method: System.String get_SubProtocol()
+
+Disassembly:
+	0x03493804 MOVZ W0, 0x8
+	0x03493808 BL 0x3EB1AF0
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_SubProtocol(System.String value)
+
+Disassembly:
+	0x0349380C LDR X8, [X20]
+	0x03493810 STR X8, [X0]
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x034928A0 MOV X0, X31
+	0x034928A4 BL 0x32C4770
+	0x034928A8 LDUR V0, [X31 + 0x8]
+	0x034928AC LDR X9, [X31 + 0x18]
+	0x034928B0 LDR X2, [X24]
+	0x034928B4 ADD X8, X31, 0x20
+	0x034928B8 STP X21, X19, [X31 + 0x58]
+	0x034928BC ORR X19, X8, 0xF
+	0x034928C0 MOVN W10, 0x0
+	0x034928C4 ADD X1, X31, 0x20
+	0x034928C8 MOV X0, X19
+	0x034928CC STR W23, [X31 + 0x40]
+	0x034928D0 STP X22, X20, [X31 + 0x48]
+	0x034928D4 STUR V0, [X31 + 0x28]
+	0x034928D8 STR X9, [X31 + 0x38]
+	0x034928DC STR W10, [X31 + 0x20]
+	0x034928E0 BL 0x21911B8
+	0x034928E4 MOV X0, X19
+	0x034928E8 MOV X1, X31
+	0x034928EC BL 0x32C47F8
+	0x034928F0 LDP X20, X19, [X31 + 0xB0]
+	0x034928F4 LDP X22, X21, [X31 + 0xA0]
+	0x034928F8 LDP X24, X23, [X31 + 0x90]
+	0x034928FC LDP X30, X25, [X31 + 0x80]
+	0x03492900 ADD X31, X31, 0xC0
+	0x03492904 RET
+	0x03492908 SUB X31, X31, 0xC0
+	0x0349290C STR X30, [X31 + 0x70]
+	0x03492910 STP X26, X25, [X31 + 0x80]
+	0x03492914 STP X24, X23, [X31 + 0x90]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xF4C000
+	006 Move X20, 0xC64000
+	007 Move W8, [X21+2384]
+	008 Move X20, [X20+1392]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xC64000
+	015 Move X0, [X0+1392]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+2384], W8
+	019 Move X0, X19
+	020 Move X1, X31
+	021 Call Object..ctor, X0
+	022 Move X0, [X20]
+	023 Move W8, [X0+224]
+	024 Compare W8, 0
+	025 JumpIfNotEqual {27}
+	026 Call 0x1C17DFC
+	027 Move X8, 0x404E0000
+	028 Move D0, X8
+	029 Move X0, X31
+	030 Call TimeSpan.FromSeconds, V0
+	031 Move [X19+16], X0
+	032 Move [X19+24], W31
+	033 Move [X19+32], X31
+	034 Move X20, [X31+16]
+	035 Move X19, [X31+24]
+	036 Move X30, [X31+32]
+	037 Move X21, [X31+40]
+	038 Return 
+

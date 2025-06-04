@@ -1,0 +1,40 @@
+Type: System.Runtime.Remoting.EnvoyInfo
+
+Method: System.Void .ctor(System.Runtime.Remoting.Messaging.IMessageSink sinks)
+
+Disassembly:
+	0x03274204 B 0x3274210
+	0x03274208 B 0x3274210
+	0x0327420C B 0x3274210
+	0x03274210 MOV X20, X0
+	0x03274214 CMP W1, 0x1
+	0x03274218 B.NE 0x3274234
+	0x0327421C MOV X0, X20
+	0x03274220 BL 0x3EB1AD0
+	0x03274224 LDR X22, [X0]
+	0x03274228 BL 0x3EB1AE0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Runtime.Remoting.Messaging.IMessageSink get_EnvoySinks()
+
+Disassembly:
+	0x0327422C MOV X21, X31
+	0x03274230 B 0x327416C
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+

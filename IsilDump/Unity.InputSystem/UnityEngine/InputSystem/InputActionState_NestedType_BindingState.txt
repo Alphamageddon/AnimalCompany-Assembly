@@ -1,0 +1,1137 @@
+Type: UnityEngine.InputSystem.InputActionState/BindingState
+
+Method: System.Int32 get_controlStartIndex()
+
+Disassembly:
+	0x037527D8 ADD X31, X31, 0xC0
+	0x037527DC RET
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 Return X0
+
+Method: System.Void set_controlStartIndex(System.Int32 value)
+
+Disassembly:
+	0x037527E0 STR X30, [X31 - 0x30]!
+	0x037527E4 STP X22, X21, [X31 + 0x10]
+	0x037527E8 STP X20, X19, [X31 + 0x20]
+	0x037527EC MOV X19, X0
+	0x037527F0 LDR X0, [X0 + 0x40]
+	0x037527F4 CBNZ X0, 0x3752800
+	0x037527F8 LDR X0, [X19 + 0x10]
+	0x037527FC CBZ X0, 0x37528CC
+	0x03752800 LDR X8, [X0]
+	0x03752804 LDP X9, X1, [X8 + 0x158]
+	0x03752808 BLR X9
+	0x0375280C MOVZ W8, 0x18D
+	0x03752810 MUL W20, W0, W8
+	0x03752814 LDR X0, [X19 + 0x48]
+	0x03752818 CBNZ X0, 0x3752824
+	0x0375281C LDR X0, [X19 + 0x18]
+	0x03752820 CBZ X0, 0x37528D4
+	0x03752824 LDR X8, [X0]
+	0x03752828 LDP X9, X1, [X8 + 0x158]
+	0x0375282C BLR X9
+	0x03752830 MOV W8, W0
+	0x03752834 LDR X0, [X19 + 0x50]
+	0x03752838 CBZ X0, 0x375284C
+	0x0375283C EOR W8, W8, W20, 0x0
+	0x03752840 MOVZ W9, 0x18D
+	0x03752844 MUL W22, W8, W9
+	0x03752848 B 0x3752860
+	0x0375284C LDR X0, [X19 + 0x20]
+	0x03752850 EOR W8, W8, W20, 0x0
+	0x03752854 MOVZ W9, 0x18D
+	0x03752858 MUL W22, W8, W9
+	0x0375285C CBZ X0, 0x37528DC
+	0x03752860 LDR X8, [X0]
+	0x03752864 LDP X9, X1, [X8 + 0x158]
+	0x03752868 BLR X9
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W8, 0xFFFF
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Move X20, [X31+16]
+	007 Move X19, [X31+24]
+	008 NotImplemented "Instruction STRH not yet implemented."
+	009 Move X30, [X31+32]
+	010 Return 
+	011 Add X0, X31, 12
+	012 Move X1, X31
+	013 NotImplemented "Instruction STRH not yet implemented."
+	014 Call UInt16.ToString, X0
+	015 Move X19, X0
+	016 Move X0, 0x9F4000
+	017 Move X0, [X0+3248]
+	018 Call 0x1C17D08
+	019 Move X1, X19
+	020 Move X2, X31
+	021 Call String.Concat, X0, X1
+	022 Move X19, X0
+	023 Move X0, 0x9A2000
+	024 Move X0, [X0+2880]
+	025 Call 0x1C17D08
+	026 Call 0x1C17F10
+	027 Move X1, X19
+	028 Move X2, X31
+	029 Move X20, X0
+	030 Call NotSupportedException..ctor, X0, X1
+	031 Move X0, 0x9F4000
+	032 Move X0, [X0+3256]
+	033 Call 0x1C17D08
+	034 Move X1, X0
+	035 Move X0, X20
+	036 Call 0x1C17DEC
+
+Method: System.Int32 get_controlCount()
+
+Disassembly:
+	0x0375286C MOV W20, W0
+	0x03752870 LDR X0, [X19 + 0x28]
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Void set_controlCount(System.Int32 value)
+
+Disassembly:
+	0x03752874 CBZ X0, 0x375288C
+	0x03752878 LDR X8, [X0]
+	0x0375287C LDP X9, X1, [X8 + 0x158]
+	0x03752880 BLR X9
+	0x03752884 MOV W21, W0
+	0x03752888 B 0x3752890
+	0x0375288C MOV W21, W31
+	0x03752890 LDR X0, [X19 + 0x30]
+	0x03752894 CBZ X0, 0x37528A4
+	0x03752898 LDR X8, [X0]
+	0x0375289C LDP X9, X1, [X8 + 0x158]
+	0x037528A0 BLR X9
+	0x037528A4 EOR W8, W20, W22, 0x0
+	0x037528A8 MOVZ W9, 0x18D
+	0x037528AC MUL W8, W8, W9
+	0x037528B0 EOR W8, W21, W8, 0x0
+	0x037528B4 LDP X20, X19, [X31 + 0x20]
+	0x037528B8 LDP X22, X21, [X31 + 0x10]
+	0x037528BC MUL W8, W8, W9
+	0x037528C0 EOR W0, W0, W8, 0x0
+	0x037528C4 LDR X30, [X31], #0x30
+	0x037528C8 RET
+	0x037528CC MOV W20, W31
+	0x037528D0 B 0x3752814
+	0x037528D4 MOV W8, W31
+	0x037528D8 B 0x3752834
+	0x037528DC MOV W20, W31
+	0x037528E0 B 0x3752870
+	0x037528E4 STP X30, X21, [X31 - 0x20]!
+	0x037528E8 STP X20, X19, [X31 + 0x10]
+	0x037528EC ADRP X19, 0xC8E000
+	0x037528F0 ADRP X21, 0x9A1000
+	0x037528F4 LDRB W8, [X19 + 0xDBC]
+	0x037528F8 LDR X21, [X21 + 0x8F0]
+	0x037528FC MOV X20, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Move X20, [X31+16]
+	006 Move X19, [X31+24]
+	007 Move [X0], W1
+	008 Move X30, [X31+32]
+	009 Return 
+	010 Move W8, 255
+	011 Add X0, X31, 12
+	012 Move X1, X31
+	013 Move [X31+12], W8
+	014 Call Byte.ToString, X0
+	015 Move X19, X0
+	016 Move X0, 0x9F4000
+	017 Move X0, [X0+3264]
+	018 Call 0x1C17D08
+	019 Move X1, X19
+	020 Move X2, X31
+	021 Call String.Concat, X0, X1
+	022 Move X19, X0
+	023 Move X0, 0x9A2000
+	024 Move X0, [X0+2880]
+	025 Call 0x1C17D08
+	026 Call 0x1C17F10
+	027 Move X1, X19
+	028 Move X2, X31
+	029 Move X20, X0
+	030 Call NotSupportedException..ctor, X0, X1
+	031 Move X0, 0x9F4000
+	032 Move X0, [X0+3272]
+	033 Call 0x1C17D08
+	034 Move X1, X0
+	035 Move X0, X20
+	036 Call 0x1C17DEC
+
+Method: System.Int32 get_interactionStartIndex()
+
+Disassembly:
+	0x0374CDB0 MOVZ W13, 0x1
+	0x0374CDB4 CMP W11, W12
+	0x0374CDB8 LDR X12, [X19 + 0x70]
+	0x0374CDBC LDR X10, [X0 + 0xB8]
+	0x0374CDC0 BFM W13, W9, 0x1F, 0x1E
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 Move W9, 0xFFFF
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSINV not yet implemented."
+	005 Return X0
+
+Method: System.Void set_interactionStartIndex(System.Int32 value)
+
+Disassembly:
+	0x03752900 TBNZ X8, 0x0, 0x3752918
+	0x03752904 ADRP X0, 0x9A1000
+	0x03752908 LDR X0, [X0 + 0x8F0]
+	0x0375290C BL 0x1C16CF4
+	0x03752910 MOVZ W8, 0x1
+	0x03752914 STRB W8, [X19 + 0xDBC]
+	0x03752918 LDR X0, [X21]
+	0x0375291C BL 0x1C16F10
+	0x03752920 MOV X1, X31
+	0x03752924 MOV X19, X0
+	0x03752928 BL 0x3231AC4
+	0x0375292C LDR X0, [X20 + 0x30]
+	0x03752930 MOV X1, X31
+	0x03752934 BL 0x32277A8
+	0x03752938 TBNZ X0, 0x0, 0x3752960
+	0x0375293C CBZ X19, 0x37529F4
+	0x03752940 LDR X1, [X20 + 0x30]
+	0x03752944 MOV X0, X19
+	0x03752948 MOV X2, X31
+	0x0375294C BL 0x32333E0
+	0x03752950 MOVZ W1, 0x3A
+	0x03752954 MOV X0, X19
+	0x03752958 MOV X2, X31
+	0x0375295C BL 0x3233D30
+	0x03752960 LDR X21, [X20 + 0x40]
+	0x03752964 CBNZ X21, 0x375296C
+	0x03752968 LDR X21, [X20 + 0x10]
+	0x0375296C MOV X0, X21
+	0x03752970 MOV X1, X31
+	0x03752974 BL 0x32277A8
+	0x03752978 TBNZ X0, 0x0, 0x3752990
+	0x0375297C CBZ X19, 0x37529F4
+	0x03752980 MOV X0, X19
+	0x03752984 MOV X1, X21
+	0x03752988 MOV X2, X31
+	0x0375298C BL 0x32333E0
+	0x03752990 LDR X0, [X20 + 0x28]
+	0x03752994 MOV X1, X31
+	0x03752998 BL 0x32277A8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Add W31, W1, 1
+	005 Move W8, 0xFFFF
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 Move W8, W1
+	008 Move X20, [X31+16]
+	009 Move X19, [X31+24]
+	010 NotImplemented "Instruction STRH not yet implemented."
+	011 Move X30, [X31+32]
+	012 Return 
+	013 Move W8, 0xFFFF
+	014 Add X0, X31, 12
+	015 Move X1, X31
+	016 NotImplemented "Instruction STRH not yet implemented."
+	017 Call UInt16.ToString, X0
+	018 Move X19, X0
+	019 Move X0, 0x9F4000
+	020 Move X0, [X0+3280]
+	021 Call 0x1C17D08
+	022 Move X1, X19
+	023 Move X2, X31
+	024 Call String.Concat, X0, X1
+	025 Move X19, X0
+	026 Move X0, 0x9A2000
+	027 Move X0, [X0+2880]
+	028 Call 0x1C17D08
+	029 Call 0x1C17F10
+	030 Move X1, X19
+	031 Move X2, X31
+	032 Move X20, X0
+	033 Call NotSupportedException..ctor, X0, X1
+	034 Move X0, 0x9F4000
+	035 Move X0, [X0+3288]
+	036 Call 0x1C17D08
+	037 Move X1, X0
+	038 Move X0, X20
+	039 Call 0x1C17DEC
+
+Method: System.Int32 get_interactionCount()
+
+Disassembly:
+	0x0375299C TBZ X0, 0x0, 0x37529A8
+	0x037529A0 CBNZ X19, 0x37529DC
+
+ISIL:
+	001 Move W0, [X0+1]
+	002 Return X0
+
+Method: System.Void set_interactionCount(System.Int32 value)
+
+Disassembly:
+	0x037529A4 B 0x37529F4
+	0x037529A8 CBZ X19, 0x37529F4
+	0x037529AC MOVZ W1, 0x5B
+	0x037529B0 MOV X0, X19
+	0x037529B4 MOV X2, X31
+	0x037529B8 BL 0x3233D30
+	0x037529BC LDR X1, [X20 + 0x28]
+	0x037529C0 MOV X0, X19
+	0x037529C4 MOV X2, X31
+	0x037529C8 BL 0x32333E0
+	0x037529CC MOVZ W1, 0x5D
+	0x037529D0 MOV X0, X19
+	0x037529D4 MOV X2, X31
+	0x037529D8 BL 0x3233D30
+	0x037529DC LDR X8, [X19]
+	0x037529E0 MOV X0, X19
+	0x037529E4 LDP X20, X19, [X31 + 0x10]
+	0x037529E8 LDP X2, X1, [X8 + 0x168]
+	0x037529EC LDP X30, X21, [X31], #0x20
+	0x037529F0 BR X2
+	0x037529F4 BL 0x1C16F20
+	0x037529F8 SUB X31, X31, 0x20
+	0x037529FC STP X30, X31, [X31 + 0x10]
+	0x03752A00 MOV X4, X2
+	0x03752A04 MOV W3, W1
+	0x03752A08 ADD X1, X31, 0x18
+	0x03752A0C ADD X2, X31, 0x8
+	0x03752A10 STR X31, [X31 + 0x8]
+	0x03752A14 BL 0x3752A24
+	0x03752A18 LDR X30, [X31 + 0x10]
+	0x03752A1C ADD X31, X31, 0x20
+	0x03752A20 RET
+	0x03752A24 SUB X31, X31, 0x70
+	0x03752A28 STR X30, [X31 + 0x20]
+	0x03752A2C STP X26, X25, [X31 + 0x30]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Move X20, [X31+16]
+	006 Move X19, [X31+24]
+	007 Move [X0+1], W1
+	008 Move X30, [X31+32]
+	009 Return 
+	010 Move W8, 255
+	011 Add X0, X31, 12
+	012 Move X1, X31
+	013 Move [X31+12], W8
+	014 Call Byte.ToString, X0
+	015 Move X19, X0
+	016 Move X0, 0x9F4000
+	017 Move X0, [X0+3296]
+	018 Call 0x1C17D08
+	019 Move X1, X19
+	020 Move X2, X31
+	021 Call String.Concat, X0, X1
+	022 Move X19, X0
+	023 Move X0, 0x9A2000
+	024 Move X0, [X0+2880]
+	025 Call 0x1C17D08
+	026 Call 0x1C17F10
+	027 Move X1, X19
+	028 Move X2, X31
+	029 Move X20, X0
+	030 Call NotSupportedException..ctor, X0, X1
+	031 Move X0, 0x9F4000
+	032 Move X0, [X0+3304]
+	033 Call 0x1C17D08
+	034 Move X1, X0
+	035 Move X0, X20
+	036 Call 0x1C17DEC
+
+Method: System.Int32 get_processorStartIndex()
+
+Disassembly:
+	0x037511C4 BL 0x32C05E4
+	0x037511C8 TBZ X0, 0x0, 0x37511F0
+	0x037511CC LDR X8, [X24]
+	0x037511D0 LDR X2, [X26]
+	0x037511D4 MOV W1, W21
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 Move W9, 0xFFFF
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSINV not yet implemented."
+	005 Return X0
+
+Method: System.Void set_processorStartIndex(System.Int32 value)
+
+Disassembly:
+	0x03752A30 STP X24, X23, [X31 + 0x40]
+	0x03752A34 STP X22, X21, [X31 + 0x50]
+	0x03752A38 STP X20, X19, [X31 + 0x60]
+	0x03752A3C ADRP X24, 0xC8E000
+	0x03752A40 LDRB W8, [X24 + 0xDBD]
+	0x03752A44 MOV X19, X4
+	0x03752A48 MOV W21, W3
+	0x03752A4C MOV X22, X2
+	0x03752A50 MOV X23, X1
+	0x03752A54 MOV X20, X0
+	0x03752A58 TBNZ X8, 0x0, 0x3752AB8
+	0x03752A5C ADRP X0, 0x9A1000
+	0x03752A60 LDR X0, [X0 + 0xE00]
+	0x03752A64 BL 0x1C16CF4
+	0x03752A68 ADRP X0, 0x9F3000
+	0x03752A6C LDR X0, [X0 + 0xD50]
+	0x03752A70 BL 0x1C16CF4
+	0x03752A74 ADRP X0, 0x9F3000
+	0x03752A78 LDR X0, [X0 + 0xD58]
+	0x03752A7C BL 0x1C16CF4
+	0x03752A80 ADRP X0, 0x9A1000
+	0x03752A84 LDR X0, [X0 + 0xE18]
+	0x03752A88 BL 0x1C16CF4
+	0x03752A8C ADRP X0, 0x9A3000
+	0x03752A90 LDR X0, [X0 + 0x278]
+	0x03752A94 BL 0x1C16CF4
+	0x03752A98 ADRP X0, 0x9A1000
+	0x03752A9C LDR X0, [X0 + 0xDD8]
+	0x03752AA0 BL 0x1C16CF4
+	0x03752AA4 ADRP X0, 0x9F3000
+	0x03752AA8 LDR X0, [X0 + 0xD60]
+	0x03752AAC BL 0x1C16CF4
+	0x03752AB0 MOVZ W8, 0x1
+	0x03752AB4 STRB W8, [X24 + 0xDBD]
+	0x03752AB8 LDRB W8, [X20 + 0x38]
+	0x03752ABC TBNZ X8, 0x2, 0x3752B8C
+	0x03752AC0 RBIT W8, W21
+	0x03752AC4 MOVZ W9, 0x6
+	0x03752AC8 BIC W3, W9, W8, 0x1D
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Add W31, W1, 1
+	005 Move W8, 0xFFFF
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 Move W8, W1
+	008 Move X20, [X31+16]
+	009 Move X19, [X31+24]
+	010 NotImplemented "Instruction STRH not yet implemented."
+	011 Move X30, [X31+32]
+	012 Return 
+	013 Move W8, 0xFFFF
+	014 Add X0, X31, 12
+	015 Move X1, X31
+	016 NotImplemented "Instruction STRH not yet implemented."
+	017 Call UInt16.ToString, X0
+	018 Move X19, X0
+	019 Move X0, 0x9F4000
+	020 Move X0, [X0+3312]
+	021 Call 0x1C17D08
+	022 Move X1, X19
+	023 Move X2, X31
+	024 Call String.Concat, X0, X1
+	025 Move X19, X0
+	026 Move X0, 0x9A2000
+	027 Move X0, [X0+2880]
+	028 Call 0x1C17D08
+	029 Call 0x1C17F10
+	030 Move X1, X19
+	031 Move X2, X31
+	032 Move X20, X0
+	033 Call NotSupportedException..ctor, X0, X1
+	034 Move X0, 0x9F4000
+	035 Move X0, [X0+3320]
+	036 Call 0x1C17D08
+	037 Move X1, X0
+	038 Move X0, X20
+	039 Call 0x1C17DEC
+
+Method: System.Int32 get_processorCount()
+
+Disassembly:
+	0x03752ACC TBNZ X21, 0x3, 0x3752AD8
+	0x03752AD0 LDR X0, [X20 + 0x40]
+
+ISIL:
+	001 Move W0, [X0+2]
+	002 Return X0
+
+Method: System.Void set_processorCount(System.Int32 value)
+
+Disassembly:
+	0x03752AD4 CBNZ X0, 0x3752ADC
+	0x03752AD8 LDR X0, [X20 + 0x10]
+	0x03752ADC MOV X1, X23
+	0x03752AE0 MOV X2, X22
+	0x03752AE4 MOV X4, X19
+	0x03752AE8 MOV X5, X31
+	0x03752AEC BL 0x3776CB8
+	0x03752AF0 LDR X8, [X20 + 0x48]
+	0x03752AF4 MOV X19, X0
+	0x03752AF8 CBNZ X8, 0x3752B00
+	0x03752AFC LDR X8, [X20 + 0x18]
+	0x03752B00 MOV X0, X8
+	0x03752B04 MOV X1, X31
+	0x03752B08 BL 0x32277A8
+	0x03752B0C TBNZ X21, 0x2, 0x3752BA8
+	0x03752B10 TBNZ X0, 0x0, 0x3752BA8
+	0x03752B14 ADRP X8, 0x9A3000
+	0x03752B18 LDR X8, [X8 + 0x278]
+	0x03752B1C LDR X0, [X20 + 0x48]
+	0x03752B20 LDR X8, [X8]
+	0x03752B24 LDR X8, [X8 + 0xB8]
+	0x03752B28 CBNZ X0, 0x3752B30
+	0x03752B2C LDR X0, [X20 + 0x18]
+	0x03752B30 LDR X23, [X8]
+	0x03752B34 MOV X1, X31
+	0x03752B38 BL 0x3763238
+	0x03752B3C CBZ X0, 0x3752DC0
+	0x03752B40 ADRP X10, 0x9F3000
+	0x03752B44 LDR X8, [X0]
+	0x03752B48 LDR X10, [X10 + 0xD50]
+	0x03752B4C MOV X20, X0
+	0x03752B50 LDRH W9, [X8 + 0x12E]
+	0x03752B54 LDR X1, [X10]
+	0x03752B58 CBZ X9, 0x3752B7C
+	0x03752B5C LDR X10, [X8 + 0xB0]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Move X20, [X31+16]
+	006 Move X19, [X31+24]
+	007 Move [X0+2], W1
+	008 Move X30, [X31+32]
+	009 Return 
+	010 Move W8, 255
+	011 Add X0, X31, 12
+	012 Move X1, X31
+	013 Move [X31+12], W8
+	014 Call Byte.ToString, X0
+	015 Move X19, X0
+	016 Move X0, 0x9F4000
+	017 Move X0, [X0+3328]
+	018 Call 0x1C17D08
+	019 Move X1, X19
+	020 Move X2, X31
+	021 Call String.Concat, X0, X1
+	022 Move X19, X0
+	023 Move X0, 0x9A2000
+	024 Move X0, [X0+2880]
+	025 Call 0x1C17D08
+	026 Call 0x1C17F10
+	027 Move X1, X19
+	028 Move X2, X31
+	029 Move X20, X0
+	030 Call NotSupportedException..ctor, X0, X1
+	031 Move X0, 0x9F4000
+	032 Move X0, [X0+3336]
+	033 Call 0x1C17D08
+	034 Move X1, X0
+	035 Move X0, X20
+	036 Call 0x1C17DEC
+
+Method: System.Int32 get_actionIndex()
+
+Disassembly:
+	0x0374D89C LDP X20, X19, [X31 + 0x10]
+	0x0374D8A0 MOV W0, W31
+	0x0374D8A4 LDR X30, [X31], #0x20
+	0x0374D8A8 B 0x374CF48
+	0x0374D8AC BL 0x1C16F20
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 Move W9, 0xFFFF
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSINV not yet implemented."
+	005 Return X0
+
+Method: System.Void set_actionIndex(System.Int32 value)
+
+Disassembly:
+	0x03752B60 ADD X10, X10, 0x8
+	0x03752B64 LDUR X11, [X10 - 0x8]
+	0x03752B68 CMP X11, X1
+	0x03752B6C B.EQ 0x3752BC8
+	0x03752B70 SUBS X9, X9, 0x1
+	0x03752B74 ADD X10, X10, 0x10
+	0x03752B78 B.NE 0x3752B64
+	0x03752B7C MOV X0, X20
+	0x03752B80 MOV W2, W31
+	0x03752B84 BL 0x1C5C788
+	0x03752B88 B 0x3752BD4
+	0x03752B8C STR X31, [X23]
+	0x03752B90 STR X31, [X22]
+	0x03752B94 ADRP X8, 0x9A3000
+	0x03752B98 LDR X8, [X8 + 0x278]
+	0x03752B9C LDR X8, [X8]
+	0x03752BA0 LDR X8, [X8 + 0xB8]
+	0x03752BA4 LDR X19, [X8]
+	0x03752BA8 MOV X0, X19
+	0x03752BAC LDP X20, X19, [X31 + 0x60]
+	0x03752BB0 LDP X22, X21, [X31 + 0x50]
+	0x03752BB4 LDP X24, X23, [X31 + 0x40]
+	0x03752BB8 LDP X26, X25, [X31 + 0x30]
+	0x03752BBC LDR X30, [X31 + 0x20]
+	0x03752BC0 ADD X31, X31, 0x70
+	0x03752BC4 RET
+	0x03752BC8 LDRSW X9, [X10]
+	0x03752BCC ADD X8, X8, X9, 0x4, LSL
+	0x03752BD0 ADD X0, X8, 0x138
+	0x03752BD4 LDP X8, X1, [X0]
+	0x03752BD8 MOV X0, X20
+	0x03752BDC BLR X8
+	0x03752BE0 ADRP X24, 0x9A1000
+	0x03752BE4 ADRP X25, 0x9F3000
+	0x03752BE8 ADRP X26, 0x9F3000
+	0x03752BEC LDR X24, [X24 + 0xE18]
+	0x03752BF0 LDR X25, [X25 + 0xD58]
+	0x03752BF4 LDR X26, [X26 + 0xD60]
+	0x03752BF8 MOV X20, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Add W31, W1, 1
+	005 Move W8, 0xFFFF
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 Move W8, W1
+	008 Move X20, [X31+16]
+	009 Move X19, [X31+24]
+	010 NotImplemented "Instruction STRH not yet implemented."
+	011 Move X30, [X31+32]
+	012 Return 
+	013 Move W8, 0xFFFF
+	014 Add X0, X31, 12
+	015 Move X1, X31
+	016 NotImplemented "Instruction STRH not yet implemented."
+	017 Call UInt16.ToString, X0
+	018 Move X19, X0
+	019 Move X0, 0x9F4000
+	020 Move X0, [X0+3344]
+	021 Call 0x1C17D08
+	022 Move X1, X19
+	023 Move X2, X31
+	024 Call String.Concat, X0, X1
+	025 Move X19, X0
+	026 Move X0, 0x9A2000
+	027 Move X0, [X0+2880]
+	028 Call 0x1C17D08
+	029 Call 0x1C17F10
+	030 Move X1, X19
+	031 Move X2, X31
+	032 Move X20, X0
+	033 Call NotSupportedException..ctor, X0, X1
+	034 Move X0, 0x9F4000
+	035 Move X0, [X0+3352]
+	036 Call 0x1C17D08
+	037 Move X1, X0
+	038 Move X0, X20
+	039 Call 0x1C17DEC
+
+Method: System.Int32 get_mapIndex()
+
+Disassembly:
+	0x03752BFC MOV X22, X23
+	0x03752C00 MOV X21, X22
+
+ISIL:
+	001 Move W0, [X0+3]
+	002 Return X0
+
+Method: System.Void set_mapIndex(System.Int32 value)
+
+Disassembly:
+	0x03752C04 CBZ X20, 0x3752DB8
+	0x03752C08 LDR X8, [X20]
+	0x03752C0C LDR X1, [X24]
+	0x03752C10 LDRH W9, [X8 + 0x12E]
+	0x03752C14 CBZ X9, 0x3752C38
+	0x03752C18 LDR X10, [X8 + 0xB0]
+	0x03752C1C ADD X10, X10, 0x8
+	0x03752C20 LDUR X11, [X10 - 0x8]
+	0x03752C24 CMP X11, X1
+	0x03752C28 B.EQ 0x3752C48
+	0x03752C2C SUBS X9, X9, 0x1
+	0x03752C30 ADD X10, X10, 0x10
+	0x03752C34 B.NE 0x3752C20
+	0x03752C38 MOV X0, X20
+	0x03752C3C MOV W2, W31
+	0x03752C40 BL 0x1C5C788
+	0x03752C44 B 0x3752C54
+	0x03752C48 LDRSW X9, [X10]
+	0x03752C4C ADD X8, X8, X9, 0x4, LSL
+	0x03752C50 ADD X0, X8, 0x138
+	0x03752C54 LDP X8, X1, [X0]
+	0x03752C58 MOV X0, X20
+	0x03752C5C BLR X8
+	0x03752C60 TBZ X0, 0x0, 0x3752D08
+	0x03752C64 LDR X8, [X20]
+	0x03752C68 LDR X1, [X25]
+	0x03752C6C LDRH W9, [X8 + 0x12E]
+	0x03752C70 CBZ X9, 0x3752C94
+	0x03752C74 LDR X10, [X8 + 0xB0]
+	0x03752C78 ADD X10, X10, 0x8
+	0x03752C7C LDUR X11, [X10 - 0x8]
+	0x03752C80 CMP X11, X1
+	0x03752C84 B.EQ 0x3752CA4
+	0x03752C88 SUBS X9, X9, 0x1
+	0x03752C8C ADD X10, X10, 0x10
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 NotImplemented "Instruction CMP not yet implemented."
+	005 Move X20, [X31+16]
+	006 Move X19, [X31+24]
+	007 Move [X0+3], W1
+	008 Move X30, [X31+32]
+	009 Return 
+	010 Move W8, 255
+	011 Add X0, X31, 12
+	012 Move X1, X31
+	013 Move [X31+12], W8
+	014 Call Byte.ToString, X0
+	015 Move X19, X0
+	016 Move X0, 0x9F4000
+	017 Move X0, [X0+3360]
+	018 Call 0x1C17D08
+	019 Move X1, X19
+	020 Move X2, X31
+	021 Call String.Concat, X0, X1
+	022 Move X19, X0
+	023 Move X0, 0x9A2000
+	024 Move X0, [X0+2880]
+	025 Call 0x1C17D08
+	026 Call 0x1C17F10
+	027 Move X1, X19
+	028 Move X2, X31
+	029 Move X20, X0
+	030 Call NotSupportedException..ctor, X0, X1
+	031 Move X0, 0x9F4000
+	032 Move X0, [X0+3368]
+	033 Call 0x1C17D08
+	034 Move X1, X0
+	035 Move X0, X20
+	036 Call 0x1C17DEC
+
+Method: System.Int32 get_compositeOrCompositeBindingIndex()
+
+Disassembly:
+	0x0374BB68 BL 0x1C16F28
+	0x0374BB6C B 0x374BC6C
+	0x0374BB70 BL 0x1C16F28
+	0x0374BB74 B 0x374BC6C
+	0x0374BB78 BL 0x1C16F20
+
+ISIL:
+	001 NotImplemented "Instruction LDRH not yet implemented."
+	002 Move W9, 0xFFFF
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 NotImplemented "Instruction CSINV not yet implemented."
+	005 Return X0
+
+Method: System.Void set_compositeOrCompositeBindingIndex(System.Int32 value)
+
+Disassembly:
+	0x03752C90 B.NE 0x3752C7C
+	0x03752C94 MOV X0, X20
+	0x03752C98 MOV W2, W31
+	0x03752C9C BL 0x1C5C788
+	0x03752CA0 B 0x3752CB0
+	0x03752CA4 LDRSW X9, [X10]
+	0x03752CA8 ADD X8, X8, X9, 0x4, LSL
+	0x03752CAC ADD X0, X8, 0x138
+	0x03752CB0 LDP X9, X1, [X0]
+	0x03752CB4 ADD X8, X31, 0x8
+	0x03752CB8 MOV X0, X20
+	0x03752CBC BLR X9
+	0x03752CC0 LDR X0, [X31 + 0x8]
+	0x03752CC4 MOV X1, X31
+	0x03752CC8 BL 0x3733F4C
+	0x03752CCC MOV X22, X0
+	0x03752CD0 MOV X1, X31
+	0x03752CD4 BL 0x32277A8
+	0x03752CD8 TBNZ X0, 0x0, 0x3752C04
+	0x03752CDC MOV X0, X21
+	0x03752CE0 MOV X1, X31
+	0x03752CE4 BL 0x32277A8
+	0x03752CE8 TBNZ X0, 0x0, 0x3752C00
+	0x03752CEC LDR X1, [X26]
+	0x03752CF0 MOV X0, X21
+	0x03752CF4 MOV X2, X22
+	0x03752CF8 MOV X3, X31
+	0x03752CFC BL 0x32274B8
+	0x03752D00 MOV X22, X0
+	0x03752D04 B 0x3752C00
+	0x03752D08 MOV X22, X31
+	0x03752D0C MOVZ W23, 0xB
+	0x03752D10 CBZ X20, 0x3752D74
+	0x03752D14 ADRP X10, 0x9A1000
+	0x03752D18 LDR X8, [X20]
+	0x03752D1C LDR X10, [X10 + 0xE00]
+	0x03752D20 LDRH W9, [X8 + 0x12E]
+	0x03752D24 LDR X1, [X10]
+	0x03752D28 CBZ X9, 0x3752D4C
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Add W31, W1, 1
+	005 Move W8, 0xFFFF
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 Move W8, W1
+	008 Move X20, [X31+16]
+	009 Move X19, [X31+24]
+	010 NotImplemented "Instruction STRH not yet implemented."
+	011 Move X30, [X31+32]
+	012 Return 
+	013 Move W8, 0xFFFF
+	014 Add X0, X31, 12
+	015 Move X1, X31
+	016 NotImplemented "Instruction STRH not yet implemented."
+	017 Call UInt16.ToString, X0
+	018 Move X19, X0
+	019 Move X0, 0x9F4000
+	020 Move X0, [X0+3376]
+	021 Call 0x1C17D08
+	022 Move X1, X19
+	023 Move X2, X31
+	024 Call String.Concat, X0, X1
+	025 Move X19, X0
+	026 Move X0, 0x9A2000
+	027 Move X0, [X0+2880]
+	028 Call 0x1C17D08
+	029 Call 0x1C17F10
+	030 Move X1, X19
+	031 Move X2, X31
+	032 Move X20, X0
+	033 Call NotSupportedException..ctor, X0, X1
+	034 Move X0, 0x9F4000
+	035 Move X0, [X0+3384]
+	036 Call 0x1C17D08
+	037 Move X1, X0
+	038 Move X0, X20
+	039 Call 0x1C17DEC
+
+Method: System.Int32 get_triggerEventIdForComposite()
+
+Disassembly:
+	0x03752D2C LDR X10, [X8 + 0xB0]
+	0x03752D30 ADD X10, X10, 0x8
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_triggerEventIdForComposite(System.Int32 value)
+
+Disassembly:
+	0x03752D34 LDUR X11, [X10 - 0x8]
+	0x03752D38 CMP X11, X1
+
+ISIL:
+	001 Move [X0+24], W1
+	002 Return 
+
+Method: System.Double get_pressTime()
+
+Disassembly:
+	0x03752D3C B.EQ 0x3752D5C
+	0x03752D40 SUBS X9, X9, 0x1
+
+ISIL:
+	001 Move V0, [X0+16]
+	002 Return V0
+
+Method: System.Void set_pressTime(System.Double value)
+
+Disassembly:
+	0x03752D44 ADD X10, X10, 0x10
+	0x03752D48 B.NE 0x3752D34
+
+ISIL:
+	001 Move [X0+16], D0
+	002 Return 
+
+Method: UnityEngine.InputSystem.InputActionState/BindingState/Flags get_flags()
+
+Disassembly:
+	0x03752D4C MOV X0, X20
+	0x03752D50 MOV W2, W31
+
+ISIL:
+	001 Move W0, [X0+4]
+	002 Return X0
+
+Method: System.Void set_flags(UnityEngine.InputSystem.InputActionState/BindingState/Flags value)
+
+Disassembly:
+	0x03752D54 BL 0x1C5C788
+	0x03752D58 B 0x3752D68
+
+ISIL:
+	001 Move [X0+4], W1
+	002 Return 
+
+Method: System.Boolean get_chainsWithNext()
+
+Disassembly:
+	0x03752D5C LDRSW X9, [X10]
+	0x03752D60 ADD X8, X8, X9, 0x4, LSL
+	0x03752D64 ADD X0, X8, 0x138
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 And W0, W8, 1
+	003 Return X0
+
+Method: System.Void set_chainsWithNext(System.Boolean value)
+
+Disassembly:
+	0x03752D68 LDP X8, X1, [X0]
+	0x03752D6C MOV X0, X20
+	0x03752D70 BLR X8
+	0x03752D74 CBNZ X22, 0x3752DC4
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 NotImplemented "Instruction BFM not yet implemented."
+	003 Move [X0+4], W8
+	004 Return 
+
+Method: System.Boolean get_isEndOfChain()
+
+Disassembly:
+	0x03752D78 CMP W23, 0xB
+	0x03752D7C B.EQ 0x3752D84
+	0x03752D80 CBNZ W23, 0x3752BA8
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 Move W0, W8
+	003 ShiftRight W0, 1
+	004 And W0, W0, 1
+	005 Return X0
+
+Method: System.Void set_isEndOfChain(System.Boolean value)
+
+Disassembly:
+	0x03752D84 MOV X0, X21
+	0x03752D88 MOV X1, X31
+	0x03752D8C BL 0x32277A8
+	0x03752D90 TBNZ X0, 0x0, 0x3752BA8
+	0x03752D94 ADRP X8, 0x9A1000
+	0x03752D98 LDR X8, [X8 + 0xDD8]
+	0x03752D9C MOV X0, X21
+	0x03752DA0 MOV X2, X19
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 And W31, W1, 1
+	003 Move W9, 2
+	004 NotImplemented "Instruction CSEL not yet implemented."
+	005 And W8, W8, 0xFFFFFFFD
+	006 Or W8, W8, W9
+	007 Move [X0+4], W8
+	008 Return 
+
+Method: System.Boolean get_isPartOfChain()
+
+Disassembly:
+	0x03752DA4 MOV X3, X31
+	0x03752DA8 LDR X1, [X8]
+	0x03752DAC BL 0x32274B8
+	0x03752DB0 MOV X19, X0
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 And W31, W8, 3
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Boolean get_isComposite()
+
+Disassembly:
+	0x0374C788 ADD X0, X31, 0x30
+	0x0374C78C BL 0x2BC4998
+	0x0374C790 MOV X20, X0
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 Move W0, W8
+	003 ShiftRight W0, 2
+	004 And W0, W0, 3
+	005 Return X0
+
+Method: System.Void set_isComposite(System.Boolean value)
+
+Disassembly:
+	0x03752DB4 B 0x3752BA8
+	0x03752DB8 MOV X21, X23
+	0x03752DBC BL 0x1C16F20
+	0x03752DC0 BL 0x1C16F20
+	0x03752DC4 MOV X0, X22
+	0x03752DC8 BL 0x1C16F18
+	0x03752DCC B 0x3752DE4
+	0x03752DD0 B 0x3752DE4
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 And W31, W1, 1
+	003 Move W9, 4
+	004 NotImplemented "Instruction CSEL not yet implemented."
+	005 And W8, W8, 0xFFFFFFFB
+	006 Or W8, W8, W9
+	007 Move [X0+4], W8
+	008 Return 
+
+Method: System.Boolean get_isPartOfComposite()
+
+Disassembly:
+	0x0374BB5C B 0x374BC6C
+	0x0374BB60 BL 0x1C16F20
+	0x0374BB64 B 0x374BC6C
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 Move W0, W8
+	003 ShiftRight W0, 3
+	004 And W0, W0, 7
+	005 Return X0
+
+Method: System.Void set_isPartOfComposite(System.Boolean value)
+
+Disassembly:
+	0x03752DD4 B 0x3752DE4
+	0x03752DD8 B 0x3752DE4
+	0x03752DDC B 0x3752DE4
+	0x03752DE0 B 0x3752DE4
+	0x03752DE4 MOV X23, X0
+	0x03752DE8 CMP W1, 0x1
+	0x03752DEC B.NE 0x3752E0C
+	0x03752DF0 MOV X0, X23
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 And W31, W1, 1
+	003 Move W9, 8
+	004 NotImplemented "Instruction CSEL not yet implemented."
+	005 And W8, W8, 0xFFFFFFF7
+	006 Or W8, W8, W9
+	007 Move [X0+4], W8
+	008 Return 
+
+Method: System.Boolean get_initialStateCheckPending()
+
+Disassembly:
+	0x0374EE38 MOV X20, X0
+	0x0374EE3C TBNZ X8, 0x0, 0x374EE54
+	0x0374EE40 ADRP X0, 0x9CD000
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 Move W0, W8
+	003 ShiftRight W0, 4
+	004 And W0, W0, 15
+	005 Return X0
+
+Method: System.Void set_initialStateCheckPending(System.Boolean value)
+
+Disassembly:
+	0x0374D8CC LDRSW X20, [X8 + 0x58]
+	0x0374D8D0 LDR X8, [X0 + 0xB8]
+	0x0374D8D4 MOVZ W9, 0x30
+	0x0374D8D8 MOV X19, X0
+	0x0374D8DC MADD X8, X20, X9, X8
+	0x0374D8E0 CBZ X8, 0x374D95C
+	0x0374D8E4 LDR W21, [X8 + 0x14]
+	0x0374D8E8 CMP W21, 0x1
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 And W31, W1, 1
+	003 Move W9, 16
+	004 NotImplemented "Instruction CSEL not yet implemented."
+	005 And W8, W8, 0xFFFFFFEF
+	006 Or W8, W8, W9
+	007 Move [X0+4], W8
+	008 Return 
+
+Method: System.Boolean get_wantsInitialStateCheck()
+
+Disassembly:
+	0x0374D8C0 CBZ X1, 0x374D95C
+	0x0374D8C4 LDR X8, [X1 + 0xC8]
+	0x0374D8C8 CBZ X8, 0x374D95C
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 Move W0, W8
+	003 ShiftRight W0, 5
+	004 And W0, W0, 31
+	005 Return X0
+
+Method: System.Void set_wantsInitialStateCheck(System.Boolean value)
+
+Disassembly:
+	0x03752DF4 BL 0x3EB1AD0
+	0x03752DF8 LDR X22, [X0]
+	0x03752DFC BL 0x3EB1AE0
+	0x03752E00 MOV W23, W31
+	0x03752E04 CBNZ X20, 0x3752D14
+	0x03752E08 B 0x3752D74
+	0x03752E0C MOV X22, X31
+	0x03752E10 B 0x3752E18
+
+ISIL:
+	001 Move W8, [X0+4]
+	002 And W31, W1, 1
+	003 Move W9, 32
+	004 NotImplemented "Instruction CSEL not yet implemented."
+	005 And W8, W8, 0xFFFFFFDF
+	006 Or W8, W8, W9
+	007 Move [X0+4], W8
+	008 Return 
+
+Method: System.Int32 get_partIndex()
+
+Disassembly:
+	0x03752E14 MOV X23, X0
+	0x03752E18 CBZ X20, 0x3752E7C
+
+ISIL:
+	001 Move W0, [X0+5]
+	002 Return X0
+
+Method: System.Void set_partIndex(System.Int32 value)
+
+Disassembly:
+	0x03752E1C ADRP X10, 0x9A1000
+	0x03752E20 LDR X8, [X20]
+
+ISIL:
+	001 Move [X0+5], W1
+	002 Return 
+

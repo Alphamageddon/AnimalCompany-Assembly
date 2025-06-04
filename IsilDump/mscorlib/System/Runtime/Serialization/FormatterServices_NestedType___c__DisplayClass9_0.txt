@@ -1,0 +1,113 @@
+Type: System.Runtime.Serialization.FormatterServices/<>c__DisplayClass9_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x032A2860 BL 0x1C16DFC
+	0x032A2864 MOV X0, X31
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Reflection.MemberInfo[] <GetSerializableMembers>b__0(System.Runtime.Serialization.MemberHolder _)
+
+Disassembly:
+	0x032A3C40 CBZ X21, 0x32A3D60
+	0x032A3C44 ADRP X10, 0xE81000
+	0x032A3C48 LDR X22, [X19 + 0x10]
+	0x032A3C4C LDR X23, [X19 + 0x28]
+	0x032A3C50 LDR X8, [X21]
+	0x032A3C54 LDP X25, X24, [X20 + 0x48]
+	0x032A3C58 LDR X10, [X10 + 0xCA0]
+	0x032A3C5C LDRH W9, [X8 + 0x12E]
+	0x032A3C60 LDR X1, [X10]
+	0x032A3C64 CBZ X9, 0x32A3C88
+	0x032A3C68 LDR X10, [X8 + 0xB0]
+	0x032A3C6C ADD X10, X10, 0x8
+	0x032A3C70 LDUR X11, [X10 - 0x8]
+	0x032A3C74 CMP X11, X1
+	0x032A3C78 B.EQ 0x32A3C98
+	0x032A3C7C SUBS X9, X9, 0x1
+	0x032A3C80 ADD X10, X10, 0x10
+	0x032A3C84 B.NE 0x32A3C70
+	0x032A3C88 MOVZ W2, 0x1
+	0x032A3C8C MOV X0, X21
+	0x032A3C90 BL 0x1C5C788
+	0x032A3C94 B 0x32A3CA8
+	0x032A3C98 LDR W9, [X10]
+	0x032A3C9C ADD W9, W9, 0x1
+	0x032A3CA0 ADD X8, X8, W9, 0x4, SXTW
+	0x032A3CA4 ADD X0, X8, 0x138
+	0x032A3CA8 LDP X8, X6, [X0]
+	0x032A3CAC MOV X0, X21
+	0x032A3CB0 MOV X1, X22
+	0x032A3CB4 MOV X2, X23
+	0x032A3CB8 MOV X3, X25
+	0x032A3CBC MOV X4, X24
+	0x032A3CC0 MOV X5, X31
+	0x032A3CC4 BLR X8
+	0x032A3CC8 CBZ X0, 0x32A3CF8
+	0x032A3CCC MOV X22, X0
+	0x032A3CD0 MOV X0, X19
+	0x032A3CD4 BL 0x32A3E20
+	0x032A3CD8 TBNZ X0, 0x0, 0x32A3CE8
+	0x032A3CDC LDR X8, [X19 + 0x10]
+	0x032A3CE0 CMP X22, X8
+	0x032A3CE4 B.NE 0x32A3D64
+	0x032A3CE8 MOV X0, X19
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x113A000
+	006 Move X20, 0xE82000
+	007 Move W8, [X21+1911]
+	008 Move X20, [X20+2928]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {22}
+	014 Move X0, 0xE82000
+	015 Move X0, [X0+2928]
+	016 Call 0x1C17CF4
+	017 Move X0, 0xE7A000
+	018 Move X0, [X0+1256]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X21+1911], W8
+	022 Move X0, [X20]
+	023 Move X19, [X19+16]
+	024 Move W8, [X0+224]
+	025 Compare W8, 0
+	026 JumpIfEqual {29}
+	027 Compare X19, 0
+	028 JumpIfNotEqual {32}
+	029 Call 0x1C17DFC
+	030 Compare X19, 0
+	031 JumpIfEqual {43}
+	032 Move X9, 0xE7A000
+	033 Move X9, [X9+1256]
+	034 Move X8, [X19]
+	035 Move X1, [X9]
+	036 Move W10, [X8+304]
+	037 Move W9, [X1+304]
+	038 NotImplemented "Instruction CMP not yet implemented."
+	039 Move X8, [X8+200]
+	040 Add X8, X8, X9
+	041 NotImplemented "Instruction LDUR not yet implemented."
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 Move X0, X19
+	044 Move X20, [X31+16]
+	045 Move X19, [X31+24]
+	046 Move X30, [X31+32]
+	047 Move X21, [X31+40]
+	048 Call FormatterServices.InternalGetSerializableMembers, X0
+	049 Return X0
+	050 Move X0, X19
+	051 Call 0x1C181E0
+

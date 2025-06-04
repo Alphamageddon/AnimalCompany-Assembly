@@ -1,0 +1,184 @@
+Type: TMPro.TMP_GlyphValueRecord
+
+Method: System.Single get_xPlacement()
+
+Disassembly:
+	0x03AECE98 LDRB W8, [X19 + 0x160]
+	0x03AECE9C CBZ W8, 0x3AECEC8
+
+ISIL:
+	001 Move V0, [X0]
+	002 Return V0
+
+Method: System.Void set_xPlacement(System.Single value)
+
+Disassembly:
+	0x03AECEA0 ADRP X8, 0x60A000
+	0x03AECEA4 LDR X8, [X8 + 0x920]
+
+ISIL:
+	001 Move [X0], S0
+	002 Return 
+
+Method: System.Single get_yPlacement()
+
+Disassembly:
+	0x03AECEA8 LDR X21, [X19 + 0x108]
+	0x03AECEAC LDR X0, [X8]
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Return V0
+
+Method: System.Void set_yPlacement(System.Single value)
+
+Disassembly:
+	0x03AECEB0 LDR W8, [X0 + 0xE0]
+	0x03AECEB4 CBNZ W8, 0x3AECEBC
+
+ISIL:
+	001 Move [X0+4], S0
+	002 Return 
+
+Method: System.Single get_xAdvance()
+
+Disassembly:
+	0x03AECEB8 BL 0x1C16DFC
+	0x03AECEBC MOV X0, X21
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Return V0
+
+Method: System.Void set_xAdvance(System.Single value)
+
+Disassembly:
+	0x03AECEC0 MOV X1, X31
+	0x03AECEC4 BL 0x3E2F3D8
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Return 
+
+Method: System.Single get_yAdvance()
+
+Disassembly:
+	0x03AECEC8 LDR W8, [X19 + 0x2DC]
+	0x03AECECC CMP W8, 0x1
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Return V0
+
+Method: System.Void set_yAdvance(System.Single value)
+
+Disassembly:
+	0x03AECED0 B.LT 0x3AECFB4
+	0x03AECED4 LDR X0, [X19 + 0x138]
+
+ISIL:
+	001 Move [X0+12], S0
+	002 Return 
+
+Method: System.Void .ctor(System.Single xPlacement, System.Single yPlacement, System.Single xAdvance, System.Single yAdvance)
+
+Disassembly:
+	0x03AEA850 LDP X30, X23, [X31 + 0x40]
+	0x03AEA854 LDP D9, D8, [X31 + 0x30]
+	0x03AEA858 LDP D11, D10, [X31 + 0x20]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: System.Void .ctor(TMPro.GlyphValueRecord_Legacy valueRecord)
+
+Disassembly:
+	0x03AECED8 CBZ X0, 0x3AED020
+	0x03AECEDC LDR X8, [X0]
+	0x03AECEE0 MOV W1, W31
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: System.Void .ctor(UnityEngine.TextCore.LowLevel.GlyphValueRecord valueRecord)
+
+Disassembly:
+	0x03AECEE4 MOV W2, W31
+	0x03AECEE8 LDR X9, [X8 + 0x7D8]
+	0x03AECEEC LDR X3, [X8 + 0x7E0]
+	0x03AECEF0 BLR X9
+	0x03AECEF4 LDR X8, [X19 + 0x138]
+	0x03AECEF8 CBZ X8, 0x3AED020
+	0x03AECEFC LDR X8, [X8 + 0x368]
+	0x03AECF00 CBZ X8, 0x3AECFB4
+	0x03AECF04 LDR W9, [X8 + 0x2C]
+	0x03AECF08 LDR W10, [X19 + 0x2DC]
+	0x03AECF0C CMP W9, W10
+	0x03AECF10 B.LE 0x3AECFB4
+	0x03AECF14 LDR X9, [X8 + 0x50]
+	0x03AECF18 CBZ X9, 0x3AED020
+	0x03AECF1C LDR W11, [X9 + 0x18]
+	0x03AECF20 SUB W10, W10, 0x1
+	0x03AECF24 CMP W10, W11
+	0x03AECF28 B.CS 0x3AED024
+	0x03AECF2C LDR X8, [X8 + 0x38]
+	0x03AECF30 CBZ X8, 0x3AED020
+	0x03AECF34 MOVZ W11, 0x5C
+	0x03AECF38 SMADDL X9, X10, X11, X9
+	0x03AECF3C LDRSW X9, [X9 + 0x3C]
+	0x03AECF40 LDR W10, [X8 + 0x18]
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move X19, X0
+	005 Add X0, X31, 0
+	006 Move X1, X31
+	007 Move [X31], S0
+	008 Move [X31+8], S1
+	009 Move [X31+8], S2
+	010 Move [X31+16], S3
+	011 Call GlyphValueRecord.get_xPlacement, X0
+	012 Add X0, X31, 0
+	013 Move X1, X31
+	014 Move [X19], S0
+	015 Call GlyphValueRecord.get_yPlacement, X0
+	016 Add X0, X31, 0
+	017 Move X1, X31
+	018 Move [X19+4], S0
+	019 Call GlyphValueRecord.get_xAdvance, X0
+	020 Add X0, X31, 0
+	021 Move X1, X31
+	022 Move [X19+8], S0
+	023 Call GlyphValueRecord.get_yAdvance, X0
+	024 Move [X19+12], S0
+	025 Move X30, [X31+16]
+	026 Move X19, [X31+24]
+	027 Add X31, X31, 32
+	028 Return 
+
+Method: TMPro.TMP_GlyphValueRecord op_Addition(TMPro.TMP_GlyphValueRecord a, TMPro.TMP_GlyphValueRecord b)
+
+Disassembly:
+	0x03AECF44 CMP W9, W10
+	0x03AECF48 B.CS 0x3AED024
+	0x03AECF4C CBZ X20, 0x3AED020
+	0x03AECF50 MOVZ W10, 0x178
+	0x03AECF54 MADD X8, X9, X10, X8
+
+ISIL:
+	001 Add S0, S0, S4
+	002 Add S1, S1, S5
+	003 Add S2, S2, S6
+	004 Add S3, S3, S7
+	005 Return X0
+

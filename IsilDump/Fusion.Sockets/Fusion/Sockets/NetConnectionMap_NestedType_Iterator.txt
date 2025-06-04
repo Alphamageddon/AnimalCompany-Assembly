@@ -1,0 +1,160 @@
+Type: Fusion.Sockets.NetConnectionMap/Iterator
+
+Method: Fusion.Sockets.NetConnection* get_Current()
+
+Disassembly:
+	0x01EFE150 SUBS X9, X9, 0x1
+	0x01EFE154 ADD X10, X10, 0x10
+	0x01EFE158 B.NE 0x1EFE144
+	0x01EFE15C MOVZ W2, 0x3
+	0x01EFE160 MOV X0, X20
+	0x01EFE164 BL 0x1C5C788
+	0x01EFE168 MOV X22, X0
+	0x01EFE16C B 0x1EFE180
+	0x01EFE170 LDR W9, [X10]
+	0x01EFE174 ADD W9, W9, 0x3
+	0x01EFE178 ADD X8, X8, W9, 0x4, SXTW
+	0x01EFE17C ADD X22, X8, 0x138
+	0x01EFE180 LDR X23, [X22]
+	0x01EFE184 ADD X0, X31, 0x5F0
+	0x01EFE188 ADD X1, X31, 0x20
+	0x01EFE18C MOVZ W2, 0xF8
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W8, [X0+8]
+	003 Move TEMP, X8
+	004 And TEMP, TEMP, -2147483648
+	005 Compare TEMP, -2147483648
+	006 JumpIfEqual {15}
+	007 Move W9, [X0+12]
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move X9, [X0]
+	010 Compare X9, 0
+	011 JumpIfEqual {18}
+	012 Move X9, [X9+16]
+	013 Move W10, 432
+	014 NotImplemented "Instruction MADD not yet implemented."
+	015 Move X0, X31
+	016 Move X30, [X31+16]
+	017 Return X0
+	018 Call 0x1C17F20
+
+Method: System.Void .ctor(Fusion.Sockets.NetConnectionMap* map)
+
+Disassembly:
+	0x01EFE1B0 LDR X8, [X31 + 0x508]
+	0x01EFE1B4 LDUR V0, [X9 + 0xFF]
+	0x01EFE1B8 ADD X9, X19, 0x128
+	0x01EFE1BC STR X8, [X31 + 0x600]
+	0x01EFE1C0 STR V0, [X31 + 0x5F]
+	0x01EFE1C4 STR X8, [X9 + 0x10]
+	0x01EFE1C8 STR V0, [X9]
+	0x01EFE1CC LDR X8, [X24 + 0x28]
+	0x01EFE1D0 LDR X9, [X31 + 0x6E8]
+	0x01EFE1D4 CMP X8, X9
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move TEMP, 0
+	003 Not TEMP
+	004 Move W8, TEMP
+	005 Move [X0], X1
+	006 Move [X0+8], W8
+	007 Compare X1, 0
+	008 JumpIfEqual {13}
+	009 Move X8, [X1+40]
+	010 Move [X0+12], W8
+	011 Move X30, [X31+16]
+	012 Return 
+	013 Call 0x1C17F20
+
+Method: System.Boolean get_IsValid()
+
+Disassembly:
+	0x01EFE190 BL 0x3EB1AC0
+	0x01EFE194 LDR X3, [X22 + 0x8]
+	0x01EFE198 ADD X8, X31, 0x4F8
+	0x01EFE19C ADD X2, X31, 0x5F0
+	0x01EFE1A0 MOV X0, X20
+	0x01EFE1A4 MOV X1, X21
+	0x01EFE1A8 BLR X23
+	0x01EFE1AC ADD X9, X31, 0x3F9
+
+ISIL:
+	001 Move W8, [X0+8]
+	002 Move TEMP, X8
+	003 And TEMP, TEMP, -2147483648
+	004 Compare TEMP, -2147483648
+	005 JumpIfEqual {10}
+	006 Move W9, [X0+12]
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSET not yet implemented."
+	009 Return X0
+	010 Move W0, W31
+	011 Return X0
+
+Method: System.Boolean Next()
+
+Disassembly:
+	0x01EFE1D8 B.NE 0x1EFE200
+	0x01EFE1DC ADD X31, X31, 0x6F0
+	0x01EFE1E0 LDP X20, X19, [X31 + 0x50]
+	0x01EFE1E4 LDP X22, X21, [X31 + 0x40]
+	0x01EFE1E8 LDP X24, X23, [X31 + 0x30]
+	0x01EFE1EC LDP X26, X25, [X31 + 0x20]
+	0x01EFE1F0 LDP X28, X27, [X31 + 0x10]
+	0x01EFE1F4 LDP X29, X30, [X31], #0x60
+	0x01EFE1F8 RET
+	0x01EFE1FC BL 0x1C16F20
+	0x01EFE200 BL 0x3EB1B20
+	0x01EFE204 STP X30, X23, [X31 - 0x30]!
+	0x01EFE208 STP X22, X21, [X31 + 0x10]
+	0x01EFE20C STP X20, X19, [X31 + 0x20]
+	0x01EFE210 ADRP X20, 0x24DB000
+	0x01EFE214 ADRP X21, 0x21FD000
+	0x01EFE218 LDRB W8, [X20 + 0x64F]
+	0x01EFE21C LDR X21, [X21 + 0x6E0]
+	0x01EFE220 MOV W19, W0
+	0x01EFE224 TBNZ X8, 0x0, 0x1EFE23C
+	0x01EFE228 ADRP X0, 0x21FD000
+	0x01EFE22C LDR X0, [X0 + 0x6E0]
+	0x01EFE230 BL 0x1C16CF4
+	0x01EFE234 MOVZ W8, 0x1
+	0x01EFE238 STRB W8, [X20 + 0x64F]
+	0x01EFE23C LDR X0, [X21]
+	0x01EFE240 LDR W8, [X0 + 0xE0]
+	0x01EFE244 CBNZ W8, 0x1EFE24C
+	0x01EFE248 BL 0x1C16DFC
+	0x01EFE24C UBFM W0, W19, 0x1F, 0x1E
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move W9, [X0+8]
+	003 Move W8, [X0+12]
+	004 Add W10, W9, 1
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Move [X0+8], W10
+	007 Move X11, [X0]
+	008 Compare X11, 0
+	009 JumpIfEqual {28}
+	010 Move X11, [X11+16]
+	011 Move W12, 432
+	012 Add W9, W9, 2
+	013 NotImplemented "Instruction SMADDL not yet implemented."
+	014 Compare X10, 0
+	015 JumpIfEqual {28}
+	016 Move W11, [X10+16]
+	017 NotImplemented "Instruction CMP not yet implemented."
+	018 Move W11, [X10+64]
+	019 NotImplemented "Instruction CMP not yet implemented."
+	020 Move [X0+8], W9
+	021 NotImplemented "Instruction CMP not yet implemented."
+	022 Add W9, W9, 1
+	023 Add X10, X10, 432
+	024 Move W0, W31
+	025 Move X30, [X31+16]
+	026 Return X0
+	027 Move W0, 1
+	028 Call 0x1C17F20
+

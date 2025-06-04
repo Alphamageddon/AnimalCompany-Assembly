@@ -1,0 +1,53 @@
+Type: AnimalCompany.UserWalletState
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Int32> get_softCurrency()
+
+Disassembly:
+	0x01D4F7FC LDR W8, [X19 + 0x18]
+	0x01D4F800 CBZ W8, 0x1D4F840
+
+ISIL:
+	001 Move X0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_softCurrency(SpatialSys.ObservableState.StatePrimitive`1<System.Int32> value)
+
+Disassembly:
+	0x01D4F804 STR X21, [X19 + 0x20]
+	0x01D4F808 MOV X0, X20
+
+ISIL:
+	001 Move [X0+72], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Int32> get_hardCurrency()
+
+Disassembly:
+	0x01D4F80C MOV X1, X19
+	0x01D4F810 LDP X20, X19, [X31 + 0x30]
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_hardCurrency(SpatialSys.ObservableState.StatePrimitive`1<System.Int32> value)
+
+Disassembly:
+	0x01D4F814 LDP X22, X21, [X31 + 0x20]
+	0x01D4F818 LDP X24, X23, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01D4F81C MOV X2, X31
+	0x01D4F820 LDR X30, [X31], #0x40
+
+ISIL:
+	001 Move X1, X31
+	002 Call StateObject..ctor, X0
+	003 Return 
+

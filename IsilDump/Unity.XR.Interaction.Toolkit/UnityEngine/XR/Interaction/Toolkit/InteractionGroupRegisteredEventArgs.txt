@@ -1,0 +1,53 @@
+Type: UnityEngine.XR.Interaction.Toolkit.InteractionGroupRegisteredEventArgs
+
+Method: UnityEngine.XR.Interaction.Toolkit.IXRInteractionGroup get_interactionGroupObject()
+
+Disassembly:
+	0x03B6CEEC ADRP X20, 0x876000
+	0x03B6CEF0 LDRB W8, [X20 + 0xA6D]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_interactionGroupObject(UnityEngine.XR.Interaction.Toolkit.IXRInteractionGroup value)
+
+Disassembly:
+	0x03B6CEF4 MOV X19, X0
+	0x03B6CEF8 TBNZ X8, 0x0, 0x3B6CFB8
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.IXRInteractionGroup get_containingGroupObject()
+
+Disassembly:
+	0x03B6CEFC ADRP X0, 0x5EF000
+	0x03B6CF00 LDR X0, [X0 + 0x5F0]
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_containingGroupObject(UnityEngine.XR.Interaction.Toolkit.IXRInteractionGroup value)
+
+Disassembly:
+	0x03B6CF04 BL 0x1C16CF4
+	0x03B6CF08 ADRP X0, 0x5EF000
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03B6CF0C LDR X0, [X0 + 0x5F8]
+	0x03B6CF10 BL 0x1C16CF4
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

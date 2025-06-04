@@ -1,0 +1,61 @@
+Type: Fusion.NetworkRunnerInitializeArgs
+
+Method: System.Boolean get_IsSinglePlayer()
+
+Disassembly:
+	0x01EBA2D0 LDR X8, [X0]
+	0x01EBA2D4 LDP X9, X1, [X8 + 0x158]
+	0x01EBA2D8 BLR X9
+	0x01EBA2DC MOVZ W8, 0x18D
+	0x01EBA2E0 MUL W8, W0, W8
+	0x01EBA2E4 B 0x1EBA2EC
+	0x01EBA2E8 MOV W8, W31
+	0x01EBA2EC LDR W9, [X19 + 0x8]
+	0x01EBA2F0 LDP X20, X19, [X31 + 0x10]
+	0x01EBA2F4 EOR W0, W9, W8, 0x0
+	0x01EBA2F8 LDP X30, X21, [X31], #0x20
+	0x01EBA2FC RET
+	0x01EBA300 BL 0x1C16F20
+	0x01EBA304 STR X30, [X31 - 0x30]!
+	0x01EBA308 STP X22, X21, [X31 + 0x10]
+	0x01EBA30C STP X20, X19, [X31 + 0x20]
+	0x01EBA310 ADRP X21, 0x251F000
+	0x01EBA314 ADRP X20, 0x2245000
+	0x01EBA318 LDRB W8, [X21 + 0x41B]
+	0x01EBA31C LDR X20, [X20 + 0x588]
+	0x01EBA320 MOV X19, X0
+	0x01EBA324 TBNZ X8, 0x0, 0x1EBA348
+	0x01EBA328 ADRP X0, 0x2244000
+	0x01EBA32C LDR X0, [X0 + 0x298]
+	0x01EBA330 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x2520000
+	005 Move W8, [X20+1035]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {19}
+	011 Move X0, 0x2241000
+	012 Move X0, [X0+1520]
+	013 Call 0x1C17CF4
+	014 Move X0, 0x2244000
+	015 Move X0, [X0+528]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1035], W8
+	019 Move W8, [X19+132]
+	020 NotImplemented "Instruction CMP not yet implemented."
+	021 Move W8, [X19+124]
+	022 NotImplemented "Instruction CMP not yet implemented."
+	023 NotImplemented "Instruction CSET not yet implemented."
+	024 Move W0, W31
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return X0
+

@@ -1,0 +1,177 @@
+Type: System.OrdinalCaseSensitiveComparer
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03394360 ADRP X0, 0xD97000
+	0x03394364 LDR X0, [X0 + 0x380]
+
+ISIL:
+	001 Move W1, W31
+	002 Call OrdinalComparer..ctor, X0, X1
+	003 Return 
+
+Method: System.Int32 Compare(System.String x, System.String y)
+
+Disassembly:
+	0x03394BF4 LDR X0, [X0 + 0x3A8]
+	0x03394BF8 BL 0x1C16D08
+	0x03394BFC MOV X1, X0
+	0x03394C00 MOV X0, X19
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X2
+	003 Move X2, X31
+	004 Call String.CompareOrdinal, X0, X1
+	005 Return X0
+
+Method: System.Boolean Equals(System.String x, System.String y)
+
+Disassembly:
+	0x03394C04 BL 0x1C16DEC
+	0x03394C08 SUB X31, X31, 0x30
+	0x03394C0C STP X30, X21, [X31 + 0x10]
+	0x03394C10 STP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move X0, X1
+	002 Move X1, X2
+	003 Move X2, X31
+	004 Call String.Equals, X0, X1
+	005 Return X0
+
+Method: System.Int32 GetHashCode(System.String obj)
+
+Disassembly:
+	0x03394C14 ADRP X20, 0x1049000
+	0x03394C18 STR X0, [X31 + 0x8]
+	0x03394C1C ADRP X21, 0xD61000
+	0x03394C20 LDRB W8, [X20 + 0x7A]
+	0x03394C24 LDR X21, [X21 + 0x570]
+	0x03394C28 MOV X19, X1
+	0x03394C2C TBNZ X8, 0x0, 0x3394C44
+	0x03394C30 ADRP X0, 0xD61000
+	0x03394C34 LDR X0, [X0 + 0x570]
+	0x03394C38 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {11}
+	004 Move X8, [X1]
+	005 Move X0, X1
+	006 Move X2, [X8+344]
+	007 Move X8, [X8+352]
+	008 Move X1, X8
+	009 Move X30, [X31+16]
+	010 CallNoReturn X2
+	011 Move W0, W31
+	012 Call ThrowHelper.ThrowArgumentNullException, X0
+
+Method: System.Void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x03394C3C MOVZ W8, 0x1
+	0x03394C40 STRB W8, [X20 + 0x7A]
+	0x03394C44 LDR X0, [X21]
+	0x03394C48 LDR W8, [X0 + 0xE0]
+	0x03394C4C CBNZ W8, 0x3394C54
+	0x03394C50 BL 0x1C16DFC
+	0x03394C54 ADD X0, X31, 0x8
+	0x03394C58 MOV X1, X19
+	0x03394C5C BL 0x33947B4
+	0x03394C60 LDP X20, X19, [X31 + 0x20]
+	0x03394C64 LDP X30, X21, [X31 + 0x10]
+	0x03394C68 ADD X31, X31, 0x30
+	0x03394C6C RET
+	0x03394C70 SUB X31, X31, 0x30
+	0x03394C74 STP X30, X21, [X31 + 0x10]
+	0x03394C78 STP X20, X19, [X31 + 0x20]
+	0x03394C7C ADRP X20, 0x1049000
+	0x03394C80 STR X0, [X31 + 0x8]
+	0x03394C84 ADRP X21, 0xD61000
+	0x03394C88 LDRB W8, [X20 + 0x7B]
+	0x03394C8C LDR X21, [X21 + 0x570]
+	0x03394C90 MOV X19, X1
+	0x03394C94 TBNZ X8, 0x0, 0x3394CAC
+	0x03394C98 ADRP X0, 0xD61000
+	0x03394C9C LDR X0, [X0 + 0x570]
+	0x03394CA0 BL 0x1C16CF4
+	0x03394CA4 MOVZ W8, 0x1
+	0x03394CA8 STRB W8, [X20 + 0x7B]
+	0x03394CAC LDR X0, [X21]
+	0x03394CB0 LDR W8, [X0 + 0xE0]
+	0x03394CB4 CBNZ W8, 0x3394CBC
+	0x03394CB8 BL 0x1C16DFC
+	0x03394CBC ADD X0, X31, 0x8
+	0x03394CC0 MOV X1, X19
+	0x03394CC4 BL 0x339424C
+	0x03394CC8 LDP X20, X19, [X31 + 0x20]
+	0x03394CCC LDP X30, X21, [X31 + 0x10]
+	0x03394CD0 ADD X31, X31, 0x30
+	0x03394CD4 RET
+	0x03394CD8 CMP X0, X1
+	0x03394CDC CSET W0, EQ
+	0x03394CE0 RET
+	0x03394CE4 CMP X0, X1
+	0x03394CE8 CSET W0, NE
+	0x03394CEC RET
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X22, 0x104A000
+	007 Move X20, 0xD98000
+	008 Move X21, 0xD60000
+	009 Move W8, [X22+101]
+	010 Move X20, [X20+840]
+	011 Move X21, [X21+1728]
+	012 Move X19, X1
+	013 Move TEMP, X8
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfEqual {28}
+	017 Move X0, 0xD98000
+	018 Move X0, [X0+840]
+	019 Call 0x1C17CF4
+	020 Move X0, 0xD60000
+	021 Move X0, [X0+1728]
+	022 Call 0x1C17CF4
+	023 Move X0, 0xD98000
+	024 Move X0, [X0+792]
+	025 Call 0x1C17CF4
+	026 Move W8, 1
+	027 Move [X22+101], W8
+	028 Move X0, [X21]
+	029 Move X20, [X20]
+	030 Move W8, [X0+224]
+	031 Compare W8, 0
+	032 JumpIfNotEqual {34}
+	033 Call 0x1C17DFC
+	034 Move X0, X20
+	035 Call Type.GetTypeFromHandle, X0
+	036 Compare X19, 0
+	037 JumpIfEqual {55}
+	038 Move X20, 0xD98000
+	039 Move X20, [X20+792]
+	040 Move X1, X0
+	041 Move X0, X19
+	042 Move X2, X31
+	043 Call SerializationInfo.SetType, X0, X1
+	044 Move X1, [X20]
+	045 Move X0, X19
+	046 Move X20, [X31+32]
+	047 Move X19, [X31+40]
+	048 Move X22, [X31+16]
+	049 Move X21, [X31+24]
+	050 Move W2, W31
+	051 Move X3, X31
+	052 Move X30, [X31+48]
+	053 Call SerializationInfo.AddValue, X0, X1, X2
+	054 Return 
+	055 Call 0x1C17F20
+

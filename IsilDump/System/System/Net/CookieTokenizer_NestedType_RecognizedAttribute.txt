@@ -1,0 +1,48 @@
+Type: System.Net.CookieTokenizer/RecognizedAttribute
+
+Method: System.Void .ctor(System.String name, System.Net.CookieToken token)
+
+Disassembly:
+	0x0368C6A4 ADRP X0, 0xAB2000
+	0x0368C6A8 LDR X0, [X0 + 0x3A0]
+	0x0368C6AC BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0], X1
+	002 Move [X0+8], W2
+	003 Return 
+
+Method: System.Net.CookieToken get_Token()
+
+Disassembly:
+	0x0368C6B0 MOVZ W8, 0x1
+	0x0368C6B4 STRB W8, [X20 + 0x848]
+
+ISIL:
+	001 Move W0, [X0+8]
+	002 Return X0
+
+Method: System.Boolean IsEqualTo(System.String value)
+
+Disassembly:
+	0x0368C370 CBNZ X21, 0x368C37C
+	0x0368C374 MOV X0, X20
+	0x0368C378 BL 0x1D2C690
+	0x0368C37C MOV X0, X21
+	0x0368C380 BL 0x1C16F18
+	0x0368C384 BL 0x1990590
+	0x0368C388 SUB X31, X31, 0x40
+	0x0368C38C STP X30, X23, [X31 + 0x10]
+	0x0368C390 STP X22, X21, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0]
+	003 Move W2, 5
+	004 Move X3, X31
+	005 Call String.Compare, X0, X1, X2
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 NotImplemented "Instruction CSET not yet implemented."
+	008 Move X30, [X31+16]
+	009 Return X0
+

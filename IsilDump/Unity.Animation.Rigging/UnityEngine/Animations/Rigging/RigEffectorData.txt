@@ -1,0 +1,97 @@
+Type: UnityEngine.Animations.Rigging.RigEffectorData
+
+Method: UnityEngine.Transform get_transform()
+
+Disassembly:
+	0x036FA02C RET
+	0x036FA030 STR X30, [X31 - 0x20]!
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: UnityEngine.Animations.Rigging.RigEffectorData/Style get_style()
+
+Disassembly:
+	0x036FA034 STP X20, X19, [X31 + 0x10]
+	0x036FA038 ADRP X20, 0xCE6000
+	0x036FA03C LDRB W8, [X20 + 0xBE3]
+	0x036FA040 MOV X19, X0
+	0x036FA044 TBNZ X8, 0x0, 0x36FA068
+	0x036FA048 ADRP X0, 0x9FD000
+	0x036FA04C LDR X0, [X0 + 0xBF0]
+	0x036FA050 BL 0x1C16CF4
+
+ISIL:
+	001 Move X9, [X0+72]
+	002 NotImplemented "Instruction LDUR not yet implemented."
+	003 NotImplemented "Instruction LDUR not yet implemented."
+	004 NotImplemented "Instruction LDUR not yet implemented."
+	005 Move [X8+48], X9
+	006 Move [X8+16], V1
+	007 Move [X8+24], V0
+	008 Move [X8], V2
+	009 Return X0
+
+Method: System.Boolean get_visible()
+
+Disassembly:
+	0x036FA054 ADRP X0, 0x9FD000
+	0x036FA058 LDR X0, [X0 + 0xBF8]
+
+ISIL:
+	001 Move W0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_visible(System.Boolean value)
+
+Disassembly:
+	0x036FA05C BL 0x1C16CF4
+	0x036FA060 MOVZ W8, 0x1
+	0x036FA064 STRB W8, [X20 + 0xBE3]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+80], W8
+	003 Return 
+
+Method: System.Void Initialize(UnityEngine.Transform transform, UnityEngine.Animations.Rigging.RigEffectorData/Style style)
+
+Disassembly:
+	0x036FA068 LDRB W8, [X19 + 0x18]!
+	0x036FA06C CBZ W8, 0x36FA08C
+	0x036FA070 ADRP X8, 0x9FD000
+	0x036FA074 LDR X8, [X8 + 0xBF8]
+	0x036FA078 MOV X0, X19
+	0x036FA07C LDP X20, X19, [X31 + 0x10]
+	0x036FA080 LDR X1, [X8]
+	0x036FA084 LDR X30, [X31], #0x20
+	0x036FA088 B 0x242D58C
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Move X8, [X2+48]
+	003 Move V1, [X2+16]
+	004 Move V0, [X2+32]
+	005 Move V2, [X2]
+	006 Move [X0+72], X8
+	007 Move [X0+56], V0
+	008 Move [X0+40], V1
+	009 Move [X0+24], V2
+	010 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x036FA08C LDP X20, X19, [X31 + 0x10]
+	0x036FA090 MOV W0, W31
+	0x036FA094 LDR X30, [X31], #0x20
+	0x036FA098 RET
+
+ISIL:
+	001 Move W8, 1
+	002 Move X1, X31
+	003 Move [X0+80], W8
+	004 Call Object..ctor, X0
+	005 Return 
+

@@ -1,0 +1,103 @@
+Type: Mono.Unity.UnityTls/unitytls_interface_struct/unitytls_x509verify_explicit_ca_t
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0x035E3D94 BICS W31, W8, W0, 0x0
+	0x035E3D98 CSET W8, NE
+	0x035E3D9C UBFM X8, X8, 0x1F, 0x1E
+	0x035E3DA0 LDR X0, [X25]
+	0x035E3DA4 ORR X21, X8, X21, 0x0
+	0x035E3DA8 BL 0x1C16F10
+	0x035E3DAC LDR X2, [X22]
+	0x035E3DB0 MOV X1, X31
+	0x035E3DB4 MOV X22, X0
+	0x035E3DB8 BL 0x35E213C
+	0x035E3DBC STR X22, [X19 + 0x70]
+	0x035E3DC0 LDR X0, [X24]
+	0x035E3DC4 BL 0x1C16F10
+	0x035E3DC8 LDR X2, [X23]
+	0x035E3DCC MOV X1, X31
+	0x035E3DD0 MOV X22, X0
+	0x035E3DD4 BL 0x35E2088
+	0x035E3DD8 LDR X0, [X19 + 0xC0]
+	0x035E3DDC LDR X27, [X19 + 0x70]
+	0x035E3DE0 MOV X1, X31
+	0x035E3DE4 STR X22, [X19 + 0x78]
+	0x035E3DE8 BL 0x33C6948
+	0x035E3DEC LDR X8, [X20]
+	0x035E3DF0 MOV X23, X0
+	0x035E3DF4 MOV X0, X20
+	0x035E3DF8 LDP X9, X1, [X8 + 0x178]
+	0x035E3DFC BLR X9
+	0x035E3E00 TBZ X0, 0x0, 0x35E40E0
+	0x035E3E04 LDR X8, [X20]
+	0x035E3E08 MOV X0, X20
+	0x035E3E0C LDP X9, X1, [X8 + 0x1E8]
+	0x035E3E10 BLR X9
+	0x035E3E14 ADD X1, X31, 0x20
+	0x035E3E18 ADD X2, X31, 0x18
+	0x035E3E1C ADD X3, X31, 0x10
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+8]
+	006 Move [X0+32], X1
+	007 Move [X0+40], X2
+	008 Move X19, X0
+	009 Move X20, X1
+	010 Move [X0+16], X8
+	011 Move W21, [X2+82]
+	012 Move [X0+64], X0
+	013 Move X0, X2
+	014 Call 0x1C17D84
+	015 Move TEMP, X0
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfNotEqual {23}
+	019 NotImplemented "Instruction CMP not yet implemented."
+	020 Move X8, -27389952
+	021 Add X8, X8, 2412
+	022 Move [X19+24], X8
+	023 Compare X20, 0
+	024 JumpIfEqual {37}
+	025 Move X8, [X19+16]
+	026 Move X9, [X19+32]
+	027 Move [X19+24], X8
+	028 Move [X19+64], X9
+	029 Move X8, -27389952
+	030 Add X8, X8, 2248
+	031 Move [X19+56], X8
+	032 Move X20, [X31+16]
+	033 Move X19, [X31+24]
+	034 Move X30, [X31+32]
+	035 Move X21, [X31+40]
+	036 Return 
+	037 Move X1, -44855296
+	038 Add X1, X1, 3811
+	039 Move X0, X31
+	040 Call 0x1C17F3C
+	041 Move X1, X31
+	042 Call 0x1C17DEC
+
+Method: Mono.Unity.UnityTls/unitytls_x509verify_result Invoke(Mono.Unity.UnityTls/unitytls_x509list_ref chain, Mono.Unity.UnityTls/unitytls_x509list_ref trustCA, System.Byte* cn, System.IntPtr cnLen, Mono.Unity.UnityTls/unitytls_x509verify_callback cb, System.Void* userData, Mono.Unity.UnityTls/unitytls_errorstate* errorState)
+
+Disassembly:
+	0x035E3E20 ADD X24, X31, 0x18
+	0x035E3E24 ADD X25, X31, 0x10
+	0x035E3E28 BL 0x35E446C
+	0x035E3E2C STP X31, X24, [X31 + 0x48]
+	0x035E3E30 STR X25, [X31 + 0x58]
+	0x035E3E34 BL 0x35E1D34
+
+ISIL:
+	001 Move X8, [X0+64]
+	002 Move X9, [X0+24]
+	003 Move X10, [X0+40]
+	004 Move X0, X8
+	005 Move [X31], X10
+	006 CallNoReturn X9
+

@@ -1,0 +1,40 @@
+Type: System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute
+
+Method: System.Void .ctor(System.Runtime.InteropServices.CallingConvention callingConvention)
+
+Disassembly:
+	0x032C0D14 LDP X20, X19, [X31 + 0x30]
+	0x032C0D18 LDP X22, X21, [X31 + 0x20]
+	0x032C0D1C LDP X24, X23, [X31 + 0x10]
+	0x032C0D20 LDR X30, [X31], #0x40
+	0x032C0D24 B 0x32C0C08
+	0x032C0D28 CBZ X20, 0x32C0D78
+	0x032C0D2C LDR W8, [X20 + 0x18]
+	0x032C0D30 CMP W8, W21
+	0x032C0D34 B.LS 0x32C0D7C
+	0x032C0D38 LDR X0, [X23]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Runtime.InteropServices.CallingConvention get_CallingConvention()
+
+Disassembly:
+	0x032C0D3C ADD X9, X20, W21, SXTW
+	0x032C0D40 ADD X23, X9, 0x20
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+

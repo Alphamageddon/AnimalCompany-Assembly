@@ -1,0 +1,436 @@
+Type: UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceModel/ImplementationData
+
+Method: System.Collections.Generic.List`1<UnityEngine.GameObject> get_hoverTargets()
+
+Disassembly:
+	0x03BA0A40 LDP X9, X1, [X8 + 0x1C8]
+	0x03BA0A44 BLR X9
+
+ISIL:
+	001 Move X0, [X0]
+	002 Return X0
+
+Method: System.Void set_hoverTargets(System.Collections.Generic.List`1<UnityEngine.GameObject> value)
+
+Disassembly:
+	0x03BA0A48 TBZ X0, 0x0, 0x3BA0AF0
+	0x03BA0A4C LDR X8, [X19 + 0x38]
+
+ISIL:
+	001 Move [X0], X1
+	002 Return 
+
+Method: UnityEngine.GameObject get_pointerTarget()
+
+Disassembly:
+	0x03BA0A50 CBZ X8, 0x3BA0AFC
+	0x03BA0A54 ADRP X21, 0x553000
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Return X0
+
+Method: System.Void set_pointerTarget(UnityEngine.GameObject value)
+
+Disassembly:
+	0x03BA0A58 LDR X21, [X21 + 0x598]
+	0x03BA0A5C LDR X20, [X8 + 0x28]
+
+ISIL:
+	001 Move [X0+8], X1
+	002 Return 
+
+Method: System.Boolean get_isDragging()
+
+Disassembly:
+	0x03BA0A60 LDR X0, [X21]
+	0x03BA0A64 LDR W9, [X0 + 0xE0]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_isDragging(System.Boolean value)
+
+Disassembly:
+	0x03BA0A68 CBNZ W9, 0x3BA0A70
+	0x03BA0A6C BL 0x1C16DFC
+	0x03BA0A70 MOV X0, X20
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+16], W8
+	003 Return 
+
+Method: System.Single get_pressedTime()
+
+Disassembly:
+	0x03BA0A74 MOV X1, X19
+	0x03BA0A78 MOV X2, X31
+
+ISIL:
+	001 Move V0, [X0+20]
+	002 Return V0
+
+Method: System.Void set_pressedTime(System.Single value)
+
+Disassembly:
+	0x03BA0A7C BL 0x3C3883C
+	0x03BA0A80 TBZ X0, 0x0, 0x3BA0AF0
+
+ISIL:
+	001 Move [X0+20], S0
+	002 Return 
+
+Method: UnityEngine.Vector2 get_position()
+
+Disassembly:
+	0x03BA0A84 ADRP X8, 0x57A000
+	0x03BA0A88 LDR X8, [X8 + 0xDF8]
+
+ISIL:
+	001 Move S0, [X0+24]
+	002 Move S1, [X0+28]
+	003 Return X0
+
+Method: System.Void set_position(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x03BA0A8C LDR X20, [X19 + 0x38]
+	0x03BA0A90 LDR X0, [X8]
+
+ISIL:
+	001 Move [X0+24], S0
+	002 Move [X0+32], S1
+	003 Return 
+
+Method: UnityEngine.Vector2 get_pressedPosition()
+
+Disassembly:
+	0x03BA0A94 LDR W8, [X0 + 0xE0]
+	0x03BA0A98 CBNZ W8, 0x3BA0AA0
+
+ISIL:
+	001 Move S0, [X0+32]
+	002 Move S1, [X0+36]
+	003 Return X0
+
+Method: System.Void set_pressedPosition(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x03BA0A9C BL 0x1C16DFC
+	0x03BA0AA0 MOV X0, X31
+
+ISIL:
+	001 Move [X0+32], S0
+	002 Move [X0+40], S1
+	003 Return 
+
+Method: UnityEngine.Vector3 get_pressedWorldPosition()
+
+Disassembly:
+	0x03BA0AA4 BL 0x3E4FF90
+	0x03BA0AA8 LDR X8, [X21]
+	0x03BA0AAC MOV X21, X0
+
+ISIL:
+	001 Move S0, [X0+40]
+	002 Move S1, [X0+44]
+	003 Move V2, [X0+48]
+	004 Return X0
+
+Method: System.Void set_pressedWorldPosition(UnityEngine.Vector3 value)
+
+Disassembly:
+	0x03BA0AB0 LDR W9, [X8 + 0xE0]
+	0x03BA0AB4 CBNZ W9, 0x3BA0AC0
+	0x03BA0AB8 MOV X0, X8
+
+ISIL:
+	001 Move [X0+40], S0
+	002 Move [X0+48], S1
+	003 Move [X0+48], S2
+	004 Return 
+
+Method: UnityEngine.EventSystems.RaycastResult get_pressedRaycast()
+
+Disassembly:
+	0x03BA0ABC BL 0x1C16DFC
+	0x03BA0AC0 MOV X0, X20
+	0x03BA0AC4 MOV X1, X21
+	0x03BA0AC8 MOV X2, X31
+
+ISIL:
+	001 Add X1, X0, 56
+	002 Move W2, 80
+	003 Move X0, X8
+	004 Call 0x3EB2AC0
+	005 Return X0
+
+Method: System.Void set_pressedRaycast(UnityEngine.EventSystems.RaycastResult value)
+
+Disassembly:
+	0x03BA0ACC BL 0x3C3883C
+	0x03BA0AD0 TBZ X0, 0x0, 0x3BA0AF0
+	0x03BA0AD4 LDR X8, [X19]
+	0x03BA0AD8 MOV X0, X19
+	0x03BA0ADC LDP X20, X19, [X31 + 0x10]
+	0x03BA0AE0 LDR X2, [X8 + 0x2F8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X0, 56
+	003 Move W2, 80
+	004 Call 0x3EB2B30
+	005 Move X30, [X31+16]
+	006 Return 
+
+Method: UnityEngine.GameObject get_pressedGameObject()
+
+Disassembly:
+	0x03BA0AE4 LDR X1, [X8 + 0x300]
+	0x03BA0AE8 LDP X30, X21, [X31], #0x20
+
+ISIL:
+	001 Move X0, [X0+136]
+	002 Return X0
+
+Method: System.Void set_pressedGameObject(UnityEngine.GameObject value)
+
+Disassembly:
+	0x03BA0AEC BR X2
+	0x03BA0AF0 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0+136], X1
+	002 Return 
+
+Method: UnityEngine.GameObject get_pressedGameObjectRaw()
+
+Disassembly:
+	0x03BA0AF4 LDP X30, X21, [X31], #0x20
+	0x03BA0AF8 RET
+
+ISIL:
+	001 Move X0, [X0+144]
+	002 Return X0
+
+Method: System.Void set_pressedGameObjectRaw(UnityEngine.GameObject value)
+
+Disassembly:
+	0x03BA0AFC BL 0x1C16F20
+	0x03BA0B00 B 0x3BA0B04
+
+ISIL:
+	001 Move [X0+144], X1
+	002 Return 
+
+Method: UnityEngine.GameObject get_draggedGameObject()
+
+Disassembly:
+	0x03BA0B04 STR X30, [X31 - 0x30]!
+	0x03BA0B08 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, [X0+152]
+	002 Return X0
+
+Method: System.Void set_draggedGameObject(UnityEngine.GameObject value)
+
+Disassembly:
+	0x03BA0B0C STP X20, X19, [X31 + 0x20]
+	0x03BA0B10 ADRP X19, 0x842000
+
+ISIL:
+	001 Move [X0+152], X1
+	002 Return 
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x03BA04F0 MOV V14.16B, V0.16B
+	0x03BA04F4 MOV V12.16B, V1.16B
+	0x03BA04F8 MOV V11.16B, V2.16B
+	0x03BA04FC ADD X0, X31, 0x10
+	0x03BA0500 MOV X1, X31
+	0x03BA0504 BL 0x3C8E678
+	0x03BA0508 ADRP X9, 0x5A9000
+	0x03BA050C LDR W10, [X19 + 0x1C]
+	0x03BA0510 LDR X8, [X19 + 0x10]
+	0x03BA0514 LDR X9, [X9 + 0x358]
+	0x03BA0518 ADD W10, W10, 0x1
+	0x03BA051C LDR X9, [X9]
+	0x03BA0520 STR W10, [X19 + 0x1C]
+	0x03BA0524 CBZ X8, 0x3BA0608
+	0x03BA0528 LDRSW X10, [X19 + 0x18]
+	0x03BA052C LDR W11, [X8 + 0x18]
+	0x03BA0530 SCVTF S3, S15
+	0x03BA0534 CMP W10, W11
+	0x03BA0538 B.CS 0x3BA0574
+	0x03BA053C MOVZ W11, 0x50
+	0x03BA0540 ADD W9, W10, 0x1
+	0x03BA0544 MADD X8, X10, X11, X8
+	0x03BA0548 STR W9, [X19 + 0x18]
+	0x03BA054C STP X22, X21, [X8 + 0x20]
+	0x03BA0550 STP S13, S3, [X8 + 0x30]
+	0x03BA0554 STP X31, X31, [X8 + 0x38]
+	0x03BA0558 STR W31, [X8 + 0x48]
+	0x03BA055C STP S14, S12, [X8 + 0x4C]
+	0x03BA0560 STP S11, S0, [X8 + 0x54]
+	0x03BA0564 STP S1, S2, [X8 + 0x5C]
+	0x03BA0568 STP S10, S9, [X8 + 0x64]
+	0x03BA056C STR W23, [X8 + 0x6C]
+	0x03BA0570 B 0x3BA05B0
+	0x03BA0574 LDR X8, [X9 + 0x20]
+	0x03BA0578 LDR X8, [X8 + 0xC0]
+	0x03BA057C LDR X2, [X8 + 0x70]
+	0x03BA0580 STP X22, X21, [X31 + 0x80]
+	0x03BA0584 STP S13, S3, [X31 + 0x90]
+	0x03BA0588 STP X31, X31, [X28]
+	0x03BA058C STR W31, [X28 + 0x10]
+	0x03BA0590 STP S14, S12, [X31 + 0xAC]
+	0x03BA0594 STP S11, S0, [X31 + 0xB4]
+	0x03BA0598 STP S1, S2, [X31 + 0xBC]
+	0x03BA059C STP S10, S9, [X31 + 0xC4]
+	0x03BA05A0 STR W23, [X31 + 0xCC]
+	0x03BA05A4 ADD X1, X31, 0x80
+	0x03BA05A8 MOV X0, X19
+	0x03BA05AC BL 0x3035DFC
+	0x03BA05B0 MOVZ W24, 0x1
+	0x03BA05B4 B 0x3BA0418
+	0x03BA05B8 LDR X1, [X29]
+	0x03BA05BC ADD X0, X31, 0x40
+	0x03BA05C0 BL 0x2BC7068
+	0x03BA05C4 AND W0, W24, 0x1
+	0x03BA05C8 LDP X20, X19, [X31 + 0x160]
+	0x03BA05CC LDP X22, X21, [X31 + 0x150]
+	0x03BA05D0 LDP X24, X23, [X31 + 0x140]
+	0x03BA05D4 LDP X26, X25, [X31 + 0x130]
+	0x03BA05D8 LDP X28, X27, [X31 + 0x120]
+	0x03BA05DC LDP X29, X30, [X31 + 0x110]
+	0x03BA05E0 LDP D9, D8, [X31 + 0x100]
+	0x03BA05E4 LDP D11, D10, [X31 + 0xF0]
+	0x03BA05E8 LDP D13, D12, [X31 + 0xE0]
+	0x03BA05EC LDP D15, D14, [X31 + 0xD0]
+	0x03BA05F0 ADD X31, X31, 0x170
+	0x03BA05F4 RET
+	0x03BA05F8 BL 0x1C16F20
+	0x03BA05FC BL 0x1C16F20
+	0x03BA0600 BL 0x1C16F20
+	0x03BA0604 BL 0x1C16F20
+	0x03BA0608 BL 0x1C16F20
+	0x03BA060C B 0x3BA0650
+	0x03BA0610 B 0x3BA0650
+	0x03BA0614 B 0x3BA0650
+	0x03BA0618 B 0x3BA0650
+	0x03BA061C B 0x3BA062C
+	0x03BA0620 B 0x3BA0650
+	0x03BA0624 B 0x3BA0650
+	0x03BA0628 B 0x3BA0650
+	0x03BA062C MOV X19, X0
+	0x03BA0630 MOV W24, W31
+	0x03BA0634 B 0x3BA0654
+	0x03BA0638 B 0x3BA0650
+	0x03BA063C B 0x3BA0650
+	0x03BA0640 B 0x3BA0650
+	0x03BA0644 B 0x3BA0650
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x843000
+	005 Move W8, [X20+3121]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {22}
+	011 Move X0, 0x5AA000
+	012 Move X0, [X0+1032]
+	013 Call 0x1C17CF4
+	014 Move X0, 0x55A000
+	015 Move X0, [X0+1360]
+	016 Call 0x1C17CF4
+	017 Move X0, 0x55A000
+	018 Move X0, [X0+1352]
+	019 Call 0x1C17CF4
+	020 Move W8, 1
+	021 Move [X20+3121], W8
+	022 Move [X19+16], W31
+	023 Move [X19+20], W31
+	024 Move X20, 0x83A000
+	025 Move W8, [X20+1935]
+	026 Compare W8, 0
+	027 JumpIfNotEqual {33}
+	028 Move X0, 0x55C000
+	029 Move X0, [X0+3848]
+	030 Call 0x1C17CF4
+	031 Move W8, 1
+	032 Move [X20+1935], W8
+	033 Move X8, 0x55C000
+	034 Move X8, [X8+3848]
+	035 Move X20, 0x839000
+	036 Move X8, [X8]
+	037 Move X9, [X8+184]
+	038 Move V0, [X9]
+	039 Move [X19+24], D0
+	040 Move X8, [X8+184]
+	041 Move V0, [X8]
+	042 Move [X19+32], D0
+	043 Move W8, [X20+1923]
+	044 Compare W8, 0
+	045 JumpIfNotEqual {51}
+	046 Move X0, 0x554000
+	047 Move X0, [X0+1440]
+	048 Call 0x1C17CF4
+	049 Move W8, 1
+	050 Move [X20+1923], W8
+	051 Move X8, 0x554000
+	052 Move X8, [X8+1440]
+	053 NotImplemented "Instruction MOVI not yet implemented."
+	054 Move X8, [X8]
+	055 Move X8, [X8+184]
+	056 Move V1, [X8]
+	057 Move V2, [X8+8]
+	058 Move X8, [X19]
+	059 Move [X19+56], V0
+	060 Move [X19+72], V0
+	061 Move [X19+88], V0
+	062 Move [X19+104], V0
+	063 Move [X19+120], V0
+	064 Move [X19+136], V0
+	065 Move [X19+40], D1
+	066 Move [X19+48], S2
+	067 Move [X19+152], X31
+	068 Compare X8, 0
+	069 JumpIfEqual {84}
+	070 Move W2, [X8+24]
+	071 Move W9, [X8+28]
+	072 Add W9, W9, 1
+	073 NotImplemented "Instruction CMP not yet implemented."
+	074 Move [X8+24], W31
+	075 Move [X8+28], W9
+	076 Move X0, [X8+16]
+	077 Move X20, [X31+16]
+	078 Move X19, [X31+24]
+	079 Move W1, W31
+	080 Move X3, X31
+	081 Move X30, [X31+32]
+	082 Call Array.Clear, X0, X1, X2
+	083 Return 
+	084 Move X8, 0x55A000
+	085 Move X8, [X8+1352]
+	086 Move X0, [X8]
+	087 Call 0x1C17F10
+	088 Move X8, 0x55A000
+	089 Move X8, [X8+1360]
+	090 Move X20, X0
+	091 Move X1, [X8]
+	092 Call List`1<Object>..ctor, X0
+	093 Move [X19], X20
+	094 Move X20, [X31+16]
+	095 Move X19, [X31+24]
+	096 Move X30, [X31+32]
+	097 Return 
+

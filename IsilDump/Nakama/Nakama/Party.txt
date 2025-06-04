@@ -1,0 +1,468 @@
+Type: Nakama.Party
+
+Method: System.String get_Id()
+
+Disassembly:
+	0x034775B8 STRB W8, [X20 + 0x83A]
+	0x034775BC LDR X0, [X21]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_Id(System.String value)
+
+Disassembly:
+	0x034775C0 MOVZ W1, 0x5
+	0x034775C4 BL 0x1C16D6C
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Boolean get_Open()
+
+Disassembly:
+	0x034775C8 CBZ X0, 0x3477648
+	0x034775CC LDR W8, [X0 + 0x18]
+
+ISIL:
+	001 Move W0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_Open(System.Boolean value)
+
+Disassembly:
+	0x034775D0 CBZ W8, 0x3477644
+	0x034775D4 ADRP X9, 0xCB9000
+	0x034775D8 LDR X9, [X9 + 0xA80]
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+24], W8
+	003 Return 
+
+Method: System.Int32 get_MaxSize()
+
+Disassembly:
+	0x034775DC CMP W8, 0x1
+	0x034775E0 LDR X9, [X9]
+
+ISIL:
+	001 Move W0, [X0+28]
+	002 Return X0
+
+Method: System.Void set_MaxSize(System.Int32 value)
+
+Disassembly:
+	0x034775E4 STR X9, [X0 + 0x20]
+	0x034775E8 B.EQ 0x3477644
+
+ISIL:
+	001 Move [X0+28], W1
+	002 Return 
+
+Method: Nakama.IUserPresence get_Self()
+
+Disassembly:
+	0x034775EC LDR X9, [X19 + 0x10]
+	0x034775F0 CMP W8, 0x2
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: Nakama.UserPresence get_SelfField()
+
+Disassembly:
+	0x034775F4 STR X9, [X0 + 0x28]
+	0x034775F8 B.LS 0x3477644
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_SelfField(Nakama.UserPresence value)
+
+Disassembly:
+	0x034775FC ADRP X9, 0xCB9000
+	0x03477600 LDR X9, [X9 + 0xA78]
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: Nakama.IUserPresence get_Leader()
+
+Disassembly:
+	0x03477604 CMP W8, 0x3
+	0x03477608 LDR X9, [X9]
+
+ISIL:
+	001 Move X0, [X0+40]
+	002 Return X0
+
+Method: Nakama.UserPresence get_LeaderField()
+
+Disassembly:
+	0x0347760C STR X9, [X0 + 0x30]
+	0x03477610 B.EQ 0x3477644
+
+ISIL:
+	001 Move X0, [X0+40]
+	002 Return X0
+
+Method: System.Void set_LeaderField(Nakama.UserPresence value)
+
+Disassembly:
+	0x03477614 LDR X9, [X19 + 0x18]
+	0x03477618 CMP W8, 0x4
+
+ISIL:
+	001 Move [X0+40], X1
+	002 Return 
+
+Method: System.Collections.Generic.IEnumerable`1<Nakama.IUserPresence> get_Presences()
+
+Disassembly:
+	0x0347761C STR X9, [X0 + 0x38]
+	0x03477620 B.LS 0x3477644
+	0x03477624 ADRP X8, 0xCB8000
+	0x03477628 LDR X8, [X8 + 0x5B8]
+	0x0347762C LDP X20, X19, [X31 + 0x10]
+	0x03477630 MOV X1, X31
+	0x03477634 LDR X8, [X8]
+	0x03477638 STR X8, [X0 + 0x40]
+	0x0347763C LDP X30, X21, [X31], #0x20
+	0x03477640 B 0x32278CC
+	0x03477644 BL 0x1C16F28
+	0x03477648 BL 0x1C16F20
+	0x0347764C MOV X1, X31
+	0x03477650 B 0x33BDD8C
+	0x03477654 LDR X0, [X0 + 0x10]
+	0x03477658 RET
+	0x0347765C STR X1, [X0 + 0x10]
+	0x03477660 RET
+	0x03477664 LDR X0, [X0 + 0x18]
+	0x03477668 RET
+	0x0347766C STR X1, [X0 + 0x18]
+	0x03477670 RET
+	0x03477674 STP X30, X21, [X31 - 0x20]!
+	0x03477678 STP X20, X19, [X31 + 0x10]
+	0x0347767C ADRP X20, 0xF66000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xF67000
+	005 Move W8, [X20+2089]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0xCBA000
+	012 Move X0, [X0+2056]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2089], W8
+	016 Move X0, [X19+48]
+	017 Compare X0, 0
+	018 JumpIfNotEqual {29}
+	019 Move X19, 0xCBA000
+	020 Move X19, [X19+2056]
+	021 Move X0, [X19]
+	022 Move W8, [X0+224]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {27}
+	025 Call 0x1C17DFC
+	026 Move X0, [X19]
+	027 Move X8, [X0+184]
+	028 Move X0, [X8]
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X30, [X31+32]
+	032 Return X0
+
+Method: System.Collections.Generic.List`1<Nakama.UserPresence> get_PresencesField()
+
+Disassembly:
+	0x03477680 ADRP X21, 0xC7C000
+	0x03477684 LDRB W8, [X20 + 0x83B]
+
+ISIL:
+	001 Move X0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_PresencesField(System.Collections.Generic.List`1<Nakama.UserPresence> value)
+
+Disassembly:
+	0x03477688 LDR X21, [X21 + 0xAC8]
+	0x0347768C MOV X19, X0
+
+ISIL:
+	001 Move [X0+48], X1
+	002 Return 
+
+Method: System.Void UpdatePresences(Nakama.IPartyPresenceEvent presenceEvent)
+
+Disassembly:
+	0x03477690 TBNZ X8, 0x0, 0x34776CC
+	0x03477694 ADRP X0, 0xC7C000
+	0x03477698 LDR X0, [X0 + 0xAC8]
+	0x0347769C BL 0x1C16CF4
+	0x034776A0 ADRP X0, 0xCB9000
+	0x034776A4 LDR X0, [X0 + 0xA78]
+	0x034776A8 BL 0x1C16CF4
+	0x034776AC ADRP X0, 0xCB8000
+	0x034776B0 LDR X0, [X0 + 0x5B8]
+	0x034776B4 BL 0x1C16CF4
+	0x034776B8 ADRP X0, 0xCB9000
+	0x034776BC LDR X0, [X0 + 0xA88]
+	0x034776C0 BL 0x1C16CF4
+	0x034776C4 MOVZ W8, 0x1
+	0x034776C8 STRB W8, [X20 + 0x83B]
+	0x034776CC LDR X0, [X21]
+	0x034776D0 MOVZ W1, 0x5
+	0x034776D4 BL 0x1C16D6C
+	0x034776D8 CBZ X0, 0x3477758
+	0x034776DC LDR W8, [X0 + 0x18]
+	0x034776E0 CBZ W8, 0x3477754
+	0x034776E4 ADRP X9, 0xCB9000
+	0x034776E8 LDR X9, [X9 + 0xA88]
+	0x034776EC CMP W8, 0x1
+	0x034776F0 LDR X9, [X9]
+	0x034776F4 STR X9, [X0 + 0x20]
+	0x034776F8 B.EQ 0x3477754
+	0x034776FC LDR X9, [X19 + 0x10]
+	0x03477700 CMP W8, 0x2
+	0x03477704 STR X9, [X0 + 0x28]
+	0x03477708 B.LS 0x3477754
+	0x0347770C ADRP X9, 0xCB9000
+	0x03477710 LDR X9, [X9 + 0xA78]
+	0x03477714 CMP W8, 0x3
+	0x03477718 LDR X9, [X9]
+	0x0347771C STR X9, [X0 + 0x30]
+	0x03477720 B.EQ 0x3477754
+	0x03477724 LDR X9, [X19 + 0x18]
+	0x03477728 CMP W8, 0x4
+	0x0347772C STR X9, [X0 + 0x38]
+	0x03477730 B.LS 0x3477754
+	0x03477734 ADRP X8, 0xCB8000
+	0x03477738 LDR X8, [X8 + 0x5B8]
+	0x0347773C LDP X20, X19, [X31 + 0x10]
+	0x03477740 MOV X1, X31
+	0x03477744 LDR X8, [X8]
+	0x03477748 STR X8, [X0 + 0x40]
+	0x0347774C LDP X30, X21, [X31], #0x20
+	0x03477750 B 0x32278CC
+	0x03477754 BL 0x1C16F28
+	0x03477758 BL 0x1C16F20
+	0x0347775C MOV X1, X31
+	0x03477760 B 0x33BDD8C
+	0x03477764 LDR X0, [X0 + 0x10]
+	0x03477768 RET
+	0x0347776C STR X1, [X0 + 0x10]
+	0x03477770 RET
+	0x03477774 LDR X0, [X0 + 0x18]
+	0x03477778 RET
+	0x0347777C STR X1, [X0 + 0x18]
+	0x03477780 RET
+	0x03477784 STP X30, X21, [X31 - 0x20]!
+	0x03477788 STP X20, X19, [X31 + 0x10]
+	0x0347778C ADRP X21, 0xF66000
+	0x03477790 ADRP X20, 0xCB9000
+	0x03477794 LDRB W8, [X21 + 0x83C]
+	0x03477798 LDR X20, [X20 + 0xA90]
+	0x0347779C MOV X19, X0
+	0x034777A0 TBNZ X8, 0x0, 0x34777B8
+	0x034777A4 ADRP X0, 0xCB9000
+	0x034777A8 LDR X0, [X0 + 0xA90]
+	0x034777AC BL 0x1C16CF4
+	0x034777B0 MOVZ W8, 0x1
+	0x034777B4 STRB W8, [X21 + 0x83C]
+	0x034777B8 LDP X1, X2, [X19 + 0x10]
+	0x034777BC LDR X0, [X20]
+	0x034777C0 LDP X20, X19, [X31 + 0x10]
+	0x034777C4 MOV X3, X31
+	0x034777C8 LDP X30, X21, [X31], #0x20
+	0x034777CC B 0x3227BD4
+	0x034777D0 MOV X1, X31
+	0x034777D4 B 0x33BDD8C
+	0x034777D8 LDR X0, [X0 + 0x10]
+	0x034777DC RET
+	0x034777E0 STR X1, [X0 + 0x10]
+	0x034777E4 RET
+	0x034777E8 STR X30, [X31 - 0x20]!
+	0x034777EC STP X20, X19, [X31 + 0x10]
+	0x034777F0 ADRP X20, 0xF66000
+	0x034777F4 LDRB W8, [X20 + 0x83D]
+	0x034777F8 MOV X19, X0
+	0x034777FC TBNZ X8, 0x0, 0x3477814
+	0x03477800 ADRP X0, 0xCB9000
+	0x03477804 LDR X0, [X0 + 0x808]
+	0x03477808 BL 0x1C16CF4
+	0x0347780C MOVZ W8, 0x1
+	0x03477810 STRB W8, [X20 + 0x83D]
+	0x03477814 LDR X0, [X19 + 0x18]
+	0x03477818 CBNZ X0, 0x3477840
+	0x0347781C ADRP X19, 0xCB9000
+	0x03477820 LDR X19, [X19 + 0x808]
+	0x03477824 LDR X0, [X19]
+	0x03477828 LDR W8, [X0 + 0xE0]
+	0x0347782C CBNZ W8, 0x3477838
+	0x03477830 BL 0x1C16DFC
+	0x03477834 LDR X0, [X19]
+	0x03477838 LDR X8, [X0 + 0xB8]
+	0x0347783C LDR X0, [X8]
+	0x03477840 LDP X20, X19, [X31 + 0x10]
+	0x03477844 LDR X30, [X31], #0x20
+	0x03477848 RET
+	0x0347784C LDR X0, [X0 + 0x18]
+	0x03477850 RET
+	0x03477854 STR X1, [X0 + 0x18]
+	0x03477858 RET
+	0x0347785C STR X30, [X31 - 0x20]!
+	0x03477860 STP X20, X19, [X31 + 0x10]
+	0x03477864 ADRP X20, 0xF66000
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0xF67000
+	007 Move W8, [X21+2090]
+	008 Move X20, X1
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xCBA000
+	015 Move X0, [X0+2544]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X21+2090], W8
+	019 Compare X20, 0
+	020 JumpIfEqual {108}
+	021 Move X22, 0xCBA000
+	022 Move X8, [X20]
+	023 Move X22, [X22+2544]
+	024 NotImplemented "Instruction LDRH not yet implemented."
+	025 Move X1, [X22]
+	026 Compare X9, 0
+	027 JumpIfEqual {34}
+	028 Move X10, [X8+176]
+	029 Add X10, X10, 8
+	030 NotImplemented "Instruction LDUR not yet implemented."
+	031 NotImplemented "Instruction CMP not yet implemented."
+	032 Subtract X9, X9, 1
+	033 Add X10, X10, 16
+	034 Move X0, X20
+	035 Move W2, W31
+	036 Call 0x1C5D788
+	037 NotImplemented "Instruction LDRSW not yet implemented."
+	038 Add X8, X8, X9
+	039 Add X0, X8, 312
+	040 Move X8, [X0]
+	041 Move X1, [X0+8]
+	042 Move X0, X20
+	043 NotImplemented "Instruction BLR not yet implemented."
+	044 Move X1, [X19+16]
+	045 Move X2, X31
+	046 Call String.op_Inequality, X0, X1
+	047 Move TEMP, X0
+	048 And TEMP, TEMP, 1
+	049 Compare TEMP, 1
+	050 JumpIfEqual {109}
+	051 Move X8, [X20]
+	052 Move X21, [X19+48]
+	053 Move X1, [X22]
+	054 NotImplemented "Instruction LDRH not yet implemented."
+	055 Compare X9, 0
+	056 JumpIfEqual {63}
+	057 Move X10, [X8+176]
+	058 Add X10, X10, 8
+	059 NotImplemented "Instruction LDUR not yet implemented."
+	060 NotImplemented "Instruction CMP not yet implemented."
+	061 Subtract X9, X9, 1
+	062 Add X10, X10, 16
+	063 Move W2, 1
+	064 Move X0, X20
+	065 Call 0x1C5D788
+	066 Move W9, [X10]
+	067 Add W9, W9, 1
+	068 Add X8, X8, W9
+	069 Add X0, X8, 312
+	070 Move X8, [X0]
+	071 Move X1, [X0+8]
+	072 Move X0, X20
+	073 NotImplemented "Instruction BLR not yet implemented."
+	074 Move X8, [X20]
+	075 Move X1, [X22]
+	076 Move X22, X0
+	077 NotImplemented "Instruction LDRH not yet implemented."
+	078 Compare X9, 0
+	079 JumpIfEqual {86}
+	080 Move X10, [X8+176]
+	081 Add X10, X10, 8
+	082 NotImplemented "Instruction LDUR not yet implemented."
+	083 NotImplemented "Instruction CMP not yet implemented."
+	084 Subtract X9, X9, 1
+	085 Add X10, X10, 16
+	086 Move W2, 2
+	087 Move X0, X20
+	088 Call 0x1C5D788
+	089 Move W9, [X10]
+	090 Add W9, W9, 2
+	091 Add X8, X8, W9
+	092 Add X0, X8, 312
+	093 Move X8, [X0]
+	094 Move X1, [X0+8]
+	095 Move X0, X20
+	096 NotImplemented "Instruction BLR not yet implemented."
+	097 Move X2, X0
+	098 Move X0, X21
+	099 Move X1, X22
+	100 Call PresenceUtil.CopyJoinsAndLeaves, X0, X1, X2
+	101 Move [X19+48], X0
+	102 Move X20, [X31+32]
+	103 Move X19, [X31+40]
+	104 Move X22, [X31+16]
+	105 Move X21, [X31+24]
+	106 Move X30, [X31+48]
+	107 Return 
+	108 Call 0x1C17F20
+	109 Move X0, 0xC7D000
+	110 Move X0, [X0+1456]
+	111 Call 0x1C17D08
+	112 Call 0x1C17F10
+	113 Move X19, X0
+	114 Move X0, 0xCBA000
+	115 Move X0, [X0+2552]
+	116 Call 0x1C17D08
+	117 Move X1, X0
+	118 Move X0, X19
+	119 Move X2, X31
+	120 Call InvalidOperationException..ctor, X0, X1
+	121 Move X0, 0xCBA000
+	122 Move X0, [X0+2560]
+	123 Call 0x1C17D08
+	124 Move X1, X0
+	125 Move X0, X19
+	126 Call 0x1C17DEC
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03477868 LDRB W8, [X20 + 0x83E]
+	0x0347786C MOV X19, X0
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

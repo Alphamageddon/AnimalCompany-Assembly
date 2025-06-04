@@ -1,0 +1,101 @@
+Type: UnityEngine.UIElements.EventCallbackFunctorBase
+
+Method: UnityEngine.UIElements.CallbackPhase get_phase()
+
+Disassembly:
+	0x03DA18B8 LDP X20, X19, [X31 + 0x10]
+	0x03DA18BC LDP X30, X21, [X31], #0x20
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: UnityEngine.UIElements.InvokePolicy get_invokePolicy()
+
+Disassembly:
+	0x03DA18C0 RET
+	0x03DA18C4 LDR X8, [X20]
+
+ISIL:
+	001 Move W0, [X0+20]
+	002 Return X0
+
+Method: System.Void .ctor(UnityEngine.UIElements.CallbackPhase phase, UnityEngine.UIElements.InvokePolicy invokePolicy)
+
+Disassembly:
+	0x03DA18C8 LDR X9, [X8 + 0x208]
+	0x03DA18CC LDR X2, [X8 + 0x210]
+	0x03DA18D0 MOV X0, X20
+	0x03DA18D4 MOV X1, X19
+	0x03DA18D8 BLR X9
+	0x03DA18DC B 0x3DA18B8
+	0x03DA18E0 LDR X8, [X20]
+	0x03DA18E4 LDR X9, [X8 + 0x218]
+	0x03DA18E8 LDR X2, [X8 + 0x220]
+	0x03DA18EC MOV X0, X20
+	0x03DA18F0 MOV X1, X19
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move W20, W1
+	006 Move X1, X31
+	007 Move W19, W2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+16], W20
+	011 Move [X21+20], W19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+
+Method: System.Void Invoke(UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.PropagationPhase propagationPhase)
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated
+Method: System.Boolean IsEquivalentTo(System.Int64 eventTypeId, System.Delegate callback, UnityEngine.UIElements.CallbackPhase phase)
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated
+Method: System.Boolean PhaseMatches(UnityEngine.UIElements.PropagationPhase propagationPhase)
+
+Disassembly:
+	0x03DA18F4 BLR X9
+	0x03DA18F8 B 0x3DA18B8
+	0x03DA18FC MOV X0, X20
+	0x03DA1900 BL 0x1C171E0
+	0x03DA1904 B 0x3DA1914
+	0x03DA1908 B 0x3DA1938
+	0x03DA190C B 0x3DA1914
+	0x03DA1910 B 0x3DA1938
+	0x03DA1914 CMP W1, 0x1
+	0x03DA1918 B.NE 0x3DA195C
+	0x03DA191C BL 0x3EB1AD0
+	0x03DA1920 LDR X19, [X0]
+	0x03DA1924 BL 0x3EB1AE0
+	0x03DA1928 B 0x3DA194C
+	0x03DA192C CBZ X19, 0x3DA195C
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Subtract W8, W1, 1
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 Move W0, 1
+	007 Return X0
+	008 And W8, W1, 0xFFFFFFFE
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Move W0, W31
+	011 Return X0
+

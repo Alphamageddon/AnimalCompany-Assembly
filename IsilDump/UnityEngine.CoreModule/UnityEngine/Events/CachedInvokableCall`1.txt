@@ -1,0 +1,70 @@
+Type: UnityEngine.Events.CachedInvokableCall`1
+
+Method: System.Void .ctor(UnityEngine.Object target, System.Reflection.MethodInfo theFunction, T argument)
+
+Disassembly:
+	0x028F1C6C MOV X0, X31
+	0x028F1C70 BL 0x3C2A260
+	0x028F1C74 LDR X0, [X26 + 0x8]
+	0x028F1C78 CBZ X0, 0x28F1E74
+	0x028F1C7C MOV X1, X31
+	0x028F1C80 MOV V10.16B, V0.16B
+	0x028F1C84 MOV V9.16B, V1.16B
+	0x028F1C88 MOV V8.16B, V2.16B
+	0x028F1C8C MOV V11.16B, V3.16B
+	0x028F1C90 BL 0x3C3DEB4
+	0x028F1C94 FMUL S4, S11, S0
+	0x028F1C98 FMUL S5, S10, S3
+	0x028F1C9C FMUL S6, S9, S2
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X4+32]
+	005 And W20, W3, 1
+	006 Move X19, X0
+	007 Move X8, [X8+192]
+	008 Move X8, [X8]
+	009 Move X3, X8
+	010 Call 0x2E721F0, X0, X1, X2
+	011 Move [X19+24], W20
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Return 
+
+Method: System.Void Invoke(System.Object[] args)
+
+Disassembly:
+	0x028F1CA0 FMUL S7, S8, S1
+	0x028F1CA4 FMUL S16, S11, S1
+	0x028F1CA8 FMUL S17, S9, S3
+	0x028F1CAC FMUL S18, S8, S0
+	0x028F1CB0 FMUL S19, S10, S2
+
+ISIL:
+	001 Move X8, [X2+32]
+	002 Move W1, [X0+24]
+	003 Move X8, [X8+192]
+	004 Move X2, [X8+32]
+	005 Call 0x2E7243C, X0, X1
+	006 Return 
+
+Method: System.Void Invoke(T arg0)
+
+Disassembly:
+	0x028F1CB4 FMUL S20, S10, S1
+	0x028F1CB8 FMUL S21, S10, S0
+	0x028F1CBC FMUL S0, S9, S0
+	0x028F1CC0 FMUL S1, S9, S1
+	0x028F1CC4 FMUL S22, S11, S2
+
+ISIL:
+	001 Move X8, [X2+32]
+	002 Move W1, [X0+24]
+	003 Move X8, [X8+192]
+	004 Move X2, [X8+32]
+	005 Call 0x2E7243C, X0, X1
+	006 Return 
+

@@ -1,0 +1,99 @@
+Type: Unity.XR.CoreUtils.Bindings.Variables.BindableEnum`1
+
+Method: System.Void .ctor(T initialValue = null, System.Boolean checkEquality = True, System.Func`3<T, T, System.Boolean> equalityMethod = null, System.Boolean startInitialized = False)
+
+Disassembly:
+	0x028CBDB8 MOV X1, X31
+	0x028CBDBC MOV X19, X3
+	0x028CBDC0 MOV X20, X0
+	0x028CBDC4 AND W22, W2, 0x1
+	0x028CBDC8 AND W23, W4, 0x1
+	0x028CBDCC BL 0x33BDD8C
+	0x028CBDD0 STRB W23, [X20 + 0x1A]
+	0x028CBDD4 STRB W21, [X20 + 0x18]
+	0x028CBDD8 STRB W22, [X20 + 0x19]
+	0x028CBDDC STR X19, [X20 + 0x20]
+	0x028CBDE0 STR W31, [X20 + 0x28]
+	0x028CBDE4 LDP X20, X19, [X31 + 0x20]
+	0x028CBDE8 LDP X22, X21, [X31 + 0x10]
+	0x028CBDEC LDP X30, X23, [X31], #0x30
+	0x028CBDF0 RET
+	0x028CBDF4 LDR X8, [X0 + 0x10]
+	0x028CBDF8 CBZ X8, 0x28CBE10
+	0x028CBDFC LDRB W1, [X0 + 0x18]
+	0x028CBE00 LDR X3, [X8 + 0x18]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move W20, W1
+	008 Move X1, X31
+	009 Move X19, X3
+	010 Move X21, X0
+	011 And W22, W2, 1
+	012 And W23, W4, 1
+	013 Call Object..ctor, X0
+	014 Move [X21+29], W23
+	015 Move [X21+24], W20
+	016 Move [X21+28], W22
+	017 Move [X21+32], X19
+	018 Move [X21+40], W31
+	019 Move X20, [X31+32]
+	020 Move X19, [X31+40]
+	021 Move X22, [X31+16]
+	022 Move X21, [X31+24]
+	023 Move X30, [X31+48]
+	024 Move X23, [X31+56]
+	025 Return 
+
+Method: System.Boolean ValueEquals(T other)
+
+Disassembly:
+	0x028CBE04 LDR X0, [X8 + 0x40]
+	0x028CBE08 LDR X2, [X8 + 0x28]
+	0x028CBE0C BR X3
+	0x028CBE10 RET
+	0x028CBE14 SUB X31, X31, 0x70
+	0x028CBE18 STP X30, X23, [X31 + 0x40]
+	0x028CBE1C STP X22, X21, [X31 + 0x50]
+	0x028CBE20 STP X20, X19, [X31 + 0x60]
+	0x028CBE24 ADRP X23, 0x1B0F000
+	0x028CBE28 LDRB W8, [X23 + 0xCF4]
+	0x028CBE2C MOV X19, X3
+	0x028CBE30 MOV X20, X2
+	0x028CBE34 MOV X22, X1
+	0x028CBE38 MOV X21, X0
+	0x028CBE3C TBNZ X8, 0x0, 0x28CBE54
+	0x028CBE40 ADRP X0, 0x1829000
+	0x028CBE44 LDR X0, [X0 + 0x7B8]
+	0x028CBE48 BL 0x1C16CF4
+	0x028CBE4C MOVZ W8, 0x1
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move [X31+12], W1
+	005 Compare X0, 0
+	006 JumpIfEqual {22}
+	007 Move W8, [X0+24]
+	008 Add X0, X31, 8
+	009 Move X1, X31
+	010 Move [X31+8], W8
+	011 Call Int32.GetHashCode, X0
+	012 Move W19, W0
+	013 Add X0, X31, 12
+	014 Move X1, X31
+	015 Call Int32.GetHashCode, X0
+	016 NotImplemented "Instruction CMP not yet implemented."
+	017 Move X30, [X31+16]
+	018 Move X19, [X31+24]
+	019 NotImplemented "Instruction CSET not yet implemented."
+	020 Add X31, X31, 32
+	021 Return X0
+	022 Call 0x1C17F20
+

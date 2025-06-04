@@ -1,0 +1,42 @@
+Type: Fusion.FieldEditorButtonAttribute
+
+Method: System.Void .ctor(System.String label, System.String targetMethod)
+
+Disassembly:
+	0x01E33F88 LDR X8, [X8 + 0xB8]
+	0x01E33F8C LDR X2, [X8]
+	0x01E33F90 LDP X30, X21, [X31], #0x20
+	0x01E33F94 B 0x3632EA0
+	0x01E33F98 BL 0x1C16F20
+	0x01E33F9C STR X30, [X31 - 0x10]!
+	0x01E33FA0 MOV X1, X0
+	0x01E33FA4 ADD X0, X31, 0x8
+	0x01E33FA8 STR X31, [X31 + 0x8]
+	0x01E33FAC BL 0x1E339A0
+	0x01E33FB0 LDR X0, [X31 + 0x8]
+	0x01E33FB4 LDR X30, [X31], #0x10
+	0x01E33FB8 RET
+	0x01E33FBC STR X30, [X31 - 0x20]!
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move X19, X2
+	008 Move X21, X0
+	009 Call PropertyAttribute..ctor, X0
+	010 Move [X21+24], X20
+	011 Move [X21+40], X19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move TEMP, 0x270F
+	015 Not TEMP
+	016 Move W8, TEMP
+	017 Move [X21+16], W8
+	018 Move X30, [X31+32]
+	019 Move X21, [X31+40]
+	020 Return 
+

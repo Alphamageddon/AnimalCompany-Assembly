@@ -1,0 +1,37 @@
+Type: Fusion.LogUtils
+
+Method: Fusion.LogUtils/DumpDefferedPtr`1<T> GetDump(T* ptr)
+
+Disassembly:
+	0x02215CFC MOV X19, X0
+	0x02215D00 ADRP X0, 0x1F06000
+	0x02215D04 LDR X0, [X0 + 0x850]
+	0x02215D08 BL 0x1C16CF4
+	0x02215D0C ADRP X0, 0x1EDE000
+	0x02215D10 LDR X0, [X0 + 0x6C0]
+	0x02215D14 BL 0x1C16CF4
+	0x02215D18 LDR X8, [X19 + 0x38]
+	0x02215D1C CBNZ X8, 0x2215D2C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X8, [X1+56]
+	004 Move X19, X0
+	005 Compare X8, 0
+	006 JumpIfNotEqual {9}
+	007 Move X0, X1
+	008 Call 0x1C5D6E0
+	009 Move X0, X19
+	010 Move X30, [X31+16]
+	011 Move X19, [X31+24]
+	012 Return X0
+
+Method: Fusion.LogUtils/DumpDefferedClass GetDump(T obj)
+
+Disassembly:
+	0x02215CF8 CBNZ X8, 0x2215D2C
+
+ISIL:
+	001 Return X0
+

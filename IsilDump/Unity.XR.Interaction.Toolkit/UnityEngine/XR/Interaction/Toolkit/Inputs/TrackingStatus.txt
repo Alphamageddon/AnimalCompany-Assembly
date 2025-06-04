@@ -1,0 +1,66 @@
+Type: UnityEngine.XR.Interaction.Toolkit.Inputs.TrackingStatus
+
+Method: System.Boolean get_isConnected()
+
+Disassembly:
+	0x03BBCFD0 ADRP X24, 0x5A1000
+	0x03BBCFD4 LDRB W8, [X23 + 0xD5E]
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Void set_isConnected(System.Boolean value)
+
+Disassembly:
+	0x03BBCFD8 LDR X24, [X24 + 0x3A8]
+	0x03BBCFDC MOV X19, X3
+	0x03BBCFE0 MOV V8.16B, V3.16B
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0], W8
+	003 Return 
+
+Method: System.Boolean get_isTracked()
+
+Disassembly:
+	0x03BBCFE4 MOV V9.16B, V2.16B
+	0x03BBCFE8 MOV V10.16B, V1.16B
+
+ISIL:
+	001 Move W0, [X0+1]
+	002 Return X0
+
+Method: System.Void set_isTracked(System.Boolean value)
+
+Disassembly:
+	0x03BBCFEC MOV V11.16B, V0.16B
+	0x03BBCFF0 MOV X20, X2
+	0x03BBCFF4 MOV X21, X1
+
+ISIL:
+	001 And W8, W1, 1
+	002 Move [X0+1], W8
+	003 Return 
+
+Method: UnityEngine.XR.InputTrackingState get_trackingState()
+
+Disassembly:
+	0x03BBCFF8 MOV X22, X0
+	0x03BBCFFC TBNZ X8, 0x0, 0x3BBD014
+
+ISIL:
+	001 Move W0, [X0+4]
+	002 Return X0
+
+Method: System.Void set_trackingState(UnityEngine.XR.InputTrackingState value)
+
+Disassembly:
+	0x03BBD000 ADRP X0, 0x5A0000
+	0x03BBD004 LDR X0, [X0 + 0x3A8]
+
+ISIL:
+	001 Move [X0+4], W1
+	002 Return 
+

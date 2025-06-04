@@ -1,0 +1,159 @@
+Type: System.Runtime.Remoting.Activation.ConstructionLevelActivator
+
+Method: System.Runtime.Remoting.Activation.IActivator get_NextActivator()
+
+Disassembly:
+	0x032911A8 STP X30, X23, [X31 - 0x30]!
+	0x032911AC STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move X0, X31
+	002 Return X0
+
+Method: System.Runtime.Remoting.Activation.IConstructionReturnMessage Activate(System.Runtime.Remoting.Activation.IConstructionCallMessage msg)
+
+Disassembly:
+	0x032911B0 STP X20, X19, [X31 + 0x20]
+	0x032911B4 ADRP X21, 0x114B000
+	0x032911B8 LDRB W8, [X21 + 0x6CF]
+	0x032911BC MOV X20, X1
+	0x032911C0 MOV X19, X0
+	0x032911C4 TBNZ X8, 0x0, 0x3291200
+	0x032911C8 ADRP X0, 0xE6C000
+	0x032911CC LDR X0, [X0 + 0x968]
+	0x032911D0 BL 0x1C16CF4
+	0x032911D4 ADRP X0, 0xE93000
+	0x032911D8 LDR X0, [X0 + 0x198]
+	0x032911DC BL 0x1C16CF4
+	0x032911E0 ADRP X0, 0xE64000
+	0x032911E4 LDR X0, [X0 + 0x278]
+	0x032911E8 BL 0x1C16CF4
+	0x032911EC ADRP X0, 0xE62000
+	0x032911F0 LDR X0, [X0 + 0x6C0]
+	0x032911F4 BL 0x1C16CF4
+	0x032911F8 MOVZ W8, 0x1
+	0x032911FC STRB W8, [X21 + 0x6CF]
+	0x03291200 ADRP X21, 0xE62000
+	0x03291204 LDR X21, [X21 + 0x6C0]
+	0x03291208 CBZ X20, 0x3291258
+	0x0329120C LDR X8, [X20]
+	0x03291210 LDR X1, [X21]
+	0x03291214 LDRB W10, [X8 + 0x130]
+	0x03291218 LDRB W9, [X1 + 0x130]
+	0x0329121C CMP W10, W9
+	0x03291220 B.CC 0x32913C0
+	0x03291224 LDR X8, [X8 + 0xC8]
+	0x03291228 ADD X8, X8, X9, 0x3, LSL
+	0x0329122C LDUR X8, [X8 - 0x8]
+	0x03291230 CMP X8, X1
+	0x03291234 B.NE 0x32913C0
+	0x03291238 LDR X8, [X19 + 0x30]
+	0x0329123C CBNZ X8, 0x3291260
+	0x03291240 LDR X8, [X20]
+	0x03291244 MOV X0, X20
+	0x03291248 LDP X9, X1, [X8 + 0x1A8]
+	0x0329124C BLR X9
+	0x03291250 STR X0, [X19 + 0x30]
+	0x03291254 B 0x3291260
+	0x03291258 LDR X8, [X19 + 0x30]
+	0x0329125C CBZ X8, 0x32913BC
+	0x03291260 LDR X8, [X19 + 0x40]
+	0x03291264 CBZ X8, 0x329127C
+	0x03291268 MOV X23, X19
+	0x0329126C LDR X8, [X23 + 0x48]!
+	0x03291270 CBNZ X8, 0x32913A0
+	0x03291274 CBNZ X20, 0x32912A0
+	0x03291278 B 0x32913BC
+	0x0329127C CBZ X20, 0x32913BC
+	0x03291280 LDR X8, [X20]
+	0x03291284 MOV X0, X20
+	0x03291288 LDP X9, X1, [X8 + 0x1A8]
+	0x0329128C BLR X9
+	0x03291290 MOV X23, X19
+	0x03291294 LDR X8, [X23 + 0x48]!
+	0x03291298 STUR X0, [X23 - 0x8]
+	0x0329129C CBNZ X8, 0x32913A0
+	0x032912A0 LDR X8, [X20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x114C000
+	005 Move W8, [X20+1737]
+	006 Move X19, X1
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {19}
+	011 Move X0, 0xE94000
+	012 Move X0, [X0+1104]
+	013 Call 0x1C17CF4
+	014 Move X0, 0xE94000
+	015 Move X0, [X0+952]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1737], W8
+	019 Move X0, X31
+	020 Call Thread.get_CurrentContext
+	021 Compare X0, 0
+	022 JumpIfEqual {66}
+	023 Move X1, X31
+	024 Call Context.GetServerContextSinkChain, X0
+	025 Compare X0, 0
+	026 JumpIfEqual {66}
+	027 Move X10, 0xE94000
+	028 Move X8, [X0]
+	029 Move X10, [X10+952]
+	030 Move X20, X0
+	031 NotImplemented "Instruction LDRH not yet implemented."
+	032 Move X1, [X10]
+	033 Compare X9, 0
+	034 JumpIfEqual {41}
+	035 Move X10, [X8+176]
+	036 Add X10, X10, 8
+	037 NotImplemented "Instruction LDUR not yet implemented."
+	038 NotImplemented "Instruction CMP not yet implemented."
+	039 Subtract X9, X9, 1
+	040 Add X10, X10, 16
+	041 Move X0, X20
+	042 Move W2, W31
+	043 Call 0x1C5D788
+	044 NotImplemented "Instruction LDRSW not yet implemented."
+	045 Add X8, X8, X9
+	046 Add X0, X8, 312
+	047 Move X8, [X0]
+	048 Move X2, [X0+8]
+	049 Move X0, X20
+	050 Move X1, X19
+	051 NotImplemented "Instruction BLR not yet implemented."
+	052 Compare X0, 0
+	053 JumpIfEqual {62}
+	054 Move X8, 0xE94000
+	055 Move X8, [X8+1104]
+	056 Move X19, X0
+	057 Move X20, [X8]
+	058 Move X1, X20
+	059 Call 0x1C17E00
+	060 Compare X0, 0
+	061 JumpIfEqual {67}
+	062 Move X20, [X31+16]
+	063 Move X19, [X31+24]
+	064 Move X30, [X31+32]
+	065 Return X0
+	066 Call 0x1C17F20
+	067 Move X0, X19
+	068 Move X1, X20
+	069 Call 0x1C181E0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0328F7B8 LDR X0, [X0 + 0x270]
+	0x0328F7BC BL 0x1C16CF4
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

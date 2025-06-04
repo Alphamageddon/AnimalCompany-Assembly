@@ -1,0 +1,77 @@
+Type: System.Runtime.CompilerServices.AsyncMethodBuilderCore/ContinuationWrapper
+
+Method: System.Void .ctor(System.Action continuation, System.Action invokeAction, System.Threading.Tasks.Task innerTask)
+
+Disassembly:
+	0x032C6090 CBZ W8, 0x32C60A0
+	0x032C6094 MOV X0, X19
+	0x032C6098 MOV X1, X31
+	0x032C609C BL 0x33E14E4
+	0x032C60A0 CBNZ X22, 0x32C60D0
+	0x032C60A4 CBZ W23, 0x32C60BC
+	0x032C60A8 AND W1, W21, 0x1
+	0x032C60AC MOV X0, X20
+	0x032C60B0 STP X31, X31, [X20 + 0x28]
+	0x032C60B4 STR X31, [X20 + 0x38]
+	0x032C60B8 BL 0x32C6178
+	0x032C60BC LDP X20, X19, [X31 + 0x30]
+	0x032C60C0 LDP X22, X21, [X31 + 0x20]
+	0x032C60C4 LDP X30, X23, [X31 + 0x10]
+	0x032C60C8 ADD X31, X31, 0x40
+	0x032C60CC RET
+	0x032C60D0 MOV X0, X22
+	0x032C60D4 BL 0x1C16F18
+	0x032C60D8 B 0x32C60E0
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, X1
+	007 Move X1, X31
+	008 Move X22, X3
+	009 Move X19, X2
+	010 Move X21, X0
+	011 Call Object..ctor, X0
+	012 Compare X22, 0
+	013 JumpIfNotEqual {17}
+	014 Move X0, X20
+	015 Call AsyncMethodBuilderCore.TryGetContinuationTask, X0
+	016 Move X22, X0
+	017 Move [X21+24], X19
+	018 Move [X21+32], X22
+	019 Move [X21+16], X20
+	020 Move X20, [X31+32]
+	021 Move X19, [X31+40]
+	022 Move X22, [X31+16]
+	023 Move X21, [X31+24]
+	024 Move X30, [X31+48]
+	025 Return 
+
+Method: System.Void Invoke()
+
+Disassembly:
+	0x032C6450 MOVZ W8, 0x1
+	0x032C6454 STRB W8, [X19 + 0x8B9]
+	0x032C6458 STP X31, X31, [X31 + 0x20]
+	0x032C645C STR W31, [X31 + 0x18]
+	0x032C6460 STRB W31, [X31 + 0x14]
+	0x032C6464 CBZ X20, 0x32C6A44
+	0x032C6468 LDR X27, [X21 + 0x10]
+	0x032C646C CBZ X27, 0x32C6A00
+	0x032C6470 LDR X8, [X21 + 0x28]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+24]
+	003 Compare X8, 0
+	004 JumpIfEqual {10}
+	005 Move X2, [X8+24]
+	006 Move X0, [X8+64]
+	007 Move X1, [X8+40]
+	008 Move X30, [X31+16]
+	009 CallNoReturn X2
+	010 Call 0x1C17F20
+

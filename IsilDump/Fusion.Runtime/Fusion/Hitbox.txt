@@ -1,0 +1,1168 @@
+Type: Fusion.Hitbox
+
+Method: System.Single get_AbsSphereRadius()
+
+Disassembly:
+	0x01E82618 BL 0x339FA34
+	0x01E8261C LDP X2, X1, [X20 + 0x60]
+	0x01E82620 MOV X0, X20
+
+ISIL:
+	001 Move V0, [X0+36]
+	002 NotImplemented "Instruction FABS not yet implemented."
+	003 Return V0
+
+Method: System.Single get_AbsCapsuleRadius()
+
+Disassembly:
+	0x01E82624 MOV W3, W31
+	0x01E82628 BL 0x1E82258
+	0x01E8262C MOV W21, W0
+
+ISIL:
+	001 Move V0, [X0+40]
+	002 NotImplemented "Instruction FABS not yet implemented."
+	003 Return V0
+
+Method: UnityEngine.Vector3 get_CapsuleTopCenter()
+
+Disassembly:
+	0x01E82630 CMP W0, 0x0
+	0x01E82634 B.LE 0x1E8266C
+	0x01E82638 LDR X0, [X20 + 0x60]
+	0x01E8263C ADD X8, X31, 0x0
+	0x01E82640 MOV X1, X31
+	0x01E82644 BL 0x1E8950C
+	0x01E82648 ADD X0, X31, 0x68
+	0x01E8264C ADD X1, X31, 0x0
+	0x01E82650 MOVZ W2, 0x68
+	0x01E82654 BL 0x3EB1AC0
+	0x01E82658 ADD X1, X31, 0x68
+	0x01E8265C MOVZ W2, 0x68
+	0x01E82660 MOV X0, X19
+	0x01E82664 BL 0x3EB1AC0
+	0x01E82668 B 0x1E82680
+	0x01E8266C MOVI V0.2D, 0x0
+	0x01E82670 STR X31, [X19 + 0x60]
+	0x01E82674 STP V0, V0, [X19 + 0x40]
+	0x01E82678 STP V0, V0, [X19 + 0x20]
+	0x01E8267C STP V0, V0, [X19]
+	0x01E82680 CMP W21, 0x0
+	0x01E82684 LDP X20, X19, [X31 + 0x150]
+	0x01E82688 LDP X22, X21, [X31 + 0x140]
+	0x01E8268C LDP X24, X23, [X31 + 0x130]
+	0x01E82690 LDP X26, X25, [X31 + 0x120]
+	0x01E82694 LDP X30, X27, [X31 + 0x110]
+	0x01E82698 LDR X29, [X31 + 0x108]
+	0x01E8269C LDP D9, D8, [X31 + 0xF8]
+	0x01E826A0 LDP D11, D10, [X31 + 0xE8]
+	0x01E826A4 LDP D13, D12, [X31 + 0xD8]
+	0x01E826A8 LDR V14, [X31 + 0xD0]
+	0x01E826AC CSET W0, GT
+	0x01E826B0 ADD X31, X31, 0x160
+	0x01E826B4 RET
+	0x01E826B8 BL 0x1C16F20
+	0x01E826BC SUB X31, X31, 0xA0
+	0x01E826C0 STR D14, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-48], D9
+	002 Move [X31-40], D8
+	003 Move [X31+16], X30
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, 0x2557000
+	007 NotImplemented "Instruction LDUR not yet implemented."
+	008 Move W8, [X20+1926]
+	009 Move V9, [X0+68]
+	010 Move X19, X0
+	011 Compare W8, 0
+	012 JumpIfNotEqual {18}
+	013 Move X0, 0x2272000
+	014 Move X0, [X0+1440]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X20+1926], W8
+	018 Move X8, 0x2272000
+	019 Move X8, [X8+1440]
+	020 Move V0, [X19+40]
+	021 Move V1, [X19+56]
+	022 Move S2, 0.5
+	023 Move X8, [X8]
+	024 NotImplemented "Instruction FABS not yet implemented."
+	025 Multiply S1, S1, S2
+	026 NotImplemented "Instruction FCMP not yet implemented."
+	027 Move X8, [X8+184]
+	028 NotImplemented "Instruction FCSEL not yet implemented."
+	029 Subtract S0, S1, S0
+	030 Move X20, [X31+32]
+	031 Move X19, [X31+40]
+	032 Move V2, [X8+24]
+	033 Move V3, [X8+32]
+	034 Move X30, [X31+16]
+	035 NotImplemented "Instruction INVALID not yet implemented."
+	036 Multiply S2, S3, S0
+	037 Add V0, V8, V1
+	038 Add S2, S9, S2
+	039 Move S1, V0.S[1]
+	040 Move D9, [X31+48]
+	041 Move D8, [X31+56]
+	042 Return X0
+
+Method: UnityEngine.Vector3 get_CapsuleBottomCenter()
+
+Disassembly:
+	0x01E826C4 STP D13, D12, [X31 + 0x28]
+	0x01E826C8 STP D11, D10, [X31 + 0x38]
+	0x01E826CC STP D9, D8, [X31 + 0x48]
+	0x01E826D0 STR X30, [X31 + 0x58]
+	0x01E826D4 STP X26, X25, [X31 + 0x60]
+	0x01E826D8 STP X24, X23, [X31 + 0x70]
+	0x01E826DC STP X22, X21, [X31 + 0x80]
+	0x01E826E0 STP X20, X19, [X31 + 0x90]
+	0x01E826E4 MOV W23, W5
+	0x01E826E8 MOV W21, W4
+	0x01E826EC MOV W25, W3
+	0x01E826F0 MOV X19, X2
+	0x01E826F4 MOV X26, X1
+	0x01E826F8 AND X1, X1, 0x0
+	0x01E826FC ADD X2, X31, 0x18
+	0x01E82700 ADD X3, X31, 0x10
+	0x01E82704 ADD X4, X31, 0x8
+	0x01E82708 MOV X5, X31
+	0x01E8270C MOV X20, X7
+	0x01E82710 MOV W22, W6
+	0x01E82714 MOV V8.16B, V6.16B
+	0x01E82718 MOV V9.16B, V5.16B
+	0x01E8271C MOV V10.16B, V4.16B
+	0x01E82720 MOV V11.16B, V3.16B
+	0x01E82724 MOV V12.16B, V2.16B
+	0x01E82728 MOV V13.16B, V1.16B
+	0x01E8272C MOV V14.16B, V0.16B
+	0x01E82730 MOV X24, X0
+	0x01E82734 STP X31, X31, [X31 + 0x10]
+	0x01E82738 STR X31, [X31 + 0x8]
+	0x01E8273C BL 0x1E89388
+	0x01E82740 LDR X8, [X24 + 0x70]
+	0x01E82744 CBZ X8, 0x1E82804
+	0x01E82748 STR W26, [X8 + 0x1C]
+	0x01E8274C LDR X8, [X24 + 0x70]
+	0x01E82750 CBZ X8, 0x1E82804
+	0x01E82754 STP S14, S13, [X8 + 0x54]
+
+ISIL:
+	001 Move [X31-48], D9
+	002 Move [X31-40], D8
+	003 Move [X31+16], X30
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X20, 0x2557000
+	007 NotImplemented "Instruction LDUR not yet implemented."
+	008 Move W8, [X20+2749]
+	009 Move V9, [X0+68]
+	010 Move X19, X0
+	011 Compare W8, 0
+	012 JumpIfNotEqual {18}
+	013 Move X0, 0x2272000
+	014 Move X0, [X0+1440]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X20+2749], W8
+	018 Move X8, 0x2272000
+	019 Move X8, [X8+1440]
+	020 Move V0, [X19+40]
+	021 Move V1, [X19+56]
+	022 Move S2, 0.5
+	023 Move X8, [X8]
+	024 NotImplemented "Instruction FABS not yet implemented."
+	025 Multiply S1, S1, S2
+	026 NotImplemented "Instruction FCMP not yet implemented."
+	027 Move X8, [X8+184]
+	028 NotImplemented "Instruction FCSEL not yet implemented."
+	029 Subtract S0, S1, S0
+	030 Move X20, [X31+32]
+	031 Move X19, [X31+40]
+	032 NotImplemented "Instruction LDUR not yet implemented."
+	033 Move V3, [X8+44]
+	034 Move X30, [X31+16]
+	035 NotImplemented "Instruction INVALID not yet implemented."
+	036 Multiply S2, S3, S0
+	037 Add V0, V8, V1
+	038 Add S2, S9, S2
+	039 Move S1, V0.S[1]
+	040 Move D9, [X31+48]
+	041 Move D8, [X31+56]
+	042 Return X0
+
+Method: UnityEngine.Vector3 get_AbsBoxExtents()
+
+Disassembly:
+	0x01E82758 STR S12, [X8 + 0x5C]
+	0x01E8275C LDR X8, [X24 + 0x70]
+	0x01E82760 CBZ X8, 0x1E82804
+	0x01E82764 STP S11, S10, [X8 + 0x48]
+	0x01E82768 STR S9, [X8 + 0x50]
+	0x01E8276C LDR X8, [X24 + 0x70]
+
+ISIL:
+	001 Move S0, [X0+44]
+	002 Move S1, [X0+48]
+	003 Move V2, [X0+52]
+	004 NotImplemented "Instruction FABS not yet implemented."
+	005 NotImplemented "Instruction FABS not yet implemented."
+	006 NotImplemented "Instruction FABS not yet implemented."
+	007 Return X0
+
+Method: System.Int32 get_HitboxIndex()
+
+Disassembly:
+	0x01E82770 CBZ X8, 0x1E82804
+	0x01E82774 STR S8, [X8 + 0x60]
+
+ISIL:
+	001 Move W0, [X0+80]
+	002 Return X0
+
+Method: System.UInt32 get_HitboxMask()
+
+Disassembly:
+	0x01E82778 LDR X9, [X31 + 0x18]
+	0x01E8277C STR X9, [X8 + 0x20]
+	0x01E82780 LDR X8, [X24 + 0x70]
+	0x01E82784 CBZ X8, 0x1E82804
+	0x01E82788 LDR X9, [X31 + 0x10]
+
+ISIL:
+	001 Move W8, [X0+80]
+	002 Move W9, 1
+	003 Add W8, W8, 1
+	004 NotImplemented "Instruction LSLV not yet implemented."
+	005 Return X0
+
+Method: System.Boolean get_HitboxActive()
+
+Disassembly:
+	0x01E8278C STR X9, [X8 + 0x38]
+	0x01E82790 LDR X8, [X24 + 0x70]
+	0x01E82794 CBZ X8, 0x1E82804
+	0x01E82798 LDR X9, [X31 + 0x8]
+	0x01E8279C MOV W0, W25
+	0x01E827A0 MOV X1, X31
+	0x01E827A4 STR X9, [X8 + 0x30]
+	0x01E827A8 LDR X26, [X24 + 0x70]
+
+ISIL:
+	001 Move X1, X0
+	002 Move X0, [X0+72]
+	003 Compare X0, 0
+	004 JumpIfEqual {10}
+	005 Move W8, [X0+48]
+	006 Move TEMP, X8
+	007 And TEMP, TEMP, 8
+	008 Compare TEMP, 8
+	009 JumpIfEqual {10}
+	010 Move W0, W31
+	011 Return X0
+
+Method: System.Void set_HitboxActive(System.Boolean value)
+
+Disassembly:
+	0x01E82908 BL 0x3C35CBC
+	0x01E8290C CBZ X24, 0x1E82964
+	0x01E82910 STR W0, [X24 + 0x18]
+	0x01E82914 LDR X1, [X22 + 0x70]
+	0x01E82918 CBZ X1, 0x1E82964
+	0x01E8291C LDR W8, [X31 + 0x90]
+	0x01E82920 LDR X9, [X31 + 0x98]
+	0x01E82924 AND W3, W20, 0x1
+	0x01E82928 MOV X0, X22
+
+ISIL:
+	001 Move X8, X0
+	002 Move X0, [X0+72]
+	003 Compare X0, 0
+	004 JumpIfEqual {12}
+	005 Move W9, [X0+48]
+	006 Move TEMP, X9
+	007 And TEMP, TEMP, 8
+	008 Compare TEMP, 8
+	009 JumpIfEqual {12}
+	010 And W2, W1, 1
+	011 Move X1, X8
+	012 Return 
+
+Method: System.Int32 get_ColliderIndex()
+
+Disassembly:
+	0x01E82A94 STP X22, X21, [X31 + 0x40]
+	0x01E82A98 STP X20, X19, [X31 + 0x50]
+
+ISIL:
+	001 Move W0, [X0+84]
+	002 Return X0
+
+Method: System.Void set_ColliderIndex(System.Int32 value)
+
+Disassembly:
+	0x01E82A9C ADRP X27, 0x2557000
+	0x01E82AA0 LDRB W8, [X27 + 0x1E8]
+
+ISIL:
+	001 Move [X0+84], W1
+	002 Return 
+
+Method: UnityEngine.Vector3 get_Position()
+
+Disassembly:
+	0x01E82AA4 MOV W20, W7
+	0x01E82AA8 MOV W21, W6
+	0x01E82AAC MOV W23, W5
+	0x01E82AB0 MOV X19, X4
+	0x01E82AB4 MOV X24, X3
+	0x01E82AB8 MOV X25, X2
+	0x01E82ABC MOV W26, W1
+	0x01E82AC0 MOV V8.16B, V3.16B
+	0x01E82AC4 MOV X22, X0
+	0x01E82AC8 TBNZ X8, 0x0, 0x1E82AE0
+	0x01E82ACC ADRP X0, 0x2272000
+	0x01E82AD0 LDR X0, [X0 + 0x470]
+	0x01E82AD4 BL 0x1C16CF4
+	0x01E82AD8 MOVZ W8, 0x1
+	0x01E82ADC STRB W8, [X27 + 0x1E8]
+	0x01E82AE0 LDR X8, [X22 + 0x78]
+	0x01E82AE4 CBZ X8, 0x1E82B90
+	0x01E82AE8 STR W31, [X8 + 0x1C]
+	0x01E82AEC LDR X27, [X22 + 0x78]
+	0x01E82AF0 CBZ X27, 0x1E82B90
+	0x01E82AF4 ADRP X8, 0x2272000
+	0x01E82AF8 LDR X8, [X8 + 0x470]
+	0x01E82AFC STR S8, [X27 + 0x54]
+	0x01E82B00 ADD X0, X31, 0x8
+	0x01E82B04 MOV W1, W26
+	0x01E82B08 LDR X2, [X8]
+	0x01E82B0C STR X31, [X31 + 0x8]
+	0x01E82B10 BL 0x24341FC
+	0x01E82B14 LDR X8, [X31 + 0x8]
+	0x01E82B18 STR X8, [X27 + 0x20]
+
+ISIL:
+	001 Move [X31-48], D10
+	002 Move [X31+16], D9
+	003 Move [X31+24], D8
+	004 Move [X31+32], X30
+	005 Move [X31+40], X19
+	006 Move X1, X31
+	007 Move X19, X0
+	008 Call Component.get_transform, X0
+	009 Compare X0, 0
+	010 JumpIfEqual {37}
+	011 Move X1, X31
+	012 Call Transform.get_position, X0
+	013 Move X0, X19
+	014 Move X1, X31
+	015 Move V8, V0
+	016 Move V9, V1
+	017 Move V10, V2
+	018 Call Component.get_transform, X0
+	019 Compare X0, 0
+	020 JumpIfEqual {37}
+	021 Move X1, X31
+	022 Call Transform.get_rotation, X0
+	023 Move S4, [X19+60]
+	024 Move S5, [X19+64]
+	025 Move V6, [X19+68]
+	026 Move X0, X31
+	027 Call Quaternion.op_Multiply, X0, X1
+	028 Add S0, S8, S0
+	029 Add S1, S9, S1
+	030 Move X30, [X31+32]
+	031 Move X19, [X31+40]
+	032 Move D9, [X31+16]
+	033 Move D8, [X31+24]
+	034 Add S2, S10, S2
+	035 Move V10, [X31+48]
+	036 Return X0
+	037 Call 0x1C17F20
+
+Method: System.Void Awake()
+
+Disassembly:
+	0x01E82B1C LDR X8, [X22 + 0x78]
+
+ISIL:
+No ISIL was generated
+Method: System.Void CacheInfo()
+
+Disassembly:
+	0x01E82B20 CBZ X8, 0x1E82B90
+	0x01E82B24 STR X25, [X8 + 0x38]
+	0x01E82B28 LDR X8, [X22 + 0x78]
+	0x01E82B2C CBZ X8, 0x1E82B90
+	0x01E82B30 STR X24, [X8 + 0x30]
+	0x01E82B34 LDR X24, [X22 + 0x78]
+	0x01E82B38 MOV W0, W23
+	0x01E82B3C MOV X1, X31
+	0x01E82B40 BL 0x3C35CBC
+	0x01E82B44 CBZ X24, 0x1E82B90
+	0x01E82B48 STR W0, [X24 + 0x18]
+	0x01E82B4C LDR X1, [X22 + 0x78]
+	0x01E82B50 CBZ X1, 0x1E82B90
+	0x01E82B54 LDR W8, [X31 + 0x60]
+	0x01E82B58 LDR X9, [X31 + 0x68]
+	0x01E82B5C AND W3, W20, 0x1
+	0x01E82B60 MOV X0, X22
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X1, X31
+	004 Move X19, X0
+	005 Call Component.get_gameObject, X0
+	006 Compare X0, 0
+	007 JumpIfEqual {20}
+	008 Move X1, X31
+	009 Call GameObject.get_layer, X0
+	010 Move W8, 1
+	011 NotImplemented "Instruction LSLV not yet implemented."
+	012 Move X0, X19
+	013 Move X1, X31
+	014 Move [X19+104], W8
+	015 Call Component.get_transform, X0
+	016 Move [X19+112], X0
+	017 Move X30, [X31+16]
+	018 Move X19, [X31+24]
+	019 Return 
+	020 Call 0x1C17F20
+
+Method: System.Void SetColliderData(ref Fusion.LagCompensation.HitboxCollider c, System.Int32 tick)
+
+Disassembly:
+	0x01E82B64 MOV X2, X19
+	0x01E82B68 STP W8, W21, [X1 + 0x10]
+	0x01E82B6C STR X9, [X1 + 0x40]
+	0x01E82B70 BL 0x1E82258
+	0x01E82B74 LDP X20, X19, [X31 + 0x50]
+	0x01E82B78 LDP X22, X21, [X31 + 0x40]
+	0x01E82B7C LDP X24, X23, [X31 + 0x30]
+	0x01E82B80 LDP X26, X25, [X31 + 0x20]
+	0x01E82B84 LDP X30, X27, [X31 + 0x10]
+	0x01E82B88 LDR V8, [X31], #0x60
+	0x01E82B8C RET
+	0x01E82B90 BL 0x1C16F20
+	0x01E82B94 SUB X31, X31, 0x90
+	0x01E82B98 STP D13, D12, [X31 + 0x10]
+	0x01E82B9C STP D11, D10, [X31 + 0x20]
+	0x01E82BA0 STP D9, D8, [X31 + 0x30]
+	0x01E82BA4 STP X30, X31, [X31 + 0x40]
+	0x01E82BA8 STP X26, X25, [X31 + 0x50]
+	0x01E82BAC STP X24, X23, [X31 + 0x60]
+	0x01E82BB0 STP X22, X21, [X31 + 0x70]
+	0x01E82BB4 STP X20, X19, [X31 + 0x80]
+	0x01E82BB8 MOV W20, W5
+	0x01E82BBC MOV W23, W4
+	0x01E82BC0 MOV W25, W3
+	0x01E82BC4 MOV X19, X2
+	0x01E82BC8 MOV X26, X1
+	0x01E82BCC AND X1, X1, 0x0
+	0x01E82BD0 ADD X2, X31, 0x48
+	0x01E82BD4 ADD X3, X31, 0x8
+	0x01E82BD8 ADD X4, X31, 0x0
+	0x01E82BDC MOV X5, X31
+	0x01E82BE0 MOV X21, X7
+	0x01E82BE4 MOV W22, W6
+	0x01E82BE8 MOV V8.16B, V5.16B
+	0x01E82BEC MOV V9.16B, V4.16B
+	0x01E82BF0 MOV V10.16B, V3.16B
+	0x01E82BF4 MOV V11.16B, V2.16B
+	0x01E82BF8 MOV V12.16B, V1.16B
+	0x01E82BFC MOV V13.16B, V0.16B
+	0x01E82C00 MOV X24, X0
+	0x01E82C04 STP X31, X31, [X31]
+	0x01E82C08 BL 0x1E89388
+	0x01E82C0C LDR X8, [X24 + 0x80]
+	0x01E82C10 CBZ X8, 0x1E82CE0
+	0x01E82C14 STR W26, [X8 + 0x1C]
+	0x01E82C18 LDR X8, [X24 + 0x80]
+	0x01E82C1C CBZ X8, 0x1E82CE0
+	0x01E82C20 STP S13, S12, [X8 + 0x48]
+	0x01E82C24 STR S11, [X8 + 0x50]
+	0x01E82C28 LDR X8, [X24 + 0x80]
+	0x01E82C2C CBZ X8, 0x1E82CE0
+	0x01E82C30 STP S10, S9, [X8 + 0x54]
+	0x01E82C34 STR S8, [X8 + 0x5C]
+	0x01E82C38 LDR X8, [X24 + 0x80]
+	0x01E82C3C CBZ X8, 0x1E82CE0
+	0x01E82C40 LDP S0, S1, [X31 + 0x90]
+	0x01E82C44 LDP S2, S3, [X31 + 0x98]
+	0x01E82C48 STP S0, S1, [X8 + 0x60]
+	0x01E82C4C STP S2, S3, [X8 + 0x68]
+	0x01E82C50 LDR X8, [X24 + 0x80]
+	0x01E82C54 CBZ X8, 0x1E82CE0
+	0x01E82C58 LDR X9, [X31 + 0x48]
+	0x01E82C5C STR X9, [X8 + 0x20]
+	0x01E82C60 LDR X8, [X24 + 0x80]
+	0x01E82C64 CBZ X8, 0x1E82CE0
+	0x01E82C68 LDR X9, [X31 + 0x8]
+	0x01E82C6C STR X9, [X8 + 0x38]
+	0x01E82C70 LDR X8, [X24 + 0x80]
+	0x01E82C74 CBZ X8, 0x1E82CE0
+	0x01E82C78 LDR X9, [X31]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move W8, [X0+32]
+	007 Move X20, X0
+	008 Move [X1], W8
+	009 Move W8, [X0+68]
+	010 NotImplemented "Instruction LDUR not yet implemented."
+	011 Move [X1+80], W8
+	012 Move [X1+72], X9
+	013 Move X0, [X0+112]
+	014 Compare X0, 0
+	015 JumpIfEqual {77}
+	016 Move X19, X1
+	017 Move W21, W2
+	018 Add X2, X1, 452
+	019 Add X1, X1, 440
+	020 Move X3, X31
+	021 Call Transform.GetPositionAndRotation, X0, X1, X2
+	022 Move X0, X19
+	023 Move X1, X31
+	024 Call HitboxCollider.ResetCachedMatrix, X0
+	025 NotImplemented "Instruction LDUR not yet implemented."
+	026 Move V1, [X20+52]
+	027 Move W9, 40
+	028 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	029 NotImplemented "Instruction FABS not yet implemented."
+	030 Move [X19+84], D0
+	031 Move [X19+92], S1
+	032 Move W8, [X20+32]
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move W8, 36
+	035 NotImplemented "Instruction CSEL not yet implemented."
+	036 Move V0, [X20]
+	037 NotImplemented "Instruction FABS not yet implemented."
+	038 Move [X19+96], S0
+	039 Move V0, [X20+56]
+	040 Move [X19+112], X20
+	041 Move [X19+124], W21
+	042 Move [X19+100], S0
+	043 Move W8, [X20+104]
+	044 Move [X19+120], W8
+	045 Move X21, [X20+72]
+	046 Compare X21, 0
+	047 JumpIfEqual {77}
+	048 Move X22, 0x2558000
+	049 Move W8, [X22+554]
+	050 Compare W8, 0
+	051 JumpIfNotEqual {57}
+	052 Move X0, 0x227C000
+	053 Move X0, [X0+3416]
+	054 Call 0x1C17CF4
+	055 Move W8, 1
+	056 Move [X22+554], W8
+	057 Move X8, 0x227C000
+	058 Move X8, [X8+3416]
+	059 Move X0, X21
+	060 Move W1, W31
+	061 Move X2, [X8]
+	062 Call NetworkBehaviour.ReinterpretState, X0, X1
+	063 Move W8, [X20+80]
+	064 Move W9, [X0]
+	065 Move [X19+436], W31
+	066 Move X22, [X31+16]
+	067 Move X21, [X31+24]
+	068 Add W8, W8, 1
+	069 NotImplemented "Instruction LSRV not yet implemented."
+	070 And W31, W8, 1
+	071 NotImplemented "Instruction CSET not yet implemented."
+	072 Move [X19+104], W8
+	073 Move X20, [X31+32]
+	074 Move X19, [X31+40]
+	075 Move X30, [X31+48]
+	076 Return 
+	077 Call 0x1C17F20
+
+Method: System.Void SetLayer(System.Int32 layer)
+
+Disassembly:
+	0x01E82C7C MOV W0, W25
+	0x01E82C80 MOV X1, X31
+	0x01E82C84 STR X9, [X8 + 0x30]
+	0x01E82C88 LDR X26, [X24 + 0x80]
+	0x01E82C8C BL 0x3C35CBC
+	0x01E82C90 CBZ X26, 0x1E82CE0
+	0x01E82C94 STR W0, [X26 + 0x18]
+	0x01E82C98 LDR X1, [X24 + 0x80]
+	0x01E82C9C CBZ X1, 0x1E82CE0
+	0x01E82CA0 AND W3, W20, 0x1
+	0x01E82CA4 MOV X0, X24
+	0x01E82CA8 MOV X2, X19
+	0x01E82CAC STP W22, W23, [X1 + 0x10]
+	0x01E82CB0 STR X21, [X1 + 0x40]
+	0x01E82CB4 BL 0x1E82258
+	0x01E82CB8 LDP X20, X19, [X31 + 0x80]
+	0x01E82CBC LDP X22, X21, [X31 + 0x70]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W20, W1
+	005 Move X1, X31
+	006 Move X19, X0
+	007 Call Component.get_gameObject, X0
+	008 Compare X0, 0
+	009 JumpIfEqual {20}
+	010 Move W1, W20
+	011 Move X2, X31
+	012 Call GameObject.set_layer, X0, X1
+	013 Move W8, 1
+	014 NotImplemented "Instruction LSLV not yet implemented."
+	015 Move [X19+104], W8
+	016 Move X20, [X31+16]
+	017 Move X19, [X31+24]
+	018 Move X30, [X31+32]
+	019 Return 
+	020 Call 0x1C17F20
+
+Method: System.Void OnDrawGizmos()
+
+Disassembly:
+	0x01E82CC0 LDP X24, X23, [X31 + 0x60]
+	0x01E82CC4 LDP X26, X25, [X31 + 0x50]
+	0x01E82CC8 LDR X30, [X31 + 0x40]
+	0x01E82CCC LDP D9, D8, [X31 + 0x30]
+	0x01E82CD0 LDP D11, D10, [X31 + 0x20]
+	0x01E82CD4 LDP D13, D12, [X31 + 0x10]
+	0x01E82CD8 ADD X31, X31, 0x90
+	0x01E82CDC RET
+	0x01E82CE0 BL 0x1C16F20
+	0x01E82CE4 SUB X31, X31, 0x90
+	0x01E82CE8 STP D13, D12, [X31 + 0x10]
+	0x01E82CEC STP D11, D10, [X31 + 0x20]
+	0x01E82CF0 STP D9, D8, [X31 + 0x30]
+	0x01E82CF4 STP X30, X27, [X31 + 0x40]
+	0x01E82CF8 STP X26, X25, [X31 + 0x50]
+	0x01E82CFC STP X24, X23, [X31 + 0x60]
+	0x01E82D00 STP X22, X21, [X31 + 0x70]
+	0x01E82D04 STP X20, X19, [X31 + 0x80]
+	0x01E82D08 ADRP X27, 0x2557000
+	0x01E82D0C LDRB W8, [X27 + 0x1E9]
+	0x01E82D10 MOV W20, W7
+	0x01E82D14 MOV W21, W6
+	0x01E82D18 MOV W23, W5
+	0x01E82D1C MOV X19, X4
+	0x01E82D20 MOV X24, X3
+	0x01E82D24 MOV X25, X2
+	0x01E82D28 MOV W26, W1
+	0x01E82D2C MOV V8.16B, V5.16B
+	0x01E82D30 MOV V9.16B, V4.16B
+	0x01E82D34 MOV V10.16B, V3.16B
+	0x01E82D38 MOV V11.16B, V2.16B
+	0x01E82D3C MOV V12.16B, V1.16B
+	0x01E82D40 MOV V13.16B, V0.16B
+	0x01E82D44 MOV X22, X0
+	0x01E82D48 TBNZ X8, 0x0, 0x1E82D60
+	0x01E82D4C ADRP X0, 0x2272000
+	0x01E82D50 LDR X0, [X0 + 0x470]
+	0x01E82D54 BL 0x1C16CF4
+	0x01E82D58 MOVZ W8, 0x1
+	0x01E82D5C STRB W8, [X27 + 0x1E9]
+	0x01E82D60 LDR X8, [X22 + 0x80]
+	0x01E82D64 CBZ X8, 0x1E82E50
+	0x01E82D68 STR W31, [X8 + 0x1C]
+	0x01E82D6C LDR X8, [X22 + 0x80]
+	0x01E82D70 CBZ X8, 0x1E82E50
+	0x01E82D74 STP S13, S12, [X8 + 0x48]
+	0x01E82D78 STR S11, [X8 + 0x50]
+	0x01E82D7C LDR X8, [X22 + 0x80]
+	0x01E82D80 CBZ X8, 0x1E82E50
+	0x01E82D84 STP S10, S9, [X8 + 0x54]
+	0x01E82D88 STR S8, [X8 + 0x5C]
+	0x01E82D8C LDR X8, [X22 + 0x80]
+	0x01E82D90 CBZ X8, 0x1E82E50
+	0x01E82D94 LDP S1, S0, [X31 + 0x90]
+	0x01E82D98 LDP S3, S2, [X31 + 0x98]
+	0x01E82D9C ADRP X9, 0x2272000
+	0x01E82DA0 LDR X9, [X9 + 0x470]
+	0x01E82DA4 STP S1, S0, [X8 + 0x60]
+	0x01E82DA8 STP S3, S2, [X8 + 0x68]
+	0x01E82DAC LDR X27, [X22 + 0x80]
+	0x01E82DB0 LDR X2, [X9]
+	0x01E82DB4 ADD X0, X31, 0x8
+	0x01E82DB8 MOV W1, W26
+	0x01E82DBC STR X31, [X31 + 0x8]
+	0x01E82DC0 BL 0x24341FC
+	0x01E82DC4 CBZ X27, 0x1E82E50
+	0x01E82DC8 LDR X8, [X31 + 0x8]
+	0x01E82DCC STR X8, [X27 + 0x20]
+	0x01E82DD0 LDR X8, [X22 + 0x80]
+	0x01E82DD4 CBZ X8, 0x1E82E50
+	0x01E82DD8 STR X25, [X8 + 0x38]
+	0x01E82DDC LDR X8, [X22 + 0x80]
+	0x01E82DE0 CBZ X8, 0x1E82E50
+	0x01E82DE4 STR X24, [X8 + 0x30]
+	0x01E82DE8 LDR X24, [X22 + 0x80]
+	0x01E82DEC MOV W0, W23
+	0x01E82DF0 MOV X1, X31
+	0x01E82DF4 BL 0x3C35CBC
+	0x01E82DF8 CBZ X24, 0x1E82E50
+	0x01E82DFC STR W0, [X24 + 0x18]
+	0x01E82E00 LDR X1, [X22 + 0x80]
+	0x01E82E04 CBZ X1, 0x1E82E50
+	0x01E82E08 LDR W8, [X31 + 0xA0]
+	0x01E82E0C LDR X9, [X31 + 0xA8]
+	0x01E82E10 AND W3, W20, 0x1
+	0x01E82E14 MOV X0, X22
+	0x01E82E18 MOV X2, X19
+	0x01E82E1C STP W8, W21, [X1 + 0x10]
+	0x01E82E20 STR X9, [X1 + 0x40]
+	0x01E82E24 BL 0x1E82258
+	0x01E82E28 LDP X20, X19, [X31 + 0x80]
+	0x01E82E2C LDP X22, X21, [X31 + 0x70]
+	0x01E82E30 LDP X24, X23, [X31 + 0x60]
+	0x01E82E34 LDP X26, X25, [X31 + 0x50]
+	0x01E82E38 LDP X30, X27, [X31 + 0x40]
+	0x01E82E3C LDP D9, D8, [X31 + 0x30]
+	0x01E82E40 LDP D11, D10, [X31 + 0x20]
+	0x01E82E44 LDP D13, D12, [X31 + 0x10]
+	0x01E82E48 ADD X31, X31, 0x90
+	0x01E82E4C RET
+	0x01E82E50 BL 0x1C16F20
+	0x01E82E54 SUB X31, X31, 0x50
+	0x01E82E58 STP X1, X30, [X31 + 0x38]
+	0x01E82E5C ANDS W31, W5, 0x1
+	0x01E82E60 MOVZ W8, 0x4
+	0x01E82E64 STP W31, W2, [X31 + 0xC]
+	0x01E82E68 CSEL W8, W8, W31, NE
+	0x01E82E6C ADD X1, X31, 0x0
+	0x01E82E70 MOV X2, X3
+	0x01E82E74 MOV X3, X4
+	0x01E82E78 STUR X31, [X31 + 0x2C]
+	0x01E82E7C STUR X31, [X31 + 0x24]
+	0x01E82E80 STR W31, [X31 + 0x34]
+	0x01E82E84 STUR X31, [X31 + 0x4]
+	0x01E82E88 STUR X6, [X31 + 0x14]
+	0x01E82E8C STUR X7, [X31 + 0x1C]
+	0x01E82E90 STR W8, [X31]
+	0x01E82E94 BL 0x1E82EA4
+	0x01E82E98 LDR X30, [X31 + 0x40]
+	0x01E82E9C ADD X31, X31, 0x50
+	0x01E82EA0 RET
+	0x01E82EA4 STP X30, X23, [X31 - 0x30]!
+	0x01E82EA8 STP X22, X21, [X31 + 0x10]
+	0x01E82EAC STP X20, X19, [X31 + 0x20]
+	0x01E82EB0 ADRP X23, 0x2557000
+	0x01E82EB4 LDRB W8, [X23 + 0x1F2]
+	0x01E82EB8 MOV X19, X3
+	0x01E82EBC MOV X20, X2
+	0x01E82EC0 MOV X21, X1
+	0x01E82EC4 MOV X22, X0
+
+ISIL:
+	001 Subtract X31, X31, 272
+	002 Move [X31+160], D15
+	003 Move [X31+168], D14
+	004 Move [X31+176], D13
+	005 Move [X31+184], D12
+	006 Move [X31+192], D11
+	007 Move [X31+200], D10
+	008 Move [X31+208], D9
+	009 Move [X31+216], D8
+	010 Move [X31+224], X29
+	011 Move [X31+232], X30
+	012 Move [X31+240], X22
+	013 Move [X31+248], X21
+	014 Move [X31+256], X20
+	015 Move [X31+264], X19
+	016 NotImplemented "Instruction MOVI not yet implemented."
+	017 Move X19, X0
+	018 Move [X31+128], V0
+	019 Move [X31+136], V0
+	020 Move [X31+96], V0
+	021 Move [X31+104], V0
+	022 Move S10, [X0+88]
+	023 Move S8, [X0+92]
+	024 Move X0, [X0+72]
+	025 Move S11, [X19+96]
+	026 Move S9, [X19+100]
+	027 Compare X0, 0
+	028 JumpIfEqual {90}
+	029 Move W8, [X0+48]
+	030 Move TEMP, X8
+	031 And TEMP, TEMP, 8
+	032 Compare TEMP, 8
+	033 JumpIfEqual {90}
+	034 Move X1, X31
+	035 Call NetworkBehaviour.get_StateBufferIsValid, X0
+	036 Move TEMP, X0
+	037 And TEMP, TEMP, 1
+	038 Compare TEMP, 1
+	039 JumpIfNotEqual {90}
+	040 Move X20, [X19+72]
+	041 Compare X20, 0
+	042 JumpIfEqual {175}
+	043 Move X21, 0x2558000
+	044 Move W8, [X21+555]
+	045 Compare W8, 0
+	046 JumpIfNotEqual {52}
+	047 Move X0, 0x227C000
+	048 Move X0, [X0+3416]
+	049 Call 0x1C17CF4
+	050 Move W8, 1
+	051 Move [X21+555], W8
+	052 Move X21, 0x227C000
+	053 Move X21, [X21+3416]
+	054 Move X0, X20
+	055 Move W1, W31
+	056 Move X2, [X21]
+	057 Call NetworkBehaviour.ReinterpretState, X0, X1
+	058 Move W8, [X0]
+	059 Move TEMP, X8
+	060 And TEMP, TEMP, 1
+	061 Compare TEMP, 1
+	062 JumpIfEqual {87}
+	063 Move X20, [X19+72]
+	064 Compare X20, 0
+	065 JumpIfEqual {175}
+	066 Move X22, 0x2558000
+	067 Move W8, [X22+554]
+	068 Compare W8, 0
+	069 JumpIfNotEqual {75}
+	070 Move X0, 0x227C000
+	071 Move X0, [X0+3416]
+	072 Call 0x1C17CF4
+	073 Move W8, 1
+	074 Move [X22+554], W8
+	075 Move X2, [X21]
+	076 Move X0, X20
+	077 Move W1, W31
+	078 Call NetworkBehaviour.ReinterpretState, X0, X1
+	079 Move W8, [X19+80]
+	080 Move W9, [X0]
+	081 Add W8, W8, 1
+	082 NotImplemented "Instruction LSRV not yet implemented."
+	083 Move TEMP, X8
+	084 And TEMP, TEMP, 1
+	085 Compare TEMP, 1
+	086 JumpIfNotEqual {90}
+	087 Move X8, -20541440
+	088 Move V0, [X8+188]
+	089 Multiply S9, S9, S0
+	090 Move X0, X19
+	091 Move X1, X31
+	092 Call Component.get_transform, X0
+	093 Compare X0, 0
+	094 JumpIfEqual {175}
+	095 Move X1, X31
+	096 Move [X31+20], S11
+	097 Move [X31+28], S9
+	098 Move [X31+28], S8
+	099 Call Transform.get_position, X0
+	100 Move X0, X19
+	101 Move X1, X31
+	102 Move V12, V0
+	103 Move V13, V1
+	104 Move V14, V2
+	105 Call Component.get_transform, X0
+	106 Compare X0, 0
+	107 JumpIfEqual {175}
+	108 Move X1, X31
+	109 Call Transform.get_rotation, X0
+	110 Move X20, 0x2557000
+	111 Move W8, [X20+2139]
+	112 Move V15, V0
+	113 Move V8, V1
+	114 Move V9, V2
+	115 Move V11, V3
+	116 Compare W8, 0
+	117 JumpIfNotEqual {123}
+	118 Move X0, 0x2272000
+	119 Move X0, [X0+1440]
+	120 Call 0x1C17CF4
+	121 Move W8, 1
+	122 Move [X20+2139], W8
+	123 Move X8, 0x2272000
+	124 Move X8, [X8+1440]
+	125 Move V1, V13
+	126 Move V2, V14
+	127 Move V3, V15
+	128 Move X8, [X8]
+	129 Move V4, V8
+	130 Move V5, V9
+	131 Move V6, V11
+	132 Move X8, [X8+184]
+	133 Move X0, X31
+	134 Move V0, [X8+20]
+	135 NotImplemented "Instruction LDUR not yet implemented."
+	136 Add X8, X31, 32
+	137 Move [X31+8], S0
+	138 Move V0, V12
+	139 Move [X31], X9
+	140 Call Matrix4x4.TRS, X0, X1, X2
+	141 Move V0, [X31+32]
+	142 Move V1, [X31+48]
+	143 Move V2, [X31+64]
+	144 Move V3, [X31+80]
+	145 Add X1, X31, 96
+	146 Move X0, X19
+	147 Move [X31+96], V0
+	148 Move [X31+104], V1
+	149 Move [X31+128], V2
+	150 Move [X31+136], V3
+	151 Move X8, [X19]
+	152 Move S3, [X31+24]
+	153 Move S1, [X31+28]
+	154 Move V2, [X31+20]
+	155 Move V0, V10
+	156 Move X9, [X8+408]
+	157 Move X2, [X8+416]
+	158 NotImplemented "Instruction BLR not yet implemented."
+	159 Move X20, [X31+256]
+	160 Move X19, [X31+264]
+	161 Move X22, [X31+240]
+	162 Move X21, [X31+248]
+	163 Move X29, [X31+224]
+	164 Move X30, [X31+232]
+	165 Move D9, [X31+208]
+	166 Move D8, [X31+216]
+	167 Move D11, [X31+192]
+	168 Move D10, [X31+200]
+	169 Move D13, [X31+176]
+	170 Move D12, [X31+184]
+	171 Move D15, [X31+160]
+	172 Move D14, [X31+168]
+	173 Add X31, X31, 272
+	174 Return 
+	175 Call 0x1C17F20
+
+Method: System.Void DrawGizmos(UnityEngine.Color color, ref UnityEngine.Matrix4x4 localToWorldMatrix)
+
+Disassembly:
+	0x01E82EC8 TBNZ X8, 0x0, 0x1E82EEC
+	0x01E82ECC ADRP X0, 0x2275000
+	0x01E82ED0 LDR X0, [X0 + 0xC0]
+	0x01E82ED4 BL 0x1C16CF4
+	0x01E82ED8 ADRP X0, 0x2275000
+	0x01E82EDC LDR X0, [X0 + 0x118]
+	0x01E82EE0 BL 0x1C16CF4
+	0x01E82EE4 MOVZ W8, 0x1
+	0x01E82EE8 STRB W8, [X23 + 0x1F2]
+	0x01E82EEC LDR X0, [X22 + 0x38]
+	0x01E82EF0 CBZ X0, 0x1E82F70
+	0x01E82EF4 MOV X1, X31
+	0x01E82EF8 BL 0x1E9E87C
+	0x01E82EFC TBZ X0, 0x0, 0x1E82F0C
+	0x01E82F00 STUR X31, [X21 + 0x1C]
+	0x01E82F04 STUR X31, [X21 + 0x14]
+	0x01E82F08 B 0x1E82F48
+	0x01E82F0C LDRB W8, [X21]
+	0x01E82F10 TBNZ X8, 0x2, 0x1E82F48
+	0x01E82F14 MOV X0, X21
+	0x01E82F18 LDRB W8, [X0 + 0x1C]!
+	0x01E82F1C CBZ W8, 0x1E82F48
+	0x01E82F20 ADRP X8, 0x2275000
+	0x01E82F24 LDR X8, [X8 + 0x118]
+	0x01E82F28 LDR X1, [X8]
+	0x01E82F2C BL 0x243AC20
+	0x01E82F30 FMOV S1, 0.5
+	0x01E82F34 FCMP S0, S1
+	0x01E82F38 B.LE 0x1E82F48
+	0x01E82F3C LDR W8, [X21 + 0x10]
+	0x01E82F40 ADD W8, W8, 0x1
+	0x01E82F44 STR W8, [X21 + 0x10]
+	0x01E82F48 LDR X0, [X22 + 0x90]
+	0x01E82F4C CBZ X0, 0x1E82F70
+	0x01E82F50 MOV X1, X21
+	0x01E82F54 MOV X2, X20
+	0x01E82F58 MOV X3, X19
+	0x01E82F5C LDP X20, X19, [X31 + 0x20]
+	0x01E82F60 LDP X22, X21, [X31 + 0x10]
+	0x01E82F64 MOV X4, X31
+	0x01E82F68 LDP X30, X23, [X31], #0x30
+	0x01E82F6C B 0x1EEB744
+	0x01E82F70 BL 0x1C16F20
+	0x01E82F74 SUB X31, X31, 0xA0
+	0x01E82F78 STR X30, [X31 + 0x50]
+	0x01E82F7C STP X26, X25, [X31 + 0x60]
+	0x01E82F80 STP X24, X23, [X31 + 0x70]
+	0x01E82F84 STP X22, X21, [X31 + 0x80]
+	0x01E82F88 STP X20, X19, [X31 + 0x90]
+	0x01E82F8C ADRP X26, 0x2557000
+	0x01E82F90 ADRP X25, 0x2274000
+	0x01E82F94 LDRB W8, [X26 + 0x1EA]
+	0x01E82F98 LDR X25, [X25 + 0xF00]
+	0x01E82F9C MOV W24, W5
+	0x01E82FA0 MOV X19, X4
+	0x01E82FA4 MOV X20, X3
+	0x01E82FA8 MOV X23, X2
+	0x01E82FAC MOV X22, X1
+	0x01E82FB0 MOV X21, X0
+	0x01E82FB4 TBNZ X8, 0x0, 0x1E82FCC
+	0x01E82FB8 ADRP X0, 0x2274000
+	0x01E82FBC LDR X0, [X0 + 0xF00]
+	0x01E82FC0 BL 0x1C16CF4
+	0x01E82FC4 MOVZ W8, 0x1
+	0x01E82FC8 STRB W8, [X26 + 0x1EA]
+	0x01E82FCC MOVI V0.2D, 0x0
+	0x01E82FD0 AND X1, X23, 0x0
+	0x01E82FD4 ADD X2, X31, 0x58
+	0x01E82FD8 ADD X3, X31, 0x48
+	0x01E82FDC ADD X4, X31, 0x40
+	0x01E82FE0 MOV X0, X21
+	0x01E82FE4 MOV X5, X31
+	0x01E82FE8 STR X31, [X31 + 0x58]
+	0x01E82FEC STP X31, X31, [X31 + 0x40]
+	0x01E82FF0 STP V0, V0, [X31 + 0x20]
+	0x01E82FF4 STP V0, V0, [X31]
+	0x01E82FF8 BL 0x1E89388
+	0x01E82FFC LDR X1, [X25]
+	0x01E83000 ANDS W31, W24, 0x1
+	0x01E83004 MOVZ W8, 0x4
+	0x01E83008 ADD X0, X31, 0x58
+	0x01E8300C CSEL W24, W8, W31, NE
+	0x01E83010 BL 0x2434214
+	0x01E83014 LDP X9, X8, [X31 + 0x40]
+	0x01E83018 STP W23, W0, [X31 + 0xC]
+	0x01E8301C ADD X1, X31, 0x0
+	0x01E83020 MOV X0, X21
+	0x01E83024 MOV X2, X20
+	0x01E83028 MOV X3, X19
+	0x01E8302C STUR X31, [X31 + 0x2C]
+	0x01E83030 STUR X31, [X31 + 0x24]
+	0x01E83034 STR W31, [X31 + 0x34]
+	0x01E83038 STR W24, [X31]
+	0x01E8303C STUR X31, [X31 + 0x4]
+	0x01E83040 STUR X8, [X31 + 0x14]
+
+ISIL:
+	001 Subtract X31, X31, 176
+	002 Move [X31+128], D11
+	003 Move [X31+136], D10
+	004 Move [X31+144], D9
+	005 Move [X31+152], D8
+	006 Move [X31+160], X30
+	007 Move [X31+168], X19
+	008 Move V8, V3
+	009 Move V9, V2
+	010 Move V10, V1
+	011 Move V11, V0
+	012 Move V1, [X1+32]
+	013 Move V0, [X1+48]
+	014 Move V3, [X1]
+	015 Move V2, [X1+16]
+	016 Move X19, X0
+	017 Add X0, X31, 64
+	018 Move X1, X31
+	019 Move [X31+96], V1
+	020 Move [X31+104], V0
+	021 Move [X31+64], V3
+	022 Move [X31+72], V2
+	023 Call Gizmos.set_matrix, X0
+	024 Move V0, V11
+	025 Move V1, V10
+	026 Move V2, V9
+	027 Move V3, V8
+	028 Move X0, X31
+	029 Call Gizmos.set_color, X0
+	030 Move W8, [X19+32]
+	031 NotImplemented "Instruction CMP not yet implemented."
+	032 NotImplemented "Instruction CMP not yet implemented."
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 NotImplemented "Instruction LDUR not yet implemented."
+	035 Move V4, [X19+52]
+	036 Move S0, [X19+60]
+	037 Move S1, [X19+64]
+	038 Move V2, [X19+68]
+	039 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	040 NotImplemented "Instruction FABS not yet implemented."
+	041 Add V3, V3, V3
+	042 Add S5, S4, S4
+	043 Move S4, V3.S[1]
+	044 Move X0, X31
+	045 Call Gizmos.DrawWireCube, X0, X1
+	046 Move X0, X19
+	047 Call Hitbox.get_CapsuleTopCenter, X0
+	048 Move X0, X19
+	049 Move V8, V0
+	050 Move V9, V1
+	051 Move V10, V2
+	052 Call Hitbox.get_CapsuleBottomCenter, X0
+	053 Move V3, V0
+	054 Move V0, [X19+40]
+	055 Move V4, V1
+	056 Move V5, V2
+	057 Move V1, V9
+	058 NotImplemented "Instruction FABS not yet implemented."
+	059 Move V0, V8
+	060 Move V2, V10
+	061 Move X0, X31
+	062 Call LagCompensationDraw.GizmosDrawWireCapsule, X0, X1, V0
+	063 Move V3, [X19+36]
+	064 Move S0, [X19+60]
+	065 Move S1, [X19+64]
+	066 Move V2, [X19+68]
+	067 Move X0, X31
+	068 NotImplemented "Instruction FABS not yet implemented."
+	069 Call Gizmos.DrawWireSphere, X0, V0
+	070 Move S0, 1
+	071 Move S1, 1
+	072 Move S2, 1
+	073 Move S3, 1
+	074 Move X0, X31
+	075 Call Gizmos.set_color, X0
+	076 Move X19, 0x2557000
+	077 Move W8, [X19+2752]
+	078 Compare W8, 0
+	079 JumpIfNotEqual {85}
+	080 Move X0, 0x2276000
+	081 Move X0, [X0+624]
+	082 Call 0x1C17CF4
+	083 Move W8, 1
+	084 Move [X19+2752], W8
+	085 Move X8, 0x2275000
+	086 Move X8, [X8+624]
+	087 Add X0, X31, 0
+	088 Move X1, X31
+	089 Move X8, [X8]
+	090 Move X8, [X8+184]
+	091 Move V1, [X8+96]
+	092 Move V0, [X8+112]
+	093 Move V2, [X8+64]
+	094 Move V3, [X8+80]
+	095 Move [X31+32], V1
+	096 Move [X31+40], V0
+	097 Move [X31], V2
+	098 Move [X31+8], V3
+	099 Call Gizmos.set_matrix, X0
+	100 Move X30, [X31+160]
+	101 Move X19, [X31+168]
+	102 Move D9, [X31+144]
+	103 Move D8, [X31+152]
+	104 Move D11, [X31+128]
+	105 Move D10, [X31+136]
+	106 Add X31, X31, 176
+	107 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E83044 STUR X9, [X31 + 0x1C]
+	0x01E83048 STR X22, [X31 + 0x38]
+	0x01E8304C BL 0x1E82EA4
+	0x01E83050 LDP X20, X19, [X31 + 0x90]
+	0x01E83054 LDP X22, X21, [X31 + 0x80]
+
+ISIL:
+	001 Move X8, -20537344
+	002 Move V0, [X8+24]
+	003 Move X1, X31
+	004 Move [X0+88], V0
+	005 Call MonoBehaviour..ctor, X0
+	006 Return 
+

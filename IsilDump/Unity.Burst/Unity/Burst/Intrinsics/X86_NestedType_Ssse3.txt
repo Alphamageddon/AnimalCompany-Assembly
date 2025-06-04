@@ -1,0 +1,1312 @@
+Type: Unity.Burst.Intrinsics.X86/Ssse3
+
+Method: System.Boolean get_IsSsse3Supported()
+
+Disassembly:
+	0x03732CF0 LDR X0, [X0 + 0x1D0]
+	0x03732CF4 RET
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: Unity.Burst.Intrinsics.v128 abs_epi8(Unity.Burst.Intrinsics.v128 a)
+
+Disassembly:
+	0x03732CF8 STR X1, [X0 + 0x1D0]
+	0x03732CFC RET
+	0x03732D00 LDR X0, [X0 + 0x1D8]
+	0x03732D04 RET
+	0x03732D08 STR X1, [X0 + 0x1D8]
+	0x03732D0C RET
+	0x03732D10 STP X29, X30, [X31 - 0x60]!
+	0x03732D14 STP X28, X27, [X31 + 0x10]
+	0x03732D18 STP X26, X25, [X31 + 0x20]
+	0x03732D1C STP X24, X23, [X31 + 0x30]
+	0x03732D20 STP X22, X21, [X31 + 0x40]
+	0x03732D24 STP X20, X19, [X31 + 0x50]
+	0x03732D28 ADRP X27, 0xCAE000
+	0x03732D2C ADRP X26, 0x9E9000
+	0x03732D30 ADRP X24, 0xA12000
+	0x03732D34 ADRP X25, 0xA12000
+	0x03732D38 ADRP X23, 0xA12000
+	0x03732D3C ADRP X22, 0xA12000
+	0x03732D40 ADRP X21, 0xA12000
+	0x03732D44 ADRP X29, 0xA12000
+	0x03732D48 ADRP X28, 0xA12000
+	0x03732D4C ADRP X20, 0xA12000
+	0x03732D50 LDR X26, [X26 + 0x118]
+	0x03732D54 LDR X24, [X24 + 0xE30]
+	0x03732D58 LDR X25, [X25 + 0xE50]
+	0x03732D5C LDR X23, [X23 + 0xE18]
+	0x03732D60 LDR X22, [X22 + 0xE28]
+	0x03732D64 LDR X21, [X21 + 0xE58]
+	0x03732D68 LDR X29, [X29 + 0xE60]
+	0x03732D6C LDR X28, [X28 + 0xE38]
+	0x03732D70 LDRB W8, [X27 + 0xCD1]
+	0x03732D74 LDR X20, [X20 + 0xDD0]
+	0x03732D78 MOV X19, X0
+	0x03732D7C TBNZ X8, 0x0, 0x3732E30
+	0x03732D80 ADRP X0, 0xA12000
+	0x03732D84 LDR X0, [X0 + 0xE30]
+	0x03732D88 BL 0x1C16CF4
+	0x03732D8C ADRP X0, 0xA12000
+	0x03732D90 LDR X0, [X0 + 0xE18]
+	0x03732D94 BL 0x1C16CF4
+	0x03732D98 ADRP X0, 0xA12000
+	0x03732D9C LDR X0, [X0 + 0xE38]
+	0x03732DA0 BL 0x1C16CF4
+	0x03732DA4 ADRP X0, 0xA12000
+	0x03732DA8 LDR X0, [X0 + 0xDD0]
+	0x03732DAC BL 0x1C16CF4
+
+ISIL:
+	001 Subtract X31, X31, 112
+	002 Move [X31+48], X30
+	003 Move [X31+64], X24
+	004 Move [X31+72], X23
+	005 Move [X31+80], X22
+	006 Move [X31+88], X21
+	007 Move [X31+96], X20
+	008 Move [X31+104], X19
+	009 NotImplemented "Instruction MRS not yet implemented."
+	010 Move X8, [X19+40]
+	011 Move X20, 0xCAF000
+	012 Move [X31+40], X8
+	013 Move W8, [X20+3273]
+	014 Move [X31+24], X0
+	015 Move [X31+32], X1
+	016 Move TEMP, X8
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {25}
+	020 Move X0, 0x9C2000
+	021 Move X0, [X0+1448]
+	022 Call 0x1C17CF4
+	023 Move W8, 1
+	024 Move [X20+3273], W8
+	025 Move X21, 0x9C2000
+	026 Move X21, [X21+1448]
+	027 Move X20, X31
+	028 Add X22, X31, 24
+	029 Add X23, X31, 8
+	030 Move [X31+8], X31
+	031 Move [X31+16], X31
+	032 Move X0, [X21]
+	033 NotImplemented "Instruction INVALID not yet implemented."
+	034 Move W8, [X0+224]
+	035 Compare W8, 0
+	036 JumpIfNotEqual {38}
+	037 Call 0x1C17DFC
+	038 NotImplemented "Instruction CMP not yet implemented."
+	039 NotImplemented "Instruction CSNEG not yet implemented."
+	040 Move [X23], W8
+	041 Add X20, X20, 1
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 Move X0, [X31+8]
+	044 Move X1, [X31+16]
+	045 Move X8, [X19+40]
+	046 Move X9, [X31+40]
+	047 NotImplemented "Instruction CMP not yet implemented."
+	048 Move X20, [X31+96]
+	049 Move X19, [X31+104]
+	050 Move X22, [X31+80]
+	051 Move X21, [X31+88]
+	052 Move X24, [X31+64]
+	053 Move X23, [X31+72]
+	054 Move X30, [X31+48]
+	055 Add X31, X31, 112
+	056 Return X0
+	057 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 abs_epi16(Unity.Burst.Intrinsics.v128 a)
+
+Disassembly:
+	0x03732DB0 ADRP X0, 0xA12000
+	0x03732DB4 LDR X0, [X0 + 0xE50]
+	0x03732DB8 BL 0x1C16CF4
+	0x03732DBC ADRP X0, 0xA12000
+	0x03732DC0 LDR X0, [X0 + 0xDC8]
+	0x03732DC4 BL 0x1C16CF4
+	0x03732DC8 ADRP X0, 0xA12000
+	0x03732DCC LDR X0, [X0 + 0xDD8]
+	0x03732DD0 BL 0x1C16CF4
+	0x03732DD4 ADRP X0, 0x9E9000
+	0x03732DD8 LDR X0, [X0 + 0x118]
+	0x03732DDC BL 0x1C16CF4
+	0x03732DE0 ADRP X0, 0xA12000
+	0x03732DE4 LDR X0, [X0 + 0xE58]
+	0x03732DE8 BL 0x1C16CF4
+	0x03732DEC ADRP X0, 0xA12000
+	0x03732DF0 LDR X0, [X0 + 0xE28]
+	0x03732DF4 BL 0x1C16CF4
+	0x03732DF8 ADRP X0, 0xA12000
+	0x03732DFC LDR X0, [X0 + 0xE48]
+	0x03732E00 BL 0x1C16CF4
+	0x03732E04 ADRP X0, 0x9E9000
+	0x03732E08 LDR X0, [X0 + 0x138]
+	0x03732E0C BL 0x1C16CF4
+	0x03732E10 ADRP X0, 0xA12000
+	0x03732E14 LDR X0, [X0 + 0xE60]
+	0x03732E18 BL 0x1C16CF4
+	0x03732E1C ADRP X0, 0xA12000
+	0x03732E20 LDR X0, [X0 + 0xE68]
+	0x03732E24 BL 0x1C16CF4
+	0x03732E28 MOVZ W8, 0x1
+	0x03732E2C STRB W8, [X27 + 0xCD1]
+	0x03732E30 MOV X0, X19
+	0x03732E34 MOV X1, X31
+	0x03732E38 BL 0x37DB700
+	0x03732E3C LDR X1, [X26]
+	0x03732E40 LDR X2, [X24]
+	0x03732E44 MOV X0, X19
+	0x03732E48 BL 0x21FC754
+	0x03732E4C STR X0, [X19 + 0x190]
+	0x03732E50 LDR X1, [X25]
+	0x03732E54 LDR X2, [X23]
+	0x03732E58 MOV X0, X19
+	0x03732E5C BL 0x21FC754
+	0x03732E60 STR X0, [X19 + 0x1A0]
+	0x03732E64 LDR X1, [X22]
+
+ISIL:
+	001 Subtract X31, X31, 112
+	002 Move [X31+48], X30
+	003 Move [X31+64], X24
+	004 Move [X31+72], X23
+	005 Move [X31+80], X22
+	006 Move [X31+88], X21
+	007 Move [X31+96], X20
+	008 Move [X31+104], X19
+	009 NotImplemented "Instruction MRS not yet implemented."
+	010 Move X8, [X19+40]
+	011 Move X20, 0xCAF000
+	012 Move [X31+40], X8
+	013 Move W8, [X20+3274]
+	014 Move [X31+24], X0
+	015 Move [X31+32], X1
+	016 Move TEMP, X8
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {25}
+	020 Move X0, 0x9C2000
+	021 Move X0, [X0+1448]
+	022 Call 0x1C17CF4
+	023 Move W8, 1
+	024 Move [X20+3274], W8
+	025 Move X21, 0x9C2000
+	026 Move X21, [X21+1448]
+	027 Move X20, X31
+	028 Add X22, X31, 24
+	029 Add X23, X31, 8
+	030 Move [X31+8], X31
+	031 Move [X31+16], X31
+	032 Move X0, [X21]
+	033 NotImplemented "Instruction LDRSH not yet implemented."
+	034 Move W8, [X0+224]
+	035 Compare W8, 0
+	036 JumpIfNotEqual {38}
+	037 Call 0x1C17DFC
+	038 NotImplemented "Instruction CMP not yet implemented."
+	039 NotImplemented "Instruction CSNEG not yet implemented."
+	040 NotImplemented "Instruction STRH not yet implemented."
+	041 Add X20, X20, 2
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 Move X0, [X31+8]
+	044 Move X1, [X31+16]
+	045 Move X8, [X19+40]
+	046 Move X9, [X31+40]
+	047 NotImplemented "Instruction CMP not yet implemented."
+	048 Move X20, [X31+96]
+	049 Move X19, [X31+104]
+	050 Move X22, [X31+80]
+	051 Move X21, [X31+88]
+	052 Move X24, [X31+64]
+	053 Move X23, [X31+72]
+	054 Move X30, [X31+48]
+	055 Add X31, X31, 112
+	056 Return X0
+	057 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 abs_epi32(Unity.Burst.Intrinsics.v128 a)
+
+Disassembly:
+	0x03732E68 LDR X2, [X23]
+	0x03732E6C MOV X0, X19
+	0x03732E70 BL 0x21FC754
+	0x03732E74 STR X0, [X19 + 0x198]
+	0x03732E78 LDR X1, [X21]
+	0x03732E7C LDR X2, [X23]
+	0x03732E80 MOV X0, X19
+	0x03732E84 BL 0x21FC754
+	0x03732E88 STR X0, [X19 + 0x1A8]
+	0x03732E8C LDR X1, [X29]
+	0x03732E90 LDR X2, [X23]
+	0x03732E94 MOV X0, X19
+	0x03732E98 BL 0x21FC754
+	0x03732E9C STR X0, [X19 + 0x1B0]
+	0x03732EA0 ADRP X8, 0xA12000
+	0x03732EA4 LDR X8, [X8 + 0xE68]
+	0x03732EA8 LDR X2, [X28]
+	0x03732EAC MOV X0, X19
+	0x03732EB0 LDR X1, [X8]
+	0x03732EB4 BL 0x21FC754
+	0x03732EB8 STR X0, [X19 + 0x1B8]
+	0x03732EBC ADRP X8, 0x9E9000
+	0x03732EC0 LDR X8, [X8 + 0x138]
+	0x03732EC4 LDR X2, [X24]
+	0x03732EC8 MOV X0, X19
+	0x03732ECC LDR X1, [X8]
+	0x03732ED0 BL 0x21FC754
+	0x03732ED4 STR X0, [X19 + 0x1C0]
+	0x03732ED8 ADRP X8, 0xA12000
+	0x03732EDC LDR X8, [X8 + 0xE48]
+	0x03732EE0 LDR X2, [X23]
+	0x03732EE4 MOV X0, X19
+	0x03732EE8 LDR X1, [X8]
+	0x03732EEC BL 0x21FC754
+	0x03732EF0 STR X0, [X19 + 0x1C8]
+	0x03732EF4 ADRP X8, 0xA12000
+	0x03732EF8 LDR X8, [X8 + 0xDC8]
+	0x03732EFC LDR X2, [X20]
+	0x03732F00 MOV X0, X19
+	0x03732F04 LDR X1, [X8]
+	0x03732F08 BL 0x21FC754
+	0x03732F0C STR X0, [X19 + 0x1D0]
+	0x03732F10 ADRP X8, 0xA12000
+	0x03732F14 LDR X8, [X8 + 0xDD8]
+	0x03732F18 LDR X2, [X20]
+	0x03732F1C MOV X0, X19
+
+ISIL:
+	001 Subtract X31, X31, 112
+	002 Move [X31+48], X30
+	003 Move [X31+64], X24
+	004 Move [X31+72], X23
+	005 Move [X31+80], X22
+	006 Move [X31+88], X21
+	007 Move [X31+96], X20
+	008 Move [X31+104], X19
+	009 NotImplemented "Instruction MRS not yet implemented."
+	010 Move X8, [X19+40]
+	011 Move X20, 0xCAF000
+	012 Move [X31+40], X8
+	013 Move W8, [X20+3275]
+	014 Move [X31+24], X0
+	015 Move [X31+32], X1
+	016 Move TEMP, X8
+	017 And TEMP, TEMP, 1
+	018 Compare TEMP, 1
+	019 JumpIfEqual {25}
+	020 Move X0, 0x9C2000
+	021 Move X0, [X0+1448]
+	022 Call 0x1C17CF4
+	023 Move W8, 1
+	024 Move [X20+3275], W8
+	025 Move X21, 0x9C2000
+	026 Move X21, [X21+1448]
+	027 Move X20, X31
+	028 Add X22, X31, 24
+	029 Add X23, X31, 8
+	030 Move [X31+8], X31
+	031 Move [X31+16], X31
+	032 Move X0, [X21]
+	033 NotImplemented "Instruction LDRSW not yet implemented."
+	034 Move W8, [X0+224]
+	035 Compare W8, 0
+	036 JumpIfNotEqual {38}
+	037 Call 0x1C17DFC
+	038 NotImplemented "Instruction CMP not yet implemented."
+	039 NotImplemented "Instruction CSNEG not yet implemented."
+	040 Move [X23], W8
+	041 Add X20, X20, 4
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 Move X0, [X31+8]
+	044 Move X1, [X31+16]
+	045 Move X8, [X19+40]
+	046 Move X9, [X31+40]
+	047 NotImplemented "Instruction CMP not yet implemented."
+	048 Move X20, [X31+96]
+	049 Move X19, [X31+104]
+	050 Move X22, [X31+80]
+	051 Move X21, [X31+88]
+	052 Move X24, [X31+64]
+	053 Move X23, [X31+72]
+	054 Move X30, [X31+48]
+	055 Add X31, X31, 112
+	056 Return X0
+	057 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 shuffle_epi8(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x03732F20 LDR X1, [X8]
+	0x03732F24 BL 0x21FC754
+	0x03732F28 STR X0, [X19 + 0x1D8]
+	0x03732F2C LDP X20, X19, [X31 + 0x50]
+	0x03732F30 LDP X22, X21, [X31 + 0x40]
+	0x03732F34 LDP X24, X23, [X31 + 0x30]
+	0x03732F38 LDP X26, X25, [X31 + 0x20]
+	0x03732F3C LDP X28, X27, [X31 + 0x10]
+	0x03732F40 LDP X29, X30, [X31], #0x60
+	0x03732F44 RET
+	0x03732F48 MOV X1, X31
+	0x03732F4C B 0x37DB970
+	0x03732F50 MOV X1, X31
+	0x03732F54 B 0x37C1378
+	0x03732F58 LDR X0, [X0 + 0x190]
+	0x03732F5C RET
+	0x03732F60 STR X1, [X0 + 0x190]
+	0x03732F64 RET
+	0x03732F68 LDR X0, [X0 + 0x198]
+	0x03732F6C RET
+	0x03732F70 STR X1, [X0 + 0x198]
+	0x03732F74 RET
+	0x03732F78 STP X30, X23, [X31 - 0x30]!
+	0x03732F7C STP X22, X21, [X31 + 0x10]
+	0x03732F80 STP X20, X19, [X31 + 0x20]
+	0x03732F84 ADRP X23, 0xCAE000
+	0x03732F88 ADRP X22, 0xA12000
+	0x03732F8C ADRP X20, 0xA12000
+	0x03732F90 ADRP X21, 0xA12000
+	0x03732F94 LDRB W8, [X23 + 0xCD2]
+	0x03732F98 LDR X22, [X22 + 0xDC8]
+	0x03732F9C LDR X20, [X20 + 0xDD0]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X10, [X8+40]
+	005 Move X9, X31
+	006 Add X11, X31, 40
+	007 Add X12, X31, 8
+	008 Move [X31+56], X10
+	009 Add X10, X31, 24
+	010 Move [X31+40], X0
+	011 Move [X31+48], X1
+	012 Move [X31+24], X2
+	013 Move [X31+32], X3
+	014 Move [X31+8], X31
+	015 Move [X31+16], X31
+	016 NotImplemented "Instruction INVALID not yet implemented."
+	017 Move TEMP, X13
+	018 And TEMP, TEMP, -2147483648
+	019 Compare TEMP, -2147483648
+	020 JumpIfEqual {24}
+	021 And X13, X13, 255
+	022 And X13, X13, 15
+	023 Move W13, [X13]
+	024 Move W13, W31
+	025 Move [X12], W13
+	026 Add X9, X9, 1
+	027 NotImplemented "Instruction CMP not yet implemented."
+	028 Move X0, [X31+8]
+	029 Move X1, [X31+16]
+	030 Move X8, [X8+40]
+	031 Move X9, [X31+56]
+	032 NotImplemented "Instruction CMP not yet implemented."
+	033 Move X30, [X31+64]
+	034 Add X31, X31, 80
+	035 Return X0
+	036 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 alignr_epi8(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b, System.Int32 count)
+
+Disassembly:
+	0x03732FA0 LDR X21, [X21 + 0xDD8]
+	0x03732FA4 MOV X19, X0
+	0x03732FA8 TBNZ X8, 0x0, 0x3732FD8
+	0x03732FAC ADRP X0, 0xA12000
+	0x03732FB0 LDR X0, [X0 + 0xDD0]
+	0x03732FB4 BL 0x1C16CF4
+	0x03732FB8 ADRP X0, 0xA12000
+	0x03732FBC LDR X0, [X0 + 0xDC8]
+	0x03732FC0 BL 0x1C16CF4
+	0x03732FC4 ADRP X0, 0xA12000
+	0x03732FC8 LDR X0, [X0 + 0xDD8]
+	0x03732FCC BL 0x1C16CF4
+	0x03732FD0 MOVZ W8, 0x1
+	0x03732FD4 STRB W8, [X23 + 0xCD2]
+	0x03732FD8 MOV X0, X19
+	0x03732FDC MOV X1, X31
+	0x03732FE0 BL 0x37C1230
+	0x03732FE4 LDR X1, [X22]
+	0x03732FE8 LDR X2, [X20]
+	0x03732FEC MOV X0, X19
+	0x03732FF0 BL 0x21FC754
+	0x03732FF4 STR X0, [X19 + 0x190]
+	0x03732FF8 LDR X1, [X21]
+	0x03732FFC LDR X2, [X20]
+	0x03733000 MOV X0, X19
+	0x03733004 BL 0x21FC754
+	0x03733008 STR X0, [X19 + 0x198]
+	0x0373300C LDP X20, X19, [X31 + 0x20]
+	0x03733010 LDP X22, X21, [X31 + 0x10]
+	0x03733014 LDP X30, X23, [X31], #0x30
+	0x03733018 RET
+	0x0373301C MOV X1, X31
+	0x03733020 B 0x37C1378
+	0x03733024 LDR X0, [X0 + 0x1A0]
+	0x03733028 RET
+	0x0373302C STR X1, [X0 + 0x1A0]
+	0x03733030 RET
+	0x03733034 LDR X0, [X0 + 0x1A8]
+	0x03733038 RET
+	0x0373303C STR X1, [X0 + 0x1A8]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X9, [X8+40]
+	005 Move [X31+56], X9
+	006 Move W9, 16
+	007 Subtract W10, W9, W4
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move [X31+40], X0
+	010 Move [X31+48], X1
+	011 Move [X31+24], X2
+	012 Move [X31+32], X3
+	013 Move [X31+8], X31
+	014 Move [X31+16], X31
+	015 Add X11, X31, 40
+	016 Add X9, X31, 8
+	017 Add X11, X11, W4
+	018 Subtract W12, W4, 16
+	019 Move W13, [X11+1]
+	020 Add W12, W12, 1
+	021 Move [X9+1], W13
+	022 NotImplemented "Instruction CMP not yet implemented."
+	023 Move W10, W31
+	024 Add X9, X31, 8
+	025 Add X11, X31, 24
+	026 Subtract W10, W10, 16
+	027 Move W12, [X11+1]
+	028 Add W10, W10, 1
+	029 Move [X9+1], W12
+	030 Move X0, [X31+8]
+	031 Move X1, [X31+16]
+	032 Move X8, [X8+40]
+	033 Move X9, [X31+56]
+	034 NotImplemented "Instruction CMP not yet implemented."
+	035 Move X30, [X31+64]
+	036 Add X31, X31, 80
+	037 Return X0
+	038 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 hadd_epi16(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x03733040 RET
+	0x03733044 LDR X0, [X0 + 0x1B0]
+	0x03733048 RET
+	0x0373304C STR X1, [X0 + 0x1B0]
+	0x03733050 RET
+	0x03733054 LDR X0, [X0 + 0x1B8]
+	0x03733058 RET
+	0x0373305C STR X1, [X0 + 0x1B8]
+	0x03733060 RET
+	0x03733064 LDR X0, [X0 + 0x1C0]
+	0x03733068 RET
+	0x0373306C STR X1, [X0 + 0x1C0]
+	0x03733070 RET
+	0x03733074 STP X30, X27, [X31 - 0x50]!
+	0x03733078 STP X26, X25, [X31 + 0x10]
+	0x0373307C STP X24, X23, [X31 + 0x20]
+	0x03733080 STP X22, X21, [X31 + 0x30]
+	0x03733084 STP X20, X19, [X31 + 0x40]
+	0x03733088 ADRP X25, 0xCAD000
+	0x0373308C ADRP X26, 0x9E8000
+	0x03733090 ADRP X27, 0xA11000
+	0x03733094 ADRP X24, 0xA11000
+	0x03733098 ADRP X20, 0xA11000
+	0x0373309C ADRP X23, 0xA11000
+	0x037330A0 ADRP X22, 0xA11000
+	0x037330A4 ADRP X21, 0xA11000
+	0x037330A8 LDR X26, [X26 + 0x118]
+	0x037330AC LDR X27, [X27 + 0xE30]
+	0x037330B0 LDRB W8, [X25 + 0xCD3]
+	0x037330B4 LDR X24, [X24 + 0xE50]
+	0x037330B8 LDR X20, [X20 + 0xE18]
+	0x037330BC LDR X23, [X23 + 0xE28]
+	0x037330C0 LDR X22, [X22 + 0xE58]
+	0x037330C4 LDR X21, [X21 + 0xE48]
+	0x037330C8 MOV X19, X0
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X10, [X8+40]
+	005 Move X9, X31
+	006 Add X11, X31, 40
+	007 Add X12, X31, 24
+	008 Move [X31+56], X10
+	009 Add X10, X31, 8
+	010 Move [X31+40], X0
+	011 Move [X31+48], X1
+	012 Move [X31+24], X2
+	013 Move [X31+32], X3
+	014 Move [X31+8], X31
+	015 Move [X31+16], X31
+	016 Add X13, X11, X9
+	017 NotImplemented "Instruction LDRH not yet implemented."
+	018 NotImplemented "Instruction LDRH not yet implemented."
+	019 Add X15, X12, X9
+	020 Add X9, X9, 4
+	021 NotImplemented "Instruction CMP not yet implemented."
+	022 Add W13, W13, W14
+	023 NotImplemented "Instruction STRH not yet implemented."
+	024 NotImplemented "Instruction LDRH not yet implemented."
+	025 NotImplemented "Instruction LDRH not yet implemented."
+	026 Add W13, W14, W13
+	027 NotImplemented "Instruction STRH not yet implemented."
+	028 Add X10, X10, 2
+	029 Move X0, [X31+8]
+	030 Move X1, [X31+16]
+	031 Move X8, [X8+40]
+	032 Move X9, [X31+56]
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move X30, [X31+64]
+	035 Add X31, X31, 80
+	036 Return X0
+	037 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 hadds_epi16(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x037330CC TBNZ X8, 0x0, 0x373312C
+	0x037330D0 ADRP X0, 0xA11000
+	0x037330D4 LDR X0, [X0 + 0xE30]
+	0x037330D8 BL 0x1C16CF4
+	0x037330DC ADRP X0, 0xA11000
+	0x037330E0 LDR X0, [X0 + 0xE18]
+	0x037330E4 BL 0x1C16CF4
+	0x037330E8 ADRP X0, 0xA11000
+	0x037330EC LDR X0, [X0 + 0xE50]
+	0x037330F0 BL 0x1C16CF4
+	0x037330F4 ADRP X0, 0x9E8000
+	0x037330F8 LDR X0, [X0 + 0x118]
+	0x037330FC BL 0x1C16CF4
+	0x03733100 ADRP X0, 0xA11000
+	0x03733104 LDR X0, [X0 + 0xE58]
+	0x03733108 BL 0x1C16CF4
+	0x0373310C ADRP X0, 0xA11000
+	0x03733110 LDR X0, [X0 + 0xE28]
+	0x03733114 BL 0x1C16CF4
+	0x03733118 ADRP X0, 0xA11000
+	0x0373311C LDR X0, [X0 + 0xE48]
+	0x03733120 BL 0x1C16CF4
+	0x03733124 MOVZ W8, 0x1
+	0x03733128 STRB W8, [X25 + 0xCD3]
+	0x0373312C LDR X1, [X26]
+	0x03733130 LDR X2, [X27]
+	0x03733134 MOV X0, X19
+	0x03733138 BL 0x21FC754
+	0x0373313C STR X0, [X19 + 0x1A0]
+	0x03733140 LDR X1, [X24]
+	0x03733144 LDR X2, [X20]
+	0x03733148 MOV X0, X19
+	0x0373314C BL 0x21FC754
+	0x03733150 STR X0, [X19 + 0x1B0]
+	0x03733154 LDR X1, [X23]
+	0x03733158 LDR X2, [X20]
+	0x0373315C MOV X0, X19
+	0x03733160 BL 0x21FC754
+	0x03733164 STR X0, [X19 + 0x1A8]
+	0x03733168 LDR X1, [X22]
+	0x0373316C LDR X2, [X20]
+	0x03733170 MOV X0, X19
+	0x03733174 BL 0x21FC754
+
+ISIL:
+	001 Subtract X31, X31, 112
+	002 Move [X31+64], X30
+	003 Move [X31+72], X23
+	004 Move [X31+80], X22
+	005 Move [X31+88], X21
+	006 Move [X31+96], X20
+	007 Move [X31+104], X19
+	008 NotImplemented "Instruction MRS not yet implemented."
+	009 Move X8, [X19+40]
+	010 Move X20, X31
+	011 Add X21, X31, 8
+	012 Add X22, X31, 40
+	013 Add X23, X31, 24
+	014 Move [X31+56], X8
+	015 Move [X31+40], X0
+	016 Move [X31+48], X1
+	017 Move [X31+24], X2
+	018 Move [X31+32], X3
+	019 Move [X31+8], X31
+	020 Move [X31+16], X31
+	021 Add X8, X22, X20
+	022 NotImplemented "Instruction LDRSH not yet implemented."
+	023 NotImplemented "Instruction LDRSH not yet implemented."
+	024 Move X1, X31
+	025 Add W0, W8, W9
+	026 Call X86.Saturate_To_Int16, X0
+	027 NotImplemented "Instruction STRH not yet implemented."
+	028 Add X8, X23, X20
+	029 NotImplemented "Instruction LDRSH not yet implemented."
+	030 NotImplemented "Instruction LDRSH not yet implemented."
+	031 Move X1, X31
+	032 Add W0, W8, W9
+	033 Call X86.Saturate_To_Int16, X0
+	034 Add X20, X20, 4
+	035 NotImplemented "Instruction STRH not yet implemented."
+	036 NotImplemented "Instruction CMP not yet implemented."
+	037 Add X21, X21, 2
+	038 Move X0, [X31+8]
+	039 Move X1, [X31+16]
+	040 Move X8, [X19+40]
+	041 Move X9, [X31+56]
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 Move X20, [X31+96]
+	044 Move X19, [X31+104]
+	045 Move X22, [X31+80]
+	046 Move X21, [X31+88]
+	047 Move X30, [X31+64]
+	048 Move X23, [X31+72]
+	049 Add X31, X31, 112
+	050 Return X0
+	051 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 hadd_epi32(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x03733178 STR X0, [X19 + 0x1B8]
+	0x0373317C LDR X1, [X21]
+	0x03733180 LDR X2, [X20]
+	0x03733184 MOV X0, X19
+	0x03733188 BL 0x21FC754
+	0x0373318C STR X0, [X19 + 0x1C0]
+	0x03733190 MOV X0, X19
+	0x03733194 LDP X20, X19, [X31 + 0x40]
+	0x03733198 LDP X22, X21, [X31 + 0x30]
+	0x0373319C LDP X24, X23, [X31 + 0x20]
+	0x037331A0 LDP X26, X25, [X31 + 0x10]
+
+ISIL:
+	001 Move X8, X0
+	002 ShiftRight X8, 32
+	003 And X8, X8, 0x7FFFFFFF
+	004 Move X9, X2
+	005 ShiftRight X9, 32
+	006 And X9, X9, 0x7FFFFFFF
+	007 Add X10, X3, X3
+	008 Add X11, X1, X1
+	009 Add W8, W8, W0
+	010 Add W9, W9, W2
+	011 And X10, X10, 0
+	012 And X11, X11, 0
+	013 Or X1, X9, X10
+	014 Or X0, X8, X11
+	015 Return X0
+
+Method: Unity.Burst.Intrinsics.v128 hsub_epi16(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x037331A4 LDP X30, X27, [X31], #0x50
+	0x037331A8 B 0x3732F78
+	0x037331AC MOV X1, X31
+	0x037331B0 B 0x37C1378
+	0x037331B4 LDR X0, [X0 + 0x190]
+	0x037331B8 RET
+	0x037331BC STR X1, [X0 + 0x190]
+	0x037331C0 RET
+	0x037331C4 LDR X0, [X0 + 0x198]
+	0x037331C8 RET
+	0x037331CC STR X1, [X0 + 0x198]
+	0x037331D0 RET
+	0x037331D4 LDR X0, [X0 + 0x1A0]
+	0x037331D8 RET
+	0x037331DC STR X1, [X0 + 0x1A0]
+	0x037331E0 RET
+	0x037331E4 LDR X0, [X0 + 0x1A8]
+	0x037331E8 RET
+	0x037331EC STR X1, [X0 + 0x1A8]
+	0x037331F0 RET
+	0x037331F4 LDR X0, [X0 + 0x1B0]
+	0x037331F8 RET
+	0x037331FC STR X1, [X0 + 0x1B0]
+	0x03733200 RET
+	0x03733204 LDR X0, [X0 + 0x1B8]
+	0x03733208 RET
+	0x0373320C STR X1, [X0 + 0x1B8]
+	0x03733210 RET
+	0x03733214 LDR X0, [X0 + 0x1C0]
+	0x03733218 RET
+	0x0373321C STR X1, [X0 + 0x1C0]
+	0x03733220 RET
+	0x03733224 LDR X0, [X0 + 0x1C8]
+	0x03733228 RET
+	0x0373322C STR X1, [X0 + 0x1C8]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X10, [X8+40]
+	005 Move X9, X31
+	006 Add X11, X31, 40
+	007 Add X12, X31, 24
+	008 Move [X31+56], X10
+	009 Add X10, X31, 8
+	010 Move [X31+40], X0
+	011 Move [X31+48], X1
+	012 Move [X31+24], X2
+	013 Move [X31+32], X3
+	014 Move [X31+8], X31
+	015 Move [X31+16], X31
+	016 Add X13, X11, X9
+	017 NotImplemented "Instruction LDRH not yet implemented."
+	018 NotImplemented "Instruction LDRH not yet implemented."
+	019 Add X15, X12, X9
+	020 Add X9, X9, 4
+	021 NotImplemented "Instruction CMP not yet implemented."
+	022 Subtract W13, W14, W13
+	023 NotImplemented "Instruction STRH not yet implemented."
+	024 NotImplemented "Instruction LDRH not yet implemented."
+	025 NotImplemented "Instruction LDRH not yet implemented."
+	026 Subtract W13, W13, W14
+	027 NotImplemented "Instruction STRH not yet implemented."
+	028 Add X10, X10, 2
+	029 Move X0, [X31+8]
+	030 Move X1, [X31+16]
+	031 Move X8, [X8+40]
+	032 Move X9, [X31+56]
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move X30, [X31+64]
+	035 Add X31, X31, 80
+	036 Return X0
+	037 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 hsubs_epi16(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x03733230 RET
+	0x03733234 LDR X0, [X0 + 0x1D0]
+	0x03733238 RET
+	0x0373323C STR X1, [X0 + 0x1D0]
+	0x03733240 RET
+	0x03733244 LDR X0, [X0 + 0x1D8]
+	0x03733248 RET
+	0x0373324C STR X1, [X0 + 0x1D8]
+	0x03733250 RET
+	0x03733254 LDR X0, [X0 + 0x1E0]
+	0x03733258 RET
+	0x0373325C STR X1, [X0 + 0x1E0]
+	0x03733260 RET
+	0x03733264 STP X29, X30, [X31 - 0x60]!
+	0x03733268 STP X28, X27, [X31 + 0x10]
+	0x0373326C STP X26, X25, [X31 + 0x20]
+	0x03733270 STP X24, X23, [X31 + 0x30]
+	0x03733274 STP X22, X21, [X31 + 0x40]
+	0x03733278 STP X20, X19, [X31 + 0x50]
+	0x0373327C ADRP X27, 0xCAD000
+	0x03733280 ADRP X25, 0xA11000
+	0x03733284 ADRP X26, 0xA11000
+	0x03733288 ADRP X24, 0x9E8000
+	0x0373328C ADRP X21, 0xA11000
+	0x03733290 ADRP X22, 0x9E8000
+	0x03733294 ADRP X29, 0x9E8000
+	0x03733298 ADRP X23, 0xA11000
+	0x0373329C ADRP X28, 0x9E8000
+	0x037332A0 ADRP X20, 0xA11000
+	0x037332A4 LDR X25, [X25 + 0xE70]
+	0x037332A8 LDR X26, [X26 + 0xE38]
+	0x037332AC LDR X24, [X24 + 0x138]
+	0x037332B0 LDR X21, [X21 + 0xE30]
+	0x037332B4 LDR X22, [X22 + 0x118]
+	0x037332B8 LDR X29, [X29 + 0x328]
+	0x037332BC LDR X23, [X23 + 0xE18]
+	0x037332C0 LDR X28, [X28 + 0x320]
+	0x037332C4 LDRB W8, [X27 + 0xCD4]
+	0x037332C8 LDR X20, [X20 + 0xDD0]
+	0x037332CC MOV X19, X0
+	0x037332D0 TBNZ X8, 0x0, 0x3733390
+	0x037332D4 ADRP X0, 0xA11000
+	0x037332D8 LDR X0, [X0 + 0xE30]
+
+ISIL:
+	001 Subtract X31, X31, 112
+	002 Move [X31+64], X30
+	003 Move [X31+72], X23
+	004 Move [X31+80], X22
+	005 Move [X31+88], X21
+	006 Move [X31+96], X20
+	007 Move [X31+104], X19
+	008 NotImplemented "Instruction MRS not yet implemented."
+	009 Move X8, [X19+40]
+	010 Move X20, X31
+	011 Add X21, X31, 8
+	012 Add X22, X31, 40
+	013 Add X23, X31, 24
+	014 Move [X31+56], X8
+	015 Move [X31+40], X0
+	016 Move [X31+48], X1
+	017 Move [X31+24], X2
+	018 Move [X31+32], X3
+	019 Move [X31+8], X31
+	020 Move [X31+16], X31
+	021 Add X8, X22, X20
+	022 NotImplemented "Instruction LDRSH not yet implemented."
+	023 NotImplemented "Instruction LDRSH not yet implemented."
+	024 Move X1, X31
+	025 Subtract W0, W9, W8
+	026 Call X86.Saturate_To_Int16, X0
+	027 NotImplemented "Instruction STRH not yet implemented."
+	028 Add X8, X23, X20
+	029 NotImplemented "Instruction LDRSH not yet implemented."
+	030 NotImplemented "Instruction LDRSH not yet implemented."
+	031 Move X1, X31
+	032 Subtract W0, W9, W8
+	033 Call X86.Saturate_To_Int16, X0
+	034 Add X20, X20, 4
+	035 NotImplemented "Instruction STRH not yet implemented."
+	036 NotImplemented "Instruction CMP not yet implemented."
+	037 Add X21, X21, 2
+	038 Move X0, [X31+8]
+	039 Move X1, [X31+16]
+	040 Move X8, [X19+40]
+	041 Move X9, [X31+56]
+	042 NotImplemented "Instruction CMP not yet implemented."
+	043 Move X20, [X31+96]
+	044 Move X19, [X31+104]
+	045 Move X22, [X31+80]
+	046 Move X21, [X31+88]
+	047 Move X30, [X31+64]
+	048 Move X23, [X31+72]
+	049 Add X31, X31, 112
+	050 Return X0
+	051 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 hsub_epi32(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x037332DC BL 0x1C16CF4
+	0x037332E0 ADRP X0, 0xA11000
+	0x037332E4 LDR X0, [X0 + 0xE18]
+	0x037332E8 BL 0x1C16CF4
+	0x037332EC ADRP X0, 0xA11000
+	0x037332F0 LDR X0, [X0 + 0xE38]
+	0x037332F4 BL 0x1C16CF4
+	0x037332F8 ADRP X0, 0xA11000
+	0x037332FC LDR X0, [X0 + 0xDD0]
+	0x03733300 BL 0x1C16CF4
+	0x03733304 ADRP X0, 0xA11000
+
+ISIL:
+	001 Move X8, X0
+	002 ShiftRight X8, 32
+	003 And X8, X8, 0x7FFFFFFF
+	004 Move X9, X2
+	005 ShiftRight X9, 32
+	006 And X9, X9, 0x7FFFFFFF
+	007 Subtract W0, W0, W8
+	008 Move X8, X1
+	009 ShiftRight X8, 32
+	010 And X8, X8, 0x7FFFFFFF
+	011 Move X10, X3
+	012 ShiftRight X10, 32
+	013 And X10, X10, 0x7FFFFFFF
+	014 Subtract W8, W1, W8
+	015 Subtract W1, W2, W9
+	016 Subtract W9, W3, W10
+	017 NotImplemented "Instruction BFM not yet implemented."
+	018 NotImplemented "Instruction BFM not yet implemented."
+	019 Return X0
+
+Method: Unity.Burst.Intrinsics.v128 maddubs_epi16(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x03733308 LDR X0, [X0 + 0xDC8]
+	0x0373330C BL 0x1C16CF4
+	0x03733310 ADRP X0, 0xA11000
+	0x03733314 LDR X0, [X0 + 0xDD8]
+	0x03733318 BL 0x1C16CF4
+	0x0373331C ADRP X0, 0x9E8000
+	0x03733320 LDR X0, [X0 + 0x320]
+	0x03733324 BL 0x1C16CF4
+	0x03733328 ADRP X0, 0x9E8000
+	0x0373332C LDR X0, [X0 + 0x110]
+	0x03733330 BL 0x1C16CF4
+	0x03733334 ADRP X0, 0x9E8000
+	0x03733338 LDR X0, [X0 + 0x118]
+	0x0373333C BL 0x1C16CF4
+	0x03733340 ADRP X0, 0x9E8000
+	0x03733344 LDR X0, [X0 + 0x328]
+	0x03733348 BL 0x1C16CF4
+	0x0373334C ADRP X0, 0xA11000
+	0x03733350 LDR X0, [X0 + 0xE70]
+	0x03733354 BL 0x1C16CF4
+	0x03733358 ADRP X0, 0xA11000
+	0x0373335C LDR X0, [X0 + 0xE28]
+	0x03733360 BL 0x1C16CF4
+	0x03733364 ADRP X0, 0xA11000
+	0x03733368 LDR X0, [X0 + 0xE48]
+	0x0373336C BL 0x1C16CF4
+	0x03733370 ADRP X0, 0x9E8000
+	0x03733374 LDR X0, [X0 + 0x138]
+	0x03733378 BL 0x1C16CF4
+	0x0373337C ADRP X0, 0x9E8000
+	0x03733380 LDR X0, [X0 + 0x330]
+	0x03733384 BL 0x1C16CF4
+	0x03733388 MOVZ W8, 0x1
+	0x0373338C STRB W8, [X27 + 0xCD4]
+	0x03733390 MOV X0, X19
+	0x03733394 MOV X1, X31
+	0x03733398 BL 0x37DB700
+	0x0373339C LDR X1, [X25]
+	0x037333A0 LDR X2, [X26]
+
+ISIL:
+	001 Subtract X31, X31, 112
+	002 Move [X31+64], X30
+	003 Move [X31+72], X23
+	004 Move [X31+80], X22
+	005 Move [X31+88], X21
+	006 Move [X31+96], X20
+	007 Move [X31+104], X19
+	008 NotImplemented "Instruction MRS not yet implemented."
+	009 Move X8, [X19+40]
+	010 Move X20, X31
+	011 Add X21, X31, 40
+	012 Add X22, X31, 24
+	013 Add X23, X31, 8
+	014 Move [X31+56], X8
+	015 Move [X31+40], X0
+	016 Move [X31+48], X1
+	017 Move [X31+24], X2
+	018 Move [X31+32], X3
+	019 Move [X31+8], X31
+	020 Move [X31+16], X31
+	021 Add X8, X21, X20
+	022 Add X9, X22, X20
+	023 Move W10, [X8+1]
+	024 NotImplemented "Instruction INVALID not yet implemented."
+	025 Move W8, [X8]
+	026 NotImplemented "Instruction INVALID not yet implemented."
+	027 Move X1, X31
+	028 Multiply W10, W11, W10
+	029 NotImplemented "Instruction MADD not yet implemented."
+	030 Call X86.Saturate_To_Int16, X0
+	031 NotImplemented "Instruction STRH not yet implemented."
+	032 Add X20, X20, 2
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move X0, [X31+8]
+	035 Move X1, [X31+16]
+	036 Move X8, [X19+40]
+	037 Move X9, [X31+56]
+	038 NotImplemented "Instruction CMP not yet implemented."
+	039 Move X20, [X31+96]
+	040 Move X19, [X31+104]
+	041 Move X22, [X31+80]
+	042 Move X21, [X31+88]
+	043 Move X30, [X31+64]
+	044 Move X23, [X31+72]
+	045 Add X31, X31, 112
+	046 Return X0
+	047 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 mulhrs_epi16(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x037333A4 MOV X0, X19
+	0x037333A8 BL 0x21FC754
+	0x037333AC STR X0, [X19 + 0x190]
+	0x037333B0 LDR X1, [X24]
+	0x037333B4 LDR X2, [X21]
+	0x037333B8 MOV X0, X19
+	0x037333BC BL 0x21FC754
+	0x037333C0 STR X0, [X19 + 0x198]
+	0x037333C4 LDR X1, [X22]
+	0x037333C8 LDR X2, [X21]
+	0x037333CC MOV X0, X19
+	0x037333D0 BL 0x21FC754
+	0x037333D4 STR X0, [X19 + 0x1A0]
+	0x037333D8 LDR X1, [X29]
+	0x037333DC LDR X2, [X23]
+	0x037333E0 MOV X0, X19
+	0x037333E4 BL 0x21FC754
+	0x037333E8 STR X0, [X19 + 0x1A8]
+	0x037333EC LDR X1, [X28]
+	0x037333F0 LDR X2, [X23]
+	0x037333F4 MOV X0, X19
+	0x037333F8 BL 0x21FC754
+	0x037333FC STR X0, [X19 + 0x1B0]
+	0x03733400 ADRP X8, 0xA11000
+	0x03733404 LDR X8, [X8 + 0xE28]
+	0x03733408 LDR X2, [X23]
+	0x0373340C MOV X0, X19
+	0x03733410 LDR X1, [X8]
+	0x03733414 BL 0x21FC754
+	0x03733418 STR X0, [X19 + 0x1B8]
+	0x0373341C ADRP X8, 0x9E8000
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X10, [X8+40]
+	005 Move X9, X31
+	006 Add X11, X31, 24
+	007 Add X12, X31, 8
+	008 Move [X31+56], X10
+	009 Add X10, X31, 40
+	010 Move [X31+40], X0
+	011 Move [X31+48], X1
+	012 Move [X31+24], X2
+	013 Move [X31+32], X3
+	014 Move [X31+8], X31
+	015 Move [X31+16], X31
+	016 NotImplemented "Instruction LDRSH not yet implemented."
+	017 NotImplemented "Instruction LDRSH not yet implemented."
+	018 Multiply W13, W14, W13
+	019 Move W13, W13
+	020 ShiftRight W13, 14
+	021 And W13, W13, 0x7FFFFFFF
+	022 Add W13, W13, 1
+	023 Move W13, W13
+	024 ShiftRight W13, 1
+	025 And W13, W13, 0x7FFFFFFF
+	026 NotImplemented "Instruction STRH not yet implemented."
+	027 Add X9, X9, 2
+	028 NotImplemented "Instruction CMP not yet implemented."
+	029 Move X0, [X31+8]
+	030 Move X1, [X31+16]
+	031 Move X8, [X8+40]
+	032 Move X9, [X31+56]
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move X30, [X31+64]
+	035 Add X31, X31, 80
+	036 Return X0
+	037 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 sign_epi8(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x03733420 LDR X8, [X8 + 0x330]
+	0x03733424 LDR X2, [X23]
+	0x03733428 MOV X0, X19
+	0x0373342C LDR X1, [X8]
+	0x03733430 BL 0x21FC754
+	0x03733434 STR X0, [X19 + 0x1C8]
+	0x03733438 ADRP X8, 0x9E8000
+	0x0373343C LDR X8, [X8 + 0x110]
+	0x03733440 LDR X2, [X23]
+	0x03733444 MOV X0, X19
+	0x03733448 LDR X1, [X8]
+	0x0373344C BL 0x21FC754
+	0x03733450 STR X0, [X19 + 0x1D0]
+	0x03733454 ADRP X8, 0xA11000
+	0x03733458 LDR X8, [X8 + 0xE48]
+	0x0373345C LDR X2, [X23]
+	0x03733460 MOV X0, X19
+	0x03733464 LDR X1, [X8]
+	0x03733468 BL 0x21FC754
+	0x0373346C STR X0, [X19 + 0x1C0]
+	0x03733470 ADRP X8, 0xA11000
+	0x03733474 LDR X8, [X8 + 0xDC8]
+	0x03733478 LDR X2, [X20]
+	0x0373347C MOV X0, X19
+	0x03733480 LDR X1, [X8]
+	0x03733484 BL 0x21FC754
+	0x03733488 STR X0, [X19 + 0x1D8]
+	0x0373348C ADRP X8, 0xA11000
+	0x03733490 LDR X8, [X8 + 0xDD8]
+	0x03733494 LDR X2, [X20]
+	0x03733498 MOV X0, X19
+	0x0373349C LDR X1, [X8]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X10, [X8+40]
+	005 Move X9, X31
+	006 Add X11, X31, 40
+	007 Add X12, X31, 8
+	008 Move [X31+56], X10
+	009 Add X10, X31, 24
+	010 Move [X31+40], X0
+	011 Move [X31+48], X1
+	012 Move [X31+24], X2
+	013 Move [X31+32], X3
+	014 Move [X31+8], X31
+	015 Move [X31+16], X31
+	016 NotImplemented "Instruction INVALID not yet implemented."
+	017 Move TEMP, X13
+	018 And TEMP, TEMP, -2147483648
+	019 Compare TEMP, -2147483648
+	020 JumpIfEqual {24}
+	021 Compare W13, 0
+	022 JumpIfEqual {26}
+	023 Move W13, [X11]
+	024 Move W13, [X11]
+	025 Subtract W13, W31, W13
+	026 Move [X12], W13
+	027 Add X9, X9, 1
+	028 NotImplemented "Instruction CMP not yet implemented."
+	029 Move X0, [X31+8]
+	030 Move X1, [X31+16]
+	031 Move X8, [X8+40]
+	032 Move X9, [X31+56]
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move X30, [X31+64]
+	035 Add X31, X31, 80
+	036 Return X0
+	037 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 sign_epi16(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x037334A0 BL 0x21FC754
+	0x037334A4 STR X0, [X19 + 0x1E0]
+	0x037334A8 LDP X20, X19, [X31 + 0x50]
+	0x037334AC LDP X22, X21, [X31 + 0x40]
+	0x037334B0 LDP X24, X23, [X31 + 0x30]
+	0x037334B4 LDP X26, X25, [X31 + 0x20]
+	0x037334B8 LDP X28, X27, [X31 + 0x10]
+	0x037334BC LDP X29, X30, [X31], #0x60
+	0x037334C0 RET
+	0x037334C4 MOV X1, X31
+	0x037334C8 B 0x37DB970
+	0x037334CC MOV X1, X31
+	0x037334D0 B 0x37DB5B8
+	0x037334D4 LDR X0, [X0 + 0x190]
+	0x037334D8 RET
+	0x037334DC STR X1, [X0 + 0x190]
+	0x037334E0 RET
+	0x037334E4 LDR X0, [X0 + 0x198]
+	0x037334E8 RET
+	0x037334EC STR X1, [X0 + 0x198]
+	0x037334F0 RET
+	0x037334F4 LDR X0, [X0 + 0x1A0]
+	0x037334F8 RET
+	0x037334FC STR X1, [X0 + 0x1A0]
+	0x03733500 RET
+	0x03733504 LDR X0, [X0 + 0x1A8]
+	0x03733508 RET
+	0x0373350C STR X1, [X0 + 0x1A8]
+	0x03733510 RET
+	0x03733514 LDR X0, [X0 + 0x1B0]
+	0x03733518 RET
+	0x0373351C STR X1, [X0 + 0x1B0]
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X10, [X8+40]
+	005 Move X9, X31
+	006 Add X11, X31, 40
+	007 Add X12, X31, 8
+	008 Move [X31+56], X10
+	009 Add X10, X31, 24
+	010 Move [X31+40], X0
+	011 Move [X31+48], X1
+	012 Move [X31+24], X2
+	013 Move [X31+32], X3
+	014 Move [X31+8], X31
+	015 Move [X31+16], X31
+	016 NotImplemented "Instruction LDRSH not yet implemented."
+	017 Move TEMP, X13
+	018 And TEMP, TEMP, -2147483648
+	019 Compare TEMP, -2147483648
+	020 JumpIfEqual {24}
+	021 Compare W13, 0
+	022 JumpIfEqual {26}
+	023 NotImplemented "Instruction LDRH not yet implemented."
+	024 NotImplemented "Instruction LDRH not yet implemented."
+	025 Subtract W13, W31, W13
+	026 NotImplemented "Instruction STRH not yet implemented."
+	027 Add X9, X9, 2
+	028 NotImplemented "Instruction CMP not yet implemented."
+	029 Move X0, [X31+8]
+	030 Move X1, [X31+16]
+	031 Move X8, [X8+40]
+	032 Move X9, [X31+56]
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move X30, [X31+64]
+	035 Add X31, X31, 80
+	036 Return X0
+	037 Call 0x3EB2B20
+
+Method: Unity.Burst.Intrinsics.v128 sign_epi32(Unity.Burst.Intrinsics.v128 a, Unity.Burst.Intrinsics.v128 b)
+
+Disassembly:
+	0x03733520 RET
+	0x03733524 LDR X0, [X0 + 0x1B8]
+	0x03733528 RET
+	0x0373352C STR X1, [X0 + 0x1B8]
+	0x03733530 RET
+	0x03733534 LDR X0, [X0 + 0x1C0]
+	0x03733538 RET
+	0x0373353C STR X1, [X0 + 0x1C0]
+	0x03733540 RET
+	0x03733544 LDR X0, [X0 + 0x1C8]
+	0x03733548 RET
+	0x0373354C STR X1, [X0 + 0x1C8]
+	0x03733550 RET
+	0x03733554 LDR X0, [X0 + 0x1D0]
+	0x03733558 RET
+	0x0373355C STR X1, [X0 + 0x1D0]
+	0x03733560 RET
+	0x03733564 LDR X0, [X0 + 0x1D8]
+	0x03733568 RET
+	0x0373356C STR X1, [X0 + 0x1D8]
+	0x03733570 RET
+	0x03733574 LDR X0, [X0 + 0x1E0]
+	0x03733578 RET
+	0x0373357C STR X1, [X0 + 0x1E0]
+	0x03733580 RET
+	0x03733584 STP X29, X30, [X31 - 0x60]!
+	0x03733588 STP X28, X27, [X31 + 0x10]
+	0x0373358C STP X26, X25, [X31 + 0x20]
+	0x03733590 STP X24, X23, [X31 + 0x30]
+	0x03733594 STP X22, X21, [X31 + 0x40]
+	0x03733598 STP X20, X19, [X31 + 0x50]
+	0x0373359C ADRP X26, 0xCAD000
+
+ISIL:
+	001 Subtract X31, X31, 80
+	002 Move [X31+64], X30
+	003 NotImplemented "Instruction MRS not yet implemented."
+	004 Move X10, [X8+40]
+	005 Move X9, X31
+	006 Add X11, X31, 40
+	007 Add X12, X31, 8
+	008 Move [X31+56], X10
+	009 Add X10, X31, 24
+	010 Move [X31+40], X0
+	011 Move [X31+48], X1
+	012 Move [X31+24], X2
+	013 Move [X31+32], X3
+	014 Move [X31+8], X31
+	015 Move [X31+16], X31
+	016 Move W13, [X10]
+	017 Move TEMP, X13
+	018 And TEMP, TEMP, -2147483648
+	019 Compare TEMP, -2147483648
+	020 JumpIfEqual {24}
+	021 Compare W13, 0
+	022 JumpIfEqual {26}
+	023 Move W13, [X11]
+	024 Move W13, [X11]
+	025 Subtract W13, W31, W13
+	026 Move [X12], W13
+	027 Add X9, X9, 4
+	028 NotImplemented "Instruction CMP not yet implemented."
+	029 Move X0, [X31+8]
+	030 Move X1, [X31+16]
+	031 Move X8, [X8+40]
+	032 Move X9, [X31+56]
+	033 NotImplemented "Instruction CMP not yet implemented."
+	034 Move X30, [X31+64]
+	035 Add X31, X31, 80
+	036 Return X0
+	037 Call 0x3EB2B20
+

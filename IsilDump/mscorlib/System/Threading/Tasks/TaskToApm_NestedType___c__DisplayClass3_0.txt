@@ -1,0 +1,40 @@
+Type: System.Threading.Tasks.TaskToApm/<>c__DisplayClass3_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x033EE398 LDR X0, [X0 + 0x8A8]
+	0x033EE39C BL 0x1C16D08
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <InvokeCallbackWhenTaskCompletes>b__0()
+
+Disassembly:
+	0x033EE4A0 BL 0x33EF944
+	0x033EE4A4 MOV W21, W0
+	0x033EE4A8 TBZ X0, 0x0, 0x33EE4C8
+	0x033EE4AC MOV X0, X19
+	0x033EE4B0 MOV X1, X20
+	0x033EE4B4 MOV W2, W31
+	0x033EE4B8 BL 0x33F0D74
+	0x033EE4BC MOV X0, X19
+	0x033EE4C0 MOV W1, W31
+	0x033EE4C4 BL 0x33EFB68
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {11}
+	005 Move X1, [X0+24]
+	006 Move X3, [X8+24]
+	007 Move X0, [X8+64]
+	008 Move X2, [X8+40]
+	009 Move X30, [X31+16]
+	010 CallNoReturn X3
+	011 Call 0x1C17F20
+

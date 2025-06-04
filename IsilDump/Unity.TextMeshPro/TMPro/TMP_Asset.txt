@@ -1,0 +1,42 @@
+Type: TMPro.TMP_Asset
+
+Method: System.Int32 get_instanceID()
+
+Disassembly:
+	0x03ADC8A4 MOV X0, X20
+	0x03ADC8A8 MOV X1, X31
+	0x03ADC8AC BL 0x3C356F8
+	0x03ADC8B0 CBZ X21, 0x3ADC90C
+	0x03ADC8B4 MOV X1, X0
+	0x03ADC8B8 MOV X0, X21
+	0x03ADC8BC MOV W2, W31
+	0x03ADC8C0 MOV X3, X31
+	0x03ADC8C4 BL 0x3C3FEB8
+	0x03ADC8C8 MOV X0, X20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move W0, [X0+24]
+	005 Compare W0, 0
+	006 JumpIfNotEqual {11}
+	007 Move X0, X19
+	008 Move X1, X31
+	009 Call Object.GetInstanceID, X0
+	010 Move [X19+24], W0
+	011 Move X30, [X31+16]
+	012 Move X19, [X31+24]
+	013 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03ADC8CC MOV X1, X31
+	0x03ADC8D0 BL 0x3C35734
+
+ISIL:
+	001 Move X1, X31
+	002 Call ScriptableObject..ctor, X0
+	003 Return 
+

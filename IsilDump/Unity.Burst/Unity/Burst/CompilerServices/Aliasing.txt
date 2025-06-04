@@ -1,0 +1,66 @@
+Type: Unity.Burst.CompilerServices.Aliasing
+
+Method: System.Void ExpectAliased(System.Void* a, System.Void* b)
+
+Disassembly:
+	0x037335A0 ADRP X24, 0xA11000
+
+ISIL:
+	001 Return 
+
+Method: System.Void ExpectAliased(in A a, in B b)
+
+Disassembly:
+	0x0227A704 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Return 
+
+Method: System.Void ExpectAliased(System.Void* a, in B b)
+
+Disassembly:
+	0x0227A700 MOV X0, X19
+
+ISIL:
+	001 Return 
+
+Method: System.Void ExpectAliased(in A a, System.Void* b)
+
+Disassembly:
+	0x0227A6FC LDR X1, [X8]
+
+ISIL:
+	001 Return 
+
+Method: System.Void ExpectNotAliased(System.Void* a, System.Void* b)
+
+Disassembly:
+	0x037335A4 ADRP X25, 0xA11000
+
+ISIL:
+	001 Return 
+
+Method: System.Void ExpectNotAliased(in A a, in B b)
+
+Disassembly:
+	0x0227A710 BR X2
+
+ISIL:
+	001 Return 
+
+Method: System.Void ExpectNotAliased(System.Void* a, in B b)
+
+Disassembly:
+	0x0227A70C LDR X30, [X31], #0x20
+
+ISIL:
+	001 Return 
+
+Method: System.Void ExpectNotAliased(in A a, System.Void* b)
+
+Disassembly:
+	0x0227A708 LDR X2, [X1]
+
+ISIL:
+	001 Return 
+

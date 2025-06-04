@@ -1,0 +1,199 @@
+Type: UnityEngine.ProBuilder.MeshOperations.UVEditing/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x03981650 CBZ X8, 0x3981990
+	0x03981654 LDR X9, [X8 + 0x20]
+	0x03981658 FADD S10, S10, S14
+	0x0398165C FADD S11, S11, S15
+	0x03981660 FADD S12, S12, S8
+	0x03981664 FADD S13, S13, S9
+	0x03981668 CBZ X9, 0x39816C8
+	0x0398166C MOV W28, W31
+	0x03981670 LDR X0, [X8 + 0x20]
+	0x03981674 CBZ X0, 0x3981930
+	0x03981678 LDR W8, [X0 + 0x18]
+	0x0398167C CMP W28, W8
+	0x03981680 B.GE 0x39816C8
+	0x03981684 ADRP X8, 0x79C000
+	0x03981688 LDR X8, [X8 + 0xF38]
+	0x0398168C LDR X2, [X8]
+	0x03981690 MOV W1, W28
+	0x03981694 BL 0x2FDC41C
+	0x03981698 MOV W1, W0
+	0x0398169C LDR X3, [X26]
+	0x039816A0 MOV X0, X22
+	0x039816A4 MOV W2, W27
+	0x039816A8 BL 0x2A0A344
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xA61000
+	005 Move X20, 0x7D0000
+	006 Move W8, [X19+2624]
+	007 Move X20, [X20+824]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x7D0000
+	013 Move X0, [X0+824]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+2624], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x039816AC LDR W8, [X29 + 0x18]
+	0x039816B0 CMP W24, W8
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: UnityEngine.Vector2 <GetUVs>b__2_0(UnityEngine.Vector4 x)
+
+Disassembly:
+	0x039816B4 B.CS 0x3981934
+
+ISIL:
+	001 Return X0
+
+Method: System.Int32 <SewUVs>b__4_1(System.Collections.Generic.KeyValuePair`2<System.Int32, System.Int32> y)
+
+Disassembly:
+	0x039816B8 LDR X8, [X25]
+	0x039816BC ADD W28, W28, 0x1
+	0x039816C0 CBNZ X8, 0x3981670
+	0x039816C4 B 0x3981938
+	0x039816C8 LDR W8, [X29 + 0x18]
+	0x039816CC ADD W24, W24, 0x1
+	0x039816D0 CMP W24, W8
+	0x039816D4 B.LT 0x39815BC
+	0x039816D8 CBNZ X21, 0x39816E8
+	0x039816DC B 0x3981A3C
+	0x039816E0 FMOV S13, W31
+	0x039816E4 CBZ X21, 0x3981A3C
+	0x039816E8 ADRP X8, 0x7CF000
+	0x039816EC LDR X8, [X8 + 0x408]
+	0x039816F0 FDIV S2, S12, S13
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xA61000
+	005 Move W8, [X20+2625]
+	006 Move X19, X1
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x7CA000
+	012 Move X0, [X0+864]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2625], W8
+	016 Move W0, W19
+	017 Move X20, [X31+16]
+	018 Move X19, [X31+24]
+	019 Move X30, [X31+32]
+	020 Return X0
+
+Method: System.Collections.Generic.IEnumerable`1<System.Int32> <ProjectFacesAuto>b__8_0(UnityEngine.ProBuilder.Face x)
+
+Disassembly:
+	0x039816F4 FDIV S1, S11, S13
+	0x039816F8 FDIV S0, S10, S13
+	0x039816FC LDR X2, [X8]
+	0x03981700 MOV X0, X21
+	0x03981704 MOV W1, W27
+	0x03981708 BL 0x2A28F94
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {7}
+	003 Move X0, X1
+	004 Move X1, X31
+	005 Call Face.get_distinctIndexesInternal, X0
+	006 Return X0
+	007 Move [X31-16], X30
+	008 Call 0x1C17F20
+
+Method: System.Collections.Generic.IEnumerable`1<System.Int32> <ProjectFacesAuto>b__8_1(UnityEngine.ProBuilder.Face x)
+
+Disassembly:
+	0x0398170C ADRP X29, 0x779000
+	0x03981710 ADRP X24, 0x7CD000
+	0x03981714 LDR X29, [X29 + 0x838]
+	0x03981718 LDR X24, [X24 + 0xD08]
+	0x0398171C LDR V11, [X31 + 0x14]
+	0x03981720 ADD W27, W27, 0x1
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {7}
+	003 Move X0, X1
+	004 Move X1, X31
+	005 Call Face.get_distinctIndexesInternal, X0
+	006 Return X0
+	007 Move [X31-16], X30
+	008 Call 0x1C17F20
+
+Method: System.Collections.Generic.IEnumerable`1<System.Int32> <ProjectFacesBox>b__9_0(UnityEngine.ProBuilder.Face x)
+
+Disassembly:
+	0x03981724 B 0x3981418
+	0x03981728 ADRP X8, 0x779000
+	0x0398172C LDR X8, [X8 + 0x830]
+	0x03981730 ADD X0, X31, 0x80
+	0x03981734 LDR X1, [X8]
+	0x03981738 BL 0x2BBDA68
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {7}
+	003 Move X0, X1
+	004 Move X1, X31
+	005 Call Face.get_distinctIndexesInternal, X0
+	006 Return X0
+	007 Move [X31-16], X30
+	008 Call 0x1C17F20
+
+Method: System.Collections.Generic.IEnumerable`1<System.Int32> <ProjectFacesBox>b__11_0(UnityEngine.ProBuilder.Face x)
+
+Disassembly:
+	0x0398173C CBZ X22, 0x39819A4
+	0x03981740 ADRP X8, 0x7CD000
+	0x03981744 LDR X8, [X8 + 0xD78]
+	0x03981748 MOV X0, X22
+	0x0398174C LDR X1, [X8]
+	0x03981750 BL 0x2A0A118
+
+ISIL:
+	001 Compare X1, 0
+	002 JumpIfEqual {7}
+	003 Move X0, X1
+	004 Move X1, X31
+	005 Call Face.get_distinctIndexesInternal, X0
+	006 Return X0
+	007 Move [X31-16], X30
+	008 Call 0x1C17F20
+

@@ -1,0 +1,56 @@
+Type: Fusion.Sockets.NetConfigNotify
+
+Method: System.Int32 get_SequenceBounds()
+
+Disassembly:
+	0x01EFCAE4 MOV X11, X21
+	0x01EFCAE8 MOV X21, X12
+	0x01EFCAEC LDR X12, [X12]
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 Move W0, W8
+	003 ShiftRight W0, 28
+	004 And W0, W0, 0x7FFFFFF
+	005 Return X0
+
+Method: System.Int32 get_AckMaskBits()
+
+Disassembly:
+	0x01EFCAF0 CMP X12, X10
+	0x01EFCAF4 B.NE 0x1EFCB28
+	0x01EFCAF8 LDR X12, [X21 + 0x28]
+
+ISIL:
+	001 Move W8, [X0]
+	002 Move W0, W8
+	003 ShiftRight W0, 29
+	004 And W0, W0, 0xFFFFFFF
+	005 Return X0
+
+Method: Fusion.Sockets.NetConfigNotify get_Defaults()
+
+Disassembly:
+	0x01EFCA40 STR X9, [X20 + 0x8]
+	0x01EFCA44 STR X13, [X8, X12, LSL #3]
+	0x01EFCA48 B 0x1EFC9E0
+	0x01EFCA4C BL 0x3EB1B20
+	0x01EFCA50 STP X30, X23, [X31 - 0x30]!
+	0x01EFCA54 STP X22, X21, [X31 + 0x10]
+	0x01EFCA58 STP X20, X19, [X31 + 0x20]
+	0x01EFCA5C ADRP X22, 0x24DD000
+	0x01EFCA60 ADRP X21, 0x2201000
+	0x01EFCA64 LDRB W8, [X22 + 0x637]
+
+ISIL:
+	001 Move X9, -21024768
+	002 Move V1, [X9+1112]
+	003 Or X9, X31, -7378697629483820647
+	004 NotImplemented "Instruction MOVK not yet implemented."
+	005 NotImplemented "Instruction MOVI not yet implemented."
+	006 NotImplemented "Instruction MOVK not yet implemented."
+	007 Move [X8], D0
+	008 Move [X8+8], X9
+	009 Move [X8+16], D1
+	010 Return X0
+

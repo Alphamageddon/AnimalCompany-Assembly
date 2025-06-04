@@ -1,0 +1,121 @@
+Type: UnityEngine.InputSystem.LowLevel.SetIMECursorPositionCommand
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_Type()
+
+Disassembly:
+	0x03800550 MOV X1, X0
+	0x03800554 MOV X0, X19
+	0x03800558 BL 0x1C16DEC
+	0x0380055C RET
+	0x03800560 STR X30, [X31 - 0x10]!
+	0x03800564 ADD X0, X31, 0x8
+	0x03800568 MOVZ W1, 0x41
+	0x0380056C MOVZ W2, 0x43
+	0x03800570 MOVZ W3, 0x54
+	0x03800574 MOVZ W4, 0x4E
+	0x03800578 MOV X5, X31
+	0x0380057C STR W31, [X31 + 0x8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 73
+	004 Move W2, 77
+	005 Move W3, 69
+	006 Move W4, 80
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.Vector2 get_position()
+
+Disassembly:
+	0x03800580 BL 0x375AA28
+	0x03800584 LDR W0, [X31 + 0x8]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Return X0
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_typeStatic()
+
+Disassembly:
+	0x03800588 LDR X30, [X31], #0x10
+	0x0380058C RET
+	0x03800590 ADD W0, W0, 0x24
+	0x03800594 RET
+	0x03800598 SUB X31, X31, 0x30
+	0x0380059C STP X30, X0, [X31 + 0x10]
+	0x038005A0 STP X20, X19, [X31 + 0x20]
+	0x038005A4 ADRP X20, 0xBE1000
+	0x038005A8 LDRB W8, [X20 + 0x406]
+	0x038005AC MOV X19, X0
+	0x038005B0 TBNZ X8, 0x0, 0x38005C8
+	0x038005B4 ADRP X0, 0x94A000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 73
+	004 Move W2, 77
+	005 Move W3, 69
+	006 Move W4, 80
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.LowLevel.SetIMECursorPositionCommand Create(UnityEngine.Vector2 cursorPosition)
+
+Disassembly:
+	0x038005B8 LDR X0, [X0 + 0x50]
+	0x038005BC BL 0x1C16CF4
+	0x038005C0 MOVZ W8, 0x1
+	0x038005C4 STRB W8, [X20 + 0x406]
+	0x038005C8 CBZ X19, 0x38005FC
+	0x038005CC ADRP X8, 0x94A000
+	0x038005D0 LDR X8, [X8 + 0x50]
+	0x038005D4 ADD X0, X31, 0x18
+	0x038005D8 LDR X1, [X8]
+	0x038005DC BL 0x2207F38
+	0x038005E0 LDR X8, [X31 + 0x18]
+	0x038005E4 TBZ X0, 0x0, 0x3800644
+	0x038005E8 LDP X20, X19, [X31 + 0x20]
+	0x038005EC LDR X30, [X31 + 0x10]
+	0x038005F0 MOV X0, X8
+	0x038005F4 ADD X31, X31, 0x30
+	0x038005F8 RET
+	0x038005FC ADRP X0, 0x8F8000
+	0x03800600 LDR X0, [X0 + 0x528]
+	0x03800604 BL 0x1C16D08
+
+ISIL:
+	001 Move [X31-32], D9
+	002 Move [X31-24], D8
+	003 Move [X31+16], X30
+	004 Add X0, X31, 24
+	005 Move W1, 73
+	006 Move W2, 77
+	007 Move W3, 69
+	008 Move W4, 80
+	009 Move X5, X31
+	010 Move V8, V1
+	011 Move V9, V0
+	012 Move [X31+24], W31
+	013 Call FourCC..ctor, X0, X1, X2, X3, X4
+	014 Move W8, [X31+24]
+	015 Move X30, [X31+16]
+	016 Move W1, S9
+	017 Move W9, S8
+	018 Or X0, X8, 0x1FFFFFFFFF
+	019 NotImplemented "Instruction BFM not yet implemented."
+	020 Move D9, [X31+32]
+	021 Move D8, [X31+40]
+	022 Return X0
+

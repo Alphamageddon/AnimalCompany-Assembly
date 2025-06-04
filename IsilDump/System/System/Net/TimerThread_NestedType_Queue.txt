@@ -1,0 +1,47 @@
+Type: System.Net.TimerThread/Queue
+
+Method: System.Void .ctor(System.Int32 durationMilliseconds)
+
+Disassembly:
+	0x03689774 LDR X0, [X19 + 0x10]
+	0x03689778 CBZ X0, 0x3689DC4
+	0x0368977C LDR W8, [X0 + 0x10]
+	0x03689780 MOV X2, X31
+	0x03689784 SUB W1, W8, 0x1
+	0x03689788 BL 0x3222A1C
+	0x0368978C AND W8, W0, 0xFFFF
+	0x03689790 CMP W8, 0x22
+	0x03689794 B.EQ 0x368982C
+	0x03689798 LDR X0, [X29]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Int32 get_Duration()
+
+Disassembly:
+	0x0368979C LDR X28, [X19 + 0x10]
+	0x036897A0 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move W0, [X0+16]
+	002 Return X0
+
+Method: System.Net.TimerThread/Timer CreateTimer(System.Net.TimerThread/Callback callback, System.Object context)
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated

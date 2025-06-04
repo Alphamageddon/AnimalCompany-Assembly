@@ -1,0 +1,94 @@
+Type: UnityEngine.InputSystem.LowLevel.EnableDeviceCommand
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_Type()
+
+Disassembly:
+	0x037FF6BC MOVZ W1, 0x55
+	0x037FF6C0 MOVZ W2, 0x57
+	0x037FF6C4 MOVZ W3, 0x47
+	0x037FF6C8 MOVZ W4, 0x49
+	0x037FF6CC MOV X5, X31
+	0x037FF6D0 STR W31, [X31 + 0x8]
+	0x037FF6D4 BL 0x375AA28
+	0x037FF6D8 LDR W0, [X31 + 0x8]
+	0x037FF6DC LDR X30, [X31], #0x10
+	0x037FF6E0 RET
+	0x037FF6E4 STR X30, [X31 - 0x10]!
+	0x037FF6E8 ADD X0, X31, 0x8
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 69
+	004 Move W2, 78
+	005 Move W3, 66
+	006 Move W4, 76
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.Utilities.FourCC get_typeStatic()
+
+Disassembly:
+	0x037FF6EC MOVZ W1, 0x55
+	0x037FF6F0 MOVZ W2, 0x57
+	0x037FF6F4 MOVZ W3, 0x47
+	0x037FF6F8 MOVZ W4, 0x49
+	0x037FF6FC MOV X5, X31
+	0x037FF700 STR W31, [X31 + 0x8]
+	0x037FF704 BL 0x375AA28
+	0x037FF708 LDR W0, [X31 + 0x8]
+	0x037FF70C LDR X30, [X31], #0x10
+	0x037FF710 RET
+	0x037FF714 SUB X31, X31, 0x20
+	0x037FF718 STP X30, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 69
+	004 Move W2, 78
+	005 Move W3, 66
+	006 Move W4, 76
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W0, [X31+8]
+	011 Move X30, [X31+16]
+	012 Return X0
+
+Method: UnityEngine.InputSystem.LowLevel.EnableDeviceCommand Create()
+
+Disassembly:
+	0x037FF71C MOV W19, W0
+	0x037FF720 ADD X0, X31, 0x8
+	0x037FF724 MOVZ W1, 0x55
+	0x037FF728 MOVZ W2, 0x57
+	0x037FF72C MOVZ W3, 0x47
+	0x037FF730 MOVZ W4, 0x49
+	0x037FF734 MOV X5, X31
+	0x037FF738 STR W31, [X31 + 0x8]
+	0x037FF73C BL 0x375AA28
+	0x037FF740 LDR W8, [X31 + 0x8]
+	0x037FF744 AND X1, X19, 0x1
+	0x037FF748 LDP X30, X19, [X31 + 0x10]
+	0x037FF74C MOVZ X9, 0x9
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Add X0, X31, 8
+	003 Move W1, 69
+	004 Move W2, 78
+	005 Move W3, 66
+	006 Move W4, 76
+	007 Move X5, X31
+	008 Move [X31+8], W31
+	009 Call FourCC..ctor, X0, X1, X2, X3, X4
+	010 Move W8, [X31+8]
+	011 Or X0, X8, 0xFFFFFFFFF
+	012 Move X30, [X31+16]
+	013 Return X0
+

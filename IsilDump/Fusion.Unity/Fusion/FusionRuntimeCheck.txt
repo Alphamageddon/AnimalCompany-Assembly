@@ -1,0 +1,25 @@
+Type: Fusion.FusionRuntimeCheck
+
+Method: System.Void RuntimeCheck()
+
+Disassembly:
+	0x01F82940 LDP X30, X23, [X31], #0x30
+	0x01F82944 B 0x3C02C84
+	0x01F82948 BL 0x1C16F20
+	0x01F8294C STP X30, X21, [X31 - 0x20]!
+	0x01F82950 STP X20, X19, [X31 + 0x10]
+	0x01F82954 LDP S0, S1, [X0 + 0x48]
+	0x01F82958 LDP S2, S3, [X0 + 0x50]
+	0x01F8295C LDP W19, W20, [X0 + 0x40]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, X31
+	003 Call RuntimeUnityFlagsSetup.Check_ENABLE_IL2CPP
+	004 Move X0, X31
+	005 Call RuntimeUnityFlagsSetup.Check_NET_STANDARD_2_0
+	006 Move X0, X31
+	007 Move X30, [X31+16]
+	008 Call RuntimeUnityFlagsSetup.Check_UNITY_2019_4_OR_NEWER
+	009 Return 
+

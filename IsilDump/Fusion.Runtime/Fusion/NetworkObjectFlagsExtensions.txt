@@ -1,0 +1,80 @@
+Type: Fusion.NetworkObjectFlagsExtensions
+
+Method: System.Int32 GetVersion(Fusion.NetworkObjectFlags flags)
+
+Disassembly:
+	0x01E95DAC MOV X0, X22
+	0x01E95DB0 MOV X2, X31
+
+ISIL:
+	001 And W0, W0, 255
+	002 Return X0
+
+Method: System.Boolean IsVersionCurrent(Fusion.NetworkObjectFlags flags)
+
+Disassembly:
+	0x01E95DB4 BL 0x32333E0
+	0x01E95DB8 LDR X0, [X26]
+	0x01E95DBC ADD X21, X19, 0x10
+	0x01E95DC0 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 And W8, W0, 255
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: Fusion.NetworkObjectFlags SetCurrentVersion(Fusion.NetworkObjectFlags flags)
+
+Disassembly:
+	0x01E95DC4 CBNZ W8, 0x1E95DCC
+	0x01E95DC8 BL 0x1C16DFC
+	0x01E95DCC LDR W8, [X21]
+
+ISIL:
+	001 And W8, W0, 0xFFFFFF00
+	002 Or W0, W8, 1
+	003 Return X0
+
+Method: System.Boolean IsIgnored(Fusion.NetworkObjectFlags flags)
+
+Disassembly:
+	0x01E95DD0 CBZ W8, 0x1E95E40
+	0x01E95DD4 LDR X1, [X24]
+
+ISIL:
+	001 Move W0, W0
+	002 ShiftRight W0, 16
+	003 And W0, W0, 0xFFFF
+	004 Return X0
+
+Method: Fusion.NetworkObjectFlags SetIgnored(Fusion.NetworkObjectFlags flags, System.Boolean value)
+
+Disassembly:
+	0x01E95DD8 MOV X0, X20
+	0x01E95DDC MOV X2, X31
+	0x01E95DE0 BL 0x32333E0
+	0x01E95DE4 CBZ X0, 0x1E9615C
+	0x01E95DE8 ADRP X8, 0x2269000
+	0x01E95DEC LDR X8, [X8 + 0x388]
+
+ISIL:
+	001 And W31, W1, 1
+	002 Move W9, 0x10000
+	003 And W8, W0, 0xFFFEFFFF
+	004 NotImplemented "Instruction CSEL not yet implemented."
+	005 Or W0, W9, W8
+	006 Return X0
+
+Method: Fusion.NetworkObjectFlags SetWithMask(Fusion.NetworkObjectFlags flags, Fusion.NetworkObjectFlags value, Fusion.NetworkObjectFlags mask)
+
+Disassembly:
+	0x01E95DF0 MOV X2, X31
+	0x01E95DF4 LDR X1, [X8]
+	0x01E95DF8 BL 0x32333E0
+
+ISIL:
+	001 NotImplemented "Instruction BIC not yet implemented."
+	002 Or W0, W8, W1
+	003 Return X0
+

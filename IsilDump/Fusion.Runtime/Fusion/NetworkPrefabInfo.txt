@@ -1,0 +1,79 @@
+Type: Fusion.NetworkPrefabInfo
+
+Method: System.Void .ctor(Fusion.NetworkPrefabId prefab, Fusion.NetworkObjectHeader* header, System.Boolean synchronous)
+
+Disassembly:
+	0x01E9B3DC MOV X0, X20
+	0x01E9B3E0 BL 0x1C5C788
+	0x01E9B3E4 B 0x1E9B484
+	0x01E9B3E8 LDR W9, [X10]
+	0x01E9B3EC ADD W9, W9, 0x2
+
+ISIL:
+	001 And W8, W3, 1
+	002 Move [X0], W1
+	003 Move [X0+8], X2
+	004 Move [X0+16], W8
+	005 Return 
+
+Method: System.Boolean get_HasHeader()
+
+Disassembly:
+	0x01E9B3F0 ADD X8, X8, W9, 0x4, SXTW
+	0x01E9B3F4 ADD X0, X8, 0x138
+	0x01E9B3F8 LDP X8, X1, [X0]
+	0x01E9B3FC ADRP X24, 0x2263000
+
+ISIL:
+	001 Move X8, [X0+8]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Int32* get_Data()
+
+Disassembly:
+	0x01E9B400 ADRP X22, 0x2263000
+	0x01E9B404 LDR X24, [X24 + 0x548]
+	0x01E9B408 LDR X22, [X22 + 0x5E0]
+	0x01E9B40C MOV X0, X20
+	0x01E9B410 BLR X8
+	0x01E9B414 LDR X8, [X21]
+	0x01E9B418 MOV X23, X0
+	0x01E9B41C LDR W9, [X8 + 0xE0]
+	0x01E9B420 CBNZ W9, 0x1E9B42C
+	0x01E9B424 MOV X0, X8
+	0x01E9B428 BL 0x1C16DFC
+	0x01E9B42C MOV X0, X23
+	0x01E9B430 MOV X1, X31
+	0x01E9B434 BL 0x3C38948
+	0x01E9B438 MOV W20, W0
+	0x01E9B43C LDR X0, [X24]
+	0x01E9B440 ADD X1, X31, 0x8
+	0x01E9B444 STR W19, [X31 + 0x8]
+	0x01E9B448 BL 0x1C16E04
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X8, [X0+8]
+	004 Compare X8, 0
+	005 JumpIfEqual {10}
+	006 Add X0, X8, 80
+	007 Move X30, [X31+16]
+	008 Move X19, [X31+24]
+	009 Return X0
+	010 Move X0, 0x2259000
+	011 Move X0, [X0+1456]
+	012 Call 0x1C17D08
+	013 Call 0x1C17F10
+	014 Move X1, X31
+	015 Move X19, X0
+	016 Call InvalidOperationException..ctor, X0
+	017 Move X0, 0x2264000
+	018 Move X0, [X0+1376]
+	019 Call 0x1C17D08
+	020 Move X1, X0
+	021 Move X0, X19
+	022 Call 0x1C17DEC
+

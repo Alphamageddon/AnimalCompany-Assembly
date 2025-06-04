@@ -1,0 +1,191 @@
+Type: System.Text.RegularExpressions.GroupCollection/Enumerator
+
+Method: System.Void .ctor(System.Text.RegularExpressions.GroupCollection collection)
+
+Disassembly:
+	0x03630CE8 ADRP X0, 0xB0B000
+	0x03630CEC LDR X0, [X0 + 0x7A0]
+	0x03630CF0 BL 0x1C16CF4
+	0x03630CF4 MOVZ W8, 0x1
+	0x03630CF8 STRB W8, [X20 + 0x51B]
+	0x03630CFC LDR X20, [X19 + 0x40]
+	0x03630D00 CBNZ X20, 0x3630D28
+	0x03630D04 ADRP X8, 0xB0B000
+	0x03630D08 LDR X8, [X8 + 0x7A0]
+	0x03630D0C LDR X0, [X8]
+	0x03630D10 BL 0x1C16F10
+	0x03630D14 MOV X1, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move TEMP, 0
+	009 Not TEMP
+	010 Move W8, TEMP
+	011 Move [X20+16], X19
+	012 Move [X20+24], W8
+	013 Move X20, [X31+16]
+	014 Move X19, [X31+24]
+	015 Move X30, [X31+32]
+	016 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x036319E8 LDR X30, [X31], #0x20
+	0x036319EC RET
+	0x036319F0 STP X30, X21, [X31 - 0x20]!
+	0x036319F4 STP X20, X19, [X31 + 0x10]
+	0x036319F8 CBZ X1, 0x3631A60
+	0x036319FC LDR X8, [X0 + 0x18]
+	0x03631A00 MOV X20, X1
+	0x03631A04 MOV X19, X0
+	0x03631A08 CMP X8, X1
+	0x03631A0C B.EQ 0x3631A48
+	0x03631A10 CBNZ X8, 0x3631A54
+	0x03631A14 ADD X21, X19, 0x20
+	0x03631A18 BL 0x1C16D44
+	0x03631A1C MOVZ W1, 0x1
+	0x03631A20 MOV X0, X21
+	0x03631A24 MOV X2, X31
+	0x03631A28 BL 0x33E9064
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+16]
+	005 Compare X0, 0
+	006 JumpIfEqual {18}
+	007 Call GroupCollection.get_Count, X0
+	008 Move W8, [X19+24]
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Add W8, W8, 1
+	011 NotImplemented "Instruction CMP not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 Move [X19+24], W8
+	014 Move W0, W31
+	015 Move X30, [X31+16]
+	016 Move X19, [X31+24]
+	017 Return X0
+	018 Call 0x1C17F20
+
+Method: System.Text.RegularExpressions.Group get_Current()
+
+Disassembly:
+	0x03631A2C CBNZ W0, 0x3631A54
+	0x03631A30 LDR X8, [X19 + 0x10]
+	0x03631A34 CBNZ X8, 0x3631A3C
+	0x03631A38 STR X20, [X19 + 0x10]
+	0x03631A3C BL 0x1C16D44
+	0x03631A40 STR W31, [X21]
+	0x03631A44 B 0x3631A54
+	0x03631A48 STR X31, [X19 + 0x18]
+	0x03631A4C BL 0x1C16D44
+	0x03631A50 STR W31, [X19 + 0x20]
+	0x03631A54 LDP X20, X19, [X31 + 0x10]
+	0x03631A58 LDP X30, X21, [X31], #0x20
+	0x03631A5C RET
+	0x03631A60 ADRP X0, 0xAC7000
+	0x03631A64 LDR X0, [X0 + 0x528]
+	0x03631A68 BL 0x1C16D08
+	0x03631A6C BL 0x1C16F10
+	0x03631A70 MOV X19, X0
+	0x03631A74 ADRP X0, 0xACD000
+	0x03631A78 LDR X0, [X0 + 0x8A8]
+	0x03631A7C BL 0x1C16D08
+	0x03631A80 MOV X1, X0
+	0x03631A84 MOV X0, X19
+	0x03631A88 MOV X2, X31
+	0x03631A8C BL 0x330E100
+	0x03631A90 ADRP X0, 0xB0A000
+	0x03631A94 LDR X0, [X0 + 0x7D8]
+	0x03631A98 BL 0x1C16D08
+	0x03631A9C MOV X1, X0
+	0x03631AA0 MOV X0, X19
+	0x03631AA4 BL 0x1C16DEC
+	0x03631AA8 MOV X1, X31
+	0x03631AAC B 0x33BDD8C
+	0x03631AB0 SUB X31, X31, 0x90
+	0x03631AB4 STP X30, X23, [X31 + 0x60]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W20, [X0+24]
+	005 Move TEMP, X20
+	006 And TEMP, TEMP, -2147483648
+	007 Compare TEMP, -2147483648
+	008 JumpIfEqual {24}
+	009 Move X19, X0
+	010 Move X0, [X0+16]
+	011 Compare X0, 0
+	012 JumpIfEqual {42}
+	013 Call GroupCollection.get_Count, X0
+	014 NotImplemented "Instruction CMP not yet implemented."
+	015 Move X0, [X19+16]
+	016 Compare X0, 0
+	017 JumpIfEqual {42}
+	018 Move W1, [X19+24]
+	019 Move X20, [X31+16]
+	020 Move X19, [X31+24]
+	021 Move X30, [X31+32]
+	022 Call GroupCollection.GetGroup, X0, X1
+	023 Return X0
+	024 Move X0, 0xAC3000
+	025 Move X0, [X0+1456]
+	026 Call 0x1C17D08
+	027 Call 0x1C17F10
+	028 Move X19, X0
+	029 Move X0, 0xAED000
+	030 Move X0, [X0+656]
+	031 Call 0x1C17D08
+	032 Move X1, X0
+	033 Move X0, X19
+	034 Move X2, X31
+	035 Call InvalidOperationException..ctor, X0, X1
+	036 Move X0, 0xB0B000
+	037 Move X0, [X0+1936]
+	038 Call 0x1C17D08
+	039 Move X1, X0
+	040 Move X0, X19
+	041 Call 0x1C17DEC
+	042 Call 0x1C17F20
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x03631AB8 STP X22, X21, [X31 + 0x70]
+
+ISIL:
+	001 Call Enumerator.get_Current, X0
+	002 Return X0
+
+Method: System.Void System.Collections.IEnumerator.Reset()
+
+Disassembly:
+	0x03631ABC STP X20, X19, [X31 + 0x80]
+	0x03631AC0 ADRP X22, 0xDAF000
+	0x03631AC4 ADRP X23, 0xACA000
+
+ISIL:
+	001 Move TEMP, 0
+	002 Not TEMP
+	003 Move W8, TEMP
+	004 Move [X0+24], W8
+	005 Return 
+
+Method: System.Void System.IDisposable.Dispose()
+
+Disassembly:
+	0x03631AC8 LDRB W8, [X22 + 0x522]
+
+ISIL:
+	001 Return 
+

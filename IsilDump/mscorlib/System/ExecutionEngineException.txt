@@ -1,0 +1,98 @@
+Type: System.ExecutionEngineException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0336832C LDR W8, [X0 + 0xE0]
+	0x03368330 CBNZ W8, 0x3368338
+	0x03368334 BL 0x1C16DFC
+	0x03368338 MOVZ W3, 0x64
+	0x0336833C MOV X0, X23
+	0x03368340 MOV X1, X22
+	0x03368344 MOV W2, W28
+	0x03368348 BL 0x33679B4
+	0x0336834C STR W0, [X31 + 0x34]
+	0x03368350 CBZ X26, 0x3368FB0
+	0x03368354 LDR X8, [X26]
+	0x03368358 CMP W0, 0x2
+	0x0336835C B.LE 0x3368CC8
+	0x03368360 LDP X9, X2, [X8 + 0x1F8]
+	0x03368364 MOV X0, X26
+	0x03368368 MOV X1, X20
+	0x0336836C BLR X9
+	0x03368370 LDR X8, [X19]
+	0x03368374 LDR W19, [X31 + 0x34]
+	0x03368378 MOV W29, W0
+	0x0336837C LDR W9, [X8 + 0xE0]
+	0x03368380 CBNZ W9, 0x336838C
+	0x03368384 MOV X0, X8
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x1075000
+	006 Move X21, 0xDC3000
+	007 Move W8, [X20+3754]
+	008 Move X21, [X21+2920]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xDC3000
+	015 Move X0, [X0+2920]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+3754], W8
+	019 Move X1, [X21]
+	020 Move X0, X19
+	021 Move X2, X31
+	022 Call SystemException..ctor, X0, X1
+	023 Move W8, 0x1506
+	024 NotImplemented "Instruction MOVK not yet implemented."
+	025 Move [X19+96], W8
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Return 
+
+Method: System.Void .ctor(System.String message)
+
+Disassembly:
+	0x03368388 BL 0x1C16DFC
+	0x0336838C MOV W0, W29
+	0x03368390 MOV W1, W19
+	0x03368394 MOV X2, X21
+	0x03368398 BL 0x3367A3C
+	0x0336839C CBNZ X25, 0x3368F34
+	0x033683A0 B 0x3368FB0
+	0x033683A4 CMP W29, 0x48
+	0x033683A8 B.EQ 0x336876C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X2, X31
+	004 Move X19, X0
+	005 Call SystemException..ctor, X0, X1
+	006 Move W8, 0x1506
+	007 NotImplemented "Instruction MOVK not yet implemented."
+	008 Move [X19+96], W8
+	009 Move X30, [X31+16]
+	010 Move X19, [X31+24]
+	011 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+
+Disassembly:
+	0x033683AC CMP W29, 0x4B
+	0x033683B0 B.NE 0x3368438
+
+ISIL:
+	001 Move X4, X31
+	002 Call SystemException..ctor, X0, X1, X2
+	003 Return 
+

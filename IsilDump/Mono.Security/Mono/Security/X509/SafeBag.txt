@@ -1,0 +1,55 @@
+Type: Mono.Security.X509.SafeBag
+
+Method: System.Void .ctor(System.String bagOID, Mono.Security.ASN1 asn1)
+
+Disassembly:
+	0x031EC0EC LDR X19, [X19 + 0xE40]
+	0x031EC0F0 MOV X23, X31
+	0x031EC0F4 MOV X24, X31
+	0x031EC0F8 MOV X25, X31
+	0x031EC0FC MOV W26, W31
+	0x031EC100 LDR X0, [X22 + 0x20]
+	0x031EC104 CBZ X0, 0x31EC118
+	0x031EC108 LDR X8, [X0]
+	0x031EC10C LDR X9, [X8 + 0x298]
+	0x031EC110 LDR X1, [X8 + 0x2A0]
+	0x031EC114 BLR X9
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move X19, X2
+	008 Move X21, X0
+	009 Call Object..ctor, X0
+	010 Move [X21+16], X20
+	011 Move [X21+24], X19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+
+Method: System.String get_BagOID()
+
+Disassembly:
+	0x031EC118 CMP W26, W0
+	0x031EC11C B.GE 0x31EC058
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: Mono.Security.ASN1 get_ASN1()
+
+Disassembly:
+	0x031EC120 MOV X0, X22
+	0x031EC124 MOV W1, W26
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+

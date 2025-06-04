@@ -1,0 +1,137 @@
+Type: Nakama.WriteStorageObject
+
+Method: System.String get_Collection()
+
+Disassembly:
+	0x03489760 BL 0x3222A1C
+	0x03489764 AND W8, W0, 0xFFFF
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_Collection(System.String value)
+
+Disassembly:
+	0x03489768 CMP W8, 0x7B
+	0x0348976C MOV X21, X31
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.String get_Key()
+
+Disassembly:
+	0x03489770 B.NE 0x348933C
+	0x03489774 LDR W8, [X19 + 0x10]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_Key(System.String value)
+
+Disassembly:
+	0x03489778 MOV X0, X19
+	0x0348977C MOV X2, X31
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Int32 get_PermissionRead()
+
+Disassembly:
+	0x03489780 SUB W1, W8, 0x1
+	0x03489784 BL 0x3222A1C
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_PermissionRead(System.Int32 value)
+
+Disassembly:
+	0x03489788 AND W8, W0, 0xFFFF
+	0x0348978C CMP W8, 0x7D
+
+ISIL:
+	001 Move [X0+32], W1
+	002 Return 
+
+Method: System.Int32 get_PermissionWrite()
+
+Disassembly:
+	0x03489790 MOV X21, X31
+	0x03489794 B.NE 0x348933C
+
+ISIL:
+	001 Move W0, [X0+36]
+	002 Return X0
+
+Method: System.Void set_PermissionWrite(System.Int32 value)
+
+Disassembly:
+	0x03489798 MOV X0, X19
+	0x0348979C BL 0x3488964
+
+ISIL:
+	001 Move [X0+36], W1
+	002 Return 
+
+Method: System.String get_Value()
+
+Disassembly:
+	0x034897A0 CBZ X0, 0x3489BA8
+	0x034897A4 LDRB W8, [X0 + 0x18]
+
+ISIL:
+	001 Move X0, [X0+40]
+	002 Return X0
+
+Method: System.Void set_Value(System.String value)
+
+Disassembly:
+	0x034897A8 MOV X19, X0
+	0x034897AC TBNZ X8, 0x0, 0x3489A80
+
+ISIL:
+	001 Move [X0+40], X1
+	002 Return 
+
+Method: System.String get_Version()
+
+Disassembly:
+	0x034897B0 ADRP X8, 0xC72000
+	0x034897B4 LDR X8, [X8 + 0xC60]
+
+ISIL:
+	001 Move X0, [X0+48]
+	002 Return X0
+
+Method: System.Void set_Version(System.String value)
+
+Disassembly:
+	0x034897B8 MOVZ W1, 0x1
+	0x034897BC LDR X0, [X8]
+
+ISIL:
+	001 Move [X0+48], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x034897C0 BL 0x1C16D6C
+	0x034897C4 ADRP X9, 0xC91000
+	0x034897C8 LDR X8, [X24]
+	0x034897CC LDR X9, [X9 + 0xD80]
+
+ISIL:
+	001 NotImplemented "Instruction MOVI not yet implemented."
+	002 Move X1, X31
+	003 Move [X0+32], D0
+	004 Call Object..ctor, X0
+	005 Return 
+

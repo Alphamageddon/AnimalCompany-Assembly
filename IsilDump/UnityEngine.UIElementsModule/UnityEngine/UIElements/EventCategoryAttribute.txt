@@ -1,0 +1,30 @@
+Type: UnityEngine.UIElements.EventCategoryAttribute
+
+Method: System.Void .ctor(UnityEngine.UIElements.EventCategory category)
+
+Disassembly:
+	0x03D18610 CBZ X0, 0x3D186F4
+	0x03D18614 LDR X8, [X0]
+	0x03D18618 LDR X1, [X8 + 0x240]
+	0x03D1861C LDR X9, [X8 + 0x238]
+	0x03D18620 BLR X9
+	0x03D18624 TBZ X0, 0x0, 0x3D18688
+	0x03D18628 LDR X0, [X20 + 0x18]
+	0x03D1862C CBZ X0, 0x3D186F8
+	0x03D18630 LDR W8, [X0 + 0x24]
+	0x03D18634 TBNZ X8, 0x1F, 0x3D18688
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

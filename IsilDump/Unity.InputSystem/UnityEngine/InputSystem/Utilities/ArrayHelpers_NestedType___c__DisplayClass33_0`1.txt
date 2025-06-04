@@ -1,0 +1,47 @@
+Type: UnityEngine.InputSystem.Utilities.ArrayHelpers/<>c__DisplayClass33_0`1
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x02375E00 BL 0x1C16F20
+	0x02375E04 STP X30, X21, [X31 - 0x20]!
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <Merge>b__0(TValue x)
+
+Disassembly:
+	0x02375E08 STP X20, X19, [X31 + 0x10]
+	0x02375E0C LDR X8, [X0 + 0x18]
+	0x02375E10 MOV X19, X2
+	0x02375E14 MOV X20, X0
+	0x02375E18 CBZ X8, 0x2375E58
+	0x02375E1C LDR X21, [X20 + 0x10]
+	0x02375E20 LDR X0, [X8 + 0x40]
+	0x02375E24 LDR X9, [X8 + 0x18]
+	0x02375E28 LDR X2, [X8 + 0x28]
+	0x02375E2C BLR X9
+	0x02375E30 MOV X1, X0
+	0x02375E34 CBZ X21, 0x2375E5C
+	0x02375E38 LDR X8, [X19 + 0x20]
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+8], X2
+	003 Move [X31+16], X30
+	004 Move [X31], X1
+	005 Move X8, [X3+32]
+	006 Move X1, [X0+16]
+	007 Move X2, [X0+24]
+	008 Add X0, X31, 0
+	009 Move X8, [X8+192]
+	010 Move X3, [X8+24]
+	011 Call InternedString.Equals, X0, X1
+	012 Move X30, [X31+16]
+	013 And W0, W0, 1
+	014 Add X31, X31, 32
+	015 Return X0
+

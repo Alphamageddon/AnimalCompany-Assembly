@@ -1,0 +1,103 @@
+Type: AnimalCompany.NetSessionPlayerState
+
+Method: System.Int32 get_playerID()
+
+Disassembly:
+	0x01DBBC08 LDR X3, [X27]
+	0x01DBBC0C MOV X0, X23
+
+ISIL:
+	001 Move W0, [X0+72]
+	002 Return X0
+
+Method: System.Void set_playerID(System.Int32 value)
+
+Disassembly:
+	0x01DBBC10 MOV X1, X24
+	0x01DBBC14 MOV X2, X25
+
+ISIL:
+	001 Move [X0+72], W1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_userID()
+
+Disassembly:
+	0x01DBBC18 BL 0x21D5D10
+	0x01DBBC1C LDR X8, [X28]
+
+ISIL:
+	001 Move X0, [X0+80]
+	002 Return X0
+
+Method: System.Void set_userID(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+
+Disassembly:
+	0x01DBBC20 MOV X24, X0
+	0x01DBBC24 MOV X0, X8
+
+ISIL:
+	001 Move [X0+80], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Single> get_voice()
+
+Disassembly:
+	0x01DBBC28 BL 0x1C16F10
+	0x01DBBC2C MOV X1, X31
+
+ISIL:
+	001 Move X0, [X0+88]
+	002 Return X0
+
+Method: System.Void set_voice(SpatialSys.ObservableState.StatePrimitive`1<System.Single> value)
+
+Disassembly:
+	0x01DBBC30 MOV X23, X0
+	0x01DBBC34 BL 0x1D36B98
+
+ISIL:
+	001 Move [X0+88], X1
+	002 Return 
+
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> get_blockedLocalPlayer()
+
+Disassembly:
+	0x01DBBC38 STP X20, X24, [X23 + 0x18]
+	0x01DBBC3C CBZ X22, 0x1DBBE0C
+
+ISIL:
+	001 Move X0, [X0+96]
+	002 Return X0
+
+Method: System.Void set_blockedLocalPlayer(SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> value)
+
+Disassembly:
+	0x01DBBC40 LDR X8, [X22]
+	0x01DBBC44 MOV X0, X23
+
+ISIL:
+	001 Move [X0+96], X1
+	002 Return 
+
+Method: System.Void OnKeyAssigned(System.Int32 key)
+
+Disassembly:
+	0x01DBBC48 LDR X1, [X8 + 0x40]
+	0x01DBBC4C BL 0x1C16E00
+
+ISIL:
+	001 Move [X0+72], W1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01DBBC50 CBZ X0, 0x1DBBE10
+	0x01DBBC54 LDR W8, [X22 + 0x18]
+
+ISIL:
+	001 Move X1, X31
+	002 Call StateObject..ctor, X0
+	003 Return 
+

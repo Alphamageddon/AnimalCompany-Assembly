@@ -1,0 +1,115 @@
+Type: UnityEngine.Rendering.LocalKeywordSpace
+
+Method: System.Boolean Equals(System.Object o)
+
+Disassembly:
+	0x03C5E34C BL 0x1C16DFC
+	0x03C5E350 MOV X0, X20
+	0x03C5E354 MOV W1, W19
+	0x03C5E358 MOV V0.16B, V8.16B
+	0x03C5E35C BL 0x3C5E3E8
+	0x03C5E360 LDP X20, X19, [X31 + 0x20]
+	0x03C5E364 LDP X22, X21, [X31 + 0x10]
+	0x03C5E368 LDR X30, [X31 + 0x8]
+	0x03C5E36C MOVZ W0, 0x1
+	0x03C5E370 LDR V8, [X31], #0x30
+	0x03C5E374 RET
+	0x03C5E378 STR X30, [X31 - 0x30]!
+	0x03C5E37C STP X22, X21, [X31 + 0x10]
+	0x03C5E380 STP X20, X19, [X31 + 0x20]
+	0x03C5E384 ADRP X21, 0x788000
+	0x03C5E388 ADRP X22, 0x4BE000
+	0x03C5E38C LDRB W8, [X21 + 0x285]
+	0x03C5E390 LDR X22, [X22 + 0x230]
+	0x03C5E394 MOV W19, W1
+	0x03C5E398 MOV X20, X0
+	0x03C5E39C TBNZ X8, 0x0, 0x3C5E3B4
+	0x03C5E3A0 ADRP X0, 0x4BE000
+	0x03C5E3A4 LDR X0, [X0 + 0x230]
+	0x03C5E3A8 BL 0x1C16CF4
+	0x03C5E3AC MOVZ W8, 0x1
+	0x03C5E3B0 STRB W8, [X21 + 0x285]
+	0x03C5E3B4 LDR X0, [X22]
+	0x03C5E3B8 LDR W8, [X0 + 0xE0]
+	0x03C5E3BC CBNZ W8, 0x3C5E3C4
+	0x03C5E3C0 BL 0x1C16DFC
+	0x03C5E3C4 MOV X0, X20
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0x789000
+	006 Move W8, [X21+490]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x502000
+	014 Move X0, [X0+3992]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+490], W8
+	018 Compare X20, 0
+	019 JumpIfEqual {25}
+	020 Move X8, 0x502000
+	021 Move X8, [X8+3992]
+	022 Move X9, [X20]
+	023 Move X8, [X8]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move W0, W31
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Return X0
+	031 Move X0, X20
+	032 Call 0x1C17E08
+	033 Move X1, [X0]
+	034 Move X0, [X19]
+	035 Move X20, [X31+16]
+	036 Move X19, [X31+24]
+	037 Move X2, X31
+	038 Move X30, [X31+32]
+	039 Move X21, [X31+40]
+	040 Call IntPtr.op_Equality, X0, X1
+	041 Return X0
+
+Method: System.Boolean Equals(UnityEngine.Rendering.LocalKeywordSpace rhs)
+
+Disassembly:
+	0x03C5E3C8 MOV W1, W19
+	0x03C5E3CC MOV W2, W31
+	0x03C5E3D0 BL 0x3C5E60C
+
+ISIL:
+	001 Move X0, [X0]
+	002 Move X2, X31
+	003 Call IntPtr.op_Equality, X0, X1
+	004 Return X0
+
+Method: System.Boolean op_Equality(UnityEngine.Rendering.LocalKeywordSpace lhs, UnityEngine.Rendering.LocalKeywordSpace rhs)
+
+Disassembly:
+	0x03C5E304 MOV W19, W1
+	0x03C5E308 MOV X20, X0
+
+ISIL:
+	001 Move X2, X31
+	002 Call IntPtr.op_Equality, X0, X1
+	003 Return X0
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x03C5E344 LDR W8, [X0 + 0xE0]
+	0x03C5E348 CBNZ W8, 0x3C5E350
+
+ISIL:
+	001 Move X1, X31
+	002 Call IntPtr.GetHashCode, X0
+	003 Return X0
+

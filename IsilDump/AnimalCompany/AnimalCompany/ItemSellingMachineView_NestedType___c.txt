@@ -1,0 +1,82 @@
+Type: AnimalCompany.ItemSellingMachineView/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x01DDD3D8 STP X30, X19, [X31 - 0x10]!
+	0x01DDD3DC ADRP X0, 0x2316000
+	0x01DDD3E0 LDR X0, [X0 + 0xB40]
+	0x01DDD3E4 BL 0x1C16D08
+	0x01DDD3E8 BL 0x1C16F10
+	0x01DDD3EC MOV X1, X31
+	0x01DDD3F0 MOV X19, X0
+	0x01DDD3F4 BL 0x3380310
+	0x01DDD3F8 ADRP X0, 0x231B000
+	0x01DDD3FC LDR X0, [X0 + 0xB58]
+	0x01DDD400 BL 0x1C16D08
+	0x01DDD404 MOV X1, X0
+	0x01DDD408 MOV X0, X19
+	0x01DDD40C BL 0x1C16DEC
+	0x01DDD410 LDR X0, [X0 + 0x18]
+	0x01DDD414 RET
+	0x01DDD418 MOV X1, X31
+	0x01DDD41C B 0x3C36C30
+	0x01DDD420 STR X30, [X31 - 0x40]!
+	0x01DDD424 STP X24, X23, [X31 + 0x10]
+	0x01DDD428 STP X22, X21, [X31 + 0x20]
+	0x01DDD42C STP X20, X19, [X31 + 0x30]
+	0x01DDD430 ADRP X23, 0x25FB000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x25FC000
+	005 Move X20, 0x231C000
+	006 Move W8, [X19+3183]
+	007 Move X20, [X20+2856]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x231C000
+	013 Move X0, [X0+2856]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+3183], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01DDD434 ADRP X24, 0x2316000
+	0x01DDD438 ADRP X19, 0x231B000
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <PlayBulbEffectCoroutine>b__36_0(System.Collections.IEnumerator enumerator)
+
+Disassembly:
+	0x01DDD43C ADRP X22, 0x2316000
+	0x01DDD440 ADRP X21, 0x2316000
+	0x01DDD444 LDRB W8, [X23 + 0xC73]
+
+ISIL:
+	001 NotImplemented "Instruction CMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 Return X0
+

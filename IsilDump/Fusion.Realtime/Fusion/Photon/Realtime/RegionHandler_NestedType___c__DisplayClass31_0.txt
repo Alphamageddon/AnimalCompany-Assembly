@@ -1,0 +1,42 @@
+Type: Fusion.Photon.Realtime.RegionHandler/<>c__DisplayClass31_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E5D594 LDR X8, [X21]
+	0x01E5D598 ADRP X9, 0x229F000
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <PingMinimumOfRegions>b__0(Fusion.Photon.Realtime.Region r)
+
+Disassembly:
+	0x01E5E410 CBZ X9, 0x1E5E448
+	0x01E5E414 LDR X1, [X8 + 0x30]
+	0x01E5E418 LDR X8, [X9 + 0x18]
+	0x01E5E41C LDR X0, [X9 + 0x40]
+	0x01E5E420 LDR X2, [X9 + 0x28]
+	0x01E5E424 BLR X8
+	0x01E5E428 MOV X20, X31
+	0x01E5E42C MOVZ W8, 0x5
+	0x01E5E430 MOVZ W0, 0x1
+	0x01E5E434 STR X20, [X19 + 0x18]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {13}
+	004 Move X8, [X1+16]
+	005 Compare X8, 0
+	006 JumpIfEqual {13}
+	007 Move X1, [X0+16]
+	008 Move X0, X8
+	009 Move X2, X31
+	010 Move X30, [X31+16]
+	011 Call String.Equals, X0, X1
+	012 Return X0
+	013 Call 0x1C17F20
+

@@ -1,0 +1,86 @@
+Type: UnityEngine.XR.Management.XRConfigurationDataAttribute
+
+Method: System.String get_displayName()
+
+Disassembly:
+	0x03BD9984 BL 0x2AA4804
+	0x03BD9988 STR X20, [X19 + 0x18]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_displayName(System.String value)
+
+Disassembly:
+	0x03BD998C MOV X0, X19
+	0x03BD9990 LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.String get_buildSettingsKey()
+
+Disassembly:
+	0x03BD9994 LDP X22, X21, [X31 + 0x10]
+	0x03BD9998 MOV X1, X31
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_buildSettingsKey(System.String value)
+
+Disassembly:
+	0x03BD999C LDR X30, [X31], #0x30
+	0x03BD99A0 B 0x3C36D2C
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03BD99A4 STR X30, [X31 - 0x20]!
+	0x03BD99A8 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Attribute..ctor, X0
+	003 Return 
+
+Method: System.Void .ctor(System.String displayName, System.String buildSettingsKey)
+
+Disassembly:
+	0x03BD99AC ADRP X19, 0x809000
+	0x03BD99B0 ADRP X20, 0x584000
+	0x03BD99B4 LDRB W8, [X19 + 0xEBB]
+	0x03BD99B8 LDR X20, [X20 + 0xDE0]
+	0x03BD99BC TBNZ X8, 0x0, 0x3BD99D4
+	0x03BD99C0 ADRP X0, 0x584000
+	0x03BD99C4 LDR X0, [X0 + 0xDE0]
+	0x03BD99C8 BL 0x1C16CF4
+	0x03BD99CC MOVZ W8, 0x1
+	0x03BD99D0 STRB W8, [X19 + 0xEBB]
+	0x03BD99D4 LDR X8, [X20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, X1
+	006 Move X1, X31
+	007 Move X19, X2
+	008 Move X21, X0
+	009 Call Attribute..ctor, X0
+	010 Move [X21+16], X20
+	011 Move [X21+24], X19
+	012 Move X20, [X31+16]
+	013 Move X19, [X31+24]
+	014 Move X30, [X31+32]
+	015 Move X21, [X31+40]
+	016 Return 
+

@@ -1,0 +1,61 @@
+Type: Fusion.Photon.Realtime.Extension.RealtimeExtensions_DictionaryProperties
+
+Method: System.Int32 CalculateTotalSize(System.Collections.Generic.Dictionary`2<System.String, Fusion.SessionProperty> dictionary)
+
+Disassembly:
+	0x01E637C4 STP X30, X25, [X31 - 0x40]!
+	0x01E637C8 STP X24, X23, [X31 + 0x10]
+	0x01E637CC STP X22, X21, [X31 + 0x20]
+	0x01E637D0 STP X20, X19, [X31 + 0x30]
+	0x01E637D4 ADRP X25, 0x2576000
+	0x01E637D8 LDRB W8, [X25 + 0xD1]
+	0x01E637DC MOV X19, X5
+	0x01E637E0 MOV W20, W4
+	0x01E637E4 MOV W21, W3
+	0x01E637E8 MOV X23, X2
+	0x01E637EC MOV X24, X1
+	0x01E637F0 MOV X22, X0
+	0x01E637F4 TBNZ X8, 0x0, 0x1E63830
+	0x01E637F8 ADRP X0, 0x2299000
+	0x01E637FC LDR X0, [X0 + 0xBD0]
+	0x01E63800 BL 0x1C16CF4
+	0x01E63804 ADRP X0, 0x2299000
+	0x01E63808 LDR X0, [X0 + 0xC60]
+	0x01E6380C BL 0x1C16CF4
+	0x01E63810 ADRP X0, 0x2291000
+	0x01E63814 LDR X0, [X0 + 0x7B8]
+	0x01E63818 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x2577000
+	006 Move X21, 0x2299000
+	007 Move W8, [X20+196]
+	008 Move X21, [X21+3504]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0x2299000
+	015 Move X0, [X0+3504]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+196], W8
+	019 Move X0, [X21]
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move X0, X19
+	025 Call RealtimeExtensions_Hashtable.ConvertToHashtable, X0
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Call RealtimeExtensions_Hashtable.CalculateTotalSize, X0
+	031 Return X0
+

@@ -1,0 +1,78 @@
+Type: UnityEngine.XR.Interaction.Toolkit.UI.NavigationModel/ImplementationData
+
+Method: System.Int32 get_consecutiveMoveCount()
+
+Disassembly:
+	0x03B9A990 STRB W8, [X20 + 0x30]
+	0x03B9A994 LDR V0, [X19 + 0x134]
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Void set_consecutiveMoveCount(System.Int32 value)
+
+Disassembly:
+	0x03B9A998 ADD X8, X19, 0x114
+	0x03B9A99C STR S0, [X20 + 0x34]
+
+ISIL:
+	001 Move [X0], W1
+	002 Return 
+
+Method: UnityEngine.EventSystems.MoveDirection get_lastMoveDirection()
+
+Disassembly:
+	0x03B9A9A0 LDR V0, [X8]
+	0x03B9A9A4 STR D0, [X20 + 0x38]
+
+ISIL:
+	001 Move W0, [X0+4]
+	002 Return X0
+
+Method: System.Void set_lastMoveDirection(UnityEngine.EventSystems.MoveDirection value)
+
+Disassembly:
+	0x03B9A9A8 BL 0x3EB1B30
+	0x03B9A9AC LDR X8, [X19 + 0x28]
+
+ISIL:
+	001 Move [X0+4], W1
+	002 Return 
+
+Method: System.Single get_lastMoveTime()
+
+Disassembly:
+	0x03B9A9B0 LDR X0, [X20 + 0x20]
+	0x03B9A9B4 STR X8, [X20 + 0x90]
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Return V0
+
+Method: System.Void set_lastMoveTime(System.Single value)
+
+Disassembly:
+	0x03B9A9B8 LDUR V0, [X19 + 0x38]
+	0x03B9A9BC STUR V0, [X20 + 0x98]
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Return 
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x03B9A974 CBZ X19, 0x3B9AA0C
+	0x03B9A978 LDR X8, [X19 + 0x20]
+	0x03B9A97C ADD X1, X19, 0xA0
+	0x03B9A980 ADD X0, X20, 0x40
+	0x03B9A984 MOVZ W2, 0x50
+
+ISIL:
+	001 Move X8, -51036160
+	002 Move V0, [X8+3304]
+	003 Move [X0+8], W31
+	004 Move [X0], D0
+	005 Return 
+

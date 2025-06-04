@@ -1,0 +1,106 @@
+Type: UnityEngine.UIElements.TemplateContainer
+
+Method: System.String get_templateId()
+
+Disassembly:
+	0x03E0A390 LDP X24, X23, [X31 + 0x10]
+	0x03E0A394 STP X9, X8, [X19 + 0x20]
+
+ISIL:
+	001 Move X0, [X0+984]
+	002 Return X0
+
+Method: System.Void set_templateId(System.String value)
+
+Disassembly:
+	0x03E0A398 LDR X8, [X20]
+	0x03E0A39C STR X8, [X19 + 0x40]
+
+ISIL:
+	001 Move [X0+984], X1
+	002 Return 
+
+Method: System.Void set_templateSource(UnityEngine.UIElements.VisualTreeAsset value)
+
+Disassembly:
+	0x03E0A3A0 LDP X20, X19, [X31 + 0x30]
+	0x03E0A3A4 LDR X30, [X31], #0x40
+
+ISIL:
+	001 Move [X0+1000], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03E0A3A8 RET
+	0x03E0A3AC STP X30, X21, [X31 - 0x20]!
+	0x03E0A3B0 STP X20, X19, [X31 + 0x10]
+	0x03E0A3B4 ADRP X19, 0x5DE000
+	0x03E0A3B8 ADRP X20, 0x360000
+	0x03E0A3BC LDRB W8, [X19 + 0x348]
+	0x03E0A3C0 LDR X20, [X20 + 0x398]
+	0x03E0A3C4 TBNZ X8, 0x0, 0x3E0A3F4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X1, X31
+	004 Move X19, X0
+	005 Call BindableElement..ctor, X0
+	006 Move [X19+984], X31
+	007 Move [X19+992], X19
+	008 Move X30, [X31+16]
+	009 Move X19, [X31+24]
+	010 Return 
+
+Method: System.Void .ctor(System.String templateId)
+
+Disassembly:
+	0x03E0A3C8 ADRP X0, 0x2E9000
+	0x03E0A3CC LDR X0, [X0 + 0x598]
+	0x03E0A3D0 BL 0x1C16CF4
+	0x03E0A3D4 ADRP X0, 0x360000
+	0x03E0A3D8 LDR X0, [X0 + 0x398]
+	0x03E0A3DC BL 0x1C16CF4
+	0x03E0A3E0 ADRP X0, 0x360000
+	0x03E0A3E4 LDR X0, [X0 + 0x3A0]
+	0x03E0A3E8 BL 0x1C16CF4
+	0x03E0A3EC MOVZ W8, 0x1
+	0x03E0A3F0 STRB W8, [X19 + 0x348]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call BindableElement..ctor, X0
+	008 Move [X20+984], X19
+	009 Move [X20+992], X20
+	010 Move X20, [X31+16]
+	011 Move X19, [X31+24]
+	012 Move X30, [X31+32]
+	013 Return 
+
+Method: UnityEngine.UIElements.VisualElement get_contentContainer()
+
+Disassembly:
+	0x03E0A3F4 LDR X0, [X20]
+	0x03E0A3F8 ADRP X21, 0x2E9000
+
+ISIL:
+	001 Move X0, [X0+992]
+	002 Return X0
+
+Method: System.Void SetContentContainer(UnityEngine.UIElements.VisualElement content)
+
+Disassembly:
+	0x03E0A3FC LDR W8, [X0 + 0xE0]
+	0x03E0A400 LDR X21, [X21 + 0x598]
+
+ISIL:
+	001 Move [X0+992], X1
+	002 Return 
+

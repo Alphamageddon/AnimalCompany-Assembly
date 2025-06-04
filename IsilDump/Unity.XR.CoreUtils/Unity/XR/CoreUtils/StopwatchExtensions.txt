@@ -1,0 +1,38 @@
+Type: Unity.XR.CoreUtils.StopwatchExtensions
+
+Method: System.Void Restart(System.Diagnostics.Stopwatch stopwatch)
+
+Disassembly:
+	0x03B25270 LDR X1, [X8 + 0x820]
+	0x03B25274 BLR X9
+	0x03B25278 LDR X8, [X21]
+	0x03B2527C MOV X25, X0
+	0x03B25280 LDR W9, [X8 + 0xE0]
+	0x03B25284 CBNZ W9, 0x3B25290
+	0x03B25288 MOV X0, X8
+	0x03B2528C BL 0x1C16DFC
+	0x03B25290 MOV X0, X25
+	0x03B25294 MOV X1, X31
+	0x03B25298 MOV X2, X31
+	0x03B2529C BL 0x3395F0C
+	0x03B252A0 TBZ X0, 0x0, 0x3B252D4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Compare X0, 0
+	004 JumpIfEqual {17}
+	005 Move X1, X31
+	006 Move X19, X0
+	007 Call Stopwatch.Stop, X0
+	008 Move X0, X19
+	009 Move X1, X31
+	010 Call Stopwatch.Reset, X0
+	011 Move X0, X19
+	012 Move X1, X31
+	013 Move X30, [X31+16]
+	014 Move X19, [X31+24]
+	015 Call Stopwatch.Start, X0
+	016 Return 
+	017 Call 0x1C17F20
+

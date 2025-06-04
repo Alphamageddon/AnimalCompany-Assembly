@@ -1,0 +1,30 @@
+Type: System.Reflection.AssemblyDescriptionAttribute
+
+Method: System.Void .ctor(System.String description)
+
+Disassembly:
+	0x032CD638 ADRP X8, 0xE26000
+	0x032CD63C LDR X8, [X8 + 0x758]
+	0x032CD640 STR W0, [X31 + 0x1C]
+	0x032CD644 ADD X1, X31, 0x1C
+	0x032CD648 LDR X8, [X8]
+	0x032CD64C MOV X0, X8
+	0x032CD650 BL 0x1C16E04
+	0x032CD654 MOV X2, X0
+	0x032CD658 ADD X0, X31, 0x0
+	0x032CD65C MOV X1, X23
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

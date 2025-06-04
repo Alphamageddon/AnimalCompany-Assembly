@@ -1,0 +1,99 @@
+Type: UnityEngine.InputSystem.InputRemoting/RemoveDeviceMsg
+
+Method: UnityEngine.InputSystem.InputRemoting/Message Create(UnityEngine.InputSystem.InputDevice device)
+
+Disassembly:
+	0x037BCB70 BL 0x1C16D08
+	0x037BCB74 MOV X2, X0
+	0x037BCB78 MOV X0, X20
+	0x037BCB7C MOV X1, X19
+	0x037BCB80 MOV X3, X31
+	0x037BCB84 BL 0x32274B8
+	0x037BCB88 MOV X19, X0
+	0x037BCB8C ADRP X0, 0x93F000
+	0x037BCB90 LDR X0, [X0 + 0x578]
+	0x037BCB94 BL 0x1C16D08
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X0, 0
+	003 JumpIfEqual {11}
+	004 Move W0, [X0+224]
+	005 Move X1, X31
+	006 Call BitConverter.GetBytes, X0
+	007 Move X1, X0
+	008 Move X0, 5
+	009 Move X30, [X31+16]
+	010 Return X0
+	011 Call 0x1C17F20
+
+Method: System.Void Process(UnityEngine.InputSystem.InputRemoting receiver, UnityEngine.InputSystem.InputRemoting/Message msg)
+
+Disassembly:
+	0x037BBD78 ADD X0, X31, 0x20
+	0x037BBD7C MOVZ W1, 0x1
+	0x037BBD80 STR V0, [X31 + 0x2]
+	0x037BBD84 STR W8, [X31 + 0x30]
+	0x037BBD88 BL 0x37BB9E0
+	0x037BBD8C LDR X8, [X19 + 0x28]
+	0x037BBD90 LDR X9, [X31 + 0x38]
+	0x037BBD94 CMP X8, X9
+	0x037BBD98 B.NE 0x37BBDAC
+	0x037BBD9C LDP X30, X19, [X31 + 0x40]
+	0x037BBDA0 ADD X31, X31, 0x50
+	0x037BBDA4 RET
+	0x037BBDA8 BL 0x1C16F20
+	0x037BBDAC BL 0x3EB1B20
+	0x037BBDB0 SUB X31, X31, 0x70
+	0x037BBDB4 STR X30, [X31 + 0x40]
+	0x037BBDB8 STP X22, X21, [X31 + 0x50]
+	0x037BBDBC STP X20, X19, [X31 + 0x60]
+	0x037BBDC0 ADRP X22, 0xC26000
+	0x037BBDC4 LDRB W8, [X22 + 0x16C]
+	0x037BBDC8 MOV W21, W2
+	0x037BBDCC MOV X20, X1
+	0x037BBDD0 MOV X19, X0
+	0x037BBDD4 TBNZ X8, 0x0, 0x37BBDF8
+	0x037BBDD8 ADRP X0, 0x98C000
+	0x037BBDDC LDR X0, [X0 + 0xC80]
+	0x037BBDE0 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Compare X0, 0
+	006 JumpIfEqual {37}
+	007 Move X20, X2
+	008 Move X19, X0
+	009 Call InputRemoting.FindOrCreateSenderRecord, X0, X1
+	010 Move W21, W0
+	011 Move X0, X20
+	012 Move W1, W31
+	013 Move X2, X31
+	014 Call BitConverter.ToInt32, X0, X1
+	015 Move W1, W0
+	016 Move X0, X19
+	017 Move W2, W21
+	018 Call InputRemoting.TryGetDeviceByRemoteId, X0, X1, X2
+	019 Compare X0, 0
+	020 JumpIfEqual {32}
+	021 Move X1, X0
+	022 Move X0, [X19+24]
+	023 Compare X0, 0
+	024 JumpIfEqual {37}
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move W2, W31
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Call InputManager.RemoveDevice, X0, X1, X2
+	031 Return 
+	032 Move X20, [X31+16]
+	033 Move X19, [X31+24]
+	034 Move X30, [X31+32]
+	035 Move X21, [X31+40]
+	036 Return 
+	037 Call 0x1C17F20
+

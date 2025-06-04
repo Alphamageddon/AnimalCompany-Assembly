@@ -1,0 +1,178 @@
+Type: UnityEngine.Touch
+
+Method: System.Int32 get_fingerId()
+
+Disassembly:
+	0x03C855A8 LDR X8, [X8 + 0x18]
+	0x03C855AC CBZ X8, 0x3C85D78
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: UnityEngine.Vector2 get_position()
+
+Disassembly:
+	0x03C855B0 LDR W9, [X8 + 0x18]
+	0x03C855B4 CMP X20, X9
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Return X0
+
+Method: System.Void set_position(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x03C855B8 B.CS 0x3C85D7C
+	0x03C855BC ADD X8, X8, X21
+
+ISIL:
+	001 Move [X0+4], S0
+	002 Move [X0+12], S1
+	003 Return 
+
+Method: UnityEngine.Vector2 get_rawPosition()
+
+Disassembly:
+	0x03C855C0 ADD X20, X20, 0x1
+	0x03C855C4 ADD X21, X21, 0x10
+
+ISIL:
+	001 Move S0, [X0+12]
+	002 Move S1, [X0+16]
+	003 Return X0
+
+Method: System.Void set_rawPosition(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x03C855C8 STP X31, X31, [X8]
+	0x03C855CC B 0x3C85568
+
+ISIL:
+	001 Move [X0+12], S0
+	002 Move [X0+20], S1
+	003 Return 
+
+Method: UnityEngine.Vector2 get_deltaPosition()
+
+Disassembly:
+	0x03C855D0 LDRB W9, [X8]
+	0x03C855D4 STP S9, S8, [X31 + 0x20]
+
+ISIL:
+	001 Move S0, [X0+20]
+	002 Move S1, [X0+24]
+	003 Return X0
+
+Method: System.Void set_deltaPosition(UnityEngine.Vector2 value)
+
+Disassembly:
+	0x03C855D8 CBNZ W9, 0x3C85CCC
+	0x03C855DC LDR W9, [X0 + 0xE0]
+
+ISIL:
+	001 Move [X0+20], S0
+	002 Move [X0+28], S1
+	003 Return 
+
+Method: System.Single get_deltaTime()
+
+Disassembly:
+	0x03C855E0 CBNZ W9, 0x3C855F0
+	0x03C855E4 BL 0x1C16DFC
+
+ISIL:
+	001 Move V0, [X0+28]
+	002 Return V0
+
+Method: System.Int32 get_tapCount()
+
+Disassembly:
+	0x03C855E8 LDR X8, [X28]
+	0x03C855EC LDR X8, [X8 + 0xB8]
+
+ISIL:
+	001 Move W0, [X0+32]
+	002 Return X0
+
+Method: UnityEngine.TouchPhase get_phase()
+
+Disassembly:
+	0x03C855F0 LDR X29, [X8 + 0x20]
+	0x03C855F4 CBZ X29, 0x3C85D78
+
+ISIL:
+	001 Move W0, [X0+36]
+	002 Return X0
+
+Method: System.Single get_pressure()
+
+Disassembly:
+	0x03C855F8 LDR X8, [X29 + 0x18]
+	0x03C855FC CMP W8, 0x1
+
+ISIL:
+	001 Move V0, [X0+44]
+	002 Return V0
+
+Method: System.Single get_maximumPossiblePressure()
+
+Disassembly:
+	0x03C85600 B.LT 0x3C85CCC
+	0x03C85604 ADRP X9, 0xFFFFFFFFFCE64000
+
+ISIL:
+	001 Move V0, [X0+48]
+	002 Return V0
+
+Method: UnityEngine.TouchType get_type()
+
+Disassembly:
+	0x03C85608 LDR V0, [X9 + 0xF20]
+	0x03C8560C ADRP X20, 0x46E000
+
+ISIL:
+	001 Move W0, [X0+40]
+	002 Return X0
+
+Method: System.Single get_altitudeAngle()
+
+Disassembly:
+	0x03C85610 ADRP X27, 0x4D2000
+	0x03C85614 ADRP X10, 0xFFFFFFFFFCE65000
+
+ISIL:
+	001 Move V0, [X0+60]
+	002 Return V0
+
+Method: System.Single get_azimuthAngle()
+
+Disassembly:
+	0x03C85618 LDR X20, [X20 + 0x598]
+	0x03C8561C LDR X27, [X27 + 0x448]
+
+ISIL:
+	001 Move V0, [X0+64]
+	002 Return V0
+
+Method: System.Single get_radius()
+
+Disassembly:
+	0x03C85620 STR S0, [X31 + 0x1C]
+	0x03C85624 LDR V0, [X10 + 0x240]
+
+ISIL:
+	001 Move V0, [X0+52]
+	002 Return V0
+
+Method: System.Single get_radiusVariance()
+
+Disassembly:
+	0x03C85628 MOV X22, X31
+	0x03C8562C AND X8, X8, 0x0
+
+ISIL:
+	001 Move V0, [X0+56]
+	002 Return V0
+

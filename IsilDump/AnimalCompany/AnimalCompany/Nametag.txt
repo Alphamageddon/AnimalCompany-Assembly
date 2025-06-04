@@ -1,0 +1,37 @@
+Type: AnimalCompany.Nametag
+
+Method: System.Void SetName(System.String name)
+
+Disassembly:
+	0x01DC0A60 LDR X8, [X8 + 0xB8]
+	0x01DC0A64 STR X0, [X8 + 0x148]
+	0x01DC0A68 LDR X8, [X0]
+	0x01DC0A6C CMP X8, X1
+	0x01DC0A70 B.EQ 0x1DC0A84
+	0x01DC0A74 BL 0x1C171E0
+	0x01DC0A78 LDR X8, [X22]
+	0x01DC0A7C LDR X8, [X8 + 0xB8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, [X0+32]
+	003 Compare X0, 0
+	004 JumpIfEqual {10}
+	005 Move W2, 1
+	006 Move X3, X31
+	007 Move X30, [X31+16]
+	008 Call TMP_Text.SetText, X0, X1, X2
+	009 Return 
+	010 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01DC0A80 STR X0, [X8 + 0x148]
+	0x01DC0A84 ADRP X8, 0x2333000
+
+ISIL:
+	001 Move X1, X31
+	002 Call MonoBehaviour..ctor, X0
+	003 Return 
+

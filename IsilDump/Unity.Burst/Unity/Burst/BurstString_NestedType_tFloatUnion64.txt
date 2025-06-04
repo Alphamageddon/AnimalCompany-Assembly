@@ -1,0 +1,42 @@
+Type: Unity.Burst.BurstString/tFloatUnion64
+
+Method: System.Boolean IsNegative()
+
+Disassembly:
+	0x0370301C MOV X1, X31
+	0x03703020 MOV X19, X0
+	0x03703024 BL 0x3380288
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X0, X8
+	003 ShiftRight X0, 63
+	004 And X0, X0, 0x7FFFFFFF
+	005 Return X0
+
+Method: System.UInt32 GetExponent()
+
+Disassembly:
+	0x03703004 BL 0x1C16DEC
+	0x03703008 STP X30, X19, [X31 - 0x10]!
+	0x0370300C ADRP X0, 0x9F9000
+
+ISIL:
+	001 Move X8, [X0]
+	002 Move X0, X8
+	003 ShiftRight X0, 52
+	004 And X0, X0, 0x3FFFFFFF
+	005 Return X0
+
+Method: System.UInt64 GetMantissa()
+
+Disassembly:
+	0x03703010 LDR X0, [X0 + 0x758]
+	0x03703014 BL 0x1C16D08
+	0x03703018 BL 0x1C16F10
+
+ISIL:
+	001 Move X8, [X0]
+	002 And X0, X8, 0xFFFFF
+	003 Return X0
+

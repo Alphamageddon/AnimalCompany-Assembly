@@ -1,0 +1,30 @@
+Type: UnityEngine.UIElements.VisualElement/VisualElementScheduledItem`1
+
+Method: System.Void .ctor(UnityEngine.UIElements.VisualElement handler, ActionType upEvent)
+
+Disassembly:
+	0x02845E5C CMP W8, W21
+	0x02845E60 B.EQ 0x2845ED0
+	0x02845E64 ADRP X8, 0x18AF000
+	0x02845E68 LDR X8, [X8 + 0x9F0]
+	0x02845E6C STRB W21, [X19 + 0x1C]
+	0x02845E70 LDR X0, [X8]
+	0x02845E74 LDR W8, [X0 + 0xE0]
+	0x02845E78 CBNZ W8, 0x2845E80
+	0x02845E7C BL 0x1C16DFC
+	0x02845E80 MOV X0, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X2
+	005 Move X2, X31
+	006 Move X20, X0
+	007 Call BaseVisualElementScheduledItem..ctor, X0, X1
+	008 Move [X20+80], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

@@ -1,0 +1,8313 @@
+Type: Unity.Mathematics.float4
+
+Method: System.Void .ctor(System.Single x, System.Single y, System.Single z, System.Single w)
+
+Disassembly:
+	0x0389177C LDP S1, S0, [X0]
+	0x03891780 LDP S2, S3, [X0 + 0x8]
+	0x03891784 RET
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: System.Void .ctor(System.Single x, System.Single y, Unity.Mathematics.float2 zw)
+
+Disassembly:
+	0x03891788 STP S1, S0, [X0]
+	0x0389178C STP S2, S3, [X0 + 0x8]
+	0x03891790 RET
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: System.Void .ctor(System.Single x, Unity.Mathematics.float2 yz, System.Single w)
+
+Disassembly:
+	0x03891794 LDP S1, S0, [X0]
+	0x03891798 LDR V2, [X0 + 0xC]
+	0x0389179C MOV V3.16B, V1.16B
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: System.Void .ctor(System.Single x, Unity.Mathematics.float3 yzw)
+
+Disassembly:
+	0x038917A0 RET
+	0x038917A4 LDP S1, S0, [X0]
+	0x038917A8 LDR V2, [X0 + 0xC]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.float2 xy, System.Single z, System.Single w)
+
+Disassembly:
+	0x038917AC MOV V3.16B, V0.16B
+	0x038917B0 RET
+	0x038917B4 LDP S1, S0, [X0]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.float2 xy, Unity.Mathematics.float2 zw)
+
+Disassembly:
+	0x038917B8 LDP S3, S2, [X0 + 0x8]
+	0x038917BC RET
+	0x038917C0 STP S1, S0, [X0]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.float3 xyz, System.Single w)
+
+Disassembly:
+	0x038917C4 STP S3, S2, [X0 + 0x8]
+	0x038917C8 RET
+	0x038917CC LDR V2, [X0 + 0xC]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.float4 xyzw)
+
+Disassembly:
+	0x038917D0 LDP S1, S0, [X0]
+	0x038917D4 MOV V3.16B, V2.16B
+	0x038917D8 RET
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: System.Void .ctor(System.Single v)
+
+Disassembly:
+	0x038917DC LDR V2, [X0]
+	0x038917E0 MOV S0, V2.S[1]
+	0x038917E4 MOV V1.16B, V0.16B
+
+ISIL:
+	001 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	002 Move [X0], V0
+	003 Return 
+
+Method: System.Void .ctor(System.Boolean v)
+
+Disassembly:
+	0x038917E8 MOV V3.16B, V2.16B
+	0x038917EC RET
+	0x038917F0 LDR V2, [X0]
+	0x038917F4 MOV S0, V2.S[1]
+	0x038917F8 MOV V1.16B, V0.16B
+	0x038917FC MOV V3.16B, V0.16B
+	0x03891800 RET
+
+ISIL:
+	001 And W31, W1, 1
+	002 Move S0, W31
+	003 Move S1, 1
+	004 NotImplemented "Instruction FCSEL not yet implemented."
+	005 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	006 Move [X0], V0
+	007 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.bool4 v)
+
+Disassembly:
+	0x03891804 LDP S2, S0, [X0]
+	0x03891808 LDR V3, [X0 + 0x8]
+	0x0389180C MOV V1.16B, V0.16B
+	0x03891810 RET
+	0x03891814 LDP S2, S0, [X0]
+	0x03891818 LDR V3, [X0 + 0xC]
+	0x0389181C MOV V1.16B, V0.16B
+	0x03891820 RET
+	0x03891824 LDP S3, S0, [X0]
+	0x03891828 MOV V1.16B, V0.16B
+	0x0389182C MOV V2.16B, V0.16B
+	0x03891830 RET
+	0x03891834 LDR V0, [X0 + 0x4]
+
+ISIL:
+	001 And X31, X1, 1
+	002 Move S0, 1
+	003 Move S1, W31
+	004 NotImplemented "Instruction FCSEL not yet implemented."
+	005 And X31, X1, 511
+	006 NotImplemented "Instruction FCSEL not yet implemented."
+	007 And X31, X1, 0x1FFFF
+	008 Move [X0], S2
+	009 Move [X0+8], S3
+	010 NotImplemented "Instruction FCSEL not yet implemented."
+	011 And X31, X1, 0x1FFFFFF
+	012 NotImplemented "Instruction FCSEL not yet implemented."
+	013 Move [X0+8], S2
+	014 Move [X0+16], S0
+	015 Return 
+
+Method: System.Void .ctor(System.Int32 v)
+
+Disassembly:
+	0x03891838 MOV V1.16B, V0.16B
+	0x0389183C MOV V2.16B, V0.16B
+	0x03891840 MOV V3.16B, V0.16B
+	0x03891844 RET
+
+ISIL:
+	001 NotImplemented "Instruction SCVTF not yet implemented."
+	002 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	003 Move [X0], V0
+	004 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.int4 v)
+
+Disassembly:
+	0x03891848 LDP S0, S3, [X0 + 0x4]
+	0x0389184C MOV V1.16B, V0.16B
+	0x03891850 MOV V2.16B, V0.16B
+	0x03891854 RET
+	0x03891858 LDR V0, [X0 + 0x4]
+	0x0389185C LDR V3, [X0 + 0xC]
+	0x03891860 MOV V1.16B, V0.16B
+	0x03891864 MOV V2.16B, V0.16B
+	0x03891868 RET
+
+ISIL:
+	001 Move X8, X1
+	002 ShiftRight X8, 32
+	003 And X8, X8, 0x7FFFFFFF
+	004 Move X9, X2
+	005 ShiftRight X9, 32
+	006 And X9, X9, 0x7FFFFFFF
+	007 NotImplemented "Instruction SCVTF not yet implemented."
+	008 NotImplemented "Instruction SCVTF not yet implemented."
+	009 NotImplemented "Instruction SCVTF not yet implemented."
+	010 NotImplemented "Instruction SCVTF not yet implemented."
+	011 Move [X0], S0
+	012 Move [X0+8], S2
+	013 Move [X0+8], S1
+	014 Move [X0+16], S3
+	015 Return 
+
+Method: System.Void .ctor(System.UInt32 v)
+
+Disassembly:
+	0x0389186C LDP S0, S2, [X0 + 0x4]
+	0x03891870 LDR V3, [X0]
+	0x03891874 MOV V1.16B, V0.16B
+	0x03891878 RET
+
+ISIL:
+	001 NotImplemented "Instruction UCVTF not yet implemented."
+	002 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	003 Move [X0], V0
+	004 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.uint4 v)
+
+Disassembly:
+	0x0389187C LDUR V0, [X0 + 0x4]
+	0x03891880 MOV S2, V0.S[1]
+	0x03891884 MOV V1.16B, V0.16B
+	0x03891888 MOV V3.16B, V0.16B
+	0x0389188C RET
+	0x03891890 LDUR V0, [X0 + 0x4]
+	0x03891894 MOV S2, V0.S[1]
+	0x03891898 MOV V1.16B, V0.16B
+	0x0389189C MOV V3.16B, V2.16B
+
+ISIL:
+	001 Move X8, X1
+	002 ShiftRight X8, 32
+	003 And X8, X8, 0x7FFFFFFF
+	004 Move X9, X2
+	005 ShiftRight X9, 32
+	006 And X9, X9, 0x7FFFFFFF
+	007 NotImplemented "Instruction UCVTF not yet implemented."
+	008 NotImplemented "Instruction UCVTF not yet implemented."
+	009 NotImplemented "Instruction UCVTF not yet implemented."
+	010 NotImplemented "Instruction UCVTF not yet implemented."
+	011 Move [X0], S0
+	012 Move [X0+8], S2
+	013 Move [X0+8], S1
+	014 Move [X0+16], S3
+	015 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.half v)
+
+Disassembly:
+	0x038918A0 RET
+	0x038918A4 LDP S0, S2, [X0 + 0x4]
+	0x038918A8 LDR V3, [X0 + 0xC]
+	0x038918AC MOV V1.16B, V0.16B
+	0x038918B0 RET
+	0x038918B4 LDP S3, S0, [X0]
+	0x038918B8 LDR V2, [X0 + 0xC]
+	0x038918BC MOV V1.16B, V0.16B
+	0x038918C0 RET
+	0x038918C4 LDR V0, [X0 + 0x4]
+	0x038918C8 LDR V2, [X0 + 0xC]
+	0x038918CC MOV V1.16B, V0.16B
+	0x038918D0 MOV V3.16B, V0.16B
+	0x038918D4 RET
+	0x038918D8 LDR V0, [X0 + 0x4]
+	0x038918DC LDP S3, S2, [X0 + 0x8]
+	0x038918E0 MOV V1.16B, V0.16B
+	0x038918E4 RET
+	0x038918E8 LDR V0, [X0 + 0x4]
+	0x038918EC LDR V2, [X0 + 0xC]
+	0x038918F0 MOV V1.16B, V0.16B
+	0x038918F4 MOV V3.16B, V2.16B
+	0x038918F8 RET
+	0x038918FC LDR V2, [X0]
+	0x03891900 LDP S0, S1, [X0 + 0x4]
+
+ISIL:
+	001 And W8, W1, 0xFFFF
+	002 Move W9, 0xF800000
+	003 Move W10, 0xB8800000
+	004 Move S0, W10
+	005 And W10, W9, W8
+	006 Move W11, 0x38000000
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSEL not yet implemented."
+	009 And W31, W9, W8
+	010 Move W9, W8
+	011 ShiftRight W9, 19
+	012 And W9, W9, 0x3FFFF
+	013 And W9, W9, 0xFFFE000
+	014 Add W9, W9, W10
+	015 Move W10, 0x38800000
+	016 Add W10, W9, W10
+	017 Move S1, W10
+	018 Add S0, S1, S0
+	019 Move W8, W8
+	020 ShiftRight W8, 16
+	021 And W8, W8, 0x7FFF
+	022 Add W9, W9, W11
+	023 Move W10, S0
+	024 NotImplemented "Instruction CSEL not yet implemented."
+	025 And W8, W8, 0x80000000
+	026 Or W8, W9, W8
+	027 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	028 Move [X0], V0
+	029 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.half4 v)
+
+Disassembly:
+	0x03891904 MOV V3.16B, V2.16B
+	0x03891908 RET
+	0x0389190C LDP S0, S1, [X0 + 0x4]
+	0x03891910 LDR V2, [X0]
+	0x03891914 MOV V3.16B, V0.16B
+	0x03891918 RET
+	0x0389191C LDP S0, S1, [X0 + 0x4]
+	0x03891920 LDR V2, [X0]
+	0x03891924 MOV V3.16B, V1.16B
+	0x03891928 RET
+	0x0389192C LDP S2, S0, [X0]
+	0x03891930 LDP S1, S3, [X0 + 0x8]
+	0x03891934 RET
+	0x03891938 STP S2, S0, [X0]
+	0x0389193C STP S1, S3, [X0 + 0x8]
+	0x03891940 RET
+	0x03891944 LDP S0, S1, [X0 + 0x4]
+	0x03891948 LDR V3, [X0]
+	0x0389194C MOV V2.16B, V0.16B
+	0x03891950 RET
+	0x03891954 LDP S0, S1, [X0 + 0x4]
+	0x03891958 MOV V2.16B, V0.16B
+	0x0389195C MOV V3.16B, V0.16B
+	0x03891960 RET
+	0x03891964 LDP S0, S1, [X0 + 0x4]
+	0x03891968 MOV V2.16B, V0.16B
+	0x0389196C MOV V3.16B, V1.16B
+	0x03891970 RET
+	0x03891974 LDP S0, S1, [X0 + 0x4]
+	0x03891978 LDR V3, [X0 + 0xC]
+	0x0389197C MOV V2.16B, V0.16B
+	0x03891980 RET
+	0x03891984 LDP S0, S1, [X0 + 0x4]
+	0x03891988 LDR V3, [X0]
+	0x0389198C MOV V2.16B, V1.16B
+	0x03891990 RET
+	0x03891994 LDP S0, S1, [X0 + 0x4]
+	0x03891998 MOV V2.16B, V1.16B
+	0x0389199C MOV V3.16B, V0.16B
+	0x038919A0 RET
+	0x038919A4 LDP S0, S1, [X0 + 0x4]
+	0x038919A8 MOV V2.16B, V1.16B
+	0x038919AC MOV V3.16B, V1.16B
+	0x038919B0 RET
+
+ISIL:
+	001 And W10, W1, 0xFFFF
+	002 Or W13, W31, 0xFFFE000
+	003 Move X11, X1
+	004 ShiftRight X11, 16
+	005 And X11, X11, 0x7FFFFFFF
+	006 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	007 Move W13, W10
+	008 ShiftRight W13, 19
+	009 And W13, W13, 0x3FFFF
+	010 Move X12, X1
+	011 ShiftRight X12, 32
+	012 And X12, X12, 0x7FFF
+	013 Move S3, W13
+	014 Move W13, W11
+	015 ShiftRight W13, 19
+	016 And W13, W13, 0x3FFFF
+	017 Move X9, X1
+	018 ShiftRight X9, 48
+	019 And X9, X9, 0x7FFFFFFF
+	020 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	021 Move W13, W12
+	022 ShiftRight W13, 19
+	023 And W13, W13, 0x3FFFF
+	024 Move W14, 0xF800000
+	025 Move W9, W9
+	026 ShiftRight W9, 19
+	027 And W9, W9, 0x3FFFF
+	028 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	029 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	030 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	031 And V1, V3, V1
+	032 And V3, V3, V2
+	033 NotImplemented "Instruction MOVI not yet implemented."
+	034 NotImplemented "Instruction INVALID not yet implemented."
+	035 Move W15, 0x38800000
+	036 And V2, V2, V0
+	037 Move W14, 0xB8800000
+	038 Add S1, S1, S2
+	039 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	040 Add S0, S1, S0
+	041 Add S1, S1, S2
+	042 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	043 Add V1, V1, V2
+	044 Move W9, W10
+	045 ShiftRight W9, 16
+	046 And W9, W9, 0x7FFF
+	047 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	048 Move W10, W11
+	049 ShiftRight W10, 16
+	050 And W10, W10, 0x7FFF
+	051 NotImplemented "Instruction INVALID not yet implemented."
+	052 Move S1, W9
+	053 Move W11, W12
+	054 ShiftRight W11, 16
+	055 And W11, W11, 0x7FFF
+	056 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	057 Move X8, X1
+	058 ShiftRight X8, 32
+	059 And X8, X8, 0x7FFFFFFF
+	060 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	061 NotImplemented "Instruction MOVI not yet implemented."
+	062 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	063 And V1, V1, V2
+	064 Or V0, V0, V1
+	065 Move [X0], V0
+	066 Return 
+
+Method: System.Void .ctor(System.Double v)
+
+Disassembly:
+	0x038919B4 LDP S0, S1, [X0 + 0x4]
+	0x038919B8 LDR V3, [X0 + 0xC]
+	0x038919BC MOV V2.16B, V1.16B
+	0x038919C0 RET
+
+ISIL:
+	001 NotImplemented "Instruction INVALID not yet implemented."
+	002 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	003 Move [X0], V0
+	004 Return 
+
+Method: System.Void .ctor(Unity.Mathematics.double4 v)
+
+Disassembly:
+	0x038919C4 LDP S1, S2, [X0 + 0x8]
+	0x038919C8 LDP S3, S0, [X0]
+	0x038919CC RET
+	0x038919D0 STP S1, S2, [X0 + 0x8]
+	0x038919D4 STP S3, S0, [X0]
+	0x038919D8 RET
+	0x038919DC LDP S0, S1, [X0 + 0x4]
+
+ISIL:
+	001 NotImplemented "Instruction INVALID not yet implemented."
+	002 NotImplemented "Instruction INVALID not yet implemented."
+	003 NotImplemented "Instruction INVALID not yet implemented."
+	004 NotImplemented "Instruction INVALID not yet implemented."
+	005 Move [X0], S0
+	006 Move [X0+8], S1
+	007 Move [X0+8], S2
+	008 Move [X0+16], S3
+	009 Return 
+
+Method: Unity.Mathematics.float4 op_Implicit(System.Single v)
+
+Disassembly:
+	0x038919E0 LDR V2, [X0 + 0xC]
+	0x038919E4 MOV V3.16B, V0.16B
+	0x038919E8 RET
+	0x038919EC LDP S0, S1, [X0 + 0x4]
+
+ISIL:
+	001 Move V1, V0
+	002 Move V2, V0
+	003 Move V3, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float4 op_Explicit(System.Boolean v)
+
+Disassembly:
+	0x038919F0 LDR V2, [X0 + 0xC]
+	0x038919F4 MOV V3.16B, V1.16B
+	0x038919F8 RET
+	0x038919FC LDR V2, [X0 + 0xC]
+	0x03891A00 LDP S0, S1, [X0 + 0x4]
+	0x03891A04 MOV V3.16B, V2.16B
+	0x03891A08 RET
+	0x03891A0C LDP S2, S0, [X0]
+
+ISIL:
+	001 And W31, W0, 1
+	002 Move S0, W31
+	003 Move S1, 1
+	004 NotImplemented "Instruction FCSEL not yet implemented."
+	005 Move V1, V0
+	006 Move V2, V0
+	007 Move V3, V0
+	008 Return X0
+
+Method: Unity.Mathematics.float4 op_Explicit(Unity.Mathematics.bool4 v)
+
+Disassembly:
+	0x03891A10 LDR V1, [X0 + 0xC]
+	0x03891A14 MOV V3.16B, V2.16B
+	0x03891A18 RET
+	0x03891A1C LDP S2, S0, [X0]
+	0x03891A20 LDR V1, [X0 + 0xC]
+	0x03891A24 MOV V3.16B, V0.16B
+	0x03891A28 RET
+	0x03891A2C LDP S2, S0, [X0]
+	0x03891A30 LDP S3, S1, [X0 + 0x8]
+	0x03891A34 RET
+	0x03891A38 STP S2, S0, [X0]
+
+ISIL:
+	001 And X31, X0, 1
+	002 Move S3, 1
+	003 Move S4, W31
+	004 NotImplemented "Instruction FCSEL not yet implemented."
+	005 And X31, X0, 511
+	006 NotImplemented "Instruction FCSEL not yet implemented."
+	007 And X31, X0, 0x1FFFF
+	008 NotImplemented "Instruction FCSEL not yet implemented."
+	009 And X31, X0, 0x1FFFFFF
+	010 NotImplemented "Instruction FCSEL not yet implemented."
+	011 Return X0
+
+Method: Unity.Mathematics.float4 op_Implicit(System.Int32 v)
+
+Disassembly:
+	0x03891A3C STP S3, S1, [X0 + 0x8]
+	0x03891A40 RET
+	0x03891A44 LDR V1, [X0 + 0xC]
+	0x03891A48 LDP S2, S0, [X0]
+	0x03891A4C MOV V3.16B, V1.16B
+
+ISIL:
+	001 NotImplemented "Instruction SCVTF not yet implemented."
+	002 Move V1, V0
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Implicit(Unity.Mathematics.int4 v)
+
+Disassembly:
+	0x03891A50 RET
+	0x03891A54 LDP S3, S0, [X0]
+	0x03891A58 LDR V1, [X0 + 0xC]
+	0x03891A5C MOV V2.16B, V0.16B
+	0x03891A60 RET
+	0x03891A64 LDR V0, [X0 + 0x4]
+	0x03891A68 LDR V1, [X0 + 0xC]
+
+ISIL:
+	001 Move X8, X0
+	002 ShiftRight X8, 32
+	003 And X8, X8, 0x7FFFFFFF
+	004 Move X9, X1
+	005 ShiftRight X9, 32
+	006 And X9, X9, 0x7FFFFFFF
+	007 NotImplemented "Instruction SCVTF not yet implemented."
+	008 NotImplemented "Instruction SCVTF not yet implemented."
+	009 NotImplemented "Instruction SCVTF not yet implemented."
+	010 NotImplemented "Instruction SCVTF not yet implemented."
+	011 Return X0
+
+Method: Unity.Mathematics.float4 op_Implicit(System.UInt32 v)
+
+Disassembly:
+	0x03891A6C MOV V2.16B, V0.16B
+	0x03891A70 MOV V3.16B, V0.16B
+	0x03891A74 RET
+	0x03891A78 LDR V0, [X0 + 0x4]
+	0x03891A7C LDP S3, S1, [X0 + 0x8]
+
+ISIL:
+	001 NotImplemented "Instruction UCVTF not yet implemented."
+	002 Move V1, V0
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Implicit(Unity.Mathematics.uint4 v)
+
+Disassembly:
+	0x03891A80 MOV V2.16B, V0.16B
+	0x03891A84 RET
+	0x03891A88 LDR V0, [X0 + 0x4]
+	0x03891A8C LDR V1, [X0 + 0xC]
+	0x03891A90 MOV V2.16B, V0.16B
+	0x03891A94 MOV V3.16B, V1.16B
+	0x03891A98 RET
+
+ISIL:
+	001 Move X8, X0
+	002 ShiftRight X8, 32
+	003 And X8, X8, 0x7FFFFFFF
+	004 Move X9, X1
+	005 ShiftRight X9, 32
+	006 And X9, X9, 0x7FFFFFFF
+	007 NotImplemented "Instruction UCVTF not yet implemented."
+	008 NotImplemented "Instruction UCVTF not yet implemented."
+	009 NotImplemented "Instruction UCVTF not yet implemented."
+	010 NotImplemented "Instruction UCVTF not yet implemented."
+	011 Return X0
+
+Method: Unity.Mathematics.float4 op_Implicit(Unity.Mathematics.half v)
+
+Disassembly:
+	0x03891A9C LDP S2, S1, [X0 + 0x8]
+	0x03891AA0 LDP S3, S0, [X0]
+	0x03891AA4 RET
+	0x03891AA8 STP S2, S1, [X0 + 0x8]
+	0x03891AAC STP S3, S0, [X0]
+	0x03891AB0 RET
+	0x03891AB4 LDR V0, [X0 + 0x4]
+	0x03891AB8 LDP S2, S1, [X0 + 0x8]
+	0x03891ABC MOV V3.16B, V0.16B
+	0x03891AC0 RET
+	0x03891AC4 LDP S2, S1, [X0 + 0x8]
+	0x03891AC8 LDR V0, [X0 + 0x4]
+	0x03891ACC MOV V3.16B, V2.16B
+	0x03891AD0 RET
+	0x03891AD4 LDP S2, S1, [X0 + 0x8]
+	0x03891AD8 LDR V0, [X0 + 0x4]
+	0x03891ADC MOV V3.16B, V1.16B
+	0x03891AE0 RET
+	0x03891AE4 LDR V1, [X0 + 0xC]
+	0x03891AE8 LDP S3, S0, [X0]
+	0x03891AEC MOV V2.16B, V1.16B
+	0x03891AF0 RET
+	0x03891AF4 LDR V0, [X0 + 0x4]
+	0x03891AF8 LDR V1, [X0 + 0xC]
+	0x03891AFC MOV V3.16B, V0.16B
+	0x03891B00 MOV V2.16B, V1.16B
+	0x03891B04 RET
+
+ISIL:
+	001 And W8, W0, 0xFFFF
+	002 Move W9, 0xF800000
+	003 Move W10, 0xB8800000
+	004 Move S0, W10
+	005 And W10, W9, W8
+	006 Move W11, 0x38000000
+	007 NotImplemented "Instruction CMP not yet implemented."
+	008 NotImplemented "Instruction CSEL not yet implemented."
+	009 And W31, W9, W8
+	010 Move W9, W8
+	011 ShiftRight W9, 19
+	012 And W9, W9, 0x3FFFF
+	013 And W9, W9, 0xFFFE000
+	014 Add W9, W9, W10
+	015 Move W10, 0x38800000
+	016 Add W10, W9, W10
+	017 Move S1, W10
+	018 Add S0, S1, S0
+	019 Move W8, W8
+	020 ShiftRight W8, 16
+	021 And W8, W8, 0x7FFF
+	022 Add W9, W9, W11
+	023 Move W10, S0
+	024 NotImplemented "Instruction CSEL not yet implemented."
+	025 And W8, W8, 0x80000000
+	026 Or W8, W9, W8
+	027 Move S0, W8
+	028 Move V1, V0
+	029 Move V2, V0
+	030 Move V3, V0
+	031 Return X0
+
+Method: Unity.Mathematics.float4 op_Implicit(Unity.Mathematics.half4 v)
+
+Disassembly:
+	0x03891B08 LDP S3, S1, [X0 + 0x8]
+	0x03891B0C LDR V0, [X0 + 0x4]
+	0x03891B10 MOV V2.16B, V1.16B
+	0x03891B14 RET
+	0x03891B18 LDR V1, [X0 + 0xC]
+	0x03891B1C LDR V0, [X0 + 0x4]
+	0x03891B20 MOV V2.16B, V1.16B
+	0x03891B24 MOV V3.16B, V1.16B
+	0x03891B28 RET
+	0x03891B2C LDR V1, [X0]
+	0x03891B30 LDR V0, [X0 + 0x8]
+	0x03891B34 MOV V2.16B, V1.16B
+	0x03891B38 MOV V3.16B, V1.16B
+	0x03891B3C RET
+	0x03891B40 LDR V1, [X0]
+	0x03891B44 LDP S3, S0, [X0 + 0x4]
+	0x03891B48 MOV V2.16B, V1.16B
+	0x03891B4C RET
+	0x03891B50 LDR V0, [X0 + 0x8]
+	0x03891B54 LDR V1, [X0]
+	0x03891B58 MOV V3.16B, V0.16B
+	0x03891B5C MOV V2.16B, V1.16B
+	0x03891B60 RET
+	0x03891B64 LDR V1, [X0]
+	0x03891B68 LDP S0, S3, [X0 + 0x8]
+	0x03891B6C MOV V2.16B, V1.16B
+	0x03891B70 RET
+	0x03891B74 LDR V1, [X0]
+	0x03891B78 LDP S2, S0, [X0 + 0x4]
+	0x03891B7C MOV V3.16B, V1.16B
+	0x03891B80 RET
+	0x03891B84 LDP S2, S0, [X0 + 0x4]
+	0x03891B88 LDR V1, [X0]
+	0x03891B8C MOV V3.16B, V2.16B
+	0x03891B90 RET
+	0x03891B94 LDP S2, S0, [X0 + 0x4]
+	0x03891B98 LDR V1, [X0]
+	0x03891B9C MOV V3.16B, V0.16B
+	0x03891BA0 RET
+	0x03891BA4 LDP S1, S2, [X0]
+	0x03891BA8 LDP S0, S3, [X0 + 0x8]
+	0x03891BAC RET
+	0x03891BB0 STP S1, S2, [X0]
+	0x03891BB4 STP S0, S3, [X0 + 0x8]
+	0x03891BB8 RET
+	0x03891BBC LDR V0, [X0 + 0x8]
+
+ISIL:
+	001 And W10, W0, 0xFFFF
+	002 Move W14, 0xF800000
+	003 Move X11, X0
+	004 ShiftRight X11, 16
+	005 And X11, X11, 0x7FFFFFFF
+	006 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	007 Move W14, W10
+	008 ShiftRight W14, 16
+	009 And W14, W14, 0x7FFF
+	010 Move X12, X0
+	011 ShiftRight X12, 32
+	012 And X12, X12, 0x7FFF
+	013 Move S4, W14
+	014 Move W14, W11
+	015 ShiftRight W14, 19
+	016 And W14, W14, 0x3FFFF
+	017 Move W11, W11
+	018 ShiftRight W11, 16
+	019 And W11, W11, 0x7FFF
+	020 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	021 Move W11, W12
+	022 ShiftRight W11, 19
+	023 And W11, W11, 0x3FFFF
+	024 Move W12, W12
+	025 ShiftRight W12, 16
+	026 And W12, W12, 0x7FFF
+	027 Move X8, X0
+	028 ShiftRight X8, 32
+	029 And X8, X8, 0x7FFFFFFF
+	030 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	031 NotImplemented "Instruction MOVI not yet implemented."
+	032 Move W10, W10
+	033 ShiftRight W10, 19
+	034 And W10, W10, 0x3FFFF
+	035 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	036 And V2, V4, V2
+	037 Move S4, W10
+	038 Move X9, X0
+	039 ShiftRight X9, 48
+	040 And X9, X9, 0x7FFFFFFF
+	041 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	042 Or W13, W31, 0xFFFE000
+	043 Move W9, W9
+	044 ShiftRight W9, 19
+	045 And W9, W9, 0x3FFFF
+	046 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	047 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	048 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	049 And V1, V4, V1
+	050 And V4, V4, V3
+	051 NotImplemented "Instruction MOVI not yet implemented."
+	052 NotImplemented "Instruction INVALID not yet implemented."
+	053 Move W15, 0x38800000
+	054 And V3, V3, V0
+	055 Move W13, 0xB8800000
+	056 Add S1, S1, S3
+	057 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	058 Add S0, S1, S0
+	059 Add S1, S1, S3
+	060 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	061 Add V1, V1, V3
+	062 NotImplemented "Instruction UNIMPLEMENTED not yet implemented."
+	063 NotImplemented "Instruction INVALID not yet implemented."
+	064 Or V0, V0, V2
+	065 Move S1, V0.S[1]
+	066 Move S2, V0.S[2]
+	067 Move S3, V0.S[3]
+	068 Return X0
+
+Method: Unity.Mathematics.float4 op_Explicit(System.Double v)
+
+Disassembly:
+	0x03891BC0 LDR V1, [X0]
+	0x03891BC4 MOV V2.16B, V0.16B
+	0x03891BC8 MOV V3.16B, V1.16B
+	0x03891BCC RET
+	0x03891BD0 LDP S3, S0, [X0 + 0x4]
+
+ISIL:
+	001 NotImplemented "Instruction INVALID not yet implemented."
+	002 Move V1, V0
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Explicit(Unity.Mathematics.double4 v)
+
+Disassembly:
+	0x03891BD4 LDR V1, [X0]
+	0x03891BD8 MOV V2.16B, V0.16B
+	0x03891BDC RET
+	0x03891BE0 LDR V0, [X0 + 0x8]
+	0x03891BE4 LDR V1, [X0]
+
+ISIL:
+	001 NotImplemented "Instruction INVALID not yet implemented."
+	002 NotImplemented "Instruction INVALID not yet implemented."
+	003 NotImplemented "Instruction INVALID not yet implemented."
+	004 NotImplemented "Instruction INVALID not yet implemented."
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Multiply(Unity.Mathematics.float4 lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891BE8 MOV V2.16B, V0.16B
+	0x03891BEC MOV V3.16B, V0.16B
+	0x03891BF0 RET
+	0x03891BF4 LDP S0, S3, [X0 + 0x8]
+	0x03891BF8 LDR V1, [X0]
+
+ISIL:
+	001 Multiply S0, S0, S4
+	002 Multiply S1, S1, S5
+	003 Multiply S2, S2, S6
+	004 Multiply S3, S3, S7
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Multiply(Unity.Mathematics.float4 lhs, System.Single rhs)
+
+Disassembly:
+	0x03891BFC MOV V2.16B, V0.16B
+	0x03891C00 RET
+	0x03891C04 LDR V1, [X0]
+	0x03891C08 LDP S0, S2, [X0 + 0x8]
+	0x03891C0C MOV V3.16B, V1.16B
+
+ISIL:
+	001 Multiply S0, S0, S4
+	002 Multiply S1, S1, S4
+	003 Multiply S2, S2, S4
+	004 Multiply S3, S3, S4
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Multiply(System.Single lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891C10 RET
+	0x03891C14 LDP S0, S2, [X0 + 0x8]
+	0x03891C18 LDP S1, S3, [X0]
+	0x03891C1C RET
+	0x03891C20 STP S0, S2, [X0 + 0x8]
+	0x03891C24 STP S1, S3, [X0]
+
+ISIL:
+	001 Multiply S5, S1, S0
+	002 Multiply S1, S2, S0
+	003 Multiply S2, S3, S0
+	004 Multiply S3, S4, S0
+	005 Move V0, V5
+	006 Return X0
+
+Method: Unity.Mathematics.float4 op_Addition(Unity.Mathematics.float4 lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891C28 RET
+	0x03891C2C LDP S0, S2, [X0 + 0x8]
+	0x03891C30 LDR V1, [X0]
+	0x03891C34 MOV V3.16B, V0.16B
+	0x03891C38 RET
+
+ISIL:
+	001 Add S0, S0, S4
+	002 Add S1, S1, S5
+	003 Add S2, S2, S6
+	004 Add S3, S3, S7
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Addition(Unity.Mathematics.float4 lhs, System.Single rhs)
+
+Disassembly:
+	0x03891C3C LDP S0, S2, [X0 + 0x8]
+	0x03891C40 LDR V1, [X0]
+	0x03891C44 MOV V3.16B, V2.16B
+	0x03891C48 RET
+	0x03891C4C LDR V2, [X0]
+
+ISIL:
+	001 Add S0, S0, S4
+	002 Add S1, S1, S4
+	003 Add S2, S2, S4
+	004 Add S3, S3, S4
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Addition(System.Single lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891C50 LDP S1, S0, [X0 + 0x4]
+	0x03891C54 MOV V3.16B, V2.16B
+	0x03891C58 RET
+	0x03891C5C LDP S1, S0, [X0 + 0x4]
+	0x03891C60 LDR V2, [X0]
+	0x03891C64 MOV V3.16B, V1.16B
+
+ISIL:
+	001 Add S5, S1, S0
+	002 Add S1, S2, S0
+	003 Add S2, S3, S0
+	004 Add S3, S4, S0
+	005 Move V0, V5
+	006 Return X0
+
+Method: Unity.Mathematics.float4 op_Subtraction(Unity.Mathematics.float4 lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891C68 RET
+	0x03891C6C LDP S1, S0, [X0 + 0x4]
+	0x03891C70 LDR V2, [X0]
+	0x03891C74 MOV V3.16B, V0.16B
+	0x03891C78 RET
+
+ISIL:
+	001 Subtract S0, S0, S4
+	002 Subtract S1, S1, S5
+	003 Subtract S2, S2, S6
+	004 Subtract S3, S3, S7
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Subtraction(Unity.Mathematics.float4 lhs, System.Single rhs)
+
+Disassembly:
+	0x03891C7C LDP S2, S1, [X0]
+	0x03891C80 LDP S0, S3, [X0 + 0x8]
+	0x03891C84 RET
+	0x03891C88 STP S2, S1, [X0]
+	0x03891C8C STP S0, S3, [X0 + 0x8]
+
+ISIL:
+	001 Subtract S0, S0, S4
+	002 Subtract S1, S1, S4
+	003 Subtract S2, S2, S4
+	004 Subtract S3, S3, S4
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Subtraction(System.Single lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891C90 RET
+	0x03891C94 LDP S1, S0, [X0 + 0x4]
+	0x03891C98 LDR V3, [X0]
+	0x03891C9C MOV V2.16B, V1.16B
+	0x03891CA0 RET
+	0x03891CA4 LDP S1, S0, [X0 + 0x4]
+
+ISIL:
+	001 Subtract S5, S0, S1
+	002 Subtract S1, S0, S2
+	003 Subtract S2, S0, S3
+	004 Subtract S3, S0, S4
+	005 Move V0, V5
+	006 Return X0
+
+Method: Unity.Mathematics.float4 op_Division(Unity.Mathematics.float4 lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891CA8 MOV V2.16B, V1.16B
+	0x03891CAC MOV V3.16B, V1.16B
+	0x03891CB0 RET
+	0x03891CB4 LDP S1, S0, [X0 + 0x4]
+	0x03891CB8 MOV V2.16B, V1.16B
+
+ISIL:
+	001 NotImplemented "Instruction FDIV not yet implemented."
+	002 NotImplemented "Instruction FDIV not yet implemented."
+	003 NotImplemented "Instruction FDIV not yet implemented."
+	004 NotImplemented "Instruction FDIV not yet implemented."
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Division(Unity.Mathematics.float4 lhs, System.Single rhs)
+
+Disassembly:
+	0x03891CBC MOV V3.16B, V0.16B
+	0x03891CC0 RET
+	0x03891CC4 LDP S1, S0, [X0 + 0x4]
+	0x03891CC8 LDR V3, [X0 + 0xC]
+	0x03891CCC MOV V2.16B, V1.16B
+
+ISIL:
+	001 NotImplemented "Instruction FDIV not yet implemented."
+	002 NotImplemented "Instruction FDIV not yet implemented."
+	003 NotImplemented "Instruction FDIV not yet implemented."
+	004 NotImplemented "Instruction FDIV not yet implemented."
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_Division(System.Single lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891CD0 RET
+	0x03891CD4 LDP S1, S0, [X0 + 0x4]
+	0x03891CD8 LDR V3, [X0]
+	0x03891CDC MOV V2.16B, V0.16B
+	0x03891CE0 RET
+	0x03891CE4 LDP S1, S0, [X0 + 0x4]
+
+ISIL:
+	001 NotImplemented "Instruction FDIV not yet implemented."
+	002 NotImplemented "Instruction FDIV not yet implemented."
+	003 NotImplemented "Instruction FDIV not yet implemented."
+	004 NotImplemented "Instruction FDIV not yet implemented."
+	005 Move V0, V5
+	006 Return X0
+
+Method: Unity.Mathematics.float4 op_Modulus(Unity.Mathematics.float4 lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891CE8 MOV V2.16B, V0.16B
+	0x03891CEC MOV V3.16B, V1.16B
+	0x03891CF0 RET
+	0x03891CF4 LDP S1, S0, [X0 + 0x4]
+	0x03891CF8 MOV V2.16B, V0.16B
+	0x03891CFC MOV V3.16B, V0.16B
+	0x03891D00 RET
+	0x03891D04 LDP S1, S0, [X0 + 0x4]
+	0x03891D08 LDR V3, [X0 + 0xC]
+	0x03891D0C MOV V2.16B, V0.16B
+	0x03891D10 RET
+	0x03891D14 LDP S0, S2, [X0 + 0x8]
+	0x03891D18 LDP S3, S1, [X0]
+	0x03891D1C RET
+	0x03891D20 STP S0, S2, [X0 + 0x8]
+	0x03891D24 STP S3, S1, [X0]
+	0x03891D28 RET
+	0x03891D2C LDP S1, S0, [X0 + 0x4]
+	0x03891D30 LDR V2, [X0 + 0xC]
+	0x03891D34 MOV V3.16B, V1.16B
+	0x03891D38 RET
+	0x03891D3C LDP S1, S0, [X0 + 0x4]
+	0x03891D40 LDR V2, [X0 + 0xC]
+	0x03891D44 MOV V3.16B, V0.16B
+	0x03891D48 RET
+	0x03891D4C LDR V2, [X0 + 0xC]
+	0x03891D50 LDP S1, S0, [X0 + 0x4]
+	0x03891D54 MOV V3.16B, V2.16B
+	0x03891D58 RET
+	0x03891D5C LDR V0, [X0 + 0x8]
+	0x03891D60 LDR V2, [X0]
+	0x03891D64 MOV V1.16B, V0.16B
+	0x03891D68 MOV V3.16B, V2.16B
+	0x03891D6C RET
+	0x03891D70 LDP S3, S0, [X0 + 0x4]
+
+ISIL:
+	001 Move [X31-64], D14
+	002 Move [X31+8], D13
+	003 Move [X31+16], D12
+	004 Move [X31+24], D11
+	005 Move [X31+32], D10
+	006 Move [X31+40], D9
+	007 Move [X31+48], D8
+	008 Move [X31+56], X30
+	009 Move V13, V1
+	010 Move V1, V4
+	011 Move V8, V7
+	012 Move V9, V6
+	013 Move V10, V5
+	014 Move V11, V3
+	015 Move V12, V2
+	016 Call 0x3EB2BA0
+	017 Move V14, V0
+	018 Move V0, V13
+	019 Move V1, V10
+	020 Call 0x3EB2BA0
+	021 Move V10, V0
+	022 Move V0, V12
+	023 Move V1, V9
+	024 Call 0x3EB2BA0
+	025 Move V9, V0
+	026 Move V0, V11
+	027 Move V1, V8
+	028 Call 0x3EB2BA0
+	029 Move V1, V10
+	030 Move V2, V9
+	031 Move X30, [X31+56]
+	032 Move D9, [X31+40]
+	033 Move D8, [X31+48]
+	034 Move D11, [X31+24]
+	035 Move D10, [X31+32]
+	036 Move D13, [X31+8]
+	037 Move D12, [X31+16]
+	038 Move V3, V0
+	039 Move V0, V14
+	040 Move V14, [X31+64]
+	041 Return X0
+
+Method: Unity.Mathematics.float4 op_Modulus(Unity.Mathematics.float4 lhs, System.Single rhs)
+
+Disassembly:
+	0x03891D74 LDR V2, [X0]
+	0x03891D78 MOV V1.16B, V0.16B
+	0x03891D7C RET
+	0x03891D80 LDR V0, [X0 + 0x8]
+	0x03891D84 LDR V2, [X0]
+	0x03891D88 MOV V1.16B, V0.16B
+	0x03891D8C MOV V3.16B, V0.16B
+	0x03891D90 RET
+	0x03891D94 LDP S0, S3, [X0 + 0x8]
+	0x03891D98 LDR V2, [X0]
+	0x03891D9C MOV V1.16B, V0.16B
+	0x03891DA0 RET
+	0x03891DA4 LDP S2, S0, [X0 + 0x4]
+	0x03891DA8 LDR V3, [X0]
+	0x03891DAC MOV V1.16B, V0.16B
+	0x03891DB0 RET
+	0x03891DB4 LDUR V2, [X0 + 0x4]
+	0x03891DB8 MOV S0, V2.S[1]
+	0x03891DBC MOV V1.16B, V0.16B
+	0x03891DC0 MOV V3.16B, V2.16B
+	0x03891DC4 RET
+	0x03891DC8 LDUR V2, [X0 + 0x4]
+	0x03891DCC MOV S0, V2.S[1]
+	0x03891DD0 MOV V1.16B, V0.16B
+	0x03891DD4 MOV V3.16B, V0.16B
+	0x03891DD8 RET
+	0x03891DDC LDP S2, S0, [X0 + 0x4]
+	0x03891DE0 LDR V3, [X0 + 0xC]
+	0x03891DE4 MOV V1.16B, V0.16B
+	0x03891DE8 RET
+	0x03891DEC LDR V0, [X0 + 0x8]
+
+ISIL:
+	001 Move [X31-48], D12
+	002 Move [X31+8], D11
+	003 Move [X31+16], D10
+	004 Move [X31+24], D9
+	005 Move [X31+32], D8
+	006 Move [X31+40], X30
+	007 Move V11, V1
+	008 Move V1, V4
+	009 Move V8, V4
+	010 Move V9, V3
+	011 Move V10, V2
+	012 Call 0x3EB2BA0
+	013 Move V12, V0
+	014 Move V0, V11
+	015 Move V1, V8
+	016 Call 0x3EB2BA0
+	017 Move V11, V0
+	018 Move V0, V10
+	019 Move V1, V8
+	020 Call 0x3EB2BA0
+	021 Move V10, V0
+	022 Move V0, V9
+	023 Move V1, V8
+	024 Call 0x3EB2BA0
+	025 Move V1, V11
+	026 Move V2, V10
+	027 Move X30, [X31+40]
+	028 Move D9, [X31+24]
+	029 Move D8, [X31+32]
+	030 Move D11, [X31+8]
+	031 Move D10, [X31+16]
+	032 Move V3, V0
+	033 Move V0, V12
+	034 Move V12, [X31+48]
+	035 Return X0
+
+Method: Unity.Mathematics.float4 op_Modulus(System.Single lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891DF0 LDR V3, [X0]
+	0x03891DF4 MOV V1.16B, V0.16B
+	0x03891DF8 MOV V2.16B, V0.16B
+	0x03891DFC RET
+	0x03891E00 LDP S3, S0, [X0 + 0x4]
+	0x03891E04 MOV V1.16B, V0.16B
+	0x03891E08 MOV V2.16B, V0.16B
+	0x03891E0C RET
+	0x03891E10 LDR V0, [X0 + 0x8]
+	0x03891E14 MOV V1.16B, V0.16B
+	0x03891E18 MOV V2.16B, V0.16B
+	0x03891E1C MOV V3.16B, V0.16B
+	0x03891E20 RET
+	0x03891E24 LDP S0, S3, [X0 + 0x8]
+	0x03891E28 MOV V1.16B, V0.16B
+	0x03891E2C MOV V2.16B, V0.16B
+	0x03891E30 RET
+	0x03891E34 LDP S0, S2, [X0 + 0x8]
+	0x03891E38 LDR V3, [X0]
+	0x03891E3C MOV V1.16B, V0.16B
+	0x03891E40 RET
+	0x03891E44 LDP S0, S2, [X0 + 0x8]
+	0x03891E48 LDR V3, [X0 + 0x4]
+	0x03891E4C MOV V1.16B, V0.16B
+	0x03891E50 RET
+	0x03891E54 LDR V0, [X0 + 0x8]
+	0x03891E58 MOV S2, V0.S[1]
+	0x03891E5C MOV V1.16B, V0.16B
+	0x03891E60 MOV V3.16B, V0.16B
+	0x03891E64 RET
+
+ISIL:
+	001 Move [X31-48], D12
+	002 Move [X31+8], D11
+	003 Move [X31+16], D10
+	004 Move [X31+24], D9
+	005 Move [X31+32], D8
+	006 Move [X31+40], X30
+	007 Move V8, V4
+	008 Move V9, V3
+	009 Move V10, V2
+	010 Move V11, V0
+	011 Call 0x3EB2BA0
+	012 Move V12, V0
+	013 Move V0, V11
+	014 Move V1, V10
+	015 Call 0x3EB2BA0
+	016 Move V10, V0
+	017 Move V0, V11
+	018 Move V1, V9
+	019 Call 0x3EB2BA0
+	020 Move V9, V0
+	021 Move V0, V11
+	022 Move V1, V8
+	023 Call 0x3EB2BA0
+	024 Move V1, V10
+	025 Move V2, V9
+	026 Move X30, [X31+40]
+	027 Move D9, [X31+24]
+	028 Move D8, [X31+32]
+	029 Move D11, [X31+8]
+	030 Move D10, [X31+16]
+	031 Move V3, V0
+	032 Move V0, V12
+	033 Move V12, [X31+48]
+	034 Return X0
+
+Method: Unity.Mathematics.float4 op_Increment(Unity.Mathematics.float4 val)
+
+Disassembly:
+	0x03891E68 LDR V0, [X0 + 0x8]
+	0x03891E6C MOV S2, V0.S[1]
+	0x03891E70 MOV V1.16B, V0.16B
+	0x03891E74 MOV V3.16B, V2.16B
+	0x03891E78 RET
+	0x03891E7C LDR V2, [X0]
+
+ISIL:
+	001 Move S4, 1
+	002 Add S0, S0, S4
+	003 Add S1, S1, S4
+	004 Add S2, S2, S4
+	005 Add S3, S3, S4
+	006 Return X0
+
+Method: Unity.Mathematics.float4 op_Decrement(Unity.Mathematics.float4 val)
+
+Disassembly:
+	0x03891E80 LDP S0, S1, [X0 + 0x8]
+	0x03891E84 MOV V3.16B, V2.16B
+	0x03891E88 RET
+	0x03891E8C LDP S0, S1, [X0 + 0x8]
+	0x03891E90 LDP S2, S3, [X0]
+	0x03891E94 RET
+
+ISIL:
+	001 Move S4, -1
+	002 Add S0, S0, S4
+	003 Add S1, S1, S4
+	004 Add S2, S2, S4
+	005 Add S3, S3, S4
+	006 Return X0
+
+Method: Unity.Mathematics.bool4 op_LessThan(Unity.Mathematics.float4 lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891E98 STP S0, S1, [X0 + 0x8]
+	0x03891E9C STP S2, S3, [X0]
+	0x03891EA0 RET
+	0x03891EA4 LDP S0, S1, [X0 + 0x8]
+	0x03891EA8 LDR V2, [X0]
+	0x03891EAC MOV V3.16B, V0.16B
+	0x03891EB0 RET
+	0x03891EB4 LDP S0, S1, [X0 + 0x8]
+	0x03891EB8 LDR V2, [X0]
+	0x03891EBC MOV V3.16B, V1.16B
+	0x03891EC0 RET
+	0x03891EC4 LDP S0, S1, [X0 + 0x8]
+	0x03891EC8 LDP S3, S2, [X0]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_LessThan(Unity.Mathematics.float4 lhs, System.Single rhs)
+
+Disassembly:
+	0x03891ECC RET
+	0x03891ED0 STP S0, S1, [X0 + 0x8]
+	0x03891ED4 STP S3, S2, [X0]
+	0x03891ED8 RET
+	0x03891EDC LDR V2, [X0 + 0x4]
+	0x03891EE0 LDP S0, S1, [X0 + 0x8]
+	0x03891EE4 MOV V3.16B, V2.16B
+	0x03891EE8 RET
+	0x03891EEC LDP S0, S1, [X0 + 0x8]
+	0x03891EF0 LDR V2, [X0 + 0x4]
+	0x03891EF4 MOV V3.16B, V0.16B
+	0x03891EF8 RET
+	0x03891EFC LDP S0, S1, [X0 + 0x8]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_LessThan(System.Single lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891F00 LDR V2, [X0 + 0x4]
+	0x03891F04 MOV V3.16B, V1.16B
+	0x03891F08 RET
+	0x03891F0C LDP S0, S1, [X0 + 0x8]
+	0x03891F10 LDR V3, [X0]
+	0x03891F14 MOV V2.16B, V0.16B
+	0x03891F18 RET
+	0x03891F1C LDP S0, S1, [X0 + 0x8]
+	0x03891F20 LDR V3, [X0 + 0x4]
+	0x03891F24 MOV V2.16B, V0.16B
+	0x03891F28 RET
+	0x03891F2C LDP S0, S1, [X0 + 0x8]
+	0x03891F30 MOV V2.16B, V0.16B
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_LessThanOrEqual(Unity.Mathematics.float4 lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891F34 MOV V3.16B, V0.16B
+	0x03891F38 RET
+	0x03891F3C LDP S0, S1, [X0 + 0x8]
+	0x03891F40 MOV V2.16B, V0.16B
+	0x03891F44 MOV V3.16B, V1.16B
+	0x03891F48 RET
+	0x03891F4C LDP S0, S1, [X0 + 0x8]
+	0x03891F50 LDR V3, [X0]
+	0x03891F54 MOV V2.16B, V1.16B
+	0x03891F58 RET
+	0x03891F5C LDP S0, S1, [X0 + 0x8]
+	0x03891F60 LDR V3, [X0 + 0x4]
+	0x03891F64 MOV V2.16B, V1.16B
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_LessThanOrEqual(Unity.Mathematics.float4 lhs, System.Single rhs)
+
+Disassembly:
+	0x03891F68 RET
+	0x03891F6C LDP S0, S1, [X0 + 0x8]
+	0x03891F70 MOV V2.16B, V1.16B
+	0x03891F74 MOV V3.16B, V0.16B
+	0x03891F78 RET
+	0x03891F7C LDP S0, S1, [X0 + 0x8]
+	0x03891F80 MOV V2.16B, V1.16B
+	0x03891F84 MOV V3.16B, V1.16B
+	0x03891F88 RET
+	0x03891F8C LDR V1, [X0]
+	0x03891F90 LDR V0, [X0 + 0xC]
+	0x03891F94 MOV V2.16B, V1.16B
+	0x03891F98 MOV V3.16B, V1.16B
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_LessThanOrEqual(System.Single lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891F9C RET
+	0x03891FA0 LDP S1, S3, [X0]
+	0x03891FA4 LDR V0, [X0 + 0xC]
+	0x03891FA8 MOV V2.16B, V1.16B
+	0x03891FAC RET
+	0x03891FB0 LDR V1, [X0]
+	0x03891FB4 LDP S3, S0, [X0 + 0x8]
+	0x03891FB8 MOV V2.16B, V1.16B
+	0x03891FBC RET
+	0x03891FC0 LDR V0, [X0 + 0xC]
+	0x03891FC4 LDR V1, [X0]
+	0x03891FC8 MOV V3.16B, V0.16B
+	0x03891FCC MOV V2.16B, V1.16B
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_GreaterThan(Unity.Mathematics.float4 lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03891FD0 RET
+	0x03891FD4 LDP S1, S2, [X0]
+	0x03891FD8 LDR V0, [X0 + 0xC]
+	0x03891FDC MOV V3.16B, V1.16B
+	0x03891FE0 RET
+	0x03891FE4 LDP S1, S2, [X0]
+	0x03891FE8 LDR V0, [X0 + 0xC]
+	0x03891FEC MOV V3.16B, V2.16B
+	0x03891FF0 RET
+	0x03891FF4 LDP S1, S2, [X0]
+	0x03891FF8 LDP S3, S0, [X0 + 0x8]
+	0x03891FFC RET
+	0x03892000 STP S1, S2, [X0]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_GreaterThan(Unity.Mathematics.float4 lhs, System.Single rhs)
+
+Disassembly:
+	0x03892004 STP S3, S0, [X0 + 0x8]
+	0x03892008 RET
+	0x0389200C LDR V0, [X0 + 0xC]
+	0x03892010 LDP S1, S2, [X0]
+	0x03892014 MOV V3.16B, V0.16B
+	0x03892018 RET
+	0x0389201C LDR V1, [X0]
+	0x03892020 LDP S2, S0, [X0 + 0x8]
+	0x03892024 MOV V3.16B, V1.16B
+	0x03892028 RET
+	0x0389202C LDP S2, S0, [X0 + 0x8]
+	0x03892030 LDP S1, S3, [X0]
+	0x03892034 RET
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_GreaterThan(System.Single lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03892038 STP S2, S0, [X0 + 0x8]
+	0x0389203C STP S1, S3, [X0]
+	0x03892040 RET
+	0x03892044 LDP S2, S0, [X0 + 0x8]
+	0x03892048 LDR V1, [X0]
+	0x0389204C MOV V3.16B, V2.16B
+	0x03892050 RET
+	0x03892054 LDP S2, S0, [X0 + 0x8]
+	0x03892058 LDR V1, [X0]
+	0x0389205C MOV V3.16B, V0.16B
+	0x03892060 RET
+	0x03892064 LDR V0, [X0 + 0xC]
+	0x03892068 LDR V1, [X0]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_GreaterThanOrEqual(Unity.Mathematics.float4 lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x0389206C MOV V2.16B, V0.16B
+	0x03892070 MOV V3.16B, V1.16B
+	0x03892074 RET
+	0x03892078 LDR V0, [X0 + 0xC]
+	0x0389207C LDP S1, S3, [X0]
+	0x03892080 MOV V2.16B, V0.16B
+	0x03892084 RET
+	0x03892088 LDP S3, S0, [X0 + 0x8]
+	0x0389208C LDR V1, [X0]
+	0x03892090 MOV V2.16B, V0.16B
+	0x03892094 RET
+	0x03892098 LDR V0, [X0 + 0xC]
+	0x0389209C LDR V1, [X0]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_GreaterThanOrEqual(Unity.Mathematics.float4 lhs, System.Single rhs)
+
+Disassembly:
+	0x038920A0 MOV V2.16B, V0.16B
+	0x038920A4 MOV V3.16B, V0.16B
+	0x038920A8 RET
+	0x038920AC LDP S2, S1, [X0]
+	0x038920B0 LDR V0, [X0 + 0xC]
+	0x038920B4 MOV V3.16B, V2.16B
+	0x038920B8 RET
+	0x038920BC LDP S2, S1, [X0]
+	0x038920C0 LDR V0, [X0 + 0xC]
+	0x038920C4 MOV V3.16B, V1.16B
+	0x038920C8 RET
+	0x038920CC LDP S2, S1, [X0]
+	0x038920D0 LDP S3, S0, [X0 + 0x8]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_GreaterThanOrEqual(System.Single lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x038920D4 RET
+	0x038920D8 STP S2, S1, [X0]
+	0x038920DC STP S3, S0, [X0 + 0x8]
+	0x038920E0 RET
+	0x038920E4 LDR V0, [X0 + 0xC]
+	0x038920E8 LDP S2, S1, [X0]
+	0x038920EC MOV V3.16B, V0.16B
+	0x038920F0 RET
+	0x038920F4 LDP S3, S1, [X0]
+	0x038920F8 LDR V0, [X0 + 0xC]
+	0x038920FC MOV V2.16B, V1.16B
+	0x03892100 RET
+	0x03892104 LDR V1, [X0 + 0x4]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.float4 op_UnaryNegation(Unity.Mathematics.float4 val)
+
+Disassembly:
+	0x03892108 LDR V0, [X0 + 0xC]
+	0x0389210C MOV V2.16B, V1.16B
+	0x03892110 MOV V3.16B, V1.16B
+	0x03892114 RET
+	0x03892118 LDR V1, [X0 + 0x4]
+
+ISIL:
+	001 NotImplemented "Instruction FNEG not yet implemented."
+	002 NotImplemented "Instruction FNEG not yet implemented."
+	003 NotImplemented "Instruction FNEG not yet implemented."
+	004 NotImplemented "Instruction FNEG not yet implemented."
+	005 Return X0
+
+Method: Unity.Mathematics.float4 op_UnaryPlus(Unity.Mathematics.float4 val)
+
+Disassembly:
+	0x0389211C LDP S3, S0, [X0 + 0x8]
+
+ISIL:
+	001 Return X0
+
+Method: Unity.Mathematics.bool4 op_Equality(Unity.Mathematics.float4 lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03892120 MOV V2.16B, V1.16B
+	0x03892124 RET
+	0x03892128 LDR V0, [X0 + 0xC]
+	0x0389212C LDR V1, [X0 + 0x4]
+	0x03892130 MOV V3.16B, V0.16B
+	0x03892134 MOV V2.16B, V1.16B
+	0x03892138 RET
+	0x0389213C LDP S2, S0, [X0 + 0x8]
+	0x03892140 LDP S3, S1, [X0]
+	0x03892144 RET
+	0x03892148 STP S2, S0, [X0 + 0x8]
+	0x0389214C STP S3, S1, [X0]
+	0x03892150 RET
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_Equality(Unity.Mathematics.float4 lhs, System.Single rhs)
+
+Disassembly:
+	0x03892154 LDR V1, [X0 + 0x4]
+	0x03892158 LDP S2, S0, [X0 + 0x8]
+	0x0389215C MOV V3.16B, V1.16B
+	0x03892160 RET
+	0x03892164 LDP S2, S0, [X0 + 0x8]
+	0x03892168 LDR V1, [X0 + 0x4]
+	0x0389216C MOV V3.16B, V2.16B
+	0x03892170 RET
+	0x03892174 LDP S2, S0, [X0 + 0x8]
+	0x03892178 LDR V1, [X0 + 0x4]
+	0x0389217C MOV V3.16B, V0.16B
+	0x03892180 RET
+	0x03892184 LDR V0, [X0 + 0xC]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_Equality(System.Single lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03892188 LDP S3, S1, [X0]
+	0x0389218C MOV V2.16B, V0.16B
+	0x03892190 RET
+	0x03892194 LDR V0, [X0 + 0xC]
+	0x03892198 LDR V1, [X0 + 0x4]
+	0x0389219C MOV V2.16B, V0.16B
+	0x038921A0 MOV V3.16B, V1.16B
+	0x038921A4 RET
+	0x038921A8 LDP S3, S0, [X0 + 0x8]
+	0x038921AC LDR V1, [X0 + 0x4]
+	0x038921B0 MOV V2.16B, V0.16B
+	0x038921B4 RET
+	0x038921B8 LDR V0, [X0 + 0xC]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_Inequality(Unity.Mathematics.float4 lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x038921BC LDR V1, [X0 + 0x4]
+	0x038921C0 MOV V2.16B, V0.16B
+	0x038921C4 MOV V3.16B, V0.16B
+	0x038921C8 RET
+	0x038921CC LDR V2, [X0]
+	0x038921D0 LDP S1, S0, [X0 + 0x8]
+	0x038921D4 MOV V3.16B, V2.16B
+	0x038921D8 RET
+	0x038921DC LDP S1, S0, [X0 + 0x8]
+	0x038921E0 LDP S2, S3, [X0]
+	0x038921E4 RET
+	0x038921E8 STP S1, S0, [X0 + 0x8]
+	0x038921EC STP S2, S3, [X0]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_Inequality(Unity.Mathematics.float4 lhs, System.Single rhs)
+
+Disassembly:
+	0x038921F0 RET
+	0x038921F4 LDP S1, S0, [X0 + 0x8]
+	0x038921F8 LDR V2, [X0]
+	0x038921FC MOV V3.16B, V1.16B
+	0x03892200 RET
+	0x03892204 LDP S1, S0, [X0 + 0x8]
+	0x03892208 LDR V2, [X0]
+	0x0389220C MOV V3.16B, V0.16B
+	0x03892210 RET
+	0x03892214 LDP S1, S0, [X0 + 0x8]
+	0x03892218 LDP S3, S2, [X0]
+	0x0389221C RET
+	0x03892220 STP S1, S0, [X0 + 0x8]
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.bool4 op_Inequality(System.Single lhs, Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x03892224 STP S3, S2, [X0]
+	0x03892228 RET
+	0x0389222C LDR V2, [X0 + 0x4]
+	0x03892230 LDP S1, S0, [X0 + 0x8]
+	0x03892234 MOV V3.16B, V2.16B
+	0x03892238 RET
+	0x0389223C LDP S1, S0, [X0 + 0x8]
+	0x03892240 LDR V2, [X0 + 0x4]
+	0x03892244 MOV V3.16B, V1.16B
+	0x03892248 RET
+	0x0389224C LDP S1, S0, [X0 + 0x8]
+	0x03892250 LDR V2, [X0 + 0x4]
+	0x03892254 MOV V3.16B, V0.16B
+
+ISIL:
+	001 NotImplemented "Instruction FCMP not yet implemented."
+	002 NotImplemented "Instruction CSET not yet implemented."
+	003 NotImplemented "Instruction FCMP not yet implemented."
+	004 NotImplemented "Instruction CSET not yet implemented."
+	005 NotImplemented "Instruction FCMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Move X10, X10
+	008 ShiftRight X10, 48
+	009 And X10, X10, 0x7FFF
+	010 NotImplemented "Instruction FCMP not yet implemented."
+	011 NotImplemented "Instruction BFM not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 NotImplemented "Instruction BFM not yet implemented."
+	014 Or X0, X10, X11
+	015 Return X0
+
+Method: Unity.Mathematics.float4 get_xxxx()
+
+Disassembly:
+	0x03892258 RET
+	0x0389225C LDP S1, S0, [X0 + 0x8]
+	0x03892260 LDR V3, [X0]
+	0x03892264 MOV V2.16B, V1.16B
+	0x03892268 RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, V0
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxxy()
+
+Disassembly:
+	0x0389226C LDP S1, S0, [X0 + 0x8]
+	0x03892270 LDR V3, [X0 + 0x4]
+	0x03892274 MOV V2.16B, V1.16B
+	0x03892278 RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S3, [X0+4]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxxz()
+
+Disassembly:
+	0x0389227C LDP S1, S0, [X0 + 0x8]
+	0x03892280 MOV V2.16B, V1.16B
+	0x03892284 MOV V3.16B, V1.16B
+	0x03892288 RET
+	0x0389228C LDP S1, S0, [X0 + 0x8]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V3, [X0+8]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxxw()
+
+Disassembly:
+	0x03892290 MOV V2.16B, V1.16B
+	0x03892294 MOV V3.16B, V0.16B
+	0x03892298 RET
+	0x0389229C LDP S1, S0, [X0 + 0x8]
+	0x038922A0 LDR V3, [X0]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V3, [X0+12]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxyx()
+
+Disassembly:
+	0x038922A4 MOV V2.16B, V0.16B
+	0x038922A8 RET
+	0x038922AC LDP S1, S0, [X0 + 0x8]
+	0x038922B0 LDR V3, [X0 + 0x4]
+	0x038922B4 MOV V2.16B, V0.16B
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S2, V0.S[1]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxyy()
+
+Disassembly:
+	0x038922B8 RET
+	0x038922BC LDP S1, S0, [X0 + 0x8]
+	0x038922C0 MOV V2.16B, V0.16B
+	0x038922C4 MOV V3.16B, V1.16B
+	0x038922C8 RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S2, V0.S[1]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxyz()
+
+Disassembly:
+	0x038922CC LDP S1, S0, [X0 + 0x8]
+	0x038922D0 MOV V2.16B, V0.16B
+	0x038922D4 MOV V3.16B, V0.16B
+	0x038922D8 RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S2, [X0+4]
+	003 Move V3, [X0+8]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxyw()
+
+Disassembly:
+	0x038922DC LDR V0, [X0 + 0xC]
+	0x038922E0 LDR V2, [X0]
+	0x038922E4 MOV V1.16B, V0.16B
+	0x038922E8 MOV V3.16B, V2.16B
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S2, [X0+4]
+	003 Move V3, [X0+12]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxzx()
+
+Disassembly:
+	0x038922EC RET
+	0x038922F0 LDR V0, [X0 + 0xC]
+	0x038922F4 LDP S2, S3, [X0]
+	0x038922F8 MOV V1.16B, V0.16B
+	0x038922FC RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V2, [X0+8]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxzy()
+
+Disassembly:
+	0x03892300 LDP S3, S0, [X0 + 0x8]
+	0x03892304 LDR V2, [X0]
+	0x03892308 MOV V1.16B, V0.16B
+	0x0389230C RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S3, [X0+4]
+	003 Move S2, [X0+8]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxzz()
+
+Disassembly:
+	0x03892310 LDR V0, [X0 + 0xC]
+	0x03892314 LDR V2, [X0]
+	0x03892318 MOV V1.16B, V0.16B
+	0x0389231C MOV V3.16B, V0.16B
+	0x03892320 RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V2, [X0+8]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxzw()
+
+Disassembly:
+	0x03892324 LDR V0, [X0 + 0xC]
+	0x03892328 LDP S3, S2, [X0]
+	0x0389232C MOV V1.16B, V0.16B
+	0x03892330 RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S2, [X0+8]
+	003 Move S3, [X0+12]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxwx()
+
+Disassembly:
+	0x03892334 LDR V0, [X0 + 0xC]
+	0x03892338 LDR V2, [X0 + 0x4]
+	0x0389233C MOV V1.16B, V0.16B
+	0x03892340 MOV V3.16B, V2.16B
+	0x03892344 RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V2, [X0+12]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxwy()
+
+Disassembly:
+	0x03892348 LDP S3, S0, [X0 + 0x8]
+	0x0389234C LDR V2, [X0 + 0x4]
+	0x03892350 MOV V1.16B, V0.16B
+	0x03892354 RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S3, [X0+4]
+	003 Move V2, [X0+12]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxwz()
+
+Disassembly:
+	0x03892358 LDR V0, [X0 + 0xC]
+	0x0389235C LDR V2, [X0 + 0x4]
+	0x03892360 MOV V1.16B, V0.16B
+	0x03892364 MOV V3.16B, V0.16B
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S3, [X0+8]
+	003 Move S2, [X0+12]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xxww()
+
+Disassembly:
+	0x03892368 RET
+	0x0389236C LDP S2, S0, [X0 + 0x8]
+	0x03892370 LDR V3, [X0]
+	0x03892374 MOV V1.16B, V0.16B
+	0x03892378 RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V2, [X0+12]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyxx()
+
+Disassembly:
+	0x0389237C LDP S2, S0, [X0 + 0x8]
+	0x03892380 LDR V3, [X0 + 0x4]
+	0x03892384 MOV V1.16B, V0.16B
+	0x03892388 RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyxy()
+
+Disassembly:
+	0x0389238C LDR V2, [X0 + 0x8]
+	0x03892390 MOV S0, V2.S[1]
+	0x03892394 MOV V1.16B, V0.16B
+	0x03892398 MOV V3.16B, V2.16B
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyxz()
+
+Disassembly:
+	0x0389239C RET
+	0x038923A0 LDR V2, [X0 + 0x8]
+	0x038923A4 MOV S0, V2.S[1]
+	0x038923A8 MOV V1.16B, V0.16B
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V3, [X0+8]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyxw()
+
+Disassembly:
+	0x038923AC MOV V3.16B, V0.16B
+	0x038923B0 RET
+	0x038923B4 LDR V0, [X0 + 0xC]
+	0x038923B8 LDR V3, [X0]
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V3, [X0+12]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyyx()
+
+Disassembly:
+	0x038923BC MOV V1.16B, V0.16B
+	0x038923C0 MOV V2.16B, V0.16B
+	0x038923C4 RET
+	0x038923C8 LDR V0, [X0 + 0xC]
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, V1
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyyy()
+
+Disassembly:
+	0x038923CC LDR V3, [X0 + 0x4]
+	0x038923D0 MOV V1.16B, V0.16B
+	0x038923D4 MOV V2.16B, V0.16B
+	0x038923D8 RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyyz()
+
+Disassembly:
+	0x038923DC LDP S3, S0, [X0 + 0x8]
+	0x038923E0 MOV V1.16B, V0.16B
+	0x038923E4 MOV V2.16B, V0.16B
+	0x038923E8 RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V3, [X0+8]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyyw()
+
+Disassembly:
+	0x038923EC LDR V0, [X0 + 0xC]
+	0x038923F0 MOV V1.16B, V0.16B
+	0x038923F4 MOV V2.16B, V0.16B
+	0x038923F8 MOV V3.16B, V0.16B
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V3, [X0+12]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyzx()
+
+Disassembly:
+	0x038923FC RET
+	0x03892400 LDR V0, [X0]
+	0x03892404 MOV V1.16B, V0.16B
+	0x03892408 MOV V2.16B, V0.16B
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, [X0+8]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyzy()
+
+Disassembly:
+	0x0389240C RET
+	0x03892410 LDP S0, S2, [X0]
+	0x03892414 MOV V1.16B, V0.16B
+	0x03892418 RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, [X0+8]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyzz()
+
+Disassembly:
+	0x0389241C LDR V0, [X0]
+	0x03892420 LDR V2, [X0 + 0x8]
+	0x03892424 MOV V1.16B, V0.16B
+	0x03892428 RET
+
+ISIL:
+	001 Move V2, [X0+8]
+	002 Move S0, [X0]
+	003 Move S1, [X0+4]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xyzw()
+
+Disassembly:
+	0x0389242C LDR V0, [X0]
+	0x03892430 LDR V2, [X0 + 0xC]
+	0x03892434 MOV V1.16B, V0.16B
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move S2, [X0+8]
+	004 Move S3, [X0+12]
+	005 Return X0
+
+Method: System.Void set_xyzw(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892438 RET
+	0x0389243C LDP S0, S1, [X0]
+	0x03892440 MOV V2.16B, V0.16B
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_xywx()
+
+Disassembly:
+	0x03892444 RET
+	0x03892448 LDP S0, S1, [X0]
+	0x0389244C MOV V2.16B, V1.16B
+	0x03892450 RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, [X0+12]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xywy()
+
+Disassembly:
+	0x03892454 LDP S0, S1, [X0]
+	0x03892458 LDR V2, [X0 + 0x8]
+	0x0389245C RET
+	0x03892460 STP S0, S1, [X0]
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, [X0+12]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xywz()
+
+Disassembly:
+	0x03892464 STR S2, [X0 + 0x8]
+	0x03892468 RET
+	0x0389246C LDP S0, S1, [X0]
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move S3, [X0+8]
+	004 Move S2, [X0+12]
+	005 Return X0
+
+Method: System.Void set_xywz(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892470 LDR V2, [X0 + 0xC]
+	0x03892474 RET
+	0x03892478 STP S0, S1, [X0]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S3
+	004 Move [X0+16], S2
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_xyww()
+
+Disassembly:
+	0x0389247C STR S2, [X0 + 0xC]
+	0x03892480 RET
+	0x03892484 LDR V0, [X0]
+	0x03892488 LDR V1, [X0 + 0x8]
+
+ISIL:
+	001 Move V2, [X0+12]
+	002 Move S0, [X0]
+	003 Move S1, [X0+4]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzxx()
+
+Disassembly:
+	0x0389248C MOV V2.16B, V0.16B
+	0x03892490 RET
+	0x03892494 LDP S2, S1, [X0 + 0x4]
+	0x03892498 LDR V0, [X0]
+	0x0389249C RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+8]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzxy()
+
+Disassembly:
+	0x038924A0 STP S2, S1, [X0 + 0x4]
+	0x038924A4 STR S0, [X0]
+	0x038924A8 RET
+	0x038924AC LDR V1, [X0 + 0x8]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S3, [X0+4]
+	003 Move S1, [X0+8]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzxz()
+
+Disassembly:
+	0x038924B0 LDR V0, [X0]
+	0x038924B4 MOV V2.16B, V1.16B
+	0x038924B8 RET
+	0x038924BC LDR V0, [X0]
+	0x038924C0 LDP S1, S2, [X0 + 0x8]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+8]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzxw()
+
+Disassembly:
+	0x038924C4 RET
+	0x038924C8 STR S0, [X0]
+	0x038924CC STP S1, S2, [X0 + 0x8]
+	0x038924D0 RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S1, [X0+8]
+	003 Move S3, [X0+12]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzyx()
+
+Disassembly:
+	0x038924D4 LDR V0, [X0]
+	0x038924D8 LDR V1, [X0 + 0xC]
+	0x038924DC MOV V2.16B, V0.16B
+	0x038924E0 RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S2, [X0+4]
+	003 Move S1, [X0+8]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzyy()
+
+Disassembly:
+	0x038924E4 LDR V1, [X0 + 0xC]
+	0x038924E8 LDP S0, S2, [X0]
+	0x038924EC RET
+	0x038924F0 STR S1, [X0 + 0xC]
+
+ISIL:
+	001 Move S2, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V0, [X0]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzyz()
+
+Disassembly:
+	0x038924F4 STP S0, S2, [X0]
+	0x038924F8 RET
+	0x038924FC LDR V0, [X0]
+	0x03892500 LDP S2, S1, [X0 + 0x8]
+
+ISIL:
+	001 Move S2, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V0, [X0]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzyw()
+
+Disassembly:
+	0x03892504 RET
+	0x03892508 STR S0, [X0]
+	0x0389250C STP S2, S1, [X0 + 0x8]
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S2, [X0+4]
+	003 Move S1, [X0+8]
+	004 Move S3, [X0+12]
+	005 Return X0
+
+Method: System.Void set_xzyw(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892510 RET
+	0x03892514 LDR V1, [X0 + 0xC]
+	0x03892518 LDR V0, [X0]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S2
+	003 Move [X0+8], S1
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_xzzx()
+
+Disassembly:
+	0x0389251C MOV V2.16B, V1.16B
+	0x03892520 RET
+	0x03892524 LDP S1, S0, [X0]
+	0x03892528 MOV V2.16B, V1.16B
+	0x0389252C RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+8]
+	003 Move V3, V0
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzzy()
+
+Disassembly:
+	0x03892530 LDP S1, S0, [X0]
+	0x03892534 MOV V2.16B, V0.16B
+	0x03892538 RET
+	0x0389253C LDP S1, S0, [X0]
+
+ISIL:
+	001 Move S3, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V0, [X0]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzzz()
+
+Disassembly:
+	0x03892540 LDR V2, [X0 + 0x8]
+	0x03892544 RET
+	0x03892548 STP S1, S0, [X0]
+	0x0389254C STR S2, [X0 + 0x8]
+	0x03892550 RET
+
+ISIL:
+	001 Move V1, [X0+8]
+	002 Move V0, [X0]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzzw()
+
+Disassembly:
+	0x03892554 LDP S1, S0, [X0]
+	0x03892558 LDR V2, [X0 + 0xC]
+	0x0389255C RET
+	0x03892560 STP S1, S0, [X0]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S3, [X0+12]
+	003 Move V0, [X0]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzwx()
+
+Disassembly:
+	0x03892564 STR S2, [X0 + 0xC]
+	0x03892568 RET
+	0x0389256C LDP S2, S0, [X0]
+	0x03892570 MOV V1.16B, V0.16B
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S1, [X0+8]
+	003 Move S2, [X0+12]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzwy()
+
+Disassembly:
+	0x03892574 RET
+	0x03892578 LDR V0, [X0 + 0x4]
+	0x0389257C MOV V1.16B, V0.16B
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S2, [X0+12]
+	003 Move S0, [X0]
+	004 Move S3, [X0+4]
+	005 Return X0
+
+Method: System.Void set_xzwy(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892580 MOV V2.16B, V0.16B
+	0x03892584 RET
+	0x03892588 LDP S0, S2, [X0 + 0x4]
+
+ISIL:
+	001 Move [X0+8], S1
+	002 Move [X0+16], S2
+	003 Move [X0], S0
+	004 Move [X0+8], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_xzwz()
+
+Disassembly:
+	0x0389258C MOV V1.16B, V0.16B
+	0x03892590 RET
+	0x03892594 LDR V0, [X0 + 0x4]
+	0x03892598 LDR V2, [X0 + 0xC]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S2, [X0+12]
+	003 Move V0, [X0]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xzww()
+
+Disassembly:
+	0x0389259C MOV V1.16B, V0.16B
+	0x038925A0 RET
+	0x038925A4 LDP S0, S1, [X0 + 0x4]
+	0x038925A8 LDR V2, [X0]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S2, [X0+12]
+	003 Move V0, [X0]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwxx()
+
+Disassembly:
+	0x038925AC RET
+	0x038925B0 STP S0, S1, [X0 + 0x4]
+	0x038925B4 STR S2, [X0]
+	0x038925B8 RET
+	0x038925BC LDP S0, S1, [X0 + 0x4]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+12]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwxy()
+
+Disassembly:
+	0x038925C0 MOV V2.16B, V0.16B
+	0x038925C4 RET
+	0x038925C8 LDP S0, S1, [X0 + 0x4]
+	0x038925CC MOV V2.16B, V1.16B
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S3, [X0+4]
+	003 Move V1, [X0+12]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwxz()
+
+Disassembly:
+	0x038925D0 RET
+	0x038925D4 LDP S0, S1, [X0 + 0x4]
+	0x038925D8 LDR V2, [X0 + 0xC]
+	0x038925DC RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S3, [X0+8]
+	003 Move S1, [X0+12]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwxw()
+
+Disassembly:
+	0x038925E0 STP S0, S1, [X0 + 0x4]
+	0x038925E4 STR S2, [X0 + 0xC]
+	0x038925E8 RET
+	0x038925EC LDR V1, [X0 + 0xC]
+	0x038925F0 LDP S2, S0, [X0]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+12]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwyx()
+
+Disassembly:
+	0x038925F4 RET
+	0x038925F8 STR S1, [X0 + 0xC]
+	0x038925FC STP S2, S0, [X0]
+	0x03892600 RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S2, [X0+4]
+	003 Move V1, [X0+12]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwyy()
+
+Disassembly:
+	0x03892604 LDR V0, [X0 + 0x4]
+	0x03892608 LDR V1, [X0 + 0xC]
+	0x0389260C MOV V2.16B, V0.16B
+	0x03892610 RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S2, [X0+4]
+	003 Move V1, [X0+12]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwyz()
+
+Disassembly:
+	0x03892614 LDP S2, S1, [X0 + 0x8]
+	0x03892618 LDR V0, [X0 + 0x4]
+	0x0389261C RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S2, [X0+4]
+	003 Move S3, [X0+8]
+	004 Move S1, [X0+12]
+	005 Return X0
+
+Method: System.Void set_xwyz(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892620 STP S2, S1, [X0 + 0x8]
+	0x03892624 STR S0, [X0 + 0x4]
+	0x03892628 RET
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S2
+	003 Move [X0+8], S3
+	004 Move [X0+16], S1
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_xwyw()
+
+Disassembly:
+	0x0389262C LDR V1, [X0 + 0xC]
+	0x03892630 LDR V0, [X0 + 0x4]
+	0x03892634 MOV V2.16B, V1.16B
+	0x03892638 RET
+
+ISIL:
+	001 Move V1, [X0+12]
+	002 Move S0, [X0]
+	003 Move S2, [X0+4]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwzx()
+
+Disassembly:
+	0x0389263C LDR V1, [X0]
+	0x03892640 LDR V0, [X0 + 0x8]
+	0x03892644 MOV V2.16B, V1.16B
+	0x03892648 RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S2, [X0+8]
+	003 Move S1, [X0+12]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwzy()
+
+Disassembly:
+	0x0389264C LDP S2, S0, [X0 + 0x4]
+	0x03892650 LDR V1, [X0]
+	0x03892654 RET
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move S0, [X0]
+	004 Move S3, [X0+4]
+	005 Return X0
+
+Method: System.Void set_xwzy(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892658 STP S2, S0, [X0 + 0x4]
+	0x0389265C STR S1, [X0]
+	0x03892660 RET
+
+ISIL:
+	001 Move [X0+8], S2
+	002 Move [X0+16], S1
+	003 Move [X0], S0
+	004 Move [X0+8], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_xwzz()
+
+Disassembly:
+	0x03892664 LDR V0, [X0 + 0x8]
+	0x03892668 LDR V1, [X0]
+	0x0389266C MOV V2.16B, V0.16B
+	0x03892670 RET
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V0, [X0]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwzw()
+
+Disassembly:
+	0x03892674 LDR V1, [X0]
+	0x03892678 LDP S0, S2, [X0 + 0x8]
+	0x0389267C RET
+	0x03892680 STR S1, [X0]
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V0, [X0]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwwx()
+
+Disassembly:
+	0x03892684 STP S0, S2, [X0 + 0x8]
+	0x03892688 RET
+	0x0389268C LDP S1, S0, [X0 + 0x4]
+	0x03892690 LDR V2, [X0]
+	0x03892694 RET
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+12]
+	003 Move V3, V0
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwwy()
+
+Disassembly:
+	0x03892698 STP S1, S0, [X0 + 0x4]
+	0x0389269C STR S2, [X0]
+	0x038926A0 RET
+	0x038926A4 LDP S1, S0, [X0 + 0x4]
+
+ISIL:
+	001 Move V1, [X0+12]
+	002 Move S0, [X0]
+	003 Move S3, [X0+4]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwwz()
+
+Disassembly:
+	0x038926A8 MOV V2.16B, V1.16B
+	0x038926AC RET
+	0x038926B0 LDP S1, S0, [X0 + 0x4]
+	0x038926B4 MOV V2.16B, V0.16B
+
+ISIL:
+	001 Move S3, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V0, [X0]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_xwww()
+
+Disassembly:
+	0x038926B8 RET
+	0x038926BC LDP S1, S0, [X0 + 0x4]
+	0x038926C0 LDR V2, [X0 + 0xC]
+	0x038926C4 RET
+	0x038926C8 STP S1, S0, [X0 + 0x4]
+
+ISIL:
+	001 Move V1, [X0+12]
+	002 Move V0, [X0]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxxx()
+
+Disassembly:
+	0x038926CC STR S2, [X0 + 0xC]
+	0x038926D0 RET
+	0x038926D4 LDR V0, [X0 + 0x8]
+	0x038926D8 LDR V2, [X0]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxxy()
+
+Disassembly:
+	0x038926DC MOV V1.16B, V0.16B
+	0x038926E0 RET
+	0x038926E4 LDP S2, S0, [X0 + 0x4]
+	0x038926E8 MOV V1.16B, V0.16B
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, V1
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxxz()
+
+Disassembly:
+	0x038926EC RET
+	0x038926F0 LDR V0, [X0 + 0x8]
+	0x038926F4 MOV V1.16B, V0.16B
+	0x038926F8 MOV V2.16B, V0.16B
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V3, [X0+8]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxxw()
+
+Disassembly:
+	0x038926FC RET
+	0x03892700 LDP S0, S2, [X0 + 0x8]
+	0x03892704 MOV V1.16B, V0.16B
+	0x03892708 RET
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V3, [X0+12]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxyx()
+
+Disassembly:
+	0x0389270C LDP S0, S1, [X0 + 0x8]
+	0x03892710 LDR V2, [X0]
+	0x03892714 RET
+	0x03892718 STP S0, S1, [X0 + 0x8]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxyy()
+
+Disassembly:
+	0x0389271C STR S2, [X0]
+	0x03892720 RET
+	0x03892724 LDP S0, S1, [X0 + 0x8]
+	0x03892728 LDR V2, [X0 + 0x4]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxyz()
+
+Disassembly:
+	0x0389272C RET
+	0x03892730 STP S0, S1, [X0 + 0x8]
+	0x03892734 STR S2, [X0 + 0x4]
+	0x03892738 RET
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V3, [X0+8]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxyw()
+
+Disassembly:
+	0x0389273C LDP S0, S1, [X0 + 0x8]
+	0x03892740 MOV V2.16B, V0.16B
+	0x03892744 RET
+	0x03892748 LDP S0, S1, [X0 + 0x8]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V3, [X0+12]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxzx()
+
+Disassembly:
+	0x0389274C MOV V2.16B, V1.16B
+	0x03892750 RET
+	0x03892754 LDR V1, [X0]
+	0x03892758 LDR V0, [X0 + 0xC]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, [X0+8]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxzy()
+
+Disassembly:
+	0x0389275C MOV V2.16B, V1.16B
+	0x03892760 RET
+	0x03892764 LDR V0, [X0 + 0xC]
+	0x03892768 LDP S1, S2, [X0]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, [X0+8]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxzz()
+
+Disassembly:
+	0x0389276C RET
+	0x03892770 STR S0, [X0 + 0xC]
+	0x03892774 STP S1, S2, [X0]
+	0x03892778 RET
+
+ISIL:
+	001 Move V2, [X0+8]
+	002 Move S1, [X0]
+	003 Move S0, [X0+4]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxzw()
+
+Disassembly:
+	0x0389277C LDR V1, [X0]
+	0x03892780 LDP S2, S0, [X0 + 0x8]
+	0x03892784 RET
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move S2, [X0+8]
+	004 Move S3, [X0+12]
+	005 Return X0
+
+Method: System.Void set_yxzw(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892788 STR S1, [X0]
+	0x0389278C STP S2, S0, [X0 + 0x8]
+	0x03892790 RET
+
+ISIL:
+	001 Move [X0], S1
+	002 Move [X0+8], S0
+	003 Move [X0+8], S2
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_yxwx()
+
+Disassembly:
+	0x03892794 LDR V0, [X0 + 0xC]
+	0x03892798 LDR V1, [X0]
+	0x0389279C MOV V2.16B, V0.16B
+	0x038927A0 RET
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, [X0+12]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxwy()
+
+Disassembly:
+	0x038927A4 LDR V0, [X0 + 0xC]
+	0x038927A8 LDP S2, S1, [X0]
+	0x038927AC RET
+	0x038927B0 STR S0, [X0 + 0xC]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, [X0+12]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yxwz()
+
+Disassembly:
+	0x038927B4 STP S2, S1, [X0]
+	0x038927B8 RET
+	0x038927BC LDR V1, [X0 + 0x4]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move S3, [X0+8]
+	004 Move S2, [X0+12]
+	005 Return X0
+
+Method: System.Void set_yxwz(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x038927C0 LDR V0, [X0 + 0xC]
+	0x038927C4 MOV V2.16B, V1.16B
+	0x038927C8 RET
+
+ISIL:
+	001 Move [X0], S1
+	002 Move [X0+8], S0
+	003 Move [X0+8], S3
+	004 Move [X0+16], S2
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_yxww()
+
+Disassembly:
+	0x038927CC LDP S2, S0, [X0 + 0x8]
+	0x038927D0 LDR V1, [X0 + 0x4]
+	0x038927D4 RET
+	0x038927D8 STP S2, S0, [X0 + 0x8]
+
+ISIL:
+	001 Move V2, [X0+12]
+	002 Move S1, [X0]
+	003 Move S0, [X0+4]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyxx()
+
+Disassembly:
+	0x038927DC STR S1, [X0 + 0x4]
+	0x038927E0 RET
+	0x038927E4 LDR V0, [X0 + 0xC]
+	0x038927E8 LDR V1, [X0 + 0x4]
+	0x038927EC MOV V2.16B, V0.16B
+
+ISIL:
+	001 Move V2, [X0]
+	002 Move S0, V2.S[1]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyxy()
+
+Disassembly:
+	0x038927F0 RET
+	0x038927F4 LDP S1, S0, [X0 + 0x8]
+	0x038927F8 LDR V2, [X0]
+	0x038927FC RET
+	0x03892800 STP S1, S0, [X0 + 0x8]
+
+ISIL:
+	001 Move V2, [X0]
+	002 Move S0, V2.S[1]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyxz()
+
+Disassembly:
+	0x03892804 STR S2, [X0]
+	0x03892808 RET
+	0x0389280C LDP S1, S0, [X0 + 0x8]
+	0x03892810 LDR V2, [X0 + 0x4]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move V3, [X0+8]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyxw()
+
+Disassembly:
+	0x03892814 RET
+	0x03892818 STP S1, S0, [X0 + 0x8]
+	0x0389281C STR S2, [X0 + 0x4]
+	0x03892820 RET
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move V3, [X0+12]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyyx()
+
+Disassembly:
+	0x03892824 LDP S1, S0, [X0 + 0x8]
+	0x03892828 MOV V2.16B, V1.16B
+	0x0389282C RET
+	0x03892830 LDP S1, S0, [X0 + 0x8]
+
+ISIL:
+	001 Move S3, [X0]
+	002 Move S0, [X0+4]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyyy()
+
+Disassembly:
+	0x03892834 MOV V2.16B, V0.16B
+	0x03892838 RET
+	0x0389283C LDR V0, [X0 + 0xC]
+	0x03892840 LDR V2, [X0]
+	0x03892844 MOV V1.16B, V0.16B
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V1, V0
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyyz()
+
+Disassembly:
+	0x03892848 RET
+	0x0389284C LDR V0, [X0 + 0xC]
+	0x03892850 LDR V2, [X0 + 0x4]
+	0x03892854 MOV V1.16B, V0.16B
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S3, [X0+8]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyyw()
+
+Disassembly:
+	0x03892858 RET
+	0x0389285C LDP S2, S0, [X0 + 0x8]
+	0x03892860 MOV V1.16B, V0.16B
+	0x03892864 RET
+	0x03892868 LDR V0, [X0 + 0xC]
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V3, [X0+12]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyzx()
+
+Disassembly:
+	0x0389286C MOV V1.16B, V0.16B
+	0x03892870 MOV V2.16B, V0.16B
+	0x03892874 RET
+	0x03892878 LDR V0, [X0]
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S2, [X0+8]
+	003 Move V3, [X0]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyzy()
+
+Disassembly:
+	0x0389287C MOV V1.16B, V0.16B
+	0x03892880 RET
+	0x03892884 LDP S0, S1, [X0]
+	0x03892888 RET
+	0x0389288C STP S0, S1, [X0]
+
+ISIL:
+	001 NotImplemented "Instruction LDUR not yet implemented."
+	002 Move S2, V0.S[1]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyzz()
+
+Disassembly:
+	0x03892890 RET
+	0x03892894 LDR V0, [X0]
+	0x03892898 LDR V1, [X0 + 0x8]
+	0x0389289C RET
+	0x038928A0 STR S0, [X0]
+
+ISIL:
+	001 NotImplemented "Instruction LDUR not yet implemented."
+	002 Move S2, V0.S[1]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyzw()
+
+Disassembly:
+	0x038928A4 STR S1, [X0 + 0x8]
+	0x038928A8 RET
+	0x038928AC LDR V0, [X0]
+	0x038928B0 LDR V1, [X0 + 0xC]
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S2, [X0+8]
+	003 Move V3, [X0+12]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yywx()
+
+Disassembly:
+	0x038928B4 RET
+	0x038928B8 STR S0, [X0]
+	0x038928BC STR S1, [X0 + 0xC]
+	0x038928C0 RET
+
+ISIL:
+	001 Move S3, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, [X0+12]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yywy()
+
+Disassembly:
+	0x038928C4 LDP S1, S0, [X0]
+	0x038928C8 RET
+	0x038928CC STP S1, S0, [X0]
+	0x038928D0 RET
+	0x038928D4 LDR V0, [X0 + 0x4]
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V2, [X0+12]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yywz()
+
+Disassembly:
+	0x038928D8 MOV V1.16B, V0.16B
+	0x038928DC RET
+	0x038928E0 LDP S0, S1, [X0 + 0x4]
+	0x038928E4 RET
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move S3, [X0+8]
+	003 Move S2, [X0+12]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yyww()
+
+Disassembly:
+	0x038928E8 STP S0, S1, [X0 + 0x4]
+	0x038928EC RET
+	0x038928F0 LDR V0, [X0 + 0x4]
+	0x038928F4 LDR V1, [X0 + 0xC]
+	0x038928F8 RET
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V2, [X0+12]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzxx()
+
+Disassembly:
+	0x038928FC STR S0, [X0 + 0x4]
+	0x03892900 STR S1, [X0 + 0xC]
+	0x03892904 RET
+	0x03892908 LDR V0, [X0 + 0x8]
+
+ISIL:
+	001 Move V2, [X0]
+	002 Move S0, [X0+4]
+	003 Move S1, [X0+8]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzxy()
+
+Disassembly:
+	0x0389290C LDR V1, [X0]
+	0x03892910 RET
+	0x03892914 STR S0, [X0 + 0x8]
+	0x03892918 STR S1, [X0]
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, [X0]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzxz()
+
+Disassembly:
+	0x0389291C RET
+	0x03892920 LDP S1, S0, [X0 + 0x4]
+	0x03892924 RET
+	0x03892928 STP S1, S0, [X0 + 0x4]
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, [X0]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzxw()
+
+Disassembly:
+	0x0389292C RET
+	0x03892930 LDR V0, [X0 + 0x8]
+	0x03892934 MOV V1.16B, V0.16B
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move S1, [X0+8]
+	004 Move S3, [X0+12]
+	005 Return X0
+
+Method: System.Void set_yzxw(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892938 RET
+	0x0389293C LDP S0, S1, [X0 + 0x8]
+	0x03892940 RET
+
+ISIL:
+	001 Move [X0], S2
+	002 Move [X0+8], S0
+	003 Move [X0+8], S1
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_yzyx()
+
+Disassembly:
+	0x03892944 STP S0, S1, [X0 + 0x8]
+	0x03892948 RET
+	0x0389294C LDR V0, [X0 + 0xC]
+	0x03892950 LDR V1, [X0]
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V3, [X0]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzyy()
+
+Disassembly:
+	0x03892954 RET
+	0x03892958 STR S0, [X0 + 0xC]
+	0x0389295C STR S1, [X0]
+	0x03892960 RET
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzyz()
+
+Disassembly:
+	0x03892964 LDR V0, [X0 + 0xC]
+	0x03892968 LDR V1, [X0 + 0x4]
+	0x0389296C RET
+	0x03892970 STR S0, [X0 + 0xC]
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzyw()
+
+Disassembly:
+	0x03892974 STR S1, [X0 + 0x4]
+	0x03892978 RET
+	0x0389297C LDP S1, S0, [X0 + 0x8]
+	0x03892980 RET
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V3, [X0+12]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzzx()
+
+Disassembly:
+	0x03892984 STP S1, S0, [X0 + 0x8]
+	0x03892988 RET
+	0x0389298C LDR V0, [X0 + 0xC]
+	0x03892990 MOV V1.16B, V0.16B
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V3, [X0]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzzy()
+
+Disassembly:
+	0x03892994 RET
+	0x03892998 LDR V0, [X0, W1, SXTW]
+	0x0389299C RET
+	0x038929A0 STR S0, [X0, W1, SXTW]
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, V1
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzzz()
+
+Disassembly:
+	0x038929A4 RET
+	0x038929A8 LDR V4, [X0]
+	0x038929AC FCMP S4, S0
+	0x038929B0 B.NE 0x38929DC
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzzw()
+
+Disassembly:
+	0x038929B4 LDR V0, [X0 + 0x4]
+	0x038929B8 FCMP S0, S1
+	0x038929BC B.NE 0x38929DC
+	0x038929C0 LDR V0, [X0 + 0x8]
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V3, [X0+12]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzwx()
+
+Disassembly:
+	0x038929C4 FCMP S0, S2
+	0x038929C8 B.NE 0x38929DC
+	0x038929CC LDR V0, [X0 + 0xC]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S2, [X0+12]
+	003 Move S3, [X0]
+	004 Move S0, [X0+4]
+	005 Return X0
+
+Method: System.Void set_yzwx(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x038929D0 FCMP S0, S3
+	0x038929D4 CSET W0, EQ
+	0x038929D8 RET
+
+ISIL:
+	001 Move [X0+8], S1
+	002 Move [X0+16], S2
+	003 Move [X0], S3
+	004 Move [X0+8], S0
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_yzwy()
+
+Disassembly:
+	0x038929DC MOV W0, W31
+	0x038929E0 RET
+	0x038929E4 STP X30, X21, [X31 - 0x20]!
+	0x038929E8 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, [X0+12]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzwz()
+
+Disassembly:
+	0x038929EC ADRP X21, 0xB4F000
+	0x038929F0 LDRB W8, [X21 + 0x634]
+	0x038929F4 MOV X20, X1
+	0x038929F8 MOV X19, X0
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, [X0+12]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_yzww()
+
+Disassembly:
+	0x038929FC TBNZ X8, 0x0, 0x3892A14
+	0x03892A00 ADRP X0, 0x88C000
+	0x03892A04 LDR X0, [X0 + 0x840]
+	0x03892A08 BL 0x1C16CF4
+
+ISIL:
+	001 Move V2, [X0+12]
+	002 Move S0, [X0+4]
+	003 Move S1, [X0+8]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywxx()
+
+Disassembly:
+	0x03892A0C MOVZ W8, 0x1
+	0x03892A10 STRB W8, [X21 + 0x634]
+	0x03892A14 CBZ X20, 0x3892A30
+	0x03892A18 ADRP X8, 0x88C000
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move V1, [X0+12]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywxy()
+
+Disassembly:
+	0x03892A1C LDR X8, [X8 + 0x840]
+	0x03892A20 LDR X9, [X20]
+	0x03892A24 LDR X8, [X8]
+	0x03892A28 CMP X9, X8
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move V1, [X0+12]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywxz()
+
+Disassembly:
+	0x03892A2C B.EQ 0x3892A40
+	0x03892A30 MOV W0, W31
+	0x03892A34 LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move S3, [X0+8]
+	004 Move S1, [X0+12]
+	005 Return X0
+
+Method: System.Void set_ywxz(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892A38 LDP X30, X21, [X31], #0x20
+	0x03892A3C RET
+	0x03892A40 MOV X0, X20
+
+ISIL:
+	001 Move [X0], S2
+	002 Move [X0+8], S0
+	003 Move [X0+8], S3
+	004 Move [X0+16], S1
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_ywxw()
+
+Disassembly:
+	0x03892A44 BL 0x1C16E08
+	0x03892A48 LDR V0, [X0]
+	0x03892A4C LDR V1, [X19]
+	0x03892A50 FCMP S1, S0
+
+ISIL:
+	001 Move V1, [X0+12]
+	002 Move S2, [X0]
+	003 Move S0, [X0+4]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywyx()
+
+Disassembly:
+	0x03892A54 B.NE 0x3892A30
+	0x03892A58 LDR V0, [X0 + 0x4]
+	0x03892A5C LDR V1, [X19 + 0x4]
+	0x03892A60 FCMP S1, S0
+
+ISIL:
+	001 Move S3, [X0]
+	002 Move S0, [X0+4]
+	003 Move V1, [X0+12]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywyy()
+
+Disassembly:
+	0x03892A64 B.NE 0x3892A30
+	0x03892A68 LDR V0, [X0 + 0x8]
+	0x03892A6C LDR V1, [X19 + 0x8]
+	0x03892A70 FCMP S1, S0
+	0x03892A74 B.NE 0x3892A30
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V1, [X0+12]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywyz()
+
+Disassembly:
+	0x03892A78 LDR V0, [X0 + 0xC]
+	0x03892A7C LDR V1, [X19 + 0xC]
+	0x03892A80 FCMP S1, S0
+	0x03892A84 CSET W0, EQ
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move S3, [X0+8]
+	003 Move S1, [X0+12]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywyw()
+
+Disassembly:
+	0x03892A88 B 0x3892A34
+	0x03892A8C LDP W10, W11, [X0]
+	0x03892A90 LDP W8, W9, [X0 + 0x8]
+	0x03892A94 MOVZ X13, 0xEEB
+	0x03892A98 MOVZ X12, 0xB51
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V1, [X0+12]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywzx()
+
+Disassembly:
+	0x03892A9C MOVK X13, 0xBD010000
+	0x03892AA0 MOVK X12, 0x43BE0000
+	0x03892AA4 MUL X11, X11, X13
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move S3, [X0]
+	004 Move S0, [X0+4]
+	005 Return X0
+
+Method: System.Void set_ywzx(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892AA8 MOVZ W13, 0xE1D1
+	0x03892AAC MUL X9, X9, X12
+	0x03892AB0 MOVZ W12, 0x26FF
+
+ISIL:
+	001 Move [X0+8], S2
+	002 Move [X0+16], S1
+	003 Move [X0], S3
+	004 Move [X0+8], S0
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_ywzy()
+
+Disassembly:
+	0x03892AB4 MOVK W13, 0x9CED0000
+	0x03892AB8 MOVK W12, 0xE6960000
+	0x03892ABC MUL W8, W8, W13
+	0x03892AC0 UBFM X11, X11, 0x20, 0x3F
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move S2, [X0+8]
+	003 Move S1, [X0+12]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywzz()
+
+Disassembly:
+	0x03892AC4 MADD W8, W10, W12, W8
+	0x03892AC8 UBFM X9, X9, 0x20, 0x3F
+	0x03892ACC ADD W8, W8, W11
+	0x03892AD0 ADD W8, W8, W9
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V0, [X0+4]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywzw()
+
+Disassembly:
+	0x03892AD4 MOVZ W9, 0x6EE1
+	0x03892AD8 MOVK W9, 0xAF830000
+	0x03892ADC ADD W0, W8, W9
+	0x03892AE0 RET
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V0, [X0+4]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywwx()
+
+Disassembly:
+	0x03892AE4 SUB X31, X31, 0x40
+	0x03892AE8 STR X30, [X31 + 0x10]
+	0x03892AEC STP X22, X21, [X31 + 0x20]
+	0x03892AF0 STP X20, X19, [X31 + 0x30]
+
+ISIL:
+	001 Move V1, [X0+12]
+	002 Move S3, [X0]
+	003 Move S0, [X0+4]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywwy()
+
+Disassembly:
+	0x03892AF4 ADRP X19, 0xB4F000
+	0x03892AF8 ADRP X21, 0x861000
+	0x03892AFC ADRP X22, 0x861000
+	0x03892B00 LDRB W8, [X19 + 0x635]
+	0x03892B04 LDR X21, [X21 + 0x9D0]
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V1, [X0+12]
+	003 Move V3, V0
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywwz()
+
+Disassembly:
+	0x03892B08 LDR X22, [X22 + 0xA90]
+	0x03892B0C MOV X20, X0
+	0x03892B10 TBNZ X8, 0x0, 0x3892B40
+	0x03892B14 ADRP X0, 0x861000
+
+ISIL:
+	001 Move S3, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V0, [X0+4]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_ywww()
+
+Disassembly:
+	0x03892B18 LDR X0, [X0 + 0x9D0]
+	0x03892B1C BL 0x1C16CF4
+	0x03892B20 ADRP X0, 0x861000
+	0x03892B24 LDR X0, [X0 + 0xA90]
+	0x03892B28 BL 0x1C16CF4
+
+ISIL:
+	001 Move V1, [X0+12]
+	002 Move V0, [X0+4]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxxx()
+
+Disassembly:
+	0x03892B2C ADRP X0, 0x8B8000
+	0x03892B30 LDR X0, [X0 + 0xF90]
+	0x03892B34 BL 0x1C16CF4
+	0x03892B38 MOVZ W8, 0x1
+	0x03892B3C STRB W8, [X19 + 0x635]
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V0, [X0+8]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxxy()
+
+Disassembly:
+	0x03892B40 LDR X0, [X21]
+	0x03892B44 MOVZ W1, 0x4
+	0x03892B48 BL 0x1C16D6C
+	0x03892B4C MOV X19, X0
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move S3, [X0+4]
+	003 Move S0, [X0+8]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxxz()
+
+Disassembly:
+	0x03892B50 LDR V0, [X20]
+	0x03892B54 LDR X0, [X22]
+	0x03892B58 ADD X1, X31, 0x1C
+	0x03892B5C STR S0, [X31 + 0x1C]
+	0x03892B60 BL 0x1C16E04
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V1, [X0]
+	003 Move V3, V0
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxxw()
+
+Disassembly:
+	0x03892B64 CBZ X19, 0x3892C8C
+	0x03892B68 MOV X21, X0
+	0x03892B6C CBZ X0, 0x3892B84
+	0x03892B70 LDR X8, [X19]
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move S0, [X0+8]
+	003 Move S3, [X0+12]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxyx()
+
+Disassembly:
+	0x03892B74 MOV X0, X21
+	0x03892B78 LDR X1, [X8 + 0x40]
+	0x03892B7C BL 0x1C16E00
+	0x03892B80 CBZ X0, 0x3892C80
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move S2, [X0+4]
+	003 Move S0, [X0+8]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxyy()
+
+Disassembly:
+	0x03892B84 LDR W8, [X19 + 0x18]
+	0x03892B88 CBZ W8, 0x3892C7C
+	0x03892B8C STR X21, [X19 + 0x20]
+	0x03892B90 LDR V0, [X20 + 0x4]
+
+ISIL:
+	001 Move S2, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V1, [X0]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxyz()
+
+Disassembly:
+	0x03892B94 LDR X0, [X22]
+	0x03892B98 ADD X1, X31, 0x18
+	0x03892B9C STR S0, [X31 + 0x18]
+	0x03892BA0 BL 0x1C16E04
+
+ISIL:
+	001 Move S2, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V1, [X0]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxyw()
+
+Disassembly:
+	0x03892BA4 MOV X21, X0
+	0x03892BA8 CBZ X0, 0x3892BC0
+	0x03892BAC LDR X8, [X19]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S2, [X0+4]
+	003 Move S0, [X0+8]
+	004 Move S3, [X0+12]
+	005 Return X0
+
+Method: System.Void set_zxyw(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892BB0 MOV X0, X21
+	0x03892BB4 LDR X1, [X8 + 0x40]
+	0x03892BB8 BL 0x1C16E00
+
+ISIL:
+	001 Move [X0], S1
+	002 Move [X0+8], S2
+	003 Move [X0+8], S0
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_zxzx()
+
+Disassembly:
+	0x03892BBC CBZ X0, 0x3892C80
+	0x03892BC0 LDR W8, [X19 + 0x18]
+	0x03892BC4 CMP W8, 0x1
+	0x03892BC8 B.LS 0x3892C7C
+	0x03892BCC STR X21, [X19 + 0x28]
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V1, [X0]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxzy()
+
+Disassembly:
+	0x03892BD0 LDR V0, [X20 + 0x8]
+	0x03892BD4 LDR X0, [X22]
+	0x03892BD8 ADD X1, X31, 0xC
+	0x03892BDC STR S0, [X31 + 0xC]
+
+ISIL:
+	001 Move S3, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V1, [X0]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxzz()
+
+Disassembly:
+	0x03892BE0 BL 0x1C16E04
+	0x03892BE4 MOV X21, X0
+	0x03892BE8 CBZ X0, 0x3892C00
+	0x03892BEC LDR X8, [X19]
+	0x03892BF0 MOV X0, X21
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V1, [X0]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxzw()
+
+Disassembly:
+	0x03892BF4 LDR X1, [X8 + 0x40]
+	0x03892BF8 BL 0x1C16E00
+	0x03892BFC CBZ X0, 0x3892C80
+	0x03892C00 LDR W8, [X19 + 0x18]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S3, [X0+12]
+	003 Move V1, [X0]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxwx()
+
+Disassembly:
+	0x03892C04 CMP W8, 0x2
+	0x03892C08 B.LS 0x3892C7C
+	0x03892C0C STR X21, [X19 + 0x30]
+	0x03892C10 LDR V0, [X20 + 0xC]
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move S0, [X0+8]
+	003 Move S2, [X0+12]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxwy()
+
+Disassembly:
+	0x03892C14 LDR X0, [X22]
+	0x03892C18 ADD X1, X31, 0x8
+	0x03892C1C STR S0, [X31 + 0x8]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S2, [X0+12]
+	003 Move S1, [X0]
+	004 Move S3, [X0+4]
+	005 Return X0
+
+Method: System.Void set_zxwy(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892C20 BL 0x1C16E04
+	0x03892C24 MOV X20, X0
+	0x03892C28 CBZ X0, 0x3892C40
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Move [X0+16], S2
+	003 Move [X0], S1
+	004 Move [X0+8], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_zxwz()
+
+Disassembly:
+	0x03892C2C LDR X8, [X19]
+	0x03892C30 MOV X0, X20
+	0x03892C34 LDR X1, [X8 + 0x40]
+	0x03892C38 BL 0x1C16E00
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S2, [X0+12]
+	003 Move V1, [X0]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zxww()
+
+Disassembly:
+	0x03892C3C CBZ X0, 0x3892C80
+	0x03892C40 LDR W8, [X19 + 0x18]
+	0x03892C44 CMP W8, 0x3
+	0x03892C48 B.LS 0x3892C7C
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S2, [X0+12]
+	003 Move V1, [X0]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyxx()
+
+Disassembly:
+	0x03892C4C ADRP X8, 0x8B8000
+	0x03892C50 LDR X8, [X8 + 0xF90]
+	0x03892C54 STR X20, [X19 + 0x38]
+	0x03892C58 MOV X1, X19
+
+ISIL:
+	001 Move V2, [X0]
+	002 Move S1, [X0+4]
+	003 Move S0, [X0+8]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyxy()
+
+Disassembly:
+	0x03892C5C MOV X2, X31
+	0x03892C60 LDR X0, [X8]
+	0x03892C64 BL 0x3227C5C
+	0x03892C68 LDP X20, X19, [X31 + 0x30]
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, [X0]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyxz()
+
+Disassembly:
+	0x03892C6C LDP X22, X21, [X31 + 0x20]
+	0x03892C70 LDR X30, [X31 + 0x10]
+	0x03892C74 ADD X31, X31, 0x40
+	0x03892C78 RET
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, [X0]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyxw()
+
+Disassembly:
+	0x03892C7C BL 0x1C16F28
+	0x03892C80 BL 0x1C16F44
+	0x03892C84 MOV X1, X31
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 Move S0, [X0+8]
+	004 Move S3, [X0+12]
+	005 Return X0
+
+Method: System.Void set_zyxw(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892C88 BL 0x1C16DEC
+	0x03892C8C BL 0x1C16F20
+	0x03892C90 STP X30, X23, [X31 - 0x30]!
+
+ISIL:
+	001 Move [X0], S2
+	002 Move [X0+8], S1
+	003 Move [X0+8], S0
+	004 Move [X0+16], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_zyyx()
+
+Disassembly:
+	0x03892C94 STP X22, X21, [X31 + 0x10]
+	0x03892C98 STP X20, X19, [X31 + 0x20]
+	0x03892C9C ADRP X19, 0xB4F000
+	0x03892CA0 ADRP X23, 0x861000
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V3, [X0]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyyy()
+
+Disassembly:
+	0x03892CA4 LDRB W8, [X19 + 0x636]
+	0x03892CA8 LDR X23, [X23 + 0x9D0]
+	0x03892CAC MOV X20, X2
+	0x03892CB0 MOV X21, X1
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyyz()
+
+Disassembly:
+	0x03892CB4 MOV X22, X0
+	0x03892CB8 TBNZ X8, 0x0, 0x3892CDC
+	0x03892CBC ADRP X0, 0x861000
+	0x03892CC0 LDR X0, [X0 + 0x9D0]
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, V1
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyyw()
+
+Disassembly:
+	0x03892CC4 BL 0x1C16CF4
+	0x03892CC8 ADRP X0, 0x8B8000
+	0x03892CCC LDR X0, [X0 + 0xF90]
+	0x03892CD0 BL 0x1C16CF4
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V3, [X0+12]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyzx()
+
+Disassembly:
+	0x03892CD4 MOVZ W8, 0x1
+	0x03892CD8 STRB W8, [X19 + 0x636]
+	0x03892CDC LDR X0, [X23]
+	0x03892CE0 MOVZ W1, 0x4
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V3, [X0]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyzy()
+
+Disassembly:
+	0x03892CE4 BL 0x1C16D6C
+	0x03892CE8 MOV X19, X0
+	0x03892CEC MOV X0, X22
+	0x03892CF0 MOV X1, X21
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyzz()
+
+Disassembly:
+	0x03892CF4 MOV X2, X20
+	0x03892CF8 MOV X3, X31
+	0x03892CFC BL 0x338FFB4
+	0x03892D00 CBZ X19, 0x3892E20
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyzw()
+
+Disassembly:
+	0x03892D04 MOV X23, X0
+	0x03892D08 CBZ X0, 0x3892D20
+	0x03892D0C LDR X8, [X19]
+	0x03892D10 MOV X0, X23
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V3, [X0+12]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zywx()
+
+Disassembly:
+	0x03892D14 LDR X1, [X8 + 0x40]
+	0x03892D18 BL 0x1C16E00
+	0x03892D1C CBZ X0, 0x3892E14
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S2, [X0+12]
+	003 Move S3, [X0]
+	004 Move S1, [X0+4]
+	005 Return X0
+
+Method: System.Void set_zywx(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892D20 LDR W8, [X19 + 0x18]
+	0x03892D24 CBZ W8, 0x3892E10
+	0x03892D28 ADD X0, X22, 0x4
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Move [X0+16], S2
+	003 Move [X0], S3
+	004 Move [X0+8], S1
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_zywy()
+
+Disassembly:
+	0x03892D2C MOV X1, X21
+	0x03892D30 MOV X2, X20
+	0x03892D34 MOV X3, X31
+	0x03892D38 STR X23, [X19 + 0x20]
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, [X0+12]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zywz()
+
+Disassembly:
+	0x03892D3C BL 0x338FFB4
+	0x03892D40 MOV X23, X0
+	0x03892D44 CBZ X0, 0x3892D5C
+	0x03892D48 LDR X8, [X19]
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, [X0+12]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zyww()
+
+Disassembly:
+	0x03892D4C MOV X0, X23
+	0x03892D50 LDR X1, [X8 + 0x40]
+	0x03892D54 BL 0x1C16E00
+	0x03892D58 CBZ X0, 0x3892E14
+
+ISIL:
+	001 Move V2, [X0+12]
+	002 Move S1, [X0+4]
+	003 Move S0, [X0+8]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzxx()
+
+Disassembly:
+	0x03892D5C LDR W8, [X19 + 0x18]
+	0x03892D60 CMP W8, 0x1
+	0x03892D64 B.LS 0x3892E10
+	0x03892D68 ADD X0, X22, 0x8
+	0x03892D6C MOV X1, X21
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V2, [X0]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzxy()
+
+Disassembly:
+	0x03892D70 MOV X2, X20
+	0x03892D74 MOV X3, X31
+	0x03892D78 STR X23, [X19 + 0x28]
+	0x03892D7C BL 0x338FFB4
+
+ISIL:
+	001 Move S3, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, [X0]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzxz()
+
+Disassembly:
+	0x03892D80 MOV X23, X0
+	0x03892D84 CBZ X0, 0x3892D9C
+	0x03892D88 LDR X8, [X19]
+	0x03892D8C MOV X0, X23
+	0x03892D90 LDR X1, [X8 + 0x40]
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V2, [X0]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzxw()
+
+Disassembly:
+	0x03892D94 BL 0x1C16E00
+	0x03892D98 CBZ X0, 0x3892E14
+	0x03892D9C LDR W8, [X19 + 0x18]
+	0x03892DA0 CMP W8, 0x2
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S3, [X0+12]
+	003 Move V2, [X0]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzyx()
+
+Disassembly:
+	0x03892DA4 B.LS 0x3892E10
+	0x03892DA8 ADD X0, X22, 0xC
+	0x03892DAC MOV X1, X21
+	0x03892DB0 MOV X2, X20
+
+ISIL:
+	001 Move S2, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V3, [X0]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzyy()
+
+Disassembly:
+	0x03892DB4 MOV X3, X31
+	0x03892DB8 STR X23, [X19 + 0x30]
+	0x03892DBC BL 0x338FFB4
+	0x03892DC0 MOV X20, X0
+	0x03892DC4 CBZ X0, 0x3892DDC
+
+ISIL:
+	001 NotImplemented "Instruction LDUR not yet implemented."
+	002 Move S0, V2.S[1]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzyz()
+
+Disassembly:
+	0x03892DC8 LDR X8, [X19]
+	0x03892DCC MOV X0, X20
+	0x03892DD0 LDR X1, [X8 + 0x40]
+	0x03892DD4 BL 0x1C16E00
+	0x03892DD8 CBZ X0, 0x3892E14
+
+ISIL:
+	001 NotImplemented "Instruction LDUR not yet implemented."
+	002 Move S0, V2.S[1]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzyw()
+
+Disassembly:
+	0x03892DDC LDR W8, [X19 + 0x18]
+	0x03892DE0 CMP W8, 0x3
+	0x03892DE4 B.LS 0x3892E10
+	0x03892DE8 ADRP X8, 0x8B8000
+
+ISIL:
+	001 Move S2, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V3, [X0+12]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzzx()
+
+Disassembly:
+	0x03892DEC LDR X8, [X8 + 0xF90]
+	0x03892DF0 STR X20, [X19 + 0x38]
+	0x03892DF4 MOV X1, X19
+	0x03892DF8 LDP X20, X19, [X31 + 0x20]
+	0x03892DFC LDR X0, [X8]
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V3, [X0]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzzy()
+
+Disassembly:
+	0x03892E00 LDP X22, X21, [X31 + 0x10]
+	0x03892E04 MOV X2, X31
+	0x03892E08 LDP X30, X23, [X31], #0x30
+	0x03892E0C B 0x3227C5C
+
+ISIL:
+	001 Move S3, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzzz()
+
+Disassembly:
+	0x03892E10 BL 0x1C16F28
+	0x03892E14 BL 0x1C16F44
+	0x03892E18 MOV X1, X31
+	0x03892E1C BL 0x1C16DEC
+	0x03892E20 BL 0x1C16F20
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V1, V0
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzzw()
+
+Disassembly:
+	0x03892E24 RET
+	0x03892E28 RET
+	0x03892E2C STP D11, D10, [X31 - 0x30]!
+	0x03892E30 STP D9, D8, [X31 + 0x10]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S3, [X0+12]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzwx()
+
+Disassembly:
+	0x03892E34 STP X30, X19, [X31 + 0x20]
+	0x03892E38 MOV X1, X31
+	0x03892E3C MOV V8.16B, V3.16B
+	0x03892E40 MOV V9.16B, V2.16B
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S2, [X0+12]
+	003 Move V3, [X0]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzwy()
+
+Disassembly:
+	0x03892E44 MOV V10.16B, V1.16B
+	0x03892E48 MOV V11.16B, V0.16B
+	0x03892E4C MOV X19, X0
+	0x03892E50 BL 0x33BDD8C
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S2, [X0+12]
+	003 Move V3, [X0+4]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzwz()
+
+Disassembly:
+	0x03892E54 STP S11, S10, [X19 + 0x10]
+	0x03892E58 STP S9, S8, [X19 + 0x18]
+	0x03892E5C LDP X30, X19, [X31 + 0x20]
+	0x03892E60 LDP D9, D8, [X31 + 0x10]
+	0x03892E64 LDP D11, D10, [X31], #0x30
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move S2, V0.S[1]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zzww()
+
+Disassembly:
+	0x03892E68 RET
+	0x03892E6C STP S0, S1, [X0]
+	0x03892E70 STP S2, S3, [X0 + 0x8]
+	0x03892E74 STP S4, S5, [X0 + 0x10]
+	0x03892E78 STP S6, S7, [X0 + 0x18]
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move S2, V0.S[1]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwxx()
+
+Disassembly:
+	0x03892E7C RET
+	0x03892E80 STP S0, S2, [X0]
+	0x03892E84 STP S4, S6, [X0 + 0x8]
+	0x03892E88 STP S1, S3, [X0 + 0x10]
+
+ISIL:
+	001 Move V2, [X0]
+	002 Move S0, [X0+8]
+	003 Move S1, [X0+12]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwxy()
+
+Disassembly:
+	0x03892E8C STP S5, S7, [X0 + 0x18]
+	0x03892E90 RET
+	0x03892E94 UNIMPLEMENTED
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move S2, [X0]
+	004 Move S3, [X0+4]
+	005 Return X0
+
+Method: System.Void set_zwxy(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892E98 STP V0, V0, [X0]
+	0x03892E9C RET
+	0x03892EA0 ANDS W31, W1, 0x1
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Move [X0+16], S1
+	003 Move [X0], S2
+	004 Move [X0+8], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_zwxz()
+
+Disassembly:
+	0x03892EA4 FMOV S0, W31
+	0x03892EA8 FMOV S1, 1
+	0x03892EAC FCSEL S0, S1, S0, NE
+	0x03892EB0 STP S0, S0, [X0]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, [X0]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwxw()
+
+Disassembly:
+	0x03892EB4 STP S0, S0, [X0 + 0x8]
+	0x03892EB8 STP S0, S0, [X0 + 0x10]
+	0x03892EBC STP S0, S0, [X0 + 0x18]
+	0x03892EC0 RET
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, [X0]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwyx()
+
+Disassembly:
+	0x03892EC4 ANDS X31, X1, 0x1
+	0x03892EC8 FMOV S0, 1
+	0x03892ECC FMOV S1, W31
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move S3, [X0]
+	004 Move S2, [X0+4]
+	005 Return X0
+
+Method: System.Void set_zwyx(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03892ED0 FCSEL S2, S1, S0, EQ
+	0x03892ED4 ANDS X31, X1, 0x1FF
+	0x03892ED8 FCSEL S3, S1, S0, EQ
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Move [X0+16], S1
+	003 Move [X0], S3
+	004 Move [X0+8], S2
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_zwyy()
+
+Disassembly:
+	0x03892EDC ANDS X31, X1, 0x1FFFF
+	0x03892EE0 FCSEL S4, S1, S0, EQ
+	0x03892EE4 ANDS X31, X1, 0x1FFFFFF
+	0x03892EE8 STP S2, S3, [X0]
+
+ISIL:
+	001 Move V2, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move S1, [X0+12]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwyz()
+
+Disassembly:
+	0x03892EEC FCSEL S2, S1, S0, EQ
+	0x03892EF0 ANDS X31, X1, 0x1FFFFFFFF
+	0x03892EF4 STP S4, S2, [X0 + 0x8]
+	0x03892EF8 FCSEL S2, S1, S0, EQ
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, [X0+4]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwyw()
+
+Disassembly:
+	0x03892EFC ANDS X31, X1, 0x1FFFFFFFFFF
+	0x03892F00 FCSEL S3, S1, S0, EQ
+	0x03892F04 ANDS X31, X1, 0x1FFFFFFFFFFFF
+	0x03892F08 FCSEL S4, S1, S0, EQ
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, [X0+4]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwzx()
+
+Disassembly:
+	0x03892F0C ANDS X31, X1, 0x1FFFFFFFFFFFFFF
+	0x03892F10 FCSEL S0, S1, S0, EQ
+	0x03892F14 STP S2, S3, [X0 + 0x10]
+	0x03892F18 STP S4, S0, [X0 + 0x18]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V3, [X0]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwzy()
+
+Disassembly:
+	0x03892F1C RET
+	0x03892F20 SCVTF S0, W1
+	0x03892F24 UNIMPLEMENTED
+	0x03892F28 STP V0, V0, [X0]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V3, [X0+4]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwzz()
+
+Disassembly:
+	0x03892F2C RET
+	0x03892F30 LDP S0, S1, [X1]
+	0x03892F34 LDP S2, S3, [X1 + 0x8]
+	0x03892F38 SCVTF S0, S0
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwzw()
+
+Disassembly:
+	0x03892F3C SCVTF S1, S1
+	0x03892F40 SCVTF S2, S2
+	0x03892F44 SCVTF S3, S3
+	0x03892F48 STP S0, S1, [X0]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwwx()
+
+Disassembly:
+	0x03892F4C STP S2, S3, [X0 + 0x8]
+	0x03892F50 LDP S0, S1, [X1 + 0x10]
+	0x03892F54 LDP S2, S3, [X1 + 0x18]
+	0x03892F58 SCVTF S0, S0
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V3, [X0]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwwy()
+
+Disassembly:
+	0x03892F5C SCVTF S1, S1
+	0x03892F60 SCVTF S2, S2
+	0x03892F64 SCVTF S3, S3
+	0x03892F68 STP S0, S1, [X0 + 0x10]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V3, [X0+4]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwwz()
+
+Disassembly:
+	0x03892F6C STP S2, S3, [X0 + 0x18]
+	0x03892F70 RET
+	0x03892F74 UCVTF S0, W1
+	0x03892F78 UNIMPLEMENTED
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, V1
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_zwww()
+
+Disassembly:
+	0x03892F7C STP V0, V0, [X0]
+	0x03892F80 RET
+	0x03892F84 LDP S0, S1, [X1]
+	0x03892F88 LDP S2, S3, [X1 + 0x8]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxxx()
+
+Disassembly:
+	0x03892F8C UCVTF S0, S0
+	0x03892F90 UCVTF S1, S1
+	0x03892F94 UCVTF S2, S2
+	0x03892F98 UCVTF S3, S3
+	0x03892F9C STP S0, S1, [X0]
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V0, [X0+12]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxxy()
+
+Disassembly:
+	0x03892FA0 STP S2, S3, [X0 + 0x8]
+	0x03892FA4 LDP S0, S1, [X1 + 0x10]
+	0x03892FA8 LDP S2, S3, [X1 + 0x18]
+	0x03892FAC UCVTF S0, S0
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S3, [X0+4]
+	003 Move V0, [X0+12]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxxz()
+
+Disassembly:
+	0x03892FB0 UCVTF S1, S1
+	0x03892FB4 UCVTF S2, S2
+	0x03892FB8 UCVTF S3, S3
+	0x03892FBC STP S0, S1, [X0 + 0x10]
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move S3, [X0+8]
+	003 Move S0, [X0+12]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxxw()
+
+Disassembly:
+	0x03892FC0 STP S2, S3, [X0 + 0x18]
+	0x03892FC4 RET
+	0x00000000 INVALID
+	0x03892FCC UNIMPLEMENTED
+	0x03892FD0 STP V0, V0, [X0]
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, [X0]
+	003 Move V3, V0
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxyx()
+
+Disassembly:
+	0x03892FD4 RET
+	0x03892FD8 LDP V0, V1, [X1]
+	0x03892FDC UNIMPLEMENTED
+	0x03892FE0 UNIMPLEMENTED
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S2, [X0+4]
+	003 Move V0, [X0+12]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxyy()
+
+Disassembly:
+	0x03892FE4 STR V0, [X0]
+	0x03892FE8 LDP V0, V1, [X1 + 0x20]
+	0x03892FEC UNIMPLEMENTED
+	0x03892FF0 UNIMPLEMENTED
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S2, [X0+4]
+	003 Move V0, [X0+12]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxyz()
+
+Disassembly:
+	0x03892FF4 STR V0, [X0 + 0x1]
+	0x03892FF8 RET
+	0x03892FFC UNIMPLEMENTED
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S2, [X0+4]
+	003 Move S3, [X0+8]
+	004 Move S0, [X0+12]
+	005 Return X0
+
+Method: System.Void set_wxyz(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03893000 STP V0, V0, [X8]
+	0x03893004 RET
+	0x03893008 ANDS W31, W0, 0x1
+
+ISIL:
+	001 Move [X0], S1
+	002 Move [X0+8], S2
+	003 Move [X0+8], S3
+	004 Move [X0+16], S0
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_wxyw()
+
+Disassembly:
+	0x0389300C FMOV S0, W31
+	0x03893010 FMOV S1, 1
+	0x03893014 FCSEL S0, S1, S0, NE
+	0x03893018 STP S0, S0, [X8]
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move S1, [X0]
+	003 Move S2, [X0+4]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxzx()
+
+Disassembly:
+	0x0389301C STP S0, S0, [X8 + 0x8]
+	0x03893020 STP S0, S0, [X8 + 0x10]
+	0x03893024 STP S0, S0, [X8 + 0x18]
+	0x03893028 RET
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move S2, [X0+8]
+	003 Move S0, [X0+12]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxzy()
+
+Disassembly:
+	0x0389302C ANDS X31, X0, 0x1
+	0x03893030 FMOV S0, 1
+	0x03893034 FMOV S1, W31
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move S1, [X0]
+	004 Move S3, [X0+4]
+	005 Return X0
+
+Method: System.Void set_wxzy(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03893038 FCSEL S2, S1, S0, EQ
+	0x0389303C ANDS X31, X0, 0x1FF
+	0x03893040 FCSEL S3, S1, S0, EQ
+
+ISIL:
+	001 Move [X0+8], S2
+	002 Move [X0+16], S0
+	003 Move [X0], S1
+	004 Move [X0+8], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_wxzz()
+
+Disassembly:
+	0x03893044 ANDS X31, X0, 0x1FFFF
+	0x03893048 FCSEL S4, S1, S0, EQ
+	0x0389304C ANDS X31, X0, 0x1FFFFFF
+	0x03893050 STP S2, S3, [X8]
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V1, [X0]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxzw()
+
+Disassembly:
+	0x03893054 FCSEL S2, S1, S0, EQ
+	0x03893058 ANDS X31, X0, 0x1FFFFFFFF
+	0x0389305C STP S4, S2, [X8 + 0x8]
+	0x03893060 FCSEL S2, S1, S0, EQ
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V1, [X0]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxwx()
+
+Disassembly:
+	0x03893064 ANDS X31, X0, 0x1FFFFFFFFFF
+	0x03893068 FCSEL S3, S1, S0, EQ
+	0x0389306C ANDS X31, X0, 0x1FFFFFFFFFFFF
+	0x03893070 FCSEL S4, S1, S0, EQ
+	0x03893074 ANDS X31, X0, 0x1FFFFFFFFFFFFFF
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, [X0]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxwy()
+
+Disassembly:
+	0x03893078 FCSEL S0, S1, S0, EQ
+	0x0389307C STP S2, S3, [X8 + 0x10]
+	0x03893080 STP S4, S0, [X8 + 0x18]
+	0x03893084 RET
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move S1, [X0]
+	003 Move S3, [X0+4]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxwz()
+
+Disassembly:
+	0x03893088 SCVTF S0, W0
+	0x0389308C UNIMPLEMENTED
+	0x03893090 STP V0, V0, [X8]
+	0x03893094 RET
+
+ISIL:
+	001 Move S3, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V1, [X0]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wxww()
+
+Disassembly:
+	0x03893098 LDP S0, S1, [X0]
+	0x0389309C LDP S2, S3, [X0 + 0x8]
+	0x038930A0 LDP S4, S5, [X0 + 0x10]
+	0x038930A4 LDP S6, S7, [X0 + 0x18]
+	0x038930A8 SCVTF S0, S0
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, [X0]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wyxx()
+
+Disassembly:
+	0x038930AC SCVTF S1, S1
+	0x038930B0 SCVTF S2, S2
+	0x038930B4 SCVTF S3, S3
+	0x038930B8 SCVTF S4, S4
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 Move V0, [X0+12]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wyxy()
+
+Disassembly:
+	0x038930BC SCVTF S5, S5
+	0x038930C0 SCVTF S6, S6
+	0x038930C4 SCVTF S7, S7
+	0x038930C8 STP S0, S1, [X8]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 Move V0, [X0+12]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wyxz()
+
+Disassembly:
+	0x038930CC STP S2, S3, [X8 + 0x8]
+	0x038930D0 STP S4, S5, [X8 + 0x10]
+	0x038930D4 STP S6, S7, [X8 + 0x18]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S1, [X0+4]
+	003 Move S3, [X0+8]
+	004 Move S0, [X0+12]
+	005 Return X0
+
+Method: System.Void set_wyxz(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x038930D8 RET
+	0x038930DC UCVTF S0, W0
+	0x038930E0 UNIMPLEMENTED
+
+ISIL:
+	001 Move [X0], S2
+	002 Move [X0+8], S1
+	003 Move [X0+8], S3
+	004 Move [X0+16], S0
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_wyxw()
+
+Disassembly:
+	0x038930E4 STP V0, V0, [X8]
+	0x038930E8 RET
+	0x038930EC LDP S0, S1, [X0]
+	0x038930F0 LDP S2, S3, [X0 + 0x8]
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move S2, [X0]
+	003 Move S1, [X0+4]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wyyx()
+
+Disassembly:
+	0x038930F4 LDP S4, S5, [X0 + 0x10]
+	0x038930F8 LDP S6, S7, [X0 + 0x18]
+	0x038930FC UCVTF S0, S0
+	0x03893100 UCVTF S1, S1
+
+ISIL:
+	001 Move S3, [X0]
+	002 Move S1, [X0+4]
+	003 Move V0, [X0+12]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wyyy()
+
+Disassembly:
+	0x03893104 UCVTF S2, S2
+	0x03893108 UCVTF S3, S3
+	0x0389310C UCVTF S4, S4
+	0x03893110 UCVTF S5, S5
+	0x03893114 UCVTF S6, S6
+
+ISIL:
+	001 Move V1, [X0+4]
+	002 Move V0, [X0+12]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wyyz()
+
+Disassembly:
+	0x03893118 UCVTF S7, S7
+	0x0389311C STP S0, S1, [X8]
+	0x03893120 STP S2, S3, [X8 + 0x8]
+	0x03893124 STP S4, S5, [X8 + 0x10]
+
+ISIL:
+	001 Move V1, [X0+4]
+	002 Move S3, [X0+8]
+	003 Move S0, [X0+12]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wyyw()
+
+Disassembly:
+	0x03893128 STP S6, S7, [X8 + 0x18]
+	0x0389312C RET
+	0x00000000 INVALID
+	0x03893134 UNIMPLEMENTED
+	0x03893138 STP V0, V0, [X8]
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, [X0+4]
+	003 Move V3, V0
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wyzx()
+
+Disassembly:
+	0x0389313C RET
+	0x03893140 LDP V0, V2, [X0]
+	0x03893144 LDP V1, V3, [X0 + 0x20]
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move S3, [X0]
+	004 Move S1, [X0+4]
+	005 Return X0
+
+Method: System.Void set_wyzx(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03893148 UNIMPLEMENTED
+	0x0389314C UNIMPLEMENTED
+	0x03893150 UNIMPLEMENTED
+
+ISIL:
+	001 Move [X0+8], S2
+	002 Move [X0+16], S0
+	003 Move [X0], S3
+	004 Move [X0+8], S1
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_wyzy()
+
+Disassembly:
+	0x03893154 UNIMPLEMENTED
+	0x03893158 STP V0, V1, [X8]
+	0x0389315C RET
+	0x03893160 LDP V0, V1, [X0]
+
+ISIL:
+	001 Move V1, [X0+4]
+	002 Move S2, [X0+8]
+	003 Move S0, [X0+12]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wyzz()
+
+Disassembly:
+	0x03893164 LDP V2, V3, [X1]
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x03893170 STP V0, V1, [X8]
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V1, [X0+4]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wyzw()
+
+Disassembly:
+	0x03893174 RET
+	0x03893178 LDP V1, V2, [X0]
+	0x00000000 INVALID
+	0x00000000 INVALID
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V1, [X0+4]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wywx()
+
+Disassembly:
+	0x03893184 STP V1, V0, [X8]
+	0x03893188 RET
+	0x0389318C LDP V1, V2, [X0]
+	0x00000000 INVALID
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move S3, [X0]
+	003 Move S1, [X0+4]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wywy()
+
+Disassembly:
+	0x00000000 INVALID
+	0x03893198 STP V1, V0, [X8]
+	0x0389319C RET
+	0x038931A0 LDP V0, V1, [X0]
+	0x038931A4 LDP V2, V3, [X1]
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, [X0+4]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wywz()
+
+Disassembly:
+	0x038931A8 FADD V0.4S, V0.4S, V2.4S
+	0x038931AC FADD V1.4S, V1.4S, V3.4S
+	0x038931B0 STP V0, V1, [X8]
+	0x038931B4 RET
+
+ISIL:
+	001 Move S3, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V1, [X0+4]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wyww()
+
+Disassembly:
+	0x038931B8 LDP V1, V2, [X0]
+	0x038931BC UNIMPLEMENTED
+	0x038931C0 FADD V1.4S, V1.4S, V0.4S
+	0x038931C4 FADD V0.4S, V2.4S, V0.4S
+	0x038931C8 STP V1, V0, [X8]
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, [X0+4]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzxx()
+
+Disassembly:
+	0x038931CC RET
+	0x038931D0 LDP V1, V2, [X0]
+	0x038931D4 UNIMPLEMENTED
+	0x038931D8 FADD V1.4S, V1.4S, V0.4S
+
+ISIL:
+	001 Move V2, [X0]
+	002 Move S1, [X0+8]
+	003 Move S0, [X0+12]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzxy()
+
+Disassembly:
+	0x038931DC FADD V0.4S, V2.4S, V0.4S
+	0x038931E0 STP V1, V0, [X8]
+	0x038931E4 RET
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move S2, [X0]
+	004 Move S3, [X0+4]
+	005 Return X0
+
+Method: System.Void set_wzxy(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x038931E8 LDP V0, V1, [X0]
+	0x038931EC LDP V2, V3, [X1]
+	0x038931F0 FSUB V0.4S, V0.4S, V2.4S
+
+ISIL:
+	001 Move [X0+8], S1
+	002 Move [X0+16], S0
+	003 Move [X0], S2
+	004 Move [X0+8], S3
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_wzxz()
+
+Disassembly:
+	0x038931F4 FSUB V1.4S, V1.4S, V3.4S
+	0x038931F8 STP V0, V1, [X8]
+	0x038931FC RET
+	0x03893200 LDP V1, V2, [X0]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, [X0]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzxw()
+
+Disassembly:
+	0x03893204 UNIMPLEMENTED
+	0x03893208 FSUB V1.4S, V1.4S, V0.4S
+	0x0389320C FSUB V0.4S, V2.4S, V0.4S
+	0x03893210 STP V1, V0, [X8]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, [X0]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzyx()
+
+Disassembly:
+	0x03893214 RET
+	0x03893218 LDP V1, V2, [X0]
+	0x0389321C UNIMPLEMENTED
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move S3, [X0]
+	004 Move S2, [X0+4]
+	005 Return X0
+
+Method: System.Void set_wzyx(Unity.Mathematics.float4 value)
+
+Disassembly:
+	0x03893220 FSUB V1.4S, V0.4S, V1.4S
+	0x03893224 FSUB V0.4S, V0.4S, V2.4S
+	0x03893228 STP V1, V0, [X8]
+
+ISIL:
+	001 Move [X0+8], S1
+	002 Move [X0+16], S0
+	003 Move [X0], S3
+	004 Move [X0+8], S2
+	005 Return 
+
+Method: Unity.Mathematics.float4 get_wzyy()
+
+Disassembly:
+	0x0389322C RET
+	0x03893230 LDP V0, V1, [X0]
+	0x03893234 LDP V2, V3, [X1]
+	0x00000000 INVALID
+
+ISIL:
+	001 Move V2, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move S0, [X0+12]
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzyz()
+
+Disassembly:
+	0x00000000 INVALID
+	0x03893240 STP V0, V1, [X8]
+	0x03893244 RET
+	0x03893248 LDP V1, V2, [X0]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, [X0+4]
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzyw()
+
+Disassembly:
+	0x0389324C UNIMPLEMENTED
+	0x00000000 INVALID
+	0x00000000 INVALID
+	0x03893258 STP V1, V0, [X8]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, [X0+4]
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzzx()
+
+Disassembly:
+	0x0389325C RET
+	0x03893260 LDP V1, V2, [X0]
+	0x03893264 UNIMPLEMENTED
+	0x00000000 INVALID
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V3, [X0]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzzy()
+
+Disassembly:
+	0x00000000 INVALID
+	0x03893270 STP V1, V0, [X8]
+	0x03893274 RET
+	0x03893278 SUB X31, X31, 0x70
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V3, [X0+4]
+	004 Move V2, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzzz()
+
+Disassembly:
+	0x0389327C STP D15, D14, [X31 + 0x10]
+	0x03893280 STP D13, D12, [X31 + 0x20]
+	0x03893284 STP D11, D10, [X31 + 0x30]
+	0x03893288 STP D9, D8, [X31 + 0x40]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, V1
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzzw()
+
+Disassembly:
+	0x0389328C STP X30, X21, [X31 + 0x50]
+	0x03893290 STP X20, X19, [X31 + 0x60]
+	0x03893294 LDP S0, S8, [X0]
+	0x03893298 LDP S1, S11, [X1]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, V1
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzwx()
+
+Disassembly:
+	0x0389329C LDP S9, S10, [X0 + 0x8]
+	0x038932A0 LDP S12, S13, [X1 + 0x8]
+	0x038932A4 MOV X20, X1
+	0x038932A8 MOV X21, X0
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V3, [X0]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzwy()
+
+Disassembly:
+	0x038932AC MOV X19, X8
+	0x038932B0 BL 0x3EB1BA0
+	0x038932B4 STR S0, [X31 + 0xC]
+	0x038932B8 MOV V0.16B, V8.16B
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V3, [X0+4]
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzwz()
+
+Disassembly:
+	0x038932BC MOV V1.16B, V11.16B
+	0x038932C0 BL 0x3EB1BA0
+	0x038932C4 STR S0, [X31 + 0x8]
+	0x038932C8 MOV V0.16B, V9.16B
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, V0
+	004 Move V3, V1
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wzww()
+
+Disassembly:
+	0x038932CC MOV V1.16B, V12.16B
+	0x038932D0 BL 0x3EB1BA0
+	0x038932D4 STR S0, [X31 + 0x4]
+	0x038932D8 MOV V0.16B, V10.16B
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwxx()
+
+Disassembly:
+	0x038932DC MOV V1.16B, V13.16B
+	0x038932E0 BL 0x3EB1BA0
+	0x038932E4 LDP S2, S10, [X21 + 0x10]
+	0x038932E8 LDP S1, S13, [X20 + 0x10]
+	0x038932EC LDP S11, S12, [X21 + 0x18]
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V2, [X0]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwxy()
+
+Disassembly:
+	0x038932F0 LDP S15, S14, [X20 + 0x18]
+	0x038932F4 MOV V8.16B, V0.16B
+	0x038932F8 MOV V0.16B, V2.16B
+	0x038932FC BL 0x3EB1BA0
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move S2, [X0]
+	003 Move S3, [X0+4]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwxz()
+
+Disassembly:
+	0x03893300 MOV V9.16B, V0.16B
+	0x03893304 MOV V0.16B, V10.16B
+	0x03893308 MOV V1.16B, V13.16B
+	0x0389330C BL 0x3EB1BA0
+
+ISIL:
+	001 Move S3, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, [X0]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwxw()
+
+Disassembly:
+	0x03893310 MOV V10.16B, V0.16B
+	0x03893314 MOV V0.16B, V11.16B
+	0x03893318 MOV V1.16B, V15.16B
+	0x0389331C BL 0x3EB1BA0
+	0x03893320 MOV V11.16B, V0.16B
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V2, [X0]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwyx()
+
+Disassembly:
+	0x03893324 MOV V0.16B, V12.16B
+	0x03893328 MOV V1.16B, V14.16B
+	0x0389332C BL 0x3EB1BA0
+	0x03893330 LDR V3, [X31 + 0xC]
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move S3, [X0]
+	003 Move S2, [X0+4]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwyy()
+
+Disassembly:
+	0x03893334 LDR V1, [X31 + 0x8]
+	0x03893338 STP S9, S10, [X19 + 0x10]
+	0x0389333C STP S11, S0, [X19 + 0x18]
+	0x03893340 LDP X30, X21, [X31 + 0x50]
+	0x03893344 STP S3, S1, [X19]
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V2, [X0+4]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwyz()
+
+Disassembly:
+	0x03893348 LDR V1, [X31 + 0x4]
+	0x0389334C LDP D11, D10, [X31 + 0x30]
+	0x03893350 LDP D13, D12, [X31 + 0x20]
+	0x03893354 LDP D15, D14, [X31 + 0x10]
+
+ISIL:
+	001 Move S3, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, [X0+4]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwyw()
+
+Disassembly:
+	0x03893358 STP S1, S8, [X19 + 0x8]
+	0x0389335C LDP X20, X19, [X31 + 0x60]
+	0x03893360 LDP D9, D8, [X31 + 0x40]
+	0x03893364 ADD X31, X31, 0x70
+	0x03893368 RET
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V2, [X0+4]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwzx()
+
+Disassembly:
+	0x0389336C STP D15, D14, [X31 - 0x60]!
+	0x03893370 STP D13, D12, [X31 + 0x10]
+	0x03893374 STP D11, D10, [X31 + 0x20]
+	0x03893378 STP D9, D8, [X31 + 0x30]
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V3, [X0]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwzy()
+
+Disassembly:
+	0x0389337C STR X30, [X31 + 0x40]
+	0x03893380 STP X20, X19, [X31 + 0x50]
+	0x03893384 MOV V8.16B, V0.16B
+	0x03893388 LDP S0, S9, [X0]
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V3, [X0+4]
+	004 Move V1, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwzz()
+
+Disassembly:
+	0x0389338C LDP S10, S11, [X0 + 0x8]
+	0x03893390 MOV V1.16B, V8.16B
+	0x03893394 MOV X19, X0
+	0x03893398 MOV X20, X8
+	0x0389339C BL 0x3EB1BA0
+
+ISIL:
+	001 Move V2, [X0+8]
+	002 Move S0, V2.S[1]
+	003 Move V1, V0
+	004 Move V3, V2
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwzw()
+
+Disassembly:
+	0x038933A0 STR S0, [X31 + 0x4C]
+	0x038933A4 MOV V0.16B, V9.16B
+	0x038933A8 MOV V1.16B, V8.16B
+	0x038933AC BL 0x3EB1BA0
+	0x038933B0 MOV V9.16B, V0.16B
+
+ISIL:
+	001 Move V2, [X0+8]
+	002 Move S0, V2.S[1]
+	003 Move V1, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwwx()
+
+Disassembly:
+	0x038933B4 MOV V0.16B, V10.16B
+	0x038933B8 MOV V1.16B, V8.16B
+	0x038933BC BL 0x3EB1BA0
+	0x038933C0 MOV V10.16B, V0.16B
+	0x038933C4 MOV V0.16B, V11.16B
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V3, [X0]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwwy()
+
+Disassembly:
+	0x038933C8 MOV V1.16B, V8.16B
+	0x038933CC BL 0x3EB1BA0
+	0x038933D0 LDP S1, S11, [X19 + 0x10]
+	0x038933D4 LDP S13, S14, [X19 + 0x18]
+	0x038933D8 MOV V15.16B, V0.16B
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V3, [X0+4]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwwz()
+
+Disassembly:
+	0x038933DC MOV V0.16B, V1.16B
+	0x038933E0 MOV V1.16B, V8.16B
+	0x038933E4 BL 0x3EB1BA0
+	0x038933E8 MOV V12.16B, V0.16B
+
+ISIL:
+	001 Move S3, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V1, V0
+	004 Move V2, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float4 get_wwww()
+
+Disassembly:
+	0x038933EC MOV V0.16B, V11.16B
+	0x038933F0 MOV V1.16B, V8.16B
+	0x038933F4 BL 0x3EB1BA0
+	0x038933F8 MOV V11.16B, V0.16B
+	0x038933FC MOV V0.16B, V13.16B
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, V0
+	003 Move V2, V0
+	004 Move V3, V0
+	005 Return X0
+
+Method: Unity.Mathematics.float3 get_xxx()
+
+Disassembly:
+	0x03893400 MOV V1.16B, V8.16B
+	0x03893404 BL 0x3EB1BA0
+	0x03893408 MOV V13.16B, V0.16B
+	0x0389340C MOV V0.16B, V14.16B
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, V0
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_xxy()
+
+Disassembly:
+	0x03893410 MOV V1.16B, V8.16B
+	0x03893414 BL 0x3EB1BA0
+	0x03893418 LDR V1, [X31 + 0x4C]
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S2, [X0+4]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_xxz()
+
+Disassembly:
+	0x0389341C STP S10, S15, [X20 + 0x8]
+	0x03893420 STP S12, S11, [X20 + 0x10]
+	0x03893424 STP S13, S0, [X20 + 0x18]
+	0x03893428 STP S1, S9, [X20]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V2, [X0+8]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_xxw()
+
+Disassembly:
+	0x0389342C LDP X20, X19, [X31 + 0x50]
+	0x03893430 LDR X30, [X31 + 0x40]
+	0x03893434 LDP D9, D8, [X31 + 0x30]
+	0x03893438 LDP D11, D10, [X31 + 0x20]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V2, [X0+12]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_xyx()
+
+Disassembly:
+	0x0389343C LDP D13, D12, [X31 + 0x10]
+	0x03893440 LDP D15, D14, [X31], #0x60
+	0x03893444 RET
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_xyy()
+
+Disassembly:
+	0x03893448 STP D15, D14, [X31 - 0x60]!
+	0x0389344C STP D13, D12, [X31 + 0x10]
+	0x03893450 STP D11, D10, [X31 + 0x20]
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_xyz()
+
+Disassembly:
+	0x03893454 STP D9, D8, [X31 + 0x30]
+	0x03893458 STR X30, [X31 + 0x40]
+	0x0389345C STP X20, X19, [X31 + 0x50]
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, [X0+8]
+	004 Return X0
+
+Method: System.Void set_xyz(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893460 LDP S1, S9, [X0]
+	0x03893464 LDP S10, S11, [X0 + 0x8]
+	0x03893468 MOV X19, X0
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_xyw()
+
+Disassembly:
+	0x0389346C MOV V8.16B, V0.16B
+	0x03893470 MOV X20, X8
+	0x03893474 BL 0x3EB1BA0
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, [X0+12]
+	004 Return X0
+
+Method: System.Void set_xyw(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893478 STR S0, [X31 + 0x4C]
+	0x0389347C MOV V0.16B, V8.16B
+	0x03893480 MOV V1.16B, V9.16B
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+12], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_xzx()
+
+Disassembly:
+	0x03893484 BL 0x3EB1BA0
+	0x03893488 MOV V9.16B, V0.16B
+	0x0389348C MOV V0.16B, V8.16B
+	0x03893490 MOV V1.16B, V10.16B
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+8]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_xzy()
+
+Disassembly:
+	0x03893494 BL 0x3EB1BA0
+	0x03893498 MOV V10.16B, V0.16B
+	0x0389349C MOV V0.16B, V8.16B
+
+ISIL:
+	001 Move S2, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V0, [X0]
+	004 Return X0
+
+Method: System.Void set_xzy(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x038934A0 MOV V1.16B, V11.16B
+	0x038934A4 BL 0x3EB1BA0
+	0x038934A8 LDP S1, S11, [X19 + 0x10]
+
+ISIL:
+	001 Move [X0+4], S2
+	002 Move [X0+12], S1
+	003 Move [X0], S0
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_xzz()
+
+Disassembly:
+	0x038934AC LDP S13, S14, [X19 + 0x18]
+	0x038934B0 MOV V15.16B, V0.16B
+	0x038934B4 MOV V0.16B, V8.16B
+	0x038934B8 BL 0x3EB1BA0
+
+ISIL:
+	001 Move V1, [X0+8]
+	002 Move V0, [X0]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_xzw()
+
+Disassembly:
+	0x038934BC MOV V12.16B, V0.16B
+	0x038934C0 MOV V0.16B, V8.16B
+	0x038934C4 MOV V1.16B, V11.16B
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S1, [X0+8]
+	003 Move S2, [X0+12]
+	004 Return X0
+
+Method: System.Void set_xzw(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x038934C8 BL 0x3EB1BA0
+	0x038934CC MOV V11.16B, V0.16B
+	0x038934D0 MOV V0.16B, V8.16B
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+16], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_xwx()
+
+Disassembly:
+	0x038934D4 MOV V1.16B, V13.16B
+	0x038934D8 BL 0x3EB1BA0
+	0x038934DC MOV V13.16B, V0.16B
+	0x038934E0 MOV V0.16B, V8.16B
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+12]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_xwy()
+
+Disassembly:
+	0x038934E4 MOV V1.16B, V14.16B
+	0x038934E8 BL 0x3EB1BA0
+	0x038934EC LDR V1, [X31 + 0x4C]
+
+ISIL:
+	001 Move V1, [X0+12]
+	002 Move S0, [X0]
+	003 Move S2, [X0+4]
+	004 Return X0
+
+Method: System.Void set_xwy(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x038934F0 STP S10, S15, [X20 + 0x8]
+	0x038934F4 STP S12, S11, [X20 + 0x10]
+	0x038934F8 STP S13, S0, [X20 + 0x18]
+
+ISIL:
+	001 Move [X0+12], S1
+	002 Move [X0], S0
+	003 Move [X0+8], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_xwz()
+
+Disassembly:
+	0x038934FC STP S1, S9, [X20]
+	0x03893500 LDP X20, X19, [X31 + 0x50]
+	0x03893504 LDR X30, [X31 + 0x40]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move S2, [X0+8]
+	003 Move S1, [X0+12]
+	004 Return X0
+
+Method: System.Void set_xwz(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893508 LDP D9, D8, [X31 + 0x30]
+	0x0389350C LDP D11, D10, [X31 + 0x20]
+	0x03893510 LDP D13, D12, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S2
+	003 Move [X0+16], S1
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_xww()
+
+Disassembly:
+	0x03893514 LDP D15, D14, [X31], #0x60
+	0x03893518 RET
+	0x0389351C LDP V0, V1, [X0]
+	0x03893520 FMOV V2.4S, 0x0
+
+ISIL:
+	001 Move V1, [X0+12]
+	002 Move V0, [X0]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_yxx()
+
+Disassembly:
+	0x03893524 FADD V0.4S, V0.4S, V2.4S
+	0x03893528 FADD V1.4S, V1.4S, V2.4S
+	0x0389352C STP V0, V1, [X0]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_yxy()
+
+Disassembly:
+	0x03893530 STP V0, V1, [X8]
+	0x03893534 RET
+	0x03893538 LDP V0, V1, [X0]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_yxz()
+
+Disassembly:
+	0x0389353C FMOV V2.4S, 0x0
+	0x03893540 FADD V0.4S, V0.4S, V2.4S
+	0x03893544 FADD V1.4S, V1.4S, V2.4S
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, [X0+8]
+	004 Return X0
+
+Method: System.Void set_yxz(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893548 STP V0, V1, [X0]
+	0x0389354C STP V0, V1, [X8]
+	0x03893550 RET
+
+ISIL:
+	001 Move [X0], S1
+	002 Move [X0+8], S0
+	003 Move [X0+8], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_yxw()
+
+Disassembly:
+	0x03893554 LDP S2, S0, [X0]
+	0x03893558 LDP S1, S3, [X1 + 0x4]
+	0x0389355C LDR V5, [X1 + 0xC]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Move V2, [X0+12]
+	004 Return X0
+
+Method: System.Void set_yxw(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893560 LDR V4, [X1]
+	0x03893564 FCMP S0, S1
+	0x03893568 LDP S0, S1, [X0 + 0x8]
+
+ISIL:
+	001 Move [X0], S1
+	002 Move [X0+8], S0
+	003 Move [X0+12], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_yyx()
+
+Disassembly:
+	0x0389356C CSET W8, MI
+	0x03893570 FCMP S0, S3
+	0x03893574 LDP S0, S3, [X0 + 0x10]
+
+ISIL:
+	001 Move S2, [X0]
+	002 Move S0, [X0+4]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_yyy()
+
+Disassembly:
+	0x03893578 CSET W9, MI
+	0x0389357C FCMP S1, S5
+	0x03893580 LDP S5, S1, [X1 + 0x14]
+	0x03893584 CSET W10, MI
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V1, V0
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_yyz()
+
+Disassembly:
+	0x03893588 FCMP S2, S4
+	0x0389358C CSET W11, MI
+	0x03893590 FCMP S3, S5
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S2, [X0+8]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_yyw()
+
+Disassembly:
+	0x03893594 LDP S3, S4, [X0 + 0x18]
+	0x03893598 LDR V5, [X1 + 0x1C]
+	0x0389359C LDR V2, [X1 + 0x10]
+	0x038935A0 CSET W12, MI
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V2, [X0+12]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_yzx()
+
+Disassembly:
+	0x038935A4 FCMP S3, S1
+	0x038935A8 CSET W13, MI
+	0x038935AC FCMP S4, S5
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, [X0]
+	004 Return X0
+
+Method: System.Void set_yzx(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x038935B0 BFM X11, X8, 0x38, 0x0
+	0x038935B4 CSET W8, MI
+	0x038935B8 FCMP S0, S2
+
+ISIL:
+	001 Move [X0+4], S0
+	002 Move [X0+12], S1
+	003 Move [X0], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_yzy()
+
+Disassembly:
+	0x038935BC BFM X11, X9, 0x30, 0x0
+	0x038935C0 CSET W9, MI
+	0x038935C4 BFM W9, W12, 0x18, 0x0
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_yzz()
+
+Disassembly:
+	0x038935C8 BFM W9, W13, 0x10, 0x0
+	0x038935CC BFM W9, W8, 0x8, 0x0
+	0x038935D0 BFM X11, X10, 0x28, 0x0
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_yzw()
+
+Disassembly:
+	0x038935D4 ORR X0, X11, X9, 0x20
+	0x038935D8 RET
+	0x038935DC LDP S2, S1, [X0]
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Move V2, [X0+12]
+	004 Return X0
+
+Method: System.Void set_yzw(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x038935E0 FCMP S1, S0
+	0x038935E4 LDP S3, S1, [X0 + 0x8]
+	0x038935E8 CSET W8, MI
+
+ISIL:
+	001 Move [X0+4], S0
+	002 Move [X0+12], S1
+	003 Move [X0+12], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_ywx()
+
+Disassembly:
+	0x038935EC FCMP S3, S0
+	0x038935F0 CSET W9, MI
+	0x038935F4 FCMP S1, S0
+
+ISIL:
+	001 Move V1, [X0+12]
+	002 Move S2, [X0]
+	003 Move S0, [X0+4]
+	004 Return X0
+
+Method: System.Void set_ywx(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x038935F8 LDP S1, S3, [X0 + 0x10]
+	0x038935FC CSET W10, MI
+	0x03893600 FCMP S2, S0
+
+ISIL:
+	001 Move [X0+12], S1
+	002 Move [X0], S2
+	003 Move [X0+8], S0
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_ywy()
+
+Disassembly:
+	0x03893604 CSET W11, MI
+	0x03893608 FCMP S3, S0
+	0x0389360C LDP S2, S3, [X0 + 0x18]
+	0x03893610 CSET W12, MI
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V1, [X0+12]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_ywz()
+
+Disassembly:
+	0x03893614 BFM X11, X8, 0x38, 0x0
+	0x03893618 BFM X11, X9, 0x30, 0x0
+	0x0389361C FCMP S2, S0
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V0, [X0+4]
+	004 Return X0
+
+Method: System.Void set_ywz(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893620 CSET W8, MI
+	0x03893624 FCMP S3, S0
+	0x03893628 CSET W9, MI
+
+ISIL:
+	001 Move [X0+8], S2
+	002 Move [X0+16], S1
+	003 Move [X0+4], S0
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_yww()
+
+Disassembly:
+	0x0389362C FCMP S1, S0
+	0x03893630 CSET W13, MI
+	0x03893634 BFM W13, W12, 0x18, 0x0
+	0x03893638 BFM W13, W8, 0x10, 0x0
+
+ISIL:
+	001 Move V1, [X0+12]
+	002 Move V0, [X0+4]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_zxx()
+
+Disassembly:
+	0x0389363C BFM W13, W9, 0x8, 0x0
+	0x03893640 BFM X11, X10, 0x28, 0x0
+	0x03893644 ORR X0, X11, X13, 0x20
+	0x03893648 RET
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V0, [X0+8]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_zxy()
+
+Disassembly:
+	0x0389364C LDP S2, S1, [X0]
+	0x03893650 FCMP S1, S0
+	0x03893654 LDP S3, S1, [X0 + 0x8]
+
+ISIL:
+	001 Move S2, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V1, [X0]
+	004 Return X0
+
+Method: System.Void set_zxy(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893658 CSET W8, GT
+	0x0389365C FCMP S3, S0
+	0x03893660 CSET W9, GT
+
+ISIL:
+	001 Move [X0+4], S2
+	002 Move [X0+12], S0
+	003 Move [X0], S1
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_zxz()
+
+Disassembly:
+	0x03893664 FCMP S1, S0
+	0x03893668 LDP S1, S3, [X0 + 0x10]
+	0x0389366C CSET W10, GT
+	0x03893670 FCMP S2, S0
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V1, [X0]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_zxw()
+
+Disassembly:
+	0x03893674 CSET W11, GT
+	0x03893678 FCMP S3, S0
+	0x0389367C LDP S2, S3, [X0 + 0x18]
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move S0, [X0+8]
+	003 Move S2, [X0+12]
+	004 Return X0
+
+Method: System.Void set_zxw(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893680 CSET W12, GT
+	0x03893684 BFM X11, X8, 0x38, 0x0
+	0x03893688 BFM X11, X9, 0x30, 0x0
+
+ISIL:
+	001 Move [X0], S1
+	002 Move [X0+8], S0
+	003 Move [X0+16], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_zyx()
+
+Disassembly:
+	0x0389368C FCMP S2, S0
+	0x03893690 CSET W8, GT
+	0x03893694 FCMP S3, S0
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, [X0]
+	004 Return X0
+
+Method: System.Void set_zyx(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893698 CSET W9, GT
+	0x0389369C FCMP S1, S0
+	0x038936A0 CSET W13, GT
+
+ISIL:
+	001 Move [X0+4], S1
+	002 Move [X0+12], S0
+	003 Move [X0], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_zyy()
+
+Disassembly:
+	0x038936A4 BFM W13, W12, 0x18, 0x0
+	0x038936A8 BFM W13, W8, 0x10, 0x0
+	0x038936AC BFM W13, W9, 0x8, 0x0
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_zyz()
+
+Disassembly:
+	0x038936B0 BFM X11, X10, 0x28, 0x0
+	0x038936B4 ORR X0, X11, X13, 0x20
+	0x038936B8 RET
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_zyw()
+
+Disassembly:
+	0x038936BC LDP S2, S0, [X0]
+	0x038936C0 LDP S1, S3, [X1 + 0x4]
+	0x038936C4 LDR V5, [X1 + 0xC]
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V2, [X0+12]
+	004 Return X0
+
+Method: System.Void set_zyw(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x038936C8 LDR V4, [X1]
+	0x038936CC FCMP S0, S1
+	0x038936D0 LDP S0, S1, [X0 + 0x8]
+
+ISIL:
+	001 Move [X0+4], S1
+	002 Move [X0+12], S0
+	003 Move [X0+12], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_zzx()
+
+Disassembly:
+	0x038936D4 CSET W8, LS
+	0x038936D8 FCMP S0, S3
+	0x038936DC LDP S0, S3, [X0 + 0x10]
+	0x038936E0 CSET W9, LS
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V2, [X0]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_zzy()
+
+Disassembly:
+	0x038936E4 FCMP S1, S5
+	0x038936E8 LDP S5, S1, [X1 + 0x14]
+	0x038936EC CSET W10, LS
+
+ISIL:
+	001 Move S2, [X0+4]
+	002 Move S0, [X0+8]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_zzz()
+
+Disassembly:
+	0x038936F0 FCMP S2, S4
+	0x038936F4 CSET W11, LS
+	0x038936F8 FCMP S3, S5
+	0x038936FC LDP S3, S4, [X0 + 0x18]
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V1, V0
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_zzw()
+
+Disassembly:
+	0x03893700 LDR V5, [X1 + 0x1C]
+	0x03893704 LDR V2, [X1 + 0x10]
+	0x03893708 CSET W12, LS
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S2, [X0+12]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_zwx()
+
+Disassembly:
+	0x0389370C FCMP S3, S1
+	0x03893710 CSET W13, LS
+	0x03893714 FCMP S4, S5
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, [X0]
+	004 Return X0
+
+Method: System.Void set_zwx(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893718 BFM X11, X8, 0x38, 0x0
+	0x0389371C CSET W8, LS
+	0x03893720 FCMP S0, S2
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Move [X0+16], S1
+	003 Move [X0], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_zwy()
+
+Disassembly:
+	0x03893724 BFM X11, X9, 0x30, 0x0
+	0x03893728 CSET W9, LS
+	0x0389372C BFM W9, W12, 0x18, 0x0
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, [X0+4]
+	004 Return X0
+
+Method: System.Void set_zwy(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893730 BFM W9, W13, 0x10, 0x0
+	0x03893734 BFM W9, W8, 0x8, 0x0
+	0x03893738 BFM X11, X10, 0x28, 0x0
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Move [X0+16], S1
+	003 Move [X0+4], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_zwz()
+
+Disassembly:
+	0x0389373C ORR X0, X11, X9, 0x20
+	0x03893740 RET
+	0x03893744 LDP S2, S1, [X0]
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_zww()
+
+Disassembly:
+	0x03893748 FCMP S1, S0
+	0x0389374C LDP S3, S1, [X0 + 0x8]
+	0x03893750 CSET W8, LS
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_wxx()
+
+Disassembly:
+	0x03893754 FCMP S3, S0
+	0x03893758 CSET W9, LS
+	0x0389375C FCMP S1, S0
+	0x03893760 LDP S1, S3, [X0 + 0x10]
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move V0, [X0+12]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_wxy()
+
+Disassembly:
+	0x03893764 CSET W10, LS
+	0x03893768 FCMP S2, S0
+	0x0389376C CSET W11, LS
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move S1, [X0]
+	003 Move S2, [X0+4]
+	004 Return X0
+
+Method: System.Void set_wxy(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893770 FCMP S3, S0
+	0x03893774 LDP S2, S3, [X0 + 0x18]
+	0x03893778 CSET W12, LS
+
+ISIL:
+	001 Move [X0+12], S0
+	002 Move [X0], S1
+	003 Move [X0+8], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_wxz()
+
+Disassembly:
+	0x0389377C BFM X11, X8, 0x38, 0x0
+	0x03893780 BFM X11, X9, 0x30, 0x0
+	0x03893784 FCMP S2, S0
+
+ISIL:
+	001 Move V1, [X0]
+	002 Move S2, [X0+8]
+	003 Move S0, [X0+12]
+	004 Return X0
+
+Method: System.Void set_wxz(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893788 CSET W8, LS
+	0x0389378C FCMP S3, S0
+	0x03893790 CSET W9, LS
+
+ISIL:
+	001 Move [X0], S1
+	002 Move [X0+8], S2
+	003 Move [X0+16], S0
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_wxw()
+
+Disassembly:
+	0x03893794 FCMP S1, S0
+	0x03893798 CSET W13, LS
+	0x0389379C BFM W13, W12, 0x18, 0x0
+	0x038937A0 BFM W13, W8, 0x10, 0x0
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, [X0]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_wyx()
+
+Disassembly:
+	0x038937A4 BFM W13, W9, 0x8, 0x0
+	0x038937A8 BFM X11, X10, 0x28, 0x0
+	0x038937AC ORR X0, X11, X13, 0x20
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move S2, [X0]
+	003 Move S1, [X0+4]
+	004 Return X0
+
+Method: System.Void set_wyx(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x038937B0 RET
+	0x038937B4 LDP S2, S1, [X0]
+	0x038937B8 FCMP S1, S0
+
+ISIL:
+	001 Move [X0+12], S0
+	002 Move [X0], S2
+	003 Move [X0+8], S1
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_wyy()
+
+Disassembly:
+	0x038937BC LDP S3, S1, [X0 + 0x8]
+	0x038937C0 CSET W8, GE
+	0x038937C4 FCMP S3, S0
+	0x038937C8 CSET W9, GE
+
+ISIL:
+	001 Move V1, [X0+4]
+	002 Move V0, [X0+12]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_wyz()
+
+Disassembly:
+	0x038937CC FCMP S1, S0
+	0x038937D0 LDP S1, S3, [X0 + 0x10]
+	0x038937D4 CSET W10, GE
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V1, [X0+4]
+	004 Return X0
+
+Method: System.Void set_wyz(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x038937D8 FCMP S2, S0
+	0x038937DC CSET W11, GE
+	0x038937E0 FCMP S3, S0
+
+ISIL:
+	001 Move [X0+8], S2
+	002 Move [X0+16], S0
+	003 Move [X0+4], S1
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_wyw()
+
+Disassembly:
+	0x038937E4 LDP S2, S3, [X0 + 0x18]
+	0x038937E8 CSET W12, GE
+	0x038937EC BFM X11, X8, 0x38, 0x0
+	0x038937F0 BFM X11, X9, 0x30, 0x0
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, [X0+4]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_wzx()
+
+Disassembly:
+	0x038937F4 FCMP S2, S0
+	0x038937F8 CSET W8, GE
+	0x038937FC FCMP S3, S0
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, [X0]
+	004 Return X0
+
+Method: System.Void set_wzx(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893800 CSET W9, GE
+	0x03893804 FCMP S1, S0
+	0x03893808 CSET W13, GE
+
+ISIL:
+	001 Move [X0+8], S1
+	002 Move [X0+16], S0
+	003 Move [X0], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_wzy()
+
+Disassembly:
+	0x0389380C BFM W13, W12, 0x18, 0x0
+	0x03893810 BFM W13, W8, 0x10, 0x0
+	0x03893814 BFM W13, W9, 0x8, 0x0
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, [X0+4]
+	004 Return X0
+
+Method: System.Void set_wzy(Unity.Mathematics.float3 value)
+
+Disassembly:
+	0x03893818 BFM X11, X10, 0x28, 0x0
+	0x0389381C ORR X0, X11, X13, 0x20
+	0x03893820 RET
+
+ISIL:
+	001 Move [X0+8], S1
+	002 Move [X0+16], S0
+	003 Move [X0+4], S2
+	004 Return 
+
+Method: Unity.Mathematics.float3 get_wzz()
+
+Disassembly:
+	0x03893824 LDP S2, S0, [X0]
+	0x03893828 LDP S1, S3, [X1 + 0x4]
+	0x0389382C LDR V5, [X1 + 0xC]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, V1
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_wzw()
+
+Disassembly:
+	0x03893830 LDR V4, [X1]
+	0x03893834 FCMP S0, S1
+	0x03893838 LDP S0, S1, [X0 + 0x8]
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_wwx()
+
+Disassembly:
+	0x0389383C CSET W8, GT
+	0x03893840 FCMP S0, S3
+	0x03893844 LDP S0, S3, [X0 + 0x10]
+	0x03893848 CSET W9, GT
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V2, [X0]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_wwy()
+
+Disassembly:
+	0x0389384C FCMP S1, S5
+	0x03893850 LDP S5, S1, [X1 + 0x14]
+	0x03893854 CSET W10, GT
+	0x03893858 FCMP S2, S4
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V2, [X0+4]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_wwz()
+
+Disassembly:
+	0x0389385C CSET W11, GT
+	0x03893860 FCMP S3, S5
+	0x03893864 LDP S3, S4, [X0 + 0x18]
+
+ISIL:
+	001 Move S2, [X0+8]
+	002 Move S0, [X0+12]
+	003 Move V1, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float3 get_www()
+
+Disassembly:
+	0x03893868 LDR V5, [X1 + 0x1C]
+	0x0389386C LDR V2, [X1 + 0x10]
+	0x03893870 CSET W12, GT
+	0x03893874 FCMP S3, S1
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, V0
+	003 Move V2, V0
+	004 Return X0
+
+Method: Unity.Mathematics.float2 get_xx()
+
+Disassembly:
+	0x03893878 CSET W13, GT
+	0x0389387C FCMP S4, S5
+	0x03893880 BFM X11, X8, 0x38, 0x0
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, V0
+	003 Return X0
+
+Method: Unity.Mathematics.float2 get_xy()
+
+Disassembly:
+	0x03893884 CSET W8, GT
+	0x03893888 FCMP S0, S2
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Return X0
+
+Method: System.Void set_xy(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x0389388C BFM X11, X9, 0x30, 0x0
+	0x03893890 CSET W9, GT
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_xz()
+
+Disassembly:
+	0x03893894 BFM W9, W12, 0x18, 0x0
+	0x03893898 BFM W9, W13, 0x10, 0x0
+	0x0389389C BFM W9, W8, 0x8, 0x0
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+8]
+	003 Return X0
+
+Method: System.Void set_xz(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x038938A0 BFM X11, X10, 0x28, 0x0
+	0x038938A4 ORR X0, X11, X9, 0x20
+	0x038938A8 RET
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_xw()
+
+Disassembly:
+	0x038938AC LDP S2, S1, [X0]
+	0x038938B0 FCMP S1, S0
+	0x038938B4 LDP S3, S1, [X0 + 0x8]
+
+ISIL:
+	001 Move V0, [X0]
+	002 Move V1, [X0+12]
+	003 Return X0
+
+Method: System.Void set_xw(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x038938B8 CSET W8, GT
+	0x038938BC FCMP S3, S0
+	0x038938C0 CSET W9, GT
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+12], S1
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_yx()
+
+Disassembly:
+	0x038938C4 FCMP S1, S0
+	0x038938C8 LDP S1, S3, [X0 + 0x10]
+
+ISIL:
+	001 Move S1, [X0]
+	002 Move S0, [X0+4]
+	003 Return X0
+
+Method: System.Void set_yx(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x038938CC CSET W10, GT
+	0x038938D0 FCMP S2, S0
+
+ISIL:
+	001 Move [X0], S1
+	002 Move [X0+8], S0
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_yy()
+
+Disassembly:
+	0x038938D4 CSET W11, GT
+	0x038938D8 FCMP S3, S0
+	0x038938DC LDP S2, S3, [X0 + 0x18]
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V1, V0
+	003 Return X0
+
+Method: Unity.Mathematics.float2 get_yz()
+
+Disassembly:
+	0x038938E0 CSET W12, GT
+	0x038938E4 BFM X11, X8, 0x38, 0x0
+
+ISIL:
+	001 Move S0, [X0+4]
+	002 Move S1, [X0+8]
+	003 Return X0
+
+Method: System.Void set_yz(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x038938E8 BFM X11, X9, 0x30, 0x0
+	0x038938EC FCMP S2, S0
+
+ISIL:
+	001 Move [X0+4], S0
+	002 Move [X0+12], S1
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_yw()
+
+Disassembly:
+	0x038938F0 CSET W8, GT
+	0x038938F4 FCMP S3, S0
+	0x038938F8 CSET W9, GT
+
+ISIL:
+	001 Move V0, [X0+4]
+	002 Move V1, [X0+12]
+	003 Return X0
+
+Method: System.Void set_yw(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x038938FC FCMP S1, S0
+	0x03893900 CSET W13, GT
+	0x03893904 BFM W13, W12, 0x18, 0x0
+
+ISIL:
+	001 Move [X0+4], S0
+	002 Move [X0+12], S1
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_zx()
+
+Disassembly:
+	0x03893908 BFM W13, W8, 0x10, 0x0
+	0x0389390C BFM W13, W9, 0x8, 0x0
+	0x03893910 BFM X11, X10, 0x28, 0x0
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V1, [X0]
+	003 Return X0
+
+Method: System.Void set_zx(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x03893914 ORR X0, X11, X13, 0x20
+	0x03893918 RET
+	0x0389391C LDP S2, S1, [X0]
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Move [X0], S1
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_zy()
+
+Disassembly:
+	0x03893920 FCMP S1, S0
+	0x03893924 LDP S3, S1, [X0 + 0x8]
+
+ISIL:
+	001 Move S1, [X0+4]
+	002 Move S0, [X0+8]
+	003 Return X0
+
+Method: System.Void set_zy(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x03893928 CSET W8, MI
+	0x0389392C FCMP S3, S0
+
+ISIL:
+	001 Move [X0+4], S1
+	002 Move [X0+12], S0
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_zz()
+
+Disassembly:
+	0x03893930 CSET W9, MI
+	0x03893934 FCMP S1, S0
+	0x03893938 LDP S1, S3, [X0 + 0x10]
+
+ISIL:
+	001 Move V0, [X0+8]
+	002 Move V1, V0
+	003 Return X0
+
+Method: Unity.Mathematics.float2 get_zw()
+
+Disassembly:
+	0x0389393C CSET W10, MI
+	0x03893940 FCMP S2, S0
+
+ISIL:
+	001 Move S0, [X0+8]
+	002 Move S1, [X0+12]
+	003 Return X0
+
+Method: System.Void set_zw(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x03893944 CSET W11, MI
+	0x03893948 FCMP S3, S0
+
+ISIL:
+	001 Move [X0+8], S0
+	002 Move [X0+16], S1
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_wx()
+
+Disassembly:
+	0x0389394C LDP S2, S3, [X0 + 0x18]
+	0x03893950 CSET W12, MI
+	0x03893954 BFM X11, X8, 0x38, 0x0
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, [X0]
+	003 Return X0
+
+Method: System.Void set_wx(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x03893958 BFM X11, X9, 0x30, 0x0
+	0x0389395C FCMP S2, S0
+	0x03893960 CSET W8, MI
+
+ISIL:
+	001 Move [X0+12], S0
+	002 Move [X0], S1
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_wy()
+
+Disassembly:
+	0x03893964 FCMP S3, S0
+	0x03893968 CSET W9, MI
+	0x0389396C FCMP S1, S0
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, [X0+4]
+	003 Return X0
+
+Method: System.Void set_wy(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x03893970 CSET W13, MI
+	0x03893974 BFM W13, W12, 0x18, 0x0
+	0x03893978 BFM W13, W8, 0x10, 0x0
+
+ISIL:
+	001 Move [X0+12], S0
+	002 Move [X0+4], S1
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_wz()
+
+Disassembly:
+	0x0389397C BFM W13, W9, 0x8, 0x0
+	0x03893980 BFM X11, X10, 0x28, 0x0
+
+ISIL:
+	001 Move S1, [X0+8]
+	002 Move S0, [X0+12]
+	003 Return X0
+
+Method: System.Void set_wz(Unity.Mathematics.float2 value)
+
+Disassembly:
+	0x03893984 ORR X0, X11, X13, 0x20
+	0x03893988 RET
+
+ISIL:
+	001 Move [X0+8], S1
+	002 Move [X0+16], S0
+	003 Return 
+
+Method: Unity.Mathematics.float2 get_ww()
+
+Disassembly:
+	0x0389398C LDP S2, S0, [X0]
+	0x03893990 LDP S1, S3, [X1 + 0x4]
+	0x03893994 LDR V5, [X1 + 0xC]
+
+ISIL:
+	001 Move V0, [X0+12]
+	002 Move V1, V0
+	003 Return X0
+
+Method: System.Single get_Item(System.Int32 index)
+
+Disassembly:
+	0x03893998 LDR V4, [X1]
+	0x0389399C FCMP S0, S1
+
+ISIL:
+	001 Move V0, [X0]
+	002 Return V0
+
+Method: System.Void set_Item(System.Int32 index, System.Single value)
+
+Disassembly:
+	0x038939A0 LDP S0, S1, [X0 + 0x8]
+	0x038939A4 CSET W8, GE
+
+ISIL:
+	001 Move [X0], S0
+	002 Return 
+
+Method: System.Boolean Equals(Unity.Mathematics.float4 rhs)
+
+Disassembly:
+	0x038939A8 FCMP S0, S3
+	0x038939AC LDP S0, S3, [X0 + 0x10]
+	0x038939B0 CSET W9, GE
+	0x038939B4 FCMP S1, S5
+	0x038939B8 LDP S5, S1, [X1 + 0x14]
+	0x038939BC CSET W10, GE
+	0x038939C0 FCMP S2, S4
+	0x038939C4 CSET W11, GE
+	0x038939C8 FCMP S3, S5
+	0x038939CC LDP S3, S4, [X0 + 0x18]
+	0x038939D0 LDR V5, [X1 + 0x1C]
+	0x038939D4 LDR V2, [X1 + 0x10]
+	0x038939D8 CSET W12, GE
+	0x038939DC FCMP S3, S1
+	0x038939E0 CSET W13, GE
+
+ISIL:
+	001 Move V4, [X0]
+	002 NotImplemented "Instruction FCMP not yet implemented."
+	003 Move V0, [X0+4]
+	004 NotImplemented "Instruction FCMP not yet implemented."
+	005 Move V0, [X0+8]
+	006 NotImplemented "Instruction FCMP not yet implemented."
+	007 Move V0, [X0+12]
+	008 NotImplemented "Instruction FCMP not yet implemented."
+	009 NotImplemented "Instruction CSET not yet implemented."
+	010 Return X0
+	011 Move W0, W31
+	012 Return X0
+
+Method: System.Boolean Equals(System.Object o)
+
+Disassembly:
+	0x038939E4 FCMP S4, S5
+	0x038939E8 BFM X11, X8, 0x38, 0x0
+	0x038939EC CSET W8, GE
+	0x038939F0 FCMP S0, S2
+	0x038939F4 BFM X11, X9, 0x30, 0x0
+	0x038939F8 CSET W9, GE
+	0x038939FC BFM W9, W12, 0x18, 0x0
+	0x03893A00 BFM W9, W13, 0x10, 0x0
+	0x03893A04 BFM W9, W8, 0x8, 0x0
+	0x03893A08 BFM X11, X10, 0x28, 0x0
+	0x03893A0C ORR X0, X11, X9, 0x20
+	0x03893A10 RET
+	0x03893A14 LDP S2, S1, [X0]
+	0x03893A18 FCMP S1, S0
+	0x03893A1C LDP S3, S1, [X0 + 0x8]
+	0x03893A20 CSET W8, GE
+	0x03893A24 FCMP S3, S0
+	0x03893A28 CSET W9, GE
+	0x03893A2C FCMP S1, S0
+	0x03893A30 LDP S1, S3, [X0 + 0x10]
+	0x03893A34 CSET W10, GE
+	0x03893A38 FCMP S2, S0
+	0x03893A3C CSET W11, GE
+	0x03893A40 FCMP S3, S0
+	0x03893A44 LDP S2, S3, [X0 + 0x18]
+	0x03893A48 CSET W12, GE
+	0x03893A4C BFM X11, X8, 0x38, 0x0
+	0x03893A50 BFM X11, X9, 0x30, 0x0
+	0x03893A54 FCMP S2, S0
+	0x03893A58 CSET W8, GE
+	0x03893A5C FCMP S3, S0
+	0x03893A60 CSET W9, GE
+	0x03893A64 FCMP S1, S0
+	0x03893A68 CSET W13, GE
+	0x03893A6C BFM W13, W12, 0x18, 0x0
+	0x03893A70 BFM W13, W8, 0x10, 0x0
+	0x03893A74 BFM W13, W9, 0x8, 0x0
+	0x03893A78 BFM X11, X10, 0x28, 0x0
+	0x03893A7C ORR X0, X11, X13, 0x20
+	0x03893A80 RET
+	0x03893A84 LDP S2, S1, [X0]
+	0x03893A88 FCMP S1, S0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X21, 0xB4F000
+	006 Move W8, [X21+1588]
+	007 Move X20, X1
+	008 Move X19, X0
+	009 Move TEMP, X8
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfEqual {18}
+	013 Move X0, 0x88C000
+	014 Move X0, [X0+2112]
+	015 Call 0x1C17CF4
+	016 Move W8, 1
+	017 Move [X21+1588], W8
+	018 Compare X20, 0
+	019 JumpIfEqual {25}
+	020 Move X8, 0x88C000
+	021 Move X8, [X8+2112]
+	022 Move X9, [X20]
+	023 Move X8, [X8]
+	024 NotImplemented "Instruction CMP not yet implemented."
+	025 Move W0, W31
+	026 Move X20, [X31+16]
+	027 Move X19, [X31+24]
+	028 Move X30, [X31+32]
+	029 Move X21, [X31+40]
+	030 Return X0
+	031 Move X0, X20
+	032 Call 0x1C17E08
+	033 Move V0, [X0]
+	034 Move V1, [X19]
+	035 NotImplemented "Instruction FCMP not yet implemented."
+	036 Move V0, [X0+4]
+	037 Move V1, [X19+4]
+	038 NotImplemented "Instruction FCMP not yet implemented."
+	039 Move V0, [X0+8]
+	040 Move V1, [X19+8]
+	041 NotImplemented "Instruction FCMP not yet implemented."
+	042 Move V0, [X0+12]
+	043 Move V1, [X19+12]
+	044 NotImplemented "Instruction FCMP not yet implemented."
+	045 NotImplemented "Instruction CSET not yet implemented."
+
+Method: System.Int32 GetHashCode()
+
+Disassembly:
+	0x03893A8C LDP S3, S1, [X0 + 0x8]
+	0x03893A90 CSET W8, LS
+	0x03893A94 FCMP S3, S0
+	0x03893A98 CSET W9, LS
+	0x03893A9C FCMP S1, S0
+	0x03893AA0 LDP S1, S3, [X0 + 0x10]
+	0x03893AA4 CSET W10, LS
+	0x03893AA8 FCMP S2, S0
+	0x03893AAC CSET W11, LS
+	0x03893AB0 FCMP S3, S0
+	0x03893AB4 LDP S2, S3, [X0 + 0x18]
+	0x03893AB8 CSET W12, LS
+	0x03893ABC BFM X11, X8, 0x38, 0x0
+	0x03893AC0 BFM X11, X9, 0x30, 0x0
+	0x03893AC4 FCMP S2, S0
+	0x03893AC8 CSET W8, LS
+	0x03893ACC FCMP S3, S0
+	0x03893AD0 CSET W9, LS
+	0x03893AD4 FCMP S1, S0
+	0x03893AD8 CSET W13, LS
+	0x03893ADC BFM W13, W12, 0x18, 0x0
+	0x03893AE0 BFM W13, W8, 0x10, 0x0
+
+ISIL:
+	001 Move W10, [X0]
+	002 Move W11, [X0+4]
+	003 Move W8, [X0+8]
+	004 Move W9, [X0+12]
+	005 Move X13, 3819
+	006 Move X12, 2897
+	007 NotImplemented "Instruction MOVK not yet implemented."
+	008 NotImplemented "Instruction MOVK not yet implemented."
+	009 Multiply X11, X11, X13
+	010 Move W13, 0xE1D1
+	011 Multiply X9, X9, X12
+	012 Move W12, 0x26FF
+	013 NotImplemented "Instruction MOVK not yet implemented."
+	014 NotImplemented "Instruction MOVK not yet implemented."
+	015 Multiply W8, W8, W13
+	016 Move X11, X11
+	017 ShiftRight X11, 32
+	018 And X11, X11, 0x7FFFFFFF
+	019 NotImplemented "Instruction MADD not yet implemented."
+	020 Move X9, X9
+	021 ShiftRight X9, 32
+	022 And X9, X9, 0x7FFFFFFF
+	023 Add W8, W8, W11
+	024 Add W8, W8, W9
+	025 Move W9, 0x6EE1
+	026 NotImplemented "Instruction MOVK not yet implemented."
+	027 Add W0, W8, W9
+	028 Return X0
+
+Method: System.String ToString()
+
+Disassembly:
+	0x03893AE4 BFM W13, W9, 0x8, 0x0
+	0x03893AE8 BFM X11, X10, 0x28, 0x0
+	0x03893AEC ORR X0, X11, X13, 0x20
+	0x03893AF0 RET
+	0x03893AF4 LDP V0, V1, [X0]
+	0x03893AF8 UNIMPLEMENTED
+	0x03893AFC UNIMPLEMENTED
+	0x03893B00 STP V0, V1, [X8]
+	0x03893B04 RET
+	0x03893B08 LDP V0, V1, [X0]
+	0x03893B0C STP V0, V1, [X8]
+	0x03893B10 RET
+	0x03893B14 LDP S2, S0, [X0]
+	0x03893B18 LDP S1, S3, [X1 + 0x4]
+	0x03893B1C LDR V5, [X1 + 0xC]
+	0x03893B20 LDR V4, [X1]
+	0x03893B24 FCMP S0, S1
+	0x03893B28 LDP S0, S1, [X0 + 0x8]
+	0x03893B2C CSET W8, EQ
+	0x03893B30 FCMP S0, S3
+	0x03893B34 LDP S0, S3, [X0 + 0x10]
+	0x03893B38 CSET W9, EQ
+	0x03893B3C FCMP S1, S5
+	0x03893B40 LDP S5, S1, [X1 + 0x14]
+	0x03893B44 CSET W10, EQ
+	0x03893B48 FCMP S2, S4
+	0x03893B4C CSET W11, EQ
+	0x03893B50 FCMP S3, S5
+	0x03893B54 LDP S3, S4, [X0 + 0x18]
+	0x03893B58 LDR V5, [X1 + 0x1C]
+	0x03893B5C LDR V2, [X1 + 0x10]
+	0x03893B60 CSET W12, EQ
+	0x03893B64 FCMP S3, S1
+	0x03893B68 CSET W13, EQ
+	0x03893B6C FCMP S4, S5
+	0x03893B70 BFM X11, X8, 0x38, 0x0
+	0x03893B74 CSET W8, EQ
+	0x03893B78 FCMP S0, S2
+	0x03893B7C BFM X11, X9, 0x30, 0x0
+	0x03893B80 CSET W9, EQ
+	0x03893B84 BFM W9, W12, 0x18, 0x0
+	0x03893B88 BFM W9, W13, 0x10, 0x0
+	0x03893B8C BFM W9, W8, 0x8, 0x0
+	0x03893B90 BFM X11, X10, 0x28, 0x0
+	0x03893B94 ORR X0, X11, X9, 0x20
+	0x03893B98 RET
+	0x03893B9C LDP S2, S1, [X0]
+	0x03893BA0 FCMP S1, S0
+	0x03893BA4 LDP S3, S1, [X0 + 0x8]
+	0x03893BA8 CSET W8, EQ
+	0x03893BAC FCMP S3, S0
+	0x03893BB0 CSET W9, EQ
+	0x03893BB4 FCMP S1, S0
+	0x03893BB8 LDP S1, S3, [X0 + 0x10]
+	0x03893BBC CSET W10, EQ
+	0x03893BC0 FCMP S2, S0
+	0x03893BC4 CSET W11, EQ
+	0x03893BC8 FCMP S3, S0
+	0x03893BCC LDP S2, S3, [X0 + 0x18]
+	0x03893BD0 CSET W12, EQ
+	0x03893BD4 BFM X11, X8, 0x38, 0x0
+	0x03893BD8 BFM X11, X9, 0x30, 0x0
+	0x03893BDC FCMP S2, S0
+	0x03893BE0 CSET W8, EQ
+	0x03893BE4 FCMP S3, S0
+	0x03893BE8 CSET W9, EQ
+	0x03893BEC FCMP S1, S0
+	0x03893BF0 CSET W13, EQ
+	0x03893BF4 BFM W13, W12, 0x18, 0x0
+	0x03893BF8 BFM W13, W8, 0x10, 0x0
+	0x03893BFC BFM W13, W9, 0x8, 0x0
+	0x03893C00 BFM X11, X10, 0x28, 0x0
+	0x03893C04 ORR X0, X11, X13, 0x20
+	0x03893C08 RET
+	0x03893C0C LDP S2, S1, [X0]
+	0x03893C10 FCMP S1, S0
+	0x03893C14 LDP S3, S1, [X0 + 0x8]
+	0x03893C18 CSET W8, EQ
+	0x03893C1C FCMP S3, S0
+	0x03893C20 CSET W9, EQ
+	0x03893C24 FCMP S1, S0
+	0x03893C28 LDP S1, S3, [X0 + 0x10]
+	0x03893C2C CSET W10, EQ
+	0x03893C30 FCMP S2, S0
+	0x03893C34 CSET W11, EQ
+	0x03893C38 FCMP S3, S0
+	0x03893C3C LDP S2, S3, [X0 + 0x18]
+	0x03893C40 CSET W12, EQ
+	0x03893C44 BFM X11, X8, 0x38, 0x0
+	0x03893C48 BFM X11, X9, 0x30, 0x0
+	0x03893C4C FCMP S2, S0
+	0x03893C50 CSET W8, EQ
+	0x03893C54 FCMP S3, S0
+	0x03893C58 CSET W9, EQ
+	0x03893C5C FCMP S1, S0
+	0x03893C60 CSET W13, EQ
+	0x03893C64 BFM W13, W12, 0x18, 0x0
+	0x03893C68 BFM W13, W8, 0x10, 0x0
+	0x03893C6C BFM W13, W9, 0x8, 0x0
+	0x03893C70 BFM X11, X10, 0x28, 0x0
+	0x03893C74 ORR X0, X11, X13, 0x20
+	0x03893C78 RET
+	0x03893C7C LDP S2, S0, [X0]
+	0x03893C80 LDP S1, S3, [X1 + 0x4]
+	0x03893C84 LDR V5, [X1 + 0xC]
+	0x03893C88 LDR V4, [X1]
+	0x03893C8C FCMP S0, S1
+
+ISIL:
+	001 Subtract X31, X31, 64
+	002 Move [X31+16], X30
+	003 Move [X31+32], X22
+	004 Move [X31+40], X21
+	005 Move [X31+48], X20
+	006 Move [X31+56], X19
+	007 Move X19, 0xB4F000
+	008 Move X21, 0x861000
+	009 Move X22, 0x861000
+	010 Move W8, [X19+1589]
+	011 Move X21, [X21+2512]
+	012 Move X22, [X22+2704]
+	013 Move X20, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {29}
+	018 Move X0, 0x861000
+	019 Move X0, [X0+2512]
+	020 Call 0x1C17CF4
+	021 Move X0, 0x861000
+	022 Move X0, [X0+2704]
+	023 Call 0x1C17CF4
+	024 Move X0, 0x8B8000
+	025 Move X0, [X0+3984]
+	026 Call 0x1C17CF4
+	027 Move W8, 1
+	028 Move [X19+1589], W8
+	029 Move X0, [X21]
+	030 Move W1, 4
+	031 Call 0x1C17D6C
+	032 Move X19, X0
+	033 Move V0, [X20]
+	034 Move X0, [X22]
+	035 Add X1, X31, 28
+	036 Move [X31+28], S0
+	037 Call 0x1C17E04
+	038 Compare X19, 0
+	039 JumpIfEqual {121}
+	040 Move X21, X0
+	041 Compare X0, 0
+	042 JumpIfEqual {49}
+	043 Move X8, [X19]
+	044 Move X0, X21
+	045 Move X1, [X8+64]
+	046 Call 0x1C17E00
+	047 Compare X0, 0
+	048 JumpIfEqual {118}
+	049 Move W8, [X19+24]
+	050 Compare W8, 0
+	051 JumpIfEqual {117}
+	052 Move [X19+32], X21
+	053 Move V0, [X20+4]
+	054 Move X0, [X22]
+	055 Add X1, X31, 24
+	056 Move [X31+24], S0
+	057 Call 0x1C17E04
+	058 Move X21, X0
+	059 Compare X0, 0
+	060 JumpIfEqual {67}
+	061 Move X8, [X19]
+	062 Move X0, X21
+	063 Move X1, [X8+64]
+	064 Call 0x1C17E00
+	065 Compare X0, 0
+	066 JumpIfEqual {118}
+	067 Move W8, [X19+24]
+	068 NotImplemented "Instruction CMP not yet implemented."
+	069 Move [X19+40], X21
+	070 Move V0, [X20+8]
+	071 Move X0, [X22]
+	072 Add X1, X31, 12
+	073 Move [X31+12], S0
+	074 Call 0x1C17E04
+	075 Move X21, X0
+	076 Compare X0, 0
+	077 JumpIfEqual {84}
+	078 Move X8, [X19]
+	079 Move X0, X21
+	080 Move X1, [X8+64]
+	081 Call 0x1C17E00
+	082 Compare X0, 0
+	083 JumpIfEqual {118}
+	084 Move W8, [X19+24]
+	085 NotImplemented "Instruction CMP not yet implemented."
+	086 Move [X19+48], X21
+	087 Move V0, [X20+12]
+	088 Move X0, [X22]
+	089 Add X1, X31, 8
+	090 Move [X31+8], S0
+	091 Call 0x1C17E04
+	092 Move X20, X0
+	093 Compare X0, 0
+	094 JumpIfEqual {101}
+	095 Move X8, [X19]
+	096 Move X0, X20
+	097 Move X1, [X8+64]
+	098 Call 0x1C17E00
+	099 Compare X0, 0
+	100 JumpIfEqual {118}
+	101 Move W8, [X19+24]
+	102 NotImplemented "Instruction CMP not yet implemented."
+	103 Move X8, 0x8B8000
+	104 Move X8, [X8+3984]
+	105 Move [X19+56], X20
+	106 Move X1, X19
+	107 Move X2, X31
+	108 Move X0, [X8]
+	109 Call String.Format, X0, X1
+	110 Move X20, [X31+48]
+	111 Move X19, [X31+56]
+	112 Move X22, [X31+32]
+	113 Move X21, [X31+40]
+	114 Move X30, [X31+16]
+	115 Add X31, X31, 64
+	116 Return X0
+	117 Call 0x1C17F28
+	118 Call 0x1C17F44
+	119 Move X1, X31
+	120 Call 0x1C17DEC
+	121 Call 0x1C17F20
+
+Method: System.String ToString(System.String format, System.IFormatProvider formatProvider)
+
+Disassembly:
+	0x03893C90 LDP S0, S1, [X0 + 0x8]
+	0x03893C94 CSET W8, NE
+	0x03893C98 FCMP S0, S3
+	0x03893C9C LDP S0, S3, [X0 + 0x10]
+	0x03893CA0 CSET W9, NE
+	0x03893CA4 FCMP S1, S5
+	0x03893CA8 LDP S5, S1, [X1 + 0x14]
+	0x03893CAC CSET W10, NE
+	0x03893CB0 FCMP S2, S4
+	0x03893CB4 CSET W11, NE
+	0x03893CB8 FCMP S3, S5
+	0x03893CBC LDP S3, S4, [X0 + 0x18]
+	0x03893CC0 LDR V5, [X1 + 0x1C]
+	0x03893CC4 LDR V2, [X1 + 0x10]
+	0x03893CC8 CSET W12, NE
+	0x03893CCC FCMP S3, S1
+	0x03893CD0 CSET W13, NE
+	0x03893CD4 FCMP S4, S5
+	0x03893CD8 BFM X11, X8, 0x38, 0x0
+	0x03893CDC CSET W8, NE
+	0x03893CE0 FCMP S0, S2
+	0x03893CE4 BFM X11, X9, 0x30, 0x0
+	0x03893CE8 CSET W9, NE
+	0x03893CEC BFM W9, W12, 0x18, 0x0
+	0x03893CF0 BFM W9, W13, 0x10, 0x0
+	0x03893CF4 BFM W9, W8, 0x8, 0x0
+	0x03893CF8 BFM X11, X10, 0x28, 0x0
+	0x03893CFC ORR X0, X11, X9, 0x20
+	0x03893D00 RET
+	0x03893D04 LDP S2, S1, [X0]
+	0x03893D08 FCMP S1, S0
+	0x03893D0C LDP S3, S1, [X0 + 0x8]
+	0x03893D10 CSET W8, NE
+	0x03893D14 FCMP S3, S0
+	0x03893D18 CSET W9, NE
+	0x03893D1C FCMP S1, S0
+	0x03893D20 LDP S1, S3, [X0 + 0x10]
+	0x03893D24 CSET W10, NE
+	0x03893D28 FCMP S2, S0
+	0x03893D2C CSET W11, NE
+	0x03893D30 FCMP S3, S0
+	0x03893D34 LDP S2, S3, [X0 + 0x18]
+	0x03893D38 CSET W12, NE
+	0x03893D3C BFM X11, X8, 0x38, 0x0
+	0x03893D40 BFM X11, X9, 0x30, 0x0
+	0x03893D44 FCMP S2, S0
+	0x03893D48 CSET W8, NE
+	0x03893D4C FCMP S3, S0
+	0x03893D50 CSET W9, NE
+	0x03893D54 FCMP S1, S0
+	0x03893D58 CSET W13, NE
+	0x03893D5C BFM W13, W12, 0x18, 0x0
+	0x03893D60 BFM W13, W8, 0x10, 0x0
+	0x03893D64 BFM W13, W9, 0x8, 0x0
+	0x03893D68 BFM X11, X10, 0x28, 0x0
+	0x03893D6C ORR X0, X11, X13, 0x20
+	0x03893D70 RET
+	0x03893D74 LDP S2, S1, [X0]
+	0x03893D78 FCMP S1, S0
+	0x03893D7C LDP S3, S1, [X0 + 0x8]
+	0x03893D80 CSET W8, NE
+	0x03893D84 FCMP S3, S0
+	0x03893D88 CSET W9, NE
+	0x03893D8C FCMP S1, S0
+	0x03893D90 LDP S1, S3, [X0 + 0x10]
+	0x03893D94 CSET W10, NE
+	0x03893D98 FCMP S2, S0
+	0x03893D9C CSET W11, NE
+	0x03893DA0 FCMP S3, S0
+	0x03893DA4 LDP S2, S3, [X0 + 0x18]
+	0x03893DA8 CSET W12, NE
+	0x03893DAC BFM X11, X8, 0x38, 0x0
+	0x03893DB0 BFM X11, X9, 0x30, 0x0
+	0x03893DB4 FCMP S2, S0
+	0x03893DB8 CSET W8, NE
+	0x03893DBC FCMP S3, S0
+	0x03893DC0 CSET W9, NE
+	0x03893DC4 FCMP S1, S0
+	0x03893DC8 CSET W13, NE
+	0x03893DCC BFM W13, W12, 0x18, 0x0
+	0x03893DD0 BFM W13, W8, 0x10, 0x0
+	0x03893DD4 BFM W13, W9, 0x8, 0x0
+	0x03893DD8 BFM X11, X10, 0x28, 0x0
+	0x03893DDC ORR X0, X11, X13, 0x20
+	0x03893DE0 RET
+	0x03893DE4 ADD X0, X0, W1, 0x4, SXTW
+	0x03893DE8 RET
+	0x03893DEC LDR V0, [X1]
+	0x03893DF0 LDR V1, [X0]
+	0x03893DF4 FCMP S1, S0
+	0x03893DF8 B.NE 0x3893E70
+	0x03893DFC LDR V0, [X1 + 0x4]
+	0x03893E00 LDR V1, [X0 + 0x4]
+	0x03893E04 FCMP S1, S0
+	0x03893E08 B.NE 0x3893E70
+	0x03893E0C LDR V0, [X1 + 0x8]
+	0x03893E10 LDR V1, [X0 + 0x8]
+	0x03893E14 FCMP S1, S0
+	0x03893E18 B.NE 0x3893E70
+	0x03893E1C LDR V0, [X1 + 0xC]
+	0x03893E20 LDR V1, [X0 + 0xC]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move X19, 0xB4F000
+	008 Move X23, 0x861000
+	009 Move W8, [X19+1590]
+	010 Move X23, [X23+2512]
+	011 Move X20, X2
+	012 Move X21, X1
+	013 Move X22, X0
+	014 Move TEMP, X8
+	015 And TEMP, TEMP, 1
+	016 Compare TEMP, 1
+	017 JumpIfEqual {26}
+	018 Move X0, 0x861000
+	019 Move X0, [X0+2512]
+	020 Call 0x1C17CF4
+	021 Move X0, 0x8B8000
+	022 Move X0, [X0+3984]
+	023 Call 0x1C17CF4
+	024 Move W8, 1
+	025 Move [X19+1590], W8
+	026 Move X0, [X23]
+	027 Move W1, 4
+	028 Call 0x1C17D6C
+	029 Move X19, X0
+	030 Move X0, X22
+	031 Move X1, X21
+	032 Move X2, X20
+	033 Move X3, X31
+	034 Call Single.ToString, X0, X1, X2
+	035 Compare X19, 0
+	036 JumpIfEqual {118}
+	037 Move X23, X0
+	038 Compare X0, 0
+	039 JumpIfEqual {46}
+	040 Move X8, [X19]
+	041 Move X0, X23
+	042 Move X1, [X8+64]
+	043 Call 0x1C17E00
+	044 Compare X0, 0
+	045 JumpIfEqual {115}
+	046 Move W8, [X19+24]
+	047 Compare W8, 0
+	048 JumpIfEqual {114}
+	049 Add X0, X22, 4
+	050 Move X1, X21
+	051 Move X2, X20
+	052 Move X3, X31
+	053 Move [X19+32], X23
+	054 Call Single.ToString, X0, X1, X2
+	055 Move X23, X0
+	056 Compare X0, 0
+	057 JumpIfEqual {64}
+	058 Move X8, [X19]
+	059 Move X0, X23
+	060 Move X1, [X8+64]
+	061 Call 0x1C17E00
+	062 Compare X0, 0
+	063 JumpIfEqual {115}
+	064 Move W8, [X19+24]
+	065 NotImplemented "Instruction CMP not yet implemented."
+	066 Add X0, X22, 8
+	067 Move X1, X21
+	068 Move X2, X20
+	069 Move X3, X31
+	070 Move [X19+40], X23
+	071 Call Single.ToString, X0, X1, X2
+	072 Move X23, X0
+	073 Compare X0, 0
+	074 JumpIfEqual {81}
+	075 Move X8, [X19]
+	076 Move X0, X23
+	077 Move X1, [X8+64]
+	078 Call 0x1C17E00
+	079 Compare X0, 0
+	080 JumpIfEqual {115}
+	081 Move W8, [X19+24]
+	082 NotImplemented "Instruction CMP not yet implemented."
+	083 Add X0, X22, 12
+	084 Move X1, X21
+	085 Move X2, X20
+	086 Move X3, X31
+	087 Move [X19+48], X23
+	088 Call Single.ToString, X0, X1, X2
+	089 Move X20, X0
+	090 Compare X0, 0
+	091 JumpIfEqual {98}
+	092 Move X8, [X19]
+	093 Move X0, X20
+	094 Move X1, [X8+64]
+	095 Call 0x1C17E00
+	096 Compare X0, 0
+	097 JumpIfEqual {115}
+	098 Move W8, [X19+24]
+	099 NotImplemented "Instruction CMP not yet implemented."
+	100 Move X8, 0x8B8000
+	101 Move X8, [X8+3984]
+	102 Move [X19+56], X20
+	103 Move X1, X19
+	104 Move X20, [X31+32]
+	105 Move X19, [X31+40]
+	106 Move X0, [X8]
+	107 Move X22, [X31+16]
+	108 Move X21, [X31+24]
+	109 Move X2, X31
+	110 Move X30, [X31+48]
+	111 Move X23, [X31+56]
+	112 Call String.Format, X0, X1
+	113 Return X0
+	114 Call 0x1C17F28
+	115 Call 0x1C17F44
+	116 Move X1, X31
+	117 Call 0x1C17DEC
+	118 Call 0x1C17F20
+
+Method: Unity.Mathematics.float4 op_Implicit(UnityEngine.Vector4 v)
+
+Disassembly:
+	0x03893E24 FCMP S1, S0
+
+ISIL:
+	001 Return X0
+
+Method: UnityEngine.Vector4 op_Implicit(Unity.Mathematics.float4 v)
+
+Disassembly:
+	0x03893E28 B.NE 0x3893E70
+
+ISIL:
+	001 Return X0
+

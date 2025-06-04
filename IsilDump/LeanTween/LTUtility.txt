@@ -1,0 +1,95 @@
+Type: LTUtility
+
+Method: UnityEngine.Vector3[] reverse(UnityEngine.Vector3[] arr)
+
+Disassembly:
+	0x031B94D0 LDP X30, X21, [X31], #0x20
+	0x031B94D4 B 0x31B90D4
+	0x031B94D8 STP D9, D8, [X31 - 0x30]!
+	0x031B94DC STR X30, [X31 + 0x10]
+	0x031B94E0 STP X20, X19, [X31 + 0x20]
+	0x031B94E4 MOV V8.16B, V0.16B
+	0x031B94E8 LDR V0, [X0 + 0x30]
+	0x031B94EC ADRP X20, 0x121F000
+	0x031B94F0 LDRB W8, [X20 + 0xA23]
+	0x031B94F4 MOV X19, X0
+	0x031B94F8 SCVTF S9, S0
+	0x031B94FC CBNZ W8, 0x31B9514
+	0x031B9500 ADRP X0, 0xF3A000
+	0x031B9504 LDR X0, [X0 + 0x5A8]
+	0x031B9508 BL 0x1C16CF4
+	0x031B950C MOVZ W8, 0x1
+	0x031B9510 STRB W8, [X20 + 0xA23]
+	0x031B9514 ADRP X8, 0xF3A000
+	0x031B9518 LDR X8, [X8 + 0x5A8]
+	0x031B951C FMUL S9, S9, S8
+	0x031B9520 LDR X0, [X8]
+	0x031B9524 LDR W8, [X0 + 0xE0]
+	0x031B9528 CBNZ W8, 0x31B9530
+	0x031B952C BL 0x1C16DFC
+	0x031B9530 MOVZ W10, 0x7F800000
+	0x031B9534 LDR W9, [X19 + 0x30]
+	0x031B9538 FRINTM S0, S9
+	0x031B953C FMOV S1, W10
+	0x031B9540 FCVTMS W8, S9
+	0x031B9544 FCMP S0, S1
+	0x031B9548 MOVZ W10, 0x80000000
+	0x031B954C CSEL W10, W10, W8, EQ
+	0x031B9550 LDR X8, [X19 + 0x18]
+	0x031B9554 SUB W11, W9, 0x1
+	0x031B9558 CMP W10, W11
+	0x031B955C CSEL W10, W10, W11, LT
+	0x031B9560 STR W10, [X19 + 0x34]
+	0x031B9564 CBZ X8, 0x31B96D8
+	0x031B9568 LDR W14, [X8 + 0x18]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X0, 0
+	003 JumpIfEqual {37}
+	004 Move X10, [X0+24]
+	005 Subtract W11, W10, 1
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 And X13, X10, 0
+	008 Compare X13, 0
+	009 JumpIfEqual {34}
+	010 Move W12, 12
+	011 Move W9, W11
+	012 NotImplemented "Instruction UMADDL not yet implemented."
+	013 Move X8, X31
+	014 Subtract W10, W10, 2
+	015 Add X11, X11, 40
+	016 Add X12, X0, 40
+	017 NotImplemented "Instruction CMP not yet implemented."
+	018 Move V0, [X12]
+	019 NotImplemented "Instruction LDUR not yet implemented."
+	020 NotImplemented "Instruction LDUR not yet implemented."
+	021 Move V3, [X11]
+	022 Add X8, X8, 1
+	023 NotImplemented "Instruction CMP not yet implemented."
+	024 Move [X12-8], D2
+	025 Move [X12], S3
+	026 Move [X11-8], D1
+	027 Move [X11], S0
+	028 Move W13, [X0+24]
+	029 Subtract X9, X9, 1
+	030 Subtract W10, W10, 1
+	031 Subtract X11, X11, 12
+	032 NotImplemented "Instruction CMP not yet implemented."
+	033 Add X12, X12, 12
+	034 Call 0x1C17F28
+	035 Move X30, [X31+16]
+	036 Return X0
+	037 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x031B956C CMP W10, W14
+	0x031B9570 B.CS 0x31B96D4
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

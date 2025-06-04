@@ -1,0 +1,125 @@
+Type: UnityEngine.XR.Management.XRLoader
+
+Method: System.Boolean Initialize()
+
+Disassembly:
+	0x03BDA840 STRB W8, [X20 + 0xECE]
+	0x03BDA844 BL 0x3BDE264
+
+ISIL:
+	001 Move W0, 1
+	002 Return X0
+
+Method: System.Boolean Start()
+
+Disassembly:
+	0x03BDA848 TBNZ X0, 0x0, 0x3BDA878
+	0x03BDA84C ADRP X8, 0x519000
+
+ISIL:
+	001 Move W0, 1
+	002 Return X0
+
+Method: System.Boolean Stop()
+
+Disassembly:
+	0x03BDA850 LDR X8, [X8 + 0xA28]
+	0x03BDA854 ADRP X20, 0x583000
+
+ISIL:
+	001 Move W0, 1
+	002 Return X0
+
+Method: System.Boolean Deinitialize()
+
+Disassembly:
+	0x03BDA858 LDR X0, [X8]
+	0x03BDA85C LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Move W0, 1
+	002 Return X0
+
+Method: T GetLoadedSubsystem()
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated
+Method: System.Collections.Generic.List`1<UnityEngine.Rendering.GraphicsDeviceType> GetSupportedGraphicsDeviceTypes(System.Boolean buildingPlayer)
+
+Disassembly:
+	0x03BDA860 LDR X20, [X20 + 0xE98]
+	0x03BDA864 CBNZ W8, 0x3BDA86C
+	0x03BDA868 BL 0x1C16DFC
+	0x03BDA86C LDR X0, [X20]
+	0x03BDA870 MOV X1, X31
+	0x03BDA874 BL 0x3C06A04
+	0x03BDA878 AND W0, W19, 0x1
+	0x03BDA87C LDP X20, X19, [X31 + 0x10]
+	0x03BDA880 LDR X30, [X31], #0x20
+	0x03BDA884 B 0x3BDE3B8
+	0x03BDA888 AND W0, W0, 0x1
+	0x03BDA88C B 0x3BDE3B8
+	0x03BDA890 STP X30, X19, [X31 - 0x10]!
+	0x03BDA894 ADRP X19, 0x808000
+	0x03BDA898 LDRB W8, [X19 + 0xECF]
+	0x03BDA89C TBNZ X8, 0x0, 0x3BDA8C0
+	0x03BDA8A0 ADRP X0, 0x519000
+	0x03BDA8A4 LDR X0, [X0 + 0xA28]
+	0x03BDA8A8 BL 0x1C16CF4
+	0x03BDA8AC ADRP X0, 0x583000
+	0x03BDA8B0 LDR X0, [X0 + 0xEA0]
+	0x03BDA8B4 BL 0x1C16CF4
+	0x03BDA8B8 MOVZ W8, 0x1
+	0x03BDA8BC STRB W8, [X19 + 0xECF]
+	0x03BDA8C0 BL 0x3BDE264
+	0x03BDA8C4 TBZ X0, 0x0, 0x3BDA8D0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x809000
+	006 Move X21, 0x584000
+	007 Move X19, 0x584000
+	008 Move W8, [X20+3768]
+	009 Move X21, [X21+3512]
+	010 Move X19, [X19+3520]
+	011 Move TEMP, X8
+	012 And TEMP, TEMP, 1
+	013 Compare TEMP, 1
+	014 JumpIfEqual {23}
+	015 Move X0, 0x584000
+	016 Move X0, [X0+3520]
+	017 Call 0x1C17CF4
+	018 Move X0, 0x584000
+	019 Move X0, [X0+3512]
+	020 Call 0x1C17CF4
+	021 Move W8, 1
+	022 Move [X20+3768], W8
+	023 Move X0, [X21]
+	024 Call 0x1C17F10
+	025 Move X1, [X19]
+	026 Move X19, X0
+	027 Call List`1<Int32Enum>..ctor, X0
+	028 Move X0, X19
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X30, [X31+32]
+	032 Move X21, [X31+40]
+	033 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03BDA8C8 LDP X30, X19, [X31], #0x10
+	0x03BDA8CC B 0x3BDE350
+
+ISIL:
+	001 Move X1, X31
+	002 Call ScriptableObject..ctor, X0
+	003 Return 
+

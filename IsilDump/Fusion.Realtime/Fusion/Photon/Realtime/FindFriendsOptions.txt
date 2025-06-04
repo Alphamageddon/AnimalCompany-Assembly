@@ -1,0 +1,43 @@
+Type: Fusion.Photon.Realtime.FindFriendsOptions
+
+Method: System.Int32 ToIntFlags()
+
+Disassembly:
+	0x01E58B38 LDR X8, [X19]
+	0x01E58B3C LDR X3, [X31 + 0x28]
+	0x01E58B40 MOVZ W1, 0xE7
+	0x01E58B44 MOV X0, X19
+	0x01E58B48 LDR X9, [X8 + 0x228]
+	0x01E58B4C LDR X4, [X8 + 0x230]
+	0x01E58B50 MOV X2, X26
+	0x01E58B54 BLR X9
+	0x01E58B58 LDP X20, X19, [X31 + 0x80]
+	0x01E58B5C LDP X22, X21, [X31 + 0x70]
+
+ISIL:
+	001 Move W8, [X0+16]
+	002 Move W9, [X0+17]
+	003 Move W10, [X0+18]
+	004 Or W11, W8, 2
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSEL not yet implemented."
+	007 Or W9, W8, 4
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 NotImplemented "Instruction CSEL not yet implemented."
+	010 Return X0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01E5A31C ADRP X1, 0x205A000
+	0x01E5A320 ADD X1, X1, 0xE58
+	0x01E5A324 MOV X2, X31
+	0x01E5A328 BL 0x3EB1B00
+
+ISIL:
+	001 Move X1, X31
+	002 NotImplemented "Instruction STRH not yet implemented."
+	003 Move [X0+18], W31
+	004 Call Object..ctor, X0
+	005 Return 
+

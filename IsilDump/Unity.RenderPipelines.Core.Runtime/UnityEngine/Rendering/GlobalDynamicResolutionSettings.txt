@@ -1,0 +1,54 @@
+Type: UnityEngine.Rendering.GlobalDynamicResolutionSettings
+
+Method: UnityEngine.Rendering.GlobalDynamicResolutionSettings NewDefault()
+
+Disassembly:
+	0x039A01B0 STRB W24, [X8 + 0x38]
+	0x039A01B4 LDP X20, X19, [X31 + 0x30]
+	0x039A01B8 LDP X24, X23, [X31 + 0x10]
+	0x039A01BC STR W31, [X8 + 0x28]
+	0x039A01C0 STR W9, [X8 + 0x3C]
+	0x039A01C4 STRB W31, [X8 + 0x40]
+	0x039A01C8 LDR X30, [X31], #0x40
+	0x039A01CC RET
+	0x039A01D0 BL 0x1C16F28
+	0x039A01D4 BL 0x1C16F20
+	0x039A01D8 SUB X31, X31, 0x40
+	0x039A01DC STP X30, X23, [X31 + 0x10]
+	0x039A01E0 STP X22, X21, [X31 + 0x20]
+	0x039A01E4 STP X20, X19, [X31 + 0x30]
+	0x039A01E8 ADRP X20, 0xA41000
+	0x039A01EC LDRB W8, [X20 + 0xB7B]
+	0x039A01F0 MOV X19, X0
+	0x039A01F4 TBNZ X8, 0x0, 0x39A0230
+	0x039A01F8 ADRP X0, 0x753000
+	0x039A01FC LDR X0, [X0 + 0xDF8]
+	0x039A0200 BL 0x1C16CF4
+	0x039A0204 ADRP X0, 0x7B1000
+	0x039A0208 LDR X0, [X0 + 0x3A0]
+
+ISIL:
+	001 Move W9, 1
+	002 Move [X8+12], W9
+	003 Move X9, -48959488
+	004 Move V0, [X9+576]
+	005 Move W9, 0x3F000000
+	006 Move [X8+16], W9
+	007 Move X9, -48967680
+	008 Move [X8+24], D0
+	009 Move V0, [X9+48]
+	010 Move X9, 0x42C80000
+	011 NotImplemented "Instruction MOVK not yet implemented."
+	012 Move [X8+32], X9
+	013 Move W9, 0x42480000
+	014 Move [X8+8], W31
+	015 Move [X8], X31
+	016 NotImplemented "Instruction STURH not yet implemented."
+	017 Move [X8+15], W31
+	018 Move [X8+20], W31
+	019 NotImplemented "Instruction STURH not yet implemented."
+	020 Move [X8+23], W31
+	021 Move [X8+40], V0
+	022 Move [X8+56], W9
+	023 Return X0
+

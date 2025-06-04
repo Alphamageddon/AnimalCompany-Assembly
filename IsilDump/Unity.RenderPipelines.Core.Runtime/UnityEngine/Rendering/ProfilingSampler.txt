@@ -1,0 +1,802 @@
+Type: UnityEngine.Rendering.ProfilingSampler
+
+Method: UnityEngine.Rendering.ProfilingSampler Get(TEnum marker)
+
+Disassembly:
+	0x02236BC0 LDR X8, [X19 + 0x38]
+	0x02236BC4 MOV X0, X20
+	0x02236BC8 LDP X20, X19, [X31 + 0x10]
+	0x02236BCC LDR X1, [X8 + 0x8]
+	0x02236BD0 LDR X30, [X31], #0x20
+	0x02236BD4 B 0x223756C
+	0x02236BD8 STR X30, [X31 - 0x20]!
+	0x02236BDC STP X20, X19, [X31 + 0x10]
+	0x02236BE0 LDR X8, [X1 + 0x38]
+	0x02236BE4 MOV X19, X1
+	0x02236BE8 MOV X20, X0
+	0x02236BEC CBNZ X8, 0x2236C0C
+	0x02236BF0 ADRP X0, 0x1EE6000
+	0x02236BF4 LDR X0, [X0 + 0x2C8]
+	0x02236BF8 BL 0x1C16CF4
+	0x02236BFC LDR X8, [X19 + 0x38]
+	0x02236C00 CBNZ X8, 0x2236C0C
+	0x02236C04 MOV X0, X19
+	0x02236C08 BL 0x1C5C6E0
+	0x02236C0C ADRP X8, 0x1EE6000
+	0x02236C10 LDR X8, [X8 + 0x2C8]
+	0x02236C14 LDR X0, [X8]
+	0x02236C18 LDR W8, [X0 + 0xE0]
+	0x02236C1C CBNZ W8, 0x2236C24
+	0x02236C20 BL 0x1C16DFC
+	0x02236C24 LDR X8, [X19 + 0x38]
+	0x02236C28 MOV X0, X20
+	0x02236C2C LDP X20, X19, [X31 + 0x10]
+	0x02236C30 LDR X1, [X8 + 0x8]
+	0x02236C34 LDR X30, [X31], #0x20
+	0x02236C38 B 0x2237B14
+	0x02236C3C STR X30, [X31 - 0x20]!
+	0x02236C40 STP X20, X19, [X31 + 0x10]
+	0x02236C44 LDR X8, [X1 + 0x38]
+	0x02236C48 MOV X19, X1
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X1+56]
+	005 Move X20, X1
+	006 Move W19, W0
+	007 Compare X8, 0
+	008 JumpIfNotEqual {12}
+	009 Move X0, X20
+	010 Call 0x1C5D6E0
+	011 Move X8, [X20+56]
+	012 Move [X31+8], X31
+	013 Move X0, [X8+16]
+	014 Move W8, [X0+309]
+	015 Move TEMP, X8
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfEqual {20}
+	019 Call 0x1C5D684
+	020 Move W8, [X0+224]
+	021 Compare W8, 0
+	022 JumpIfNotEqual {24}
+	023 Call 0x1C17DFC
+	024 Move X8, [X20+56]
+	025 Move X0, [X8+16]
+	026 Move W8, [X0+309]
+	027 Move TEMP, X8
+	028 And TEMP, TEMP, 1
+	029 Compare TEMP, 1
+	030 JumpIfEqual {32}
+	031 Call 0x1C5D684
+	032 Move X8, [X0+184]
+	033 Move X0, [X8]
+	034 Compare X0, 0
+	035 JumpIfEqual {46}
+	036 Move X8, [X20+56]
+	037 Add X2, X31, 8
+	038 Move W1, W19
+	039 Move X3, [X8+32]
+	040 Call Dictionary`2<Int32Enum, Object>.TryGetValue, X0, X1, X2
+	041 Move X0, [X31+8]
+	042 Move X20, [X31+16]
+	043 Move X19, [X31+24]
+	044 Move X30, [X31+32]
+	045 Return X0
+	046 Call 0x1C17F20
+
+Method: System.Void .ctor(System.String name)
+
+Disassembly:
+	0x039B29AC LDR X8, [X8 + 0xA90]
+	0x039B29B0 STR S0, [X31 + 0x20]
+	0x039B29B4 LDR X0, [X8]
+	0x039B29B8 ADD X1, X31, 0x20
+	0x039B29BC BL 0x1C16E04
+	0x039B29C0 MOV X24, X0
+	0x039B29C4 CBZ X0, 0x39B29DC
+	0x039B29C8 LDR X8, [X23]
+	0x039B29CC LDR X1, [X8 + 0x40]
+	0x039B29D0 MOV X0, X24
+	0x039B29D4 BL 0x1C16E00
+	0x039B29D8 CBZ X0, 0x39B31CC
+	0x039B29DC LDR W8, [X23 + 0x18]
+	0x039B29E0 CMP W8, 0x1
+	0x039B29E4 B.LS 0x39B3180
+	0x039B29E8 STR X24, [X23 + 0x28]
+	0x039B29EC ADRP X8, 0x741000
+	0x039B29F0 LDR V0, [X26 + 0x8]
+	0x039B29F4 LDR X8, [X8 + 0xA90]
+	0x039B29F8 STR S0, [X31 + 0x1C]
+	0x039B29FC LDR X0, [X8]
+	0x039B2A00 ADD X1, X31, 0x1C
+	0x039B2A04 BL 0x1C16E04
+	0x039B2A08 MOV X24, X0
+	0x039B2A0C CBZ X0, 0x39B2A24
+	0x039B2A10 LDR X8, [X23]
+	0x039B2A14 LDR X1, [X8 + 0x40]
+	0x039B2A18 MOV X0, X24
+	0x039B2A1C BL 0x1C16E00
+	0x039B2A20 CBZ X0, 0x39B31D8
+	0x039B2A24 LDR W8, [X23 + 0x18]
+	0x039B2A28 CMP W8, 0x2
+	0x039B2A2C B.LS 0x39B3184
+	0x039B2A30 STR X24, [X23 + 0x30]
+	0x039B2A34 ADRP X8, 0x741000
+	0x039B2A38 LDR V0, [X26 + 0xC]
+	0x039B2A3C LDR X8, [X8 + 0xA90]
+	0x039B2A40 STR S0, [X31 + 0x18]
+	0x039B2A44 LDR X0, [X8]
+	0x039B2A48 ADD X1, X31, 0x18
+	0x039B2A4C BL 0x1C16E04
+	0x039B2A50 ADRP X26, 0x749000
+	0x039B2A54 LDR X26, [X26 + 0x720]
+	0x039B2A58 MOV X24, X0
+	0x039B2A5C CBZ X0, 0x39B2A74
+	0x039B2A60 LDR X8, [X23]
+	0x039B2A64 LDR X1, [X8 + 0x40]
+	0x039B2A68 MOV X0, X24
+	0x039B2A6C BL 0x1C16E00
+	0x039B2A70 CBZ X0, 0x39B31E4
+	0x039B2A74 LDR W8, [X23 + 0x18]
+	0x039B2A78 CMP W8, 0x3
+	0x039B2A7C B.LS 0x39B3188
+	0x039B2A80 STR X24, [X23 + 0x38]
+	0x039B2A84 ADRP X8, 0x79F000
+	0x039B2A88 LDR X8, [X8 + 0xF00]
+	0x039B2A8C LDR X0, [X8]
+	0x039B2A90 MOV X1, X23
+	0x039B2A94 MOV X2, X31
+	0x039B2A98 BL 0x3227C5C
+	0x039B2A9C MOV X1, X0
+	0x039B2AA0 MOV X0, X21
+	0x039B2AA4 MOV X2, X31
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0xA30000
+	007 Move X22, 0x7A0000
+	008 Move W8, [X21+3139]
+	009 Move X22, [X22+3632]
+	010 Move X20, X1
+	011 Move X19, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {24}
+	016 Move X0, 0x7A0000
+	017 Move X0, [X0+3632]
+	018 Call 0x1C17CF4
+	019 Move X0, 0x7A0000
+	020 Move X0, [X0+3640]
+	021 Call 0x1C17CF4
+	022 Move W8, 1
+	023 Move [X21+3139], W8
+	024 Move X21, 0x7A0000
+	025 Move X21, [X21+3640]
+	026 Move X0, X19
+	027 Move X1, X31
+	028 Call Object..ctor, X0
+	029 Move X0, [X22]
+	030 Move W8, [X0+224]
+	031 Compare W8, 0
+	032 JumpIfNotEqual {34}
+	033 Call 0x1C17DFC
+	034 Move W1, 1
+	035 Move X0, X20
+	036 Move X2, X31
+	037 Call CustomSampler.Create, X0, X1
+	038 Move [X19+16], X0
+	039 Move X0, [X21]
+	040 Move X1, X20
+	041 Move X2, X31
+	042 Call String.Concat, X0, X1
+	043 Move W1, W31
+	044 Move X2, X31
+	045 Call CustomSampler.Create, X0, X1
+	046 Move X8, X0
+	047 Move X0, [X19+16]
+	048 Move [X19+24], X8
+	049 Move [X19+32], X20
+	050 Compare X0, 0
+	051 JumpIfEqual {77}
+	052 Move X1, X31
+	053 Call Sampler.GetRecorder, X0
+	054 Move [X19+40], X0
+	055 Compare X0, 0
+	056 JumpIfEqual {77}
+	057 Move W1, W31
+	058 Move X2, X31
+	059 Call Recorder.set_enabled, X0, X1
+	060 Move X0, [X19+24]
+	061 Compare X0, 0
+	062 JumpIfEqual {77}
+	063 Move X1, X31
+	064 Call Sampler.GetRecorder, X0
+	065 Move [X19+48], X0
+	066 Compare X0, 0
+	067 JumpIfEqual {77}
+	068 Move X20, [X31+32]
+	069 Move X19, [X31+40]
+	070 Move X22, [X31+16]
+	071 Move X21, [X31+24]
+	072 Move W1, W31
+	073 Move X2, X31
+	074 Move X30, [X31+48]
+	075 Call Recorder.set_enabled, X0, X1
+	076 Return 
+	077 Call 0x1C17F20
+
+Method: System.Void Begin(UnityEngine.Rendering.CommandBuffer cmd)
+
+Disassembly:
+	0x039B2AA8 BL 0x321B938
+	0x039B2AAC B 0x39B3104
+	0x039B2AB0 ADD X24, X22, W19, 0x2, SXTW
+	0x039B2AB4 ADRP X20, 0x741000
+	0x039B2AB8 LDR W8, [X24]
+	0x039B2ABC LDR X20, [X20 + 0x758]
+	0x039B2AC0 STR W8, [X31 + 0x24]
+	0x039B2AC4 LDR X0, [X20]
+	0x039B2AC8 ADD X1, X31, 0x24
+	0x039B2ACC BL 0x1C16E04
+	0x039B2AD0 MOV X23, X0
+	0x039B2AD4 LDR W8, [X24 + 0x4]
+	0x039B2AD8 LDR X0, [X20]
+	0x039B2ADC STR W8, [X31 + 0x20]
+	0x039B2AE0 ADD X1, X31, 0x20
+	0x039B2AE4 BL 0x1C16E04
+	0x039B2AE8 ADRP X8, 0x799000
+	0x039B2AEC LDR X8, [X8 + 0x8]
+	0x039B2AF0 MOV X2, X0
+	0x039B2AF4 LDR X0, [X8]
+	0x039B2AF8 MOV X1, X23
+	0x039B2AFC MOV X3, X31
+	0x039B2B00 BL 0x3227BD4
+	0x039B2B04 MOV X1, X0
+	0x039B2B08 MOV X0, X21
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Compare X1, 0
+	005 JumpIfEqual {33}
+	006 Move X20, X0
+	007 Move X0, [X0+16]
+	008 Move X19, X1
+	009 Compare X0, 0
+	010 JumpIfEqual {25}
+	011 Move X1, X31
+	012 Call Sampler.get_isValid, X0
+	013 Move TEMP, X0
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfNotEqual {25}
+	017 Move X1, [X20+16]
+	018 Move X0, X19
+	019 Move X20, [X31+16]
+	020 Move X19, [X31+24]
+	021 Move X2, X31
+	022 Move X30, [X31+32]
+	023 Call CommandBuffer.BeginSample, X0, X1
+	024 Return 
+	025 Move X1, [X20+32]
+	026 Move X0, X19
+	027 Move X20, [X31+16]
+	028 Move X19, [X31+24]
+	029 Move X2, X31
+	030 Move X30, [X31+32]
+	031 Call CommandBuffer.BeginSample, X0, X1
+	032 Return 
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 Move X30, [X31+32]
+	036 Return 
+
+Method: System.Void End(UnityEngine.Rendering.CommandBuffer cmd)
+
+Disassembly:
+	0x039B2B0C MOV X2, X31
+	0x039B2B10 BL 0x321B938
+	0x039B2B14 B 0x39B3104
+	0x039B2B18 LDR X8, [X31 + 0x10]
+	0x039B2B1C ADRP X9, 0x776000
+	0x039B2B20 LDR W8, [X8, W19, SXTW]
+	0x039B2B24 CMP W8, 0x0
+	0x039B2B28 ADRP X8, 0x775000
+	0x039B2B2C LDR X8, [X8 + 0xFF8]
+	0x039B2B30 LDR X9, [X9]
+	0x039B2B34 CSEL X8, X8, X9, EQ
+	0x039B2B38 LDR X1, [X8]
+	0x039B2B3C MOV X0, X21
+	0x039B2B40 MOV X2, X31
+	0x039B2B44 BL 0x321B938
+	0x039B2B48 B 0x39B3104
+	0x039B2B4C ADRP X8, 0x741000
+	0x039B2B50 LDR X8, [X8 + 0x9D0]
+	0x039B2B54 LDR X0, [X8]
+	0x039B2B58 MOVZ W1, 0x4
+	0x039B2B5C BL 0x1C16D6C
+	0x039B2B60 ADD X26, X22, W19, 0x2, SXTW
+	0x039B2B64 ADRP X9, 0x749000
+	0x039B2B68 LDR W8, [X26]
+	0x039B2B6C LDR X9, [X9 + 0x720]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Compare X1, 0
+	005 JumpIfEqual {33}
+	006 Move X20, X0
+	007 Move X0, [X0+16]
+	008 Move X19, X1
+	009 Compare X0, 0
+	010 JumpIfEqual {25}
+	011 Move X1, X31
+	012 Call Sampler.get_isValid, X0
+	013 Move TEMP, X0
+	014 And TEMP, TEMP, 1
+	015 Compare TEMP, 1
+	016 JumpIfNotEqual {25}
+	017 Move X1, [X20+16]
+	018 Move X0, X19
+	019 Move X20, [X31+16]
+	020 Move X19, [X31+24]
+	021 Move X2, X31
+	022 Move X30, [X31+32]
+	023 Call CommandBuffer.EndSample, X0, X1
+	024 Return 
+	025 Move X1, [X20+32]
+	026 Move X0, X19
+	027 Move X20, [X31+16]
+	028 Move X19, [X31+24]
+	029 Move X2, X31
+	030 Move X30, [X31+32]
+	031 Call CommandBuffer.EndSample, X0, X1
+	032 Return 
+	033 Move X20, [X31+16]
+	034 Move X19, [X31+24]
+	035 Move X30, [X31+32]
+	036 Return 
+
+Method: System.Boolean IsValid()
+
+Disassembly:
+	0x039B2B70 MOV X23, X0
+	0x039B2B74 STR W8, [X31 + 0x24]
+	0x039B2B78 LDR X0, [X9]
+	0x039B2B7C ADD X1, X31, 0x24
+	0x039B2B80 BL 0x1C16E04
+	0x039B2B84 CBZ X23, 0x39B31B8
+	0x039B2B88 MOV X24, X0
+	0x039B2B8C CBZ X0, 0x39B2BA4
+
+ISIL:
+	001 Move X8, [X0+16]
+	002 Compare X8, 0
+	003 JumpIfEqual {8}
+	004 Move X8, [X0+24]
+	005 NotImplemented "Instruction CMP not yet implemented."
+	006 NotImplemented "Instruction CSET not yet implemented."
+	007 Return X0
+	008 Move W0, W31
+	009 Return X0
+
+Method: UnityEngine.Profiling.CustomSampler get_sampler()
+
+Disassembly:
+	0x039B2B90 LDR X8, [X23]
+	0x039B2B94 LDR X1, [X8 + 0x40]
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_sampler(UnityEngine.Profiling.CustomSampler value)
+
+Disassembly:
+	0x039B2B98 MOV X0, X24
+	0x039B2B9C BL 0x1C16E00
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: UnityEngine.Profiling.CustomSampler get_inlineSampler()
+
+Disassembly:
+	0x039B2BA0 CBZ X0, 0x39B3220
+	0x039B2BA4 LDR W8, [X23 + 0x18]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void set_inlineSampler(UnityEngine.Profiling.CustomSampler value)
+
+Disassembly:
+	0x039B2BA8 CBZ W8, 0x39B31B4
+	0x039B2BAC STR X24, [X23 + 0x20]
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.String get_name()
+
+Disassembly:
+	0x039B2BB0 ADRP X9, 0x749000
+	0x039B2BB4 LDR W8, [X26 + 0x4]
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_name(System.String value)
+
+Disassembly:
+	0x039B2BB8 LDR X9, [X9 + 0x720]
+	0x039B2BBC STR W8, [X31 + 0x20]
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.Void set_enableRecording(System.Boolean value)
+
+Disassembly:
+	0x039B2BC0 LDR X0, [X9]
+	0x039B2BC4 ADD X1, X31, 0x20
+	0x039B2BC8 BL 0x1C16E04
+	0x039B2BCC MOV X24, X0
+	0x039B2BD0 CBZ X0, 0x39B2BE8
+	0x039B2BD4 LDR X8, [X23]
+	0x039B2BD8 LDR X1, [X8 + 0x40]
+	0x039B2BDC MOV X0, X24
+	0x039B2BE0 BL 0x1C16E00
+	0x039B2BE4 CBZ X0, 0x39B322C
+	0x039B2BE8 LDR W8, [X23 + 0x18]
+	0x039B2BEC CMP W8, 0x1
+	0x039B2BF0 B.LS 0x39B31A8
+	0x039B2BF4 STR X24, [X23 + 0x28]
+	0x039B2BF8 ADRP X9, 0x749000
+	0x039B2BFC LDR W8, [X26 + 0x8]
+	0x039B2C00 LDR X9, [X9 + 0x720]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X0
+	005 Move X0, [X0+40]
+	006 Compare X0, 0
+	007 JumpIfEqual {22}
+	008 And W20, W1, 1
+	009 Move W1, W20
+	010 Move X2, X31
+	011 Call Recorder.set_enabled, X0, X1
+	012 Move X0, [X19+48]
+	013 Compare X0, 0
+	014 JumpIfEqual {22}
+	015 Move W1, W20
+	016 Move X20, [X31+16]
+	017 Move X19, [X31+24]
+	018 Move X2, X31
+	019 Move X30, [X31+32]
+	020 Call Recorder.set_enabled, X0, X1
+	021 Return 
+	022 Call 0x1C17F20
+
+Method: System.Single get_gpuElapsedTime()
+
+Disassembly:
+	0x039B2C04 STR W8, [X31 + 0x1C]
+	0x039B2C08 LDR X0, [X9]
+	0x039B2C0C ADD X1, X31, 0x1C
+	0x039B2C10 BL 0x1C16E04
+	0x039B2C14 MOV X24, X0
+	0x039B2C18 CBZ X0, 0x39B2C30
+	0x039B2C1C LDR X8, [X23]
+	0x039B2C20 LDR X1, [X8 + 0x40]
+	0x039B2C24 MOV X0, X24
+	0x039B2C28 BL 0x1C16E00
+	0x039B2C2C CBZ X0, 0x39B3238
+	0x039B2C30 LDR W8, [X23 + 0x18]
+	0x039B2C34 CMP W8, 0x2
+	0x039B2C38 B.LS 0x39B31AC
+	0x039B2C3C STR X24, [X23 + 0x30]
+	0x039B2C40 LDR W8, [X26 + 0xC]
+	0x039B2C44 ADRP X26, 0x749000
+	0x039B2C48 LDR X26, [X26 + 0x720]
+	0x039B2C4C STR W8, [X31 + 0x18]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+40]
+	005 Compare X0, 0
+	006 JumpIfEqual {26}
+	007 Move X1, X31
+	008 Call Recorder.get_enabled, X0
+	009 Move S0, W31
+	010 Move TEMP, X0
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfNotEqual {23}
+	014 Move X0, [X19+40]
+	015 Compare X0, 0
+	016 JumpIfEqual {26}
+	017 Move X1, X31
+	018 Call Recorder.get_gpuElapsedNanoseconds, X0
+	019 Move X8, -49049600
+	020 Move V0, [X8+1072]
+	021 NotImplemented "Instruction SCVTF not yet implemented."
+	022 NotImplemented "Instruction FDIV not yet implemented."
+	023 Move X30, [X31+16]
+	024 Move X19, [X31+24]
+	025 Return V0
+	026 Call 0x1C17F20
+
+Method: System.Int32 get_gpuSampleCount()
+
+Disassembly:
+	0x039B2C50 LDR X0, [X26]
+	0x039B2C54 ADD X1, X31, 0x18
+	0x039B2C58 BL 0x1C16E04
+	0x039B2C5C MOV X24, X0
+	0x039B2C60 CBZ X0, 0x39B2C78
+	0x039B2C64 LDR X8, [X23]
+	0x039B2C68 LDR X1, [X8 + 0x40]
+	0x039B2C6C MOV X0, X24
+	0x039B2C70 BL 0x1C16E00
+	0x039B2C74 CBZ X0, 0x39B3244
+	0x039B2C78 LDR W8, [X23 + 0x18]
+	0x039B2C7C CMP W8, 0x3
+	0x039B2C80 B.LS 0x39B31B0
+	0x039B2C84 STR X24, [X23 + 0x38]
+	0x039B2C88 ADRP X8, 0x798000
+	0x039B2C8C LDR X8, [X8 + 0xDE0]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+40]
+	005 Compare X0, 0
+	006 JumpIfEqual {25}
+	007 Move X1, X31
+	008 Call Recorder.get_enabled, X0
+	009 Move TEMP, X0
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfNotEqual {21}
+	013 Move X0, [X19+40]
+	014 Compare X0, 0
+	015 JumpIfEqual {25}
+	016 Move X1, X31
+	017 Move X30, [X31+16]
+	018 Move X19, [X31+24]
+	019 Call Recorder.get_gpuSampleBlockCount, X0
+	020 Return X0
+	021 Move W0, W31
+	022 Move X30, [X31+16]
+	023 Move X19, [X31+24]
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: System.Single get_cpuElapsedTime()
+
+Disassembly:
+	0x039B2C90 LDR X0, [X8]
+	0x039B2C94 MOV X1, X23
+	0x039B2C98 MOV X2, X31
+	0x039B2C9C BL 0x3227C5C
+	0x039B2CA0 MOV X1, X0
+	0x039B2CA4 MOV X0, X21
+	0x039B2CA8 MOV X2, X31
+	0x039B2CAC BL 0x321B938
+	0x039B2CB0 B 0x39B3104
+	0x039B2CB4 LDR V0, [X22, W19, SXTW]
+	0x039B2CB8 LDR X0, [X24]
+	0x039B2CBC STR S0, [X31 + 0x24]
+	0x039B2CC0 ADD X1, X31, 0x24
+	0x039B2CC4 BL 0x1C16E04
+	0x039B2CC8 MOV X1, X0
+	0x039B2CCC ADRP X8, 0x79F000
+	0x039B2CD0 LDR X8, [X8 + 0xEC8]
+	0x039B2CD4 LDR X0, [X8]
+	0x039B2CD8 MOV X2, X31
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+40]
+	005 Compare X0, 0
+	006 JumpIfEqual {26}
+	007 Move X1, X31
+	008 Call Recorder.get_enabled, X0
+	009 Move S0, W31
+	010 Move TEMP, X0
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfNotEqual {23}
+	014 Move X0, [X19+40]
+	015 Compare X0, 0
+	016 JumpIfEqual {26}
+	017 Move X1, X31
+	018 Call Recorder.get_elapsedNanoseconds, X0
+	019 Move X8, -49049600
+	020 Move V0, [X8+1072]
+	021 NotImplemented "Instruction SCVTF not yet implemented."
+	022 NotImplemented "Instruction FDIV not yet implemented."
+	023 Move X30, [X31+16]
+	024 Move X19, [X31+24]
+	025 Return V0
+	026 Call 0x1C17F20
+
+Method: System.Int32 get_cpuSampleCount()
+
+Disassembly:
+	0x039B2CDC BL 0x321EFD0
+	0x039B2CE0 MOV X1, X0
+	0x039B2CE4 MOV X0, X21
+	0x039B2CE8 MOV X2, X31
+	0x039B2CEC BL 0x321B938
+	0x039B2CF0 B 0x39B3104
+	0x039B2CF4 ADD X24, X22, W19, 0x2, SXTW
+	0x039B2CF8 LDR W8, [X24]
+	0x039B2CFC LDR X0, [X26]
+	0x039B2D00 STR W8, [X31 + 0x24]
+	0x039B2D04 ADD X1, X31, 0x24
+	0x039B2D08 BL 0x1C16E04
+	0x039B2D0C MOV X23, X0
+	0x039B2D10 LDR W8, [X24 + 0x4]
+	0x039B2D14 LDR X0, [X26]
+	0x039B2D18 STR W8, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+40]
+	005 Compare X0, 0
+	006 JumpIfEqual {25}
+	007 Move X1, X31
+	008 Call Recorder.get_enabled, X0
+	009 Move TEMP, X0
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfNotEqual {21}
+	013 Move X0, [X19+40]
+	014 Compare X0, 0
+	015 JumpIfEqual {25}
+	016 Move X1, X31
+	017 Move X30, [X31+16]
+	018 Move X19, [X31+24]
+	019 Call Recorder.get_sampleBlockCount, X0
+	020 Return X0
+	021 Move W0, W31
+	022 Move X30, [X31+16]
+	023 Move X19, [X31+24]
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: System.Single get_inlineCpuElapsedTime()
+
+Disassembly:
+	0x039B2D1C ADD X1, X31, 0x20
+	0x039B2D20 BL 0x1C16E04
+	0x039B2D24 ADRP X8, 0x799000
+	0x039B2D28 LDR X8, [X8 + 0xF8]
+	0x039B2D2C MOV X2, X0
+	0x039B2D30 LDR X0, [X8]
+	0x039B2D34 MOV X1, X23
+	0x039B2D38 MOV X3, X31
+	0x039B2D3C BL 0x3227BD4
+	0x039B2D40 MOV X1, X0
+	0x039B2D44 MOV X0, X21
+	0x039B2D48 MOV X2, X31
+	0x039B2D4C BL 0x321B938
+	0x039B2D50 B 0x39B3104
+	0x039B2D54 ADD X26, X22, W19, 0x2, SXTW
+	0x039B2D58 ADRP X20, 0x741000
+	0x039B2D5C LDR W8, [X26]
+	0x039B2D60 LDR X20, [X20 + 0x758]
+	0x039B2D64 STR W8, [X31 + 0x24]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+48]
+	005 Compare X0, 0
+	006 JumpIfEqual {26}
+	007 Move X1, X31
+	008 Call Recorder.get_enabled, X0
+	009 Move S0, W31
+	010 Move TEMP, X0
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfNotEqual {23}
+	014 Move X0, [X19+48]
+	015 Compare X0, 0
+	016 JumpIfEqual {26}
+	017 Move X1, X31
+	018 Call Recorder.get_elapsedNanoseconds, X0
+	019 Move X8, -49049600
+	020 Move V0, [X8+1072]
+	021 NotImplemented "Instruction SCVTF not yet implemented."
+	022 NotImplemented "Instruction FDIV not yet implemented."
+	023 Move X30, [X31+16]
+	024 Move X19, [X31+24]
+	025 Return V0
+	026 Call 0x1C17F20
+
+Method: System.Int32 get_inlineCpuSampleCount()
+
+Disassembly:
+	0x039B2D68 LDR X0, [X20]
+	0x039B2D6C ADD X1, X31, 0x24
+	0x039B2D70 BL 0x1C16E04
+	0x039B2D74 MOV X23, X0
+	0x039B2D78 LDR W8, [X26 + 0x4]
+	0x039B2D7C LDR X0, [X20]
+	0x039B2D80 STR W8, [X31 + 0x20]
+	0x039B2D84 ADD X1, X31, 0x20
+	0x039B2D88 BL 0x1C16E04
+	0x039B2D8C MOV X24, X0
+	0x039B2D90 LDR W8, [X26 + 0x8]
+	0x039B2D94 LDR X0, [X20]
+	0x039B2D98 STR W8, [X31 + 0x1C]
+	0x039B2D9C ADD X1, X31, 0x1C
+	0x039B2DA0 BL 0x1C16E04
+	0x039B2DA4 ADRP X8, 0x799000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, X0
+	004 Move X0, [X0+48]
+	005 Compare X0, 0
+	006 JumpIfEqual {25}
+	007 Move X1, X31
+	008 Call Recorder.get_enabled, X0
+	009 Move TEMP, X0
+	010 And TEMP, TEMP, 1
+	011 Compare TEMP, 1
+	012 JumpIfNotEqual {21}
+	013 Move X0, [X19+48]
+	014 Compare X0, 0
+	015 JumpIfEqual {25}
+	016 Move X1, X31
+	017 Move X30, [X31+16]
+	018 Move X19, [X31+24]
+	019 Call Recorder.get_sampleBlockCount, X0
+	020 Return X0
+	021 Move W0, W31
+	022 Move X30, [X31+16]
+	023 Move X19, [X31+24]
+	024 Return X0
+	025 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x039B2DA8 LDR X8, [X8 + 0x48]
+	0x039B2DAC MOV X3, X0
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

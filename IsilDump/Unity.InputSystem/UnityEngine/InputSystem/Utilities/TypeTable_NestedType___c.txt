@@ -1,0 +1,95 @@
+Type: UnityEngine.InputSystem.Utilities.TypeTable/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x0376ADE0 MOV V0.16B, V8.16B
+	0x0376ADE4 MOV V1.16B, V9.16B
+	0x0376ADE8 LDP X20, X19, [X31 + 0x40]
+	0x0376ADEC LDP X22, X21, [X31 + 0x30]
+	0x0376ADF0 LDP X24, X23, [X31 + 0x20]
+	0x0376ADF4 LDR X30, [X31 + 0x18]
+	0x0376ADF8 LDP D9, D8, [X31 + 0x8]
+	0x0376ADFC MOV V2.16B, V10.16B
+	0x0376AE00 MOV X0, X31
+	0x0376AE04 LDR V10, [X31], #0x50
+	0x0376AE08 B 0x3759B00
+	0x0376AE0C MOV X0, X19
+	0x0376AE10 MOV X2, X31
+	0x0376AE14 BL 0x3753850
+	0x0376AE18 LDR W1, [X20 + 0x14]
+	0x0376AE1C MOV W21, W0
+	0x0376AE20 MOV X0, X19
+	0x0376AE24 MOV X2, X31
+	0x0376AE28 BL 0x3753850
+	0x0376AE2C LDR W1, [X20 + 0x18]
+	0x0376AE30 MOV W22, W0
+	0x0376AE34 MOV X0, X19
+	0x0376AE38 MOV X2, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0xC77000
+	005 Move X20, 0x9DD000
+	006 Move W8, [X19+3735]
+	007 Move X20, [X20+1656]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x9DD000
+	013 Move X0, [X0+1656]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+3735], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0376AE3C BL 0x3753850
+	0x0376AE40 LDR W1, [X20 + 0x1C]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.String <get_names>b__2_0(UnityEngine.InputSystem.Utilities.InternedString x)
+
+Disassembly:
+	0x0376AE44 MOV W23, W0
+	0x0376AE48 MOV X0, X19
+	0x0376AE4C MOV X2, X31
+	0x0376AE50 BL 0x3753850
+	0x0376AE54 LDRB W9, [X20 + 0x20]
+	0x0376AE58 AND W8, W21, 0x1
+	0x0376AE5C AND W1, W22, 0x1
+	0x0376AE60 AND W2, W23, 0x1
+	0x0376AE64 CMP W9, 0x0
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+8], X2
+	003 Move [X31+16], X30
+	004 Move [X31], X1
+	005 Add X0, X31, 0
+	006 Move X1, X31
+	007 Call InternedString.ToString, X0
+	008 Move X30, [X31+16]
+	009 Add X31, X31, 32
+	010 Return X0
+

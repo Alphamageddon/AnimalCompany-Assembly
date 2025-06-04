@@ -1,0 +1,336 @@
+Type: Unity.Burst.Intrinsics.X86/Bmi1
+
+Method: System.Boolean get_IsBmi1Supported()
+
+Disassembly:
+	0x0372A090 LDR X0, [X0 + 0x7D0]
+	0x0372A094 BL 0x1C16D08
+
+ISIL:
+	001 Move W0, W31
+	002 Return X0
+
+Method: System.UInt32 andn_u32(System.UInt32 a, System.UInt32 b)
+
+Disassembly:
+	0x0372A098 BL 0x1C16F10
+	0x0372A09C MOV X19, X0
+
+ISIL:
+	001 NotImplemented "Instruction BIC not yet implemented."
+	002 Return X0
+
+Method: System.UInt64 andn_u64(System.UInt64 a, System.UInt64 b)
+
+Disassembly:
+	0x0372A0A0 ADRP X0, 0xA1A000
+	0x0372A0A4 LDR X0, [X0 + 0xC70]
+
+ISIL:
+	001 NotImplemented "Instruction BIC not yet implemented."
+	002 Return X0
+
+Method: System.UInt32 bextr_u32(System.UInt32 a, System.UInt32 start, System.UInt32 len)
+
+Disassembly:
+	0x0372A0A8 BL 0x1C16D08
+	0x0372A0AC MOV X1, X0
+	0x0372A0B0 MOV X0, X19
+	0x0372A0B4 MOV X2, X31
+	0x0372A0B8 BL 0x33B2C70
+	0x0372A0BC ADRP X0, 0xA1A000
+	0x0372A0C0 LDR X0, [X0 + 0xCB0]
+	0x0372A0C4 BL 0x1C16D08
+	0x0372A0C8 MOV X1, X0
+	0x0372A0CC MOV X0, X19
+	0x0372A0D0 BL 0x1C16DEC
+	0x0372A0D4 FMOV S0, W0
+
+ISIL:
+	001 And W31, W1, 224
+	002 Move W0, W31
+	003 Return X0
+	004 And W31, W2, 224
+	005 NotImplemented "Instruction LSRV not yet implemented."
+	006 Return X0
+	007 Move TEMP, 0
+	008 Not TEMP
+	009 Move W8, TEMP
+	010 NotImplemented "Instruction LSLV not yet implemented."
+	011 NotImplemented "Instruction BIC not yet implemented."
+	012 Return X0
+
+Method: System.UInt64 bextr_u64(System.UInt64 a, System.UInt32 start, System.UInt32 len)
+
+Disassembly:
+	0x0372A0D8 FMOV S1, W2
+	0x0372A0DC FMOV S2, W4
+	0x0372A0E0 FCVT S0, S0
+	0x0372A0E4 FCVT S1, S1
+	0x0372A0E8 FCVT S2, S2
+	0x0372A0EC FMUL D0, D0, D1
+	0x0372A0F0 FSUB D0, D0, D2
+	0x00000000 INVALID
+	0x0372A0F8 AND X8, X0, 0x0
+	0x0372A0FC FMOV W9, S0
+	0x0372A100 ORR X0, X8, X9, 0x0
+	0x0372A104 RET
+
+ISIL:
+	001 And W31, W1, 192
+	002 Move X0, X31
+	003 Return X0
+	004 And W31, W2, 192
+	005 NotImplemented "Instruction LSRV not yet implemented."
+	006 Return X0
+	007 Move TEMP, 0
+	008 Not TEMP
+	009 Move X8, TEMP
+	010 NotImplemented "Instruction LSLV not yet implemented."
+	011 NotImplemented "Instruction BIC not yet implemented."
+	012 Return X0
+
+Method: System.UInt32 bextr2_u32(System.UInt32 a, System.UInt32 control)
+
+Disassembly:
+	0x0372A108 STP X30, X19, [X31 - 0x10]!
+	0x0372A10C ADRP X0, 0x9C9000
+	0x0372A110 LDR X0, [X0 + 0x7D0]
+	0x0372A114 BL 0x1C16D08
+	0x0372A118 BL 0x1C16F10
+	0x0372A11C MOV X19, X0
+	0x0372A120 ADRP X0, 0xA1A000
+	0x0372A124 LDR X0, [X0 + 0xC70]
+	0x0372A128 BL 0x1C16D08
+	0x0372A12C MOV X1, X0
+	0x0372A130 MOV X0, X19
+	0x0372A134 MOV X2, X31
+	0x0372A138 BL 0x33B2C70
+
+ISIL:
+	001 And W31, W1, 224
+	002 Move W0, W31
+	003 Return X0
+	004 And W31, W1, 0xE000
+	005 NotImplemented "Instruction LSRV not yet implemented."
+	006 Return X0
+	007 Move W8, W1
+	008 ShiftRight W8, 8
+	009 And W8, W8, 0x7FFFFFFF
+	010 Move TEMP, 0
+	011 Not TEMP
+	012 Move W9, TEMP
+	013 NotImplemented "Instruction LSLV not yet implemented."
+	014 NotImplemented "Instruction BIC not yet implemented."
+	015 Return X0
+
+Method: System.UInt64 bextr2_u64(System.UInt64 a, System.UInt64 control)
+
+Disassembly:
+	0x0372A13C ADRP X0, 0xA1A000
+	0x0372A140 LDR X0, [X0 + 0xCB8]
+	0x0372A144 BL 0x1C16D08
+	0x0372A148 MOV X1, X0
+	0x0372A14C MOV X0, X19
+	0x0372A150 BL 0x1C16DEC
+	0x0372A154 STP X30, X19, [X31 - 0x10]!
+	0x0372A158 ADRP X0, 0x9C9000
+	0x0372A15C LDR X0, [X0 + 0x7D0]
+	0x0372A160 BL 0x1C16D08
+	0x0372A164 BL 0x1C16F10
+	0x0372A168 MOV X19, X0
+	0x0372A16C ADRP X0, 0xA1A000
+
+ISIL:
+	001 And X31, X1, 255
+	002 Move X0, X31
+	003 Return X0
+	004 And X31, X1, 0xFFFF
+	005 NotImplemented "Instruction LSRV not yet implemented."
+	006 Return X0
+	007 Move X8, X1
+	008 ShiftRight X8, 8
+	009 And X8, X8, 0x7FFFFFFF
+	010 Move TEMP, 0
+	011 Not TEMP
+	012 Move X9, TEMP
+	013 NotImplemented "Instruction LSLV not yet implemented."
+	014 NotImplemented "Instruction BIC not yet implemented."
+	015 Return X0
+
+Method: System.UInt32 blsi_u32(System.UInt32 a)
+
+Disassembly:
+	0x0372A170 LDR X0, [X0 + 0xC70]
+	0x0372A174 BL 0x1C16D08
+	0x0372A178 MOV X1, X0
+
+ISIL:
+	001 Subtract W8, W31, W0
+	002 And W0, W8, W0
+	003 Return X0
+
+Method: System.UInt64 blsi_u64(System.UInt64 a)
+
+Disassembly:
+	0x0372A17C MOV X0, X19
+	0x0372A180 MOV X2, X31
+	0x0372A184 BL 0x33B2C70
+
+ISIL:
+	001 Subtract X8, X31, X0
+	002 And X0, X8, X0
+	003 Return X0
+
+Method: System.UInt32 blsmsk_u32(System.UInt32 a)
+
+Disassembly:
+	0x0372A188 ADRP X0, 0xA1A000
+	0x0372A18C LDR X0, [X0 + 0xCC0]
+	0x0372A190 BL 0x1C16D08
+
+ISIL:
+	001 Subtract W8, W0, 1
+	002 Xor W0, W8, W0
+	003 Return X0
+
+Method: System.UInt64 blsmsk_u64(System.UInt64 a)
+
+Disassembly:
+	0x0372A194 MOV X1, X0
+	0x0372A198 MOV X0, X19
+	0x0372A19C BL 0x1C16DEC
+
+ISIL:
+	001 Subtract X8, X0, 1
+	002 Xor X0, X8, X0
+	003 Return X0
+
+Method: System.UInt32 blsr_u32(System.UInt32 a)
+
+Disassembly:
+	0x0372A1A0 FMOV S0, W0
+	0x0372A1A4 FMOV D1, X0
+	0x0372A1A8 FMOV S2, W2
+
+ISIL:
+	001 Subtract W8, W0, 1
+	002 And W0, W8, W0
+	003 Return X0
+
+Method: System.UInt64 blsr_u64(System.UInt64 a)
+
+Disassembly:
+	0x0372A1AC FMOV D3, X2
+	0x0372A1B0 FMOV D5, X4
+	0x0372A1B4 UNIMPLEMENTED
+
+ISIL:
+	001 Subtract X8, X0, 1
+	002 And X0, X8, X0
+	003 Return X0
+
+Method: System.UInt32 tzcnt_u32(System.UInt32 a)
+
+Disassembly:
+	0x0372A1B8 UNIMPLEMENTED
+	0x0372A1BC UNIMPLEMENTED
+	0x0372A1C0 UNIMPLEMENTED
+	0x0372A1C4 FMOV S4, W4
+	0x0372A1C8 UNIMPLEMENTED
+	0x0372A1CC UNIMPLEMENTED
+	0x0372A1D0 UNIMPLEMENTED
+	0x0372A1D4 UNIMPLEMENTED
+	0x0372A1D8 UNIMPLEMENTED
+	0x0372A1DC UNIMPLEMENTED
+	0x0372A1E0 UNIMPLEMENTED
+	0x00000000 INVALID
+	0x0372A1E8 UNIMPLEMENTED
+	0x0372A1EC UNIMPLEMENTED
+	0x0372A1F0 UNIMPLEMENTED
+	0x0372A1F4 UNIMPLEMENTED
+	0x00000000 INVALID
+	0x0372A1FC FADD V0.2D, V0.2D, V4.2D
+	0x0372A200 FSUB V1.2D, V1.2D, V3.2D
+	0x0372A204 UNIMPLEMENTED
+	0x0372A208 UNIMPLEMENTED
+	0x0372A20C UNIMPLEMENTED
+
+ISIL:
+	001 Subtract W8, W31, W0
+	002 And W8, W8, W0
+	003 And W31, W8, 0xFFFF
+	004 Move W9, 15
+	005 Move W10, 31
+	006 NotImplemented "Instruction CSEL not yet implemented."
+	007 And W31, W8, 0xFF00FF
+	008 Subtract W10, W9, 8
+	009 NotImplemented "Instruction CSEL not yet implemented."
+	010 And W31, W8, 0xF0F0F0F
+	011 Subtract W10, W9, 4
+	012 NotImplemented "Instruction CSEL not yet implemented."
+	013 And W31, W8, 0x33333333
+	014 Subtract W10, W9, 2
+	015 NotImplemented "Instruction CSEL not yet implemented."
+	016 And W31, W8, 0x55555555
+	017 NotImplemented "Instruction CSET not yet implemented."
+	018 Subtract W0, W9, W8
+	019 Return X0
+	020 Move W0, 32
+	021 Return X0
+
+Method: System.UInt64 tzcnt_u64(System.UInt64 a)
+
+Disassembly:
+	0x0372A210 UNIMPLEMENTED
+	0x0372A214 ORR V0.16B, V1.16B, V0.16B
+	0x0372A218 UNIMPLEMENTED
+	0x0372A21C FMOV X0, D0
+	0x0372A220 RET
+	0x0372A224 LDP S0, S1, [X2]
+	0x0372A228 LDP S2, S3, [X2 + 0x8]
+	0x0372A22C LDR V4, [X0]
+	0x0372A230 LDR V5, [X1]
+	0x0372A234 FNEG S1, S1
+	0x0372A238 FNEG S3, S3
+	0x0372A23C UNIMPLEMENTED
+	0x0372A240 UNIMPLEMENTED
+	0x0372A244 UNIMPLEMENTED
+	0x0372A248 UNIMPLEMENTED
+	0x0372A24C MOV V0.S[1], V1.S[0]
+	0x00000000 INVALID
+	0x0372A254 MOV V2.S[1], V3.S[0]
+	0x0372A258 UNIMPLEMENTED
+	0x00000000 INVALID
+	0x0372A260 UNIMPLEMENTED
+	0x0372A264 FADD V0.2D, V4.2D, V0.2D
+	0x0372A268 FADD V1.2D, V5.2D, V1.2D
+	0x0372A26C UNIMPLEMENTED
+	0x0372A270 UNIMPLEMENTED
+
+ISIL:
+	001 Subtract X8, X31, X0
+	002 And X8, X8, X0
+	003 NotImplemented "Instruction CMP not yet implemented."
+	004 Move W9, 31
+	005 Move W10, 63
+	006 NotImplemented "Instruction CSEL not yet implemented."
+	007 And X31, X8, 0xFFFF0000FFFF
+	008 Subtract X10, X9, 16
+	009 NotImplemented "Instruction CSEL not yet implemented."
+	010 And X31, X8, 0xFF00FF00FF00FF
+	011 Subtract X10, X9, 8
+	012 NotImplemented "Instruction CSEL not yet implemented."
+	013 And X31, X8, 0xF0F0F0F0F0F0F0F
+	014 Subtract X10, X9, 4
+	015 NotImplemented "Instruction CSEL not yet implemented."
+	016 And X31, X8, 0x3333333333333333
+	017 Subtract X10, X9, 2
+	018 NotImplemented "Instruction CSEL not yet implemented."
+	019 And X31, X8, 0x5555555555555555
+	020 NotImplemented "Instruction CSET not yet implemented."
+	021 Subtract X0, X9, X8
+	022 Return X0
+	023 Move W0, 64
+	024 Return X0
+

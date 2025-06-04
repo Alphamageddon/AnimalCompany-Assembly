@@ -1,0 +1,174 @@
+Type: UnityEngine.UIElements.UIR.GradientSettingsAtlas/RawTexture
+
+Method: System.Void WriteRawInt2Packed(System.Int32 v0, System.Int32 v1, System.Int32 destX, System.Int32 destY)
+
+Disassembly:
+	0x03D22794 STR X31, [X31 + 0x28]
+	0x03D22798 STP X31, X31, [X31 + 0x8]
+	0x03D2279C STR X31, [X31]
+	0x03D227A0 STR W31, [X31 + 0x18]
+	0x03D227A4 LDR X10, [X0 + 0x8]
+	0x03D227A8 CBZ X10, 0x3D22864
+	0x03D227AC LDR W11, [X10 + 0x18]
+	0x03D227B0 CMP W11, W1
+	0x03D227B4 B.LS 0x3D22868
+	0x03D227B8 LDR X11, [X0 + 0x20]
+	0x03D227BC CBZ X11, 0x3D22864
+	0x03D227C0 LDR W12, [X11 + 0x18]
+	0x03D227C4 CMP W12, W1
+	0x03D227C8 B.LS 0x3D22868
+	0x03D227CC LDR X12, [X0 + 0x30]
+	0x03D227D0 CBZ X12, 0x3D22864
+	0x03D227D4 LDR W13, [X12 + 0x18]
+	0x03D227D8 CMP W13, W1
+	0x03D227DC B.LS 0x3D22868
+	0x03D227E0 MOVZ W13, 0xC
+	0x03D227E4 ADD X11, X11, X9, 0x4, LSL
+	0x03D227E8 ADD X12, X12, X9, 0x2, LSL
+	0x03D227EC MADD X9, X9, X13, X10
+	0x03D227F0 MOVZ W10, 0x437F0000
+	0x03D227F4 MOV V0.S[1], V1.S[0]
+	0x03D227F8 FCMP S2, 0x0
+	0x03D227FC FMOV S1, W31
+	0x03D22800 FMOV S2, W10
+	0x03D22804 FCSEL S1, S2, S1, MI
+	0x03D22808 LDR V2, [X11 + 0x20]
+	0x03D2280C LDR W11, [X12 + 0x20]
+	0x03D22810 FCVTZS W12, S1
+	0x03D22814 LDR V1, [X9 + 0x20]
+	0x03D22818 MOVZ W13, 0x1000000
+	0x03D2281C LDR X10, [X31 + 0x28]
+	0x03D22820 LDR V3, [X31]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {39}
+	005 Move W9, [X0+8]
+	006 Move W10, [X8+24]
+	007 NotImplemented "Instruction MADD not yet implemented."
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move W10, 0x8081
+	010 NotImplemented "Instruction MOVK not yet implemented."
+	011 Move W11, 0x8081
+	012 NotImplemented "Instruction MOVK not yet implemented."
+	013 NotImplemented "Instruction SMADDL not yet implemented."
+	014 NotImplemented "Instruction SMADDL not yet implemented."
+	015 Move X10, X10
+	016 ShiftRight X10, 32
+	017 And X10, X10, 0x7FFFFFFF
+	018 Move X11, X11
+	019 ShiftRight X11, 32
+	020 And X11, X11, 0x7FFFFFFF
+	021 Add W10, W10, W2
+	022 Add W11, W11, W1
+	023 NotImplemented "Instruction SBFM not yet implemented."
+	024 Add W10, W12, W10
+	025 NotImplemented "Instruction SBFM not yet implemented."
+	026 Add W11, W12, W11
+	027 Subtract W12, W10, W10
+	028 And W13, W11, 255
+	029 Add W12, W12, W2
+	030 Subtract W11, W11, W11
+	031 NotImplemented "Instruction BFM not yet implemented."
+	032 Add W11, W11, W1
+	033 NotImplemented "Instruction BFM not yet implemented."
+	034 NotImplemented "Instruction BFM not yet implemented."
+	035 Add X8, X8, W9
+	036 Move [X8+32], W13
+	037 Move X30, [X31+16]
+	038 Return 
+	039 Call 0x1C17F20
+	040 Call 0x1C17F28
+
+Method: System.Void WriteRawFloat4Packed(System.Single f0, System.Single f1, System.Single f2, System.Single f3, System.Int32 destX, System.Int32 destY)
+
+Disassembly:
+	0x03D226EC ADD X31, X31, 0x40
+	0x03D226F0 RET
+	0x03D226F4 LDRB W0, [X0 + 0x24]
+	0x03D226F8 RET
+	0x03D226FC AND W8, W1, 0x1
+	0x03D22700 STRB W8, [X0 + 0x24]
+	0x03D22704 RET
+	0x03D22708 STP X30, X21, [X31 - 0x20]!
+	0x03D2270C STP X20, X19, [X31 + 0x10]
+	0x03D22710 ADRP X21, 0x6C5000
+	0x03D22714 LDRB W8, [X21 + 0xA88]
+	0x03D22718 MOV W20, W1
+	0x03D2271C MOV X19, X0
+	0x03D22720 TBNZ X8, 0x0, 0x3D22738
+	0x03D22724 ADRP X0, 0x442000
+	0x03D22728 LDR X0, [X0 + 0x5F8]
+	0x03D2272C BL 0x1C16CF4
+	0x03D22730 MOVZ W8, 0x1
+	0x03D22734 STRB W8, [X21 + 0xA88]
+	0x03D22738 LDRB W8, [X19 + 0x24]
+	0x03D2273C CBNZ W8, 0x3D22760
+	0x03D22740 TBZ X20, 0x0, 0x3D22758
+	0x03D22744 ADRP X8, 0x442000
+	0x03D22748 LDR X8, [X8 + 0x5F8]
+	0x03D2274C ADD X0, X19, 0x10
+	0x03D22750 LDR X1, [X8]
+	0x03D22754 BL 0x23D7780
+	0x03D22758 MOVZ W8, 0x1
+	0x03D2275C STRB W8, [X19 + 0x24]
+	0x03D22760 LDP X20, X19, [X31 + 0x10]
+	0x03D22764 LDP X30, X21, [X31], #0x20
+	0x03D22768 RET
+	0x03D2276C SUB X31, X31, 0x30
+	0x03D22770 STR X30, [X31 + 0x20]
+	0x03D22774 LDR X10, [X0 + 0x28]
+	0x03D22778 CBZ X10, 0x3D22864
+	0x03D2277C LDR W9, [X10 + 0x18]
+	0x03D22780 CMP W9, W1
+	0x03D22784 B.LS 0x3D22868
+	0x03D22788 SXTW X9, W1
+	0x03D2278C ADD X10, X10, X9, 0x3, LSL
+	0x03D22790 LDR V2, [X10 + 0x24]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {41}
+	005 Move W9, [X0+8]
+	006 Move W10, [X8+24]
+	007 NotImplemented "Instruction MADD not yet implemented."
+	008 NotImplemented "Instruction CMP not yet implemented."
+	009 Move W10, 0x437F0000
+	010 Move S5, W10
+	011 Move S4, 0.5
+	012 Multiply S3, S3, S5
+	013 Multiply S2, S2, S5
+	014 Add S3, S3, S4
+	015 Multiply S1, S1, S5
+	016 Add S2, S2, S4
+	017 NotImplemented "Instruction FCVTZS not yet implemented."
+	018 NotImplemented "Instruction FCMP not yet implemented."
+	019 Multiply S0, S0, S5
+	020 Add S1, S1, S4
+	021 NotImplemented "Instruction FCVTZS not yet implemented."
+	022 NotImplemented "Instruction CSEL not yet implemented."
+	023 NotImplemented "Instruction FCMP not yet implemented."
+	024 Add S0, S0, S4
+	025 NotImplemented "Instruction FCVTZS not yet implemented."
+	026 NotImplemented "Instruction CSEL not yet implemented."
+	027 NotImplemented "Instruction FCMP not yet implemented."
+	028 NotImplemented "Instruction FCVTZS not yet implemented."
+	029 NotImplemented "Instruction CSEL not yet implemented."
+	030 NotImplemented "Instruction FCMP not yet implemented."
+	031 And W12, W12, 255
+	032 NotImplemented "Instruction CSEL not yet implemented."
+	033 And W11, W11, 255
+	034 NotImplemented "Instruction BFM not yet implemented."
+	035 NotImplemented "Instruction BFM not yet implemented."
+	036 NotImplemented "Instruction BFM not yet implemented."
+	037 Add X8, X8, W9
+	038 Move [X8+32], W13
+	039 Move X30, [X31+16]
+	040 Return 
+	041 Call 0x1C17F20
+	042 Call 0x1C17F28
+

@@ -1,0 +1,40 @@
+Type: Fusion.UnityResourcePathAttribute
+
+Method: System.Void .ctor(System.Type resourceType)
+
+Disassembly:
+	0x01E34238 LDR X22, [X22 + 0x600]
+	0x01E3423C LDR X19, [X19 + 0x608]
+	0x01E34240 LDR X20, [X20 + 0x5E0]
+	0x01E34244 TBNZ X8, 0x0, 0x1E34274
+	0x01E34248 ADRP X0, 0x22C7000
+	0x01E3424C LDR X0, [X0 + 0x600]
+	0x01E34250 BL 0x1C16CF4
+	0x01E34254 ADRP X0, 0x22C7000
+	0x01E34258 LDR X0, [X0 + 0x5E0]
+	0x01E3425C BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call PropertyAttribute..ctor, X0
+	008 Move [X20+24], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Type get_ResourceType()
+
+Disassembly:
+	0x01E34260 ADRP X0, 0x22C7000
+	0x01E34264 LDR X0, [X0 + 0x608]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+

@@ -1,0 +1,30 @@
+Type: System.MonoLimitationAttribute
+
+Method: System.Void .ctor(System.String comment)
+
+Disassembly:
+	0x033A6220 ADD X31, X31, 0x30
+	0x033A6224 RET
+	0x033A6228 MOV X0, X20
+	0x033A622C BL 0x1C16F18
+	0x033A6230 B 0x33A6238
+	0x033A6234 B 0x33A6238
+	0x033A6238 MOV X21, X0
+	0x033A623C CMP W1, 0x1
+	0x033A6240 B.NE 0x33A625C
+	0x033A6244 MOV X0, X21
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

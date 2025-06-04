@@ -1,0 +1,9 @@
+namespace UnityEngine.XR.Interaction.Toolkit.AR;
+
+public class ARPlacementInteractable
+{
+
+	public ARPlacementInteractable() { }
+
+}
+

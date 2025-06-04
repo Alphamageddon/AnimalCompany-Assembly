@@ -1,0 +1,103 @@
+Type: UnityEngine.UIElements.TreeItem
+
+Method: System.Int32 get_id()
+
+Disassembly:
+	0x03D888F0 CBZ X9, 0x3D88914
+	0x03D888F4 LDR X10, [X8 + 0xB0]
+
+ISIL:
+	001 Move W0, [X0]
+	002 Return X0
+
+Method: System.Int32 get_parentId()
+
+Disassembly:
+	0x03D888F8 ADD X10, X10, 0x8
+	0x03D888FC LDUR X11, [X10 - 0x8]
+
+ISIL:
+	001 Move W0, [X0+4]
+	002 Return X0
+
+Method: System.Collections.Generic.IEnumerable`1<System.Int32> get_childrenIds()
+
+Disassembly:
+	0x03D88900 CMP X11, X1
+	0x03D88904 B.EQ 0x3D88924
+
+ISIL:
+	001 Move X0, [X0+8]
+	002 Return X0
+
+Method: System.Boolean get_hasChildren()
+
+Disassembly:
+	0x03D88908 SUBS X9, X9, 0x1
+	0x03D8890C ADD X10, X10, 0x10
+	0x03D88910 B.NE 0x3D888FC
+	0x03D88914 MOVZ W2, 0x15
+	0x03D88918 MOV X0, X20
+	0x03D8891C BL 0x1C5C788
+	0x03D88920 B 0x3D88934
+	0x03D88924 LDR W9, [X10]
+	0x03D88928 ADD W9, W9, 0x15
+	0x03D8892C ADD X8, X8, W9, 0x4, SXTW
+	0x03D88930 ADD X0, X8, 0x138
+	0x03D88934 LDP X8, X2, [X0]
+	0x03D88938 MOV X0, X20
+	0x03D8893C MOV X1, X21
+	0x03D88940 BLR X8
+	0x03D88944 LDR X0, [X19 + 0x3E0]
+	0x03D88948 CBZ X0, 0x3D890AC
+	0x03D8894C MOV X1, X31
+	0x03D88950 BL 0x3DE7EEC
+	0x03D88954 MOV X20, X0
+	0x03D88958 FMOV S0, 1
+	0x03D8895C MOV X0, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0x660000
+	005 Move W8, [X20+3586]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x3C6000
+	012 Move X0, [X0+2720]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+3586], W8
+	016 Move X0, [X19+8]
+	017 Compare X0, 0
+	018 JumpIfEqual {27}
+	019 Move X8, 0x3C6000
+	020 Move X8, [X8+2720]
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X1, [X8]
+	024 Move X30, [X31+32]
+	025 Call Enumerable.Any, X0
+	026 Return X0
+	027 Move X20, [X31+16]
+	028 Move X19, [X31+24]
+	029 Move X30, [X31+32]
+	030 Return X0
+
+Method: System.Void .ctor(System.Int32 id, System.Int32 parentId = -1, System.Collections.Generic.IEnumerable`1<System.Int32> childrenIds = null)
+
+Disassembly:
+	0x03D88960 BL 0x3DFE658
+	0x03D88964 CBZ X20, 0x3D890AC
+	0x03D88968 LDR X8, [X20]
+
+ISIL:
+	001 Move [X0], W1
+	002 Move [X0+4], W2
+	003 Move [X0+8], X3
+	004 Return 
+

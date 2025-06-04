@@ -1,0 +1,82 @@
+Type: System.Security.Authentication.AuthenticationException
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0364D42C ADRP X9, 0xAEF000
+	0x0364D430 LDR X8, [X8 + 0xB8]
+	0x0364D434 LDR X9, [X9 + 0x780]
+	0x0364D438 LDR X23, [X8]
+	0x0364D43C LDR X0, [X9]
+	0x0364D440 BL 0x1C16F10
+	0x0364D444 ADRP X8, 0xAEF000
+	0x0364D448 LDR X8, [X8 + 0x790]
+	0x0364D44C MOV X1, X23
+	0x0364D450 MOV X3, X31
+	0x0364D454 MOV X22, X0
+	0x0364D458 LDR X2, [X8]
+	0x0364D45C BL 0x2D27AA8
+	0x0364D460 LDR X8, [X25]
+	0x0364D464 LDR X8, [X8 + 0xB8]
+	0x0364D468 STR X22, [X8 + 0x8]
+	0x0364D46C LDR X2, [X26]
+	0x0364D470 MOV X0, X21
+	0x0364D474 MOV X1, X22
+	0x0364D478 BL 0x2212A40
+	0x0364D47C LDR X8, [X25]
+	0x0364D480 MOV X22, X0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0xD94000
+	006 Move X21, 0xAF0000
+	007 Move W8, [X20+1515]
+	008 Move X21, [X21+1840]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xAF0000
+	015 Move X0, [X0+1840]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1515], W8
+	019 Move X0, [X21]
+	020 Move X1, X31
+	021 Call Locale.GetText, X0
+	022 Move X1, X0
+	023 Move X0, X19
+	024 Move X20, [X31+16]
+	025 Move X19, [X31+24]
+	026 Move X2, X31
+	027 Move X30, [X31+32]
+	028 Move X21, [X31+40]
+	029 Call SystemException..ctor, X0, X1
+	030 Return 
+
+Method: System.Void .ctor(System.String message, System.Exception innerException)
+
+Disassembly:
+	0x0364D484 LDR W9, [X8 + 0xE0]
+	0x0364D488 CBNZ W9, 0x364D498
+
+ISIL:
+	001 Move X3, X31
+	002 Call SystemException..ctor, X0, X1, X2
+	003 Return 
+
+Method: System.Void .ctor(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
+
+Disassembly:
+	0x0364D48C MOV X0, X8
+	0x0364D490 BL 0x1C16DFC
+
+ISIL:
+	001 Move X4, X31
+	002 Call SystemException..ctor, X0, X1, X2
+	003 Return 
+

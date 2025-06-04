@@ -1,0 +1,227 @@
+Type: UnityEngine.InputSystem.Layouts.InputDeviceFindControlLayoutDelegate
+
+Method: System.Void .ctor(System.Object object, System.IntPtr method)
+
+Disassembly:
+	0x03811A78 LDR W9, [X23 + 0xA8]
+	0x03811A7C AND W9, W9, 0xFFFFFFFE
+	0x03811A80 ORR W8, W9, W8, 0x0
+	0x03811A84 STR W8, [X23 + 0xA8]
+	0x03811A88 CBZ X21, 0x3811B68
+	0x03811A8C LDRB W9, [X21 + 0x48]
+	0x03811A90 AND W8, W8, 0xFFFFFFFD
+	0x03811A94 ORR W8, W8, W9, 0x1
+	0x03811A98 STR W8, [X23 + 0xA8]
+	0x03811A9C CBZ X19, 0x3811BB4
+	0x03811AA0 LDUR V0, [X21 + 0x38]
+	0x03811AA4 MOV X0, X19
+	0x03811AA8 STUR V0, [X19 + 0x98]
+	0x03811AAC LDURH W1, [X21 + 0x31]
+	0x03811AB0 BL 0x3811000
+	0x03811AB4 LDR W8, [X19 + 0xA8]
+	0x03811AB8 LDRB W9, [X21 + 0x30]
+	0x03811ABC AND W8, W8, 0xFFFFFFDF
+	0x03811AC0 ORR W8, W8, W9, 0x5
+	0x03811AC4 STR W8, [X19 + 0xA8]
+	0x03811AC8 LDR X20, [X21 + 0x20]
+	0x03811ACC CBZ X20, 0x3811B94
+	0x03811AD0 ADRP X23, 0x939000
+	0x03811AD4 LDR X23, [X23 + 0x790]
+	0x03811AD8 LDR X0, [X23]
+	0x03811ADC LDR W8, [X0 + 0xE0]
+	0x03811AE0 CBNZ W8, 0x3811AEC
+	0x03811AE4 BL 0x1C16DFC
+	0x03811AE8 LDR X0, [X23]
+	0x03811AEC LDR X8, [X0 + 0xB8]
+	0x03811AF0 LDR X21, [X8 + 0x8]
+	0x03811AF4 CBNZ X21, 0x3811B48
+	0x03811AF8 LDR W8, [X0 + 0xE0]
+	0x03811AFC CBNZ W8, 0x3811B08
+	0x03811B00 BL 0x1C16DFC
+	0x03811B04 LDR X0, [X23]
+	0x03811B08 ADRP X9, 0x939000
+	0x03811B0C LDR X8, [X0 + 0xB8]
+	0x03811B10 LDR X9, [X9 + 0x768]
+	0x03811B14 LDR X22, [X8]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X8, [X2+8]
+	006 Move [X0+32], X1
+	007 Move [X0+40], X2
+	008 Move X19, X0
+	009 Move X20, X1
+	010 Move [X0+16], X8
+	011 Move W21, [X2+82]
+	012 Move [X0+64], X0
+	013 Move X0, X2
+	014 Call 0x1C17D84
+	015 Move TEMP, X0
+	016 And TEMP, TEMP, 1
+	017 Compare TEMP, 1
+	018 JumpIfNotEqual {22}
+	019 NotImplemented "Instruction CMP not yet implemented."
+	020 Move X8, -29601792
+	021 Add X8, X8, 744
+	022 NotImplemented "Instruction CMP not yet implemented."
+	023 Move X8, -29601792
+	024 Add X8, X8, 720
+	025 Move [X19+24], X8
+	026 Compare X20, 0
+	027 JumpIfEqual {40}
+	028 Move X8, [X19+16]
+	029 Move X9, [X19+32]
+	030 Move [X19+24], X8
+	031 Move [X19+64], X9
+	032 Move X8, -29601792
+	033 Add X8, X8, 616
+	034 Move [X19+56], X8
+	035 Move X20, [X31+16]
+	036 Move X19, [X31+24]
+	037 Move X30, [X31+32]
+	038 Move X21, [X31+40]
+	039 Return 
+	040 Move X1, -47140864
+	041 Add X1, X1, 3811
+	042 Move X0, X31
+	043 Call 0x1C17F3C
+	044 Move X1, X31
+	045 Call 0x1C17DEC
+
+Method: System.String Invoke(ref UnityEngine.InputSystem.Layouts.InputDeviceDescription description, System.String matchedLayout, UnityEngine.InputSystem.LowLevel.InputDeviceExecuteCommandDelegate executeDeviceCommand)
+
+Disassembly:
+	0x03811B18 LDR X0, [X9]
+	0x03811B1C BL 0x1C16F10
+	0x03811B20 ADRP X8, 0x939000
+	0x03811B24 LDR X8, [X8 + 0x788]
+	0x03811B28 MOV X1, X22
+
+ISIL:
+	001 Move X8, [X0+64]
+	002 Move X5, [X0+24]
+	003 Move X4, [X0+40]
+	004 Move X0, X8
+	005 CallNoReturn X5
+
+Method: System.IAsyncResult BeginInvoke(ref UnityEngine.InputSystem.Layouts.InputDeviceDescription description, System.String matchedLayout, UnityEngine.InputSystem.LowLevel.InputDeviceExecuteCommandDelegate executeDeviceCommand, System.AsyncCallback callback, System.Object object)
+
+Disassembly:
+	0x03811B2C MOV X3, X31
+	0x03811B30 MOV X21, X0
+	0x03811B34 LDR X2, [X8]
+	0x03811B38 BL 0x2D30464
+	0x03811B3C LDR X8, [X23]
+	0x03811B40 LDR X8, [X8 + 0xB8]
+	0x03811B44 STR X21, [X8 + 0x8]
+	0x03811B48 ADRP X8, 0x939000
+	0x03811B4C LDR X8, [X8 + 0x760]
+	0x03811B50 MOV X0, X20
+	0x03811B54 MOV X1, X21
+	0x03811B58 LDR X2, [X8]
+	0x03811B5C BL 0x217C220
+	0x03811B60 STR X0, [X19 + 0x88]
+	0x03811B64 B 0x3811B94
+	0x03811B68 AND W8, W8, 0xFFFFFFFD
+	0x03811B6C STR W8, [X23 + 0xA8]
+	0x03811B70 CBZ X20, 0x3811BB4
+	0x03811B74 MOV X0, X20
+	0x03811B78 MOV X1, X31
+	0x03811B7C STP X31, X31, [X20 + 0x98]
+	0x03811B80 BL 0x3811000
+	0x03811B84 LDR W8, [X20 + 0xA8]
+	0x03811B88 MOV X19, X20
+	0x03811B8C AND W8, W8, 0xFFFFFFDF
+	0x03811B90 STR W8, [X20 + 0xA8]
+	0x03811B94 MOV X0, X19
+	0x03811B98 LDP X20, X19, [X31 + 0x60]
+	0x03811B9C LDP X22, X21, [X31 + 0x50]
+	0x03811BA0 LDP X24, X23, [X31 + 0x40]
+	0x03811BA4 LDP X26, X25, [X31 + 0x30]
+	0x03811BA8 LDR X30, [X31 + 0x20]
+	0x03811BAC ADD X31, X31, 0x70
+	0x03811BB0 RET
+	0x03811BB4 BL 0x1C16F20
+	0x03811BB8 MOV X0, X25
+	0x03811BBC MOV X1, X23
+	0x03811BC0 BL 0x1C171E0
+	0x03811BC4 MOV X0, X25
+	0x03811BC8 MOV X1, X24
+
+ISIL:
+	001 Subtract X31, X31, 112
+	002 Move [X31+32], X30
+	003 Move [X31+48], X26
+	004 Move [X31+56], X25
+	005 Move [X31+64], X24
+	006 Move [X31+72], X23
+	007 Move [X31+80], X22
+	008 Move [X31+88], X21
+	009 Move [X31+96], X20
+	010 Move [X31+104], X19
+	011 Move X26, 0xBD1000
+	012 Move X25, 0x90E000
+	013 Move W8, [X26+1221]
+	014 Move X25, [X25+1264]
+	015 Move X19, X5
+	016 Move X20, X4
+	017 Move X22, X3
+	018 Move X23, X2
+	019 Move X24, X1
+	020 Move X21, X0
+	021 Move TEMP, X8
+	022 And TEMP, TEMP, 1
+	023 Compare TEMP, 1
+	024 JumpIfEqual {30}
+	025 Move X0, 0x90E000
+	026 Move X0, [X0+1264]
+	027 Call 0x1C17CF4
+	028 Move W8, 1
+	029 Move [X26+1221], W8
+	030 Move X0, [X25]
+	031 Move X1, X24
+	032 Move [X31+24], X31
+	033 Call 0x1C17E04
+	034 Move [X31], X0
+	035 Move [X31+8], X23
+	036 Add X1, X31, 0
+	037 Move X0, X21
+	038 Move X2, X20
+	039 Move X3, X19
+	040 Move [X31+16], X22
+	041 Call 0x1C17CB0
+	042 Move X20, [X31+96]
+	043 Move X19, [X31+104]
+	044 Move X22, [X31+80]
+	045 Move X21, [X31+88]
+	046 Move X24, [X31+64]
+	047 Move X23, [X31+72]
+	048 Move X26, [X31+48]
+	049 Move X25, [X31+56]
+	050 Move X30, [X31+32]
+	051 Add X31, X31, 112
+	052 Return X0
+
+Method: System.String EndInvoke(ref UnityEngine.InputSystem.Layouts.InputDeviceDescription description, System.IAsyncResult result)
+
+Disassembly:
+	0x03811BCC BL 0x1C171E0
+	0x03811BD0 STP X30, X23, [X31 - 0x30]!
+	0x03811BD4 STP X22, X21, [X31 + 0x10]
+	0x03811BD8 STP X20, X19, [X31 + 0x20]
+	0x03811BDC ADRP X22, 0xBD0000
+	0x03811BE0 ADRP X23, 0x90A000
+	0x03811BE4 LDRB W8, [X22 + 0x4D5]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X0, X2
+	003 Move [X31+8], X1
+	004 Add X1, X31, 8
+	005 Call 0x1C17CB4
+	006 Move X30, [X31+16]
+	007 Return X0
+

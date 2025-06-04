@@ -1,0 +1,47 @@
+Type: UnityEngine.Rendering.Universal.MyIntersectNodeSort
+
+Method: System.Int32 Compare(UnityEngine.Rendering.Universal.IntersectNode node1, UnityEngine.Rendering.Universal.IntersectNode node2)
+
+Disassembly:
+	0x03A0557C LDR X8, [X31 + 0x200]
+	0x03A05580 CMP X20, X8
+	0x03A05584 B.NE 0x3A05594
+	0x03A05588 CMP W25, 0x2
+	0x03A0558C B.GE 0x3A05540
+	0x03A05590 MOV W25, W31
+	0x03A05594 STR W24, [X31 + 0x8]
+	0x03A05598 ADRP X22, 0x74F000
+	0x03A0559C ADRP X27, 0x74F000
+	0x03A055A0 ADRP X28, 0x74F000
+	0x03A055A4 ADRP X20, 0x74F000
+	0x03A055A8 LDR X22, [X22 + 0x218]
+	0x03A055AC LDR X27, [X27 + 0x220]
+	0x03A055B0 LDR X28, [X28 + 0x1E8]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X2, 0
+	003 JumpIfEqual {14}
+	004 Compare X1, 0
+	005 JumpIfEqual {14}
+	006 Move X8, [X2+48]
+	007 Move X9, [X1+48]
+	008 Subtract X8, X8, X9
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Move W0, 1
+	011 NotImplemented "Instruction CSINV not yet implemented."
+	012 Move X30, [X31+16]
+	013 Return X0
+	014 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03A055B4 LDR X20, [X20 + 0x208]
+	0x03A055B8 MOV W26, W25
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

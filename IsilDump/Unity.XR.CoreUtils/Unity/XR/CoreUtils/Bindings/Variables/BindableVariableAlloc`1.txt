@@ -1,0 +1,52 @@
+Type: Unity.XR.CoreUtils.Bindings.Variables.BindableVariableAlloc`1
+
+Method: System.Void .ctor(T initialValue = null, System.Boolean checkEquality = True, System.Func`3<T, T, System.Boolean> equalityMethod = null, System.Boolean startInitialized = False)
+
+Disassembly:
+	0x028CC108 MOV X1, X23
+	0x028CC10C BL 0x1C16E00
+	0x028CC110 MOV X1, X0
+	0x028CC114 CBNZ X0, 0x28CC120
+	0x028CC118 B 0x28CC14C
+	0x028CC11C MOV X1, X31
+	0x028CC120 MOV X0, X20
+	0x028CC124 MOV X2, X22
+	0x028CC128 BL 0x1C24138
+	0x028CC12C CMP X22, X0
+	0x028CC130 MOV X22, X0
+	0x028CC134 B.NE 0x28CC0CC
+	0x028CC138 LDP X20, X19, [X31 + 0x30]
+	0x028CC13C LDP X22, X21, [X31 + 0x20]
+	0x028CC140 LDP X24, X23, [X31 + 0x10]
+	0x028CC144 LDR X30, [X31], #0x40
+	0x028CC148 RET
+	0x028CC14C MOV X0, X24
+	0x028CC150 MOV X1, X23
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31-40], X23
+	003 Move [X31+16], X22
+	004 Move [X31+24], X21
+	005 Move [X31+32], X20
+	006 Move [X31+40], X19
+	007 Move W20, W1
+	008 Move X1, X31
+	009 Move X19, X3
+	010 Move X21, X0
+	011 And W22, W2, 1
+	012 And W23, W4, 1
+	013 Call Object..ctor, X0
+	014 Move [X21+29], W23
+	015 Move [X21+24], W20
+	016 Move [X21+28], W22
+	017 Move [X21+32], X19
+	018 Move [X21+40], W31
+	019 Move X20, [X31+32]
+	020 Move X19, [X31+40]
+	021 Move X22, [X31+16]
+	022 Move X21, [X31+24]
+	023 Move X30, [X31+48]
+	024 Move X23, [X31+56]
+	025 Return 
+

@@ -1,0 +1,31 @@
+Type: UnityEngine.ScriptingRuntime
+
+Method: System.String[] GetAllUserAssemblies()
+
+Disassembly:
+	0x03C37E6C MOV W23, W31
+	0x03C37E70 ADD X24, X19, 0x20
+	0x03C37E74 BIC W25, W8, W8, 0x1F
+	0x03C37E78 LDR W8, [X0 + 0xE0]
+	0x03C37E7C CBNZ W8, 0x3C37E88
+	0x03C37E80 BL 0x1C16DFC
+	0x03C37E84 LDR X0, [X22]
+	0x03C37E88 LDR X8, [X0 + 0xB8]
+	0x03C37E8C CMP W23, W25
+	0x03C37E90 B.EQ 0x3C37FF4
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X19, 0x7AF000
+	004 Move X0, [X19+1216]
+	005 Compare X0, 0
+	006 JumpIfNotEqual {11}
+	007 Move X0, -51494912
+	008 Add X0, X0, 3410
+	009 Call 0x1C17CB8
+	010 Move [X19+1216], X0
+	011 Move X30, [X31+16]
+	012 Move X19, [X31+24]
+	013 CallNoReturn X0
+

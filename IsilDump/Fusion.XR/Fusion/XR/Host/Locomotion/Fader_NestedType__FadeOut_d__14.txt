@@ -1,0 +1,166 @@
+Type: Fusion.XR.Host.Locomotion.Fader/<FadeOut>d__14
+
+Method: System.Void .ctor(System.Int32 <>1__state)
+
+Disassembly:
+	0x01FA24EC B 0x3C36C30
+	0x01FA24F0 SUB X31, X31, 0xD0
+	0x01FA24F4 STP X29, X30, [X31 + 0x70]
+	0x01FA24F8 STP X28, X27, [X31 + 0x80]
+	0x01FA24FC STP X26, X25, [X31 + 0x90]
+	0x01FA2500 STP X24, X23, [X31 + 0xA0]
+	0x01FA2504 STP X22, X21, [X31 + 0xB0]
+	0x01FA2508 STP X20, X19, [X31 + 0xC0]
+	0x01FA250C ADRP X22, 0x2437000
+	0x01FA2510 ADRP X21, 0x2179000
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void System.IDisposable.Dispose()
+
+Disassembly:
+	0x01FA2A20 FNEG S0, S1
+
+ISIL:
+	001 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x01FA2A24 FCSEL S0, S1, S0, GE
+	0x01FA2A28 MOV X0, X19
+	0x01FA2A2C BL 0x1FA2A50
+	0x01FA2A30 MOV X1, X0
+	0x01FA2A34 MOV X0, X19
+	0x01FA2A38 LDP X20, X19, [X31 + 0x20]
+	0x01FA2A3C LDR X30, [X31 + 0x10]
+	0x01FA2A40 MOV X2, X31
+	0x01FA2A44 LDP D9, D8, [X31], #0x30
+	0x01FA2A48 B 0x3C366FC
+	0x01FA2A4C BL 0x1C16F20
+	0x01FA2A50 STR D8, [X31 - 0x30]!
+	0x01FA2A54 STP X30, X21, [X31 + 0x10]
+	0x01FA2A58 STP X20, X19, [X31 + 0x20]
+	0x01FA2A5C ADRP X20, 0x2437000
+	0x01FA2A60 ADRP X21, 0x2179000
+	0x01FA2A64 LDRB W8, [X20 + 0x7DC]
+	0x01FA2A68 LDR X21, [X21 + 0x3C8]
+	0x01FA2A6C MOV V8.16B, V0.16B
+	0x01FA2A70 MOV X19, X0
+	0x01FA2A74 TBNZ X8, 0x0, 0x1FA2A8C
+	0x01FA2A78 ADRP X0, 0x2179000
+	0x01FA2A7C LDR X0, [X0 + 0x3C8]
+	0x01FA2A80 BL 0x1C16CF4
+	0x01FA2A84 MOVZ W8, 0x1
+	0x01FA2A88 STRB W8, [X20 + 0x7DC]
+	0x01FA2A8C LDR X0, [X21]
+	0x01FA2A90 BL 0x1C16F10
+	0x01FA2A94 MOV X1, X31
+	0x01FA2A98 MOV X20, X0
+	0x01FA2A9C BL 0x33BDD8C
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move W8, [X0+16]
+	004 Move X19, X0
+	005 Move W0, W31
+	006 NotImplemented "Instruction CMP not yet implemented."
+	007 Compare W8, 0
+	008 JumpIfNotEqual {33}
+	009 Move V0, [X19+32]
+	010 Move X0, [X19+40]
+	011 Move S1, -1
+	012 Move TEMP, 0
+	013 Not TEMP
+	014 Move W8, TEMP
+	015 NotImplemented "Instruction FCMP not yet implemented."
+	016 Move [X19+16], W8
+	017 Compare X0, 0
+	018 JumpIfEqual {36}
+	019 Move V0, [X0+80]
+	020 Move [X19+32], S0
+	021 Move TEMP, 0
+	022 Not TEMP
+	023 Move W8, TEMP
+	024 Compare X0, 0
+	025 JumpIfEqual {36}
+	026 Move S1, 1
+	027 Move S2, W31
+	028 Call Fader.Fade, X0, V0, V1, V2
+	029 Move [X19+24], X0
+	030 Move W8, 1
+	031 Move W0, 1
+	032 Move [X19+16], W8
+	033 Move X30, [X31+16]
+	034 Move X19, [X31+24]
+	035 Return X0
+	036 Call 0x1C17F20
+
+Method: System.Object System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+
+Disassembly:
+	0x01FA2AA0 STR W31, [X20 + 0x10]
+	0x01FA2AA4 STR X19, [X20 + 0x20]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void System.Collections.IEnumerator.Reset()
+
+Disassembly:
+	0x01FA2AA8 STR S8, [X20 + 0x28]
+	0x01FA2AAC MOV X0, X20
+	0x01FA2AB0 LDP X20, X19, [X31 + 0x20]
+	0x01FA2AB4 LDP X30, X21, [X31 + 0x10]
+	0x01FA2AB8 LDR V8, [X31], #0x30
+	0x01FA2ABC RET
+	0x01FA2AC0 STR X30, [X31 - 0x20]!
+	0x01FA2AC4 STP X20, X19, [X31 + 0x10]
+	0x01FA2AC8 MOV W19, W1
+	0x01FA2ACC MOV X1, X31
+	0x01FA2AD0 MOV X20, X0
+	0x01FA2AD4 BL 0x33BDD8C
+	0x01FA2AD8 STR W19, [X20 + 0x10]
+	0x01FA2ADC LDP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0x2152000
+	004 Move X0, [X0+2880]
+	005 Call 0x1C17D08
+	006 Call 0x1C17F10
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotSupportedException..ctor, X0
+	010 Move X0, 0x217A000
+	011 Move X0, [X0+768]
+	012 Call 0x1C17D08
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1C17DEC
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x01FA2AE0 LDR X30, [X31], #0x20
+	0x01FA2AE4 RET
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+

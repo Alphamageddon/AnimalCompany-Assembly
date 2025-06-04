@@ -1,0 +1,100 @@
+Type: UnityEngine.Rendering.ReloadAttribute
+
+Method: System.Void .ctor(System.String[] paths, UnityEngine.Rendering.ReloadAttribute/Package package = 1)
+
+Disassembly:
+	0x039EDBF0 FCSEL S2, S11, S0, GT
+	0x039EDBF4 FCMP S0, 0x0
+
+ISIL:
+	001 Move X1, X31
+	002 Call Attribute..ctor, X0
+	003 Return 
+
+Method: System.Void .ctor(System.String path, UnityEngine.Rendering.ReloadAttribute/Package package = 1)
+
+Disassembly:
+	0x039EDBF8 FCSEL S1, S2, S1, PL
+	0x039EDBFC FMOV S0, 3
+	0x039EDC00 FMUL S2, S1, S12
+	0x039EDC04 FADD S2, S13, S2
+	0x039EDC08 FMUL S0, S1, S0
+	0x039EDC0C FADD S3, S13, S13
+	0x039EDC10 FMUL S0, S12, S0
+	0x039EDC14 FMUL S2, S1, S2
+	0x039EDC18 FADD S0, S3, S0
+	0x039EDC1C FADD S2, S8, S2
+	0x039EDC20 FMUL S0, S1, S0
+	0x039EDC24 FMUL S1, S1, S2
+	0x039EDC28 FADD S0, S8, S0
+	0x039EDC2C FADD S1, S9, S1
+	0x039EDC30 STR S1, [X20]
+	0x039EDC34 STR S0, [X19]
+	0x039EDC38 LDP X20, X19, [X31 + 0x50]
+	0x039EDC3C LDP X22, X21, [X31 + 0x40]
+	0x039EDC40 LDR X30, [X31 + 0x30]
+	0x039EDC44 LDP D9, D8, [X31 + 0x20]
+	0x039EDC48 LDP D11, D10, [X31 + 0x10]
+	0x039EDC4C LDP D13, D12, [X31], #0x60
+	0x039EDC50 RET
+	0x039EDC54 SUB X31, X31, 0xD0
+	0x039EDC58 STR D10, [X31 + 0x90]
+	0x039EDC5C STP D9, D8, [X31 + 0x98]
+	0x039EDC60 STR X30, [X31 + 0xA8]
+	0x039EDC64 STP X22, X21, [X31 + 0xB0]
+	0x039EDC68 STP X20, X19, [X31 + 0xC0]
+	0x039EDC6C MOV X22, X8
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, 0x9F5000
+	007 Move X22, 0x707000
+	008 Move W8, [X21+3656]
+	009 Move X22, [X22+2760]
+	010 Move X20, X1
+	011 Move X19, X0
+	012 Move TEMP, X8
+	013 And TEMP, TEMP, 1
+	014 Compare TEMP, 1
+	015 JumpIfEqual {21}
+	016 Move X0, 0x707000
+	017 Move X0, [X0+2760]
+	018 Call 0x1C17CF4
+	019 Move W8, 1
+	020 Move [X21+3656], W8
+	021 Move X0, [X22]
+	022 Move W1, 1
+	023 Call 0x1C17D6C
+	024 Compare X0, 0
+	025 JumpIfEqual {39}
+	026 Move W8, [X0+24]
+	027 Compare W8, 0
+	028 JumpIfEqual {40}
+	029 Move [X0+32], X20
+	030 Move X0, X19
+	031 Move X20, [X31+32]
+	032 Move X19, [X31+40]
+	033 Move X22, [X31+16]
+	034 Move X21, [X31+24]
+	035 Move X1, X31
+	036 Move X30, [X31+48]
+	037 Call Attribute..ctor, X0
+	038 Return 
+	039 Call 0x1C17F20
+	040 Call 0x1C17F28
+
+Method: System.Void .ctor(System.String pathFormat, System.Int32 rangeMin, System.Int32 rangeMax, UnityEngine.Rendering.ReloadAttribute/Package package = 1)
+
+Disassembly:
+	0x039EDC70 ADD X8, X31, 0x70
+	0x039EDC74 MOV V8.16B, V2.16B
+
+ISIL:
+	001 Move X1, X31
+	002 Call Attribute..ctor, X0
+	003 Return 
+

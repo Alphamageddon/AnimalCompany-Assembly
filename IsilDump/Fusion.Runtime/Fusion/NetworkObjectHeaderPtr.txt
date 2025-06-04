@@ -1,0 +1,44 @@
+Type: Fusion.NetworkObjectHeaderPtr
+
+Method: Fusion.NetworkObjectTypeId get_Type()
+
+Disassembly:
+	0x01E969F4 LDR X1, [X0 + 0x30]
+	0x01E969F8 LDR W2, [X0 + 0x2C]
+	0x01E969FC MOV X3, X31
+	0x01E96A00 MOV X0, X8
+	0x01E96A04 LDR X30, [X31], #0x10
+	0x01E96A08 B 0x1E35764
+	0x01E96A0C BL 0x1C16F20
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {8}
+	005 Move X0, [X8+8]
+	006 Move X30, [X31+16]
+	007 Return X0
+	008 Call 0x1C17F20
+
+Method: Fusion.NetworkId get_Id()
+
+Disassembly:
+	0x01E96A10 STR X30, [X31 - 0x10]!
+	0x01E96A14 LDR X8, [X0]
+	0x01E96A18 CBZ X8, 0x1E96A34
+	0x01E96A1C CBZ X1, 0x1E96A34
+	0x01E96A20 LDR X8, [X8 + 0x30]
+	0x01E96A24 LDRSW X9, [X1 + 0x6C]
+	0x01E96A28 ADD X0, X8, X9, 0x2, LSL
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0]
+	003 Compare X8, 0
+	004 JumpIfEqual {8}
+	005 Move W0, [X8]
+	006 Move X30, [X31+16]
+	007 Return X0
+	008 Call 0x1C17F20
+

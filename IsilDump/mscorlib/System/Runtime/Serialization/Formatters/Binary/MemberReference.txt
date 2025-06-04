@@ -1,0 +1,121 @@
+Type: System.Runtime.Serialization.Formatters.Binary.MemberReference
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x032AEFD4 CBZ X9, 0x32AF00C
+	0x032AEFD8 LDR W10, [X9 + 0x18]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void Set(System.Int32 idRef)
+
+Disassembly:
+	0x032AEFDC CMP W8, W10
+	0x032AEFE0 B.CS 0x32AF010
+
+ISIL:
+	001 Move [X0+16], W1
+	002 Return 
+
+Method: System.Void Write(System.Runtime.Serialization.Formatters.Binary.__BinaryWriter sout)
+
+Disassembly:
+	0x032AEFE4 ADD X9, X9, X8, 0x3, LSL
+	0x032AEFE8 LDR X9, [X9 + 0x20]
+	0x032AEFEC ADD W8, W8, 0x1
+	0x032AEFF0 STR W8, [X0 + 0x14]
+	0x032AEFF4 STR X9, [X0 + 0x40]
+	0x032AEFF8 MOVZ W0, 0x1
+	0x032AEFFC B 0x32AF004
+	0x032AF000 MOV W0, W31
+	0x032AF004 LDR X30, [X31], #0x10
+	0x032AF008 RET
+	0x032AF00C BL 0x1C16F20
+	0x032AF010 BL 0x1C16F28
+	0x032AF014 STR X30, [X31 - 0x20]!
+	0x032AF018 STP X20, X19, [X31 + 0x10]
+	0x032AF01C ADRP X19, 0x112D000
+	0x032AF020 ADRP X20, 0xE76000
+	0x032AF024 LDRB W8, [X19 + 0x7D4]
+	0x032AF028 LDR X20, [X20 + 0x68]
+	0x032AF02C TBNZ X8, 0x0, 0x32AF044
+	0x032AF030 ADRP X0, 0xE76000
+	0x032AF034 LDR X0, [X0 + 0x68]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Compare X1, 0
+	005 JumpIfEqual {27}
+	006 Move X19, X0
+	007 Move X0, [X1+48]
+	008 Move X20, X1
+	009 Compare X0, 0
+	010 JumpIfEqual {27}
+	011 Move X8, [X0]
+	012 Move W1, 9
+	013 Move X9, [X8+456]
+	014 Move X2, [X8+464]
+	015 NotImplemented "Instruction BLR not yet implemented."
+	016 Move X0, [X20+48]
+	017 Compare X0, 0
+	018 JumpIfEqual {27}
+	019 Move X8, [X0]
+	020 Move W1, [X19+16]
+	021 Move X20, [X31+16]
+	022 Move X19, [X31+24]
+	023 Move X3, [X8+584]
+	024 Move X2, [X8+592]
+	025 Move X30, [X31+32]
+	026 CallNoReturn X3
+	027 Call 0x1C17F20
+
+Method: System.Void Read(System.Runtime.Serialization.Formatters.Binary.__BinaryParser input)
+
+Disassembly:
+	0x032AF038 BL 0x1C16CF4
+	0x032AF03C MOVZ W8, 0x1
+	0x032AF040 STRB W8, [X19 + 0x7D4]
+	0x032AF044 LDR X8, [X20]
+	0x032AF048 LDP X20, X19, [X31 + 0x10]
+	0x032AF04C MOVZ W9, 0x1
+	0x032AF050 LDR X8, [X8 + 0xB8]
+	0x032AF054 STR W9, [X8]
+	0x032AF058 LDR X30, [X31], #0x20
+	0x032AF05C RET
+	0x032AF060 STP X30, X21, [X31 - 0x20]!
+	0x032AF064 STP X20, X19, [X31 + 0x10]
+	0x032AF068 ADRP X21, 0x112D000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Compare X1, 0
+	004 JumpIfEqual {17}
+	005 Move X19, X0
+	006 Move X0, [X1+104]
+	007 Compare X0, 0
+	008 JumpIfEqual {17}
+	009 Move X8, [X0]
+	010 Move X9, [X8+552]
+	011 Move X1, [X8+560]
+	012 NotImplemented "Instruction BLR not yet implemented."
+	013 Move [X19+16], W0
+	014 Move X30, [X31+16]
+	015 Move X19, [X31+24]
+	016 Return 
+	017 Call 0x1C17F20
+
+Method: System.Void Dump()
+
+Disassembly:
+	0x032AF06C ADRP X20, 0xE75000
+
+ISIL:
+	001 Return 
+

@@ -1,0 +1,30 @@
+Type: UnityEngine.HeaderAttribute
+
+Method: System.Void .ctor(System.String header)
+
+Disassembly:
+	0x03C31474 BL 0x1C16F20
+	0x03C31478 STP X30, X19, [X31 - 0x10]!
+	0x03C3147C ADRP X19, 0x7B4000
+	0x03C31480 LDR X0, [X19 + 0x270]
+	0x03C31484 CBNZ X0, 0x3C31498
+	0x03C31488 ADRP X0, 0xFFFFFFFFFCEE1000
+	0x03C3148C ADD X0, X0, 0xDBB
+	0x03C31490 BL 0x1C16CB8
+	0x03C31494 STR X0, [X19 + 0x270]
+	0x03C31498 LDP X30, X19, [X31], #0x10
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, X1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Attribute..ctor, X0
+	008 Move [X20+24], X19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+

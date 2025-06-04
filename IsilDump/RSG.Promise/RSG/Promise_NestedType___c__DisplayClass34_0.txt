@@ -1,0 +1,35 @@
+Type: RSG.Promise/<>c__DisplayClass34_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0358FAB4 STP X30, X21, [X31 - 0x20]!
+	0x0358FAB8 STP X20, X19, [X31 + 0x10]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <InvokeRejectHandlers>b__0(RSG.RejectHandler handler)
+
+Disassembly:
+	0x03591678 CBZ X0, 0x35916B0
+	0x0359167C LDRSW X8, [X8 + 0x10]
+	0x03591680 LDR W10, [X0 + 0x18]
+	0x03591684 CMP W8, W10
+	0x03591688 B.CS 0x35916B4
+	0x0359168C ADD X8, X0, X8, 0x2, LSL
+	0x03591690 STR S0, [X8 + 0x20]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move X8, [X0+16]
+	003 Compare X8, 0
+	004 JumpIfEqual {9}
+	005 Move X3, [X0+24]
+	006 Move X30, [X31+16]
+	007 Call Promise.InvokeRejectHandler, X0, X1, X2, X3
+	008 Return 
+	009 Call 0x1C17F20
+

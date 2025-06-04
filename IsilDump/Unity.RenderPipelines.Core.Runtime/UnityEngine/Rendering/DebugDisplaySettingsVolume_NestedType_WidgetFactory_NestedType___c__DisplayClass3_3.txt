@@ -1,0 +1,93 @@
+Type: UnityEngine.Rendering.DebugDisplaySettingsVolume/WidgetFactory/<>c__DisplayClass3_3
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x039A6318 LDR X8, [X24]
+	0x039A631C MOVZ W1, 0x3
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Boolean <CreateVolumeTable>b__10()
+
+Disassembly:
+	0x039A6800 BL 0x1C16F10
+	0x039A6804 LDR X2, [X26]
+	0x039A6808 MOV X1, X20
+	0x039A680C MOV X3, X31
+	0x039A6810 MOV X26, X0
+	0x039A6814 BL 0x2D27AA8
+	0x039A6818 STR X26, [X25 + 0x48]
+	0x039A681C LDR X8, [X24]
+	0x039A6820 MOV X0, X25
+	0x039A6824 LDR X1, [X8 + 0x40]
+	0x039A6828 BL 0x1C16E00
+	0x039A682C CBZ X0, 0x39A6EC8
+	0x039A6830 LDR W8, [X24 + 0x18]
+	0x039A6834 CMP W8, 0x2
+	0x039A6838 B.LS 0x39A6EC4
+	0x039A683C STR X25, [X24 + 0x30]
+	0x039A6840 STR X24, [X23 + 0x48]
+	0x039A6844 CBZ X22, 0x39A6EC0
+	0x039A6848 ADRP X8, 0x7AA000
+	0x039A684C LDR X8, [X8 + 0x7A0]
+	0x039A6850 ADRP X24, 0x7AB000
+	0x039A6854 MOV X0, X22
+	0x039A6858 MOV X1, X23
+	0x039A685C LDR X2, [X8]
+	0x039A6860 LDR X24, [X24 + 0x8B0]
+	0x039A6864 BL 0x2497EC8
+	0x039A6868 ADRP X8, 0x7AB000
+	0x039A686C LDR X22, [X21 + 0x48]
+	0x039A6870 LDR X8, [X8 + 0x878]
+	0x039A6874 LDR X0, [X8]
+	0x039A6878 BL 0x1C16F10
+	0x039A687C MOVN W8, 0x0
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X20, 0xA3C000
+	005 Move W8, [X20+2981]
+	006 Move X19, X0
+	007 Move TEMP, X8
+	008 And TEMP, TEMP, 1
+	009 Compare TEMP, 1
+	010 JumpIfEqual {16}
+	011 Move X0, 0x7AC000
+	012 Move X0, [X0+1912]
+	013 Call 0x1C17CF4
+	014 Move W8, 1
+	015 Move [X20+2981], W8
+	016 Move X9, [X19+16]
+	017 Compare X9, 0
+	018 JumpIfEqual {42}
+	019 Move X8, [X19+24]
+	020 Compare X8, 0
+	021 JumpIfEqual {42}
+	022 Move X0, [X9+40]
+	023 Compare X0, 0
+	024 JumpIfEqual {42}
+	025 Move X9, 0x7AC000
+	026 Move X9, [X9+1912]
+	027 Move W1, [X8+16]
+	028 Move X2, [X9]
+	029 Call List`1<Object>.get_Item, X0, X1
+	030 Compare X0, 0
+	031 JumpIfEqual {42}
+	032 Move X8, [X0]
+	033 Move X9, [X8+392]
+	034 Move X1, [X8+400]
+	035 NotImplemented "Instruction BLR not yet implemented."
+	036 Move X20, [X31+16]
+	037 Move X19, [X31+24]
+	038 NotImplemented "Instruction ORN not yet implemented."
+	039 And W0, W8, 1
+	040 Move X30, [X31+32]
+	041 Return X0
+	042 Call 0x1C17F20
+

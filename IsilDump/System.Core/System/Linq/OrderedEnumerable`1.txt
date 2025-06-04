@@ -1,0 +1,192 @@
+Type: System.Linq.OrderedEnumerable`1
+
+Method: System.Collections.Generic.IEnumerator`1<TElement> GetEnumerator()
+
+Disassembly:
+	0x0249E188 STR X30, [X31 - 0x40]!
+	0x0249E18C STP X24, X23, [X31 + 0x10]
+	0x0249E190 STP X22, X21, [X31 + 0x20]
+	0x0249E194 STP X20, X19, [X31 + 0x30]
+	0x0249E198 MOV X24, X1
+	0x0249E19C MOV X1, X31
+	0x0249E1A0 MOV X19, X5
+	0x0249E1A4 MOV W20, W4
+	0x0249E1A8 MOV X22, X3
+	0x0249E1AC MOV X23, X2
+	0x0249E1B0 MOV X21, X0
+	0x0249E1B4 BL 0x33BDD8C
+	0x0249E1B8 CBZ X24, 0x249E200
+	0x0249E1BC CBZ X23, 0x249E20C
+	0x0249E1C0 STP X24, X31, [X21 + 0x10]
+	0x0249E1C4 STR X23, [X21 + 0x20]
+	0x0249E1C8 CBNZ X22, 0x249E1E0
+	0x0249E1CC LDR X8, [X19 + 0x20]
+	0x0249E1D0 LDR X8, [X8 + 0xC0]
+	0x0249E1D4 LDR X0, [X8 + 0x38]
+	0x0249E1D8 BL 0x29286B0
+	0x0249E1DC MOV X22, X0
+	0x0249E1E0 AND W8, W20, 0x1
+	0x0249E1E4 STR X22, [X21 + 0x28]
+	0x0249E1E8 STRB W8, [X21 + 0x30]
+	0x0249E1EC LDP X20, X19, [X31 + 0x30]
+	0x0249E1F0 LDP X22, X21, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X8, [X1+32]
+	005 Move X20, X1
+	006 Move X19, X0
+	007 Move X8, [X8+192]
+	008 Move X8, [X8]
+	009 Move W9, [X8+309]
+	010 Move TEMP, X9
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {17}
+	014 Move X0, X8
+	015 Call 0x1C5D684
+	016 Move X8, X0
+	017 Move X0, X8
+	018 Call 0x1C17F10
+	019 Move X8, [X20+32]
+	020 Move W1, W31
+	021 Move X20, X0
+	022 Move X8, [X8+192]
+	023 Move X2, [X8+8]
+	024 Call 0x239852C, X0, X1
+	025 Compare X20, 0
+	026 JumpIfEqual {33}
+	027 Move [X20+40], X19
+	028 Move X0, X20
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X30, [X31+32]
+	032 Return X0
+	033 Call 0x1C17F20
+
+Method: System.Linq.EnumerableSorter`1<TElement> GetEnumerableSorter(System.Linq.EnumerableSorter`1<TElement> next)
+
+Disassembly:
+	
+
+ISIL:
+No ISIL was generated
+Method: System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+
+Disassembly:
+	0x0249E1F4 LDP X24, X23, [X31 + 0x10]
+	0x0249E1F8 LDR X30, [X31], #0x40
+	0x0249E1FC RET
+	0x0249E200 ADRP X0, 0x1C60000
+
+ISIL:
+	001 Move X8, [X1+32]
+	002 Move X8, [X8+192]
+	003 Move X1, [X8+32]
+	004 Call 0x249E188, X0
+	005 Return X0
+
+Method: System.Linq.IOrderedEnumerable`1<TElement> System.Linq.IOrderedEnumerable<TElement>.CreateOrderedEnumerable(System.Func`2<TElement, TKey> keySelector, System.Collections.Generic.IComparer`1<TKey> comparer, System.Boolean descending)
+
+Disassembly:
+	0x021350D8 LDR X2, [X8 + 0x18]
+	0x021350DC LDR X9, [X3]
+	0x021350E0 BLR X9
+	0x021350E4 LDR X8, [X19 + 0x38]
+	0x021350E8 MOV X0, X20
+	0x021350EC MOV X1, X21
+	0x021350F0 LDP X20, X19, [X31 + 0x20]
+	0x021350F4 LDR X2, [X8 + 0x30]
+	0x021350F8 LDP X22, X21, [X31 + 0x10]
+	0x021350FC LDR X3, [X2]
+	0x02135100 LDR X30, [X31], #0x30
+	0x02135104 BR X3
+	0x02135108 BL 0x1C16F20
+	0x0213510C SUB X31, X31, 0x50
+	0x02135110 STP X30, X25, [X31 + 0x10]
+	0x02135114 STP X24, X23, [X31 + 0x20]
+	0x02135118 STP X22, X21, [X31 + 0x30]
+	0x0213511C STP X20, X19, [X31 + 0x40]
+	0x02135120 LDR X8, [X1 + 0x38]
+	0x02135124 MOV X19, X1
+	0x02135128 MOV X20, X0
+	0x0213512C CBNZ X8, 0x213517C
+	0x02135130 ADRP X0, 0x1FE6000
+	0x02135134 LDR X0, [X0 + 0x6D0]
+	0x02135138 BL 0x1C16CF4
+	0x0213513C ADRP X0, 0x1FE6000
+	0x02135140 LDR X0, [X0 + 0x6D8]
+	0x02135144 BL 0x1C16CF4
+	0x02135148 ADRP X0, 0x1FC5000
+	0x0213514C LDR X0, [X0 + 0x5F0]
+	0x02135150 BL 0x1C16CF4
+	0x02135154 ADRP X0, 0x1FBF000
+	0x02135158 LDR X0, [X0 + 0x470]
+	0x0213515C BL 0x1C16CF4
+	0x02135160 ADRP X0, 0x1FC1000
+	0x02135164 LDR X0, [X0 + 0xEF8]
+	0x02135168 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X31-64], X30
+	002 Move [X31+16], X24
+	003 Move [X31+24], X23
+	004 Move [X31+32], X22
+	005 Move [X31+40], X21
+	006 Move [X31+48], X20
+	007 Move [X31+56], X19
+	008 Move X8, [X4+56]
+	009 Move X23, X4
+	010 Move W22, W3
+	011 Move X20, X2
+	012 Move X21, X1
+	013 Move X19, X0
+	014 Compare X8, 0
+	015 JumpIfNotEqual {19}
+	016 Move X0, X23
+	017 Call 0x1C5D6E0
+	018 Move X8, [X23+56]
+	019 Move X0, [X8+16]
+	020 Move X24, [X19+16]
+	021 Move W8, [X0+309]
+	022 Move TEMP, X8
+	023 And TEMP, TEMP, 1
+	024 Compare TEMP, 1
+	025 JumpIfEqual {27}
+	026 Call 0x1C5D684
+	027 Call 0x1C17F10
+	028 Move X8, [X23+56]
+	029 And W4, W22, 1
+	030 Move X1, X24
+	031 Move X2, X21
+	032 Move X5, [X8+24]
+	033 Move X3, X20
+	034 Move X23, X0
+	035 Call OrderedEnumerable`2<GlyphPairAdjustmentRecord, UInt32>..ctor, X0, X1, X2, X3, X4
+	036 Compare X23, 0
+	037 JumpIfEqual {48}
+	038 Move [X23+24], X19
+	039 Move X0, X23
+	040 Move X20, [X31+48]
+	041 Move X19, [X31+56]
+	042 Move X22, [X31+32]
+	043 Move X21, [X31+40]
+	044 Move X24, [X31+16]
+	045 Move X23, [X31+24]
+	046 Move X30, [X31+64]
+	047 Return X0
+	048 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0249E204 LDR X0, [X0 + 0x580]
+	0x0249E208 B 0x249E214
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

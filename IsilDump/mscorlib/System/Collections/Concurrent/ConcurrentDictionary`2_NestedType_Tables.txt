@@ -1,0 +1,45 @@
+Type: System.Collections.Concurrent.ConcurrentDictionary`2/Tables
+
+Method: System.Void .ctor(System.Collections.Concurrent.ConcurrentDictionary`2/Node<TKey, TValue>[] buckets, System.Object[] locks, System.Int32[] countPerLock)
+
+Disassembly:
+	0x02677894 MOV X4, X31
+	0x02677898 B 0x32C3A9C
+	0x0267789C STR X30, [X31 - 0x20]!
+	0x026778A0 STP X20, X19, [X31 + 0x10]
+	0x026778A4 MOV X20, X0
+	0x026778A8 LDR X0, [X0]
+	0x026778AC MOV X19, X1
+	0x026778B0 MOV X1, X31
+	0x026778B4 BL 0x32C3B54
+	0x026778B8 LDR X20, [X20]
+	0x026778BC CBZ X20, 0x26778E0
+	0x026778C0 LDR X0, [X19 + 0x20]
+	0x026778C4 LDRB W8, [X0 + 0x135]
+	0x026778C8 TBNZ X8, 0x0, 0x26778D0
+	0x026778CC BL 0x1C5C684
+	0x026778D0 LDRB W0, [X20 + 0x50]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X21, X1
+	007 Move X1, X31
+	008 Move X19, X3
+	009 Move X20, X2
+	010 Move X22, X0
+	011 Call Object..ctor, X0
+	012 Move [X22+16], X21
+	013 Move [X22+24], X20
+	014 Call 0x1C17D44
+	015 Move [X22+32], X19
+	016 Move X20, [X31+32]
+	017 Move X19, [X31+40]
+	018 Move X22, [X31+16]
+	019 Move X21, [X31+24]
+	020 Move X30, [X31+48]
+	021 Return 
+

@@ -1,0 +1,108 @@
+Type: TMPro.TMP_FontFeatureTable/<>c
+
+Method: System.Void .cctor()
+
+Disassembly:
+	0x03AED054 LDR X0, [X19 + 0x1E0]
+	0x03AED058 CBZ X0, 0x3AED078
+	0x03AED05C ADRP X8, 0x66C000
+	0x03AED060 LDR X8, [X8 + 0x48]
+	0x03AED064 LDR X1, [X19 + 0x220]
+	0x03AED068 LDP X20, X19, [X31 + 0x10]
+	0x03AED06C LDR X2, [X8]
+	0x03AED070 LDR X30, [X31], #0x20
+	0x03AED074 B 0x2729DBC
+	0x03AED078 LDP X20, X19, [X31 + 0x10]
+	0x03AED07C LDR X30, [X31], #0x20
+	0x03AED080 RET
+	0x03AED084 LDRB W0, [X0 + 0x270]
+	0x03AED088 RET
+	0x03AED08C LDR V0, [X0 + 0x228]
+	0x03AED090 RET
+	0x03AED094 STR D8, [X31 - 0x30]!
+	0x03AED098 STP X30, X21, [X31 + 0x10]
+	0x03AED09C STP X20, X19, [X31 + 0x20]
+	0x03AED0A0 ADRP X21, 0x8F5000
+	0x03AED0A4 ADRP X20, 0x66C000
+	0x03AED0A8 LDRB W8, [X21 + 0x5DA]
+	0x03AED0AC LDR X20, [X20 + 0x50]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move X19, 0x8F6000
+	005 Move X20, 0x66C000
+	006 Move W8, [X19+1487]
+	007 Move X20, [X20+3576]
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x66C000
+	013 Move X0, [X0+3576]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X19+1487], W8
+	017 Move X0, [X20]
+	018 Call 0x1C17F10
+	019 Move X1, X31
+	020 Move X19, X0
+	021 Call Object..ctor, X0
+	022 Move X8, [X20]
+	023 Move X8, [X8+184]
+	024 Move [X8], X19
+	025 Move X20, [X31+16]
+	026 Move X19, [X31+24]
+	027 Move X30, [X31+32]
+	028 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x03AED0B0 MOV V8.16B, V0.16B
+	0x03AED0B4 MOV X19, X0
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.UInt32 <SortGlyphPairAdjustmentRecords>b__6_0(TMPro.TMP_GlyphPairAdjustmentRecord s)
+
+Disassembly:
+	0x03AED0B8 TBNZ X8, 0x0, 0x3AED0D0
+	0x03AED0BC ADRP X0, 0x66C000
+	0x03AED0C0 LDR X0, [X0 + 0x50]
+	0x03AED0C4 BL 0x1C16CF4
+	0x03AED0C8 MOVZ W8, 0x1
+	0x03AED0CC STRB W8, [X21 + 0x5DA]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {7}
+	004 Move W0, [X1+16]
+	005 Move X30, [X31+16]
+	006 Return X0
+	007 Call 0x1C17F20
+
+Method: System.UInt32 <SortGlyphPairAdjustmentRecords>b__6_1(TMPro.TMP_GlyphPairAdjustmentRecord s)
+
+Disassembly:
+	0x03AED0D0 LDR X1, [X20]
+	0x03AED0D4 ADD X0, X19, 0x228
+	0x03AED0D8 MOV V0.16B, V8.16B
+	0x03AED0DC BL 0x2253FAC
+	0x03AED0E0 TBZ X0, 0x0, 0x3AED100
+	0x03AED0E4 LDRB W8, [X19 + 0x270]
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X1, 0
+	003 JumpIfEqual {7}
+	004 Move W0, [X1+36]
+	005 Move X30, [X31+16]
+	006 Return X0
+	007 Call 0x1C17F20
+

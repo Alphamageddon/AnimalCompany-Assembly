@@ -1,0 +1,112 @@
+Type: System.Net.Http.Headers.HeaderInfo/CollectionHeaderTypeInfo`2
+
+Method: System.Void .ctor(System.String name, System.Net.Http.Headers.TryParseListDelegate`1<T> parser, System.Net.Http.Headers.HttpHeaderKind headerKind, System.Int32 minimalCount, System.String separator)
+
+Disassembly:
+	0x028F9068 LDRB W9, [X8 + 0x135]
+	0x028F906C TBNZ X9, 0x0, 0x28F907C
+	0x028F9070 MOV X0, X8
+	0x028F9074 BL 0x1C5C684
+	0x028F9078 MOV X8, X0
+	0x028F907C LDR X8, [X8 + 0xC0]
+	0x028F9080 LDR X0, [X8 + 0x10]
+	0x028F9084 LDRB W8, [X0 + 0x135]
+	0x028F9088 TBNZ X8, 0x0, 0x28F9090
+	0x028F908C BL 0x1C5C684
+	0x028F9090 LDR W8, [X0 + 0xE0]
+	0x028F9094 CBNZ W8, 0x28F909C
+	0x028F9098 BL 0x1C16DFC
+	0x028F909C LDR X0, [X20 + 0x20]
+	0x028F90A0 LDRB W8, [X0 + 0x135]
+	0x028F90A4 TBNZ X8, 0x0, 0x28F90AC
+	0x028F90A8 BL 0x1C5C684
+	0x028F90AC LDR X8, [X0 + 0xC0]
+	0x028F90B0 LDR X0, [X8 + 0x10]
+	0x028F90B4 LDRB W8, [X0 + 0x135]
+
+ISIL:
+	001 Move [X31-48], X30
+	002 Move [X31+16], X22
+	003 Move [X31+24], X21
+	004 Move [X31+32], X20
+	005 Move [X31+40], X19
+	006 Move X8, [X6+32]
+	007 Move W20, W4
+	008 Move X21, X2
+	009 Move X2, X31
+	010 Move X8, [X8+192]
+	011 Move X19, X5
+	012 Move X22, X0
+	013 Move X4, [X8]
+	014 Call HeaderTypeInfo`2<Object, Object>..ctor, X0, X1, X2, X3
+	015 Move W8, 1
+	016 Move [X22+48], W20
+	017 Move [X22+16], W8
+	018 Move [X22+56], X19
+	019 Move [X22+64], X21
+	020 Move X20, [X31+32]
+	021 Move X19, [X31+40]
+	022 Move X22, [X31+16]
+	023 Move X21, [X31+24]
+	024 Move X30, [X31+48]
+	025 Return 
+
+Method: System.String get_Separator()
+
+Disassembly:
+	0x028F90B8 TBNZ X8, 0x0, 0x28F90C0
+	0x028F90BC BL 0x1C5C684
+
+ISIL:
+	001 Move X0, [X0+56]
+	002 Return X0
+
+Method: System.Boolean TryParse(System.String value, out System.Object result)
+
+Disassembly:
+	0x028F90C0 LDR X8, [X0 + 0xB8]
+	0x028F90C4 LDR X21, [X8]
+	0x028F90C8 CBZ X21, 0x28F90F8
+	0x028F90CC LDR X0, [X20 + 0x20]
+	0x028F90D0 LDRB W8, [X0 + 0x135]
+	0x028F90D4 TBNZ X8, 0x0, 0x28F90DC
+	0x028F90D8 BL 0x1C5C684
+	0x028F90DC LDR X8, [X0 + 0xC0]
+	0x028F90E0 MOV X1, X19
+	0x028F90E4 LDP X20, X19, [X31 + 0x10]
+	0x028F90E8 MOV X0, X21
+	0x028F90EC LDR X2, [X8 + 0x30]
+	0x028F90F0 LDP X30, X21, [X31], #0x20
+	0x028F90F4 B 0x2493380
+	0x028F90F8 BL 0x1C16F20
+	0x028F90FC STP X30, X21, [X31 - 0x20]!
+	0x028F9100 STP X20, X19, [X31 + 0x10]
+	0x028F9104 LDR X8, [X1 + 0x20]
+	0x028F9108 MOV X20, X1
+	0x028F910C MOV X19, X0
+
+ISIL:
+	001 Subtract X31, X31, 32
+	002 Move [X31+16], X30
+	003 Move [X31+24], X19
+	004 Move [X31+8], X31
+	005 Move X8, [X0+64]
+	006 Compare X8, 0
+	007 JumpIfEqual {23}
+	008 Move X19, X2
+	009 Move W2, [X0+48]
+	010 Move X9, [X8+24]
+	011 Move X0, [X8+64]
+	012 Move X4, [X8+40]
+	013 Add X3, X31, 8
+	014 NotImplemented "Instruction BLR not yet implemented."
+	015 Move X8, [X31+8]
+	016 And W0, W0, 1
+	017 NotImplemented "Instruction CSEL not yet implemented."
+	018 Move [X19], X8
+	019 Move X30, [X31+16]
+	020 Move X19, [X31+24]
+	021 Add X31, X31, 32
+	022 Return X0
+	023 Call 0x1C17F20
+

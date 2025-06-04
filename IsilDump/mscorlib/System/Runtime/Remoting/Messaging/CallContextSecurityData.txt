@@ -1,0 +1,93 @@
+Type: System.Runtime.Remoting.Messaging.CallContextSecurityData
+
+Method: System.Boolean get_HasInfo()
+
+Disassembly:
+	0x03293898 LDR W8, [X21 + 0x18]
+	0x0329389C CMP W8, 0x1
+	0x032938A0 B.LT 0x3293914
+	0x032938A4 MOV X22, X0
+
+ISIL:
+	001 Move X8, [X0+16]
+	002 NotImplemented "Instruction CMP not yet implemented."
+	003 NotImplemented "Instruction CSET not yet implemented."
+	004 Return X0
+
+Method: System.Object Clone()
+
+Disassembly:
+	0x03293590 LDR X0, [X22, X24, LSL #3]
+	0x03293594 CBZ X0, 0x3293648
+	0x03293598 LDR X8, [X0]
+	0x0329359C LDP X9, X1, [X8 + 0x1D8]
+	0x032935A0 BLR X9
+	0x032935A4 CBZ X0, 0x3293648
+	0x032935A8 LDR X8, [X0]
+	0x032935AC LDR X9, [X8 + 0x2D8]
+	0x032935B0 LDR X1, [X8 + 0x2E0]
+	0x032935B4 BLR X9
+	0x032935B8 LDR X8, [X19 + 0x28]
+	0x032935BC CBZ X8, 0x3293648
+	0x032935C0 LDR W9, [X8 + 0x18]
+	0x032935C4 CMP W25, W9
+	0x032935C8 B.CS 0x329364C
+	0x032935CC LDR X1, [X8, X24, LSL #3]
+	0x032935D0 MOV X2, X31
+	0x032935D4 BL 0x3226EF8
+	0x032935D8 TBNZ X0, 0x0, 0x32935F4
+	0x032935DC LDR W8, [X22 + 0x18]
+	0x032935E0 ADD X24, X24, 0x1
+	0x032935E4 SUB W9, W24, 0x4
+	0x032935E8 CMP W9, W8
+	0x032935EC B.LT 0x3293584
+	0x032935F0 B 0x32935F8
+	0x032935F4 MOV X20, X31
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x114A000
+	006 Move X21, 0xE92000
+	007 Move W8, [X20+1753]
+	008 Move X21, [X21+1904]
+	009 Move X19, X0
+	010 Move TEMP, X8
+	011 And TEMP, TEMP, 1
+	012 Compare TEMP, 1
+	013 JumpIfEqual {19}
+	014 Move X0, 0xE92000
+	015 Move X0, [X0+1904]
+	016 Call 0x1C17CF4
+	017 Move W8, 1
+	018 Move [X20+1753], W8
+	019 Move X0, [X21]
+	020 Call 0x1C17F10
+	021 Move X1, X31
+	022 Move X20, X0
+	023 Call Object..ctor, X0
+	024 Compare X20, 0
+	025 JumpIfEqual {34}
+	026 Move X8, [X19+16]
+	027 Move X0, X20
+	028 Move [X20+16], X8
+	029 Move X20, [X31+16]
+	030 Move X19, [X31+24]
+	031 Move X30, [X31+32]
+	032 Move X21, [X31+40]
+	033 Return X0
+	034 Call 0x1C17F20
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x032939C8 BL 0x1C16F28
+	0x032939CC LDP X20, X19, [X31 + 0x30]
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+

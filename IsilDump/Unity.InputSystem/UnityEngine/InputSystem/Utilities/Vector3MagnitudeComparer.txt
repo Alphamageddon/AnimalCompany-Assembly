@@ -1,0 +1,41 @@
+Type: UnityEngine.InputSystem.Utilities.Vector3MagnitudeComparer
+
+Method: System.Int32 Compare(UnityEngine.Vector3 x, UnityEngine.Vector3 y)
+
+Disassembly:
+	0x0375FA3C STP X22, X21, [X31 + 0x10]
+	0x0375FA40 STP X20, X19, [X31 + 0x20]
+	0x0375FA44 ADRP X21, 0xC81000
+	0x0375FA48 ADRP X22, 0x996000
+	0x0375FA4C LDRB W8, [X21 + 0xE4C]
+	0x0375FA50 LDR X22, [X22 + 0xC48]
+	0x0375FA54 MOV X19, X2
+	0x0375FA58 MOV X20, X0
+	0x0375FA5C TBNZ X8, 0x0, 0x375FA74
+	0x0375FA60 ADRP X0, 0x996000
+	0x0375FA64 LDR X0, [X0 + 0xC48]
+	0x0375FA68 BL 0x1C16CF4
+	0x0375FA6C MOVZ W8, 0x1
+	0x0375FA70 STRB W8, [X21 + 0xE4C]
+	0x0375FA74 LDR X0, [X22]
+	0x0375FA78 LDR W8, [X0 + 0xE0]
+
+ISIL:
+	001 Multiply S0, S0, S0
+	002 Multiply S1, S1, S1
+	003 Multiply S3, S3, S3
+	004 Multiply S4, S4, S4
+	005 Multiply S2, S2, S2
+	006 Multiply S5, S5, S5
+	007 Add S0, S0, S1
+	008 Add S1, S3, S4
+	009 Add S0, S2, S0
+	010 Add S1, S5, S1
+	011 NotImplemented "Instruction FCMP not yet implemented."
+	012 NotImplemented "Instruction CSET not yet implemented."
+	013 Return X0
+	014 Move TEMP, 0
+	015 Not TEMP
+	016 Move W0, TEMP
+	017 Return X0
+

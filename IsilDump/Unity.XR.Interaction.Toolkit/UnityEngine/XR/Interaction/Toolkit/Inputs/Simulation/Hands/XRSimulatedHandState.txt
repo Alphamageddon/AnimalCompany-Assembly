@@ -1,0 +1,205 @@
+Type: UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.Hands.XRSimulatedHandState
+
+Method: UnityEngine.Vector3 get_position()
+
+Disassembly:
+	0x03BCB764 LDP X20, X19, [X31 + 0x20]
+	0x03BCB768 LDP X22, X21, [X31 + 0x10]
+	0x03BCB76C LDR X30, [X31], #0x30
+
+ISIL:
+	001 Move S0, [X0]
+	002 Move S1, [X0+4]
+	003 Move V2, [X0+8]
+	004 Return X0
+
+Method: System.Void set_position(UnityEngine.Vector3 value)
+
+Disassembly:
+	0x03BCB770 B 0x29AD964
+	0x03BCB774 STR X30, [X31 - 0x30]!
+	0x03BCB778 STP X22, X21, [X31 + 0x10]
+
+ISIL:
+	001 Move [X0], S0
+	002 Move [X0+8], S1
+	003 Move [X0+8], S2
+	004 Return 
+
+Method: UnityEngine.Quaternion get_rotation()
+
+Disassembly:
+	0x03BCB77C STP X20, X19, [X31 + 0x20]
+	0x03BCB780 ADRP X21, 0x817000
+	0x03BCB784 ADRP X22, 0x592000
+
+ISIL:
+	001 Move S0, [X0+12]
+	002 Move S1, [X0+16]
+	003 Move S2, [X0+20]
+	004 Move S3, [X0+24]
+	005 Return X0
+
+Method: System.Void set_rotation(UnityEngine.Quaternion value)
+
+Disassembly:
+	0x03BCB788 LDRB W8, [X21 + 0xE13]
+	0x03BCB78C LDR X22, [X22 + 0x8C0]
+	0x03BCB790 MOV X19, X1
+
+ISIL:
+	001 Move [X0+12], S0
+	002 Move [X0+20], S1
+	003 Move [X0+20], S2
+	004 Move [X0+28], S3
+	005 Return 
+
+Method: UnityEngine.Vector3 get_euler()
+
+Disassembly:
+	0x03BCB794 MOV X20, X0
+	0x03BCB798 TBNZ X8, 0x0, 0x3BCB7B0
+	0x03BCB79C ADRP X0, 0x592000
+
+ISIL:
+	001 Move S0, [X0+28]
+	002 Move S1, [X0+32]
+	003 Move V2, [X0+36]
+	004 Return X0
+
+Method: System.Void set_euler(UnityEngine.Vector3 value)
+
+Disassembly:
+	0x03BCB7A0 LDR X0, [X0 + 0x8C0]
+	0x03BCB7A4 BL 0x1C16CF4
+	0x03BCB7A8 MOVZ W8, 0x1
+
+ISIL:
+	001 Move [X0+28], S0
+	002 Move [X0+36], S1
+	003 Move [X0+36], S2
+	004 Return 
+
+Method: UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.Hands.HandExpressionName get_expressionName()
+
+Disassembly:
+	0x03BCB7AC STRB W8, [X21 + 0xE13]
+	0x03BCB7B0 LDR X2, [X22]
+	0x03BCB7B4 MOV X0, X20
+
+ISIL:
+	001 Move X8, [X0+40]
+	002 Move X1, [X0+48]
+	003 Move X0, X8
+	004 Return X0
+
+Method: System.Void set_expressionName(UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.Hands.HandExpressionName value)
+
+Disassembly:
+	0x03BCB7B8 MOV X1, X19
+	0x03BCB7BC LDP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move [X0+40], X1
+	002 Move [X0+48], X2
+	003 Return 
+
+Method: System.Void Reset()
+
+Disassembly:
+	0x03BCB7C0 LDP X22, X21, [X31 + 0x10]
+	0x03BCB7C4 LDR X30, [X31], #0x30
+	0x03BCB7C8 B 0x29AD994
+	0x03BCB7CC STP X30, X21, [X31 - 0x20]!
+	0x03BCB7D0 STP X20, X19, [X31 + 0x10]
+	0x03BCB7D4 ADRP X20, 0x817000
+	0x03BCB7D8 ADRP X21, 0x592000
+	0x03BCB7DC LDRB W8, [X20 + 0xE14]
+	0x03BCB7E0 LDR X21, [X21 + 0x8C8]
+	0x03BCB7E4 MOV X19, X0
+	0x03BCB7E8 TBNZ X8, 0x0, 0x3BCB800
+	0x03BCB7EC ADRP X0, 0x592000
+	0x03BCB7F0 LDR X0, [X0 + 0x8C8]
+	0x03BCB7F4 BL 0x1C16CF4
+	0x03BCB7F8 MOVZ W8, 0x1
+	0x03BCB7FC STRB W8, [X20 + 0xE14]
+	0x03BCB800 LDR X1, [X21]
+	0x03BCB804 MOV X0, X19
+	0x03BCB808 LDP X20, X19, [X31 + 0x10]
+	0x03BCB80C LDP X30, X21, [X31], #0x20
+	0x03BCB810 B 0x29AE60C
+	0x03BCB814 STP X30, X21, [X31 - 0x20]!
+	0x03BCB818 STP X20, X19, [X31 + 0x10]
+	0x03BCB81C ADRP X20, 0x817000
+	0x03BCB820 ADRP X21, 0x592000
+	0x03BCB824 LDRB W8, [X20 + 0xE15]
+	0x03BCB828 LDR X21, [X21 + 0x8D0]
+	0x03BCB82C MOV X19, X0
+	0x03BCB830 TBNZ X8, 0x0, 0x3BCB848
+	0x03BCB834 ADRP X0, 0x592000
+	0x03BCB838 LDR X0, [X0 + 0x8D0]
+	0x03BCB83C BL 0x1C16CF4
+	0x03BCB840 MOVZ W8, 0x1
+	0x03BCB844 STRB W8, [X20 + 0xE15]
+	0x03BCB848 LDR X1, [X21]
+	0x03BCB84C MOV X0, X19
+	0x03BCB850 LDP X20, X19, [X31 + 0x10]
+	0x03BCB854 LDP X30, X21, [X31], #0x20
+	0x03BCB858 B 0x264A2AC
+	0x03BCB85C STR X30, [X31 - 0x30]!
+	0x03BCB860 STP X22, X21, [X31 + 0x10]
+	0x03BCB864 STP X20, X19, [X31 + 0x20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31-24], X21
+	003 Move [X31+16], X20
+	004 Move [X31+24], X19
+	005 Move X20, 0x818000
+	006 Move W8, [X20+3570]
+	007 Move X19, X0
+	008 Move TEMP, X8
+	009 And TEMP, TEMP, 1
+	010 Compare TEMP, 1
+	011 JumpIfEqual {17}
+	012 Move X0, 0x593000
+	013 Move X0, [X0+1840]
+	014 Call 0x1C17CF4
+	015 Move W8, 1
+	016 Move [X20+3570], W8
+	017 Move [X19], X31
+	018 Move [X19+8], W31
+	019 Move X21, 0x80E000
+	020 Move X20, 0x593000
+	021 Move W8, [X21+1939]
+	022 Move X20, [X20+1840]
+	023 Compare W8, 0
+	024 JumpIfNotEqual {30}
+	025 Move X0, 0x52A000
+	026 Move X0, [X0+1448]
+	027 Call 0x1C17CF4
+	028 Move W8, 1
+	029 Move [X21+1939], W8
+	030 Move X8, 0x52A000
+	031 Move X8, [X8+1448]
+	032 Move X8, [X8]
+	033 Move X8, [X8+184]
+	034 Move V0, [X8]
+	035 Move [X19+32], X31
+	036 Move [X19+28], W31
+	037 Move [X19+12], V0
+	038 Move X0, [X20]
+	039 Move W8, [X0+224]
+	040 Compare W8, 0
+	041 JumpIfNotEqual {44}
+	042 Call 0x1C17DFC
+	043 Move X0, [X20]
+	044 Move X8, [X0+184]
+	045 Move V0, [X8]
+	046 Move [X19+40], V0
+	047 Move X20, [X31+16]
+	048 Move X19, [X31+24]
+	049 Move X30, [X31+32]
+	050 Move X21, [X31+40]
+	051 Return 
+

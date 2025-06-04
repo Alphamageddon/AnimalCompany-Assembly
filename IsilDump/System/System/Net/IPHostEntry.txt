@@ -1,0 +1,67 @@
+Type: System.Net.IPHostEntry
+
+Method: System.String get_HostName()
+
+Disassembly:
+	0x0367F0E4 MOV X20, X1
+	0x0367F0E8 MOV X19, X0
+
+ISIL:
+	001 Move X0, [X0+16]
+	002 Return X0
+
+Method: System.Void set_HostName(System.String value)
+
+Disassembly:
+	0x0367F0EC TBNZ X8, 0x0, 0x367F104
+	0x0367F0F0 ADRP X0, 0xA76000
+
+ISIL:
+	001 Move [X0+16], X1
+	002 Return 
+
+Method: System.Void set_Aliases(System.String[] value)
+
+Disassembly:
+	0x0367F0F4 LDR X0, [X0 + 0x278]
+	0x0367F0F8 BL 0x1C16CF4
+
+ISIL:
+	001 Move [X0+24], X1
+	002 Return 
+
+Method: System.Net.IPAddress[] get_AddressList()
+
+Disassembly:
+	0x0367F0FC MOVZ W8, 0x1
+	0x0367F100 STRB W8, [X21 + 0x7D5]
+
+ISIL:
+	001 Move X0, [X0+32]
+	002 Return X0
+
+Method: System.Void set_AddressList(System.Net.IPAddress[] value)
+
+Disassembly:
+	0x0367F104 CBNZ X20, 0x367F11C
+	0x0367F108 ADRP X8, 0xA76000
+
+ISIL:
+	001 Move [X0+32], X1
+	002 Return 
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x0367F10C LDR X8, [X8 + 0x278]
+	0x0367F110 LDR X8, [X8]
+	0x0367F114 LDR X8, [X8 + 0xB8]
+	0x0367F118 LDR X20, [X8]
+
+ISIL:
+	001 Move W8, 1
+	002 Move X1, X31
+	003 Move [X0+40], W8
+	004 Call Object..ctor, X0
+	005 Return 
+
