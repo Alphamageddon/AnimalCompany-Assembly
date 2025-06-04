@@ -3,7 +3,10 @@ namespace AnimalCompany;
 public class ItemTrigger : MonoBehaviour
 {
 
-	public ItemTrigger() { }
+        public ItemTrigger()
+        {
+                // MonoBehaviour default constructor
+        }
 
 }
 

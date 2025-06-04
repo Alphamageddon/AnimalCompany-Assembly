@@ -2,25 +2,76 @@ namespace AnimalCompany;
 
 public static class Analytics
 {
-	private static bool ANALYTICS_ENABLED; //Field offset: 0x0
+        private static bool ANALYTICS_ENABLED; //Field offset: 0x0
 
-	private static Analytics() { }
+        static Analytics()
+        {
+                ANALYTICS_ENABLED = true;
+                mixpanel.Mixpanel.Init();
+        }
 
-	private static Value ObjectsToValue(Dictionary<String, Object> dict) { }
+        private static Value ObjectsToValue(Dictionary<String, Object> dict)
+        {
+                var value = new Value();
+                if (dict == null)
+                        return value;
 
-	private static Value ObjectsToValue(ValueTuple<String, Object>[] objects) { }
+                foreach (var kvp in dict)
+                {
+                        value.set_Item(kvp.Key, ObjectToValue(kvp.Value));
+                }
+                return value;
+        }
 
-	private static Value ObjectToValue(object obj) { }
+        private static Value ObjectsToValue(ValueTuple<String, Object>[] objects)
+        {
+                var value = new Value();
+                if (objects == null)
+                        return value;
 
-	public static void Register(string propertyName, object propertyValue) { }
+                foreach (var pair in objects)
+                {
+                        value.set_Item(pair.Item1, ObjectToValue(pair.Item2));
+                }
+                return value;
+        }
 
-	public static void Track(string eventName) { }
+        private static Value ObjectToValue(object obj)
+        {
+                if (obj is Value v)
+                        return v;
+                return mixpanel.Value.op_Implicit(obj);
+        }
 
-	public static void Track(string eventName, Dictionary<String, Object> properties) { }
+        public static void Register(string propertyName, object propertyValue)
+        {
+                if (!ANALYTICS_ENABLED) return;
+                mixpanel.Mixpanel.Register(propertyName, ObjectToValue(propertyValue));
+        }
 
-	public static void Track(string eventName, ValueTuple<String, Object>[] properties) { }
+        public static void Track(string eventName)
+        {
+                if (!ANALYTICS_ENABLED) return;
+                mixpanel.Mixpanel.Track(eventName);
+        }
 
-	public static void Track(string eventName, string propertyName, object propertyValue) { }
+        public static void Track(string eventName, Dictionary<String, Object> properties)
+        {
+                if (!ANALYTICS_ENABLED) return;
+                mixpanel.Mixpanel.Track(eventName, ObjectsToValue(properties));
+        }
+
+        public static void Track(string eventName, ValueTuple<String, Object>[] properties)
+        {
+                if (!ANALYTICS_ENABLED) return;
+                mixpanel.Mixpanel.Track(eventName, ObjectsToValue(properties));
+        }
+
+        public static void Track(string eventName, string propertyName, object propertyValue)
+        {
+                if (!ANALYTICS_ENABLED) return;
+                mixpanel.Mixpanel.Track(eventName, propertyName, ObjectToValue(propertyValue));
+        }
 
 }
 
