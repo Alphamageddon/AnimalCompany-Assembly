@@ -2,9 +2,9 @@ namespace AnimalCompany;
 
 public class ArmstrongView : MobView
 {
-	private bool _isHeadMoving; //Field offset: 0xA9
-	private float _headMovingSpeed; //Field offset: 0xAC
-	private Vector3 _headLookAtLocalPositionCached; //Field offset: 0xB0
+	private bool _isHeadMoving; //Field offset: 0x85
+	private float _headMovingSpeed; //Field offset: 0x88
+	private Vector3 _headLookAtLocalPositionCached; //Field offset: 0x8C
 
 	public ArmstrongView() { }
 

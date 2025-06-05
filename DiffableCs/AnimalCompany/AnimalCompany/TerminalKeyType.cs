@@ -7,6 +7,5 @@ public enum TerminalKeyType
 	Enter = 2,
 	Backspace = 3,
 	Random = 4,
-	RandomNoPVP = 5,
 }
 

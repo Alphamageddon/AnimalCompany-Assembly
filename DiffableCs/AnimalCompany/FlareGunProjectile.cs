@@ -3,17 +3,16 @@
 [NetworkBehaviourWeaved(1)]
 public class FlareGunProjectile : NetworkBehaviour
 {
-	private const float STUN_DURATION = 8; //Field offset: 0x0
-	private const float EXPLOSION_RADIUS = 7; //Field offset: 0x0
-	private const string STUN_HIT_NAME = "FlareGunExplosion"; //Field offset: 0x0
 	public float lifetime; //Field offset: 0x80
-	public RandomSFX explosionSound; //Field offset: 0x88
-	private NetworkVFXType deathVFX; //Field offset: 0x90
+	public int damage; //Field offset: 0x84
+	public float explosionRadius; //Field offset: 0x88
+	public RandomSFX explosionSound; //Field offset: 0x90
+	private NetworkVFXType deathVFX; //Field offset: 0x98
+	private float explosionForce; //Field offset: 0x9C
 	[DefaultForProperty("aliveTimer", 0, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[WeaverGenerated]
-	private TickTimer _aliveTimer; //Field offset: 0x94
-	private List<IStunnable> _stunnables; //Field offset: 0x98
+	private TickTimer _aliveTimer; //Field offset: 0xA0
 
 	[Networked]
 	[NetworkedWeaved(0, 1)]

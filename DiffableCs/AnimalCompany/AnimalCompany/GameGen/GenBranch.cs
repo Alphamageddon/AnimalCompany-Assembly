@@ -4,7 +4,6 @@ public class GenBranch : ForceConnection, IForceConnectionStyle
 {
 	[Tooltip("If true mobs can roam across connections.")]
 	public bool allowMobRoam; //Field offset: 0x28
-	public string branchTag; //Field offset: 0x30
 
 	public override Color ConnectionColor
 	{

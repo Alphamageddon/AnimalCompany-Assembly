@@ -1,0 +1,182 @@
+Type: AnimalCompany.PlayerController/<RegenerationCoroutine>d__94
+
+Method: System.Void .ctor(System.Int32 <>1__state)
+
+Disassembly:
+	0x01CC3370 CBNZ W9, 0x1CC3378
+	0x01CC3374 BL 0x1B6E8F8
+	0x01CC3378 MOV X0, X22
+	0x01CC337C MOV X1, X31
+	0x01CC3380 MOV X2, X31
+	0x01CC3384 BL 0x3A9D6EC
+	0x01CC3388 LDR X8, [X31 + 0x58]
+	0x01CC338C TBZ X0, 0x0, 0x1CC33B0
+	0x01CC3390 CBZ X8, 0x1CC3524
+	0x01CC3394 LDR X9, [X8 + 0x20]
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W19, W1
+	005 Move X1, X31
+	006 Move X20, X0
+	007 Call Object..ctor, X0
+	008 Move [X20+16], W19
+	009 Move X20, [X31+16]
+	010 Move X19, [X31+24]
+	011 Move X30, [X31+32]
+	012 Return 
+
+Method: System.Void System.IDisposable.Dispose()
+
+Disassembly:
+	0x01CC504C MOV X1, X31
+
+ISIL:
+	001 Return 
+
+Method: System.Boolean MoveNext()
+
+Disassembly:
+	0x01CC5050 B 0x3A9EEE4
+	0x01CC5054 RET
+	0x01CC5058 SUB X31, X31, 0xA0
+	0x01CC505C STP D15, D14, [X31 + 0x20]
+	0x01CC5060 STP D13, D12, [X31 + 0x30]
+	0x01CC5064 STP D11, D10, [X31 + 0x40]
+	0x01CC5068 STP D9, D8, [X31 + 0x50]
+	0x01CC506C STR X30, [X31 + 0x60]
+	0x01CC5070 STP X24, X23, [X31 + 0x70]
+	0x01CC5074 STP X22, X21, [X31 + 0x80]
+	0x01CC5078 STP X20, X19, [X31 + 0x90]
+	0x01CC507C LDR W8, [X0 + 0x10]
+	0x01CC5080 LDR X21, [X0 + 0x28]
+	0x01CC5084 MOV X19, X0
+	0x01CC5088 CMP W8, 0x1
+	0x01CC508C B.EQ 0x1CC50AC
+	0x01CC5090 CBNZ W8, 0x1CC54A4
+	0x01CC5094 LDRB W8, [X19 + 0x20]
+	0x01CC5098 MOVN W9, 0x0
+	0x01CC509C STR W9, [X19 + 0x10]
+	0x01CC50A0 CBZ W8, 0x1CC5158
+	0x01CC50A4 CBNZ X21, 0x1CC5194
+	0x01CC50A8 B 0x1CC54D0
+	0x01CC50AC LDRB W8, [X19 + 0x20]
+	0x01CC50B0 MOVN W9, 0x0
+	0x01CC50B4 STR W9, [X19 + 0x10]
+	0x01CC50B8 CBZ W8, 0x1CC54A4
+	0x01CC50BC CBZ X21, 0x1CC54D0
+	0x01CC50C0 LDR X0, [X21 + 0x28]
+	0x01CC50C4 CBZ X0, 0x1CC54D0
+	0x01CC50C8 LDP S1, S2, [X19 + 0x34]
+	0x01CC50CC LDR V0, [X19 + 0x30]
+	0x01CC50D0 MOV X1, X31
+	0x01CC50D4 BL 0x1D099E0
+	0x01CC50D8 ADRP X20, 0x255E000
+	0x01CC50DC LDR V8, [X19 + 0x30]
+	0x01CC50E0 LDRB W8, [X20 + 0x441]
+	0x01CC50E4 LDR V9, [X19 + 0x38]
+	0x01CC50E8 CBNZ W8, 0x1CC5100
+
+ISIL:
+	001 Move [X31-32], X30
+	002 Move [X31+16], X20
+	003 Move [X31+24], X19
+	004 Move W8, [X0+16]
+	005 Move X20, [X0+32]
+	006 Move X19, X0
+	007 Compare W8, 0
+	008 JumpIfEqual {20}
+	009 NotImplemented "Instruction CMP not yet implemented."
+	010 Move TEMP, 0
+	011 Not TEMP
+	012 Move W8, TEMP
+	013 Move [X19+16], W8
+	014 Compare X20, 0
+	015 JumpIfEqual {44}
+	016 Move W8, [X20+128]
+	017 Move X0, X20
+	018 Add W1, W8, 1
+	019 Call PlayerController.SetCurrentHealth, X0, X1
+	020 Move TEMP, 0
+	021 Not TEMP
+	022 Move W8, TEMP
+	023 Move [X19+16], W8
+	024 Compare X20, 0
+	025 JumpIfEqual {44}
+	026 Move W8, [X20+132]
+	027 Compare W8, 0
+	028 JumpIfNotEqual {35}
+	029 Move W8, [X20+128]
+	030 NotImplemented "Instruction CMP not yet implemented."
+	031 Move X8, [X20+136]
+	032 Move W0, 1
+	033 Move [X19+16], W0
+	034 Move [X19+24], X8
+	035 Move W0, W31
+	036 Move W8, 100
+	037 Move [X20+128], W8
+	038 Move [X20+144], X31
+	039 Move W0, W31
+	040 Move X20, [X31+16]
+	041 Move X19, [X31+24]
+	042 Move X30, [X31+32]
+	043 Return X0
+	044 Call 0x1B6FA1C
+
+Method: System.Object System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+
+Disassembly:
+	0x01CC50EC ADRP X0, 0x2288000
+	0x01CC50F0 LDR X0, [X0 + 0x488]
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+
+Method: System.Void System.Collections.IEnumerator.Reset()
+
+Disassembly:
+	0x01CC50F4 BL 0x1B6E7F0
+	0x01CC50F8 MOVZ W8, 0x1
+	0x01CC50FC STRB W8, [X20 + 0x441]
+	0x01CC5100 ADRP X23, 0x2288000
+	0x01CC5104 LDR X23, [X23 + 0x488]
+	0x01CC5108 LDR X0, [X23]
+	0x01CC510C LDR W8, [X0 + 0xE0]
+	0x01CC5110 CBNZ W8, 0x1CC5118
+	0x01CC5114 BL 0x1B6E8F8
+	0x01CC5118 ADRP X8, 0xFFFFFFFFFEDE4000
+	0x01CC511C FMUL S1, S8, S8
+	0x01CC5120 FMOV S0, W31
+	0x01CC5124 LDR V12, [X8 + 0xB64]
+	0x01CC5128 ADRP X22, 0x2288000
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Move [X31-8], X19
+	003 Move X0, 0x2289000
+	004 Move X0, [X0+2448]
+	005 Call 0x1B6F804
+	006 Call 0x1B6FA0C
+	007 Move X1, X31
+	008 Move X19, X0
+	009 Call NotSupportedException..ctor, X0
+	010 Move X0, 0x228B000
+	011 Move X0, [X0+1024]
+	012 Call 0x1B6F804
+	013 Move X1, X0
+	014 Move X0, X19
+	015 Call 0x1B6F8E8
+
+Method: System.Object System.Collections.IEnumerator.get_Current()
+
+Disassembly:
+	0x01CC512C FADD S1, S1, S0
+	0x01CC5130 FMUL S2, S9, S9
+
+ISIL:
+	001 Move X0, [X0+24]
+	002 Return X0
+

@@ -35,6 +35,22 @@ public static class AuthCommands
 	}
 
 	[CompilerGenerated]
+	private struct <AuthenticateWithDevice>d__8 : IAsyncStateMachine
+	{
+		public int <>1__state; //Field offset: 0x0
+		public AsyncTaskMethodBuilder<AuthResult> <>t__builder; //Field offset: 0x8
+		private AuthResult <result>5__2; //Field offset: 0x20
+		private string <deviceID>5__3; //Field offset: 0x38
+		private TaskAwaiter<ISession> <>u__1; //Field offset: 0x40
+
+		private override void MoveNext() { }
+
+		[DebuggerHidden]
+		private override void SetStateMachine(IAsyncStateMachine stateMachine) { }
+
+	}
+
+	[CompilerGenerated]
 	private struct <AuthenticateWithMetaQuestAccount>d__7 : IAsyncStateMachine
 	{
 		public int <>1__state; //Field offset: 0x0
@@ -75,13 +91,10 @@ public static class AuthCommands
 	{
 		public int <>1__state; //Field offset: 0x0
 		public AsyncTaskMethodBuilder<LoginResult> <>t__builder; //Field offset: 0x8
-		private AuthResult <authResult>5__2; //Field offset: 0x20
-		private LoginResult <result>5__3; //Field offset: 0x38
-		private TaskAwaiter<AuthResult> <>u__1; //Field offset: 0xA8
-		private TaskAwaiter<IApiAccount> <>u__2; //Field offset: 0xB0
-		private TaskAwaiter<GetAvatarsResponse> <>u__3; //Field offset: 0xB8
-		private TaskAwaiter<ApiUserInventory> <>u__4; //Field offset: 0xC0
-		private TaskAwaiter <>u__5; //Field offset: 0xC8
+		private LoginResult <result>5__2; //Field offset: 0x20
+		private TaskAwaiter<AuthResult> <>u__1; //Field offset: 0x38
+		private TaskAwaiter<IApiAccount> <>u__2; //Field offset: 0x40
+		private TaskAwaiter <>u__3; //Field offset: 0x48
 
 		private override void MoveNext() { }
 
@@ -133,9 +146,7 @@ public static class AuthCommands
 	{
 		public ISession session; //Field offset: 0x0
 		public IApiAccount account; //Field offset: 0x8
-		public ApiUserAvatar avatar; //Field offset: 0x10
-		public ApiUserInventory inventory; //Field offset: 0x60
-		public LoginErrorCode errorCode; //Field offset: 0x68
+		public LoginErrorCode errorCode; //Field offset: 0x10
 
 		public bool success
 		{
@@ -148,6 +159,9 @@ public static class AuthCommands
 
 	public const string EDITOR_PREFS_AUTH_DEVICE_ID_OVERRIDE = "AC_AUTH_DEVICE_ID_OVERRIDE"; //Field offset: 0x0
 	private const string PLAYER_PREFS_DEVICE_ID = "AC_DEVICE_ID"; //Field offset: 0x0
+
+	[AsyncStateMachine(typeof(<AuthenticateWithDevice>d__8))]
+	private static Task<AuthResult> AuthenticateWithDevice() { }
 
 	[AsyncStateMachine(typeof(<AuthenticateWithMetaQuestAccount>d__7))]
 	private static Task<AuthResult> AuthenticateWithMetaQuestAccount() { }

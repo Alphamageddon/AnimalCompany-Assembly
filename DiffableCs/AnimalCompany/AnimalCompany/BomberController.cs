@@ -17,22 +17,16 @@ public class BomberController : MobController
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private Phase _phase; //Field offset: 0x1A4
+	private Phase _phase; //Field offset: 0x174
+	[SerializeField]
+	private BomberView _bomberView; //Field offset: 0x178
+	[SerializeField]
+	private Explosion _explosionPrefab; //Field offset: 0x180
 	[DefaultForProperty("timerAnticipating", 16, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private float _timerAnticipating; //Field offset: 0x1A8
-	[Header("Bomber Controller")]
-	[SerializeField]
-	private BomberView _bomberView; //Field offset: 0x1B0
-	[SerializeField]
-	private Explosion _explosionPrefab; //Field offset: 0x1B8
-	[Header("Animation Speed")]
-	[SerializeField]
-	private float _walkSpeedMultiplier; //Field offset: 0x1C0
-	[SerializeField]
-	private float _runSpeedMultiplier; //Field offset: 0x1C4
+	private float _timerAnticipating; //Field offset: 0x188
 
 	private float EXPLOSION_DELAY
 	{
@@ -65,6 +59,8 @@ public class BomberController : MobController
 	public virtual void CopyStateToBackingFields() { }
 
 	private void Explode() { }
+
+	public virtual void FixedUpdateNetwork() { }
 
 	private float get_EXPLOSION_DELAY() { }
 
@@ -99,8 +95,6 @@ public class BomberController : MobController
 	private void UpdateAnticipating() { }
 
 	protected virtual void UpdateChasing() { }
-
-	protected virtual void UpdateMonsterBehaviour() { }
 
 	public virtual void UpdateRoaming() { }
 

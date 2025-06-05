@@ -24,36 +24,36 @@ public class ChickenController : MobController
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private Phase _phase; //Field offset: 0x1A4
+	private Phase _phase; //Field offset: 0x174
 	[DefaultForProperty("eggID", 16, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private NetworkId _eggID; //Field offset: 0x1A8
+	private NetworkId _eggID; //Field offset: 0x178
 	[DefaultForProperty("nestPosition", 17, 3)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private Vector3 _nestPosition; //Field offset: 0x1AC
+	private Vector3 _nestPosition; //Field offset: 0x17C
 	[DefaultForProperty("_timerToSpawnEgg", 20, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[WeaverGenerated]
-	private TickTimer __timerToSpawnEgg; //Field offset: 0x1B8
+	private TickTimer __timerToSpawnEgg; //Field offset: 0x188
 	[SerializeField]
-	private ChickenView _chickenView; //Field offset: 0x1C0
+	private ChickenView _chickenView; //Field offset: 0x190
 	[SerializeField]
-	private RandomSFX _angrySFX; //Field offset: 0x1C8
+	private RandomSFX _angrySFX; //Field offset: 0x198
 	[Header("Nest")]
 	[SerializeField]
-	private GameObject _nestPrefab; //Field offset: 0x1D0
+	private GameObject _nestPrefab; //Field offset: 0x1A0
 	[SerializeField]
-	private GameObject _nestInstance; //Field offset: 0x1D8
+	private GameObject _nestInstance; //Field offset: 0x1A8
 	[Header("Egg")]
 	[SerializeField]
-	private GameObject _eggPrefab; //Field offset: 0x1E0
+	private GameObject _eggPrefab; //Field offset: 0x1B0
 	[SerializeField]
-	private Transform _eggTransform; //Field offset: 0x1E8
-	private Collider[] _chickenColliders; //Field offset: 0x1F0
+	private Transform _eggTransform; //Field offset: 0x1B8
+	private Collider[] _chickenColliders; //Field offset: 0x1C0
 
 	private Vector3 _attackPosition
 	{
@@ -115,13 +115,15 @@ public class ChickenController : MobController
 	private void <SpawnEgg>b__46_0(NetworkRunner runner, NetworkObject o) { }
 
 	[CompilerGenerated]
-	private int <UpdateIncubating>b__50_0(NetPlayer a, NetPlayer b) { }
+	private int <UpdateIncubating>b__49_0(NetPlayer a, NetPlayer b) { }
 
 	[WeaverGenerated]
 	public virtual void CopyBackingFieldsToState(bool unnamed_param_0) { }
 
 	[WeaverGenerated]
 	public virtual void CopyStateToBackingFields() { }
+
+	public virtual void FixedUpdateNetwork() { }
 
 	private Vector3 get__attackPosition() { }
 
@@ -171,8 +173,6 @@ public class ChickenController : MobController
 
 	private void SetSearching() { }
 
-	public virtual void SetTargetPlayer(NetPlayer netPlayer) { }
-
 	public virtual void Setup() { }
 
 	private void SpawnEgg(Vector3 position, Quaternion rotation) { }
@@ -184,8 +184,6 @@ public class ChickenController : MobController
 	protected virtual void UpdateChasing() { }
 
 	private void UpdateIncubating() { }
-
-	protected virtual void UpdateMonsterBehaviour() { }
 
 	private void UpdateNoticed() { }
 

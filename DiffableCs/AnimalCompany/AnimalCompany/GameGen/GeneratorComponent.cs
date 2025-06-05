@@ -12,6 +12,7 @@ public class GeneratorComponent : MonoBehaviour
 	public List<Bounds> bounds; //Field offset: 0x40
 	public Transform itemOutput; //Field offset: 0x48
 	public Transform mobOutput; //Field offset: 0x50
+	public NavMeshSurface navSurface; //Field offset: 0x58
 
 	public GeneratorComponent() { }
 
@@ -23,8 +24,6 @@ public class GeneratorComponent : MonoBehaviour
 	private void OnDrawGizmosSelected() { }
 
 	private void OnEnable() { }
-
-	public bool TryGenerate() { }
 
 }
 

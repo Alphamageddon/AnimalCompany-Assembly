@@ -64,6 +64,8 @@ public class NetworkedLootSpawnGroup : NetworkBehaviour
 
 	private NetworkArray<SpawnedLoot> get__spawnedLoot() { }
 
+	private Item PickRandomItem() { }
+
 	private void ResetAvailableItemPoints() { }
 
 	private void set__groupID(short value) { }

@@ -12,11 +12,7 @@ public class NetworkVFX : SimulationBehaviour
 
 	private void HandleNewRunner(NetworkRunner runner) { }
 
-	private void OnDestroy() { }
-
 	public static void PlayVFX(NetworkVFXType type, Vector3 position, Quaternion rotation) { }
-
-	public static void PlayVFXLocal(NetworkVFXType type, Vector3 position, Quaternion rotation) { }
 
 	[Rpc(RpcSources::All (7), RpcTargets::All (7))]
 	private static void RPC_PlayVFX(NetworkRunner runner, NetworkVFXType type, Vector3 position, Quaternion rotation) { }

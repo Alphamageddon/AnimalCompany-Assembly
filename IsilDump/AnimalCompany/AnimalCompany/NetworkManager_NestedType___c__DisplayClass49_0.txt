@@ -1,0 +1,37 @@
+Type: AnimalCompany.NetworkManager/<>c__DisplayClass49_0
+
+Method: System.Void .ctor()
+
+Disassembly:
+	0x01CBE7EC BL 0x1B6EA1C
+	0x01CBE7F0 STP X30, X21, [X31 - 0x20]!
+
+ISIL:
+	001 Move X1, X31
+	002 Call Object..ctor, X0
+	003 Return 
+
+Method: System.Void <OnHostMigrationResumed>b__0(Fusion.NetworkRunner runner, Fusion.NetworkObject newNO)
+
+Disassembly:
+	0x01CBF7D0 MOV X1, X31
+	0x01CBF7D4 BL 0x3A7F6EC
+	0x01CBF7D8 CBZ X0, 0x1CBF864
+	0x01CBF7DC MOV X1, X31
+	0x01CBF7E0 BL 0x3A80750
+	0x01CBF7E4 CBZ X0, 0x1CBF864
+	0x01CBF7E8 LDR W8, [X0 + 0x18]
+	0x01CBF7EC CMP X23, X8
+
+ISIL:
+	001 Move [X31-16], X30
+	002 Compare X2, 0
+	003 JumpIfEqual {10}
+	004 Move X1, [X0+16]
+	005 Move X0, X2
+	006 Move X2, X31
+	007 Move X30, [X31+16]
+	008 Call NetworkObject.CopyStateFrom, X0, X1
+	009 Return 
+	010 Call 0x1B6FA1C
+

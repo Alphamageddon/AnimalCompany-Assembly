@@ -14,6 +14,7 @@ public class PlayerControlAsset : ScriptableObject
 	public float defaultPrecision; //Field offset: 0x38
 	public Vector3 leftHandOffset; //Field offset: 0x3C
 	public Vector3 rightHandOffset; //Field offset: 0x48
+	public LayerMask locomotionEnabledLayers; //Field offset: 0x54
 
 	public PlayerControlAsset() { }
 

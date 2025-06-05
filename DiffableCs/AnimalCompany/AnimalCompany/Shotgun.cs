@@ -34,20 +34,17 @@ public class Shotgun : NetworkBehaviour
 	private LayerMask _hitLayer; //Field offset: 0xA8
 	[SerializeField]
 	private GameObject _muzzleFlashGO; //Field offset: 0xB0
-	[SerializeField]
-	private RayMeshController _rayMeshController; //Field offset: 0xB8
-	private List<Vector3> _rayDirections; //Field offset: 0xC0
 	[DefaultForProperty("_ammoLeft", 0, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[WeaverGenerated]
-	private int __ammoLeft; //Field offset: 0xC8
+	private int __ammoLeft; //Field offset: 0xB8
 	[DefaultForProperty("reloadTimer", 1, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private TickTimer _reloadTimer; //Field offset: 0xCC
-	private Rigidbody _rigidbody; //Field offset: 0xD0
-	private int _muzzleFlashRemainingFrames; //Field offset: 0xD8
+	private TickTimer _reloadTimer; //Field offset: 0xBC
+	private Rigidbody _rigidbody; //Field offset: 0xC0
+	private int _muzzleFlashRemainingFrames; //Field offset: 0xC8
 
 	[Networked]
 	[NetworkedWeaved(0, 1)]
@@ -117,7 +114,7 @@ public class Shotgun : NetworkBehaviour
 
 	private void ShootInternal() { }
 
-	private void ShootRandomRay(Dictionary<IDamageable, HitDamage> damageToApply, List<Vector3> rayDirections) { }
+	private void ShootRandomRay(Dictionary<IDamageable, HitDamage> damageToApply) { }
 
 	public virtual void Spawned() { }
 

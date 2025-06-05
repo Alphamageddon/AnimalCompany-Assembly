@@ -1,270 +1,130 @@
 Type: AnimalCompany.UserState
 
-Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_platformUserID()
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_userID()
 
 Disassembly:
-	0x01D4F724 LDR X8, [X0 + 0xB8]
-	0x01D4F728 LDR X8, [X8]
+	0x01C98508 MOV X1, X31
+	0x01C9850C BL 0x3A9B084
 
 ISIL:
 	001 Move X0, [X0+72]
 	002 Return X0
 
-Method: System.Void set_platformUserID(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+Method: System.Void set_userID(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
 
 Disassembly:
-	0x01D4F72C CBZ X8, 0x1D4F83C
-	0x01D4F730 ADRP X9, 0x23A5000
+	0x01C98510 MOV X20, X0
+	0x01C98514 MOV X0, X19
 
 ISIL:
 	001 Move [X0+72], X1
 	002 Return 
 
-Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_userID()
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_username()
 
 Disassembly:
-	0x01D4F734 LDR X9, [X9 + 0x178]
-	0x01D4F738 LDR X0, [X8 + 0xB0]
+	0x01C98518 MOV X1, X31
+	0x01C9851C BL 0x3A9B084
 
 ISIL:
 	001 Move X0, [X0+80]
 	002 Return X0
 
-Method: System.Void set_userID(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+Method: System.Void set_username(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
 
 Disassembly:
-	0x01D4F73C LDR X1, [X9]
-	0x01D4F740 BL 0x2651A74
+	0x01C98520 CBZ X0, 0x1C98C84
+	0x01C98524 MOV X1, X31
 
 ISIL:
 	001 Move [X0+80], X1
 	002 Return 
 
-Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_username()
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_displayName()
 
 Disassembly:
-	0x01D4F744 TBZ X0, 0x0, 0x1D4F828
-	0x01D4F748 LDR X0, [X23]
+	0x01C98528 BL 0x3AA7658
+	0x01C9852C MOV X0, X19
 
 ISIL:
 	001 Move X0, [X0+88]
 	002 Return X0
 
-Method: System.Void set_username(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+Method: System.Void set_displayName(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
 
 Disassembly:
-	0x01D4F74C BL 0x1C16F10
-	0x01D4F750 LDR X2, [X22]
+	0x01C98530 MOV X1, X31
+	0x01C98534 MOV V8.16B, V0.16B
 
 ISIL:
 	001 Move [X0+88], X1
 	002 Return 
 
-Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_displayName()
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_profilePictureURL()
 
 Disassembly:
-	0x01D4F754 MOV X1, X19
-	0x01D4F758 MOV X3, X31
+	0x01C98538 MOV V9.16B, V1.16B
+	0x01C9853C MOV V10.16B, V2.16B
 
 ISIL:
 	001 Move X0, [X0+96]
 	002 Return X0
 
-Method: System.Void set_displayName(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+Method: System.Void set_profilePictureURL(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
 
 Disassembly:
-	0x01D4F75C MOV X20, X0
-	0x01D4F760 BL 0x35C52F0
+	0x01C98540 BL 0x3A9B084
+	0x01C98544 CBZ X0, 0x1C98C84
 
 ISIL:
 	001 Move [X0+96], X1
 	002 Return 
 
-Method: SpatialSys.ObservableState.StatePrimitive`1<System.String> get_profilePictureURL()
+Method: AnimalCompany.UserWalletState get_wallet()
 
 Disassembly:
-	0x01D4F764 ADRP X8, 0x23A4000
-	0x01D4F768 LDR X8, [X8 + 0xDB0]
+	0x01C98548 MOV X1, X31
+	0x01C9854C BL 0x3AA79D8
 
 ISIL:
 	001 Move X0, [X0+104]
 	002 Return X0
 
-Method: System.Void set_profilePictureURL(SpatialSys.ObservableState.StatePrimitive`1<System.String> value)
+Method: System.Void set_wallet(AnimalCompany.UserWalletState value)
 
 Disassembly:
-	0x01D4F76C MOVZ W1, 0x1
-	0x01D4F770 LDR X0, [X8]
+	0x01C98550 MOV X0, X31
+	0x01C98554 MOV V11.16B, V0.16B
 
 ISIL:
 	001 Move [X0+104], X1
 	002 Return 
 
-Method: AnimalCompany.UserAvatarState get_avatar()
+Method: SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> get_isDeveloper()
 
 Disassembly:
-	0x01D4F774 BL 0x1C16D6C
-	0x01D4F778 LDR X8, [X21]
+	0x01C98558 MOV V12.16B, V1.16B
+	0x01C9855C MOV V13.16B, V2.16B
 
 ISIL:
 	001 Move X0, [X0+112]
 	002 Return X0
 
-Method: System.Void set_avatar(AnimalCompany.UserAvatarState value)
+Method: System.Void set_isDeveloper(SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> value)
 
 Disassembly:
-	0x01D4F77C MOV X19, X0
-	0x01D4F780 LDR W9, [X8 + 0xE0]
+	0x01C98560 BL 0x3AA481C
+	0x01C98564 CBZ X20, 0x1C98C84
 
 ISIL:
 	001 Move [X0+112], X1
 	002 Return 
 
-Method: AnimalCompany.UserAvatarState get_draftAvatar()
-
-Disassembly:
-	0x01D4F784 CBNZ W9, 0x1D4F790
-	0x01D4F788 MOV X0, X8
-
-ISIL:
-	001 Move X0, [X0+120]
-	002 Return X0
-
-Method: System.Void set_draftAvatar(AnimalCompany.UserAvatarState value)
-
-Disassembly:
-	0x01D4F78C BL 0x1C16DFC
-	0x01D4F790 LDRB W8, [X24 + 0x787]
-
-ISIL:
-	001 Move [X0+120], X1
-	002 Return 
-
-Method: AnimalCompany.UserWalletState get_wallet()
-
-Disassembly:
-	0x01D4F794 CBNZ W8, 0x1D4F7AC
-	0x01D4F798 ADRP X0, 0x23A4000
-
-ISIL:
-	001 Move X0, [X0+128]
-	002 Return X0
-
-Method: System.Void set_wallet(AnimalCompany.UserWalletState value)
-
-Disassembly:
-	0x01D4F79C LDR X0, [X0 + 0x648]
-	0x01D4F7A0 BL 0x1C16CF4
-
-ISIL:
-	001 Move [X0+128], X1
-	002 Return 
-
-Method: AnimalCompany.UserInventoryState get_inventory()
-
-Disassembly:
-	0x01D4F7A4 MOVZ W8, 0x1
-	0x01D4F7A8 STRB W8, [X24 + 0x787]
-
-ISIL:
-	001 Move X0, [X0+136]
-	002 Return X0
-
-Method: System.Void set_inventory(AnimalCompany.UserInventoryState value)
-
-Disassembly:
-	0x01D4F7AC LDR X0, [X21]
-	0x01D4F7B0 LDR W8, [X0 + 0xE0]
-
-ISIL:
-	001 Move [X0+136], X1
-	002 Return 
-
-Method: SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> get_canClaimDailyReward()
-
-Disassembly:
-	0x01D4F7B4 CBNZ W8, 0x1D4F7C0
-	0x01D4F7B8 BL 0x1C16DFC
-
-ISIL:
-	001 Move X0, [X0+144]
-	002 Return X0
-
-Method: System.Void set_canClaimDailyReward(SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> value)
-
-Disassembly:
-	0x01D4F7BC LDR X0, [X21]
-	0x01D4F7C0 LDR X8, [X0 + 0xB8]
-
-ISIL:
-	001 Move [X0+144], X1
-	002 Return 
-
-Method: SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> get_isDeveloper()
-
-Disassembly:
-	0x01D4F7C4 LDR X8, [X8]
-	0x01D4F7C8 CBZ X8, 0x1D4F83C
-
-ISIL:
-	001 Move X0, [X0+152]
-	002 Return X0
-
-Method: System.Void set_isDeveloper(SpatialSys.ObservableState.StatePrimitive`1<System.Boolean> value)
-
-Disassembly:
-	0x01D4F7CC LDR X8, [X8 + 0xB8]
-	0x01D4F7D0 CBZ X8, 0x1D4F83C
-
-ISIL:
-	001 Move [X0+152], X1
-	002 Return 
-
-Method: AnimalCompany.FriendsState get_friends()
-
-Disassembly:
-	0x01D4F7D4 LDR X8, [X8 + 0x80]
-	0x01D4F7D8 CBZ X8, 0x1D4F83C
-
-ISIL:
-	001 Move X0, [X0+160]
-	002 Return X0
-
-Method: System.Void set_friends(AnimalCompany.FriendsState value)
-
-Disassembly:
-	0x01D4F7DC CBZ X19, 0x1D4F83C
-	0x01D4F7E0 LDR X21, [X8 + 0x48]
-
-ISIL:
-	001 Move [X0+160], X1
-	002 Return 
-
-Method: AnimalCompany.NotificationsState get_notifications()
-
-Disassembly:
-	0x01D4F7E4 CBZ X21, 0x1D4F7FC
-	0x01D4F7E8 LDR X8, [X19]
-
-ISIL:
-	001 Move X0, [X0+168]
-	002 Return X0
-
-Method: System.Void set_notifications(AnimalCompany.NotificationsState value)
-
-Disassembly:
-	0x01D4F7EC MOV X0, X21
-	0x01D4F7F0 LDR X1, [X8 + 0x40]
-
-ISIL:
-	001 Move [X0+168], X1
-	002 Return 
-
 Method: System.Void .ctor()
 
 Disassembly:
-	0x01D4F7F4 BL 0x1C16E00
-	0x01D4F7F8 CBZ X0, 0x1D4F844
+	0x01C98568 LDR V3, [X31 + 0x2]
+	0x01C9856C MOV X0, X20
 
 ISIL:
 	001 Move X1, X31

@@ -3,7 +3,7 @@ namespace AnimalCompany;
 public class SFXManager : SimulationBehaviour
 {
 	[CompilerGenerated]
-	private sealed class <ReturnAudioSource>d__18 : IEnumerator<Object>, IEnumerator, IDisposable
+	private sealed class <ReturnAudioSource>d__13 : IEnumerator<Object>, IEnumerator, IDisposable
 	{
 		private int <>1__state; //Field offset: 0x10
 		private object <>2__current; //Field offset: 0x18
@@ -23,7 +23,7 @@ public class SFXManager : SimulationBehaviour
 		}
 
 		[DebuggerHidden]
-		public <ReturnAudioSource>d__18(int <>1__state) { }
+		public <ReturnAudioSource>d__13(int <>1__state) { }
 
 		private override bool MoveNext() { }
 
@@ -43,11 +43,8 @@ public class SFXManager : SimulationBehaviour
 
 	private static SFXManager _instance; //Field offset: 0x0
 	private const int INITIAL_AUDIO_SOURCES = 20; //Field offset: 0x0
-	[SerializeField]
-	private RandomSFX[] _sfxResources; //Field offset: 0x48
-	public NetworkRunner runner; //Field offset: 0x50
-	private Queue<AudioSource> _audioSources; //Field offset: 0x58
-	private Dictionary<RandomSFX, UInt16> _sfxIDLookup; //Field offset: 0x60
+	public NetworkRunner runner; //Field offset: 0x48
+	private Queue<AudioSource> _audioSources; //Field offset: 0x50
 
 	public SFXManager() { }
 
@@ -61,34 +58,22 @@ public class SFXManager : SimulationBehaviour
 
 	public static void PlaySFX(RandomSFX sfx, Vector3 position, float volume) { }
 
-	public static void PlaySFX(ushort sfxID, Vector3 position, float volume) { }
-
 	public static void PlaySFXAsRPC(RandomSFX sfx, Vector3 position, float volume) { }
 
 	public static void PlaySFXAsRPC(string sfxName, Vector3 position, float volume) { }
 
 	private static void PlaySFXInternal(RandomSFX sfx, Vector3 position, float volume, AudioSource source, bool isPooled) { }
 
-	[IteratorStateMachine(typeof(<ReturnAudioSource>d__18))]
+	[IteratorStateMachine(typeof(<ReturnAudioSource>d__13))]
 	private static IEnumerator ReturnAudioSource(AudioSource a, float delay) { }
 
 	[Rpc(RpcSources::All (7), RpcTargets::All (7))]
 	public static void RPC_PlaySFX(NetworkRunner runner, string sfxResourceName, Vector3 position, float volume) { }
 
-	[Rpc(RpcSources::All (7), RpcTargets::All (7))]
-	public static void RPC_PlaySFX(NetworkRunner runner, ushort sfxID, Vector3 position, float volume) { }
-
 	[NetworkRpcStaticWeavedInvoker("System.Void AnimalCompany.SFXManager::RPC_PlaySFX(Fusion.NetworkRunner,System.String,UnityEngine.Vector3,System.Single)")]
 	[Preserve]
 	[WeaverGenerated]
 	protected static void RPC_PlaySFX@Invoker(NetworkRunner runner, SimulationMessage* message) { }
-
-	[NetworkRpcStaticWeavedInvoker("System.Void AnimalCompany.SFXManager::RPC_PlaySFX(Fusion.NetworkRunner,System.UInt16,UnityEngine.Vector3,System.Single)")]
-	[Preserve]
-	[WeaverGenerated]
-	protected static void RPC_PlaySFX@Invoker2(NetworkRunner runner, SimulationMessage* message) { }
-
-	public static bool TryGetSFXResourceID(RandomSFX sfx, out ushort id) { }
 
 }
 

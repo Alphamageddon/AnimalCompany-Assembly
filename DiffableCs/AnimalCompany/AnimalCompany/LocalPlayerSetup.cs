@@ -8,9 +8,9 @@ public class LocalPlayerSetup : MonoBehaviour
 
 	public LocalPlayerSetup() { }
 
-	private void OnConnected(NetworkRunner runner) { }
-
 	private void OnDestroy() { }
+
+	private void OnSetupRunner(NetworkRunner runner) { }
 
 	private void Start() { }
 

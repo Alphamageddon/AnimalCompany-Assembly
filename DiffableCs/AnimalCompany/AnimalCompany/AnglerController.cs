@@ -14,7 +14,6 @@ public class AnglerController : MobController
 		Die = 6,
 	}
 
-	private const float TIME_AROUNDLIGHT_SHORT = 3; //Field offset: 0x0
 	private const float TIME_AROUNDLIGHT = 10; //Field offset: 0x0
 	private const float TIME_ANTICIPATION = 1.3; //Field offset: 0x0
 	private const float TIME_TO_HOLD_AFTER_ATTACK = 1; //Field offset: 0x0
@@ -22,21 +21,21 @@ public class AnglerController : MobController
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private Phase _phase; //Field offset: 0x1A4
+	private Phase _phase; //Field offset: 0x174
 	[SerializeField]
-	private Flashlight _targetFlashlight; //Field offset: 0x1A8
+	private Flashlight _targetFlashlight; //Field offset: 0x178
 	[DefaultForProperty("timerAroundLight", 16, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private float _timerAroundLight; //Field offset: 0x1B0
+	private float _timerAroundLight; //Field offset: 0x180
 	[DefaultForProperty("timerAnticipation", 17, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private float _timerAnticipation; //Field offset: 0x1B4
+	private float _timerAnticipation; //Field offset: 0x184
 	[SerializeField]
-	private AnglerView _anglerView; //Field offset: 0x1B8
+	private AnglerView _anglerView; //Field offset: 0x188
 
 	private Vector3 _attackPosition
 	{
@@ -70,14 +69,13 @@ public class AnglerController : MobController
 
 	public AnglerController() { }
 
-	[CompilerGenerated]
-	private int <UpdateChasing>b__39_0(Flashlight flashlightA, Flashlight flashlightB) { }
-
 	[WeaverGenerated]
 	public virtual void CopyBackingFieldsToState(bool unnamed_param_0) { }
 
 	[WeaverGenerated]
 	public virtual void CopyStateToBackingFields() { }
+
+	public virtual void FixedUpdateNetwork() { }
 
 	private Vector3 get__attackPosition() { }
 
@@ -100,7 +98,7 @@ public class AnglerController : MobController
 	[Rpc(RpcSources::StateAuthority (1), RpcTargets::All (7))]
 	private void RPC_PlayAttackAnimation() { }
 
-	[NetworkRpcWeavedInvoker(6, 1, 7)]
+	[NetworkRpcWeavedInvoker(4, 1, 7)]
 	[Preserve]
 	[WeaverGenerated]
 	protected static void RPC_PlayAttackAnimation@Invoker(NetworkBehaviour behaviour, SimulationMessage* message) { }
@@ -136,8 +134,6 @@ public class AnglerController : MobController
 	protected virtual void UpdateChasing() { }
 
 	private void UpdateLightDetected() { }
-
-	protected virtual void UpdateMonsterBehaviour() { }
 
 	public virtual void UpdateRoaming() { }
 

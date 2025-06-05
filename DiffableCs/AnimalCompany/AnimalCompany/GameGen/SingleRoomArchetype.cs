@@ -2,9 +2,9 @@ namespace AnimalCompany.GameGen;
 
 public class SingleRoomArchetype : Archetype, IGenerationNode, IForceNodeIcon, IForceNodeTitle
 {
-	public string label; //Field offset: 0x38
+	public string label; //Field offset: 0x28
 	[Space]
-	public Tile tile; //Field offset: 0x40
+	public Tile tile; //Field offset: 0x30
 
 	public override string NodeIcon
 	{
@@ -17,6 +17,8 @@ public class SingleRoomArchetype : Archetype, IGenerationNode, IForceNodeIcon, I
 	}
 
 	public SingleRoomArchetype() { }
+
+	private bool CustomBoundsCheck(Bounds a, Bounds b, float error = 0.01) { }
 
 	public override NodeGenerationResponse Generate(Socket source, Generator generator) { }
 

@@ -2,8 +2,8 @@ namespace AnimalCompany.GameGen;
 
 public class LootNode : ForceNode, IForceNodeStyle, IForceNodeIcon, IForceNodeTitle
 {
-	public int value; //Field offset: 0x2C
-	public List<ItemSet> itemSets; //Field offset: 0x30
+	public int value; //Field offset: 0x20
+	public List<ItemSet> itemSets; //Field offset: 0x28
 
 	public override Color NodeBackgroundColor
 	{

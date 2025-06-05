@@ -17,7 +17,7 @@ public class Crossbow : NetworkBehaviour
 	private GrabbableItem _grabbable; //Field offset: 0xA0
 	private float _pull; //Field offset: 0xA8
 	private float _pullVelocity; //Field offset: 0xAC
-	private readonly int _stretchMtxAttr; //Field offset: 0xB0
+	private readonly int _pullPositionAttr; //Field offset: 0xB0
 
 	public Crossbow() { }
 
@@ -42,8 +42,6 @@ public class Crossbow : NetworkBehaviour
 	private void Update() { }
 
 	private void UpdatePull() { }
-
-	private void UpdateStringView() { }
 
 }
 

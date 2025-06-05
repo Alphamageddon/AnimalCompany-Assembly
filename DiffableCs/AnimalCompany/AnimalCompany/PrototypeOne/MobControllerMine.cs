@@ -3,7 +3,6 @@ namespace AnimalCompany.PrototypeOne;
 [NetworkBehaviourWeaved(3)]
 public class MobControllerMine : NetworkBehaviour, IDamageable
 {
-	private const float RESET_TIME = 30; //Field offset: 0x0
 	private static readonly Vector3 PLUG_POS_ORIGINAL; //Field offset: 0x0
 	private static readonly Vector3 PLUG_POS_TRIGGERED; //Field offset: 0xC
 	private static HashSet<MobControllerMine> _allMines; //Field offset: 0x18
@@ -72,6 +71,8 @@ public class MobControllerMine : NetworkBehaviour, IDamageable
 
 	public virtual void Despawned(NetworkRunner runner, bool hasState) { }
 
+	public virtual void FixedUpdateNetwork() { }
+
 	public static IEnumerable<MobControllerMine> get_allMines() { }
 
 	public bool get_isExploded() { }
@@ -82,7 +83,7 @@ public class MobControllerMine : NetworkBehaviour, IDamageable
 
 	private void HandleIsExplodedChanged() { }
 
-	public override void Hit(int damage, Vector3 position, RandomSFX hitSound, RandomSFX killSound, Vector3 force, string hitName, NetworkBehaviourId source) { }
+	public override void Hit(int damage, Vector3 position, RandomSFX hitSound, RandomSFX killSound, Vector3 force, string hitName) { }
 
 	private bool IsHand(Collider collider) { }
 
@@ -91,8 +92,6 @@ public class MobControllerMine : NetworkBehaviour, IDamageable
 	private void OnTriggerEnter(Collider other) { }
 
 	private void OnTriggerExit(Collider other) { }
-
-	public virtual void Render() { }
 
 	private void Reset() { }
 

@@ -32,11 +32,11 @@ public class ArmstrongController : MobController
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private Phase _phase; //Field offset: 0x1A4
-	private float _timerToFinding; //Field offset: 0x1A8
-	private float _timerToHoldAfterPunch; //Field offset: 0x1AC
+	private Phase _phase; //Field offset: 0x174
+	private float _timerToFinding; //Field offset: 0x178
+	private float _timerToHoldAfterPunch; //Field offset: 0x17C
 	[SerializeField]
-	private ArmstrongView _armstrongView; //Field offset: 0x1B0
+	private ArmstrongView _armstrongView; //Field offset: 0x180
 
 	private Vector3 _attackSphereCenter
 	{
@@ -69,6 +69,8 @@ public class ArmstrongController : MobController
 
 	[WeaverGenerated]
 	public virtual void CopyStateToBackingFields() { }
+
+	public virtual void FixedUpdateNetwork() { }
 
 	private Vector3 get__attackSphereCenter() { }
 
@@ -105,8 +107,6 @@ public class ArmstrongController : MobController
 	protected virtual void UpdateChasing() { }
 
 	private void UpdateFinding() { }
-
-	protected virtual void UpdateMonsterBehaviour() { }
 
 	private void UpdatePunchAndHold() { }
 

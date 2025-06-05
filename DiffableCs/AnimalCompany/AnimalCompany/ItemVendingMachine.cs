@@ -2,20 +2,6 @@ namespace AnimalCompany;
 
 public class ItemVendingMachine : MonoBehaviour
 {
-	[CompilerGenerated]
-	private sealed class <>c
-	{
-		public static readonly <>c <>9; //Field offset: 0x0
-		public static OnBeforeSpawned <>9__28_0; //Field offset: 0x8
-
-		private static <>c() { }
-
-		public <>c() { }
-
-		internal void <TryToBuy>b__28_0(NetworkRunner runner, NetworkObject obj) { }
-
-	}
-
 	private const int ITEM_BUY_TIME_LIMIT = 60; //Field offset: 0x0
 	private const float PREVIEW_ROTATE_SPEED = 25; //Field offset: 0x0
 	private static int _updateLimitFrame; //Field offset: 0x0
@@ -29,18 +15,16 @@ public class ItemVendingMachine : MonoBehaviour
 	[SerializeField]
 	private TextMeshProUGUI _priceText; //Field offset: 0x30
 	[SerializeField]
-	private Image _currencyIcon; //Field offset: 0x38
+	private Transform _previewRoot; //Field offset: 0x38
 	[SerializeField]
-	private Transform _previewRoot; //Field offset: 0x40
+	private RandomSFX _successSFX; //Field offset: 0x40
 	[SerializeField]
-	private RandomSFX _successSFX; //Field offset: 0x48
-	[SerializeField]
-	private RandomSFX _errorSFX; //Field offset: 0x50
-	private TerminalKeyInputListener _keyInputListener; //Field offset: 0x58
-	private Dictionary<ItemData, GameObject> _previews; //Field offset: 0x60
-	private int _currItemIndex; //Field offset: 0x68
-	private int _tweenID; //Field offset: 0x6C
-	private bool _addedDevItems; //Field offset: 0x70
+	private RandomSFX _errorSFX; //Field offset: 0x48
+	private TerminalKeyInputListener _keyInputListener; //Field offset: 0x50
+	private Dictionary<ItemData, GameObject> _previews; //Field offset: 0x58
+	private int _currItemIndex; //Field offset: 0x60
+	private int _tweenID; //Field offset: 0x64
+	private bool _addedDevItems; //Field offset: 0x68
 
 	private static bool IsPurchaseLimited
 	{
@@ -50,13 +34,13 @@ public class ItemVendingMachine : MonoBehaviour
 	public ItemVendingMachine() { }
 
 	[CompilerGenerated]
-	private void <AnimateNotEnoughMoney>b__31_0(float val) { }
+	private void <AnimateNotEnoughMoney>b__30_0(float val) { }
 
 	[CompilerGenerated]
-	private void <AnimateNotEnoughMoney>b__31_1() { }
+	private void <AnimateNotEnoughMoney>b__30_1() { }
 
 	[CompilerGenerated]
-	private bool <HandleUserIsDeveloperChanged>b__22_0(ItemData item) { }
+	private bool <HandleUserIsDeveloperChanged>b__21_0(ItemData item) { }
 
 	private void AnimateNotEnoughMoney() { }
 

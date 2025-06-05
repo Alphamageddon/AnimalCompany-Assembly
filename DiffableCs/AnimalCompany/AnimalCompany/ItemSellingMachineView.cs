@@ -6,18 +6,18 @@ public class ItemSellingMachineView : MonoBehaviour
 	private sealed class <>c
 	{
 		public static readonly <>c <>9; //Field offset: 0x0
-		public static Predicate<IEnumerator> <>9__36_0; //Field offset: 0x8
+		public static Predicate<IEnumerator> <>9__35_0; //Field offset: 0x8
 
 		private static <>c() { }
 
 		public <>c() { }
 
-		internal bool <PlayBulbEffectCoroutine>b__36_0(IEnumerator enumerator) { }
+		internal bool <PlayBulbEffectCoroutine>b__35_0(IEnumerator enumerator) { }
 
 	}
 
 	[CompilerGenerated]
-	private sealed class <PlayBulbEffectCoroutine>d__36 : IEnumerator<Object>, IEnumerator, IDisposable
+	private sealed class <PlayBulbEffectCoroutine>d__35 : IEnumerator<Object>, IEnumerator, IDisposable
 	{
 		private int <>1__state; //Field offset: 0x10
 		private object <>2__current; //Field offset: 0x18
@@ -37,7 +37,7 @@ public class ItemSellingMachineView : MonoBehaviour
 		}
 
 		[DebuggerHidden]
-		public <PlayBulbEffectCoroutine>d__36(int <>1__state) { }
+		public <PlayBulbEffectCoroutine>d__35(int <>1__state) { }
 
 		private override bool MoveNext() { }
 
@@ -56,7 +56,7 @@ public class ItemSellingMachineView : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class <PlayItemSellAnimationCoroutine>d__38 : IEnumerator<Object>, IEnumerator, IDisposable
+	private sealed class <PlayItemSellAnimationCoroutine>d__37 : IEnumerator<Object>, IEnumerator, IDisposable
 	{
 		private int <>1__state; //Field offset: 0x10
 		private object <>2__current; //Field offset: 0x18
@@ -81,7 +81,7 @@ public class ItemSellingMachineView : MonoBehaviour
 		}
 
 		[DebuggerHidden]
-		public <PlayItemSellAnimationCoroutine>d__38(int <>1__state) { }
+		public <PlayItemSellAnimationCoroutine>d__37(int <>1__state) { }
 
 		private override bool MoveNext() { }
 
@@ -100,7 +100,7 @@ public class ItemSellingMachineView : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class <ShowValueTextCoroutine>d__41 : IEnumerator<Object>, IEnumerator, IDisposable
+	private sealed class <ShowValueTextCoroutine>d__40 : IEnumerator<Object>, IEnumerator, IDisposable
 	{
 		private int <>1__state; //Field offset: 0x10
 		private object <>2__current; //Field offset: 0x18
@@ -124,7 +124,7 @@ public class ItemSellingMachineView : MonoBehaviour
 		}
 
 		[DebuggerHidden]
-		public <ShowValueTextCoroutine>d__41(int <>1__state) { }
+		public <ShowValueTextCoroutine>d__40(int <>1__state) { }
 
 		private override bool MoveNext() { }
 
@@ -172,15 +172,13 @@ public class ItemSellingMachineView : MonoBehaviour
 	private Transform[] _doorTransforms; //Field offset: 0x70
 	[SerializeField]
 	private TextMeshPro[] _valueTexts; //Field offset: 0x78
-	[SerializeField]
-	private MeshRenderer[] _scrapIcons; //Field offset: 0x80
-	private IEnumerator[] _bulbEffectCoroutines; //Field offset: 0x88
-	private WaitForSeconds _bulbEffectWait; //Field offset: 0x90
-	private IEnumerator _itemSellAnimationCoroutine; //Field offset: 0x98
-	private IEnumerator _showValueTextCoroutine; //Field offset: 0xA0
-	private WaitForSeconds _waitForHalfSeconds; //Field offset: 0xA8
-	private WaitForSeconds _waitForOneSecond; //Field offset: 0xB0
-	private WaitForSeconds _waitForFiveSeconds; //Field offset: 0xB8
+	private IEnumerator[] _bulbEffectCoroutines; //Field offset: 0x80
+	private WaitForSeconds _bulbEffectWait; //Field offset: 0x88
+	private IEnumerator _itemSellAnimationCoroutine; //Field offset: 0x90
+	private IEnumerator _showValueTextCoroutine; //Field offset: 0x98
+	private WaitForSeconds _waitForHalfSeconds; //Field offset: 0xA0
+	private WaitForSeconds _waitForOneSecond; //Field offset: 0xA8
+	private WaitForSeconds _waitForFiveSeconds; //Field offset: 0xB0
 
 	public bool isSellingInProgress
 	{
@@ -205,14 +203,14 @@ public class ItemSellingMachineView : MonoBehaviour
 
 	private void OnItemTrigger3Enter(Collider col) { }
 
-	[IteratorStateMachine(typeof(<PlayBulbEffectCoroutine>d__36))]
+	[IteratorStateMachine(typeof(<PlayBulbEffectCoroutine>d__35))]
 	private IEnumerator PlayBulbEffectCoroutine(int bulbIndex) { }
 
 	private void PlayerBulbEffect(int bulbIndex) { }
 
 	public void PlayItemSellAnimation(float closeDuration = 0.3, float lightDuration = 2, float openDuration = 0.3, float randomWaitTime = 1.5) { }
 
-	[IteratorStateMachine(typeof(<PlayItemSellAnimationCoroutine>d__38))]
+	[IteratorStateMachine(typeof(<PlayItemSellAnimationCoroutine>d__37))]
 	private IEnumerator PlayItemSellAnimationCoroutine(float closeDuration, float lightDuration, float openDuration, float randomWaitTime) { }
 
 	public void PlayValueTextAnimation(int value) { }
@@ -221,7 +219,7 @@ public class ItemSellingMachineView : MonoBehaviour
 
 	public void SetOverheatedColor(bool isOverheated) { }
 
-	[IteratorStateMachine(typeof(<ShowValueTextCoroutine>d__41))]
+	[IteratorStateMachine(typeof(<ShowValueTextCoroutine>d__40))]
 	private IEnumerator ShowValueTextCoroutine(int value) { }
 
 	public void StopValueTextAnimation() { }

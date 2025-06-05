@@ -3,10 +3,9 @@ namespace AnimalCompany;
 public class ChickenView : MobView
 {
 	[SerializeField]
-	private AudioSource _audioSourceRunning; //Field offset: 0xB0
+	private AudioSource _audioSourceRunning; //Field offset: 0x88
 	[SerializeField]
-	private MeshRenderer _rendererTeeth; //Field offset: 0xB8
-	public Transform targetPlayerTransform; //Field offset: 0xC0
+	private MeshRenderer _rendererTeeth; //Field offset: 0x90
 
 	public ChickenView() { }
 

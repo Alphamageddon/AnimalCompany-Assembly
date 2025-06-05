@@ -39,16 +39,6 @@ public class AttachedItemAnchor : NetworkBehaviour
 		 set { } //Length: 96
 	}
 
-	public bool isHand
-	{
-		 get { } //Length: 16
-	}
-
-	public GrabbableItem rootGrabbable
-	{
-		 get { } //Length: 8
-	}
-
 	public Vector3 velocity
 	{
 		 get { } //Length: 12
@@ -75,10 +65,6 @@ public class AttachedItemAnchor : NetworkBehaviour
 	public GrabbableItem get_grabbableItem() { }
 
 	public NetworkBehaviourId get_grabbedItem() { }
-
-	public bool get_isHand() { }
-
-	public GrabbableItem get_rootGrabbable() { }
 
 	public Vector3 get_velocity() { }
 

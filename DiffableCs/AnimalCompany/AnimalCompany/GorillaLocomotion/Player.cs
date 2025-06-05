@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
 	private static Player _instance; //Field offset: 0x0
 	private const float DEFAULT_MAX_SPEED = 8; //Field offset: 0x0
 	public const float AFFECT_MOVEMENT_MASS_THRESHOLD = 20; //Field offset: 0x0
-	private const float collisionNormalForce = 1000; //Field offset: 0x0
 	public const float AFFECT_MOVEMENT_MASS_FACTOR = 10; //Field offset: 0x0
 	public PlayerController playerController; //Field offset: 0x20
 	public SphereCollider headCollider; //Field offset: 0x28
@@ -49,22 +48,17 @@ public class Player : MonoBehaviour
 	public bool wasRightHandTouching; //Field offset: 0x111
 	public bool disableMovement; //Field offset: 0x112
 	private bool _disableHandCollisions; //Field offset: 0x113
-	private bool _addedExternalVelocityPrevFrame; //Field offset: 0x114
-	private Vector3 _prevAddedExternalVelocity; //Field offset: 0x118
-	public AudioSource windAudioSource; //Field offset: 0x128
+	public AudioSource windAudioSource; //Field offset: 0x118
 	[Tooltip("The inverse lerp range of speed to wind sound. X = speed with wind volume at 0, Y = speed with wind volume at 1")]
-	public Vector2 windSpeedRange; //Field offset: 0x130
-	private RaycastHit hitInfoLeftHand; //Field offset: 0x138
-	private RaycastHit hitInfoRightHand; //Field offset: 0x164
-	private RaycastHit hitInfoItem; //Field offset: 0x190
-	public Action<RaycastHit, Vector3> onHandCollidingLeft; //Field offset: 0x1C0
-	public Action<RaycastHit, Vector3> onHandCollidingRight; //Field offset: 0x1C8
-	private Vector3 _externalForceVelocity; //Field offset: 0x1D0
-	private List<ItemContactPoint> _itemContacts; //Field offset: 0x1E0
-	private float _itemMass; //Field offset: 0x1E8
-	private Vector3 _grabOffset; //Field offset: 0x1EC
-	private int _numGrabOffset; //Field offset: 0x1F8
-	private bool _wasGrabbing; //Field offset: 0x1FC
+	public Vector2 windSpeedRange; //Field offset: 0x120
+	private RaycastHit hitInfoLeftHand; //Field offset: 0x128
+	private RaycastHit hitInfoRightHand; //Field offset: 0x154
+	private RaycastHit hitInfoItem; //Field offset: 0x180
+	public Action<RaycastHit, Vector3> onHandCollidingLeft; //Field offset: 0x1B0
+	public Action<RaycastHit, Vector3> onHandCollidingRight; //Field offset: 0x1B8
+	private Vector3 _externalForceVelocity; //Field offset: 0x1C0
+	private List<ItemContactPoint> _itemContacts; //Field offset: 0x1D0
+	private float _itemMass; //Field offset: 0x1D8
 
 	public static Player Instance
 	{
@@ -75,11 +69,7 @@ public class Player : MonoBehaviour
 
 	public void AddExternalForceVelocity(Vector3 velocity) { }
 
-	public void AddGrabPositionOffset(Vector3 grabOffset) { }
-
 	public void AddItemContactPoint(Vector3 position, Vector3 prevPosition) { }
-
-	private void ApplyFriction(Vector3 normal) { }
 
 	private void Awake() { }
 
@@ -107,9 +97,9 @@ public class Player : MonoBehaviour
 
 	private Vector3 PositionWithOffset(Transform transformToModify, Vector3 offsetVector) { }
 
-	public void Reposition(Vector3 targetPosition, Vector3 targetDirection) { }
-
 	public void Reposition(Vector3 targetPosition) { }
+
+	public void Reposition(Vector3 targetPosition, Vector3 targetDirection) { }
 
 	public void Rotate(Vector3 targetForward) { }
 

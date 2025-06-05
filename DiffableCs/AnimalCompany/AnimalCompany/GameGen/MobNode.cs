@@ -2,9 +2,9 @@ namespace AnimalCompany.GameGen;
 
 public class MobNode : ForceNode, IForceNodeStyle, IForceNodeIcon, IForceNodeTitle
 {
-	public string label; //Field offset: 0x30
-	public GameObject mob; //Field offset: 0x38
-	public int spawnCount; //Field offset: 0x40
+	public string label; //Field offset: 0x20
+	public GameObject mob; //Field offset: 0x28
+	public int spawnCount; //Field offset: 0x30
 
 	public override Color NodeBackgroundColor
 	{

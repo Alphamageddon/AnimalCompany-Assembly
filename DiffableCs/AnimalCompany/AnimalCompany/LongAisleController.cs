@@ -23,23 +23,23 @@ public class LongAisleController : MobController
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private Phase _phase; //Field offset: 0x1A4
-	private float _timerToStartCharge; //Field offset: 0x1A8
-	private float _timerFastCharge; //Field offset: 0x1AC
-	private float _timerStunned; //Field offset: 0x1B0
-	private float _timerSearching; //Field offset: 0x1B4
-	private List<NetPlayer> _playersNotified; //Field offset: 0x1B8
-	private Vector3 _waitingDirection; //Field offset: 0x1C0
-	private Vector3 _chargeDirection; //Field offset: 0x1CC
-	private Vector3 _chargeDestination; //Field offset: 0x1D8
+	private Phase _phase; //Field offset: 0x174
+	private float _timerToStartCharge; //Field offset: 0x178
+	private float _timerFastCharge; //Field offset: 0x17C
+	private float _timerStunned; //Field offset: 0x180
+	private float _timerSearching; //Field offset: 0x184
+	private List<NetPlayer> _playersNotified; //Field offset: 0x188
+	private Vector3 _waitingDirection; //Field offset: 0x190
+	private Vector3 _chargeDirection; //Field offset: 0x19C
+	private Vector3 _chargeDestination; //Field offset: 0x1A8
 	[SerializeField]
-	private AisleData _currentAisleData; //Field offset: 0x1E8
+	private AisleData _currentAisleData; //Field offset: 0x1B8
 	[SerializeField]
-	private LayerMask _aisleLayer; //Field offset: 0x210
+	private LayerMask _aisleLayer; //Field offset: 0x1E0
 	[SerializeField]
-	private RandomSFX _hitWallSFX; //Field offset: 0x218
+	private RandomSFX _hitWallSFX; //Field offset: 0x1E8
 	[SerializeField]
-	private AudioSource _audioSourceRun; //Field offset: 0x220
+	private AudioSource _audioSourceRun; //Field offset: 0x1F0
 
 	[Networked]
 	[NetworkedWeaved(15, 1)]
@@ -63,6 +63,8 @@ public class LongAisleController : MobController
 
 	[WeaverGenerated]
 	public virtual void CopyStateToBackingFields() { }
+
+	public virtual void FixedUpdateNetwork() { }
 
 	public Phase get_phase() { }
 
@@ -89,8 +91,6 @@ public class LongAisleController : MobController
 	private void SetWaiting() { }
 
 	private void UpdateCharging() { }
-
-	protected virtual void UpdateMonsterBehaviour() { }
 
 	private void UpdatePreparing() { }
 

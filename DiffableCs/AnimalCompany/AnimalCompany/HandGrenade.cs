@@ -3,8 +3,6 @@ namespace AnimalCompany;
 [NetworkBehaviourWeaved(5)]
 public class HandGrenade : NetworkBehaviour, IDamageable
 {
-	private const float EXPLODE_ON_IMPACT_SPEED = 25; //Field offset: 0x0
-	private static readonly LayerMask EXPLODE_ON_IMPACT_LAYERMASK; //Field offset: 0x0
 	[SerializeField]
 	private GrabbableItem _grabbable; //Field offset: 0x80
 	[SerializeField]
@@ -86,8 +84,6 @@ public class HandGrenade : NetworkBehaviour, IDamageable
 		private set { } //Length: 96
 	}
 
-	private static HandGrenade() { }
-
 	public HandGrenade() { }
 
 	private void AddRigibodyAndForce(GameObject go) { }
@@ -106,8 +102,6 @@ public class HandGrenade : NetworkBehaviour, IDamageable
 
 	public virtual void FixedUpdateNetwork() { }
 
-	private void ForceExplode() { }
-
 	public bool get_isExploded() { }
 
 	public bool get_isPinPulled() { }
@@ -120,8 +114,6 @@ public class HandGrenade : NetworkBehaviour, IDamageable
 
 	private void HandleDroppedFromDeath() { }
 
-	private void HandleGrabReleased(Vector3 velocity) { }
-
 	private void HandleIsExplodedChanged() { }
 
 	private void HandleIsPinPulledChanged() { }
@@ -130,9 +122,7 @@ public class HandGrenade : NetworkBehaviour, IDamageable
 
 	private void HandleToggleUse() { }
 
-	public override void Hit(int damage, Vector3 position, RandomSFX hitSound, RandomSFX killSound, Vector3 force, string hitName, NetworkBehaviourId source) { }
-
-	private void OnCollisionEnter(Collision collision) { }
+	public override void Hit(int damage, Vector3 position, RandomSFX hitSound, RandomSFX killSound, Vector3 force, string hitName) { }
 
 	private void OnDestroy() { }
 

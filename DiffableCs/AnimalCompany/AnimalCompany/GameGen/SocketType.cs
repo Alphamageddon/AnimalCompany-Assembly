@@ -9,7 +9,5 @@ public enum SocketType
 	Underbelly_SmallPipe = 4,
 	Underbelly_Foundation = 5,
 	Underbelly_Foundation_Twisted = 6,
-	HauntedHouse_Hallway = 7,
-	HauntedHouse_Doorway = 8,
 }
 

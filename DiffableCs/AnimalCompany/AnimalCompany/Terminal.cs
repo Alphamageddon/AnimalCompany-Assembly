@@ -7,11 +7,11 @@ public class Terminal : MonoBehaviour
 
 		public OnCodeEnteredDelegate(object object, IntPtr method) { }
 
-		public override IAsyncResult BeginInvoke(string code, SessionProperties properties, AsyncCallback callback, object object) { }
+		public override IAsyncResult BeginInvoke(string code, AsyncCallback callback, object object) { }
 
 		public override bool EndInvoke(IAsyncResult result) { }
 
-		public override bool Invoke(string code, SessionProperties properties) { }
+		public override bool Invoke(string code) { }
 
 	}
 
@@ -22,10 +22,7 @@ public class Terminal : MonoBehaviour
 	public TextMeshProUGUI inputText; //Field offset: 0x30
 	public TextMeshProUGUI roomCodeText; //Field offset: 0x38
 	public TextMeshProUGUI appVersionText; //Field offset: 0x40
-	public TextMeshProUGUI statusText; //Field offset: 0x48
-	public TextMeshProUGUI playerCountText; //Field offset: 0x50
-	public TextMeshProUGUI pvpEnabledText; //Field offset: 0x58
-	private TerminalKeyInputListener _keyInputListener; //Field offset: 0x60
+	private TerminalKeyInputListener _keyInputListener; //Field offset: 0x48
 
 	public Terminal() { }
 
@@ -35,17 +32,11 @@ public class Terminal : MonoBehaviour
 
 	public void Backspace() { }
 
-	public void Enter(SessionProperties properties = null) { }
+	public void Enter() { }
 
 	private void HandleCurrentRoomCodeChanged(StateChangedEventArgs args) { }
 
 	private void HandleKeyInput(KeyCode key, TerminalKeyType keyType) { }
-
-	private void HandleSessionPlayerCountChanged(StateChangedEventArgs args) { }
-
-	private void HandleSessionPropertiesChanged(StateChangedEventArgs args) { }
-
-	private void HandleSessionStatusChanged(StateChangedEventArgs args) { }
 
 	private void OnDestroy() { }
 

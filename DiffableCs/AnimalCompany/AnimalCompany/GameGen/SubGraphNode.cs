@@ -2,7 +2,7 @@ namespace AnimalCompany.GameGen;
 
 public class SubGraphNode : Archetype, IGenerationNode, IForceNodeStyle, IForceNodeIcon, IForceNodeTitle
 {
-	public GenGraph subGraph; //Field offset: 0x38
+	public GenGraph subGraph; //Field offset: 0x28
 
 	public override Color NodeBackgroundColor
 	{

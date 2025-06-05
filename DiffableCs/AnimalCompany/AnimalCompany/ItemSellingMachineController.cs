@@ -13,15 +13,15 @@ public class ItemSellingMachineController : NetworkBehaviour
 	private const int MIN_ANIMATION_TO_EXPLOSION = 4; //Field offset: 0x0
 	private const float HEAT_REDUCTION_PER_SECOND = 1; //Field offset: 0x0
 	private const float HEAT_TO_EXPLOSION = 100; //Field offset: 0x0
-	private const string HIT_NAME_SELLING = "ItemSellingMachine"; //Field offset: 0x0
-	private const float ANIMATION_DELAY_MIN = 2; //Field offset: 0x0
+	private const float ANIMATION_DELAY_MAX = 5; //Field offset: 0x0
 	private const float ANIMATION_DURATION_OPEN_DOOR = 1; //Field offset: 0x0
 	private const float ANIMATION_DURATION_LIGHT_EFFECT = 3; //Field offset: 0x0
 	private const float ANIMATION_DURATION_CLOSE_DOOR = 0.3; //Field offset: 0x0
-	private const float ANIMATION_DELAY_MAX = 5; //Field offset: 0x0
+	private const float ANIMATION_DELAY_MIN = 2; //Field offset: 0x0
 	private const float ANIMATION_TOTAL_DURATION = 4.3; //Field offset: 0x0
-	private const float BUTTON_RESET_TIME = 5; //Field offset: 0x0
 	private const float ANIMATION_DURATION_TO_SELL_ITEM = 1.8; //Field offset: 0x0
+	private const string HIT_NAME_SELLING = "ItemSellingMachine"; //Field offset: 0x0
+	private const float BUTTON_RESET_TIME = 5; //Field offset: 0x0
 	[DefaultForProperty("isSellingInProgress", 0, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
@@ -90,7 +90,6 @@ public class ItemSellingMachineController : NetworkBehaviour
 	[SerializeField]
 	private RandomSFX _SFXexplosion; //Field offset: 0xE0
 	private HashSet<GrabbableItem> _itemsInMachine; //Field offset: 0xE8
-	private bool _isAfterSpawned; //Field offset: 0xF0
 
 	private Vector3 _capsulePoint0
 	{

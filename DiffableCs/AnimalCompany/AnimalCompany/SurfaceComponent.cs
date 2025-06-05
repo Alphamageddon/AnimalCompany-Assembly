@@ -1,6 +1,5 @@
 namespace AnimalCompany;
 
-[AddComponentMenu("Animal Company/Surface")]
 [ExecuteInEditMode]
 public class SurfaceComponent : MonoBehaviour
 {

@@ -23,7 +23,7 @@ public class HandInteractor : NetworkBehaviour
 	public HandInteractor() { }
 
 	[CompilerGenerated]
-	private int <CheckAndTryGrab>b__17_0(Collider a, Collider b) { }
+	private int <CheckAndTryGrab>b__16_0(Collider a, Collider b) { }
 
 	private void Awake() { }
 
@@ -43,8 +43,6 @@ public class HandInteractor : NetworkBehaviour
 
 	public AttachedItemAnchor get_itemAnchor() { }
 
-	private void HandleAltGrabButtonPressed() { }
-
 	private void HandleGrabButtonPressed() { }
 
 	private bool IsByBackAttachment() { }
@@ -54,7 +52,7 @@ public class HandInteractor : NetworkBehaviour
 	public virtual void Spawned() { }
 
 	[ContextMenu("Test Grab")]
-	public void TestGrab() { }
+	private void TestGrab() { }
 
 }
 

@@ -26,8 +26,6 @@ public class LootSpawnGroup : MonoBehaviour
 
 	protected void OnValidate() { }
 
-	public Item PickRandomItem() { }
-
 	public static bool TryGetSpawnGroup(short id, out LootSpawnGroup spawnGroup) { }
 
 }

@@ -7,10 +7,13 @@ public class AppStartup : MonoBehaviour
 	{
 		public static readonly <>c <>9; //Field offset: 0x0
 		public static TaskGenerator<LoginResult> <>9__17_0; //Field offset: 0x8
+		public static TaskGenerator<ClientBootstrapResponse> <>9__18_0; //Field offset: 0x10
 
 		private static <>c() { }
 
 		public <>c() { }
+
+		internal Task<ClientBootstrapResponse> <BootstrapCommand>b__18_0(CancellationToken token) { }
 
 		internal Task<LoginResult> <InitialLogInCommand>b__17_0(CancellationToken token) { }
 
@@ -44,35 +47,11 @@ public class AppStartup : MonoBehaviour
 	private sealed class <>c__DisplayClass17_0
 	{
 		public LoginResult loginResult; //Field offset: 0x10
-		public CommandConditionEval <>9__1; //Field offset: 0x80
+		public CommandConditionEval <>9__1; //Field offset: 0x28
 
 		public <>c__DisplayClass17_0() { }
 
 		internal bool <InitialLogInCommand>b__1(float elapsed) { }
-
-	}
-
-	[CompilerGenerated]
-	private sealed class <>c__DisplayClass18_0
-	{
-		public AppStartup <>4__this; //Field offset: 0x10
-		public ClientBootstrapResponse bootstrapResponse; //Field offset: 0x18
-		public CoroutineGenerator <>9__1; //Field offset: 0x48
-
-		public <>c__DisplayClass18_0() { }
-
-		internal IEnumerator<Command> <BootstrapCommand>b__1() { }
-
-	}
-
-	[CompilerGenerated]
-	private sealed class <>c__DisplayClass18_1
-	{
-		public ApiBootstrapRequest req; //Field offset: 0x10
-
-		public <>c__DisplayClass18_1() { }
-
-		internal Task<ClientBootstrapResponse> <BootstrapCommand>b__0(CancellationToken token) { }
 
 	}
 
@@ -82,11 +61,9 @@ public class AppStartup : MonoBehaviour
 		private int <>1__state; //Field offset: 0x10
 		private Command <>2__current; //Field offset: 0x18
 		public AppStartup <>4__this; //Field offset: 0x20
-		private <>c__DisplayClass18_0 <>8__1; //Field offset: 0x28
-		private int <tryCount>5__2; //Field offset: 0x30
-		private float <timeout>5__3; //Field offset: 0x34
-		private String[] <termsAccepted>5__4; //Field offset: 0x38
-		private TaskCommand<ClientBootstrapResponse> <bootstrapRequestCmd>5__5; //Field offset: 0x40
+		private int <tryCount>5__2; //Field offset: 0x28
+		private float <timeout>5__3; //Field offset: 0x2C
+		private TaskCommand<ClientBootstrapResponse> <bootstrapRequestCmd>5__4; //Field offset: 0x30
 
 		private override Command System.Collections.Generic.IEnumerator<SpatialSys.CommandLib.Command>.Current
 		{
@@ -280,45 +257,6 @@ public class AppStartup : MonoBehaviour
 
 	}
 
-	[CompilerGenerated]
-	private sealed class <TermsAgreementCommand>d__19 : IEnumerator<Command>, IEnumerator, IDisposable
-	{
-		private int <>1__state; //Field offset: 0x10
-		private Command <>2__current; //Field offset: 0x18
-		public String[] termsAcceptanceNeeded; //Field offset: 0x20
-		private GameObject <termsGO>5__2; //Field offset: 0x28
-
-		private override Command System.Collections.Generic.IEnumerator<SpatialSys.CommandLib.Command>.Current
-		{
-			[DebuggerHidden]
-			private get { } //Length: 8
-		}
-
-		private override object System.Collections.IEnumerator.Current
-		{
-			[DebuggerHidden]
-			private get { } //Length: 8
-		}
-
-		[DebuggerHidden]
-		public <TermsAgreementCommand>d__19(int <>1__state) { }
-
-		private override bool MoveNext() { }
-
-		[DebuggerHidden]
-		private override Command System.Collections.Generic.IEnumerator<SpatialSys.CommandLib.Command>.get_Current() { }
-
-		[DebuggerHidden]
-		private override object System.Collections.IEnumerator.get_Current() { }
-
-		[DebuggerHidden]
-		private override void System.Collections.IEnumerator.Reset() { }
-
-		[DebuggerHidden]
-		private override void System.IDisposable.Dispose() { }
-
-	}
-
 	private const int APPCORE_SCENE_BUILD_INDEX = 0; //Field offset: 0x0
 	private const int LOADING_SCENE_BUILD_INDEX = 1; //Field offset: 0x0
 	private const int APPVIEW_SCENE_BUILD_INDEX = 2; //Field offset: 0x0
@@ -368,9 +306,6 @@ public class AppStartup : MonoBehaviour
 
 	[IteratorStateMachine(typeof(<RequestMicrophonePermissionCommand>d__15))]
 	private IEnumerator<Command> RequestMicrophonePermissionCommand() { }
-
-	[IteratorStateMachine(typeof(<TermsAgreementCommand>d__19))]
-	private IEnumerator<Command> TermsAgreementCommand(String[] termsAcceptanceNeeded) { }
 
 }
 

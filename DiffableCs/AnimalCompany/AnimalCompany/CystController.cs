@@ -120,7 +120,7 @@ public class CystController : NetworkBehaviour, IDamageable
 
 	public CystController() { }
 
-	public void AttachTether(CystTether tether, bool initialize = false) { }
+	public void AttachTether(CystTether tether) { }
 
 	public void BreakTether(CystTether tether, NetPlayer player) { }
 
@@ -154,7 +154,7 @@ public class CystController : NetworkBehaviour, IDamageable
 
 	private void HandleIsDieChanged() { }
 
-	public override void Hit(int damage, Vector3 position, RandomSFX hitSound, RandomSFX killSound, Vector3 force, string hitName, NetworkBehaviourId source) { }
+	public override void Hit(int damage, Vector3 position, RandomSFX hitSound, RandomSFX killSound, Vector3 force, string hitName) { }
 
 	private void OnDrawGizmosSelected() { }
 

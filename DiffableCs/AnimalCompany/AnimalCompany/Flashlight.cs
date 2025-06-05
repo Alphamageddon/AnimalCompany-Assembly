@@ -14,14 +14,12 @@ public class Flashlight : NetworkBehaviour
 	[SerializeField]
 	private Light _light; //Field offset: 0x98
 	[SerializeField]
-	private LightCollider _lightCollider; //Field offset: 0xA0
-	[SerializeField]
-	private RandomSFX _SFXswitch; //Field offset: 0xA8
+	private RandomSFX _SFXswitch; //Field offset: 0xA0
 	[DefaultForProperty("isOn", 0, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private bool _isOn; //Field offset: 0xB0
+	private bool _isOn; //Field offset: 0xA8
 
 	public GrabbableItem grabbable
 	{

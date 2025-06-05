@@ -3,7 +3,7 @@ namespace AnimalCompany;
 public class PlayerController : MonoBehaviour
 {
 	[CompilerGenerated]
-	private sealed class <RegenerationCoroutine>d__113 : IEnumerator<Object>, IEnumerator, IDisposable
+	private sealed class <RegenerationCoroutine>d__94 : IEnumerator<Object>, IEnumerator, IDisposable
 	{
 		private int <>1__state; //Field offset: 0x10
 		private object <>2__current; //Field offset: 0x18
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 		}
 
 		[DebuggerHidden]
-		public <RegenerationCoroutine>d__113(int <>1__state) { }
+		public <RegenerationCoroutine>d__94(int <>1__state) { }
 
 		private override bool MoveNext() { }
 
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class <SetDeathCoroutine>d__114 : IEnumerator<Object>, IEnumerator, IDisposable
+	private sealed class <SetDeathCoroutine>d__95 : IEnumerator<Object>, IEnumerator, IDisposable
 	{
 		private int <>1__state; //Field offset: 0x10
 		private object <>2__current; //Field offset: 0x18
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
 		}
 
 		[DebuggerHidden]
-		public <SetDeathCoroutine>d__114(int <>1__state) { }
+		public <SetDeathCoroutine>d__95(int <>1__state) { }
 
 		private override bool MoveNext() { }
 
@@ -81,20 +81,19 @@ public class PlayerController : MonoBehaviour
 	}
 
 	private static PlayerController _instance; //Field offset: 0x0
-	private const float EAR_RINGING_VOLUME_MAX = 0.5; //Field offset: 0x0
 	private const float REGENERATION_INTERVAL = 3; //Field offset: 0x0
-	public const int MAX_PLAYER_HEALTH = 100; //Field offset: 0x0
-	private const float TIME_TO_REVIVE = 8; //Field offset: 0x0
 	private const int REGENERATION_HEALTH = 1; //Field offset: 0x0
+	private const float TIME_TO_REVIVE = 8; //Field offset: 0x0
+	public const int MAX_PLAYER_HEALTH = 100; //Field offset: 0x0
 	[CompilerGenerated]
 	private static Color <playerColor>k__BackingField; //Field offset: 0x8
-	public static Action<HandSide, RandomSFX, Single> OnHandstep; //Field offset: 0x18
+	public static Action<HandSide, Single> OnHandstep; //Field offset: 0x18
 	public static Action<Boolean> OnPlayerDie; //Field offset: 0x20
-	public static Action<Int32> onHealthChanged; //Field offset: 0x28
-	public static Action<Boolean, Single> onBackpackUpdated; //Field offset: 0x30
-	public static Action<Single> onHeldWeightUpdated; //Field offset: 0x38
-	public static Action<Int32> onChannelChanged; //Field offset: 0x40
-	public static Action<Single[]> onFingerValuesChanged; //Field offset: 0x48
+	public static Action onColorChanged; //Field offset: 0x28
+	public static Action<Int32> onHealthChanged; //Field offset: 0x30
+	public static Action<Boolean, Single> onBackpackUpdated; //Field offset: 0x38
+	public static Action<Single> onHeldWeightUpdated; //Field offset: 0x40
+	public static Action<Int32> onChannelChanged; //Field offset: 0x48
 	private static readonly Vector2 HAND_MOVE_DELTA_MIN_MAX; //Field offset: 0x50
 	private static readonly Vector2 HAND_STEP_VIBRATION_MIN_MAX; //Field offset: 0x58
 	[Header("References")]
@@ -123,46 +122,37 @@ public class PlayerController : MonoBehaviour
 	private Transform _controllerTransformLeft; //Field offset: 0x70
 	[SerializeField]
 	private Transform _controllerTransformRight; //Field offset: 0x78
-	[Header("Fingers")]
-	[SerializeField]
-	private PlayerFingerValueReceiver _fingerValueReceiver; //Field offset: 0x80
 	[Header("PlayerState")]
 	[SerializeField]
-	private int _currHealth; //Field offset: 0x88
+	private int _currHealth; //Field offset: 0x80
 	[SerializeField]
-	private bool _isDie; //Field offset: 0x8C
-	private WaitForSeconds _regenerationWait; //Field offset: 0x90
-	private IEnumerator _regenerationCoroutine; //Field offset: 0x98
-	public Vector3 _forceExternal; //Field offset: 0xA0
-	private float _forceDrag; //Field offset: 0xAC
-	private Transform _grabbedTransform; //Field offset: 0xB0
-	private Vector3 _grabbedOffset; //Field offset: 0xB8
-	private IEnumerator _deathCoroutine; //Field offset: 0xC8
-	private Dictionary<AttachedLocation, Single> _itemWeights; //Field offset: 0xD0
-	private float _cachedItemWeight; //Field offset: 0xD8
-	[Header("Audios")]
-	[SerializeField]
-	private AudioSource _audioSourceEarRinging; //Field offset: 0xE0
-	private Single[] _currFingerValues; //Field offset: 0xE8
-	private FingerUsage _leftHandFingerUsage; //Field offset: 0xF0
-	private FingerUsage _rightHandFingerUsage; //Field offset: 0xF4
-	private Collider[] hitDamageSafeZoneCollidersBuffer; //Field offset: 0xF8
-	private float _fpsMeasureInterval; //Field offset: 0x100
-	private float _timeLastMeasure; //Field offset: 0x104
-	private int _frameCount; //Field offset: 0x108
-	private Vector3 _spawnPosition; //Field offset: 0x10C
-	private Vector3 _spawnDirection; //Field offset: 0x118
-	private readonly Color[] COLOR_OPTIONS; //Field offset: 0x128
+	private bool _isDie; //Field offset: 0x84
+	private WaitForSeconds _regenerationWait; //Field offset: 0x88
+	private IEnumerator _regenerationCoroutine; //Field offset: 0x90
+	public Vector3 _forceExternal; //Field offset: 0x98
+	private float _forceDrag; //Field offset: 0xA4
+	private Transform _grabbedTransform; //Field offset: 0xA8
+	private Vector3 _grabbedOffset; //Field offset: 0xB0
+	private IEnumerator _deathCoroutine; //Field offset: 0xC0
+	private Dictionary<AttachedLocation, Single> _itemWeights; //Field offset: 0xC8
+	private float _cachedItemWeight; //Field offset: 0xD0
+	private Collider[] hitDamageSafeZoneCollidersBuffer; //Field offset: 0xD8
+	private float _fpsMeasureInterval; //Field offset: 0xE0
+	private float _timeLastMeasure; //Field offset: 0xE4
+	private int _frameCount; //Field offset: 0xE8
+	private Vector3 _spawnPosition; //Field offset: 0xEC
+	private Vector3 _spawnDirection; //Field offset: 0xF8
+	private readonly Color[] COLOR_OPTIONS; //Field offset: 0x108
 	[CompilerGenerated]
-	private int <playerChannel>k__BackingField; //Field offset: 0x130
+	private int <playerChannel>k__BackingField; //Field offset: 0x110
 	[CompilerGenerated]
-	private bool <snapTurnEnabled>k__BackingField; //Field offset: 0x134
-	private Vector2 _prevLeftJoystickValue; //Field offset: 0x138
-	private Vector2 _prevRightJoystickValue; //Field offset: 0x140
-	[CompilerGenerated]
-	private HandController <leftHandController>k__BackingField; //Field offset: 0x148
-	[CompilerGenerated]
-	private HandController <rightHandController>k__BackingField; //Field offset: 0x150
+	private bool <snapTurnEnabled>k__BackingField; //Field offset: 0x114
+	private Vector2 _prevLeftJoystickValue; //Field offset: 0x118
+	private Vector2 _prevRightJoystickValue; //Field offset: 0x120
+	private XRController _leftController; //Field offset: 0x128
+	private XRController _rightController; //Field offset: 0x130
+	private bool _prevTrackedleft; //Field offset: 0x138
+	private bool _prevTrackedRight; //Field offset: 0x139
 
 	public Transform backAttachAnchor
 	{
@@ -204,22 +194,9 @@ public class PlayerController : MonoBehaviour
 		 get { } //Length: 8
 	}
 
-	public float heldItemWeight
-	{
-		 get { } //Length: 8
-	}
-
 	public static PlayerController instance
 	{
 		 get { } //Length: 88
-	}
-
-	public private HandController leftHandController
-	{
-		[CompilerGenerated]
-		 get { } //Length: 8
-		[CompilerGenerated]
-		private set { } //Length: 8
 	}
 
 	public private int playerChannel
@@ -238,29 +215,6 @@ public class PlayerController : MonoBehaviour
 		private set { } //Length: 124
 	}
 
-	public Vector3 playerGravity
-	{
-		 get { } //Length: 304
-	}
-
-	public Rigidbody playerRigidbody
-	{
-		 get { } //Length: 8
-	}
-
-	public PlayerView playerView
-	{
-		 get { } //Length: 8
-	}
-
-	public private HandController rightHandController
-	{
-		[CompilerGenerated]
-		 get { } //Length: 8
-		[CompilerGenerated]
-		private set { } //Length: 8
-	}
-
 	private bool snapTurnEnabled
 	{
 		[CompilerGenerated]
@@ -274,11 +228,9 @@ public class PlayerController : MonoBehaviour
 	public PlayerController() { }
 
 	[CompilerGenerated]
-	internal static float <UpdateSnapTurn>g__CheckToTurn|133_0(HandSide handSide, ref Vector2 prevValue) { }
+	internal static float <UpdateSnapTurn>g__CheckToTurn|110_0(HandSide handSide, ref Vector2 prevValue) { }
 
 	public void AddExternalForce(Vector3 velocity) { }
-
-	public void AddGrabOffset(Vector3 offset) { }
 
 	public void AddItemContactPoint(Vector3 position, Vector3 prevPosition) { }
 
@@ -304,12 +256,7 @@ public class PlayerController : MonoBehaviour
 
 	public Transform get_head() { }
 
-	public float get_heldItemWeight() { }
-
 	public static PlayerController get_instance() { }
-
-	[CompilerGenerated]
-	public HandController get_leftHandController() { }
 
 	[CompilerGenerated]
 	public int get_playerChannel() { }
@@ -317,23 +264,10 @@ public class PlayerController : MonoBehaviour
 	[CompilerGenerated]
 	public static Color get_playerColor() { }
 
-	public Vector3 get_playerGravity() { }
-
-	public Rigidbody get_playerRigidbody() { }
-
-	public PlayerView get_playerView() { }
-
-	[CompilerGenerated]
-	public HandController get_rightHandController() { }
-
 	[CompilerGenerated]
 	private bool get_snapTurnEnabled() { }
 
-	private void HandleFingerValuesChanged(Single[] fingerValues) { }
-
 	private void HandleHandCollision(Collider collider, Vector3 point, Vector3 moveDelta, HandSide handSide) { }
-
-	private void HandleLocalUserAvatarChanged(StateChangedEventArgs args) { }
 
 	private void HandleMenuButtonPressed() { }
 
@@ -355,29 +289,22 @@ public class PlayerController : MonoBehaviour
 
 	public void PlayerDie(RandomSFX killSound, string hitName) { }
 
-	public void PlayerHit(int damage, Vector3 position, Quaternion rotation, string hitSound, string killSound, PrefabType prefabType, string hitName) { }
+	public void PlayerHit(int damage, Vector3 position, Quaternion rotation, string hitSound, string killSound, string hitName) { }
 
 	public void PlayerHit(int damage, Vector3 position, Quaternion rotation, string hitSound, string killSound, Vector3 force, string hitName) { }
 
-	public void PlayerHit(int damage, Vector3 position, Quaternion rotation, string hitSound, string killSound, string hitName) { }
+	public void PlayerHit(int damage, Vector3 position, Quaternion rotation, string hitSound, string killSound, PrefabType prefabType, string hitName) { }
 
 	private void PlayerHitInternal(int damage, Vector3 position, Quaternion rotation, string hitSound, string killSound, string hitName) { }
 
-	public void PlayerStun(Vector3 position, float stunRange, float duration, AttenuationType attenType) { }
-
-	[IteratorStateMachine(typeof(<RegenerationCoroutine>d__113))]
+	[IteratorStateMachine(typeof(<RegenerationCoroutine>d__94))]
 	private IEnumerator RegenerationCoroutine() { }
-
-	public void Respawn(Transform targetTransform, bool dropItems = false) { }
-
-	public void Respawn(Vector3 targetPosition, bool dropItems = false) { }
 
 	public void Respawn(Vector3 targetPosition, Vector3 targetDirection, bool dropItems = false) { }
 
-	private void SanitizeFingerValues(Single[] fingerValues, int startIndex, FingerUsage fingerUsage) { }
+	public void Respawn(Vector3 targetPosition, bool dropItems = false) { }
 
-	[CompilerGenerated]
-	private void set_leftHandController(HandController value) { }
+	public void Respawn(Transform targetTransform, bool dropItems = false) { }
 
 	[CompilerGenerated]
 	private void set_playerChannel(int value) { }
@@ -386,21 +313,19 @@ public class PlayerController : MonoBehaviour
 	private static void set_playerColor(Color value) { }
 
 	[CompilerGenerated]
-	private void set_rightHandController(HandController value) { }
-
-	[CompilerGenerated]
 	private void set_snapTurnEnabled(bool value) { }
 
 	public void SetChannel(int channel) { }
 
 	private void SetCurrentHealth(int health) { }
 
-	[IteratorStateMachine(typeof(<SetDeathCoroutine>d__114))]
+	[IteratorStateMachine(typeof(<SetDeathCoroutine>d__95))]
 	private IEnumerator SetDeathCoroutine(string hitName, Vector3 force = null) { }
 
-	public void SetFingerUsage(HandSide side, FingerUsage fingerUsage) { }
-
 	public void SetItemWeight(AttachedLocation slot, float weight) { }
+
+	[ContextMenu("Change Color")]
+	public void SetRandomColor() { }
 
 	private void Update() { }
 

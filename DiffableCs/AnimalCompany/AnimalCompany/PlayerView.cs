@@ -3,11 +3,12 @@ namespace AnimalCompany;
 public class PlayerView : MonoBehaviour
 {
 	[CompilerGenerated]
-	private sealed class <PlayerHitCoroutine>d__83 : IEnumerator<Object>, IEnumerator, IDisposable
+	private sealed class <PlayerHitCoroutine>d__77 : IEnumerator<Object>, IEnumerator, IDisposable
 	{
 		private int <>1__state; //Field offset: 0x10
 		private object <>2__current; //Field offset: 0x18
 		public PlayerView <>4__this; //Field offset: 0x20
+		private Renderer[] <renderers>5__2; //Field offset: 0x28
 
 		private override object System.Collections.Generic.IEnumerator<System.Object>.Current
 		{
@@ -22,7 +23,7 @@ public class PlayerView : MonoBehaviour
 		}
 
 		[DebuggerHidden]
-		public <PlayerHitCoroutine>d__83(int <>1__state) { }
+		public <PlayerHitCoroutine>d__77(int <>1__state) { }
 
 		private override bool MoveNext() { }
 
@@ -46,124 +47,120 @@ public class PlayerView : MonoBehaviour
 		Ragdoll = 1,
 	}
 
-	private static readonly Quaternion HIP_ROTATION_OFFSET_LEFT; //Field offset: 0x0
-	private const float _ragdollGravityIntensity = 0.005; //Field offset: 0x0
+	internal enum Type
+	{
+		Local = 0,
+		Remote = 1,
+	}
+
+	private static readonly Vector3 HAND_ROTATION_OFFSET_LEFT; //Field offset: 0x0
 	private const float _armFollowDamping = 0.2; //Field offset: 0x0
+	private const float _ragdollGravityIntensity = 0.005; //Field offset: 0x0
+	private const float _armFollowIntensity = 0.3; //Field offset: 0x0
 	private const float _maxArmLength = 0.75; //Field offset: 0x0
 	private const string KEYWORD_EMISSION = "_EMISSION"; //Field offset: 0x0
-	private const float _armFollowIntensity = 0.3; //Field offset: 0x0
-	private static readonly Quaternion HIP_ROTATION_OFFSET_RIGHT; //Field offset: 0x10
-	private static readonly Vector3 HAND_ROTATION_OFFSET_LEFT; //Field offset: 0x20
-	private static readonly Vector3 HAND_ROTATION_OFFSET_RIGHT; //Field offset: 0x2C
-	private static readonly int PROP_EMISSION_COLOR; //Field offset: 0x38
-	private static readonly int PROP_PLAYER_VOLUME; //Field offset: 0x3C
-	private Quaternion _handRotationOffsetLeft; //Field offset: 0x20
-	private Quaternion _handRotationOffsetRight; //Field offset: 0x30
-	public Vector3 HAND_POSITION_OFFSET_LEFT; //Field offset: 0x40
-	public Vector3 HAND_POSITION_OFFSET_RIGHT; //Field offset: 0x4C
+	private static readonly Vector3 HAND_ROTATION_OFFSET_RIGHT; //Field offset: 0xC
+	private static readonly Vector3 HINT_OFFSET_LEFT; //Field offset: 0x18
+	private static readonly Vector3 HINT_OFFSET_RIGHT; //Field offset: 0x24
+	private static readonly int PROP_EMISSION_COLOR; //Field offset: 0x30
 	[Header("References")]
 	[SerializeField]
-	private Transform _cameraTransform; //Field offset: 0x58
+	private Transform _cameraTransform; //Field offset: 0x20
 	[SerializeField]
-	private Transform _handTransformLeft; //Field offset: 0x60
+	private Transform _handTransformLeft; //Field offset: 0x28
 	[SerializeField]
-	private Transform _handTransformRight; //Field offset: 0x68
+	private Transform _handTransformRight; //Field offset: 0x30
 	[SerializeField]
-	private Transform _controllerTransformLeft; //Field offset: 0x70
+	private Transform _controllerTransformLeft; //Field offset: 0x38
 	[SerializeField]
-	private Transform _controllerTransformRight; //Field offset: 0x78
+	private Transform _controllerTransformRight; //Field offset: 0x40
 	[SerializeField]
-	private Transform _backAttachAnchor; //Field offset: 0x80
-	[Header("Adjustment")]
+	private Transform _backAttachAnchor; //Field offset: 0x48
+	[Header("Type")]
 	[SerializeField]
-	private Transform _lowerArmBoneLeft; //Field offset: 0x88
+	private Type _type; //Field offset: 0x50
 	[SerializeField]
-	private Transform _lowerArmBoneRight; //Field offset: 0x90
+	private Renderer[] _rendererLocal; //Field offset: 0x58
 	[SerializeField]
-	private Transform _handBoneLeft; //Field offset: 0x98
-	[SerializeField]
-	private Transform _handBoneRight; //Field offset: 0xA0
-	[Header("Avatar Body")]
-	[SerializeField]
-	private AvatarView _avatarView; //Field offset: 0xA8
+	private Renderer[] _rendererRemote; //Field offset: 0x60
 	[Header("IK")]
 	[SerializeField]
-	private Transform _cameraTarget; //Field offset: 0xB0
+	private Transform _cameraTarget; //Field offset: 0x68
 	[SerializeField]
-	private Transform _handTargetLeft; //Field offset: 0xB8
+	private Transform _handTargetLeft; //Field offset: 0x70
 	[SerializeField]
-	private Transform _handTargetRight; //Field offset: 0xC0
+	private Transform _handTargetRight; //Field offset: 0x78
 	[SerializeField]
-	private Transform _handHintLeft; //Field offset: 0xC8
+	private Transform _handHintLeft; //Field offset: 0x80
 	[SerializeField]
-	private Transform _handHintRight; //Field offset: 0xD0
-	[Header("Fingers")]
-	[SerializeField]
-	private PlayerFingerView[] _fingerViews; //Field offset: 0xD8
+	private Transform _handHintRight; //Field offset: 0x88
 	[Header("Ragdoll")]
 	[SerializeField]
-	private Mode _mode; //Field offset: 0xE0
+	private Mode _mode; //Field offset: 0x90
 	[SerializeField]
-	private GameObject[] _ragdollGameObjects; //Field offset: 0xE8
+	private GameObject[] _ragdollGameObjects; //Field offset: 0x98
 	[SerializeField]
-	private Rigidbody[] _ragdollRigidbodies; //Field offset: 0xF0
-	private Vector3 _velocityHandLeft; //Field offset: 0xF8
-	private Vector3 _velocityHandRight; //Field offset: 0x104
-	private Vector3 _prevHandPositionLeft; //Field offset: 0x110
-	private Vector3 _prevHandPositionRight; //Field offset: 0x11C
+	private Rigidbody[] _ragdollRigidbodies; //Field offset: 0xA0
+	private Vector3 _velocityHandLeft; //Field offset: 0xA8
+	private Vector3 _velocityHandRight; //Field offset: 0xB4
+	private Vector3 _prevHandPositionLeft; //Field offset: 0xC0
+	private Vector3 _prevHandPositionRight; //Field offset: 0xCC
 	[Header("Mouse Movement")]
 	[SerializeField]
-	private float _volumeSmoothStrengh; //Field offset: 0x128
+	private float _volumeSmoothStrengh; //Field offset: 0xD8
 	[Range(0, 1)]
 	[SerializeField]
-	private float _volumeSmoothDrag; //Field offset: 0x12C
+	private float _volumeSmoothDrag; //Field offset: 0xDC
 	[SerializeField]
-	private float _volumeTremoloSpeed; //Field offset: 0x130
+	private float _volumeTremoloSpeed; //Field offset: 0xE0
 	[Range(0, 0.1)]
 	[SerializeField]
-	private float _volumeTremoloAmplitude; //Field offset: 0x134
+	private float _volumeTremoloAmplitude; //Field offset: 0xE4
 	[SerializeField]
-	private float _eyeScaleByVolume; //Field offset: 0x138
-	private float _volumeSmooth; //Field offset: 0x13C
-	private float _volumeSmoothVelocity; //Field offset: 0x140
-	private float _eyeScaleDefault; //Field offset: 0x144
+	private Vector2 _tungRotationRange; //Field offset: 0xE8
+	[SerializeField]
+	private Transform _tungTransform; //Field offset: 0xF0
+	[SerializeField]
+	private SkinnedMeshRenderer _bodyRenderer; //Field offset: 0xF8
+	[SerializeField]
+	private float _eyeScaleByVolume; //Field offset: 0x100
+	[SerializeField]
+	private Transform[] _eyeTransforms; //Field offset: 0x108
+	private float _volumeSmooth; //Field offset: 0x110
+	private float _volumeSmoothVelocity; //Field offset: 0x114
+	private float _tungRotaitonDefault; //Field offset: 0x118
+	private float _eyeScaleDefault; //Field offset: 0x11C
 	[Header("Elastic Hip")]
 	[SerializeField]
-	private float _elasticHipStrength; //Field offset: 0x148
+	private float _elasticHipStrength; //Field offset: 0x120
 	[Range(0, 1)]
 	[SerializeField]
-	private float _elasticHipDrag; //Field offset: 0x14C
+	private float _elasticHipDrag; //Field offset: 0x124
 	[SerializeField]
-	private Transform _hipTipLeft; //Field offset: 0x150
+	private Transform _hipTipLeft; //Field offset: 0x128
 	[SerializeField]
-	private Transform _hipTipRight; //Field offset: 0x158
+	private Transform _hipTipRight; //Field offset: 0x130
 	[SerializeField]
-	private Transform _hipBoneLeft; //Field offset: 0x160
+	private Transform _hipBoneLeft; //Field offset: 0x138
 	[SerializeField]
-	private Transform _hipBoneRight; //Field offset: 0x168
+	private Transform _hipBoneRight; //Field offset: 0x140
 	[SerializeField]
-	private Transform _spineBone; //Field offset: 0x170
-	private Vector3 _hipTipPositionSpineSpaceLeft; //Field offset: 0x178
-	private Vector3 _hipTipPositionSpineSpaceRight; //Field offset: 0x184
-	private Vector3 _hipTipElasticPositionLeft; //Field offset: 0x190
-	private Vector3 _hipTipElasticPositionRight; //Field offset: 0x19C
-	private Vector3 _hipElasticVelocityLeft; //Field offset: 0x1A8
-	private Vector3 _hipElasticVelocityRight; //Field offset: 0x1B4
+	private Transform _spineBone; //Field offset: 0x148
+	private Vector3 _hipTipPositionSpineSpaceLeft; //Field offset: 0x150
+	private Vector3 _hipTipPositionSpineSpaceRight; //Field offset: 0x15C
+	private Vector3 _hipTipElasticPositionLeft; //Field offset: 0x168
+	private Vector3 _hipTipElasticPositionRight; //Field offset: 0x174
+	private Vector3 _hipElasticVelocityLeft; //Field offset: 0x180
+	private Vector3 _hipElasticVelocityRight; //Field offset: 0x18C
 	[Header("Debug")]
 	[SerializeField]
-	private bool _isTest; //Field offset: 0x1C0
+	private bool _isTest; //Field offset: 0x198
 	[SerializeField]
-	private bool _disableTracking; //Field offset: 0x1C1
+	private bool _disableTracking; //Field offset: 0x199
 	[Range(0, 1)]
 	[SerializeField]
-	private float _testVoiceVolume; //Field offset: 0x1C4
-	private bool _isLocalPlayer; //Field offset: 0x1C8
-	private IEnumerator _playerHitCoroutine; //Field offset: 0x1D0
-
-	public AvatarView avatarView
-	{
-		 get { } //Length: 8
-	}
+	private float _testVoiceVolume; //Field offset: 0x19C
+	private IEnumerator _playerHitCoroutine; //Field offset: 0x1A0
 
 	public Transform backAttachAnchor
 	{
@@ -198,8 +195,6 @@ public class PlayerView : MonoBehaviour
 
 	private void FixedUpdate() { }
 
-	public AvatarView get_avatarView() { }
-
 	public Transform get_backAttachAnchor() { }
 
 	public Mode get_mode() { }
@@ -210,26 +205,24 @@ public class PlayerView : MonoBehaviour
 
 	public Transform get_ragdollHead() { }
 
+	public bool GetIsLocal() { }
+
 	private void OnDrawGizmos() { }
 
 	public void PlayerHit() { }
 
-	[IteratorStateMachine(typeof(<PlayerHitCoroutine>d__83))]
+	[IteratorStateMachine(typeof(<PlayerHitCoroutine>d__77))]
 	private IEnumerator PlayerHitCoroutine() { }
 
 	public void SetColor(Color color) { }
 
-	public void SetFingerValues(HandSide handSide, float thumbValue, float indexValue, float middleValue) { }
-
-	public void SetIsLocalPlayer(bool isLocalPlayer) { }
-
 	public void SetRagdoll(bool ragdoll, Vector3 force = null) { }
 
-	public void Setup(UserAvatarState avatarState, Transform camera, Transform handLeft, Transform handRight, Transform controllerLeft, Transform controllerRight, bool isLocalPlayer) { }
+	public void SetRenderType(Type type) { }
+
+	public void Setup(Transform camera, Transform handLeft, Transform handRight, Transform controllerLeft, Transform controllerRight, Type type) { }
 
 	private void Update() { }
-
-	public void UpdateAvatar(UserAvatarState avatarState) { }
 
 	private void UpdateElasticHip() { }
 

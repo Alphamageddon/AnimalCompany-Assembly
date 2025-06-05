@@ -9,17 +9,16 @@ public class TerminalKeyInput : MonoBehaviour
 	public Transform translateTransform; //Field offset: 0x30
 	public RandomSFX keyPressSFX; //Field offset: 0x38
 	public TerminalKeyInputListener keyInputListener; //Field offset: 0x40
-	public float tweenValue; //Field offset: 0x48
-	private int tweenID; //Field offset: 0x4C
-	private float _lastKeyPressTime; //Field offset: 0x50
+	private int tweenID; //Field offset: 0x48
+	private float _lastKeyPressTime; //Field offset: 0x4C
 
 	public TerminalKeyInput() { }
 
 	[CompilerGenerated]
-	private void <Press>b__12_0(float val) { }
+	private void <Press>b__11_0(float val) { }
 
 	[CompilerGenerated]
-	private void <Press>b__12_1() { }
+	private void <Press>b__11_1() { }
 
 	private void OnDestroy() { }
 

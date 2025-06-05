@@ -24,14 +24,10 @@ public class PrefabGenerator : SimulationBehaviour
 
 	private static Dictionary<PrefabType, RandomPrefab> _prefabDictionary; //Field offset: 0x0
 	private static PrefabGenerator _instance; //Field offset: 0x8
-	private List<NetworkObject> _generatedPrefabs; //Field offset: 0x48
+	public NetworkRunner runner; //Field offset: 0x48
+	private List<NetworkObject> _generatedPrefabs; //Field offset: 0x50
 	[SerializeField]
-	private LayerMask _groundLayerMask; //Field offset: 0x50
-
-	public NetworkRunner runner
-	{
-		 get { } //Length: 76
-	}
+	private LayerMask _groundLayerMask; //Field offset: 0x58
 
 	private static PrefabGenerator() { }
 
@@ -41,9 +37,9 @@ public class PrefabGenerator : SimulationBehaviour
 
 	public static void GeneratePrefab(PrefabType prefabType, Vector3 position, Quaternion rotation, bool onGround = false) { }
 
-	private static void GeneratePrefabInternal(NetworkRunner runner, PrefabType prefabType, Vector3 position, Quaternion rotation) { }
+	private static void GeneratePrefabInternal(PrefabType prefabType, Vector3 position, Quaternion rotation) { }
 
-	public NetworkRunner get_runner() { }
+	private void HandleNewRunner(NetworkRunner runner) { }
 
 	private static GameObject LoadPrefab(PrefabType prefabType) { }
 

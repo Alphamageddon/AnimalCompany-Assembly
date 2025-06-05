@@ -3,7 +3,7 @@ namespace AnimalCompany;
 public class PlayerWatchView : MonoBehaviour
 {
 	[CompilerGenerated]
-	private sealed class <SetMoneyTextAnimationCoroutine>d__45 : IEnumerator<Object>, IEnumerator, IDisposable
+	private sealed class <SetMoneyTextAnimationCoroutine>d__44 : IEnumerator<Object>, IEnumerator, IDisposable
 	{
 		private int <>1__state; //Field offset: 0x10
 		private object <>2__current; //Field offset: 0x18
@@ -27,7 +27,7 @@ public class PlayerWatchView : MonoBehaviour
 		}
 
 		[DebuggerHidden]
-		public <SetMoneyTextAnimationCoroutine>d__45(int <>1__state) { }
+		public <SetMoneyTextAnimationCoroutine>d__44(int <>1__state) { }
 
 		private override bool MoveNext() { }
 
@@ -61,44 +61,42 @@ public class PlayerWatchView : MonoBehaviour
 	[SerializeField]
 	private TextMeshProUGUI _textMoney; //Field offset: 0x30
 	[SerializeField]
-	private Image _currencyIcon; //Field offset: 0x38
+	private TextMeshProUGUI _textChannel; //Field offset: 0x38
 	[SerializeField]
-	private TextMeshProUGUI _textChannel; //Field offset: 0x40
+	private TextMeshProUGUI _textChannelHeader; //Field offset: 0x40
 	[SerializeField]
-	private TextMeshProUGUI _textChannelHeader; //Field offset: 0x48
+	private AudioSource _soundAlarm; //Field offset: 0x48
 	[SerializeField]
-	private AudioSource _soundAlarm; //Field offset: 0x50
+	private Image _healthFill; //Field offset: 0x50
 	[SerializeField]
-	private Image _healthFill; //Field offset: 0x58
+	private Image _healthIcon; //Field offset: 0x58
 	[SerializeField]
-	private Image _healthIcon; //Field offset: 0x60
+	private Image _lootFill; //Field offset: 0x60
 	[SerializeField]
-	private Image _lootFill; //Field offset: 0x68
+	private Image _lootIcon; //Field offset: 0x68
 	[SerializeField]
-	private Image _lootIcon; //Field offset: 0x70
+	private Image _weightFill; //Field offset: 0x70
 	[SerializeField]
-	private Image _weightFill; //Field offset: 0x78
+	private Image _weightIcon; //Field offset: 0x78
 	[SerializeField]
-	private Image _weightIcon; //Field offset: 0x80
+	private RectTransform _directionRoot; //Field offset: 0x80
 	[SerializeField]
-	private RectTransform _directionRoot; //Field offset: 0x88
+	private MapIconView _playerIconPrefab; //Field offset: 0x88
 	[SerializeField]
-	private MapIconView _playerIconPrefab; //Field offset: 0x90
+	private Sprite _playerIconSprite; //Field offset: 0x90
 	[SerializeField]
-	private Sprite _playerIconSprite; //Field offset: 0x98
+	private Sprite _playerDeadIconSprite; //Field offset: 0x98
 	[SerializeField]
-	private Sprite _playerDeadIconSprite; //Field offset: 0xA0
+	private RectTransform _mapIconsRoot; //Field offset: 0xA0
 	[SerializeField]
-	private RectTransform _mapIconsRoot; //Field offset: 0xA8
+	private RectTransform _moneyDisplayRoot; //Field offset: 0xA8
 	[SerializeField]
-	private RectTransform _moneyDisplayRoot; //Field offset: 0xB0
+	private RectTransform _mapDisplayRoot; //Field offset: 0xB0
 	[SerializeField]
-	private RectTransform _mapDisplayRoot; //Field offset: 0xB8
-	[SerializeField]
-	private MapView _mapView; //Field offset: 0xC0
-	private IEnumerator _setMoneyTextAnimationCoroutine; //Field offset: 0xC8
-	private WaitForSeconds _waitForHalfSeconds; //Field offset: 0xD0
-	private WaitForSeconds _waitForOneSecond; //Field offset: 0xD8
+	private MapView _mapView; //Field offset: 0xB8
+	private IEnumerator _setMoneyTextAnimationCoroutine; //Field offset: 0xC0
+	private WaitForSeconds _waitForHalfSeconds; //Field offset: 0xC8
+	private WaitForSeconds _waitForOneSecond; //Field offset: 0xD0
 
 	public MapView mapView
 	{
@@ -133,7 +131,7 @@ public class PlayerWatchView : MonoBehaviour
 
 	public void SetMoneyText(int amount, int amountPrev, bool animate) { }
 
-	[IteratorStateMachine(typeof(<SetMoneyTextAnimationCoroutine>d__45))]
+	[IteratorStateMachine(typeof(<SetMoneyTextAnimationCoroutine>d__44))]
 	private IEnumerator SetMoneyTextAnimationCoroutine(int amount, int amountPrev) { }
 
 	public void SetSignalStrength(float level) { }

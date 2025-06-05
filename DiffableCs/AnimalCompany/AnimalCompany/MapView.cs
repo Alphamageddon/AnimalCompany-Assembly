@@ -39,7 +39,7 @@ public class MapView : MonoBehaviour
 
 	private void Update() { }
 
-	public void UpdateLootLocations(IEnumerable<GrabbableItem> items, IEnumerable<Crate> crates) { }
+	public void UpdateLootLocations(IEnumerable<GrabbableItem> items) { }
 
 	public void UpdateMobLocations(IEnumerable<MobController> mobs, IEnumerable<MobControllerMine> mines) { }
 

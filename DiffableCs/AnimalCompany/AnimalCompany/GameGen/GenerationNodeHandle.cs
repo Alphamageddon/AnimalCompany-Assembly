@@ -3,23 +3,6 @@ namespace AnimalCompany.GameGen;
 public class GenerationNodeHandle
 {
 	[CompilerGenerated]
-	private sealed class <>c
-	{
-		public static readonly <>c <>9; //Field offset: 0x0
-		public static Func<GenBranch, Boolean> <>9__9_2; //Field offset: 0x8
-		public static Func<Socket, Boolean> <>9__9_4; //Field offset: 0x10
-
-		private static <>c() { }
-
-		public <>c() { }
-
-		internal bool <TryGenerate>b__9_2(GenBranch b) { }
-
-		internal bool <TryGenerate>b__9_4(Socket s) { }
-
-	}
-
-	[CompilerGenerated]
 	private sealed class <>c__DisplayClass9_0
 	{
 		public Archetype fromArchetype; //Field offset: 0x10
@@ -30,17 +13,6 @@ public class GenerationNodeHandle
 		internal bool <TryGenerate>b__0(List<NodeGenerationResult> rList) { }
 
 		internal bool <TryGenerate>b__1(NodeGenerationResult r) { }
-
-	}
-
-	[CompilerGenerated]
-	private sealed class <>c__DisplayClass9_1
-	{
-		public GenBranch branch; //Field offset: 0x10
-
-		public <>c__DisplayClass9_1() { }
-
-		internal bool <TryGenerate>b__3(Socket s) { }
 
 	}
 

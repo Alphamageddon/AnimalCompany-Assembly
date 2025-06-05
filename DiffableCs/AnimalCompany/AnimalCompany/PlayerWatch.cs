@@ -1,6 +1,5 @@
 namespace AnimalCompany;
 
-[DefaultExecutionOrder(102)]
 [NetworkBehaviourWeaved(4)]
 public class PlayerWatch : NetworkBehaviour
 {
@@ -16,35 +15,36 @@ public class PlayerWatch : NetworkBehaviour
 	private const float TOGGLE_TIME = 1; //Field offset: 0x0
 	private static HashSet<PlayerWatch> _transmittingWalkieTalkies; //Field offset: 0x0
 	[SerializeField]
-	private WalkieTalkieSpeaker _speaker; //Field offset: 0x80
+	private NetPlayer _player; //Field offset: 0x80
 	[SerializeField]
-	private AudioSource _soundOn; //Field offset: 0x88
+	private WalkieTalkieSpeaker _speaker; //Field offset: 0x88
 	[SerializeField]
-	private AudioSource _soundOff; //Field offset: 0x90
+	private AudioSource _soundOn; //Field offset: 0x90
 	[SerializeField]
-	private PlayerWatchView _view; //Field offset: 0x98
+	private AudioSource _soundOff; //Field offset: 0x98
+	[SerializeField]
+	private PlayerWatchView _view; //Field offset: 0xA0
 	[DefaultForProperty("transmittingPlayerObjectID", 0, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private int _transmittingPlayerObjectID; //Field offset: 0xA0
+	private int _transmittingPlayerObjectID; //Field offset: 0xA8
 	[DefaultForProperty("channel", 1, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private int _channel; //Field offset: 0xA4
+	private int _channel; //Field offset: 0xAC
 	[DefaultForProperty("moneyAmount", 2, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private int _moneyAmount; //Field offset: 0xA8
-	private int _moneyAmountCache; //Field offset: 0xAC
+	private int _moneyAmount; //Field offset: 0xB0
+	private int _moneyAmountCache; //Field offset: 0xB4
 	[DefaultForProperty("display", 3, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private WatchDisplay _display; //Field offset: 0xB0
-	private NetPlayer _player; //Field offset: 0xB8
+	private WatchDisplay _display; //Field offset: 0xB8
 	private ChangeDetector _changeDetector; //Field offset: 0xC0
 	private NetPlayer _currentTransmittingPlayer; //Field offset: 0xC8
 	private float _lastChangeTransmissionTime; //Field offset: 0xD0
@@ -138,8 +138,6 @@ public class PlayerWatch : NetworkBehaviour
 
 	private bool IsRightHand(Collider collider) { }
 
-	private void LateUpdate() { }
-
 	private void OnDestroy() { }
 
 	private void OnHealthChanged(int health) { }
@@ -171,6 +169,8 @@ public class PlayerWatch : NetworkBehaviour
 	private void Start() { }
 
 	private void ToggleDisplayChange() { }
+
+	private void Update() { }
 
 }
 

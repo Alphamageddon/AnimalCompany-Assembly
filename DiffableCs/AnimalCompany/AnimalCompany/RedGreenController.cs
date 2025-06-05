@@ -20,41 +20,41 @@ public class RedGreenController : MobController
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private Phase _phase; //Field offset: 0x1A4
+	private Phase _phase; //Field offset: 0x174
 	[DefaultForProperty("spawnedPosition", 16, 3)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private Vector3 _spawnedPosition; //Field offset: 0x1A8
+	private Vector3 _spawnedPosition; //Field offset: 0x178
 	[DefaultForProperty("isGreen", 19, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private bool _isGreen; //Field offset: 0x1B4
+	private bool _isGreen; //Field offset: 0x184
 	[Header("Timers")]
 	[SerializeField]
-	private Vector2 _lightSwitchIntervalGreen; //Field offset: 0x1B8
+	private Vector2 _lightSwitchIntervalGreen; //Field offset: 0x188
 	[SerializeField]
-	private Vector2 _lightSwitchIntervalRed; //Field offset: 0x1C0
+	private Vector2 _lightSwitchIntervalRed; //Field offset: 0x190
 	[DefaultForProperty("switchLightTimer", 20, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private float _switchLightTimer; //Field offset: 0x1C8
+	private float _switchLightTimer; //Field offset: 0x198
 	[DefaultForProperty("switchLightInterval", 21, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private float _switchLightInterval; //Field offset: 0x1CC
+	private float _switchLightInterval; //Field offset: 0x19C
 	[DefaultForProperty("timerAnticipating", 22, 1)]
 	[DrawIf("IsEditorWritable", True, CompareOperator::Equal (0), DrawIfMode::ReadOnly (0))]
 	[SerializeField]
 	[WeaverGenerated]
-	private float _timerAnticipating; //Field offset: 0x1D0
+	private float _timerAnticipating; //Field offset: 0x1A0
 	[Header("References")]
 	[SerializeField]
-	private RedGreenView _redGreenView; //Field offset: 0x1D8
-	private Dictionary<NetPlayer, Vector3[]> _previousPositions; //Field offset: 0x1E0
+	private RedGreenView _redGreenView; //Field offset: 0x1A8
+	private Dictionary<NetPlayer, Vector3[]> _previousPositions; //Field offset: 0x1B0
 
 	private Vector3 _attackSphereCenter
 	{
@@ -124,6 +124,8 @@ public class RedGreenController : MobController
 	[WeaverGenerated]
 	public virtual void CopyStateToBackingFields() { }
 
+	public virtual void FixedUpdateNetwork() { }
+
 	private Vector3 get__attackSphereCenter() { }
 
 	private float get__attackSphereRadius() { }
@@ -185,8 +187,6 @@ public class RedGreenController : MobController
 	private void UpdateCharging() { }
 
 	private void UpdateDetectingPlayer(bool shorterAnticipating = false) { }
-
-	protected virtual void UpdateMonsterBehaviour() { }
 
 	private void UpdateStanding() { }
 
